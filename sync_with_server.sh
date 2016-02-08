@@ -8,6 +8,6 @@
 # WWW-Verz.: /var/www/html
 ########################################
 
-rsync -rtvuc --delete ./ mkoenig@h2389049.stratoserver.net:/var/www/html
+rsync -rtvuc --delete ./html/ mkoenig@h2389049.stratoserver.net:/var/www/html
 
 
