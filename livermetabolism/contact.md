@@ -6,8 +6,8 @@ permalink: /contact/
 
 <div class="container-fluid">
 	<div class="row">
+	  <h1>Matthias König</h1>
 	  <div class="col-md-6">
-		  <h3>Matthias König</h3>
 			<p>
 			<b>Junior Group Leader</b><br />
 			<b>LiSym - Systems Medicine of the Liver</b><br />
@@ -29,7 +29,6 @@ permalink: /contact/
 			</p>
 	  </div>
 	  <div class="col-md-6">
-	  	<h2>&nbsp;</h2>
 	  	<p>
 		<img src="../images/matthias_small.png">
 	    </p>
@@ -37,31 +36,11 @@ permalink: /contact/
 	</div>
 
 	<div class="row">
-	<h3>Publications</h3>
-	<table class="table table-hover">
-		{% for publication in site.data.publications %}
-		<tr>
-			<td><b>{{ publication.year }}</b></td>
-			<td>
-				{% if publication.pdf %}
-				<a href="../paper/{{ publication.pdf }}"><img src="../images/pdf.png" title="pdf"/></a>
-				{% endif %}
-				{% if publication.project %}
-				<a href="{{ publication.project }}"><img src="../images/project.png" title="project homepage"/></a>
-				{% endif %}
-				{% if publication.repository %}
-				<a href="{{ publication.repository }}"><img src="../images/repository.png" title="repository"/></a>
-				{% endif %}
-			</td>
-			<td>{{ publication.authors }} <br />
-				<i>{{ publication.title }}</i><br />
-				{{ publication.journal }}
-			</td>
-			<td></td>
-		</tr>
-		{% endfor %}
-	</table>
+	  <h1>Funding</h1>
+	  <img src="../images/bmbf.png">
+
 	</div>
+
 </div>
 
 <!--

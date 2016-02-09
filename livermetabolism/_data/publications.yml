@@ -6,7 +6,8 @@
   project: 'http://tellurium.analogmachine.org/'
   repository: 'https://github.com/sys-bio/tellurium'
 
-- year: 2016
+- id: 'Koenig2016'
+  year: 2016
   pdf: 'Multiscale.galactose_Koenig2016.pdf'
   authors: '<b>König M.</b>, Marchesini G., Vilstrup H., and Holzhütter HG.'
   title: 'A Multiscale Computational Model Predicts Human Liver Function From Single-Cell Metabolism'
@@ -14,7 +15,9 @@
   project: 'http://www.github.com/matthiaskoenig/multiscale-galactose'
   repository: 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
-- year: 2015
+
+- id: 'Abshagen2015'
+  year: 2015
   pdf: 'Pathobiochemical.signatures_Abshagen2015.pdf'
   authors: 'Kerstin A.<b>*</b>, <b>König M.*</b>, Hoppe A., Thomas M., Müller I., Ebert M., Weng H., Holzhütter HG., Zanger UM., Bode J., Vollmar B. and Dooley S.<br /><b>* equal contribution</b>'
   title: 'Pathobiochemical signatures of cholestatic liver disease in bile duct ligated mice'
