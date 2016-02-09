@@ -1,0 +1,18 @@
+- year: 2016 
+  authors: 'Choi K., Medley JK., Cannistra C., <b>König M.</b>, Smith L., Stocking K., and Sauro HM.'
+  title: 'Tellurium: A Python Based Integrated Environment for Biological Modeling and Simulation'
+  journal: '[in preparation]'
+  project: '<a href="http://tellurium.readthedocs.org/en/latest/">Tellurium project</a>'
+
+- year: 2016
+  authors: '<b>König M.</b>, Marchesini G., Vilstrup H., and Holzhütter HG.'
+  title: 'A Multiscale Computational Model Predicts Human Liver Function From Single-Cell Metabolism'
+  journal: '[in preparation]'
+  project: ''
+
+- year: 2015
+  authors: 'Kerstin A.<b>*</b>, <b>König M.*</b>, Hoppe A., Thomas M., Müller I., Ebert M., Weng H., Holzhütter HG., Zanger UM., Bode J., Vollmar B. and Dooley S.</br><b>* equal contribution</b>'
+  title: 'Pathobiochemical signatures of cholestatic liver disease in bile duct ligated mice'
+  journal: 'BMC Syst Biol. 2015 Nov 20;9(1):83. doi: 10.1186/s12918-015-0229-0 [<a href="http://www.ncbi.nlm.nih.gov/pubmed/26589287">PubMed</a>]'
+  project: ''
+

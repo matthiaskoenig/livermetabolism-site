@@ -7,14 +7,14 @@ permalink: /contact/
 <table cellpadding="0">
   <tbody><tr>
    <td width="35">&nbsp;</td>
-  	<td><img src="images/matthias.png"></td>
+  	<td><img src="./images/matthias.png"></td>
 	<td width="35">&nbsp;</td>
 	<td width="550">
 		<h2>Matthias K&ouml;nig</h2>
 		<p>
 		<b>Junior Group Leader</b><br>
 		<b>LiSym - Systems Medicine of the Liver</b><br>
-		<img src="./images/vln-bw.png"><br><br>
+		<img src="images/vln-bw.png"><br><br>
 		Institute for Theoretical Biology<br>
 		Humboldt-University Berlin<br>
 		Invalidenstra&szlig;e 43, 10117 Berlin, Germany<br>
@@ -35,6 +35,31 @@ permalink: /contact/
 </tbody>
 </table>
 
+<ul>
+{% for member in site.data.members %}
+  <li>
+    <a href="https://github.com/{{ member.github }}">
+      {{ member.name }}
+    </a>
+  </li>
+{% endfor %}
+</ul>
+
+
+<table class="table">
+	{% for p in site.data.publications %}
+	<tr>
+		<td>{{ p.year }}</td>
+		<td>{{ p.authors }} <br />
+			<i>{{ p.title }}</i><br />
+			{{ p.journal }}<br />
+			{{ p.project }}
+		</td>
+		<td></td>
+	</tr>
+	{% endfor %}
+</table>
+
 
 <!--
 <h3>Research Interests</h3>
@@ -47,10 +72,11 @@ permalink: /contact/
 </ul>
 -->
 
-<h3>Publications</h3>
-<table class="table">
-<p>	
 
+<!-- use the json content to encode the publications -->
+<h3>Publications</h3>
+
+<table class="table">
 <tr><td>2016</td><td>Choi K., Medley JK., Cannistra C., <b>K&ouml;nig M.</b>, Smith L., Stocking K., and Sauro HM.<br>
 <i>Tellurium: A Python Based Integrated Environment for Biological Modeling and Simulation</i><br>
 [in preparation]<br>
