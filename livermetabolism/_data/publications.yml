@@ -1,83 +1,106 @@
-- year: 2016 
+- year: 2016
+  pdf: 
   authors: 'Choi K., Medley JK., Cannistra C., <b>König M.</b>, Smith L., Stocking K., and Sauro HM.'
   title: 'Tellurium: A Python Based Integrated Environment for Biological Modeling and Simulation'
   journal: '[in preparation]'
-  project: '<a href="http://tellurium.readthedocs.org/en/latest/">Tellurium project</a>'
+  project: 'http://tellurium.analogmachine.org/'
+  repository: 'https://github.com/sys-bio/tellurium'
 
 - year: 2016
+  pdf: 'Multiscale.galactose_Koenig2016.pdf'
   authors: '<b>König M.</b>, Marchesini G., Vilstrup H., and Holzhütter HG.'
   title: 'A Multiscale Computational Model Predicts Human Liver Function From Single-Cell Metabolism'
   journal: '[in preparation]'
-  project: '<a href="http://www.github.com/matthiaskoenig/multiscale-galactose">multiscale-galactose project</a>'
+  project: 'http://www.github.com/matthiaskoenig/multiscale-galactose'
+  repository: 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
 - year: 2015
-  authors: 'Kerstin A.<b>*</b>, <b>König M.*</b>, Hoppe A., Thomas M., Müller I., Ebert M., Weng H., Holzhütter HG., Zanger UM., Bode J., Vollmar B. and Dooley S.</br><b>* equal contribution</b>'
+  pdf: 'Pathobiochemical.signatures_Abshagen2015.pdf'
+  authors: 'Kerstin A.<b>*</b>, <b>König M.*</b>, Hoppe A., Thomas M., Müller I., Ebert M., Weng H., Holzhütter HG., Zanger UM., Bode J., Vollmar B. and Dooley S.<br /><b>* equal contribution</b>'
   title: 'Pathobiochemical signatures of cholestatic liver disease in bile duct ligated mice'
   journal: 'BMC Syst Biol. 2015 Nov 20;9(1):83. doi: 10.1186/s12918-015-0229-0 [<a href="http://www.ncbi.nlm.nih.gov/pubmed/26589287">PubMed</a>]'
-  project: '<a href="http://matthiaskoenig.github.io/bdl-analysis/">BDL project</a>'
+  project: 'http://matthiaskoenig.github.io/bdl-analysis/'
+  repository: 'http://github.com/matthiaskoenig/bdl-analysis/'
 
 - year: 2015
+  pdf: 
   authors: 'Werner D., Ricken T., Dahmen U., Dirsch O., Holzhütter HG., <b>König M.</b>'
   title: 'On the Influence of Growth in Perfusion Dependent Biological Systems - at the Example of the Human Liver.'
   journal: 'PAMM 15 (1), 119-120, 2015 [<a href="http://onlinelibrary.wiley.com/doi/10.1002/pamm.201510050/abstract;jsessionid=381EE9FEDFD3E8AACF0647465168F845.f02t03">doi:10.1002/pamm.201510050</a>]'
-  project: ''
+  project: 
+  repository: 
 
 - year: 2015
+  pdf: 'libRoadRunner_Somogyi2015.pdf'
   authors: 'Somogyi ET., Bouteiller JM., Glazier JA., <b>König M.</b>, Medley JK., Swat MH and Sauro HM.'
   title: 'LibRoadRunner: a high performance SBML simulation and analysis library.'
   journal: 'Bioinformatics. 2015 Jun 17. pii: btv363. [<a href="http://www.ncbi.nlm.nih.gov/pubmed/26085503">PubMed</a>]'
-  project: '<a href="http://libroadrunner.org/">libRoadRunner project</a>'
+  project: 'http://libroadrunner.org/'
+  repository: 'https://github.com/sys-bio/roadrunner'
 
 - year: 2014
+  pdf: 'LiverTissue_Ricken2015.pdf'
   authors: 'Ricken T., Werner D., Holzhütter HG., <b>König M.</b>, Dahmen U., Dirsch O.'
   title: 'Modeling function-perfusion behavior in liver lobules including tissue, blood, glucose, lactate and glycogen by use of a coupled two-scale PDE-ODE approach.'
   journal: 'Biomech Model Mechanobiol. 2014 Sep 19. [<a href="http://dx.doi.org/10.1007/s10237-014-0619-z">doi</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/25236798">PubMed</a>]'
-  project: ''
+  project: 
 
 - year: 2014
+  pdf: systembiologie_Koenig2014.pdf
   authors: '<b>König M.</b> and Holzhütter HG.'
   title: 'Homeostasis of blood glucose - Computer simulations of central liver functions.'
   journal: 'systembiologie.de 2014; 8:p.53-57 [<a href="https://www.systembiologie.de/lw_resource/datapool/_items/item_14/frs-13014_systembiologie_8_2014.pdf">PDF (de)</a>, <a href="https://www.systembiologie.de/lw_resource/datapool/_items/item_36/systembiologie_magazine_issue08.pdf">PDF (en)</a>]'
-  project: ''
+  project: 
 
 - year: 2013
+  pdf: 'CancerTissue_Koenig2013.pdf'
   authors: '<b>König M.</b>, Holzhütter HG., Berndt N.'
   title: 'Metabolic Gradients as Key Regulators in Zonation of Tumor Energy Metabolism: A Tissue-scale Model Based Study.'
   journal: 'Biotechnol J. 2013 Apr 16. [<a href="http://dx.doi.org/10.1002/biot.201200393">doi</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/23589477">PubMed</a>]'
-  project: ''
+  project: 
 
 - year: 2012
+  pdf: 'GlucoseModelT2DM_Koenig2012b.pdf'
   authors: '<b>König M.</b> and Holzhütter HG.'
   title: 'Kinetic Modeling of Human Hepatic Glucose Metabolism in T2DM Predicts Higher Risk of Hypoglycemic Events in Rigorous Insulin Therapy'
   journal: 'J Biol Chem. 2012  [<a href="http://www.jbc.org/content/early/2012/09/12/jbc.M112.382069">DOI 10.1074/jbc.M112.382069</a>]'
-  project: ''
+  project: 
 
 - year: 2012
+  pdf: 'CySBML_Koenig2012.pdf'
   authors: '<b>König M.</b>, Dräger A. and Holzhütter HG.'
   title: 'CySBML: a Cytoscape plugin for SBML'
   journal: 'Bioinformatics.  2012 Jul 5. [<a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=pubmed&cmd=Retrieve&dopt=AbstractPlus&list_uids=22772946">PubMed</a>]'
-  project: '<a href="http://matthiaskoenig.github.io/cy2sbml/">cy2sbml project</a>'
+  project: 'http://matthiaskoenig.github.io/cy3sbml/'
+  repository: 'https://github.com/matthiaskoenig/cy3sbml'
 
 - year: 2012
+  pdf: 'GlucoseModel_Koenig2012a.pdf'
   authors: '<b>König M.</b>, Bulik S. and Holzhütter HG.'
   title: 'Quantifying the Contribution of the Liver to the Homeostasis of Plasma Glucose: A Detailed Kinetic Model of Hepatic Glucose Metabolism Integrated with the Hormonal Control by Insulin, Glucagon and Epinephrine'
   journal: 'PLoS Comput Biol. 2012 Jun;8(6):e1002577. Epub 2012 Jun 21. [<a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=pubmed&cmd=Retrieve&dopt=AbstractPlus&list_uids=22761565">PubMed</a>]'
-  project: ''
+  project: 
+  repository: 
 
 - year: 2011
+  pdf: 'CancerGlucoseReview_Herling2011.pdf'
   authors: 'Herling A, <b>König M</b>, Bulik S, Holzhütter HG.'
   title: 'Enzymatic Features of the Glucose Metabolism in Tumor Cells.'
   journal: 'FEBS J. 2011 Jul;<b>278</b>(14):2436-59. [<a href="http://dx.doi.org/10.1111/j.1742-4658.2011.08174.x">doi</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/21564549">PubMed</a>]'
-  project: ''
+  project: 
+  repository: 
 
-- year: 2010
-  authors: 'König M.</b> and Holzhütter HG.'
+- year: 2011
+  pdf: 'FluxViz_Koenig2011.pdf'
+  authors: '<b>König M.</b> and Holzhütter HG.'
   title: 'FluxViz - Cytoscape Plug-in for Vizualisation of Flux Distributions in Networks'
   journal: 'Genome Informatics 2010, Vol.24, p.96-103 [<a href="http://www.ncbi.nlm.nih.gov/pubmed?term=22081592">PubMed</a>]'
-  project: '<a href="http://matthiaskoenig.github.io/cy2fluxviz/">cy2fluxviz project</a>'
+  project: 'http://matthiaskoenig.github.io/cy2fluxviz/'
+  repository: 'https://github.com/matthiaskoenig/cy2fluxviz'
 
 - year: 2010
+  pdf: 'HepatoNet1_Gille2010.pdf'
   authors: 'Gille C, Bölling C, Hoppe A, Bulik S, Hoffmann S, Hübner K, Karlstädt A, Ganeshan R, <b>König M</b>, Rother K, Weidlich M, Behre J, Holzhütter HG.'
   title: 'HepatoNet1: a comprehensive metabolic reconstruction of the human hepatocyte for the analysis of liver physiology.'
   journal: 'Mol Syst Biol., <b>6</b>:411. [<a href="http://www.ncbi.nlm.nih.gov/pubmed/20823849">PubMed</a>]'
-  project: ''
+  project: 
