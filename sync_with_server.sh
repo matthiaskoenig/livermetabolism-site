@@ -10,4 +10,3 @@
 
 rsync -rtvuc --delete ./livermetabolism/_site/ mkoenig@h2389049.stratoserver.net:/var/www/html
 
-
