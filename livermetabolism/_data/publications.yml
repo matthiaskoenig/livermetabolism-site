@@ -1,4 +1,5 @@
-- year: 2016
+- id: 'Choi2016'
+  year: 2016
   pdf: 
   authors: 'Choi K., Medley JK., Cannistra C., <b>König M.</b>, Smith L., Stocking K., and Sauro HM.'
   title: 'Tellurium: A Python Based Integrated Environment for Biological Modeling and Simulation'

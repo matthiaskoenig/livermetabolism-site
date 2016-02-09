@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Publications
-permalink: /publications/
 ---
 <div class="container-fluid">
 	<div class="row">

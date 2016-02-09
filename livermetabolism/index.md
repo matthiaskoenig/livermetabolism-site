@@ -39,6 +39,33 @@ layout: default
           <b><a href="./gec_app/" target="_blank">GEC App</a></b>
         </p>
         
+        <h1>Tellurium</h1>
+        {% for publication in site.data.publications %}
+        {% if publication.id == "Choi2016" %}
+          <p>
+          {% if publication.pdf %}
+            <a href="../paper/{{ publication.pdf }}"><img src="../images/pdf.png" title="pdf"/></a>
+          {% endif %}
+          {% if publication.project %}
+            <a href="{{ publication.project }}"><img src="../images/project.png" title="project homepage"/></a>
+          {% endif %}
+          {% if publication.repository %}
+            <a href="{{ publication.repository }}"><img src="../images/repository.png" title="repository"/></a>
+          {% endif %}
+          </p>
+          <p>
+            {{ publication.authors }}<br />
+            <i>{{ publication.title }}</i><br />
+            {{ publication.journal }}
+          </p>
+        {% endif %}
+        {% endfor %}
+        <h3>Example simulations</h3>
+        <p>
+          <img alt="tellurium simulation" title="tellurium simulation" src="./images/tellurium_01.png" />
+          <img alt="tellurium simulation" title="tellurium simulation" src="./images/tellurium_02.png" />
+        </p>
+
         <h1>Pathobiochemical signatures of cholestatic liver disease</h1>
         
         {% for publication in site.data.publications %}
