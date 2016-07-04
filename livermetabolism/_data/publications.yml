@@ -1,13 +1,4 @@
-- id: 'Choi2016'
-  year: 2016
-  pdf: 
-  authors: 'Choi K., Medley JK., Cannistra C., <b>König M.</b>, Smith L., Stocking K., and Sauro HM.'
-  title: 'Tellurium: A Python Based Integrated Environment for Biological Modeling and Simulation'
-  journal: '[in preparation]'
-  project: 'http://tellurium.analogmachine.org/'
-  repository: 'https://github.com/sys-bio/tellurium'
-
-- id: 'Koenig2016'
+- id: 'multiscale_Koenig2016'
   year: 2016
   pdf: 'Multiscale.galactose_Koenig2016.pdf'
   authors: '<b>König M.</b>, Marchesini G., Vilstrup H., and Holzhütter HG.'
@@ -16,6 +7,41 @@
   project: 'http://www.github.com/matthiaskoenig/multiscale-galactose'
   repository: 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
+- id: 'models2clinics_Koenig2016'
+  year: 2016
+  pdf: 'Systems.biology.standards.in.medical.research_Koenig2016.pdf'
+  authors: '<b>König M.*</b>, Oellrich A.<b>*</b>, Waltemath D.<b>*</b>, Dobson R., Hubbard T., and Wolkenhauer O.<br /><b>* equal contribution</b>'
+  title: 'Challenges and opportunities for system biology standards and tools in medical research'
+  journal: '[submitted]'
+  project:
+  repository:
+
+- id: 'cy3sabiork_Koenig2016'
+  year: 2016
+  pdf: 'cy3sabiork_Koenig2016.pdf'
+  authors: '<b>König M.</b>'
+  title: 'cy3sabiork: A Cytoscape app for visualizing kinetic data from SABIO-RK'
+  journal: '[submitted]'
+  project: 'http://www.github.com/matthiaskoenig/cy3sabiork'
+  repository: 'http://www.github.com/matthiaskoenig/cy3sabiork'
+
+- id: 'Choi2016'
+  year: 2016
+  pdf:
+  authors: 'Choi K., Medley JK., Cannistra C., <b>König M.</b>, Smith L., Stocking K., and Sauro HM.'
+  title: 'Tellurium: A Python Based Integrated Environment for Biological Modeling and Simulation'
+  journal: '[submitted]'
+  project: 'http://tellurium.analogmachine.org/'
+  repository: 'https://github.com/sys-bio/tellurium'
+
+- id: 'Wholecell2016'
+  year: 2016
+  pdf: 'Toward.community.standards.and.software.for.whole-cell.modeling_Walthemath2016.pdf'
+  authors: 'Wholecell Consortium (<b>König M.</b>)'
+  title: 'Toward community standards and software for whole-cell modeling'
+  journal: 'IEEE Trans Biomed Eng. 2016 Jun 10. [<a href="http://www.ncbi.nlm.nih.gov/pubmed/27305665">PubMed</a>]'
+  project: 'https://github.com/whole-cell-tutors'
+  repository: 'https://github.com/whole-cell-tutors'
 
 - id: 'Abshagen2015'
   year: 2015

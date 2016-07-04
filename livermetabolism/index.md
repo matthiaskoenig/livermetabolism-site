@@ -38,7 +38,34 @@ layout: default
           <a href="./gec_app/" target="_blank"><img alt="GEC calculation App" src="./images/gec_app.png" /></a>
           <b><a href="./gec_app/" target="_blank">GEC App</a></b>
         </p>
-        
+
+        <h1>Cytoscape app for visualizing kinetic data from SABIO-RK</h1>
+
+        {% for publication in site.data.publications %}
+        {% if publication.id == "cy3sabiork_Koenig2016" %}
+          <p>
+          {% if publication.pdf %}
+            <a href="../paper/{{ publication.pdf }}"><img src="../images/pdf.png" title="pdf"/></a>
+          {% endif %}
+          {% if publication.project %}
+            <a href="{{ publication.project }}"><img src="../images/project.png" title="project homepage"/></a>
+          {% endif %}
+          {% if publication.repository %}
+            <a href="{{ publication.repository }}"><img src="../images/repository.png" title="repository"/></a>
+          {% endif %}
+          </p>
+          <p>
+            {{ publication.authors }}<br />
+            <i>{{ publication.title }}</i><br />
+            {{ publication.journal }}
+          </p>
+        {% endif %}
+        {% endfor %}
+
+        <p>
+          <img alt="cy3sabiork workflow" title="cy3sabiork workflow" src="./images/cy3sabiork-workflow.png" width="700"/>
+        </p>
+
         <h1>Tellurium</h1>
         {% for publication in site.data.publications %}
         {% if publication.id == "Choi2016" %}
