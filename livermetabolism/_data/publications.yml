@@ -21,7 +21,7 @@
   pdf: 'cy3sabiork_Koenig2016.pdf'
   authors: '<b>König M.</b>'
   title: 'cy3sabiork: A Cytoscape app for visualizing kinetic data from SABIO-RK'
-  journal: '[submitted]'
+  journal: 'bioRxiv 062091; doi: <a href="http://dx.doi.org/10.1101/062091">http://dx.doi.org/10.1101/062091</a> [submitted]'
   project: 'http://www.github.com/matthiaskoenig/cy3sabiork'
   repository: 'http://www.github.com/matthiaskoenig/cy3sabiork'
 
@@ -30,7 +30,7 @@
   pdf:
   authors: 'Choi K., Medley JK., Cannistra C., <b>König M.</b>, Smith L., Stocking K., and Sauro HM.'
   title: 'Tellurium: A Python Based Integrated Environment for Biological Modeling and Simulation'
-  journal: '[submitted]'
+  journal: 'bioRxiv 054601; doi: <a href="http://dx.doi.org/10.1101/054601">http://dx.doi.org/10.1101/054601</a> [in revision]'
   project: 'http://tellurium.analogmachine.org/'
   repository: 'https://github.com/sys-bio/tellurium'
 
