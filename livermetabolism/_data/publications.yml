@@ -21,8 +21,8 @@
   pdf: 'cy3sabiork_Koenig2016.pdf'
   authors: '<b>König M.</b>'
   title: 'cy3sabiork: A Cytoscape app for visualizing kinetic data from SABIO-RK'
-  journal: 'bioRxiv 062091; doi: <a href="http://dx.doi.org/10.1101/062091">http://dx.doi.org/10.1101/062091</a> [submitted]'
-  project: 'http://www.github.com/matthiaskoenig/cy3sabiork'
+  journal: '[version 1; referees: awaiting peer review]. F1000Research 2016, 5:1736 (doi: <a href="http://dx.doi.org/10.12688/f1000research.9211.1">10.12688/f1000research.9211.1</a>)'
+  project: 'http://apps.cytoscape.org/apps/cy3sabiork'
   repository: 'http://www.github.com/matthiaskoenig/cy3sabiork'
 
 - id: 'Choi2016'
