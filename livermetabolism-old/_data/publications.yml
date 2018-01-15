@@ -1,0 +1,195 @@
+- id: 'multiscale_Koenig2016'
+  year: 2018
+  pdf: 'Multiscale.galactose_Koenig2016.pdf'
+  authors: '<b>König M.</b> et al.'
+  title: 'A Multiscale Computational Model Predicts Human Liver Function From Single-Cell Metabolism'
+  journal: '[in preparation]'
+  project: 'http://www.github.com/matthiaskoenig/multiscale-galactose'
+  repository: 'http://www.github.com/matthiaskoenig/multiscale-galactose'
+
+- id: 'sedml_Bergmann2018'
+  year: 2018
+  pdf: 'SED-ML_L1V3_Bergmann2018.pdf'
+  authors: 'Bergmann, FT., Cooper, J., <b>König, M.*</b>, Moraru, I., Nickerson, D., Le Novère N., Olivier, BG., Sahle, S., Smith, L., Waltemath, D.'
+  title: 'Simulation Experiment Description Markup Language (SED-ML) Level 1 Version 3 (L1V3)'
+  journal: 'Journal of Integrative Bioinformatics, 3, 2018 [submitted]'
+  project: 'https://sed-ml.github.io/index.html'
+  repository: 'https://github.com/SED-ML/sed-ml'
+  abstract: 'The creation of computational simulation experiments to inform modern biological research poses challenges to reproduce, annotate, archive, and share such experiments. Efforts such as SBML or CellML standardize the formal representation of computational models in various areas of biology. The Simulation Experiment Description Markup Language (SED-ML) describes what procedures the models are subjected to, and the details of those procedures. These standards, together with further COMBINE standards, describe models sufficiently well for the reproduction of simulation studies among users and software tools. The Simulation Experiment Description Markup Language (SED-ML) is an XML-based format that encodes, for a given simulation experiment, i) which models to use; ii) which modifications to apply to models before simulation; iii) which simulation procedures to run on each model; iv) how to post-process the data; and v) how these results should be plotted and reported. SED-ML Level 1 Version 1 (L1V1) implemented support for the encoding of basic time course simulations. SED-ML L1V2 added support for more complex types of simulations, specifically repeated tasks and chained simulation procedures. SED-ML L1V3 extends L1V2 by means to describe which datasets and subsets thereof to use within a simulation experiment.'
+
+- id: 'annotations_Neal2018'
+  year: 2018
+  pdf:
+  authors: 'Neal, M.; <b>König, M.</b>; Nickerson, D.; Misirli, G.; Kalbasi, R.; Dräger, A.; Atalag, K.; Chelliah, V.; Cooling, M.; Cook, D.; Crook, S.; de Alba, M.; Friedman, S.; Garny, A.; Gennari, J.; Gleeson, P.; Golebiewski, M.; Hucka, M.; Juty, N.; Novère, N. L.; Myers, C.; Olivier, B.; Sauro, H.; Scharm, M.; Snoep, J.; Touré, V.; Wipat, A.; Wolkenhauer, O. & Waltemath, D.'
+  title: 'Harmonizing semantic annotations for computational models in biology'
+  journal: 'bioRxiv 2018'
+  project: 'https://github.com/combine-org/Annotations'
+  repository: 'https://github.com/combine-org/Annotations'
+  abstract: 'Life science researchers use computational models to articulate and test hypotheses about the behavior of biological systems. Semantic annotation is a critical component for enhancing the interoperability and reusability of such models as well as for the integration of the data needed for model parameterization and validation. Encoded as machine-readable links to knowledge resource terms, semantic annotations describe the computational or biological meaning of what models and data represent. These annotations help researchers find and repurpose models, accelerate model composition, and enable knowledge integration across model repositories and experimental data stores. However, realizing the potential benefits of semantic annotation requires the development of model annotation standards that adhere to a community-based annotation protocol. Without such standards, tool developers must account for a variety of annotation formats and approaches, a situation that can become prohibitively cumbersome and which can defeat the purpose of linking model elements to controlled knowledge resource terms. Currently, no consensus protocol for semantic annotation exists among the larger biological modeling community. Here, we report on the landscape of current semantic annotation practices among the COmputational Modeling in BIology NEtwork (COMBINE) community and provide a set of recommendations for building a consensus approach to semantic annotation.'
+
+- id: 'dfba_Watanabe2018'
+  year: 2018
+  pdf: 'dfba_Watanabe2018.pdf'
+  authors: 'Watanabe L.*, <b>König*</b> M., and Myers C.<br /><b>* equal contribution</b>'
+  title: 'Dynamic Flux Balance Analysis Models in SBML'
+  journal: 'bioRxiv 245076; doi: <a href="https://doi.org/10.1101/245076">https://doi.org/10.1101/245076</a>'
+  project: 'http://www.github.com/matthiaskoenig/dfba'
+  repository: 'http://www.github.com/matthiaskoenig/dfba'
+  abstract: 'Motivation: Systems biology models are typically simulated using a single formalism such as ordinary differential equations (ODE) or stochastic methods. However, more complex models require the coupling of multiple formalisms since different biological concepts are better described using different methods, e.g., stationary metabolism is often modeled using flux-balance analysis (FBA) whereas dynamic changes of model components are better described via ODEs. The coupling of FBA and ODE frameworks results in dynamic FBA models. A major challenge is how to describe such hybrid models coupling multiple frameworks in a standardized way, so that they can be exchanged between tools and simulated consistently and in a reproducible manner. Results: This paper presents a scheme and implementation for encoding dynamic FBA models in the Systems Biology Markup Language (SBML), thereby allowing to exchange multi-framework computational models between software tools. The paper shows the feasibility of the approach using various example models and demonstrates that different tools are able to simulate the hybrid models and agree on the results. As part of this work, two independent implementations of a multi-framework simulation method for dynamic FBA have been developed supporting such models: iBioSim and sbmlutils. Availability: All materials and models are available from https://github.com/matthiaskoenig/dfba. The tools used in this project are freely available: iBioSim at http://www.async.ece.utah.edu/ibiosim and sbmlutils at https://github.com/matthiaskoenig/sbmlutils/.'
+
+- id: 'tellurium_Medley2017'
+  year: 2017
+  pdf: 'Tellurium.Notebook_Medley2017.pdf'
+  authors: 'Medley K., Choi K., <b>König M.</b>, Smith L., Gu S., Hellerstein J., Sealfon S., and Sauro HM.'
+  title: 'Tellurium Notebooks - An Environment for Dynamical Model Development, Reproducibility, and Reuse'
+  journal: 'bioRxiv 239004; doi: <a href="https://doi.org/10.1101/239004">https://doi.org/10.1101/239004</a>'
+  project: 'http://tellurium.analogmachine.org/'
+  repository: 'https://github.com/sys-bio/tellurium'
+  abstract: 'The considerable difficulty encountered in reproducing the results of published dynamical models limits validation, exploration and reuse of this increasingly large biomedical research resource. To address this problem, we have developed Tellurium Notebook, a software system that facilitates building reproducible dynamical models and reusing models by 1) supporting the COMBINE archive format during model development for capturing model information in an exchangeable format and 2) enabling users to easily simulate and edit public COMBINE-compliant models from public repositories to facilitate studying model dynamics, variants and test cases. Tellurium Notebook, a Python-based Jupyter-like environment, is designed to seamlessly inter-operate with these community standards by automating conversion between COMBINE standards formulations and corresponding in-line, human-readable representations. Thus, Tellurium brings to systems biology the strategy used by other literate notebook systems such as Mathematica. These capabilities allow users to edit every aspect of the standards-compliant models and simulations, run the simulations in-line, and re-export to standard formats. We provide several use cases illustrating the advantages of our approach and how it allows development and reuse of models without requiring technical knowledge of standards. Adoption of Tellurium should accelerate model development, reproducibility and reuse.'
+
+- id: 'surgery_Christ2017'
+  year: 2017
+  pdf: 'Systems.surgery_Christ2017.pdf'
+  authors: 'Christ, B.*, Dahmen, U.*, Herrmann, K.H.*, <b>König, M.*</b>, Reichenbach, J.R*., Ricken, T.*, Schleicher, J.*, Ole Schwen, L.*, Vlaic, S.* and Waschinsky, N.*<br /><b>* equal contribution</b>'
+  title: 'Computational Modeling in Liver Surgery'
+  journal: 'Frontiers in physiology, 8, p.906; <a href="https://doi.org/10.3389/fphys.2017.00906">https://doi.org/10.3389/fphys.2017.00906</a>'
+  project:
+  repository:
+
+- id: 'hepatokin_Berndt2017'
+  year: 2017
+  pdf:
+  authors: 'Berndt N., Bulik S., Wallach I., Wünsch T., <b>König M.</b>, Stockmann M., Meierhofer M., Holzhütter HG.'
+  title: 'The Virtual Liver: Computational Assessment of Liver Metabolism'
+  journal: '[submitted, 2017]'
+  project:
+  repository:
+  abstract: 'Abstract	The most reliable and predictive type of metabolic models are kinetic models resting on the principles of chemical kinetics and including all relevant molecular details of enzyme regulation. Here we present a kinetic model of liver metabolism with yet unequalled complexity comprising the major pathways of the energy, carbohydrate, lipid and nitrogen metabolism and including the regulation of enzyme activities by their reactants, allosteric effectors and hormone-dependent reversible enzyme phosphorylation. We illustrate the utility of the model for basic research and medical applications by simulating diurnal variations of the metabolic state of the liver under normal conditions and at various perturbations caused by nutritional challenges (alcohol), intake of drugs (valproate), interfering with metabolic processes inherited enzyme disorders (galactosemia) and liver tumors (adenoma, hepatocellular carcinoma).'
+
+- id: 'models2clinics_Koenig2016'
+  year: 2016
+  pdf: 'Systems.biology.standards.in.medical.research_Koenig2016.pdf'
+  authors: '<b>König M.*</b>, Oellrich A.<b>*</b>, Waltemath D.<b>*</b>, Dobson R., Hubbard T., and Wolkenhauer O.<br /><b>* equal contribution</b>'
+  title: 'Challenges and opportunities for system biology standards and tools in medical research'
+  journal: 'ODLS, p1-6, 2016'
+  project:
+  repository:
+
+- id: 'cy3sabiork_Koenig2016'
+  year: 2016
+  pdf: 'cy3sabiork_Koenig2016.pdf'
+  authors: '<b>König M.</b>'
+  title: 'cy3sabiork: A Cytoscape app for visualizing kinetic data from SABIO-RK'
+  journal: '[version 1; referees: awaiting peer review]. F1000Research 2016, 5:1736 (doi: <a href="http://dx.doi.org/10.12688/f1000research.9211.1">10.12688/f1000research.9211.1</a>)'
+  project: 'http://apps.cytoscape.org/apps/cy3sabiork'
+  repository: 'http://www.github.com/matthiaskoenig/cy3sabiork'
+
+- id: 'Choi2016'
+  year: 2016
+  pdf:
+  authors: 'Choi K., Medley JK., Cannistra C., <b>König M.</b>, Smith L., Stocking K., and Sauro HM.'
+  title: 'Tellurium: A Python Based Integrated Environment for Biological Modeling and Simulation'
+  journal: 'bioRxiv 054601; doi: <a href="http://dx.doi.org/10.1101/054601">http://dx.doi.org/10.1101/054601</a> [in revision]'
+  project: 'http://tellurium.analogmachine.org/'
+  repository: 'https://github.com/sys-bio/tellurium'
+
+- id: 'Wholecell2016'
+  year: 2016
+  pdf: 'Toward.community.standards.and.software.for.whole-cell.modeling_Walthemath2016.pdf'
+  authors: 'Wholecell Consortium (<b>König M.</b>)'
+  title: 'Toward community standards and software for whole-cell modeling'
+  journal: 'IEEE Trans Biomed Eng. 2016 Jun 10. [<a href="http://www.ncbi.nlm.nih.gov/pubmed/27305665">PubMed</a>]'
+  project: 'https://github.com/whole-cell-tutors'
+  repository: 'https://github.com/whole-cell-tutors'
+
+- id: 'Abshagen2015'
+  year: 2015
+  pdf: 'Pathobiochemical.signatures_Abshagen2015.pdf'
+  authors: 'Kerstin A.<b>*</b>, <b>König M.*</b>, Hoppe A., Thomas M., Müller I., Ebert M., Weng H., Holzhütter HG., Zanger UM., Bode J., Vollmar B. and Dooley S.<br /><b>* equal contribution</b>'
+  title: 'Pathobiochemical signatures of cholestatic liver disease in bile duct ligated mice'
+  journal: 'BMC Syst Biol. 2015 Nov 20;9(1):83. doi: 10.1186/s12918-015-0229-0 [<a href="http://www.ncbi.nlm.nih.gov/pubmed/26589287">PubMed</a>]'
+  project: 'http://matthiaskoenig.github.io/bdl-analysis/'
+  repository: 'http://github.com/matthiaskoenig/bdl-analysis/'
+
+- year: 2015
+  pdf: 
+  authors: 'Werner D., Ricken T., Dahmen U., Dirsch O., Holzhütter HG., <b>König M.</b>'
+  title: 'On the Influence of Growth in Perfusion Dependent Biological Systems - at the Example of the Human Liver.'
+  journal: 'PAMM 15 (1), 119-120, 2015 [<a href="http://onlinelibrary.wiley.com/doi/10.1002/pamm.201510050/abstract;jsessionid=381EE9FEDFD3E8AACF0647465168F845.f02t03">doi:10.1002/pamm.201510050</a>]'
+  project: 
+  repository: 
+
+- year: 2015
+  pdf: 'libRoadRunner_Somogyi2015.pdf'
+  authors: 'Somogyi ET., Bouteiller JM., Glazier JA., <b>König M.</b>, Medley JK., Swat MH and Sauro HM.'
+  title: 'LibRoadRunner: a high performance SBML simulation and analysis library.'
+  journal: 'Bioinformatics. 2015 Jun 17. pii: btv363. [<a href="http://www.ncbi.nlm.nih.gov/pubmed/26085503">PubMed</a>]'
+  project: 'http://libroadrunner.org/'
+  repository: 'https://github.com/sys-bio/roadrunner'
+
+- year: 2014
+  pdf: 'LiverTissue_Ricken2015.pdf'
+  authors: 'Ricken T., Werner D., Holzhütter HG., <b>König M.</b>, Dahmen U., Dirsch O.'
+  title: 'Modeling function-perfusion behavior in liver lobules including tissue, blood, glucose, lactate and glycogen by use of a coupled two-scale PDE-ODE approach.'
+  journal: 'Biomech Model Mechanobiol. 2014 Sep 19. [<a href="http://dx.doi.org/10.1007/s10237-014-0619-z">doi</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/25236798">PubMed</a>]'
+  project: 
+
+- year: 2014
+  pdf: systembiologie_Koenig2014.pdf
+  authors: '<b>König M.</b> and Holzhütter HG.'
+  title: 'Homeostasis of blood glucose - Computer simulations of central liver functions.'
+  journal: 'systembiologie.de 2014; 8:p.53-57 [<a href="https://www.systembiologie.de/lw_resource/datapool/_items/item_14/frs-13014_systembiologie_8_2014.pdf">PDF (de)</a>, <a href="https://www.systembiologie.de/lw_resource/datapool/_items/item_36/systembiologie_magazine_issue08.pdf">PDF (en)</a>]'
+  project: 
+
+- year: 2013
+  pdf: 'CancerTissue_Koenig2013.pdf'
+  authors: '<b>König M.</b>, Holzhütter HG., Berndt N.'
+  title: 'Metabolic Gradients as Key Regulators in Zonation of Tumor Energy Metabolism: A Tissue-scale Model Based Study.'
+  journal: 'Biotechnol J. 2013 Apr 16. [<a href="http://dx.doi.org/10.1002/biot.201200393">doi</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/23589477">PubMed</a>]'
+  project: 
+
+- year: 2012
+  pdf: 'GlucoseModelT2DM_Koenig2012b.pdf'
+  authors: '<b>König M.</b> and Holzhütter HG.'
+  title: 'Kinetic Modeling of Human Hepatic Glucose Metabolism in T2DM Predicts Higher Risk of Hypoglycemic Events in Rigorous Insulin Therapy'
+  journal: 'J Biol Chem. 2012  [<a href="http://www.jbc.org/content/early/2012/09/12/jbc.M112.382069">DOI 10.1074/jbc.M112.382069</a>]'
+  project: 
+
+- year: 2012
+  pdf: 'CySBML_Koenig2012.pdf'
+  authors: '<b>König M.</b>, Dräger A. and Holzhütter HG.'
+  title: 'CySBML: a Cytoscape plugin for SBML'
+  journal: 'Bioinformatics.  2012 Jul 5. [<a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=pubmed&cmd=Retrieve&dopt=AbstractPlus&list_uids=22772946">PubMed</a>]'
+  project: 'http://matthiaskoenig.github.io/cy3sbml/'
+  repository: 'https://github.com/matthiaskoenig/cy3sbml'
+
+- year: 2012
+  pdf: 'GlucoseModel_Koenig2012a.pdf'
+  authors: '<b>König M.</b>, Bulik S. and Holzhütter HG.'
+  title: 'Quantifying the Contribution of the Liver to the Homeostasis of Plasma Glucose: A Detailed Kinetic Model of Hepatic Glucose Metabolism Integrated with the Hormonal Control by Insulin, Glucagon and Epinephrine'
+  journal: 'PLoS Comput Biol. 2012 Jun;8(6):e1002577. Epub 2012 Jun 21. [<a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=pubmed&cmd=Retrieve&dopt=AbstractPlus&list_uids=22761565">PubMed</a>]'
+  project: 
+  repository: 
+
+- year: 2011
+  pdf: 'CancerGlucoseReview_Herling2011.pdf'
+  authors: 'Herling A, <b>König M</b>, Bulik S, Holzhütter HG.'
+  title: 'Enzymatic Features of the Glucose Metabolism in Tumor Cells.'
+  journal: 'FEBS J. 2011 Jul;<b>278</b>(14):2436-59. [<a href="http://dx.doi.org/10.1111/j.1742-4658.2011.08174.x">doi</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/21564549">PubMed</a>]'
+  project: 
+  repository: 
+
+- year: 2011
+  pdf: 'FluxViz_Koenig2011.pdf'
+  authors: '<b>König M.</b> and Holzhütter HG.'
+  title: 'FluxViz - Cytoscape Plug-in for Vizualisation of Flux Distributions in Networks'
+  journal: 'Genome Informatics 2010, Vol.24, p.96-103 [<a href="http://www.ncbi.nlm.nih.gov/pubmed?term=22081592">PubMed</a>]'
+  project: 'http://matthiaskoenig.github.io/cy2fluxviz/'
+  repository: 'https://github.com/matthiaskoenig/cy2fluxviz'
+
+- year: 2010
+  pdf: 'HepatoNet1_Gille2010.pdf'
+  authors: 'Gille C, Bölling C, Hoppe A, Bulik S, Hoffmann S, Hübner K, Karlstädt A, Ganeshan R, <b>König M</b>, Rother K, Weidlich M, Behre J, Holzhütter HG.'
+  title: 'HepatoNet1: a comprehensive metabolic reconstruction of the human hepatocyte for the analysis of liver physiology.'
+  journal: 'Mol Syst Biol., <b>6</b>:411. [<a href="http://www.ncbi.nlm.nih.gov/pubmed/20823849">PubMed</a>]'
+  project: 
