@@ -4,8 +4,8 @@
   authors: '<b>König M.</b> et al.'
   title: 'A Multiscale Computational Model Predicts Human Liver Function From Single-Cell Metabolism'
   journal: '[in preparation]'
-  project: 'http://www.github.com/matthiaskoenig/multiscale-galactose'
-  repository: 'http://www.github.com/matthiaskoenig/multiscale-galactose'
+  project:   # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
+  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
 - id: 'sedml_Bergmann2018'
   year: 2018
