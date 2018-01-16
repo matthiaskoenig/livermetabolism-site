@@ -3,7 +3,6 @@ title: livermetabolism
 email: konigmatt@googlemail.com
 description: > # this means to ignore newlines until "baseurl:"
   LiSyM Junior Group König
-
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://www.livermetabolism.com" # the base hostname & protocol for your site
 git_address: https://github.com/matthiaskoenig
