@@ -3,6 +3,19 @@ layout: page
 title: Contact
 ---
 
+Computational modeling, Data Science and Machine Learning based on biological, medical, and clinical datasets. Predictive modeling of physiological processes and systems with focus on metabolic research. Main research projects are glucose homeostasis in normal subjects and diabetes and the personalization of liver function tests for the improvement of diagnosis.
+
+The liver is the metabolic hub of the body with a central role for metabolic homeostasis and  detoxification of drugs and xenobiotics. The quantification of this liver function is indispensable to determine the functional status of the liver (e.g. in liver transplantation and resection), the alterations due to liver impairment and alteration (e.g. in liver disease like cirrhosis), or the success of interventions (e.g. medication).
+Within the research network LiSyM we investigate with computational models of the liver which factors and processes influence hepatic function from the single cell, over the tissue up to the whole organ. We analyse the role of metabolism, perfusion and structure for liver function, and gain insights in the biological mechanisms underlying liver function.
+A central objective is the development of a multiscale-model of the liver for the improved evaluation of quantitative liver function tests in the clinics. The model will be personalized using clinical and imaging data, as well as information about gender, age, bodyweight and height providing means for the individual evaluation of liver function tests.
+More information under www.livermetabolism.com.
+
+Research Cooperations	
+BMBF: “LiSyM Junior Group – Multi-scale models of the liver for personalized liver function tests.
+Central objective is the identification of key processes of disease progression based on mathematical modeling applying the systems biology research approach in clinical liver research.
+
+
+
 <div class="container-fluid">
 	<div class="row">
 	  <h1>Matthias König</h1>
