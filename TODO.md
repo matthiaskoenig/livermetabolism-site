@@ -7,9 +7,20 @@
 * add updated Stellenausschreibung & send links
 * Acknowledgements
 
+* Projects
+    * FluType
+    * circadian modelling
+    
+* Group located at Institute for Theoretical Biology (information and logos).
+
+* add people: Dimitra Eleftheriadou, Janek, Patrick Pett (circadian modeling) Data Science & 
+Machine Learning for classification.
+* add People page
+
+* add Media section with systemsbiology.de
+
 * update projects
 
 * update publications (bibliography with information) - use as basis for documents
-* Group picture
 
  

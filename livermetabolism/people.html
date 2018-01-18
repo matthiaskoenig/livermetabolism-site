@@ -1,0 +1,61 @@
+---
+layout: page
+title: People
+permalink: /people/
+---
+
+<div class="container">
+    <div class="row">
+        <div class="">
+
+	<table class="table table-hover table-responsive">
+		{% for person in site.data.people %}
+		<tr>
+
+			<td>{% if person.image %}
+				<img src="/img/people/{{ person.image }}" class="img-circle" height="120" />
+                <br /><br />
+				{% endif %}
+			</td>
+			<td>
+                <strong>{{ person.name }}</strong><br />
+                {% if person.orcid %}
+                <a href="https://orcid.org/{{ person.orcid}}" target="_blank" title="ORCID"><img src="/img/orcid.png" height="20"/></a>
+                {% endif %}
+                {% if person.repository %}
+				<a href="{{ person.repository }}"><img src="../img/repository.png" title="Repository homepage" height="20"/></a>
+				{% endif %}
+            </td>
+			<td>
+                <strong>{{ person.position }}</strong><br />
+                {{ person.year }}<br />
+            </td>
+			<td>{{ person.description }}</td>
+            <td>
+
+            </td>
+            <!--
+			<td>
+				{% if publication.pdf %}
+				<a href="/paper/{{ publication.pdf }}"><img src="../img/pdf.png" title="pdf" height="20"/></a>
+				{% endif %}
+				{% if publication.project %}
+				<a href="{{ publication.project }}"><img src="../img/project.png" title="Project homepage" height="20"/></a>
+				{% endif %}
+				{% if publication.repository %}
+				<a href="{{ publication.repository }}"><img src="../img/repository.png" title="Repository homepage" height="20"/></a>
+				{% endif %}
+			</td>
+			<td>{{ publication.authors }} <br />
+				<i>{{ publication.title }}</i><br />
+				{{ publication.journal }}
+			</td>
+			<td></td>
+			-->
+		</tr>
+		{% endfor %}
+	</table>
+
+    </div>
+
+</div>

@@ -1,0 +1,47 @@
+- id: 'koenig'
+  year: '2016-'
+  name: 'Matthias König'
+  position: 'Group leader'
+  image: koenig.png
+  orcid: '0000-0003-1725-179X'
+  repository: 'https://github.com/matthiaskoenig/'
+  homepage: 'https://livermetabolism.com/cv/'
+  description: ''
+
+- id: 'janek'
+  year: '2017-'
+  name: 'Jan Grzegorzewski'
+  position: 'Ph.D. student (mentoring)'
+  image: grzegorzewski.png
+  orcid: '0000-0002-4588-4925'
+  repository: 'https://github.com/janekg89/'
+  homepage: 'https://github.com/janekg89/'
+  description: 'Jan is developing an influenza sub-classification platform based on peptides using data science and
+   machine learning approaches. Part of the work is the development of the
+   data management system required for bioinformatics analysis of peptide-virus binding data <a href="https://www.flutype.de/about/">FluTypeDB</a>.
+   <br />
+   Jan contributes to an online database for running reproducible simulation experiments in computational biology,
+   i.e. <a href="https://github.com/matthiaskoenig/tellurium-web">tellurium-web</a>.'
+
+- id: 'patrick'
+  year: '2017-'
+  name: 'Patrick Pett'
+  position: 'Ph.D. student (mentoring)'
+  image:
+  orcid:
+  repository: 'https://bitbucket.org/JPatrickP/'
+  homepage:
+  description: 'Patrick works on the analysis of mammalian circadian clock in the human liver based on the analysis
+  of OMICS datasets.'
+
+- id: 'dimitra'
+  year: '2016-2017'
+  name: 'Dimitra Eleftheriadou'
+  position: 'Student assistant'
+  image: eleftheriadou.png
+  orcid:
+  repository:
+  homepage:
+  description: 'Dimitra (Master Toxicology) worked on the analysis and digitalization of literature data for liver function tests.'
+
+
