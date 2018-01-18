@@ -60,11 +60,11 @@
   year: 2017
   pdf:
   authors: 'Berndt N., Bulik S., Wallach I., Wünsch T., <b>König M.</b>, Stockmann M., Meierhofer M., Holzhütter HG.'
-  title: 'The Virtual Liver: Computational Assessment of Liver Metabolism'
-  journal: '[submitted, 2017]'
+  title: 'HEPATOKIN1: A Biochemistry-Based Model of Liver Metabolism Suited for Applications in Medicine and Pharmacology'
+  journal: '[submitted, Nov. 2017]'
   project:
   repository:
-  abstract: 'Abstract	The most reliable and predictive type of metabolic models are kinetic models resting on the principles of chemical kinetics and including all relevant molecular details of enzyme regulation. Here we present a kinetic model of liver metabolism with yet unequalled complexity comprising the major pathways of the energy, carbohydrate, lipid and nitrogen metabolism and including the regulation of enzyme activities by their reactants, allosteric effectors and hormone-dependent reversible enzyme phosphorylation. We illustrate the utility of the model for basic research and medical applications by simulating diurnal variations of the metabolic state of the liver under normal conditions and at various perturbations caused by nutritional challenges (alcohol), intake of drugs (valproate), interfering with metabolic processes inherited enzyme disorders (galactosemia) and liver tumors (adenoma, hepatocellular carcinoma).'
+  abstract: 'The most reliable and predictive type of metabolic models are biochemistry-based kinetic models resting on the principles of chemical kinetics and including all relevant molecular details of enzyme regulation. Here we present such a model with yet unequalled complexity encompassing the major pathways of hepatic energy, carbohydrate, lipid, and nitrogen metabolism and including the regulation of enzyme activities by their reactants, allosteric effectors and hormone-dependent reversible enzyme phosphorylation. We illustrate the utility of the model for basic research and applications in medicine and pharmacology by simulating diurnal variations of the metabolic state of the liver under normal conditions and at various perturbations caused by nutritional challenges (alcohol), drugs (valproate) and inherited enzyme disorders (galactosemia). In particular, the model can be used to quantify alterations in the metabolic functions of different liver cells (normal hepatocytes versus adenoma and hepatocellular carcinoma) by exploiting relative changes in the abundance of metabolic enzymes for the re-scaling of maximal enzyme activities (Vmax values).'
 
 - id: 'models2clinics_Koenig2016'
   year: 2016
