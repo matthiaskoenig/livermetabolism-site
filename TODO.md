@@ -5,6 +5,7 @@
 * add ITB and HU logos and links
 * retire old homepage
 * add updated Stellenausschreibung & send links
+* Acknowledgements
 
 * update projects
 
