@@ -1,6 +1,6 @@
-- id: 'multiscale_Koenig2016'
+- id: 'multiscale_Koenig2018'
   year: 2018
-  pdf: 'Multiscale.galactose_Koenig2016.pdf'
+  pdf: 'Multiscale.galactose_Koenig2018.pdf'
   authors: '<b>König M.</b> et al.'
   title: 'A Multiscale Computational Model Predicts Human Liver Function From Single-Cell Metabolism'
   journal: '[in preparation]'

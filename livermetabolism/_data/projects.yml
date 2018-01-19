@@ -1,0 +1,50 @@
+- title: Multi-scale Model of Hepatic Galactose Metabolism
+  publication: multiscale_Koenig2018
+  project:
+  repository:
+  cooperation partners:
+  images:
+    - multiscale-galactose.png
+  image_title: Multiscale Galactose Model
+  abstract: '
+  <p>
+    Multiscale model of human galactose metabolism - from single hepatocytes to individual liver function.
+  </p>
+  <h3>GEC App</h3>
+  <p>
+    Calculation of individual liver function based on Galactose Elimination Capacity (GEC).
+  </p>
+  <p>
+    <a href="./gec_app/" target="_blank"><img alt="GEC calculation App" src="/img/projects/gec_app.png" /></a>
+    <b><a href="./gec_app/" target="_blank">GEC App</a></b>
+  </p>'
+
+- title: Cytoscape app for visualizing kinetic data from SABIO-RK
+  publication: cy3sabiork_Koenig2016
+  project:
+  repository:
+  cooperation partners:
+  images:
+    - cy3sabiork-workflow.png
+  image_title: Multiscale Galactose Model
+  abstract: ''
+
+- title: Tellurium
+  publication: Choi2016
+  project:
+  repository:
+  cooperation partners:
+  images:
+    - tellurium_01.png
+    - tellurium_02.png
+  abstract: ''
+
+
+- title: Pathobiochemical signatures of cholestatic liver disease
+  publication: Abshagen2015
+  project:
+  repository:
+  cooperation partners:
+  images:
+    - BDL_correlation_heatmap.png
+  abstract: ''
