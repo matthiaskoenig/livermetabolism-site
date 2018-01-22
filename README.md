@@ -29,7 +29,7 @@ bundle exec jekyll serve
 The data on the server is updated with the script
 ```
 cd livermetabolism
-JEKYLL_ENV=production bundle exec jekyll build
+bundle exec jekyll build
 cd ..
 ./sync_with_server.sh
 ```
