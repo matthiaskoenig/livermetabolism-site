@@ -4,41 +4,63 @@ title: Projects
 permalink: /projects/
 ---
 
- <div class="container">
-     {% for project in site.data.projects %}
-     <div class="row">
+<div class="container">
+    {% for project in site.data.projects %}
+    <div class="row">
 
         <h2>{{ project.title}}</h2>
+        {% publication = site.data.publications | where:"id", project.publication.id | first %}
 
-        {% for publication in site.data.publications %}
-            {% if publication.id == "project.publication" %}
-              <p>
-              {% if publication.pdf %}
-                <a href="../paper/{{ publication.pdf }}"><img src="/img/pdf.png" title="pdf"/></a>
-              {% endif %}
-              {% if publication.project %}
-                <a href="{{ publication.project }}"><img src="/img/project.png" title="project homepage"/></a>
-              {% endif %}
-              {% if publication.repository %}
-                <a href="{{ publication.repository }}"><img src="/img/repository.png" title="repository"/></a>
-              {% endif %}
-              </p>
-              <p>
-                {{ publication.authors }}<br />
-                <i>{{ publication.title }}</i><br />
-                {{ publication.journal }}
-              </p>
-            {% endif %}
-        {% endfor %}
+        <table class="table table-responsive">
+            <tr>
+                <td>
+                    {% for author in project.people %}
+                    {% person = site.data.people | where:"id", author.id | first %}
+                    {% if person and person.image %}
+                    <img src="/img/people/{{ person.image }}" class="img-circle" height="60" title="{{ person.name }}"/>
+                    {% endif %}
+                    {% endfor %}
+                </td>
+                <td>
+                    {% if publication %}
+                    {% if publication.pdf %}
+                    <a href="../paper/{{ publication.pdf }}"><img src="/img/pdf.png" title="pdf" height="30"/></a>
+                    {% endif %}
+                    {% if publication.project %}
+                    <a href="{{ publication.project }}"><img src="/img/project.png" title="project homepage"
+                                                             height="30"/></a>
+                    {% endif %}
+                    {% if publication.repository %}
+                    <a href="{{ publication.repository }}"><img src="/img/repository.png" title="repository"
+                                                                height="30"/></a>
+                    {% endif %}
+                    {% endif %}
+                </td>
+                <td>
+                    {% if publication %}
+                    {{ publication.authors }}<br/>
+                    <i>{{ publication.title }}</i><br/>
+                    {{ publication.journal }}
+                    {% endif %}}
+                </td>
+            </tr>
+        </table>
 
-         <div class="col-md-6 text-justify">
-            {% for image in project.images %}
-            <img alt="{{ project.title }}" title="{{ project.title }}" src="/img/projects/{{ image }}" class="img-responsive"/>
-            {% endfor %}
-         </div>
 
-         <div class="col-md-6">
-            {{ project.abstract }}
+        <div class="row">
+            <div class="col-md-6 text-justify">
+                <p>
+                    {% for image in project.images %}
+                    <img alt="{{ project.title }}" title="{{ project.title }}" src="/img/projects/{{ image }}"
+                         class="img-thumbnail"/>
+                    {% endfor %}
+                </p>
+            </div>
+            <div class="col-md-< text-justify">
+                <p>
+                    {{ project.abstract }}
+                </p>
+            </div>
         </div>
     </div>
     {% endfor %}

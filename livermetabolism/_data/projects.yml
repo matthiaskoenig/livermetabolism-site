@@ -2,21 +2,44 @@
   publication: multiscale_Koenig2018
   project:
   repository:
+  people:
+    - koenig
   cooperation partners:
   images:
     - multiscale-galactose.png
   image_title: Multiscale Galactose Model
   abstract: '
+  <h3>Multiscale model of human galactose metabolism - from single hepatocytes to individual liver function.</h3>
   <p>
-    Multiscale model of human galactose metabolism - from single hepatocytes to individual liver function.
+  Understanding how liver function arises from the complex interaction of morphology, perfusion, and metabolism from single cells up to the entire organ requires systems-levels computational approaches. We report a multiscale mathematical model of the Human liver comprising the scales from single hepatocytes, over representation of ultra-structure and micro-circulation in the hepatic tissue, up to the entire organ integrated with perfusion. The model was validated against data on multiple spatial and temporal scales. Herein we describe the model construction and application to hepatic galactose metabolism demonstrating its utility via i) the personalization of liver function tests based on galactose elimination capacity (GEC), ii) the explanation of changes in liver function with aging, and iii) the prediction of population variability in liver function based on variability in liver volume and perfusion. We conclude that physiology- and morphology-based multiscale models can improve the evaluation of individual liver function.
   </p>
-  <h3>GEC App</h3>
   <p>
     Calculation of individual liver function based on Galactose Elimination Capacity (GEC).
   </p>
   <p>
-    <a href="./gec_app/" target="_blank"><img alt="GEC calculation App" src="/img/projects/gec_app.png" /></a>
-    <b><a href="./gec_app/" target="_blank">GEC App</a></b>
+    <a href="https://livermetabolism.com/gec_app" target="_blank">
+    <img src="/img/projects/gec_app.png" />
+    </a>
+  </p>'
+
+- title: FluTypeDB
+  publication:
+  project: https://www.flutype.de/about/
+  repository: https://github.com/janekg89/flutype_webapp
+  cooperation partners:
+  people:
+    - janek
+    - koenig
+  images:
+    - flutypedb.png
+  abstract: '
+  <p>
+  The FluTypeDB project is a web application for the data management of binding assays for the classification of influenza subtypes. FluTypeDB consists of a database and web interface with focus on various binding assays for the classification of influenza viruses and contains experimental data based on
+  <ul>
+    <li>ELISA antibody binding assays</li>
+    <li>Peptid binding assays on microwell plates</li>
+    <li>Peptid bindings assays on peptide microarrays</li>
+  </ul>
   </p>'
 
 - title: Cytoscape app for visualizing kinetic data from SABIO-RK
@@ -28,6 +51,9 @@
     - cy3sabiork-workflow.png
   image_title: Multiscale Galactose Model
   abstract: ''
+
+
+
 
 - title: Tellurium
   publication: Choi2016
