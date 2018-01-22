@@ -7,33 +7,47 @@ permalink: /projects/
 <div class="container">
     {% for project in site.data.projects %}
     <div class="row">
+        <h2> {{ project.title}}</h2>
 
-        <h2>{{ project.title}}</h2>
-        {% publication = site.data.publications | where:"id", project.publication.id | first %}
+        {% assign publication = site.data.publications | where:"id", project.publication | first %}
 
-        <table class="table table-responsive">
+        <table class="table table-responsive well">
             <tr>
-                <td>
+                <td width="150">
                     {% for author in project.people %}
-                    {% person = site.data.people | where:"id", author.id | first %}
+                    {% assign person = site.data.people | where:"id", author | first %}
                     {% if person and person.image %}
-                    <img src="/img/people/{{ person.image }}" class="img-circle" height="60" title="{{ person.name }}"/>
+                    <img src="/img/people/{{ person.image }}" class="img-circle" height="50" title="{{ person.name }}"/>
                     {% endif %}
                     {% endfor %}
                 </td>
-                <td>
+                <td width="150">
                     {% if publication %}
-                    {% if publication.pdf %}
-                    <a href="../paper/{{ publication.pdf }}"><img src="/img/pdf.png" title="pdf" height="30"/></a>
-                    {% endif %}
-                    {% if publication.project %}
-                    <a href="{{ publication.project }}"><img src="/img/project.png" title="project homepage"
+
+
+                        {% if publication.project %}
+                        <a href="{{ publication.project }}"><img src="/img/project.png" title="project homepage"
+                                                                 height="30"/></a>
+                        {% endif %}
+
+                        {% if publication.repository %}
+                        <a href="{{ publication.repository }}"><img src="/img/repository.png" title="repository"
+                                                                    height="30"/></a>
+                        {% endif %}
+
+                        {% if publication.pdf %}
+                        <a href="../paper/{{ publication.pdf }}"><img src="/img/pdf.png" title="pdf" height="30"/></a>
+                        {% endif %}
+
+                    {% else %}
+                        {% if project.project %}
+                        <a href="{{ project.project }}"><img src="/img/project.png" title="project homepage"
                                                              height="30"/></a>
-                    {% endif %}
-                    {% if publication.repository %}
-                    <a href="{{ publication.repository }}"><img src="/img/repository.png" title="repository"
+                        {% endif %}
+                        {% if project.repository %}
+                        <a href="{{ project.repository }}"><img src="/img/repository.png" title="repository"
                                                                 height="30"/></a>
-                    {% endif %}
+                        {% endif %}
                     {% endif %}
                 </td>
                 <td>
@@ -41,22 +55,20 @@ permalink: /projects/
                     {{ publication.authors }}<br/>
                     <i>{{ publication.title }}</i><br/>
                     {{ publication.journal }}
-                    {% endif %}}
+                    {% endif %}
                 </td>
             </tr>
         </table>
-
-
         <div class="row">
             <div class="col-md-6 text-justify">
                 <p>
                     {% for image in project.images %}
                     <img alt="{{ project.title }}" title="{{ project.title }}" src="/img/projects/{{ image }}"
-                         class="img-thumbnail"/>
+                         class="img-responsive"/>
                     {% endfor %}
                 </p>
             </div>
-            <div class="col-md-< text-justify">
+            <div class="col-md-6 text-justify">
                 <p>
                     {{ project.abstract }}
                 </p>
@@ -64,5 +76,9 @@ permalink: /projects/
         </div>
     </div>
     {% endfor %}
+
+    <h2>More</h2>
+    For more projects see our <strong><a href="{{ "/publications/" | prepend: site.baseurl }}"><i
+        class="fa fa-newspaper-o" aria-hidden="true"></i> Publications</a></strong>.
 
 </div>
