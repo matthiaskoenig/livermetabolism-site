@@ -4,6 +4,8 @@
     * FluType
     * circadian modelling
     * SBML web app
+    
+* google analytics
 
 # minor
 * add publications with acknowledgements  
