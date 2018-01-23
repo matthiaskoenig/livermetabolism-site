@@ -19,10 +19,10 @@
 
 - id: 'annotations_Neal2018'
   year: 2018
-  pdf:
+  pdf: 'Semantic.annotations_Neal2018.pdf'
   authors: 'Neal, M.; <b>König, M.</b>; Nickerson, D.; Misirli, G.; Kalbasi, R.; Dräger, A.; Atalag, K.; Chelliah, V.; Cooling, M.; Cook, D.; Crook, S.; de Alba, M.; Friedman, S.; Garny, A.; Gennari, J.; Gleeson, P.; Golebiewski, M.; Hucka, M.; Juty, N.; Novère, N. L.; Myers, C.; Olivier, B.; Sauro, H.; Scharm, M.; Snoep, J.; Touré, V.; Wipat, A.; Wolkenhauer, O. & Waltemath, D.'
   title: 'Harmonizing semantic annotations for computational models in biology'
-  journal: 'bioRxiv 2018'
+  journal: 'bioRxiv 246470; doi: <a href="https://doi.org/10.1101/246470">https://doi.org/10.1101/246470</a>'
   project: 'https://github.com/combine-org/Annotations'
   repository: 'https://github.com/combine-org/Annotations'
   abstract: 'Life science researchers use computational models to articulate and test hypotheses about the behavior of biological systems. Semantic annotation is a critical component for enhancing the interoperability and reusability of such models as well as for the integration of the data needed for model parameterization and validation. Encoded as machine-readable links to knowledge resource terms, semantic annotations describe the computational or biological meaning of what models and data represent. These annotations help researchers find and repurpose models, accelerate model composition, and enable knowledge integration across model repositories and experimental data stores. However, realizing the potential benefits of semantic annotation requires the development of model annotation standards that adhere to a community-based annotation protocol. Without such standards, tool developers must account for a variety of annotation formats and approaches, a situation that can become prohibitively cumbersome and which can defeat the purpose of linking model elements to controlled knowledge resource terms. Currently, no consensus protocol for semantic annotation exists among the larger biological modeling community. Here, we report on the landscape of current semantic annotation practices among the COmputational Modeling in BIology NEtwork (COMBINE) community and provide a set of recommendations for building a consensus approach to semantic annotation.'
