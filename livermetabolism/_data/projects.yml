@@ -1,3 +1,26 @@
+- title: Stratification and personalization of computational models
+  publication:
+  project:
+  repository: https://github.com/matthiaskoenig/
+  people:
+    - janek
+    - koenig
+  cooperation partners:
+  images:
+    - data_extraction.png
+  image_title: Workflow for extraction of pharmacokinetics data
+  abstract: '<h3>Workflow for extraction of pharmacokinetics data</h3>
+  <p>
+  Physiologically based pharmacokinetics (PBPK) models are an important tool for understanding dynamical liver function tests.
+  Such models allow to simulate the absorption, distribution, metabolization and elimination (ADME) of test substances.
+Stratification and personalization of PBPK models is an important task in systems biology and systems medicine, e.g., to simulate different subpopulations like smokers vs. non-smokers, obese vs. lean people, or children vs. adults vs. elderly, or to simulate the individual person based for instance on anthropometric information like age, gender or bodyweight.
+Such PBPK models can be described in standard exchange formats like the systems biology markup language (SBML) which allow a reproducible, exchangable and interoperable encoding of these models. On the other hand data sets for stratification and personalization of such models are available from the research literature or clinical cooperation partners.
+An open task to implement an workflow for the stratification and personalization of PBPK models from existing datasets. This includes the automatic
+extraction of information via literature mining and machine learning, storage of information in a pharmacokinetics database, and parametrization of models base on subsets of information.
+  </p>'
+
+
+
 - title: Multi-scale Model of Hepatic Metabolism
   publication: multiscale_Koenig2018
   project:
@@ -9,7 +32,7 @@
     - multiscale-galactose.png
   image_title: Multiscale Galactose Model
   abstract: '
-  <h3>Multiscale model of human galactose metabolism - from single hepatocytes to individual liver function.</h3>
+  <h3>Multiscale model of human galactose metabolism - from single hepatocytes to individual liver function</h3>
   <p>
   Understanding how liver function arises from the complex interaction of morphology, perfusion, and metabolism from single cells up to the entire organ requires systems-levels computational approaches. We report a multiscale mathematical model of the Human liver comprising the scales from single hepatocytes, over representation of ultra-structure and micro-circulation in the hepatic tissue, up to the entire organ integrated with perfusion. The model was validated against data on multiple spatial and temporal scales. Herein we describe the model construction and application to hepatic galactose metabolism demonstrating its utility via i) the personalization of liver function tests based on galactose elimination capacity (GEC), ii) the explanation of changes in liver function with aging, and iii) the prediction of population variability in liver function based on variability in liver volume and perfusion. We conclude that physiology- and morphology-based multiscale models can improve the evaluation of individual liver function.
   </p>
