@@ -12,17 +12,18 @@
   pdf: 'Tellurium_Choi2018.pdf'
   authors: 'Choi K., Medley K., <b>König M.</b>, Stocking K., Smith L., Gu S., and Sauro HM.'
   title: 'Tellurium: An Extensible Python-based Modeling Environment for Systems and Synthetic Biology'
-  journal: 'BioSystems [accepted, 2018-07-17]'
+  journal: 'Biosystems. 2018 Jul 24. pii: S0303-2647(18)30125-4. doi: 10.1016/j.biosystems.2018.07.006.'
+
   project: 'http://tellurium.analogmachine.org/'
   repository: 'https://github.com/sys-bio/tellurium'
   abstract: 'Here we present Tellurium, a Python-based environment for model building, simulation, and analysis that facilitates reproducibility of models in systems and synthetic biology. Tellurium is a modular, cross-platform, and open-source simulation environment composed of multiple libraries, plugins, and specialized modules and methods. Tellurium is a self-contained modeling platform which comes with a fully configured Python distribution. Two interfaces are provided, one based on the Spyder IDE which has an accessible user interface akin to MATLAB and a second based on the Jupyter Notebook, which is a format that contains live code, equations, visualizations and narrative text. Tellurium uses libRoadRunner as the default SBML simulation engine which supports deterministic simulations, stochastic simulations, and steady-state analyses. Tellurium also includes Antimony, a human-readable model definition language which can be converted to and from SBML. Other standard Python scientific libraries such as NumPy, SciPy, and matplotlib are included by default. Additionally, we include several user-friendly plugins and advanced modules for a wide-variety of applications, ranging from complex algorithms for bifurcation analysis to multidimensional parameter scanning. By combining multiple libraries, plugins, and modules into a single package, Tellurium provides a unified but extensible solution for biological modeling and analysis for both novices and experts.'
 
 - id: 'hepatokin_Berndt2018'
   year: 2018
-  pdf:
+  pdf: 'hepatokin_Berndt2018.pdf'
   authors: 'Berndt N., Bulik S., Wallach I., Wünsch T., <b>König M.</b>, Stockmann M., Meierhofer M., Holzhütter HG.'
   title: 'HEPATOKIN1: A Biochemistry-Based Model of Liver Metabolism Suited for Applications in Medicine and Pharmacology'
-  journal: 'Nature Communications [accepted 05-2018]'
+  journal: 'Nat Commun. 2018 Jun 19;9(1):2386. doi: 10.1038/s41467-018-04720-9.'
   project:
   repository:
   abstract: 'The most reliable and predictive type of metabolic models are biochemistry-based kinetic models resting on the principles of chemical kinetics and including all relevant molecular details of enzyme regulation. Here we present such a model with yet unequalled complexity encompassing the major pathways of hepatic energy, carbohydrate, lipid, and nitrogen metabolism and including the regulation of enzyme activities by their reactants, allosteric effectors and hormone-dependent reversible enzyme phosphorylation. We illustrate the utility of the model for basic research and applications in medicine and pharmacology by simulating diurnal variations of the metabolic state of the liver under normal conditions and at various perturbations caused by nutritional challenges (alcohol), drugs (valproate) and inherited enzyme disorders (galactosemia). In particular, the model can be used to quantify alterations in the metabolic functions of different liver cells (normal hepatocytes versus adenoma and hepatocellular carcinoma) by exploiting relative changes in the abundance of metabolic enzymes for the re-scaling of maximal enzyme activities (Vmax values).'

@@ -1,4 +1,5 @@
 - id: 'koenig'
+  status: 'current'
   year: '2016-'
   name: 'Dr. Matthias König'
   position: 'Group leader'
@@ -9,6 +10,7 @@
   description: 'Data scientist, data analyst, computational modeller, bioinformatician, group leader. Application of computational modelling and machine learning to biological, medical, and clinical questions and datasets. Predictive modeling of physiological processes and systems with focus on metabolic research. Research projects on glucose homeostasis in normal subjects and diabetes, personalization of liver function tests for the improvement of diagnosis, and stratification and individualization of computer models for precision medicine.'
 
 - id: 'janek'
+  status: 'current'
   year: '2017-'
   name: 'Jan Grzegorzewski'
   position: 'Ph.D. student (mentoring)'
@@ -28,6 +30,7 @@
    data management system required for bioinformatics analysis of peptide-virus binding data <a href="https://www.flutype.de/about/">FluTypeDB</a>.'
 
 - id: 'patrick'
+  status: 'current'
   year: '2017-'
   name: 'Patrick Pett'
   position: 'Ph.D. student (mentoring)'
@@ -38,7 +41,42 @@
   description: 'Patrick works on the analysis of mammalian circadian clock in the human liver based on the analysis
   of OMICS datasets.'
 
+- id: 'schulte'
+  status: 'current'
+  year: '2018-'
+  name: 'Roman Schulte'
+  position: 'Master thesis'
+  image:
+  orcid:
+  repository: 'https://github.com/anfark'
+  homepage: 'https://github.com/draeger-lab/insilico'
+  description: '<img src="../img/projects/insilico_logo.png" title="InSilico" height="80" align="left"/> Within his thesis the concept of an Modular Research Environment (MRE) was developed. An MRE is a modular application framework that can be extended with plugins to create a new tool. InSilico is the working proof-of-principle implementation of such an MRE and was developed alongside this work. The created infrastructure of InSilico can be used to create, share and reuse custom research tools with less effort, time, and resources compared to the traditional approach.'
+
+- id: 'shah'
+  status: 'current'
+  year: '2018-'
+  name: 'Shalin Shah'
+  position: 'Google Summer of Code 2018'
+  image: 'shah.png'
+  orcid:
+  repository: 'https://github.com/shalinshah1993/SBSCL'
+  homepage: 'https://github.com/shalinshah1993'
+  description: '<img src="../img/gsoc.jpg" title="GSOC" height="80" align="left"/> The Systems Biology Simulation Core Library (SBSCL) provides an efficient and exhaustive Java™ implementation of methods to interpret the content of models encoded in the Systems Biology Markup Language (SBML) and its numerical solution. This library is based on the JSBML project and can be used on every operating system for which a Java Virtual Machine is available. Within this project SBSCL was extended among others with better support for SED-ML and COMBINE archives. See also <a href="https://ssdoesgsoc.wordpress.com/" target="_blank">https://ssdoesgsoc.wordpress.com/</a>.'
+
+- id: 'yamada'
+  status: 'former'
+  year: '2017'
+  name: 'Takahiro Yamada'
+  position: 'Google Summer of Code 2017'
+  image: 'yamada.jpeg'
+  orcid:
+  repository: 'https://github.com/TakahiroYamada/GSOC2017_SBMLModelAnalysisWebApp'
+  homepage: 'https://github.com/TakahiroYamada'
+  description: '<img src="../img/gsoc.jpg" title="GSOC" height="80" align="left"/> Within this project as part of Google Summer of Code 2017 a Web App for SBML models was implemented which provides functionality for time course simulation, steady state analysis, and parameter estimation. The Web App provides options for uploading SBML models and experimental data files and run the respective simulations with the models. See also <a href="https://gsoc2017developwebservice.blogspot.com/" target="_blank">https://gsoc2017developwebservice.blogspot.com/</a>.'
+
+
 - id: 'dimitra'
+  status: 'former'
   year: '2016-2017'
   name: 'Dimitra Eleftheriadou'
   position: 'Student assistant'
@@ -47,5 +85,3 @@
   repository:
   homepage:
   description: 'Dimitra (Master Toxicology) worked on the analysis and digitalization of literature data for liver function tests.'
-
-

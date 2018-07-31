@@ -1,3 +1,18 @@
+- title: Modeling Hepatic Metabolism
+  publication: hepatokin_Berndt2018
+  project:
+  repository:
+  people:
+    - koenig
+  cooperation partners: Hermann-Georg Holzhütter
+  images:
+    - hepatokin.png
+  image_title: Central Carbon Model of the Liver (HepatoKin1)
+  abstract: '
+  <h3>Modeling hepatic metabolism in health and disease</h3>
+  <p>The epidemic increase of non-alcoholic fatty liver diseases (NAFLD) requires a deeper understanding of the regulatory circuits controlling the response of liver metabolism to nutritional challenges, medical drugs, and genetic enzyme variants. As in vivo studies of human liver metabolism are encumbered with serious ethical and technical issues, we were involved in the development of a comprehensive biochemistry-based kinetic model of the central liver metabolism including the regulation of enzyme activities by their reactants, allosteric effectors, and hormone-dependent phosphorylation.
+  </p>'
+
 - title: Stratification and personalization of computational models
   publication:
   project:
@@ -18,7 +33,6 @@ Such PBPK models can be described in standard exchange formats like the systems 
 An open task to implement an workflow for the stratification and personalization of PBPK models from existing datasets. This includes the automatic
 extraction of information via literature mining and machine learning, storage of information in a pharmacokinetics database, and parametrization of models base on subsets of information.
   </p>'
-
 
 
 - title: Multi-scale Model of Hepatic Metabolism
@@ -108,7 +122,7 @@ extraction of information via literature mining and machine learning, storage of
   '
 
 - title: High Performance Simulators and Simulation Software
-  publication: tellurium_Medley2017
+  publication: tellurium_Medley2018
   project: http://tellurium.analogmachine.org/
   repository: https://github.com/sys-bio/tellurium
   cooperation partners:

@@ -13,8 +13,14 @@ permalink: /people/
 		<tr>
 
 			<td>{% if person.image %}
+                {% if person.homepage %}
+                <a href="{{ person.homepage }}" target="_blank">
+                {% endif %}
 				<img src="/img/people/{{ person.image }}" class="img-circle" height="120" />
                 <br /><br />
+                {% if person.homepage %}
+                </a>
+                {% endif %}
 				{% endif %}
 			</td>
 			<td>
