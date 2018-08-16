@@ -1,4 +1,5 @@
-- title: "Computational Modeling of Dynamical Liver Function Tests: LiMAx"
+- id: limax
+  title: "Computational Modeling of Dynamical Liver Function Tests: LiMAx"
   publication: LiMAx_Koenig2018
   project:
   repository:
@@ -9,7 +10,7 @@
     - limax.png
   image_title: Computational model of LiMAx test.
   abstract: '
-  <h3>Modeling hepatic metabolism in health and disease</h3>
+  <h3>Modeling LiMAx liver function test</h3>
   <p>
   Assessment of liver function is a key task in hepatology but accurate quantification of hepatic function has remained a clinical challenge. Dynamic liver function tests are a promising tool for the non-invasive evaluation of liver function in vivo. One class of such tests are breath tests based on the conversion of 13C-labeled substrates by the liver to 13CO2 subsequently measured in the breath. A commonly applied substrate is 13C-methacetin, converted to paracetamol and 13CO2 via cytochrome P450 1A2 (CYP1A2), used orally in the methacetin breath test (MBT) and intravenously in the LiMAx test. An important clinical question is which factors can affect MBT and LiMAx results. The aim of our study was to answer this question using computational modeling to derive basic information for a better understanding of the methacetin breath test and factors influencing its results.
   </p>
@@ -20,7 +21,8 @@
   The model was applied to study the effect of clinically relevant parameters like CYP1A2 content, hepatic perfusion or lifestyle factors like smoking on LiMAx. In summary, we present a valuable tool for the evaluation of dynamical liver function tests based on 13C-methacetin.
   </p>'
 
-- title: Modeling Hepatic Metabolism
+- id: central_metabolism
+  title: Modeling Hepatic Central Metabolism
   publication: hepatokin_Berndt2018
   project:
   repository:

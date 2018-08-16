@@ -7,6 +7,14 @@
 #  project:   # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 #  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
+- id: 'LiMAx_Koenig2018'
+  year: 2018
+  pdf: 'LiMAx_Koenig2018.pdf'
+  authors: '<b>König M.</b>, Wünsch T., Lill D., Lock JF., Mohr J., Taheri P., Timmer J., Stockmann M.'
+  title: 'Computational Modeling of Dynamical Liver Function Tests: LiMAx and Methacetin Breath Test (MBT)'
+  journal: 'preprint 2018'
+
+
 - id: 'tellurium_Choi2018'
   year: 2018
   pdf: 'Tellurium_Choi2018.pdf'
