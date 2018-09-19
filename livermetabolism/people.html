@@ -10,8 +10,8 @@ permalink: /people/
 
 	<table class="table table-hover table-responsive">
 		{% for person in site.data.people %}
+        {% if person.status=="current" %}
 		<tr>
-
 			<td>{% if person.image %}
                 {% if person.homepage %}
                 <a href="{{ person.homepage }}" target="_blank">
@@ -37,12 +37,48 @@ permalink: /people/
                 {{ person.year }}<br />
             </td>
 			<td>{{ person.description }}</td>
-            <td>
-
-            </td>
+            <td></td>
 		</tr>
+        {% endif %}
 		{% endfor %}
 	</table>
+
+    <h2>Alumni</h2>
+    <table class="table table-hover table-responsive">
+		{% for person in site.data.people %}
+        {% if person.status=="alumni" %}
+		<tr>
+			<td>{% if person.image %}
+                {% if person.homepage %}
+                <a href="{{ person.homepage }}" target="_blank">
+                {% endif %}
+				<img src="/img/people/{{ person.image }}" class="img-circle" height="120" />
+                <br /><br />
+                {% if person.homepage %}
+                </a>
+                {% endif %}
+				{% endif %}
+			</td>
+			<td>
+                <strong>{{ person.name }}</strong><br />
+                {% if person.orcid %}
+                <a href="https://orcid.org/{{ person.orcid}}" target="_blank" title="ORCID"><img src="/img/orcid.png" height="20"/></a>
+                {% endif %}
+                {% if person.repository %}
+				<a href="{{ person.repository }}"><img src="../img/repository.png" title="Repository homepage" height="20"/></a>
+				{% endif %}
+            </td>
+			<td>
+                <strong>{{ person.position }}</strong><br />
+                {{ person.year }}<br />
+            </td>
+			<td>{{ person.description }}</td>
+            <td></td>
+		</tr>
+        {% endif %}
+		{% endfor %}
+	</table>
+
 
     </div>
 

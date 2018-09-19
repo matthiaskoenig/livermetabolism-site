@@ -42,19 +42,19 @@
   of OMICS datasets.'
 
 - id: 'schulte'
-  status: 'current'
-  year: '2018-'
+  status: 'alumni'
+  year: '2018'
   name: 'Roman Schulte'
-  position: 'Master thesis'
-  image:
+  position: 'Bachelor thesis'
+  image: schulte.jpg
   orcid:
   repository: 'https://github.com/anfark'
   homepage: 'https://github.com/draeger-lab/insilico'
   description: '<img src="../img/projects/insilico_logo.png" title="InSilico" height="80" align="left"/> Within his thesis the concept of an Modular Research Environment (MRE) was developed. An MRE is a modular application framework that can be extended with plugins to create a new tool. InSilico is the working proof-of-principle implementation of such an MRE and was developed alongside this work. The created infrastructure of InSilico can be used to create, share and reuse custom research tools with less effort, time, and resources compared to the traditional approach.'
 
 - id: 'shah'
-  status: 'current'
-  year: '2018-'
+  status: 'alumni'
+  year: '2018'
   name: 'Shalin Shah'
   position: 'Google Summer of Code 2018'
   image: 'shah.png'
@@ -64,7 +64,7 @@
   description: '<img src="../img/gsoc.jpg" title="GSOC" height="80" align="left"/> The Systems Biology Simulation Core Library (SBSCL) provides an efficient and exhaustive Java™ implementation of methods to interpret the content of models encoded in the Systems Biology Markup Language (SBML) and its numerical solution. This library is based on the JSBML project and can be used on every operating system for which a Java Virtual Machine is available. Within this project SBSCL was extended among others with better support for SED-ML and COMBINE archives. See also <a href="https://ssdoesgsoc.wordpress.com/" target="_blank">https://ssdoesgsoc.wordpress.com/</a>.'
 
 - id: 'yamada'
-  status: 'former'
+  status: 'alumni'
   year: '2017'
   name: 'Takahiro Yamada'
   position: 'Google Summer of Code 2017'
@@ -76,7 +76,7 @@
 
 
 - id: 'dimitra'
-  status: 'former'
+  status: 'alumni'
   year: '2016-2017'
   name: 'Dimitra Eleftheriadou'
   position: 'Student assistant'
