@@ -34,15 +34,17 @@ services:
     command: jekyll serve
     image: jekyll/jekyll:latest
     volumes:
-      - $PWD/livermetabolism:/srv/jekyll
-      - $PWD/vendor/bundle:/usr/local/bundle"
-    environment:
-      - JEKYLL_ENV=production
+      - $PWD:/srv/jekyll
+      - $PWD/app/vendor/bundle:/usr/local/bundle"
+    # environment:
+      # - JEKYLL_ENV=production
       # - VIRTUAL_HOST=livermetabolism.com,www.livermetabolism.com
-      - VIRTUAL_PORT=4000
+      # - VIRTUAL_PORT=4000
       # - LETSENCRYPT_HOST=livermetabolism.com,www.livermetabolism.com
       # - LETSENCRYPT_EMAIL=konigmatt@googlemail.com
     ports:
+      - "4000:4000"
       - "35729:35729"
+      - "3000:3000"
     networks:
       - default

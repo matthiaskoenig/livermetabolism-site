@@ -1,10 +1,13 @@
 # Site settings
+source: app
+destination: web
+url: "http://www.livermetabolism.com"
+
 title: livermetabolism
-email: koenigmx@hu-berlin.de
 description: > # this means to ignore newlines until "baseurl:"
   LiSyM Junior Group König
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "https://www.livermetabolism.com" # the base hostname & protocol for your site
+email: koenigmx@hu-berlin.de
 git_address: https://github.com/matthiaskoenig
 git_edit_address: https://github.com/aksakalli/jekyll-doc-theme/blob/gh-pages
 twitter_username: konigmatt

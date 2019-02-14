@@ -1,4 +1,6 @@
 *~
 .Rhistory
 .idea
-livermetabolism/vendor
+app/vendor
+web
+.sass-cache

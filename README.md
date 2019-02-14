@@ -15,8 +15,13 @@ The page is built using Jekyll with additional site templates
 ## Docker
 ### Run development server
 ```
-cd livermetabolism
-docker run --rm --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/local/bundle" -p 4000:4000 -it jekyll/jekyll:latest jekyll serve
+docker-compose -f docker-compose-serve.yml up
+# docker run --rm --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/local/bundle" -p 4000:4000 -it jekyll/jekyll:latest jekyll serve
+```
+
+### Update dependencies
+```
+docker run --rm --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/local/bundle" -it jekyll/jekyll:latest bundle update
 ```
 
 ### Deploy and update server
@@ -24,7 +29,8 @@ docker run --rm --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/lo
 
 ```
 
-## Local Setup
+
+## Local Setup (deprecated !)
 ### Install `ruby` and `jekyll`
 ```
 sudo apt-get install ruby ruby-dev
