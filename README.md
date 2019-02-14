@@ -12,6 +12,12 @@ The page is built using Jekyll with additional site templates
 * http://jekyllrb.com/
 * [Jekyll Doc Theme](https://aksakalli.github.io/jekyll-doc-theme/)
 
+
+# setup server
+
+
+
+
 ## Docker
 ### Run development server
 ```
@@ -24,44 +30,33 @@ docker-compose -f docker-compose-serve.yml up
 docker run --rm --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/local/bundle" -it jekyll/jekyll:latest bundle update
 ```
 
+### HTTPS certificates
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+sudo apt-get install -y python-certbot-nginx 
+# Initial certificates
+sudo certbot certonly
+livermetabolism.com www.livermetabolism.com livermetabolism.de www.livermetabolism.de liver-metabolism.com www.liver-metabolism.com liver-metabolism.de www.liver-metabolism.de
+
+sudo chown mkoenig:mkoenig /etc/letsencrypt/live/
+
 ### Deploy and update server
 ```bash
+# access server
+ssh strato
+
+# download code
+mkdir /home/mkoenig/git
+git clone https://github.com/matthiaskoenig/livermetabolism-site
+
 # get latest code
-cd /var/git/livermetabolism-site/
+cd /home/mkoenig/git/livermetabolism-site
 git pull
 # update web content
 docker-compose -f docker-compose-build.yml up
 
 # start nginx service
 docker-compose up
-```
-
-## Local Setup (deprecated !)
-### Install `ruby` and `jekyll`
-```
-sudo apt-get install ruby ruby-dev
-gem install jekyll bundler
-```
-
-### Update dependencies
-```
-rm Gemfile.lock
-bundle update
-```
-
-### Run development server
-```
-cd livermetabolism
-jekyll serve
-```
-
-### Deploy & Update server
-The data on the server is updated with the script
-```
-cd livermetabolism
-jekyll build
-cd ..
-./sync_with_server.sh
 ```
 
 ----

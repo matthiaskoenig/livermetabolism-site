@@ -4,7 +4,7 @@ services:
   nginx:
     image: nginx:latest
     volumes:
-      - $PWD/web:/usr/share/nginx/html
+      - $PWD/web:/usr/share/nginx/html/
       - $PWD/nginx_ssl.conf:/etc/nginx/nginx.conf
       - $PWD/ssl.conf:/etc/nginx/snippets/ssl.conf
       - $PWD/logs:/logs
