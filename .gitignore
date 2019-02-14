@@ -4,3 +4,4 @@
 app/vendor
 web
 .sass-cache
+logs

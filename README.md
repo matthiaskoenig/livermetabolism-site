@@ -25,10 +25,16 @@ docker run --rm --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/lo
 ```
 
 ### Deploy and update server
-```
+```bash
+# get latest code
+cd /var/git/livermetabolism-site/
+git pull
+# update web content
+docker-compose -f docker-compose-build.yml up
 
+# start nginx service
+docker-compose up
 ```
-
 
 ## Local Setup (deprecated !)
 ### Install `ruby` and `jekyll`
