@@ -29,9 +29,7 @@ plugins:
 exclude:
   - Gemfile
   - Gemfile.lock
-  - .idea/
-  - .gitignore
-  - README.md
+  - vendor
 timezone: Europe/Berlin
 defaults:
 - scope:

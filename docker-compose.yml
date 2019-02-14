@@ -34,7 +34,8 @@ services:
     command: jekyll serve
     image: jekyll/jekyll:latest
     volumes:
-      - ./livermetabolism:/srv/jekyll
+      - $PWD/livermetabolism:/srv/jekyll
+      - $PWD/vendor/bundle:/usr/local/bundle"
     environment:
       - JEKYLL_ENV=production
       # - VIRTUAL_HOST=livermetabolism.com,www.livermetabolism.com

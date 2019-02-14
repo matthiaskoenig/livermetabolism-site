@@ -13,16 +13,16 @@ The page is built using Jekyll with additional site templates
 * [Jekyll Doc Theme](https://aksakalli.github.io/jekyll-doc-theme/)
 
 ## Docker
+### Run development server
 ```
 cd livermetabolism
-docker run --rm --volume="$PWD:/srv/jekyll" -p 4000:4000 -it jekyll/jekyll:latest jekyll serve
+docker run --rm --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/local/bundle" -p 4000:4000 -it jekyll/jekyll:latest jekyll serve
 ```
-# docker run --rm --volume="$PWD:/srv/jekyll" -p 4000:4000 -it jekyll/jekyll:latest jekyll build --watch
 
+### Deploy and update server
+```
 
-
-
-
+```
 
 ## Local Setup
 ### Install `ruby` and `jekyll`
