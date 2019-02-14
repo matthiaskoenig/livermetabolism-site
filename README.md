@@ -12,27 +12,45 @@ The page is built using Jekyll with additional site templates
 * http://jekyllrb.com/
 * [Jekyll Doc Theme](https://aksakalli.github.io/jekyll-doc-theme/)
 
-## Setup
+## Docker
+```
+cd livermetabolism
+docker run --rm --volume="$PWD:/srv/jekyll" -p 4000:4000 -it jekyll/jekyll:latest jekyll serve
+```
+# docker run --rm --volume="$PWD:/srv/jekyll" -p 4000:4000 -it jekyll/jekyll:latest jekyll build --watch
+
+
+
+
+
+
+## Local Setup
+### Install `ruby` and `jekyll`
 ```
 sudo apt-get install ruby ruby-dev
 gem install jekyll bundler
 ```
 
-## Run server
+### Update dependencies
+```
+rm Gemfile.lock
+bundle update
+```
+
+### Run development server
 ```
 cd livermetabolism
-bundle exec jekyll serve
+jekyll serve
 ```
 
-
-## Deploy & Update server
+### Deploy & Update server
 The data on the server is updated with the script
 ```
 cd livermetabolism
-bundle exec jekyll build
+jekyll build
 cd ..
 ./sync_with_server.sh
 ```
 
 ----
-&copy; 2016-2018 Matthias König.
+&copy; 2016-2019 Matthias König.

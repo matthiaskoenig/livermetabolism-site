@@ -1,0 +1,47 @@
+# 4000 is the default port that Jekyll uses to serve pages via the jekyll serve command
+# 35729 is the port used by livereload, which you may or may not use? I’m not using it.
+# 3000? IDK
+# 80 is just remapping port 4000 externally.
+
+# https://github.com/envygeeks/jekyll-docker/blob/master/README.md
+
+
+version: "3"
+services:
+  
+  #  nginx-proxy:
+  #      image: jwilder/nginx-proxy
+  #      ports:
+  #        - "80:80"
+  #        - "443:443"
+  #      volumes:
+  #        - /PATHTO/certs:/etc/nginx/certs:ro
+  #        - /PATHTO/vhost.d:/etc/nginx/vhost.d
+  #        - /PATHTO/html:/usr/share/nginx/html
+  #        - /var/run/docker.sock:/tmp/docker.sock:ro
+  #      labels:
+  #        - "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy"
+
+  #  nginx-letsencrypt:
+  #      image: jrcs/letsencrypt-nginx-proxy-companion
+  #      volumes_from:
+  #        - nginx-proxy
+  #      volumes:
+  #        - /PATHTO/certs:/etc/nginx/certs:rw
+  #        - /var/run/docker.sock:/var/run/docker.sock:ro
+
+  jekyll:
+    command: jekyll serve
+    image: jekyll/jekyll:latest
+    volumes:
+      - ./livermetabolism:/srv/jekyll
+    environment:
+      - JEKYLL_ENV=production
+      # - VIRTUAL_HOST=livermetabolism.com,www.livermetabolism.com
+      - VIRTUAL_PORT=4000
+      # - LETSENCRYPT_HOST=livermetabolism.com,www.livermetabolism.com
+      # - LETSENCRYPT_EMAIL=konigmatt@googlemail.com
+    ports:
+      - "35729:35729"
+    networks:
+      - default

@@ -20,7 +20,7 @@ bootwatch: flatly
 # Build settings
 markdown: kramdown
 highlighter: rouge
-gems:
+plugins:
   - jekyll-feed
   - jekyll-redirect-from
   - jekyll-seo-tag
