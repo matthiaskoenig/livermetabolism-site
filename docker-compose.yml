@@ -12,6 +12,7 @@ services:
     ports:
     # - "4567:80"
       - "80:80"
+      - "443:443"
     restart: always
     networks:
       - frontend
