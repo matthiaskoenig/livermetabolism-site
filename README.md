@@ -17,39 +17,47 @@ The page is built using Jekyll with additional site templates
 ### Run development server
 ```
 docker-compose -f docker-compose-serve.yml up
-# docker run --rm --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/local/bundle" -p 4000:4000 -it jekyll/jekyll:latest jekyll serve
 ```
 ### Update dependencies
 ```
 docker run --rm --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/local/bundle" -it jekyll/jekyll:latest bundle update
 ```
+### Build web content
+```
+docker-compose -f docker-compose-build.yml up
+```
 
-### Deploy and update server
+## Deployment
+
+### certificates
 ```bash
 # access server
 ssh strato
-
 # https certificates
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt-get update
-sudo apt-get install -y python-certbot-nginx 
+sudo apt-get install -y certbot
 # initial certificates
 sudo certbot certonly
 livermetabolism.com www.livermetabolism.com livermetabolism.de www.livermetabolism.de liver-metabolism.com www.liver-metabolism.com liver-metabolism.de www.liver-metabolism.de
+```
 
+### deploy
+```bash
+# access server
+ssh strato
 # download code
 mkdir /home/mkoenig/git
 git clone https://github.com/matthiaskoenig/livermetabolism-site
-
 # get latest code
 cd /home/mkoenig/git/livermetabolism-site
 git pull
-# update web content
+# stop nginx
+docker-compose down
+# build web content
 docker-compose -f docker-compose-build.yml up
-
 # start nginx service
 docker-compose up --build -d
 ```
-
 ----
 &copy; 2016-2019 Matthias König.
