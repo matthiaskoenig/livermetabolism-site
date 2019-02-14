@@ -13,37 +13,29 @@ The page is built using Jekyll with additional site templates
 * [Jekyll Doc Theme](https://aksakalli.github.io/jekyll-doc-theme/)
 
 
-# setup server
-
-
-
-
-## Docker
+## Local development
 ### Run development server
 ```
 docker-compose -f docker-compose-serve.yml up
 # docker run --rm --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/local/bundle" -p 4000:4000 -it jekyll/jekyll:latest jekyll serve
 ```
-
 ### Update dependencies
 ```
 docker run --rm --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/local/bundle" -it jekyll/jekyll:latest bundle update
 ```
 
-### HTTPS certificates
-sudo add-apt-repository ppa:certbot/certbot
-sudo apt-get update
-sudo apt-get install -y python-certbot-nginx 
-# Initial certificates
-sudo certbot certonly
-livermetabolism.com www.livermetabolism.com livermetabolism.de www.livermetabolism.de liver-metabolism.com www.liver-metabolism.com liver-metabolism.de www.liver-metabolism.de
-
-sudo chown mkoenig:mkoenig /etc/letsencrypt/live/
-
 ### Deploy and update server
 ```bash
 # access server
 ssh strato
+
+# https certificates
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+sudo apt-get install -y python-certbot-nginx 
+# initial certificates
+sudo certbot certonly
+livermetabolism.com www.livermetabolism.com livermetabolism.de www.livermetabolism.de liver-metabolism.com www.liver-metabolism.com liver-metabolism.de www.liver-metabolism.de
 
 # download code
 mkdir /home/mkoenig/git
@@ -56,7 +48,7 @@ git pull
 docker-compose -f docker-compose-build.yml up
 
 # start nginx service
-docker-compose up
+docker-compose up --build -d
 ```
 
 ----

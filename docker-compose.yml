@@ -9,10 +9,11 @@ services:
       - $PWD/ssl.conf:/etc/nginx/snippets/ssl.conf
       - $PWD/logs:/logs
       - /etc/letsencrypt:/etc/letsencrypt
+    #- $PWD/nginx_ssl.conf:/etc/nginx/nginx.conf
     ports:
-    # - "4567:80"
       - "80:80"
       - "443:443"
+    # - "4567:80"
     restart: always
     networks:
       - frontend
