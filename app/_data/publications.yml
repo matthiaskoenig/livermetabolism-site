@@ -7,6 +7,13 @@
 #  project:   # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 #  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
+- id: 'Memote_Lieven2019'
+  year: 2019
+  pdf: 'Memote_Lieven2019.pdf'
+  authors: 'Christian Lieven, Moritz Emanuel Beber, Brett G. Olivier, Frank T. Bergmann, Meric Ataman, Parizad Babaei, Jennifer A. Bartell, Lars M. Blank, Siddharth Chauhan, Kevin Correia, Christian Diener, Andreas Dräger, Birgitta Elisabeth Ebert, Janaka N. Edirisinghe, Jose P. Faria, Adam Feist, Georgios Fengos, Ronan M. T. Fleming, Beatriz Garcia-Jimenez, Vassily Hatzimanikatis, Wout van Helvoirt, Christopher Henry, Henning Hermjakob, Markus J. Herrgard, Hyun Uk Kim, Zachary King, Jasper Jan Koehorst, <b>Matthias König</b>, Steffen Klamt, Edda Klipp, Meiyappan Lakshmanan, Nicolas Le Novere, Dong-Yup Lee, Sang Yup Lee, Sunjae Lee, Nathan E. Lewis, Hongwu Ma, Daniel Machado, Radhakrishnan Mahadevan, Paulo Maia, Adil Mardinoglu, Greg L. Medlock, Jonathan Monk, Jens Nielsen, Lars K. Nielsen, Juan Nogales, Intawat Nookaew, Osbaldo Resendis, Bernhard Palsson, Jason A. Papin, Kiran Raosaheb Patil, Mark Poolman, Nathan D. Price, Anne Richelle, Isabel Rocha, Benjamin Sanchez, Peter Schaap, Rahuman S. Malik Sheriff, Saeed Shoaie, Nikolaus Sonnenschein, Bas Teusink, Paulo Vilaca, Jon Olav Vik, Judith A. Wodke, Joana C. Xavier, Qianqian Yuan, Maksim Zakhartsev, Cheng Zhang'
+  title: 'Memote: A community-driven effort towards a standardized genome-scale metabolic model test suite'
+  journal: 'bioRxiv 350991; doi: <a href="https://doi.org/10.1101/350991">10.1101/350991</a> [in revision]' 
+
 - id: 'LiMAx_Koenig2018'
   year: 2018
   pdf: 'LiMAx_Koenig2018.pdf'
@@ -20,7 +27,7 @@
   pdf: 'Tellurium_Choi2018.pdf'
   authors: 'Choi K., Medley K., <b>König M.</b>, Stocking K., Smith L., Gu S., and Sauro HM.'
   title: 'Tellurium: An Extensible Python-based Modeling Environment for Systems and Synthetic Biology'
-  journal: 'Biosystems. 2018 Jul 24. pii: S0303-2647(18)30125-4. doi: 10.1016/j.biosystems.2018.07.006.'
+  journal: 'Biosystems. 2018 Jul 24. pii: S0303-2647(18)30125-4. doi: <a href="https://doi.org/10.1016/j.biosystems.2018.07.006">10.1016/j.biosystems.2018.07.006</a>'
 
   project: 'http://tellurium.analogmachine.org/'
   repository: 'https://github.com/sys-bio/tellurium'
@@ -31,7 +38,7 @@
   pdf: 'hepatokin_Berndt2018.pdf'
   authors: 'Berndt N., Bulik S., Wallach I., Wünsch T., <b>König M.</b>, Stockmann M., Meierhofer M., Holzhütter HG.'
   title: 'HEPATOKIN1: A Biochemistry-Based Model of Liver Metabolism Suited for Applications in Medicine and Pharmacology'
-  journal: 'Nat Commun. 2018 Jun 19;9(1):2386. doi: 10.1038/s41467-018-04720-9.'
+  journal: 'Nat Commun. 2018 Jun 19;9(1):2386. doi: <a href="https://doi.org/10.1038/s41467-018-04720-9">10.1038/s41467-018-04720-9</a>.'
   project:
   repository:
   abstract: 'The most reliable and predictive type of metabolic models are biochemistry-based kinetic models resting on the principles of chemical kinetics and including all relevant molecular details of enzyme regulation. Here we present such a model with yet unequalled complexity encompassing the major pathways of hepatic energy, carbohydrate, lipid, and nitrogen metabolism and including the regulation of enzyme activities by their reactants, allosteric effectors and hormone-dependent reversible enzyme phosphorylation. We illustrate the utility of the model for basic research and applications in medicine and pharmacology by simulating diurnal variations of the metabolic state of the liver under normal conditions and at various perturbations caused by nutritional challenges (alcohol), drugs (valproate) and inherited enzyme disorders (galactosemia). In particular, the model can be used to quantify alterations in the metabolic functions of different liver cells (normal hepatocytes versus adenoma and hepatocellular carcinoma) by exploiting relative changes in the abundance of metabolic enzymes for the re-scaling of maximal enzyme activities (Vmax values).'
@@ -41,7 +48,7 @@
   pdf: 'SED-ML_L1V3_Bergmann2018.pdf'
   authors: 'Bergmann, FT., Cooper, J., <b>König, M.*</b>, Moraru, I., Nickerson, D., Le Novère N., Olivier, BG., Sahle, S., Smith, L., Waltemath, D.<br /><b>* corresponding author</b>'
   title: 'Simulation Experiment Description Markup Language (SED-ML) Level 1 Version 3 (L1V3)'
-  journal: 'Journal of Integrative Bioinformatics, 15(1), 2018'
+  journal: 'J Integr Bioinform. 2018 Mar 19;15(1); doi: <a href="https://doi.org/10.1515/jib-2017-0086">10.1515/jib-2017-0086</a>'
   project: 'https://sed-ml.github.io/index.html'
   repository: 'https://github.com/SED-ML/sed-ml'
   abstract: 'The creation of computational simulation experiments to inform modern biological research poses challenges to reproduce, annotate, archive, and share such experiments. Efforts such as SBML or CellML standardize the formal representation of computational models in various areas of biology. The Simulation Experiment Description Markup Language (SED-ML) describes what procedures the models are subjected to, and the details of those procedures. These standards, together with further COMBINE standards, describe models sufficiently well for the reproduction of simulation studies among users and software tools. The Simulation Experiment Description Markup Language (SED-ML) is an XML-based format that encodes, for a given simulation experiment, i) which models to use; ii) which modifications to apply to models before simulation; iii) which simulation procedures to run on each model; iv) how to post-process the data; and v) how these results should be plotted and reported. SED-ML Level 1 Version 1 (L1V1) implemented support for the encoding of basic time course simulations. SED-ML L1V2 added support for more complex types of simulations, specifically repeated tasks and chained simulation procedures. SED-ML L1V3 extends L1V2 by means to describe which datasets and subsets thereof to use within a simulation experiment.'
@@ -51,7 +58,7 @@
   pdf: 'Semantic.annotations_Neal2018.pdf'
   authors: 'Neal, M.; <b>König, M.</b>; Nickerson, D.; Misirli, G.; Kalbasi, R.; Dräger, A.; Atalag, K.; Chelliah, V.; Cooling, M.; Cook, D.; Crook, S.; de Alba, M.; Friedman, S.; Garny, A.; Gennari, J.; Gleeson, P.; Golebiewski, M.; Hucka, M.; Juty, N.; Novère, N. L.; Myers, C.; Olivier, B.; Sauro, H.; Scharm, M.; Snoep, J.; Touré, V.; Wipat, A.; Wolkenhauer, O. & Waltemath, D.'
   title: 'Harmonizing semantic annotations for computational models in biology'
-  journal: 'bioRxiv 246470; doi: <a href="https://doi.org/10.1101/246470">doi.org/10.1101/246470</a> [Briefings in Bioinformatics, accepted 2018-08-20]'
+  journal: 'Brief Bioinform. 2018 Nov 21. doi: <a href="https://doi.org/10.1093/bib/bby087">10.1093/bib/bby087</a>'
   project: 'https://github.com/combine-org/Annotations'
   repository: 'https://github.com/combine-org/Annotations'
   abstract: 'Life science researchers use computational models to articulate and test hypotheses about the behavior of biological systems. Semantic annotation is a critical component for enhancing the interoperability and reusability of such models as well as for the integration of the data needed for model parameterization and validation. Encoded as machine-readable links to knowledge resource terms, semantic annotations describe the computational or biological meaning of what models and data represent. These annotations help researchers find and repurpose models, accelerate model composition, and enable knowledge integration across model repositories and experimental data stores. However, realizing the potential benefits of semantic annotation requires the development of model annotation standards that adhere to a community-based annotation protocol. Without such standards, tool developers must account for a variety of annotation formats and approaches, a situation that can become prohibitively cumbersome and which can defeat the purpose of linking model elements to controlled knowledge resource terms. Currently, no consensus protocol for semantic annotation exists among the larger biological modeling community. Here, we report on the landscape of current semantic annotation practices among the COmputational Modeling in BIology NEtwork (COMBINE) community and provide a set of recommendations for building a consensus approach to semantic annotation.'
@@ -71,7 +78,7 @@
   pdf: 'Tellurium.Notebook_Medley2018.pdf'
   authors: 'Medley K., Choi K., <b>König M.</b>, Smith L., Gu S., Hellerstein J., Sealfon S., and Sauro HM.'
   title: 'Tellurium Notebooks — An Environment for Reproducible Dynamical Modeling in Systems Biology.'
-  journal: 'PLoS computational biology 14, no. 6 (2018): e1006220.'
+  journal: 'PLoS computational biology 14, no. 6 (2018): e1006220.; doi: <a href="https://doi.org/10.1371/journal.pcbi.1006220">10.1371/journal.pcbi.1006220</a>'
   project: 'http://tellurium.analogmachine.org/'
   repository: 'https://github.com/sys-bio/tellurium'
   abstract: 'The considerable difficulty encountered in reproducing the results of published dynamical models limits validation, exploration and reuse of this increasingly large biomedical research resource. To address this problem, we have developed Tellurium Notebook, a software system that facilitates building reproducible dynamical models and reusing models by 1) supporting the COMBINE archive format during model development for capturing model information in an exchangeable format and 2) enabling users to easily simulate and edit public COMBINE-compliant models from public repositories to facilitate studying model dynamics, variants and test cases. Tellurium Notebook, a Python-based Jupyter-like environment, is designed to seamlessly inter-operate with these community standards by automating conversion between COMBINE standards formulations and corresponding in-line, human-readable representations. Thus, Tellurium brings to systems biology the strategy used by other literate notebook systems such as Mathematica. These capabilities allow users to edit every aspect of the standards-compliant models and simulations, run the simulations in-line, and re-export to standard formats. We provide several use cases illustrating the advantages of our approach and how it allows development and reuse of models without requiring technical knowledge of standards. Adoption of Tellurium should accelerate model development, reproducibility and reuse.'
@@ -81,7 +88,7 @@
   pdf: 'Systems.surgery_Christ2017.pdf'
   authors: 'Christ, B.*, Dahmen, U.*, Herrmann, K.H.*, <b>König, M.*</b>, Reichenbach, J.R*., Ricken, T.*, Schleicher, J.*, Ole Schwen, L.*, Vlaic, S.* and Waschinsky, N.*<br /><b>* equal contribution</b>'
   title: 'Computational Modeling in Liver Surgery'
-  journal: 'Frontiers in physiology, 8, p.906; doi: <a href="https://doi.org/10.3389/fphys.2017.00906">doi.org/10.3389/fphys.2017.00906</a>'
+  journal: 'Frontiers in physiology, 8, p.906; doi: <a href="https://doi.org/10.3389/fphys.2017.00906">10.3389/fphys.2017.00906</a>'
   project:
   repository:
 
