@@ -13,7 +13,7 @@
   authors: 'Christian Lieven, Moritz Emanuel Beber, Brett G. Olivier, Frank T. Bergmann, Meric Ataman, Parizad Babaei, Jennifer A. Bartell, Lars M. Blank, Siddharth Chauhan, Kevin Correia, Christian Diener, Andreas Dräger, Birgitta Elisabeth Ebert, Janaka N. Edirisinghe, Jose P. Faria, Adam Feist, Georgios Fengos, Ronan M. T. Fleming, Beatriz Garcia-Jimenez, Vassily Hatzimanikatis, Wout van Helvoirt, Christopher Henry, Henning Hermjakob, Markus J. Herrgard, Hyun Uk Kim, Zachary King, Jasper Jan Koehorst, <b>Matthias König</b>, Steffen Klamt, Edda Klipp, Meiyappan Lakshmanan, Nicolas Le Novere, Dong-Yup Lee, Sang Yup Lee, Sunjae Lee, Nathan E. Lewis, Hongwu Ma, Daniel Machado, Radhakrishnan Mahadevan, Paulo Maia, Adil Mardinoglu, Greg L. Medlock, Jonathan Monk, Jens Nielsen, Lars K. Nielsen, Juan Nogales, Intawat Nookaew, Osbaldo Resendis, Bernhard Palsson, Jason A. Papin, Kiran Raosaheb Patil, Mark Poolman, Nathan D. Price, Anne Richelle, Isabel Rocha, Benjamin Sanchez, Peter Schaap, Rahuman S. Malik Sheriff, Saeed Shoaie, Nikolaus Sonnenschein, Bas Teusink, Paulo Vilaca, Jon Olav Vik, Judith A. Wodke, Joana C. Xavier, Qianqian Yuan, Maksim Zakhartsev, Cheng Zhang'
   title: 'Memote: A community-driven effort towards a standardized genome-scale metabolic model test suite'
   journal: 'bioRxiv 350991; doi: <a href="https://doi.org/10.1101/350991">10.1101/350991</a> [in revision]' 
-  project: https://github.com/opencobra/memote
+  project: https://memote.readthedocs.io/en/latest/?badge=latest
   repository: https://github.com/opencobra/memote
 
 - id: 'LiMAx_Koenig2018'
