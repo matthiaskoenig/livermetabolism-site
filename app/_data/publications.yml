@@ -7,6 +7,15 @@
 #  project:   # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 #  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
+- id: 'sbml-level-3-version-2-core_2019'
+  year: 2019
+  pdf: 'sbml-level-3-version-2-core.pdf'
+  authors: 'M. Hucka, F. Bergmann, C. Chaouiya, A. Dräger, S. Hoops, S. Keating, M. König, N Le Novere, C. Myers, B. Olivier, S. Sahle, J. Schaff, R. Sheriff, L. Smith, D. Waltemath, D. Wilkinson, F. Zhang'
+  title: 'The Systems Biology Markup Language (SBML): Language Specification for Level 3 Version 2 Core'
+  journal: 'J Integr Bioinform. 2018 [in submission]'
+  project: http://sbml.org
+  repository: https://github.com/opencobra/memote
+
 - id: 'Memote_Lieven2019'
   year: 2019
   pdf: 'Memote_Lieven2019.pdf'
