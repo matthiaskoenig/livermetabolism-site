@@ -7,14 +7,24 @@
 #  project:   # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 #  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
+- id: 'combine_editorial_2019'
+  year: 2019
+  pdf: 'combine_editorial_2019.pdf'
+  authors: 'F Schreiber, G Bader, P Gleeson, M Golebiewski, M Hucka, SM Keating, <b>M König</b>, C Myers, D Nickerson, B Sommer, D Waltemath'
+  title: 'Specifications of Standards in Systems and Synthetic Biology: Status and Developments in 2019'
+  journal: 'J Integr Bioinform. 2019 [in submission]'
+  project: http://co.mbine.org/
+  repository:
+
+
 - id: 'sbml-level-3-version-2-core_2019'
   year: 2019
   pdf: 'sbml-level-3-version-2-core.pdf'
-  authors: 'M. Hucka, F. Bergmann, C. Chaouiya, A. Dräger, S. Hoops, S. Keating, M. König, N Le Novere, C. Myers, B. Olivier, S. Sahle, J. Schaff, R. Sheriff, L. Smith, D. Waltemath, D. Wilkinson, F. Zhang'
+  authors: 'M. Hucka, F. Bergmann, C. Chaouiya, A. Dräger, S. Hoops, S. Keating, <b>M. König</b>, N Le Novere, C. Myers, B. Olivier, S. Sahle, J. Schaff, R. Sheriff, L. Smith, D. Waltemath, D. Wilkinson, F. Zhang'
   title: 'The Systems Biology Markup Language (SBML): Language Specification for Level 3 Version 2 Core'
-  journal: 'J Integr Bioinform. 2018 [in submission]'
+  journal: 'J Integr Bioinform. 2019 [submitted]'
   project: http://sbml.org
-  repository: https://github.com/opencobra/memote
+  repository: https://sourceforge.net/projects/sbml/
 
 - id: 'Memote_Lieven2019'
   year: 2019
