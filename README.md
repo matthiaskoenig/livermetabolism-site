@@ -32,7 +32,8 @@ docker-compose -f docker-compose-build.yml up
 
 ## Deployment
 
-### certificates
+### HTTPS certificates
+#### Initial certificates & renewal
 ```bash
 # access server
 ssh strato
@@ -40,9 +41,13 @@ ssh strato
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt-get update
 sudo apt-get install -y certbot
+
 # initial certificates
+cd /home/mkoenig/git/livermetabolism-site
+docker-compose down
 sudo certbot certonly
 livermetabolism.com www.livermetabolism.com livermetabolism.de www.livermetabolism.de liver-metabolism.com www.liver-metabolism.com liver-metabolism.de www.liver-metabolism.de
+docker-compose up --build -d
 ```
 
 ### deploy
@@ -62,5 +67,14 @@ docker-compose -f docker-compose-build.yml up
 # start nginx service
 docker-compose up --build -d
 ```
+
+## TODO
+### minor
+* add circadian modelling project
+* add publications with acknowledgements
+* add media section with systemsbiology.de
+* add mentoring GSOC info
+* add software project information
+
 ----
 &copy; 2016-2019 Matthias König.
