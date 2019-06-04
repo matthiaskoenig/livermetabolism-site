@@ -12,7 +12,7 @@
   pdf: 'combine_editorial_2019.pdf'
   authors: 'F Schreiber, G Bader, P Gleeson, M Golebiewski, M Hucka, SM Keating, <b>M König</b>, C Myers, D Nickerson, B Sommer, D Waltemath'
   title: 'Specifications of Standards in Systems and Synthetic Biology: Status and Developments in 2019'
-  journal: 'J Integr Bioinform. 2019 [in submission]'
+  journal: 'J Integr Bioinform. 2019 [accepted]'
   project: http://co.mbine.org/
   repository:
 
@@ -22,7 +22,7 @@
   pdf: 'sbml-level-3-version-2-core.pdf'
   authors: 'M. Hucka, F. Bergmann, C. Chaouiya, A. Dräger, S. Hoops, S. Keating, <b>M. König</b>, N Le Novere, C. Myers, B. Olivier, S. Sahle, J. Schaff, R. Sheriff, L. Smith, D. Waltemath, D. Wilkinson, F. Zhang'
   title: 'The Systems Biology Markup Language (SBML): Language Specification for Level 3 Version 2 Core'
-  journal: 'J Integr Bioinform. 2019 [submitted]'
+  journal: 'J Integr Bioinform. 2019 [accepted]'
   project: http://sbml.org
   repository: https://sourceforge.net/projects/sbml/
 
