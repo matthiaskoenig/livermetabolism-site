@@ -48,7 +48,14 @@ docker-compose down
 sudo certbot certonly
 livermetabolism.com www.livermetabolism.com livermetabolism.de www.livermetabolism.de liver-metabolism.com www.liver-metabolism.com liver-metabolism.de www.liver-metabolism.de
 docker-compose up --build -d
+
+# certificate renewal 
+cd /home/mkoenig/git/livermetabolism-site
+docker-compose down
+sudo certbot renew
+docker-compose up --build -d
 ```
+
 
 ### deploy
 ```bash
