@@ -7,6 +7,15 @@
 #  project:   # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 #  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
+- id: 'MOR_Lambers2019'
+  year: 2019
+  pdf:
+  authors: 'Lambers L., Ricken T., and <b>König M.</b>'
+  title: 'Model Order Reduction (MOR) of Function-Perfusion-Growth Simulation in the Human Fatty Liver via Artificial Neural Network (ANN)'
+  journal: 'Proceedings in Applied Mathematics & Mechanics, PAMM, 10.1002/pamm.201900429 [accepted]'
+  project:
+  repository:
+
 - id: 'combine_editorial_2019'
   year: 2019
   pdf: 'combine_editorial_2019.pdf'
