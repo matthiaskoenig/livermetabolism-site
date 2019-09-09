@@ -18,10 +18,10 @@
 
 - id: 'MOR_Lambers2019'
   year: 2019
-  pdf:
+  pdf: 'MOR_Lambers2019.pdf'
   authors: 'Lambers L., Ricken T., and <b>König M.</b>'
   title: 'Model Order Reduction (MOR) of Function-Perfusion-Growth Simulation in the Human Fatty Liver via Artificial Neural Network (ANN)'
-  journal: 'Proceedings in Applied Mathematics & Mechanics, PAMM, 10.1002/pamm.201900429 [accepted, 07-2019]'
+  journal: 'Proceedings in Applied Mathematics & Mechanics, PAMM, <a href="https://doi.org/10.1002/pamm.201900429">10.1002/pamm.201900429</a>, 2019'
   project:
   repository:
 
