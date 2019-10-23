@@ -29,17 +29,16 @@
    machine learning approaches. Part of the work was the development of the
    data management system required for bioinformatics analysis of peptide-virus binding data <a href="https://www.flutype.de/about/">FluTypeDB</a>.'
 
-- id: 'patrick'
+- id: 'yannick'
   status: 'current'
-  year: '2017-'
-  name: 'Patrick Pett'
-  position: 'Ph.D. student (mentoring)'
-  image: pett.png
+  year: '2019-'
+  name: 'Yannick Duport'
+  position: 'Bachelor student'
+  image: yannick.png
   orcid:
-  repository: 'https://bitbucket.org/JPatrickP/'
+  repository: 'https://github.com/YannickDuport'
   homepage:
-  description: 'Patrick works on the analysis of mammalian circadian clock in the human liver based on the analysis
-  of OMICS datasets.'
+  description: 'Yannick Duport works on a physiological based model of midazolam clearance. Key questions are the effect of inhibitors and inducers on the metabolism of midazolam.'
 
 - id: 'deepa'
   status: 'current'
@@ -50,20 +49,8 @@
   orcid:
   repository: 'https://github.com/DeepaMahm'
   homepage:
-  description: 'Deepa Maheshvare works on a kinetic model of the pancreatic beta-cell.'
+  description: 'Deepa Maheshvare works on a kinetic model of the pancreatic beta-cell. Key questions are the effect of various amino acids on the insulin secretion of the pancreas.'
 
-- id: 'kaustubh'
-  status: 'current'
-  year: '2019-'
-  name: 'Kaustubh Trivedi'
-  affiliation: 'Indian Institute of Technology, Roorkee'
-  position: 'Google summer of code student (2019)'
-  image: kaustubh.jpg
-  orcid:
-  repository: 'https://github.com/codekaust'
-  homepage: 'https://kt-gsoc19.blogspot.com/'
-  description: 'In cooperation with <a href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/systembiologie/team/jun-prof-dr-andreas-draeger/">Andreas Dräger</a>
-  from the University of Tübingen we are working on the extension of <a href="https://github.com/draeger-lab/ModelPolisher">ModelPolisher</a> to a universal annotation tool.'
 
 - id: 'brandhorst'
   status: 'current'
@@ -75,6 +62,32 @@
   repository: 'https://github.com/JBrandh'
   homepage:
   description: 'Janosch Branhorst works on the computational modeling of paracetamol by the liver and curating data for PKDB.'
+
+
+- id: 'kaustubh'
+  status: 'alumni'
+  year: '2019'
+  name: 'Kaustubh Trivedi'
+  affiliation: 'Indian Institute of Technology, Roorkee'
+  position: 'Google summer of code student (2019)'
+  image: kaustubh.jpg
+  orcid:
+  repository: 'https://github.com/codekaust'
+  homepage: 'https://kt-gsoc19.blogspot.com/'
+  description: 'In cooperation with <a href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/systembiologie/team/jun-prof-dr-andreas-draeger/">Andreas Dräger</a>
+  from the University of Tübingen we are working on the extension of <a href="https://github.com/draeger-lab/ModelPolisher">ModelPolisher</a> to a universal annotation tool.'
+
+- id: 'patrick'
+  status: 'alumni'
+  year: '2017-2019'
+  name: 'Patrick Pett'
+  position: 'Ph.D. student (mentoring)'
+  image: pett.png
+  orcid:
+  repository: 'https://bitbucket.org/JPatrickP/'
+  homepage:
+  description: 'Patrick works on the analysis of mammalian circadian clock in the human liver based on the analysis
+  of OMICS datasets.'
 
 - id: 'schulte'
   status: 'alumni'
