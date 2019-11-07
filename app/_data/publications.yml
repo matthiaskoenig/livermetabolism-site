@@ -7,6 +7,24 @@
 #  project:   # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 #  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
+- id: 'Memote_Lieven2019'
+  year: 2019
+  pdf: 'Memote_Lieven2019.pdf'
+  authors: 'Christian Lieven, Moritz Emanuel Beber, Brett G. Olivier, Frank T. Bergmann, Meric Ataman, Parizad Babaei, Jennifer A. Bartell, Lars M. Blank, Siddharth Chauhan, Kevin Correia, Christian Diener, Andreas Dräger, Birgitta Elisabeth Ebert, Janaka N. Edirisinghe, Jose P. Faria, Adam Feist, Georgios Fengos, Ronan M. T. Fleming, Beatriz Garcia-Jimenez, Vassily Hatzimanikatis, Wout van Helvoirt, Christopher Henry, Henning Hermjakob, Markus J. Herrgard, Hyun Uk Kim, Zachary King, Jasper Jan Koehorst, <b>Matthias König</b>, Steffen Klamt, Edda Klipp, Meiyappan Lakshmanan, Nicolas Le Novere, Dong-Yup Lee, Sang Yup Lee, Sunjae Lee, Nathan E. Lewis, Hongwu Ma, Daniel Machado, Radhakrishnan Mahadevan, Paulo Maia, Adil Mardinoglu, Greg L. Medlock, Jonathan Monk, Jens Nielsen, Lars K. Nielsen, Juan Nogales, Intawat Nookaew, Osbaldo Resendis, Bernhard Palsson, Jason A. Papin, Kiran Raosaheb Patil, Mark Poolman, Nathan D. Price, Anne Richelle, Isabel Rocha, Benjamin Sanchez, Peter Schaap, Rahuman S. Malik Sheriff, Saeed Shoaie, Nikolaus Sonnenschein, Bas Teusink, Paulo Vilaca, Jon Olav Vik, Judith A. Wodke, Joana C. Xavier, Qianqian Yuan, Maksim Zakhartsev, Cheng Zhang'
+  title: 'Memote: A community-driven effort towards a standardized genome-scale metabolic model test suite'
+  journal: 'Nature Biotechnology [accepted, 2019-11-04]'
+  project: https://memote.readthedocs.io/en/latest/?badge=latest
+  repository: https://github.com/opencobra/memote
+
+- id: 'SBML_Keating2019'
+  year: 2019
+  pdf: 'SBML_Keating2019.pdf'
+  authors: 'SM Keating, D Waltemath, <b>M König</b>, F Zhang, A Dräger, C Chaouiya, FT Bergmann, A Finney, CS Gillespie, T Helikar, S Hoops, RS Malik-Sheriff, SL Moodie, II Moraru, CJ Myers, A Naldi, BG Olivier, S Sahle, JC Schaff, LP Smith, MJ Swat, DT, L Watanabe, DJ Wilkinson, ML Blinov, K Begley, JR Faeder, HF Gómez, TM Hamm, Y Inagaki, W Liebermeister, AL Lister, D Lucio, E Mjolsness, CJ Proctor, K Raman, N Rodriguez, CA Shaffer, BE Shapiro, J Stelling, N Swainston, N Tanimura, J Wagner, M Meier-Schellersheim, HM Sauro, B Palsson, H Bolouri, H Kitano, Akira Funahashi, H Hermjakob, JC Doyle M Hucka, and SBML Community members'
+  title: 'SBML Level 3: an extensible format for the exchange and reuse of biological models'
+  journal: 'Molecular Systems Biology [11-2019, in revision]'
+  project: http://sbml.org
+  repository: https://sourceforge.net/projects/sbml/
+
 - id: 'PKDB_Grzegorzewski2019'
   year: 2019
   pdf: 'PKDB_Grzegorzewski2019.pdf'
@@ -15,15 +33,6 @@
   journal: 'bioRxiv 760884; doi: <a href="https://doi.org/10.1101/760884">10.1101/760884</a> [09-09-2019]'
   project: https://pk-db.com
   repository: https://github.com/matthiaskoenig/pkdb
-
-- id: 'SBML_Keating2019'
-  year: 2019
-  pdf: 'SBML_Keating2019.pdf'
-  authors: 'SM Keating, D Waltemath, <b>M König</b>, F Zhang, A Dräger, C Chaouiya, FT Bergmann, A Finney, CS Gillespie, T Helikar, S Hoops, RS Malik-Sheriff, SL Moodie, II Moraru, CJ Myers, A Naldi, BG Olivier, S Sahle, JC Schaff, LP Smith, MJ Swat, DT, L Watanabe, DJ Wilkinson, ML Blinov, K Begley, JR Faeder, HF Gómez, TM Hamm, Y Inagaki, W Liebermeister, AL Lister, D Lucio, E Mjolsness, CJ Proctor, K Raman, N Rodriguez, CA Shaffer, BE Shapiro, J Stelling, N Swainston, N Tanimura, J Wagner, M Meier-Schellersheim, HM Sauro, B Palsson, H Bolouri, H Kitano, Akira Funahashi, H Hermjakob, JC Doyle M Hucka, and SBML Community members'
-  title: 'SBML Level 3: an extensible format for the exchange and reuse of biological models'
-  journal: 'MSB [submitted, 07-2019]'
-  project: http://sbml.org
-  repository: https://sourceforge.net/projects/sbml/
 
 - id: 'MOR_Lambers2019'
   year: 2019
@@ -52,15 +61,6 @@
   journal: 'J Integr Bioinform. 2019 Jun 20;16(2); <a href="https://doi.org/10.1515/jib-2019-0021">10.1515/jib-2019-0021</a>'
   project: http://sbml.org
   repository: https://sourceforge.net/projects/sbml/
-
-- id: 'Memote_Lieven2019'
-  year: 2019
-  pdf: 'Memote_Lieven2019.pdf'
-  authors: 'Christian Lieven, Moritz Emanuel Beber, Brett G. Olivier, Frank T. Bergmann, Meric Ataman, Parizad Babaei, Jennifer A. Bartell, Lars M. Blank, Siddharth Chauhan, Kevin Correia, Christian Diener, Andreas Dräger, Birgitta Elisabeth Ebert, Janaka N. Edirisinghe, Jose P. Faria, Adam Feist, Georgios Fengos, Ronan M. T. Fleming, Beatriz Garcia-Jimenez, Vassily Hatzimanikatis, Wout van Helvoirt, Christopher Henry, Henning Hermjakob, Markus J. Herrgard, Hyun Uk Kim, Zachary King, Jasper Jan Koehorst, <b>Matthias König</b>, Steffen Klamt, Edda Klipp, Meiyappan Lakshmanan, Nicolas Le Novere, Dong-Yup Lee, Sang Yup Lee, Sunjae Lee, Nathan E. Lewis, Hongwu Ma, Daniel Machado, Radhakrishnan Mahadevan, Paulo Maia, Adil Mardinoglu, Greg L. Medlock, Jonathan Monk, Jens Nielsen, Lars K. Nielsen, Juan Nogales, Intawat Nookaew, Osbaldo Resendis, Bernhard Palsson, Jason A. Papin, Kiran Raosaheb Patil, Mark Poolman, Nathan D. Price, Anne Richelle, Isabel Rocha, Benjamin Sanchez, Peter Schaap, Rahuman S. Malik Sheriff, Saeed Shoaie, Nikolaus Sonnenschein, Bas Teusink, Paulo Vilaca, Jon Olav Vik, Judith A. Wodke, Joana C. Xavier, Qianqian Yuan, Maksim Zakhartsev, Cheng Zhang'
-  title: 'Memote: A community-driven effort towards a standardized genome-scale metabolic model test suite'
-  journal: 'bioRxiv 350991; doi: <a href="https://doi.org/10.1101/350991">10.1101/350991</a> [in revision]' 
-  project: https://memote.readthedocs.io/en/latest/?badge=latest
-  repository: https://github.com/opencobra/memote
 
 #- id: 'LiMAx_Koenig2018'
 #  year: 2018
