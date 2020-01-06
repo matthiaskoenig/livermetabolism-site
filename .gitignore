@@ -5,3 +5,4 @@ app/vendor
 web
 .sass-cache
 logs
+livermetabolism/_site

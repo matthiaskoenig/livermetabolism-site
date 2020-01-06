@@ -7,6 +7,15 @@
 #  project:   # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 #  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
+- id: 'EXSIMO_Koenig2020'
+  year: 2020
+  pdf: 'EXSIMO_Koenig2020.pdf'
+  authors: 'Matthias König'
+  title: 'Executable Simulation Model of the Liver'
+  journal: 'bioRxiv 2020.01.04.894873; doi: <a href="https://www.biorxiv.org/content/10.1101/2020.01.04.894873v1">https://doi.org/10.1101/2020.01.04.894873</a>'
+  project: https://matthiaskoenig.github.io/exsimo/
+  repository: https://github.com/matthiaskoenig/exsimo
+
 - id: 'Memote_Lieven2019'
   year: 2019
   pdf: 'Memote_Lieven2019.pdf'

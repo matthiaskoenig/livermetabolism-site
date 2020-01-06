@@ -36,7 +36,7 @@ docker-compose -f docker-compose-build.yml up
 #### Initial certificates & renewal
 ```bash
 # access server
-ssh strato
+ssh h2389049.stratoserver.net
 # https certificates
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt-get update
