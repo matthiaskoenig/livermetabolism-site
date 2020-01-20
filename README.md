@@ -60,7 +60,7 @@ docker-compose up --build -d
 ### deploy
 ```bash
 # access server
-ssh strato
+ssh h2389049.stratoserver.net
 # download code
 mkdir /home/mkoenig/git
 git clone https://github.com/matthiaskoenig/livermetabolism-site
