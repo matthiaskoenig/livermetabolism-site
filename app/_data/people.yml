@@ -32,7 +32,7 @@
 - id: 'yannick'
   status: 'current'
   year: '2019-'
-  name: 'Yannick Duport'
+  name: 'Yannick Bartsch'
   position: 'Bachelor student'
   image: yannick.png
   orcid:
@@ -40,17 +40,16 @@
   homepage:
   description: 'Yannick Duport works on a physiological based model of midazolam clearance. Key questions are the effect of inhibitors and inducers on the metabolism of midazolam.'
 
-- id: 'deepa'
+- id: 'flobar'
   status: 'current'
-  year: '2019-'
-  name: 'Deepa Maheshvare'
-  position: 'Ph.D. student (internship)'
-  image: deepa.png
+  year: '2020-'
+  name: 'Florian Bart'
+  position: 'Bachelor student'
+  image: flobar.jpg
   orcid:
-  repository: 'https://github.com/DeepaMahm'
+  repository: 'https://github.com/FloBar'
   homepage:
-  description: 'Deepa Maheshvare works on a kinetic model of the pancreatic beta-cell. Key questions are the effect of various amino acids on the insulin secretion of the pancreas.'
-
+  description: 'Florian Bartsch works on a physiological based model of statin metabolism clearance. Key questions are the effect of statins (atorvastatin and simvasting) on cholesterol plasma levels, and drug-drug interactions due to medications.'
 
 - id: 'brandhorst'
   status: 'current'
@@ -63,6 +62,16 @@
   homepage:
   description: 'Janosch Branhorst works on the computational modeling of paracetamol by the liver and curating data for PKDB.'
 
+- id: 'deepa'
+  status: 'current'
+  year: '2019-'
+  name: 'Deepa Maheshvare'
+  position: 'Ph.D. student (internship)'
+  image: deepa.png
+  orcid:
+  repository: 'https://github.com/DeepaMahm'
+  homepage:
+  description: 'Deepa Maheshvare works on a kinetic model of the pancreatic beta-cell. Key questions are the effect of various amino acids on the insulin secretion of the pancreas.'
 
 - id: 'kaustubh'
   status: 'alumni'
