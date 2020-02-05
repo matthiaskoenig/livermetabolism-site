@@ -61,6 +61,7 @@ docker-compose up --build -d
 ```bash
 # access server
 ssh h2389049.stratoserver.net
+
 # download code
 mkdir /home/mkoenig/git
 git clone https://github.com/matthiaskoenig/livermetabolism-site
@@ -74,6 +75,7 @@ docker-compose -f docker-compose-build.yml up
 # start nginx service
 docker-compose up --build -d
 ```
+or simply use the the `./deploy.sh`
 
 ## TODO
 ### minor
