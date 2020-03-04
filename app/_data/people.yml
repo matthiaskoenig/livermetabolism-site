@@ -51,6 +51,19 @@
   homepage:
   description: 'Florian Bartsch works on a physiological based model of statin metabolism clearance. Key questions are the effect of statins (atorvastatin and simvasting) on cholesterol plasma levels, and drug-drug interactions due to medications.'
 
+- id: 'adrian'
+  status: 'current'
+  year: '2020-'
+  name: 'Adrian Köller'
+  position: 'Bachelor student'
+  image: adrian.jpg
+  orcid:
+  repository: 'https://github.com/adriankl'
+  homepage:
+  description: 'Adrian Köller works on a physiological based model of indocyanine green (ICG) clearance.
+  Key questions are the effect of blood flow and plasma proteins on ICG clearance and corresponding liver function tests.'
+
+
 - id: 'brandhorst'
   status: 'current'
   year: '2019-'
