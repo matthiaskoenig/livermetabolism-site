@@ -75,7 +75,9 @@ docker-compose -f docker-compose-build.yml up
 # start nginx service
 docker-compose up --build -d
 ```
-or simply use the the `./deploy.sh`
+
+### update
+Execute the `./deploy.sh` script which downloads the latest changes and updates the page.
 
 ## TODO
 ### minor
