@@ -7,6 +7,15 @@
 #  project:   # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 #  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
+- id: 'COMBINE2019_Waltemath2020'
+  year: 2020
+  pdf:
+  authors: 'D Waltemath, M Golebiewski, M Blinov, P Gleeson, H Hermjakob, E Inau, S Keating, <b>M König</b>, O Krebs, R Malik-Sheriff, D Nickerson, E Oberortner, H Sauro, F Schreiber, L Smith, M Stefan, U Wittig, C Myers'
+  title: 'The first 10 years of the international coordination network for standards in systems and synthetic biology (COMBINE)'
+  journal: 'J Integr Bioinform [in revision, 04-2020]'
+  project: http://co.mbine.org/
+  repository:
+
 - id: 'SBML_distrib_Smith2020'
   year: 2020
   pdf: 'SBML_distrib_Smith2020.pdf'
