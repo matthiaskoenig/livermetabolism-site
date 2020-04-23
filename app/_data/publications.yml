@@ -7,6 +7,17 @@
 #  project:   # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 #  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
+
+- id: 'Standards_in_Systems_and_Synthetic_Biology_Schreiber2020'
+  year: 2020
+  pdf: 'Standards_in_Systems_and_Synthetic_Biology_Schreiber2020.pdf'
+  authors: 'F Schreiber, B Sommer, G Bader, P Gleeson, M Golebiewski, T Gorochowski, M Hucka, S Keating, <b>M König</b>, C Myers, D Nickerson, D. Walthemath'
+  title: 'Specifications of Standards in Systems and Synthetic Biology:Status and Developments in 2020'
+  journal: 'J Integr Bioinform [in revision, 04-2020]'
+  project: http://co.mbine.org/
+  repository:
+
+
 - id: 'COMBINE2019_Waltemath2020'
   year: 2020
   pdf:
@@ -21,7 +32,7 @@
   pdf: 'SBML_distrib_Smith2020.pdf'
   authors: 'L Smith, S Moodie, F Bergmann, C Gillespie, S Keating, <b>M. König</b>, C Myers, M Swat, D Wilkinson, M Hucka'
   title: 'The Distributions Package for SBML Level 3'
-  journal: 'J Integr Bioinform [submitted 04-2020]'
+  journal: 'J Integr Bioinform [accepted 04-2020]'
   project: http://sbml.org/Documents/Specifications/SBML_Level_3/Packages/distrib
   repository:
 
