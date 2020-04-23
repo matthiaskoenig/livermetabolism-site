@@ -50,7 +50,7 @@
   pdf: 'EXSIMO_Koenig2020.pdf'
   authors: '<b>Matthias König</b>'
   title: 'Executable Simulation Model of the Liver'
-  journal: 'bioRxiv 2020.01.04.894873; doi: <a href="https://www.biorxiv.org/content/10.1101/2020.01.04.894873v1">https://doi.org/10.1101/2020.01.04.894873</a>'
+  journal: 'bioRxiv 2020.01.04.894873; doi: <a href="https://www.biorxiv.org/content/10.1101/2020.01.04.894873v1">https://doi.org/10.1101/2020.01.04.894873</a> [accepted, 04-2020]'
   project: https://matthiaskoenig.github.io/exsimo/
   repository: https://github.com/matthiaskoenig/exsimo
 
