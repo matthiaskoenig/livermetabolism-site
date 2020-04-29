@@ -63,6 +63,18 @@
   description: 'Adrian Köller works on a physiological based model of indocyanine green (ICG) clearance.
   Key questions are the effect of blood flow and plasma proteins on ICG clearance and corresponding liver function tests.'
 
+- id: 'danny'
+  status: 'current'
+  year: '2020-'
+  name: 'Danny Ke'
+  position: 'Humboldt Internship Student 2020'
+  image: danny.png
+  orcid:
+  repository: 'https://github.com/dannythekey'
+  homepage:
+  description: 'Danny Ke works on a physiological based model of benzodiazepines.
+  Key questions are the effect of genetic variance on clearance of diazepam.'
+
 
 - id: 'brandhorst'
   status: 'current'
