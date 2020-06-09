@@ -75,6 +75,18 @@
   description: 'Danny Ke works on a physiological based model of benzodiazepines.
   Key questions are the effect of genetic variance on clearance of diazepam.'
 
+- id: 'sara'
+  status: 'current'
+  year: '2020-'
+  name: 'Sara de Angelis'
+  position: 'Humboldt Internship Student 2020'
+  image: sara.png
+  orcid:
+  repository: 'https://github.com/SaraD-hub'
+  homepage:
+  description: 'Sara de Angelis works on a physiological based model of torasemide.
+  Key questions are the effect of sex on torasemide pharmacokinetics and pharmacodynamics.'
+
 
 - id: 'brandhorst'
   status: 'current'
