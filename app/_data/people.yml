@@ -110,6 +110,34 @@
   homepage:
   description: 'Deepa Maheshvare works on a kinetic model of the pancreatic beta-cell. Key questions are the effect of various amino acids on the insulin secretion of the pancreas.'
 
+- id: 'hemant'
+  status: 'current'
+  year: '2020'
+  name: 'Hemant Yadav'
+  affiliation: 'Indian Institute of Technology, Roorkee'
+  position: 'Google summer of code student (2020)'
+  image: hemant.png
+  orcid:
+  repository: 'https://github.com/hemant27031999/cobrapy'
+  homepage: 'https://hemant-gsoc2020.blogspot.com/'
+  description: 'In cooperation with <a href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/systembiologie/team/jun-prof-dr-andreas-draeger/">Andreas Dräger</a>
+  from the University of Tübingen we are extending SBML and JSON support for <a href="https://github.com/opencobra/cobrapy">cobrapy</a>. The full proposal is available <a href="https://docs.google.com/document/d/1f0PknoPUpcWRHS8jljEOX5439us4ZD9qjNlbbfGk8Y8/edit?usp=sharing">here</a>.'
+
+- id: 'hemil'
+  status: 'current'
+  year: '2020'
+  name: 'Hemil Panchiwala'
+  affiliation: 'Indian Institute of Technology, Roorkee'
+  position: 'Google summer of code student (2020)'
+  image: hemil.jpg
+  orcid:
+  repository: 'https://github.com/hemilpanchiwala/SBSCL'
+  homepage: 'https://gsoc20hemil.blogspot.com'
+  description: 'In cooperation with <a href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/systembiologie/team/jun-prof-dr-andreas-draeger/">Andreas Dräger</a>
+  from the University of Tübingen we are extending SBML support for <a href="https://github.com/draeger-lab/SBSCL">The Systems Biology Simulation Core Library</a>. The full proposal is available <a href="https://docs.google.com/document/d/1XKAXN28gKWWR5hTLJtV9IlWYwp6aEI9JE_009rtVLCA/edit#heading=h.89yl7tg5fubi">here</a>.'
+
+
+
 - id: 'kaustubh'
   status: 'alumni'
   year: '2019'

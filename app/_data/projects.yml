@@ -21,6 +21,24 @@
   The model was applied to study the effect of clinically relevant parameters like CYP1A2 content, hepatic perfusion or lifestyle factors like smoking on LiMAx. In summary, we present a valuable tool for the evaluation of dynamical liver function tests based on 13C-methacetin.
   </p>'
 
+- id: covid_reproducible
+  title: Reproducible simulation studies targeting COVID-19
+  publication: 'Standards_in_Systems_and_Synthetic_Biology_Schreiber2020'
+  project: https://wwwdev.ebi.ac.uk/biomodels/covid-19
+  repository:
+  people:
+    - koenig
+  cooperation partners: 'Dagmar Waltemath & Esther Inau (Medical Informatics and Core Unit Research Data Management, University Medicine Greifswald, Germany), Henning Hermjakob & Rahuman Sheriff (BioModels, EMBL-EBI, Cambridge, UK), Martin Scharm (code ahoi software, Germany).'
+  images:
+    - covid_reproducible.png
+  image_title: Reproducible archives for COVID-19
+  abstract: '
+  <h3>Interoperable COVID-19 models</h3>
+  <p>In a collaboration between the University of Greifswald, the Humboldt-University Berlin, code ahoi, and the BioModels database at EMBL-EBI, we aim to rapidly disseminate simulation studies of COVID-19 models to the research community, in interoperable formats and in high quality.</p>
+  <p>
+  This project is supported by <a href="http://eoscsecreteriat.eu/">EOSCsecreteriat.eu</a> COVID-19 Fast Track Funding.
+  </p>'
+
 - id: central_metabolism
   title: Modeling Hepatic Central Metabolism
   publication: hepatokin_Berndt2018
@@ -38,7 +56,7 @@
   </p>'
 
 - title: Stratification and personalization of computational models
-  publication:
+  publication: PKDB_Grzegorzewski2019
   project:
   repository: https://github.com/matthiaskoenig/
   people:

@@ -2,7 +2,7 @@ version: "3"
 
 services:
   nginx:
-    image: nginx:latest
+    image: nginx:1.19
     volumes:
       - $PWD/web:/usr/share/nginx/html/
       - $PWD/nginx/nginx_ssl.conf:/etc/nginx/nginx.conf

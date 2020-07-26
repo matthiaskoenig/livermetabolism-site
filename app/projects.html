@@ -9,7 +9,7 @@ permalink: /projects/
     <div class="row">
         <h2> {{ project.title}}</h2>
 
-        {% assign publication = site.data.publications | where:"id", project.publication | first %}
+        <!--{% assign publication = site.data.publications | where:"id", project.publication | first %}-->
 
         <table class="table table-responsive well">
             <tr>
@@ -23,7 +23,6 @@ permalink: /projects/
                 </td>
                 <td width="150">
                     {% if publication %}
-
 
                         {% if publication.project %}
                         <a href="{{ publication.project }}"><img src="/img/project.png" title="project homepage"
