@@ -33,6 +33,10 @@ docker-compose -f docker-compose-build.yml up
 
 ## Deployment
 
+### update
+Execute the `./deploy.sh` script which downloads the latest changes and updates the page.
+
+
 ### HTTPS certificates
 #### Initial certificates & renewal
 ```bash
@@ -77,8 +81,6 @@ docker-compose -f docker-compose-build.yml up
 docker-compose up --build -d
 ```
 
-### update
-Execute the `./deploy.sh` script which downloads the latest changes and updates the page.
 
 ## TODO
 ### minor

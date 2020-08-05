@@ -49,7 +49,7 @@
   pdf: 'SBML_distrib_Smith2020.pdf'
   authors: 'L Smith, S Moodie, F Bergmann, C Gillespie, S Keating, <b>M. König</b>, C Myers, M Swat, D Wilkinson, M Hucka'
   title: 'The Distributions Package for SBML Level 3'
-  journal: 'J Integr Bioinform [accepted 04-2020]'
+  journal: 'J Integr Bioinform. 2020 Aug 4;/j/jib.ahead-of-print/jib-2020-0018/jib-2020-0018.xml. <a href="https://doi.org/10.1515/jib-2020-0018">doi: 10.1515/jib-2020-0018</a>'
   project: http://sbml.org/Documents/Specifications/SBML_Level_3/Packages/distrib
   repository:
 
