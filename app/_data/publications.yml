@@ -12,7 +12,7 @@
   pdf: 'SBML_Keating2019.pdf'
   authors: 'SM Keating, D Waltemath, <b>M König</b>, F Zhang, A Dräger, C Chaouiya, FT Bergmann, A Finney, CS Gillespie, T Helikar, S Hoops, RS Malik-Sheriff, SL Moodie, II Moraru, CJ Myers, A Naldi, BG Olivier, S Sahle, JC Schaff, LP Smith, MJ Swat, DT, L Watanabe, DJ Wilkinson, ML Blinov, K Begley, JR Faeder, HF Gómez, TM Hamm, Y Inagaki, W Liebermeister, AL Lister, D Lucio, E Mjolsness, CJ Proctor, K Raman, N Rodriguez, CA Shaffer, BE Shapiro, J Stelling, N Swainston, N Tanimura, J Wagner, M Meier-Schellersheim, HM Sauro, B Palsson, H Bolouri, H Kitano, Akira Funahashi, H Hermjakob, JC Doyle M Hucka, and SBML Community members'
   title: 'SBML Level 3: an extensible format for the exchange and reuse of biological models'
-  journal: 'Molecular Systems Biology [accepted, 06-2020]'
+  journal: 'Mol Syst Biol. 2020;16(8):e9110. <a href="https://doi.org/10.15252/msb.20199110">doi:10.15252/msb.20199110</a>'
   project: http://sbml.org
   repository: https://sourceforge.net/projects/sbml/
 
@@ -21,7 +21,7 @@
   pdf: 'Open.modeling.and.exchange.(OMEX).metadata.specification.version.1.0_Koenig2020.pdf'
   authors: 'Neal ML, Gennari JH, Waltemath D, Nickerson DP, <b>König M</b>'
   title: 'Open modeling and exchange (OMEX) metadata specification version 1.0'
-  journal: 'Integr Bioinform. 2020;/j/jib.ahead-of-print/jib-2020-0020/jib-2020-0020.xml. <a href="https://doi.org/10.1515/jib-2020-0020">doi:10.1515/jib-2020-0020</a>'
+  journal: 'J Integr Bioinform. 2020;/j/jib.ahead-of-print/jib-2020-0020/jib-2020-0020.xml. <a href="https://doi.org/10.1515/jib-2020-0020">doi:10.1515/jib-2020-0020</a>'
   project: http://co.mbine.org/
   repository:
 
