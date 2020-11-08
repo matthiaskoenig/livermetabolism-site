@@ -7,6 +7,15 @@
 #  project:   # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 #  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
+- id: 'PKDB_Grzegorzewski2020'
+  year: 2020
+  pdf: 'PKDB_Grzegorzewski2020.pdf'
+  authors: 'Grzegorzewski J, Brandhorst J, Green K, Eleftheriadou D, Duport Y, Barthorscht F, Köller A, Ke DYJ, De Angelis S, <b>König M.</b>'
+  title: 'PK-DB: pharmacokinetics database for individualized and stratified computational modeling'
+  journal: 'Nucleic Acids Res. 2020 Nov 5:gkaa990. doi: <a href="https://doi.org/10.1093/nar/gkaa990" target="_blank">10.1093/nar/gkaa990</a>. Epub ahead of print. PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/33151297/" target="_blank">33151297</a>'
+  project: https://pk-db.com
+  repository: https://github.com/matthiaskoenig/pkdb
+
 - id: 'SBML_Keating2020'
   year: 2020
   pdf: 'SBML_Keating2019.pdf'
@@ -70,16 +79,6 @@
   journal: 'bioRxiv 2020.01.04.894873; doi: <a href="https://www.biorxiv.org/content/10.1101/2020.01.04.894873v1">https://doi.org/10.1101/2020.01.04.894873</a> [accepted, 04-2020]'
   project: https://matthiaskoenig.github.io/exsimo/
   repository: https://github.com/matthiaskoenig/exsimo
-
-
-- id: 'PKDB_Grzegorzewski2019'
-  year: 2019
-  pdf: 'PKDB_Grzegorzewski2019.pdf'
-  authors: 'Jan Grzegorzewski, Janosch Brandhorst, Dimitra Eleftheriadou, Kathleen Green, <b>Matthias König</b>'
-  title: 'PK-DB: PharmacoKinetics DataBase for Individualized and Stratified Computational Modeling'
-  journal: 'bioRxiv 760884; doi: <a href="https://doi.org/10.1101/760884">10.1101/760884</a> [09-09-2019]'
-  project: https://pk-db.com
-  repository: https://github.com/matthiaskoenig/pkdb
 
 - id: 'MOR_Lambers2019'
   year: 2019
