@@ -9,6 +9,7 @@ services:
       - $PWD/nginx/ssl.conf:/etc/nginx/snippets/ssl.conf
       - $PWD/logs:/logs
       - /etc/letsencrypt:/etc/letsencrypt
+      - /usr/share/nginx/letsencrypt:/usr/share/nginx/letsencrypt
     # - $PWD/nginx/nginx.conf:/etc/nginx/nginx.conf
     ports:
       - "80:80"

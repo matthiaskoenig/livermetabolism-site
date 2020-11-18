@@ -61,6 +61,8 @@ sudo certbot renew
 docker-compose up --build -d
 ```
 
+sudo mkdir -p /usr/share/nginx/letsencrypt
+
 
 ### deploy
 ```bash
