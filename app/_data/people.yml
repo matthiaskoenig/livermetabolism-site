@@ -29,22 +29,35 @@
    machine learning approaches. Part of the work was the development of the
    data management system required for bioinformatics analysis of peptide-virus binding data <a href="https://www.flutype.de/about/">FluTypeDB</a>.'
 
-- id: 'yannick'
+- id: 'deepa'
   status: 'current'
   year: '2019-'
-  name: 'Yannick Bartsch'
-  position: 'Bachelor student'
-  image: yannick.png
+  name: 'Deepa Maheshvare'
+  position: 'Ph.D. student (internship)'
+  image: deepa.png
   orcid:
-  repository: 'https://github.com/YannickDuport'
+  repository: 'https://github.com/DeepaMahm'
   homepage:
-  description: 'Yannick Duport works on a physiological based model of midazolam clearance. Key questions are the effect of inhibitors and inducers on the metabolism of midazolam.'
+  description: 'Deepa Maheshvare works on a kinetic model of the pancreatic beta-cell. Key questions are the effect of various amino acids on the insulin secretion of the pancreas.'
+
+- id: 'sara'
+  status: 'current'
+  year: '2020'
+  name: 'Sara de Angelis'
+  position: 'Humboldt Internship Student 2020'
+  image: sara.png
+  orcid:
+  repository: 'https://github.com/SaraD-hub'
+  homepage:
+  description: 'Sara de Angelis works on a physiological based model of torasemide.
+  Key questions are the effect of sex on torasemide pharmacokinetics and pharmacodynamics.'
+
 
 - id: 'flobar'
   status: 'current'
   year: '2020-'
   name: 'Florian Bart'
-  position: 'Bachelor student'
+  position: 'Bachelor student, student assistant'
   image: flobar.jpg
   orcid:
   repository: 'https://github.com/FloBar'
@@ -55,7 +68,7 @@
   status: 'current'
   year: '2020-'
   name: 'Adrian Köller'
-  position: 'Bachelor student'
+  position: 'Bachelor student, student assistant'
   image: adrian.jpg
   orcid:
   repository: 'https://github.com/adriankl'
@@ -63,29 +76,17 @@
   description: 'Adrian Köller works on a physiological based model of indocyanine green (ICG) clearance.
   Key questions are the effect of blood flow and plasma proteins on ICG clearance and corresponding liver function tests.'
 
-- id: 'danny'
+- id: 'balci'
   status: 'current'
   year: '2020-'
-  name: 'Danny Ke'
-  position: 'Humboldt Internship Student 2020'
-  image: danny.png
+  name: 'Sükrü Balci'
+  position: 'Bachelor student'
+  image: balci.png
   orcid:
-  repository: 'https://github.com/dannythekey'
+  repository: 'https://github.com/SukruBalci'
   homepage:
-  description: 'Danny Ke works on a physiological based model of benzodiazepines.
-  Key questions are the effect of genetic variance on clearance of diazepam.'
-
-- id: 'sara'
-  status: 'current'
-  year: '2020-'
-  name: 'Sara de Angelis'
-  position: 'Humboldt Internship Student 2020'
-  image: sara.png
-  orcid:
-  repository: 'https://github.com/SaraD-hub'
-  homepage:
-  description: 'Sara de Angelis works on a physiological based model of torasemide.
-  Key questions are the effect of sex on torasemide pharmacokinetics and pharmacodynamics.'
+  description: 'Sükrü Balci works on a physiological based model of omeprazole.
+  Key questions are the effect of omeprazole formulation and dosing on the pharmacodynamic effects of omeprazole.'
 
 
 - id: 'brandhorst'
@@ -99,19 +100,31 @@
   homepage:
   description: 'Janosch Branhorst works on the computational modeling of paracetamol by the liver and curating data for PKDB.'
 
-- id: 'deepa'
+- id: 'yannick'
   status: 'current'
-  year: '2019-'
-  name: 'Deepa Maheshvare'
-  position: 'Ph.D. student (internship)'
-  image: deepa.png
+  year: '2019-2020'
+  name: 'Yannick Bartsch'
+  position: 'Bachelor student'
+  image: yannick.png
   orcid:
-  repository: 'https://github.com/DeepaMahm'
+  repository: 'https://github.com/YannickDuport'
   homepage:
-  description: 'Deepa Maheshvare works on a kinetic model of the pancreatic beta-cell. Key questions are the effect of various amino acids on the insulin secretion of the pancreas.'
+  description: 'Yannick Duport works on a physiological based model of midazolam clearance. Key questions are the effect of inhibitors and inducers on the metabolism of midazolam.'
+
+- id: 'danny'
+  status: 'current'
+  year: '2020'
+  name: 'Danny Ke'
+  position: 'Humboldt Internship Student 2020'
+  image: danny.png
+  orcid:
+  repository: 'https://github.com/dannythekey'
+  homepage:
+  description: 'Danny Ke works on a physiological based model of benzodiazepines.
+  Key questions are the effect of genetic variance on clearance of diazepam.'
 
 - id: 'hemant'
-  status: 'current'
+  status: 'alumni'
   year: '2020'
   name: 'Hemant Yadav'
   affiliation: 'Indian Institute of Technology, Roorkee'
@@ -124,7 +137,7 @@
   from the University of Tübingen we are extending SBML and JSON support for <a href="https://github.com/opencobra/cobrapy">cobrapy</a>. The full proposal is available <a href="https://docs.google.com/document/d/1f0PknoPUpcWRHS8jljEOX5439us4ZD9qjNlbbfGk8Y8/edit?usp=sharing">here</a>.'
 
 - id: 'hemil'
-  status: 'current'
+  status: 'alumni'
   year: '2020'
   name: 'Hemil Panchiwala'
   affiliation: 'Indian Institute of Technology, Roorkee'
