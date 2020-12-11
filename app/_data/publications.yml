@@ -7,6 +7,15 @@
 #  project:   # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 #  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
+- id: 'SBSCL_Panchiwala2020'
+  year: 2020
+  pdf: 'SBSCL_Panchiwala2020.pdf'
+  authors: 'Panchiwala, H.; Shah, S.; Planatscher, H.; Zakharchuk, M.; <b>König, M.</b>; Dräger, A.'
+  title: 'The Systems Biology Simulation Core Library'
+  journal: 'Preprints 2020, 2020120296 (doi: <a href="https://doi.org/10.20944/preprints202012.0296.v1" target="_blank">10.20944/preprints202012.0296.v1</a>)'
+  project: https://draeger-lab.github.io/SBSCL/
+  repository: https://github.com/draeger-lab/SBSCL
+
 - id: 'PKDB_Grzegorzewski2020'
   year: 2020
   pdf: 'PKDB_Grzegorzewski2020.pdf'
