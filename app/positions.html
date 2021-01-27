@@ -10,24 +10,8 @@ permalink: /positions/
 
             <h3><i class="fa fa-user"></i> PhD</h3>
             <p>
-                We are <strong>looking for a PhD student for our team</strong> right now.<br />
-                The position is funded via the BMBF within LiSyM with focus on
-            <ul>
-                <li>Computational modeling of hepatic liver metabolism and function</li>
-                <li>Systems Biology and Systems Medicine of the liver</li>
-            </ul>
-
-            <a href="https://www.bmbf.de/" target="_blank"><img src="/img/bmbf.png" title="BMBF" height="140" /></a>&nbsp;
-            <a href="http://www.lisym.org/" target="_blank"><img src="/img/lisym.png" title="LiSyM" height="50" /></a><br />
-
-            <strong>Requirements</strong>:
-            <ul>
-                <li>programming experience (preferable python or R)</li>
-                <li>background in mathematical modeling or bioinformatics is an advantage</li>
-            </ul>
-
-            Just write an Email to <i class="fa fa-envelope"></i> <a href="mailto:{{ site.email }}">Matthias König</a>
-            or call <i class="fa fa-phone"></i> +49 30 2093-8450.
+                We currently have no open funded PhD positions. If you have a scholarship or other funding please apply. Just write to
+                <i class="fa fa-envelope"></i> <a href="mailto:{{ site.email }}">Matthias König</a>.
             </p>
 
             <h3><i class="fa fa-user"></i> Bachelor & Master Thesis</h3>
@@ -44,33 +28,38 @@ permalink: /positions/
                 <li>Systems Biology and Systems Medicine of the liver</li>
             </ul>
 
-            Just write an Email to <i class="fa fa-envelope"></i> <a href="mailto:{{ site.email }}">Matthias König</a>
+            Just write to <i class="fa fa-envelope"></i> <a href="mailto:{{ site.email }}">Matthias König</a>
             </p>
 
             <h3><i class="fa fa-user"></i> Research Internships</h3>
             <p>
-            We also offer individual research internships (4-12 weeks) for undergraduate students with a background in
+            We also offer individual research internships (4-12 weeks) for students with a background in
             computer science, bioinformatics, quantitative/theoretical biology or related fields.<br />
 
             Please note, in general, we cannot cover the living and travel costs. Thus, if required, third party funding
             via scholarships/travel grants needs to be organized first.<br />
 
-            Just write an Email to <i class="fa fa-envelope"></i> <a href="mailto:{{ site.email }}">Matthias König</a>
+            Internships are possible as online only internship.<br />
+
+            Just write to <i class="fa fa-envelope"></i> <a href="mailto:{{ site.email }}">Matthias König</a>
             </p>
         </div>
 
         <div class="col-md-6" text->
             <p>
 {% highlight python %}
-def hire(you):
+def hire(you: Student):
     if you.are_motivated and you.can_code:
-        print("Hi, {}. We are looking for you.".format(name))
+        print(f"We are looking for {you}.")
         return True
 {% endhighlight %}
             </p>
             <br />
             <p>
-                <img src="/img/escher_example.png" class="img-responsive"/>
+                <img src="/img/projects/function-tests.png" class="img-responsive"/>
+            </p>
+            <p>
+                <img src="/img/projects/hepatokin.png" class="img-responsive"/>
             </p>
         </div>
 

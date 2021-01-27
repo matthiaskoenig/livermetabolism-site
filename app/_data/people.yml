@@ -40,6 +40,17 @@
   homepage:
   description: 'Deepa Maheshvare works on a kinetic model of the pancreatic beta-cell. Key questions are the effect of various amino acids on the insulin secretion of the pancreas.'
 
+- id: 'paula'
+  status: 'current'
+  year: '2020-'
+  name: 'Paula Ogata'
+  position: 'Humboldt Intership Student'
+  image: paula.png
+  orcid:
+  repository: 'https://github.com/paula-ogata'
+  homepage:
+  description: 'Paula Ogata works on a pharmacokinetics/pharmacodynamics model of metorpolol. Key questions are the effect of dosing and formulation on metoprolol pharmacokinetics and reduction in exercise heart rate (EHR).'
+
 - id: 'sara'
   status: 'current'
   year: '2020'

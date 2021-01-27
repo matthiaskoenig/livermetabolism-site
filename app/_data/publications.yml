@@ -7,6 +7,15 @@
 #  project:   # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 #  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
+- id: 'GACM-Report_Qualiperf2020'
+  year: 2020
+  pdf: 'GACM-Report_Qualiperf2020.pdf'
+  authors: 'Tim Ricken, Lena Lambers, Bruno Christ, Uta Dahmen, Karl-Heinz Herrmann, <b>Matthias König</b>, Manja Marz, Nicole Radde, Jürgen R. Reichenbach, Lars Ole Schwen & Hans-Michael Tautenhahn'
+  title: 'QuaLiPerF – Multi-X Liver Modelling'
+  journal: 'GACM - German Association for Computational Mechanics Report, winter 2020: No. 13'
+  project: https://qualiperf.de
+  repository:
+
 - id: 'SBSCL_Panchiwala2020'
   year: 2020
   pdf: 'SBSCL_Panchiwala2020.pdf'
