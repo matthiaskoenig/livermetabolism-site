@@ -7,6 +7,15 @@
 #  project:   # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 #  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
+- id: 'Bachelor.Thesis.Adrian.Koeller'
+  year: 2021
+  pdf: 'Bachelor.Thesis.Adrian.Koeller.pdf'
+  authors: 'Adrian Köller (supervisor: <b>Matthias König</b>)'
+  title: 'A Physiologically Based Model of Indocyanine Green Liver Function Tests - Eﬀects of Physiological Factors, Hepatic Disease and Hepatic Surgery'
+  journal: 'Bachelor Thesis, March 2021'
+  project:
+  repository:
+
 - id: 'GACM-Report_Qualiperf2020'
   year: 2020
   pdf: 'GACM-Report_Qualiperf2020.pdf'
@@ -14,6 +23,24 @@
   title: 'QuaLiPerF – Multi-X Liver Modelling'
   journal: 'GACM - German Association for Computational Mechanics Report, winter 2020: No. 13'
   project: https://qualiperf.de
+  repository:
+
+- id: 'Bachelor.Thesis.Florian.Bartsch'
+  year: 2020
+  pdf: 'Bachelor.Thesis.Florian.Bartsch.pdf'
+  authors: 'Florian Bartsch (supervisor: <b>Matthias König</b>)'
+  title: 'Computational Modelling of Simvastatin - Eﬀects on HMG-CoA Reductase Activity and Cholesterol'
+  journal: 'Bachelor Thesis, November 2020'
+  project:
+  repository:
+
+- id: 'Bachelor.Thesis.Yannick.Duport'
+  year: 2020
+  pdf: 'Bachelor.Thesis.Yannick.Duport.pdf'
+  authors: 'Yannick Duport (supervisor: <b>Matthias König</b>)'
+  title: 'Computational Modelling of Midazolam Clearance: Effect of Inhibitors and Inducers'
+  journal: 'Bachelor Thesis, August 2020'
+  project:
   repository:
 
 - id: 'SBSCL_Panchiwala2020'

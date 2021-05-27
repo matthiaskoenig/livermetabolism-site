@@ -7,67 +7,27 @@
   orcid: '0000-0003-1725-179X'
   repository: 'https://github.com/matthiaskoenig/'
   homepage: 'https://livermetabolism.com/cv/'
-  description: 'Data scientist, data analyst, computational modeller, bioinformatician, group leader. Application of computational modelling and machine learning to biological, medical, and clinical questions and datasets. Predictive modeling of physiological processes and systems with focus on metabolic research. Research projects on glucose homeostasis in normal subjects and diabetes, personalization of liver function tests for the improvement of diagnosis, and stratification and individualization of computer models for precision medicine.'
+  description: 'Data scientist, data analyst, computational modeller, bioinformatician, group leader. Application of computational modelling and machine learning to biological, medical, and clinical questions and datasets. Predictive modeling of physiological processes and systems with focus on metabolic research.
+  <br />
+  Research projects on glucose homeostasis in normal subjects and diabetes, personalization of liver function tests for the improvement of diagnosis, and stratification and individualization of computer models for precision medicine.'
 
 - id: 'janek'
   status: 'current'
   year: '2017-'
   name: 'Jan Grzegorzewski'
-  position: 'Ph.D. student (mentoring)'
+  position: 'Ph.D. student'
   image: grzegorzewski.png
   orcid: '0000-0002-4588-4925'
   repository: 'https://github.com/janekg89/'
   homepage: 'https://github.com/janekg89/'
   description: 'Jan works on the stratification and personalization of computational models. He develops methods and
   software for semi-automatic data curation of pharmacokinetics information and a pharmacokinetics database for
-  the storage and FAIR access of such data.
-  <br />
-  Jan contributes to an online database for running reproducible simulation experiments in computational biology,
-   i.e. <a href="https://github.com/matthiaskoenig/tellurium-web">tellurium-web</a>.
-   <br />
-  Jan developed an influenza sub-classification platform based on peptides using data science and
-   machine learning approaches. Part of the work was the development of the
-   data management system required for bioinformatics analysis of peptide-virus binding data <a href="https://www.flutype.de/about/">FluTypeDB</a>.'
-
-- id: 'deepa'
-  status: 'current'
-  year: '2019-'
-  name: 'Deepa Maheshvare'
-  position: 'Ph.D. student (internship)'
-  image: deepa.png
-  orcid:
-  repository: 'https://github.com/DeepaMahm'
-  homepage:
-  description: 'Deepa Maheshvare works on a kinetic model of the pancreatic beta-cell. Key questions are the effect of various amino acids on the insulin secretion of the pancreas.'
-
-- id: 'paula'
-  status: 'current'
-  year: '2020-'
-  name: 'Paula Ogata'
-  position: 'Humboldt Intership Student'
-  image: paula.png
-  orcid:
-  repository: 'https://github.com/paula-ogata'
-  homepage:
-  description: 'Paula Ogata works on a pharmacokinetics/pharmacodynamics model of metorpolol. Key questions are the effect of dosing and formulation on metoprolol pharmacokinetics and reduction in exercise heart rate (EHR).'
-
-- id: 'sara'
-  status: 'current'
-  year: '2020'
-  name: 'Sara de Angelis'
-  position: 'Humboldt Internship Student 2020'
-  image: sara.png
-  orcid:
-  repository: 'https://github.com/SaraD-hub'
-  homepage:
-  description: 'Sara de Angelis works on a physiological based model of torasemide.
-  Key questions are the effect of sex on torasemide pharmacokinetics and pharmacodynamics.'
-
-
+  the storage and FAIR access of such data (<a href="https://pk-db.com">PK-DB</a>).
+  '
 - id: 'flobar'
   status: 'current'
   year: '2020-'
-  name: 'Florian Bart'
+  name: 'Florian Bartsch'
   position: 'Bachelor student, student assistant'
   image: flobar.jpg
   orcid:
@@ -99,7 +59,6 @@
   description: 'Sükrü Balci works on a physiological based model of omeprazole.
   Key questions are the effect of omeprazole formulation and dosing on the pharmacodynamic effects of omeprazole.'
 
-
 - id: 'brandhorst'
   status: 'current'
   year: '2019-'
@@ -113,8 +72,8 @@
 
 - id: 'yannick'
   status: 'current'
-  year: '2019-2020'
-  name: 'Yannick Bartsch'
+  year: '2019-2021'
+  name: 'Yannick Duport'
   position: 'Bachelor student'
   image: yannick.png
   orcid:
@@ -124,7 +83,7 @@
 
 - id: 'danny'
   status: 'current'
-  year: '2020'
+  year: '2020-2021'
   name: 'Danny Ke'
   position: 'Humboldt Internship Student 2020'
   image: danny.png
@@ -133,6 +92,53 @@
   homepage:
   description: 'Danny Ke works on a physiological based model of benzodiazepines.
   Key questions are the effect of genetic variance on clearance of diazepam.'
+
+- id: 'paula'
+  status: 'current'
+  year: '2020-2021'
+  name: 'Paula Ogata'
+  position: 'Humboldt Intership Student'
+  image: paula.png
+  orcid:
+  repository: 'https://github.com/paula-ogata'
+  homepage:
+  description: 'Paula Ogata works on a pharmacokinetics/pharmacodynamics model of metorpolol. Key questions are the effect of dosing and formulation on metoprolol pharmacokinetics and reduction in exercise heart rate (EHR).'
+
+- id: 'sankha'
+  status: 'current'
+  year: '2021'
+  name: 'Sankha Das'
+  affiliation: 'Dhirubhai Institute of ICT'
+  position: 'Google summer of code student (2021)'
+  image:
+  orcid:
+  repository: 'https://github.com/sankha555'
+  homepage: 'https://sbml4humans-gsoc-2021.blogspot.com/'
+  description: 'In cooperation with Ralf Steuer
+  from the Humboldt-University Berlin we are implementing an SBML report for Humans in <a href="https://github.com/matthiaskoenig/sbmlutils">sbmlutils</a>. The full proposal is available <a href="https://docs.google.com/document/d/1agR1obktnBA4magF2wKGOukxnV8WjwmtoDvFVk_GMP4/edit?usp=sharing">here</a>.'
+
+- id: 'deepa'
+  status: 'current'
+  year: '2019-'
+  name: 'Deepa Maheshvare'
+  position: 'Ph.D. student (internship)'
+  image: deepa.png
+  orcid:
+  repository: 'https://github.com/DeepaMahm'
+  homepage:
+  description: 'Deepa Maheshvare works on a kinetic model of the pancreatic beta-cell. Key questions are the effect of various amino acids on the insulin secretion of the pancreas.'
+
+- id: 'sara'
+  status: 'alumni'
+  year: '2020'
+  name: 'Sara de Angelis'
+  position: 'Humboldt Internship Student 2020'
+  image: sara.png
+  orcid:
+  repository: 'https://github.com/SaraD-hub'
+  homepage:
+  description: 'Sara de Angelis works on a physiological based model of torasemide.
+  Key questions are the effect of sex on torasemide pharmacokinetics and pharmacodynamics.'
 
 - id: 'hemant'
   status: 'alumni'
@@ -159,8 +165,6 @@
   homepage: 'https://gsoc20hemil.blogspot.com'
   description: 'In cooperation with <a href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/systembiologie/team/jun-prof-dr-andreas-draeger/">Andreas Dräger</a>
   from the University of Tübingen we are extending SBML support for <a href="https://github.com/draeger-lab/SBSCL">The Systems Biology Simulation Core Library</a>. The full proposal is available <a href="https://docs.google.com/document/d/1XKAXN28gKWWR5hTLJtV9IlWYwp6aEI9JE_009rtVLCA/edit#heading=h.89yl7tg5fubi">here</a>.'
-
-
 
 - id: 'kaustubh'
   status: 'alumni'
