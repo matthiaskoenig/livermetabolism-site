@@ -110,7 +110,7 @@
   name: 'Sankha Das'
   affiliation: 'Dhirubhai Institute of ICT'
   position: 'Google summer of code student (2021)'
-  image:
+  image: 'sankha.png'
   orcid:
   repository: 'https://github.com/sankha555'
   homepage: 'https://sbml4humans-gsoc-2021.blogspot.com/'
