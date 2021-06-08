@@ -8,7 +8,7 @@
 #  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
 - id: 'SED-ML_validator_Shaikh2021'
-  year: 2020
+  year: 2021
   pdf: 'SED-ML_validator_Shaikh2021.pdf'
   authors: 'Bilal Shaikh, Andrew Philip Freiburger, <b>Matthias König</b>, Frank T. Bergmann, David P. Nickerson, Herbert M. Sauro, Michael L. Blinov, Lucian P. Smith, Ion I. Moraru, Jonathan R. Karr'
   title: 'SED-ML Validator: tool for debugging simulation experiments'
