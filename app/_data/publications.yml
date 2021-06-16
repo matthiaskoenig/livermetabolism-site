@@ -7,6 +7,15 @@
 #  project:   # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 #  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
+- id: 'ICG_model_hepatectomy_Koeller2021'
+  year: 2021
+  pdf: 'ICG_model_hepatectomy_Koeller2021.pdf'
+  authors: 'Adrian Köller, Jan Grzegorzewski, Michael Tautenhahn, <b>Matthias König</b>'
+  title: 'Prediction of survival after hepatectomy using a physiologically based pharmacokinetic model of indocyanine green liver function tests'
+  journal: 'bioRxiv 2021.06.15.448411; doi: <a href="https://doi.org/10.1101/2021.06.15.448411" target="_blank">https://doi.org/10.1101/2021.06.15.448411</a>'
+  project:
+  repository:
+
 - id: 'SED-ML_validator_Shaikh2021'
   year: 2021
   pdf: 'SED-ML_validator_Shaikh2021.pdf'
