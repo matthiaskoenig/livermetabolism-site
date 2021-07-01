@@ -10,12 +10,12 @@
 - id: 'Review_Qualiperf2021'
   year: 2021
   pdf: 'Review_Qualiperf2021.pdf'
-  authors: 'Bruno Christ∗, y, Maximilian Collatz*, Uta Dahmen*, Karl-Heinz
-            Herrmann*, Sebastian Hopfl*, Matthias Konig*, Lena Lambers*, Manja
+  authors: 'Bruno Christ∗, Maximilian Collatz*, Uta Dahmen*, Karl-Heinz
+            Herrmann*, Sebastian Höpfl*, <b>Matthias König*</b>, Lena Lambers*, Manja
             Marz*, Daria Meyer*, Nicole Radde*, Jürgen R. Reichenbach*, Tim
             Ricken*, and Hans-Michael Tautenhahn* (* equal contribution)'
   title: 'Hepatectomy-induced alterations in hepatic perfusion and function - Towards multi-scale modeling for a better risk assessment in liver surgery'
-  journal: 'Frontiers physiology [submitted 2021-06-30]'
+  journal: '[Submitted to Frontiers Physiology 2021-06-30]'
   project: https://qualiperf.de
   repository:
 
@@ -24,7 +24,7 @@
   pdf: 'ICG_model_hepatectomy_Koeller2021.pdf'
   authors: 'Adrian Köller, Jan Grzegorzewski, Michael Tautenhahn, <b>Matthias König</b>'
   title: 'Prediction of survival after hepatectomy using a physiologically based pharmacokinetic model of indocyanine green liver function tests'
-  journal: 'bioRxiv 2021.06.15.448411; doi: <a href="https://doi.org/10.1101/2021.06.15.448411" target="_blank">https://doi.org/10.1101/2021.06.15.448411</a>'
+  journal: 'bioRxiv 2021.06.15.448411; doi: <a href="https://doi.org/10.1101/2021.06.15.448411" target="_blank">https://doi.org/10.1101/2021.06.15.448411</a>, [Submitted to Frontiers Physiology 2021-06-30]'
   project:
   repository:
 
@@ -33,7 +33,7 @@
   pdf: 'SED-ML_validator_Shaikh2021.pdf'
   authors: 'Bilal Shaikh, Andrew Philip Freiburger, <b>Matthias König</b>, Frank T. Bergmann, David P. Nickerson, Herbert M. Sauro, Michael L. Blinov, Lucian P. Smith, Ion I. Moraru, Jonathan R. Karr'
   title: 'SED-ML Validator: tool for debugging simulation experiments'
-  journal: 'arXiV, 2021, <a href="https://arxiv.org/abs/2106.00844" target="_blank">2106.00844</a>'
+  journal: 'arXiV, 2021, <a href="https://arxiv.org/abs/2106.00844" target="_blank">2106.00844</a>, [Submitted to Bioinformatics 2021-06-02]'
   project: https://run.biosimulations.org/utils/validate
   repository: https://github.com/biosimulators/Biosimulators_utils
 
@@ -78,7 +78,7 @@
   pdf: 'SBSCL_Panchiwala2020.pdf'
   authors: 'Panchiwala, H.; Shah, S.; Planatscher, H.; Zakharchuk, M.; <b>König, M.</b>; Dräger, A.'
   title: 'The Systems Biology Simulation Core Library'
-  journal: 'Preprints 2020, 2020120296 (doi: <a href="https://doi.org/10.20944/preprints202012.0296.v1" target="_blank">10.20944/preprints202012.0296.v1</a>)'
+  journal: 'Preprints 2020, 2020120296 (doi: <a href="https://doi.org/10.20944/preprints202012.0296.v1" target="_blank">10.20944/preprints202012.0296.v1</a>), [Submitted to Bioinformatics]'
   project: https://draeger-lab.github.io/SBSCL/
   repository: https://github.com/draeger-lab/SBSCL
 

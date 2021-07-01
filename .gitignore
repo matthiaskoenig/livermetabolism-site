@@ -7,3 +7,4 @@ web
 .sass-cache
 logs
 livermetabolism
+Gemfile.lock
