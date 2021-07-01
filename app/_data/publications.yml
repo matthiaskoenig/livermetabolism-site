@@ -7,6 +7,18 @@
 #  project:   # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 #  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
+- id: 'Review_Qualiperf2021'
+  year: 2021
+  pdf: 'Review_Qualiperf2021.pdf'
+  authors: 'Bruno Christ∗, y, Maximilian Collatz*, Uta Dahmen*, Karl-Heinz
+            Herrmann*, Sebastian Hopfl*, Matthias Konig*, Lena Lambers*, Manja
+            Marz*, Daria Meyer*, Nicole Radde*, Jürgen R. Reichenbach*, Tim
+            Ricken*, and Hans-Michael Tautenhahn* (* equal contribution)'
+  title: 'Hepatectomy-induced alterations in hepatic perfusion and function - Towards multi-scale modeling for a better risk assessment in liver surgery'
+  journal: 'Frontiers physiology [submitted 2021-06-30]'
+  project: https://qualiperf.de
+  repository:
+
 - id: 'ICG_model_hepatectomy_Koeller2021'
   year: 2021
   pdf: 'ICG_model_hepatectomy_Koeller2021.pdf'
