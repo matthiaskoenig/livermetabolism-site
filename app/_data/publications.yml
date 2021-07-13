@@ -7,6 +7,24 @@
 #  project:   # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 #  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
+- id: 'Caffeine_meta_Grzegorzewski2021'
+  year: 2021
+  pdf: 'Caffeine_meta_Grzegorzewski2021.pdf'
+  authors: 'Jan Grzegorzewski, Florian Bartsch, Adrian Köller, and <b>Matthias König</b>'
+  title: 'Pharmacokinetics of caffeine: A systematic analysis of reported data for application in metabolic phenotyping and liver function testing'
+  journal: '[preprint, 2021-07-12]'
+  project: https://pk-db.de
+  repository:
+
+- id: 'SBSCL_Panchiwala2020'
+  year: 2021
+  pdf: 'SBSCL_Panchiwala2020.pdf'
+  authors: 'Panchiwala, H.; Shah, S.; Planatscher, H.; Zakharchuk, M.; <b>König, M.</b>; Dräger, A.'
+  title: 'The Systems Biology Simulation Core Library'
+  journal: 'Preprints 2020, 2020120296 (doi: <a href="https://doi.org/10.20944/preprints202012.0296.v1" target="_blank">10.20944/preprints202012.0296.v1</a>), [In revision, Bioinformatics]'
+  project: https://draeger-lab.github.io/SBSCL/
+  repository: https://github.com/draeger-lab/SBSCL
+
 - id: 'Review_Qualiperf2021'
   year: 2021
   pdf: 'Review_Qualiperf2021.pdf'
@@ -15,7 +33,7 @@
             Marz*, Daria Meyer*, Nicole Radde*, Jürgen R. Reichenbach*, Tim
             Ricken*, and Hans-Michael Tautenhahn* (* equal contribution)'
   title: 'Hepatectomy-induced alterations in hepatic perfusion and function - Towards multi-scale modeling for a better risk assessment in liver surgery'
-  journal: '[Submitted to Frontiers Physiology 2021-06-30]'
+  journal: '[Submitted to Frontiers Physiology, 2021-06-30]'
   project: https://qualiperf.de
   repository:
 
@@ -72,15 +90,6 @@
   journal: 'Bachelor Thesis, August 2020'
   project:
   repository:
-
-- id: 'SBSCL_Panchiwala2020'
-  year: 2020
-  pdf: 'SBSCL_Panchiwala2020.pdf'
-  authors: 'Panchiwala, H.; Shah, S.; Planatscher, H.; Zakharchuk, M.; <b>König, M.</b>; Dräger, A.'
-  title: 'The Systems Biology Simulation Core Library'
-  journal: 'Preprints 2020, 2020120296 (doi: <a href="https://doi.org/10.20944/preprints202012.0296.v1" target="_blank">10.20944/preprints202012.0296.v1</a>), [Submitted to Bioinformatics]'
-  project: https://draeger-lab.github.io/SBSCL/
-  repository: https://github.com/draeger-lab/SBSCL
 
 - id: 'PKDB_Grzegorzewski2020'
   year: 2020
