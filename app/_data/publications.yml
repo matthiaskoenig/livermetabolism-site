@@ -7,12 +7,22 @@
 #  project:   # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 #  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
+
+- id: 'sedml-l1v4-Smith2021'
+  year: 2021
+  pdf: 'sedml-l1v4-Smith2021.pdf'
+  authors: 'Lucian P. Smith, Frank T. Bergmann, Alan Garny, Thomas Helikar, Jonathan Karr, David Nickerson, Herbert Sauro, Dagmar Waltemath, and <b>Matthias König</b>'
+  title: 'The Simulation Experiment Description Markup Language (SED-ML): Language Specification for Level 1 Version 4'
+  journal: '[Submitted to JIB, 2021-08-02]'
+  project: https://sed-ml.org
+  repository:
+
 - id: 'Caffeine_meta_Grzegorzewski2021'
   year: 2021
   pdf: 'Caffeine_meta_Grzegorzewski2021.pdf'
   authors: 'Jan Grzegorzewski, Florian Bartsch, Adrian Köller, and <b>Matthias König</b>'
   title: 'Pharmacokinetics of caffeine: A systematic analysis of reported data for application in metabolic phenotyping and liver function testing'
-  journal: 'bioRxiv 2021.07.12.452094; doi: <a href="https://doi.org/10.1101/2021.07.12.452094">https://doi.org/10.1101/2021.07.12.452094</a> [preprint, 2021-07-13]'
+  journal: 'bioRxiv 2021.07.12.452094; doi: <a href="https://doi.org/10.1101/2021.07.12.452094">https://doi.org/10.1101/2021.07.12.452094</a> [preprint, 2021-08-03], [Submitted to Frontiers Pharmacology, 2021-08-03]'
   project: https://pk-db.de
   repository:
 
