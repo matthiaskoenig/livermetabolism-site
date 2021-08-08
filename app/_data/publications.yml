@@ -7,6 +7,15 @@
 #  project:   # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 #  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
+- id: 'OMEX_Metadata_Spec.1.2_Gennari2021'
+  year: 2021
+  pdf: 'OMEX_Metadata_Spec.1.2_Gennari2021.pdf'
+  authors: 'John Gennari, <b>Matthias König</b>, Goskel Misirli, Maxwell Neal, David Nickerson, Dagmar Waltemath'
+  title: 'OMEX Metadata Specification Version 1.2'
+  journal: '[Submitted to JIB, 2021-08-08]'
+  project:
+  repository:
+
 
 - id: 'sedml-l1v4-Smith2021'
   year: 2021
