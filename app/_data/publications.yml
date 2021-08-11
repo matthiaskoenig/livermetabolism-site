@@ -7,6 +7,18 @@
 #  project:   # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 #  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
+
+
+
+- id: 'Koeller2021_icg_variability'
+  year: 2021
+  pdf: 'Koeller2021_icg_variability.pdf'
+  authors: 'Adrian Köller, Jan Grzegorzewski and <b>Matthias König</b>'
+  title: 'Physiologically based modeling of the effect of physiological and anthropometric variability on indocyanine green based liver function tests'
+  journal: '[Submitted to Frontiers Physiology 2021-08-12]'
+  project:
+  repository:
+
 - id: 'SBMLWebApp_Yamada2021'
   year: 2021
   pdf: 'SBMLWebApp_Yamada2021.pdf'
