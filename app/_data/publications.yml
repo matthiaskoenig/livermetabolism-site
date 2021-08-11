@@ -7,6 +7,15 @@
 #  project:   # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 #  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
+- id: 'SBMLWebApp_Yamada2021'
+  year: 2021
+  pdf: 'SBMLWebApp_Yamada2021.pdf'
+  authors: 'Takahiro G. Yamada, Kaito Ii, <b>Matthias König</b>, Martina Feierabend, Andreas Dräger, and Akira Funahashi'
+  title: 'SBMLWebApp: Web-based Simulation, Steady-State Analysis, and Parameter Estimation of Systems Biology Models'
+  journal: '[Submitted to MDPI, 2021-08-11]'
+  project: http://simulate-biology.org
+  repository: https://github.com/TakahiroYamada/SBMLWebApp
+
 - id: 'OMEX_Metadata_Spec.1.2_Gennari2021'
   year: 2021
   pdf: 'OMEX_Metadata_Spec.1.2_Gennari2021.pdf'
@@ -15,7 +24,6 @@
   journal: '[Submitted to JIB, 2021-08-08]'
   project:
   repository:
-
 
 - id: 'sedml-l1v4-Smith2021'
   year: 2021
