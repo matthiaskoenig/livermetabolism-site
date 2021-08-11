@@ -24,7 +24,7 @@
   pdf: 'SBMLWebApp_Yamada2021.pdf'
   authors: 'Takahiro G. Yamada, Kaito Ii, <b>Matthias König</b>, Martina Feierabend, Andreas Dräger, and Akira Funahashi'
   title: 'SBMLWebApp: Web-based Simulation, Steady-State Analysis, and Parameter Estimation of Systems Biology Models'
-  journal: '[Submitted to MDPI, 2021-08-11]'
+  journal: 'Preprints 2021, 2021080259 (doi: <a href="https://doi.org/10.20944/preprints202108.0259.v1">10.20944/preprints202108.0259.v1</a>). [Submitted to MDPI, 2021-08-11]'
   project: http://simulate-biology.org
   repository: https://github.com/TakahiroYamada/SBMLWebApp
 
