@@ -8,7 +8,14 @@
 #  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
 
-
+- id: 'Koenig2021_Ten_simple_rules'
+  year: 2021
+  pdf: 'Koenig2021_Ten_simple_rules.pdf'
+  authors: '<b>Matthias König*</b>, Jan Grzegorzewski, Martin Golebiewski, Henning Hermjakob, Mike Hucka, Brett Olivier, Sarah M. Keating, David Nickerson, Falk Schreiber, Rahuman Sheriff, Dagmar Waltemath'
+  title: 'Ten Simple Rules for Sharing Experimental and Clinical Data with the Modeling Community'
+  journal: '[Preprint submitted 2021-08-13]'
+  project:
+  repository:
 
 - id: 'Koeller2021_icg_variability'
   year: 2021
