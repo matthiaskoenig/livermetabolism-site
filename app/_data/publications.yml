@@ -103,7 +103,7 @@
 
 - id: 'Bachelor.Thesis.Adrian.Koeller'
   year: 2021
-  pdf: 'Bachelor.Thesis.Adrian.Koeller.pdf'
+  pdf: 'theses/Bachelor.Thesis.Adrian.Koeller.pdf'
   authors: 'Adrian Köller (supervisor: <b>Matthias König</b>)'
   title: 'A Physiologically Based Model of Indocyanine Green Liver Function Tests - Eﬀects of Physiological Factors, Hepatic Disease and Hepatic Surgery'
   journal: 'Bachelor Thesis, March 2021'
@@ -119,7 +119,7 @@
   project: https://qualiperf.de
   repository:
 
-- id: 'Bachelor.Thesis.Florian.Bartsch'
+- id: 'theses/Bachelor.Thesis.Florian.Bartsch'
   year: 2020
   pdf: 'Bachelor.Thesis.Florian.Bartsch.pdf'
   authors: 'Florian Bartsch (supervisor: <b>Matthias König</b>)'
@@ -130,7 +130,7 @@
 
 - id: 'Bachelor.Thesis.Yannick.Duport'
   year: 2020
-  pdf: 'Bachelor.Thesis.Yannick.Duport.pdf'
+  pdf: 'theses/Bachelor.Thesis.Yannick.Duport.pdf'
   authors: 'Yannick Duport (supervisor: <b>Matthias König</b>)'
   title: 'Computational Modelling of Midazolam Clearance: Effect of Inhibitors and Inducers'
   journal: 'Bachelor Thesis, August 2020'
