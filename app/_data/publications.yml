@@ -7,6 +7,15 @@
 #  project:   # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 #  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
+- id: 'Smith2021_sed-ml-L1V4'
+  year: 2021
+  pdf: 'Smith2021_sed-ml-L1V4.pdf'
+  authors: 'Smith, Lucian P., Bergmann, Frank T., Garny, Alan, Helikar, Tomáš, Karr, Jonathan, Nickerson, David, Sauro, Herbert, Waltemath, Dagmar and <b>König, Matthias.</b>'
+  title: 'The simulation experiment description markup language (SED-ML): language specification for level 1 version 4'
+  journal: 'Journal of Integrative Bioinformatics, vol. , no. , 2021, pp. 20210021.'
+  project: https://sed-ml.org/
+  repository: https://github.com/SED-ML/
+
 - id: 'SBSCL_Panchiwala2021'
   year: 2021
   pdf: 'SBSCL_Panchiwala2021.pdf'
