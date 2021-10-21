@@ -7,6 +7,24 @@
 #  project:   # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 #  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
+- id: 'Standards.in.Systems.and.Synthetic.Biology_Schreiber2021'
+  year: 2021
+  pdf: 'Standards.in.Systems.and.Synthetic.Biology_Schreiber2021.pdf'
+  authors: 'F. Schreiber, P. Gleeson, M. Golebiewski, T. Gorochowski, M. Hucka, S. Keating, <b>M. König</b>, C. Myers, D. Nickerson, D. Walthemath'
+  title: 'Specifications of Standards in Systems and Synthetic Biology: Status and Developments in 2021'
+  journal: 'J Integr Bioinform. [accepted]</a>'
+  project: http://co.mbine.org/
+  repository:
+
+- id: 'Bachelor.Thesis.Suekrue.Balci'
+  year: 2021
+  pdf: 'theses/Bachelor.Thesis.Suekrue.Balci.pdf'
+  authors: 'Sükrü Balci (supervisor: <b>Matthias König</b>)'
+  title: 'Computational modelling of omeprazole - pharmacokinetics and pharmacodynics'
+  journal: 'Bachelor Thesis, October 2021'
+  project:
+  repository: https://github.com/matthiaskoenig/omeprazole-model
+
 - id: 'SBMLWebApp_Yamada2021'
   year: 2021
   pdf: 'SBMLWebApp_Yamada2021.pdf'
@@ -96,7 +114,7 @@
   pdf: 'ICG_model_hepatectomy_Koeller2021.pdf'
   authors: 'Adrian Köller, Jan Grzegorzewski, Michael Tautenhahn, <b>Matthias König</b>'
   title: 'Prediction of survival after hepatectomy using a physiologically based pharmacokinetic model of indocyanine green liver function tests'
-  journal: 'bioRxiv 2021.06.15.448411; doi: <a href="https://doi.org/10.1101/2021.06.15.448411" target="_blank">https://doi.org/10.1101/2021.06.15.448411</a>, [Submitted to Frontiers Physiology 2021-06-30]'
+  journal: 'bioRxiv 2021.06.15.448411; doi: <a href="https://doi.org/10.1101/2021.06.15.448411" target="_blank">https://doi.org/10.1101/2021.06.15.448411</a>, [Accepted in Frontiers Physiology 2021-10-01]'
   project:
   repository:
 
@@ -127,9 +145,9 @@
   project: https://qualiperf.de
   repository:
 
-- id: 'theses/Bachelor.Thesis.Florian.Bartsch'
+- id: 'Bachelor.Thesis.Florian.Bartsch'
   year: 2020
-  pdf: 'Bachelor.Thesis.Florian.Bartsch.pdf'
+  pdf: 'theses/Bachelor.Thesis.Florian.Bartsch.pdf'
   authors: 'Florian Bartsch (supervisor: <b>Matthias König</b>)'
   title: 'Computational Modelling of Simvastatin - Eﬀects on HMG-CoA Reductase Activity and Cholesterol'
   journal: 'Bachelor Thesis, November 2020'
