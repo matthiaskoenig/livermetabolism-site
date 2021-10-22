@@ -30,7 +30,7 @@
   pdf: 'SBMLWebApp_Yamada2021.pdf'
   authors: 'Takahiro G. Yamada, Kaito Ii, <b>Matthias König</b>, Martina Feierabend, Andreas Dräger, and Akira Funahashi'
   title: 'SBMLWebApp: Web-based Simulation, Steady-State Analysis, and Parameter Estimation of Systems Biology Models'
-  journal: 'Preprints 2021, 2021080259 (doi: <a href="https://doi.org/10.20944/preprints202108.0259.v1">10.20944/preprints202108.0259.v1</a>). [Accepted MDPI, 2021-10-12]'
+  journal: 'Processes 9, no. 10: 1830. https://doi.org/10.3390/pr9101830 (doi: <a href="https://doi.org/10.3390/pr9101830">https://doi.org/10.3390/pr9101830</a>).'
   project: http://simulate-biology.org
   repository: https://github.com/TakahiroYamada/SBMLWebApp
 
@@ -77,15 +77,6 @@
   title: 'OMEX Metadata Specification Version 1.2'
   journal: '[Submitted to JIB, 2021-08-08]'
   project:
-  repository:
-
-- id: 'sedml-l1v4-Smith2021'
-  year: 2021
-  pdf: 'sedml-l1v4-Smith2021.pdf'
-  authors: 'Lucian P. Smith, Frank T. Bergmann, Alan Garny, Thomas Helikar, Jonathan Karr, David Nickerson, Herbert Sauro, Dagmar Waltemath, and <b>Matthias König</b>'
-  title: 'The Simulation Experiment Description Markup Language (SED-ML): Language Specification for Level 1 Version 4'
-  journal: '[Accepted, JIB]'
-  project: https://sed-ml.org
   repository:
 
 - id: 'Caffeine_meta_Grzegorzewski2021'
