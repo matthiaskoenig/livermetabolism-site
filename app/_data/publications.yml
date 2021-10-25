@@ -66,7 +66,7 @@
   pdf: 'Koeller2021_icg_variability.pdf'
   authors: 'Adrian Köller, Jan Grzegorzewski and <b>Matthias König</b>'
   title: 'Physiologically based modeling of the effect of physiological and anthropometric variability on indocyanine green based liver function tests'
-  journal: 'bioRxiv 2021.08.11.455999; doi: <a href="https://doi.org/10.1101/2021.08.11.455999">https://doi.org/10.1101/2021.08.11.455999</a> [Revision submitted to Frontiers Physiology, 2021-09-30]'
+  journal: 'bioRxiv 2021.08.11.455999; doi: <a href="https://doi.org/10.1101/2021.08.11.455999">https://doi.org/10.1101/2021.08.11.455999</a> [Accepted Frontiers Physiology, 2021-10-25]'
   project:
   repository:
 
@@ -96,7 +96,7 @@
             Marz*, Daria Meyer*, Nicole Radde*, Jürgen R. Reichenbach*, Tim
             Ricken*, and Hans-Michael Tautenhahn* (* equal contribution)'
   title: 'Hepatectomy-induced alterations in hepatic perfusion and function - Towards multi-scale modeling for a better risk assessment in liver surgery'
-  journal: '[Revision submitted to Frontiers Physiology, 2021-10-04]'
+  journal: '[Accepted Frontiers Physiology, 2021-10-25]'
   project: https://qualiperf.de
   repository:
 
