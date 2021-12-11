@@ -22,18 +22,20 @@
   homepage: 'https://github.com/janekg89/'
   description: 'Jan works on the stratification and personalization of computational models. He develops methods and
   software for semi-automatic data curation of pharmacokinetics information and a pharmacokinetics database for
-  the storage and FAIR access of such data (<a href="https://pk-db.com">PK-DB</a>).
-  '
-- id: 'flobar'
+  the storage and FAIR access of such data (<a href="https://pk-db.com">PK-DB</a>).'
+
+- id: 'helen'
   status: 'current'
-  year: '2020-'
-  name: 'Florian Bartsch'
-  position: 'Bachelor student, student assistant'
-  image: flobar.jpg
+  year: '2021-'
+  name: 'Helen Leal Pujol'
+  position: 'Bachelor student'
+  image: helen.png
   orcid:
-  repository: 'https://github.com/FloBar'
+  repository: 'https://github.com/Lepujolh'
   homepage:
-  description: 'Florian Bartsch works on a physiological based model of statin metabolism clearance. Key questions are the effect of statins (atorvastatin and simvasting) on cholesterol plasma levels, and drug-drug interactions due to medications.'
+  description: 'Helen Leal Pujol works on a physiological based model of pravastatin.
+  Key questions are the effect of genotypes and hepatic and renal disease on pravastatin 
+  pharmacokinetics.'
 
 - id: 'adrian'
   status: 'current'
@@ -47,51 +49,16 @@
   description: 'Adrian Köller works on a physiological based model of indocyanine green (ICG) clearance.
   Key questions are the effect of blood flow and plasma proteins on ICG clearance and corresponding liver function tests.'
 
-- id: 'balci'
+- id: 'flobar'
   status: 'current'
   year: '2020-'
-  name: 'Sükrü Balci'
-  position: 'Bachelor student'
-  image: balci.png
+  name: 'Florian Bartsch'
+  position: 'Bachelor student, student assistant'
+  image: flobar.jpg
   orcid:
-  repository: 'https://github.com/SukruBalci'
+  repository: 'https://github.com/FloBar'
   homepage:
-  description: 'Sükrü Balci works on a physiological based model of omeprazole.
-  Key questions are the effect of omeprazole formulation and dosing on the pharmacodynamic effects of omeprazole.'
-
-- id: 'brandhorst'
-  status: 'current'
-  year: '2019-'
-  name: 'Janosch Brandhorst'
-  position: 'Student assistant'
-  image: brandhorst.png
-  orcid:
-  repository: 'https://github.com/JBrandh'
-  homepage:
-  description: 'Janosch Branhorst works on the computational modeling of paracetamol by the liver and curating data for PKDB.'
-
-- id: 'yannick'
-  status: 'current'
-  year: '2019-2021'
-  name: 'Yannick Duport'
-  position: 'Bachelor student'
-  image: yannick.png
-  orcid:
-  repository: 'https://github.com/YannickDuport'
-  homepage:
-  description: 'Yannick Duport works on a physiological based model of midazolam clearance. Key questions are the effect of inhibitors and inducers on the metabolism of midazolam.'
-
-- id: 'danny'
-  status: 'current'
-  year: '2020-2021'
-  name: 'Danny Ke'
-  position: 'Humboldt Internship Student 2020'
-  image: danny.png
-  orcid:
-  repository: 'https://github.com/dannythekey'
-  homepage:
-  description: 'Danny Ke works on a physiological based model of benzodiazepines.
-  Key questions are the effect of genetic variance on clearance of diazepam.'
+  description: 'Florian Bartsch works on a physiological based model of statin metabolism clearance. Key questions are the effect of statins (atorvastatin and simvasting) on cholesterol plasma levels, and drug-drug interactions due to medications.'
 
 - id: 'paula'
   status: 'current'
@@ -104,18 +71,17 @@
   homepage:
   description: 'Paula Ogata works on a pharmacokinetics/pharmacodynamics model of metorpolol. Key questions are the effect of dosing and formulation on metoprolol pharmacokinetics and reduction in exercise heart rate (EHR).'
 
-- id: 'sankha'
+- id: 'brandhorst'
   status: 'current'
-  year: '2021'
-  name: 'Sankha Das'
-  affiliation: 'Dhirubhai Institute of ICT'
-  position: 'Google summer of code student (2021)'
-  image: 'sankha.png'
+  year: '2019-'
+  name: 'Janosch Brandhorst'
+  position: 'Student assistant'
+  image: brandhorst.png
   orcid:
-  repository: 'https://github.com/sankha555'
-  homepage: 'https://sbml4humans-gsoc-2021.blogspot.com/'
-  description: 'In cooperation with Ralf Steuer
-  from the Humboldt-University Berlin we are implementing an SBML report for Humans in <a href="https://github.com/matthiaskoenig/sbmlutils">sbmlutils</a>. The full proposal is available <a href="https://docs.google.com/document/d/1agR1obktnBA4magF2wKGOukxnV8WjwmtoDvFVk_GMP4/edit?usp=sharing">here</a>.'
+  repository: 'https://github.com/JBrandh'
+  homepage:
+  description: 'Janosch Branhorst works on the computational modeling of paracetamol by the liver and curating data for PKDB.'
+
 
 - id: 'deepa'
   status: 'current'
@@ -127,6 +93,54 @@
   repository: 'https://github.com/DeepaMahm'
   homepage:
   description: 'Deepa Maheshvare works on a kinetic model of the pancreatic beta-cell. Key questions are the effect of various amino acids on the insulin secretion of the pancreas.'
+
+- id: 'balci'
+  status: 'alumni'
+  year: '2020-2021'
+  name: 'Sükrü Balci'
+  position: 'Bachelor student'
+  image: balci.png
+  orcid:
+  repository: 'https://github.com/SukruBalci'
+  homepage:
+  description: 'Sükrü Balci works on a physiological based model of omeprazole.
+  Key questions are the effect of omeprazole formulation and dosing on the pharmacodynamic effects of omeprazole.'
+
+- id: 'sankha'
+  status: 'alumni'
+  year: '2021'
+  name: 'Sankha Das'
+  affiliation: 'Dhirubhai Institute of ICT'
+  position: 'Google summer of code student (2021)'
+  image: 'sankha.png'
+  orcid:
+  repository: 'https://github.com/sankha555'
+  homepage: 'https://sbml4humans-gsoc-2021.blogspot.com/'
+  description: 'In cooperation with Ralf Steuer
+  from the Humboldt-University Berlin we are implementing an SBML report for Humans in <a href="https://github.com/matthiaskoenig/sbmlutils">sbmlutils</a>. The full proposal is available <a href="https://docs.google.com/document/d/1agR1obktnBA4magF2wKGOukxnV8WjwmtoDvFVk_GMP4/edit?usp=sharing">here</a>.'
+
+- id: 'yannick'
+  status: 'alumni'
+  year: '2019-2021'
+  name: 'Yannick Duport'
+  position: 'Bachelor student'
+  image: yannick.png
+  orcid:
+  repository: 'https://github.com/YannickDuport'
+  homepage:
+  description: 'Yannick Duport works on a physiological based model of midazolam clearance. Key questions are the effect of inhibitors and inducers on the metabolism of midazolam.'
+
+- id: 'danny'
+  status: 'alumni'
+  year: '2020-2021'
+  name: 'Danny Ke'
+  position: 'Humboldt Internship Student 2020'
+  image: danny.png
+  orcid:
+  repository: 'https://github.com/dannythekey'
+  homepage:
+  description: 'Danny Ke works on a physiological based model of benzodiazepines.
+  Key questions are the effect of genetic variance on clearance of diazepam.'
 
 - id: 'sara'
   status: 'alumni'

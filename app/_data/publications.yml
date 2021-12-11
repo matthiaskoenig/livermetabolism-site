@@ -33,8 +33,8 @@
   pdf: 'Caffeine_meta_Grzegorzewski2021.pdf'
   authors: 'Jan Grzegorzewski, Florian Bartsch, Adrian Köller, and <b>Matthias König</b>'
   title: 'Pharmacokinetics of caffeine: A systematic analysis of reported data for application in metabolic phenotyping and liver function testing'
-  journal: 'bioRxiv 2021.07.12.452094; doi: <a href="https://doi.org/10.1101/2021.07.12.452094">10.1101/2021.07.12.452094</a> [Revision subitted Frontiers Pharmacology, 2021-11-18]'
-  project: https://pk-db.de
+  journal: 'bioRxiv 2021.07.12.452094; doi: <a href="https://doi.org/10.1101/2021.07.12.452094">10.1101/2021.07.12.452094</a> [Accepted Frontiers Pharmacology, 2021-12-03]'
+  project: https://pk-db.com
   repository:
 
 - id: 'Standards.in.Systems.and.Synthetic.Biology_Schreiber2021'
