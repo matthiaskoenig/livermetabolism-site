@@ -95,4 +95,4 @@ docker-compose up --build -d
 * add software project information
 
 ----
-&copy; 2016-2021 Matthias König.
+&copy; 2016-2022 Matthias König.
