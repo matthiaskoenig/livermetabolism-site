@@ -7,6 +7,16 @@
 #  project:   # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 #  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
+
+- id: 'FAIR.sharing.of.reproducible.and.reusable.COVID-19.models_Ramachandran2022'
+  year: 2022
+  pdf: 'FAIR.sharing.of.reproducible.and.reusable.COVID-19.models_Ramachandran2022.pdf'
+  authors: 'Kausthubh Ramachandran, <b>Matthias König</b>, Martin Scharm, Dagmar Waltemath, Henning Hermjakob, Rahuman Sheriff'
+  title: 'FAIR sharing of reproducible and reusable COVID-19 models'
+  journal: '[submitted, 2022-02-16]'
+  project:
+  repository: https://www.ebi.ac.uk/biomodels/covid-19
+
 - id: 'ICG_model_hepatectomy_Koeller2021'
   year: 2021
   pdf: 'ICG_model_hepatectomy_Koeller2021.pdf'
@@ -15,6 +25,15 @@
   journal: 'Front. Physiol., 22 November 2021; doi: <a href="https://doi.org/10.3389/fphys.2021.730418" target="_blank">10.3389/fphys.2021.730418</a>'
   project:
   repository: https://github.com/matthiaskoenig/icg-model.git
+
+- id: 'Koeller2021_icg_variability'
+  year: 2021
+  pdf: 'Koeller2021_icg_variability.pdf'
+  authors: 'Adrian Köller, Jan Grzegorzewski and <b>Matthias König</b>'
+  title: 'Physiologically based modeling of the effect of physiological and anthropometric variability on indocyanine green based liver function tests'
+  journal: 'Front Physiol. 2021 Nov 22;12:757293. doi: <a href="https://doi.org/10.3389/fphys.2021.757293">10.3389/fphys.2021.757293</a>. eCollection 2021.'
+  project:
+  repository: https://github.com/matthiaskoenig/icg-model
 
 - id: 'Review_Qualiperf2021'
   year: 2021
@@ -88,15 +107,6 @@
   authors: '<b>Matthias König*</b>, Jan Grzegorzewski, Martin Golebiewski, Henning Hermjakob, Mike Hucka, Brett Olivier, Sarah M. Keating, David Nickerson, Falk Schreiber, Rahuman Sheriff, Dagmar Waltemath'
   title: 'Ten Simple Rules for FAIR Sharing of Experimental and Clinical Data with the Modeling Community'
   journal: 'Preprints 2021, 2021080303, doi: <a href="https://doi.org/10.20944/preprints202108.0303.v2">10.20944/preprints202108.0303.v2</a> [Submitted PLoS Computational Biology, 2021-11-19]'
-  project:
-  repository:
-
-- id: 'Koeller2021_icg_variability'
-  year: 2021
-  pdf: 'Koeller2021_icg_variability.pdf'
-  authors: 'Adrian Köller, Jan Grzegorzewski and <b>Matthias König</b>'
-  title: 'Physiologically based modeling of the effect of physiological and anthropometric variability on indocyanine green based liver function tests'
-  journal: 'bioRxiv 2021.08.11.455999; doi: <a href="https://doi.org/10.1101/2021.08.11.455999">https://doi.org/10.1101/2021.08.11.455999</a> [Accepted Frontiers Physiology, 2021-10-25]'
   project:
   repository:
 

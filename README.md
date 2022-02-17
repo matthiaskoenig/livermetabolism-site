@@ -92,7 +92,6 @@ docker-compose up --build -d
 * add publications with acknowledgements
 * add media section with systemsbiology.de
 * add mentoring GSOC info
-* add software project information
 
 ----
 &copy; 2016-2022 Matthias König.

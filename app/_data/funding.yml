@@ -1,0 +1,50 @@
+- id: 'simliva'
+  funder: Deutsche Forschungsgemeinschaft (DFG)
+  funder_link: https://www.dfg.de
+  funder_logo: dfg.jpeg
+  grant: 465194077
+  start: '2020'
+  end: '2023'
+  title: 'SPP2311 - SimLivA - SIMulation supported LIVer Assessment for donor organs'
+  role: Co-Investigator
+  logo:
+  project: https://www.spp2311.uni-stuttgart.de/en/
+  repository:
+
+- id: 'qualiperf'
+  funder: Deutsche Forschungsgemeinschaft (DFG)
+  funder_link: https://www.dfg.de
+  funder_logo: dfg.jpeg
+  grant: 436883643
+  start: '2021'
+  end: '2025'
+  title: 'FOR5151 - QuaLiPerF - Quantifying Liver Perfusion-Function Relationship in Complex Resection – A Systems Medicine Approach'
+  role: Recipient
+  logo:
+  project: https://qualiperf.de
+  repository:
+
+- id: 'lisym'
+  funder: Bundesministerium für Bildung und Forschung (BMBF)
+  funder_link: https://www.bmbf.de
+  funder_logo: bmbf.png
+  grant: 031L0054
+  start: '2016'
+  end: '2022'
+  title: 'LiSyM - Systems Medicine of the Liver - Multi-scale models for the personalized evaluation of liver function'
+  role: Recipient
+  logo:
+  project: https://lisym.org/
+  repository:
+
+- id: 'eosc'
+  funder: EOSCsecretariat.eu - EU Horizon Program - EOSC-life
+  funder_link: https://www.eosc-life.eu/
+  funder_logo: eosc.png
+  grant: H2020-INFRAEOSC-05-2018-2019
+  start: '2020'
+  end: '2021'
+  title: 'EOSC-Life - Reproducible simulation studies targeting COVID-19'
+  role: Recipient
+  project: https://www.ebi.ac.uk/biomodels/covid-19
+  repository:
