@@ -85,13 +85,5 @@ docker-compose -f docker-compose-build.yml up
 docker-compose up --build -d
 ```
 
-
-## TODO
-### minor
-* add circadian modelling project
-* add publications with acknowledgements
-* add media section with systemsbiology.de
-* add mentoring GSOC info
-
 ----
 &copy; 2016-2022 Matthias König.
