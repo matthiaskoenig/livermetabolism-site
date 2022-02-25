@@ -7,6 +7,14 @@
 #  project:   # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 #  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
 
+- id: 'Caffeine_meta_Grzegorzewski2021'
+  year: 2021
+  pdf: 'Caffeine_meta_Grzegorzewski2021.pdf'
+  authors: 'Jan Grzegorzewski, Florian Bartsch, Adrian Köller, and <b>Matthias König</b>'
+  title: 'Pharmacokinetics of caffeine: A systematic analysis of reported data for application in metabolic phenotyping and liver function testing'
+  journal: 'Frontiers in Pharmacology 2022, Vol12; doi: <a href="https://doi.org/10.3389/fphar.2021.752826">10.3389/fphar.2021.752826</a>'
+  project: https://pk-db.com
+  repository:
 
 - id: 'FAIR.sharing.of.reproducible.and.reusable.COVID-19.models_Ramachandran2022'
   year: 2022
@@ -45,15 +53,6 @@
   title: 'Hepatectomy-Induced Alterations in Hepatic Perfusion and Function - Toward Multi-Scale Computational Modeling for a Better Prediction of Post-hepatectomy Liver Function'
   journal: 'Front. Physiol. 2021; doi: <a href="https://doi.org/10.3389/fphys.2021.733868">10.3389/fphys.2021.733868</a>'
   project: https://qualiperf.de
-  repository:
-
-- id: 'Caffeine_meta_Grzegorzewski2021'
-  year: 2021
-  pdf: 'Caffeine_meta_Grzegorzewski2021.pdf'
-  authors: 'Jan Grzegorzewski, Florian Bartsch, Adrian Köller, and <b>Matthias König</b>'
-  title: 'Pharmacokinetics of caffeine: A systematic analysis of reported data for application in metabolic phenotyping and liver function testing'
-  journal: 'bioRxiv 2021.07.12.452094; doi: <a href="https://doi.org/10.1101/2021.07.12.452094">10.1101/2021.07.12.452094</a> [Accepted Frontiers Pharmacology, 2021-12-03]'
-  project: https://pk-db.com
   repository:
 
 - id: 'Standards.in.Systems.and.Synthetic.Biology_Schreiber2021'
