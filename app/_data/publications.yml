@@ -1,11 +1,25 @@
-# - id: 'multiscale_Koenig2018'
-#  year: 2018
-#  pdf: 'Multiscale.galactose_Koenig2018.pdf'
-#  authors: '<b>König M.</b> et al.'
-#  title: 'A Multiscale Computational Model Predicts Human Liver Function From Single-Cell Metabolism'
-#  journal: '[in preparation]'
-#  project:   # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
-#  repository:  # 'http://www.github.com/matthiaskoenig/multiscale-galactose'
+
+- id: 'Shaikh2022_biosimulators'
+  year: 2022
+  pdf: 'Shaikh2022_biosimulators.pdf'
+  authors: 'Bilal Shaikh, Lucian P. Smith, Dan Vasilescu, Gnaneswara Marupilla, Mike Wilson, <b>BioSimulators Consortium</b>, Arthur P. Goldberg, James C. Schaff, Michael L. Blinov, Herbert M. Sauro, Ion I. Moraru and Jonathan R. Karr'
+  title: 'BioSimulators: a web-based registry of simulation engines and services for multiscale modeling'
+  journal: '[in preparation]'
+  project: https://biosimulators.org
+  repository: https://github.com/biosimulators
+  abstract: "Computational models have great potential to accelerate bioscience, bioengineering, and medicine. One promising way to build models is to combine submodels of multiple subsystems and scales that involve multiple modeling methods. However, it remains challenging to combine simulations because these methods remain siloed by different software tools. For example, each tool must be executed through a distinct interface using particular model formats. To help investigators find and use these tools, we developed BioSimulators (https://biosimulators.org), a central registry of the capabilities of simulation tools and consistent Python, command-line, and containerized interfaces to them. The foundation of BioSimulators is standards such as CellML, SBML, SED-ML, and the COMBINE archive format, and tools for validating that simulation projects and tools use these standards consistently. To help modelers find tools for particular projects, we have also used the reg- istry to develop recommendation services. Together, we anticipate that BioSimulators will help modelers exchange, reproduce, and combine simulations."
+
+- id: 'Welsh2022_libroadrunner_2.0'
+  year: 2022
+  pdf: 'Welsh2022_libroadrunner_2.0.pdf'
+  authors: 'Ciaran Welsh, Jin Xu, Lucian Smith, <b>Matthias König</b>, Kiri Choi, Herbert M. Sauro'
+  title: 'libRoadRunner 2.0: A High-Performance SBML Simulation and Analysis Library'
+  journal: 'arXiv preprint arXiv:2203.01175. 2022 Feb 26; doi: <a href="https://doi.org/10.48550/arXiv.2203.01175">https://doi.org/10.48550/arXiv.2203.01175</a>'
+  project: http://libroadrunner.org/
+  repository: https://github.com/sys-bio/roadrunner/
+  abstract: "Motivation: This paper presents libRoadRunner 2.0, an extensible, high-performance, cross-platform, open-source software library for the simulation and analysis of models expressed using Systems Biology Markup Language SBML).
+Results: libRoadRunner is a self-contained library, able to run both as a component inside other tools via its C++ and C bindings, and interactively through its Python or Julia interface. libRoadRunner uses a custom Just-In-Time JIT compiler built on the widely-used LLVM JIT compiler framework. It compiles SBML-specified models directly into native machine code for a large variety of processors, making it appropriate for solving extremely large models or repeated runs. libRoadRunner is flexible, supporting the bulk of the SBML specification (except for delay and nonlinear algebraic equations) and including several SBML extensions such as composition and distributions. It offers multiple deterministic and stochastic integrators, as well as tools for steady-state, sensitivity, stability analysis, and structural analysis of the stoichiometric matrix.
+Availability: libRoadRunner binary distributions are available for Mac OS X, Linux, and Windows. The library is licensed under the Apache License Version 2.0. libRoadRunner is also available for ARM-based computers such as the Raspberry Pi and can in principle be compiled on any system supported by LLVM-13. this http URL provides online documentation, full build instructions, binaries, and a git source repository."
 
 - id: 'Caffeine_meta_Grzegorzewski2021'
   year: 2022
@@ -87,7 +101,7 @@
   pdf: 'Smith2021_sed-ml-L1V4.pdf'
   authors: 'Smith, Lucian P., Bergmann, Frank T., Garny, Alan, Helikar, Tomáš, Karr, Jonathan, Nickerson, David, Sauro, Herbert, Waltemath, Dagmar and <b>König, Matthias.</b>'
   title: 'The simulation experiment description markup language (SED-ML): language specification for level 1 version 4'
-  journal: 'Journal of Integrative Bioinformatics, vol. , no. , 2021, pp. 20210021.'
+  journal: 'Journal of Integrative Bioinformatics, vol. 18, no. 3, 2021, pp. 20210021. doi: <a href="https://doi.org/10.1515/jib-2021-0021">10.1515/jib-2021-0021</a>'
   project: https://sed-ml.org/
   repository: https://github.com/SED-ML/
 

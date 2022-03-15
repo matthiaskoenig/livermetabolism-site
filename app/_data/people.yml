@@ -37,6 +37,29 @@
   Key questions are the effect of genotypes and hepatic and renal disease on pravastatin 
   pharmacokinetics.'
 
+- id: 'jonaspk98'
+  status: 'current'
+  year: '2022-'
+  name: 'Jonas Küttner'
+  position: 'Master student'
+  image: jonaspk98.png
+  orcid:
+  repository: 'https://github.com/jonaspk98'
+  homepage:
+  description: 'Jonas Küttner works on a physiological based model of chlorzoxazone for hepatic CYP2E1 phenotyping.
+  Key questions are the effect of CYP2E1 induction/inhibition and zonation on phenotyping using chlorzoxazone.'
+
+- id: 'stemllb'
+  status: 'current'
+  year: '2022-'
+  name: 'Beatrice Stemmer Mallol'
+  position: 'Bachelor student'
+  image: stemllb.png
+  orcid:
+  repository: 'https://github.com/stemllb'
+  homepage:
+  description: 'Beatrice Stemmer Mallol works on a physiological based model for the characterization of intestinal P-glycoprotein using talinolol as a probe drug.'
+
 - id: 'adrian'
   status: 'current'
   year: '2020-'
@@ -71,18 +94,6 @@
   homepage:
   description: 'Paula Ogata works on a pharmacokinetics/pharmacodynamics model of metorpolol. Key questions are the effect of dosing and formulation on metoprolol pharmacokinetics and reduction in exercise heart rate (EHR).'
 
-- id: 'brandhorst'
-  status: 'current'
-  year: '2019-'
-  name: 'Janosch Brandhorst'
-  position: 'Student assistant'
-  image: brandhorst.png
-  orcid:
-  repository: 'https://github.com/JBrandh'
-  homepage:
-  description: 'Janosch Branhorst works on the computational modeling of paracetamol by the liver and curating data for PKDB.'
-
-
 - id: 'deepa'
   status: 'current'
   year: '2019-'
@@ -93,6 +104,17 @@
   repository: 'https://github.com/DeepaMahm'
   homepage:
   description: 'Deepa Maheshvare works on a kinetic model of the pancreatic beta-cell. Key questions are the effect of various amino acids on the insulin secretion of the pancreas.'
+
+- id: 'brandhorst'
+  status: 'alumni'
+  year: '2019-2022'
+  name: 'Janosch Brandhorst'
+  position: 'Student assistant'
+  image: brandhorst.png
+  orcid:
+  repository: 'https://github.com/JBrandh'
+  homepage:
+  description: 'Janosch Brandhorst works on the computational modeling of paracetamol by the liver and curating data for PKDB.'
 
 - id: 'balci'
   status: 'alumni'
