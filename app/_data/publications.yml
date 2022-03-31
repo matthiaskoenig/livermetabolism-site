@@ -1,4 +1,15 @@
 
+- id: 'Koenig2022_dfba'
+  year: 2022
+  pdf: 'Koenig2022_dfba.pdf'
+  authors: '<b>Matthias König*</b>, Leandro H. Watanabe<b>*</b>, Jan Grzegorzewski, and Chris J. Myers<br /><b>*</b> equal contribution'
+  title: 'Dynamic Flux Balance Analysis Models in SBML'
+  journal: 'bioRxiv 245076; doi: <a href="https://doi.org/10.1101/245076">doi.org/10.1101/245076</a> [submitted]'
+  project: 'http://www.github.com/matthiaskoenig/dfba'
+  repository: 'http://www.github.com/matthiaskoenig/dfba'
+  abstract: 'Computational models in systems biology and systems medicine are typically simulated using a single formalism such as ordinary differential equations (ODE). However, more complex models require the coupling of multiple formalisms since different biological phenomena are better described by different methods. For example, metabolism in steady state is often modeled using flux-balance analysis (FBA) whereas dynamic changes of model components are better described via ODEs. The coupling of FBA and ODE modeling formalisms results in dynamic FBA models. A major challenge is how to describe such hybrid models that couple multiple formalisms in a standardized way so that they can be exchanged between tools and simulated consistently in a reproducible manner. This paper presents a scheme for encoding and implementation of dynamic FBA models in the Systems Biology Markup Language (SBML), thereby enabling the exchange of multi-framework computational models between software tools. We demonstrate the feasibility of the approach using various example models and show that different tools are able to simulate the hybrid models and agree on the results. As part of this work, two independent implementations of a multi-framework simulation method for dynamic FBA have been developed supporting such models: iBioSim and sbmlutils.'
+
+
 - id: 'Shaikh2022_biosimulators'
   year: 2022
   pdf: 'Shaikh2022_biosimulators.pdf'
@@ -101,7 +112,7 @@ Availability: libRoadRunner binary distributions are available for Mac OS X, Lin
   pdf: 'Smith2021_sed-ml-L1V4.pdf'
   authors: 'Smith, Lucian P., Bergmann, Frank T., Garny, Alan, Helikar, Tomáš, Karr, Jonathan, Nickerson, David, Sauro, Herbert, Waltemath, Dagmar and <b>König, Matthias.</b>'
   title: 'The simulation experiment description markup language (SED-ML): language specification for level 1 version 4'
-  journal: 'Journal of Integrative Bioinformatics, vol. 18, no. 3, 2021, pp. 20210021. doi: <a href="https://doi.org/10.1515/jib-2021-0021">10.1515/jib-2021-0021</a>'
+  journal: 'Journal of Integrative Bioinformatics, vol. 18, no. 3, 2021, pp. 20210021. doi: <a href="https://doi.org/10.1515/jib-2021-0021">10.1515/jib-2021-0021</a>, PMID: 35330701'
   project: https://sed-ml.org/
   repository: https://github.com/SED-ML/
 
