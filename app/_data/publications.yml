@@ -1,4 +1,13 @@
 
+- id: 'Bachelor.Thesis.Helena.Leal.Pujol'
+  year: 2022
+  pdf: 'theses/Bachelor.Thesis.Helena.Leal.Pujol.pdf'
+  authors: 'Helena Leal Pujol (supervisor: <b>Matthias König</b>)'
+  title: 'A physiologically based model of pravastatin - The role of genotypes and hepatic or renal impairment on the pharmacokinetics of pravastatin'
+  journal: 'Bachelor Thesis, May 2022'
+  project:
+  repository: https://github.com/matthiaskoenig/pravastatin-model
+
 - id: 'Koenig2022_dfba'
   year: 2022
   pdf: 'Koenig2022_dfba.pdf'
@@ -93,7 +102,7 @@ Availability: libRoadRunner binary distributions are available for Mac OS X, Lin
   year: 2021
   pdf: 'theses/Bachelor.Thesis.Suekrue.Balci.pdf'
   authors: 'Sükrü Balci (supervisor: <b>Matthias König</b>)'
-  title: 'Computational modelling of omeprazole - pharmacokinetics and pharmacodynics'
+  title: 'Computational modelling of omeprazole - pharmacokinetics and pharmacodynamics'
   journal: 'Bachelor Thesis, October 2021'
   project:
   repository: https://github.com/matthiaskoenig/omeprazole-model
