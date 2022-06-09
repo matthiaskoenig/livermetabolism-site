@@ -1,7 +1,17 @@
+- id: 'FAIR.sharing.of.reproducible.and.reusable.COVID-19.models_Ramachandran2022'
+  year: 2022
+  pdf: 'FAIR.sharing.of.reproducible.and.reusable.COVID-19.models_Ramachandran2022.pdf'
+  authors: 'Ramachandran, K.*; <b>König, M.*</b>; Scharm, M.; Nguyen, T.V.N.; Hermjakob, H.; Waltemath, D.; Malik Sheriff, R.S. (* equal contribution)'
+  title: 'FAIR Sharing of Reproducible Models of Epidemic and Pandemic Forecast'
+  journal: 'Preprints 2022, 2022060137 (doi: <a href="https://doi.org/10.20944/preprints202206.0137.v1">10.20944/preprints202206.0137.v1</a>).'
+  project: https://www.ebi.ac.uk/biomodels/covid-19
+  repository: https://www.ebi.ac.uk/biomodels/search?query=submitter_keywords:COVID-19&domain=biomodels
+  abstract: "A major challenge for the dissemination, replication, and reuse of epidemiological forecasting studies during COVID-19 pandemics is the lack of clear guidelines and platforms to exchange models in a Findable, Accessible, Interoperable, and Reusable (FAIR) manner, facilitating reproducibility of research outcomes. During the beginning of pandemics, models were developed in diverse tools that were not interoperable, opaque without traceability and semantics, and scattered across various platforms - making them hard to locate, infer and reuse. In this work, we demonstrate that implementing the standards developed by the systems biology community to encode and share COVID-19 epidemiological models can serve as a roadmap to implement models as a tool in medical informatics, in general. As a proof-of-concept, we encoded and shared 24 epidemiological models using the standard format for model exchange in systems biology, annotated them with cross-references to data resources, packed up all associated files in COMBINE archives for easy sharing, and finally, disseminated the models through BioModels repository to significantly enhance their reproducibility and repurposing potential. We recommend the use of systems biology standards to encode and share models of epidemic and pandemic forecasts to improve their findability, accessibility, interoperability, reusability, and reproducibility."
+
 - id: 'Shaikh2022_biosimulators'
   year: 2022
   pdf: 'Shaikh2022_biosimulators.pdf'
-  authors: 'Shaikh B, Smith LP, Vasilescu D, Marupilla G, Wilson M, Agmon E, Agnew H, Andrews SS, Anwar A, Beber ME, Bergmann FT, Brooks D, Brusch L, Calzone L, Choi K, Cooper J, Detloff J, Drawert B, Dumontier M, Ermentrout GB, Faeder JR, Freiburger AP, Fröhlich F, Funahashi A, Garny A, Gennari JH, Gleeson P, Goelzer A, Haiman Z, Hasenauer J, Hellerstein JL, Hermjakob H, Hoops S, Ison JC, Jahn D, Jakubowski HV, Jordan R, Kalaš M, <b>König M</b>, Liebermeister W, Sheriff RSM, Mandal S, McDougal R, Medley JK, Mendes P, Müller R, Myers CJ, Naldi A, Nguyen TVN, Nickerson DP, Olivier BG, Patoliya D, Paulevé L, Petzold LR, Priya A, Rampadarath AK, Rohwer JM, Saglam AS, Singh D, Sinha A, Snoep J, Sorby H, Spangler R, Starruß J, Thomas PJ, van Niekerk D, Weindl D, Zhang F, Zhukova A, Goldberg AP, Schaff JC, Blinov ML, Sauro HM, Moraru II, Karr JR. '
+  authors: 'Shaikh B, Smith LP, Vasilescu D, Marupilla G, Wilson M, Agmon E, Agnew H, Andrews SS, Anwar A, Beber ME, Bergmann FT, Brooks D, Brusch L, Calzone L, Choi K, Cooper J, Detloff J, Drawert B, Dumontier M, Ermentrout GB, Faeder JR, Freiburger AP, Fröhlich F, Funahashi A, Garny A, Gennari JH, Gleeson P, Goelzer A, Haiman Z, Hasenauer J, Hellerstein JL, Hermjakob H, Hoops S, Ison JC, Jahn D, Jakubowski HV, Jordan R, Kalaš M, <b>König M</b>, Liebermeister W, Sheriff RSM, Mandal S, McDougal R, Medley JK, Mendes P, Müller R, Myers CJ, Naldi A, Nguyen TVN, Nickerson DP, Olivier BG, Patoliya D, Paulevé L, Petzold LR, Priya A, Rampadarath AK, Rohwer JM, Saglam AS, Singh D, Sinha A, Snoep J, Sorby H, Spangler R, Starruß J, Thomas PJ, van Niekerk D, Weindl D, Zhang F, Zhukova A, Goldberg AP, Schaff JC, Blinov ML, Sauro HM, Moraru II, Karr JR.'
   title: 'BioSimulators: a central registry of simulation engines and services for recommending specific tools'
   journal: 'Nucleic Acids Res. 2022 May 7:gkac331. doi: <a href="https://doi.org/10.1093/nar/gkac331">10.1093/nar/gkac331</a>. Epub ahead of print. PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/35524558/">35524558</a>. 2022 Mar 16;</a>'
   project: https://biosimulators.org
@@ -48,15 +58,6 @@ Availability: libRoadRunner binary distributions are available for Mac OS X, Lin
   journal: 'Frontiers in Pharmacology 2022, Vol12; doi: <a href="https://doi.org/10.3389/fphar.2021.752826">10.3389/fphar.2021.752826</a>'
   project: https://pk-db.com
   repository:
-
-- id: 'FAIR.sharing.of.reproducible.and.reusable.COVID-19.models_Ramachandran2022'
-  year: 2022
-  pdf: 'FAIR.sharing.of.reproducible.and.reusable.COVID-19.models_Ramachandran2022.pdf'
-  authors: 'Kausthubh Ramachandran, <b>Matthias König</b>, Martin Scharm, Dagmar Waltemath, Henning Hermjakob, Rahuman Sheriff'
-  title: 'FAIR sharing of reproducible and reusable COVID-19 models'
-  journal: '[submitted, 2022-02-16]'
-  project:
-  repository: https://www.ebi.ac.uk/biomodels/covid-19
 
 - id: 'ICG_model_hepatectomy_Koeller2021'
   year: 2021
