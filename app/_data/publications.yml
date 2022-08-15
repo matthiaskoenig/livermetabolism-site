@@ -77,6 +77,26 @@ Availability: libRoadRunner binary distributions are available for Mac OS X, Lin
   project:
   repository: https://github.com/matthiaskoenig/icg-model
 
+- id: 'CFT24_icg_2021'
+  year: 2021
+  pdf: 'CFT24_abstracts_2021.pdf'
+  authors: 'Adrian Köller, Jan Grzegorzewski and <b>Matthias König</b>'
+  title: '24th Surgical Research Days. Eur Surg Res., Abstract: ID 17, Physiological Based Pharmacokinetic Models of Dynamical Liver Function Tests as a Promising Tool in Hepatectomy'
+  journal: '2021;62(3):161-220. doi: <a href="https://doi.org/10.1159/000518793">10.1159/000518793</a>. Epub 2021 Aug 31. PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/34515110/">34515110</a>.'
+  project:
+  repository: https://github.com/matthiaskoenig/icg-model
+
+- id: 'CFT24_uncertainty_2021'
+  year: 2021
+  pdf: 'CFT24_uncertainty_2021.pdf'
+  authors: 'S. Höpfl, <b>M. König</b>, N. Radde'
+  title: '24th Surgical Research Days. Eur Surg Res., Abstract: ID 101, Bayesian Statistics for Uncertainty Quantification of a Physiologically Based Model of Indocyanine Green Liver Function Tests'
+  journal: '2021;62(3):161-220. doi: <a href="https://doi.org/10.1159/000518793">10.1159/000518793</a>. Epub 2021 Aug 31. PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/34515110/">34515110</a>.'
+  project:
+  repository:
+
+
+
 - id: 'Review_Qualiperf2021'
   year: 2021
   pdf: 'Review_Qualiperf2021.pdf'
