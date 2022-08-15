@@ -1,0 +1,11 @@
+- id: 'FAIR.sharing.of.reproducible.and.reusable.COVID-19.models_Ramachandran2022'
+  title: 'Developing computational models with SBML - sbmlutils & cy3sbml'
+  authors: '<b>Matthias König</b>'
+  slides: 'https://docs.google.com/presentation/d/1eDTGNMdWx3HYe37C26BuYqzV1xwfiLMzbWsD_qSkrnU/edit?usp=sharing'
+  video: https://www.youtube.com/watch?v=jHZ0xn89dVI
+  event: 'CRBM Network Modeling Virtual Symposium'
+  event_page:
+  date: 2022-07-22
+  repository:
+  publication:
+
