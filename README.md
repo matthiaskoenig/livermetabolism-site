@@ -1,32 +1,41 @@
 # livermetabolism-site
+
 Code and material for static site at [https://www.livermetabolism.com/](https://www.livermetabolism.com/).
 
-**Bug Tracker**: https://github.com/matthiaskoenig/livermetabolism-site/issues  
+**Bug Tracker**: https://github.com/matthiaskoenig/livermetabolism-site/issues
 
 ## License
+
 * Source Code: [LGPLv3](http://opensource.org/licenses/GPL-3.0)
 * Documentation: [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)
 
 ## Build page
-The page is built using Jekyll with additional site templates 
+
+The page is built using Jekyll with additional site templates
+
 * http://jekyllrb.com/
 * [Jekyll Doc Theme](https://aksakalli.github.io/jekyll-doc-theme/)
 
-
 ## Local development
+
 ### Run development server
+
 ```
 docker-compose -f docker-compose-serve.yml up
 ```
+
 Change the web content in the `./app/` folder.
 
-
 ### Update dependencies
+
 Delete the `Gemfile.lock`
+
 ```
 docker run --rm --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/local/bundle" -it jekyll/jekyll:latest bundle update
 ```
+
 ### Build web content
+
 ```
 docker-compose -f docker-compose-build.yml up
 ```
@@ -34,11 +43,13 @@ docker-compose -f docker-compose-build.yml up
 ## Deployment
 
 ### update
+
 Execute the `./deploy.sh` script which downloads the latest changes and updates the page.
 
-
 ### HTTPS certificates
+
 #### Initial certificates & renewal
+
 ```bash
 # access server
 ssh h2389049.stratoserver.net
@@ -61,12 +72,12 @@ sudo certbot renew
 docker-compose up --build -d
 ```
 
-sudo mkdir -p /usr/share/nginx/letsencrypt
-sudo certbot renew 
-livermetabolism.com www.livermetabolism.com livermetabolism.de www.livermetabolism.de liver-metabolism.com www.liver-metabolism.com liver-metabolism.de www.liver-metabolism.de
-
+sudo mkdir -p /usr/share/nginx/letsencrypt sudo certbot renew livermetabolism.com www.livermetabolism.com
+livermetabolism.de www.livermetabolism.de liver-metabolism.com www.liver-metabolism.com
+liver-metabolism.de www.liver-metabolism.de
 
 ### deploy
+
 ```bash
 # access server
 ssh h2389049.stratoserver.net
