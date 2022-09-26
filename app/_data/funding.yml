@@ -1,14 +1,27 @@
-- id: 'simliva'
-  funder: Deutsche Forschungsgemeinschaft (DFG)
-  funder_link: https://www.dfg.de
-  funder_logo: dfg.jpeg
-  grant: 465194077
-  start: '2020'
+- id: 'atlas'
+  funder: Bundesministerium für Bildung und Forschung (BMBF) "Computational Life Sciences"
+  funder_link: https://www.bmbf.de
+  funder_logo: bmbf.png
+  grant:
+  start: '2023'
+  end: '2026'
+  title: 'ATLAS - AI and Simulation for Tumor Liver ASessment'
+  role: Recipient
+  logo: atlas.png
+  project:
+  repository:
+
+- id: 'xresearch'
+  funder: Bundesministerium für Bildung und Forschung (BMBF) und dem  Land Berlin im Rahmen der Exzellenzstrategie von Bund und Ländern
+  funder_link: https://www.bmbf.de
+  funder_logo: bua.png
+  grant:
+  start: '2022'
   end: '2023'
-  title: 'SPP2311 - SimLivA - SIMulation supported LIVer Assessment for donor organs'
-  role: Co-Investigator
+  title: 'X-Student Research Group - Physiologically based modeling of drugs: ACE inhibitors in the treatment of high blood pressure'
+  role: Recipient
   logo:
-  project: https://www.spp2311.uni-stuttgart.de/en/
+  project:
   repository:
 
 - id: 'qualiperf'
@@ -24,17 +37,17 @@
   project: https://qualiperf.de
   repository:
 
-- id: 'lisym'
-  funder: Bundesministerium für Bildung und Forschung (BMBF)
-  funder_link: https://www.bmbf.de
-  funder_logo: bmbf.png
-  grant: 031L0054
-  start: '2016'
-  end: '2022'
-  title: 'LiSyM - Systems Medicine of the Liver - Multi-scale models for the personalized evaluation of liver function'
-  role: Recipient
+- id: 'simliva'
+  funder: Deutsche Forschungsgemeinschaft (DFG)
+  funder_link: https://www.dfg.de
+  funder_logo: dfg.jpeg
+  grant: 465194077
+  start: '2020'
+  end: '2023'
+  title: 'SPP2311 - SimLivA - SIMulation supported LIVer Assessment for donor organs'
+  role: Co-Investigator
   logo:
-  project: https://lisym.org/
+  project: https://www.spp2311.uni-stuttgart.de/en/
   repository:
 
 - id: 'eosc'
@@ -48,3 +61,17 @@
   role: Recipient
   project: https://www.ebi.ac.uk/biomodels/covid-19
   repository:
+
+- id: 'lisym'
+  funder: Bundesministerium für Bildung und Forschung (BMBF)
+  funder_link: https://www.bmbf.de
+  funder_logo: bmbf.png
+  grant: 031L0054
+  start: '2016'
+  end: '2022'
+  title: 'LiSyM - Systems Medicine of the Liver - Multi-scale models for the personalized evaluation of liver function'
+  role: Recipient
+  logo:
+  project: https://lisym.org/
+  repository:
+
