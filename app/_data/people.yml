@@ -28,7 +28,7 @@
   status: 'current'
   year: '2021-'
   name: 'Helen Leal Pujol'
-  position: 'Bachelor student'
+  position: 'Bachelor student, student assistant'
   image: helen.png
   orcid:
   repository: 'https://github.com/Lepujolh'
@@ -36,6 +36,29 @@
   description: 'Helen Leal Pujol works on a physiological based model of pravastatin.
   Key questions are the effect of genotypes and hepatic and renal disease on pravastatin 
   pharmacokinetics.'
+
+- id: 'adrian'
+  status: 'current'
+  year: '2020-'
+  name: 'Adrian Köller'
+  position: 'Bachelor student, Master project, student assistant'
+  image: adrian.jpg
+  orcid:
+  repository: 'https://github.com/adriankl'
+  homepage:
+  description: 'Adrian Köller works on a physiological based model of indocyanine green (ICG) clearance.
+  Key questions are the effect of blood flow and plasma proteins on ICG clearance and corresponding liver function tests.'
+
+- id: 'flobar'
+  status: 'current'
+  year: '2020-'
+  name: 'Florian Bartsch'
+  position: 'Bachelor student, Master project, student assistant'
+  image: flobar.jpg
+  orcid:
+  repository: 'https://github.com/FloBar'
+  homepage:
+  description: 'Florian Bartsch works on a physiological based model of statin metabolism clearance. Key questions are the effect of statins (atorvastatin and simvasting) on cholesterol plasma levels, and drug-drug interactions due to medications.'
 
 - id: 'jonaspk98'
   status: 'current'
@@ -59,29 +82,6 @@
   repository: 'https://github.com/stemllb'
   homepage:
   description: 'Beatrice Stemmer Mallol works on a physiological based model for the characterization of intestinal P-glycoprotein using talinolol as a probe drug.'
-
-- id: 'adrian'
-  status: 'current'
-  year: '2020-'
-  name: 'Adrian Köller'
-  position: 'Bachelor student, student assistant'
-  image: adrian.jpg
-  orcid:
-  repository: 'https://github.com/adriankl'
-  homepage:
-  description: 'Adrian Köller works on a physiological based model of indocyanine green (ICG) clearance.
-  Key questions are the effect of blood flow and plasma proteins on ICG clearance and corresponding liver function tests.'
-
-- id: 'flobar'
-  status: 'current'
-  year: '2020-'
-  name: 'Florian Bartsch'
-  position: 'Bachelor student, student assistant'
-  image: flobar.jpg
-  orcid:
-  repository: 'https://github.com/FloBar'
-  homepage:
-  description: 'Florian Bartsch works on a physiological based model of statin metabolism clearance. Key questions are the effect of statins (atorvastatin and simvasting) on cholesterol plasma levels, and drug-drug interactions due to medications.'
 
 - id: 'paula'
   status: 'current'

@@ -1,0 +1,40 @@
+- id: 'huinternship'
+  status: 'current'
+  title: 'Humboldt Internship Program 2023 - Computational Modeling of Drug Detoxification - A Systems Medicine Approach'
+  date: '2022-10-26'
+  image: humboldt-internship.jpg
+  link: 'https://hic.hu-berlin.de/en/internship-program/projects/201'
+  short: 'We offer Internships in 2023, application open from 01 Nov - 09 Dec 2022.'
+
+- id: 'dex'
+  status: 'current'
+  title: 'Dextromethorphan Publication'
+  date: '2022-10-24'
+  image: dex_model.png
+  link: 'https://www.frontiersin.org/articles/10.3389/fphar.2022.1029073/full'
+  short: 'How does CYP2D6 genotype effect metabolic phenotyping? See our latest paper in Frontiers in Pharmacology for answers.'
+
+- id: 'xresearch2022'
+  status: 'current'
+  title: 'X-Research Group'
+  date: '2022-10-24'
+  image: xresearch.png
+  link: '/teaching/'
+  short: 'M. König receives funding of the Berlin University Alliance and the DFG for the X-Student Research Group: Physiologically based modeling of drugs: ACE inhibitors'
+
+- id: 'combine2022'
+  status: 'current'
+  title: 'COMBINE 2022'
+  date: '2022-10-06'
+  image: COMBINE2022_logo.png
+  image2: COMBINE2022_participants.jpg
+  link: 'http://co.mbine.org/events/'
+  short: 'We organized the Computational Modeling in Biology Network (COMBINE) meeting in Berlin this year with > 100 participants from 06-08 October 2022.'
+
+- id: 'icsb2022'
+  status: 'old'
+  title: 'ICSB 2022 - Presentation and Posters'
+  date: '2022-10-10'
+  image: ICSB2022_slides.png
+  link: 'https://t.co/XmLdd2VhQ2'
+  short: 'We could present our work on physiologically based pharmacokinetics (PBPK) modeling at <a href="https://www.icsb2022.berlin/">ICSB2022</a>.'

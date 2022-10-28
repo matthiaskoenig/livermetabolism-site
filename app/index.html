@@ -6,8 +6,13 @@ layout: default
     <img src="/img/banner.png" style="width: 100%; height: auto;"/>
     <div class="row">
 
-        <div class="col-md-6 text-justify">
+        <div class="col-md-8 text-justify">
             <h2 class="header-light regular-pad">Systems Medicine of the Liver</h2>
+            <p>
+                The König lab uses Systems Medicine and Systems Biology to study drug metabolism and liver function. We apply computational modeling, data science, data management, bioinformatics analysis and machine learning on biological, medical and clinical data. <br /><br />
+                Main research topics are (i) predictive modeling of biomedical systems with special focus on the liver; (ii) development of digital twins using physiologically based pharmacokinetic (PBPK) models, (iii) reproducible and open research, and (iv) FAIR data and workflows.<br /><br />
+                Key projects are the personalized evaluation of liver function tests, multi-scale modeling of the liver, and development of databases and workflows to support reproducible, open and FAIR research. Within our research we generate predictive digital twins of the individual human physiology. Such models can provide important insights in inter-individual differences and personal treatments, e.g., individual dosing of medication or effect of lifestyle factors on drug metabolism. For more information have a look at our <a href="/publications/"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> publications</a> and <a href="/projects/"><i class="fa fa-cogs" aria-hidden="true"></i> projects</a>.
+            </p>
             <p>
             {% for person in site.data.people %}
                 {% if person.status=="current" %}
@@ -16,48 +21,85 @@ layout: default
             {% endfor %}
             </p>
             <p>
-                The <a href="/cv/">König</a> lab uses Systems Medicine and Systems Biology to study drug metabolism and liver function. We apply computational modeling, data science, data management, bioinformatics analysis and machine learning on biological, medical and clinical data. <br /><br />
-                Main research topics are (i) predictive modeling of biomedical systems with special focus on the liver; (ii) development of digital twins using physiologically based pharmacokinetic (PBPK) models, (iii) reproducible and open research, and (iv) FAIR data and workflows.<br /><br />
-                Key projects are the personalized evaluation of liver function tests, multi-scale modeling of the liver, and development of databases and workflows to support reproducible, open and FAIR research. Within our research we generate predictive digital twins of the individual human physiology. Such models can provide important insights in inter-individual differences and personal treatments, e.g., individual dosing of medication or effect of lifestyle factors on drug metabolism. For more information have a look at our <a href="/publications/">publications</a> and <a href="/projects/">projects.</a>
+                Interested in joining the lab, have a look at the <a href="/positions/"><i class="fa fa-users" aria-hidden="true"></i> open positions</a>.
             </p>
+            <h3>Contact</h3>
+
+            <div class="row">
+                <div class="col-md-4">
+                <p>
+                <strong>
+                    Group Leader</br>
+                    Dr. Matthias König
+                </strong><br /><br/>
+
+                <strong>Systems Medicine of the Liver</strong><br />
+
+                Institute for Biology, Institute for Theoretical Biology<br />
+                Humboldt Universität zu Berlin<br />
+                Philippstraße 13, 10115 Berlin, Germany<br />
+                    <i class="fa fa-phone"></i> +49 30 2093-98435<br />
+                    <i class="fa fa-envelope"></i> <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+                </p>
+                </div>
+
+                <div class="col-md-4">
+                <img src="/img/people/koenig.png" class="img-responsive img-circle" height="100" />
+                </div>
+
+                <div class="col-md-4">
+                    <i class="fa fa-github"></i> <a href="https://github.com/matthiaskoenig" target="_blank" title="github">{{ site.github_username }}</a><br/>
+                    <i class="fa fa-twitter"></i> <a href="https://twitter.com/konigmatt" target="_blank" title="twitter">{{ site.twitter_username }}</a><br/>
+                    <img src="/img/orcid.png" height="15"/> <a href="https://orcid.org/0000-0003-1725-179X" target="_blank" title="ORCID">{{ site.orcid_username }}</a><br />
+                        <i class="fa fa-youtube"></i> <a href="https://www.youtube.com/channel/UCin1GjSgRYEkN0Oqia_D44A" target="_blank" title="youtube">Youtube</a><br/>
+                    <i class="fa fa-linkedin"></i> <a href="https://www.linkedin.com/in/matthias-k%C3%B6nig-796bb758/" target="_blank" title="LinkedIn">LinkedIn</a><br />
+                    <i class="fa fa-registered"></i> <a href="https://www.researchgate.net/profile/Matthias_Koenig4/" target="_blank" title="ResearchGate">ResearchGate</a><br />
+                    <i class="fa fa-google"></i> <a href="http://scholar.google.com/citations?user=xD9IjnYAAAAJ&hl=en" target="_blank" title="Google Scholar">Google Scholar</a><br />
+                    <img src="/img/publons.png" height="15"/> <a href="https://publons.com/a/1333493/" target="_blank" title="Publons Review Information">Publons</a>
+                </div>
+
+            </div>
+
+            <h3>Funding</h3>
+            For more information have a look at our <a href="/funding/"><i class="fa fa-money" aria-hidden="true"></i> funding</a> information.
             <p>
                 <a href="https://www.bmbf.de/" target="_blank"><img src="/img/bmbf.png" title="BMBF - Bundesministerium für Bildung und Forschung" width="110"></a>&nbsp;&nbsp;
                 <a href="https://www.dfg.de/" target="_blank"><img src="/img/dfg.jpeg" title="DFG - Deutsche Forschungsgesellschaft" width="110"></a>&nbsp;&nbsp;
                 <a href="https://www.denbi.de/" target="_blank"><img src="/img/denbi.png" title="de.NBI - German Network for Bioinformatics Infrastructure" width="110"></a>&nbsp;&nbsp;
                 <a href="https://www.eosc-life.eu" target="_blank"><img src="/img/eosc.png" title="EOSC - European Open Science Cloud" width="90"></a>&nbsp;&nbsp;
-                <a href="https://summerofcode.withgoogle.com/" target="_blank"><img src="/img/gsoc.jpg" title="Google Summer of Code" width="90"></a></p>
+                <a href="https://summerofcode.withgoogle.com/" target="_blank"><img src="/img/gsoc.jpg" title="Google Summer of Code" width="90"></a></br />
+            </p>
         </div>
 
-        <div class="col-md-4 text-justify">
-            <h3>Dr. Matthias König</h3>
-			<p>
-			<strong>Group Leader</strong><br />
-			<strong>Systems Biology and Medicine of the Liver</strong><br />
-
-			Institute for Biology, Institute for Theoretical Biology<br />
-			Humboldt Universität zu Berlin<br />
-			Philippstraße 13, 10115 Berlin, Germany<br />
-                <i class="fa fa-phone"></i> +49 30 2093-98435<br />
-                <i class="fa fa-envelope"></i> <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-                <br /><br />
-            </p>
-
-            <p>
-                <img src="/img/people/koenig.png" class="img-responsive img-circle" height="100" /><br />
-                <i class="fa fa-github"></i> <a href="https://github.com/matthiaskoenig" target="_blank" title="github">{{ site.github_username }}</a><br/>
-                <i class="fa fa-twitter"></i> <a href="https://twitter.com/konigmatt" target="_blank" title="twitter">{{ site.twitter_username }}</a><br/>
-                <img src="/img/orcid.png" height="15"/> <a href="https://orcid.org/0000-0003-1725-179X" target="_blank" title="ORCID">{{ site.orcid_username }}</a><br />
-                <i class="fa fa-linkedin"></i> <a href="https://www.linkedin.com/in/matthias-k%C3%B6nig-796bb758/" target="_blank" title="LinkedIn">LinkedIn</a><br />
-                <i class="fa fa-registered"></i> <a href="https://www.researchgate.net/profile/Matthias_Koenig4/" target="_blank" title="ResearchGate">ResearchGate</a><br />
-                <i class="fa fa-google"></i> <a href="http://scholar.google.com/citations?user=xD9IjnYAAAAJ&hl=en" target="_blank" title="Google Scholar">Google Scholar</a><br />
-                <img src="/img/publons.png" height="15"/> <a href="https://publons.com/a/1333493/" target="_blank" title="Publons Review Information">Publons</a>
-            </p>
-	    </div>
-         <div class="col-md-2">
+         <div class="col-md-4">
              <h3>News</h3>
-            <p>
+             {% for news in site.data.news %}
+                {% if news.status=="current" %}
+                <p>
+                    {{ news.date }} <strong>{{ news.title }}</strong>
+                    <div class="row">
+                    <div class="col-md-6">
+                    <a href="{{ news.link }}" target="_blank">
+                    <img src="/img/news/{{ news.image }}" class="img-responsive" height="60"/>
+                    {% if news.image2 %}
+                        <img src="/img/news/{{ news.image2 }}" class="img-responsive" height="60"/>
+                    {% endif %}
+                    </a>
+                    </div>
+                    <div class="col-md-6">
+                    {{ news.short }}<br />
 
-            </p>
+                    </div>
+
+
+                    </div>
+                    <a href="{{ news.link }}" target="_blank">{{ news.link }}</a>
+
+                </p>
+                {% endif %}
+            {% endfor %}
+             For more news see <a href="/news/"><i class="fa fa-newspaper-o" aria-hidden="true"></i> news</a>.
+
         </div>
     </div>
     <!--
@@ -73,26 +115,7 @@ layout: default
                 Core interests are the computational modeling of liver metabolism and multi-scale modes of liver function.
             </p>
         </div>
-        <div class="col-sm-4">
-            <a href="/publications/">
-            <h1 class="text-center"><i class="fa fa-newspaper-o" aria-hidden="true"></i></h1>
-            <h3 class="text-center">Publications</h3>
-            </a>
-            <p>
-                Scientific publications and preprints can be found below. We are trying to publish as much as
-                possible of our scientific work as Open Access.
-            </p>
-        </div>
-        <div class="col-sm-4">
-            <a href="/positions/">
-            <h1 class="text-center"><i class="fa fa-users" aria-hidden="true"></i></h1>
-            <h3 class="text-center">Open Positions</h3>
-            </a>
-            <p>
-                Bachelor and Master students, and research interns are always welcome.
-                Just send a mail to <a href="mailto:{{ site.email }}">Matthias König</a>. We currently do not have any open PhD or PostDoc positions.
-            </p>
-        </div>
+
     </div>
     -->
 

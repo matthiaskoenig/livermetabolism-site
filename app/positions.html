@@ -5,62 +5,100 @@ permalink: /positions/
 ---
 
 <div class="container">
+    <!--<img src="/img/banner.png" style="width: 100%; height: auto;"/>-->
     <div class="row">
         <div class="col-md-6 text-justify">
 
             <h3><i class="fa fa-user"></i> PhD</h3>
             <p>
-                We currently have no open funded PhD positions. If you have a scholarship or other funding please apply. Just write to
-                <i class="fa fa-envelope"></i> <a href="mailto:{{ site.email }}">Matthias König</a>.
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="/img/atlas.png" class="img-responsive" title="ATLAS"/>
+                </div>
+
+                <div class="col-md-9">
+                    <p>
+                    We have an open funded PhD position starting 03/2023 working on the interface of machine learning
+                    and
+                    physiologically based pharmacokinetics (PBPK) models in liver cancer within the ATLAS project.
+                    </p>
+                    <p>
+                    In addition we supervise PhD projects if you have a scholarship or similar funding sources.
+                    </p>
+
+                    <p>
+                    Please contact <i class="fa fa-envelope"></i> <a href="mailto:{{ site.email }}">Matthias König</a>.
+                    </p>
+                </div>
+            </div>
             </p>
 
             <h3><i class="fa fa-user"></i> Bachelor & Master Thesis</h3>
             <p>
-            Bachelor and Master students are always welcome. We supervise projects with computational background.
+                Bachelor and Master students are always welcome.
 
-            For students interested in a thesis in theoretical biology, computational modeling, or bioinformatics
-            applied to biological problems, we can provide different thesis projects on
+                For students interested in a thesis in computational modeling or bioinformatics
+                applied to biological problems, we can provide projects on
 
             <ul>
+                <li>Physiologically based pharmacokinetics modeling</li>
                 <li>Modeling of hepatic liver metabolism and liver function</li>
-                <li>Physiological modeling </li>
+                <li>Image analysis and Machine Learning</li>
                 <li>Data bases, web interface, standardization of computational models, simulation workflows</li>
+                <li>Data integration</li>
                 <li>Systems Biology and Systems Medicine of the liver</li>
             </ul>
 
-            Just write to <i class="fa fa-envelope"></i> <a href="mailto:{{ site.email }}">Matthias König</a>
+            The projects will be adapted based on your computational background.
+            </p>
+            <p>
+            Please contact <i class="fa fa-envelope"></i> <a href="mailto:{{ site.email }}">Matthias König</a>
             </p>
 
             <h3><i class="fa fa-user"></i> Research Internships</h3>
+            <div class="row">
+                <div class="col-md-6">
+                <a href="https://hic.hu-berlin.de/en/internship-program/projects/201" target="_blank">
+                <img src="/img/news/humboldt-internship.jpg" class="img-responsive" height="60"/>
+                </a>
+                </div>
+                <div class="col-md-6">
+                    We offer internships via the Humboldt Internship Program 2023 - Computational Modeling of Drug Detoxification - A Systems Medicine Approach.
+                    Application is open from 01 Nov - 09 Dec 2022.
+                    <a href="https://hic.hu-berlin.de/en/internship-program/projects/201" target="_blank">https://hic.hu-berlin.de/en/internship-program/projects/201</a>
+                </div>
+            </div>
             <p>
-            We also offer individual research internships (4-12 weeks) for students with a background in
-            computer science, bioinformatics, quantitative/theoretical biology or related fields.<br />
-
-            Please note, in general, we cannot cover the living and travel costs. Thus, if required, third party funding
-            via scholarships/travel grants needs to be organized first.<br />
-
-            Internships are possible as online only internship.<br />
-
-            Just write to <i class="fa fa-envelope"></i> <a href="mailto:{{ site.email }}">Matthias König</a>
+                We also offer individual research internships (4-12 weeks) for students with a background in
+                computer science, bioinformatics, quantitative/theoretical biology or related fields.
             </p>
+
+            <p>
+                Please note, in general, we cannot cover the living and travel costs. Thus, if required, third party
+                funding via scholarships/travel grants needs to be organized first.
+            </p>
+            <p>
+                Internships are possible as online or in person internship.<br/>
+            </p>
+                Please contact <i class="fa fa-envelope"></i> <a href="mailto:{{ site.email }}">Matthias König</a>
+            </p>
+
+
+
+
         </div>
 
         <div class="col-md-6" text->
-            <p>
+            <img src="/img/banner.png" class="img-responsive"/>
+            <br/>
 {% highlight python %}
-def hire(you: Student):
+def participate(you: Student) -> bool:
     if you.are_motivated and you.can_code:
         print(f"We are looking for {you}.")
         return True
 {% endhighlight %}
-            </p>
             <br />
-            <p>
-                <img src="/img/projects/function-tests.png" class="img-responsive"/>
-            </p>
-            <p>
-                <img src="/img/projects/hepatokin.png" class="img-responsive"/>
-            </p>
+            <img src="/img/projects/hepatokin.png" class="img-responsive"/>
         </div>
 
     </div>
