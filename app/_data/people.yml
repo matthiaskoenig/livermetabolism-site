@@ -37,6 +37,17 @@
   Key questions are the effect of genotypes and hepatic and renal disease on pravastatin 
   pharmacokinetics.'
 
+- id: 'afruja'
+  status: 'current'
+  year: '2022-'
+  name: 'Afruja Hossain'
+  position: 'Bachelor student'
+  image: afruja.png
+  orcid:
+  repository: 'https://github.com/afruja-h'
+  homepage:
+  description: 'Afruja Hossain works on a systematic overview of protein variability of cytochrome P450 (CYP450) isoforms in the human liver.'
+
 - id: 'adrian'
   status: 'current'
   year: '2020-'

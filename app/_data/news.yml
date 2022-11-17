@@ -1,3 +1,20 @@
+- id: 'afruja'
+  status: 'current'
+  title: 'New Bachelor Student - Afruja Hossain'
+  date: '2022-11-17'
+  image: afruja.png
+  link: 'https://livermetabolism.com/people/'
+  short: 'Afruja Hossain started in our lab working on a systematic overview of protein variability of cytochrome P450 (CYP450) isoforms in the human liver.'
+
+- id: 'euparliament'
+  status: 'current'
+  title: 'Visiting EU parliament and attending STOA AI session'
+  date: '2022-11-15'
+  image: koenig_eu_parliament.png
+  link: 'https://www.berlin-university-alliance.de/news/items/2022/221017-bruessel-reise.html'
+  short: 'We were selected to participate in an European policy journey on the topic
+EU research funding and science communication by the Berlin University Alliance (BUA).'
+
 - id: 'huinternship'
   status: 'current'
   title: 'Humboldt Internship Program 2023 - Computational Modeling of Drug Detoxification - A Systems Medicine Approach'
@@ -27,7 +44,7 @@
   title: 'COMBINE 2022'
   date: '2022-10-06'
   image: COMBINE2022_logo.png
-  image2: COMBINE2022_participants.jpg
+  image2: COMBINE2022_participants.png
   link: 'http://co.mbine.org/events/'
   short: 'We organized the Computational Modeling in Biology Network (COMBINE) meeting in Berlin this year with > 100 participants from 06-08 October 2022.'
 
