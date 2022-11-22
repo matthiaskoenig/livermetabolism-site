@@ -31,7 +31,7 @@ Change the web content in the `./app/` folder.
 Delete the `Gemfile.lock`
 
 ```
-docker run --rm --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/local/bundle" -it jekyll/jekyll:latest bundle update
+docker run --rm --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/local/bundle" -it jekyll/jekyll:4.2.2 bundle update
 ```
 
 ### Build web content
