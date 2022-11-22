@@ -16,7 +16,7 @@ layout: default
             <p>
             {% for person in site.data.people %}
                 {% if person.status=="current" %}
-                <img src="/img/people/{{ person.image }}" class="img-circle" height="40" title="{{ person.name }} ({{ person.position }})"/>
+                <img src="/img/people/50/{{ person.image }}" class="img-circle" height="50" title="{{ person.name }} ({{ person.position }})"/>
                 {% endif %}
             {% endfor %}
             </p>
@@ -83,7 +83,7 @@ layout: default
                     <a href="{{ news.link }}" target="_blank">
                     <img src="/img/news/{{ news.image }}" class="img-responsive" height="60"/>
                     {% if news.image2 %}
-                        <img src="/img/news/{{ news.image2 }}" class="img-responsive" height="60"/>
+                        <img src="/img/news/60/{{ news.image2 }}" class="img-responsive" height="60"/>
                     {% endif %}
                     </a>
                     </div>

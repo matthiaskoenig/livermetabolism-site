@@ -53,7 +53,7 @@
   year: '2020-'
   name: 'Adrian Köller'
   position: 'Bachelor student, Master project, student assistant'
-  image: adrian.jpg
+  image: adrian.png
   orcid:
   repository: 'https://github.com/adriankl'
   homepage:
@@ -65,7 +65,7 @@
   year: '2020-'
   name: 'Florian Bartsch'
   position: 'Bachelor student, Master project, student assistant'
-  image: flobar.jpg
+  image: flobar.png
   orcid:
   repository: 'https://github.com/FloBar'
   homepage:
@@ -206,7 +206,7 @@
   name: 'Hemil Panchiwala'
   affiliation: 'Indian Institute of Technology, Roorkee'
   position: 'Google summer of code student (2020)'
-  image: hemil.jpg
+  image: hemil.png
   orcid:
   repository: 'https://github.com/hemilpanchiwala/SBSCL'
   homepage: 'https://gsoc20hemil.blogspot.com'
@@ -219,7 +219,7 @@
   name: 'Kaustubh Trivedi'
   affiliation: 'Indian Institute of Technology, Roorkee'
   position: 'Google summer of code student (2019)'
-  image: kaustubh.jpg
+  image: kaustubh.png
   orcid:
   repository: 'https://github.com/codekaust'
   homepage: 'https://kt-gsoc19.blogspot.com/'
@@ -243,7 +243,7 @@
   year: '2018'
   name: 'Roman Schulte'
   position: 'Bachelor thesis'
-  image: schulte.jpg
+  image: schulte.png
   orcid:
   repository: 'https://github.com/anfark'
   homepage: 'https://github.com/draeger-lab/insilico'
@@ -265,7 +265,7 @@
   year: '2017'
   name: 'Takahiro Yamada'
   position: 'Google Summer of Code 2017'
-  image: 'yamada.jpeg'
+  image: 'yamada.png'
   orcid:
   repository: 'https://github.com/TakahiroYamada/GSOC2017_SBMLModelAnalysisWebApp'
   homepage: 'https://github.com/TakahiroYamada'
