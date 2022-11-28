@@ -1,3 +1,15 @@
+- id: 'Welsh2022_libroadrunner_2.0'
+  year: 2022
+  pdf: 'Welsh2022_libroadrunner_2.0.pdf'
+  authors: 'Ciaran Welsh, Jin Xu, Lucian Smith, <b>Matthias König</b>, Kiri Choi, Herbert M. Sauro'
+  title: 'libRoadRunner 2.0: A High-Performance SBML Simulation and Analysis Library'
+  journal: 'Bioinformatics, accepted [2022-11-24], arXiv preprint arXiv:2203.01175. 2022 Feb 26; doi: <a href="https://doi.org/10.48550/arXiv.2203.01175">https://doi.org/10.48550/arXiv.2203.01175</a>'
+  project: http://libroadrunner.org/
+  repository: https://github.com/sys-bio/roadrunner/
+  abstract: "Motivation: This paper presents libRoadRunner 2.0, an extensible, high-performance, cross-platform, open-source software library for the simulation and analysis of models expressed using Systems Biology Markup Language SBML).
+Results: libRoadRunner is a self-contained library, able to run both as a component inside other tools via its C++ and C bindings, and interactively through its Python or Julia interface. libRoadRunner uses a custom Just-In-Time JIT compiler built on the widely-used LLVM JIT compiler framework. It compiles SBML-specified models directly into native machine code for a large variety of processors, making it appropriate for solving extremely large models or repeated runs. libRoadRunner is flexible, supporting the bulk of the SBML specification (except for delay and nonlinear algebraic equations) and including several SBML extensions such as composition and distributions. It offers multiple deterministic and stochastic integrators, as well as tools for steady-state, sensitivity, stability analysis, and structural analysis of the stoichiometric matrix.
+Availability: libRoadRunner binary distributions are available for Mac OS X, Linux, and Windows. The library is licensed under the Apache License Version 2.0. libRoadRunner is also available for ARM-based computers such as the Raspberry Pi and can in principle be compiled on any system supported by LLVM-13. this http URL provides online documentation, full build instructions, binaries, and a git source repository."
+
 - id: 'Grzegorzewski2022_dextromethorphan'
   year: 2022
   pdf: 'Grzegorzewski2022_dextromethorphan.pdf'
@@ -57,18 +69,6 @@
   project: 'http://www.github.com/matthiaskoenig/dfba'
   repository: 'http://www.github.com/matthiaskoenig/dfba'
   abstract: 'Computational models in systems biology and systems medicine are typically simulated using a single formalism such as ordinary differential equations (ODE). However, more complex models require the coupling of multiple formalisms since different biological phenomena are better described by different methods. For example, metabolism in steady state is often modeled using flux-balance analysis (FBA) whereas dynamic changes of model components are better described via ODEs. The coupling of FBA and ODE modeling formalisms results in dynamic FBA models. A major challenge is how to describe such hybrid models that couple multiple formalisms in a standardized way so that they can be exchanged between tools and simulated consistently in a reproducible manner. This paper presents a scheme for encoding and implementation of dynamic FBA models in the Systems Biology Markup Language (SBML), thereby enabling the exchange of multi-framework computational models between software tools. We demonstrate the feasibility of the approach using various example models and show that different tools are able to simulate the hybrid models and agree on the results. As part of this work, two independent implementations of a multi-framework simulation method for dynamic FBA have been developed supporting such models: iBioSim and sbmlutils.'
-
-- id: 'Welsh2022_libroadrunner_2.0'
-  year: 2022
-  pdf: 'Welsh2022_libroadrunner_2.0.pdf'
-  authors: 'Ciaran Welsh, Jin Xu, Lucian Smith, <b>Matthias König</b>, Kiri Choi, Herbert M. Sauro'
-  title: 'libRoadRunner 2.0: A High-Performance SBML Simulation and Analysis Library'
-  journal: 'arXiv preprint arXiv:2203.01175. 2022 Feb 26; doi: <a href="https://doi.org/10.48550/arXiv.2203.01175">https://doi.org/10.48550/arXiv.2203.01175</a>'
-  project: http://libroadrunner.org/
-  repository: https://github.com/sys-bio/roadrunner/
-  abstract: "Motivation: This paper presents libRoadRunner 2.0, an extensible, high-performance, cross-platform, open-source software library for the simulation and analysis of models expressed using Systems Biology Markup Language SBML).
-Results: libRoadRunner is a self-contained library, able to run both as a component inside other tools via its C++ and C bindings, and interactively through its Python or Julia interface. libRoadRunner uses a custom Just-In-Time JIT compiler built on the widely-used LLVM JIT compiler framework. It compiles SBML-specified models directly into native machine code for a large variety of processors, making it appropriate for solving extremely large models or repeated runs. libRoadRunner is flexible, supporting the bulk of the SBML specification (except for delay and nonlinear algebraic equations) and including several SBML extensions such as composition and distributions. It offers multiple deterministic and stochastic integrators, as well as tools for steady-state, sensitivity, stability analysis, and structural analysis of the stoichiometric matrix.
-Availability: libRoadRunner binary distributions are available for Mac OS X, Linux, and Windows. The library is licensed under the Apache License Version 2.0. libRoadRunner is also available for ARM-based computers such as the Raspberry Pi and can in principle be compiled on any system supported by LLVM-13. this http URL provides online documentation, full build instructions, binaries, and a git source repository."
 
 - id: 'Caffeine_meta_Grzegorzewski2021'
   year: 2022

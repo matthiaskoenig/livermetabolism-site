@@ -116,6 +116,19 @@
   homepage:
   description: 'Deepa Maheshvare works on a kinetic model of the pancreatic beta-cell. Key questions are the effect of various amino acids on the insulin secretion of the pancreas.'
 
+- id: 'sankha'
+  status: 'current'
+  year: '2022-11/2023-05'
+  name: 'Sankha Das'
+  affiliation: 'Birla Institute of Technology and Science Pilani'
+  position: 'Research Internship'
+  image: 'sankha.png'
+  orcid:
+  repository: 'https://github.com/sankha555'
+  homepage: ''
+  description: 'Sankha Das works on the analysis and quantification of microcirculation data recorded in Humans and Rats. Within the project a workflow for the analysis of orthogonal polarization spectroscopy (OPS) and IDF will be developed as part of <a href="https://qualiperf.de">QuaLiPerF</a>.'
+
+
 - id: 'brandhorst'
   status: 'alumni'
   year: '2019-2022'
