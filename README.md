@@ -21,7 +21,7 @@ The page is built using Jekyll with additional site templates
 ### Run development server
 
 ```
-docker-compose -f docker-compose-serve.yml up
+docker compose -f docker-compose-serve.yml up
 ```
 
 Change the web content in the `./app/` folder.

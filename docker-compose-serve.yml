@@ -11,7 +11,7 @@ version: "3"
 services:
   jekyll:
     command: jekyll serve
-    image: jekyll/jekyll:4.2.2
+    image: jekyll/jekyll:3.8.5
     volumes:
       - $PWD:/srv/jekyll
       - $PWD/app/vendor/bundle:/usr/local/bundle"
