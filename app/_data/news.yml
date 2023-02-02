@@ -1,3 +1,13 @@
+- id: 'atlas'
+  status: 'current'
+  title: 'ATLAS - AI and Simulation for Tumor Liver ASsessment'
+  date: '2023-02-01'
+  image: atlas.png
+  # image2: ATLAS_GraphicalAbstract.png
+  link: 'https://www.simtech.uni-stuttgart.de/press/SimTech-collaborates-across-disciplines-in-joint-ATLAS-project/'
+  short: 'The BMBF is funding our joint project ATLAS in the "Computational Life Sciences - AI Methods for Systems Medicine".'
+
+
 - id: 'afruja'
   status: 'current'
   title: 'New Bachelor Student - Afruja Hossain'

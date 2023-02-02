@@ -1,5 +1,15 @@
+- id: 'Bartsch2023_simvastatin'
+  year: 2023
+  pdf: 'Bartsch2023_simvastatin.pdf'
+  authors: 'F. Bartsch, J. Grzegorzewski, H. Pujol, HM. Tautenhahn, <b>M. König</b>'
+  title: 'Simvastatin therapy in different subtypes of hypercholesterolemia - a physiologically based modelling approach'
+  journal: 'Preprint submitted [2023-02-01]'
+  project:
+  repository: https://github.com/matthiaskoenig/simvastatin-model
+  abstract: "Hypercholesterolemia is a multifaceted plasma lipid disorder with heterogeneous causes including lifestyle and genetic factors. A key feature of hypercholesterolemia is elevated plasma levels of low-density lipoprotein cholesterol (LDL-C). Several genetic variants have been reported to be associated with hypercholesterolemia, known as familial hypercholesterolemia (FH). Important variants affect the LDL receptor (LDLR), which mediates the uptake of LDL-C from the plasma, apoliporotein B (APOB), which is involved in the binding of LDL-C to the LDLR, and proprotein convertase subtilisin/kexin type 9 (PCSK9), which modulates the degradation of the LDLR. A typical treatment for hypercholesterolemia is statin medication, with simvastatin being one of the most commonly prescribed statins. In this work, the LDL-C lowering therapy with simvastatin in hypercholesterolemia was investigated using a computational modeling approach. A physiologically based pharmacokinetic model of simvastatin integrated with a pharmacodynamic model of plasma LDL-C (PBPK/PD) was developed based on extensive data curation. A key component of the model is LDL-C turnover by the liver, consisting of: hepatic cholesterol synthesis with the key enzymes HMG-CoA reductase and HMG-CoA synthase; cholesterol export from the liver as VLDL-C; de novo synthesis of LDLR; transport of LDLR to the membrane; binding of LDL-C by LDLR via APOB; endocytosis of the LDLR-LDL-C complex; recycling of LDLR from the complex. The model was applied to study the effects of simvastatin therapy in hypercholesterolemia due to different causes in the LDLR pathway corresponding to different subtypes of hypercholesterolemia. Model predictions of LDL-C lowering therapy were validated with independent clinical data sets. Key findings are: (i) hepatic LDLR turnover is highly heterogeneous among FH classes; (ii) despite this heterogeneity, simvastatin therapy results in a consistent reduction in plasma LDL-C regardless of class; and (iii) simvastatin therapy shows a dose-dependent reduction in LDL-C. Our model suggests that the underlying cause of hypercholesterolemia does not influence simvastatin therapy. Furthermore, our model supports the treatment strategy of stepwise dose adjustment to achieve target LDL-C levels. Both the model and the database are freely available for reuse."
+
 - id: 'PhD.Thesis.Jan.Grzegorzewski'
-  year: 2022
+  year: 2023
   pdf: 'theses/PhD.Thesis.Jan.Grzegorzewski.pdf'
   authors: 'Jan Grzegorzewski (supervisor: <b>Matthias König</b>)'
   title: 'Physiologically based pharmacokinetic (PBPK) modeling for dynamical liver function tests and CYP phenotyping'
