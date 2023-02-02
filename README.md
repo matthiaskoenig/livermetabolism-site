@@ -97,4 +97,4 @@ docker-compose up --build -d
 ```
 
 ----
-&copy; 2016-2022 Matthias König.
+&copy; 2016-2023 Matthias König.
