@@ -1,3 +1,11 @@
+- id: 'simvastatin_preprint'
+  status: 'current'
+  title: 'Preprint: Simvastatin therapy in different subtypes of hypercholesterolemia '
+  date: '2023-02-03'
+  image: simvastatin_preprint.png
+  link: 'https://www.medrxiv.org/content/10.1101/2023.02.01.23285358v1'
+  short: 'Our latest preprint is now on medRxiv: Simvastatin therapy in different subtypes of hypercholesterolemia - a physiologically based modelling approach.'
+
 - id: 'atlas'
   status: 'current'
   title: 'ATLAS - AI and Simulation for Tumor Liver ASsessment'
@@ -26,7 +34,7 @@
 EU research funding and science communication by the Berlin University Alliance (BUA).'
 
 - id: 'huinternship'
-  status: 'current'
+  status: 'old'
   title: 'Humboldt Internship Program 2023 - Computational Modeling of Drug Detoxification - A Systems Medicine Approach'
   date: '2022-10-26'
   image: humboldt-internship.jpg
