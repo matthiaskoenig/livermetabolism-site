@@ -47,6 +47,27 @@
   </p>
   '
 
+- id: zonation
+  title: "Hepatic zonation patterns of Cytochrome P450 enzymes"
+  publication:
+  project:
+  repository:
+  people:
+    - koenig
+  cooperation partners: Prof. Bruno Christ, Prof. Uta Dahmen
+  images:
+    - zonation.png
+  image_title: ATLAS - AI and Simulation for Tumor Liver ASsessment.
+  abstract: '
+  <h3>Quantification of hepatic zonation patterns from Immunofluorescence and Immunohistochemistry Images</h3>
+  <p>
+This project implements an image analysis pipeline based on whole slide images (WSI) from brightfield or fluorescence microscopy. The zonation patterns will be quantified.
+  </p>
+  <p>
+  The developed pipeline will be applied to study species differences in zonation patterns of CYP enzymes and changes in zonation due to hepatic steatosis and perfusion changes.
+  </p>
+  '
+
 - id: simvastatin
   title: "Simvastatin therapy in different subtypes of hypercholesterolemia"
   publication: Bartsch2023_simvastatin
