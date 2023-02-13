@@ -62,7 +62,7 @@ layout: default
             </div>
 
             <h3>Funding</h3>
-            For more information, please see our <a href="/funding/"><i class="fa fa-money" aria-hidden="true"></i> funding</a>.
+            For more information, please see our <a href="/funding/">funding</a>.
             <p>
                 <a href="https://www.bmbf.de/" target="_blank"><img src="/img/bmbf.png" title="BMBF - Bundesministerium für Bildung und Forschung" width="110"></a>&nbsp;&nbsp;
                 <a href="https://www.dfg.de/" target="_blank"><img src="/img/dfg.jpeg" title="DFG - Deutsche Forschungsgesellschaft" width="110"></a>&nbsp;&nbsp;
@@ -79,13 +79,13 @@ layout: default
                     <td><b>{{ editor.term }}</b></td>
                     <td>
                         {% if editor.homepage %}
-                        <a href="{{ editor.project }}"><img src="../img/project.png" title="Project homepage" height="20"/></a>
+                        <a href="{{ editor.homepage }}"><img src="../img/project.png" title="Project homepage" height="20"/></a>
                         {% endif %}
                         {% if editor.repository %}
                         <a href="{{ editor.repository }}"><img src="../img/repository.png" title="Repository homepage" height="20"/></a>
                         {% endif %}
                     </td>
-                    <td><img src="../img/editors/{{ editor.image }}" title="{{ editor.name }}" height="20"/> </td>
+                    <td><a href="{{ editor.homepage }}"><img src="../img/editors/{{ editor.image }}" title="{{ editor.name }}" height="35"/></a></td>
                     <td><strong>{{ editor.name }}</strong> <br />{{ editor.description }}</td>
                 </tr>
                 {% endfor %}
@@ -94,26 +94,25 @@ layout: default
             <h3>Software</h3>
             We are actively involved in the standardization and reproducibility efforts in Systems Biology and Systems Medicine.
             <table class="table table-hover">
-                {% for editor in site.data.editors %}
+                {% for software in site.data.software %}
                 <tr>
-                    <td><b>{{ editor.term }}</b></td>
+                    <td><b>{{ software.term }}</b></td>
                     <td>
-                        {% if editor.homepage %}
-                        <a href="{{ editor.project }}"><img src="../img/project.png" title="Project homepage" height="20"/></a>
+                        {% if software.homepage %}
+                        <a href="{{ software.homepage }}"><img src="../img/project.png" title="Project homepage" height="20"/></a>
                         {% endif %}
-                        {% if editor.repository %}
-                        <a href="{{ editor.repository }}"><img src="../img/repository.png" title="Repository homepage" height="20"/></a>
+                        {% if software.repository %}
+                        <a href="{{ software.repository }}"><img src="../img/repository.png" title="Repository homepage" height="20"/></a>
                         {% endif %}
                     </td>
-                    <td><img src="../img/editors/{{ editor.image }}" title="{{ editor.name }}" height="20"/> </td>
-                    <td><strong>{{ editor.name }}</strong> <br />{{ editor.description }}</td>
+                    <td><a href="{{ software.homepage }}"><img src="../img/software/{{ software.image }}" title="{{ software.name }}" height="35"/></a></td>
+                    <td><strong>{{ software.name }} - {{ software.title }}</strong> <br />{{ software.description }}</td>
                 </tr>
                 {% endfor %}
             </table>
-
         </div>
 
-         <div class="col-md-4">
+         <div class="col-md-4" style="background-color: #efefef;">
              <h3>News</h3>
              {% for news in site.data.news %}
                 {% if news.status=="current" %}
@@ -130,18 +129,42 @@ layout: default
                     </div>
                     <div class="col-md-6">
                     {{ news.short }}<br />
-
+                    </div>
                     </div>
 
-
-                    </div>
-                    <a href="{{ news.link }}" target="_blank">{{ news.link }}</a>
 
                 </p>
                 {% endif %}
             {% endfor %}
-             For more news see <a href="/news/"><i class="fa fa-newspaper-o" aria-hidden="true"></i> news</a>.
-
+             For more information, please see our <a href="/news/"><i class="fa fa-newspaper-o" aria-hidden="true"></i> news</a>.
         </div>
+
+
     </div>
 
+    <div class="row">
+        <h3>Publications</h3>
+        <table class="table table-hover">
+            {% for publication in site.data.publications %}
+            <tr>
+                <td><b>{{ publication.year }}</b></td>
+                <td>
+                    {% if publication.pdf %}
+                    <a href="/paper/{{ publication.pdf }}"><img src="../img/pdf.png" title="PDF" height="20"/></a>
+                    {% endif %}
+                    {% if publication.project %}
+                    <a href="{{ publication.project }}"><img src="../img/project.png" title="Project homepage" height="20"/></a>
+                    {% endif %}
+                    {% if publication.repository %}
+                    <a href="{{ publication.repository }}"><img src="../img/repository.png" title="Repository homepage" height="20"/></a>
+                    {% endif %}
+                </td>
+                <td>{{ publication.authors }} <br />
+                    <i>{{ publication.title }}</i><br />
+                    {{ publication.journal }}
+                </td>
+                <td></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>

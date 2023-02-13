@@ -54,7 +54,7 @@
 EU research funding and science communication by the Berlin University Alliance (BUA).'
 
 - id: 'huinternship'
-  status: 'old'
+  status: 'current'
   title: 'Humboldt Internship Program 2023 - Computational Modeling of Drug Detoxification - A Systems Medicine Approach'
   date: '2022-10-26'
   image: humboldt-internship.jpg
@@ -63,7 +63,7 @@ EU research funding and science communication by the Berlin University Alliance 
 
 - id: 'dex'
   status: 'current'
-  title: 'Dextromethorphan Publication'
+  title: 'Dextromethorphan publication'
   date: '2022-10-24'
   image: dex_model.png
   link: 'https://www.frontiersin.org/articles/10.3389/fphar.2022.1029073/full'

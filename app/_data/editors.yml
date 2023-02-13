@@ -1,6 +1,6 @@
 - id: 'combine'
   status: 'current'
-  term: '2020-'
+  term: '2020-2023'
   name: 'COMBINE coordinator'
   image: combine.png
   repository: 'https://github.com/combine-org'
@@ -24,8 +24,6 @@
   repository: 'https://github.com/sbmlteam/'
   homepage: 'https://sbml.org/'
   description: 'The Systems Biology Markup Language (SBML) is a software data format for describing models in biology. '
-
-
 
 - id: 'sed-ml'
   status: 'alumni'

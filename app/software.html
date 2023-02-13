@@ -1,0 +1,26 @@
+---
+layout: page
+title: Software
+permalink: /software/
+---
+
+<div class="row">
+ We are actively involved in the standardization and reproducibility efforts in Systems Biology and Systems Medicine.
+            <table class="table table-hover">
+                {% for software in site.data.software %}
+                <tr>
+                    <td><b>{{ software.term }}</b></td>
+                    <td>
+                        {% if software.homepage %}
+                        <a href="{{ software.homepage }}"><img src="../img/project.png" title="Project homepage" height="20"/></a>
+                        {% endif %}
+                        {% if software.repository %}
+                        <a href="{{ software.repository }}"><img src="../img/repository.png" title="Repository homepage" height="20"/></a>
+                        {% endif %}
+                    </td>
+                    <td><a href="{{ software.homepage }}"><img src="../img/software/{{ software.image }}" title="{{ software.name }}" height="35"/></a></td>
+                    <td><strong>{{ software.name }} - {{ software.title }}</strong> <br />{{ software.description }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+</div>
