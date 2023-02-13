@@ -68,6 +68,7 @@ EU research funding and science communication by the Berlin University Alliance 
   image: dex_model.png
   link: 'https://www.frontiersin.org/articles/10.3389/fphar.2022.1029073/full'
   short: 'How does CYP2D6 genotype effect metabolic phenotyping? See our latest paper in Frontiers in Pharmacology for answers.'
+  abstract: ''
 
 - id: 'xresearch2022'
   status: 'old'

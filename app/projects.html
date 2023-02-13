@@ -12,47 +12,41 @@ permalink: /projects/
 
     <table class="table table-responsive well">
         <tr>
-            <td width="150">
+            <td width="200">
                 {% for author in project.people %}
                 {% assign person = site.data.people | where:"id", author | first %}
                 {% if person and person.image %}
-                <img src="/img/people/{{ person.image }}" class="img-circle" height="50" title="{{ person.name }}"/>
+                <img src="/img/people/{{ person.image }}" class="img-circle" height="40" title="{{ person.name }}"/>
                 {% endif %}
                 {% endfor %}
             </td>
-            <td width="150">
-                {% if publication %}
-
-                    {% if publication.project %}
-                    <a href="{{ publication.project }}"><img src="/img/project.png" title="project homepage"
-                                                             height="30"/></a>
-                    {% endif %}
-
-                    {% if publication.repository %}
-                    <a href="{{ publication.repository }}"><img src="/img/repository.png" title="repository"
-                                                                height="30"/></a>
-                    {% endif %}
-
+            <td width="200">
+                {% if project.publication %}
+                    {% assign publication = site.data.publications | where:"id", project.publication | first %}
                     {% if publication.pdf %}
-                    <a href="../paper/{{ publication.pdf }}"><img src="/img/pdf.png" title="pdf" height="30"/></a>
+                    <a href="../paper/{{ publication.pdf }}"><img src="/img/pdf.png" title="pdf" height="20"/></a>
                     {% endif %}
-
                 {% else %}
-                    {% if project.project %}
-                    <a href="{{ project.project }}"><img src="/img/project.png" title="project homepage"
-                                                         height="30"/></a>
-                    {% endif %}
-                    {% if project.repository %}
-                    <a href="{{ project.repository }}"><img src="/img/repository.png" title="repository"
-                                                            height="30"/></a>
-                    {% endif %}
+                    {% assign publication = '' %}
+                {% endif %}
+
+                {% if project.project %}
+                <a href="{{ project.project }}"><img src="/img/project.png" title="project homepage" height="20"/></a>
+                {% endif %}
+
+                {% if project.repository %}
+                <a href="{{ project.repository }}"><img src="/img/repository.png" title="repository"
+                                                        height="20"/></a>
                 {% endif %}
             </td>
             <td>
-                {% if publication %}
-                {{ publication.authors }}<br/>
-                <i>{{ publication.title }}</i><br/>
-                {{ publication.journal }}
+                {% if project.publication %}
+                    {% assign publication = site.data.publications | where:"id", project.publication | first %}
+                    {{ publication.authors }}<br/>
+                    <i>{{ publication.title }}</i><br/>
+                    {{ publication.journal }}
+                {% else %}
+                    {% assign publication = '' %}
                 {% endif %}
             </td>
         </tr>

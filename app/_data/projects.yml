@@ -1,57 +1,85 @@
+- id: dextromethorphan
+  title: "Physiologically based pharmacokinetic (PBPK) model of CYP2D6 polymorphism"
+  publication: Grzegorzewski2022_dextromethorphan
+  project:
+  repository: https://github.com/matthiaskoenig/dextromethorphan-model
+  people:
+    - janek
+    - brandhorst
+    - koenig
+  cooperation partners:
+  images:
+    - dex_model.png
+  image_title: Physiologically based pharmacokinetic (PBPK) model of dextromethophan.
+  abstract: '
+  <h3>Physiologically based pharmacokinetic (PBPK) model of dextromethorphan</h3>
+  <p>
+  The cytochrome P450 2D6 (CYP2D6) is a key xenobiotic-metabolizing enzyme involved in the clearance of many drugs. Genetic polymorphisms in CYP2D6 contribute to the large inter-individual variability in drug metabolism and could affect metabolic phenotyping of CYP2D6 probe substances such as dextromethorphan (DXM).
+  </p> 
+  <p>
+  To study this question, we (i) established an extensive pharmacokinetics dataset for DXM; and (ii) developed and validated a physiologically based pharmacokinetic (PBPK) model of DXM and its metabolites dextrorphan (DXO) and dextrorphan O-glucuronide (DXO-Glu) based on the data. Drug-gene interactions (DGI) were introduced by accounting for changes in CYP2D6 enzyme kinetics depending on activity score (AS), which in combination with AS for individual polymorphisms allowed us to model CYP2D6 gene variants. Variability in CYP3A4 and CYP2D6 activity was modeled based on in vitro data from human liver microsomes. 
+  </p>
+  Both, model and database are freely available for reuse.
+   </p>
+  '
+
 - id: atlas
-  title: "Computational Modeling of Dynamical Liver Function Tests: LiMAx"
-  publication: Bartsch2023_simvastatin
+  title: "ATLAS - AI and Simulation for Tumor Liver ASsessment"
+  publication:
   project:
   repository:
   people:
     - koenig
-  cooperation partners: Prof. Stockmann, Prof. Timmer
+  cooperation partners: Prof. Tim Ricken, Prof. Stefan Staab, Dr. Hans-Michael Tautenhahn
   images:
-    - limax.png
-  image_title: Computational model of LiMAx test.
+    - atlas.png
+  image_title: ATLAS - AI and Simulation for Tumor Liver ASsessment.
   abstract: '
-  <h3>Modeling LiMAx liver function test</h3>
+  <h3>ATLAS - AI and Simulation for Tumor Liver ASsessment</h3>
   <p>
-  Assessment of liver function is a key task in hepatology but accurate quantification of hepatic function has remained a clinical challenge. Dynamic liver function tests are a promising tool for the non-invasive evaluation of liver function in vivo. One class of such tests are breath tests based on the conversion of 13C-labeled substrates by the liver to 13CO2 subsequently measured in the breath. A commonly applied substrate is 13C-methacetin, converted to paracetamol and 13CO2 via cytochrome P450 1A2 (CYP1A2), used orally in the methacetin breath test (MBT) and intravenously in the LiMAx test. An important clinical question is which factors can affect MBT and LiMAx results. The aim of our study was to answer this question using computational modeling to derive basic information for a better understanding of the methacetin breath test and factors influencing its results.
+  Liver cancer is the second most common cause of cancer-related death. Diagnosis and treatment are time-critical and require highly patient-specific diagnostic and treatment pathways. Medical decision-making is based on a variety of interdependent factors related to different medical disciplines, past experience and clinical guidelines. Taking into account all decision factors in combination with the possible therapeutic approaches is a major challenge for physicians and often cannot be solved optimally even in an interdisciplinary tumor board.
+   </p>
+   <p>
+   In this project, we are developing ATLAS, a decision support tool that will significantly assist clinicians in meeting this challenge. Based on AI methods, ATLAS processes all relevant patient data from databases, systems medicine and continuum biomechanical in silico prognosis models as well as individual patient data. The tool is being developed in a co-design approach by experts in surgical oncology, mathematical modeling and machine learning. The selected technologies will integrate automated understanding of a highly complex patient situation through simulation of liver functions with expert knowledge and ontology-driven learning with knowledge graphs from retrospective liver tumor cases.
+   </p>
+   <p> 
+   ATLAS will be based on a detailed historical data cohort of more than 6,000 patients with liver tumors and will be evaluated on case studies at the University Hospital of Jena. The integration of medical expert knowledge, mathematical modeling and artificial intelligence represents a highly original and promising approach for high-quality diagnosis and treatment of liver tumors, resulting in patient-specific improvement of prognosis. The scientific knowledge gained from these projects will provide opportunities for transfer to malignancies in other organs, such as the lung, kidney or brain. The development of tools and demonstrators will provide sustainable exploitation pathways for future commercial applications.
   </p>
-  <p>
-  A physiological based pharmacokinetics (PBPK) model for 13C-methacetin breath tests including absorption, distribution, metabolism and elimination of 13C-methacetin, paracetamol, and 13C-bicarbonate/13CO2 was developed. The model correctly predicts data from more than 20 clinical studies after oral and intravenous application under various dosing regimens of paracetamol, 13C-bicarbonate, and 13C-methacetin, based on retrospective analysis. Model predictions were validated based on data from multiple studies consisting of 13C-bicarbonate kinetics, LiMAx dosing study and retrospective analysis of LiMAx data from healthy smokers and non-smokers. Sensitivity analysis was performed to identify key factors influencing MBT and LiMAx.
-  </p>
-  </p>
-  The model was applied to study the effect of clinically relevant parameters like CYP1A2 content, hepatic perfusion or lifestyle factors like smoking on LiMAx. In summary, we present a valuable tool for the evaluation of dynamical liver function tests based on 13C-methacetin.
-  </p>'
+  '
 
 - id: simvastatin
-  title: "Computational Modeling of Dynamical Liver Function Tests: LiMAx"
+  title: "Simvastatin therapy in different subtypes of hypercholesterolemia"
   publication: Bartsch2023_simvastatin
   project:
   repository:
   people:
+    - flobar
     - koenig
-  cooperation partners: Prof. Stockmann, Prof. Timmer
+    - janek
+  cooperation partners:
   images:
-    - limax.png
+    - simvastatin.png
   image_title: Computational model of LiMAx test.
   abstract: '
-  <h3>Modeling LiMAx liver function test</h3>
+  <h3>Simvastatin therapy in different subtypes of hypercholesterolemia</h3>
   <p>
-  Assessment of liver function is a key task in hepatology but accurate quantification of hepatic function has remained a clinical challenge. Dynamic liver function tests are a promising tool for the non-invasive evaluation of liver function in vivo. One class of such tests are breath tests based on the conversion of 13C-labeled substrates by the liver to 13CO2 subsequently measured in the breath. A commonly applied substrate is 13C-methacetin, converted to paracetamol and 13CO2 via cytochrome P450 1A2 (CYP1A2), used orally in the methacetin breath test (MBT) and intravenously in the LiMAx test. An important clinical question is which factors can affect MBT and LiMAx results. The aim of our study was to answer this question using computational modeling to derive basic information for a better understanding of the methacetin breath test and factors influencing its results.
+  Hypercholesterolemia is a multifaceted plasma lipid disorder with heterogeneous causes including lifestyle and genetic factors. A key feature of hypercholesterolemia is elevated plasma levels of low-density lipoprotein cholesterol (LDL-C). Several genetic variants have been reported to be associated with hypercholesterolemia, known as familial hypercholesterolemia (FH). Important variants affect the LDL receptor (LDLR), which mediates the uptake of LDL-C from the plasma, apoliporotein B (APOB), which is involved in the binding of LDL-C to the LDLR, and proprotein convertase subtilisin/kexin type 9 (PCSK9), which modulates the degradation of the LDLR. A typical treatment for hypercholesterolemia is statin medication, with simvastatin being one of the most commonly prescribed statins. 
   </p>
   <p>
-  A physiological based pharmacokinetics (PBPK) model for 13C-methacetin breath tests including absorption, distribution, metabolism and elimination of 13C-methacetin, paracetamol, and 13C-bicarbonate/13CO2 was developed. The model correctly predicts data from more than 20 clinical studies after oral and intravenous application under various dosing regimens of paracetamol, 13C-bicarbonate, and 13C-methacetin, based on retrospective analysis. Model predictions were validated based on data from multiple studies consisting of 13C-bicarbonate kinetics, LiMAx dosing study and retrospective analysis of LiMAx data from healthy smokers and non-smokers. Sensitivity analysis was performed to identify key factors influencing MBT and LiMAx.
+  In this project, the LDL-C lowering therapy with simvastatin in hypercholesterolemia was investigated using a computational modeling approach. A physiologically based pharmacokinetic model of simvastatin integrated with a pharmacodynamic model of plasma LDL-C (PBPK/PD) was developed based on extensive data curation. A key component of the model is LDL-C turnover by the liver, consisting of: hepatic cholesterol synthesis with the key enzymes HMG-CoA reductase and HMG-CoA synthase; cholesterol export from the liver as VLDL-C; de novo synthesis of LDLR; transport of LDLR to the membrane; binding of LDL-C by LDLR via APOB; endocytosis of the LDLR-LDL-C complex; recycling of LDLR from the complex. The model was applied to study the effects of simvastatin therapy in hypercholesterolemia due to different causes in the LDLR pathway corresponding to different subtypes of hypercholesterolemia.
   </p>
   </p>
-  The model was applied to study the effect of clinically relevant parameters like CYP1A2 content, hepatic perfusion or lifestyle factors like smoking on LiMAx. In summary, we present a valuable tool for the evaluation of dynamical liver function tests based on 13C-methacetin.
+  Model predictions of LDL-C lowering therapy were validated with independent clinical data sets. Key findings are: (i) hepatic LDLR turnover is highly heterogeneous among FH classes; (ii) despite this heterogeneity, simvastatin therapy results in a consistent reduction in plasma LDL-C regardless of class; and (iii) simvastatin therapy shows a dose-dependent reduction in LDL-C. Our model suggests that the underlying cause of hypercholesterolemia does not influence simvastatin therapy. Furthermore, our model supports the treatment strategy of stepwise dose adjustment to achieve target LDL-C levels. Both the model and the database are freely available for reuse.
   </p>'
 
 - id: limax
   title: "Computational Modeling of Dynamical Liver Function Tests: LiMAx"
-  publication: LiMAx_Koenig2018
-  project:
-  repository:
+  publication:
+  project: https://github.com/matthiaskoenig/limax
+  repository: https://github.com/matthiaskoenig/limax
   people:
     - koenig
-  cooperation partners: Prof. Stockmann, Prof. Timmer
+  cooperation partners: Prof. Stockmann, Prof. Timmer, Dr. Hans-Michael Tautenhahn
   images:
     - limax.png
   image_title: Computational model of LiMAx test.
