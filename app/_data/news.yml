@@ -1,10 +1,30 @@
+- id: 'xresearch2023'
+  status: 'current'
+  title: 'X-Research Group - Digital twins for the treatment of hypertension'
+  date: '2023-12-02'
+  image: xresearch_logo.png
+  link: '/teaching/'
+  short: 'M. König receives funding of the Berlin University Alliance and the DFG for the X-Student Research Group: Physiologically based modeling of drugs: ACE inhibitors'
+  abstract: 'Understanding a drugs pharmacokinetics - how it is absorbed, distributed, metabolised and excreted by the body - and its pharmacodynamics - how it affects the body - is a key challenge in treating people. Angiotensin converting enzyme (ACE) inhibitors and diuretics are two classes of drugs used to treat high blood pressure. Both are among the most commonly prescribed drugs due to the high prevalence of hypertension in an ageing society. In this X-student research group we will develop physiologically based pharmacokinetic models of the diuretic hydrochlorothiazide and the ACE inhibitor lisinopril. The methodological approach is a combination of lectures, tutorials and practical work by the students. The research project is aimed at students with a STEM (science, technology, engineering, mathematics) background, including biology, computer science and medical students. Basic programming skills in Python are required.'
+
+- id: 'petab_editor'
+  status: 'current'
+  title: 'M. König has been elected as PEtab editor (2023-2026)'
+  date: '2023-02-07'
+  image: petab.png
+  link: 'https://petab.readthedocs.io/en/latest/'
+  short: 'Proud to be elected editor for PEtab, a data format for specifying parameter estimation problems in systems biology.'
+  abstract: 'PEtab is a data format for specifying parameter estimation problems in systems biology. PEtab is built around SBML and is based on tab-separated values (TSV) files. It is intended as a standardized way to provide information for parameter estimation that is beyond the current scope of SBML. This includes, for example: (1) specifying and linking measurements to models; (2) defining model outputs; (3) specifying noise models; (4) specifying parameter bounds for optimization; (5) specifying multiple simulation conditions with potentially shared parameters. 
+  Matthias König has been elected PEtab Editor from March 2023 to March 2026.'
+
 - id: 'simvastatin_preprint'
   status: 'current'
-  title: 'Preprint: Simvastatin therapy in different subtypes of hypercholesterolemia '
+  title: 'Preprint: Simvastatin therapy in different subtypes of hypercholesterolemia'
   date: '2023-02-03'
   image: simvastatin_preprint.png
   link: 'https://www.medrxiv.org/content/10.1101/2023.02.01.23285358v1'
   short: 'Our latest preprint is now on medRxiv: Simvastatin therapy in different subtypes of hypercholesterolemia - a physiologically based modelling approach.'
+  abstract: 'Hypercholesterolemia is a multifaceted plasma lipid disorder with heterogeneous causes including lifestyle and genetic factors. A key feature of hypercholesterolemia is elevated plasma levels of low-density lipoprotein cholesterol (LDL-C). Several genetic variants have been reported to be associated with hypercholesterolemia, known as familial hypercholesterolemia (FH). Important variants affect the LDL receptor (LDLR), which mediates the uptake of LDL-C from the plasma, apoliporotein B (APOB), which is involved in the binding of LDL-C to the LDLR, and proprotein convertase subtilisin/kexin type 9 (PCSK9), which modulates the degradation of the LDLR. A typical treatment for hypercholesterolemia is statin medication, with simvastatin being one of the most commonly prescribed statins. In this work, the LDL-C lowering therapy with simvastatin in hypercholesterolemia was investigated using a computational modeling approach. A physiologically based pharmacokinetic model of simvastatin integrated with a pharmacodynamic model of plasma LDL-C (PBPK/PD) was developed based on extensive data curation. A key component of the model is LDL-C turnover by the liver, consisting of: hepatic cholesterol synthesis with the key enzymes HMG-CoA reductase and HMG-CoA synthase; cholesterol export from the liver as VLDL-C; de novo synthesis of LDLR; transport of LDLR to the membrane; binding of LDL-C by LDLR via APOB; endocytosis of the LDLR-LDL-C complex; recycling of LDLR from the complex. The model was applied to study the effects of simvastatin therapy in hypercholesterolemia due to different causes in the LDLR pathway corresponding to different subtypes of hypercholesterolemia. Model predictions of LDL-C lowering therapy were validated with independent clinical data sets. Key findings are: (i) hepatic LDLR turnover is highly heterogeneous among FH classes; (ii) despite this heterogeneity, simvastatin therapy results in a consistent reduction in plasma LDL-C regardless of class; and (iii) simvastatin therapy shows a dose-dependent reduction in LDL-C. Our model suggests that the underlying cause of hypercholesterolemia does not influence simvastatin therapy. Furthermore, our model supports the treatment strategy of stepwise dose adjustment to achieve target LDL-C levels. Both the model and the database are freely available for reuse.'
 
 - id: 'atlas'
   status: 'current'
@@ -14,7 +34,7 @@
   # image2: ATLAS_GraphicalAbstract.png
   link: 'https://www.simtech.uni-stuttgart.de/press/SimTech-collaborates-across-disciplines-in-joint-ATLAS-project/'
   short: 'The BMBF is funding our joint project ATLAS in the "Computational Life Sciences - AI Methods for Systems Medicine".'
-
+  abstract: 'Liver cancer is the second most common cause of cancer-related death. Diagnosis and treatment are time-critical and require highly patient-specific diagnostic and treatment pathways. Medical decision-making is based on a variety of interdependent factors related to different medical disciplines, past experience and clinical guidelines. Taking into account all decision factors in combination with the possible therapeutic approaches is a major challenge for physicians and often cannot be solved optimally even in an interdisciplinary tumor board. In this project, we are developing ATLAS, a decision support tool that will significantly assist clinicians in meeting this challenge. Based on AI methods, ATLAS processes all relevant patient data from databases, systems medicine and continuum biomechanical in silico prognosis models as well as individual patient data. The tool is being developed in a co-design approach by experts in surgical oncology, mathematical modeling and machine learning. The selected technologies will integrate automated understanding of a highly complex patient situation through simulation of liver functions with expert knowledge and ontology-driven learning with knowledge graphs from retrospective liver tumor cases. ATLAS will be based on a detailed historical data cohort of more than 6,000 patients with liver tumors and will be evaluated on case studies at the University Hospital of Jena. The integration of medical expert knowledge, mathematical modeling and artificial intelligence represents a highly original and promising approach for high-quality diagnosis and treatment of liver tumors, resulting in patient-specific improvement of prognosis. The scientific knowledge gained from these projects will provide opportunities for transfer to malignancies in other organs, such as the lung, kidney or brain. The development of tools and demonstrators will provide sustainable exploitation pathways for future commercial applications.'
 
 - id: 'afruja'
   status: 'current'
@@ -22,7 +42,7 @@
   date: '2022-11-17'
   image: afruja.png
   link: 'https://livermetabolism.com/people/'
-  short: 'Afruja Hossain started in our lab working on a systematic overview of protein variability of cytochrome P450 (CYP450) isoforms in the human liver.'
+  short: 'Afruja Hossain started working in our lab on a systematic overview of the protein variability of cytochrome P450 (CYP450) isoforms in the human liver.'
 
 - id: 'euparliament'
   status: 'current'
@@ -50,7 +70,7 @@ EU research funding and science communication by the Berlin University Alliance 
   short: 'How does CYP2D6 genotype effect metabolic phenotyping? See our latest paper in Frontiers in Pharmacology for answers.'
 
 - id: 'xresearch2022'
-  status: 'current'
+  status: 'old'
   title: 'X-Research Group'
   date: '2022-10-24'
   image: xresearch.png

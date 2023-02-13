@@ -4,31 +4,32 @@ title: News
 permalink: /news/
 ---
 
-<div class="container">
-    <div class="row">
-        {% for news in site.data.news %}
-        <div class="col-md-6">
-            <h2>{{ news.title }}</h2>
-            <h3>{{ news.date }}</h3>
-            <div class="row">
-                <div class="col-md-6">
-                    <a href="{{ news.link }}" target="_blank">
-                        <img src="/img/news/{{ news.image }}" class="img-responsive" height="60"/>
-                        {% if news.image2 %}
-                        <img src="/img/news/{{ news.image2 }}" class="img-responsive" height="60"/>
-                        {% endif %}
-                    </a>
-                </div>
-                <div class="col-md-6">
-					<p>
-                    {{ news.short }}
-					</p>
-                </div>
+<div class="row">
+    {% for news in site.data.news %}
+    <div class="col-md-12">
+        <h4>{{ news.date }}</h4>
+        <h3>{{ news.title }}</h3>
+        <div class="row">
+            <div class="col-md-3">
+                <a href="{{ news.link }}" target="_blank">
+                    <img src="/img/news/{{ news.image }}" class="img-responsive" height="60"/>
+                    {% if news.image2 %}
+                    <img src="/img/news/{{ news.image2 }}" class="img-responsive" height="60"/>
+                    {% endif %}
+                </a>
             </div>
-            <a href="{{ news.link }}" target="_blank">{{ news.link }}</a>
+            <div class="col-md-9">
+                <p>
+                {{ news.short }}
+                </p>
+                {% if news.abstract %}
+                <p>
+                {{ news.abstract }}
+                </p>
+                {% endif %}
+            </div>
         </div>
-        {% endfor %}
+        <a href="{{ news.link }}" target="_blank">{{ news.link }}</a>
     </div>
-
-
+    {% endfor %}
 </div>

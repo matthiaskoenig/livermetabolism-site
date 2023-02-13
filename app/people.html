@@ -4,10 +4,7 @@ title: People
 permalink: /people/
 ---
 
-<div class="container">
-    <div class="row">
-        <div class="">
-
+<div class="row">
 	<table class="table table-hover table-responsive">
 		{% for person in site.data.people %}
         {% if person.status=="current" %}
@@ -78,8 +75,4 @@ permalink: /people/
         {% endif %}
 		{% endfor %}
 	</table>
-
-
-    </div>
-
 </div>

@@ -1,0 +1,35 @@
+- id: 'petab'
+  status: 'current'
+  term: '03-2023'
+  name: 'PETab editor'
+  image: petab.png
+  repository: ''
+  homepage: ''
+  description: ''
+
+- id: 'sbml'
+  status: 'current'
+  term: '03-2023'
+  name: 'SBML editor'
+  image: sbml.png
+  repository: ''
+  homepage: ''
+  description: ''
+
+- id: 'combine'
+  status: 'current'
+  term: '03-2023'
+  name: 'COMBINE coordinator'
+  image: combine.png
+  repository: ''
+  homepage: ''
+  description: ''
+
+- id: 'sed-ml'
+  status: 'alumni'
+  term: '03-2023'
+  name: 'SED-ML editor'
+  image: sedml.png
+  repository: ''
+  homepage: ''
+  description: ''

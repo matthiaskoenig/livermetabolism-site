@@ -2,16 +2,16 @@
 layout: default
 ---
 
-<div class="container">
-    <img src="/img/banner.png" style="width: 100%; height: auto;"/>
+
+
     <div class="row">
 
         <div class="col-md-8 text-justify">
             <h2 class="header-light regular-pad">Systems Medicine of the Liver</h2>
             <p>
                 The König lab uses Systems Medicine and Systems Biology to study drug metabolism and liver function. We apply computational modeling, data science, data management, bioinformatics analysis and machine learning on biological, medical and clinical data. <br /><br />
-                Main research topics are (i) predictive modeling of biomedical systems with special focus on the liver; (ii) development of digital twins using physiologically based pharmacokinetic (PBPK) models, (iii) reproducible and open research, and (iv) FAIR data and workflows.<br /><br />
-                Key projects are the personalized evaluation of liver function tests, multi-scale modeling of the liver, and development of databases and workflows to support reproducible, open and FAIR research. Within our research we generate predictive digital twins of the individual human physiology. Such models can provide important insights in inter-individual differences and personal treatments, e.g., individual dosing of medication or effect of lifestyle factors on drug metabolism. For more information have a look at our <a href="/publications/"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> publications</a> and <a href="/projects/"><i class="fa fa-cogs" aria-hidden="true"></i> projects</a>.
+                The main research topics are (i) predictive modeling of biomedical systems with a special focus on the liver, (ii) development of digital twins using physiologically based pharmacokinetic (PBPK) models, (iii) reproducible and open research, and (iv) FAIR data and workflows.<br /><br />
+                Key projects include personalized assessment of liver function tests, multi-scale modeling of the liver, and development of databases and workflows to support reproducible, open and FAIR research. As part of our research, we generate predictive digital twins of individual human physiology. Such models can provide important insights into inter-individual differences and personalized treatments, such as individualized drug dosing or the effect of lifestyle factors on drug metabolism. For more information, please see our <a href="/publications/"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> publications</a> and <a href="/projects/"><i class="fa fa-cogs" aria-hidden="true"></i> projects</a>.
             </p>
             <p>
             {% for person in site.data.people %}
@@ -62,7 +62,7 @@ layout: default
             </div>
 
             <h3>Funding</h3>
-            For more information have a look at our <a href="/funding/"><i class="fa fa-money" aria-hidden="true"></i> funding</a> information.
+            For more information, please see our <a href="/funding/"><i class="fa fa-money" aria-hidden="true"></i> funding</a>.
             <p>
                 <a href="https://www.bmbf.de/" target="_blank"><img src="/img/bmbf.png" title="BMBF - Bundesministerium für Bildung und Forschung" width="110"></a>&nbsp;&nbsp;
                 <a href="https://www.dfg.de/" target="_blank"><img src="/img/dfg.jpeg" title="DFG - Deutsche Forschungsgesellschaft" width="110"></a>&nbsp;&nbsp;
@@ -70,6 +70,47 @@ layout: default
                 <a href="https://www.eosc-life.eu" target="_blank"><img src="/img/eosc.png" title="EOSC - European Open Science Cloud" width="90"></a>&nbsp;&nbsp;
                 <a href="https://summerofcode.withgoogle.com/" target="_blank"><img src="/img/gsoc.jpg" title="Google Summer of Code" width="90"></a></br />
             </p>
+
+            <h3>Editor</h3>
+            We are actively involved in the standardization and reproducibility efforts in Systems Biology and Systems Medicine.
+            <table class="table table-hover">
+                {% for editor in site.data.editors %}
+                <tr>
+                    <td><b>{{ editor.term }}</b></td>
+                    <td>
+                        {% if editor.homepage %}
+                        <a href="{{ editor.project }}"><img src="../img/project.png" title="Project homepage" height="20"/></a>
+                        {% endif %}
+                        {% if editor.repository %}
+                        <a href="{{ editor.repository }}"><img src="../img/repository.png" title="Repository homepage" height="20"/></a>
+                        {% endif %}
+                    </td>
+                    <td><img src="../img/editors/{{ editor.image }}" title="{{ editor.name }}" height="20"/> </td>
+                    <td><strong>{{ editor.name }}</strong> <br />{{ editor.description }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+            <h3>Software</h3>
+            We are actively involved in the standardization and reproducibility efforts in Systems Biology and Systems Medicine.
+            <table class="table table-hover">
+                {% for editor in site.data.editors %}
+                <tr>
+                    <td><b>{{ editor.term }}</b></td>
+                    <td>
+                        {% if editor.homepage %}
+                        <a href="{{ editor.project }}"><img src="../img/project.png" title="Project homepage" height="20"/></a>
+                        {% endif %}
+                        {% if editor.repository %}
+                        <a href="{{ editor.repository }}"><img src="../img/repository.png" title="Repository homepage" height="20"/></a>
+                        {% endif %}
+                    </td>
+                    <td><img src="../img/editors/{{ editor.image }}" title="{{ editor.name }}" height="20"/> </td>
+                    <td><strong>{{ editor.name }}</strong> <br />{{ editor.description }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
         </div>
 
          <div class="col-md-4">
@@ -103,21 +144,4 @@ layout: default
 
         </div>
     </div>
-    <!--
-    <hr />
-    <div class="row">
-        <div class="col-sm-4">
-            <a href="/projects/">
-            <h1 class="text-center"><i class="fa fa-cogs" aria-hidden="true"></i></h1>
-            <h3 class="text-center">Projects</h3>
-            </a>
-            <p>
-                Here you can find information about our latest projects. Most of them are hosted on GitHub and Open Source.
-                Core interests are the computational modeling of liver metabolism and multi-scale modes of liver function.
-            </p>
-        </div>
 
-    </div>
-    -->
-
-</div>

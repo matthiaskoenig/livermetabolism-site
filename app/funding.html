@@ -4,44 +4,41 @@ title: Funding
 permalink: /funding/
 ---
 
-<div class="container">
-	<table class="table table-hover">
-		<tr>
-			<th>Title</th>
-			<th>Start</th>
-			<th>End</th>
-			<th>Role</th>
-			<th>Funder</th>
-			<th>Funder</th>
-			<th>Grant Number</th>
-			<th>Project</th>
-		</tr>
+<table class="table table-hover">
+	<tr>
+		<th>Title</th>
+		<th>Start</th>
+		<th>End</th>
+		<th>Role</th>
+		<th>Funder</th>
+		<th>Funder</th>
+		<th>Grant Number</th>
+		<th>Project</th>
+	</tr>
 
-		{% for funding in site.data.funding %}
-		<tr>
-			<td>
-				{{ funding.title }}
-			</td>
-			<td>{{ funding.start }}</td>
-			<td>{{ funding.end }}</td>
-			<td>
-				{{ funding.role }}
-			</td>
-			<td>
-				<a href="{{ funding.funder_link }}"><img src="../img/{{funding.funder_logo}}" title="{{funding.funder}}" width="100"/></a>
-			</td>
-			<td>
-				{{ funding.funder }}
-			</td>
+	{% for funding in site.data.funding %}
+	<tr>
+		<td>
+			{{ funding.title }}
+		</td>
+		<td>{{ funding.start }}</td>
+		<td>{{ funding.end }}</td>
+		<td>
+			{{ funding.role }}
+		</td>
+		<td>
+			<a href="{{ funding.funder_link }}"><img src="../img/{{funding.funder_logo}}" title="{{funding.funder}}" width="100"/></a>
+		</td>
+		<td>
+			{{ funding.funder }}
+		</td>
 
-			<td>
-				{{ funding.grant }}
-			</td>
-			<td>
-				<a href="{{ funding.project }}">{{ funding.project }}</a>
-			</td>
-		</tr>
-		{% endfor %}
-	</table>
-
-</div>
+		<td>
+			{{ funding.grant }}
+		</td>
+		<td>
+			<a href="{{ funding.project }}">{{ funding.project }}</a>
+		</td>
+	</tr>
+	{% endfor %}
+</table>

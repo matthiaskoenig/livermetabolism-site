@@ -1,3 +1,16 @@
+- id: 'xresearch'
+  funder: Bundesministerium für Bildung und Forschung (BMBF) und dem Land Berlin im Rahmen der Exzellenzstrategie von Bund und Ländern
+  funder_link: https://www.bmbf.de
+  funder_logo: bua.png
+  grant:
+  start: '04-2023'
+  end: '09-2023'
+  title: 'X-Student Research Group - Physiologically based digital twins for the treatment of hypertension with ACE inhibitors and diuretics'
+  role: Recipient
+  logo:
+  project:
+  repository:
+
 - id: 'atlas'
   funder: Bundesministerium für Bildung und Forschung (BMBF) "Computational Life Sciences"
   funder_link: https://www.bmbf.de
@@ -12,12 +25,12 @@
   repository:
 
 - id: 'xresearch'
-  funder: Bundesministerium für Bildung und Forschung (BMBF) und dem  Land Berlin im Rahmen der Exzellenzstrategie von Bund und Ländern
+  funder: Bundesministerium für Bildung und Forschung (BMBF) und dem Land Berlin im Rahmen der Exzellenzstrategie von Bund und Ländern
   funder_link: https://www.bmbf.de
   funder_logo: bua.png
   grant:
-  start: '2022'
-  end: '2023'
+  start: '10-2022'
+  end: '03-2023'
   title: 'X-Student Research Group - Physiologically based modeling of drugs: ACE inhibitors in the treatment of high blood pressure'
   role: Recipient
   logo:
