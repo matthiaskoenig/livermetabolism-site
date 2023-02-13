@@ -1,6 +1,7 @@
 - id: xresearch2023
   title: "X-Student Research Group: Physiologically based digital twins for the treatment of hypertension with ACE inhibitors and diuretics"
   date: 04/2023 - 09/2023
+  location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
   image: xresearch2023.png
   caption: '<strong>Physiologically based digital twins </strong> for the treatment of hypertension with ACE inhibitors and diuretics.'
   funding: 'Funded under the Excellence Strategy of the Federal Government and the Länder by the Berlin University Alliance.'
@@ -16,6 +17,7 @@
 - id: xresearch2022
   title: "X-Student Research Group: Physiologically based modeling of drugs: ACE inhibitors in the treatment of high blood pressure"
   date: 10/2022 - 03/2023
+  location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
   image: xresearch2022.png
   caption: '<strong>Physiological-based pharmacokinetics model</strong> of the ACE inhibitors</strong>. The models will study the absorption (GI tract), distribution (systemic circulation), metabolization (liver) and elimination (kidneys and liver) of the ACE inhibitors lisinopril and ramipril. Organs and plasma volumes are connected via the blood flow (Q).'
   funding: 'Funded under the Excellence Strategy of the Federal Government and the Länder by the Berlin University Alliance.'
