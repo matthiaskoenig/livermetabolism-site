@@ -4,7 +4,7 @@
   date: '2023-12-02'
   image: xresearch_logo.png
   link: '/teaching/'
-  short: 'M. König receives funding of the Berlin University Alliance and the DFG for the X-Student Research Group: Physiologically based modeling of drugs: ACE inhibitors'
+  short: 'M. König receives funding of the Berlin University Alliance and the DFG for the X-Student Research Group: Digital twins for the treatment of hypertension'
   abstract: 'Understanding a drugs pharmacokinetics - how it is absorbed, distributed, metabolised and excreted by the body - and its pharmacodynamics - how it affects the body - is a key challenge in treating people. Angiotensin converting enzyme (ACE) inhibitors and diuretics are two classes of drugs used to treat high blood pressure. Both are among the most commonly prescribed drugs due to the high prevalence of hypertension in an ageing society. In this X-student research group we will develop physiologically based pharmacokinetic models of the diuretic hydrochlorothiazide and the ACE inhibitor lisinopril. The methodological approach is a combination of lectures, tutorials and practical work by the students. The research project is aimed at students with a STEM (science, technology, engineering, mathematics) background, including biology, computer science and medical students. Basic programming skills in Python are required.'
 
 - id: 'petab_editor'
