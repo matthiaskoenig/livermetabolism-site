@@ -1,35 +1,37 @@
+- id: 'combine'
+  status: 'current'
+  term: '2020-'
+  name: 'COMBINE coordinator'
+  image: combine.png
+  repository: 'https://github.com/combine-org'
+  homepage: 'https://co.mbine.org'
+  description: 'The COmputational Modeling in BIology NEtwork (COMBINE) is an initiative to coordinate the development of the various community standards and formats for computational models.'
+
 - id: 'petab'
   status: 'current'
-  term: '03-2023'
+  term: '2023-2026'
   name: 'PETab editor'
   image: petab.png
-  repository: ''
-  homepage: ''
-  description: ''
+  repository: 'https://github.com/PEtab-dev/'
+  homepage: 'https://petab.readthedocs.io/en/latest/'
+  description: 'PEtab is a data format for specifying parameter estimation problems in systems biology.'
 
 - id: 'sbml'
   status: 'current'
-  term: '03-2023'
+  term: '2018-2023'
   name: 'SBML editor'
-  image: sbml.png
-  repository: ''
-  homepage: ''
-  description: ''
+  image: sbml.jpeg
+  repository: 'https://github.com/sbmlteam/'
+  homepage: 'https://sbml.org/'
+  description: 'The Systems Biology Markup Language (SBML) is a software data format for describing models in biology. '
 
-- id: 'combine'
-  status: 'current'
-  term: '03-2023'
-  name: 'COMBINE coordinator'
-  image: combine.png
-  repository: ''
-  homepage: ''
-  description: ''
+
 
 - id: 'sed-ml'
   status: 'alumni'
-  term: '03-2023'
+  term: '2017-2022'
   name: 'SED-ML editor'
   image: sedml.png
-  repository: ''
-  homepage: ''
-  description: ''
+  repository: 'https://github.com/SED-ML'
+  homepage: 'https://sed-ml.org/'
+  description: 'The Simulation Experiment Description Markup Language (SED-ML) is a format for encoding simulation setups, to ensure exchangeability and reproducibility of simulation experiments.'
