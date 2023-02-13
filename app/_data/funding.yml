@@ -5,7 +5,7 @@
   grant:
   start: '04-2023'
   end: '09-2023'
-  title: 'X-Student Research Group - Physiologically based digital twins for the treatment of hypertension with ACE inhibitors and diuretics'
+  title: '<b>X-Student Research Group</b> - Physiologically based digital twins for the treatment of hypertension with ACE inhibitors and diuretics'
   role: Recipient
   logo:
   project:
@@ -18,7 +18,7 @@
   grant:
   start: '2023'
   end: '2026'
-  title: 'ATLAS - AI and Simulation for Tumor Liver ASessment'
+  title: '<b>ATLAS - AI and Simulation for Tumor Liver ASessment</b>'
   role: Recipient
   logo: atlas.png
   project:
@@ -31,7 +31,7 @@
   grant:
   start: '10-2022'
   end: '03-2023'
-  title: 'X-Student Research Group - Physiologically based modeling of drugs: ACE inhibitors in the treatment of high blood pressure'
+  title: '<b>X-Student Research Group</b> - Physiologically based modeling of drugs: ACE inhibitors in the treatment of high blood pressure'
   role: Recipient
   logo:
   project:
@@ -44,7 +44,7 @@
   grant: 436883643
   start: '2021'
   end: '2025'
-  title: 'FOR5151 - QuaLiPerF - Quantifying Liver Perfusion-Function Relationship in Complex Resection – A Systems Medicine Approach'
+  title: '<b>FOR5151 - QuaLiPerF</b> - Quantifying Liver Perfusion-Function Relationship in Complex Resection – A Systems Medicine Approach'
   role: Recipient
   logo:
   project: https://qualiperf.de
@@ -57,7 +57,7 @@
   grant: 465194077
   start: '2020'
   end: '2023'
-  title: 'SPP2311 - SimLivA - SIMulation supported LIVer Assessment for donor organs'
+  title: '<b>SPP2311 - SimLivA</b> - SIMulation supported LIVer Assessment for donor organs'
   role: Co-Investigator
   logo:
   project: https://www.spp2311.uni-stuttgart.de/en/
@@ -70,7 +70,7 @@
   grant: H2020-INFRAEOSC-05-2018-2019
   start: '2020'
   end: '2021'
-  title: 'EOSC-Life - Reproducible simulation studies targeting COVID-19'
+  title: '<b>EOSC-Life - Reproducible simulation studies targeting COVID-19</b>'
   role: Recipient
   project: https://www.ebi.ac.uk/biomodels/covid-19
   repository:
@@ -82,7 +82,7 @@
   grant: 031L0054
   start: '2016'
   end: '2022'
-  title: 'LiSyM - Systems Medicine of the Liver - Multi-scale models for the personalized evaluation of liver function'
+  title: '<b>LiSyM - Systems Medicine of the Liver</b> - Multi-scale models for the personalized evaluation of liver function'
   role: Recipient
   logo:
   project: https://lisym.org/
