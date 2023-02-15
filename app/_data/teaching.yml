@@ -52,7 +52,24 @@
   title_german: "Wichtige Modelle der Quantitativen Biologie aus der Literatur"
   date: 10/2021 - 03/2022
   type: <i class="fa-solid fa-book"></i>&nbsp;seminar, <i class="fa-solid fa-laptop-code"></i>&nbsp;course
-  semester: WS22/23
+  semester: WS21/22
+  people: "R. Steuer, P. Romanczuk, N. Blüthgen, <b>M. König</b>"
+  location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
+  image: important_models.png
+  caption: '<strong>Important models in quantitative biology</strong>'
+  funding:
+  content: '
+  <p>
+  This course discusses, implements and analyses important models in quantitative biology. The course covers Boolean and ordinary differential equation models from metabolism and signalling.
+  </p>
+  '
+
+- id: models_quantitative_biology_ws20
+  title: "Important models of quantitative biology from the literature"
+  title_german: "Wichtige Modelle der Quantitativen Biologie aus der Literatur"
+  date: 10/2020 - 03/2021
+  type: <i class="fa-solid fa-book"></i>&nbsp;seminar, <i class="fa-solid fa-laptop-code"></i>&nbsp;course
+  semester: WS20/21
   people: "R. Steuer, P. Romanczuk, N. Blüthgen, <b>M. König</b>"
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
   image: important_models.png
