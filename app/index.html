@@ -62,7 +62,7 @@ layout: default
             </div>
 
             <h3>Funding</h3>
-            For more information, please see our <a href="/funding/">funding</a>.
+            For more information, see our <a href="/funding/">funding</a>.
             <p>
                 <a href="https://www.bmbf.de/" target="_blank"><img src="/img/bmbf.png" title="BMBF - Bundesministerium für Bildung und Forschung" width="110"></a>&nbsp;&nbsp;
                 <a href="https://www.dfg.de/" target="_blank"><img src="/img/dfg.jpeg" title="DFG - Deutsche Forschungsgesellschaft" width="110"></a>&nbsp;&nbsp;
@@ -93,6 +93,7 @@ layout: default
 
             <h3>Software</h3>
             We are actively involved in the standardization and reproducibility efforts in Systems Biology and Systems Medicine.
+            For more information, see our <a href="/funding/">software</a>.
             <table class="table table-hover">
                 {% for software in site.data.software %}
                 <tr>
@@ -107,6 +108,20 @@ layout: default
                     </td>
                     <td><a href="{{ software.homepage }}"><img src="../img/software/{{ software.image }}" title="{{ software.name }}" height="35"/></a></td>
                     <td><strong>{{ software.name }} - {{ software.title }}</strong> <br />{{ software.description }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+            <h3>Teaching</h3>
+            For more information, see our <a href="/funding/">teaching</a>.
+            <table class="table table-hover">
+                {% for teaching in site.data.teaching %}
+                <tr>
+                    <td><strong>{{ teaching.title }}</strong></td>
+                    <td>{{ teaching.people }}</td>
+                    <td>{{ teaching.type }}</td>
+                    <td>{{ teaching.semester }}</td>
+
                 </tr>
                 {% endfor %}
             </table>

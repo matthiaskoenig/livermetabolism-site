@@ -8,7 +8,8 @@ permalink: /teaching/
     {% for teaching in site.data.teaching %}
     <div class="col-md-12">
         <h3>{{ teaching.title }}</h3>
-        <h4>{{ teaching.date }} - {{ teaching.location }}</h4>
+        <h4>{{ teaching.people }}</h4>
+        <h5>{{ teaching.date }} - {{ teaching.location }}</h5>
         <div class="row">
             <div class="col-md-3">
                     <img src="/img/teaching/{{ teaching.image }}" class="img-responsive"/>
