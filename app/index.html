@@ -117,10 +117,11 @@ layout: default
             <table class="table table-hover">
                 {% for teaching in site.data.teaching %}
                 <tr>
-                    <td><strong>{{ teaching.title }}</strong></td>
+                    <td><i>{{ teaching.title }}</i></td>
                     <td>{{ teaching.people }}</td>
-                    <td>{{ teaching.type }}</td>
                     <td>{{ teaching.semester }}</td>
+                    <td>{{ teaching.type }}</td>
+
 
                 </tr>
                 {% endfor %}
@@ -151,7 +152,7 @@ layout: default
                 </p>
                 {% endif %}
             {% endfor %}
-             For more information, please see our <a href="/news/"><i class="fa fa-newspaper-o" aria-hidden="true"></i> news</a>.
+             For more information, please see our <a href="/news/"><i class="fa-solid fa-newspaper-o"></i> news</a>.
         </div>
 
 

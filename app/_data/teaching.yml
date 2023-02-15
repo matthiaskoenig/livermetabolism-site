@@ -2,7 +2,7 @@
   title: "X-Student Research Group: Physiologically based digital twins for the treatment of hypertension with ACE inhibitors and diuretics"
   title_german: "X-Student Research Group: Physiologisch basierte Digital Twins für die Behandlung von Bluthochdruck mit ACE-Inhibitoren und Diuretika"
   date: 04/2023 - 09/2023
-  type: <i class="fa fa-person-chalkboard" aria-hidden="true"></i> lecture, course
+  type: <i class="fa-solid fa-person-chalkboard"></i>&nbsp;lecture, <i class="fa-solid fa-laptop-code"></i>&nbsp;course
   people: "<b>M. König</b>"
   semester: SS23
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
@@ -25,7 +25,7 @@
   title: "X-Student Research Group: Physiologically based modeling of drugs: ACE inhibitors in the treatment of high blood pressure"
   title_german: "X-Student Research Group: Physiologisch basierte Modellierung von Arzneimitteln: ACE-Hemmer bei der Behandlung von Bluthochdruck"
   date: 10/2022 - 03/2023
-  type: Lecture &amp; course
+  type: <i class="fa-solid fa-person-chalkboard"></i>&nbsp;lecture, <i class="fa-solid fa-laptop-code"></i>&nbsp;course
   semester: WS22/23
   people: "<b>M. König</b>"
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
@@ -47,11 +47,11 @@
   </ul>
   '
 
-- id: quantitative_biology_ws21
-  title: "Important Models of Quantitative Biology from the Literature"
+- id: models_quantitative_biology_ws21
+  title: "Important models of quantitative biology from the literature"
   title_german: "Wichtige Modelle der Quantitativen Biologie aus der Literatur"
   date: 10/2021 - 03/2022
-  type: Seminar &amp; course
+  type: <i class="fa-solid fa-book"></i>&nbsp;seminar, <i class="fa-solid fa-laptop-code"></i>&nbsp;course
   semester: WS22/23
   people: "R. Steuer, P. Romanczuk, N. Blüthgen, <b>M. König</b>"
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
@@ -64,11 +64,11 @@
   </p>
   '
 
-- id: quantitative_biology_course_ws19
+- id: models_cellular_processes_ws19
   title: "Models of cellular processes"
   title_german: "Vorlesung: Modelle zellulärer Prozesse"
   date: 10/2019 - 03/2020
-  type: Lecture
+  type: <i class="fa-solid fa-person-chalkboard"></i>&nbsp;lecture
   semester: WS19/20
   people: "<b>M. König</b>, R. Steuer"
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
@@ -81,11 +81,11 @@
   </p>
   '
 
-- id: quantitative_biology_ws19
-  title: "Important Models of Quantitative Biology from the Literature"
+- id: models_quantitative_biology_ws19
+  title: "Important models of quantitative biology from the literature"
   title_german: "Seminar und Praktikum: Wichtige Modelle der Quantitativen Biologie aus der Literatur"
   date: 10/2019 - 03/2020
-  type: Seminar &amp; course
+  type: <i class="fa-solid fa-book"></i>&nbsp;seminar, <i class="fa-solid fa-laptop-code"></i>&nbsp;course
   semester: WS19/20
   people: "N.Blüthgen, <b>M.König</b>, R.Steuer"
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
@@ -98,11 +98,11 @@
   </p>
   '
 
-- id: quantitative_biology_ws18
-  title: "Important Models of Quantitative Biology from the Literature"
+- id: models_quantitative_biology_ws18
+  title: "Important models of quantitative biology from the literature"
   title_german: "Seminar – Wichtige Modelle der Quantitativen Biologie aus der Literatur"
   date: 10/2018 - 03/2019
-  type: Seminar &amp; course
+  type: <i class="fa-solid fa-book"></i>&nbsp;seminar, <i class="fa-solid fa-laptop-code"></i>&nbsp;course
   semester: WS18/19
   people: "N. Blüthgen, R.Steuer, <b>M. König</b>"
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
