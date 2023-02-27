@@ -7,9 +7,9 @@
   orcid: '0000-0003-1725-179X'
   repository: 'https://github.com/matthiaskoenig/'
   homepage: 'https://livermetabolism.com/cv/'
-  description: 'Data scientist, data analyst, computational modeller, bioinformatician, group leader. Application of computational modelling and machine learning to biological, medical, and clinical questions and datasets. Predictive modeling of physiological processes and systems with focus on metabolic research.
+  description: 'Data scientist, data analyst, computational modeler, bioinformatician, group leader. Application of computational modeling and machine learning to biological, medical and clinical questions and data sets. Predictive modeling of physiological processes and systems with a focus on metabolic research.
   <br />
-  Research projects on glucose homeostasis in normal subjects and diabetes, personalization of liver function tests for the improvement of diagnosis, and stratification and individualization of computer models for precision medicine.'
+  Research projects on glucose homeostasis in normal and diabetic subjects, personalization of liver function tests to improve diagnosis, and stratification and individualization of computational models for precision medicine.'
 
 - id: 'janek'
   status: 'current'
@@ -20,9 +20,7 @@
   orcid: '0000-0002-4588-4925'
   repository: 'https://github.com/janekg89/'
   homepage: 'https://github.com/janekg89/'
-  description: 'Jan works on the stratification and personalization of computational models. He develops methods and
-  software for semi-automatic data curation of pharmacokinetics information and a pharmacokinetics database for
-  the storage and FAIR access of such data (<a href="https://pk-db.com">PK-DB</a>).'
+  description: 'Jan works on the stratification and personalization of computational models. He develops methods and software for semi-automatic data curation of pharmacokinetic information and a pharmacokinetic database for storage and the storage and FAIR access of such data (<a href="https://pk-db.com">PK-DB</a>).'
 
 - id: 'helen'
   status: 'current'
@@ -33,9 +31,7 @@
   orcid:
   repository: 'https://github.com/Lepujolh'
   homepage:
-  description: 'Helen Leal Pujol works on a physiological based model of pravastatin.
-  Key questions are the effect of genotypes and hepatic and renal disease on pravastatin 
-  pharmacokinetics.'
+  description: 'Helen works on a physiologically based model of pravastatin. Key questions are the effect of genotypes and hepatic and renal disease on pravastatin pharmacokinetics.'
 
 - id: 'afruja'
   status: 'current'
@@ -46,7 +42,7 @@
   orcid:
   repository: 'https://github.com/afruja-h'
   homepage:
-  description: 'Afruja Hossain works on a systematic overview of protein variability of cytochrome P450 (CYP450) isoforms in the human liver.'
+  description: 'Afruja works on a systematic overview of the protein variability of cytochrome P450 (CYP450) isoforms in the human liver.'
 
 - id: 'adrian'
   status: 'current'
@@ -57,8 +53,7 @@
   orcid:
   repository: 'https://github.com/adriankl'
   homepage:
-  description: 'Adrian Köller works on a physiological based model of indocyanine green (ICG) clearance.
-  Key questions are the effect of blood flow and plasma proteins on ICG clearance and corresponding liver function tests.'
+  description: 'Adrian works on a physiologically based model of indocyanine green (ICG) clearance. Key questions are the effect of blood flow and plasma proteins on ICG clearance and related liver function tests.'
 
 - id: 'flobar'
   status: 'current'
@@ -69,7 +64,7 @@
   orcid:
   repository: 'https://github.com/FloBar'
   homepage:
-  description: 'Florian Bartsch works on a physiological based model of statin metabolism clearance. Key questions are the effect of statins (atorvastatin and simvasting) on cholesterol plasma levels, and drug-drug interactions due to medications.'
+  description: 'Florian works on a physiologically based model of statin clearance. Key questions are the effect of statins (atorvastatin and simvastatin) on cholesterol plasma levels and drug-drug interactions.'
 
 - id: 'jonaspk98'
   status: 'current'
@@ -80,8 +75,7 @@
   orcid:
   repository: 'https://github.com/jonaspk98'
   homepage:
-  description: 'Jonas Küttner works on a physiological based model of chlorzoxazone for hepatic CYP2E1 phenotyping.
-  Key questions are the effect of CYP2E1 induction/inhibition and zonation on phenotyping using chlorzoxazone.'
+  description: 'Jonas works on a physiologically based model of chlorzoxazone for hepatic CYP2E1 phenotyping. Key questions are the effect of CYP2E1 induction/inhibition and zonation on chlorzoxazone phenotyping.'
 
 - id: 'stemllb'
   status: 'current'
@@ -92,29 +86,40 @@
   orcid:
   repository: 'https://github.com/stemllb'
   homepage:
-  description: 'Beatrice Stemmer Mallol works on a physiological based model for the characterization of intestinal P-glycoprotein using talinolol as a probe drug.'
+  description: 'Beatrice works on a physiologically based model to characterize intestinal P-glycoprotein using talinolol as a probe drug.'
 
 - id: 'paula'
-  status: 'current'
-  year: '2020-2021'
+  status: 'alumni'
+  year: '2020-2022'
   name: 'Paula Ogata'
-  position: 'Humboldt Intership Student'
+  position: 'Humboldt Internship Student'
   image: paula.png
   orcid:
   repository: 'https://github.com/paula-ogata'
   homepage:
-  description: 'Paula Ogata works on a pharmacokinetics/pharmacodynamics model of metorpolol. Key questions are the effect of dosing and formulation on metoprolol pharmacokinetics and reduction in exercise heart rate (EHR).'
+  description: 'Paula works on a pharmacokinetics/pharmacodynamics model of metoprolol. Key questions are the effect of dosing and formulation on metoprolol pharmacokinetics and exercise heart rate (EHR) reduction.'
+
+- id: 'frances'
+  status: 'current'
+  year: '2023'
+  name: 'Frances Okibedi'
+  position: 'Internship'
+  image: frances.png
+  orcid:
+  repository: 'https://github.com/fuokibedi'
+  homepage:
+  description: 'Frances works a physiologically based pharmacokinetic (PBPK) model of sorafenib for systemic treatment of hepatocellular carcinoma (HCC). Key questions are to study the effect of OATP activity and CYP3A4 inhibition on sorafenib pharmacokinetics and efficiency.'
 
 - id: 'deepa'
   status: 'current'
-  year: '2019-'
+  year: '2019-2023'
   name: 'Deepa Maheshvare'
   position: 'Ph.D. student (internship)'
   image: deepa.png
   orcid:
   repository: 'https://github.com/DeepaMahm'
   homepage:
-  description: 'Deepa Maheshvare works on a kinetic model of the pancreatic beta-cell. Key questions are the effect of various amino acids on the insulin secretion of the pancreas.'
+  description: 'Deepa works on a kinetic model of glucose stimulated insulin secretion (GSIS) of the pancreatic beta-cell. Key questions are the changes in glycolysis during insulin secretion.'
 
 - id: 'sankha'
   status: 'current'
@@ -125,8 +130,8 @@
   image: 'sankha.png'
   orcid:
   repository: 'https://github.com/sankha555'
-  homepage: ''
-  description: 'Sankha Das works on the analysis and quantification of microcirculation data recorded in Humans and Rats. Within the project a workflow for the analysis of orthogonal polarization spectroscopy (OPS) and IDF will be developed as part of <a href="https://qualiperf.de">QuaLiPerF</a>.'
+  homepage:
+  description: 'Sankha works on the analysis and quantification of microcirculation data recorded in Humans and Rats. Within the project a workflow for the analysis of orthogonal polarization spectroscopy (OPS) and IDF will be developed as part of <a href="https://qualiperf.de">QuaLiPerF</a>.'
 
 
 - id: 'brandhorst'
@@ -138,7 +143,7 @@
   orcid:
   repository: 'https://github.com/JBrandh'
   homepage:
-  description: 'Janosch Brandhorst works on the computational modeling of paracetamol by the liver and curating data for PKDB.'
+  description: 'Janosch works on the computational modeling of acetaminophen through the liver and curates data for the pharmacokinetics database PK-DB.'
 
 - id: 'balci'
   status: 'alumni'
@@ -149,8 +154,7 @@
   orcid:
   repository: 'https://github.com/SukruBalci'
   homepage:
-  description: 'Sükrü Balci works on a physiological based model of omeprazole.
-  Key questions are the effect of omeprazole formulation and dosing on the pharmacodynamic effects of omeprazole.'
+  description: 'Sükrü Balci works on a physiological based model of omeprazole. Key questions are the effect of omeprazole formulation and dosing on the pharmacodynamic effects of omeprazole.'
 
 - id: 'sankha'
   status: 'alumni'
