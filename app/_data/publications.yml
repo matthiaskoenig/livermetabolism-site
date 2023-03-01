@@ -1,3 +1,13 @@
+- id: 'Koenig2023_standards'
+  year: 2023
+  pdf: 'Koenig2023_standards.pdf'
+  authors: '<b>M. König</b>, P. Gleeson, M. Golebiewski, T. Gorochowski, M. Hucka, S. Keating, C. Myers, D. Nickerson, F. Schreiber'
+  title: 'Specifications of Standards in Systems and Synthetic Biology: Status and Developments in 2022 and the COMBINE meeting 2022'
+  journal: 'Submitted JIB'
+  project: https://co.mbine.org
+  repository:
+  abstract: "This special issue of the Journal of Integrative Bioinformatics contains updated specifications of COMBINE standards in systems and synthetic biology. The 2022 special issue presents three updates to the standards: CellML 2.0.1, SBML Level 3 Package: Spatial Processes, Version 1, Release 1, and Synthetic Biology Open Language (SBOL) Version 3.1.0. This document can also be used to identify the latest specifications for all COMBINE standards. In addition, this editorial provides a brief overview of the COMBINE 2022 meeting in Berlin."
+
 - id: 'Bartsch2023_simvastatin'
   year: 2023
   pdf: 'Bartsch2023_simvastatin.pdf'
@@ -7,6 +17,8 @@
   project:
   repository: https://github.com/matthiaskoenig/simvastatin-model
   abstract: "Hypercholesterolemia is a multifaceted plasma lipid disorder with heterogeneous causes including lifestyle and genetic factors. A key feature of hypercholesterolemia is elevated plasma levels of low-density lipoprotein cholesterol (LDL-C). Several genetic variants have been reported to be associated with hypercholesterolemia, known as familial hypercholesterolemia (FH). Important variants affect the LDL receptor (LDLR), which mediates the uptake of LDL-C from the plasma, apoliporotein B (APOB), which is involved in the binding of LDL-C to the LDLR, and proprotein convertase subtilisin/kexin type 9 (PCSK9), which modulates the degradation of the LDLR. A typical treatment for hypercholesterolemia is statin medication, with simvastatin being one of the most commonly prescribed statins. In this work, the LDL-C lowering therapy with simvastatin in hypercholesterolemia was investigated using a computational modeling approach. A physiologically based pharmacokinetic model of simvastatin integrated with a pharmacodynamic model of plasma LDL-C (PBPK/PD) was developed based on extensive data curation. A key component of the model is LDL-C turnover by the liver, consisting of: hepatic cholesterol synthesis with the key enzymes HMG-CoA reductase and HMG-CoA synthase; cholesterol export from the liver as VLDL-C; de novo synthesis of LDLR; transport of LDLR to the membrane; binding of LDL-C by LDLR via APOB; endocytosis of the LDLR-LDL-C complex; recycling of LDLR from the complex. The model was applied to study the effects of simvastatin therapy in hypercholesterolemia due to different causes in the LDLR pathway corresponding to different subtypes of hypercholesterolemia. Model predictions of LDL-C lowering therapy were validated with independent clinical data sets. Key findings are: (i) hepatic LDLR turnover is highly heterogeneous among FH classes; (ii) despite this heterogeneity, simvastatin therapy results in a consistent reduction in plasma LDL-C regardless of class; and (iii) simvastatin therapy shows a dose-dependent reduction in LDL-C. Our model suggests that the underlying cause of hypercholesterolemia does not influence simvastatin therapy. Furthermore, our model supports the treatment strategy of stepwise dose adjustment to achieve target LDL-C levels. Both the model and the database are freely available for reuse."
+
+
 
 - id: 'PhD.Thesis.Jan.Grzegorzewski'
   year: 2023
