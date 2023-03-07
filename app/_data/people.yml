@@ -115,9 +115,9 @@
   year: '2023-03/2023-05'
   name: 'Nurudeen Sojimade'
   position: 'Internship'
-  image:
+  image: "nurudeen.png"
   orcid:
-  repository: 'https://github.com/nurudeen'
+  repository: 'https://github.com/Soji4eva'
   homepage:
   description: 'Nurudeen works a physiologically based pharmacokinetic (PBPK) model of the contrast agent Gd-EOB-DTPA. Key questions are to study the effect of hepato-renal impairment, perfusion and OATP activity on Gd-EOB-DTPA pharmacokinetics.'
 
