@@ -13,7 +13,9 @@ permalink: /people/
                 {% if person.homepage %}
                 <a href="{{ person.homepage }}" target="_blank">
                 {% endif %}
+                {% if person.image %}
 				<img src="/img/people/{{ person.image }}" class="img-circle" height="60" />
+                {% endif %}
                 <br /><br />
                 {% if person.homepage %}
                 </a>

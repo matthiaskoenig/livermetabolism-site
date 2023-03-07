@@ -101,7 +101,7 @@
 
 - id: 'frances'
   status: 'current'
-  year: '2023'
+  year: '2023-03/2023-05'
   name: 'Frances Okibedi'
   position: 'Internship'
   image: frances.png
@@ -109,6 +109,17 @@
   repository: 'https://github.com/fuokibedi'
   homepage:
   description: 'Frances works a physiologically based pharmacokinetic (PBPK) model of sorafenib for systemic treatment of hepatocellular carcinoma (HCC). Key questions are to study the effect of OATP activity and CYP3A4 inhibition on sorafenib pharmacokinetics and efficiency.'
+
+- id: 'nurudeen'
+  status: 'current'
+  year: '2023-03/2023-05'
+  name: 'Nurudeen Sojimade'
+  position: 'Internship'
+  image:
+  orcid:
+  repository: 'https://github.com/nurudeen'
+  homepage:
+  description: 'Nurudeen works a physiologically based pharmacokinetic (PBPK) model of the contrast agent Gd-EOB-DTPA. Key questions are to study the effect of hepato-renal impairment, perfusion and OATP activity on Gd-EOB-DTPA pharmacokinetics.'
 
 - id: 'deepa'
   status: 'current'
