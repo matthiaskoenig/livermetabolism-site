@@ -25,6 +25,14 @@ $(function() {
         window.location.href = suggestion.url;
     });
 
+    $("#hide").click(function(){
+      $("p").hide();
+    });
+
+    $("#show").click(function(){
+      $("p").show();
+    });
+
 
     // Markdown plain out to bootstrap style
     $('#markdown-content-container table').addClass('table');

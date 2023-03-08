@@ -20,9 +20,20 @@ permalink: /publications/
 				<a href="{{ publication.repository }}"><img src="../img/repository.png" title="Repository homepage" height="20"/></a>
 				{% endif %}
 			</td>
-			<td>{{ publication.authors }} <br />
-				<i>{{ publication.title }}</i><br />
-				{{ publication.journal }}
+			<td><strong><i>{{ publication.title }}</i></strong><br />
+				{{ publication.authors }}<br />
+				{{ publication.journal }}{% if publication.status %} ({{publication.status}}){% endif %}{% if publication.doi %}; doi:<a href="https://doi.org/{{publication.doi}}/">{{publication.doi}}</a>{% endif %}{% if publication.pmid %}; pubmed:<a href="https://pubmed.ncbi.nlm.nih.gov/{{publication.pmid}}/">{{publication.pmid}}</a>{% endif %}
+				{% if publication.abstract %}
+				<p class="abstract text-justify small">{{ publication.abstract }}</p>
+				{% endif %}
+				{% if publication.keywords %}
+				<p class="small">
+				<strong class="small">Keywords:</strong>
+				{% for keyword in publication.keywords %}
+					{{ keyword }},
+				{% endfor %}
+				</p>
+				{% endif %}
 			</td>
 			<td></td>
 		</tr>
