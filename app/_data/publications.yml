@@ -57,25 +57,6 @@
   repository: https://github.com/matthiaskoenig/dextromethorphan-model
   abstract: 'Cytochrome P450 (CYP) phenotyping and dynamic liver function testing are essential methods in clinical practice. These methods utilize the pharmacokinetics (PK) of test substances and their metabolites to gain insight into the liver’s metabolic capacity and the activity of enzymes and transporters. Despite an extensive body of literature, many aspects affecting liver function and CYP activity are not well understood. Liver function tests are not only influenced by numerous characteristics of a studied subject but also by the specifics of individual study procedures. A key challenge is to disentangle the various factors which influence the outcome of the measurements from each other to study their influence on the dynamic liver function and CYP phenotype. In this work, the challenge was addressed through meta-analysis and physiologically based pharmacokinetic (PBPK) modeling. As a foundation, an open pharmacokinetics database (https://pk-db.com) was developed and pharmacokinetics data were curated for a wide range of test substances. To my knowledge, PK-DB currently contains the largest open pharmacokinetic dataset on substances used for phenotyping and dynamical liver function testing. The dataset allowed for identifying and quantifying demographic and racial bias (sex, ethnicity, age, health), reporting errors, and inconsistencies in pharmacokinetic literature. Based on the data, a caffeine pharmacokinetics meta-analysis was conducted concerning various factors affecting liver function and CYP1A2 activity. In particular, meta-analysis and data integration solidified existing knowledge on the effects of smoking, oral contraceptives, multiple diseases, and co-medications on caffeine pharmacokinetics. Similarly, the measurement accuracy of caffeine concentration in saliva versus plasma was quantified, and the effect of dosing amount and sampling timing for phenotyping were analyzed. In addition, the impact of CYP2D6 polymorphism was investigated. Therefore, a PBPK model of dextromethorphan (DXM) and its metabolites dextrorphan (DXO) and dextrorphan O-glucuronide (DXO-Glu) was developed, and calibrated and validated with pharmacokinetics data. The variability in CYP activity was modeled based on in vitro data. The model can predict individual plasma concentrations and urinary amounts of DXM, DXO, and DXO-Glu and the metabolic phenotype based on the individual’s CYP2D6 genotype and physiological characteristics. The analyses suggest that most of the variability in the pharmacokinetics of dextromethorphan can be attributed to the variability in CYP2D6 and CYP3A4 enzyme kinetics. Among various other investigations, the influence of ethnicity on CYP2D6 activity was also investigated. Contributions to PK data curation and PBPK model development were also made for other phenotyping and liver function test substances (chlorzoxazone, codeine, diazepam, galactose, indocyanine green (ICG), metoprolol, midazolam, omeprazole, pravastatin, simvastatin, talinolol, and torasemide). For ICG, in particular, the impact of hepatic blood flow, cardiac output, and body weight, as well as the survival probability after partial hepatectomy, were investigated by PBPK modeling. Notably, the studying of the various test substances was only made possible by a systematic and standardized workflow that facilitated data integration, data sharing, the creation of reproducible PBPK models, and the standardized integration of data and models. In conclusion, a pharmacokinetic database, methods, and workflows for the analysis of test compounds used in dynamical liver function testing and CYP phenotyping were established. Factors affecting CYP phenotyping and liver function testing were investigated by meta-analysis and PBPK modeling. The models developed in this effort have the potential to impact personalized medicine and to increase the precision of dynamic liver function tests in clinics.'
 
-
-- id: 'Albadry2022_Cytochrome.p450.enzymes.in.periportal.steatosis'
-  year: 2022
-  pdf: 'Albadry2022_Cytochrome.p450.enzymes.in.periportal.steatosis.pdf'
-  authors: 'M. Albadry, S. Höpfl, N. Ehteshamzad, <b>M. König</b>, M. Böttcher, J. Neumann, A. Lupp, O. Dirsch, N. Radde, B. Christ, M. Christ, L.O. Schwen, H. Laue, R. Klopfleisch and Uta Dahmen'
-  title: 'Cytochrome p450 enzymes in periportal steatosis: Modulation of drug metabolizing activity but not of pericentral expression pattern'
-  journal: 'Sci Rep. 2022 Dec 17;12(1):21825.'
-  status:
-  doi: 10.1038/s41598-022-26483-6
-  pmid: 36528753
-  keywords:
-    - cytochrome P-450 Enzyme System
-    - fatty Liver
-    - mice
-    - pharmacokinetics
-  project:
-  repository:
-  abstract: "Little is known about the impact of morphological disorders in distinct zones on metabolic zonation. It was described recently that periportal fibrosis did affect the expression of CYP proteins, a set of pericentrally located drug-metabolizing enzymes. Here, we investigated whether periportal steatosis might have a similar effect. Periportal steatosis was induced in C57BL6/J mice by feeding a high-fat diet with low methionine/choline content for either two or four weeks. Steatosis severity was quantified using image analysis. Triglycerides and CYP activity were quantified in photometric or fluorometric assay. The dis- tribution of CYP3A4, CYP1A2, CYP2D6, and CYP2E1 was visualized by immunohistochemistry. Pharmacokinetic parameters of test drugs were determined after injecting a drug cocktail (caffeine, codeine, and midazolam). The dietary model resulted in moderate to severe mixed steatosis confined to periportal and midzonal areas. Periportal steatosis did not affect the zonal distribution of CYP expression but the activity of selected CYPs was associated with steatosis severity. Caffeine elimination was accelerated by microvesicular steatosis, whereas midazolam elimination was delayed in macrovesicular steatosis. In summary, periportal steatosis affected parameters of pericentrally located drug metabolism. This observation calls for fur- ther investigations of the highly complex interrelationship between steatosis and drug metabolism and underlying signaling mechanisms."
-
 - id: 'Welsh2022_libroadrunner_2.0'
   year: 2023
   pdf: 'Welsh2022_libroadrunner_2.0.pdf'
@@ -93,12 +74,31 @@
   repository: https://github.com/sys-bio/roadrunner/
   abstract: "Motivation: This paper presents libRoadRunner 2.0, an extensible, high-performance, cross-platform, open-source software library for the simulation and analysis of models expressed using the Systems Biology Markup Language (SBML). Results: libRoadRunner is a self-contained library, able to run either as a component inside other tools via its C ++, C and Python APIs, or interactively through its Python or Julia interface. libRoadRunner uses a custom Just-In-Time (JIT) compiler built on the widely-used LLVM JIT compiler framework. It compiles SBML-specified models directly into native machine code for a large variety of processors, making it fast enough to simulate extremely large models or repeated runs in reasonable timeframes. libRoadRunner is flexible, supporting the bulk of the SBML specification (except for delay and nonlinear algebraic equations) as well as several SBML extensions such as hierarchical composition and probability distributions. It offers multiple deterministic and stochastic integrators, as well as tools for steady-state, sensitivity, stability and structural analyses. Availability: libRoadRunner binary distributions for Windows, Mac OS, and Linux, Julia and Python bindings, source code, and documentation are all available at https://github.com/sys-bio/roadrunner, and Python bindings are also available via pip. The source code can be compiled for the supported systems as well as in principle any system supported by LLVM-13, such as ARM-based computers like the Raspberry Pi. The library is licensed under the Apache License Version 2.0."
 
+
+- id: 'Albadry2022_Cytochrome.p450.enzymes.in.periportal.steatosis'
+  year: 2022
+  pdf: 'Albadry2022_Cytochrome.p450.enzymes.in.periportal.steatosis.pdf'
+  authors: 'M. Albadry, S. Höpfl, N. Ehteshamzad, <b>M. König</b>, M. Böttcher, J. Neumann, A. Lupp, O. Dirsch, N. Radde, B. Christ, M. Christ, L.O. Schwen, H. Laue, R. Klopfleisch and Uta Dahmen'
+  title: 'Cytochrome p450 enzymes in periportal steatosis: Modulation of drug metabolizing activity but not of pericentral expression pattern'
+  journal: 'Sci Rep. 2022 Dec 17;12(1):21825'
+  status:
+  doi: 10.1038/s41598-022-26483-6
+  pmid: 36528753
+  keywords:
+    - cytochrome P-450 Enzyme System
+    - fatty Liver
+    - mice
+    - pharmacokinetics
+  project:
+  repository:
+  abstract: "Little is known about the impact of morphological disorders in distinct zones on metabolic zonation. It was described recently that periportal fibrosis did affect the expression of CYP proteins, a set of pericentrally located drug-metabolizing enzymes. Here, we investigated whether periportal steatosis might have a similar effect. Periportal steatosis was induced in C57BL6/J mice by feeding a high-fat diet with low methionine/choline content for either two or four weeks. Steatosis severity was quantified using image analysis. Triglycerides and CYP activity were quantified in photometric or fluorometric assay. The dis- tribution of CYP3A4, CYP1A2, CYP2D6, and CYP2E1 was visualized by immunohistochemistry. Pharmacokinetic parameters of test drugs were determined after injecting a drug cocktail (caffeine, codeine, and midazolam). The dietary model resulted in moderate to severe mixed steatosis confined to periportal and midzonal areas. Periportal steatosis did not affect the zonal distribution of CYP expression but the activity of selected CYPs was associated with steatosis severity. Caffeine elimination was accelerated by microvesicular steatosis, whereas midazolam elimination was delayed in macrovesicular steatosis. In summary, periportal steatosis affected parameters of pericentrally located drug metabolism. This observation calls for fur- ther investigations of the highly complex interrelationship between steatosis and drug metabolism and underlying signaling mechanisms."
+
 - id: 'Grzegorzewski2022_dextromethorphan'
   year: 2022
   pdf: 'Grzegorzewski2022_dextromethorphan.pdf'
   authors: 'Grzegorzewski, J., Brandhorst, J., <b>König, M.*</b>'
   title: 'Physiologically based pharmacokinetic (PBPK) modeling of the role of CYP2D6 polymorphism for metabolic phenotyping with dextromethorphan'
-  journal: 'Front. Pharmacol., 24 October 2022'
+  journal: ' Front Pharmacol. 2022 Oct 24;13:1029073'
   status:
   doi: 10.3389/fphar.2022.1029073
   pmid: 36353484
@@ -265,7 +265,7 @@
             Marz*, Daria Meyer*, Nicole Radde*, Jürgen R. Reichenbach*, Tim
             Ricken*, and Hans-Michael Tautenhahn* (<b>* equal contribution)</b>'
   title: 'Hepatectomy-Induced Alterations in Hepatic Perfusion and Function - Toward Multi-Scale Computational Modeling for a Better Prediction of Post-hepatectomy Liver Function'
-  journal: ' Front Physiol. 2021 Nov 18;12:733868'
+  journal: 'Front Physiol. 2021 Nov 18;12:733868'
   status:
   doi: 10.3389/fphys.2021.733868
   pmid: 34867441
@@ -325,7 +325,7 @@
   pdf: 'SBMLWebApp_Yamada2021.pdf'
   authors: 'Takahiro G. Yamada, Kaito Ii, <b>Matthias König</b>, Martina Feierabend, Andreas Dräger, and Akira Funahashi'
   title: 'SBMLWebApp: Web-based Simulation, Steady-State Analysis, and Parameter Estimation of Systems Biology Models'
-  journal: 'Processes 9, no. 10: 1830.'
+  journal: 'Processes 9, no. 10: 1830'
   project: http://simulate-biology.org
   status:
   doi: 10.3390/pr9101830
@@ -363,48 +363,53 @@
   pdf: 'SBSCL_Panchiwala2021.pdf'
   authors: 'Panchiwala, H.; Shah, S.; Planatscher, H.; Zakharchuk, M.; <b>König, M.</b>; Dräger, A.'
   title: 'The Systems Biology Simulation Core Library'
-  journal: 'Bioinformatics. 2021 Sep 23:btab669. doi: <a href="https://doi.org/10.1093/bioinformatics/btab669">10.1093/bioinformatics/btab669</a>. Epub ahead of print. PMID: 34554191.'
+  journal: ' Bioinformatics. 2022 Jan 12;38(3):864-865'
   status:
-  doi:
-  pmid:
+  doi: 10.1093/bioinformatics/btab669
+  pmid: 34554191
   keywords:
   project: https://draeger-lab.github.io/SBSCL/
   repository: https://github.com/draeger-lab/SBSCL
+  abstract: 'Summary: Studying biological systems generally relies on computational modeling and simulation, e.g., model-driven discovery and hypothesis testing. Progress in standardization efforts led to the development of interrelated file formats to exchange and reuse models in systems biology, such as SBML, the Simulation Experiment Description Markup Language (SED-ML) or the Open Modeling EXchange format. Conducting simulation experiments based on these formats requires efficient and reusable implementations to make them accessible to the broader scientific community and to ensure the reproducibility of the results. The Systems Biology Simulation Core Library (SBSCL) provides interpreters and solvers for these standards as a versatile open-source API in JavaTM. The library simulates even complex bio-models and supports deterministic Ordinary Differential Equations; Stochastic Differential Equations; constraint-based analyses; recent SBML and SED-ML versions; exchange of results, and visualization of in silico experiments; open modeling exchange formats (COMBINE archives); hierarchically structured models; and compatibility with standard testing systems, including the Systems Biology Test Suite and published models from the BioModels and BiGG databases.'
 
 - id: 'Koenig2021_Ten_simple_rules'
   year: 2021
   pdf: 'Koenig2021_Ten_simple_rules.pdf'
   authors: '<b>Matthias König*</b>, Jan Grzegorzewski, Martin Golebiewski, Henning Hermjakob, Mike Hucka, Brett Olivier, Sarah M. Keating, David Nickerson, Falk Schreiber, Rahuman Sheriff, Dagmar Waltemath'
   title: 'Ten Simple Rules for FAIR Sharing of Experimental and Clinical Data with the Modeling Community'
-  journal: 'Preprints 2021, 2021080303, doi: <a href="https://doi.org/10.20944/preprints202108.0303.v2">10.20944/preprints202108.0303.v2</a> [Submitted PLoS Computational Biology, 2021-11-19]'
-  status:
-  doi:
+  journal: 'Preprints 2021, 2021080303'
+  status: in revision
+  doi: 10.20944/preprints202108.0303.v2
   pmid:
   keywords:
+    - data sharing
+    - FAIR
   project:
   repository:
+  abstract: 'Science continues to become more interdisciplinary and to involve increasingly complex data sets. Many projects in the biomedical and health-related sciences follow or aim to follow the principles of FAIR data sharing, which has been demonstrated to foster collaboration, to lead to better research outcomes, and to help ensure reproducibility of results. Data generated in the course of biomedical and health research present specific challenges for FAIR sharing in the sense that they are heterogeneous and highly sensitive to context and the needs of protection and privacy. Data sharing must respect these features without impeding timely dissemination of results, so that they can contribute to time-critical advances in medical therapy and treatment. Modeling and simulation of biomedical processes have become established tools, and a global community has been developing algorithms, methodologies, and standards for applying biomedical simulation models in clinical research. However, it can be difficult for clinician scientists to follow the specific rules and recommendations for FAIR data sharing within this domain. We seek to clarify the standard workflow for sharing experimental and clinical data with the simulation modeling community. By following these recommendations, data sharing will be improved, collaborations will become more effective, and the FAIR publication and subsequent reuse of data will become possible at the level of quality necessary to support biomedical and health-related sciences.'
 
 - id: 'OMEX_Metadata_Spec.1.2_Gennari2021'
   year: 2021
   pdf: 'OMEX_Metadata_Spec.1.2_Gennari2021.pdf'
   authors: 'John Gennari, <b>Matthias König</b>, Goskel Misirli, Maxwell Neal, David Nickerson, Dagmar Waltemath'
   title: 'OMEX Metadata Specification Version 1.2'
-  journal: '[Submitted to JIB, 2021-08-08]'
+  journal: ' J Integr Bioinform. 2021 Oct 20;18(3):20210020'
   status:
-  doi:
-  pmid:
+  doi: 10.1515/jib-2021-0020
+  pmid: 34668356
   keywords:
   project:
   repository:
+  abstract: 'A standardized approach to annotating computational biomedical models and their associated files can facilitate model reuse and reproducibility among research groups, enhance search and retrieval of models and data, and enable semantic comparisons between models. Motivated by these potential benefits and guided by consensus across the COmputational Modeling in BIology NEtwork (COMBINE) community, we have developed a specification for encoding annotations in Open Modeling and EXchange (OMEX)-formatted archives. This document details version 1.2 of the specification, which builds on version 1.0 published last year in this journal. In particular, this version includes a set of initial model-level annotations (whereas v 1.0 described exclusively annotations at a smaller scale). Additionally, this version uses best practices for namespaces, and introduces omex-library.org as a common root for all annotations. Distributing modeling projects within an OMEX archive is a best practice established by COMBINE, and the OMEX metadata specification presented here provides a harmonized, community-driven approach for annotating a variety of standardized model representations. This specification acts as a technical guideline for developing software tools that can support this standard, and thereby encourages broad advances in model reuse, discovery, and semantic analyses.'
 
 - id: 'SED-ML_validator_Shaikh2021'
   year: 2021
   pdf: 'SED-ML_validator_Shaikh2021.pdf'
   authors: 'Bilal Shaikh, Andrew Philip Freiburger, <b>Matthias König</b>, Frank T. Bergmann, David P. Nickerson, Herbert M. Sauro, Michael L. Blinov, Lucian P. Smith, Ion I. Moraru, Jonathan R. Karr'
   title: 'SED-ML Validator: tool for debugging simulation experiments'
-  journal: 'arXiV, 2021, <a href="https://arxiv.org/abs/2106.00844" target="_blank">2106.00844</a>, [Submitted to Bioinformatics 2021-06-02]'
-  status:
-  doi:
+  journal: 'arXiV, 2021, <a href="https://arxiv.org/abs/2106.00844" target="_blank">2106.00844</a>'
+  status: preprint, submitted
+  doi: 10.48550/arXiv.2106.00844
   pmid:
   keywords:
   project: https://run.biosimulations.org/utils/validate
@@ -422,6 +427,7 @@
   keywords:
   project:
   repository:
+  abstract: 'The evaluation of hepatic function and functional capacity are essential tasks in hepatology. Indocyanine Green (ICG) is a widely applied test compound that is used in clinical routine to evaluate hepatic function. Accurate assessment of liver-function through ICG pharmacokinetics is challenging because the elimination of ICG is influenced by physiological factors such as liver perfusion as well as the health status of the patient. Important questions for the functional evaluation are how blood flow, plasma protein binding or surgical interventions can influence the distribution and elimination of ICG. In the course of this project, these questions were studied by the means of computational modeling to evaluate ICG dynamics in silico. Within this work a physiological-based model of ICG pharmacokinetics was developed. For the parameterization and validation of the model a database of ICG pharmacokinetic data was established. The model was applied to study (i) the effect of liver disease, specifically liver cirrhosis, on ICG pharmacokinetics; (ii) how hepatic blood flow and other cardiovascular parameters affect ICG-elimination; and (iii) the role of plasma protein binding of ICG and its impact on ICG pharmacokinetics. Finally, the model was applied to analyse the effect of liver resection (hepatectomy) on ICG-elimination and the value of ICG as a predictive measure for postoperative outcome. The model is able to accurately predict changes in ICG pharmacokinetics caused by changes in blood flow and plasma proteins as well as liver cirrhosis. Furthermore, the model is able to accurately predict postoperative changes of ICG-elimination after liver resection, showing its potential value as a clinical tool.'
 
 - id: 'GACM-Report_Qualiperf2020'
   year: 2020
@@ -435,6 +441,7 @@
   keywords:
   project: https://qualiperf.de
   repository:
+  abstract:
 
 - id: 'Bachelor.Thesis.Florian.Bartsch'
   year: 2020
@@ -446,8 +453,14 @@
   doi:
   pmid:
   keywords:
+    - simvastaton
+    - PBPK
+    - pharmacokinetics
+    - pharmacodynamics
+    - cholesterol
   project:
   repository:
+  abstract: 'Cholesterol is one of the most important molecules in biology. Elevated plasma levels are associated with an increased risk for arteriosclerosis and cardiovascular diseases. A common treatment for hypercholesterolemic patients are statins, which are capable of reducing total plasma cholesterol levels. Within this thesis the effects of the statin simvastatin on cholesterol levels were studied using a computational modelling approach. Based on extensive data curation, a kinetic model of simvastatin pharmacokinetics coupled to a pharmacodynamic model of cholesterol metabolism was developed. The resulting pharmacokinetic/ pharmacodynamic (PK/PD) model was applied to study the effects of simvastatin on hepatic HMG-CoA reductase activity, hepatic cholesterol homeostasis and plasma cholesterol levels.'
 
 - id: 'Bachelor.Thesis.Yannick.Duport'
   year: 2020
@@ -459,163 +472,204 @@
   doi:
   pmid:
   keywords:
+    - midazolam
+    - PBPK
+    - pharmacokinetics
+    - drug-drug interactions
+    - DDI
   project:
   repository:
+  abstract: 'Midazolam is one of the most effective and safe medicines used for anesthesia and procedural sedation, as well as treating trouble sleeping and severe agitation. Midazolam is metabolised in the liver as well as in the small intestine to cytochrome P450 3A4 (CYP3A4). Many factors can alter the pharmacokinetics of midazolam due to inhibition or induction of hepatic and/or intestinal metabolism, resulting in either (i) adverse effects due to increased plasma midazolam concentrations in case of inhibition of metabolism or (ii) ineffectiveness as a consequence of too low concentrations if metabolism is induced. Within this thesis the clearance and pharmacokinetics of midazolam were studied, using a computational modeling approach. A large data base of midazolam pharmacokinetics data was established and utilized to develop a physiological-based pharmacokinetics model of midazolam. The model was applied to study the following questions: (i) What are the effects of CYP3A4 inhibition and induction on midazolam pharmacokinetics? (ii) What are the differences of intestinal and hepatic CYP3A4 inhibition and induction on midazolam pharmacokinetics?'
 
 - id: 'PKDB_Grzegorzewski2020'
   year: 2020
   pdf: 'PKDB_Grzegorzewski2020.pdf'
   authors: 'Grzegorzewski J, Brandhorst J, Green K, Eleftheriadou D, Duport Y, Barthorscht F, Köller A, Ke DYJ, De Angelis S, <b>König M.</b>'
   title: 'PK-DB: pharmacokinetics database for individualized and stratified computational modeling'
-  journal: 'Nucleic Acids Res. 2020 Nov 5:gkaa990. doi: <a href="https://doi.org/10.1093/nar/gkaa990" target="_blank">10.1093/nar/gkaa990</a>. Epub ahead of print. PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/33151297/" target="_blank">33151297</a>'
+  journal: ' Nucleic Acids Res. 2021 Jan 8;49(D1):D1358-D1364'
   status:
-  doi:
-  pmid:
+  doi: 10.1093/nar/gkaa990
+  pmid: 33151297
   keywords:
   project: https://pk-db.com
   repository: https://github.com/matthiaskoenig/pkdb
+  abstract: 'A multitude of pharmacokinetics studies have been published. However, due to the lack of an open database, pharmacokinetics data, as well as the corresponding meta-information, have been difficult to access. We present PK-DB (https://pk-db.com), an open database for pharmacokinetics information from clinical trials. PK-DB provides curated information on (i) characteristics of studied patient cohorts and subjects (e.g. age, bodyweight, smoking status, genetic variants); (ii) applied interventions (e.g. dosing, substance, route of application); (iii) pharmacokinetic parameters (e.g. clearance, half-life, area under the curve) and (iv) measured pharmacokinetic time-courses. Key features are the representation of experimental errors, the normalization of measurement units, annotation of information to biological ontologies, calculation of pharmacokinetic parameters from concentration-time profiles, a workflow for collaborative data curation, strong validation rules on the data, computational access via a REST API as well as human access via a web interface. PK-DB enables meta-analysis based on data from multiple studies and data integration with computational models. A special focus lies on meta-data relevant for individualized and stratified computational modeling with methods like physiologically based pharmacokinetic (PBPK), pharmacokinetic/pharmacodynamic (PK/PD), or population pharmacokinetic (pop PK) modeling.'
 
 - id: 'SBML_Keating2020'
   year: 2020
   pdf: 'SBML_Keating2019.pdf'
   authors: 'SM Keating, D Waltemath, <b>M König</b>, F Zhang, A Dräger, C Chaouiya, FT Bergmann, A Finney, CS Gillespie, T Helikar, S Hoops, RS Malik-Sheriff, SL Moodie, II Moraru, CJ Myers, A Naldi, BG Olivier, S Sahle, JC Schaff, LP Smith, MJ Swat, DT, L Watanabe, DJ Wilkinson, ML Blinov, K Begley, JR Faeder, HF Gómez, TM Hamm, Y Inagaki, W Liebermeister, AL Lister, D Lucio, E Mjolsness, CJ Proctor, K Raman, N Rodriguez, CA Shaffer, BE Shapiro, J Stelling, N Swainston, N Tanimura, J Wagner, M Meier-Schellersheim, HM Sauro, B Palsson, H Bolouri, H Kitano, Akira Funahashi, H Hermjakob, JC Doyle M Hucka, and SBML Community members'
   title: 'SBML Level 3: an extensible format for the exchange and reuse of biological models'
-  journal: 'Mol Syst Biol. 2020;16(8):e9110. <a href="https://doi.org/10.15252/msb.20199110">doi:10.15252/msb.20199110</a>'
+  journal: 'Mol Syst Biol. 2020;16(8):e9110'
   status:
-  doi:
-  pmid:
+  doi: 10.15252/msb.20199110
+  pmid: 32845085
   keywords:
+    - computational modeling
+    - file format
+    - interoperability
+    - reproducibility
+    - systems biology
   project: http://sbml.org
   repository: https://sourceforge.net/projects/sbml/
+  abstract: 'Systems biology has experienced dramatic growth in the number, size, and complexity of computational models. To reproduce simulation results and reuse models, researchers must exchange unambiguous model descriptions. We review the latest edition of the Systems Biology Markup Language (SBML), a format designed for this purpose. A community of modelers and software authors developed SBML Level 3 over the past decade. Its modular form consists of a core suited to representing reaction-based models and packages that extend the core with features suited to other model types including constraint-based models, reaction-diffusion models, logical network models, and rule-based models. The format leverages two decades of SBML and a rich software ecosystem that transformed how systems biologists build and interact with models. More recently, the rise of multiscale models of whole cells and organs, and new data sources such as single-cell measurements and live imaging, has precipitated new ways of integrating data with models. We provide our perspectives on the challenges presented by these developments and how SBML Level 3 provides the foundation needed to support this evolution.'
 
 - id: 'OMEX_Koenig2020'
   year: 2020
   pdf: 'Open.modeling.and.exchange.(OMEX).metadata.specification.version.1.0_Koenig2020.pdf'
   authors: 'Neal ML, Gennari JH, Waltemath D, Nickerson DP, <b>König M</b>'
   title: 'Open modeling and exchange (OMEX) metadata specification version 1.0'
-  journal: 'J Integr Bioinform. 2020;/j/jib.ahead-of-print/jib-2020-0020/jib-2020-0020.xml. <a href="https://doi.org/10.1515/jib-2020-0020">doi:10.1515/jib-2020-0020</a>'
+  journal: ' J Integr Bioinform. 2020 Jun 25;17(2-3):20200020'
   status:
-  doi:
-  pmid:
+  doi: 10.1515/jib-2020-0020
+  pmid: 32589606
   keywords:
+    - data integration
+    - metadata
+    - semantics
+    - simulation
   project: http://co.mbine.org/
   repository:
+  abstract: 'A standardized approach to annotating computational biomedical models and their associated files can facilitate model reuse and reproducibility among research groups, enhance search and retrieval of models and data, and enable semantic comparisons between models. Motivated by these potential benefits and guided by consensus across the COmputational Modeling in BIology NEtwork (COMBINE) community, we have developed a specification for encoding annotations in Open Modeling and EXchange (OMEX)-formatted archives. Distributing modeling projects within these archives is a best practice established by COMBINE, and the OMEX metadata specification presented here provides a harmonized, community-driven approach for annotating a variety of standardized model and data representation formats within an archive. The specification primarily includes technical guidelines for encoding archive metadata, so that software tools can more easily utilize and exchange it, thereby spurring broad advancements in model reuse, discovery, and semantic analyses.'
 
 - id: 'Standards_in_Systems_and_Synthetic_Biology_Schreiber2020'
   year: 2020
   pdf: 'Standards_in_Systems_and_Synthetic_Biology_Schreiber2020.pdf'
   authors: 'F. Schreiber, B. Sommer, G. Bader, P. Gleeson, M. Golebiewski, T. Gorochowski, M. Hucka, S. Keating, <b>M. König</b>, C. Myers, D. Nickerson, D. Walthemath'
   title: 'Specifications of Standards in Systems and Synthetic Biology:Status and Developments in 2020'
-  journal: 'J Integr Bioinform. 2020;/j/jib.ahead-of-print/jib-2020-0022/jib-2020-0022.xml; <a href="https://doi.org/10.1515/jib-2020-0022">doi:10.1515/jib-2020-0022</a>'
+  journal: ' J Integr Bioinform. 2020 Jun 29;17(2-3):20200022'
   status:
-  doi:
+  doi: 10.1515/jib-2020-0022
   pmid:
   keywords:
+    - ontologies
+    - standards
+    - synthetic biology
+    - systems biology
   project: http://co.mbine.org/
   repository:
-
+  abstract: 'This special issue of the Journal of Integrative Bioinformatics presents papers related to the 10th COMBINE meeting together with the annual update of COMBINE standards in systems and synthetic biology.'
 
 - id: 'COMBINE2019_Waltemath2020'
   year: 2020
   pdf: 'COMBINE2019_Waltemath2020.pdf'
   authors: 'D Waltemath, M Golebiewski, M Blinov, P Gleeson, H Hermjakob, E Inau, S Keating, <b>M König</b>, O Krebs, R Malik-Sheriff, D Nickerson, E Oberortner, H Sauro, F Schreiber, L Smith, M Stefan, U Wittig, C Myers'
   title: 'The first 10 years of the international coordination network for standards in systems and synthetic biology (COMBINE)'
-  journal: 'J Integr Bioinform. 2020;/j/jib.ahead-of-print/jib-2020-0005/jib-2020-0005.xml. <a href="https://doi.org/10.1515/jib-2020-0005">doi:10.1515/jib-2020-0005</a>'
+  journal: 'J Integr Bioinform. 2020 Jun 29;17(2-3):20200005'
   status:
-  doi:
+  doi: 10.1515/jib-2020-0005
   pmid:
   keywords:
-  project: http://co.mbine.org/
+    - COMBINE
+    - community building
+    - meeting report
+    - standardization
+  project: https://co.mbine.org/
   repository:
+  abstract: 'This paper presents a report on outcomes of the 10th Computational Modeling in Biology Network (COMBINE) meeting that was held in Heidelberg, Germany, in July of 2019. The annual event brings together researchers, biocurators and software engineers to present recent results and discuss future work in the area of standards for systems and synthetic biology. The COMBINE initiative coordinates the development of various community standards and formats for computational models in the life sciences. Over the past 10 years, COMBINE has brought together standard communities that have further developed and harmonized their standards for better interoperability of models and data. COMBINE 2019 was co-located with a stakeholder workshop of the European EU-STANDS4PM initiative that aims at harmonized data and model standardization for in silico models in the field of personalized medicine, as well as with the FAIRDOM PALs meeting to discuss findable, accessible, interoperable and reusable (FAIR) data sharing. This report briefly describes the work discussed in invited and contributed talks as well as during breakout sessions. It also highlights recent advancements in data, model, and annotation standardization efforts. Finally, this report concludes with some challenges and opportunities that this community will face during the next 10 years.'
 
 - id: 'SBML_distrib_Smith2020'
   year: 2020
   pdf: 'SBML_distrib_Smith2020.pdf'
   authors: 'L Smith, S Moodie, F Bergmann, C Gillespie, S Keating, <b>M. König</b>, C Myers, M Swat, D Wilkinson, M Hucka'
   title: 'The Distributions Package for SBML Level 3'
-  journal: 'J Integr Bioinform. 2020 Aug 4;/j/jib.ahead-of-print/jib-2020-0018/jib-2020-0018.xml. <a href="https://doi.org/10.1515/jib-2020-0018">doi: 10.1515/jib-2020-0018</a>'
+  journal: ' J Integr Bioinform. 2020 Jul 20;17(2-3):20200018'
   status:
-  doi:
-  pmid:
+  doi: 10.1515/jib-2020-0018
+  pmid: 32750035
   keywords:
+  - SBML
+  - distributions
+  - modeling
+  - systems biology
+  - uncertainty
   project: http://sbml.org/Documents/Specifications/SBML_Level_3/Packages/distrib
   repository:
+  abstract: 'Biological models often contain elements that have inexact numerical values, since they are based on values that are stochastic in nature or data that contains uncertainty. The Systems Biology Markup Language (SBML) Level 3 Core specification does not include an explicit mechanism to include inexact or stochastic values in a model, but it does provide a mechanism for SBML packages to extend the Core specification and add additional syntactic constructs. The SBML Distributions package for SBML Level 3 adds the necessary features to allow models to encode information about the distribution and uncertainty of values underlying a quantity.'
 
 - id: 'Memote_Lieven2020'
   year: 2020
   pdf: 'Memote_Lieven2020.pdf'
   authors: 'Christian Lieven, Moritz Emanuel Beber, Brett G. Olivier, Frank T. Bergmann, Meric Ataman, Parizad Babaei, Jennifer A. Bartell, Lars M. Blank, Siddharth Chauhan, Kevin Correia, Christian Diener, Andreas Dräger, Birgitta Elisabeth Ebert, Janaka N. Edirisinghe, Jose P. Faria, Adam Feist, Georgios Fengos, Ronan M. T. Fleming, Beatriz Garcia-Jimenez, Vassily Hatzimanikatis, Wout van Helvoirt, Christopher Henry, Henning Hermjakob, Markus J. Herrgard, Hyun Uk Kim, Zachary King, Jasper Jan Koehorst, <b>Matthias König</b>, Steffen Klamt, Edda Klipp, Meiyappan Lakshmanan, Nicolas Le Novere, Dong-Yup Lee, Sang Yup Lee, Sunjae Lee, Nathan E. Lewis, Hongwu Ma, Daniel Machado, Radhakrishnan Mahadevan, Paulo Maia, Adil Mardinoglu, Greg L. Medlock, Jonathan Monk, Jens Nielsen, Lars K. Nielsen, Juan Nogales, Intawat Nookaew, Osbaldo Resendis, Bernhard Palsson, Jason A. Papin, Kiran Raosaheb Patil, Mark Poolman, Nathan D. Price, Anne Richelle, Isabel Rocha, Benjamin Sanchez, Peter Schaap, Rahuman S. Malik Sheriff, Saeed Shoaie, Nikolaus Sonnenschein, Bas Teusink, Paulo Vilaca, Jon Olav Vik, Judith A. Wodke, Joana C. Xavier, Qianqian Yuan, Maksim Zakhartsev, Cheng Zhang'
   title: 'MEMOTE for standardized genome-scale metabolic model testing'
-  journal: 'Nat Biotechnol. 2020;38(3):272-276. doi: <a href="https://doi.org/10.1038/s41587-020-0446-y">10.1038/s41587-020-0446-y</a>'
+  journal: 'Nat Biotechnol. 2020;38(3):272-276'
   status:
-  doi:
-  pmid:
+  doi: 10.1038/s41587-020-0446-y
+  pmid: 32123384
   keywords:
   project: https://memote.readthedocs.io/en/latest/?badge=latest
   repository: https://github.com/opencobra/memote
+  abstract: 'Reconstructing metabolic reaction networks enables the development of testable hypotheses of an organism’s metabolism under different conditions. State-of-the-art genome-scale metabolic models (GEMs) can include thousands of metabolites and reactions that are assigned to subcellular locations. Gene–protein–reaction (GPR) rules and annotations using database information can add meta-information to GEMs. GEMs with metadata can be built using standard reconstruction protocols, and guidelines have been put in place for tracking provenance and enabling interoperability, but a standardized means of quality control for GEMs is lacking. Here we report a community effort to develop a test suite named MEMOTE (for metabolic model tests) to assess GEM quality.'
 
 - id: 'EXSIMO_Koenig2020'
   year: 2020
   pdf: 'EXSIMO_Koenig2020.pdf'
   authors: '<b>Matthias König</b>'
   title: 'Executable Simulation Model of the Liver'
-  journal: 'bioRxiv 2020.01.04.894873; doi: <a href="https://www.biorxiv.org/content/10.1101/2020.01.04.894873v1">https://doi.org/10.1101/2020.01.04.894873</a> [accepted, 04-2020]'
-  status:
-  doi:
+  journal: 'bioRxiv 2020.01.04.894873'
+  status: preprint
+  doi: 10.1101/2020.01.04.894873v1
   pmid:
   keywords:
   project: https://matthiaskoenig.github.io/exsimo/
   repository: https://github.com/matthiaskoenig/exsimo
+  abstract: 'To address the issue of reproducibility in computational modeling we developed the concept of an executable simulation model (EXSIMO). An EXSIMO combines model, data and code with the execution environment to run the computational analysis in an automated manner using tools from software engineering. Key components are i) models, data and code for the computational analysis; ii) tests for models, data and code; and iii) an automation layer to run tests and execute the analysis. An EXSIMO combines version control, model, data, units, annotations, analysis, reports, execution environment, testing, continuous integration and release. We applied the concept to perform a replication study of a computational analysis of hepatic glucose metabolism in the liver. The corresponding EXSIMO is available from https://github.com/matthiaskoenig/exsimo'
 
 - id: 'MOR_Lambers2019'
   year: 2019
   pdf: 'MOR_Lambers2019.pdf'
   authors: 'Lambers L., Ricken T., and <b>König M.</b>'
   title: 'Model Order Reduction (MOR) of Function-Perfusion-Growth Simulation in the Human Fatty Liver via Artificial Neural Network (ANN)'
-  journal: 'Proceedings in Applied Mathematics & Mechanics, PAMM, <a href="https://doi.org/10.1002/pamm.201900429">10.1002/pamm.201900429</a>, 2019'
+  journal: 'Proceedings in Applied Mathematics & Mechanics, PAMM, 2019'
   status:
-  doi:
+  doi: 10.1002/pamm.201900429
   pmid:
   keywords:
   project:
   repository:
+  abstract: 'Numerical modeling of biological systems has become an important assistance for understanding and predicting hepatic diseases like non-alcoholic fatty liver disease (NAFLD) or the detoxification of drugs and toxines by the liver. We developed a model for the simulation of hepatic function-perfusion processes using a multiscale and multiphase approach. Here, the liver lobules are described using a homogenization approach with a coupled set of partial differential equations (PDE) based on the Theory of Porous Media (TPM) to describe the coupled blood transport and tissue deformation. For the description of metabolic processes on cellular scale ordinary differential equations (ODE) are used. For many practical and clinical applications, e.g. optimization procedures or uncertainty quantification, a fast but reliable computation is required. Thus, we use a non-linear model order reduction (MOR) based on an artificial neural network (ANN) for the prediction of simulation results. The practicability of this approach is shown in a comparison between the high fidelity numerical simulation of a NAFLD and the predicted results by the ANN.'
 
 - id: 'combine_editorial_2019'
   year: 2019
   pdf: 'combine_editorial_2019.pdf'
   authors: 'F Schreiber, G Bader, P Gleeson, M Golebiewski, M Hucka, SM Keating, <b>M König</b>, C Myers, D Nickerson, B Sommer, D Waltemath'
   title: 'Specifications of Standards in Systems and Synthetic Biology: Status and Developments in 2019'
-  journal: 'J Integr Bioinform. 2019 Jul 13;16(2); <a href="https://doi.org/10.1101/350991">10.1515/jib-2019-0035</a>'
+  journal: 'J Integr Bioinform. 2019 Jul 13;16(2)'
   status:
-  doi:
-  pmid:
+  doi: 10.1515/jib-2019-0035
+  pmid: 31301675
   keywords:
   project: http://co.mbine.org/
   repository:
-
+  abstract: 'This special issue of the Journal of Integrative Bioinformatics presents an overview of COMBINE standards and their latest specifications. The standards cover representation formats for computational modeling in synthetic and systems biology and include BioPAX, CellML, NeuroML, SBML, SBGN, SBOL and SED-ML. The articles in this issue contain updated specifications of SBGN Process Description Level 1 Version 2, SBML Level 3 Core Version 2 Release 2, SBOL Version 2.3.0, and SBOL Visual Version 2.1.'
 
 - id: 'sbml-level-3-version-2-core_2019'
   year: 2019
   pdf: 'sbml-level-3-version-2-core.pdf'
   authors: 'M. Hucka, F. Bergmann, C. Chaouiya, A. Dräger, S. Hoops, S. Keating, <b>M. König</b>, N Le Novere, C. Myers, B. Olivier, S. Sahle, J. Schaff, R. Sheriff, L. Smith, D. Waltemath, D. Wilkinson, F. Zhang'
   title: 'The Systems Biology Markup Language (SBML): Language Specification for Level 3 Version 2 Core'
-  journal: 'J Integr Bioinform. 2019 Jun 20;16(2); <a href="https://doi.org/10.1515/jib-2019-0021">10.1515/jib-2019-0021</a>'
+  journal: 'J Integr Bioinform. 2019 Jun 20;16(2);'
   status:
-  doi:
-  pmid:
+  doi: 10.1515/jib-2019-0021
+  pmid: 31219795
   keywords:
+    - Representation
+    - Standards
+    - Systems Biology Markup Language
+    - Visualization
   project: http://sbml.org
   repository: https://sourceforge.net/projects/sbml/
+  abstract: 'Computational models can help researchers to interpret data, understand biological functions, and make quantitative predictions. The Systems Biology Markup Language (SBML) is a file format for representing computational models in a declarative form that different software systems can exchange. SBML is oriented towards describing biological processes of the sort common in research on a number of topics, including metabolic pathways, cell signaling pathways, and many others. By supporting SBML as an input/output format, different tools can all operate on an identical representation of a model, removing opportunities for translation errors and assuring a common starting point for analyses and simulations. This document provides the specification for Release 2 of Version 2 of SBML Level 3 Core. The specification defines the data structures prescribed by SBML as well as their encoding in XML, the eXtensible Markup Language. Release 2 corrects some errors and clarifies some ambiguities discovered in Release 1. This specification also defines validation rules that determine the validity of an SBML document, and provides many examples of models in SBML form. Other materials and software are available from the SBML project website at http://sbml.org/.'
 
 - id: 'tellurium_Choi2018'
   year: 2018
   pdf: 'Tellurium_Choi2018.pdf'
   authors: 'Choi K., Medley K., <b>König M.</b>, Stocking K., Smith L., Gu S., and Sauro HM.'
   title: 'Tellurium: An Extensible Python-based Modeling Environment for Systems and Synthetic Biology'
-  journal: 'Biosystems. 2018 Jul 24. pii: S0303-2647(18)30125-4. doi: <a href="https://doi.org/10.1016/j.biosystems.2018.07.006">10.1016/j.biosystems.2018.07.006</a>'
+  journal: 'Biosystems. 2018 Jul 24. pii: S0303-2647(18)30125-4'
   status:
-  doi:
-  pmid:
+  doi: 10.1016/j.biosystems.2018.07.006
+  pmid: 30053414
   keywords:
   project: 'http://tellurium.analogmachine.org/'
   repository: 'https://github.com/sys-bio/tellurium'
@@ -626,10 +680,10 @@
   pdf: 'hepatokin_Berndt2018.pdf'
   authors: 'Berndt N., Bulik S., Wallach I., Wünsch T., <b>König M.</b>, Stockmann M., Meierhofer M., Holzhütter HG.'
   title: 'HEPATOKIN1: A Biochemistry-Based Model of Liver Metabolism Suited for Applications in Medicine and Pharmacology'
-  journal: 'Nat Commun. 2018 Jun 19;9(1):2386. doi: <a href="https://doi.org/10.1038/s41467-018-04720-9">10.1038/s41467-018-04720-9</a>.'
+  journal: 'Nat Commun. 2018 Jun 19;9(1):2386.'
   status:
-  doi:
-  pmid:
+  doi: 10.1038/s41467-018-04720-9
+  pmid: 29921957
   keywords:
   project:
   repository:
@@ -640,10 +694,10 @@
   pdf: 'SED-ML_L1V3_Bergmann2018.pdf'
   authors: 'Bergmann, FT., Cooper, J., <b>König, M.*</b>, Moraru, I., Nickerson, D., Le Novère N., Olivier, BG., Sahle, S., Smith, L., Waltemath, D.<br /><b>* corresponding author</b>'
   title: 'Simulation Experiment Description Markup Language (SED-ML) Level 1 Version 3 (L1V3)'
-  journal: 'J Integr Bioinform. 2018 Mar 19;15(1); doi: <a href="https://doi.org/10.1515/jib-2017-0086">10.1515/jib-2017-0086</a>'
+  journal: 'J Integr Bioinform. 2018 Mar 19;15(1)'
   status:
-  doi:
-  pmid:
+  doi: 10.1515/jib-2017-0086
+  pmid: 29550789
   keywords:
   project: 'https://sed-ml.github.io/index.html'
   repository: 'https://github.com/SED-ML/sed-ml'
@@ -654,38 +708,24 @@
   pdf: 'Semantic.annotations_Neal2018.pdf'
   authors: 'Neal, M.; <b>König, M.</b>; Nickerson, D.; Misirli, G.; Kalbasi, R.; Dräger, A.; Atalag, K.; Chelliah, V.; Cooling, M.; Cook, D.; Crook, S.; de Alba, M.; Friedman, S.; Garny, A.; Gennari, J.; Gleeson, P.; Golebiewski, M.; Hucka, M.; Juty, N.; Novère, N. L.; Myers, C.; Olivier, B.; Sauro, H.; Scharm, M.; Snoep, J.; Touré, V.; Wipat, A.; Wolkenhauer, O. & Waltemath, D.'
   title: 'Harmonizing semantic annotations for computational models in biology'
-  journal: 'Brief Bioinform. 2018 Nov 21. doi: <a href="https://doi.org/10.1093/bib/bby087">10.1093/bib/bby087</a>'
+  journal: 'Brief Bioinform. 2019 Mar 22;20(2):540-550'
   status:
-  doi:
-  pmid:
+  doi: 10.1093/bib/bby087
+  pmid: 30462164
   keywords:
   project: 'https://github.com/combine-org/Annotations'
   repository: 'https://github.com/combine-org/Annotations'
   abstract: 'Life science researchers use computational models to articulate and test hypotheses about the behavior of biological systems. Semantic annotation is a critical component for enhancing the interoperability and reusability of such models as well as for the integration of the data needed for model parameterization and validation. Encoded as machine-readable links to knowledge resource terms, semantic annotations describe the computational or biological meaning of what models and data represent. These annotations help researchers find and repurpose models, accelerate model composition, and enable knowledge integration across model repositories and experimental data stores. However, realizing the potential benefits of semantic annotation requires the development of model annotation standards that adhere to a community-based annotation protocol. Without such standards, tool developers must account for a variety of annotation formats and approaches, a situation that can become prohibitively cumbersome and which can defeat the purpose of linking model elements to controlled knowledge resource terms. Currently, no consensus protocol for semantic annotation exists among the larger biological modeling community. Here, we report on the landscape of current semantic annotation practices among the COmputational Modeling in BIology NEtwork (COMBINE) community and provide a set of recommendations for building a consensus approach to semantic annotation.'
-
-- id: 'dfba_Watanabe2018'
-  year: 2018
-  pdf: 'dfba_Watanabe2018.pdf'
-  authors: 'Watanabe L.*, <b>König*</b> M., and Myers C.<br /><b>* equal contribution</b>'
-  title: 'Dynamic Flux Balance Analysis Models in SBML'
-  journal: 'bioRxiv 245076; doi: <a href="https://doi.org/10.1101/245076">doi.org/10.1101/245076</a> [submitted]'
-  status:
-  doi:
-  pmid:
-  keywords:
-  project: 'http://www.github.com/matthiaskoenig/dfba'
-  repository: 'http://www.github.com/matthiaskoenig/dfba'
-  abstract: 'Motivation: Systems biology models are typically simulated using a single formalism such as ordinary differential equations (ODE) or stochastic methods. However, more complex models require the coupling of multiple formalisms since different biological concepts are better described using different methods, e.g., stationary metabolism is often modeled using flux-balance analysis (FBA) whereas dynamic changes of model components are better described via ODEs. The coupling of FBA and ODE frameworks results in dynamic FBA models. A major challenge is how to describe such hybrid models coupling multiple frameworks in a standardized way, so that they can be exchanged between tools and simulated consistently and in a reproducible manner. Results: This paper presents a scheme and implementation for encoding dynamic FBA models in the Systems Biology Markup Language (SBML), thereby allowing to exchange multi-framework computational models between software tools. The paper shows the feasibility of the approach using various example models and demonstrates that different tools are able to simulate the hybrid models and agree on the results. As part of this work, two independent implementations of a multi-framework simulation method for dynamic FBA have been developed supporting such models: iBioSim and sbmlutils. Availability: All materials and models are available from https://github.com/matthiaskoenig/dfba. The tools used in this project are freely available: iBioSim at http://www.async.ece.utah.edu/ibiosim and sbmlutils at https://github.com/matthiaskoenig/sbmlutils/.'
 
 - id: 'tellurium_Medley2018'
   year: 2018
   pdf: 'Tellurium.Notebook_Medley2018.pdf'
   authors: 'Medley K., Choi K., <b>König M.</b>, Smith L., Gu S., Hellerstein J., Sealfon S., and Sauro HM.'
   title: 'Tellurium Notebooks — An Environment for Reproducible Dynamical Modeling in Systems Biology.'
-  journal: 'PLoS computational biology 14, no. 6 (2018): e1006220.; doi: <a href="https://doi.org/10.1371/journal.pcbi.1006220">10.1371/journal.pcbi.1006220</a>'
+  journal: ' PLoS Comput Biol. 2018 Jun 15;14(6):e1006220'
   status:
-  doi:
-  pmid:
+  doi: 10.1371/journal.pcbi.1006220
+  pmid: 29906293
   keywords:
   project: 'http://tellurium.analogmachine.org/'
   repository: 'https://github.com/sys-bio/tellurium'
@@ -696,13 +736,22 @@
   pdf: 'Systems.surgery_Christ2017.pdf'
   authors: 'Christ, B.*, Dahmen, U.*, Herrmann, K.H.*, <b>König, M.*</b>, Reichenbach, J.R*., Ricken, T.*, Schleicher, J.*, Ole Schwen, L.*, Vlaic, S.* and Waschinsky, N.*<br /><b>* equal contribution</b>'
   title: 'Computational Modeling in Liver Surgery'
-  journal: 'Frontiers in physiology, 8, p.906; doi: <a href="https://doi.org/10.3389/fphys.2017.00906">10.3389/fphys.2017.00906</a>'
+  journal: ' Front Physiol. 2017 Nov 14;8:906'
   status:
-  doi:
-  pmid:
+  doi: 10.3389/fphys.2017.00906
+  pmid: 29249974
   keywords:
+    - Liver resection
+    - function prediction
+    - liver metabolism
+    - liver regeneration
+    - liver surgical planning
+    - multi-scale modeling
+    - risk assessment
+    - systems medicine
   project:
   repository:
+  abstract: 'The need for extended liver resection is increasing due to the growing incidence of liver tumors in aging societies. Individualized surgical planning is the key for identifying the optimal resection strategy and to minimize the risk of postoperative liver failure and tumor recurrence. Current computational tools provide virtual planning of liver resection by taking into account the spatial relationship between the tumor and the hepatic vascular trees, as well as the size of the future liver remnant. However, size and function of the liver are not necessarily equivalent. Hence, determining the future liver volume might misestimate the future liver function, especially in cases of hepatic comorbidities such as hepatic steatosis. A systems medicine approach could be applied, including biological, medical, and surgical aspects, by integrating all available anatomical and functional information of the individual patient. Such an approach holds promise for better prediction of postoperative liver function and hence improved risk assessment. This review provides an overview of mathematical models related to the liver and its function and explores their potential relevance for computational liver surgery. We first summarize key facts of hepatic anatomy, physiology, and pathology relevant for hepatic surgery, followed by a description of the computational tools currently used in liver surgical planning. Then we present selected state-of-the-art computational liver models potentially useful to support liver surgery. Finally, we discuss the main challenges that will need to be addressed when developing advanced computational planning tools in the context of liver surgery.'
 
 - id: 'models2clinics_Koenig2016'
   year: 2016
@@ -716,93 +765,87 @@
   keywords:
   project:
   repository:
+  abstract: 'Kinetic models are increasingly relevant in medical research. In systems biology, more than 10 years of experience with the development of standards and tools to construct and analyse kinetic models exists. This has supported the sharing of kinetic models, increased their reuse, and thereby has helped to reproduce and validate scientific results. Given the expertise and the existing infrastructure, it seems natural to consider the application and development of standards and tools to meet the requirements of medical scientists. In this paper, we discuss challenges and opportunities for standards and tools from systems biology in medical research, and we put forward criteria for the safe use of simulations. We conclude that standards, tools and infrastructure need to be extended to ensure the quality, reliability and safety required when working with medical and patient data. This will foster the adaptation of modelling in the clinic, providing tools for improved diagnosis, prognosis and therapy.'
 
 - id: 'cy3sabiork_Koenig2016'
   year: 2016
   pdf: 'cy3sabiork_Koenig2016.pdf'
   authors: '<b>König M.</b>'
   title: 'cy3sabiork: A Cytoscape app for visualizing kinetic data from SABIO-RK'
-  journal: '[version 1; referees: awaiting peer review]. F1000Research 2016, 5:1736 (doi: <a href="http://dx.doi.org/10.12688/f1000research.9211.1">10.12688/f1000research.9211.1</a>)'
+  journal: '[version 1; referees: awaiting peer review]. F1000Research 2016, 5:1736'
   status:
-  doi:
+  doi: 10.12688/f1000research.9211.1
   pmid:
   keywords:
   project: 'http://apps.cytoscape.org/apps/cy3sabiork'
   repository: 'http://www.github.com/matthiaskoenig/cy3sabiork'
-
-- id: 'Choi2016'
-  year: 2016
-  pdf:
-  authors: 'Choi K., Medley JK., Cannistra C., <b>König M.</b>, Smith L., Stocking K., and Sauro HM.'
-  title: 'Tellurium: A Python Based Integrated Environment for Biological Modeling and Simulation'
-  journal: 'bioRxiv 054601; doi: <a href="http://dx.doi.org/10.1101/054601">doi.org/10.1101/054601</a>'
-  status:
-  doi:
-  pmid:
-  keywords:
-  project: 'http://tellurium.analogmachine.org/'
-  repository: 'https://github.com/sys-bio/tellurium'
+  abstract: 'Kinetic data of biochemical reactions are essential for the creation of kinetic models of biochemical networks. One of the main resources of such information is SABIO-RK, a curated database for kinetic data of biochemical reactions and their related information. Despite the importance for computational modelling there has been no simple solution to visualize the kinetic data from SABIO-RK. In this work, I present cy3sabiork, an app for querying and visualization of kinetic data from SABIO-RK in Cytoscape. The kinetic information is accessible via a combination of graph structure and annotations of nodes, with provided information consisting of: (I) reaction details, enzyme and organism; (II) kinetic law, formula, parameters; (III) experimental conditions; (IV) publication; (V) additional annotations. cy3sabiork creates an intuitive visualization of kinetic entries in form of a species-reaction-kinetics graph, which reflects the reaction-centered approach of  SABIO-RK. Kinetic entries can be imported in SBML format from either the SABIO-RK web interface or via web service queries. The app allows for easy comparison of kinetic data, visual inspection of the elements involved in the kinetic record and simple access to the annotation information of the kinetic record. I applied cy3sabiork in the computational modelling of galactose metabolism in the human liver.'
 
 - id: 'Wholecell2016'
   year: 2016
   pdf: 'Toward.community.standards.and.software.for.whole-cell.modeling_Walthemath2016.pdf'
   authors: 'Wholecell Consortium (<b>König M.</b>)'
   title: 'Toward community standards and software for whole-cell modeling'
-  journal: 'IEEE Trans Biomed Eng. 2016 Jun 10. [<a href="http://www.ncbi.nlm.nih.gov/pubmed/27305665">PubMed</a>]'
+  journal: 'IEEE Trans Biomed Eng. 2016 Jun 10.'
   status:
-  doi:
-  pmid:
+  doi: 10.1109/TBME.2016.2560762
+  pmid: 27305665
   keywords:
   project: 'https://github.com/whole-cell-tutors'
   repository: 'https://github.com/whole-cell-tutors'
+  abstract: 'Objective: Whole-cell (WC) modeling is a promising tool for biological research, bioengineering, and medicine. However, substantial work remains to create accurate comprehensive models of complex cells. Methods: We organized the 2015 Whole-Cell Modeling Summer School to teach WC modeling and evaluate the need for new WC modeling standards and software by recoding a recently published WC model in the Systems Biology Markup Language. Results: Our analysis revealed several challenges to representing WC models using the current standards. Conclusion: We, therefore, propose several new WC modeling standards, software, and databases. Significance: We anticipate that these new standards and software will enable more comprehensive models.'
 
 - id: 'Abshagen2015'
   year: 2015
   pdf: 'Pathobiochemical.signatures_Abshagen2015.pdf'
   authors: 'Kerstin A.<b>*</b>, <b>König M.*</b>, Hoppe A., Thomas M., Müller I., Ebert M., Weng H., Holzhütter HG., Zanger UM., Bode J., Vollmar B. and Dooley S.<br /><b>* equal contribution</b>'
   title: 'Pathobiochemical signatures of cholestatic liver disease in bile duct ligated mice'
-  journal: 'BMC Syst Biol. 2015 Nov 20;9(1):83. doi: 10.1186/s12918-015-0229-0 [<a href="http://www.ncbi.nlm.nih.gov/pubmed/26589287">PubMed</a>]'
+  journal: 'BMC Syst Biol. 2015 Nov 20;9(1):83.'
   status:
-  doi:
-  pmid:
+  doi: 10.1186/s12918-015-0229-0
+  pmid: 26589287
   keywords:
   project: 'http://matthiaskoenig.github.io/bdl-analysis/'
   repository: 'http://github.com/matthiaskoenig/bdl-analysis/'
+  abstract: 'Background: Disrupted bile secretion leads to liver damage characterized by inflammation, fibrosis, eventually cirrhosis, and hepatocellular cancer. As obstructive cholestasis often progresses insidiously, markers for the diagnosis and staging of the disease are urgently needed. To this end, we compiled a comprehensive data set of serum markers, histological parameters and transcript profiles at 8 time points of disease progression after bile duct ligation (BDL) in mice, aiming at identifying a set of parameters that could be used as robust biomarkers for transition of different disease progression phases. Results: Statistical analysis of the more than 6,000 data points revealed distinct temporal phases of disease. Time course correlation analysis of biochemical, histochemical and mRNA transcript parameters (=factors) defined 6 clusters for different phases of disease progression. The number of CTGF-positive cells provided the most reliable overall measure for disease progression at histological level, bilirubin at biochemical level, and metalloproteinase inhibitor 1 (Timp1) at transcript level. Prominent molecular events exhibited by strong transcript peaks are found for the transcriptional regulator Nr0b2 (Shp) and 1,25-dihydroxyvitamin D(3) 24-hydroxylase (Cyp24a1) at 6 h. Based on these clusters, we constructed a decision tree of factor combinations potentially useful as markers for different time intervals of disease progression. Best prediction for onset of disease is achieved by fibronectin (Fn1), for early disease phase by Cytochrome P450 1A2 (Cyp1a2), passage to perpetuation phase by collagen1α-1 (Col1a1), and transition to the progression phase by interleukin 17-a (Il17a), with early and late progression separated by Col1a1. Notably, these predictions remained stable even for randomly chosen small sub-sets of factors selected from the clusters. Conclusion: Our detailed time-resolved explorative study of liver homogenates following BDL revealed a well-coordinated response, resulting in disease phase dependent parameter modulations at morphological, biochemical, metabolic and gene expression levels. Interestingly, a small set of selected parameters can be used as diagnostic markers to predict disease stages in mice with cholestatic liver disease.'
 
 - year: 2015
   pdf: 
   authors: 'Werner D., Ricken T., Dahmen U., Dirsch O., Holzhütter HG., <b>König M.</b>'
   title: 'On the Influence of Growth in Perfusion Dependent Biological Systems - at the Example of the Human Liver.'
-  journal: 'PAMM 15 (1), 119-120, 2015 [<a href="http://onlinelibrary.wiley.com/doi/10.1002/pamm.201510050/abstract;jsessionid=381EE9FEDFD3E8AACF0647465168F845.f02t03">doi:10.1002/pamm.201510050</a>]'
+  journal: 'PAMM 15 (1), 119-120, 2015'
   status:
-  doi:
+  doi: 10.1002/pamm.201510050
   pmid:
   keywords:
   project: 
-  repository: 
+  repository:
+  abstract: 'Biochemical reactions in the liver are a complex non-linear and time depending coupled function-perfusion-mechanisms. The metabolism of the liver, e.g. nutrient storage, is directly coupled to its blood perfusion. Growth phenomena, such as accumulation of fat, have a strong impact onto micro-perfusion within the liver. Here, we present the results of a computational model that describes selected coupled functionalities. The metabolic processes take place in the liver cells, the hepatocytes, which are arranged in a delicate system of capillaries, so called sinusoids. Nutrients, oxygen, and other components of the blood are transported through the sinusoids. Due to this highly complex inner structure of the lobules it is impracticable to give a microscopic geometrical description in a continuum mechanical manner. Therefore, a homogenization scheme based on the theory of porous media (TPM) is used;. In case of the presented liver model we consider a porous solid body, that consists of tissue and fat, and a fluid representing blood. In each phase several miscible components are considered. For the microscopic cell level use has been made of an embedded set of ordinary differential equations (ODE) that mimics a simplified metabolism, e.g. glucose utilization and production;. In case of growth of the fat phase we follow a phenomenological approach. Numerical examples for this coupled process are presented and discussed.'
 
 - year: 2015
   pdf: 'libRoadRunner_Somogyi2015.pdf'
   authors: 'Somogyi ET., Bouteiller JM., Glazier JA., <b>König M.</b>, Medley JK., Swat MH and Sauro HM.'
   title: 'LibRoadRunner: a high performance SBML simulation and analysis library.'
-  journal: 'Bioinformatics. 2015 Jun 17. pii: btv363. [<a href="http://www.ncbi.nlm.nih.gov/pubmed/26085503">PubMed</a>]'
+  journal: ' Bioinformatics. 2015 Oct 15;31(20):3315-21'
   status:
-  doi:
-  pmid:
+  doi: 10.1093/bioinformatics/btv363
+  pmid: 26085503
   keywords:
   project: 'http://libroadrunner.org/'
   repository: 'https://github.com/sys-bio/roadrunner'
+  abstract: 'Motivation: This article presents libRoadRunner, an extensible, high-performance, cross-platform, open-source software library for the simulation and analysis of models expressed using Systems Biology Markup Language (SBML). SBML is the most widely used standard for representing dynamic networks, especially biochemical networks. libRoadRunner is fast enough to support large-scale problems such as tissue models, studies that require large numbers of repeated runs and interactive simulations. Results: libRoadRunner is a self-contained library, able to run both as a component inside other tools via its C++ and C bindings, and interactively through its Python interface. Its Python Application Programming Interface (API) is similar to the APIs of MATLAB and SciPy, making it fast and easy to learn. libRoadRunner uses a custom Just-In-Time (JIT) compiler built on the widely used LLVM JIT compiler framework. It compiles SBML-specified models directly into native machine code for a variety of processors, making it appropriate for solving extremely large models or repeated runs. libRoadRunner is flexible, supporting the bulk of the SBML specification (except for delay and non-linear algebraic equations) including several SBML extensions (composition and distributions). It offers multiple deterministic and stochastic integrators, as well as tools for steady-state analysis, stability analysis and structural analysis of the stoichiometric matrix. Availability and implementation: libRoadRunner binary distributions are available for Mac OS X, Linux and Windows. The library is licensed under Apache License Version 2.0. libRoadRunner is also available for ARM-based computers such as the Raspberry Pi. http://www.libroadrunner.org provides online documentation, full build instructions, binaries and a git source repository.'
 
 - year: 2014
   pdf: 'LiverTissue_Ricken2015.pdf'
   authors: 'Ricken T., Werner D., Holzhütter HG., <b>König M.</b>, Dahmen U., Dirsch O.'
   title: 'Modeling function-perfusion behavior in liver lobules including tissue, blood, glucose, lactate and glycogen by use of a coupled two-scale PDE-ODE approach.'
-  journal: 'Biomech Model Mechanobiol. 2014 Sep 19. [<a href="http://dx.doi.org/10.1007/s10237-014-0619-z">doi</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/25236798">PubMed</a>]'
+  journal: ' Biomech Model Mechanobiol. 2015 Jun;14(3):515-36'
   status:
-  doi:
-  pmid:
+  doi: 10.1007/s10237-014-0619-z
+  pmid: 25236798
   keywords:
-  project: 
+  project:
+  abstract: 'This study focuses on a two-scale, continuum multicomponent model for the description of blood perfusion and cell metabolism in the liver. The model accounts for a spatial and time depending hydro-diffusion-advection-reaction description. We consider a solid-phase (tissue) containing glycogen and a fluid-phase (blood) containing glucose as well as lactate. The five-component model is enhanced by a two-scale approach including a macroscale (sinusoidal level) and a microscale (cell level). The perfusion on the macroscale within the lobules is described by a homogenized multiphasic approach based on the theory of porous media (mixture theory combined with the concept of volume fraction). On macro level, we recall the basic mixture model, the governing equations as well as the constitutive framework including the solid (tissue) stress, blood pressure and solutes chemical potential. In view of the transport phenomena, we discuss the blood flow including transverse isotropic permeability, as well as the transport of solute concentrations including diffusion and advection. The continuum multicomponent model on the macroscale finally leads to a coupled system of partial differential equations (PDE). In contrast, the hepatic metabolism on the microscale (cell level) was modeled via a coupled system of ordinary differential equations (ODE). Again, we recall the constitutive relations for cell metabolism level. A finite element implementation of this framework is used to provide an illustrative example, describing the spatial and time-depending perfusion-metabolism processes in liver lobules that integrates perfusion and metabolism of the liver.'
 
 - year: 2014
   pdf: systembiologie_Koenig2014.pdf
@@ -813,41 +856,45 @@
   doi:
   pmid:
   keywords:
-  project: 
+  project:
+  abstract: 'The liver performs a multitude of important physiological functions such as synthesising plasma proteins, producing bile and hormones, detoxifying toxic compounds and precisely regulating the concentration of various substances in the blood (homeostasis). In particular, the liver plays a crucial role in the regulation of blood glucose levels. Modelling hepatic glucose metabolism helps to understand central liver functions and basic regulation mechanisms and thereby provides insights in the role of the liver in systemic diseases such as diabetes.'
 
 - year: 2013
   pdf: 'CancerTissue_Koenig2013.pdf'
   authors: '<b>König M.</b>, Holzhütter HG., Berndt N.'
   title: 'Metabolic Gradients as Key Regulators in Zonation of Tumor Energy Metabolism: A Tissue-scale Model Based Study.'
-  journal: 'Biotechnol J. 2013 Apr 16. [<a href="http://dx.doi.org/10.1002/biot.201200393">doi</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/23589477">PubMed</a>]'
+  journal: 'Biotechnol J. 2013 Sep;8(9):1058-69.'
   status:
-  doi:
-  pmid:
+  doi: 10.1002/biot.201200393
+  pmid: 23589477
   keywords:
-  project: 
+  project:
+  abstract: 'Characteristics of many tumor types are the reprogramming of metabolism and the occurrence of regional hypoxia. In this work, we investigated the hypothesis that metabolic reprogramming in combination with metabolic zonation of cellular energy metabolism are important factors in promotion of the growth capacity of solid tumors. A tissue-scale model of the two main ATP delivering pathways, glycolysis (GLY) and oxidative phosphorylation (OXP), was used to simulate the energy metabolism within solid tumors under various metabolic strategies. Remarkably, despite the high diversity in the usage of glucose, lactate and oxygen in various spatial regions, the tumor as a whole clearly displays the hallmark of the so-called Warburg effect, i.e. a high rate of glucose consumption and lactate production in the presence of sufficiently high levels of oxygen. Our simulations suggest that an increase in GLY capacity and concomitant decrease in OXP capacity from the periphery towards the center of the tumor improves the availability of oxygen to pericentral tumor cells. The found relationship between the regional oxygen level and the relative share of GLY and OXP capacities supports the view that metabolite availability functions as key regulator of tumor energy metabolism.'
 
 - year: 2012
   pdf: 'GlucoseModelT2DM_Koenig2012b.pdf'
   authors: '<b>König M.</b> and Holzhütter HG.'
   title: 'Kinetic Modeling of Human Hepatic Glucose Metabolism in T2DM Predicts Higher Risk of Hypoglycemic Events in Rigorous Insulin Therapy'
-  journal: 'J Biol Chem. 2012  [<a href="http://www.jbc.org/content/early/2012/09/12/jbc.M112.382069">DOI 10.1074/jbc.M112.382069</a>]'
+  journal: ' J Biol Chem. 2012 Oct 26;287(44):36978-89'
   status:
-  doi:
-  pmid:
+  doi: 10.1074/jbc.M112.382069
+  pmid: 22977253
   keywords:
-  project: 
+  project:
+  abstract: 'A major problem in the insulin therapy of patients with diabetes type 2 (T2DM) is the increased occurrence of hypoglycemic events which, if left untreated, may cause confusion or fainting and in severe cases seizures, coma, and even death. To elucidate the potential contribution of the liver to hypoglycemia in T2DM we applied a detailed kinetic model of human hepatic glucose metabolism to simulate changes in glycolysis, gluconeogenesis, and glycogen metabolism induced by deviations of the hormones insulin, glucagon, and epinephrine from their normal plasma profiles. Our simulations reveal in line with experimental and clinical data from a multitude of studies in T2DM, (i) significant changes in the relative contribution of glycolysis, gluconeogenesis, and glycogen metabolism to hepatic glucose production and hepatic glucose utilization; (ii) decreased postprandial glycogen storage as well as increased glycogen depletion in overnight fasting and short term fasting; and (iii) a shift of the set point defining the switch between hepatic glucose production and hepatic glucose utilization to elevated plasma glucose levels, respectively, in T2DM relative to normal, healthy subjects. Intriguingly, our model simulations predict a restricted gluconeogenic response of the liver under impaired hormonal signals observed in T2DM, resulting in an increased risk of hypoglycemia. The inability of hepatic glucose metabolism to effectively counterbalance a decline of the blood glucose level becomes even more pronounced in case of tightly controlled insulin treatment. Given this Janus face mode of action of insulin, our model simulations underline the great potential that normalization of the plasma glucagon profile may have for the treatment of T2DM.'
 
 - year: 2012
   pdf: 'CySBML_Koenig2012.pdf'
   authors: '<b>König M.</b>, Dräger A. and Holzhütter HG.'
   title: 'CySBML: a Cytoscape plugin for SBML'
-  journal: 'Bioinformatics.  2012 Jul 5. [<a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=pubmed&cmd=Retrieve&dopt=AbstractPlus&list_uids=22772946">PubMed</a>]'
+  journal: ' Bioinformatics. 2012 Sep 15;28(18):2402-3'
   status:
-  doi:
-  pmid:
+  doi: 10.1093/bioinformatics/bts432
+  pmid: 22772946
   keywords:
   project: 'http://matthiaskoenig.github.io/cy3sbml/'
   repository: 'https://github.com/matthiaskoenig/cy3sbml'
+  abstract: 'Summary: CySBML is a plugin designed to work with Systems Biology Markup Language (SBML) in Cytoscape having the following features: SBML import, support of the SBML layout and qualitative model packages, navigation in network layouts based on SBML structure, access to MIRIAM and SBO-based annotations and SBML validation. CySBML includes an importer for BioModels to load SBML from standard repositories. Availability and implementation: Freely available for non-commercial purposes through the Cytoscape plugin manager or for download at http://sourceforge.net/projects/cysbml/. Contact: cysbml-team@lists.sourceforge.net. Supplementary information: Tutorial, usage guide, installation instructions and additional figures are available for download at http://www.charite.de/sysbio/people/koenig/software/cysbml/.'
 
 - year: 2012
   pdf: 'GlucoseModel_Koenig2012a.pdf'

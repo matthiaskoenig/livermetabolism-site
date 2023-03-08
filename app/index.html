@@ -179,7 +179,7 @@ layout: default
                 </td>
                 <td><strong><i>{{ publication.title }}</i></strong><br />
 				{{ publication.authors }}<br />
-				{{ publication.journal }}{% if publication.status %} ({{publication.status}}){% endif %}{% if publication.doi %}; doi:<a href="https://doi.org/{{publication.doi}}/">{{publication.doi}}</a>{% endif %}{% if publication.pmid %}; Pubmed:<a href="https://pubmed.ncbi.nlm.nih.gov/{{publication.pmid}}/">{{publication.pmid}}</a>{% endif %}
+				{{ publication.journal }}{% if publication.status %} ({{publication.status}}){% endif %}{% if publication.doi %}. doi:<a href="https://doi.org/{{publication.doi}}/">{{publication.doi}}</a>{% endif %}{% if publication.pmid %}. pmid:<a href="https://pubmed.ncbi.nlm.nih.gov/{{publication.pmid}}/">{{publication.pmid}}</a>{% endif %}
                     {% if publication.abstract %}
                     <p class="abstract text-justify small hidden">{{ publication.abstract }}</p>
                     {% endif %}
