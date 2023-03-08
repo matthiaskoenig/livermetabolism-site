@@ -1,3 +1,19 @@
+
+- id: 'frances_narudeem'
+  status: 'current'
+  title: 'PBPK modelling of sorafenib and Gd-EOB-DTPA'
+  date: '2023-02-12'
+  image: frances_narudeem.png
+  link: '/people/'
+  short: 'Frances Okibedi and Narudeem Sojimade will develop models of the anticancer drug sorafenib in HCC and the liver contrast agent Gd-EOB-DTPA.'
+  abstract: '<p>
+  Within this project, a high quality database of sorafenib pharmacokinetic data used in systemic therapy of hepatocellular carcinoma will be established. Based on the pharmacokinetic data set, a physiologically based pharmacokinetic (PBPK) model will be established for the evaluation of systemic sorafenib therapy in liver cancer. The model will be used to address important clinically relevant questions such as (1) sorafenib is contraindicated in advanced liver cirrhosis, (2) genetic variants of OATP uptake transporters may alter the efficacy of sorafenib, (3) CYP3A4 substrates lead to drug-drug interactions with sorafenib.
+  </p>
+  <p>
+  Using established data curation pipelines, this project will extend our pharmacokinetics database PK-DB with literature data on Gd-EOB-DTPA. Based on the pharmacokinetic data set, a physiologically based pharmacokinetic (PBPK) model will be established for the evaluation of the pharmacokinetics of Gd-EOB-DTPA and its use as an MRI contrast agent. The model will be used to address important clinically relevant questions such as (1) the effect of renal and hepatic impairment on Gd-EOB-DTPA pharmacokinetics, (2) the effect of perfusion and OATP on Gd-EOB-DTPA pharmacokinetics, (3) the relationship between concentration and MRI attenuation.
+  </p>
+  '
+
 - id: 'xresearch2023'
   status: 'current'
   title: 'X-Research Group - Digital twins for the treatment of hypertension'
