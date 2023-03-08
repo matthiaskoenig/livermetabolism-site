@@ -72,9 +72,11 @@ sudo certbot renew
 docker-compose up --build -d
 ```
 
-sudo mkdir -p /usr/share/nginx/letsencrypt sudo certbot renew livermetabolism.com www.livermetabolism.com
-livermetabolism.de www.livermetabolism.de liver-metabolism.com www.liver-metabolism.com
-liver-metabolism.de www.liver-metabolism.de
+```
+sudo mkdir -p /usr/share/nginx/letsencrypt 
+sudo certbot renew 
+livermetabolism.com www.livermetabolism.com livermetabolism.de www.livermetabolism.de liver-metabolism.com www.liver-metabolism.com liver-metabolism.de www.liver-metabolism.de
+```
 
 ### deploy
 
