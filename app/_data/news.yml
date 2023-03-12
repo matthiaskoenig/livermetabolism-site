@@ -1,4 +1,14 @@
 
+- id: 'pancreas_preprint'
+  status: 'current'
+  title: 'Preprint: A consensus model of glucose-stimulated insulin secretion in the pancreatic beta-cell'
+  date: '2023-03-13'
+  image: pancreas_preprint.png
+  link: 'https://www.biorxiv.org/content/10.1101/2023.03.10.532028v1'
+  short: 'Our latest preprint is now on bioRxiv: A consensus model of glucose-stimulated insulin secretion in the pancreatic beta-cell'
+  abstract: 'The pancreas plays a critical role in maintaining glucose homeostasis through the secretion of hormones from the islets of Langerhans. Glucose-stimulated insulin secretion (GSIS) by the pancreatic beta-cell is the main mechanism for reducing elevated plasma glucose. Here we present a systematic modeling workflow for the development of kinetic pathway models using the Systems Biology Markup Language (SBML). The workflow was applied to construct the first consensus model of GSIS in the pancreatic beta-cell based on experimental and clinical data from 39 studies spanning 50 years of pancreatic, islet, and beta-cell research in humans, rats, mice, and cell lines. The model consists of detailed glycolysis and equations for insulin secretion coupled to cellular energy state (ATP/ADP ratio). Key findings of our work are that in GSIS there is a glucose-dependent increase in almost all intermediates of glycolysis. This increase in glycolytic metabolites is accompanied by an increase in energy metabolites, especially ATP and NADH. One of the few decreasing metabolites is ADP, which, in combination with the increase in ATP, results in a large increase in ATP/ADP ratios in the beta-cell with increasing glucose. Insulin secretion is dependent on ATP/ADP, resulting in glucose-stimulated insulin secretion. The observed glucose-dependent increase in glycolytic intermediates and the resulting change in ATP/ADP ratios and insulin secretion is a robust phenomenon observed across data sets, experimental systems and species.'
+
+
 - id: 'frances_narudeem'
   status: 'current'
   title: 'PBPK modelling of sorafenib and Gd-EOB-DTPA'
