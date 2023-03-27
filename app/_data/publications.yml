@@ -1,3 +1,20 @@
+- id: 'Anton2023_standard.GEM'
+  year: 2023
+  pdf: 'Anton2023_standard.GEM.pdf'
+  authors: 'Mihail Anton, Eivind Almaas, Rui Benfeitas, Sara Benito-Vaquerizo, Lars M. Blank, Andreas Dräger, John M. Hancock, Cheewin Kittikunapong, <b>Matthias König</b>, Feiran Li, Ulf W. Liebal, Hongzhong Lu, Hongwu Ma, Radhakrishnan Mahadevan, Adil Mardinoglu, Jens Nielsen, Juan Nogales, Marco Pagni, Jason A. Papin, Kiran Raosaheb Patil, Nathan D. Price, Jonathan L. Robinson, Benjamín J. Sánchez, Maria Suarez-Diez, Snorre Sulheim, L. Thomas Svensson, Bas Teusink, Wanwipa Vongsangnak, Hao Wang, Ahmad A. Zeidan, Eduard J. Kerkhoven'
+  title: 'standard-GEM: standardization of open-source genome-scale metabolic models'
+  journal: 'bioRxiv 2023.03.21.512712'
+  status: 'preprint'
+  doi: 10.1101/2023.03.21.512712
+  pmid:
+  keywords:
+    - genome-scale metabolic model
+    - open source
+    - versioning
+  project:
+  repository: https://github.com/MetabolicAtlas/standard-GEM
+  abstract: "The field of metabolic modelling at the genome-scale continues to grow with more models being created and curated. This comes with an increasing demand for adopting common principles regarding transparency and versioning, in addition to standardisation efforts regarding file formats, annotation and testing. Here, we present a standardised template for git-based and GitHub-hosted genome-scale metabolic models (GEMs) supporting both new models and curated ones, following FAIR principles (findability, accessibility, interoperability, and reusability), and incorporating best-practices. standard-GEM facilitates the reuse of GEMs across web services and platforms in the metabolic modelling field and enables automatic validation of GEMs. The use of this template for new models, and its adoption for existing ones, paves the way for increasing model quality, openness, and accessibility with minimal effort."
+
 - id: 'Maheshvare2023_pancreas'
   year: 2023
   pdf: 'Maheshvare2023_pancreas.pdf'
