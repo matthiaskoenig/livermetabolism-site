@@ -1,4 +1,14 @@
 
+
+- id: 'jib_editorial'
+  status: 'current'
+  title: 'Publication: Specifications of standards in systems and synthetic biology: status and developments in 2022 and the COMBINE meeting 2022'
+  date: '2023-03-29'
+  image: jib_editorial.png
+  link: 'https://doi.org/10.1515/jib-2023-0004'
+  short: 'Our overview of specifications in systems and synthetic biology with a brief overview of the COMBINE 2022 is available.'
+  abstract: 'The Journal of Integrative Bioinformatics has published our editorial for a special issue providing updated specifications of the COMBINE standards in systems and synthetic biology. The 2022 issue includes three updates to the standards, namely CellML 2.0.1, SBML Level 3 Package: Spatial Processes, Version 1, Release 1, and Synthetic Biology Open Language (SBOL) Version 3.1.0. This publication is a valuable resource for researchers looking to keep up with the latest developments in COMBINE standards. Additionally, the editorial section of the issue provides a brief overview of the COMBINE 2022 meeting held in Berlin.'
+
 - id: 'pancreas_preprint'
   status: 'current'
   title: 'Preprint: A consensus model of glucose-stimulated insulin secretion in the pancreatic beta-cell'
