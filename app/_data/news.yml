@@ -1,3 +1,16 @@
+- id: 'chlorzoxazone_preprint'
+  status: 'current'
+  title: 'Preprint: A physiologically based pharmacokinetic model for CYP2E1 phenotyping via chlorzoxazone'
+  date: '2023-04-16'
+  image: chlorzoxazone_preprint.png
+  link: 'https://www.biorxiv.org/content/10.1101/2023.03.10.532028v1'
+  short: 'Our latest preprint is now on bioRxiv: A physiologically based pharmacokinetic model for CYP2E1 phenotyping via chlorzoxazone'
+  abstract: 'We have developed a physiologically based pharmacokinetic (PBPK) model for CYP2E1 phenotyping via chlorzoxazone. This model takes into account various factors that can influence the activity of CYP enzymes, such as genetics, diet, age, environmental factors, and disease, making it a highly effective and reliable tool for assessing the in vivo activity of the CYP2E1 enzyme.
+  
+  What is  truly exciting about this research is that it incorporates the effect of ethanol consumption and liver impairment on the results of metabolic phenotyping with chlorzoxazone. This means that the model is not only accurate but also highly practical, as it takes into account factors that are commonly encountered in clinical practice.
+  
+  The extensive pharmacokinetic dataset for chlorzoxazone and the validated PBPK model are expected to have a significant impact on the field of pharmacokinetics, as they provide a reliable and comprehensive tool for assessing the activity of CYP2E1 in a wide range of clinical contexts. This research represents a major step forward in our understanding of the factors that influence the activity of CYP enzymes and promises to have a significant impact on the development of new drugs and the optimization of existing ones.'
+
 - id: 'michael_stifel_price'
   status: 'current'
   title: 'Michael Stifel Price to promote interdisciplinary, data-driven research'

@@ -1,3 +1,23 @@
+- id: 'Kuettner2023_chlorzoxazone'
+  year: 2023
+  pdf: 'Kuettner2023_chlorzoxazone.pdf'
+  authors: 'J. Küttner, J. Grzegorzewski, HM. Tautenhahn, <b>M. König</b>'
+  title: 'A physiologically based pharmacokinetic model for CYP2E1 phenotyping via chlorzoxazone'
+  journal: 'bioRxiv 2023.04.12.536571'
+  status: 'preprint'
+  doi: 10.1101/2023.04.12.536571
+  pmid:
+  keywords:
+    - PBPK
+    - chlorzoxazone
+    - CYP2E1
+    - alcohol
+    - ethanol
+    - pharmacokinetics
+  project:
+  repository: https://github.com/matthiaskoenig/chlorzoxazone-model
+  abstract: "The cytochrome P450 (CYP) superfamily of enzymes plays a critical role in the metabolism of drugs, toxins, and endogenous and exogenous compounds. The activity of CYP enzymes can be influenced by a variety of factors, including genetics, diet, age, environmental factors, and disease. Among the major isoforms, CYP2E1 is of particular interest due to its involvement in the metabolism of various low molecular weight chemicals, including alcohols, pharmaceuticals, industrial solvents, and halogenated anesthetics. Metabolic phenotyping of CYPs based on the elimination of test compounds is a useful method for assessing in vivo activity, with chlorzoxazone being the primary probe drug for phenotyping of CYP2E1. The aim of this work was to investigate the effect of changes in CYP2E1 level and activity, ethanol consumption, ethanol abstinence, and liver impairment on the results of metabolic phenotyping with chlorzoxazone. To accomplish this, an extensive pharmacokinetic dataset for chlorzoxazone was established and a physiologically based pharmacokinetic (PBPK) model of chlorzoxazone and its metabolites, 6-hydroxychlorzoxazone and chlorzoxazone-O-glucuronide, was developed and validated. The model incorporates the effect of ethanol consumption on CYP2E1 levels and activity by extending the model with a core ethanol pharmacokinetic model and a CYP2E1 turnover model. The model accurately predicts pharmacokinetic data from several clinical studies and is able to estimate the effect of changes in CYP2E1 levels and activity on chlorzoxazone pharmacokinetics. Regular ethanol consumption induces CYP2E1 over two to three weeks, resulting in increased conversion of chlorzoxazone to 6-hydroxychlorzoxazone and a higher 6-hydroxychlorzoxazone/chlorzoxazone metabolic ratio. After ethanol withdrawal, CYP2E1 levels return to baseline within one week. Importantly, liver impairment has an opposite effect, resulting in reduced liver function via CYP2E1. In alcoholics with liver impairment who also consume ethanol, these factors will have opposite confounding effects on metabolic phenotyping with chlorzoxazone."
+
 - id: 'Koenig2023_standards'
   year: 2023
   pdf: 'Koenig2023_standards.pdf'
@@ -5,8 +25,8 @@
   title: 'Specifications of Standards in Systems and Synthetic Biology: Status and Developments in 2022 and the COMBINE meeting 2022'
   journal: 'J Integr Bioinform. 2023 Mar 29;20(1).'
   status:
-  doi: 36989443
-  pmid: 10.1515/jib-2023-0004
+  doi: 10.1515/jib-2023-0004
+  pmid: 36989443
   keywords:
     - COMBINE
     - standardization
