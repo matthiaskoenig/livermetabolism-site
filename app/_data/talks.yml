@@ -1,3 +1,14 @@
+- id: 'MBM2023_keynote'
+  title: 'Digital twins for liver function & metabolic phenotyping'
+  authors: '<b>Matthias König</b>'
+  slides: 'https://docs.google.com/presentation/d/13A3xH0ALH_u6_gwPu54bEPtOEW3anM8Pl4FMWfFRupg/edit?usp=sharing'
+  video:
+  event: 'Workshop on Modelling in Biology and Medicine'
+  event_page: https://mbm.systemsbiology.se
+  date: 2023-07-22
+  repository:
+  publication:
+
 - id: 'FAIR.sharing.of.reproducible.and.reusable.COVID-19.models_Ramachandran2022'
   title: 'Developing computational models with SBML - sbmlutils & cy3sbml'
   authors: '<b>Matthias König</b>'
