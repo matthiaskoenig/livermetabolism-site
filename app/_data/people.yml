@@ -88,16 +88,16 @@
   homepage:
   description: 'Beatrice works on a physiologically based model to characterize intestinal P-glycoprotein using talinolol as a probe drug.'
 
-- id: 'paula'
-  status: 'alumni'
-  year: '2020-2022'
-  name: 'Paula Ogata'
-  position: 'Humboldt Internship Student'
-  image: paula.png
+- id: 'sophie'
+  status: 'current'
+  year: '2023-05/2023-06'
+  name: 'Sophie Silberhorn'
+  position: 'Internship'
+  image: sophie.png
   orcid:
-  repository: 'https://github.com/paula-ogata'
+  repository: 'https://github.com/SophieSilberhorn'
   homepage:
-  description: 'Paula works on a pharmacokinetics/pharmacodynamics model of metoprolol. Key questions are the effect of dosing and formulation on metoprolol pharmacokinetics and exercise heart rate (EHR) reduction.'
+  description: 'Sophie works on a systematic overview of the protein variability of ABC and SLC transporters in the human liver.'
 
 - id: 'frances'
   status: 'current'
@@ -121,16 +121,6 @@
   homepage:
   description: 'Nurudeen works a physiologically based pharmacokinetic (PBPK) model of the contrast agent Gd-EOB-DTPA. Key questions are to study the effect of hepato-renal impairment, perfusion and OATP activity on Gd-EOB-DTPA pharmacokinetics.'
 
-- id: 'deepa'
-  status: 'current'
-  year: '2019-2023'
-  name: 'Deepa Maheshvare'
-  position: 'Ph.D. student (internship)'
-  image: deepa.png
-  orcid:
-  repository: 'https://github.com/DeepaMahm'
-  homepage:
-  description: 'Deepa works on a kinetic model of glucose stimulated insulin secretion (GSIS) of the pancreatic beta-cell. Key questions are the changes in glycolysis during insulin secretion.'
 
 - id: 'sankha'
   status: 'current'
@@ -143,6 +133,29 @@
   repository: 'https://github.com/sankha555'
   homepage:
   description: 'Sankha works on the analysis and quantification of microcirculation data recorded in Humans and Rats. Within the project a workflow for the analysis of orthogonal polarization spectroscopy (OPS) and IDF will be developed as part of <a href="https://qualiperf.de">QuaLiPerF</a>.'
+
+- id: 'paula'
+  status: 'alumni'
+  year: '2020-2022'
+  name: 'Paula Ogata'
+  position: 'Humboldt Internship Student'
+  image: paula.png
+  orcid:
+  repository: 'https://github.com/paula-ogata'
+  homepage:
+  description: 'Paula works on a pharmacokinetics/pharmacodynamics model of metoprolol. Key questions are the effect of dosing and formulation on metoprolol pharmacokinetics and exercise heart rate (EHR) reduction.'
+
+
+- id: 'deepa'
+  status: 'alumni'
+  year: '2019-2023'
+  name: 'Deepa Maheshvare'
+  position: 'Ph.D. student (internship)'
+  image: deepa.png
+  orcid:
+  repository: 'https://github.com/DeepaMahm'
+  homepage:
+  description: 'Deepa works on a kinetic model of glucose stimulated insulin secretion (GSIS) of the pancreatic beta-cell. Key questions are the changes in glycolysis during insulin secretion.'
 
 
 - id: 'brandhorst'
