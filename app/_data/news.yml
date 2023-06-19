@@ -1,3 +1,16 @@
+- id: 'keynote_wcm2023'
+  status: 'current'
+  title: 'Keynote: Advancing Liver Function Assessment: Personalized and Stratified Approaches with Standardized Computational Models and Data'
+  date: '2023-06-16'
+  image: WCM2023_keynote.png
+  link: 'https://docs.google.com/presentation/d/1hi7-4bwzqFJYiYQkbSBHNQivSPA5T3YHB9OLZqJG0rA/edit?usp=sharing'
+  short: "Keynote talk at the Workshop on Computational Models in Biology and Medicine 2023 organized by Nicole Radde and Sebastian Höpfl."
+  abstract: "Essential prerequisites for the practical application and translation of computational models include: i) reproducibility of results; ii) reusability and extensibility of models; iii) data availability; and iv) strategies for model stratification and individualization. In this study, we present a modeling workflow tailored to these critical aspects, with a focus on liver function tests.
+Evaluating liver function is a crucial task in hepatology, yet accurately quantifying hepatic function has persisted as a clinical challenge. Dynamic liver function tests offer a promising method for non-invasive in vivo assessment of liver function and metabolic phenotyping. These clinical tests determine liver function through the elimination of a specific test substance, thus revealing information about the liver's metabolic capacity.
+We employed whole-body physiologically-based pharmacokinetic (PBPK) models to simulate these tests, which encompass absorption, distribution, metabolism, and elimination processes. PBPK models serve as powerful instruments for investigating drug metabolism and its impact on the human body. In this research, we showcase our efforts in utilizing PBPK models as digital twins for metabolic phenotyping and liver function evaluation. To develop and validate our models, we created the first open pharmacokinetics database, PK-DB, containing curated data from over 600 clinical studies. Our models are individualizable and stratifiable, enabling simulation of lifestyle factors and co-administration effects on drug metabolism.
+We have applied our models to various clinical inquiries, such as simulating individual outcomes post-hepatectomy using an indocyanine green model and examining the influence of CYP2D6 gene variants through a dextromethorphan model integrated with drug-gene interactions. These models are constructed hierarchically, describing metabolic and other biological processes in organs like the liver and kidneys, connected to whole-body physiology. All models and data are accessible for reuse in a reproducible manner, encoded in the Systems Biology Markup Language (SBML).
+In this study, we provide an overview of PBPK models and demonstrate how SBML, COMBINE standards, and FAIR principles can facilitate model development, coupling, and reuse."
+
 - id: 'reproducible_research_preprint'
   status: 'current'
   title: 'Preprint: Eleven Strategies for Making Reproducible Research and Open Science Training the Norm at Research Institutions'
