@@ -53,7 +53,7 @@
   orcid:
   repository: 'https://github.com/jonaspk98'
   homepage:
-  description: 'Jonas works on a physiologically based model of chlorzoxazone for hepatic CYP2E1 phenotyping. Key questions are the effect of CYP2E1 induction/inhibition and zonation on chlorzoxazone phenotyping.'
+  description: 'Jonas worked on a physiologically based model of chlorzoxazone for hepatic CYP2E1 phenotyping. Key questions are the effect of CYP2E1 induction/inhibition and zonation on chlorzoxazone phenotyping. Jonas now analyses whole-slide images of the the liver to evaluate zonation patterns in the the liver using digital pathology methods.'
 
 - id: 'stemllb'
   status: 'current'
