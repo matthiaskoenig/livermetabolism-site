@@ -11,17 +11,6 @@
   <br />
   Research projects on glucose homeostasis in normal and diabetic subjects, personalization of liver function tests to improve diagnosis, and stratification and individualization of computational models for precision medicine.'
 
-- id: 'janek'
-  status: 'current'
-  year: '2017-'
-  name: 'Jan Grzegorzewski'
-  position: 'Ph.D. student'
-  image: grzegorzewski.png
-  orcid: '0000-0002-4588-4925'
-  repository: 'https://github.com/janekg89/'
-  homepage: 'https://github.com/janekg89/'
-  description: 'Jan works on the stratification and personalization of computational models. He develops methods and software for semi-automatic data curation of pharmacokinetic information and a pharmacokinetic database for storage and the storage and FAIR access of such data (<a href="https://pk-db.com">PK-DB</a>).'
-
 - id: 'helen'
   status: 'current'
   year: '2021-'
@@ -31,7 +20,7 @@
   orcid:
   repository: 'https://github.com/Lepujolh'
   homepage:
-  description: 'Helen works on a physiologically based model of pravastatin. Key questions are the effect of genotypes and hepatic and renal disease on pravastatin pharmacokinetics.'
+  description: 'Helen worked on a physiologically based model of pravastatin. Key questions are the effect of genotypes and hepatic and renal disease on pravastatin pharmacokinetics and coupling to a pharmacodynamic model of LDL-C reduction. Currently, Helen works on a physiologically based model of omeprazol.'
 
 - id: 'afruja'
   status: 'current'
@@ -53,24 +42,13 @@
   orcid:
   repository: 'https://github.com/adriankl'
   homepage:
-  description: 'Adrian works on a physiologically based model of indocyanine green (ICG) clearance. Key questions are the effect of blood flow and plasma proteins on ICG clearance and related liver function tests.'
-
-- id: 'flobar'
-  status: 'current'
-  year: '2020-'
-  name: 'Florian Bartsch'
-  position: 'Bachelor student, Master project, student assistant'
-  image: flobar.png
-  orcid:
-  repository: 'https://github.com/FloBar'
-  homepage:
-  description: 'Florian works on a physiologically based model of statin clearance. Key questions are the effect of statins (atorvastatin and simvastatin) on cholesterol plasma levels and drug-drug interactions.'
+  description: 'Adrian worked on a physiologically based model of indocyanine green (ICG) clearance. Key questions are the effect of blood flow and plasma proteins on ICG clearance and related liver function tests. Currently, Adrian analyzes the changes in OGTT during impaired glucose tolerance and diabetes type 2.'
 
 - id: 'jonaspk98'
   status: 'current'
   year: '2022-'
   name: 'Jonas Küttner'
-  position: 'Master student'
+  position: 'Master project, Master student'
   image: jonaspk98.png
   orcid:
   repository: 'https://github.com/jonaspk98'
@@ -81,23 +59,34 @@
   status: 'current'
   year: '2022-'
   name: 'Beatrice Stemmer Mallol'
-  position: 'Bachelor student'
+  position: 'Bachelor student, student assistant'
   image: stemllb.png
   orcid:
   repository: 'https://github.com/stemllb'
   homepage:
   description: 'Beatrice works on a physiologically based model to characterize intestinal P-glycoprotein using talinolol as a probe drug.'
 
-- id: 'sophie'
+- id: 'xenia'
   status: 'current'
-  year: '2023-05/2023-06'
-  name: 'Sophie Silberhorn'
-  position: 'Internship'
-  image: sophie.png
+  year: '2023-07/2023-09'
+  name: 'Xenia Petukhova'
+  position: 'Humboldt Internship Student'
+  image: xenia.png
   orcid:
-  repository: 'https://github.com/SophieSilberhorn'
+  repository: 'https://github.com/dzinty'
   homepage:
-  description: 'Sophie works on a systematic overview of the protein variability of ABC and SLC transporters in the human liver.'
+  description: 'Xenia works on a physiologically based pharmacokinetic (PBPK) model of inulin to assess the glomerular filtration rate (GFR). Our goal is to gain a deeper understanding of the impact of various inulin protocols on GFR measurement and the influence of physiological factors, such as body composition, on GFR determination using inulin.'
+
+- id: 'zhara'
+  status: 'current'
+  year: '2023-07/2023-09'
+  name: 'Zahra Bahri'
+  position: 'Humboldt Internship Student'
+  image: zhara.png
+  orcid:
+  repository: 'https://github.com/Rain-marine'
+  homepage:
+  description: 'Zhara works on a physiologically based pharmacokinetic (PBPK) model to estimate the glomerular filtration rate (eGFR) using creatinine. The objective is to enhance our understanding of how variations in creatinine production, muscle mass, and tubular secretion of creatinine influence eGFR calculations.'
 
 - id: 'frances'
   status: 'current'
@@ -121,7 +110,6 @@
   homepage:
   description: 'Nurudeen works a physiologically based pharmacokinetic (PBPK) model of the contrast agent Gd-EOB-DTPA. Key questions are to study the effect of hepato-renal impairment, perfusion and OATP activity on Gd-EOB-DTPA pharmacokinetics.'
 
-
 - id: 'sankha'
   status: 'current'
   year: '2022-11/2023-05'
@@ -133,6 +121,39 @@
   repository: 'https://github.com/sankha555'
   homepage:
   description: 'Sankha works on the analysis and quantification of microcirculation data recorded in Humans and Rats. Within the project a workflow for the analysis of orthogonal polarization spectroscopy (OPS) and IDF will be developed as part of <a href="https://qualiperf.de">QuaLiPerF</a>.'
+
+- id: 'flobar'
+  status: 'current'
+  year: '2020-'
+  name: 'Florian Bartsch'
+  position: 'Bachelor student, Master project, student assistant, Master project'
+  image: flobar.png
+  orcid:
+  repository: 'https://github.com/FloBar'
+  homepage:
+  description: 'Florian works on a physiologically based model of statin clearance. Key questions are the effect of statins (atorvastatin and simvastatin) on cholesterol plasma levels and drug-drug interactions.'
+
+- id: 'janek'
+  status: 'alumni'
+  year: '2017-2023'
+  name: 'Jan Grzegorzewski'
+  position: 'Ph.D. student'
+  image: grzegorzewski.png
+  orcid: '0000-0002-4588-4925'
+  repository: 'https://github.com/janekg89/'
+  homepage: 'https://github.com/janekg89/'
+  description: 'Jan worked on the stratification and personalization of computational models. He develops methods and software for semi-automatic data curation of pharmacokinetic information and a pharmacokinetic database for storage and the storage and FAIR access of such data (<a href="https://pk-db.com">PK-DB</a>).'
+
+- id: 'sophie'
+  status: 'alumni'
+  year: '2023-05/2023-06'
+  name: 'Sophie Silberhorn'
+  position: 'Internship'
+  image: sophie.png
+  orcid:
+  repository: 'https://github.com/SophieSilberhorn'
+  homepage:
+  description: 'Sophie worked on a systematic overview of the protein variability of ABC and SLC transporters in the human liver.'
 
 - id: 'paula'
   status: 'alumni'
