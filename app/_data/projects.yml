@@ -1,3 +1,24 @@
+- id: creatinine_inulin
+  title: "Physiologically based pharmacokinetic (PBPK) model of creatinine and inulin"
+  publication:
+  project:
+  repository:
+  people:
+    - xenia
+    - zhara
+    - koenig
+  cooperation partners:
+  images: inulin_creatinine.png
+  image_title: Physiologically based pharmacokinetic (PBPK) model of creatinine and inulin.
+  abstract: '
+  <p>
+  The glomerular filtration rate (GFR) is a measure of how well your kidneys are filtering waste and excess fluids from your blood. It is an important indicator of kidney function and is expressed in milliliters per minute (mL/min). GFR is calculated based on factors such as age, gender, body size, and creatinine levels in the blood. It is important to monitor GFR in individuals with kidney disease or at risk of developing kidney disease to ensure appropriate treatment and management of the condition.
+  </p> 
+  <p>
+  In this project, we aim to create a physiologically based pharmacokinetic (PBPK) model for inulin and creatinine to assess the glomerular filtration rate (GFR). Our goal is to gain a deeper understanding of the impact of various inulin protocols on GFR measurement and the influence of physiological factors, such as body composition, on GFR determination using inulin. Furthermore, it should enhance our understanding of how variations in creatinine production, muscle mass, and tubular secretion of creatinine influence eGFR calculations.
+   </p>
+  '
+
 - id: dextromethorphan
   title: "Physiologically based pharmacokinetic (PBPK) model of CYP2D6 polymorphism"
   publication: Grzegorzewski2022_dextromethorphan
@@ -23,6 +44,28 @@
    </p>
   '
 
+- id: protein_distribution
+  title: "Protein distributions in the human liver"
+  publication:
+  project:
+  repository:
+  people:
+    - afruja
+    - sophie
+    - koenig
+  cooperation partners:
+  images:
+    - protein_distribution.png
+  image_title: Protein distribution of CYP, UGT, SLC and ABC proteins in the human liver.
+  abstract: '
+  <p>
+  Individual variations in the clearance of test substances via specific enzymes and transporters in the liver are substantial. These variations are attributed to genetic polymorphisms and protein abundance in the liver. Understanding protein distributions is an essential input for computational models, such as physiologically based pharmacokinetic (PBPK) models, and for metabolic phenotyping, such as liver function tests, to study drug detoxification.
+  </p>
+  <p>
+  The primary objective of this project is to provide a comprehensive overview of the variability in protein abundance among CYP and UGT enzymes as well as ABC and SLC transporter isoforms in human livers. Furthermore, this project aims to examine relationships between enzymes and transporters, such as correlations, to gain insight into the factors affecting individual drug metabolism. This systematic analysis of proteins will provide a valuable resource for computational modeling of drug detoxification by the liver and enable a better understanding of individualized drug responses.
+  </p>
+  '
+
 - id: atlas
   title: "ATLAS - AI and Simulation for Tumor Liver ASsessment"
   publication:
@@ -35,7 +78,6 @@
     - atlas.png
   image_title: ATLAS - AI and Simulation for Tumor Liver ASsessment.
   abstract: '
-  <h3>ATLAS - AI and Simulation for Tumor Liver ASsessment</h3>
   <p>
   Liver cancer is the second most common cause of cancer-related death. Diagnosis and treatment are time-critical and require highly patient-specific diagnostic and treatment pathways. Medical decision-making is based on a variety of interdependent factors related to different medical disciplines, past experience and clinical guidelines. Taking into account all decision factors in combination with the possible therapeutic approaches is a major challenge for physicians and often cannot be solved optimally even in an interdisciplinary tumor board.
    </p>
@@ -53,11 +95,12 @@
   project:
   repository:
   people:
+    - jonaspk98
     - koenig
   cooperation partners: Prof. Bruno Christ, Prof. Uta Dahmen
   images:
     - zonation.png
-  image_title: ATLAS - AI and Simulation for Tumor Liver ASsessment.
+  image_title: Zonation patterns in the liver.
   abstract: '
   <h3>Quantification of hepatic zonation patterns from Immunofluorescence and Immunohistochemistry Images</h3>
   <p>

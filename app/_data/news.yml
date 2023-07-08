@@ -1,3 +1,21 @@
+- id: 'defense_jan_grzegorzewski'
+  status: 'current'
+  title: 'PhD Defense of Jan Grzegorzewski'
+  date: '2023-07-17'
+  image: defense_jan_grzegorzewski.png
+  link: '/paper/presentations/2021-07-07_Defense.Jan.Grzegorzewski'
+  short: "Jan Grzegorzewski defended his PhD thesis on physiologically based pharmacokinetic modeling (PBPK) for dynamical liver function tests and Cytochrome P450 (CYP) phenotyping."
+  abstract: "Congratulations to Jan Grzegorzewski for successfully defending his PhD thesis on physiologically based pharmacokinetic modeling (PBPK) for dynamical liver function tests and Cytochrome P450 (CYP) phenotyping. Jan developed the extensive open pharmacokinetics database, PK-DB, which helped to demonstrate demographic biases and errors in existing pharmacokinetic literature. His research includes a meta-analysis on caffeine pharmacokinetics, discovering multiple factors influencing liver function and CYP1A2 activity. Furthermore, he developed a PBPK model to predict individual plasma concentrations of dextromethorphan based on the CYP2D6 genotype and physiological traits. His work is expected to significantly enhance the precision of dynamic liver function tests and advance personalized medicine."
+
+- id: 'humboldt_internship'
+  status: 'current'
+  title: 'Xenia Petukhova and Zahra Bahri start Humboldt Internship Program'
+  date: '2023-07-01'
+  image: humboldt-internship.jpg
+  link:
+  short: "Humboldt Internship Program 2023 - Computational Modeling of Drug Detoxification - A Systems Medicine Approach"
+  abstract: "We welcome Xenia and Zhara in our group for the Humboldt Internship Program 2023. Xenia and Zhara will develop a physiologically based pharmacokinetic (PBPK) model for inulin and creatinine to assess the glomerular filtration rate (GFR). Our goal is to gain a deeper understanding of the impact of various inulin protocols on GFR measurement and the influence of physiological factors, such as body composition, on GFR determination using inulin. Furthermore, it should enhance our understanding of how variations in creatinine production, muscle mass, and tubular secretion of creatinine influence eGFR calculations."
+
 - id: 'keynote_wcm2023'
   status: 'current'
   title: 'Keynote: Advancing Liver Function Assessment: Personalized and Stratified Approaches with Standardized Computational Models and Data'
