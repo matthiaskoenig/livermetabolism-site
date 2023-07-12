@@ -1,3 +1,25 @@
+- id: 'Kosacka2023_Inflammation_life-2527409'
+  year: 2023
+  pdf: 'Kosacka2023_Inflammation_life-2527409.pdf'
+  authors: 'Petra Baum, Thomas Ebert, Nora Klöting, <b>Matthias König</b>, Sabine Paeschke, Michal Bulc, Matthias Blüher, Katarzyna Palus, Marcin Nowicki and Joanna Kosacka'
+  title: 'Inflammation and autophagy in peripheral nerves. Metabolic syndrome versus type 2 diabetes in rodent models.'
+  journal: 'submitted [2023-ß7-12]'
+  status: 'preprint'
+  doi: 10.31219/osf.io/kcvra
+  pmid:
+  keywords:
+    - inflammation
+    - autophagy
+    - metabolic syndrome
+    - T2D;
+    - PDN
+    - ob/ob mice
+    - db/db mice
+    - WOKW rat
+  project:
+  repository:
+  abstract: "Obesity, metabolic syndrome (MetS) and type 2 diabetes (T2D) are closely associated with activation of inflammatory signaling pathways resulting in macrophage accumulation and abnormal cytokine production. The obesity-associated inflammation itself may significantly con- tribute to the increased risk of metabolic, cardiovascular, neurological (peripheral neuropathy, PN) diseases in the absence of overt diabetes. In the previous work, we investigated the increased in- flammation with infiltrated macrophages in peripheral nerve and adipose tissue (AT) in animal models of MetS such as Wistar Ottawa Karlsburg W (RT1u) WOKW rat and ob/ob leptin-deficient mice with mild T2 D or db/db leptin receptor-deficient mice with severe T2D, respectively in com- parison to non-obese, healthy control animals. Whereas the moderate- or high-grade inflammation observed in ob/ob or db/db mice was associated with neuropathic changes of sciatic nerve, the mild macrophage infiltration and up-regulated autophagy in WOKW rats did not lead to the develop- ment of neuropathic symptoms. The aim of the present communication is to identify the inflam- matory phenotype in correlation to autophagy at the mRNA level in the peripheral nerves of ro- dent with MetS and mild and severe form of T2D (ob/ob and db/db). Since inflammation plays a causative role in neurodegeneration, the understanding its pathomechanisms and correlations is necessary to targeting PN."
+
 - id: 'Kohrs2023_reproducible.research.open.science'
   year: 2023
   pdf: 'Kohrs2023_reproducible.research.open.science.pdf'
