@@ -1,3 +1,26 @@
+- id: 'Bachelor.Thesis.Beatrice.Stemmer.Mallol'
+  year: 2023
+  pdf: 'theses/Bachelor.Thesis.Beatrice.Stemmer.Mallol.pdf'
+  authors: 'Bachelor Thesis Beatrice Stemmer Mallol (supervisor: <b>Matthias König</b>)'
+  title: 'A physiologically based pharmacokinetic (PBPK) model of the probe drug talinolol for the characterization of intestinal P-glycoprotein'
+  journal: 'Bachelor Thesis, July 2023'
+  status:
+  doi:
+  pmid:
+  keywords:
+    - talinolol
+    - PBPK
+    - pharmacokinetics
+    - OATP2B1
+    - OATP1B1
+    - P-glycoprotein
+    - liver function
+    - renal function
+  project:
+  repository: https://github.com/matthiaskoenig/talinolol-model
+  abstract: 'Talinolol is a cardioselective beta-blocker used for the treatment of various cardiovascular diseases and tachyarrhythmia. The gastrointestinal absorption of talinolol is determined via its uptake in the intestine via the organic anion transporting polypeptide 2B1 (OATP2B1) and its efflux via the P-glycoprotein (P-gp). After intestinal absorption talinolol can be transported into the liver via OATP1B1 talinolol where it undergoes enterohepatic circulation. Talinolol is excreted unchanged in the urine and feces. In addition to its clinical application, talinolol is widely used as a probe drug for the intestinal efflux transporter P-glycoprotein. P-gp plays a crucial role in the human body as it is expressed in various tissues to protect against potentially toxic substances, facilitating the elimination of xenobiotics. The application of talinolol for P-gp phenotyping enables evaluation of factors influencing P-gp-mediated transport in vivo such as genetic polymorphisms of P-gp as well as the distribution of P-gp along the intestine.
+  Within this thesis, an extensive dataset of talinolol pharmacokinetics was established and used to develop a physiologically based pharmacokinetic (PBPK) model for talinolol. The model was applied to investigate the influence of various factors on the pharmacokinetics of talinolol, including: (i) genetic variants of P-gp; (ii) enzymatic activity of the transporters OATP2B1 and OATP1B1; (iii) site-specific distribution of P-gp and OATP2B1 proteins in the intestine, and (iv) the impact of diseases such as liver cirrhosis and renal dysfunction. The model enables precise predictions of the concentration-time profile of talinolol in various tissues following oral or intravenous administration. Furthermore, the model accurately describes the effect of genetic variants of P-gp on the pharmacokinetics of talinolol. The detailed description of the limiting intestinal absorption of intestinal provided by the model, along with the precise prediction of talinolol`s pharmacokinetics in different renal functions, holds significant clinical relevance.'
+
 - id: 'Kosacka2023_Inflammation_life-2527409'
   year: 2023
   pdf: 'Kosacka2023_Inflammation_life-2527409.pdf'

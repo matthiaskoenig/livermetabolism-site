@@ -1,7 +1,21 @@
+- id: 'bachelor_thesis_beatrice.stemmer.mallol'
+  status: 'current'
+  title: 'Bachelor Thesis Beatrice Stemmer Mallol'
+  date: '2023-07-17'
+  image: bachelor_thesis_beatrice_stemmer_mallol.png
+  link: '/paper/theses/Bachelor.Thesis.Beatrice.Stemmer.Mallol.pdf'
+  short: "Beatrice Stemmer Mallol submitted her Bachelor thesis developing a PBPK model of talinolol"
+  abstract: "Congratulations to Bea for successfully submitting her Bachelor thesis on a physiologically based pharmacokinetic (PBPK) model of the probe drug talinolol for the characterization of intestinal P-glycoprotein.
+    Talinolol, a cardioselective beta-blocker applied in treating various cardiovascular diseases and tachyarrhythmias, is widely adopted as a probe drug for the intestinal efflux transporter P-glycoprotein. In the human body, P-gp plays a crucial role, given its distribution across various tissues to protect against potentially toxic substances, while expediting the elimination of xenobiotics. By employing talinolol for P-gp phenotyping, researchers can evaluate factors that influence P-gp-mediated transport, such as P-gp genetic polymorphisms and its distribution throughout the intestine.
+
+    Bea's thesis presents a comprehensive dataset on talinolol pharmacokinetics, the study of how the body absorbs, distributes, metabolizes, and excretes drugs. This data was used to develop a PBPK model for talinolol, offering detailed insights into its behaviour within the body.
+
+    The new model investigates the impact of numerous factors on talinolol's pharmacokinetics, including the genetic variants of P-gp, enzymatic activity of transporters OATP2B1 and OATP1B1, and site-specific distribution of P-gp and OATP2B1 proteins in the intestine. It also investigates the impact of diseases like liver cirrhosis and renal dysfunction."
+
 - id: 'defense_jan_grzegorzewski'
   status: 'current'
   title: 'PhD Defense of Jan Grzegorzewski'
-  date: '2023-07-17'
+  date: '2023-07-07'
   image: defense_jan_grzegorzewski.png
   link: '/paper/presentations/2021-07-07_Defense.Jan.Grzegorzewski'
   short: "Jan Grzegorzewski defended his PhD thesis on physiologically based pharmacokinetic modeling (PBPK) for dynamical liver function tests and Cytochrome P450 (CYP) phenotyping."
