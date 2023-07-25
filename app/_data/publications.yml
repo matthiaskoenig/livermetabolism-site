@@ -1,3 +1,24 @@
+- id: 'Tautenhahn2023_simliva'
+  year: 2023
+  pdf: 'Tautenhahn2023_simliva.pdf'
+  authors: 'Hans-Michael Tautenhahn, Tim Ricken, Uta Dahmen, Luis Mandl, Laura Bütow, Steffen Gerhäusser, Lena Lambers, Xinpei Chen, Elina Lehmann, Olaf Dirsch, Matthias König'
+  title: 'SimLivA – Modelling ischemia reperfusion injury in the liver: A first step towards a clinical decision support tool.'
+  journal: 'GAMM (submitted 2023-07-24)'
+  status: 'submitted'
+  doi:
+  pmid:
+  keywords:
+    - ischemia-reperfusion injury
+    - IRI
+    - liver transplantation
+    - ODE
+    - PDE
+    - porous media
+  project:
+  repository:
+  abstract: "The SIMulation supported LIVer Assessment for donor organs (SimLivA) project aims to develop a mathematical model to accurately simulate the influence of mechanical alterations in marginal liver grafts (specifically steatotic ones) and cold ischemia on early ischemia-reperfusion injury (IRI) during liver transplantation. Our project tackles significant research challenges, including the co-development of computational methodologies, experimental studies, clinical processes, and techni- cal workflows. We aim to refine a continuum-biomechanical model for enhanced IRI prediction, collect pivotal experimental and clinical data, and assess the clinical applicability of our model. Our efforts involve augmenting and tailoring a coupled continuum-biomechanical, multiphase, and multi-scale partial differential equation- ordinary differential equation (PDE-ODE) model of the liver lobule, allowing us to numerically simulate IRI depending on the degree of steatosis and the duration of ischemia. The envisaged model will intertwine the structure, perfusion, and function of the liver, serving as a crucial aid in clinical decision-making processes. We view this as the initial step towards an in-silico clinical decision support tool aimed at en- hancing the outcomes of liver transplantation. In this paper, we provide an overview of the SimLivA project and our preliminary findings, which include: a cellular model that delineates critical processes in the context of IRI during transplantation; and the integration of this model into a multi-scale PDE-ODE model using a homogenized, multi-scale, multi-component approach within the Theory of Porous Media (TPM) framework. The model has successfully simulated the interconnected relationship between structure, perfusion, and function—all of which are integral to IRI. Additionally, we have been able to study the impact of tissue perfusion and temperature, two critical parameters in the context of liver transplantation."
+
+
 - id: 'Bachelor.Thesis.Beatrice.Stemmer.Mallol'
   year: 2023
   pdf: 'theses/Bachelor.Thesis.Beatrice.Stemmer.Mallol.pdf'
