@@ -3,7 +3,7 @@
   pdf: 'Maheshvare2023_pancreas.pdf'
   authors: 'Maheshvare MD., Raha S., <b>König M.*</b>, and Pal D.* (* equal contribution)'
   title: 'A pathway model of glucose-stimulated insulin secretion in the pancreatic β-cell'
-  journal: 'Front. Endocrinol. 14:1185656.'
+  journal: 'Front. Endocrinol. 14:1185656'
   status:
   doi: 10.3389/fendo.2023.1185656
   pmid:
@@ -17,9 +17,6 @@
   project:
   repository: https://github.com/matthiaskoenig/pancreas-model
   abstract: "The pancreas plays a critical role in maintaining glucose homeostasis through the secretion of hormones from the islets of Langerhans. Glucose-stimulated insulin secretion (GSIS) by the pancreatic β-cell is the main mechanism for reducing elevated plasma glucose. Here we present a systematic modeling workflow for the development of kinetic pathway models using the Systems Biology Markup Language (SBML). Steps include retrieval of information from databases, curation of experimental and clinical data for model calibration and validation, integration of heterogeneous data including absolute and relative measurements, unit normalization, data normalization, and model annotation. An important factor was the reproducibility and exchangeability of the model, which allowed the use of various existing tools. The workflow was applied to construct a novel data-driven kinetic model of GSIS in the pancreatic β-cell based on experimental and clinical data from 39 studies spanning 50 years of pancreatic, islet, and β-cell research in humans, rats, mice, and cell lines. The model consists of detailed glycolysis and phenomenological equations for insulin secretion coupled to cellular energy state, ATP dynamics and (ATP/ADP ratio). Key findings of our work are that in GSIS there is a glucose-dependent increase in almost all intermediates of glycolysis. This increase in glycolytic metabolites is accompanied by an increase in energy metabolites, especially ATP and NADH. One of the few decreasing metabolites is ADP, which, in combination with the increase in ATP, results in a large increase in ATP/ADP ratios in the β-cell with increasing glucose. Insulin secretion is dependent on ATP/ADP, resulting in glucose-stimulated insulin secretion. The observed glucose-dependent increase in glycolytic intermediates and the resulting change in ATP/ADP ratios and insulin secretion is a robust phenomenon observed across data sets, experimental systems and species. Model predictions of the glucose-dependent response of glycolytic intermediates and biphasic insulin secretion are in good agreement with experimental measurements. Our model predicts that factors affecting ATP consumption, ATP formation, hexokinase, phosphofructokinase, and ATP/ADP-dependent insulin secretion have a major effect on GSIS. In conclusion, we have developed and applied a systematic modeling workflow for pathway models that allowed us to gain insight into key mechanisms in GSIS in the pancreatic β-cell."
-
-
-
 
 - id: 'Tautenhahn2023_simliva'
   year: 2023
