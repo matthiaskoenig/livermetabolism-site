@@ -84,7 +84,7 @@
   position: 'Humboldt Internship Student (Brown University)'
   image: hannah.png
   orcid:
-  repository:
+  repository: 'https://github.com/hannah3menghis'
   homepage:
   description: 'Hannah will establish a pharmacokinetic dataset of semaglutide and develop an initial version of a physiologically based pharmacokinetic (PBPK) model of the GLP-1 inhibitor semaglutide. The objective is to enhance our understanding of the underlying causes of intraindividual variability in semaglutide treatment, e.g., differences in renal function.'
 
