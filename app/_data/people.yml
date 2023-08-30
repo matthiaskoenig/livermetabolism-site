@@ -11,39 +11,6 @@
   <br />
   Research projects on glucose homeostasis in normal and diabetic subjects, personalization of liver function tests to improve diagnosis, and stratification and individualization of computational models for precision medicine.'
 
-- id: 'helen'
-  status: 'current'
-  year: '2021-'
-  name: 'Helen Leal Pujol'
-  position: 'Bachelor student, student assistant'
-  image: helen.png
-  orcid:
-  repository: 'https://github.com/Lepujolh'
-  homepage:
-  description: 'Helen worked on a physiologically based model of pravastatin. Key questions are the effect of genotypes and hepatic and renal disease on pravastatin pharmacokinetics and coupling to a pharmacodynamic model of LDL-C reduction. Currently, Helen works on a physiologically based model of omeprazol.'
-
-- id: 'afruja'
-  status: 'current'
-  year: '2022-'
-  name: 'Afruja Hossain'
-  position: 'Bachelor student'
-  image: afruja.png
-  orcid:
-  repository: 'https://github.com/afruja-h'
-  homepage:
-  description: 'Afruja works on a systematic overview of the protein variability of cytochrome P450 (CYP450) isoforms in the human liver.'
-
-- id: 'adrian'
-  status: 'current'
-  year: '2020-'
-  name: 'Adrian Köller'
-  position: 'Bachelor student, Master project, student assistant'
-  image: adrian.png
-  orcid:
-  repository: 'https://github.com/adriankl'
-  homepage:
-  description: 'Adrian worked on a physiologically based model of indocyanine green (ICG) clearance. Key questions are the effect of blood flow and plasma proteins on ICG clearance and related liver function tests. Currently, Adrian analyzes the changes in OGTT during impaired glucose tolerance and diabetes type 2.'
-
 - id: 'jonaspk98'
   status: 'current'
   year: '2022-'
@@ -55,6 +22,17 @@
   homepage:
   description: 'Jonas worked on a physiologically based model of chlorzoxazone for hepatic CYP2E1 phenotyping. Key questions are the effect of CYP2E1 induction/inhibition and zonation on chlorzoxazone phenotyping. Jonas now analyses whole-slide images of the the liver to evaluate zonation patterns in the the liver using digital pathology methods.'
 
+- id: 'helen'
+  status: 'current'
+  year: '2021-'
+  name: 'Helen Leal Pujol'
+  position: 'Bachelor student, student assistant'
+  image: helen.png
+  orcid:
+  repository: 'https://github.com/Lepujolh'
+  homepage:
+  description: 'Helen worked on a physiologically based model of pravastatin. Key questions are the effect of genotypes and hepatic and renal disease on pravastatin pharmacokinetics and coupling to a pharmacodynamic model of LDL-C reduction. Currently, Helen works on a physiologically based model of omeprazol.'
+
 - id: 'stemllb'
   status: 'current'
   year: '2022-'
@@ -65,6 +43,17 @@
   repository: 'https://github.com/stemllb'
   homepage:
   description: 'Beatrice works on a physiologically based model to characterize intestinal P-glycoprotein using talinolol as a probe drug.'
+
+- id: 'afruja'
+  status: 'current'
+  year: '2022-'
+  name: 'Afruja Hossain'
+  position: 'Bachelor student'
+  image: afruja.png
+  orcid:
+  repository: 'https://github.com/afruja-h'
+  homepage:
+  description: 'Afruja works on a systematic overview of the protein variability of cytochrome P450 (CYP450) isoforms in the human liver.'
 
 - id: 'xenia'
   status: 'current'
@@ -88,9 +77,20 @@
   homepage:
   description: 'Zhara works on a physiologically based pharmacokinetic (PBPK) model to estimate the glomerular filtration rate (eGFR) using creatinine. The objective is to enhance our understanding of how variations in creatinine production, muscle mass, and tubular secretion of creatinine influence eGFR calculations.'
 
+- id: 'hannah'
+  status: 'current'
+  year: '2023-08/2023-10'
+  name: 'Hannah Menghis'
+  position: 'Humboldt Internship Student (Brown University)'
+  image: hannah.png
+  orcid:
+  repository:
+  homepage:
+  description: 'Hannah will establish a pharmacokinetic dataset of semaglutide and develop an initial version of a physiologically based pharmacokinetic (PBPK) model of the GLP-1 inhibitor semaglutide. The objective is to enhance our understanding of the underlying causes of intraindividual variability in semaglutide treatment, e.g., differences in renal function.'
+
 - id: 'frances'
   status: 'current'
-  year: '2023-03/2023-05'
+  year: '2023-03/2023-09'
   name: 'Frances Okibedi'
   position: 'Internship'
   image: frances.png
@@ -98,17 +98,6 @@
   repository: 'https://github.com/fuokibedi'
   homepage:
   description: 'Frances works a physiologically based pharmacokinetic (PBPK) model of sorafenib for systemic treatment of hepatocellular carcinoma (HCC). Key questions are to study the effect of OATP activity and CYP3A4 inhibition on sorafenib pharmacokinetics and efficiency.'
-
-- id: 'nurudeen'
-  status: 'current'
-  year: '2023-03/2023-05'
-  name: 'Nurudeen Sojimade'
-  position: 'Internship'
-  image: "nurudeen.png"
-  orcid:
-  repository: 'https://github.com/Soji4eva'
-  homepage:
-  description: 'Nurudeen works a physiologically based pharmacokinetic (PBPK) model of the contrast agent Gd-EOB-DTPA. Key questions are to study the effect of hepato-renal impairment, perfusion and OATP activity on Gd-EOB-DTPA pharmacokinetics.'
 
 - id: 'sankha'
   status: 'current'
@@ -123,7 +112,7 @@
   description: 'Sankha works on the analysis and quantification of microcirculation data recorded in Humans and Rats. Within the project a workflow for the analysis of orthogonal polarization spectroscopy (OPS) and IDF will be developed as part of <a href="https://qualiperf.de">QuaLiPerF</a>.'
 
 - id: 'flobar'
-  status: 'current'
+  status: 'alumni'
   year: '2020-'
   name: 'Florian Bartsch'
   position: 'Bachelor student, Master project, student assistant, Master project'
@@ -132,6 +121,28 @@
   repository: 'https://github.com/FloBar'
   homepage:
   description: 'Florian works on a physiologically based model of statin clearance. Key questions are the effect of statins (atorvastatin and simvastatin) on cholesterol plasma levels and drug-drug interactions.'
+
+- id: 'adrian'
+  status: 'alumni'
+  year: '2020-2023'
+  name: 'Adrian Köller'
+  position: 'Bachelor student, Master project, student assistant'
+  image: adrian.png
+  orcid:
+  repository: 'https://github.com/adriankl'
+  homepage:
+  description: 'Adrian worked on a physiologically based model of indocyanine green (ICG) clearance. Key questions are the effect of blood flow and plasma proteins on ICG clearance and related liver function tests. Currently, Adrian analyzes the changes in OGTT during impaired glucose tolerance and diabetes type 2.'
+
+- id: 'nurudeen'
+  status: 'alumni'
+  year: '2023-03/2023-05'
+  name: 'Nurudeen Sojimade'
+  position: 'Internship'
+  image: "nurudeen.png"
+  orcid:
+  repository: 'https://github.com/Soji4eva'
+  homepage:
+  description: 'Nurudeen works a physiologically based pharmacokinetic (PBPK) model of the contrast agent Gd-EOB-DTPA. Key questions are to study the effect of hepato-renal impairment, perfusion and OATP activity on Gd-EOB-DTPA pharmacokinetics.'
 
 - id: 'janek'
   status: 'alumni'
