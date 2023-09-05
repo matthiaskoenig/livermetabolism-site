@@ -44,6 +44,28 @@
   homepage:
   description: 'Beatrice works on a physiologically based model to characterize intestinal P-glycoprotein using talinolol as a probe drug.'
 
+- id: 'luca'
+  status: 'current'
+  year: '2023-09/2024-01'
+  name: 'Luca Samuel Sawady'
+  position: 'Internship'
+  image: person.png
+  orcid:
+  repository: 'https://github.com/SamLuca'
+  homepage:
+  description: 'Luca works on a physiologically based model of the oral contraceptive component ethinylestradiol.'
+
+- id: 'amanda'
+  status: 'current'
+  year: '2023-09/2024-06'
+  name: 'Amanda Lim'
+  position: 'Medical thesis'
+  image: person.png
+  orcid:
+  repository: 'https://github.com/amdangelica'
+  homepage:
+  description: 'Amanda works on a physiologically based model of the loop diuretic hydrochlorothiazide (HCTZ).'
+
 - id: 'afruja'
   status: 'current'
   year: '2022-'
