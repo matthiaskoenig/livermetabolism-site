@@ -49,11 +49,11 @@
   year: '2023-09/2024-01'
   name: 'Luca Samuel Sawady'
   position: 'Internship'
-  image: person.png
+  image: luca.png
   orcid:
   repository: 'https://github.com/SamLuca'
   homepage:
-  description: 'Luca works on a physiologically based model of the oral contraceptive component ethinylestradiol.'
+  description: 'Luca works on a physiologically based model of the oral contraceptive component ethinylestradiol. By the end of this project, we offer a robust and validated PBPK model for ethinylestradiol that can serve as a valuable tool for researchers, clinicians, and the pharmaceutical industry.'
 
 - id: 'amanda'
   status: 'current'
@@ -64,7 +64,7 @@
   orcid:
   repository: 'https://github.com/amdangelica'
   homepage:
-  description: 'Amanda works on a physiologically based model of the loop diuretic hydrochlorothiazide (HCTZ).'
+  description: 'Amanda develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the diuretic hydrochlorothiazide. The objective is to enhance our understanding of how hydrochlorothiazide changes urinary volume and plasma volume and ion balance (sodium, potassium, chloride).'
 
 - id: 'afruja'
   status: 'current'
