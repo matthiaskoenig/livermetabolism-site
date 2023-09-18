@@ -1,11 +1,11 @@
-- id: 'Lambers2023_fat_zonation'
+- id: 'Lambers2023_fat_zonation_preprint'
   year: 2023
-  pdf: 'Lambers2023_fat_zonation.pdf'
+  pdf: 'Lambers2023_fat_zonation_preprint.pdf'
   authors: 'Lena Lambers, Navina Waschinsky, Jana Schleicher, <b>Matthias König</b>, Hans-Michael Tautenhahn, Mohamed Albadry, Uta Dahmen and Tim Ricken'
   title: 'Quantifying Fat Zonation in Liver Lobules: An Integrated Multiscale In-silico Model Combining Disturbed Microperfusion and Fat Metabolism via a Continuum-Biomechanical Bi-scale, Tri-phasic Approach'
-  journal: ''
-  status: 'submitted'
-  doi:
+  journal: '17 September 2023, PREPRINT (Version 1) available at Research Square'
+  status: 'preprint'
+  doi: "https://doi.org/10.21203/rs.3.rs-3348101/v1"
   pmid:
   keywords:
     - Multiscale Approach
