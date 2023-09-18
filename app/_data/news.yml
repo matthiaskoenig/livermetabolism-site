@@ -1,3 +1,12 @@
+- id: 'fat_zonation_preprint'
+  status: 'current'
+  title: 'Preprint: Quantifying Fat Zonation in Liver Lobules: An Integrated Multiscale In-silico Model'
+  date: '2023-09-18'
+  image: fat_zonation_preprint.png
+  link: 'https://doi.org/10.21203/rs.3.rs-3348101/v1'
+  short: 'Our latest preprint is now out: An integrated multiscale model for quantifying fat zonation in liver lobules.'
+  abstract: 'We have developed a sophisticated computer model to explore how various factors contribute to the distribution and accumulation of fat in the liver, a phenomenon known as "metabolic zonation." This model will help in understanding how liver health is affected by different conditions and could play a crucial role in studying diseases like MASLD (metabolic dysfunction-associated steatotic liver disease). By simulating liver functions, the model considers interactions between blood flow, oxygen levels, and fat metabolism within liver lobules.'
+
 - id: 'brown_university_hannah'
   status: 'current'
   title: 'Hannah Menghis from Brown University starts her internship'
