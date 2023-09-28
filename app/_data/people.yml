@@ -77,28 +77,6 @@
   homepage:
   description: 'Afruja works on a systematic overview of the protein variability of cytochrome P450 (CYP450) isoforms in the human liver.'
 
-- id: 'xenia'
-  status: 'current'
-  year: '2023-07/2023-09'
-  name: 'Xenia Petukhova'
-  position: 'Humboldt Internship Student'
-  image: xenia.png
-  orcid:
-  repository: 'https://github.com/dzinty'
-  homepage:
-  description: 'Xenia works on a physiologically based pharmacokinetic (PBPK) model of inulin to assess the glomerular filtration rate (GFR). Our goal is to gain a deeper understanding of the impact of various inulin protocols on GFR measurement and the influence of physiological factors, such as body composition, on GFR determination using inulin.'
-
-- id: 'zhara'
-  status: 'current'
-  year: '2023-07/2023-09'
-  name: 'Zahra Bahri'
-  position: 'Humboldt Internship Student'
-  image: zhara.png
-  orcid:
-  repository: 'https://github.com/Rain-marine'
-  homepage:
-  description: 'Zhara works on a physiologically based pharmacokinetic (PBPK) model to estimate the glomerular filtration rate (eGFR) using creatinine. The objective is to enhance our understanding of how variations in creatinine production, muscle mass, and tubular secretion of creatinine influence eGFR calculations.'
-
 - id: 'hannah'
   status: 'current'
   year: '2023-08/2023-10'
@@ -109,6 +87,28 @@
   repository: 'https://github.com/hannah3menghis'
   homepage:
   description: 'Hannah will establish a pharmacokinetic dataset of semaglutide and develop an initial version of a physiologically based pharmacokinetic (PBPK) model of the GLP-1 inhibitor semaglutide. The objective is to enhance our understanding of the underlying causes of intraindividual variability in semaglutide treatment, e.g., differences in renal function.'
+
+- id: 'samira'
+  status: 'current'
+  year: '2023-09/2023-12'
+  name: 'Samira Eissazedeh'
+  position: 'ERASMUS'
+  image:
+  orcid:
+  repository:
+  homepage:
+  description: "Samira works to enhance our understanding of the role of endoglin in TGF-β signaling. She develops a computational model that explores the nuances of L-endoglin's role within this pathway and evaluates the effects of targeted interventions on this signaling."
+
+- id: 'antonio'
+  status: 'current'
+  year: '2023-10/2024-04'
+  name: 'Antonio Aquiles Alvarez Aguilar'
+  position: 'Master thesis'
+  image:
+  orcid:
+  repository: 'https://github.com/MadNietzsche'
+  homepage:
+  description: "Antonio will delve into the influence of parameter variability in PBPK models, focusing on the consequential effects for dynamic liver function assessments. The overarching objective of this project is to augment our comprehension of how inherent variability in parameters translates into intra-individual variability in pharmacokinetics."
 
 - id: 'frances'
   status: 'current'
@@ -132,6 +132,28 @@
   repository: 'https://github.com/sankha555'
   homepage:
   description: 'Sankha works on the analysis and quantification of microcirculation data recorded in Humans and Rats. Within the project a workflow for the analysis of orthogonal polarization spectroscopy (OPS) and IDF will be developed as part of <a href="https://qualiperf.de">QuaLiPerF</a>.'
+
+- id: 'xenia'
+  status: 'alumni'
+  year: '2023-07/2023-09'
+  name: 'Xenia Petukhova'
+  position: 'Humboldt Internship Student'
+  image: xenia.png
+  orcid:
+  repository: 'https://github.com/dzinty'
+  homepage:
+  description: 'Xenia works on a physiologically based pharmacokinetic (PBPK) model of inulin to assess the glomerular filtration rate (GFR). Our goal is to gain a deeper understanding of the impact of various inulin protocols on GFR measurement and the influence of physiological factors, such as body composition, on GFR determination using inulin.'
+
+- id: 'zhara'
+  status: 'alumni'
+  year: '2023-07/2023-09'
+  name: 'Zahra Bahri'
+  position: 'Humboldt Internship Student'
+  image: zhara.png
+  orcid:
+  repository: 'https://github.com/Rain-marine'
+  homepage:
+  description: 'Zhara works on a physiologically based pharmacokinetic (PBPK) model to estimate the glomerular filtration rate (eGFR) using creatinine. The objective is to enhance our understanding of how variations in creatinine production, muscle mass, and tubular secretion of creatinine influence eGFR calculations.'
 
 - id: 'flobar'
   status: 'alumni'
