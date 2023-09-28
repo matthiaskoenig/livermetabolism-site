@@ -1,4 +1,47 @@
-- id: 'MBM2023_keynote'
+- id: 'ICCB2023_Wien_talk'
+  title: 'Studying the impact of drug metabolism on the liver tissue: An integrated biomechanical modeling approach'
+  authors: '<b>Matthias König</b>, Steffen Gerhäusser, Luis Mandl, Lena Lambers, Uta Dahmen, Hans-Michael Tautenhahn, Tim Ricken'
+  slides: 'https://docs.google.com/presentation/d/1K60V-TWxdxdXQB1CCVqv_dv1oq_yhsxhi36DGJdLR5s/edit?usp=sharing'
+  video:
+  event: 'X International Conference on Computational Bioengineering'
+  event_page: "https://iccb2023.conf.tuwien.ac.at/"
+  date: 2023-09-22
+  repository:
+  publication:
+  abstract: "Physiologically-based pharmacokinetic (PBPK) models are powerful tools for studying drug metabolism and its effect on the human body. Here, we present our work on PBPK models for metabolic phenotyping and liver function evaluation [1-5]. To develop and validate our models, we established the first open pharmacokinetics database, PK-DB, which contains curated data from over 600 clinical studies. Our models can be individualized and stratified, allowing us to simulate the effect of lifestyle factors and co-administration on drug metabolism.
+   We have applied our models to various clinical questions, such as simulating individual outcomes after hepatectomy using an indocyanine green model and studying the effect of CYP2D6 gene variants using a model of dextromethorphan coupled with drug-gene interactions. These models are constructed hierarchically, describing metabolism and other biological processes of organs such as liver and kidney coupled to whole-body physiology. All models and data are available for reuse in a reproducible manner encoded in the Systems Biology Markup Language (SBML).
+   One of the major challenges in PBPK modeling is the integration of these models with cellular and continuum-biomechanical models. By coupling PBPK models with these models, it becomes possible to provide drug concentrations at the site of action as boundary conditions and time-varying inputs to continuum-biomechanical models. This approach enables us to study the impact of systemic chemotherapy on tumor growth or to investigate changes in perfusion and pressure at the whole-body level on transport and biomechanical properties at the tissue scale.
+   To demonstrate the effectiveness of this approach, we present an example of PBPK modeling coupled with a multiscale and multiphase continuum-biomechanical model for the liver. Our model integrates partial differential equations (PDE) on the lobular scale with ordinary differential equations (ODE) on the cellular and whole-body scale, resulting in a PDE-ODE coupling. In our showcase, we investigate the drug metabolization process in the liver, considering the possible damage to the liver tissue due to necrosis caused by a toxic side product. The substrates and products of this process can be transported via the systemic circulation and be removed by the kidneys. By coupling PBPK models with continuum-biomechanical models, we can study the transport and biomechanical properties of these substances at both the tissue and whole-body levels. This coupling approach provides a promising method for studying drug metabolism and its effect on the human body at multiple scales, ranging from cellular to whole-body.
+   Our approach allows us to investigate the impact of this drug metabolization process on the liver tissue and how it affects the overall functioning of the body. Additionally, we can study the impact of various factors, such as different drug dosages, on this process and determine the optimal drug dosage for a given patient. This integrated approach provides a comprehensive understanding of the drug metabolization process and its impact on the human body, paving the way for more effective drug development and personalized medicine.
+   [1] https://doi.org/10.1093/nar/gkaa990
+   [2] https://doi.org/10.3389/fphar.2021.752826
+   [3] https://doi.org/10.3389/fphys.2021.730418
+   [4] https://doi.org/10.3389/fphys.2021.757293
+   [5] https://doi.org/10.1101/2022.08.23.504981
+"
+
+- id: 'AstraZeneca_talk'
+  title: 'Digital twins for liver function & metabolic phenotyping'
+  authors: '<b>Matthias König</b>'
+  slides: 'https://docs.google.com/presentation/d/16NHdvLQSYyY5LsPC3xcnE9_A1WKwtGRvTPlg7U1xxFA/edit?usp=sharing'
+  video:
+  event: 'AstraZeneca seminar'
+  event_page: https://www.astrazeneca.com/
+  date: 2023-09-01
+  repository:
+  publication:
+  abstract: "Physiologically-based pharmacokinetic (PBPK) models are powerful tools for studying drug metabolism and its effect on the human body. Here, we present our work on applying PBPK models as digital twins for metabolic phenotyping and liver function evaluation [1-6]. To develop and validate our models, we established the first open pharmacokinetics database, PK-DB, which contains curated data from over 600 clinical studies. Our models can be individualized and stratified, allowing us to simulate the effect of lifestyle factors and co-administration on drug metabolism.
+We have applied our models to various clinical questions, such as simulating individual outcomes after hepatectomy using an indocyanine green model and studying the effect of CYP2D6 gene variants using a model of dextromethorphan coupled with drug-gene interactions. These models are constructed hierarchically, describing metabolism and other biological processes of organs such as liver and kidney coupled to whole-body physiology. All models and data are available for reuse in a reproducible manner encoded in the Systems Biology Markup Language (SBML).
+Here we will give an overview of our PBPK models and how SBML can facilitate model development, coupling and reuse.
+PK-DB: pharmacokinetics database for individualized and stratified computational modeling. Grzegorzewski J, Brandhorst J, Green K, Eleftheriadou D, Duport Y, Barthorscht F, Köller A, Ke DYJ, De Angelis S, König M. Nucleic Acids Res. 2021 Jan 8;49(D1):D1358-D1364. doi:10.1093/nar/gkaa990. pmid:33151297
+Pharmacokinetics of caffeine: A systematic analysis of reported data for application in metabolic phenotyping and liver function testing. Jan Grzegorzewski, Florian Bartsch, Adrian Köller, and Matthias König. Frontiers in Pharmacology 2022, Vol12. doi:10.3389/fphar.2021.752826. pmid:35280254
+Prediction of survival after hepatectomy using a physiologically based pharmacokinetic model of indocyanine green liver function tests. Adrian Köller, Jan Grzegorzewski, Michael Tautenhahn, Matthias König. Front. Physiol., 22 November 2021. doi:10.3389/fphys.2021.730418. pmid:34880771
+Physiologically based modeling of the effect of physiological and anthropometric variability on indocyanine green based liver function tests. Adrian Köller, Jan Grzegorzewski and Matthias König. Front Physiol. 2021 Nov 22;12:757293. doi:10.3389/fphys.2021.757293. pmid:34880776
+Physiologically based pharmacokinetic (PBPK) modeling of the role of CYP2D6 polymorphism for metabolic phenotyping with dextromethorphan. Grzegorzewski, J., Brandhorst, J., König, M. Front Pharmacol. 2022 Oct 24;13:1029073. doi:10.3389/fphar.2022.1029073. pmid:36353484
+A physiologically based pharmacokinetic model for CYP2E1 phenotyping via chlorzoxazone. J. Küttner, J. Grzegorzewski, HM. Tautenhahn, M. König. bioRxiv 2023.04.12.536571 (preprint). doi:10.1101/2023.04.12.536571
+"
+
+- id: 'WCMBM2023_Stuttgart_keynote'
   title: 'Advancing Liver Function Assessment: Personalized and Stratified Approaches with Standardized Computational Models and Data'
   authors: '<b>Matthias König</b>'
   slides: 'https://docs.google.com/presentation/d/1hi7-4bwzqFJYiYQkbSBHNQivSPA5T3YHB9OLZqJG0rA/edit?usp=sharing'
@@ -25,7 +68,16 @@ In this study, we provide an overview of PBPK models and demonstrate how SBML [7
   date: 2023-05-22
   repository:
   publication:
-  abstract:
+  abstract: "Physiologically-based pharmacokinetic (PBPK) models are powerful tools for studying drug metabolism and its effect on the human body. Here, we present our work on applying PBPK models as digital twins for metabolic phenotyping and liver function evaluation [1-6]. To develop and validate our models, we established the first open pharmacokinetics database, PK-DB, which contains curated data from over 600 clinical studies. Our models can be individualized and stratified, allowing us to simulate the effect of lifestyle factors and co-administration on drug metabolism.
+We have applied our models to various clinical questions, such as simulating individual outcomes after hepatectomy using an indocyanine green model and studying the effect of CYP2D6 gene variants using a model of dextromethorphan coupled with drug-gene interactions. These models are constructed hierarchically, describing metabolism and other biological processes of organs such as liver and kidney coupled to whole-body physiology. All models and data are available for reuse in a reproducible manner encoded in the Systems Biology Markup Language (SBML).
+Here we will give an overview of our PBPK models and how SBML can facilitate model development, coupling and reuse.
+PK-DB: pharmacokinetics database for individualized and stratified computational modeling. Grzegorzewski J, Brandhorst J, Green K, Eleftheriadou D, Duport Y, Barthorscht F, Köller A, Ke DYJ, De Angelis S, König M. Nucleic Acids Res. 2021 Jan 8;49(D1):D1358-D1364. doi:10.1093/nar/gkaa990. pmid:33151297
+Pharmacokinetics of caffeine: A systematic analysis of reported data for application in metabolic phenotyping and liver function testing. Jan Grzegorzewski, Florian Bartsch, Adrian Köller, and Matthias König. Frontiers in Pharmacology 2022, Vol12. doi:10.3389/fphar.2021.752826. pmid:35280254
+Prediction of survival after hepatectomy using a physiologically based pharmacokinetic model of indocyanine green liver function tests. Adrian Köller, Jan Grzegorzewski, Michael Tautenhahn, Matthias König. Front. Physiol., 22 November 2021. doi:10.3389/fphys.2021.730418. pmid:34880771
+Physiologically based modeling of the effect of physiological and anthropometric variability on indocyanine green based liver function tests. Adrian Köller, Jan Grzegorzewski and Matthias König. Front Physiol. 2021 Nov 22;12:757293. doi:10.3389/fphys.2021.757293. pmid:34880776
+Physiologically based pharmacokinetic (PBPK) modeling of the role of CYP2D6 polymorphism for metabolic phenotyping with dextromethorphan. Grzegorzewski, J., Brandhorst, J., König, M. Front Pharmacol. 2022 Oct 24;13:1029073. doi:10.3389/fphar.2022.1029073. pmid:36353484
+A physiologically based pharmacokinetic model for CYP2E1 phenotyping via chlorzoxazone. J. Küttner, J. Grzegorzewski, HM. Tautenhahn, M. König. bioRxiv 2023.04.12.536571 (preprint). doi:10.1101/2023.04.12.536571
+"
 
 - id: 'FAIR.sharing.of.reproducible.and.reusable.COVID-19.models_Ramachandran2022'
   title: 'Developing computational models with SBML - sbmlutils & cy3sbml'
