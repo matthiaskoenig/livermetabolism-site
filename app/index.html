@@ -11,17 +11,27 @@ layout: default
             <p>
             At the König Lab, we merge the fields of Systems Medicine and Systems Biology to delve deep into drug metabolism and liver function. By harnessing the power of computational modeling, data science, bioinformatics analysis, and machine learning, we analyze and interpret datasets spanning biological, medical, and clinical spheres.
             </p>
+            <p>
+            {% for person in site.data.people %}
+                {% if person.status=="current" %}
+                {% if person.image %}
+                <img src="/img/people/128/{{ person.image }}" class="img-circle" height="50" title="{{ person.name }} ({{ person.position }})"/>
+                {% endif %}
+                {% endif %}
+            {% endfor %}
+            </p>
+            <p>
+                Interested in joining the lab, have a look at the <a href="/positions/"><i class="fa fa-users" aria-hidden="true"></i> open positions</a>.
+            </p>
+
             <h3>Our Core Research Avenues</h3>
             <p>
                 <ul>
                 <li><strong>Predictive Biomedical Modeling</strong>: With a primary emphasis on the liver and kidneys, we strive to foresee how these systems react and interact.</li>
-                <li><strong>Digital Twins Development</strong>:We pioneer in creating digital replicas using physiologically based pharmacokinetic and pharmacodynamic (PBPK/PD) models.</li>
+                <li><strong>Digital Twins Development</strong>: We pioneer in creating digital replicas using physiologically based pharmacokinetic and pharmacodynamic (PBPK/PD) models.</li>
                 <li><strong>Reproducibility and Open Research</strong>: We champion transparent methodologies and workflows, ensuring our work can be revisited and built upon.</li>
                 <li><strong>FAIR Data & Workflows</strong>: Ensuring that our data and workflows are Findable, Accessible, Interoperable, and Reusable is pivotal to our mission.</li>
                 </ul>
-
-            </p>
-            <p>A hallmark of our research is the generation of predictive digital twins mirroring individual human physiology. These models are instrumental in shedding light on inter-individual variances, paving the way for personalized treatments—from tailoring drug dosages to understanding the nuanced impacts of lifestyle on drug metabolism.
             </p>
             <h3>Flagship Projects</h3>
             <p>
@@ -37,18 +47,7 @@ layout: default
             A hallmark of our research is the generation of predictive digital twins mirroring individual human physiology. These models are instrumental in shedding light on inter-individual variances, paving the way for personalized treatments—from tailoring drug dosages to understanding the nuanced impacts of lifestyle on drug metabolism. For more information, please see our <a href="/publications/"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> publications</a> and <a href="/projects/"><i class="fa fa-cogs" aria-hidden="true"></i> projects</a>.
             </p>
 
-            <p>
-            {% for person in site.data.people %}
-                {% if person.status=="current" %}
-                {% if person.image %}
-                <img src="/img/people/128/{{ person.image }}" class="img-circle" height="50" title="{{ person.name }} ({{ person.position }})"/>
-                {% endif %}
-                {% endif %}
-            {% endfor %}
-            </p>
-            <p>
-                Interested in joining the lab, have a look at the <a href="/positions/"><i class="fa fa-users" aria-hidden="true"></i> open positions</a>.
-            </p>
+
             <h3>Contact</h3>
 
             <div class="row">
@@ -82,7 +81,6 @@ layout: default
                     <i class="fa fa-linkedin"></i> <a href="https://www.linkedin.com/in/matthias-k%C3%B6nig-796bb758/" target="_blank" title="LinkedIn">LinkedIn</a><br />
                     <i class="fa fa-registered"></i> <a href="https://www.researchgate.net/profile/Matthias_Koenig4/" target="_blank" title="ResearchGate">ResearchGate</a><br />
                     <i class="fa fa-google"></i> <a href="http://scholar.google.com/citations?user=xD9IjnYAAAAJ&hl=en" target="_blank" title="Google Scholar">Google Scholar</a><br />
-                    <img src="/img/publons.png" height="15"/> <a href="https://publons.com/a/1333493/" target="_blank" title="Publons Review Information">Publons</a>
                 </div>
 
             </div>
