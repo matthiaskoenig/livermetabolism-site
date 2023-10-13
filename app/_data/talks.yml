@@ -1,3 +1,39 @@
+- id: 'eMed2023_Berlin_talk'
+  title: 'Reproducible digital twins for personalized liver function assessment'
+  authors: '<b>Matthias König</b>'
+  slides: 'https://docs.google.com/presentation/d/1efm3Le1U8hkO5_RHgTz55X1G46lMsS5COlrjcycQQks/edit?usp=sharing'
+  video: 'https://www.youtube.com/watch?v=6faFifoXUeo'
+  event: 'e:Med Meeting 2023 on Systems Medicine'
+  event_page: "https://www.sys-med.de/de/meeting/emed-meeting-2023/"
+  date: 2023-10-10
+  dates: October 10-11, 2023
+  location: Berlin
+  repository:
+  publication:
+  abstract: "Essential prerequisites for the practical application and translation of computational models include: i) reproducibility of results; ii) model reusability and extensibility; iii) data availability; and iv) strategies for model stratification and individualization. Here, we present a modeling workflow built around these foundational prerequisites, with a focus on liver function tests.
+Despite the paramount significance of liver function assessment in hepatology, reliable quantification remains a clinical challenge. Dynamic liver function tests offer a promising method for non-invasive in vivo assessment of liver function and metabolic phenotyping. 
+By leveraging whole-body physiologically-based pharmacokinetic (PBPK) models, we're simulating these tests and positioning PBPK models as digital twins for metabolic phenotyping and liver function assessment. To develop and validate our models, we established the open pharmacokinetics database, PK-DB, containing curated data from 600+ clinical studies. Our models are individualizable and stratifiable, enabling simulation of lifestyle factors and co-administration effects on drug metabolism. Our models have been instrumental in clinical scenarios: from predicting individual outcomes post-hepatectomy to discerning the impact of CYP2D6 gene variants on liver function tests. These models are constructed hierarchically, describing metabolic and other biological processes in organs like the liver and kidneys, seamlessly integrated with whole-body physiology. 
+Notably, all models and data are readily available and reproducible for reuse, encoded in the Systems Biology Markup Language (SBML). We will provide an overview of these PBPK models and demonstrate how SBML and FAIR principles can facilitate model development, coupling, and reuse.
+"
+
+- id: 'itb2023_Berlin_talk'
+  title: 'Reproducible digital twins for personalized liver function assessment'
+  authors: '<b>Matthias König</b>'
+  slides: 'https://docs.google.com/presentation/d/1efm3Le1U8hkO5_RHgTz55X1G46lMsS5COlrjcycQQks/edit?usp=sharing'
+  video: 'https://www.youtube.com/watch?v=6faFifoXUeo'
+  event: 'Institute for Theoretical Biology Meeting'
+  event_page: "https://www.sys-med.de/de/meeting/emed-meeting-2023/"
+  date: 2023-10-10
+  dates: October 10, 2023
+  location: Berlin
+  repository:
+  publication:
+  abstract: "Essential prerequisites for the practical application and translation of computational models include: i) reproducibility of results; ii) model reusability and extensibility; iii) data availability; and iv) strategies for model stratification and individualization. Here, we present a modeling workflow built around these foundational prerequisites, with a focus on liver function tests.
+Despite the paramount significance of liver function assessment in hepatology, reliable quantification remains a clinical challenge. Dynamic liver function tests offer a promising method for non-invasive in vivo assessment of liver function and metabolic phenotyping. 
+By leveraging whole-body physiologically-based pharmacokinetic (PBPK) models, we're simulating these tests and positioning PBPK models as digital twins for metabolic phenotyping and liver function assessment. To develop and validate our models, we established the open pharmacokinetics database, PK-DB, containing curated data from 600+ clinical studies. Our models are individualizable and stratifiable, enabling simulation of lifestyle factors and co-administration effects on drug metabolism. Our models have been instrumental in clinical scenarios: from predicting individual outcomes post-hepatectomy to discerning the impact of CYP2D6 gene variants on liver function tests. These models are constructed hierarchically, describing metabolic and other biological processes in organs like the liver and kidneys, seamlessly integrated with whole-body physiology. 
+Notably, all models and data are readily available and reproducible for reuse, encoded in the Systems Biology Markup Language (SBML). We will provide an overview of these PBPK models and demonstrate how SBML and FAIR principles can facilitate model development, coupling, and reuse.
+"
+
 - id: 'ICCB2023_Wien_talk'
   title: 'Studying the impact of drug metabolism on the liver tissue: An integrated biomechanical modeling approach'
   authors: '<b>Matthias König</b>, Steffen Gerhäusser, Luis Mandl, Lena Lambers, Uta Dahmen, Hans-Michael Tautenhahn, Tim Ricken'

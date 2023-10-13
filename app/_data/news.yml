@@ -1,3 +1,16 @@
+- id: 'emed_presentation'
+  status: 'current'
+  title: 'e:Med Meeting 2023 on Systems Medicine: Quantifying Fat Zonation in Liver Lobules: An Integrated Multiscale In-silico Model'
+  date: '2023-10-10'
+  image: emed_presentation.png
+  link: 'https://www.youtube.com/watch?v=6faFifoXUeo'
+  short: 'We successfully presented our research on reproducible digital twins for personalized liver function assessment at the e:Med Meeting 2023 on Systems Medicine.'
+  abstract: "Essential prerequisites for the practical application and translation of computational models include: i) reproducibility of results; ii) model reusability and extensibility; iii) data availability; and iv) strategies for model stratification and individualization. Here, we present a modeling workflow built around these foundational prerequisites, with a focus on liver function tests.
+Despite the paramount significance of liver function assessment in hepatology, reliable quantification remains a clinical challenge. Dynamic liver function tests offer a promising method for non-invasive in vivo assessment of liver function and metabolic phenotyping. 
+By leveraging whole-body physiologically-based pharmacokinetic (PBPK) models, we're simulating these tests and positioning PBPK models as digital twins for metabolic phenotyping and liver function assessment. To develop and validate our models, we established the open pharmacokinetics database, PK-DB, containing curated data from 600+ clinical studies. Our models are individualizable and stratifiable, enabling simulation of lifestyle factors and co-administration effects on drug metabolism. Our models have been instrumental in clinical scenarios: from predicting individual outcomes post-hepatectomy to discerning the impact of CYP2D6 gene variants on liver function tests. These models are constructed hierarchically, describing metabolic and other biological processes in organs like the liver and kidneys, seamlessly integrated with whole-body physiology. 
+Notably, all models and data are readily available and reproducible for reuse, encoded in the Systems Biology Markup Language (SBML). We will provide an overview of these PBPK models and demonstrate how SBML and FAIR principles can facilitate model development, coupling, and reuse."
+
+
 - id: 'fat_zonation_preprint'
   status: 'current'
   title: 'Preprint: Quantifying Fat Zonation in Liver Lobules: An Integrated Multiscale In-silico Model'
