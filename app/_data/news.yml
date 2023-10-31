@@ -1,3 +1,16 @@
+- id: 'huinternship2024'
+  status: 'new'
+  title: 'Humboldt Internship Program 2024 - Computational Modeling of Drug Detoxification - A Systems Medicine Approach'
+  date: '2023-10-31'
+  image: humboldt-internship.jpg
+  link: 'https://hic.hu-berlin.de/en/internship-program/projects/201'
+  short: 'We offer Internships in 2024, academic three-month research stays at Humboldt-Universität zu Berlin. The application for the Summer Term Internships 2024 is open from 03 November to 10 December 2023.'
+  abstract: "Humboldt Internship Program is an international short-term program for subject-specific, experiential learning. It allows participants to work with teams in research projects and university-related start-ups for three months.
+  
+  This program is designed for advanced Bachelor as well as Master students and PhD candidates. Choose from projects in various academic areas, receive individual advising, and earn ECTS credit points. Some projects offer online internship opportunities. Please check the individual project descriptions for details.
+  
+  The Summer Term internships take place from May to August 2023. More information https://hic.hu-berlin.de/en/internship-program ."
+
 - id: 'emed_presentation'
   status: 'current'
   title: 'e:Med Meeting 2023 on Systems Medicine: Quantifying Fat Zonation in Liver Lobules: An Integrated Multiscale In-silico Model'
