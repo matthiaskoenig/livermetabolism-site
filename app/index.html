@@ -154,6 +154,7 @@ layout: default
 
          <div class="col-md-4" style="background-color: #efefef;">
              <h3>News</h3>
+             For details see <a href="/news/"><i class="fa-solid fa-newspaper-o"></i> news</a>.
              {% for news in site.data.news %}
                 {% if news.status=="current" %}
                 <p>
@@ -176,7 +177,6 @@ layout: default
                 </p>
                 {% endif %}
             {% endfor %}
-             For more information, please see our <a href="/news/"><i class="fa-solid fa-newspaper-o"></i> news</a>.
         </div>
 
 

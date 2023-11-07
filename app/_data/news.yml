@@ -1,3 +1,18 @@
+- id: 'dietary_twin'
+  status: 'current'
+  title: 'Your Dietary Digitial Twin (DDtwin)'
+  date: '2023-11-03'
+  image: dietary_twin.png
+  link: 'https://www.lorentzcenter.nl/your-dietary-digital-twin-ddtwin.html'
+  short: 'Advancing Precision Nutrition: Workshop Success on Dietary Digital Twin, a workshop in Leiden from 30 October - 3 November 2023.'
+  abstract: 'We are excited to announce our participation in a groundbreaking workshop dedicated to the development of the Dietary Digital Twin (DDtwin) technology platform. This innovative endeavor aims to provide precision nutrition by integrating biology-based and data-driven models with real-life data, harnessing the power of wearable sensors and applications.<br /><br />
+
+The workshop brought together experts and enthusiasts from various fields to tackle the intricate task of extending models of whole-body glucose metabolism. The primary focus was on two technical challenges: the integration of real-time Continuous Glucose Monitoring (CGM) data from wearable sensors, and the creation of a human-centered user interface that connects the DDtwin to dietary intake data collected via apps.<br /><br />
+
+The collaborative efforts made significant strides towards enabling the DDtwin to deliver personalized dietary insights and recommendations. Moreover, the workshop served as a platform for discussing the ethical, legal, and social implications (ELSI) of deploying such advanced technology in everyday practice.<br /><br />
+
+Our participation in this workshop underscores our commitment to advancing health technology and contributing to a future where nutrition is as unique as the individual. Stay tuned for further developments as we continue to navigate the exciting realm of digital twins and precision nutrition. For more information see <a href="https://www.lorentzcenter.nl/your-dietary-digital-twin-ddtwin.html">https://www.lorentzcenter.nl/your-dietary-digital-twin-ddtwin.html</a>.'
+
 - id: 'huinternship2024'
   status: 'current'
   title: 'Humboldt Internship Program 2024 - Computational Modeling of Drug Detoxification - A Systems Medicine Approach'
@@ -5,11 +20,11 @@
   image: humboldt-internship.jpg
   link: 'https://hic.hu-berlin.de/en/internship-program/projects/201'
   short: 'We offer Internships in 2024, academic three-month research stays at Humboldt-Universität zu Berlin. The application for the Summer Term Internships 2024 is open from 03 November to 10 December 2023.'
-  abstract: "Humboldt Internship Program is an international short-term program for subject-specific, experiential learning. It allows participants to work with teams in research projects and university-related start-ups for three months.
+  abstract: 'Humboldt Internship Program is an international short-term program for subject-specific, experiential learning. It allows participants to work with teams in research projects and university-related start-ups for three months.<br /><br />
   
-  This program is designed for advanced Bachelor as well as Master students and PhD candidates. Choose from projects in various academic areas, receive individual advising, and earn ECTS credit points. Some projects offer online internship opportunities. Please check the individual project descriptions for details.
+  This program is designed for advanced Bachelor as well as Master students and PhD candidates. Choose from projects in various academic areas, receive individual advising, and earn ECTS credit points. Some projects offer online internship opportunities. Please check the individual project descriptions for details.<br /><br />
   
-  The Summer Term internships take place from May to August 2023. More information https://hic.hu-berlin.de/en/internship-program ."
+  The Summer Term internships take place from May to August 2023. More information <a href="https://hic.hu-berlin.de/en/internship-program">https://hic.hu-berlin.de/en/internship-program<a/> .'
 
 - id: 'emed_presentation'
   status: 'current'
@@ -18,9 +33,12 @@
   image: emed_presentation.png
   link: 'https://www.youtube.com/watch?v=6faFifoXUeo'
   short: 'We successfully presented our research on reproducible digital twins for personalized liver function assessment at the e:Med Meeting 2023 on Systems Medicine.'
-  abstract: "Essential prerequisites for the practical application and translation of computational models include: i) reproducibility of results; ii) model reusability and extensibility; iii) data availability; and iv) strategies for model stratification and individualization. Here, we present a modeling workflow built around these foundational prerequisites, with a focus on liver function tests.
-Despite the paramount significance of liver function assessment in hepatology, reliable quantification remains a clinical challenge. Dynamic liver function tests offer a promising method for non-invasive in vivo assessment of liver function and metabolic phenotyping. 
-By leveraging whole-body physiologically-based pharmacokinetic (PBPK) models, we're simulating these tests and positioning PBPK models as digital twins for metabolic phenotyping and liver function assessment. To develop and validate our models, we established the open pharmacokinetics database, PK-DB, containing curated data from 600+ clinical studies. Our models are individualizable and stratifiable, enabling simulation of lifestyle factors and co-administration effects on drug metabolism. Our models have been instrumental in clinical scenarios: from predicting individual outcomes post-hepatectomy to discerning the impact of CYP2D6 gene variants on liver function tests. These models are constructed hierarchically, describing metabolic and other biological processes in organs like the liver and kidneys, seamlessly integrated with whole-body physiology. 
+  abstract: "Essential prerequisites for the practical application and translation of computational models include: i) reproducibility of results; ii) model reusability and extensibility; iii) data availability; and iv) strategies for model stratification and individualization. Here, we present a modeling workflow built around these foundational prerequisites, with a focus on liver function tests.<br /><br />
+  
+Despite the paramount significance of liver function assessment in hepatology, reliable quantification remains a clinical challenge. Dynamic liver function tests offer a promising method for non-invasive in vivo assessment of liver function and metabolic phenotyping.<br /><br />
+ 
+By leveraging whole-body physiologically-based pharmacokinetic (PBPK) models, we're simulating these tests and positioning PBPK models as digital twins for metabolic phenotyping and liver function assessment. To develop and validate our models, we established the open pharmacokinetics database, PK-DB, containing curated data from 600+ clinical studies. Our models are individualizable and stratifiable, enabling simulation of lifestyle factors and co-administration effects on drug metabolism. Our models have been instrumental in clinical scenarios: from predicting individual outcomes post-hepatectomy to discerning the impact of CYP2D6 gene variants on liver function tests. These models are constructed hierarchically, describing metabolic and other biological processes in organs like the liver and kidneys, seamlessly integrated with whole-body physiology.<br /><br />
+
 Notably, all models and data are readily available and reproducible for reuse, encoded in the Systems Biology Markup Language (SBML). We will provide an overview of these PBPK models and demonstrate how SBML and FAIR principles can facilitate model development, coupling, and reuse."
 
 
