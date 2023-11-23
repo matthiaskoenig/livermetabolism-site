@@ -1,3 +1,26 @@
+- id: 'StemmerMallol2023_talinolol'
+  year: 2023
+  pdf: 'StemmerMallol2023_talinolol.pdf'
+  authors: 'Beatrice Stemmer Mallol, Jan Grzegorzewski, <b>Matthias König</b>'
+  title: 'Insights into Intestinal P-glycoprotein Function using Talinolol: A PBPK Modeling Approach'
+  journal: 'bioRxiv 2023.11.21.568168'
+  status: 'preprint'
+  doi: 10.1101/2023.11.21.568168v1
+  pmid:
+  keywords:
+    - PBPK
+    - talinolol
+    - P-glycoprotein
+    - pharmacokinetics
+    - OATP2B1
+    - OATB1B1
+    - renal impairment
+    - cirrhosis
+  project:
+  repository: https://github.com/matthiaskoenig/talinolol-model.git
+  abstract: "Talinolol is a cardioselective beta-blocker used in the treatment of various cardiovascular diseases and tachyarrhythmias. Its intestinal absorption is determined by uptake by the organic anion transporting polypeptide 2B1 (OATP2B1) and efflux via P-glycoprotein (P-gp). Talinolol can be taken up via OATP1B1 in the liver, where it enters the enterohepatic circulation. Talinolol is excreted unchanged in the urine and feces. Talinolol is widely used as a probe drug for the intestinal efflux transporter P-gp, which plays a critical role in protecting against potentially toxic substances and facilitating the elimination of xenobiotics. In this work, an extensive database of talinolol pharmacokinetics was established and used to develop and validate a physiologically based pharmacokinetic (PBPK) model of talinolol for P-gp phenotyping. The model was used to investigate the influence of several factors on talinolol pharmacokinetics: (i) inhibition of P-gp via drug-drug interaction; (i) genetic polymorphisms of P-gp; (iii) activity of OATP2B1 and OATP1B1; (iv) effect of disease, namely hepatic and renal impairment; and (v) site-specific distribution of P-gp and OATP2B1 in the intestine. The model accurately predicts the concentration-time profile of talinolol after oral and intravenous administration of single and multiple dosing. Furthermore, the model accurately describes the effect of genetic variants of P-gp on the pharmacokinetics of talinolol, the effect of inhibition of P-gp, the effect of renal impairment, as well as site-specific infusion of talinolol in the intestine. The detailed description of the intestinal absorption of talinolol and the predictions of talinolol pharmacokinetics as a function of hepatorenal impairment provide valuable clinical insights for metabolic phenotyping with talinolol. Both the model and the database are freely available for reuse."
+
+
 - id: 'Kohrs2023_reproducible.research.open.science'
   year: 2023
   pdf: 'Kohrs2023_reproducible.research.open.science.pdf'
@@ -22,7 +45,7 @@
   authors: 'Lena Lambers, Navina Waschinsky, Jana Schleicher, <b>Matthias König</b>, Hans-Michael Tautenhahn, Mohamed Albadry, Uta Dahmen and Tim Ricken'
   title: 'Quantifying Fat Zonation in Liver Lobules: An Integrated Multiscale In-silico Model Combining Disturbed Microperfusion and Fat Metabolism via a Continuum-Biomechanical Bi-scale, Tri-phasic Approach'
   journal: '17 September 2023, PREPRINT (Version 1) available at Research Square'
-  status: 'preprint'
+  status: 'preprint [accepted 2023-11-23]'
   doi: 10.21203/rs.3.rs-3348101/v1
   pmid:
   keywords:
