@@ -4,8 +4,8 @@
   date: '2023-11-03'
   image: Kohrs2023_elife.png
   link: 'https://elifesciences.org/articles/89736'
-  short: 'We are pleased to announce the publication of a paper that provides a roadmap for integrating reproducible research and open science practices into academic work.'
-  abstract: 'We are excited to announce that our recent paper, "Eleven Strategies for Making Reproducible Research and Open Science Training the Norm at Research Institutions," has been published, offering a roadmap for integrating reproducible research and open science practices into academic work. Developed in collaboration with the German Reproducibility Network, the paper proposes eleven strategies focusing on modifying research assessment criteria, enhancing training, and fostering community support. This work aims to encourage researchers and institutions to adopt practices that increase the reliability and accessibility of scientific research.'
+  short: 'We are pleased to announce our latest paper in eLife that provides a roadmap for integrating reproducible research and open science practices into academic work.'
+  abstract: 'We are excited to announce that our recent paper, "Eleven Strategies for Making Reproducible Research and Open Science Training the Norm at Research Institutions," has been published in eLife, offering a roadmap for integrating reproducible research and open science practices into academic work. Developed in collaboration with the German Reproducibility Network, the paper proposes eleven strategies focusing on modifying research assessment criteria, enhancing training, and fostering community support. This work aims to encourage researchers and institutions to adopt practices that increase the reliability and accessibility of scientific research.'
 
 - id: 'dietary_twin'
   status: 'current'
