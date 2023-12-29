@@ -1,3 +1,13 @@
+- id: 'species_comparison_preprint'
+  status: 'current'
+  title: 'Preprint: Cross-Species Variability in Lobular Geometry and Cytochrome P450 Hepatic Zonation: Insights into CYP1A2, CYP2E1, CYP2D6 and CYP3A4'
+  date: '2023-12-29'
+  image: species_comparison_preprint.png
+  link: 'https://www.biorxiv.org/content/10.1101/2023.12.28.573567v1'
+  short: "Our latest preprint on 'Cross-Species Variability in Lobular Geometry & Cytochrome P450 Hepatic Zonation' reveals insights into liver function across species using WSI technology."
+  abstract: 'This study explores the critical interplay between lobular geometry and the zonated distribution of cytochrome P450 (CYP) enzymes across species. We present an innovative approach to assess lobular geometry and zonation patterns using whole slide imaging (WSI). This method allows a detailed, systematic comparison of lobular structures and spatial distribution of key CYP450 enzymes and glutamine synthetase in four different species (mouse, rat, pig, and human). Our results shed light on species differences in lobular geometry and enzymatic zonation, providing critical insights for drug metabolism research. Based on our approach we could determine the minimum number of lobules required for a statistically representative analysis, an important piece of information when evaluating liver biopsies and deriving information from WSI.'
+
+
 - id: 'Kohrs2023_elife'
   status: 'current'
   title: 'Eleven Strategies for Making Reproducible Research and Open Science Training the Norm at Research Institutions'

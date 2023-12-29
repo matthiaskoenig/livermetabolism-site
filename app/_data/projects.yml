@@ -1,3 +1,28 @@
+- id: image_analysis
+  title: "Analysis of hepatic zonation patterns from whole-slide images"
+  publication:
+  project:
+  repository:
+  people:
+    - jonaspk98
+    - koenig
+  cooperation partners:
+  images: image_analysis.png
+  image_title: Lobulus segmentation in different species.
+  abstract: '
+  <p>
+  This project explores the critical interplay between lobular geometry and the zonated distribution of cytochrome P450 (CYP)
+enzymes across species. We present an innovative approach to assess lobular geometry and zonation patterns using
+whole slide imaging (WSI). This method allows a detailed, systematic comparison of lobular structures and spatial
+distribution of key CYP450 enzymes and glutamine synthetase in four different species (mouse, rat, pig, and human). Our
+results shed light on species differences in lobular geometry and enzymatic zonation, providing critical insights for drug
+metabolism research. Based on our approach we could determine the minimum number of lobules required for a
+statistically representative analysis, an important piece of information when evaluating liver biopsies and deriving
+information from WSI.
+   </p>
+  '
+
+
 - id: creatinine_inulin
   title: "Physiologically based pharmacokinetic (PBPK) model of creatinine and inulin"
   publication:

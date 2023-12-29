@@ -1,3 +1,24 @@
+- id: 'Albadry2023_species_comparison'
+  year: 2023
+  pdf: 'Albadry2023_species_comparison.pdf'
+  authors: 'Mohamed Albadry, Jonas Kuettner, Jan Grzegorzewski, Olaf Dirsch, Eva Kindler, Robert Klopfleisch, Vaclav Liska, Vladimira Moulisova, Sandra Nickel, Richard Palek, Jachym Rosendorf, Sylvia Saalfeld, Utz Settmacher, Hans-Michael Tautenhahn, <b>Matthias König*</b>, Uta Dahmen* (* equal contribution)'
+  title: 'Cross-Species Variability in Lobular Geometry and Cytochrome P450 Hepatic Zonation: Insights into CYP1A2, CYP2E1, CYP2D6 and CYP3A4'
+  journal: 'bioRxiv 2023.12.28.573567'
+  status: "preprint"
+  doi: https://doi.org/10.1101/2023.12.28.573567
+  pmid:
+  keywords:
+    - liver
+    - zonation
+    - cytochrome P450
+    - lobule geometry
+    - drug metabolism
+    - species
+  project:
+  repository:
+  abstract: "This study explores the critical interplay between lobular geometry and the zonated distribution of cytochrome P450 (CYP) enzymes across species. We present an innovative approach to assess lobular geometry and zonation patterns using whole slide imaging (WSI). This method allows a detailed, systematic comparison of lobular structures and spatial distribution of key CYP450 enzymes and glutamine synthetase in four different species (mouse, rat, pig, and human). Our results shed light on species differences in lobular geometry and enzymatic zonation, providing critical insights for drug metabolism research. Based on our approach we could determine the minimum number of lobules required for a statistically representative analysis, an important piece of information when evaluating liver biopsies and deriving information from WSI."
+
+
 - id: 'Kohrs2023_reproducible.research.open.science'
   year: 2023
   pdf: 'Kohrs2023_reproducible.research.open.science.pdf'
