@@ -68,7 +68,7 @@
 
 - id: 'afruja'
   status: 'current'
-  year: '2022-'
+  year: '2022-2024'
   name: 'Afruja Hossain'
   position: 'Bachelor student'
   image: afruja.png
@@ -78,7 +78,7 @@
   description: 'Afruja works on a systematic overview of the protein variability of cytochrome P450 (CYP450) isoforms in the human liver.'
 
 - id: 'hannah'
-  status: 'current'
+  status: 'alumni'
   year: '2023-08/2023-10'
   name: 'Hannah Menghis'
   position: 'Humboldt Internship Student (Brown University)'
@@ -122,7 +122,7 @@
   description: "Antonio will delve into the influence of parameter variability in PBPK models, focusing on the consequential effects for dynamic liver function assessments. The overarching objective of this project is to augment our comprehension of how inherent variability in parameters translates into intra-individual variability in pharmacokinetics."
 
 - id: 'huelya'
-  status: 'current'
+  status: 'alumni'
   year: '2023-10/2023-12'
   name: 'Hülya Karaboğa'
   position: 'ERASMUS'
@@ -133,7 +133,7 @@
   description: "Huelya will develop a physiologically based pharmacokinetic (PBPK) model to estimate the glomerular filtration rate (eGFR) using cystatin C."
 
 - id: 'frances'
-  status: 'current'
+  status: 'alumni'
   year: '2023-03/2023-09'
   name: 'Frances Okibedi'
   position: 'Internship'
@@ -144,7 +144,7 @@
   description: 'Frances works a physiologically based pharmacokinetic (PBPK) model of sorafenib for systemic treatment of hepatocellular carcinoma (HCC). Key questions are to study the effect of OATP activity and CYP3A4 inhibition on sorafenib pharmacokinetics and efficiency.'
 
 - id: 'sankha'
-  status: 'current'
+  status: 'alumni'
   year: '2022-11/2023-05'
   name: 'Sankha Das'
   affiliation: 'Birla Institute of Technology and Science Pilani'
