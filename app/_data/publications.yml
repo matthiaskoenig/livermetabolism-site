@@ -1,3 +1,23 @@
+- id: 'Internship.Report.Frances.Okibedi'
+  year: 2024
+  pdf: 'reports/Internship.Report.Frances.Okibedi.pdf'
+  authors: 'Internship Report Frances Okibedi (supervisor: <b>Matthias König</b>)'
+  title: 'A physiologically-based pharmacokinetic (PBPK) model of sorafenib for investigating the effect of sorafenib parameters in hepatorenal impairment'
+  journal: 'Internship report, July 2024'
+  status:
+  doi:
+  pmid:
+  keywords:
+    - sorafenib
+    - PBPK
+    - pharmacokinetics
+    - HCC
+    - liver function
+    - renal function
+  project:
+  repository: https://github.com/matthiaskoenig/sorafenib-model
+  abstract: 'Liver cancer ranks second in cancer-related deaths thereby making timely diagnosis and personalized treatment crucial. Hepatocellular carcinoma (HCC) patients often get diagnosed at advanced stages, hindering curative options like resection and ablation. Systemic treatment has become the standard therapy and sorafenib has been the primary systemic treatment for advanced HCC for the last ten years, being the first approved drug for this purpose. Sorafenib (Nexavar), is a multi-kinase inhibitor medication approved for primarily treating advanced renal cell carcinoma, hepatocellular carcinoma or other cancers. After oral administration, sorafenib enters hepatocytes via OATP1B-type carriers. It undergoes CYP3A4-mediated oxidative metabolism to sorafenib-N-oxide (M2) and UGT1A9-mediated glucuronidation forming sorafenib-glucuronide (SG). SG is secreted into bile mainly by ABCC2, with a fraction reuptaken by ABCC3, preventing ABCC2 saturation. In bile, SG can be excreted via the feces or converted back to sorafenib by a bacterial β-glucuronidase. Sorafenib is absorbed in the intestine, reentering the systemic circulation, contributing to elimination and detoxification. Sorafenib is excreted mainly by the feces (77%) and urine (19%). Hepatic and renal impairment could have a large impact on the pharmacokinetics of sorafenib. Within this work the pharmacokinetics of sorafenib were analyzed by developing a physiologically-based pharmacokinetic (PBPK) model based on extensive data curation of sorafenib data. The model allowed to simulate the time-concentration courses of sorafenib in various tissues and to calculate the pharmacokinetic parameters for sorafenib under single and multiple dosing regimes. The model was applied to study the dose-dependency of sorafenib treatment and to investigate the effect of hepatic and renal impairment on sorafenib pharmacokinetics.'
+
 - id: 'Albadry2023_species_comparison'
   year: 2023
   pdf: 'Albadry2023_species_comparison.pdf'
