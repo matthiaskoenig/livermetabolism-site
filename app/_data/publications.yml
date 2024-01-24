@@ -1,3 +1,23 @@
+- id: 'Tautenhahn2024_simliva'
+  year: 2024
+  pdf: 'Tautenhahn2024_simliva.pdf'
+  authors: 'Hans-Michael Tautenhahn, Tim Ricken, Uta Dahmen, Luis Mandl, Laura Bütow, Steffen Gerhäusser, Lena Lambers, Xinpei Chen, Elina Lehmann, Olaf Dirsch, Matthias König'
+  title: 'SimLivA – Modelling ischemia reperfusion injury in the liver: A first step towards a clinical decision support tool.'
+  journal: 'GAMM-Mitteilungen. (2024), e202370003'
+  status: 'accepted'
+  doi: "10.1002/gamm.202370003"
+  pmid:
+  keywords:
+    - ischemia-reperfusion injury
+    - IRI
+    - liver transplantation
+    - ODE
+    - PDE
+    - porous media
+  project:
+  repository:
+  abstract: "The SIMulation supported LIVer Assessment for donor organs (SimLivA) project aims to develop a mathematical model to accurately simulate the influence of mechanical alterations in marginal liver grafts (specifically steatotic ones) and cold ischemia on early ischemia-reperfusion injury (IRI) during liver transplantation. Our project tackles significant research challenges, including the co-development of computational methodologies, experimental studies, clinical processes, and technical workflows. We aim to refine a continuum-biomechanical model for enhanced IRI prediction, collect pivotal experimental and clinical data, and assess the clinical applicability of our model. Our efforts involve augmenting and tailoring a coupled continuum-biomechanical, multiphase, and multi-scale partial differential equation-ordinary differential equation (PDE-ODE) model of the liver lobule, allowing us to numerically simulate IRI depending on the degree of steatosis and the duration of ischemia. The envisaged model will intertwine the structure, perfusion, and function of the liver, serving as a crucial aid in clinical decision-making processes. We view this as the initial step towards an in-silico clinical decision support tool aimed at enhancing the outcomes of liver transplantation. In this paper, we provide an overview of the SimLivA project and our preliminary findings, which include: a cellular model that delineates critical processes in the context of IRI during transplantation; and the integration of this model into a multi-scale PDE-ODE model using a homogenized, multi-scale, multi-component approach within the Theory of Porous Media (TPM) framework. The model has successfully simulated the interconnected relationship between structure, perfusion, and function—all of which are integral to IRI. Initial results show simulations at the cellular scale that describe critical processes related to IRI during transplantation. After integrating this model into a multiscale PDE-ODE model, first simulations were performed on the spatial distribution of key functions during warm and cold ischaemia. In addition, we were able to study the effect of tissue perfusion and temperature, two critical parameters in the context of liver transplantation and IRI."
+
 - id: 'Internship.Report.Frances.Okibedi'
   year: 2024
   pdf: 'reports/Internship.Report.Frances.Okibedi.pdf'
@@ -135,27 +155,6 @@
   project:
   repository: https://github.com/matthiaskoenig/pancreas-model
   abstract: "The pancreas plays a critical role in maintaining glucose homeostasis through the secretion of hormones from the islets of Langerhans. Glucose-stimulated insulin secretion (GSIS) by the pancreatic β-cell is the main mechanism for reducing elevated plasma glucose. Here we present a systematic modeling workflow for the development of kinetic pathway models using the Systems Biology Markup Language (SBML). Steps include retrieval of information from databases, curation of experimental and clinical data for model calibration and validation, integration of heterogeneous data including absolute and relative measurements, unit normalization, data normalization, and model annotation. An important factor was the reproducibility and exchangeability of the model, which allowed the use of various existing tools. The workflow was applied to construct a novel data-driven kinetic model of GSIS in the pancreatic β-cell based on experimental and clinical data from 39 studies spanning 50 years of pancreatic, islet, and β-cell research in humans, rats, mice, and cell lines. The model consists of detailed glycolysis and phenomenological equations for insulin secretion coupled to cellular energy state, ATP dynamics and (ATP/ADP ratio). Key findings of our work are that in GSIS there is a glucose-dependent increase in almost all intermediates of glycolysis. This increase in glycolytic metabolites is accompanied by an increase in energy metabolites, especially ATP and NADH. One of the few decreasing metabolites is ADP, which, in combination with the increase in ATP, results in a large increase in ATP/ADP ratios in the β-cell with increasing glucose. Insulin secretion is dependent on ATP/ADP, resulting in glucose-stimulated insulin secretion. The observed glucose-dependent increase in glycolytic intermediates and the resulting change in ATP/ADP ratios and insulin secretion is a robust phenomenon observed across data sets, experimental systems and species. Model predictions of the glucose-dependent response of glycolytic intermediates and biphasic insulin secretion are in good agreement with experimental measurements. Our model predicts that factors affecting ATP consumption, ATP formation, hexokinase, phosphofructokinase, and ATP/ADP-dependent insulin secretion have a major effect on GSIS. In conclusion, we have developed and applied a systematic modeling workflow for pathway models that allowed us to gain insight into key mechanisms in GSIS in the pancreatic β-cell."
-
-- id: 'Tautenhahn2023_simliva'
-  year: 2023
-  pdf: 'Tautenhahn2023_simliva.pdf'
-  authors: 'Hans-Michael Tautenhahn, Tim Ricken, Uta Dahmen, Luis Mandl, Laura Bütow, Steffen Gerhäusser, Lena Lambers, Xinpei Chen, Elina Lehmann, Olaf Dirsch, Matthias König'
-  title: 'SimLivA – Modelling ischemia reperfusion injury in the liver: A first step towards a clinical decision support tool.'
-  journal: 'GAMM (accepted 2023-11-22)'
-  status: 'accepted'
-  doi:
-  pmid:
-  keywords:
-    - ischemia-reperfusion injury
-    - IRI
-    - liver transplantation
-    - ODE
-    - PDE
-    - porous media
-  project:
-  repository:
-  abstract: "The SIMulation supported LIVer Assessment for donor organs (SimLivA) project aims to develop a mathematical model to accurately simulate the influence of mechanical alterations in marginal liver grafts (specifically steatotic ones) and cold ischemia on early ischemia-reperfusion injury (IRI) during liver transplantation. Our project tackles significant research challenges, including the co-development of computational methodologies, experimental studies, clinical processes, and techni- cal workflows. We aim to refine a continuum-biomechanical model for enhanced IRI prediction, collect pivotal experimental and clinical data, and assess the clinical applicability of our model. Our efforts involve augmenting and tailoring a coupled continuum-biomechanical, multiphase, and multi-scale partial differential equation- ordinary differential equation (PDE-ODE) model of the liver lobule, allowing us to numerically simulate IRI depending on the degree of steatosis and the duration of ischemia. The envisaged model will intertwine the structure, perfusion, and function of the liver, serving as a crucial aid in clinical decision-making processes. We view this as the initial step towards an in-silico clinical decision support tool aimed at en- hancing the outcomes of liver transplantation. In this paper, we provide an overview of the SimLivA project and our preliminary findings, which include: a cellular model that delineates critical processes in the context of IRI during transplantation; and the integration of this model into a multi-scale PDE-ODE model using a homogenized, multi-scale, multi-component approach within the Theory of Porous Media (TPM) framework. The model has successfully simulated the interconnected relationship between structure, perfusion, and function—all of which are integral to IRI. Additionally, we have been able to study the impact of tissue perfusion and temperature, two critical parameters in the context of liver transplantation."
-
 
 - id: 'Bachelor.Thesis.Beatrice.Stemmer.Mallol'
   year: 2023
