@@ -1,10 +1,33 @@
+- id: 'Hoepfl2024_uncertainty'
+  year: 2024
+  pdf:
+  authors: 'Sebastian Höpfl, Mohamed Albadry, Uta Dahmen, Karl-Heinz Herrmann, Eva Marie Kindler, <b>Matthias König</b>, Jürgen Rainer Reichenbach, Hans-Michael Tautenhahn, Weiwei Wei, Wan-Ting Zhao, Nicole Erika Radde'
+  title: 'Bayesian Modeling of Time Series Data (BayModTS) - A FAIR Workflow to Process Sparse and Highly Variable Data'
+  journal:
+  status: 'submitted'
+  doi:
+  pmid:
+  keywords:
+    - Time Series Data
+    - Bayesian Inference
+    - Posterior Predictive Distribution
+    - SBML
+    - FAIR Principles
+    - Hepatology
+  project:
+  repository:
+  abstract: "Motivation. Systems biology aims to better understand living systems through mathematical modelling of experimental and clinical data. A pervasive challenge in quantitative dynamical modelling is the integration of time series measurements, which often have high variability and low sampling resolution. Approaches are required to utilise such information while consistently handling uncertainties.
+  Results. We present BayModTS (Bayesian Modeling of Time Series data), a new FAIR (Findable, Accessible, Interoperable and Reusable) workflow for processing and analysing sparse and highly variable time series data. BayModTS consistently transfers uncertainties from data to model predictions, including process knowledge via parameterised models. Further, credible differences in the dynamics of different conditions can be identified by filtering noise. To demonstrate the power and versatility of BayModTS, we applied it to three hepatic datasets gathered from three different species and with different measurement techniques: (i) blood perfusion measurements by magnetic resonance imaging in rat livers after portal vein ligation, (ii) CT-based volumetric assessment of human liver remnants after clinical liver resection, and (iii) pharmacokinetic time series of different drugs in normal and steatotic mice.
+  Availability and Implementation. The BayModTS codebase is available on GitHub at https://github.com/Systems-Theory-in-Systems-Biology/BayModTS. The repository contains a Python script for the executable BayModTS workflow and a widely applicable SBML (Systems Biology Markup Language) model for retarded transient functions. In addition, all examples from the paper are included in the repository. Data and code of the application examples are stored on DaRUS https://doi.org/10.18419/darus-3876."
+
+
 - id: 'Tautenhahn2024_simliva'
   year: 2024
   pdf: 'Tautenhahn2024_simliva.pdf'
   authors: 'Hans-Michael Tautenhahn, Tim Ricken, Uta Dahmen, Luis Mandl, Laura Bütow, Steffen Gerhäusser, Lena Lambers, Xinpei Chen, Elina Lehmann, Olaf Dirsch, Matthias König'
   title: 'SimLivA – Modelling ischemia reperfusion injury in the liver: A first step towards a clinical decision support tool.'
   journal: 'GAMM-Mitteilungen. (2024), e202370003'
-  status: 'accepted'
+  status:
   doi: "10.1002/gamm.202370003"
   pmid:
   keywords:
