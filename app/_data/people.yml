@@ -11,6 +11,17 @@
   <br />
   Research projects on glucose homeostasis in normal and diabetic subjects, personalization of liver function tests to improve diagnosis, and stratification and individualization of computational models for precision medicine.'
 
+- id: 'mariia'
+  status: 'current'
+  year: '2024-'
+  name: 'Mariia Myshkina'
+  position: 'Ph.D. student'
+  image: myshkina.png
+  orcid:
+  repository: 'https://github.com/MariiaMysh'
+  homepage:
+  description: 'Mariia works on ATLAS, a decision support tool for hepatocellular carcinoma (HCC). Based on AI methods, ATLAS processes all relevant patient data from databases, systems medicine and continuum biomechanical in silico prognosis models as well as individual patient data. The tool is being developed in a co-design approach by experts in surgical oncology, mathematical modeling and machine learning.'
+
 - id: 'jonaspk98'
   status: 'current'
   year: '2022-'
@@ -130,7 +141,7 @@
   orcid:
   repository:
   homepage:
-  description: "Huelya will develop a physiologically based pharmacokinetic (PBPK) model to estimate the glomerular filtration rate (eGFR) using cystatin C."
+  description: "Huelya will develop a physiologically based pharmacokinetic (PBPK) model of the ACE inhibitor captopril."
 
 - id: 'frances'
   status: 'alumni'
