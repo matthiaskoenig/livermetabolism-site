@@ -1,3 +1,21 @@
+- id: 'myshkina_atlas'
+  status: 'current'
+  title: 'Mariia Myshkina has started her PhD in the ATLAS project.'
+  date: '2024-02-01'
+  image: myshkina_atlas.jpg
+  link:
+  short: "We welcome Mariia to our team who will be working on computational modeling of the liver within ATLAS."
+  abstract: 'Mariia will develop PBPK models of the liver in HCC coupled with machine learning approaches.'
+
+- id: 'edith_paris'
+  status: 'current'
+  title: 'Participation in the First EDITH-CSA Ecosystem Meeting - Advancing the Virtual Human Twin'
+  date: '2024-01-18'
+  image: edith_paris.jpeg
+  link: 'https://www.vph-institute.org/news/advancing-the-virtual-human-twin-insights-from-the-first-edith-csa-ecosystem-meeting.html'
+  short: "We participated in the first EDITH-CSA 'Ecosystem meeting on building the Virtual Human Twin was held at the École Polytechnique de Paris on January 18 and 19, 2024."
+  abstract: 'After the official launch of the Virtual Human Twin initiative and the VHT Manifesto in December, the first open community meeting attracted over 180 registered guests from the EDITH-CSA consortium and the wider ecosystem. The enthusiasm of the wider community to travel to Paris (amidst difficult weather conditions) and proactively contributing towards developing the roadmap for the VHT was inspiring.'
+
 - id: 'species_comparison_preprint'
   status: 'current'
   title: 'Preprint: Cross-Species Variability in Lobular Geometry and Cytochrome P450 Hepatic Zonation: Insights into CYP1A2, CYP2E1, CYP2D6 and CYP3A4'
@@ -6,7 +24,6 @@
   link: 'https://www.biorxiv.org/content/10.1101/2023.12.28.573567v1'
   short: "Our latest preprint on 'Cross-Species Variability in Lobular Geometry & Cytochrome P450 Hepatic Zonation' reveals insights into liver function across species using WSI technology."
   abstract: 'This study explores the critical interplay between lobular geometry and the zonated distribution of cytochrome P450 (CYP) enzymes across species. We present an innovative approach to assess lobular geometry and zonation patterns using whole slide imaging (WSI). This method allows a detailed, systematic comparison of lobular structures and spatial distribution of key CYP450 enzymes and glutamine synthetase in four different species (mouse, rat, pig, and human). Our results shed light on species differences in lobular geometry and enzymatic zonation, providing critical insights for drug metabolism research. Based on our approach we could determine the minimum number of lobules required for a statistically representative analysis, an important piece of information when evaluating liver biopsies and deriving information from WSI.'
-
 
 - id: 'Kohrs2023_elife'
   status: 'current'
