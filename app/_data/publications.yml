@@ -1,3 +1,25 @@
+- id: 'Lambers2024_fat_zonation'
+  year: 2024
+  date: 2024-02-25
+  pdf: 'Lambers2024_fat_zonation.pdf'
+  authors: 'Lena Lambers, Navina Waschinsky, Jana Schleicher, <b>Matthias König</b>, Hans-Michael Tautenhahn, Mohamed Albadry, Uta Dahmen and Tim Ricken'
+  title: 'Quantifying fat zonation in liver lobules: an integrated multiscale in silico model combining disturbed microperfusion and fat metabolism via a continuum biomechanical bi-scale, tri-phasic approach '
+  journal: 'Biomech Model Mechanobiol. 2024 Feb 25.
+Format:'
+  status:
+  doi: 10.1007/s10237-023-01797-0
+  pmid: 38402347
+  keywords:
+    - Multiscale Approach
+    - Homogenization
+    - Theory of Porous Media (TPM)
+    - Growth Kinematics
+    - Metabolic dysfunction-Associated Steatotic Liver Disease (MASLD)
+    - FEM boundary problem
+  project:
+  repository:
+  abstract: "Metabolic zonation refers to the spatial separation of metabolic functions along the sinusoidal axes of the liver. This phenomenon forms the foundation for adjusting hepatic metabolism to physiological requirements in health and disease (e.g., metabolic dysfunction-associated steatotic liver disease/MASLD). Zonated metabolic functions are influenced by zonal morphological abnormalities in the liver, such as periportal fibrosis and pericentral steatosis. We aim to analyze the interplay between microperfusion, oxygen gradient, fat metabolism and resulting zonated fat accumulation in a liver lobule. Therefore we developed a continuum biomechanical, tri-phasic, bi-scale, and multicomponent in silico model, which allows to numerically simulate coupled perfusion-function-growth interactions two-dimensionally in liver lobules. The developed homogenized model has the following specifications: (i) thermodynamically consistent, (ii) tri-phase model (tissue, fat, blood), (iii) penta-substances (glycogen, glucose, lactate, FFA, and oxygen), and (iv) bi-scale approach (lobule, cell). Our presented in silico model accounts for the mutual coupling between spatial and time-dependent liver perfusion, metabolic pathways and fat accumulation. The model thus allows the prediction of fat development in the liver lobule, depending on perfusion, oxygen and plasma concentration of free fatty acids (FFA), oxidative processes, the synthesis and the secretion of triglycerides (TGs). The use of a bi-scale approach allows in addition to focus on scale bridging processes. Thus, we will investigate how changes at the cellular scale affect perfusion at the lobular scale and vice versa. This allows to predict the zonation of fat distribution (periportal or pericentral) depending on initial conditions, as well as external and internal boundary value conditions."
+
 - id: 'Hoepfl2024_uncertainty'
   year: 2024
   pdf:
@@ -140,25 +162,25 @@
   repository: https://github.com/matthiaskoenig/talinolol-model.git
   abstract: "Talinolol is a cardioselective beta-blocker used in the treatment of various cardiovascular diseases and tachyarrhythmias. Its intestinal absorption is determined by uptake by the organic anion transporting polypeptide 2B1 (OATP2B1) and efflux via P-glycoprotein (P-gp). Talinolol can be taken up via OATP1B1 in the liver, where it enters the enterohepatic circulation. Talinolol is excreted unchanged in the urine and feces. Talinolol is widely used as a probe drug for the intestinal efflux transporter P-gp, which plays a critical role in protecting against potentially toxic substances and facilitating the elimination of xenobiotics. In this work, an extensive database of talinolol pharmacokinetics was established and used to develop and validate a physiologically based pharmacokinetic (PBPK) model of talinolol for P-gp phenotyping. The model was used to investigate the influence of several factors on talinolol pharmacokinetics: (i) inhibition of P-gp via drug-drug interaction; (i) genetic polymorphisms of P-gp; (iii) activity of OATP2B1 and OATP1B1; (iv) effect of disease, namely hepatic and renal impairment; and (v) site-specific distribution of P-gp and OATP2B1 in the intestine. The model accurately predicts the concentration-time profile of talinolol after oral and intravenous administration of single and multiple dosing. Furthermore, the model accurately describes the effect of genetic variants of P-gp on the pharmacokinetics of talinolol, the effect of inhibition of P-gp, the effect of renal impairment, as well as site-specific infusion of talinolol in the intestine. The detailed description of the intestinal absorption of talinolol and the predictions of talinolol pharmacokinetics as a function of hepatorenal impairment provide valuable clinical insights for metabolic phenotyping with talinolol. Both the model and the database are freely available for reuse."
 
-- id: 'Lambers2023_fat_zonation_preprint'
-  year: 2023
-  pdf: 'Lambers2023_fat_zonation_preprint.pdf'
-  authors: 'Lena Lambers, Navina Waschinsky, Jana Schleicher, <b>Matthias König</b>, Hans-Michael Tautenhahn, Mohamed Albadry, Uta Dahmen and Tim Ricken'
-  title: 'Quantifying Fat Zonation in Liver Lobules: An Integrated Multiscale In-silico Model Combining Disturbed Microperfusion and Fat Metabolism via a Continuum-Biomechanical Bi-scale, Tri-phasic Approach'
-  journal: '17 September 2023, PREPRINT (Version 1) available at Research Square'
-  status: 'preprint [accepted 2023-11-23]'
-  doi: 10.21203/rs.3.rs-3348101/v1
-  pmid:
-  keywords:
-    - Multiscale Approach
-    - Homogenization
-    - Theory of Porous Media (TPM)
-    - Growth Kinematics
-    - Metabolic dysfunction-Associated Steatotic Liver Disease (MASLD)
-    - FEM boundary problem
-  project:
-  repository:
-  abstract: "Metabolic zonation refers to the spatial separation of metabolic functions along the sinusoidal axes of the liver. This phenomenon forms the foundation for adjusting hepatic metabolism to physiological requirements in health and disease (e.g. metabolic dysfunction-associated steatotic liver disease/ MASLD). Zonated metabolic functions are influenced by zonal morphological abnormalities in the liver, such as periportal fibrosis and pericentral steatosis. We aim to analyze the interplay between microperfusion, oxygen gradient, fat metabolism and resulting zonated fat accumulation in a liver lobule. Therefore we developed a continuum-biomechanical, tri-phasic, bi-scale, and multicomponent in-silico model, which allows to numerically simulate coupled perfusion-function-growth interactions two-dimensionally in liver lobules. The developed homogenized model has the following specifications: i) thermodynamically consistent, ii) tri-phase model (tissue, fat, blood), iii) penta-substances (glycogen, glucose, lactate, FFA, oxygen), and iv) bi-scale approach (lobule, cell). Our presented in-silico model accounts for the mutual coupling between spatial and time-dependent liver perfusion, metabolic pathways and fat accumulation. The model thus allows the prediction of fat development in the liver lobule, depending on perfusion, oxygen and plasma concentration of free fatty acids (FFA), oxidative processes, the synthesis and the secretion of triglycerides (TGs). The use of a bi-scale approach allows in addition to focus on scale bridging processes. Thus, we will investigate how changes at the cellular scale affect perfusion at the lobular scale and vice versa. This allows to predict the zonation of fat distribution (periportal or pericentral) depending on initial conditions, as well as external and internal boundary value conditions."
+#- id: 'Lambers2023_fat_zonation_preprint'
+#  year: 2023
+#  pdf: 'Lambers2023_fat_zonation_preprint.pdf'
+#  authors: 'Lena Lambers, Navina Waschinsky, Jana Schleicher, <b>Matthias König</b>, Hans-Michael Tautenhahn, Mohamed Albadry, Uta Dahmen and Tim Ricken'
+#  title: 'Quantifying Fat Zonation in Liver Lobules: An Integrated Multiscale In-silico Model Combining Disturbed Microperfusion and Fat Metabolism via a Continuum-Biomechanical Bi-scale, Tri-phasic Approach'
+#  journal: '17 September 2023, PREPRINT (Version 1) available at Research Square'
+#  status: 'preprint [accepted 2023-11-23]'
+#  doi: 10.21203/rs.3.rs-3348101/v1
+#  pmid:
+#  keywords:
+#    - Multiscale Approach
+#    - Homogenization
+#    - Theory of Porous Media (TPM)
+#    - Growth Kinematics
+#    - Metabolic dysfunction-Associated Steatotic Liver Disease (MASLD)
+#    - FEM boundary problem
+#  project:
+#  repository:
+#  abstract: "Metabolic zonation refers to the spatial separation of metabolic functions along the sinusoidal axes of the liver. This phenomenon forms the foundation for adjusting hepatic metabolism to physiological requirements in health and disease (e.g. metabolic dysfunction-associated steatotic liver disease/ MASLD). Zonated metabolic functions are influenced by zonal morphological abnormalities in the liver, such as periportal fibrosis and pericentral steatosis. We aim to analyze the interplay between microperfusion, oxygen gradient, fat metabolism and resulting zonated fat accumulation in a liver lobule. Therefore we developed a continuum-biomechanical, tri-phasic, bi-scale, and multicomponent in-silico model, which allows to numerically simulate coupled perfusion-function-growth interactions two-dimensionally in liver lobules. The developed homogenized model has the following specifications: i) thermodynamically consistent, ii) tri-phase model (tissue, fat, blood), iii) penta-substances (glycogen, glucose, lactate, FFA, oxygen), and iv) bi-scale approach (lobule, cell). Our presented in-silico model accounts for the mutual coupling between spatial and time-dependent liver perfusion, metabolic pathways and fat accumulation. The model thus allows the prediction of fat development in the liver lobule, depending on perfusion, oxygen and plasma concentration of free fatty acids (FFA), oxidative processes, the synthesis and the secretion of triglycerides (TGs). The use of a bi-scale approach allows in addition to focus on scale bridging processes. Thus, we will investigate how changes at the cellular scale affect perfusion at the lobular scale and vice versa. This allows to predict the zonation of fat distribution (periportal or pericentral) depending on initial conditions, as well as external and internal boundary value conditions."
 
 - id: 'Maheshvare2023_pancreas'
   year: 2023
