@@ -132,6 +132,28 @@
   homepage:
   description: "Antonio will delve into the influence of parameter variability in PBPK models, focusing on the consequential effects for dynamic liver function assessments. The overarching objective of this project is to augment our comprehension of how inherent variability in parameters translates into intra-individual variability in pharmacokinetics."
 
+- id: 'deepa'
+  status: 'current'
+  year: '2023-2024'
+  name: 'Deepa Maheshvare'
+  position: 'Ph.D. student (internship)'
+  image: deepa.png
+  orcid:
+  repository: 'https://github.com/DeepaMahm'
+  homepage:
+  description: 'Deepa works on enhancing our understanding of morphine pharmacokinetics based on a physiologically based modeling approach.'
+
+- id: 'rohinichakraborty'
+  status: 'current'
+  year: '2024'
+  name: 'Rohini Chakraborty'
+  position: 'Data curation'
+  image:
+  orcid:
+  repository: 'https://github.com/rohinichakraborty'
+  homepage:
+  description: 'Rohini supports the data curation for morphine pharmacokinetics.'
+
 - id: 'huelya'
   status: 'alumni'
   year: '2023-10/2023-12'
