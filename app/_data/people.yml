@@ -88,17 +88,6 @@
   homepage:
   description: 'Afruja works on a systematic overview of the protein variability of cytochrome P450 (CYP450) isoforms in the human liver.'
 
-- id: 'hannah'
-  status: 'alumni'
-  year: '2023-08/2023-10'
-  name: 'Hannah Menghis'
-  position: 'Humboldt Internship Student (Brown University)'
-  image: hannah.png
-  orcid:
-  repository: 'https://github.com/hannah3menghis'
-  homepage:
-  description: 'Hannah will establish a pharmacokinetic dataset of semaglutide and develop an initial version of a physiologically based pharmacokinetic (PBPK) model of the GLP-1 inhibitor semaglutide. The objective is to enhance our understanding of the underlying causes of intraindividual variability in semaglutide treatment, e.g., differences in renal function.'
-
 - id: 'samira'
   status: 'current'
   year: '2023-09/2023-12'
@@ -164,6 +153,28 @@
   repository: 'https://github.com/ykulanoglu'
   homepage:
   description: 'Yusuf works on a physiologically based pharmacokinetic model of the direct renin inhibitor aliskiren.'
+
+- id: 'nike'
+  status: 'current'
+  year: '2024'
+  name: 'Nike Nemitz'
+  position: 'Bachelor project'
+  image: nike.png
+  orcid:
+  repository: 'https://github.com/nikenemitz'
+  homepage:
+  description: 'Nike develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of SGLT2 inhibitor dapagliflozin. The objective is to enhance our understanding of the underlying causes of intraindividual variability in diabetes treatment with SGLT2 inhibitors, e.g., differences in hepatorenal function.'
+
+- id: 'hannah'
+  status: 'alumni'
+  year: '2023-08/2023-10'
+  name: 'Hannah Menghis'
+  position: 'Humboldt Internship Student (Brown University)'
+  image: hannah.png
+  orcid:
+  repository: 'https://github.com/hannah3menghis'
+  homepage:
+  description: 'Hannah will establish a pharmacokinetic dataset of semaglutide and develop an initial version of a physiologically based pharmacokinetic (PBPK) model of the GLP-1 inhibitor semaglutide. The objective is to enhance our understanding of the underlying causes of intraindividual variability in semaglutide treatment, e.g., differences in renal function.'
 
 - id: 'huelya'
   status: 'alumni'
