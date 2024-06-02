@@ -31,6 +31,14 @@ Level 1 Version 5 of SED-ML significantly enhances the capabilities for modelers
 
 For more information about SED-ML and its applications, visit https://sed-ml.org.'
 
+- id: 'nike_yusuf_projects'
+  status: 'current'
+  title: 'New projects: Nike Nemitz and Yusuf Ali Kulanoglu start PBPK Modeling Projects'
+  date: '2024-04-15'
+  image: nike_yusuf_projects.png
+  link: 'https://www.degruyter.com/document/doi/10.1515/jib-2024-0008/html'
+  short: "Nike Nemitz and Yusuf Ali Kulanoglu will develop PBPK models for dapagliflozin and aliskiren, respectively, aiming to enhance understanding of pharmacokinetics and pharmacodynamics in diabetes and cardiovascular treatments."
+  abstract: 'Nike Nemitz is developing a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the SGLT2 inhibitor dapagliflozin. The objective is to enhance understanding of intraindividual variability in diabetes treatment with SGLT2 inhibitors, focusing on differences in hepatorenal function. Yusuf Ali Kulanoglu is working on a PBPK model of the direct renin inhibitor aliskiren to improve understanding of its pharmacokinetics and the influencing factors. Both projects aim to provide deeper insights into drug behavior and variability, potentially improving therapeutic outcomes.'
 
 - id: 'master_thesis_shubhankar.palwankar'
   status: 'current'
