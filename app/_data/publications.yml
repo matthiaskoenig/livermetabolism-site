@@ -1,3 +1,26 @@
+- id: 'Master.Thesis.Shubhankar.Palwankar'
+  year: 2024
+  pdf: 'theses/Bachelor.Thesis.Master.Thesis.Shubhankar.Palwankar.pdf'
+  authors: 'Master Thesis Shubhankar Palwankar (supervisor: <b>Matthias König</b>)'
+  title: 'Enhancing Our Understanding of Enalapril’s Pharmacokinetics: A Physiologically Based Modeling Approach'
+  journal: 'Master Thesis, May 2024'
+  status:
+  doi:
+  pmid:
+  keywords:
+    - hypertension
+    - enalapril
+    - PBPK
+    - pharmacokinetics
+    - CES1
+    - liver function
+    - renal function
+    - hepatic impairment
+    - renal impairment
+  project: https://docs.google.com/presentation/d/e/2PACX-1vQQGe0Q_kiCYH_fgLc1FOBiq9vUzHY7nCsEC_Ul0eQQpgG2kTwMYVm0CR1z8Hgl1xnt7eQh3-iqc4wG/pub?start=false&loop=false&delayms=3000
+  repository: https://github.com/matthiaskoenig/enalapril-model
+  abstract: 'Enalapril is a medication used to treat high blood pressure and a num- ber of other cardiovascular conditions. The renin-angiotensin-aldosterone system (RAAS) is the main component involved in the regulation of blood pressure in the body. One of the key steps in this process is the conver- sion of angiotensin I to angiotensin II by angiotensin converting enzyme (ACE). Enalapril is an ACE inhibitor and therefore helps to lower blood pressure. Pharmacokinetics is the branch of pharmacology that studies how the body absorbs, distributes, metabolizes, and eliminates drugs over time. After administration as enalapril maleate, it is absorbed in the intestine and converted by carboxylesterase 1 (CES1) in the liver to the active metabolite, enalaprilat. Enalapril and enalaprilat are eliminated from the body by re- nal clearance. A physiologically based pharmacokinetic (PBPK) model was developed to investigate the pharmacokinetics of enalapril and the factors influencing it. As part of the work, an extensive database of enalapril phar- macokinetics consisting of data from 49 clinical trials was established and used to parameterize and validate the computational model. The model was used to investigate the effect of renal impairment, hepatic impairment and changes in CES1 activity on the pharmacokinetics of enalapril and enalapri- lat, as these three factors are known to have a major influence on the phar- macokinetics of enalapril. The model shows good agreement with a wide range of enalapril and enalaprilat data in serum, plasma and urine under different conditions (healthy, renal impairment, hepatic impairment, CES1 mutations). The model is available in SBML under a CC-BY 4.0 license with all data freely available from the PK-DB pharmacokinetics database.'
+
 - id: 'Gerhaeusser2024_spt_model'
   year: 2024
   date: 2024-03-29
@@ -20,6 +43,9 @@
   project:
   repository:
   abstract: "Multiscale modeling requires the coupling of models on different scales, often based on different mathematical approaches and developed by different research teams. This poses many challenges, such as defining interfaces for coupling, reproducible exchange of submodels, efficient simulation of the models, or reproducibility of results. Here, we present a multiscale digital twin of the liver that couples a partial differential equation (PDE)-based porous media approach for the hepatic lobule with cellular-scale ordinary differential equation (ODE)-based models. The models based on the theory of porous media describe transport, tissue mechanical properties, and deformations at the lobular scale, while the cellular models describe hepatic metabolism in terms of drug metabolism and damage in terms of necrosis. The resulting multiscale model of the liver was used to simulate perfusion-zonation-function relationships in the liver spanning scales from single cell to the lobulus. The model was applied to study the effects of (i) protein zonation patterns (metabolic zonation) and (ii) drug concentration dependence on spatially heterogeneous liver damage in the form of necrosis. Depending on the zonation pattern, different liver damage patterns could be reproduced, including periportal and pericentral necrosis as seen in drug-induced liver injury (DILI). Increasing the drug concentration led to an increase in the observed damage pattern. A key point for the success was the integration of domain-specific simulators based on standard exchange formats, i.e., libroadrunner for the high-performance simulation of ODE-based systems and FEBio for the simulation of the continuum-biomechanical part. This allows a standardized and reproducible exchange of cellular scale models in the Systems Biology Markup Language (SBML) between research groups."
+
+
+
 
 - id: 'Lambers2024_fat_zonation'
   year: 2024
