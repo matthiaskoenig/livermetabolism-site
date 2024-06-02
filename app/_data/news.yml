@@ -2,7 +2,7 @@
   status: 'current'
   title: 'New Project Launch via Humboldt Internship Program (HIP): PK-LLM by Prerna Parakkat'
   date: '2024-05-23'
-  image: pk_llm.png
+  image: prerna_pk_llm.png
   link:
   short: "We are excited to announce the start of a new project under the Humboldt Internship Program (HIP) by Prerna Parakkat. Prerna will be working on PK-LLM: Implementing a Large Language Model (LLM) as an Expert System for Pharmacokinetic (PK) Data Curation from Scientific Publications."
   abstract: 'The project focuses on creating a specialized LLM tailored to interpret and extract pharmacokinetic data from diverse scientific texts, automating the extraction of key data such as parameters, dosing information, and subject details. It also aims to integrate this system with existing pharmacokinetic databases and computational modeling workflows for digital twins. We anticipate significant improvements in the accuracy and efficiency of pharmacokinetic data extraction and curation, setting a new standard in the field.'
@@ -15,6 +15,22 @@
   link: 'https://www.frontiersin.org/journals/pharmacology/articles/10.3389/fphar.2024.1404938/full'
   short: "Our latest publication on 'Cross-Species Variability in Lobular Geometry & Cytochrome P450 Hepatic Zonation' reveals insights into liver function across species using WSI technology."
   abstract: 'This study explores the critical interplay between lobular geometry and the zonated distribution of cytochrome P450 (CYP) enzymes across species. We present an innovative approach to assess lobular geometry and zonation patterns using whole slide imaging (WSI). This method allows a detailed, systematic comparison of lobular structures and spatial distribution of key CYP450 enzymes and glutamine synthetase in four different species (mouse, rat, pig, and human). Our results shed light on species differences in lobular geometry and enzymatic zonation, providing critical insights for drug metabolism research. Based on our approach we could determine the minimum number of lobules required for a statistically representative analysis, an important piece of information when evaluating liver biopsies and deriving information from WSI.'
+
+- id: 'sedml_l1v5_publication'
+  status: 'current'
+  title: 'Publication: The Simulation Experiment Description Markup Language (SED-ML): Language Specification for Level 1 Version 5'
+  date: '2024-04-15'
+  image: sedml_l1v5_publication.png
+  link: 'https://www.degruyter.com/document/doi/10.1515/jib-2024-0008/html'
+  short: "Level 1 Version 5 of SED-ML enhances the ability to annotate, archive, share, and reproduce computational simulation experiments by allowing modelers to define tasks, model changes, ranges, and outputs using the Kinetic Simulation Algorithm Ontology (KiSAO)."
+  abstract: 'We are excited to announce the latest publication titled "The Simulation Experiment Description Markup Language (SED-ML): Language Specification for Level 1 Version 5." This publication addresses the growing need in modern biological research for methods to annotate, archive, share, and reproduce computational simulation experiments.
+
+As computational simulations become more integral to biological research, extensive collaboration among modelers, experimentalists, and engineers is required. The Minimum Information About a Simulation Experiment (MIASE) guidelines provide a framework for sharing these experiments, and SED-ML offers a computer-readable format for the information outlined by MIASE.
+
+Level 1 Version 5 of SED-ML significantly enhances the capabilities for modelers by allowing the definition of tasks, model changes, ranges, and outputs using the Kinetic Simulation Algorithm Ontology (KiSAO). This builds on Version 4, which permitted defining simulations entirely with KiSAO. SED-ML growing ecosystem includes a wide range of investigators, model languages, and software tools, supporting various simulation tools, visual editors, model repositories, and validators.
+
+For more information about SED-ML and its applications, visit https://sed-ml.org.'
+
 
 - id: 'master_thesis_shubhankar.palwankar'
   status: 'current'
