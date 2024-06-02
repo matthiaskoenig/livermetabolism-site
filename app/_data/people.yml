@@ -77,17 +77,6 @@
   homepage:
   description: 'Amanda develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the diuretic hydrochlorothiazide. The objective is to enhance our understanding of how hydrochlorothiazide changes urinary volume and plasma volume and ion balance (sodium, potassium, chloride).'
 
-- id: 'samira'
-  status: 'current'
-  year: '2023-09/2023-12'
-  name: 'Samira Eissazedeh'
-  position: 'ERASMUS'
-  image: samira.png
-  orcid:
-  repository: https://github.com/47857078
-  homepage:
-  description: "Samira works to enhance our understanding of the role of endoglin in TGF-β signaling. She develops a computational model that explores the nuances of L-endoglin's role within this pathway and evaluates the effects of targeted interventions on this signaling."
-
 - id: 'prerna'
   status: 'current'
   year: '2024-05/2024-07'
@@ -159,11 +148,22 @@
   year: '2024-05'
   name: 'Rohit'
   position: 'Data curation'
-  image: rohini.png
+  image: rohit.png
   orcid:
   repository: 'https://github.com/Rohit-Chakraborty'
   homepage:
   description: 'Rohit supports the data curation for morphine pharmacokinetics.'
+
+- id: 'samira'
+  status: 'alumni'
+  year: '2023-09/2023-12'
+  name: 'Samira Eissazedeh'
+  position: 'ERASMUS'
+  image: samira.png
+  orcid:
+  repository: https://github.com/47857078
+  homepage:
+  description: "Samira works to enhance our understanding of the role of endoglin in TGF-β signaling. She develops a computational model that explores the nuances of L-endoglin's role within this pathway and evaluates the effects of targeted interventions on this signaling."
 
 - id: 'afruja'
   status: 'alumni'
