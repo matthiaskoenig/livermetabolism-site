@@ -3,7 +3,7 @@
   pdf: 'Albadry2024_species_comparison.pdf'
   authors: 'Mohamed Albadry, Jonas Kuettner, Jan Grzegorzewski, Olaf Dirsch, Eva Kindler, Robert Klopfleisch, Vaclav Liska, Vladimira Moulisova, Sandra Nickel, Richard Palek, Jachym Rosendorf, Sylvia Saalfeld, Utz Settmacher, Hans-Michael Tautenhahn, <b>Matthias König*</b>, Uta Dahmen* (* equal contribution)'
   title: 'Cross-Species Variability in Lobular Geometry and Cytochrome P450 Hepatic Zonation: Insights into CYP1A2, CYP2E1, CYP2D6 and CYP3A4'
-  journal: 'Front Pharmacol. 2024 May 16;15:1404938.'
+  journal: 'Front Pharmacol. 2024 May 16;15:1404938'
   status:
   doi: 10.3389/fphar.2024.1404938
   pmid: 38818378
@@ -20,7 +20,7 @@
 
 - id: 'Master.Thesis.Shubhankar.Palwankar'
   year: 2024
-  pdf: 'theses/Bachelor.Thesis.Master.Thesis.Shubhankar.Palwankar.pdf'
+  pdf: 'theses/Master.Thesis.Shubhankar.Palwankar.pdf'
   authors: 'Master Thesis Shubhankar Palwankar (supervisor: <b>Matthias König</b>)'
   title: 'Enhancing Our Understanding of Enalapril’s Pharmacokinetics: A Physiologically Based Modeling Approach'
   journal: 'Master Thesis, May 2024'
@@ -45,11 +45,11 @@
   year: 2024
   pdf: 'Hoepfl2024_BayModTS.pdf'
   authors: 'Höpfl S, Albadry M, Dahmen U, Herrmann KH, Kindler EM, <b>König M</b>, Reichenbach JR, Tautenhahn HM, Wei W, Zhao WT, Radde NE.'
-  title: 'Bayesian modelling of time series data (BayModTS)-a FAIR workflow to process sparse and highly variable data '
-  journal: 'Bioinformatics. 2024 May 2;40(5):btae312.'
+  title: 'Bayesian modelling of time series data (BayModTS)-a FAIR workflow to process sparse and highly variable data'
+  journal: 'Bioinformatics. 2024 May 2;40(5):btae312'
   status:
   doi: 10.1093/bioinformatics/btae312
-  pmid:
+  pmid: 38741151
   keywords:
   - Animals
   - Bayes Theorem
