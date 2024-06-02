@@ -1,3 +1,23 @@
+- id: 'Albadry2024_species_comparison'
+  year: 2024
+  pdf: 'Albadry2024_species_comparison.pdf'
+  authors: 'Mohamed Albadry, Jonas Kuettner, Jan Grzegorzewski, Olaf Dirsch, Eva Kindler, Robert Klopfleisch, Vaclav Liska, Vladimira Moulisova, Sandra Nickel, Richard Palek, Jachym Rosendorf, Sylvia Saalfeld, Utz Settmacher, Hans-Michael Tautenhahn, <b>Matthias König*</b>, Uta Dahmen* (* equal contribution)'
+  title: 'Cross-Species Variability in Lobular Geometry and Cytochrome P450 Hepatic Zonation: Insights into CYP1A2, CYP2E1, CYP2D6 and CYP3A4'
+  journal: 'Front Pharmacol. 2024 May 16;15:1404938.'
+  status:
+  doi: 10.3389/fphar.2024.1404938
+  pmid: 38818378
+  keywords:
+    - liver
+    - zonation
+    - cytochrome P450
+    - lobule geometry
+    - drug metabolism
+    - species
+  project:
+  repository:
+  abstract: "There is a lack of systematic research exploring cross-species variation in liver lobular geometry and zonation patterns of critical drug-metabolizing enzymes, a knowledge gap essential for translational studies. This study investigated the critical interplay between lobular geometry and key cytochrome P450 (CYP) zonation in four species: mouse, rat, pig, and human. We developed an automated pipeline based on whole slide images (WSI) of hematoxylin-eosin-stained liver sections and immunohistochemistry. This pipeline allows accurate quantification of both lobular geometry and zonation patterns of essential CYP proteins. Our analysis of CYP zonal expression shows that all CYP enzymes (besides CYP2D6 with panlobular expression) were observed in the pericentral region in all species, but with distinct differences. Comparison of normalized gradient intensity shows a high similarity between mice and humans, followed by rats. Specifically, CYP1A2 was expressed throughout the pericentral region in mice and humans, whereas it was restricted to a narrow pericentral rim in rats and showed a panlobular pattern in pigs. Similarly, CYP3A4 is present in the pericentral region, but its extent varies considerably in rats and appears panlobular in pigs. CYP2D6 zonal expression consistently shows a panlobular pattern in all species, although the intensity varies. CYP2E1 zonal expression covered the entire pericentral region with extension into the midzone in all four species, suggesting its potential for further cross-species analysis. Analysis of lobular geometry revealed an increase in lobular size with increasing species size, whereas lobular compactness was similar. Based on our results, zonated CYP expression in mice is most similar to humans. Therefore, mice appear to be the most appropriate species for drug metabolism studies unless larger species are required for other purposes, e.g., surgical reasons. CYP selection should be based on species, with CYP2E1 and CYP2D6 being the most preferable to compare four species. CYP1A2 could be considered as an additional CYP for rodent versus human comparisons, and CYP3A4 for mouse/human comparisons. In conclusion, our image analysis pipeline together with suggestions for species and CYP selection can serve to improve future cross-species and translational drug metabolism studies."
+
 - id: 'Master.Thesis.Shubhankar.Palwankar'
   year: 2024
   pdf: 'theses/Bachelor.Thesis.Master.Thesis.Shubhankar.Palwankar.pdf'
@@ -21,6 +41,68 @@
   repository: https://github.com/matthiaskoenig/enalapril-model
   abstract: 'Enalapril is a medication used to treat high blood pressure and a num- ber of other cardiovascular conditions. The renin-angiotensin-aldosterone system (RAAS) is the main component involved in the regulation of blood pressure in the body. One of the key steps in this process is the conver- sion of angiotensin I to angiotensin II by angiotensin converting enzyme (ACE). Enalapril is an ACE inhibitor and therefore helps to lower blood pressure. Pharmacokinetics is the branch of pharmacology that studies how the body absorbs, distributes, metabolizes, and eliminates drugs over time. After administration as enalapril maleate, it is absorbed in the intestine and converted by carboxylesterase 1 (CES1) in the liver to the active metabolite, enalaprilat. Enalapril and enalaprilat are eliminated from the body by re- nal clearance. A physiologically based pharmacokinetic (PBPK) model was developed to investigate the pharmacokinetics of enalapril and the factors influencing it. As part of the work, an extensive database of enalapril phar- macokinetics consisting of data from 49 clinical trials was established and used to parameterize and validate the computational model. The model was used to investigate the effect of renal impairment, hepatic impairment and changes in CES1 activity on the pharmacokinetics of enalapril and enalapri- lat, as these three factors are known to have a major influence on the phar- macokinetics of enalapril. The model shows good agreement with a wide range of enalapril and enalaprilat data in serum, plasma and urine under different conditions (healthy, renal impairment, hepatic impairment, CES1 mutations). The model is available in SBML under a CC-BY 4.0 license with all data freely available from the PK-DB pharmacokinetics database.'
 
+- id: 'Hoepfl2024_BayModTS'
+  year: 2024
+  pdf: 'Hoepfl2024_BayModTS.pdf'
+  authors: 'Höpfl S, Albadry M, Dahmen U, Herrmann KH, Kindler EM, <b>König M</b>, Reichenbach JR, Tautenhahn HM, Wei W, Zhao WT, Radde NE.'
+  title: 'Bayesian modelling of time series data (BayModTS)-a FAIR workflow to process sparse and highly variable data '
+  journal: 'Bioinformatics. 2024 May 2;40(5):btae312.'
+  status:
+  doi: 10.1093/bioinformatics/btae312
+  pmid:
+  keywords:
+  - Animals
+  - Bayes Theorem
+  - Humans
+  - Liver metabolism
+  - Magnetic Resonance Imaging
+  - Mice
+  - Rats
+  - Software
+  - Systems Biology
+  project:
+  repository: https://github.com/Systems-Theory-in-Systems-Biology/BayModTS
+  abstract: "Motivation: Systems biology aims to better understand living systems through mathematical modelling of experimental and clinical data. A pervasive challenge in quantitative dynamical modelling is the integration of time series measurements, which often have high variability and low sampling resolution. Approaches are required to utilize such information while consistently handling uncertainties.
+Results: We present BayModTS (Bayesian modelling of time series data), a new FAIR (findable, accessible, interoperable, and reusable) workflow for processing and analysing sparse and highly variable time series data. BayModTS consistently transfers uncertainties from data to model predictions, including process knowledge via parameterized models. Further, credible differences in the dynamics of different conditions can be identified by filtering noise. To demonstrate the power and versatility of BayModTS, we applied it to three hepatic datasets gathered from three different species and with different measurement techniques: (i) blood perfusion measurements by magnetic resonance imaging in rat livers after portal vein ligation, (ii) pharmacokinetic time series of different drugs in normal and steatotic mice, and (iii) CT-based volumetric assessment of human liver remnants after clinical liver resection.
+Availability and implementation: The BayModTS codebase is available on GitHub at https://github.com/Systems-Theory-in-Systems-Biology/BayModTS. The repository contains a Python script for the executable BayModTS workflow and a widely applicable SBML (systems biology markup language) model for retarded transient functions. In addition, all examples from the paper are included in the repository. Data and code of the application examples are stored on DaRUS: https://doi.org/10.18419/darus-3876. The raw MRI ROI voxel data were uploaded to DaRUS: https://doi.org/10.18419/darus-3878. The steatosis metabolite data are published on FairdomHub: 10.15490/fairdomhub.1.study.1070.1.
+"
+
+- id: 'Golebiewski2024_standards'
+  year: 2024
+  pdf: 'Golebiewski2024_standards.pdf'
+  authors: 'M. Golebiewski, P. Gleeson, T. Gorochowski, M. Hucka, S. Keating, <b>M. König</b>, C. Myers, D. Nickerson, H. Sommer, D. Waltemath, F. Schreiber'
+  title: 'Specifications of Standards in Systems and Synthetic Biology: Status, Developments and Tools in 2024'
+  journal: 'J Integr Bioinform. 2024'
+  status: accepted
+  doi:
+  pmid:
+  keywords:
+    - COMBINE
+    - standardization
+    - SBML
+    - SEDML
+    - OMEX
+  project: https://co.mbine.org
+  repository:
+  abstract: "This special issue of the Journal of Integrative Bioinformatics is part of a longstanding tradition that provides updated specifications of standards in systems and synthetic biology. The 2024 edition introduces a significant revision to  standards, the next versions of the Simulation Experiment Description Markup Language (SED-ML). In addition to this update, with this issue we start to include novel or updated tools that are utilising these standards or are important to their implementation, and three tools are presented. This document also serves as a comprehensive source for the latest specifications across all COMBINE standards, ensuring that researchers and practitioners have access to the most current versions of standards in the field."
+
+- id: 'SED-ML_L1V5'
+  year: 2024
+  date: 2024-04-15
+  pdf: 'Smith2024_SED-ML_L1V5.pdf'
+  authors: 'Smith LP, Bergmann FT, Garny A, Helikar T, Karr J, Nickerson D, Sauro H, Waltemath D, König M.'
+  title: 'The simulation experiment description markup language (SED-ML): language specification for level 1 version 5'
+  journal: 'J Integr Bioinform. 2024 Apr 15.'
+  status:
+  doi:  10.1515/jib-2024-0008
+  pmid: 38613325
+  keywords:
+    - SED-ML
+    - Standardization
+  project:
+  repository:
+  abstract: "Modern biological research is increasingly informed by computational simulation experiments, which necessitate the development of methods for annotating, archiving, sharing, and reproducing the conducted experiments. These simulations increasingly require extensive collaboration among modelers, experimentalists, and engineers. The Minimum Information About a Simulation Experiment (MIASE) guidelines outline the information needed to share simulation experiments. SED-ML is a computer-readable format for the information outlined by MIASE, created as a community project and supported by many investigators and software tools. Level 1 Version 5 of SED-ML expands the ability of modelers to define simulations in SED-ML using the Kinetic Simulation Algorithm Onotoloy (KiSAO). While it was possible in Version 4 to define a simulation entirely using KiSAO, Version 5 now allows users to define tasks, model changes, ranges, and outputs using the ontology as well. SED-ML is supported by a growing ecosystem of investigators, model languages, and software tools, including various languages for constraint-based, kinetic, qualitative, rule-based, and spatial models, and many simulation tools, visual editors, model repositories, and validators. Additional information about SED-ML is available at https://sed-ml.org/."
+
 - id: 'Gerhaeusser2024_spt_model'
   year: 2024
   date: 2024-03-29
@@ -43,9 +125,6 @@
   project:
   repository:
   abstract: "Multiscale modeling requires the coupling of models on different scales, often based on different mathematical approaches and developed by different research teams. This poses many challenges, such as defining interfaces for coupling, reproducible exchange of submodels, efficient simulation of the models, or reproducibility of results. Here, we present a multiscale digital twin of the liver that couples a partial differential equation (PDE)-based porous media approach for the hepatic lobule with cellular-scale ordinary differential equation (ODE)-based models. The models based on the theory of porous media describe transport, tissue mechanical properties, and deformations at the lobular scale, while the cellular models describe hepatic metabolism in terms of drug metabolism and damage in terms of necrosis. The resulting multiscale model of the liver was used to simulate perfusion-zonation-function relationships in the liver spanning scales from single cell to the lobulus. The model was applied to study the effects of (i) protein zonation patterns (metabolic zonation) and (ii) drug concentration dependence on spatially heterogeneous liver damage in the form of necrosis. Depending on the zonation pattern, different liver damage patterns could be reproduced, including periportal and pericentral necrosis as seen in drug-induced liver injury (DILI). Increasing the drug concentration led to an increase in the observed damage pattern. A key point for the success was the integration of domain-specific simulators based on standard exchange formats, i.e., libroadrunner for the high-performance simulation of ODE-based systems and FEBio for the simulation of the continuum-biomechanical part. This allows a standardized and reproducible exchange of cellular scale models in the Systems Biology Markup Language (SBML) between research groups."
-
-
-
 
 - id: 'Lambers2024_fat_zonation'
   year: 2024
@@ -132,25 +211,25 @@
   repository: https://github.com/matthiaskoenig/sorafenib-model
   abstract: 'Liver cancer ranks second in cancer-related deaths thereby making timely diagnosis and personalized treatment crucial. Hepatocellular carcinoma (HCC) patients often get diagnosed at advanced stages, hindering curative options like resection and ablation. Systemic treatment has become the standard therapy and sorafenib has been the primary systemic treatment for advanced HCC for the last ten years, being the first approved drug for this purpose. Sorafenib (Nexavar), is a multi-kinase inhibitor medication approved for primarily treating advanced renal cell carcinoma, hepatocellular carcinoma or other cancers. After oral administration, sorafenib enters hepatocytes via OATP1B-type carriers. It undergoes CYP3A4-mediated oxidative metabolism to sorafenib-N-oxide (M2) and UGT1A9-mediated glucuronidation forming sorafenib-glucuronide (SG). SG is secreted into bile mainly by ABCC2, with a fraction reuptaken by ABCC3, preventing ABCC2 saturation. In bile, SG can be excreted via the feces or converted back to sorafenib by a bacterial β-glucuronidase. Sorafenib is absorbed in the intestine, reentering the systemic circulation, contributing to elimination and detoxification. Sorafenib is excreted mainly by the feces (77%) and urine (19%). Hepatic and renal impairment could have a large impact on the pharmacokinetics of sorafenib. Within this work the pharmacokinetics of sorafenib were analyzed by developing a physiologically-based pharmacokinetic (PBPK) model based on extensive data curation of sorafenib data. The model allowed to simulate the time-concentration courses of sorafenib in various tissues and to calculate the pharmacokinetic parameters for sorafenib under single and multiple dosing regimes. The model was applied to study the dose-dependency of sorafenib treatment and to investigate the effect of hepatic and renal impairment on sorafenib pharmacokinetics.'
 
-- id: 'Albadry2023_species_comparison'
-  year: 2023
-  pdf: 'Albadry2023_species_comparison.pdf'
-  authors: 'Mohamed Albadry, Jonas Kuettner, Jan Grzegorzewski, Olaf Dirsch, Eva Kindler, Robert Klopfleisch, Vaclav Liska, Vladimira Moulisova, Sandra Nickel, Richard Palek, Jachym Rosendorf, Sylvia Saalfeld, Utz Settmacher, Hans-Michael Tautenhahn, <b>Matthias König*</b>, Uta Dahmen* (* equal contribution)'
-  title: 'Cross-Species Variability in Lobular Geometry and Cytochrome P450 Hepatic Zonation: Insights into CYP1A2, CYP2E1, CYP2D6 and CYP3A4'
-  journal: 'bioRxiv 2023.12.28.573567'
-  status: "preprint"
-  doi: 10.1101/2023.12.28.573567
-  pmid:
-  keywords:
-    - liver
-    - zonation
-    - cytochrome P450
-    - lobule geometry
-    - drug metabolism
-    - species
-  project:
-  repository:
-  abstract: "This study explores the critical interplay between lobular geometry and the zonated distribution of cytochrome P450 (CYP) enzymes across species. We present an innovative approach to assess lobular geometry and zonation patterns using whole slide imaging (WSI). This method allows a detailed, systematic comparison of lobular structures and spatial distribution of key CYP450 enzymes and glutamine synthetase in four different species (mouse, rat, pig, and human). Our results shed light on species differences in lobular geometry and enzymatic zonation, providing critical insights for drug metabolism research. Based on our approach we could determine the minimum number of lobules required for a statistically representative analysis, an important piece of information when evaluating liver biopsies and deriving information from WSI."
+#- id: 'Albadry2023_species_comparison'
+#  year: 2023
+#  pdf: 'Albadry2023_species_comparison.pdf'
+#  authors: 'Mohamed Albadry, Jonas Kuettner, Jan Grzegorzewski, Olaf Dirsch, Eva Kindler, Robert Klopfleisch, Vaclav Liska, Vladimira Moulisova, Sandra Nickel, Richard Palek, Jachym Rosendorf, Sylvia Saalfeld, Utz Settmacher, Hans-Michael Tautenhahn, <b>Matthias König*</b>, Uta Dahmen* (* equal contribution)'
+#  title: 'Cross-Species Variability in Lobular Geometry and Cytochrome P450 Hepatic Zonation: Insights into CYP1A2, CYP2E1, CYP2D6 and CYP3A4'
+#  journal: 'bioRxiv 2023.12.28.573567'
+#  status: "preprint"
+#  doi: 10.1101/2023.12.28.573567
+#  pmid:
+#  keywords:
+#    - liver
+#    - zonation
+#    - cytochrome P450
+#    - lobule geometry
+#    - drug metabolism
+#    - species
+#  project:
+#  repository:
+#  abstract: "This study explores the critical interplay between lobular geometry and the zonated distribution of cytochrome P450 (CYP) enzymes across species. We present an innovative approach to assess lobular geometry and zonation patterns using whole slide imaging (WSI). This method allows a detailed, systematic comparison of lobular structures and spatial distribution of key CYP450 enzymes and glutamine synthetase in four different species (mouse, rat, pig, and human). Our results shed light on species differences in lobular geometry and enzymatic zonation, providing critical insights for drug metabolism research. Based on our approach we could determine the minimum number of lobules required for a statistically representative analysis, an important piece of information when evaluating liver biopsies and deriving information from WSI."
 
 
 - id: 'Kohrs2023_reproducible.research.open.science'
