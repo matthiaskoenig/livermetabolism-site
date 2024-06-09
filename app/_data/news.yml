@@ -1,3 +1,21 @@
+- id: 'bachelor_thesis_afruja.hossain.mallol'
+  status: 'current'
+  title: 'Bachelor Thesis Afruja Hossain'
+  date: '2024-06-09'
+  image: bachelor_thesis_afruja.hossain.png
+  link: '/paper/theses/Bachelor.Thesis.Afruja.Hossain.pdf'
+  short: "Afruja Hossain finished her Bachelor thesis developing a database of CYP and UGT enzymes"
+  abstract: "Afruja Hossain has successfully finished her Bachelor thesis titled 'A Systematic Overview of Protein Variability in Cytochrome P450 and UDP-glucuronosyltransferase Enzymes in the Human Liver.'
+
+Her research provides an in-depth analysis of the key liver enzymes Cytochrome P450 (CYP450) and UDP-glucuronosyltransferase (UGT), crucial for drug metabolism. The study highlights the variability in protein levels of these enzymes, influenced by factors such as age, smoking, and alcohol consumption.
+
+Key findings include:
+    - Creation of a database of CYP and UGT protein levels in the human liver.
+    - Identification of significant individual variability in enzyme protein levels.
+    - Correlations between different CYP and UGT isoforms.
+
+Afruja's work offers valuable insights into drug metabolism and could enhance understanding of drug interactions and toxicity. Congratulations to Afruja on her significant academic achievement."
+
 - id: 'pkcourse_SS2024'
   status: 'current'
   title: 'Successful Completion of One-Week Pharmacokinetic Modelling Course'
