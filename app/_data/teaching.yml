@@ -1,3 +1,24 @@
+- id: theory_tools_methods_ss24
+  title: "Theory, tools and methods in biology"
+  title_german: "Theorie, Werkzeuge und Methoden der Biologie"
+  date: 04/2024 - 09/2024
+  type: <i class="fa-solid fa-person-chalkboard"></i>&nbsp;lecture, <i class="fa-solid fa-laptop-code"></i>&nbsp;course
+  semester: SS23
+  people: "HP. Herzel, R. Kempter, S. Schreiber, P. Kuokkanen, R. Steuer, JH. Schleimer, P. Romanczuk, N. Blüthgen, <b>M. König</b>"
+  location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
+  image: mb19_ss2023.png
+  caption: '<strong>Theory, tools and methods in biology - Pharmacokinetic modelling</strong>'
+  funding:
+  content: '
+  <p>
+  Within this course and lecture important theory, tools and methods in biology are presented. 
+  Our group was responsible for the submodule <b>pharmacokinetic modelling</b> with information and material available from <a href="https://github.com/matthiaskoenig/course-pharmacokinetic-modelling">https://github.com/matthiaskoenig/course-pharmacokinetic-modelling</a>.
+  </p>
+  <p>
+  Pharmacokinetic modelling is the study of how drugs are absorbed, distributed, metabolized, and excreted in the body. The course on pharmacokinetic modelling will cover topics such as pharmacokinetic principles, drug distribution, clearance, and elimination, and the factors that affect these processes. Students will learn about different models used to describe pharmacokinetics, such as compartmental models and physiologically-based pharmacokinetic models, and how to use these models to predict drug concentrations and optimize dosing regimens. Other topics that might be covered include pharmacodynamics, drug-drug interactions, and the use of pharmacokinetic modelling in drug development and clinical practice. Overall, a course on pharmacokinetic modelling will provide students with a comprehensive understanding of the principles and techniques used to describe the movement of drugs through the body, and how this knowledge can be applied to improve drug therapy.
+  </p>
+  '
+
 - id: xresearch2023
   title: "X-Student Research Group: Physiologically based digital twins for the treatment of hypertension with ACE inhibitors and diuretics"
   title_german: "X-Student Research Group: Physiologisch basierte Digital Twins für die Behandlung von Bluthochdruck mit ACE-Inhibitoren und Diuretika"

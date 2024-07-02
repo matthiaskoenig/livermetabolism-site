@@ -1,11 +1,106 @@
+- id: 'bachelor_thesis_afruja.hossain.mallol'
+  status: 'current'
+  title: 'Bachelor Thesis Afruja Hossain'
+  date: '2024-06-09'
+  image: bachelor_thesis_afruja.hossain.png
+  link: '/paper/theses/Bachelor.Thesis.Afruja.Hossain.pdf'
+  short: "Afruja Hossain finished her Bachelor thesis developing a database of CYP and UGT enzymes"
+  abstract: "Afruja Hossain has successfully finished her Bachelor thesis titled 'A Systematic Overview of Protein Variability in Cytochrome P450 and UDP-glucuronosyltransferase Enzymes in the Human Liver.'
+
+Her research provides an in-depth analysis of the key liver enzymes Cytochrome P450 (CYP450) and UDP-glucuronosyltransferase (UGT), crucial for drug metabolism. The study highlights the variability in protein levels of these enzymes, influenced by factors such as age, smoking, and alcohol consumption.
+
+Key findings include:
+    - Creation of a database of CYP and UGT protein levels in the human liver.
+    - Identification of significant individual variability in enzyme protein levels.
+    - Correlations between different CYP and UGT isoforms.
+
+Afruja's work offers valuable insights into drug metabolism and could enhance understanding of drug interactions and toxicity. Congratulations to Afruja on her significant academic achievement."
+
+- id: 'pkcourse_SS2024'
+  status: 'current'
+  title: 'Successful Completion of One-Week Pharmacokinetic Modelling Course'
+  date: '2024-06-07'
+  image: pkcourse_SS2024.png
+  link:
+  short: "We are excited to announce the successful completion of our one-week intensive course on Pharmacokinetic Modelling, where students delved into principles, drug distribution, clearance, elimination, and various modelling techniques to enhance drug therapy and development."
+  abstract: 'Pharmacokinetic modelling is the study of how drugs are absorbed, distributed, metabolised and excreted in the body. The pharmacokinetic modelling course covers topics such as pharmacokinetic principles, drug distribution, clearance and elimination and the factors that influence these processes. Students will learn about different models used to describe pharmacokinetics, such as compartmental models and physiologically based pharmacokinetic models, and how these models can be used to predict drug concentrations and optimise dosing regimens. Other topics that may be covered include pharmacodynamics, drug-drug interactions and the use of pharmacokinetic modelling in drug development and clinical practice. Overall, a course in pharmacokinetic modelling will provide students with a comprehensive understanding of the principles and techniques used to describe the movement of drugs through the body and how this knowledge can be applied to improve drug therapy.'
+
+
+- id: 'prerna_pk_llm'
+  status: 'current'
+  title: 'New Project Launch via Humboldt Internship Program (HIP): PK-LLM by Prerna Parakkat'
+  date: '2024-05-23'
+  image: prerna_pk_llm.png
+  link:
+  short: "We are excited to announce the start of a new project under the Humboldt Internship Program (HIP) by Prerna Parakkat. Prerna will be working on PK-LLM: Implementing a Large Language Model (LLM) as an Expert System for Pharmacokinetic (PK) Data Curation from Scientific Publications."
+  abstract: 'The project focuses on creating a specialized LLM tailored to interpret and extract pharmacokinetic data from diverse scientific texts, automating the extraction of key data such as parameters, dosing information, and subject details. It also aims to integrate this system with existing pharmacokinetic databases and computational modeling workflows for digital twins. We anticipate significant improvements in the accuracy and efficiency of pharmacokinetic data extraction and curation, setting a new standard in the field.'
+
+- id: 'species_comparison_publication'
+  status: 'current'
+  title: 'Preprint: Cross-Species Variability in Lobular Geometry and Cytochrome P450 Hepatic Zonation: Insights into CYP1A2, CYP2E1, CYP2D6 and CYP3A4'
+  date: '2024-05-16'
+  image: species_comparison_preprint.png
+  link: 'https://www.frontiersin.org/journals/pharmacology/articles/10.3389/fphar.2024.1404938/full'
+  short: "Our latest publication on 'Cross-Species Variability in Lobular Geometry & Cytochrome P450 Hepatic Zonation' reveals insights into liver function across species using WSI technology."
+  abstract: 'This study explores the critical interplay between lobular geometry and the zonated distribution of cytochrome P450 (CYP) enzymes across species. We present an innovative approach to assess lobular geometry and zonation patterns using whole slide imaging (WSI). This method allows a detailed, systematic comparison of lobular structures and spatial distribution of key CYP450 enzymes and glutamine synthetase in four different species (mouse, rat, pig, and human). Our results shed light on species differences in lobular geometry and enzymatic zonation, providing critical insights for drug metabolism research. Based on our approach we could determine the minimum number of lobules required for a statistically representative analysis, an important piece of information when evaluating liver biopsies and deriving information from WSI.'
+
+- id: 'nike_yusuf_projects'
+  status: 'current'
+  title: 'New projects: Nike Nemitz and Yusuf Ali Kulanoglu start PBPK Modeling Projects'
+  date: '2024-04-15'
+  image: nike_yusuf_projects.png
+  link: 'https://www.degruyter.com/document/doi/10.1515/jib-2024-0008/html'
+  short: "Nike Nemitz and Yusuf Ali Kulanoglu will develop PBPK models for dapagliflozin and aliskiren, respectively, aiming to enhance understanding of pharmacokinetics and pharmacodynamics in diabetes and cardiovascular treatments."
+  abstract: 'Nike Nemitz is developing a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the SGLT2 inhibitor dapagliflozin. The objective is to enhance understanding of intraindividual variability in diabetes treatment with SGLT2 inhibitors, focusing on differences in hepatorenal function. Yusuf Ali Kulanoglu is working on a PBPK model of the direct renin inhibitor aliskiren to improve understanding of its pharmacokinetics and the influencing factors. Both projects aim to provide deeper insights into drug behavior and variability, potentially improving therapeutic outcomes.'
+
+- id: 'sedml_l1v5_publication'
+  status: 'current'
+  title: 'Publication: The Simulation Experiment Description Markup Language (SED-ML): Language Specification for Level 1 Version 5'
+  date: '2024-04-15'
+  image: sedml_l1v5_publication.png
+  link: 'https://www.degruyter.com/document/doi/10.1515/jib-2024-0008/html'
+  short: "Level 1 Version 5 of SED-ML enhances the ability to annotate, archive, share, and reproduce computational simulation experiments by allowing modelers to define tasks, model changes, ranges, and outputs using the Kinetic Simulation Algorithm Ontology (KiSAO)."
+  abstract: 'We are excited to announce the latest publication titled "The Simulation Experiment Description Markup Language (SED-ML): Language Specification for Level 1 Version 5." This publication addresses the growing need in modern biological research for methods to annotate, archive, share, and reproduce computational simulation experiments.
+
+As computational simulations become more integral to biological research, extensive collaboration among modelers, experimentalists, and engineers is required. The Minimum Information About a Simulation Experiment (MIASE) guidelines provide a framework for sharing these experiments, and SED-ML offers a computer-readable format for the information outlined by MIASE.
+
+Level 1 Version 5 of SED-ML significantly enhances the capabilities for modelers by allowing the definition of tasks, model changes, ranges, and outputs using the Kinetic Simulation Algorithm Ontology (KiSAO). This builds on Version 4, which permitted defining simulations entirely with KiSAO. SED-ML growing ecosystem includes a wide range of investigators, model languages, and software tools, supporting various simulation tools, visual editors, model repositories, and validators.
+
+For more information about SED-ML and its applications, visit https://sed-ml.org.'
+
+
+- id: 'master_thesis_shubhankar.palwankar'
+  status: 'current'
+  title: 'Master Thesis Shubhankar Palwankar'
+  date: '2024-05-05'
+  image: master_thesis_shubhankar.palwankar.png
+  link: '/paper/theses/Master.Thesis.Shubhankar.Palwankar.pdf'
+  short: "Shubhankar Palwankar defended his Master Thesis developing a PBPK model of enalapril"
+  abstract: "We are pleased to announce that Shubhankar Palwankar has successfully defended his Master Thesis, which focuses on the development of a Physiologically Based Pharmacokinetic (PBPK) model of enalapril, a key medication used to treat high blood pressure and other cardiovascular conditions.
+
+Enalapril works as an ACE inhibitor, playing a crucial role in regulating blood pressure through the renin-angiotensin-aldosterone system (RAAS). Shubhankar's research involved the creation of an extensive database from 49 clinical trials, which was used to parameterize and validate his computational model. His model effectively simulates the pharmacokinetics of enalapril and its active metabolite, enalaprilat, under various conditions including renal and hepatic impairment and changes in CES1 enzyme activity.
+
+The findings from this study offer valuable insights into how different physiological impairments affect the drug's behavior in the body, showing excellent agreement with clinical data. The developed model and data are publicly accessible in SBML format under a CC-BY 4.0 license from the PK-DB pharmacokinetics database, contributing to open science and further research in pharmacokinetics.
+
+Congratulations to Shubhankar Palwankar for his significant contributions to pharmacological research and his successful thesis defense."
+
 - id: 'spt_preprint'
   status: 'current'
   title: 'New multiscale liver model unveils zonation-function dynamics in Drug-Induced Liver Injury (DILI).'
   date: '2024-03-29'
   image: spt_preprint.png
-  link:
+  link: https://doi.org/10.1101/2024.03.26.586870
   short: "We're excited to announce the preprint of our latest research, 'Simulation of zonation-function relationships in the liver using coupled multiscale models: Application to drug-induced liver injury.' This study introduces a multiscale digital twin of the liver, integrating models from cellular to lobular scales, and sheds light on how liver zonation patterns influence drug-induced liver injury."
   abstract: 'Multiscale modeling requires the coupling of models on different scales, often based on different mathematical approaches and developed by different research teams. This poses many challenges, such as defining interfaces for coupling, reproducible exchange of submodels, efficient simulation of the models, or reproducibility of results. Here, we present a multiscale digital twin of the liver that couples a partial differential equation (PDE)-based porous media approach for the hepatic lobule with cellular-scale ordinary differential equation (ODE)-based models. The models based on the theory of porous media describe transport, tissue mechanical properties, and deformations at the lobular scale, while the cellular models describe hepatic metabolism in terms of drug metabolism and damage in terms of necrosis. The resulting multiscale model of the liver was used to simulate perfusion-zonation-function relationships in the liver spanning scales from single cell to the lobulus. The model was applied to study the effects of (i) protein zonation patterns (metabolic zonation) and (ii) drug concentration dependence on spatially heterogeneous liver damage in the form of necrosis. Depending on the zonation pattern, different liver damage patterns could be reproduced, including periportal and pericentral necrosis as seen in drug-induced liver injury (DILI). Increasing the drug concentration led to an increase in the observed damage pattern. A key point for the success was the integration of domain-specific simulators based on standard exchange formats, i.e., libroadrunner for the high-performance simulation of ODE-based systems and FEBio for the simulation of the continuum-biomechanical part. This allows a standardized and reproducible exchange of cellular scale models in the Systems Biology Markup Language (SBML) between research groups.'
+
+- id: 'morphine_project'
+  status: 'current'
+  title: 'PBPK Model of Morphine Project'
+  date: '2024-03-01'
+  image: morphine_project.png
+  link:
+  short: "New Internship Project Launch: Development of a Physiologically Based Pharmacokinetics Model of Morphine. Deepa supported by Rohini and Rohit will develop a PBPK model of morphine."
+  abstract: 'Deepa supported by Rohini and Rohit will  develop a physiologically based pharmacokinetic (PBPK) model of morphine. Morphine, a potent analgesic derived from the opium poppy, is essential for pain management but poses significant pharmacokinetic challenges. This project aims to address intra-individual variability in morphine treatment by establishing a comprehensive pharmacokinetics/pharmacodynamics database and constructing a whole-body computational model. Key areas of focus include the role of the liver and kidney in morphine metabolism and excretion, the effects of renal and hepatic impairment, and the effects of different morphine formulations and delivery methods. This research aims to improve the safe and effective use of morphine in clinical settings, taking into account factors such as age and genetic polymorphisms.'
 
 - id: 'myshkina_atlas'
   status: 'current'
@@ -26,7 +121,7 @@
   abstract: 'After the official launch of the Virtual Human Twin initiative and the VHT Manifesto in December, the first open community meeting attracted over 180 registered guests from the EDITH-CSA consortium and the wider ecosystem. The enthusiasm of the wider community to travel to Paris (amidst difficult weather conditions) and proactively contributing towards developing the roadmap for the VHT was inspiring.'
 
 - id: 'species_comparison_preprint'
-  status: 'current'
+  status: 'old'
   title: 'Preprint: Cross-Species Variability in Lobular Geometry and Cytochrome P450 Hepatic Zonation: Insights into CYP1A2, CYP2E1, CYP2D6 and CYP3A4'
   date: '2023-12-29'
   image: species_comparison_preprint.png

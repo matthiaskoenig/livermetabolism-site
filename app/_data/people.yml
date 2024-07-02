@@ -77,38 +77,16 @@
   homepage:
   description: 'Amanda develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the diuretic hydrochlorothiazide. The objective is to enhance our understanding of how hydrochlorothiazide changes urinary volume and plasma volume and ion balance (sodium, potassium, chloride).'
 
-- id: 'afruja'
+- id: 'prerna'
   status: 'current'
-  year: '2022-2024'
-  name: 'Afruja Hossain'
-  position: 'Bachelor student'
-  image: afruja.png
+  year: '2024-05/2024-07'
+  name: 'Prerna Parakkat'
+  position: 'Humboldt-Internship student 2024'
+  image: prerna.jpg
   orcid:
-  repository: 'https://github.com/afruja-h'
+  repository: 'https://github.com/prerna2023'
   homepage:
-  description: 'Afruja works on a systematic overview of the protein variability of cytochrome P450 (CYP450) isoforms in the human liver.'
-
-- id: 'samira'
-  status: 'current'
-  year: '2023-09/2023-12'
-  name: 'Samira Eissazedeh'
-  position: 'ERASMUS'
-  image: samira.png
-  orcid:
-  repository: https://github.com/47857078
-  homepage:
-  description: "Samira works to enhance our understanding of the role of endoglin in TGF-β signaling. She develops a computational model that explores the nuances of L-endoglin's role within this pathway and evaluates the effects of targeted interventions on this signaling."
-
-- id: 'shubhankar'
-  status: 'current'
-  year: '2023-10/2024-04'
-  name: 'Shubhankar Palwankar'
-  position: 'Master thesis'
-  image: shubhankar.png
-  orcid:
-  repository: "https://github.com/shubhankarpalwankar"
-  homepage:
-  description: "Shubhankar works on enhancing our understanding of enalapril's pharmacokinetics and dynamics based on a physiologically based modeling approach. The work will build on top of existing models of the ACE inhibitors lisinopril and ramipril."
+  description: 'Prerna works on an advanced Large Language Model (LLM) to serve as an expert system for efficiently and accurately curating pharmacokinetic data from scientific literature.'
 
 - id: 'antonio'
   status: 'current'
@@ -121,27 +99,16 @@
   homepage:
   description: "Antonio will delve into the influence of parameter variability in PBPK models, focusing on the consequential effects for dynamic liver function assessments. The overarching objective of this project is to augment our comprehension of how inherent variability in parameters translates into intra-individual variability in pharmacokinetics."
 
-- id: 'deepa'
-  status: 'current'
-  year: '2023-2024'
-  name: 'Deepa Maheshvare'
-  position: 'Ph.D. student (internship)'
-  image: deepa.png
-  orcid:
-  repository: 'https://github.com/DeepaMahm'
-  homepage:
-  description: 'Deepa works on enhancing our understanding of morphine pharmacokinetics based on a physiologically based modeling approach.'
-
-- id: 'rohinichakraborty'
+- id: 'nike'
   status: 'current'
   year: '2024'
-  name: 'Rohini Chakraborty'
-  position: 'Data curation'
-  image: rohini.png
+  name: 'Nike Nemitz'
+  position: 'Bachelor project'
+  image: nike.png
   orcid:
-  repository: 'https://github.com/rohinichakraborty'
+  repository: 'https://github.com/nikenemitz'
   homepage:
-  description: 'Rohini supports the data curation for morphine pharmacokinetics.'
+  description: 'Nike develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of SGLT2 inhibitor dapagliflozin. The objective is to enhance our understanding of the underlying causes of intraindividual variability in diabetes treatment with SGLT2 inhibitors, e.g., differences in hepatorenal function.'
 
 - id: 'yusuf'
   status: 'current'
@@ -154,16 +121,71 @@
   homepage:
   description: 'Yusuf works on a physiologically based pharmacokinetic model of the direct renin inhibitor aliskiren.'
 
-- id: 'nike'
+- id: 'deepa'
   status: 'current'
-  year: '2024'
-  name: 'Nike Nemitz'
-  position: 'Bachelor project'
-  image: nike.png
+  year: '2023-2024'
+  name: 'Deepa Maheshvare'
+  position: 'Ph.D. student (internship), Humboldt-Internship student 2024'
+  image: deepa.png
   orcid:
-  repository: 'https://github.com/nikenemitz'
+  repository: 'https://github.com/DeepaMahm'
   homepage:
-  description: 'Nike develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of SGLT2 inhibitor dapagliflozin. The objective is to enhance our understanding of the underlying causes of intraindividual variability in diabetes treatment with SGLT2 inhibitors, e.g., differences in hepatorenal function.'
+  description: 'Deepa works on enhancing our understanding of morphine pharmacokinetics based on a physiologically based modeling approach.'
+
+- id: 'rohinichakraborty'
+  status: 'current'
+  year: '2024-03'
+  name: 'Rohini Chakraborty'
+  position: 'Data curation'
+  image: rohini.png
+  orcid:
+  repository: 'https://github.com/rohinichakraborty'
+  homepage:
+  description: 'Rohini supports the data curation for morphine pharmacokinetics.'
+
+- id: 'rohit'
+  status: 'current'
+  year: '2024-05'
+  name: 'Rohit Chakraborty'
+  position: 'Data curation'
+  image: rohit.png
+  orcid:
+  repository: 'https://github.com/Rohit-Chakraborty'
+  homepage:
+  description: 'Rohit supports the data curation for morphine pharmacokinetics.'
+
+- id: 'samira'
+  status: 'alumni'
+  year: '2023-09/2023-12'
+  name: 'Samira Eissazedeh'
+  position: 'ERASMUS'
+  image: samira.png
+  orcid:
+  repository: https://github.com/47857078
+  homepage:
+  description: "Samira works to enhance our understanding of the role of endoglin in TGF-β signaling. She develops a computational model that explores the nuances of L-endoglin's role within this pathway and evaluates the effects of targeted interventions on this signaling."
+
+- id: 'afruja'
+  status: 'alumni'
+  year: '2022-2024'
+  name: 'Afruja Hossain'
+  position: 'Bachelor student'
+  image: afruja.png
+  orcid:
+  repository: 'https://github.com/afruja-h'
+  homepage:
+  description: 'Afruja worked on a systematic overview of the protein variability of cytochrome P450 (CYP450) isoforms in the human liver.'
+
+- id: 'shubhankar'
+  status: 'alumni'
+  year: '2023-10/2024-05'
+  name: 'Shubhankar Palwankar'
+  position: 'Master thesis'
+  image: shubhankar.png
+  orcid: "0009-0007-3431-463X"
+  repository: "https://github.com/shubhankarpalwankar"
+  homepage:
+  description: "Shubhankar worked on enhancing our understanding of enalapril's pharmacokinetics and dynamics based on a physiologically based modeling approach. The work will build on top of existing models of the ACE inhibitors lisinopril and ramipril."
 
 - id: 'hannah'
   status: 'alumni'
@@ -214,7 +236,7 @@
   status: 'alumni'
   year: '2023-07/2023-09'
   name: 'Xenia Petukhova'
-  position: 'Humboldt Internship Student'
+  position: 'Humboldt Internship Student 2023'
   image: xenia.png
   orcid:
   repository: 'https://github.com/dzinty'
@@ -225,7 +247,7 @@
   status: 'alumni'
   year: '2023-07/2023-09'
   name: 'Zahra Bahri'
-  position: 'Humboldt Internship Student'
+  position: 'Humboldt Internship Student 2023'
   image: zhara.png
   orcid:
   repository: 'https://github.com/Rain-marine'
