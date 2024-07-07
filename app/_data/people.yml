@@ -88,6 +88,17 @@
   homepage:
   description: 'Prerna works on an advanced Large Language Model (LLM) to serve as an expert system for efficiently and accurately curating pharmacokinetic data from scientific literature.'
 
+- id: 'vera'
+  status: 'current'
+  year: '2024-07/2024-09'
+  name: 'Vera Tereshchuk'
+  position: 'Humboldt-Internship student 2024'
+  image: prerna.jpg
+  orcid:
+  repository: 'https://github.com/tereshchuk1'
+  homepage:
+  description: 'Vera develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of SGLT2 inhibitor canagliflozin. The objective is to enhance our understanding of the underlying causes of intraindividual variability in diabetes treatment with SGLT2 inhibitors, e.g., differences in hepatorenal function.'
+
 - id: 'antonio'
   status: 'current'
   year: '2023-10/2024-04'

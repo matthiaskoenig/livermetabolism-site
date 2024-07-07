@@ -1,7 +1,7 @@
 - id: 'Sego2025_stochastic_reproducibility'
   year: 2024
   date: 2024-06-24
-  pdf: 'Sego2025_stochastic_reproducibility.pdf'
+  pdf: 'Sego2024_stochastic_reproducibility.pdf'
   authors: 'T.J. Sego, <b>Matthias König</b>, Luis L. Fonseca, Baylor Fain, Adam C. Knapp, Krishna Tiwari, Henning Hermjakob, Herbert M. Sauro, James A. Glazier, Reinhard C. Laubenbacher, Rahuman S. Malik-Sheriff'
   title: 'EFECT – A Method and Metric to Assess the Reproducibility of Stochastic Simulation Studies'
   journal: 'arXiv:2406.16820'
