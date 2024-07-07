@@ -1,4 +1,28 @@
-- id: 'bachelor_thesis_afruja.hossain.mallol'
+- id: 'vera_project'
+  status: 'current'
+  title: 'New project: Vera Tereshchuk starts SGLT2 PBPK Modeling Project'
+  date: '2024-07-01'
+  image: nike_yusuf_projects.png
+  link: ''
+  short: "Vera Tereshchuk will develop a PBPK models for canagliflozin, aiming to enhance understanding of pharmacokinetics and pharmacodynamics in diabetes."
+  abstract: 'Vera Tereshchuk is developing a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the SGLT2 inhibitor canagliflozin. The objective is to enhance understanding of intraindividual variability in diabetes treatment with SGLT2 inhibitors, focusing on differences in hepatorenal function.'
+
+- id: 'page2024'
+  status: 'current'
+  title: 'PAGE2024: Presentation of our research in Rome'
+  date: '2024-06-25'
+  image: page2024.jpg
+  link: ''
+  short: "Mariia Myshkina and Matthias König presented our captopril modeling results during the PAGE2024 (Population Approach Group Europe) meeting in Rome."
+  abstract: 'Introduction: Angiotensin-converting enzyme (ACE) inhibitors, such as captopril, are widely prescribed for the treatment of hypertension and heart failure. Captopril, the first ACE inhibitor developed in the 1980s, is primarily taken orally and is rapidly absorbed, reaching peak plasma concentrations within an hour. Its half-life is approximately 2 hours, but several factors, including renal function, heart disease, age and sex, can affect its pharmacokinetics.
+Despite the widespread use of captopril, comprehensive pharmacokinetic data have been lacking. Our group has developed PK-DB (https://pk-db.com) [1], an open database containing high-quality pharmacokinetic data from clinical and preclinical research. PK-DB includes patient cohort characteristics, interventions, concentration-time profiles, and kinetic parameters, with the ability to automatically calculate pharmacokinetic parameters using non-compartmental methods.
+Objectives: The objectives of this study were to curate and analyze captopril pharmacokinetic data, expand the PK-DB, develop a whole-body physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of captopril in accordance with FAIR principles [2], and improve understanding of the intra-individual variability in captopril pharmacokinetics influenced by factors such as age, sex, renal and cardiac function.
+Methods: Over 600 publications on captopril pharmacokinetics were reviewed through a systematic literature search, with a subset selected for data curation in PK-DB. The PBPK model was developed using a compartmental approach and encoded in Systems Biology Markup Language (SBML) [3] for accessibility and reproducibility.
+Results: A comprehensive set of captopril pharmacokinetic data was generated from 15 clinical studies in healthy volunteers and patients with renal impairment, heart failure and hypertension. The PBPK model includes four major compartments (blood, intestine, liver, kidney) and describes absorption, distribution, metabolism and excretion. It successfully represents the pharmacokinetic profile of captopril in different age groups, showing minimal age-related differences in unchanged drug concentration. Heart failure did not significantly affect maximum plasma concentration or area under the curve (AUC), but renal function strongly influenced captopril elimination. We present this data set and open PBPK model of captopril as a valuable resource for further research.
+Conclusions: This study successfully establishes a freely accessible, comprehensive dataset and an open PBPK model of captopril, enhancing our understanding of its pharmacokinetic behavior across different patient groups. Our findings emphasize the significance of renal function in captopril elimination and provide a valuable resource for personalized medicine approaches in hypertension and heart failure treatment.'
+
+
+- id: 'bachelor_thesis_afruja.hossain'
   status: 'current'
   title: 'Bachelor Thesis Afruja Hossain'
   date: '2024-06-09'
@@ -49,7 +73,7 @@ Afruja's work offers valuable insights into drug metabolism and could enhance un
   title: 'New projects: Nike Nemitz and Yusuf Ali Kulanoglu start PBPK Modeling Projects'
   date: '2024-04-15'
   image: nike_yusuf_projects.png
-  link: 'https://www.degruyter.com/document/doi/10.1515/jib-2024-0008/html'
+  link: ''
   short: "Nike Nemitz and Yusuf Ali Kulanoglu will develop PBPK models for dapagliflozin and aliskiren, respectively, aiming to enhance understanding of pharmacokinetics and pharmacodynamics in diabetes and cardiovascular treatments."
   abstract: 'Nike Nemitz is developing a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the SGLT2 inhibitor dapagliflozin. The objective is to enhance understanding of intraindividual variability in diabetes treatment with SGLT2 inhibitors, focusing on differences in hepatorenal function. Yusuf Ali Kulanoglu is working on a PBPK model of the direct renin inhibitor aliskiren to improve understanding of its pharmacokinetics and the influencing factors. Both projects aim to provide deeper insights into drug behavior and variability, potentially improving therapeutic outcomes.'
 
