@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Posters & preprints
+title: Posters
 permalink: /posters/
 ---
 
@@ -8,7 +8,7 @@ permalink: /posters/
 	<table class="table table-hover">
 		{% for poster in site.data.posters %}
 		<tr>
-			<td><b>{{ poster.year }}</b></td>
+			<td><b>{{ poster.date }}</b></td>
 			<td>
 				{% if poster.pdf %}
 				<a href="/paper/{{ poster.pdf }}"><img src="../img/pdf.png" title="PDF" height="20"/></a>
@@ -25,6 +25,7 @@ permalink: /posters/
 			</td>
 			<td><strong><i>{{ poster.title }}</i></strong><br />
 				{{ poster.authors }}<br />
+				{{ poster.affiliations }}<br />
 				{{ poster.meeting }}{% if poster.doi %}. doi:<a href="https://doi.org/{{poster.doi}}">{{poster.doi}}</a>{% endif %}
 				{% if poster.abstract %}
 				<p class="abstract text-justify small">{{ poster.abstract }}</p>

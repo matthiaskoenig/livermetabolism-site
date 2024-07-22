@@ -3,7 +3,7 @@
   date: 2024-07-18
   pdf: 'posters/HIP2024_PK-LLM_Prerna.Parakkat.pdf'
   image: 'posters/HIP2024_PK-LLM_Prerna.Parakkat.jpg'
-  authors: 'Prerna Parakkat[1], <b>Matthias König</b> [1]'
+  authors: 'Prerna Parakkat<sup>2</sup>, <b>Matthias König</b><sup>1</sup>'
   affiliations: "[1] Humboldt-University of Berlin, Institute for Theoretical Biology, Berlin, Germany, [2] Vellore Institute of Technology, Chennai, India"
   title: 'PK-LLM : Large Language Model (LLM) for Pharmacokinetic (PK) Data Curation'
   meeting: 'HIC conference 2024, Humboldt Internship Program Day, Berlin, 18 July 2024'
@@ -16,14 +16,14 @@
     - pharmacokinetics
   project:
   repository:
-  abstract: "Our group has developed PK-DB [1], an open pharmacokinetics database from clinical and preclinical research. The aim of this Humboldt Internship project is to use Large Language Models (LLM) to support effective data curation for PK-DB from scientific pharmacokinetic literature."
+  abstract: "Our group has developed PK-DB, an open pharmacokinetics database from clinical and preclinical research. The aim of this Humboldt Internship project is to use Large Language Models (LLM) to support effective data curation for PK-DB from scientific pharmacokinetic literature."
 
 - id: 'HIP2024_canagliflozin_Vera.Tereshchuk'
   year: 2024
   date: 2024-07-18
   pdf: 'posters/HIP2024_canagliflozin_Vera.Tereshchuk.pdf'
   image: 'posters/HIP2024_canagliflozin_Vera.Tereshchuk.jpg'
-  authors: 'Vera Tereshchuk [1], <b>Matthias König</b> [2]'
+  authors: 'Vera Tereshchuk<sup>1</sup>, <b>Matthias König</b><sup>2</sup>'
   affiliations: "[1] Moscow Institute of Physics and Technology, [2] Humboldt-University of Berlin, Institute for Theoretical Biology, Berlin, Germany"
   title: 'Canagliflozin'
   meeting: 'HIC conference 2024, Humboldt Internship Program Day, Berlin, 18 July 2024'
@@ -41,7 +41,7 @@
   date: 2024-07-18
   pdf: 'posters/HIP2024_morphine_Deepa.Maheshvare.pdf'
   image: 'posters/HIP2024_morphine_Deepa.Maheshvare.jpg'
-  authors: 'Deepa Maheshvare M. [2], Rohini Chakraborty [2], Rohit  Chakraborty [2], <b>Matthias König</b> [1]'
+  authors: 'Deepa Maheshvare M.<sup>2</sup>, Rohini Chakraborty<sup>2</sup>, Rohit  Chakraborty<sup>2</sup>, <b>Matthias König</b><sup>1</sup>'
   affiliations: "1 Humboldt-University of Berlin, Institute for Theoretical Biology, Berlin, Germany, 2 Indian Institute of Science, Bengaluru, India"
   title: 'A physiologically based pharmacokinetic model of morphine'
   meeting: 'HIC conference 2024, Humboldt Internship Program Day, Berlin, 18 July 2024'
@@ -59,7 +59,7 @@
   date: 2024-06-26
   pdf: 'posters/PAGE2024_captopril_Myshkina_Koenig.pdf'
   image: 'posters/PAGE2024_captopril_Myshkina_Koenig.jpg'
-  authors: 'Mariia Myshkina [1], <b>Matthias König</b> [1]'
+  authors: 'Mariia Myshkina<sup>1</sup>, <b>Matthias König</b><sup>1</sup>'
   affiliations: "1 Humboldt-University of Berlin, Institute for Theoretical Biology, Berlin, Germany"
   title: 'Captopril in Focus: Establishing an Open Pharmacokinetic Dataset and PBPK Modeling'
   meeting: 'PAGE2024 - Population Approach Group Europe, Rome, 26-28 June 2024'
