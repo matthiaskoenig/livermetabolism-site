@@ -10,9 +10,6 @@ permalink: /posters/
 		<tr>
 			<td><b>{{ poster.date }}</b></td>
 			<td>
-				{% if poster.pdf %}
-				<a href="/paper/{{ poster.pdf }}"><img src="../img/pdf.png" title="PDF" height="20"/></a>
-				{% endif %}
 				{% if poster.project %}
 				<a href="{{ poster.project }}"><img src="../img/project.png" title="Project homepage" height="20"/></a>
 				{% endif %}
@@ -20,7 +17,7 @@ permalink: /posters/
 				<a href="{{ poster.repository }}"><img src="../img/repository.png" title="Repository homepage" height="20"/></a>
 				{% endif %}
 				{% if poster.image %}
-				<img src="/paper/{{ poster.image }}" title="Poster" height="200"/></a>
+				<a href="/paper/{{ poster.pdf }}"><img src="/paper/{{ poster.image }}" title="Poster" height="200"/></a>
 				{% endif %}
 			</td>
 			<td><strong><i>{{ poster.title }}</i></strong><br />
