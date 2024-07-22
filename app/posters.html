@@ -1,0 +1,42 @@
+---
+layout: page
+title: Posters & preprints
+permalink: /posters/
+---
+
+<div class="row">
+	<table class="table table-hover">
+		{% for poster in site.data.posters %}
+		<tr>
+			<td><b>{{ poster.year }}</b></td>
+			<td>
+				{% if poster.pdf %}
+				<a href="/paper/{{ poster.pdf }}"><img src="../img/pdf.png" title="PDF" height="20"/></a>
+				{% endif %}
+				{% if poster.project %}
+				<a href="{{ poster.project }}"><img src="../img/project.png" title="Project homepage" height="20"/></a>
+				{% endif %}
+				{% if poster.repository %}
+				<a href="{{ poster.repository }}"><img src="../img/repository.png" title="Repository homepage" height="20"/></a>
+				{% endif %}
+			</td>
+			<td><strong><i>{{ poster.title }}</i></strong><br />
+				{{ poster.authors }}<br />
+				{{ poster.meeting }}{% if poster.doi %}. doi:<a href="https://doi.org/{{poster.doi}}">{{poster.doi}}</a>{% endif %}
+				{% if poster.abstract %}
+				<p class="abstract text-justify small">{{ poster.abstract }}</p>
+				{% endif %}
+				{% if poster.keywords %}
+				<p class="small">
+				<strong class="small">Keywords:</strong>
+				{% for keyword in poster.keywords %}
+					{{ keyword }},
+				{% endfor %}
+				</p>
+				{% endif %}
+			</td>
+			<td></td>
+		</tr>
+		{% endfor %}
+	</table>
+</div>

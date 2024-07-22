@@ -1,0 +1,25 @@
+- id: 'PAGE2024_captopril_Myshkina_Koenig'
+  year: 2024
+  date: 2024-06-26
+  pdf: 'posters/PAGE2024_captopril_Myshkina_Koenig.pdf'
+  authors: 'Mariia Myshkina, <b>Matthias König</b>'
+  title: 'Captopril in Focus: Establishing an Open Pharmacokinetic Dataset and PBPK Modeling'
+  meeting: 'PAGE2024 - Population Approach Group Europe, Rome, 26-28 June 2024'
+  webpage: 'https://www.page-meeting.org/default.asp?id=49&keuze=meeting'
+  doi:
+  keywords:
+    - captopril
+    - pharmacometrics
+  project:
+  repository:
+  abstract: "Introduction: Angiotensin-converting enzyme (ACE) inhibitors, such as captopril, are widely prescribed for the treatment of hypertension and heart failure. Captopril, the first ACE inhibitor developed in the 1980s, is primarily taken orally and is rapidly absorbed, reaching peak plasma concentrations within an hour. Its half-life is approximately 2 hours, but several factors, including renal function, heart disease, age and sex, can affect its pharmacokinetics. Despite the widespread use of captopril, comprehensive pharmacokinetic data have been lacking. Our group has developed PK-DB (https://pk-db.com) [1], an open database containing high-quality pharmacokinetic data from clinical and preclinical research. PK-DB includes patient cohort characteristics, interventions, concentration-time profiles, and kinetic parameters, with the ability to automatically calculate pharmacokinetic parameters using non-compartmental methods. 
+  Objectives: The objectives of this study were to curate and analyze captopril pharmacokinetic data, expand the PK-DB, develop a whole-body physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of captopril in accordance with FAIR principles [2], and improve understanding of the intra-individual variability in captopril pharmacokinetics influenced by factors such as age, sex, renal and cardiac function. 
+  Methods: Over 600 publications on captopril pharmacokinetics were reviewed through a systematic literature search, with a subset selected for data curation in PK-DB. The PBPK model was developed using a compartmental approach and encoded in Systems Biology Markup Language (SBML) [3] for accessibility and reproducibility. 
+  Results: A comprehensive set of captopril pharmacokinetic data was generated from 15 clinical studies in healthy volunteers and patients with renal impairment, heart failure and hypertension. The PBPK model includes four major compartments (blood, intestine, liver, kidney) and describes absorption, distribution, metabolism and excretion. It successfully represents the pharmacokinetic profile of captopril in different age groups, showing minimal age-related differences in unchanged drug concentration. Heart failure did not significantly affect maximum plasma concentration or area under the curve (AUC), but renal function strongly influenced captopril elimination. We present this data set and open PBPK model of captopril as a valuable resource for further research. 
+  Conclusions: This study successfully establishes a freely accessible, comprehensive dataset and an open PBPK model of captopril, enhancing our understanding of its pharmacokinetic behavior across different patient groups. Our findings emphasize the significance of renal function in captopril elimination and provide a valuable resource for personalized medicine approaches in hypertension and heart failure treatment. 
+  References: 
+  [1]	Grzegorzewski, J. et al. 2021. PK-DB: pharmacokinetics database for individualized and stratified computational modeling. Nucleic Acids Research. 49, D1 (Jan. 2021), D1358–D1364. DOI:https://doi.org/10.1093/nar/gkaa990.
+  [2]	Wilkinson, M.D. et al. 2016. The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data. 3, (Mar. 2016), 160018. DOI:https://doi.org/10.1038/sdata.2016.18.
+  [3]	Keating, SM. et al, SBML Level 3: an extensible format for the exchange and reuse of biological models. Mol Syst Biol. 2020 Aug;16(8):e9110. doi: 10.15252/msb.20199110.
+"
+
