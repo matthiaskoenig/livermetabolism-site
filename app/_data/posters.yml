@@ -1,8 +1,66 @@
+- id: 'HIP2024_PK-LLM_Prerna.Parakkat'
+  year: 2024
+  date: 2024-07-18
+  pdf: 'posters/HIP2024_PK-LLM_Prerna.Parakkat.pdf'
+  image: 'posters/HIP2024_PK-LLM_Prerna.Parakkat.jpg'
+  authors: 'Prerna Parakkat[1], <b>Matthias König</b> [1]'
+  affiliations: "[1] Humboldt-University of Berlin, Institute for Theoretical Biology, Berlin, Germany, [2] Vellore Institute of Technology, Chennai, India"
+  title: 'PK-LLM : Large Language Model (LLM) for Pharmacokinetic (PK) Data Curation'
+  meeting: 'HIC conference 2024, Humboldt Internship Program Day, Berlin, 18 July 2024'
+  webpage: 'https://hic.hu-berlin.de/en/internship-program'
+  doi:
+  keywords:
+    - LLM
+    - large language models
+    - pharmacometrics
+    - pharmacokinetics
+  project:
+  repository:
+  abstract: "Our group has developed PK-DB [1], an open pharmacokinetics database from clinical and preclinical research. The aim of this Humboldt Internship project is to use Large Language Models (LLM) to support effective data curation for PK-DB from scientific pharmacokinetic literature."
+
+- id: 'HIP2024_canagliflozin_Vera.Tereshchuk'
+  year: 2024
+  date: 2024-07-18
+  pdf: 'posters/HIP2024_canagliflozin_Vera.Tereshchuk.pdf'
+  image: 'posters/HIP2024_canagliflozin_Vera.Tereshchuk.jpg'
+  authors: 'Vera Tereshchuk [1], <b>Matthias König</b> [2]'
+  affiliations: "[1] Moscow Institute of Physics and Technology, [2] Humboldt-University of Berlin, Institute for Theoretical Biology, Berlin, Germany"
+  title: 'Canagliflozin'
+  meeting: 'HIC conference 2024, Humboldt Internship Program Day, Berlin, 18 July 2024'
+  webpage: 'https://hic.hu-berlin.de/en/internship-program'
+  doi:
+  keywords:
+    - canagliflozin
+    - pharmacometrics
+  project:
+  repository:
+  abstract: "In this project, we are developing a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the SGLT2 inhibitor canagliflozin. The aim is to improve our understanding of intra-individual variability in diabetes treatment with SGLT2 inhibitors, e.g. differences in hepatorenal function."
+
+- id: 'HIP2024_morphine_Deepa.Maheshvare'
+  year: 2024
+  date: 2024-07-18
+  pdf: 'posters/HIP2024_morphine_Deepa.Maheshvare.pdf'
+  image: 'posters/HIP2024_morphine_Deepa.Maheshvare.jpg'
+  authors: 'Deepa Maheshvare M. [2], Rohini Chakraborty [2], Rohit  Chakraborty [2], <b>Matthias König</b> [1]'
+  affiliations: "1 Humboldt-University of Berlin, Institute for Theoretical Biology, Berlin, Germany, 2 Indian Institute of Science, Bengaluru, India"
+  title: 'A physiologically based pharmacokinetic model of morphine'
+  meeting: 'HIC conference 2024, Humboldt Internship Program Day, Berlin, 18 July 2024'
+  webpage: 'https://hic.hu-berlin.de/en/internship-program'
+  doi:
+  keywords:
+    - morphine
+    - pharmacometrics
+  project:
+  repository:
+  abstract: "This Humboldt Internship project develops a physiologically based pharmacokinetic (PBPK) model of the pain medication morphine. The objective is to enhance our understanding of how underlying causes of intraindividual variability in morphine treatment, e.g., differences in absorption rates or hepatorenal function."
+
 - id: 'PAGE2024_captopril_Myshkina_Koenig'
   year: 2024
   date: 2024-06-26
   pdf: 'posters/PAGE2024_captopril_Myshkina_Koenig.pdf'
-  authors: 'Mariia Myshkina, <b>Matthias König</b>'
+  image: 'posters/PAGE2024_captopril_Myshkina_Koenig.jpg'
+  authors: 'Mariia Myshkina [1], <b>Matthias König</b> [1]'
+  affiliations: "1 Humboldt-University of Berlin, Institute for Theoretical Biology, Berlin, Germany"
   title: 'Captopril in Focus: Establishing an Open Pharmacokinetic Dataset and PBPK Modeling'
   meeting: 'PAGE2024 - Population Approach Group Europe, Rome, 26-28 June 2024'
   webpage: 'https://www.page-meeting.org/default.asp?id=49&keuze=meeting'
@@ -13,10 +71,15 @@
   project:
   repository:
   abstract: "Introduction: Angiotensin-converting enzyme (ACE) inhibitors, such as captopril, are widely prescribed for the treatment of hypertension and heart failure. Captopril, the first ACE inhibitor developed in the 1980s, is primarily taken orally and is rapidly absorbed, reaching peak plasma concentrations within an hour. Its half-life is approximately 2 hours, but several factors, including renal function, heart disease, age and sex, can affect its pharmacokinetics. Despite the widespread use of captopril, comprehensive pharmacokinetic data have been lacking. Our group has developed PK-DB (https://pk-db.com) [1], an open database containing high-quality pharmacokinetic data from clinical and preclinical research. PK-DB includes patient cohort characteristics, interventions, concentration-time profiles, and kinetic parameters, with the ability to automatically calculate pharmacokinetic parameters using non-compartmental methods. 
+  
   Objectives: The objectives of this study were to curate and analyze captopril pharmacokinetic data, expand the PK-DB, develop a whole-body physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of captopril in accordance with FAIR principles [2], and improve understanding of the intra-individual variability in captopril pharmacokinetics influenced by factors such as age, sex, renal and cardiac function. 
+  
   Methods: Over 600 publications on captopril pharmacokinetics were reviewed through a systematic literature search, with a subset selected for data curation in PK-DB. The PBPK model was developed using a compartmental approach and encoded in Systems Biology Markup Language (SBML) [3] for accessibility and reproducibility. 
+  
   Results: A comprehensive set of captopril pharmacokinetic data was generated from 15 clinical studies in healthy volunteers and patients with renal impairment, heart failure and hypertension. The PBPK model includes four major compartments (blood, intestine, liver, kidney) and describes absorption, distribution, metabolism and excretion. It successfully represents the pharmacokinetic profile of captopril in different age groups, showing minimal age-related differences in unchanged drug concentration. Heart failure did not significantly affect maximum plasma concentration or area under the curve (AUC), but renal function strongly influenced captopril elimination. We present this data set and open PBPK model of captopril as a valuable resource for further research. 
+  
   Conclusions: This study successfully establishes a freely accessible, comprehensive dataset and an open PBPK model of captopril, enhancing our understanding of its pharmacokinetic behavior across different patient groups. Our findings emphasize the significance of renal function in captopril elimination and provide a valuable resource for personalized medicine approaches in hypertension and heart failure treatment. 
+  
   References: 
   [1]	Grzegorzewski, J. et al. 2021. PK-DB: pharmacokinetics database for individualized and stratified computational modeling. Nucleic Acids Research. 49, D1 (Jan. 2021), D1358–D1364. DOI:https://doi.org/10.1093/nar/gkaa990.
   [2]	Wilkinson, M.D. et al. 2016. The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data. 3, (Mar. 2016), 160018. DOI:https://doi.org/10.1038/sdata.2016.18.

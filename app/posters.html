@@ -19,6 +19,9 @@ permalink: /posters/
 				{% if poster.repository %}
 				<a href="{{ poster.repository }}"><img src="../img/repository.png" title="Repository homepage" height="20"/></a>
 				{% endif %}
+				{% if poster.image %}
+				<img src="/paper/{{ poster.image }}" title="Poster" height="200"/></a>
+				{% endif %}
 			</td>
 			<td><strong><i>{{ poster.title }}</i></strong><br />
 				{{ poster.authors }}<br />
