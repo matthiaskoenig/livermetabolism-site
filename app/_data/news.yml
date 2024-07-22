@@ -1,3 +1,21 @@
+- id: 'hip2024_day'
+  status: 'current'
+  title: 'Humboldt Internship Program (HIP) conference'
+  date: '2024-07-18'
+  image: hip2024_day.jpg
+  link: 'https://hic.hu-berlin.de/en/internship-program'
+  short: "Proud to participate in Humboldt Internship Program 2024."
+  abstract: 'Students presented their results during the Humboldt Internship Program 2024. Great work by Vera, Deepa and Prerna.'
+
+- id: 'edith_amsterdam'
+  status: 'current'
+  title: 'Final ecosystem meeting of EDITH on building the VHT'
+  date: '2024-07-15'
+  image: edith_amsterdam.jpg
+  link: 'https://www.edith-csa.eu'
+  short: "Proud to participate in the final ecosystem meeting of EDITH on building the virtual human twin (VHT) in Amsterdam."
+  abstract: 'The first day was dedicated to a plenary session on the EDITH proof of concept infrastructure, presented from the users’ perspective, where Researchers, Communities, together with Healthcare Providers and Patients were well represented to connect resources and enlighten the federated nature of the VHT, as well as to deploy VHT at bed side in clinical workflows and allow patients to upload their own data in the VHT, while representatives from Industry explored possible interaction of services within VHT.'
+
 - id: 'vera_project'
   status: 'current'
   title: 'New project: Vera Tereshchuk starts SGLT2 PBPK Modeling Project'
