@@ -1,4 +1,25 @@
-- id: 'Sego2025_stochastic_reproducibility'
+- id: 'Golebiewski2014_standards'
+  year: 2024
+  date: 2024-07-22
+  pdf: 'Golebiewski2014_standards.pdf'
+  authors: 'Martin Golebiewski, Gary Bader, Padraig Gleeson, Thomas E Gorochowski, Sarah M Keating, <b>Matthias König</b>, Chris J Myers, David P Nickerson, Björn Sommer, Dagmar Waltemath, Falk Schreiber'
+  title: 'Specifications of standards in systems and synthetic biology: status, developments, and tools in 2024'
+  journal: 'J Integr Bioinform. 2024 Jul 22'
+  status:
+  doi: 10.1515/jib-2024-0015
+  pmid: 39026464
+  keywords:
+    - COMBINE
+    - reproducibility
+    - standards
+  project:
+  repository:
+  abstract: "The “COmputational Modeling in BIology NEtwork” (COMBINE) initiative aims to harmonise the development of
+diverse community standards for computational models in biology. It coordinates standard development
+to support the associated projects towards establishing a suite of compatible, interoperable and comprehensive
+standards that address the full spectrum of modeling in systems and synthetic biology."
+
+- id: 'Sego2024_stochastic_reproducibility'
   year: 2024
   date: 2024-06-24
   pdf: 'Sego2024_stochastic_reproducibility.pdf'
