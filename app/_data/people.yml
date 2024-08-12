@@ -77,17 +77,6 @@
   homepage:
   description: 'Amanda develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the diuretic hydrochlorothiazide. The objective is to enhance our understanding of how hydrochlorothiazide changes urinary volume and plasma volume and ion balance (sodium, potassium, chloride).'
 
-- id: 'prerna'
-  status: 'current'
-  year: '2024-05/2024-07'
-  name: 'Prerna Parakkat'
-  position: 'Humboldt-Internship student 2024'
-  image: prerna.jpg
-  orcid:
-  repository: 'https://github.com/prerna2023'
-  homepage:
-  description: 'Prerna works on an advanced Large Language Model (LLM) to serve as an expert system for efficiently and accurately curating pharmacokinetic data from scientific literature.'
-
 - id: 'vera'
   status: 'current'
   year: '2024-07/2024-09'
@@ -166,8 +155,8 @@
   description: 'Rohit supports the data curation for morphine pharmacokinetics.'
 
 - id: 'samira'
-  status: 'alumni'
-  year: '2023-09/2023-12'
+  status: 'current'
+  year: '2024-08/2024-11'
   name: 'Samira Eissazedeh'
   position: 'ERASMUS'
   image: samira.png
@@ -175,6 +164,18 @@
   repository: https://github.com/47857078
   homepage:
   description: "Samira works to enhance our understanding of the role of endoglin in TGF-β signaling. She develops a computational model that explores the nuances of L-endoglin's role within this pathway and evaluates the effects of targeted interventions on this signaling."
+
+- id: 'prerna'
+  status: 'alumni'
+  year: '2024-05/2024-08'
+  name: 'Prerna Parakkat'
+  position: 'Humboldt-Internship student 2024'
+  image: prerna.jpg
+  orcid:
+  repository: 'https://github.com/prerna2023'
+  homepage:
+  description: 'Prerna worked on an advanced Large Language Model (LLM) to serve as an expert system for efficiently and accurately curating pharmacokinetic data from scientific literature.'
+
 
 - id: 'afruja'
   status: 'alumni'
@@ -253,6 +254,18 @@
   repository: 'https://github.com/dzinty'
   homepage:
   description: 'Xenia works on a physiologically based pharmacokinetic (PBPK) model of inulin to assess the glomerular filtration rate (GFR). Our goal is to gain a deeper understanding of the impact of various inulin protocols on GFR measurement and the influence of physiological factors, such as body composition, on GFR determination using inulin.'
+
+- id: 'samira'
+  status: 'alumni'
+  year: '2023-09/2023-12'
+  name: 'Samira Eissazedeh'
+  position: 'ERASMUS'
+  image: samira.png
+  orcid:
+  repository: https://github.com/47857078
+  homepage:
+  description: "Samira works to enhance our understanding of the role of endoglin in TGF-β signaling. She develops a computational model that explores the nuances of L-endoglin's role within this pathway and evaluates the effects of targeted interventions on this signaling."
+
 
 - id: 'zhara'
   status: 'alumni'

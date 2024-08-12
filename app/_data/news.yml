@@ -1,3 +1,12 @@
+- id: 'bua_open_science_ambassador'
+  status: 'current'
+  title: 'Open Science Ambassador of the BUA'
+  date: '2024-08-08'
+  image: bua_open_science_ambassador.jpg
+  link: 'https://www.berlin-university-alliance.de/en/commitments/research-quality/open-science/index.html'
+  short: "Proud to be selected as Open Science Ambassador of the Berlin University Alliance (BUA) in 2024."
+  abstract: 'To find discipline-specific and accessible solutions to be implemented into everyday research routines, we have applied for Open Science Ambassador. As part of the work we will work on the reproducibility of computational models.'
+
 - id: 'hip2024_day'
   status: 'current'
   title: 'Humboldt Internship Program (HIP) conference'
