@@ -8,13 +8,13 @@
   journal: 'Atherosclerosis, Volume 395, Supplement 1, August 2024, 118102, EAS Abstracts 2024'
   status: abstract
   doi: 10.1016/j.atherosclerosis.2024.118102
-  pmid: 39026464
+  pmid:
   keywords:
     - endoglin
     - modeling
   project:
   repository:
-  abstract: "Background and Aims: NASH,a growing liver disease worldwide,requires an understanding of its molecular progression for effective treatment.Endoglin,a TGFβ-superfamily coreceptor,has two forms:membrane endoglin (ENG)and soluble endoglin (sENG).While ENG is associated with liver sinusoidal endothelial dysfunction (LSED)and liver fibrosis, its direct involvement in the progression of NASH remains unclear.Our aim was to investigate the relationship between NASH-progression,ENG expression,and LSED development.We hypothesized that the anti-endoglin monoclonal antibody M1043 would affect LSED development by directly affecting ENG expression and signaling with respect to NASH development.
+  abstract: "Background and Aims: NASH, a growing liver disease worldwide,requires an understanding of its molecular progression for effective treatment.Endoglin,a TGFβ-superfamily coreceptor,has two forms:membrane endoglin (ENG)and soluble endoglin (sENG).While ENG is associated with liver sinusoidal endothelial dysfunction (LSED)and liver fibrosis, its direct involvement in the progression of NASH remains unclear.Our aim was to investigate the relationship between NASH-progression,ENG expression,and LSED development.We hypothesized that the anti-endoglin monoclonal antibody M1043 would affect LSED development by directly affecting ENG expression and signaling with respect to NASH development.
   
   Methods: NASH was induced in two separated groups of male C57BL/6 mice using the CDAA-HFD diet(n=7),while two control groups(n=7)were fed a standard diet.Mice were sacrificed after four and eight weeks to evaluate ENG protein changes during NASH. Then,24 mice were grouped into the control group(n=8),CDAA+rat IgG(n=8),and CDAA+M1043 group (n=8).After four weeks,CDAA+IgG and CDAA+M1043 groups received intraperitoneal injections of rat IgG (10 mg/kg)and M1043(10 mg/kg) twice a week.The experiment lasted eight weeks,with blood and liver samples collected for analysis.To better understand the role of ENG antibody and its cleavage,a computational model of ENG modulation of TGFβ signaling was developed.
   
