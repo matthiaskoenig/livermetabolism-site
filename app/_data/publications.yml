@@ -1,7 +1,31 @@
-- id: 'Golebiewski2014_standards'
+- id: 'Eissazadeh2024_abstract'
   year: 2024
   date: 2024-07-22
-  pdf: 'Golebiewski2014_standards.pdf'
+  pdf: 'Eissazadeh2024_abstract.pdf'
+  authors: 'Samira Eissazadeh, Jana Urbankova Rathouska, Ivana Nemeckova, <b>Matthias König</b>, Petr Nachtigal'
+  affilitations: "Biological And Medical Sciences, Faculty of Pharmacy, Hradec Kralove, Czech Republic; 2 Institute For Theoretical Biology, Humboldt Universität zu Berlin, Berlin, Germany"
+  title: 'Modulation of endoglin and soluble endoglin in NASH: Computational modeling and monoclonal antibody therapeutic benefits'
+  journal: 'Atherosclerosis, Volume 395, Supplement 1, August 2024, 118102, EAS Abstracts 2024'
+  status: abstract
+  doi: 10.1016/j.atherosclerosis.2024.118102
+  pmid: 39026464
+  keywords:
+    - endoglin
+    - modeling
+  project:
+  repository:
+  abstract: "Background and Aims: NASH,a growing liver disease worldwide,requires an understanding of its molecular progression for effective treatment.Endoglin,a TGFβ-superfamily coreceptor,has two forms:membrane endoglin (ENG)and soluble endoglin (sENG).While ENG is associated with liver sinusoidal endothelial dysfunction (LSED)and liver fibrosis, its direct involvement in the progression of NASH remains unclear.Our aim was to investigate the relationship between NASH-progression,ENG expression,and LSED development.We hypothesized that the anti-endoglin monoclonal antibody M1043 would affect LSED development by directly affecting ENG expression and signaling with respect to NASH development.
+  
+  Methods: NASH was induced in two separated groups of male C57BL/6 mice using the CDAA-HFD diet(n=7),while two control groups(n=7)were fed a standard diet.Mice were sacrificed after four and eight weeks to evaluate ENG protein changes during NASH. Then,24 mice were grouped into the control group(n=8),CDAA+rat IgG(n=8),and CDAA+M1043 group (n=8).After four weeks,CDAA+IgG and CDAA+M1043 groups received intraperitoneal injections of rat IgG (10 mg/kg)and M1043(10 mg/kg) twice a week.The experiment lasted eight weeks,with blood and liver samples collected for analysis.To better understand the role of ENG antibody and its cleavage,a computational model of ENG modulation of TGFβ signaling was developed.
+  
+  Results: Liver injury was confirmed by elevated liver enzymes,increased fibrosis,and inflammatory biomarkers in both CDAA-HFD groups.LSEC development was confirmed by increased ENG,VCAM-1,and ICAM-1 expression in endothelial cells.We showed increased expression of MMP-14 and higher levels of sENG levels in 8 weeks fed mice.M1043 treatment significantly prevented the increase in ENG,VCAM-1,and ICAM-1 protein expression in liver sinusoidal endothelial cells when compared to non-treated mice.Computational modeling simulations showed the ENG-dependent switch between Smad2/3 and Smad1/5/8 signaling,along with changes in sENG levels,which was reversed by ENG antibodies.
+  
+  Conclusions: Our findings indicate that NASH development is associated with LSED development,increased ENG and MMP-14 expression,and elevated sENG levels,suggesting ENG role in LSED progression.Blocking of ENG expression and signaling might be a potential target to affect LSED development and possibly prevent NASH aggravation."
+
+- id: 'Golebiewski2024_standards'
+  year: 2024
+  date: 2024-07-22
+  pdf: 'Golebiewski2024_standards.pdf'
   authors: 'Martin Golebiewski, Gary Bader, Padraig Gleeson, Thomas E Gorochowski, Sarah M Keating, <b>Matthias König</b>, Chris J Myers, David P Nickerson, Björn Sommer, Dagmar Waltemath, Falk Schreiber'
   title: 'Specifications of standards in systems and synthetic biology: status, developments, and tools in 2024'
   journal: 'J Integr Bioinform. 2024 Jul 22'
