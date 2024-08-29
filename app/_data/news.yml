@@ -2,7 +2,7 @@
   status: 'current'
   title: 'Master Thesis Jonas Küttner'
   date: '2024-08-28'
-  image: bachelor_thesis_afruja.hossain.png
+  image: master_thesis_jonas.kuettner.png
   link: '/paper/theses/Master.Thesis.Jonas.Kuettner.pdf'
   short: "Jonas Küttner submitted his Master thesis developing a workflow for image analysis in the liver"
   abstract: "The mammalian liver is organized into three-dimensional structures called lobules that are integral to its function. According to the widely accepted hexagonal model, the cross-section of each lobule is characterized by a central vein and portal triads at the corners. These portal triads consist of a hepatic portal vein, a hepatic arteriole, and a bile duct. Blood is delivered through the hepatic artery and portal vein and flows inward from the outer periportal region toward the central vein through sinusoids lined with hepatocytes. These hepatocytes express a wide variety of metabolic enzymes, including cytochrome P450 (CYP) isoforms that are critical for xenobiotic metabolism. Notably, many hepatic enzymes, including CYPs, exhibit differential expression along the periportal-to-perivenous axis, a spatial variation known as liver zonation.
