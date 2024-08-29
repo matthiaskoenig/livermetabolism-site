@@ -176,16 +176,27 @@
   homepage:
   description: 'Jennesse develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of SGLT2 inhibitor canagliflozin. The objective is to enhance our understanding of the underlying causes of intraindividual variability in diabetes treatment with SGLT2 inhibitors, e.g., differences in hepatorenal function.'
 
-- id: 'jennesse'
+- id: 'michelle'
   status: 'current'
-  year: '2024-08/2024-11'
-  name: 'Jennesse Alejandro'
-  position: 'Humboldt-Internship student 2024 (Brown University)'
-  image: jennesse.jpg
+  year: '2024-09/2025-02'
+  name: 'Michelle Elias'
+  position: 'Bachelor project and Bachelor thesis'
+  image: michelle.jpg
   orcid:
-  repository: 'https://github.com/jen-ne-sse'
+  repository: 'https://github.com/mii-halina'
   homepage:
-  description: 'Jennesse develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of SGLT2 inhibitor canagliflozin. The objective is to enhance our understanding of the underlying causes of intraindividual variability in diabetes treatment with SGLT2 inhibitors, e.g., differences in hepatorenal function.'
+  description: 'Michelle develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of the sulfonylurea glimepiride. The objective is to enhance our understanding of the underlying causes of intraindividual variability in insulin secretion and T2DM treatment with sulfonylurea, e.g., differences in hepatorenal function.'
+
+- id: 'ennie'
+  status: 'current'
+  year: '2024-09/2025-02'
+  name: 'Ennie Tensil'
+  position: 'Bachelor project and Bachelor thesis'
+  image: ennie.jpg
+  orcid:
+  repository: 'https://github.com/ennietensil'
+  homepage:
+  description: 'Ennie develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of the direct angiotensin II receptor (ARB) inhibitor losartan. The objective is to enhance our understanding of the underlying causes of intraindividual variability in hyptertension treatment with ARB inhibitors, e.g., differences in hepatorenal function and CYPC29 genotype.'
 
 - id: 'prerna'
   status: 'alumni'
