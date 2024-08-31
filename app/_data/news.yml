@@ -1,3 +1,18 @@
+- id: 'projects_ennie_michelle'
+  status: 'current'
+  title: 'Launch of Two New Research Projects in PBPK/PD Modeling'
+  date: '2024-08-30'
+  image: projects_ennie_michelle.gif
+  link:
+  short: "Ennie Tensil and Michelle Elias start Bachelor projects on losartan and glimeperide"
+  abstract: "We are excited to announce the initiation of two  projects within our group, focusing on the development of Physiologically-Based Pharmacokinetic/Pharmacodynamic (PBPK/PD) models. These projects aim to deepen our understanding of drug action and variability in treatment responses, contributing significantly to personalized medicine.
+  
+  Michelle Elias will lead the first project, which centers on the development of a PBPK/PD model for the sulfonylurea glimepiride, a widely used medication for managing type 2 diabetes. This project aims to enhance our understanding of the intraindividual variability observed in diabetes treatment with sulfonylureas, particularly focusing on differences in hepatorenal function. The insights gained from this model could lead to more personalized and effective treatment strategies for patients with diabetes.
+  
+  The second project, led by Ennie Tensil, will focus on developing a PBPK/PD model for the angiotensin II receptor blocker (ARB) losartan. This medication is commonly prescribed for treating high blood pressure and protecting against stroke in high-risk individuals. The project will investigate the physiological factors influencing the pharmacokinetics and pharmacodynamics of losartan, aiming to improve our understanding of its efficacy and variability in different patient populations.
+
+  Both projects represent important advancements in our research capabilities, with the potential to impact clinical practice by providing deeper insights into drug behavior and patient variability. We look forward to the outcomes these studies will bring and the contributions they will make to the field of pharmacology."
+
 - id: 'master_thesis_jonas.kuettner'
   status: 'current'
   title: 'Master Thesis Jonas Küttner'
