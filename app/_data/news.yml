@@ -36,6 +36,18 @@
   short: "Proud to be selected as Open Science Ambassador of the Berlin University Alliance (BUA) in 2024."
   abstract: 'To find discipline-specific and accessible solutions to be implemented into everyday research routines, we have applied for Open Science Ambassador. As part of the work we will work on the reproducibility of computational models.'
 
+- id: 'dhpe'
+  status: 'current'
+  title: 'Participation in DHPE'
+  date: '2024-07-18'
+  image: dhpe.gif
+  link: 'https://dsfz.charite.de/hochschuldidaktik/digital_health_professions_educator/'
+  short: "Matthias König selected for the Digital Health Professions Educator (DHPE) Program"
+  abstract: 'We are excited to announce that Matthias König has been selected to participate in the "Digital Health Professions Educator" (DHPE) program for 2024/25. This program, part of the "HEDS: Handlungs- und Entscheidungskompetenz Digital Stärken" project, aims to enhance digital teaching skills at Charité. Running from June 2024 to June 2025, the program includes monthly in-person sessions and digital self-study units, leading to a nationally recognized certification (MQ II).
+  <br/ >
+  We are looking forward to embark on this journey to advance our expertise in digital health education!'
+
+
 - id: 'hip2024_day'
   status: 'current'
   title: 'Humboldt Internship Program (HIP) conference'
