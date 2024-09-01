@@ -133,6 +133,36 @@ standards that address the full spectrum of modeling in systems and synthetic bi
   repository: https://github.com/matthiaskoenig/enalapril-model
   abstract: 'Enalapril is a medication used to treat high blood pressure and a num- ber of other cardiovascular conditions. The renin-angiotensin-aldosterone system (RAAS) is the main component involved in the regulation of blood pressure in the body. One of the key steps in this process is the conver- sion of angiotensin I to angiotensin II by angiotensin converting enzyme (ACE). Enalapril is an ACE inhibitor and therefore helps to lower blood pressure. Pharmacokinetics is the branch of pharmacology that studies how the body absorbs, distributes, metabolizes, and eliminates drugs over time. After administration as enalapril maleate, it is absorbed in the intestine and converted by carboxylesterase 1 (CES1) in the liver to the active metabolite, enalaprilat. Enalapril and enalaprilat are eliminated from the body by re- nal clearance. A physiologically based pharmacokinetic (PBPK) model was developed to investigate the pharmacokinetics of enalapril and the factors influencing it. As part of the work, an extensive database of enalapril phar- macokinetics consisting of data from 49 clinical trials was established and used to parameterize and validate the computational model. The model was used to investigate the effect of renal impairment, hepatic impairment and changes in CES1 activity on the pharmacokinetics of enalapril and enalapri- lat, as these three factors are known to have a major influence on the phar- macokinetics of enalapril. The model shows good agreement with a wide range of enalapril and enalaprilat data in serum, plasma and urine under different conditions (healthy, renal impairment, hepatic impairment, CES1 mutations). The model is available in SBML under a CC-BY 4.0 license with all data freely available from the PK-DB pharmacokinetics database.'
 
+- id: 'Bachelor.Thesis.Afruja.Hossain'
+  year: 2024
+  pdf: 'theses/Bachelor.Thesis.Afruja.Hossain.pdf'
+  authors: 'Bachelor Thesis Afruja Hossain (supervisor: <b>Matthias König</b>)'
+  title: 'A systematic overview of protein variability in cytochrome P450 and UDP-glucuronosyltransferase enzymes in the human liver'
+  journal: 'Bachelor Thesis, Jan 2024'
+  status:
+  doi:
+  pmid:
+  keywords:
+    - cytochrome P450
+    - UDP-glucuronosyltransferase
+    - CYP
+    - UGT
+    - protein
+    - liver
+  project:
+  repository: https://github.com/matthiaskoenig/protein-distribution
+  abstract: 'Cytochrome P450 (CYP450) and UDP-glucuronosyltransferase (UGT) enzymes play key roles in the metabolism of a wide variety of endogenous and exogenous compounds, including drugs and toxins. CYP450 enzymes are involved in phase I metabolic reactions that typically introduce or unmask functional groups on molecules, often leading to their activation or inactivation. These reactions include hydroxylation, oxidation, and reduction. UGT enzymes, on the other hand, are essential for phase II metabolism, where they catalyze the conjugation of glucuronic acid to various substrates, making the compounds more water soluble and therefore easier to excrete. Both CYP450 and UGT are critical in determining drug pharmacokinetics, drug efficacy, drug interactions and potential toxicity.
+  
+  A variety of CYP450 and UGT isoforms exist in the human liver, and different isoforms are responsible for detoxifying different substances. For example, CYP1A2 is involved in the metabolism of caffeine, CYP2D6 in dextromethorphan, CYP2E1 in chlorzoxazone, and CYP3A4 in midazolam. There are large inter-individual differences in the metabolism of drugs by the different CYP450 and UGT isoforms. Important factors for these differences are differences in activity, e.g. due to genetic polymorphisms, and the amount of protein of the respective enzyme in the liver. 
+  
+  The aim of this study was to provide a systematic overview of the variability in protein levels of CYP450 and UGT isoforms in the human liver. To this end, a manually curated database of protein abundance information was established and used to answer the following questions: (i) What are the protein distributions of the different CYP450 and UGT isoforms? (ii) What factors affect these protein levels (age, sex, body mass index, smoking, alcohol consumption)? (iii) How do CYP and UGT isoforms correlate among each other? 
+  
+  Key results include: (i) A free and open database of CYP and UGT protein levels in the human liver has been established. (ii) CYP and UGT isoforms show large inter-individual variability in protein levels. (iii) Different CYP and UGT isoforms have different protein levels. (iv) Factors such as age, smoking and alcohol consumption may affect the protein levels of CYP and UGT enzymes. (v) There are significant correlations in protein levels between CYP isoforms and between UGT isoforms.
+  
+  This work has established an important resource for the study of variability in drug detoxification due to variability in protein levels in the human liver.'
+
+
+
 - id: 'Hoepfl2024_BayModTS'
   year: 2024
   pdf: 'Hoepfl2024_BayModTS.pdf'
