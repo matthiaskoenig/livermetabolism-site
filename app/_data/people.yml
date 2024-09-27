@@ -22,16 +22,71 @@
   homepage:
   description: 'Mariia works on ATLAS, a decision support tool for hepatocellular carcinoma (HCC). Based on AI methods, ATLAS processes all relevant patient data from databases, systems medicine and continuum biomechanical in silico prognosis models as well as individual patient data. The tool is being developed in a co-design approach by experts in surgical oncology, mathematical modeling and machine learning.'
 
-- id: 'jonaspk98'
+- id: 'nike'
   status: 'current'
-  year: '2022-'
-  name: 'Jonas Küttner'
-  position: 'Master project, Master student'
-  image: jonaspk98.png
+  year: '2024'
+  name: 'Nike Nemitz'
+  position: 'Bachelor project'
+  image: nike.png
   orcid:
-  repository: 'https://github.com/jonaspk98'
+  repository: 'https://github.com/nikenemitz'
   homepage:
-  description: 'Jonas worked on a physiologically based model of chlorzoxazone for hepatic CYP2E1 phenotyping. Key questions are the effect of CYP2E1 induction/inhibition and zonation on chlorzoxazone phenotyping. Jonas now analyses whole-slide images of the the liver to evaluate zonation patterns in the the liver using digital pathology methods.'
+  description: 'Nike develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of SGLT2 inhibitor dapagliflozin. The objective is to enhance our understanding of the underlying causes of intraindividual variability in diabetes treatment with SGLT2 inhibitors, e.g., differences in hepatorenal function.'
+
+- id: 'yusuf'
+  status: 'current'
+  year: '2024-04 - 2024-12'
+  name: 'Yusuf Ali Kulanoglu'
+  position: 'Study project and Bachelor thesis Biophysics'
+  image: yusuf.png
+  orcid:
+  repository: 'https://github.com/ykulanoglu'
+  homepage:
+  description: 'Yusuf works on a physiologically based pharmacokinetic/pharmacodynamic model of the direct renin inhibitor aliskiren.'
+
+- id: 'jennesse'
+  status: 'current'
+  year: '2024-08/2024-11'
+  name: 'Jennesse Alejandro'
+  position: 'Humboldt-Internship student 2024 (Brown University)'
+  image: jennesse.jpg
+  orcid:
+  repository: 'https://github.com/jen-ne-sse'
+  homepage:
+  description: 'Jennesse develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of SGLT2 inhibitor canagliflozin. The objective is to enhance our understanding of the underlying causes of intraindividual variability in diabetes treatment with SGLT2 inhibitors, e.g., differences in hepatorenal function.'
+
+- id: 'michelle'
+  status: 'current'
+  year: '2024-09/2025-02'
+  name: 'Michelle Elias'
+  position: 'Bachelor project and Bachelor thesis'
+  image: michelle.jpg
+  orcid:
+  repository: 'https://github.com/mii-halina'
+  homepage:
+  description: 'Michelle develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of the sulfonylurea glimepiride. The objective is to enhance our understanding of the underlying causes of intraindividual variability in insulin secretion and T2DM treatment with sulfonylurea, e.g., differences in hepatorenal function.'
+
+- id: 'ennie'
+  status: 'current'
+  year: '2024-09/2025-02'
+  name: 'Ennie Tensil'
+  position: 'Bachelor project and Bachelor thesis'
+  image: ennie.jpg
+  orcid:
+  repository: 'https://github.com/ennietensil'
+  homepage:
+  description: 'Ennie develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of the direct angiotensin II receptor (ARB) inhibitor losartan. The objective is to enhance our understanding of the underlying causes of intraindividual variability in hyptertension treatment with ARB inhibitors, e.g., differences in hepatorenal function and CYPC29 genotype.'
+
+- id: 'amanda'
+  status: 'current'
+  year: '2023-09/2024-06'
+  name: 'Amanda Lim'
+  position: 'Medical thesis'
+  image: amanda.png
+  orcid:
+  repository: 'https://github.com/amdangelica'
+  homepage:
+  description: 'Amanda develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the diuretic hydrochlorothiazide. The objective is to enhance our understanding of how hydrochlorothiazide changes urinary volume and plasma volume and ion balance (sodium, potassium, chloride).'
 
 - id: 'helen'
   status: 'current'
@@ -66,28 +121,6 @@
   homepage:
   description: 'Luca works on a physiologically based model of the oral contraceptive component ethinylestradiol. By the end of this project, we offer a robust and validated PBPK model for ethinylestradiol that can serve as a valuable tool for researchers, clinicians, and the pharmaceutical industry.'
 
-- id: 'amanda'
-  status: 'current'
-  year: '2023-09/2024-06'
-  name: 'Amanda Lim'
-  position: 'Medical thesis'
-  image: amanda.png
-  orcid:
-  repository: 'https://github.com/amdangelica'
-  homepage:
-  description: 'Amanda develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the diuretic hydrochlorothiazide. The objective is to enhance our understanding of how hydrochlorothiazide changes urinary volume and plasma volume and ion balance (sodium, potassium, chloride).'
-
-- id: 'vera'
-  status: 'current'
-  year: '2024-07/2024-09'
-  name: 'Vera Tereshchuk'
-  position: 'Humboldt-Internship student 2024'
-  image: vera.jpg
-  orcid:
-  repository: 'https://github.com/tereshchuk1'
-  homepage:
-  description: 'Vera develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of SGLT2 inhibitor canagliflozin. The objective is to enhance our understanding of the underlying causes of intraindividual variability in diabetes treatment with SGLT2 inhibitors, e.g., differences in hepatorenal function.'
-
 - id: 'antonio'
   status: 'current'
   year: '2023-10/2024-04'
@@ -98,28 +131,6 @@
   repository: 'https://github.com/MadNietzsche'
   homepage:
   description: "Antonio will delve into the influence of parameter variability in PBPK models, focusing on the consequential effects for dynamic liver function assessments. The overarching objective of this project is to augment our comprehension of how inherent variability in parameters translates into intra-individual variability in pharmacokinetics."
-
-- id: 'nike'
-  status: 'current'
-  year: '2024'
-  name: 'Nike Nemitz'
-  position: 'Bachelor project'
-  image: nike.png
-  orcid:
-  repository: 'https://github.com/nikenemitz'
-  homepage:
-  description: 'Nike develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of SGLT2 inhibitor dapagliflozin. The objective is to enhance our understanding of the underlying causes of intraindividual variability in diabetes treatment with SGLT2 inhibitors, e.g., differences in hepatorenal function.'
-
-- id: 'yusuf'
-  status: 'current'
-  year: '2024-04 - 2024-12'
-  name: 'Yusuf Ali Kulanoglu'
-  position: 'Study project and Bachelor thesis Biophysics'
-  image: yusuf.png
-  orcid:
-  repository: 'https://github.com/ykulanoglu'
-  homepage:
-  description: 'Yusuf works on a physiologically based pharmacokinetic/pharmacodynamic model of the direct renin inhibitor aliskiren.'
 
 - id: 'deepa'
   status: 'current'
@@ -154,9 +165,20 @@
   homepage:
   description: 'Rohit supports the data curation for morphine pharmacokinetics.'
 
+- id: 'vera'
+  status: 'alumni'
+  year: '2024-07/2024-09'
+  name: 'Vera Tereshchuk'
+  position: 'Humboldt-Internship student 2024'
+  image: vera.jpg
+  orcid:
+  repository: 'https://github.com/tereshchuk1'
+  homepage:
+  description: 'Vera developed a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of SGLT2 inhibitor canagliflozin. The objective is to enhance our understanding of the underlying causes of intraindividual variability in diabetes treatment with SGLT2 inhibitors, e.g., differences in hepatorenal function.'
+
 - id: 'samira'
-  status: 'current'
-  year: '2024-08/2024-11'
+  status: 'alumni'
+  year: '2024-08/2024-09'
   name: 'Samira Eissazedeh'
   position: 'ERASMUS'
   image: samira.png
@@ -165,38 +187,17 @@
   homepage:
   description: "Samira works to enhance our understanding of the role of endoglin in TGF-β signaling. She develops a computational model that explores the nuances of L-endoglin's role within this pathway and evaluates the effects of targeted interventions on this signaling."
 
-- id: 'jennesse'
-  status: 'current'
-  year: '2024-08/2024-11'
-  name: 'Jennesse Alejandro'
-  position: 'Humboldt-Internship student 2024 (Brown University)'
-  image: jennesse.jpg
-  orcid:
-  repository: 'https://github.com/jen-ne-sse'
-  homepage:
-  description: 'Jennesse develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of SGLT2 inhibitor canagliflozin. The objective is to enhance our understanding of the underlying causes of intraindividual variability in diabetes treatment with SGLT2 inhibitors, e.g., differences in hepatorenal function.'
 
-- id: 'michelle'
-  status: 'current'
-  year: '2024-09/2025-02'
-  name: 'Michelle Elias'
-  position: 'Bachelor project and Bachelor thesis'
-  image: michelle.jpg
+- id: 'jonaspk98'
+  status: 'alumni'
+  year: '2022-2024'
+  name: 'Jonas Küttner'
+  position: 'Master project, Master student, QuaLiPerF'
+  image: jonaspk98.png
   orcid:
-  repository: 'https://github.com/mii-halina'
+  repository: 'https://github.com/jonaspk98'
   homepage:
-  description: 'Michelle develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of the sulfonylurea glimepiride. The objective is to enhance our understanding of the underlying causes of intraindividual variability in insulin secretion and T2DM treatment with sulfonylurea, e.g., differences in hepatorenal function.'
-
-- id: 'ennie'
-  status: 'current'
-  year: '2024-09/2025-02'
-  name: 'Ennie Tensil'
-  position: 'Bachelor project and Bachelor thesis'
-  image: ennie.jpg
-  orcid:
-  repository: 'https://github.com/ennietensil'
-  homepage:
-  description: 'Ennie develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of the direct angiotensin II receptor (ARB) inhibitor losartan. The objective is to enhance our understanding of the underlying causes of intraindividual variability in hyptertension treatment with ARB inhibitors, e.g., differences in hepatorenal function and CYPC29 genotype.'
+  description: 'Jonas worked on a physiologically based model of chlorzoxazone for hepatic CYP2E1 phenotyping. Key questions are the effect of CYP2E1 induction/inhibition and zonation on chlorzoxazone phenotyping. Jonas now analyses whole-slide images of the the liver to evaluate zonation patterns in the the liver using digital pathology methods. In his master theses Jonas developed methods for quantitative image analysis of hepatic zonation in cytochrome P450 and steatosis using whole slide scans.'
 
 - id: 'prerna'
   status: 'alumni'
