@@ -1,3 +1,21 @@
+- id: 'Raman2024_FROG'
+  year: 2024
+  date: 2024-09-24
+  pdf: 'Raman2024_FROG.pdf'
+  authors: 'Karthik Raman, Miroslav Kratochvil, Brett G. Olivier, <b>Matthias König</b>, Pratyay Sengupta, Dinesh Kumar Kuppa Baskaran, Tung V N Nguyen, Daniel Lobo, St Elmo Wilken, Krishna Kumar Tiwari, Aswathy K. Raghu, Indumathi Palanikumar, Lavanya Raajaraam, Maziya Ibrahim, Sanjaay Balakrishnan, Shreyansh Umale, Frank Bergmann, Tanisha Malpani, Venkata P Satagopam, Reinhard Schneider, Moritz E. Beber, Sarah Keating, Mihail Anton, Alina Renz, Meiyappan Lakshmanan, Dong-Yup Lee, Lokanand Koduru, Reihaneh Mostolizadeh, Oscar Dias, Emanuel Cunha, Alexandre Oliveira, Yi Qing Lee, Karsten Zengler, Rodrigo Santibanez-Palominos, Manish Kumar, Matteo Barberis, Bhanwar Lal Puniya, Tomas Helikar, Hoang V. Dinh, Patrick F. Suthers, Costas D. Maranas, Isabella Casini, Seyed Babak Loghmani, Nadine Veith, Nantia Leonidou, Feiran Li, Yu Chen, Jens Nielsen, GaRyoung Lee, Sang Mi Lee, Gi Bae Kim, Pedro T. Monteiro, Miguel C. Teixeira, Hyun Uk Kim, Sang Yup Lee, Ulf W. Liebal, Lars M. Blank, Christian Lieven, Chaimaa Tarzi, Claudio Angione, Manga Enuh Blaise, Celik Pinar Aytar, Mikhail Kulyashov, llya Akberdin, Dohyeon Kim, Sung Ho Yoon, Zhaohui Xu, Jyotshana Gautam, William T. Scott Jr., Peter J. Schaap, Jasper J. Koehorst, Cristal Zuniga, Gabriela Canto-Encalada, Sara Benito-Vaquerizo, Ivette Parera Olm, Maria Suarez-Diez, Qianqian Yuan, Hongwu Ma, Mohammad Mazharul Islam, Jason A. Papin, Francisco Zorrilla, Kiran Raosaheb Patil, Arianna Basile, Juan Nogales, Granado San Leon, Freddy Castillo-Alfonso, Roberto Olivares-Hernandez, Gabriel Vigueras-Ramirez, Henning Hermjakob, Andreas Drager, Rahuman S Malik-Sheriff'
+  title: 'FROG Analysis Ensures the Reproducibility of Genome Scale Metabolic Models'
+  journal: 'bioRxiv 2024.09.24.614797'
+  status:
+  doi: 10.1101/2024.09.24.614797
+  pmid:
+  keywords:
+    - COMBINE
+    - FROG
+    - FBC
+  project:
+  repository:
+  abstract: "Genome scale metabolic models (GEMs) and other constraint-based models (CBMs) play a pivotal role in understanding biological phenotypes and advancing research in areas like metabolic engineering, human disease modelling, drug discovery, and personalized medicine. Despite their growing application, a significant challenge remains in ensuring the reproducibility of GEMs, primarily due to inconsistent reporting and inadequate model documentation of model results. Addressing this gap, we introduce FROG analysis, a community driven initiative aimed at standardizing reproducibility assessments of CBMs and GEMs. The FROG framework encompasses four key analyses including Flux variability, Reaction deletion, Objective function, and Gene deletion to produce standardized, numerically reproducible FROG reports. These reports serve as reference datasets, enabling model evaluators, curators, and independent researchers to verify the reproducibility of GEMs systematically. BioModels, a leading repository of systems biology models, has integrated FROG analysis into its curation workflow, enhancing the reproducibility and reusability of submitted GEMs. In our study evaluating 65 GEM submissions from the community, approximately 40% reproduced without intervention, 28% requiring minor adjustments, and 32% needing input from authors. The standardization introduced by FROG analysis facilitated the detection and resolution of issues, ultimately leading to the successful reproduction of all models. By establishing a standardized and comprehensive approach to evaluating GEM reproducibility, FROG analysis significantly contributes to making CBMs and GEMs more transparent, reusable, and reliable for the broader scientific community."
+
 - id: 'Master.Thesis.Jonas.Kuettner'
   year: 2024
   pdf: 'theses/Master.Thesis.Jonas.Kuettner.pdf'
