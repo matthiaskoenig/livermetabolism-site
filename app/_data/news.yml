@@ -1,3 +1,17 @@
+- id: 'huinternship2025'
+  status: 'current'
+  title: 'Humboldt Internship Program 2025 - Computational Modeling of Drug Detoxification - A Systems Medicine Approach'
+  date: '2024-10-01'
+  image: humboldt-internship.jpg
+  link: 'https://hic.hu-berlin.de/en/internship-program/projects/201'
+  short: 'We offer Internships in 2025, academic three-month research stays at Humboldt-Universität zu Berlin. The application for the Summer Term Internships 2025 is open from 11 November to 20 December 2024.'
+  abstract: 'Humboldt Internship Program is an international short-term program for subject-specific, experiential learning. It allows participants to work with teams in research projects and university-related start-ups for three months.<br /><br />
+  
+  This program is designed for advanced Bachelor as well as Master students and PhD candidates. Choose from projects in various academic areas, receive individual advising, and earn ECTS credit points. Some projects offer online internship opportunities. Please check the individual project descriptions for details.<br /><br />
+  
+  The Summer Term internships take place from May to August 2023. More information <a href="https://hic.hu-berlin.de/en/internship-program">https://hic.hu-berlin.de/en/internship-program<a/>.'
+
+
 - id: 'projects_ennie_michelle'
   status: 'current'
   title: 'Launch of Two New Research Projects in PBPK/PD Modeling'
@@ -246,7 +260,7 @@ The collaborative efforts made significant strides towards enabling the DDtwin t
 Our participation in this workshop underscores our commitment to advancing health technology and contributing to a future where nutrition is as unique as the individual. Stay tuned for further developments as we continue to navigate the exciting realm of digital twins and precision nutrition. For more information see <a href="https://www.lorentzcenter.nl/your-dietary-digital-twin-ddtwin.html">https://www.lorentzcenter.nl/your-dietary-digital-twin-ddtwin.html</a>.'
 
 - id: 'huinternship2024'
-  status: 'current'
+  status: 'old'
   title: 'Humboldt Internship Program 2024 - Computational Modeling of Drug Detoxification - A Systems Medicine Approach'
   date: '2023-10-31'
   image: humboldt-internship.jpg
