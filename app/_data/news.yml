@@ -1,3 +1,18 @@
+"Breaking News: Circle U. Funds "AlgoNomy" to Combat Digital Paternalism in AI-Driven Healthcare
+"
+
+- id: 'algonomy'
+  status: 'current'
+  title: 'Circle U. Funds "AlgoNomy" to Combat Digital Paternalism in AI-Driven Healthcare'
+  date: '2024-12-20'
+  image: algonomy.jpg
+  link: 'https://www.circle-u.eu/resources/seed-funded-projects/'
+  short: 'Circle U. has funded AlgoNomy: Advancing Doctor-Patient Autonomy in AI-Driven Healthcare, a collaborative project tackling the issue of digital paternalism—where algorithms dominate healthcare decisions over human collaboration. Partnering with six leading European universities, AlgoNomy aims to develop ethical, transparent, and patient-centered AI systems that preserve autonomy and promote shared decision-making.'
+  abstract: "The Circle U. European University Alliance has announced funding for AlgoNomy: Advancing Doctor-Patient Autonomy in AI-Driven Healthcare, a pioneering project aimed at tackling the emerging issue of digital paternalism—an adaptation of medical paternalism where healthcare decisions are increasingly driven by algorithms rather than collaborative input from patients and physicians.
+  Led by a consortium of six leading universities—UniPi (University of Pisa), KCL (King's College London), PC (Université Paris Cité), BU (University of Belgrade), UW (University of Vienna), and HU (Humboldt Universität zu Berlin)—AlgoNomy will focus on developing ethical, technical, and practical solutions to ensure AI empowers rather than replaces human autonomy in clinical decision-making.
+  Funded under the Circle U. initiative, AlgoNomy is dedicated to fostering transparent, patient-centered, and clinician-friendly AI systems that promote shared decision-making and responsible innovation in healthcare.
+  This ambitious project marks a significant step in redefining the role of AI in medicine, ensuring technology serves as a tool for collaboration, not control. Stay tuned for updates on how AlgoNomy is shaping the future of ethical AI in healthcare!"
+
 - id: 'huinternship2025'
   status: 'current'
   title: 'Humboldt Internship Program 2025 - Computational Modeling of Drug Detoxification - A Systems Medicine Approach'
@@ -10,7 +25,6 @@
   This program is designed for advanced Bachelor as well as Master students and PhD candidates. Choose from projects in various academic areas, receive individual advising, and earn ECTS credit points. Some projects offer online internship opportunities. Please check the individual project descriptions for details.<br /><br />
   
   The 3 month Summer Term internships take place between May and August 2025. More information <a href="https://hic.hu-berlin.de/en/internship-program">https://hic.hu-berlin.de/en/internship-program<a/>.'
-
 
 - id: 'projects_ennie_michelle'
   status: 'current'
