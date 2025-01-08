@@ -33,16 +33,6 @@
   homepage:
   description: 'Nike develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of SGLT2 inhibitor dapagliflozin. The objective is to enhance our understanding of the underlying causes of intraindividual variability in diabetes treatment with SGLT2 inhibitors, e.g., differences in hepatorenal function.'
 
-- id: 'yusuf'
-  status: 'current'
-  year: '2024-04 - 2024-12'
-  name: 'Yusuf Ali Kulanoglu'
-  position: 'Study project and Bachelor thesis Biophysics'
-  image: yusuf.png
-  orcid:
-  repository: 'https://github.com/ykulanoglu'
-  homepage:
-  description: 'Yusuf works on a physiologically based pharmacokinetic/pharmacodynamic model of the direct renin inhibitor aliskiren.'
 
 - id: 'jennesse'
   status: 'current'
@@ -76,6 +66,17 @@
   repository: 'https://github.com/ennietensil'
   homepage:
   description: 'Ennie develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of the direct angiotensin II receptor (ARB) inhibitor losartan. The objective is to enhance our understanding of the underlying causes of intraindividual variability in hyptertension treatment with ARB inhibitors, e.g., differences in hepatorenal function and CYPC29 genotype.'
+
+- id: 'abhinav'
+  status: 'current'
+  year: '2025-01/2025-02'
+  name: 'Abhinav Mishra'
+  position: 'Master Internship'
+  image: abhinav.png
+  orcid:
+  repository: 'https://github.com/bibymaths'
+  homepage:
+  description: 'Abhinav develops a physiologically based pharmacokinetic (PBPK) model of the GIP and GLP-1 receptor agonist tirzepatide (Mounjaro). The objective is to enhance our understanding of the underlying causes of intraindividual variability in weight loss.'
 
 - id: 'amanda'
   status: 'current'
@@ -164,6 +165,17 @@
   repository: 'https://github.com/Rohit-Chakraborty'
   homepage:
   description: 'Rohit supports the data curation for morphine pharmacokinetics.'
+
+- id: 'yusuf'
+  status: 'alumni'
+  year: '2024-04 - 2025-01'
+  name: 'Yusuf Ali Kulanoglu'
+  position: 'Study project and Bachelor thesis Biophysics'
+  image: yusuf.png
+  orcid:
+  repository: 'https://github.com/ykulanoglu'
+  homepage:
+  description: 'Yusuf works on a physiologically based pharmacokinetic/pharmacodynamic model of the direct renin inhibitor aliskiren.'
 
 - id: 'vera'
   status: 'alumni'

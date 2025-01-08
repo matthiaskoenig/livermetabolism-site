@@ -1,3 +1,11 @@
+- id: 'projects_abhinav'
+  status: 'current'
+  title: 'Launch of New Research Internship in PBPK/PD Modeling'
+  date: '2025-01-07'
+  image: project_tirzepatide.jpg
+  link:
+  short: "PBPK Model Development for Tirzepatide in Diabetes and Obesity Treatment"
+  abstract: "Abhinav Mishra, a Master Intern, will develop a Physiologically Based Pharmacokinetic (PBPK) model for tirzepatide (Mounjaro, Zepbound), a dual agonist for GLP-1 and GIP receptors used in treating type 2 diabetes mellitus (T2DM) and obesity. The project will focus on analyzing the drug’s pharmacokinetics (PK) and pharmacodynamics (PD), with particular attention to the effects of renal and hepatic impairments. By building a computational model and integrating patient-specific data, the research aims to better understand factors influencing individual responses and improve the clinical use of tirzepatide in diverse patient populations."
 
 - id: 'algonomy'
   status: 'current'
