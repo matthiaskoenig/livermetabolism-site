@@ -1,3 +1,23 @@
+- id: 'Bachelor.Thesis.Yusuf.Ali.Kolanoglu'
+  year: 2024
+  pdf: 'theses/Bachelor.Thesis.Yusuf.Ali.Kulanoglu.pdf'
+  authors: 'Bachelor Thesis Yusuf Ali Kulanoglu (supervisor: <b>Matthias König</b>)'
+  title: 'Physiologically based pharmacokinetic/pharmacodynamic modeling of the direct renin inhibitor aliskiren: Exploring the impact of hepatorenal impairment and drug-drug interactions'
+  journal: 'Bachelor Thesis, January 2025'
+  status:
+  doi:
+  pmid:
+  keywords:
+    - PK/PD
+    - aliskiren
+    - hepatorenal impairment
+    - ODE
+  project:
+  repository: https://github.com/matthiaskoenig/zonation-image-analysis
+  abstract: 'In this thesis, an extensive dataset of aliskiren pharmacokinetics and pharmacodynamics was compiled and used to develop a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model. This model was applied to address three primary research questions: I. How does hepatorenal impairment influence the pharmacokinetics of aliskiren?; II. What effects do co-administered medications have on the pharmacokinetics of aliskiren?; III. What are the consequences of these pharmacokinetic changes for the pharmacodynamics of aliskiren, particularly its ability to modulate the renin-angiotensin-aldosterone system (RAAS)?
+
+   The PBPK/PD model enables the prediction of aliskiren concentration-time profiles following oral and intravenous administration and provides detailed insights into the factors that affect its pharmacological efficacy. By exploring these influences, the study offers a foundation for developing optimized therapeutic strategies tailored to individual patients.'
+
 - id: 'Raman2024_FROG'
   year: 2024
   date: 2024-09-24
