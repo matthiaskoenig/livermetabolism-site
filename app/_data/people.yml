@@ -78,6 +78,17 @@
   homepage:
   description: 'Abhinav develops a physiologically based pharmacokinetic (PBPK) model of the GIP and GLP-1 receptor agonist tirzepatide (Mounjaro). The objective is to enhance our understanding of the underlying causes of intraindividual variability in weight loss.'
 
+- id: 'elisabetta'
+  status: 'current'
+  year: '2025-02/2025-07'
+  name: 'Elisabetta Casabianca'
+  position: 'ERASMUS, master thesis'
+  image: elisabetta.jpg
+  orcid:
+  repository: 'https://github.com/elisabettacasabianca11'
+  homepage:
+  description: 'Elisabetta develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of the direct oral anticoagulant (DOAC) rivaroxaban. The objective is to enhance our understanding of the underlying causes of intraindividual variability in anticoagulation treatment with DOACs.'
+
 - id: 'amanda'
   status: 'current'
   year: '2023-09/2024-06'

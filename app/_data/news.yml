@@ -1,3 +1,16 @@
+- id: 'project_rivaroxaban'
+  status: 'current'
+  title: 'Launch of New Research Internship in PBPK/PD Modeling'
+  date: '2025-01-20'
+  image: project_rivaroxaban.jpg
+  link:
+  short: "PBPK Model Development for Tirzepatide in Diabetes and Obesity Treatment"
+  abstract: "We are pleased to announce that Elisabetta Cassabianca will be joining the König Lab to work on an exciting new project focused on developing a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the direct oral anticoagulant (DOAC) rivaroxaban.
+  
+  Since their introduction, DOACs have revolutionized anticoagulant therapy, offering significant advantages over traditional vitamin K antagonist therapy, such as reduced dietary restrictions and less frequent monitoring. However, despite their widespread adoption, there remain gaps in understanding their long-term efficacy, safety, and impact on specific patient populations.
+  
+  Elisabetta’s project aims to address these knowledge gaps by constructing a comprehensive PBPK/PD model of rivaroxaban. This computational model will serve as a digital twin of the human body, enabling precise predictions of the drug’s pharmacokinetics (absorption, distribution, metabolism, and excretion) and pharmacodynamics (anticoagulant effects). The model will be instrumental in exploring the influence of various factors, such as age, gender, hepatic or renal impairment, and genetic variations, on rivaroxaban therapy."
+
 - id: 'projects_abhinav'
   status: 'current'
   title: 'Launch of New Research Internship in PBPK/PD Modeling'
