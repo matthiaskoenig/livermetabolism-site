@@ -1,3 +1,40 @@
+- id: 'COMBINE2024_digital_twin'
+  year: 2025
+  pdf: 'abstracts/COMBINE2024_abstracts.pdf'
+  authors: '<b>Matthias König</b>'
+  title: 'Reproducible digital twins for personalized liver function assessment'
+  journal: 'Conference Proceedings, COMBINE 2024 - Conference of the Computational Modeling in Biology Network : September 1-5, 2024'
+  status: abstract
+  doi: 10.24407/KXP:1902121317
+  pmid:
+  keywords:
+    - digital twin
+    - reproducibility
+    - liver
+    - FAIR
+    - pharmacokinetics
+  project: https://co.mbine.org/author/combine-2024/
+  repository:
+  abstract: 'Essential prerequisites for the practical application and translation of computational models include: i) reproducibility of results; ii) model reusability and extensibility; iii) data availability; and iv) strategies for model stratification and individualization. Here, we present a modeling workflow built around these foundational prerequisites, with a focus on liver function tests. Despite the paramount significance of liver function assessment in hepatology, reliable quantification remains a clinical challenge. Dynamic liver function tests offer a promising method for non-invasive in vivo assessment of liver function and metabolic phenotyping. By leveraging whole-body physiologically-based pharmacokinetic (PBPK) models, we are simulating these tests and positioning PBPK models as digital twins for metabolic phenotyping and liver function assessment. To develop and validate our models, we established the open pharmacokinetics database, PK-DB, containing curated data from 600+ clinical studies (10.1093/nar/gkaa990, 10.3389/fphar.2021.752826). Our models are individualizable and stratifiable, enabling simulation of lifestyle factors and co-administration effects on drug metabolism. Our models have been instrumental in clinical scenarios: from predicting individual outcomes post-hepatectomy (10.3389/fphys.2021.730418, 10.3389/fphys.2021.757293) to discerning the impact of CYP2D6 gene variants on liver function tests (10.3389/fphar.2022.1029073). These models are constructed hierarchically, describing metabolic and other biological processes in organs like the liver and kidneys, seamlessly integrated with whole-body physiology. Notably, all models and data are readily available and reproducible for reuse, encoded in the Systems Biology Markup Language (SBML) (10.15252/msb.20199110). We will provide an overview of these PBPK models and demonstrate how SBML and FAIR principles can facilitate model development, coupling, and reuse.'
+
+- id: 'COMBINE2024_tools'
+  year: 2025
+  pdf: 'abstracts/COMBINE2024_abstracts.pdf'
+  authors: '<b>Matthias König</b>'
+  title: 'Computational Model Development Using SBML: sbmlutils, sbm4humans, cy3sbml'
+  journal: 'Conference Proceedings, COMBINE 2024 - Conference of the Computational Modeling in Biology Network : September 1-5, 2024'
+  status: abstract
+  doi: 10.24407/KXP:1902121317
+  pmid:
+  keywords:
+    - digital twin
+    - reproducibility
+    - liver
+
+  project: https://co.mbine.org/author/combine-2024/
+  repository:
+  abstract: 'The Systems Biology Markup Language (SBML) (Keating et al., 2020) is recognized as the standard framework for representing and exchanging complex mathematical models in biological systems research. SBML facilitates the depiction of a diverse array of biological phenomena, encom- passing metabolic networks, signaling pathways, and regulatory networks. It is versatile enough to handle models ranging from simple individual processes to intricate multi-scale representations. One of the primary challenges faced by newcomers in computational biology is the encoding and development of ordinary differential equation (ODE) models within the SBML framework. Addressing this hurdle, we introduce two innovative Python tools: sbmlutils (https://github. com/matthiaskoenig/sbmlutils), sbml4humans (https://sbml4humans.de), and the Cytoscape application cy3sbml (https://github.com/matthiaskoenig/cy3sbml). These tools collectively streamline the process of SBML model creation, enhancing both the programmatic aspect and the user experience. Specifically, sbmlutils facilitates the programmatic construction of SBML models, while sbml4humans generates user-friendly reports for model interpretation. Furthermore, cy3sbml integrates with Cytoscape to offer advanced visualization capabilities, thereby augmenting the comprehension and analysis of SBML-encoded models. These advancements significantly contribute to the ease of SBML model development and interpretation, fostering greater accessibility and understanding for those entering the field of computational systems biology.'
+
 - id: 'Bachelor.Thesis.Yusuf.Ali.Kolanoglu'
   year: 2025
   pdf: 'theses/Bachelor.Thesis.Yusuf.Ali.Kulanoglu.pdf'
