@@ -1,3 +1,23 @@
+- id: 'Eissazadeh2025_endoglin'
+  year: 2025
+  date: 2025-01-25
+  pdf: 'Eissazadeh2025_endoglin.pdf'
+  authors: 'Eissazadeh S, Fikrova P, Rathouska JU, Nemeckova I, Tripska K, Vasinova M, Havelek R, Mohammadi S, Igreja Sa IC, Theuer C, <b>König M</b>, Micuda S, Nachtigal P'
+  title: 'Anti-Endoglin monoclonal antibody prevents the progression of liver sinusoidal endothelial inflammation and fibrosis in MASH'
+  journal: 'Life Sci. 2025 Jan 29:123428'
+  status:
+  doi: 10.1016/j.lfs.2025.123428
+  pmid: 39889923
+  keywords:
+    - Anti-endoglin antibody
+    - Endoglin
+    - Fibrosis
+    - Liver alteration
+    - Liver sinusoidal endothelial inflammation
+  project:
+  repository:
+  abstract: "Liver sinusoidal endothelial inflammation/dysfunction and fibrosis are a crucial part of Metabolic Dysfunction Associated Steatohepatitis (MASH) development. TRC105 and M1043 are anti-endoglin (ENG) monoclonal antibodies that bind ENG. In this study, we hypothesized that treatment with anti-ENG antibodies would prevent the progression of LSECs inflammation and fibrosis in vivo and in vitro. MASH was induced in male C57BL/6 mice fed a choline-deficient L-amino acid-defined high-fat diet (CDAA-HFD) for 4 or 8 weeks. In the rescue study, mice were divided into three groups: a control group (chow diet), a MASH group (CDAA-HFD + IgG), and a rescue group (CDAA-HFD + M1043). Later, two groups received rat IgG1 (10 mg/kg) and M1043 (10 mg/kg). In in vitro experiments, inflammation was induced in human LSECs by ox-LDL (50 μg/mL) and treated with TRC105 (300 μg/mL). Liver sinusoidal endothelial inflammation/dysfunction in MASH animals was characterized by endothelial overexpression of ENG, VCAM-1, and ICAM-1 and reduced VE-cadherin and p-eNOS/eNOS expression. M1043 treatment prevented the overexpression of ENG, VCAM-1, and ICAM-1, the progression of liver fibrosis, and the increase of liver-to-body weight ratio. In vitro experiments with TRC105 confirmed the prevention of LSECs inflammation development by reduced ENG and VCAM-1 expression, as well as decreased THP-1 monocytic cell adhesion in ox-LDL activated LSECs. In conclusion, we demonstrate that anti-ENG antibody treatment can prevent LSECs inflammation and fibrosis progression in a MASH animal model and LSECs inflammation in vitro. Thus, we propose directly targeted ENG may represent a promising pharmacological approach for addressing LSECs inflammation and liver fibrosis."
+
 - id: 'COMBINE2024_digital_twin'
   year: 2025
   pdf: 'abstracts/COMBINE2024_abstracts.pdf'
@@ -30,7 +50,6 @@
     - digital twin
     - reproducibility
     - liver
-
   project: https://co.mbine.org/author/combine-2024/
   repository:
   abstract: 'The Systems Biology Markup Language (SBML) (Keating et al., 2020) is recognized as the standard framework for representing and exchanging complex mathematical models in biological systems research. SBML facilitates the depiction of a diverse array of biological phenomena, encom- passing metabolic networks, signaling pathways, and regulatory networks. It is versatile enough to handle models ranging from simple individual processes to intricate multi-scale representations. One of the primary challenges faced by newcomers in computational biology is the encoding and development of ordinary differential equation (ODE) models within the SBML framework. Addressing this hurdle, we introduce two innovative Python tools: sbmlutils (https://github. com/matthiaskoenig/sbmlutils), sbml4humans (https://sbml4humans.de), and the Cytoscape application cy3sbml (https://github.com/matthiaskoenig/cy3sbml). These tools collectively streamline the process of SBML model creation, enhancing both the programmatic aspect and the user experience. Specifically, sbmlutils facilitates the programmatic construction of SBML models, while sbml4humans generates user-friendly reports for model interpretation. Furthermore, cy3sbml integrates with Cytoscape to offer advanced visualization capabilities, thereby augmenting the comprehension and analysis of SBML-encoded models. These advancements significantly contribute to the ease of SBML model development and interpretation, fostering greater accessibility and understanding for those entering the field of computational systems biology.'
