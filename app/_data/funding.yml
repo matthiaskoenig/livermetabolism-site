@@ -1,3 +1,17 @@
+- id: 'algonomy'
+  funder: Circle U. - European University Alliance
+  funder_link: https://www.circle-u.eu/
+  funder_logo: circleu.png
+  grant:
+  start: '2024'
+  end: '2025'
+  title: '<b>AlgoNomy</b> - Algorithmic Regulation Before Medical Liability - Advancing Doctor-Patient Autonomy in AI-Driven Healthcare'
+  role: Recipient
+  logo: algonomy_logo.jpeg
+  project: https://algonomy.jus.unipi.it/
+  repository:
+
+
 - id: 'simliva2'
   funder: Deutsche Forschungsgemeinschaft (DFG)
   funder_link: https://www.dfg.de
