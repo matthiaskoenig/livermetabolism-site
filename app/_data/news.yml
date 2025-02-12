@@ -1,3 +1,17 @@
+- id: 'ep_conference_2025'
+  status: 'current'
+  title: 'König Lab at EP PerMed Conference on Personalised Medicine Research'
+  date: '2025-02-12'
+  image: ep_conference_2025.jpg
+  link: https://www.eppermed.eu/news-events/events/ep-permed-conference-on-personalised-medicine-research/
+  short: "We are excited to announce that Mariia Myshkina, Elisabetta Casabianca, and Matthias König participated in the EP PerMed Conference on Personalised Medicine Research, taking place on February 11–12, 2025, in Berlin, Germany."
+  abstract: "We are excited to announce that Mariia Myshkina, Elisabetta Casabianca, and Matthias König participated in the EP PerMed Conference on Personalised Medicine Research, taking place on February 11–12, 2025, in Berlin, Germany.
+
+This conference explores key advancements in personalised medicine, focusing on methodologies, translational research, personalised prevention, and inclusiveness in healthcare. Discussions will span diagnostics, therapy, big data, clinical trials, ethics, and more. The event provides a unique opportunity for multidisciplinary collaboration to advance the field and shape the future of personalised medicine. We look forward to engaging discussions, networking, and contributing to this important initiative!
+
+For more details, visit the EP PerMed website: https://www.eppermed.eu/news-events/events/ep-permed-conference-on-personalised-medicine-research/"
+
+
 - id: 'project_rivaroxaban'
   status: 'current'
   title: 'Launch of New Research Internship in PBPK/PD Modeling'
