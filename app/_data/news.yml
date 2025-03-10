@@ -1,3 +1,13 @@
+- id: 'fair_to_cure'
+  status: 'current'
+  title: 'Preprint: From FAIR to CURE: Guidelines for Computational Models of Biological Systems'
+  date: '2025-02-21'
+  image: fair_to_cure.png
+  link: 'https://doi.org/10.48550/arXiv.2502.15597/'
+  short: "Our latest preprint, From FAIR to CURE: Guidelines for Computational Models of Biological Systems, introduces the CURE principles—Credible, Understandable, Reproducible, and Extensible—as a framework to improve the development and use of computational models in biology and medicine.<br />
+  Building on the FAIR principles for data management, we propose these guidelines to enhance model reliability, clarity, reproducibility, and reusability. The preprint outlines best practices for verification, validation, documentation, and model sharing, with an emphasis on automation to support adoption."
+  abstract: "Guidelines for managing scientific data have been established under the FAIR principles requiring that data be Findable, Accessible, Interoperable, and Reusable. In many scientific disciplines, especially computational biology, both data and models are key to progress. For this reason, and recognizing that such models are a very special type of 'data', we argue that computational models, especially mechanistic models prevalent in medicine, physiology and systems biology, deserve a complementary set of guidelines. We propose the CURE principles, emphasizing that models should be Credible, Understandable, Reproducible, and Extensible. We delve into each principle, discussing verification, validation, and uncertainty quantification for model credibility; the clarity of model descriptions and annotations for understandability; adherence to standards and open science practices for reproducibility; and the use of open standards and modular code for extensibility and reuse. We outline recommended and baseline requirements for each aspect of CURE, aiming to enhance the impact and trustworthiness of computational models, particularly in biomedical applications where credibility is paramount. Our perspective underscores the need for a more disciplined approach to modeling, aligning with emerging trends such as Digital Twins and emphasizing the importance of data and modeling standards for interoperability and reuse. Finally, we emphasize that given the non-trivial effort required to implement the guidelines, the community moves to automate as many of the guidelines as possible."
+
 - id: 'ep_conference_2025'
   status: 'current'
   title: 'König Lab at EP PerMed Conference on Personalised Medicine Research'
