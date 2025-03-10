@@ -1,3 +1,39 @@
+- id: 'Internship.Report.Abhinav.Mishra'
+  year: 2025
+  pdf: 'reports/Internship.Report.Abhinav.Mishra.pdf'
+  authors: 'Internship Report Abhinav Mishra (supervisor: <b>Matthias König</b>)'
+  title: 'A Physiologically-Based Pharmacokinetic Model of Tirzepatide'
+  journal: 'Internship Report, Mar 2025'
+  status:
+  doi:
+  pmid:
+  keywords:
+    - PKDB
+    - tirzepatide
+    - GLP-1
+    - Pharmacokinetics
+  project:
+  repository: https://github.com/matthiaskoenig/tirzepatide-model
+  abstract: 'Tirzepatide, a dual glucose-dependent insulinotropic polypeptide (GIP) and glucagon-like peptide-1 (GLP-1) receptor agonist, represents a novel approach for treating type 2 diabetes mellitus (T2DM) and obesity. By combining the actions of both incretins, it enhances insulin secretion, suppresses glucagon, and reduces appetite, leading to superior glycemic control and weight loss compared to traditional GLP-1 receptor agonists. Despite its efficacy, inter-individual variability in pharmacokinetics necessitates a mechanistic understanding for optimized therapeutic application. This study employs physiologically-based pharmacokinetic (PBPK) modeling to characterize tirzepatide’s absorption, distribution, metabolism, and excretion (ADME). The model integrates physiological parameters to assess dose proportionality, hepatic and renal impairment effects, and body weight dependency. By improving drug exposure predictions, this approach aids personalized treatment strategies and enhances clinical decision-making across diverse patient populations.'
+
+- id: 'Sauro2025_fair_to_cure_preprint'
+  year: 2025
+  date: 2025-02-21
+  pdf: 'Sauro2025_fair_to_cure_preprint.pdf'
+  authors: 'Herbert M. Sauro, Eran Agmon, Michael L. Blinov, John H. Gennari, Joe Hellerstein, Adel Heydarabadipour, Peter Hunter, Bartholomew E. Jardine, Elebeoba May, David P. Nickerson, Lucian P. Smith, Gary D Bader, Frank Bergmann, Patrick M. Boyle, Andreas Drager, James R. Faeder, Song Feng, Juliana Freire, Fabian Frohlich, James A. Glazier, Thomas E. Gorochowski, Tomas Helikar, Stefan Hoops, Princess Imoukhuede, Sarah M. Keating, <b>Matthias König</b>, Reinhard Laubenbacher, Leslie M. Loew, Carlos F. Lopez, William W. Lytton, Andrew McCulloch, Pedro Mendes, Chris J. Myers, Jerry G. Myers, Lealem Mulugeta, Anna Niarakis, David D. van Niekerk, Brett G. Olivier, Alexander A. Patrie, Ellen M. Quardokus, Nicole Radde, Johann M. Rohwer, Sven Sahle, James C. Schaff, T.J. Sego, Janis Shin, Jacky L. Snoep, Rajanikanth Vadigepalli, H. Steve Wiley, Dagmar Waltemath, Ion Moraru'
+  title: 'From FAIR to CURE: Guidelines for Computational Models of Biological Systems'
+  journal: 'arXiv:2502.15597 [q-bio.OT]'
+  status: preprint
+  doi: 10.48550/arXiv.2502.15597
+  pmid:
+  keywords:
+    - FAIR
+    - CURE
+    - reproducibility
+  project:
+  repository:
+  abstract: "Guidelines for managing scientific data have been established under the FAIR principles requiring that data be Findable, Accessible, Interoperable, and Reusable. In many scientific disciplines, especially computational biology, both data and models are key to progress. For this reason, and recognizing that such models are a very special type of 'data', we argue that computational models, especially mechanistic models prevalent in medicine, physiology and systems biology, deserve a complementary set of guidelines. We propose the CURE principles, emphasizing that models should be Credible, Understandable, Reproducible, and Extensible. We delve into each principle, discussing verification, validation, and uncertainty quantification for model credibility; the clarity of model descriptions and annotations for understandability; adherence to standards and open science practices for reproducibility; and the use of open standards and modular code for extensibility and reuse. We outline recommended and baseline requirements for each aspect of CURE, aiming to enhance the impact and trustworthiness of computational models, particularly in biomedical applications where credibility is paramount. Our perspective underscores the need for a more disciplined approach to modeling, aligning with emerging trends such as Digital Twins and emphasizing the importance of data and modeling standards for interoperability and reuse. Finally, we emphasize that given the non-trivial effort required to implement the guidelines, the community moves to automate as many of the guidelines as possible."
+
 - id: 'Eissazadeh2025_endoglin'
   year: 2025
   date: 2025-01-25
