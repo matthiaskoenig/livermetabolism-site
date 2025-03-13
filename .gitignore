@@ -8,3 +8,4 @@ web
 logs
 livermetabolism
 Gemfile.lock
+.venv
