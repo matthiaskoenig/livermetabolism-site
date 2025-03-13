@@ -5,7 +5,10 @@
   authors: 'Internship Report Abhinav Mishra (supervisor: <b>Matthias König</b>)'
   title: 'A Physiologically-Based Pharmacokinetic Model of Tirzepatide'
   journal: 'Internship Report, Mar 2025'
-  status:
+  journal_short:
+  status: report
+  impact: 0
+  position: last
   doi:
   pmid:
   keywords:
@@ -24,7 +27,10 @@
   authors: 'Herbert M. Sauro, Eran Agmon, Michael L. Blinov, John H. Gennari, Joe Hellerstein, Adel Heydarabadipour, Peter Hunter, Bartholomew E. Jardine, Elebeoba May, David P. Nickerson, Lucian P. Smith, Gary D Bader, Frank Bergmann, Patrick M. Boyle, Andreas Drager, James R. Faeder, Song Feng, Juliana Freire, Fabian Frohlich, James A. Glazier, Thomas E. Gorochowski, Tomas Helikar, Stefan Hoops, Princess Imoukhuede, Sarah M. Keating, <b>Matthias König</b>, Reinhard Laubenbacher, Leslie M. Loew, Carlos F. Lopez, William W. Lytton, Andrew McCulloch, Pedro Mendes, Chris J. Myers, Jerry G. Myers, Lealem Mulugeta, Anna Niarakis, David D. van Niekerk, Brett G. Olivier, Alexander A. Patrie, Ellen M. Quardokus, Nicole Radde, Johann M. Rohwer, Sven Sahle, James C. Schaff, T.J. Sego, Janis Shin, Jacky L. Snoep, Rajanikanth Vadigepalli, H. Steve Wiley, Dagmar Waltemath, Ion Moraru'
   title: 'From FAIR to CURE: Guidelines for Computational Models of Biological Systems'
   journal: 'arXiv:2502.15597 [q-bio.OT]'
+  journal_short:
   status: preprint
+  impact: 0
+  position: index
   doi: 10.48550/arXiv.2502.15597
   pmid:
   keywords:
@@ -42,7 +48,10 @@
   authors: 'Eissazadeh S, Fikrova P, Rathouska JU, Nemeckova I, Tripska K, Vasinova M, Havelek R, Mohammadi S, Igreja Sa IC, Theuer C, <b>König M</b>, Micuda S, Nachtigal P'
   title: 'Anti-Endoglin monoclonal antibody prevents the progression of liver sinusoidal endothelial inflammation and fibrosis in MASH'
   journal: 'Life Sci. 2025 Jan 29:123428'
-  status:
+  journal_short: Life Sci.
+  status: publication
+  impact: 5.2
+  position: index
   doi: 10.1016/j.lfs.2025.123428
   pmid: 39889923
   keywords:
@@ -61,7 +70,10 @@
   authors: '<b>Matthias König</b>'
   title: 'Reproducible digital twins for personalized liver function assessment'
   journal: 'Conference Proceedings, COMBINE 2024 - Conference of the Computational Modeling in Biology Network : September 1-5, 2024'
+  journal_short:
   status: abstract
+  impact: 0
+  position: first
   doi: 10.24407/KXP:1902121317
   pmid:
   keywords:
@@ -80,7 +92,10 @@
   authors: '<b>Matthias König</b>'
   title: 'Computational Model Development Using SBML: sbmlutils, sbm4humans, cy3sbml'
   journal: 'Conference Proceedings, COMBINE 2024 - Conference of the Computational Modeling in Biology Network : September 1-5, 2024'
+  journal_short:
   status: abstract
+  impact: 0
+  position: first
   doi: 10.24407/KXP:1902121317
   pmid:
   keywords:
@@ -97,7 +112,10 @@
   authors: 'Bachelor Thesis Yusuf Ali Kulanoglu (supervisor: <b>Matthias König</b>)'
   title: 'Physiologically based pharmacokinetic/pharmacodynamic modeling of the direct renin inhibitor aliskiren: Exploring the impact of hepatorenal impairment and drug-drug interactions'
   journal: 'Bachelor Thesis, January 2025'
-  status:
+  journal_short:
+  status: thesis
+  impact: 0
+  position: last
   doi:
   pmid:
   keywords:
@@ -118,7 +136,10 @@
   authors: 'Karthik Raman, Miroslav Kratochvil, Brett G. Olivier, <b>Matthias König</b>, Pratyay Sengupta, Dinesh Kumar Kuppa Baskaran, Tung V N Nguyen, Daniel Lobo, St Elmo Wilken, Krishna Kumar Tiwari, Aswathy K. Raghu, Indumathi Palanikumar, Lavanya Raajaraam, Maziya Ibrahim, Sanjaay Balakrishnan, Shreyansh Umale, Frank Bergmann, Tanisha Malpani, Venkata P Satagopam, Reinhard Schneider, Moritz E. Beber, Sarah Keating, Mihail Anton, Alina Renz, Meiyappan Lakshmanan, Dong-Yup Lee, Lokanand Koduru, Reihaneh Mostolizadeh, Oscar Dias, Emanuel Cunha, Alexandre Oliveira, Yi Qing Lee, Karsten Zengler, Rodrigo Santibanez-Palominos, Manish Kumar, Matteo Barberis, Bhanwar Lal Puniya, Tomas Helikar, Hoang V. Dinh, Patrick F. Suthers, Costas D. Maranas, Isabella Casini, Seyed Babak Loghmani, Nadine Veith, Nantia Leonidou, Feiran Li, Yu Chen, Jens Nielsen, GaRyoung Lee, Sang Mi Lee, Gi Bae Kim, Pedro T. Monteiro, Miguel C. Teixeira, Hyun Uk Kim, Sang Yup Lee, Ulf W. Liebal, Lars M. Blank, Christian Lieven, Chaimaa Tarzi, Claudio Angione, Manga Enuh Blaise, Celik Pinar Aytar, Mikhail Kulyashov, llya Akberdin, Dohyeon Kim, Sung Ho Yoon, Zhaohui Xu, Jyotshana Gautam, William T. Scott Jr., Peter J. Schaap, Jasper J. Koehorst, Cristal Zuniga, Gabriela Canto-Encalada, Sara Benito-Vaquerizo, Ivette Parera Olm, Maria Suarez-Diez, Qianqian Yuan, Hongwu Ma, Mohammad Mazharul Islam, Jason A. Papin, Francisco Zorrilla, Kiran Raosaheb Patil, Arianna Basile, Juan Nogales, Granado San Leon, Freddy Castillo-Alfonso, Roberto Olivares-Hernandez, Gabriel Vigueras-Ramirez, Henning Hermjakob, Andreas Drager, Rahuman S Malik-Sheriff'
   title: 'FROG Analysis Ensures the Reproducibility of Genome Scale Metabolic Models'
   journal: 'bioRxiv 2024.09.24.614797'
+  journal_short:
   status: preprint
+  impact: 0
+  position: index
   doi: 10.1101/2024.09.24.614797
   pmid:
   keywords:
@@ -135,7 +156,10 @@
   authors: 'Master Thesis Jonas Küttner (supervisor: <b>Matthias König</b>)'
   title: 'Quantitative Image Analysis of Hepatic Zonation in Cytochrome P450 and Steatosis Using Whole Slide Scans'
   journal: 'Master Thesis, August 2024'
-  status:
+  journal_short:
+  status: thesis
+  impact: 0
+  position: last
   doi:
   pmid:
   keywords:
@@ -167,7 +191,10 @@ In summary, I have successfully developed and implemented an image analysis work
   affilitations: "Biological And Medical Sciences, Faculty of Pharmacy, Hradec Kralove, Czech Republic; 2 Institute For Theoretical Biology, Humboldt Universität zu Berlin, Berlin, Germany"
   title: 'Modulation of endoglin and soluble endoglin in NASH: Computational modeling and monoclonal antibody therapeutic benefits'
   journal: 'Atherosclerosis, Volume 395, Supplement 1, August 2024, 118102, EAS Abstracts 2024'
+  journal_short:
   status: abstract
+  impact: 4.9
+  position: index
   doi: 10.1016/j.atherosclerosis.2024.118102
   pmid:
   keywords:
@@ -190,7 +217,10 @@ In summary, I have successfully developed and implemented an image analysis work
   authors: 'Martin Golebiewski, Gary Bader, Padraig Gleeson, Thomas E Gorochowski, Sarah M Keating, <b>Matthias König</b>, Chris J Myers, David P Nickerson, Björn Sommer, Dagmar Waltemath, Falk Schreiber'
   title: 'Specifications of standards in systems and synthetic biology: status, developments, and tools in 2024'
   journal: 'J Integr Bioinform. 2024 Jul 22'
-  status:
+  journal_short: 'J Integr Bioinform.'
+  status: publication
+  impact: 1.5
+  position: index
   doi: 10.1515/jib-2024-0015
   pmid: 39026464
   keywords:
@@ -199,10 +229,7 @@ In summary, I have successfully developed and implemented an image analysis work
     - standards
   project:
   repository:
-  abstract: "The “COmputational Modeling in BIology NEtwork” (COMBINE) initiative aims to harmonise the development of
-diverse community standards for computational models in biology. It coordinates standard development
-to support the associated projects towards establishing a suite of compatible, interoperable and comprehensive
-standards that address the full spectrum of modeling in systems and synthetic biology."
+  abstract: "The “COmputational Modeling in BIology NEtwork” (COMBINE) initiative aims to harmonise the development of diverse community standards for computational models in biology. It coordinates standard development to support the associated projects towards establishing a suite of compatible, interoperable and comprehensive standards that address the full spectrum of modeling in systems and synthetic biology."
 
 - id: 'Sego2024_stochastic_reproducibility'
   year: 2024
@@ -212,6 +239,8 @@ standards that address the full spectrum of modeling in systems and synthetic bi
   title: 'EFECT – A Method and Metric to Assess the Reproducibility of Stochastic Simulation Studies'
   journal: 'arXiv:2406.16820'
   status: preprint
+  impact: 0
+  position: index
   doi: 10.48550/arXiv.2406.16820
   pmid:
   keywords:
@@ -227,7 +256,9 @@ standards that address the full spectrum of modeling in systems and synthetic bi
   authors: 'Mohamed Albadry, Jonas Kuettner, Jan Grzegorzewski, Olaf Dirsch, Eva Kindler, Robert Klopfleisch, Vaclav Liska, Vladimira Moulisova, Sandra Nickel, Richard Palek, Jachym Rosendorf, Sylvia Saalfeld, Utz Settmacher, Hans-Michael Tautenhahn, <b>Matthias König*</b>, Uta Dahmen* (* equal contribution)'
   title: 'Cross-Species Variability in Lobular Geometry and Cytochrome P450 Hepatic Zonation: Insights into CYP1A2, CYP2E1, CYP2D6 and CYP3A4'
   journal: 'Front Pharmacol. 2024 May 16;15:1404938'
-  status:
+  status: publication
+  impact: 5.4
+  position: last_equal
   doi: 10.3389/fphar.2024.1404938
   pmid: 38818378
   keywords:
@@ -247,7 +278,9 @@ standards that address the full spectrum of modeling in systems and synthetic bi
   authors: 'Master Thesis Shubhankar Palwankar (supervisor: <b>Matthias König</b>)'
   title: 'Enhancing Our Understanding of Enalapril’s Pharmacokinetics: A Physiologically Based Modeling Approach'
   journal: 'Master Thesis, May 2024'
-  status:
+  status: thesis
+  impact: 0
+  position: last
   doi:
   pmid:
   keywords:
@@ -270,7 +303,9 @@ standards that address the full spectrum of modeling in systems and synthetic bi
   authors: 'Bachelor Thesis Afruja Hossain (supervisor: <b>Matthias König</b>)'
   title: 'A systematic overview of protein variability in cytochrome P450 and UDP-glucuronosyltransferase enzymes in the human liver'
   journal: 'Bachelor Thesis, Jan 2024'
-  status:
+  status: thesis
+  impact: 0
+  position: last
   doi:
   pmid:
   keywords:
@@ -300,7 +335,9 @@ standards that address the full spectrum of modeling in systems and synthetic bi
   authors: 'Höpfl S, Albadry M, Dahmen U, Herrmann KH, Kindler EM, <b>König M</b>, Reichenbach JR, Tautenhahn HM, Wei W, Zhao WT, Radde NE.'
   title: 'Bayesian modelling of time series data (BayModTS)-a FAIR workflow to process sparse and highly variable data'
   journal: 'Bioinformatics. 2024 May 2;40(5):btae312'
-  status:
+  status: publication
+  impact: 6.0
+  position: index
   doi: 10.1093/bioinformatics/btae312
   pmid: 38741151
   keywords:
@@ -319,24 +356,6 @@ standards that address the full spectrum of modeling in systems and synthetic bi
 Results: We present BayModTS (Bayesian modelling of time series data), a new FAIR (findable, accessible, interoperable, and reusable) workflow for processing and analysing sparse and highly variable time series data. BayModTS consistently transfers uncertainties from data to model predictions, including process knowledge via parameterized models. Further, credible differences in the dynamics of different conditions can be identified by filtering noise. To demonstrate the power and versatility of BayModTS, we applied it to three hepatic datasets gathered from three different species and with different measurement techniques: (i) blood perfusion measurements by magnetic resonance imaging in rat livers after portal vein ligation, (ii) pharmacokinetic time series of different drugs in normal and steatotic mice, and (iii) CT-based volumetric assessment of human liver remnants after clinical liver resection.
 Availability and implementation: The BayModTS codebase is available on GitHub at https://github.com/Systems-Theory-in-Systems-Biology/BayModTS. The repository contains a Python script for the executable BayModTS workflow and a widely applicable SBML (systems biology markup language) model for retarded transient functions. In addition, all examples from the paper are included in the repository. Data and code of the application examples are stored on DaRUS: https://doi.org/10.18419/darus-3876. The raw MRI ROI voxel data were uploaded to DaRUS: https://doi.org/10.18419/darus-3878. The steatosis metabolite data are published on FairdomHub: 10.15490/fairdomhub.1.study.1070.1."
 
-- id: 'Golebiewski2024_standards'
-  year: 2024
-  pdf: 'Golebiewski2024_standards.pdf'
-  authors: 'M. Golebiewski, P. Gleeson, T. Gorochowski, M. Hucka, S. Keating, <b>M. König</b>, C. Myers, D. Nickerson, H. Sommer, D. Waltemath, F. Schreiber'
-  title: 'Specifications of Standards in Systems and Synthetic Biology: Status, Developments and Tools in 2024'
-  journal: 'J Integr Bioinform. 2024'
-  status: accepted
-  doi:
-  pmid:
-  keywords:
-    - COMBINE
-    - standardization
-    - SBML
-    - SEDML
-    - OMEX
-  project: https://co.mbine.org
-  repository:
-  abstract: "This special issue of the Journal of Integrative Bioinformatics is part of a longstanding tradition that provides updated specifications of standards in systems and synthetic biology. The 2024 edition introduces a significant revision to  standards, the next versions of the Simulation Experiment Description Markup Language (SED-ML). In addition to this update, with this issue we start to include novel or updated tools that are utilising these standards or are important to their implementation, and three tools are presented. This document also serves as a comprehensive source for the latest specifications across all COMBINE standards, ensuring that researchers and practitioners have access to the most current versions of standards in the field."
 
 - id: 'SED-ML_L1V5'
   year: 2024
@@ -345,7 +364,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Smith LP, Bergmann FT, Garny A, Helikar T, Karr J, Nickerson D, Sauro H, Waltemath D, <b>König M.</b>'
   title: 'The simulation experiment description markup language (SED-ML): language specification for level 1 version 5'
   journal: 'J Integr Bioinform. 2024 Apr 15'
-  status:
+  status: publication
+  impact: 1.5
+  position: last
   doi:  10.1515/jib-2024-0008
   pmid: 38613325
   keywords:
@@ -354,6 +375,7 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   project: 'https://sed-ml.github.io/index.html'
   repository: 'https://github.com/SED-ML/sed-ml'
   abstract: "Modern biological research is increasingly informed by computational simulation experiments, which necessitate the development of methods for annotating, archiving, sharing, and reproducing the conducted experiments. These simulations increasingly require extensive collaboration among modelers, experimentalists, and engineers. The Minimum Information About a Simulation Experiment (MIASE) guidelines outline the information needed to share simulation experiments. SED-ML is a computer-readable format for the information outlined by MIASE, created as a community project and supported by many investigators and software tools. Level 1 Version 5 of SED-ML expands the ability of modelers to define simulations in SED-ML using the Kinetic Simulation Algorithm Onotoloy (KiSAO). While it was possible in Version 4 to define a simulation entirely using KiSAO, Version 5 now allows users to define tasks, model changes, ranges, and outputs using the ontology as well. SED-ML is supported by a growing ecosystem of investigators, model languages, and software tools, including various languages for constraint-based, kinetic, qualitative, rule-based, and spatial models, and many simulation tools, visual editors, model repositories, and validators. Additional information about SED-ML is available at https://sed-ml.org/."
+
 - id: 'Gerhaeusser2024_spt_model'
   year: 2024
   date: 2024-03-29
@@ -362,6 +384,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   title: 'Simulation of zonation-function relationships in the liver using coupled multiscale models: Application to drug-induced liver injury'
   journal: 'bioRxiv 2024.03.26.586870;'
   status: preprint
+  impact: 0
+  position: last
   doi: 10.1101/2024.03.26.586870
   pmid:
   keywords:
@@ -384,7 +408,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Lena Lambers, Navina Waschinsky, Jana Schleicher, <b>Matthias König</b>, Hans-Michael Tautenhahn, Mohamed Albadry, Uta Dahmen and Tim Ricken'
   title: 'Quantifying fat zonation in liver lobules: an integrated multiscale in silico model combining disturbed microperfusion and fat metabolism via a continuum biomechanical bi-scale, tri-phasic approach'
   journal: 'Biomech Model Mechanobiol. 2024 Feb 25.'
-  status:
+  status: publication
+  impact: 3.1
+  position: index
   doi: 10.1007/s10237-023-01797-0
   pmid: 38402347
   keywords:
@@ -398,29 +424,6 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository:
   abstract: "Metabolic zonation refers to the spatial separation of metabolic functions along the sinusoidal axes of the liver. This phenomenon forms the foundation for adjusting hepatic metabolism to physiological requirements in health and disease (e.g., metabolic dysfunction-associated steatotic liver disease/MASLD). Zonated metabolic functions are influenced by zonal morphological abnormalities in the liver, such as periportal fibrosis and pericentral steatosis. We aim to analyze the interplay between microperfusion, oxygen gradient, fat metabolism and resulting zonated fat accumulation in a liver lobule. Therefore we developed a continuum biomechanical, tri-phasic, bi-scale, and multicomponent in silico model, which allows to numerically simulate coupled perfusion-function-growth interactions two-dimensionally in liver lobules. The developed homogenized model has the following specifications: (i) thermodynamically consistent, (ii) tri-phase model (tissue, fat, blood), (iii) penta-substances (glycogen, glucose, lactate, FFA, and oxygen), and (iv) bi-scale approach (lobule, cell). Our presented in silico model accounts for the mutual coupling between spatial and time-dependent liver perfusion, metabolic pathways and fat accumulation. The model thus allows the prediction of fat development in the liver lobule, depending on perfusion, oxygen and plasma concentration of free fatty acids (FFA), oxidative processes, the synthesis and the secretion of triglycerides (TGs). The use of a bi-scale approach allows in addition to focus on scale bridging processes. Thus, we will investigate how changes at the cellular scale affect perfusion at the lobular scale and vice versa. This allows to predict the zonation of fat distribution (periportal or pericentral) depending on initial conditions, as well as external and internal boundary value conditions."
 
-#- id: 'Hoepfl2024_uncertainty'
-#  year: 2024
-#  pdf:
-#  authors: 'Sebastian Höpfl, Mohamed Albadry, Uta Dahmen, Karl-Heinz Herrmann, Eva Marie Kindler, <b>Matthias König</b>, Jürgen Rainer Reichenbach, Hans-Michael Tautenhahn, Weiwei Wei, Wan-Ting Zhao, Nicole Erika Radde'
-#  title: 'Bayesian Modeling of Time Series Data (BayModTS) - A FAIR Workflow to Process Sparse and Highly Variable Data'
-#  journal:
-#  status: 'submitted'
-#  doi:
-#  pmid:
-#  keywords:
-#    - Time Series Data
-#    - Bayesian Inference
-#    - Posterior Predictive Distribution
-#    - SBML
-#    - FAIR Principles
-#    - Hepatology
-#  project:
-#  repository:
-#  abstract: "Motivation. Systems biology aims to better understand living systems through mathematical modelling of experimental and clinical data. A pervasive challenge in quantitative dynamical modelling is the integration of time series measurements, which often have high variability and low sampling resolution. Approaches are required to utilise such information while consistently handling uncertainties.
-#  Results. We present BayModTS (Bayesian Modeling of Time Series data), a new FAIR (Findable, Accessible, Interoperable and Reusable) workflow for processing and analysing sparse and highly variable time series data. BayModTS consistently transfers uncertainties from data to model predictions, including process knowledge via parameterised models. Further, credible differences in the dynamics of different conditions can be identified by filtering noise. To demonstrate the power and versatility of BayModTS, we applied it to three hepatic datasets gathered from three different species and with different measurement techniques: (i) blood perfusion measurements by magnetic resonance imaging in rat livers after portal vein ligation, (ii) CT-based volumetric assessment of human liver remnants after clinical liver resection, and (iii) pharmacokinetic time series of different drugs in normal and steatotic mice.
-#  Availability and Implementation. The BayModTS codebase is available on GitHub at https://github.com/Systems-Theory-in-Systems-Biology/BayModTS. The repository contains a Python script for the executable BayModTS workflow and a widely applicable SBML (Systems Biology Markup Language) model for retarded transient functions. In addition, all examples from the paper are included in the repository. Data and code of the application examples are stored on DaRUS https://doi.org/10.18419/darus-3876."
-
-
 - id: 'Tautenhahn2024_simliva'
   year: 2024
   date: 2024-01-23
@@ -428,7 +431,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Hans-Michael Tautenhahn, Tim Ricken, Uta Dahmen, Luis Mandl, Laura Bütow, Steffen Gerhäusser, Lena Lambers, Xinpei Chen, Elina Lehmann, Olaf Dirsch, <b>Matthias König</b>'
   title: 'SimLivA – Modelling ischemia reperfusion injury in the liver: A first step towards a clinical decision support tool.'
   journal: 'GAMM-Mitteilungen. (2024), e202370003'
-  status:
+  status: proceeding
+  impact: 0
+  position: last
   doi: "10.1002/gamm.202370003"
   pmid:
   keywords:
@@ -448,7 +453,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Internship Report Frances Okibedi (supervisor: <b>Matthias König</b>)'
   title: 'A physiologically-based pharmacokinetic (PBPK) model of sorafenib for investigating the effect of sorafenib parameters in hepatorenal impairment'
   journal: 'Internship report, July 2024'
-  status:
+  status: report
+  impact: 0
+  position: last
   doi:
   pmid:
   keywords:
@@ -462,34 +469,15 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository: https://github.com/matthiaskoenig/sorafenib-model
   abstract: 'Liver cancer ranks second in cancer-related deaths thereby making timely diagnosis and personalized treatment crucial. Hepatocellular carcinoma (HCC) patients often get diagnosed at advanced stages, hindering curative options like resection and ablation. Systemic treatment has become the standard therapy and sorafenib has been the primary systemic treatment for advanced HCC for the last ten years, being the first approved drug for this purpose. Sorafenib (Nexavar), is a multi-kinase inhibitor medication approved for primarily treating advanced renal cell carcinoma, hepatocellular carcinoma or other cancers. After oral administration, sorafenib enters hepatocytes via OATP1B-type carriers. It undergoes CYP3A4-mediated oxidative metabolism to sorafenib-N-oxide (M2) and UGT1A9-mediated glucuronidation forming sorafenib-glucuronide (SG). SG is secreted into bile mainly by ABCC2, with a fraction reuptaken by ABCC3, preventing ABCC2 saturation. In bile, SG can be excreted via the feces or converted back to sorafenib by a bacterial β-glucuronidase. Sorafenib is absorbed in the intestine, reentering the systemic circulation, contributing to elimination and detoxification. Sorafenib is excreted mainly by the feces (77%) and urine (19%). Hepatic and renal impairment could have a large impact on the pharmacokinetics of sorafenib. Within this work the pharmacokinetics of sorafenib were analyzed by developing a physiologically-based pharmacokinetic (PBPK) model based on extensive data curation of sorafenib data. The model allowed to simulate the time-concentration courses of sorafenib in various tissues and to calculate the pharmacokinetic parameters for sorafenib under single and multiple dosing regimes. The model was applied to study the dose-dependency of sorafenib treatment and to investigate the effect of hepatic and renal impairment on sorafenib pharmacokinetics.'
 
-#- id: 'Albadry2023_species_comparison'
-#  year: 2023
-#  pdf: 'Albadry2023_species_comparison.pdf'
-#  authors: 'Mohamed Albadry, Jonas Kuettner, Jan Grzegorzewski, Olaf Dirsch, Eva Kindler, Robert Klopfleisch, Vaclav Liska, Vladimira Moulisova, Sandra Nickel, Richard Palek, Jachym Rosendorf, Sylvia Saalfeld, Utz Settmacher, Hans-Michael Tautenhahn, <b>Matthias König*</b>, Uta Dahmen* (* equal contribution)'
-#  title: 'Cross-Species Variability in Lobular Geometry and Cytochrome P450 Hepatic Zonation: Insights into CYP1A2, CYP2E1, CYP2D6 and CYP3A4'
-#  journal: 'bioRxiv 2023.12.28.573567'
-#  status: "preprint"
-#  doi: 10.1101/2023.12.28.573567
-#  pmid:
-#  keywords:
-#    - liver
-#    - zonation
-#    - cytochrome P450
-#    - lobule geometry
-#    - drug metabolism
-#    - species
-#  project:
-#  repository:
-#  abstract: "This study explores the critical interplay between lobular geometry and the zonated distribution of cytochrome P450 (CYP) enzymes across species. We present an innovative approach to assess lobular geometry and zonation patterns using whole slide imaging (WSI). This method allows a detailed, systematic comparison of lobular structures and spatial distribution of key CYP450 enzymes and glutamine synthetase in four different species (mouse, rat, pig, and human). Our results shed light on species differences in lobular geometry and enzymatic zonation, providing critical insights for drug metabolism research. Based on our approach we could determine the minimum number of lobules required for a statistically representative analysis, an important piece of information when evaluating liver biopsies and deriving information from WSI."
-
-
 - id: 'Kohrs2023_reproducible.research.open.science'
   year: 2023
   pdf: 'Kohrs2023_reproducible.research.open.science.pdf'
   authors: 'Friederike E Kohrs, Susann Auer, Alexandra Bannach-Brown, Susann Fiedler, Tamarinde Laura Haven, Verena Heise, Constance Holman, Flavio Azevedo, René Bernard, Armin Bleier, Nicole Bössel, Brian Patrick Cahill, Leyla Jael Castro, Adrian Ehrenhofer, Kristina Eichel, Maximillian Frank, Claudia Frick, Malte Friese, Anne Gärtner, Kerstin Gierend, David Joachim Grüning, Lena Hahn, Maren Hülsemann, Malika Ihle, Sabrina Illius, Laura König, <b>Matthias König</b>, Louisa Kulke, Anton Kutlin, Fritjof Lammers, David MA Mehler, Christoph Miehl, Anett Müller-Alcazar, Claudia Neuendorf, Helen Niemeyer, Florian Pargent, Aaron Peikert, Christina U Pfeuffer, Robert Reinecke, Jan Philipp Röer, Jessica L Rohmann, Alfredo Sánchez-Tójar, Stefan Scherbaum, Elena Sixtus, Lisa Spitzer, Vera Maren Straßburger, Marcel Weber, Clarissa J Whitmire, Josephine Zerna, Dilara Zorbek, Philipp Zumstein, Tracey L Weissgerber'
   title: 'Eleven Strategies for Making Reproducible Research and Open Science Training the Norm at Research Institutions'
   journal: 'eLife (2023) 12:e89736.'
-  status:
+  status: publication
+  impact: 6.4
+  position: index
   doi: 10.7554/eLife.89736
   pmid:
   keywords:
@@ -500,31 +488,15 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository:
   abstract: "Reproducible research and open science practices have the potential to accelerate scientific progress by allowing others to reuse research outputs, and by promoting rigorous research that is more likely to yield trustworthy results. However, these practices are uncommon in many fields, so there is a clear need for training that helps and encourages researchers to integrate reproducible research and open science practices into their daily work. Here, we outline eleven strategies for making training in these practices the norm at research institutions. The strategies, which emerged from a virtual brainstorming event organized in collaboration with the German Reproducibility Network, are concentrated in three areas: (i) adapting research assessment criteria and program requirements; (ii) training; (iii) building communities. We provide a brief overview of each strategy, offer tips for implementation, and provide links to resources. We also highlight the importance of allocating resources and monitoring impact. Our goal is to encourage researchers – in their roles as scientists, supervisors, mentors, instructors, and members of curriculum, hiring or evaluation committees – to think creatively about the many ways they can promote reproducible research and open science practices in their institutions."
 
-#- id: 'Kohrs2023_reproducible.research.open.science'
-#  year: 2023
-#  pdf: 'Kohrs2023_reproducible.research.open.science_preprint.pdf'
-#  authors: 'Friederike E. Kohrs, Susann Auer, Alexandra Bannach-Brown, Susann Fiedler, Tamarinde Haven, Verena Heise, Constance Holman, Flavio Azevedo, René Bernard, Arnim Bleier, Nicole Bössel, Brian Cahill, Leyla Jael Castro, Adrian Ehrenhofer, Kristina Eichel, Maximilian Frank, Claudia Frick, Malte Friese, Anne Gärtner, Kerstin Gierend, David Joachim Grüning, Lena Hahn, Maren Hülsemann, Malika Ihle, Sabrina Illius, Laura König, <b>Matthias König</b>, Louisa Kulke, Anton Kutlin, Fritjof Lammers, David M.A. Mehler, Christoph Miehl, Anett Müller-Alcazar, Claudia Neuendorf, Helen Niemeyer, Florian Pargent, Aaron Peikert, Christina U. Pfeuffer, Robert Reinecke, Jan Philipp Röer, Jessica L. Rohmann, Alfredo Sánchez-Tójar, Stefan Scherbaum, Elena Sixtus, Lisa Spitzer, Vera Maren Straßburger, Marcel Weber, Clarissa Whitmire, Josephine Zerna, Dilara Zorbek, Philipp Zumstein, Tracey L. Weissgerber'
-#  title: 'Eleven Strategies for Making Reproducible Research and Open Science Training the Norm at Research Institutions'
-#  journal: 'osfpreprints 2023.04.12.536571'
-#  status: 'preprint [accepted 2023-11-07]'
-#  doi: 10.31219/osf.io/kcvra
-#  pmid:
-#  keywords:
-#    - reproducible research
-#    - open science
-#    - training
-#  project:
-#  repository:
-#  abstract: "Across disciplines, researchers increasingly recognize that open science and reproducible research practices may accelerate scientific progress by allowing others to reuse research outputs and by promoting rigorous research that is more likely to yield trustworthy results. While initiatives, training programs, and funder policies encourage researchers to adopt reproducible research and open science practices, these practices are uncommon in many fields. Researchers need training to integrate these practices into their daily work. We organized a virtual brainstorming event, in collaboration with the German Reproducibility Network, to discuss strategies for making reproducible research and open science training the norm at research institutions. Here, we outline eleven strategies, concentrated in three areas: (1) offering training, (2) adapting research assessment criteria and program requirements, and (3) building communities. We provide a brief overview of each strategy, offer tips for implementation, and provide links to resources. Our goal is to encourage members of the research community to think creatively about the many ways they can contribute and collaborate to build communities, and make reproducible research and open science training the norm. Researchers may act in their roles as scientists, supervisors, mentors, instructors, and members of curriculum, hiring or evaluation committees. Institutional leadership and research administration and support staff can accelerate progress by implementing change across their institutions."
-
-
 - id: 'StemmerMallol2023_talinolol'
   year: 2023
   pdf: 'StemmerMallol2023_talinolol.pdf'
   authors: 'Beatrice Stemmer Mallol, Jan Grzegorzewski, <b>Matthias König</b>'
   title: 'Insights into Intestinal P-glycoprotein Function using Talinolol: A PBPK Modeling Approach'
   journal: 'bioRxiv 2023.11.21.568168'
-  status: 'preprint'
+  status: preprint
+  impact: 0
+  position: last
   doi: 10.1101/2023.11.21.568168
   pmid:
   keywords:
@@ -540,33 +512,15 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository: https://github.com/matthiaskoenig/talinolol-model.git
   abstract: "Talinolol is a cardioselective beta-blocker used in the treatment of various cardiovascular diseases and tachyarrhythmias. Its intestinal absorption is determined by uptake by the organic anion transporting polypeptide 2B1 (OATP2B1) and efflux via P-glycoprotein (P-gp). Talinolol can be taken up via OATP1B1 in the liver, where it enters the enterohepatic circulation. Talinolol is excreted unchanged in the urine and feces. Talinolol is widely used as a probe drug for the intestinal efflux transporter P-gp, which plays a critical role in protecting against potentially toxic substances and facilitating the elimination of xenobiotics. In this work, an extensive database of talinolol pharmacokinetics was established and used to develop and validate a physiologically based pharmacokinetic (PBPK) model of talinolol for P-gp phenotyping. The model was used to investigate the influence of several factors on talinolol pharmacokinetics: (i) inhibition of P-gp via drug-drug interaction; (i) genetic polymorphisms of P-gp; (iii) activity of OATP2B1 and OATP1B1; (iv) effect of disease, namely hepatic and renal impairment; and (v) site-specific distribution of P-gp and OATP2B1 in the intestine. The model accurately predicts the concentration-time profile of talinolol after oral and intravenous administration of single and multiple dosing. Furthermore, the model accurately describes the effect of genetic variants of P-gp on the pharmacokinetics of talinolol, the effect of inhibition of P-gp, the effect of renal impairment, as well as site-specific infusion of talinolol in the intestine. The detailed description of the intestinal absorption of talinolol and the predictions of talinolol pharmacokinetics as a function of hepatorenal impairment provide valuable clinical insights for metabolic phenotyping with talinolol. Both the model and the database are freely available for reuse."
 
-#- id: 'Lambers2023_fat_zonation_preprint'
-#  year: 2023
-#  pdf: 'Lambers2023_fat_zonation_preprint.pdf'
-#  authors: 'Lena Lambers, Navina Waschinsky, Jana Schleicher, <b>Matthias König</b>, Hans-Michael Tautenhahn, Mohamed Albadry, Uta Dahmen and Tim Ricken'
-#  title: 'Quantifying Fat Zonation in Liver Lobules: An Integrated Multiscale In-silico Model Combining Disturbed Microperfusion and Fat Metabolism via a Continuum-Biomechanical Bi-scale, Tri-phasic Approach'
-#  journal: '17 September 2023, PREPRINT (Version 1) available at Research Square'
-#  status: 'preprint [accepted 2023-11-23]'
-#  doi: 10.21203/rs.3.rs-3348101/v1
-#  pmid:
-#  keywords:
-#    - Multiscale Approach
-#    - Homogenization
-#    - Theory of Porous Media (TPM)
-#    - Growth Kinematics
-#    - Metabolic dysfunction-Associated Steatotic Liver Disease (MASLD)
-#    - FEM boundary problem
-#  project:
-#  repository:
-#  abstract: "Metabolic zonation refers to the spatial separation of metabolic functions along the sinusoidal axes of the liver. This phenomenon forms the foundation for adjusting hepatic metabolism to physiological requirements in health and disease (e.g. metabolic dysfunction-associated steatotic liver disease/ MASLD). Zonated metabolic functions are influenced by zonal morphological abnormalities in the liver, such as periportal fibrosis and pericentral steatosis. We aim to analyze the interplay between microperfusion, oxygen gradient, fat metabolism and resulting zonated fat accumulation in a liver lobule. Therefore we developed a continuum-biomechanical, tri-phasic, bi-scale, and multicomponent in-silico model, which allows to numerically simulate coupled perfusion-function-growth interactions two-dimensionally in liver lobules. The developed homogenized model has the following specifications: i) thermodynamically consistent, ii) tri-phase model (tissue, fat, blood), iii) penta-substances (glycogen, glucose, lactate, FFA, oxygen), and iv) bi-scale approach (lobule, cell). Our presented in-silico model accounts for the mutual coupling between spatial and time-dependent liver perfusion, metabolic pathways and fat accumulation. The model thus allows the prediction of fat development in the liver lobule, depending on perfusion, oxygen and plasma concentration of free fatty acids (FFA), oxidative processes, the synthesis and the secretion of triglycerides (TGs). The use of a bi-scale approach allows in addition to focus on scale bridging processes. Thus, we will investigate how changes at the cellular scale affect perfusion at the lobular scale and vice versa. This allows to predict the zonation of fat distribution (periportal or pericentral) depending on initial conditions, as well as external and internal boundary value conditions."
-
 - id: 'Maheshvare2023_pancreas'
   year: 2023
   pdf: 'Maheshvare2023_pancreas.pdf'
   authors: 'Maheshvare MD., Raha S., <b>König M.*</b>, and Pal D.* (* equal contribution)'
   title: 'A pathway model of glucose-stimulated insulin secretion in the pancreatic β-cell'
   journal: 'Front. Endocrinol. 14:1185656'
-  status:
+  status: publication
+  impact: 5.7
+  position: last_equal
   doi: 10.3389/fendo.2023.1185656
   pmid:
   keywords:
@@ -586,7 +540,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Bachelor Thesis Beatrice Stemmer Mallol (supervisor: <b>Matthias König</b>)'
   title: 'A physiologically based pharmacokinetic (PBPK) model of the probe drug talinolol for the characterization of intestinal P-glycoprotein'
   journal: 'Bachelor Thesis, July 2023'
-  status:
+  status: thesis
+  impact: 0
+  position: last
   doi:
   pmid:
   keywords:
@@ -603,35 +559,15 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   abstract: 'Talinolol is a cardioselective beta-blocker used for the treatment of various cardiovascular diseases and tachyarrhythmia. The gastrointestinal absorption of talinolol is determined via its uptake in the intestine via the organic anion transporting polypeptide 2B1 (OATP2B1) and its efflux via the P-glycoprotein (P-gp). After intestinal absorption talinolol can be transported into the liver via OATP1B1 talinolol where it undergoes enterohepatic circulation. Talinolol is excreted unchanged in the urine and feces. In addition to its clinical application, talinolol is widely used as a probe drug for the intestinal efflux transporter P-glycoprotein. P-gp plays a crucial role in the human body as it is expressed in various tissues to protect against potentially toxic substances, facilitating the elimination of xenobiotics. The application of talinolol for P-gp phenotyping enables evaluation of factors influencing P-gp-mediated transport in vivo such as genetic polymorphisms of P-gp as well as the distribution of P-gp along the intestine.
   Within this thesis, an extensive dataset of talinolol pharmacokinetics was established and used to develop a physiologically based pharmacokinetic (PBPK) model for talinolol. The model was applied to investigate the influence of various factors on the pharmacokinetics of talinolol, including: (i) genetic variants of P-gp; (ii) enzymatic activity of the transporters OATP2B1 and OATP1B1; (iii) site-specific distribution of P-gp and OATP2B1 proteins in the intestine, and (iv) the impact of diseases such as liver cirrhosis and renal dysfunction. The model enables precise predictions of the concentration-time profile of talinolol in various tissues following oral or intravenous administration. Furthermore, the model accurately describes the effect of genetic variants of P-gp on the pharmacokinetics of talinolol. The detailed description of the limiting intestinal absorption of intestinal provided by the model, along with the precise prediction of talinolol`s pharmacokinetics in different renal functions, holds significant clinical relevance.'
 
-#- id: 'Kosacka2023_Inflammation_life-2527409'
-#  year: 2023
-#  pdf: 'Kosacka2023_Inflammation_life-2527409.pdf'
-#  authors: 'Petra Baum, Thomas Ebert, Nora Klöting, <b>Matthias König</b>, Sabine Paeschke, Michal Bulc, Matthias Blüher, Katarzyna Palus, Marcin Nowicki and Joanna Kosacka'
-#  title: 'Inflammation and autophagy in peripheral nerves. Metabolic syndrome versus type 2 diabetes in rodent models.'
-#  journal: 'submitted (2023-07-12)'
-#  status: 'preprint'
-#  doi: 10.31219/osf.io/kcvra
-#  pmid:
-#  keywords:
-#    - inflammation
-#    - autophagy
-#    - metabolic syndrome
-#    - T2D;
-#    - PDN
-#    - ob/ob mice
-#    - db/db mice
-#    - WOKW rat
-#  project:
-#  repository:
-#  abstract: "Obesity, metabolic syndrome (MetS) and type 2 diabetes (T2D) are closely associated with activation of inflammatory signaling pathways resulting in macrophage accumulation and abnormal cytokine production. The obesity-associated inflammation itself may significantly con- tribute to the increased risk of metabolic, cardiovascular, neurological (peripheral neuropathy, PN) diseases in the absence of overt diabetes. In the previous work, we investigated the increased in- flammation with infiltrated macrophages in peripheral nerve and adipose tissue (AT) in animal models of MetS such as Wistar Ottawa Karlsburg W (RT1u) WOKW rat and ob/ob leptin-deficient mice with mild T2 D or db/db leptin receptor-deficient mice with severe T2D, respectively in com- parison to non-obese, healthy control animals. Whereas the moderate- or high-grade inflammation observed in ob/ob or db/db mice was associated with neuropathic changes of sciatic nerve, the mild macrophage infiltration and up-regulated autophagy in WOKW rats did not lead to the develop- ment of neuropathic symptoms. The aim of the present communication is to identify the inflam- matory phenotype in correlation to autophagy at the mRNA level in the peripheral nerves of ro- dent with MetS and mild and severe form of T2D (ob/ob and db/db). Since inflammation plays a causative role in neurodegeneration, the understanding its pathomechanisms and correlations is necessary to targeting PN."
-
 - id: 'Kuettner2023_chlorzoxazone'
   year: 2023
   pdf: 'Kuettner2023_chlorzoxazone.pdf'
   authors: 'J. Küttner, J. Grzegorzewski, HM. Tautenhahn, <b>M. König</b>'
   title: 'A physiologically based pharmacokinetic model for CYP2E1 phenotyping via chlorzoxazone'
   journal: 'bioRxiv 2023.04.12.536571'
-  status: 'preprint'
+  status: preprint
+  impact: 0
+  position: last
   doi: 10.1101/2023.04.12.536571
   pmid:
   keywords:
@@ -651,7 +587,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: '<b>M. König</b>, P. Gleeson, M. Golebiewski, T. Gorochowski, M. Hucka, S. Keating, C. Myers, D. Nickerson, F. Schreiber'
   title: 'Specifications of Standards in Systems and Synthetic Biology: Status and Developments in 2022 and the COMBINE meeting 2022'
   journal: 'J Integr Bioinform. 2023 Mar 29;20(1).'
-  status:
+  status: publication
+  impact: 1.5
+  position: first
   doi: 10.1515/jib-2023-0004
   pmid: 36989443
   keywords:
@@ -670,7 +608,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Mihail Anton, Eivind Almaas, Rui Benfeitas, Sara Benito-Vaquerizo, Lars M. Blank, Andreas Dräger, John M. Hancock, Cheewin Kittikunapong, <b>Matthias König</b>, Feiran Li, Ulf W. Liebal, Hongzhong Lu, Hongwu Ma, Radhakrishnan Mahadevan, Adil Mardinoglu, Jens Nielsen, Juan Nogales, Marco Pagni, Jason A. Papin, Kiran Raosaheb Patil, Nathan D. Price, Jonathan L. Robinson, Benjamín J. Sánchez, Maria Suarez-Diez, Snorre Sulheim, L. Thomas Svensson, Bas Teusink, Wanwipa Vongsangnak, Hao Wang, Ahmad A. Zeidan, Eduard J. Kerkhoven'
   title: 'standard-GEM: standardization of open-source genome-scale metabolic models'
   journal: 'bioRxiv 2023.03.21.512712'
-  status: 'preprint'
+  status: preprint
+  impact: 0
+  position: index
   doi: 10.1101/2023.03.21.512712
   pmid:
   keywords:
@@ -687,7 +627,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'F. Bartsch, J. Grzegorzewski, H. Pujol, HM. Tautenhahn, <b>M. König</b>'
   title: 'Simvastatin therapy in different subtypes of hypercholesterolemia - a physiologically based modelling approach'
   journal: 'medRxiv 2023.02.01.23285358'
-  status: 'preprint'
+  status: preprint
+  impact: 0
+  position: last
   doi: 10.1101/2023.02.01.23285358
   pmid:
   keywords:
@@ -709,7 +651,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Jan Grzegorzewski (supervisor: <b>Matthias König</b>)'
   title: 'Physiologically based pharmacokinetic (PBPK) modeling for dynamical liver function tests and CYP phenotyping'
   journal: 'PhD Thesis, Jan 2023'
-  status: 'submitted'
+  status: thesis
+  impact: 0
+  position: last
   doi:
   pmid:
   keywords:
@@ -726,7 +670,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   pdf: 'Welsh2022_libroadrunner_2.0.pdf'
   authors: 'Ciaran Welsh, Jin Xu, Lucian Smith, <b>Matthias König</b>, Kiri Choi, Herbert M. Sauro'
   title: 'libRoadRunner 2.0: A High-Performance SBML Simulation and Analysis Library'
-  status:
+  status: publication
+  impact: 6.0
+  position: index
   journal: 'Bioinformatics. 2023 Jan 1;39(1):btac770'
   doi: 10.1093/bioinformatics/btac770
   pmid: 36478036
@@ -745,7 +691,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'M. Albadry, S. Höpfl, N. Ehteshamzad, <b>M. König</b>, M. Böttcher, J. Neumann, A. Lupp, O. Dirsch, N. Radde, B. Christ, M. Christ, L.O. Schwen, H. Laue, R. Klopfleisch and Uta Dahmen'
   title: 'Cytochrome p450 enzymes in periportal steatosis: Modulation of drug metabolizing activity but not of pericentral expression pattern'
   journal: 'Sci Rep. 2022 Dec 17;12(1):21825'
-  status:
+  status: publication
+  impact: 3.8
+  position: index
   doi: 10.1038/s41598-022-26483-6
   pmid: 36528753
   keywords:
@@ -762,8 +710,10 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   pdf: 'Grzegorzewski2022_dextromethorphan.pdf'
   authors: 'Grzegorzewski, J., Brandhorst, J., <b>König, M.</b>'
   title: 'Physiologically based pharmacokinetic (PBPK) modeling of the role of CYP2D6 polymorphism for metabolic phenotyping with dextromethorphan'
-  journal: ' Front Pharmacol. 2022 Oct 24;13:1029073'
-  status:
+  journal: 'Front Pharmacol. 2022 Oct 24;13:1029073'
+  status: publication
+  impact: 4.4
+  position: last
   doi: 10.3389/fphar.2022.1029073
   pmid: 36353484
   keywords:
@@ -784,6 +734,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   title: 'FAIR Sharing of Reproducible Models of Epidemic and Pandemic Forecast'
   journal: 'Preprints 2022, 2022060137'
   status: preprint
+  impact: 0
+  position: first_equal
   doi: 10.20944/preprints202206.0137.v1
   pmid:
   keywords:
@@ -803,7 +755,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Shaikh B, Smith LP, Vasilescu D, Marupilla G, Wilson M, Agmon E, Agnew H, Andrews SS, Anwar A, Beber ME, Bergmann FT, Brooks D, Brusch L, Calzone L, Choi K, Cooper J, Detloff J, Drawert B, Dumontier M, Ermentrout GB, Faeder JR, Freiburger AP, Fröhlich F, Funahashi A, Garny A, Gennari JH, Gleeson P, Goelzer A, Haiman Z, Hasenauer J, Hellerstein JL, Hermjakob H, Hoops S, Ison JC, Jahn D, Jakubowski HV, Jordan R, Kalaš M, <b>König M</b>, Liebermeister W, Sheriff RSM, Mandal S, McDougal R, Medley JK, Mendes P, Müller R, Myers CJ, Naldi A, Nguyen TVN, Nickerson DP, Olivier BG, Patoliya D, Paulevé L, Petzold LR, Priya A, Rampadarath AK, Rohwer JM, Saglam AS, Singh D, Sinha A, Snoep J, Sorby H, Spangler R, Starruß J, Thomas PJ, van Niekerk D, Weindl D, Zhang F, Zhukova A, Goldberg AP, Schaff JC, Blinov ML, Sauro HM, Moraru II, Karr JR.'
   title: 'BioSimulators: a central registry of simulation engines and services for recommending specific tools'
   journal: 'Nucleic Acids Res. 2022 May 7;50(W1):W108–14'
-  status:
+  status: publication
+  impact: 16.7
+  position: index
   doi: 10.1093/nar/gkac331
   pmid: 35524558
   keywords:
@@ -820,7 +774,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Helena Leal Pujol (supervisor: <b>Matthias König</b>)'
   title: 'A physiologically based model of pravastatin - The role of genotypes and hepatic or renal impairment on the pharmacokinetics of pravastatin'
   journal: 'Bachelor Thesis, May 2022'
-  status:
+  status: thesis
+  impact: 0
+  position: last
   doi:
   pmid:
   keywords:
@@ -842,7 +798,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: '<b>Matthias König*</b>, Leandro H. Watanabe<b>*</b>, Jan Grzegorzewski, and Chris J. Myers<br /><b>*</b> equal contribution'
   title: 'Dynamic Flux Balance Analysis Models in SBML'
   journal: 'bioRxiv 245076'
-  status: preprint, submitted
+  status: preprint
+  impact: 0
+  position: first_equal
   doi: 10.1101/245076
   pmid:
   keywords:
@@ -861,7 +819,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Jan Grzegorzewski, Florian Bartsch, Adrian Köller, and <b>Matthias König</b>'
   title: 'Pharmacokinetics of caffeine: A systematic analysis of reported data for application in metabolic phenotyping and liver function testing'
   journal: 'Frontiers in Pharmacology 2022, Vol12'
-  status:
+  status: publication
+  impact: 4.4
+  position: last
   doi: 10.3389/fphar.2021.752826
   pmid: 35280254
   keywords:
@@ -883,7 +843,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Adrian Köller, Jan Grzegorzewski, Michael Tautenhahn, <b>Matthias König</b>'
   title: 'Prediction of survival after hepatectomy using a physiologically based pharmacokinetic model of indocyanine green liver function tests'
   journal: 'Front. Physiol., 22 November 2021'
-  status:
+  status: publication
+  impact: 3.2
+  position: last
   doi: 10.3389/fphys.2021.730418
   pmid: 34880771
   keywords:
@@ -905,7 +867,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Adrian Köller, Jan Grzegorzewski and <b>Matthias König</b>'
   title: 'Physiologically based modeling of the effect of physiological and anthropometric variability on indocyanine green based liver function tests'
   journal: 'Front Physiol. 2021 Nov 22;12:757293'
-  status:
+  status: publication
+  impact: 3.2
+  position: last
   doi: 10.3389/fphys.2021.757293
   pmid: 34880776
   keywords:
@@ -930,7 +894,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
             Ricken*, and Hans-Michael Tautenhahn* (<b>* equal contribution)</b>'
   title: 'Hepatectomy-Induced Alterations in Hepatic Perfusion and Function - Toward Multi-Scale Computational Modeling for a Better Prediction of Post-hepatectomy Liver Function'
   journal: 'Front Physiol. 2021 Nov 18;12:733868'
-  status:
+  status: review
+  impact: 3.2
+  position: first_equal
   doi: 10.3389/fphys.2021.733868
   pmid: 34867441
   keywords:
@@ -951,7 +917,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'F. Schreiber, P. Gleeson, M. Golebiewski, T. Gorochowski, M. Hucka, S. Keating, <b>M. König</b>, C. Myers, D. Nickerson, D. Walthemath'
   title: 'Specifications of Standards in Systems and Synthetic Biology: Status and Developments in 2021'
   journal: 'J Integr Bioinform. 2021 Oct 22;18(3):20210026</a>'
-  status:
+  status: publication
+  impact: 1.5
+  position: index
   doi: 10.1515/jib-2021-0026
   pmid: 34674411
   keywords:
@@ -970,7 +938,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Sükrü Balci (supervisor: <b>Matthias König</b>)'
   title: 'Computational modelling of omeprazole - pharmacokinetics and pharmacodynamics'
   journal: 'Bachelor Thesis, October 2021'
-  status:
+  status: thesis
+  impact: 0
+  position: last
   doi:
   pmid:
   keywords:
@@ -991,7 +961,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   title: 'SBMLWebApp: Web-based Simulation, Steady-State Analysis, and Parameter Estimation of Systems Biology Models'
   journal: 'Processes 9, no. 10: 1830'
   project: http://simulate-biology.org
-  status:
+  status: publication
+  impact: 2.8
+  position: index
   doi: 10.3390/pr9101830
   pmid:
   keywords:
@@ -1012,7 +984,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Smith, Lucian P., Bergmann, Frank T., Garny, Alan, Helikar, Tomáš, Karr, Jonathan, Nickerson, David, Sauro, Herbert, Waltemath, Dagmar and <b>König, Matthias.</b>'
   title: 'The simulation experiment description markup language (SED-ML): language specification for level 1 version 4'
   journal: 'Journal of Integrative Bioinformatics, vol. 18, no. 3, 2021, pp. 20210021'
-  status:
+  status: publication
+  impact: 1.5
+  position: last
   doi: 10.1515/jib-2021-0021
   pmid: 35330701
   keywords:
@@ -1028,7 +1002,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Panchiwala, H.; Shah, S.; Planatscher, H.; Zakharchuk, M.; <b>König, M.</b>; Dräger, A.'
   title: 'The Systems Biology Simulation Core Library'
   journal: ' Bioinformatics. 2022 Jan 12;38(3):864-865'
-  status:
+  status: publication
+  impact: 6.0
+  position: index
   doi: 10.1093/bioinformatics/btab669
   pmid: 34554191
   keywords:
@@ -1042,7 +1018,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: '<b>Matthias König*</b>, Jan Grzegorzewski, Martin Golebiewski, Henning Hermjakob, Mike Hucka, Brett Olivier, Sarah M. Keating, David Nickerson, Falk Schreiber, Rahuman Sheriff, Dagmar Waltemath'
   title: 'Ten Simple Rules for FAIR Sharing of Experimental and Clinical Data with the Modeling Community'
   journal: 'Preprints 2021, 2021080303'
-  status: in revision
+  status: preprint
+  impact: 0
+  position: first
   doi: 10.20944/preprints202108.0303.v2
   pmid:
   keywords:
@@ -1057,8 +1035,10 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   pdf: 'OMEX_Metadata_Spec.1.2_Gennari2021.pdf'
   authors: 'John Gennari, <b>Matthias König</b>, Goskel Misirli, Maxwell Neal, David Nickerson, Dagmar Waltemath'
   title: 'OMEX Metadata Specification Version 1.2'
-  journal: ' J Integr Bioinform. 2021 Oct 20;18(3):20210020'
-  status:
+  journal: 'J Integr Bioinform. 2021 Oct 20;18(3):20210020'
+  status: publication
+  impact: 1.5
+  position: index
   doi: 10.1515/jib-2021-0020
   pmid: 34668356
   keywords:
@@ -1072,7 +1052,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Bilal Shaikh, Andrew Philip Freiburger, <b>Matthias König</b>, Frank T. Bergmann, David P. Nickerson, Herbert M. Sauro, Michael L. Blinov, Lucian P. Smith, Ion I. Moraru, Jonathan R. Karr'
   title: 'SED-ML Validator: tool for debugging simulation experiments'
   journal: 'arXiV, 2021, <a href="https://arxiv.org/abs/2106.00844" target="_blank">2106.00844</a>'
-  status: preprint, submitted
+  status: preprint
+  impact: 0
+  position: index
   doi: 10.48550/arXiv.2106.00844
   pmid:
   keywords:
@@ -1085,7 +1067,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Adrian Köller (supervisor: <b>Matthias König</b>)'
   title: 'A Physiologically Based Model of Indocyanine Green Liver Function Tests - Eﬀects of Physiological Factors, Hepatic Disease and Hepatic Surgery'
   journal: 'Bachelor Thesis, March 2021'
-  status:
+  status: thesis
+  impact: 0
+  position: last
   doi:
   pmid:
   keywords:
@@ -1099,7 +1083,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Tim Ricken, Lena Lambers, Bruno Christ, Uta Dahmen, Karl-Heinz Herrmann, <b>Matthias König</b>, Manja Marz, Nicole Radde, Jürgen R. Reichenbach, Lars Ole Schwen & Hans-Michael Tautenhahn'
   title: 'QuaLiPerF – Multi-X Liver Modelling'
   journal: 'GACM - German Association for Computational Mechanics Report, winter 2020: No. 13'
-  status:
+  status: proceeding
+  impact: 0
+  position: index
   doi:
   pmid:
   keywords:
@@ -1113,7 +1099,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Florian Bartsch (supervisor: <b>Matthias König</b>)'
   title: 'Computational Modelling of Simvastatin - Eﬀects on HMG-CoA Reductase Activity and Cholesterol'
   journal: 'Bachelor Thesis, November 2020'
-  status:
+  status: thesis
+  impact: 0
+  position: last
   doi:
   pmid:
   keywords:
@@ -1132,7 +1120,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Yannick Duport (supervisor: <b>Matthias König</b>)'
   title: 'Computational Modelling of Midazolam Clearance: Effect of Inhibitors and Inducers'
   journal: 'Bachelor Thesis, August 2020'
-  status:
+  status: thesis
+  impact: 0
+  position: last
   doi:
   pmid:
   keywords:
@@ -1150,8 +1140,10 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   pdf: 'PKDB_Grzegorzewski2020.pdf'
   authors: 'Grzegorzewski J, Brandhorst J, Green K, Eleftheriadou D, Duport Y, Barthorscht F, Köller A, Ke DYJ, De Angelis S, <b>König M.</b>'
   title: 'PK-DB: pharmacokinetics database for individualized and stratified computational modeling'
-  journal: ' Nucleic Acids Res. 2021 Jan 8;49(D1):D1358-D1364'
-  status:
+  journal: 'Nucleic Acids Res. 2021 Jan 8;49(D1):D1358-D1364'
+  status: publication
+  impact: 16.7
+  position: last
   doi: 10.1093/nar/gkaa990
   pmid: 33151297
   keywords:
@@ -1165,7 +1157,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'SM Keating, D Waltemath, <b>M König</b>, F Zhang, A Dräger, C Chaouiya, FT Bergmann, A Finney, CS Gillespie, T Helikar, S Hoops, RS Malik-Sheriff, SL Moodie, II Moraru, CJ Myers, A Naldi, BG Olivier, S Sahle, JC Schaff, LP Smith, MJ Swat, DT, L Watanabe, DJ Wilkinson, ML Blinov, K Begley, JR Faeder, HF Gómez, TM Hamm, Y Inagaki, W Liebermeister, AL Lister, D Lucio, E Mjolsness, CJ Proctor, K Raman, N Rodriguez, CA Shaffer, BE Shapiro, J Stelling, N Swainston, N Tanimura, J Wagner, M Meier-Schellersheim, HM Sauro, B Palsson, H Bolouri, H Kitano, Akira Funahashi, H Hermjakob, JC Doyle M Hucka, and SBML Community members'
   title: 'SBML Level 3: an extensible format for the exchange and reuse of biological models'
   journal: 'Mol Syst Biol. 2020;16(8):e9110'
-  status:
+  status: publication
+  impact: 8.8
+  position: index
   doi: 10.15252/msb.20199110
   pmid: 32845085
   keywords:
@@ -1183,8 +1177,10 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   pdf: 'Open.modeling.and.exchange.(OMEX).metadata.specification.version.1.0_Koenig2020.pdf'
   authors: 'Neal ML, Gennari JH, Waltemath D, Nickerson DP, <b>König M</b>'
   title: 'Open modeling and exchange (OMEX) metadata specification version 1.0'
-  journal: ' J Integr Bioinform. 2020 Jun 25;17(2-3):20200020'
-  status:
+  journal: 'J Integr Bioinform. 2020 Jun 25;17(2-3):20200020'
+  status: publication
+  impact: 1.5
+  position: last
   doi: 10.1515/jib-2020-0020
   pmid: 32589606
   keywords:
@@ -1201,8 +1197,10 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   pdf: 'Standards_in_Systems_and_Synthetic_Biology_Schreiber2020.pdf'
   authors: 'F. Schreiber, B. Sommer, G. Bader, P. Gleeson, M. Golebiewski, T. Gorochowski, M. Hucka, S. Keating, <b>M. König</b>, C. Myers, D. Nickerson, D. Walthemath'
   title: 'Specifications of Standards in Systems and Synthetic Biology:Status and Developments in 2020'
-  journal: ' J Integr Bioinform. 2020 Jun 29;17(2-3):20200022'
-  status:
+  journal: 'J Integr Bioinform. 2020 Jun 29;17(2-3):20200022'
+  status: publication
+  impact: 1.5
+  position: index
   doi: 10.1515/jib-2020-0022
   pmid:
   keywords:
@@ -1220,7 +1218,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'D Waltemath, M Golebiewski, M Blinov, P Gleeson, H Hermjakob, E Inau, S Keating, <b>M König</b>, O Krebs, R Malik-Sheriff, D Nickerson, E Oberortner, H Sauro, F Schreiber, L Smith, M Stefan, U Wittig, C Myers'
   title: 'The first 10 years of the international coordination network for standards in systems and synthetic biology (COMBINE)'
   journal: 'J Integr Bioinform. 2020 Jun 29;17(2-3):20200005'
-  status:
+  status: publication
+  impact: 1.5
+  position: index
   doi: 10.1515/jib-2020-0005
   pmid:
   keywords:
@@ -1237,8 +1237,10 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   pdf: 'SBML_distrib_Smith2020.pdf'
   authors: 'L Smith, S Moodie, F Bergmann, C Gillespie, S Keating, <b>M. König</b>, C Myers, M Swat, D Wilkinson, M Hucka'
   title: 'The Distributions Package for SBML Level 3'
-  journal: ' J Integr Bioinform. 2020 Jul 20;17(2-3):20200018'
-  status:
+  journal: 'J Integr Bioinform. 2020 Jul 20;17(2-3):20200018'
+  status: publication
+  impact: 1.5
+  position: index
   doi: 10.1515/jib-2020-0018
   pmid: 32750035
   keywords:
@@ -1257,7 +1259,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Christian Lieven, Moritz Emanuel Beber, Brett G. Olivier, Frank T. Bergmann, Meric Ataman, Parizad Babaei, Jennifer A. Bartell, Lars M. Blank, Siddharth Chauhan, Kevin Correia, Christian Diener, Andreas Dräger, Birgitta Elisabeth Ebert, Janaka N. Edirisinghe, Jose P. Faria, Adam Feist, Georgios Fengos, Ronan M. T. Fleming, Beatriz Garcia-Jimenez, Vassily Hatzimanikatis, Wout van Helvoirt, Christopher Henry, Henning Hermjakob, Markus J. Herrgard, Hyun Uk Kim, Zachary King, Jasper Jan Koehorst, <b>Matthias König</b>, Steffen Klamt, Edda Klipp, Meiyappan Lakshmanan, Nicolas Le Novere, Dong-Yup Lee, Sang Yup Lee, Sunjae Lee, Nathan E. Lewis, Hongwu Ma, Daniel Machado, Radhakrishnan Mahadevan, Paulo Maia, Adil Mardinoglu, Greg L. Medlock, Jonathan Monk, Jens Nielsen, Lars K. Nielsen, Juan Nogales, Intawat Nookaew, Osbaldo Resendis, Bernhard Palsson, Jason A. Papin, Kiran Raosaheb Patil, Mark Poolman, Nathan D. Price, Anne Richelle, Isabel Rocha, Benjamin Sanchez, Peter Schaap, Rahuman S. Malik Sheriff, Saeed Shoaie, Nikolaus Sonnenschein, Bas Teusink, Paulo Vilaca, Jon Olav Vik, Judith A. Wodke, Joana C. Xavier, Qianqian Yuan, Maksim Zakhartsev, Cheng Zhang'
   title: 'MEMOTE for standardized genome-scale metabolic model testing'
   journal: 'Nat Biotechnol. 2020;38(3):272-276'
-  status:
+  status: publication
+  impact: 33.1
+  position: index
   doi: 10.1038/s41587-020-0446-y
   pmid: 32123384
   keywords:
@@ -1272,6 +1276,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   title: 'Executable Simulation Model of the Liver'
   journal: 'bioRxiv 2020.01.04.894873'
   status: preprint
+  impact: 0
+  position: first
   doi: 10.1101/2020.01.04.894873v1
   pmid:
   keywords:
@@ -1285,7 +1291,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Lambers L., Ricken T., and <b>König M.</b>'
   title: 'Model Order Reduction (MOR) of Function-Perfusion-Growth Simulation in the Human Fatty Liver via Artificial Neural Network (ANN)'
   journal: 'Proceedings in Applied Mathematics & Mechanics, PAMM, 2019'
-  status:
+  status: proceeding
+  impact: 0
+  position: last
   doi: 10.1002/pamm.201900429
   pmid:
   keywords:
@@ -1299,7 +1307,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'F Schreiber, G Bader, P Gleeson, M Golebiewski, M Hucka, SM Keating, <b>M König</b>, C Myers, D Nickerson, B Sommer, D Waltemath'
   title: 'Specifications of Standards in Systems and Synthetic Biology: Status and Developments in 2019'
   journal: 'J Integr Bioinform. 2019 Jul 13;16(2)'
-  status:
+  status: publication
+  impact: 1.5
+  position: index
   doi: 10.1515/jib-2019-0035
   pmid: 31301675
   keywords:
@@ -1313,7 +1323,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'M. Hucka, F. Bergmann, C. Chaouiya, A. Dräger, S. Hoops, S. Keating, <b>M. König</b>, N Le Novere, C. Myers, B. Olivier, S. Sahle, J. Schaff, R. Sheriff, L. Smith, D. Waltemath, D. Wilkinson, F. Zhang'
   title: 'The Systems Biology Markup Language (SBML): Language Specification for Level 3 Version 2 Core'
   journal: 'J Integr Bioinform. 2019 Jun 20;16(2);'
-  status:
+  status: publication
+  impact: 1.5
+  position: index
   doi: 10.1515/jib-2019-0021
   pmid: 31219795
   keywords:
@@ -1331,7 +1343,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Choi K., Medley K., <b>König M.</b>, Stocking K., Smith L., Gu S., and Sauro HM.'
   title: 'Tellurium: An Extensible Python-based Modeling Environment for Systems and Synthetic Biology'
   journal: 'Biosystems. 2018 Jul 24. pii: S0303-2647(18)30125-4'
-  status:
+  status: publication
+  impact: 2.0
+  position: index
   doi: 10.1016/j.biosystems.2018.07.006
   pmid: 30053414
   keywords:
@@ -1345,7 +1359,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Berndt N., Bulik S., Wallach I., Wünsch T., <b>König M.</b>, Stockmann M., Meierhofer M., Holzhütter HG.'
   title: 'HEPATOKIN1: A Biochemistry-Based Model of Liver Metabolism Suited for Applications in Medicine and Pharmacology'
   journal: 'Nat Commun. 2018 Jun 19;9(1):2386.'
-  status:
+  status: publication
+  impact: 15.4
+  position: index
   doi: 10.1038/s41467-018-04720-9
   pmid: 29921957
   keywords:
@@ -1359,7 +1375,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Bergmann, FT., Cooper, J., <b>König, M.*</b>, Moraru, I., Nickerson, D., Le Novère N., Olivier, BG., Sahle, S., Smith, L., Waltemath, D.<br /><b>* corresponding author</b>'
   title: 'Simulation Experiment Description Markup Language (SED-ML) Level 1 Version 3 (L1V3)'
   journal: 'J Integr Bioinform. 2018 Mar 19;15(1)'
-  status:
+  status: publication
+  impact: 1.5
+  position: index
   doi: 10.1515/jib-2017-0086
   pmid: 29550789
   keywords:
@@ -1373,7 +1391,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Neal, M.; <b>König, M.</b>; Nickerson, D.; Misirli, G.; Kalbasi, R.; Dräger, A.; Atalag, K.; Chelliah, V.; Cooling, M.; Cook, D.; Crook, S.; de Alba, M.; Friedman, S.; Garny, A.; Gennari, J.; Gleeson, P.; Golebiewski, M.; Hucka, M.; Juty, N.; Novère, N. L.; Myers, C.; Olivier, B.; Sauro, H.; Scharm, M.; Snoep, J.; Touré, V.; Wipat, A.; Wolkenhauer, O. & Waltemath, D.'
   title: 'Harmonizing semantic annotations for computational models in biology'
   journal: 'Brief Bioinform. 2019 Mar 22;20(2):540-550'
-  status:
+  status: publication
+  impact: 7.9
+  position: index
   doi: 10.1093/bib/bby087
   pmid: 30462164
   keywords:
@@ -1386,8 +1406,10 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   pdf: 'Tellurium.Notebook_Medley2018.pdf'
   authors: 'Medley K., Choi K., <b>König M.</b>, Smith L., Gu S., Hellerstein J., Sealfon S., and Sauro HM.'
   title: 'Tellurium Notebooks — An Environment for Reproducible Dynamical Modeling in Systems Biology.'
-  journal: ' PLoS Comput Biol. 2018 Jun 15;14(6):e1006220'
-  status:
+  journal: 'PLoS Comput Biol. 2018 Jun 15;14(6):e1006220'
+  status: publication
+  impact: 4.5
+  position: index
   doi: 10.1371/journal.pcbi.1006220
   pmid: 29906293
   keywords:
@@ -1400,8 +1422,10 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   pdf: 'Systems.surgery_Christ2017.pdf'
   authors: 'Christ, B.*, Dahmen, U.*, Herrmann, K.H.*, <b>König, M.*</b>, Reichenbach, J.R*., Ricken, T.*, Schleicher, J.*, Ole Schwen, L.*, Vlaic, S.* and Waschinsky, N.*<br /><b>* equal contribution</b>'
   title: 'Computational Modeling in Liver Surgery'
-  journal: ' Front Physiol. 2017 Nov 14;8:906'
-  status:
+  journal: 'Front Physiol. 2017 Nov 14;8:906'
+  status: review
+  impact: 3.2
+  position: first_equal
   doi: 10.3389/fphys.2017.00906
   pmid: 29249974
   keywords:
@@ -1423,7 +1447,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: '<b>König M.*</b>, Oellrich A.<b>*</b>, Waltemath D.<b>*</b>, Dobson R., Hubbard T., and Wolkenhauer O.<br /><b>* equal contribution</b>'
   title: 'Challenges and opportunities for system biology standards and tools in medical research'
   journal: 'ODLS, p1-6, 2016; <a href="http://ceur-ws.org/Vol-1692/paperC.pdf">article</a>'
-  status:
+  status: proceeding
+  impact: 0
+  position: first_equal
   doi:
   pmid:
   keywords:
@@ -1437,7 +1463,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: '<b>König M.</b>'
   title: 'cy3sabiork: A Cytoscape app for visualizing kinetic data from SABIO-RK'
   journal: '[version 1; referees: awaiting peer review]. F1000Research 2016, 5:1736'
-  status:
+  status: preprint
+  impact: 0
+  position: first
   doi: 10.12688/f1000research.9211.1
   pmid:
   keywords:
@@ -1451,7 +1479,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Wholecell Consortium (<b>König M.</b>)'
   title: 'Toward community standards and software for whole-cell modeling'
   journal: 'IEEE Trans Biomed Eng. 2016 Jun 10.'
-  status:
+  status: publication
+  impact: 4.4
+  position: index
   doi: 10.1109/TBME.2016.2560762
   pmid: 27305665
   keywords:
@@ -1465,7 +1495,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Kerstin A.<b>*</b>, <b>König M.*</b>, Hoppe A., Thomas M., Müller I., Ebert M., Weng H., Holzhütter HG., Zanger UM., Bode J., Vollmar B. and Dooley S.<br /><b>* equal contribution</b>'
   title: 'Pathobiochemical signatures of cholestatic liver disease in bile duct ligated mice'
   journal: 'BMC Syst Biol. 2015 Nov 20;9(1):83.'
-  status:
+  status: publication
+  impact: 2.2
+  position: first_equal
   doi: 10.1186/s12918-015-0229-0
   pmid: 26589287
   keywords:
@@ -1478,7 +1510,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Werner D., Ricken T., Dahmen U., Dirsch O., Holzhütter HG., <b>König M.</b>'
   title: 'On the Influence of Growth in Perfusion Dependent Biological Systems - at the Example of the Human Liver.'
   journal: 'PAMM 15 (1), 119-120, 2015'
-  status:
+  status: proceeding
+  impact: 0
+  position: last
   doi: 10.1002/pamm.201510050
   pmid:
   keywords:
@@ -1490,8 +1524,10 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   pdf: 'libRoadRunner_Somogyi2015.pdf'
   authors: 'Somogyi ET., Bouteiller JM., Glazier JA., <b>König M.</b>, Medley JK., Swat MH and Sauro HM.'
   title: 'LibRoadRunner: a high performance SBML simulation and analysis library.'
-  journal: ' Bioinformatics. 2015 Oct 15;31(20):3315-21'
-  status:
+  journal: 'Bioinformatics. 2015 Oct 15;31(20):3315-21'
+  status: publication
+  impact: 6.0
+  position: index
   doi: 10.1093/bioinformatics/btv363
   pmid: 26085503
   keywords:
@@ -1503,8 +1539,10 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   pdf: 'LiverTissue_Ricken2015.pdf'
   authors: 'Ricken T., Werner D., Holzhütter HG., <b>König M.</b>, Dahmen U., Dirsch O.'
   title: 'Modeling function-perfusion behavior in liver lobules including tissue, blood, glucose, lactate and glycogen by use of a coupled two-scale PDE-ODE approach.'
-  journal: ' Biomech Model Mechanobiol. 2015 Jun;14(3):515-36'
-  status:
+  journal: 'Biomech Model Mechanobiol. 2015 Jun;14(3):515-36'
+  status: publication
+  impact: 3.0
+  position: index
   doi: 10.1007/s10237-014-0619-z
   pmid: 25236798
   keywords:
@@ -1516,7 +1554,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: '<b>König M.</b> and Holzhütter HG.'
   title: 'Homeostasis of blood glucose - Computer simulations of central liver functions.'
   journal: 'systembiologie.de 2014; 8:p.53-57 [<a href="https://www.systembiologie.de/lw_resource/datapool/_items/item_14/frs-13014_systembiologie_8_2014.pdf">PDF (de)</a>, <a href="https://www.systembiologie.de/lw_resource/datapool/_items/item_36/systembiologie_magazine_issue08.pdf">PDF (en)</a>]'
-  status:
+  status: proceeding
+  impact: 0
+  position: first
   doi:
   pmid:
   keywords:
@@ -1528,7 +1568,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: '<b>König M.</b>, Holzhütter HG., Berndt N.'
   title: 'Metabolic Gradients as Key Regulators in Zonation of Tumor Energy Metabolism: A Tissue-scale Model Based Study.'
   journal: 'Biotechnol J. 2013 Sep;8(9):1058-69.'
-  status:
+  status: publication
+  impact: 3.7
+  position: first
   doi: 10.1002/biot.201200393
   pmid: 23589477
   keywords:
@@ -1539,8 +1581,10 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   pdf: 'GlucoseModelT2DM_Koenig2012b.pdf'
   authors: '<b>König M.</b> and Holzhütter HG.'
   title: 'Kinetic Modeling of Human Hepatic Glucose Metabolism in T2DM Predicts Higher Risk of Hypoglycemic Events in Rigorous Insulin Therapy'
-  journal: ' J Biol Chem. 2012 Oct 26;287(44):36978-89'
-  status:
+  journal: 'J Biol Chem. 2012 Oct 26;287(44):36978-89'
+  status: publication
+  impact: 4.7
+  position: first
   doi: 10.1074/jbc.M112.382069
   pmid: 22977253
   keywords:
@@ -1551,8 +1595,10 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   pdf: 'CySBML_Koenig2012.pdf'
   authors: '<b>König M.</b>, Dräger A. and Holzhütter HG.'
   title: 'CySBML: a Cytoscape plugin for SBML'
-  journal: ' Bioinformatics. 2012 Sep 15;28(18):2402-3'
-  status:
+  journal: 'Bioinformatics. 2012 Sep 15;28(18):2402-3'
+  status: publication
+  impact: 6.0
+  position: first
   doi: 10.1093/bioinformatics/bts432
   pmid: 22772946
   keywords:
@@ -1565,7 +1611,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: '<b>König M.</b>, Bulik S. and Holzhütter HG.'
   title: 'Quantifying the Contribution of the Liver to the Homeostasis of Plasma Glucose: A Detailed Kinetic Model of Hepatic Glucose Metabolism Integrated with the Hormonal Control by Insulin, Glucagon and Epinephrine'
   journal: 'PLoS Comput Biol. 2012 Jun;8(6):e1002577. Epub 2012 Jun 21.'
-  status:
+  status: publication
+  impact: 4.9
+  position: first
   doi: 10.1371/journal.pcbi.1002577
   pmid: 22761565
   keywords:
@@ -1578,7 +1626,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Herling A, <b>König M</b>, Bulik S, Holzhütter HG.'
   title: 'Enzymatic Features of the Glucose Metabolism in Tumor Cells.'
   journal: 'FEBS J. 2011 Jul;<b>278</b>(14):2436-59'
-  status:
+  status: review
+  impact: 5.4
+  position: index
   doi: 10.1111/j.1742-4658.2011.08174.x
   pmid: 21564549
   keywords:
@@ -1591,7 +1641,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: '<b>König M.</b> and Holzhütter HG.'
   title: 'FluxViz - Cytoscape Plug-in for Vizualisation of Flux Distributions in Networks'
   journal: 'Genome Informatics 2010, Vol.24, p.96-103'
-  status:
+  status: proceeding
+  impact: 0
+  position: first
   doi:
   pmid: 22081592
   keywords:
@@ -1604,7 +1656,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   authors: 'Gille C, Bölling C, Hoppe A, Bulik S, Hoffmann S, Hübner K, Karlstädt A, Ganeshan R, <b>König M</b>, Rother K, Weidlich M, Behre J, Holzhütter HG.'
   title: 'HepatoNet1: a comprehensive metabolic reconstruction of the human hepatocyte for the analysis of liver physiology.'
   journal: 'Mol Syst Biol. 2010 Sep 7;6:411'
-  status:
+  status: publication
+  impact: 8.6
+  position: index
   doi: 10.1038/msb.2010.62
   pmid: 20823849
   keywords:

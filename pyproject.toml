@@ -5,5 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
-    "pandas"
+    "pandas",
+    "pyyaml",
+    "rich"
 ]
