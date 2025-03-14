@@ -95,10 +95,7 @@ def create_list_of_publications(publications_file: Path, df: pd.DataFrame):
         authors = authors.replace("</b>", "**")
         doi = f", [https://doi.org/{e.doi}](https://doi.org/{e.doi})" if e.doi else ""
         impact = f", IF: **{e.impact}**" if e.impact else ""
-        md = f"""**{e.title}**  
-{authors}  
-{e.journal}{doi}{impact}
-"""
+        md = f"**{e.title.strip(".")}**. {authors}; {e.journal}{doi}{impact}"
 
         return md
 
@@ -109,7 +106,7 @@ def create_list_of_publications(publications_file: Path, df: pd.DataFrame):
         md_all += f"\n## {status.title()}s\n"
         for key, row in df_status.iterrows():
             k_article += 1
-            md = f"{k_article}. " + create_entry_markdown(e=row)
+            md = f"{k_article}. " + create_entry_markdown(e=row) + "\n"
             console.print(f"<{md}>")
             md_all += md
             # console.print(Markdown(md))
