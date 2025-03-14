@@ -7,5 +7,6 @@ requires-python = ">=3.8"
 dependencies = [
     "pandas",
     "pyyaml",
-    "rich"
+    "rich",
+    "markdown"
 ]

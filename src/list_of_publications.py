@@ -2,6 +2,7 @@
 import yaml
 from pathlib import Path
 import pandas as pd
+from rich.markdown import Markdown
 from rich.console import Console
 console = Console()
 
@@ -82,22 +83,47 @@ def create_list_of_publications(publications_file: Path, df: pd.DataFrame):
 
     Creates different sections:
     # List of publications
-    ## Publications
-    ## Reviews
+    ## Publications (44)
+    ## Reviews (3)
     ## Proceedings & Book Chapters
     ## Preprints
     """
-    def create_entry_markdown(row: pd.Series):
+    def create_entry_markdown(e: pd.Series):
         """Creates markdown for a single entry."""
+        authors = e.authors
+        authors = authors.replace("<b>", "**")
+        authors = authors.replace("</b>", "**")
+        doi = f", [https://doi.org/{e.doi}](https://doi.org/{e.doi})" if e.doi else ""
+        impact = f", IF: **{e.impact}**" if e.impact else ""
+        md = f"""**{e.title}**  
+{authors}  
+{e.journal}{doi}{impact}
+"""
 
+        return md
 
+    md_all = "# List of Publications\n"
+    for status in ["publication", "review", "proceeding", "preprint"]:
+        k_article = 0
+        df_status = df[df["status"] == status]
+        md_all += f"\n## {status.title()}s\n"
+        for key, row in df_status.iterrows():
+            k_article += 1
+            md = f"{k_article}. " + create_entry_markdown(e=row)
+            console.print(f"<{md}>")
+            md_all += md
+            # console.print(Markdown(md))
+            console.rule(style="white")
+
+    with open(publications_file, "w") as f_md:
+        f_md.write(md_all)
 
 
 if __name__ == "__main__":
     yaml_file: Path = Path(__file__).parent.parent / "app" / "_data" / "publications.yml"
     df: pd.DataFrame = read_publications(yaml_file=yaml_file)
-    df_matrix = create_matrix(df=df)
-    df_matrix.to_csv("publication_matrix.tsv", index=True, sep="\t")
+    # df_matrix = create_matrix(df=df)
+    # df_matrix.to_csv("publication_matrix.tsv", index=True, sep="\t")
 
     publications_file: Path = "publications.md"
     create_list_of_publications(publications_file=publications_file, df=df)

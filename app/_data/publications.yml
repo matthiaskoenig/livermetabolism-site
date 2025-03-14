@@ -253,7 +253,7 @@ In summary, I have successfully developed and implemented an image analysis work
 - id: 'Albadry2024_species_comparison'
   year: 2024
   pdf: 'Albadry2024_species_comparison.pdf'
-  authors: 'Mohamed Albadry, Jonas Kuettner, Jan Grzegorzewski, Olaf Dirsch, Eva Kindler, Robert Klopfleisch, Vaclav Liska, Vladimira Moulisova, Sandra Nickel, Richard Palek, Jachym Rosendorf, Sylvia Saalfeld, Utz Settmacher, Hans-Michael Tautenhahn, <b>Matthias König*</b>, Uta Dahmen* (* equal contribution)'
+  authors: 'Mohamed Albadry, Jonas Kuettner, Jan Grzegorzewski, Olaf Dirsch, Eva Kindler, Robert Klopfleisch, Vaclav Liska, Vladimira Moulisova, Sandra Nickel, Richard Palek, Jachym Rosendorf, Sylvia Saalfeld, Utz Settmacher, Hans-Michael Tautenhahn, <b>Matthias KönigΔ</b>, Uta DahmenΔ (Δ equal contribution)'
   title: 'Cross-Species Variability in Lobular Geometry and Cytochrome P450 Hepatic Zonation: Insights into CYP1A2, CYP2E1, CYP2D6 and CYP3A4'
   journal: 'Front Pharmacol. 2024 May 16;15:1404938'
   status: publication
@@ -515,7 +515,7 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
 - id: 'Maheshvare2023_pancreas'
   year: 2023
   pdf: 'Maheshvare2023_pancreas.pdf'
-  authors: 'Maheshvare MD., Raha S., <b>König M.*</b>, and Pal D.* (* equal contribution)'
+  authors: 'Maheshvare MD., Raha S., <b>König M.Δ</b>, and Pal D.Δ (Δ equal contribution)'
   title: 'A pathway model of glucose-stimulated insulin secretion in the pancreatic β-cell'
   journal: 'Front. Endocrinol. 14:1185656'
   status: publication
@@ -730,7 +730,7 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
 - id: 'FAIR.sharing.of.reproducible.and.reusable.COVID-19.models_Ramachandran2022'
   year: 2022
   pdf: 'FAIR.sharing.of.reproducible.and.reusable.COVID-19.models_Ramachandran2022.pdf'
-  authors: 'Ramachandran, K.*; <b>König, M.*</b>; Scharm, M.; Nguyen, T.V.N.; Hermjakob, H.; Waltemath, D.; Malik Sheriff, R.S. (* equal contribution)'
+  authors: 'Ramachandran, K.Δ; <b>König, M.Δ</b>; Scharm, M.; Nguyen, T.V.N.; Hermjakob, H.; Waltemath, D.; Malik Sheriff, R.S. (Δ equal contribution)'
   title: 'FAIR Sharing of Reproducible Models of Epidemic and Pandemic Forecast'
   journal: 'Preprints 2022, 2022060137'
   status: preprint
@@ -795,7 +795,7 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
 - id: 'Koenig2022_dfba'
   year: 2022
   pdf: 'Koenig2022_dfba.pdf'
-  authors: '<b>Matthias König*</b>, Leandro H. Watanabe<b>*</b>, Jan Grzegorzewski, and Chris J. Myers<br /><b>*</b> equal contribution'
+  authors: '<b>Matthias KönigΔ</b>, Leandro H. Watanabe<b>Δ</b>, Jan Grzegorzewski, and Chris J. Myers. <b>Δ</b> equal contribution'
   title: 'Dynamic Flux Balance Analysis Models in SBML'
   journal: 'bioRxiv 245076'
   status: preprint
@@ -880,6 +880,7 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
     - liver cirrhosis
     - liver function
     - mathematical model
+    - mathematical model
     - pharmacokinetics
   project:
   repository: https://github.com/matthiaskoenig/icg-model
@@ -888,10 +889,10 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
 - id: 'Review_Qualiperf2021'
   year: 2021
   pdf: 'Review_Qualiperf2021.pdf'
-  authors: 'Bruno Christ∗, Maximilian Collatz*, Uta Dahmen*, Karl-Heinz
-            Herrmann*, Sebastian Höpfl*, <b>Matthias König*</b>, Lena Lambers*, Manja
-            Marz*, Daria Meyer*, Nicole Radde*, Jürgen R. Reichenbach*, Tim
-            Ricken*, and Hans-Michael Tautenhahn* (<b>* equal contribution)</b>'
+  authors: 'Bruno Christ∗, Maximilian CollatzΔ, Uta DahmenΔ, Karl-Heinz
+            HerrmannΔ, Sebastian HöpflΔ, <b>Matthias KönigΔ</b>, Lena LambersΔ, Manja
+            MarzΔ, Daria MeyerΔ, Nicole RaddeΔ, Jürgen R. ReichenbachΔ, Tim
+            RickenΔ, and Hans-Michael TautenhahnΔ (<b>Δ equal contribution)</b>'
   title: 'Hepatectomy-Induced Alterations in Hepatic Perfusion and Function - Toward Multi-Scale Computational Modeling for a Better Prediction of Post-hepatectomy Liver Function'
   journal: 'Front Physiol. 2021 Nov 18;12:733868'
   status: review
@@ -1015,7 +1016,7 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
 - id: 'Koenig2021_Ten_simple_rules'
   year: 2021
   pdf: 'Koenig2021_Ten_simple_rules.pdf'
-  authors: '<b>Matthias König*</b>, Jan Grzegorzewski, Martin Golebiewski, Henning Hermjakob, Mike Hucka, Brett Olivier, Sarah M. Keating, David Nickerson, Falk Schreiber, Rahuman Sheriff, Dagmar Waltemath'
+  authors: '<b>Matthias KönigΔ</b>, Jan Grzegorzewski, Martin Golebiewski, Henning Hermjakob, Mike Hucka, Brett Olivier, Sarah M. Keating, David Nickerson, Falk Schreiber, Rahuman Sheriff, Dagmar Waltemath'
   title: 'Ten Simple Rules for FAIR Sharing of Experimental and Clinical Data with the Modeling Community'
   journal: 'Preprints 2021, 2021080303'
   status: preprint
@@ -1372,7 +1373,7 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
 - id: 'sedml_Bergmann2018'
   year: 2018
   pdf: 'SED-ML_L1V3_Bergmann2018.pdf'
-  authors: 'Bergmann, FT., Cooper, J., <b>König, M.*</b>, Moraru, I., Nickerson, D., Le Novère N., Olivier, BG., Sahle, S., Smith, L., Waltemath, D.<br /><b>* corresponding author</b>'
+  authors: 'Bergmann, FT., Cooper, J., <b>König, M.Δ</b>, Moraru, I., Nickerson, D., Le Novère N., Olivier, BG., Sahle, S., Smith, L., Waltemath, D. <b>Δ corresponding author</b>'
   title: 'Simulation Experiment Description Markup Language (SED-ML) Level 1 Version 3 (L1V3)'
   journal: 'J Integr Bioinform. 2018 Mar 19;15(1)'
   status: publication
@@ -1420,7 +1421,7 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
 - id: 'surgery_Christ2017'
   year: 2017
   pdf: 'Systems.surgery_Christ2017.pdf'
-  authors: 'Christ, B.*, Dahmen, U.*, Herrmann, K.H.*, <b>König, M.*</b>, Reichenbach, J.R*., Ricken, T.*, Schleicher, J.*, Ole Schwen, L.*, Vlaic, S.* and Waschinsky, N.*<br /><b>* equal contribution</b>'
+  authors: 'Christ, B.Δ, Dahmen, U.Δ, Herrmann, K.H.Δ, <b>König, M.Δ</b>, Reichenbach, J.RΔ., Ricken, T.Δ, Schleicher, J.Δ, Ole Schwen, L.Δ, Vlaic, S.Δ and Waschinsky, N.Δ <b>Δ equal contribution</b>'
   title: 'Computational Modeling in Liver Surgery'
   journal: 'Front Physiol. 2017 Nov 14;8:906'
   status: review
@@ -1444,7 +1445,7 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
 - id: 'models2clinics_Koenig2016'
   year: 2016
   pdf: 'Systems.biology.standards.in.medical.research_Koenig2016.pdf'
-  authors: '<b>König M.*</b>, Oellrich A.<b>*</b>, Waltemath D.<b>*</b>, Dobson R., Hubbard T., and Wolkenhauer O.<br /><b>* equal contribution</b>'
+  authors: '<b>König M.Δ</b>, Oellrich A.<b>Δ</b>, Waltemath D.<b>Δ</b>, Dobson R., Hubbard T., and Wolkenhauer O. <b>Δ equal contribution</b>'
   title: 'Challenges and opportunities for system biology standards and tools in medical research'
   journal: 'ODLS, p1-6, 2016; <a href="http://ceur-ws.org/Vol-1692/paperC.pdf">article</a>'
   status: proceeding
@@ -1492,7 +1493,7 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
 - id: 'Abshagen2015'
   year: 2015
   pdf: 'Pathobiochemical.signatures_Abshagen2015.pdf'
-  authors: 'Kerstin A.<b>*</b>, <b>König M.*</b>, Hoppe A., Thomas M., Müller I., Ebert M., Weng H., Holzhütter HG., Zanger UM., Bode J., Vollmar B. and Dooley S.<br /><b>* equal contribution</b>'
+  authors: 'Kerstin A.<b>Δ</b>, <b>König M.Δ</b>, Hoppe A., Thomas M., Müller I., Ebert M., Weng H., Holzhütter HG., Zanger UM., Bode J., Vollmar B. and Dooley S.<b>Δ equal contribution</b>'
   title: 'Pathobiochemical signatures of cholestatic liver disease in bile duct ligated mice'
   journal: 'BMC Syst Biol. 2015 Nov 20;9(1):83.'
   status: publication
