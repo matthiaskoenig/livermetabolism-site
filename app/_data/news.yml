@@ -1,3 +1,15 @@
+- id: 'bua_alumni'
+  status: 'current'
+  title: 'Featured Fellow - Berlin University Alliance (BUA) - Matthias König'
+  date: '2025-04-02'
+  image: bua_alumni.png
+  link: 'https://www.berlin-university-alliance.de/commitments/international/bua-fellows-club/bua-featured-fellows/inhaltselemente/profile-matthias-koenig.html'
+  short: "As part of the BUA Fellows Club at Humboldt, Matthias König drives innovation in digital medicine and systems biology."
+  abstract: "Meet Matthias König, BUA Fellow and systems biologist at Humboldt-Universität zu Berlin. He develops computational models—so-called digital twins—that simulate human metabolism and organ function to advance personalized medicine.
+  With a background in physics and systems medicine, Matthias leads research that integrates mathematical modeling, bioinformatics, and clinical data to better understand liver and kidney function. His work contributes to national and European efforts to build data-driven, predictive tools for healthcare.
+  When asked about Berlin’s research landscape, he says: “Berlin offers a unique mix of scientific freedom and collaboration. It’s an exciting place for interdisciplinary research that really makes a difference.”"
+
+
 - id: 'fair_to_cure'
   status: 'current'
   title: 'Preprint: From FAIR to CURE: Guidelines for Computational Models of Biological Systems'
