@@ -1,6 +1,6 @@
 - id: 'combine'
   status: 'current'
-  term: '2020-2023'
+  term: '2020-2025'
   name: 'COMBINE coordinator'
   image: combine.png
   repository: 'https://github.com/combine-org'
@@ -18,7 +18,7 @@
 
 - id: 'sbml'
   status: 'current'
-  term: '2018-2023'
+  term: '2018-2023; 2025-2027'
   name: 'SBML editor'
   image: sbml.jpeg
   repository: 'https://github.com/sbmlteam/'
@@ -27,7 +27,7 @@
 
 - id: 'sed-ml'
   status: 'alumni'
-  term: '2017-2022'
+  term: '2017-2022; 2024-2026'
   name: 'SED-ML editor'
   image: sedml.png
   repository: 'https://github.com/SED-ML'
