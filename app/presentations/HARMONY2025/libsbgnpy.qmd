@@ -249,14 +249,30 @@ render_sbgn(sbgn, "ethanol_example.png")
 :::
 
 ::: {.row height="40%"}
-![](./images/ethanol_example_render.png){width=40%}
+![](./images/ethanol_example_render.png){width=45% fig-align="center"}
+:::
+::::
+
+
+## 6. Use other tools in the workflow
+
+:::: {.rows}
+
+::: {.row height="60%"}
+SBGN maps can be further modified in additional tools such as Newt:
+[Ethanol Example Newt](http://web.newteditor.org/?URL=https://raw.githubusercontent.com/matthiaskoenig/libsbgnpy/refs/heads/develop/src/libsbgnpy/examples/ethanol_example_render.sbgn)
 :::
 
+::: {.row height="40%"}
+![](./images/ethanol_newt.png){width=60% fig-align="center"}
+:::
 ::::
+
+
 
 ## Want to know more
 ::: {style="text-align: center; margin-top: 1em"}
-![](images/libsbgnpy_large.png){width=70%}
+![](images/libsbgnpy_large.png){width=70% fig-align="center"}
 :::
 
 ::: {style="text-align: center; margin-top: 1em"}
