@@ -62,7 +62,7 @@ sudo apt-get install -y certbot
 cd /home/mkoenig/git/livermetabolism-site
 docker-compose down
 sudo certbot certonly
-livermetabolism.com www.livermetabolism.com livermetabolism.de www.livermetabolism.de liver-metabolism.com www.liver-metabolism.com liver-metabolism.de www.liver-metabolism.de
+livermetabolism.com www.livermetabolism.com livermetabolism.de www.livermetabolism.de
 docker-compose up --build -d
 
 # certificate renewal 
@@ -75,7 +75,7 @@ docker-compose up --build -d
 ```
 sudo mkdir -p /usr/share/nginx/letsencrypt 
 sudo certbot renew 
-livermetabolism.com www.livermetabolism.com livermetabolism.de www.livermetabolism.de liver-metabolism.com www.liver-metabolism.com liver-metabolism.de www.liver-metabolism.de
+livermetabolism.com www.livermetabolism.com livermetabolism.de www.livermetabolism.de liver-metabolism.com www.liver-metabolism.com liver-metabolism.de www.liver-metabolism.de --dry-run
 ```
 
 ### deploy
