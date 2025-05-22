@@ -110,6 +110,50 @@
   homepage:
   description: "Antonio will delve into the influence of parameter variability in PBPK models, focusing on the consequential effects for dynamic liver function assessments. The overarching objective of this project is to augment our comprehension of how inherent variability in parameters translates into intra-individual variability in pharmacokinetics."
 
+- id: 'kim'
+  status: 'current'
+  year: '2025-05/2025-07'
+  name: 'Kim Minjun'
+  position: 'Humboldt Internship Project (HIP) 2025'
+  image: kim.jpg
+  orcid:
+  repository: 'https://github.com/unfulw'
+  homepage:
+  description: "Kim is developing a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the GLP-1 receptor agonist dulaglutide to better understand its absorption, distribution, metabolism, and effects on glucose regulation."
+
+- id: 'isabella'
+  status: 'current'
+  year: '2025-05/2025-07'
+  name: 'Isabella Tan'
+  position: 'Humboldt Internship Project (HIP) 2025'
+  image: isabella.jpg
+  orcid:
+  repository: 'https://github.com/bellatgy'
+  homepage:
+  description: "Isabella is building a PBPK/PD model of the GLP-1 receptor agonist liraglutide to explore its pharmacological behavior and impact on glucose homeostasis, with a focus on individualized treatment strategies."
+
+- id: 'olivia'
+  status: 'current'
+  year: '2025-05/2025-07'
+  name: 'Olivia Yau'
+  position: 'Humboldt Internship Project (HIP) 2025'
+  image: olivia.png
+  orcid:
+  repository: 'https://github.com/oliviaayau'
+  homepage:
+  description: "Olivia is developing a PBPK/PD model of the GLP-1 receptor agonist lixisenatide to investigate its kinetics and therapeutic effects on glucose regulation, aiming to support personalized approaches to diabetes treatment."
+
+- id: 'juanpablo'
+  status: 'current'
+  year: '2025-04/2025-10'
+  name: 'Juan Pablo Ramos Mendoza'
+  position: 'Master student'
+  image: juanpablo.png
+  orcid:
+  repository: 'https://github.com/Juan-hub129'
+  homepage:
+  description: "Juan Pablo is developing a closed-loop control system to optimize anesthesia delivery, aiming to enhance precision and patient safety during surgical procedures."
+
 - id: 'rohinichakraborty'
   status: 'current'
   year: '2024-03'
