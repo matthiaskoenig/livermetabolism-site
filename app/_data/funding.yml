@@ -1,3 +1,16 @@
+- id: 'spp-femvis'
+  funder: Deutsche Forschungsgemeinschaft (DFG)
+  funder_link: https://www.dfg.de
+  funder_logo: dfg.jpeg
+  grant: 465194077
+  start: '2025'
+  end: '2026'
+  title: 'SPP2311 - Startup Funding - <b>SPP-FEMVis</b>: Advancing Open Science with Web-Based FEM Visualization'
+  role: Recipient
+  logo: 'SPP-FEMVis.png'
+  project: https://www.spp2311.uni-stuttgart.de/en/
+  repository:
+
 - id: 'algonomy'
   funder: Circle U. - European University Alliance
   funder_link: https://www.circle-u.eu/
@@ -10,7 +23,6 @@
   logo: algonomy_logo.png
   project: https://algonomy.jus.unipi.it/
   repository:
-
 
 - id: 'simliva2'
   funder: Deutsche Forschungsgemeinschaft (DFG)
