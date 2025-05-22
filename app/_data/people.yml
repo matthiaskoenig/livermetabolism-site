@@ -143,6 +143,17 @@
   homepage:
   description: "Olivia is developing a PBPK/PD model of the GLP-1 receptor agonist lixisenatide to investigate its kinetics and therapeutic effects on glucose regulation, aiming to support personalized approaches to diabetes treatment."
 
+- id: 'emre'
+  status: 'current'
+  year: '2025-05/2025-08'
+  name: 'Emre Hikmet'
+  position: 'Google Summer of Code (GSOC) 2025'
+  image: emre.jpg
+  orcid:
+  repository: 'https://github.com/kyxhik'
+  homepage:
+  description: "Hikmet works on CySBML Reloaded: Smarter, Simpler, Automated focuses on upgrading CySBML — a Cytoscape app for visualizing computational models encoded in SBML. The project will enhance usability, improve stability, and introduce automation features, making it easier for researchers to explore, validate, and interact with complex biomedical models through an intuitive and streamlined interface based on network visualization."
+
 - id: 'juanpablo'
   status: 'current'
   year: '2025-04/2025-10'
