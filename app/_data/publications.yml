@@ -1,8 +1,8 @@
 - id: 'Bachelor.Thesis.Michelle.Elias'
   year: 2025
-  date: 2025-04-33
+  date: 2025-04-03
   pdf: 'theses/Bachelor.Thesis.Michelle.Elias.pdf'
-  authors: 'Bachelor Thesis Michelle Elias (supervisor: <b>Matthias König</b>)'
+  authors: 'Michelle Elias (supervisor: <b>Matthias König</b>)'
   title: 'A physiological-based pharmacokinetic (PBPK) model of the sulfonylurea glimepiride'
   journal: 'Bachelor Thesis, April 2025'
   journal_short:
