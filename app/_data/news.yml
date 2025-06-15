@@ -1,3 +1,12 @@
+- id: 'spp_startup_funding'
+  status: 'current'
+  title: 'New Projects Launched: Modeling GLP-1 Agonists and Optimizing Anesthesia Control'
+  date: '2025-05-10'
+  image: spp_startup_funding.png
+  link:
+  short: "We’re excited to announce new research projects in our group focusing on personalized treatment strategies for diabetes and improved anesthesia management through computational modeling and control systems."
+  abstract: "Kim, Isabella, and Olivia have launched new projects developing physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) models of the GLP-1 receptor agonists dulaglutide, liraglutide, and lixisenatide, respectively. Their work aims to enhance our understanding of these drugs’ behavior and effects on glucose regulation, contributing to more individualized approaches to diabetes treatment. In parallel, Juan Pablo is working on a closed-loop control system for optimizing anesthesia delivery, with the goal of improving precision and patient safety in clinical settings."
+
 - id: 'hip2025'
   status: 'current'
   title: 'New Projects Launched: Modeling GLP-1 Agonists and Optimizing Anesthesia Control'

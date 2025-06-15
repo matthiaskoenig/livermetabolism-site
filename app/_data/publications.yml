@@ -1,3 +1,33 @@
+- id: 'Bachelor.Thesis.Nike.Nemitz'
+  year: 2025
+  date: 2025-06-15
+  pdf: 'theses/Bachelor.Thesis.Nike.Nemitz.pdf'
+  authors: 'Nike Nemitz Elias (supervisor: <b>Matthias König</b>)'
+  title: 'Physiologically-Based Pharmacokinetic/Pharmacodynamic Modeling of Dapagliflozin: Exploring the Impact of Dosing, Hepatorenal Impairment and Food Intake'
+  journal: 'Bachelor Thesis, June 2025'
+  journal_short:
+  status: thesis
+  impact: 0
+  position: last
+  doi:
+  pmid:
+  keywords:
+    - PK/PD
+    - pharmacokinetics
+    - pharmacodynamics
+    - dapagliflozin
+    - hepatorenal impairment
+    - pharmacogenomics
+    - food effect
+    - ODE
+  project:
+  repository: https://github.com/matthiaskoenig/dapagliflozin-model
+  abstract: 'Dapagliflozin is a SGLT2 inhibitor used in the management of type 2 diabetes.  Its effect is based on the reduction of plasma glucose levels by promoting glucose excretion in the urine. The pharmacokinetics and pharmacodynamics of dapagliflozin exhibit considerable interindividual variability, which is influenced by patient-specific factors and potentially affects therapeutic outcomes.<br />
+  In this study, a physiologically based pharmacokinetic/ pharmacodynamic (PBPK/PD) model was developed to systematically assess how these factors influence dapagliflozin disposition. Using curated data from 27 clinical trials, a modular SBML-based model with sub-models for intestinal absorption, hepatic metabolism and renal excretion was developed.<br /> 
+  Parameter optimization resulted in good agreement between simulations and observed clinical PK/PD profiles. The validated model accurately reproduced dose-dependent kinetics within the therapeutic range, captured the effects of physiological variability and functional impairments, and simulated food-drug interactions.<br />
+  In addition, the model enabled direct comparison of urinary glucose excretion (UGE) under renal and hepatic impairment. Results showed that renal dysfunction substantially reduces UGE, while hepatic impairment has only a minor effect. Furthermore, the simulations revealed that food intake, although not altering total systemic exposure (AUC), significantly affects peak concentrations (Cmax), which in turn influences pharmacodynamic outcomes such as UGE. This suggests a clinically relevant food effect that is often underestimated.<br />
+  Despite some limitations, the model offers mechanistic insight into the sources of PK/PD variability and supports individualized dosing strategies, contributing to predictive tools for personalized diabetes management and pharmacotherapy optimization.'
+
 - id: 'Bachelor.Thesis.Michelle.Elias'
   year: 2025
   date: 2025-04-03
