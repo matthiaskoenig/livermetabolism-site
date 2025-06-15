@@ -1,6 +1,6 @@
 - id: 'bachelor_nike'
   status: 'current'
-  title: 'Physiologically-Based Pharmacokinetic/Pharmacodynamic Modeling of Dapagliflozin'
+  title: 'Bachelor Thesis Nike Nemitz: Physiologically-Based Pharmacokinetic/Pharmacodynamic Modeling of Dapagliflozin'
   date: '2025-06-15'
   image: bachelor_nike.png
   link: https://github.com/matthiaskoenig/dapagliflozin-model
@@ -8,6 +8,20 @@
   abstract: "Dapagliflozin, an SGLT2 inhibitor for type 2 diabetes, reduces plasma glucose levels by enhancing urinary glucose excretion (UGE). However, its pharmacokinetics and pharmacodynamics are subject to considerable interindividual variability influenced by dosing, organ function, and food intake. This study presents a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model, constructed using SBML and data from 27 clinical trials, with modular representations of intestinal absorption, hepatic metabolism, and renal excretion.  
   The model reliably reproduces observed dose-dependent PK/PD profiles and simulates physiological variability and food effects. Simulations reveal that renal impairment markedly reduces UGE, while hepatic impairment has a minor impact. Food intake significantly lowers peak plasma concentrations (Cmax) without affecting AUC, highlighting a clinically relevant effect on pharmacodynamics often overlooked.  
   This work provides mechanistic insight into key determinants of dapagliflozin variability and supports its use in predictive modeling for individualized therapy in diabetes care."
+
+- id: 'bua_panel_diversity'
+  status: 'current'
+  title: 'Panel Reflections on Inclusion in Research Design'
+  date: '2025-06-12'
+  image: bua_panel_diversity.png
+  link:
+  short: "Dr. Matthias König joined an interdisciplinary panel at the Berlin University Alliance Fellows Club to discuss how inclusive design influences research across fields. The event highlighted diverse approaches—from AI in healthcare to quantum computing—to advance pluralistic and equitable science."
+  abstract: "Methods of Inclusion: Designing Research for a Plural World” — part of the Berlin University Alliance Fellows Club meets... the Einstein Center Population Diversity on June 11.
+  Together with an inspiring group of researchers from diverse fields—ranging from sociology to quantum computing—we explored how inclusion, representation, and plurality shape research design across disciplines.
+  I had the opportunity to share perspectives from our work on AI-driven healthcare and digital twins, and how inclusive design principles are essential for building fair and transparent decision-support tools in medicine.
+  A big thank you to the organizers from Berlin University Alliance, Einstein Center Population Diversity, and Stiftung Charité for creating a space for cross-institutional exchange and thoughtful dialogue.
+  #Diversity #DigitalTwins #InclusiveResearch #BerlinUniversityAlliance #PopulationDiversity #SystemsMedicine #OpenScience.
+  Thanks to Camilla Leathem, PhD, Sarah Bellows-Blakely, Michaela Kreyenfeld, Günter M. Ziegler, Lara Bister, Cole Kovarik and Fariha Azad"
 
 - id: 'spp_startup_funding'
   status: 'current'
