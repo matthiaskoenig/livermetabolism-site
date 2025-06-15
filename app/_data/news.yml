@@ -37,10 +37,19 @@
   title: 'SPP Startup Funding Awarded for Web-Based FEM Visualization Tool'
   date: '2025-05-10'
   image: spp_startup_funding.png
-  link:
+  link: "https://www.spp2311.de/"
   short: "Matthias König has been awarded €15,000 in startup funding from the DFG Priority Programme SPP2311 to develop SPP-FEMVis, a web-based visualization platform for Finite Element Method (FEM) simulations supporting open science and interdisciplinary collaboration."
   abstract: "We are pleased to announce that Matthias König has received startup funding from the DFG Priority Programme SPP2311 – Robust Coupling of Continuum Biomechanical In Silico Models to Biomedical Data. His project, SPP-FEMVis: Advancing Open Science with Web-Based FEM Visualizations, aims to create an interactive, browser-based visualization tool for FEM simulation results using PyVista and Trame. With €15,000 in funding, the project will support the development of a flexible visualization framework integrated into websites and Jupyter Notebooks, enabling seamless sharing and exploration of simulation data. 
   The tool will increase accessibility and reproducibility of computational results across biomedical applications, including liver modeling, heart mechanics, and vascular simulations. By lowering technical barriers and fostering collaborative use of FEM models, SPP-FEMVis will strengthen the open science mission of SPP2311 and serve as a dissemination bridge between researchers, clinicians, and the public."
+
+- id: 'algonomy_pisa'
+  status: 'current'
+  title: 'Algonomy at Festival della Robotica 2025: AI and Digital Twins for Liver Surgery'
+  date: '2025-05-10'
+  image: algonomy_pisa.png
+  link:
+  short: "At the Festival della Robotica 2025 in Pisa, Mariia Myshkina presented our research from the Algonomy project, highlighting how AI and Digital Twins can support decision-making in hepatobiliary surgery."
+  abstract: "The Algonomy project, which investigates the ethical and practical integration of AI in clinical decision-making, was featured at the Festival della Robotica 2025 in Pisa. Representing the team, Mariia Myshkina presented our latest research on Digital Twins in hepatobiliary surgery—demonstrating how computational models of liver anatomy and function, powered by AI, can enhance surgical planning and individualized treatment strategies. Our contribution emphasized the central mission of Algonomy: combining algorithmic intelligence with clinical expertise while ensuring transparency, reproducibility, and shared decision-making in medicine."
 
 - id: 'hip2025'
   status: 'current'
