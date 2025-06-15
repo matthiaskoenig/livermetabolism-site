@@ -50,6 +50,15 @@
   short: "We’re excited to announce new research projects in our group focusing on personalized treatment strategies for diabetes and improved anesthesia management through computational modeling and control systems."
   abstract: "Kim, Isabella, and Olivia have launched new projects developing physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) models of the GLP-1 receptor agonists dulaglutide, liraglutide, and lixisenatide, respectively. Their work aims to enhance our understanding of these drugs’ behavior and effects on glucose regulation, contributing to more individualized approaches to diabetes treatment. In parallel, Juan Pablo is working on a closed-loop control system for optimizing anesthesia delivery, with the goal of improving precision and patient safety in clinical settings."
 
+- id: 'bachelor_michelle'
+  status: 'current'
+  title: 'Bachelor Thesis Michelle Elias: PBPK Modelling of Glimepiride: Investigating Variability in Type 2 Diabetes Treatment'
+  date: '2025-04-15'
+  image: bachelor_michelle.png
+  link: https://github.com/matthiaskoenig/glimepiride-model
+  short: "Michelle Elias has successfully completed her Bachelor thesis on a physiologically based pharmacokinetic (PBPK) model of glimepiride, focusing on interindividual variability, hepatorenal impairment, and pharmacogenomics."
+  abstract: "Glimepiride, a widely used sulfonylurea for type 2 diabetes, shows significant interindividual variability in pharmacokinetics due to factors such as organ function and genetic polymorphisms. In her thesis, Michelle Elias developed a modular, SBML-based PBPK model using data from 19 clinical studies to simulate glimepiride absorption, hepatic CYP2C9-mediated metabolism, and renal excretion. The model accurately reproduced dose-dependent pharmacokinetics and revealed the distinct impacts of renal and hepatic impairment, as well as the influence of CYP2C9 genotypes and bodyweight. While limitations exist regarding data in severely impaired populations, the model offers mechanistic insights into variability and supports individualized dosing strategies for improved diabetes care."
+
 - id: 'sbml_editor'
   status: 'current'
   title: 'SBML editor'
