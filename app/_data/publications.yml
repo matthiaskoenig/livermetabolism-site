@@ -57,8 +57,8 @@
   date: 2025-04-17
   pdf: 'Baum2025.pdf'
   authors: 'Baum P, Ebert T, Klöting N, Krupka S, <b>König M</b>, Paeschke S, Stock P, Bulc M, Blüher M, Palus K, Nowicki M, Kosacka J.'
-  title: 'Inflammation and autophagy in peripheral nerves of rodent models with metabolic syndrome and type 2 diabetes mellitus.'
-  journal: 'Neurosci Res. 2025 Apr 17:S0168-0102(25)00070-7.'
+  title: 'Inflammation and autophagy in peripheral nerves of rodent models with metabolic syndrome and type 2 diabetes mellitus'
+  journal: 'Neurosci Res. 2025 Apr 17:S0168-0102(25)00070-7'
   journal_short:
   status: publication
   impact: 2.4
@@ -76,7 +76,27 @@
     - ob/ob mice
   project:
   repository:
-  abstract: 'Metabolic syndrome (MetS) and type 2 diabetes mellitus (T2D) are associated with inflammation and the accumulation of macrophages in peripheral nerves, which increases the risk of developing peripheral neuropathy (PN). We have previously investigated that macrophage infiltration in the peripheral nerves of animals with T2D (leptin-deficient ob/ob mice, leptin receptor-deficient db/db) correlated with PN, whereas this process in animals with MetS (Wistar Ottawa Karlsburg W (RT1u) WOKW rat) did not lead to neuropathic changes. Additional data presented in this study suggest an association between increased mRNA expression of the anti-inflammatory marker IL-10 and autophagy in the prevention of neuropathy. '
+  abstract: 'Metabolic syndrome (MetS) and type 2 diabetes mellitus (T2D) are associated with inflammation and the accumulation of macrophages in peripheral nerves, which increases the risk of developing peripheral neuropathy (PN). We have previously investigated that macrophage infiltration in the peripheral nerves of animals with T2D (leptin-deficient ob/ob mice, leptin receptor-deficient db/db) correlated with PN, whereas this process in animals with MetS (Wistar Ottawa Karlsburg W (RT1u) WOKW rat) did not lead to neuropathic changes. Additional data presented in this study suggest an association between increased mRNA expression of the anti-inflammatory marker IL-10 and autophagy in the prevention of neuropathy.'
+
+- id: 'Balaur2025_preprint'
+  year: 2025
+  date: 2025-03-21
+  pdf: 'Balaur2025_preprint.pdf'
+  authors: 'Irina Balaur, David P. Nickerson, Danielle Welter, Judith A.H. Wodke, Francois Ancien, Tom Gebhardt, Valentin Grouès, Henning Hermjakob, <b>Matthias König</b>, Nicole Radde, Adrien Rougny, Reinhard Schneider, Rahuman S. Malik-Sheriff, Kirubel Biruk Shiferaw, Melanie Stefan, Venkata Satagopam, Dagmar Waltemath'
+  title: 'FAIRification of computational models in biology'
+  journal: 'bioRxiv 2025.03.21.644517'
+  journal_short:
+  status: preprint
+  impact: 0
+  position: index
+  doi: 10.1101/2025.03.21.644517
+  pmid:
+  keywords:
+    - FAIR
+    - computational models
+  project: https://github.com/FAIR-CA-indicators/FAIR-CA-indicators.github.io
+  repository: https://github.com/matthiaskoenig/fair-ca-visualization
+  abstract: 'Computational models are essential for studying complex systems which, particularly in clinical settings, need to be quality-approved and transparent. To enhance the communication of a model’s features and capabilities, we propose an adaptation of the Findability, Accessibility, Interoperability and Reusability (FAIR) indicators published by the Research Data Alliance to assess models encoded in domain-specific standards, such as those established by COMBINE. The assessments guide FAIRification and add value to models.'
 
 - id: 'Internship.Report.Abhinav.Mishra'
   year: 2025
