@@ -50,6 +50,16 @@
   short: "We’re excited to announce new research projects in our group focusing on personalized treatment strategies for diabetes and improved anesthesia management through computational modeling and control systems."
   abstract: "Kim, Isabella, and Olivia have launched new projects developing physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) models of the GLP-1 receptor agonists dulaglutide, liraglutide, and lixisenatide, respectively. Their work aims to enhance our understanding of these drugs’ behavior and effects on glucose regulation, contributing to more individualized approaches to diabetes treatment. In parallel, Juan Pablo is working on a closed-loop control system for optimizing anesthesia delivery, with the goal of improving precision and patient safety in clinical settings."
 
+- id: 'interview2025_reproducibility'
+  status: 'current'
+  title: 'Interview: Matthias König on Reproducibility, Open Science, and the Future of Biological Research'
+  date: '2025-04-30'
+  image: interview2025_reproducibility.png
+  link: https://www.hu-berlin.de/de/pr/themen/in-der-biologischen-forschung-gibt-es-eine-grosse-reproduzierbarkeitskrise
+  short: "In an interview for the Berlin University Alliance, Matthias König discusses the reproducibility crisis in biology and the transformative potential of Open Science. As a BUA Open Science Ambassador, he highlights the importance of FAIR data, open standards, and cultural change in academia."
+  abstract: "On April 30, 2025, Matthias König, BUA Open Science Ambassador, was interviewed about the role of Open Science in improving reproducibility and collaboration in biological research. Drawing from his work on computational modeling and digital twins, König outlines how open data, FAIR principles, and transparent code are essential for reproducible science. He points to systemic barriers—such as incentive structures focused solely on publications—and calls for alternative evaluation criteria that recognize Open Science engagement. He also emphasizes the importance of community-driven initiatives, institutional support, and education to build a more open and collaborative research culture. The interview underscores the critical role of Open Science in enabling responsible AI development and long-term progress in life sciences."
+
+
 - id: 'bachelor_michelle'
   status: 'current'
   title: 'Bachelor Thesis Michelle Elias: PBPK Modelling of Glimepiride: Investigating Variability in Type 2 Diabetes Treatment'
