@@ -1,3 +1,14 @@
+- id: 'bachelor_nike'
+  status: 'current'
+  title: 'Physiologically-Based Pharmacokinetic/Pharmacodynamic Modeling of Dapagliflozin'
+  date: '2025-06-15'
+  image: bachelor_nike.png
+  link: https://github.com/matthiaskoenig/dapagliflozin-model
+  short: "In this bachelor thesis, a PBPK/PD model of dapagliflozin was developed to investigate how physiological and external factors such as hepatorenal impairment and food intake influence drug behavior and therapeutic efficacy in type 2 diabetes treatment."
+  abstract: "Dapagliflozin, an SGLT2 inhibitor for type 2 diabetes, reduces plasma glucose levels by enhancing urinary glucose excretion (UGE). However, its pharmacokinetics and pharmacodynamics are subject to considerable interindividual variability influenced by dosing, organ function, and food intake. This study presents a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model, constructed using SBML and data from 27 clinical trials, with modular representations of intestinal absorption, hepatic metabolism, and renal excretion.  
+  The model reliably reproduces observed dose-dependent PK/PD profiles and simulates physiological variability and food effects. Simulations reveal that renal impairment markedly reduces UGE, while hepatic impairment has a minor impact. Food intake significantly lowers peak plasma concentrations (Cmax) without affecting AUC, highlighting a clinically relevant effect on pharmacodynamics often overlooked.  
+  This work provides mechanistic insight into key determinants of dapagliflozin variability and supports its use in predictive modeling for individualized therapy in diabetes care."
+
 - id: 'spp_startup_funding'
   status: 'current'
   title: 'New Projects Launched: Modeling GLP-1 Agonists and Optimizing Anesthesia Control'
