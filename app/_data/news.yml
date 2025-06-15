@@ -27,9 +27,9 @@
   status: 'current'
   title: 'Course Completed: Pharmacokinetic/Pharmacodynamic Modelling'
   date: '2025-06-12'
-  image: bua_panel_diversity.png
+  image: mb19_ss2025.png
   link: https://github.com/matthiaskoenig/dhpe-pkpd
-  short: "From June 3–6, we successfully conducted our newly redesigned course on Pharmacokinetic/Pharmacodynamic (PK/PD) Modelling. Developed as part of the Digital Health Profession Educator (DHPE) program, the course emphasized interactivity and hands-on learning in the context of biomedical modeling and clinical pharmacology."
+  short: "From June 3–6, we successfully conducted our redesigned course on Pharmacokinetic/Pharmacodynamic (PK/PD) Modelling. Developed as part of the Digital Health Profession Educator (DHPE) program, the course emphasized interactivity and hands-on learning in the context of clinical pharmacology."
   abstract: "The Pharmacokinetic/Pharmacodynamic (PK/PD) Modelling course was completely restructured for enhanced interactivity as part of a teaching innovation project within the Digital Health Profession Educator (DHPE) program. The course provided a comprehensive introduction to how drugs are absorbed, distributed, metabolized, and excreted in the body—and how these processes affect drug action. Students explored both classical compartment models and physiologically based pharmacokinetic (PBPK) models, learning how to simulate drug behavior and optimize dosing strategies. The redesigned format integrated active learning components, practical modeling exercises, and real-world case studies to deepen understanding. Topics also included pharmacodynamics, drug-drug interactions, and the application of models in drug development and personalized therapy. The course successfully combined conceptual knowledge with applied skills, preparing participants to use PK/PD models as tools for translational and clinical research."
 
 - id: 'spp_startup_funding'
