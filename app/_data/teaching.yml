@@ -6,16 +6,15 @@
   semester: SS25
   people: "HP. Herzel, R. Kempter, S. Schreiber, P. Kuokkanen, R. Steuer, JH. Schleimer, P. Romanczuk, N. Blüthgen, <b>M. König</b>"
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
-  image: mb19_ss2023.png
+  image: mb19_ss2025.png
   caption: '<strong>Theory, tools and methods in biology - Pharmacokinetic modelling</strong>'
   funding:
   content: '
   <p>
   Within this course and lecture important theory, tools and methods in biology are presented. 
-  Our group was responsible for the submodule <b>pharmacokinetic modelling</b> with information and material available from <a href="https://github.com/matthiaskoenig/course-pharmacokinetic-modelling">https://github.com/matthiaskoenig/course-pharmacokinetic-modelling</a>.
+  Our group was responsible for the submodule <b>pharmacokinetic modelling</b> with information and material available from <a href="https://github.com/matthiaskoenig/dhpe-pkpd">https://github.com/matthiaskoenig/dhpe-pkpd</a>.
   </p>
-  <p>
-  Pharmacokinetic modelling is the study of how drugs are absorbed, distributed, metabolized, and excreted in the body. The course on pharmacokinetic modelling will cover topics such as pharmacokinetic principles, drug distribution, clearance, and elimination, and the factors that affect these processes. Students will learn about different models used to describe pharmacokinetics, such as compartmental models and physiologically-based pharmacokinetic models, and how to use these models to predict drug concentrations and optimize dosing regimens. Other topics that might be covered include pharmacodynamics, drug-drug interactions, and the use of pharmacokinetic modelling in drug development and clinical practice. Overall, a course on pharmacokinetic modelling will provide students with a comprehensive understanding of the principles and techniques used to describe the movement of drugs through the body, and how this knowledge can be applied to improve drug therapy.
+  <p>Pharmacokinetic modelling is the study of how drugs are absorbed, distributed, metabolised and excreted in the body. The pharmacokinetic modelling course covers topics such as pharmacokinetic principles, drug distribution, clearance and elimination and the factors that influence these processes. Students will learn about different models used to describe pharmacokinetics, such as compartmental models and physiologically based pharmacokinetic models, and how these models can be used to predict drug concentrations and optimise dosing regimens. Other topics that may be covered include pharmacodynamics, drug-drug interactions and the use of pharmacokinetic modelling in drug development and clinical practice. Overall, a course in pharmacokinetic modelling will provide students with a comprehensive understanding of the principles and techniques used to describe the movement of drugs through the body and how this knowledge can be applied to improve drug therapy. 
   </p>
   '
 
