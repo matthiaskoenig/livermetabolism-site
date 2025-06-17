@@ -1,3 +1,27 @@
+- id: 'Elias2025_preprint'
+  year: 2025
+  date: 2025-06-17
+  pdf: 'Elias2025_preprint.pdf'
+  authors: 'Michelle Elias, <b>Matthias König</b>'
+  title: 'A Digital Twin of Glimepiride for Personalized and Stratified Diabetes Treatment'
+  journal: 'Preprints 2025, 2025061264.'
+  journal_short:
+  status: preprint
+  impact: 0
+  position: last
+  doi: 10.20944/preprints202506.1264.v1
+  pmid:
+  keywords:
+    - digital twin
+    - diabetes
+    - Glimepiride
+    - PBPK
+    - physiologically based pharmacokinetic model
+  project:
+  repository: https://github.com/matthiaskoenig/glimepiride-model
+  abstract: 'Optimizing glimepiride therapy for type 2 diabetes (T2DM) is challenged by pronounced inter-individual variability in pharmacokinetics. To address this, we developed a whole-body physiologically based pharmacokinetic (PBPK) model as a digital twin of glimepiride. This model enables systematic evaluation of how patient-specific factors influence glimepiride disposition, supporting both personalized and stratified treatment approaches. Using curated data from 19 clinical studies, the digital twin was developed to mechanistically simulate glimepiride’s absorption, distribution, metabolism, and excretion (ADME). It accounts for key determinants of patient variability, such as renal and hepatic function, cytochrome P450 2C9 (CYP2C9) genotype, and bodyweight. The model accurately reproduced observed pharmacokinetics and quantified the impact of these factors on drug exposure. For instance, increased glimepiride exposure was predicted in individuals with hepatic dysfunction or specific CYP2C9 variants, highlighting substantial genetic and physiological effects. This digital twin offers mechanistic insights into pharmacokinetic variability and serves as a robust in silico platform for exploring individualized dosing scenarios and patient stratification strategies, laying the foundation for advanced clinical decision support tools to improve T2DM management.'
+
+
 - id: 'Bachelor.Thesis.Nike.Nemitz'
   year: 2025
   date: 2025-06-15
