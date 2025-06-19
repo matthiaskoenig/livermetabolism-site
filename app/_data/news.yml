@@ -1,3 +1,12 @@
+- id: 'Elias2025_glimepiride_preprint'
+  status: 'current'
+  title: 'Digital Twin of Glimepiride Enables Personalized Diabetes Therapy'
+  date: '2025-06-17'
+  image: Elias2025_glimepiride_preprint.png
+  link: https://github.com/matthiaskoenig/glimepiride-model
+  short: "We present a digital pharmacokinetic twin of glimepiride that simulates how patient-specific factors affect drug behavior, supporting individualized and stratified treatment of type 2 diabetes."
+  abstract: "In a new preprint, Michelle Elias and Matthias König introduce a whole-body physiologically based pharmacokinetic (PBPK) model of glimepiride as a digital twin for precision diabetes care. Developed using curated data from 19 clinical studies, the model captures glimepiride’s ADME processes and quantitatively integrates key sources of interindividual variability—including hepatic and renal function, CYP2C9 genotype, and bodyweight. The digital twin accurately reflects observed pharmacokinetics and demonstrates how genetic and physiological factors can significantly alter drug exposure. By enabling virtual patient simulations, this model offers a mechanistic platform for personalized dosing and patient stratification, advancing digital decision-support tools for more effective and individualized treatment of type 2 diabetes."
+
 - id: 'bachelor_nike'
   status: 'current'
   title: 'Bachelor Thesis Nike Nemitz: Physiologically-Based Pharmacokinetic/Pharmacodynamic Modeling of Dapagliflozin'
