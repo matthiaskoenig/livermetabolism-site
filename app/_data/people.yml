@@ -154,6 +154,17 @@
   homepage:
   description: "Hikmet works on CySBML Reloaded: Smarter, Simpler, Automated focuses on upgrading CySBML — a Cytoscape app for visualizing computational models encoded in SBML. The project will enhance usability, improve stability, and introduce automation features, making it easier for researchers to explore, validate, and interact with complex biomedical models through an intuitive and streamlined interface based on network visualization."
 
+- id: 'monajes'
+  status: 'current'
+  year: '2025-07/2025-11'
+  name: 'Monika Jesionek'
+  position: 'ERASMUS student'
+  image: monajes.png
+  orcid:
+  repository: 'https://github.com/monajes'
+  homepage:
+  description: "Monika is developing a PBPK model of immune suppressent rapamycin (sirolimus) as part of our contribution to the Immune Digital Twin (IDT)."
+
 - id: 'juanpablo'
   status: 'current'
   year: '2025-04/2025-10'
