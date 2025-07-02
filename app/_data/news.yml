@@ -2,7 +2,7 @@
   status: 'current'
   title: 'New PBPK/PD Modeling Project: Rapamycin as a Case Study in Personalized Immunosuppressive Therapy'
   date: '2025-07-02'
-  image: sirolimus_project.png
+  image: sirolimus_project.jpg
   link:
   short: "Monika Jesionek has started a new ERASMUS project to develop a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of rapamycin, aiming to better understand interindividual variability and support the development of an immune digital twin."
   abstract: "As part of her ERASMUS research stay, Monika Jesionek is developing a whole-body PBPK/PD model of the mTOR inhibitor rapamycin (sirolimus). Rapamycin plays a crucial role in immunosuppressive therapy, but its clinical use is challenged by narrow therapeutic margins, complex pharmacokinetics, and high interindividual variability. The project integrates literature data and mechanistic modeling to simulate rapamycin’s absorption, distribution, metabolism, and immune-modulating effects across diverse physiological and pathological conditions. This digital twin approach aims to optimize dosing strategies and contribute to personalized medicine efforts, particularly within the broader context of building an immune digital twin (IDT)."
