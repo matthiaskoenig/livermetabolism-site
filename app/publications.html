@@ -28,7 +28,10 @@ permalink: /publications/
 				{% endif %}
 				{% if publication.keywords %}
 				<p class="small">
-				<strong class="small">Keywords:</strong> {{ publication.keywords }}
+				<strong class="small">Keywords:</strong>
+				{% for keyword in publication.keywords %}
+					{{ keyword }}{% unless forloop.last %}, {% endunless %}
+				{% endfor %}
 				</p>
 				{% endif %}
 			</td>
