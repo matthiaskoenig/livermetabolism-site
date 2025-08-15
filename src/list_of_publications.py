@@ -1,4 +1,6 @@
 """Script for creating list of publications."""
+from typing import Optional
+
 import yaml
 from pathlib import Path
 import pandas as pd
@@ -78,29 +80,22 @@ def create_matrix(df: pd.DataFrame) -> pd.DataFrame:
         console.print(f"{impact_class:<15}{count:>3}")
 
 
-def create_list_of_publications(publications_file: Path, df: pd.DataFrame):
-    """Create list of publications.
+def create_list_of_publications_md(md_path: Path, df: pd.DataFrame) -> None:
+    """Create list of publications in markdown."""
 
-    Creates different sections:
-    # List of publications
-    ## Publications (44)
-    ## Reviews (3)
-    ## Proceedings & Book Chapters
-    ## Preprints
-    """
-    def create_entry_markdown(e: pd.Series):
+    def create_entry_markdown(e: pd.Series) -> str:
         """Creates markdown for a single entry."""
         authors = e.authors
         authors = authors.replace("<b>", "**")
         authors = authors.replace("</b>", "**")
         doi = f", [https://doi.org/{e.doi}](https://doi.org/{e.doi})" if e.doi else ""
         impact = f", IF: **{e.impact}**" if e.impact else ""
-        md = f"**{e.title.strip(".")}**. {authors}; {e.journal}{doi}{impact}"
 
-        return md
+        return f"**{e.title.strip(".")}**. {authors}; {e.journal}{doi}{impact}"
+
 
     md_all = "# List of Publications\n"
-    for status in ["publication", "review", "proceeding", "preprint"]:
+    for status in ["publication", "review", "proceeding", "preprint", "thesis"]:
         k_article = 0
         df_status = df[df["status"] == status]
         md_all += f"\n## {status.title()}s\n"
@@ -112,8 +107,39 @@ def create_list_of_publications(publications_file: Path, df: pd.DataFrame):
             # console.print(Markdown(md))
             console.rule(style="white")
 
-    with open(publications_file, "w") as f_md:
+    with open(md_path, "w") as f_md:
         f_md.write(md_all)
+
+def create_list_of_publications_typst(typst_path: Path, df: pd.DataFrame, highlights: Optional[set] = None) -> None:
+    """Create list of publications in typst."""
+
+    def create_entry_typst(e: pd.Series) -> str:
+        """Creates typst for a single entry."""
+        authors = e.authors
+        authors = authors.replace("<b>", "*")
+        authors = authors.replace("</b>", "*")
+        doi = f', #link("https://doi.org/{e.doi}")[https://doi.org/{e.doi}]' if e.doi else ""
+        impact = f", IF: *{e.impact}*" if e.impact else ""
+        text = f"*{e.title.strip(".")}*. {authors}; {e.journal}{doi}{impact}"
+        if highlights and e.id in highlights:
+            text = f'#highlight(fill:rgb("#30C5FF"))[{text}]'
+        return text
+
+
+    typst_all = "= List of Publications\n"
+    for status in ["publication", "review", "proceeding", "preprint", "thesis"]:
+        k_article = 0
+        df_status = df[df["status"] == status]
+        typst_all += f"\n== {status.title()}{'s' if not status.endswith('s') else ''}\n"
+        for key, row in df_status.iterrows():
+            k_article += 1
+            text = f"{k_article}. " + create_entry_typst(e=row) + "\n"
+            console.print(f"<{text}>")
+            typst_all += text
+            console.rule(style="white")
+
+    with open(typst_path, "w") as f_typst:
+        f_typst.write(typst_all)
 
 
 if __name__ == "__main__":
@@ -122,5 +148,19 @@ if __name__ == "__main__":
     # df_matrix = create_matrix(df=df)
     # df_matrix.to_csv("publication_matrix.tsv", index=True, sep="\t")
 
-    publications_file: Path = "publications.md"
-    create_list_of_publications(publications_file=publications_file, df=df)
+    markdown_file: Path = Path("publications.md")
+    create_list_of_publications_md(md_path=markdown_file, df=df)
+
+    highlights = {
+        "PKDB_Grzegorzewski2020",
+        "hepatokin_Berndt2018",
+        # "GlucoseModel_Koenig2012a",
+        "ICG_model_hepatectomy_Koeller2021",
+        "Caffeine_meta_Grzegorzewski2021",
+        "Albadry2024_species_comparison",
+    }
+    typst_file: Path = Path("publications.typ")
+    create_list_of_publications_typst(typst_path=typst_file, df=df, highlights=highlights)
+
+    # conversion to PDF using pandoc
+    # pandoc -f markdown -t pdf publications.md -o publications.pdf  --pdf-engine=xelatex -V mainfont="Roboto"
