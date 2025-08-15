@@ -1,3 +1,16 @@
+- id: 'xresearch'
+  funder: Bundesministerium für Bildung und Forschung (BMBF) und dem Land Berlin im Rahmen der Exzellenzstrategie von Bund und Ländern
+  funder_link: https://www.bmbf.de
+  funder_logo: bua.png
+  grant:
+  start: '10-2025'
+  end: '04-2026'
+  title: '<b>X-Student Research Group</b> - Digital Twins in Action: Optimizing Direct Oral Anticoagulant Use'
+  role: Recipient
+  logo:
+  project:
+  repository:
+
 - id: 'spp-femvis'
   funder: Deutsche Forschungsgemeinschaft (DFG)
   funder_link: https://www.dfg.de
