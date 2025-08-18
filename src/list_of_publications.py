@@ -27,6 +27,8 @@ def read_publications(yaml_file: Path) -> pd.DataFrame:
         "status",  # thesis, report, preprint, publication, review, proceeding, chapter
         "impact", # int
         "position", # first, first_equal, index, last_equal, last
+        "pdf",
+        "repository"
     ]]
     print(df.status.unique())
     print(df.position.unique())
@@ -118,9 +120,11 @@ def create_list_of_publications_typst(typst_path: Path, df: pd.DataFrame, highli
         authors = e.authors
         authors = authors.replace("<b>", "*")
         authors = authors.replace("</b>", "*")
-        doi = f', #link("https://doi.org/{e.doi}")[https://doi.org/{e.doi}]' if e.doi else ""
+        doi = f', #link("https://doi.org/{e.doi}")[{e.doi}]' if e.doi else ""
         impact = f", IF: *{e.impact}*" if e.impact else ""
-        text = f"*{e.title.strip(".")}*. {authors}; {e.journal}{doi}{impact}"
+        pdf = f'#link("https://livermetabolism.com/paper/{e.pdf}")[#fa-icon("file-pdf")]' if e.pdf else ""
+        repository = f'#link("{e.repository}")[#fa-icon("git-alt")]' if e.repository else ""
+        text = f"{pdf}{repository} *{e.title.strip(".")}*. {authors}; {e.journal}{doi}{impact}"
         if highlights and e.id in highlights:
             text = f'#highlight(fill:rgb("#30C5FF"))[{text}]'
         return text
