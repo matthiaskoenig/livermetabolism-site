@@ -8,5 +8,6 @@ dependencies = [
     "pandas",
     "pyyaml",
     "rich",
-    "markdown"
+    "markdown",
+    "pandoc",
 ]
