@@ -49,6 +49,8 @@ def create_matrix(df: pd.DataFrame) -> pd.DataFrame:
     articles_if_low = 0
     articles_if_middle = 0
     articles_if_high = 0
+    articles_first = 0
+    articles_last = 0
 
     for _, row in rdf.iterrows():
         if not row.status == "publication":
@@ -67,6 +69,9 @@ def create_matrix(df: pd.DataFrame) -> pd.DataFrame:
                 "high": impact > 15,
                 "middle": 5 <= impact < 15,
                 "low": impact < 5,
+                "first": True if (row["position"] == "first" or row["position"] == "first_equal") else False,
+                "index": True if (row["position"] == "index") else False,
+                "last": True if (row["position"] == "last" or row["position"] == "last_equal") else False,
             }
         )
 
@@ -76,6 +81,10 @@ def create_matrix(df: pd.DataFrame) -> pd.DataFrame:
     for impact_class in ["high", "middle", "low"]:
         count = len(df_matrix[df_matrix[impact_class] == True])
         console.print(f"{impact_class:<15}{count:>3}")
+    for author_class in ["first", "index", "last"]:
+        count = len(df_matrix[df_matrix[author_class] == True])
+        console.print(f"{author_class:<15}{count:>3}")
+    return df_matrix
 
 
 def create_list_of_publications(publications_file: Path, df: pd.DataFrame):
@@ -119,8 +128,8 @@ def create_list_of_publications(publications_file: Path, df: pd.DataFrame):
 if __name__ == "__main__":
     yaml_file: Path = Path(__file__).parent.parent / "app" / "_data" / "publications.yml"
     df: pd.DataFrame = read_publications(yaml_file=yaml_file)
-    # df_matrix = create_matrix(df=df)
-    # df_matrix.to_csv("publication_matrix.tsv", index=True, sep="\t")
+    df_matrix = create_matrix(df=df)
+    df_matrix.to_csv("publication_matrix.tsv", index=True, sep="\t")
 
     publications_file: Path = "publications.md"
     create_list_of_publications(publications_file=publications_file, df=df)
