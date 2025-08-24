@@ -121,7 +121,7 @@ def create_list_of_publications_md(md_path: Path, df: pd.DataFrame) -> None:
     with open(md_path, "w") as f_md:
         f_md.write(md_all)
 
-def create_list_of_publications_typst(typst_path: Path, df: pd.DataFrame, highlights: Optional[set] = None) -> None:
+def create_list_of_publications_typst(typst_path: Path, df: pd.DataFrame, highlights: Optional[set] = None, selected: Optional[set] = None) -> None:
     """Create list of publications in typst."""
 
     def create_entry_typst(e: pd.Series) -> str:
@@ -139,12 +139,28 @@ def create_list_of_publications_typst(typst_path: Path, df: pd.DataFrame, highli
         return text
 
 
-    typst_all = "= List of Publications\n"
-    for status in ["publication", "review", "proceeding", "preprint", "thesis"]:
+    if not selected:
+        typst_all = "= List of Publications\n"
+        for status in ["publication", "review", "proceeding", "preprint", "thesis"]:
+            k_article = 0
+            df_status = df[df["status"] == status]
+            typst_all += f"\n== {status.title()}{'s' if not status.endswith('s') else ''}\n"
+            for key, row in df_status.iterrows():
+                k_article += 1
+                text = f"{k_article}. " + create_entry_typst(e=row) + "\n"
+                console.print(f"<{text}>")
+                typst_all += text
+                console.rule(style="white")
+
+    if selected:
+        console.print(selected)
+
+        typst_all = ""
         k_article = 0
-        df_status = df[df["status"] == status]
-        typst_all += f"\n== {status.title()}{'s' if not status.endswith('s') else ''}\n"
-        for key, row in df_status.iterrows():
+
+        for key, row in df.iterrows():
+            if selected and (row.id not in selected):
+                continue
             k_article += 1
             text = f"{k_article}. " + create_entry_typst(e=row) + "\n"
             console.print(f"<{text}>")
@@ -172,8 +188,30 @@ if __name__ == "__main__":
         # "Caffeine_meta_Grzegorzewski2021",
         # "Albadry2024_species_comparison",
     }
-    typst_file: Path = Path("publications.typ")
-    create_list_of_publications_typst(typst_path=typst_file, df=df, highlights=highlights)
+    # create_list_of_publications_typst(Path("publications.typ"), df=df, highlights=highlights)
+
+    # List of selected publications
+    selected1 = {
+        "GlucoseModel_Koenig2012a",
+        "hepatokin_Berndt2018",
+        "HepatoNet1_Gille2010",
+        "Grzegorzewski2022_dextromethorphan",
+        "ICG_model_hepatectomy_Koeller2021",
+        "Maheshvare2023_pancreas",
+        "SBML_Keating2020",
+        "PKDB_Grzegorzewski2020",
+        "Caffeine_meta_Grzegorzewski2021",
+        "Albadry2024_species_comparison",
+    }
+    create_list_of_publications_typst(Path("publications_selected1.typ"), df=df, selected=selected1)
+
+    selected2 = {
+        "Gerhaeusser2024_spt_model",
+        "StemmerMallol2023_talinolol",
+        "Kuettner2023_chlorzoxazone",
+        "Bartsch2023_simvastatin",
+    }
+    create_list_of_publications_typst(Path("publications_selected2.typ"), df=df, selected=selected2)
 
     # conversion to PDF using pandoc
     # pandoc -f markdown -t pdf publications.md -o publications.pdf  --pdf-engine=xelatex -V mainfont="Roboto"
