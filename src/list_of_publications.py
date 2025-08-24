@@ -165,12 +165,12 @@ if __name__ == "__main__":
     create_list_of_publications_md(md_path=markdown_file, df=df)
 
     highlights = {
-        "PKDB_Grzegorzewski2020",
-        "hepatokin_Berndt2018",
-        # "GlucoseModel_Koenig2012a",
-        "ICG_model_hepatectomy_Koeller2021",
-        "Caffeine_meta_Grzegorzewski2021",
-        "Albadry2024_species_comparison",
+        # "PKDB_Grzegorzewski2020",
+        # "hepatokin_Berndt2018",
+        # # "GlucoseModel_Koenig2012a",
+        # "ICG_model_hepatectomy_Koeller2021",
+        # "Caffeine_meta_Grzegorzewski2021",
+        # "Albadry2024_species_comparison",
     }
     typst_file: Path = Path("publications.typ")
     create_list_of_publications_typst(typst_path=typst_file, df=df, highlights=highlights)

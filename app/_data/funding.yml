@@ -1,155 +1,202 @@
 - id: 'xresearch'
+  funder_short: BMBF
   funder: Bundesministerium für Bildung und Forschung (BMBF) und dem Land Berlin im Rahmen der Exzellenzstrategie von Bund und Ländern
   funder_link: https://www.bmbf.de
   funder_logo: bua.png
   grant:
   start: '10-2025'
   end: '04-2026'
-  title: '<b>X-Student Research Group</b> - Digital Twins in Action: Optimizing Direct Oral Anticoagulant Use'
+  title: 'X-Student Research Group - Digital Twins in Action: Optimizing Direct Oral Anticoagulant Use'
   role: Recipient
+  amount: 1500
+  currency: "€"
   logo:
   project:
   repository:
+  description: "Project-based teaching initiative on digital twins in medicine, focusing on physiologically based pharmacokinetic (PBPK) modeling to optimize the use of direct oral anticoagulants."
 
 - id: 'spp-femvis'
+  funder_short: DFG
   funder: Deutsche Forschungsgemeinschaft (DFG)
   funder_link: https://www.dfg.de
   funder_logo: dfg.jpeg
   grant: 465194077
   start: '2025'
   end: '2026'
-  title: 'SPP2311 - Startup Funding - <b>SPP-FEMVis</b>: Advancing Open Science with Web-Based FEM Visualization'
+  title: 'SPP2311 - Startup Funding - SPP-FEMVis: Advancing Open Science with Web-Based FEM Visualization'
   role: Recipient
+  amount: 15000
+  currency: "€"
   logo: 'SPP-FEMVis.png'
   project: https://www.spp2311.uni-stuttgart.de/en/
   repository:
+  description: "Startup funding to develop an open science platform for interactive, web-based visualization of finite element method (FEM) simulations."
 
 - id: 'algonomy'
+  funder_short: Circle U.
   funder: Circle U. - European University Alliance
   funder_link: https://www.circle-u.eu/
   funder_logo: circleu.png
   grant:
   start: '2024'
   end: '2025'
-  title: '<b>AlgoNomy</b> - Algorithmic Regulation Before Medical Liability - Advancing Doctor-Patient Autonomy in AI-Driven Healthcare'
+  title: 'AlgoNomy - Algorithmic Regulation Before Medical Liability - Advancing Doctor-Patient Autonomy in AI-Driven Healthcare'
   role: Recipient
+  amount: 10000
+  currency: "€"
   logo: algonomy_logo.png
   project: https://algonomy.jus.unipi.it/
   repository:
+  description: "Building an international academic network to investigate the role of algorithms and AI in medical decision support systems, with a focus on legal, ethical, and patient autonomy implications."
 
 - id: 'open_science_ambassador'
+  funder_short: BUA - BMBF
   funder: BUA - Berlin University Alliance
   funder_link: https://www.circle-u.eu/
   funder_logo: bua.png
   grant:
   start: '2024'
   end: '2025'
-  title: '<b>Open Science Ambassador</b>'
+  title: 'Open Science Ambassador'
   role: Recipient
+  amount: 4000
+  currency: "€"
   logo:
   project:
   repository:
+  description: "Supporting the promotion and implementation of open science practices across research communities at Berlin Universities, with a focus on reproducibility, FAIR data, and fostering collaborative exchange."
 
 - id: 'simliva2'
+  funder_short: DFG
   funder: Deutsche Forschungsgemeinschaft (DFG)
   funder_link: https://www.dfg.de
   funder_logo: dfg.jpeg
   grant: 465194077
   start: '2024'
   end: '2027'
-  title: '<b>SPP2311 - SimLivA</b> - SIMulation supported LIVer Assessment for donor organs'
+  title: 'SPP2311 - SimLivA - SIMulation supported LIVer Assessment for donor organs'
   role: Recipient
+  amount: 219000
+  currency: "€"
   logo:
   project: https://www.spp2311.uni-stuttgart.de/en/
   repository:
+  description: "Developing computational models and simulation workflows to assess liver function in donor organs, advancing predictive tools for transplantation and improving clinical decision-making."
 
 - id: 'xresearch'
+  funder_short: BUA - BMBF
   funder: Bundesministerium für Bildung und Forschung (BMBF) und dem Land Berlin im Rahmen der Exzellenzstrategie von Bund und Ländern
   funder_link: https://www.bmbf.de
   funder_logo: bua.png
   grant:
   start: '04-2023'
   end: '09-2023'
-  title: '<b>X-Student Research Group</b> - Physiologically based digital twins for the treatment of hypertension with ACE inhibitors and diuretics'
+  title: 'X-Student Research Group - Physiologically based digital twins for the treatment of hypertension with ACE inhibitors and diuretics'
   role: Recipient
+  amount: 1500
+  currency: "€"
   logo:
   project:
   repository:
+  description: "Project-based teaching initiative on digital twins in pharmacology, focusing on physiologically based pharmacokinetic (PBPK) modeling to optimize hypertension therapy with ACE inhibitors and diuretics."
 
 - id: 'atlas'
+  funder_short: BMBF
   funder: Bundesministerium für Bildung und Forschung (BMBF) "Computational Life Sciences"
   funder_link: https://www.bmbf.de
   funder_logo: bmbf.png
   grant:
   start: '2023'
   end: '2026'
-  title: '<b>ATLAS - AI and Simulation for Tumor Liver ASessment</b>'
+  title: 'ATLAS - AI and Simulation for Tumor Liver ASessment'
   role: Recipient
+  amount: 311000
+  currency: "€"
   logo: atlas.png
   project:
   repository:
+  description: "Developing AI-driven and simulation-based methods to improve the assessment of liver tumors, integrating computational modeling with clinical data to support personalized diagnosis and treatment planning."
 
 - id: 'xresearch'
+  funder_short: BUA - BMBF
   funder: Bundesministerium für Bildung und Forschung (BMBF) und dem Land Berlin im Rahmen der Exzellenzstrategie von Bund und Ländern
   funder_link: https://www.bmbf.de
   funder_logo: bua.png
   grant:
   start: '10-2022'
   end: '03-2023'
-  title: '<b>X-Student Research Group</b> - Physiologically based modeling of drugs: ACE inhibitors in the treatment of high blood pressure'
+  title: 'X-Student Research Group - Physiologically based modeling of drugs: ACE inhibitors in the treatment of high blood pressure'
   role: Recipient
+  amount: 1500
+  currency: "€"
   logo:
   project:
-  repository:
+  repository: "Project-based teaching initiative on physiologically based pharmacokinetic (PBPK) modeling, focusing on optimizing the use of ACE inhibitors in hypertension therapy."
 
 - id: 'qualiperf'
+  funder_short: DFG
   funder: Deutsche Forschungsgemeinschaft (DFG)
   funder_link: https://www.dfg.de
   funder_logo: dfg.jpeg
   grant: 436883643
   start: '2021'
   end: '2025'
-  title: '<b>FOR5151 - QuaLiPerF</b> - Quantifying Liver Perfusion-Function Relationship in Complex Resection – A Systems Medicine Approach'
+  title: 'FOR5151 - QuaLiPerF - Quantifying Liver Perfusion-Function Relationship in Complex Resection – A Systems Medicine Approach'
   role: Recipient
+  amount: 425000
+  currency: "€"
   logo:
   project: https://qualiperf.de
   repository:
+  description: "Advancing systems medicine by developing computational models to quantify the relationship between liver perfusion and function in complex surgical resections, supporting risk assessment and personalized treatment planning."
 
 - id: 'simliva'
+  funder_short: DFG
   funder: Deutsche Forschungsgemeinschaft (DFG)
   funder_link: https://www.dfg.de
   funder_logo: dfg.jpeg
   grant: 465194077
   start: '2020'
   end: '2023'
-  title: '<b>SPP2311 - SimLivA</b> - SIMulation supported LIVer Assessment for donor organs'
+  title: 'SPP2311 - SimLivA - SIMulation supported LIVer Assessment for donor organs'
   role: Co-Investigator
+  amount: 0
+  currency: "€"
   logo:
   project: https://www.spp2311.uni-stuttgart.de/en/
   repository:
+  description: "Collaborative project developing simulation approaches to assess donor liver function, aiming to improve transplantation outcomes through predictive computational modeling."
 
 - id: 'eosc'
+  funder_short: EOSC-life
   funder: EOSCsecretariat.eu - EU Horizon Program - EOSC-life
   funder_link: https://www.eosc-life.eu/
   funder_logo: eosc.png
   grant: H2020-INFRAEOSC-05-2018-2019
   start: '2020'
   end: '2021'
-  title: '<b>EOSC-Life - Reproducible simulation studies targeting COVID-19</b>'
+  title: 'EOSC-Life - Reproducible simulation studies targeting COVID-19'
   role: Recipient
+  amount: 25000
+  currency: "€"
   project: https://www.ebi.ac.uk/biomodels/covid-19
   repository:
+  description: "Developed reproducible computational simulation studies to investigate COVID-19 dynamics, integrating standardized workflows and open science practices for rapid and transparent research dissemination."
 
 - id: 'lisym'
+  funder_short: BMBF
   funder: Bundesministerium für Bildung und Forschung (BMBF)
   funder_link: https://www.bmbf.de
   funder_logo: bmbf.png
   grant: 031L0054
   start: '2016'
   end: '2022'
-  title: '<b>LiSyM - Systems Medicine of the Liver</b> - Multi-scale models for the personalized evaluation of liver function'
+  title: 'LiSyM - Systems Medicine of the Liver - Junior group leader - Multi-scale models for the personalized evaluation of liver function'
   role: Recipient
+  amount: 723000
+  currency: "€"
   logo:
   project: https://lisym.org/
   repository:
+  description: "Led a junior research group developing multi-scale computational models to assess and predict liver function, advancing personalized medicine approaches and translational applications in hepatology."
 
