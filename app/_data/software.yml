@@ -78,7 +78,7 @@
 - id: 'roadrunner'
   type: "software"
   name: 'roadrunner'
-  title: 'Contributor to the high-performance simulator for SBML'
+  title: 'High-performance simulator for SBML'
   description: 'libRoadRunner is a C/C++ library that supports simulation of SBML based models. It uses LLVM) to generate extremely high performance code.'
   image: 'libroadrunner.jpg'
   homepage: https://libroadrunner.readthedocs.io/en/latest/
@@ -89,7 +89,7 @@
 - id: 'cobrapy'
   type: "software"
   name: 'COBRApy'
-  title: 'Contributor to the COBRA python package'
+  title: 'COBRA python package'
   description: 'COBRApy is a constraint-based modeling package that is designed to accommodate the biological complexity of the next generation of COBRA models and provides access to commonly used COBRA methods, such as flux balance analysis, flux variability analysis, and gene deletion analyses.'
   image: 'cobrapy.svg'
   homepage: https://github.com/opencobra/cobrapy/
@@ -100,7 +100,7 @@
 - id: 'tellurium'
   type: "software"
   name: 'cobrapy'
-  title: 'Contributor to the tellurium simulator'
+  title: 'tellurium simulator'
   description: 'Tellurium is a python environment for reproducible dynamical modeling of biological networks. Tellurium provides the interfacial code to convert between standard formats and utilize powerful libraries without requiring technical expertise, allowing you to focus on what’s important: building better models.'
   image: 'tellurium.png'
   homepage: https://github.com/sys-bio/tellurium/

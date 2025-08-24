@@ -25,10 +25,9 @@ def create_list_of_software_typst(typst_path: Path, df: pd.DataFrame, highlights
             icon = "gear"
         elif e.type == "database":
             icon = "database"
-        entry_type = f'#fa-icon("{icon}") {e.type.title()}'
-        doi = f', #link("https://doi.org/{e.doi}")[doi:{e.doi}]' if e.doi else ""
+        doi = f' #link("https://doi.org/{e.doi}")[doi:{e.doi}]' if e.doi else " "
         repository = f'#link("{e.repository}")[#fa-icon("git-alt")]' if e.repository else ""
-        text = f"{entry_type} {repository} *{e.title.strip(".")}*. {doi}. {e.description}"
+        text = f'#fa-icon("{icon}") {repository} {e.type.title()} *{e["name"]} - {e.title.strip(".")}*.{doi} {e.description}'
         return text
 
 
@@ -56,12 +55,16 @@ if __name__ == "__main__":
         'pkdb',
         'sbml4humans',
         'sbmlutils',
+        'sbmlsim',
         'cysbml',
         'roadrunner',
-        # 'libsbgnpy',
+        'libsbgnpy',
+        'brendapy',
         'cobrapy',
+        'tellurium',
     }
 
     create_list_of_software_typst(
-        typst_path=Path("software.typ"), df=df, k_start=5, selected=selected,
+        typst_path=Path("software.typ"), df=df, k_start=0,
+        selected=selected,
     )
