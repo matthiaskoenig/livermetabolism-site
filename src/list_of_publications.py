@@ -1,5 +1,5 @@
 """Script for creating list of publications."""
-from typing import Optional
+from typing import Optional, List
 
 import yaml
 from pathlib import Path
@@ -24,6 +24,7 @@ def read_publications(yaml_file: Path) -> pd.DataFrame:
         "journal",
         "doi",
         "year",
+        "pmid",
         "status",  # thesis, report, preprint, publication, review, proceeding, chapter
         "impact", # int
         "position", # first, first_equal, index, last_equal, last
@@ -171,6 +172,16 @@ def create_list_of_publications_typst(typst_path: Path, df: pd.DataFrame, highli
         f_typst.write(typst_all)
 
 
+def create_list_of_pubmeds(df: pd.DataFrame) -> List[str]:
+    import numpy as np
+    pmids: List[str] = []
+    for key, row in df.iterrows():
+        print(row)
+
+        if not np.isnan(row.pmid):
+            pmids.append(int(row.pmid))
+    return pmids
+
 if __name__ == "__main__":
     yaml_file: Path = Path(__file__).parent.parent / "app" / "_data" / "publications.yml"
     df: pd.DataFrame = read_publications(yaml_file=yaml_file)
@@ -215,3 +226,6 @@ if __name__ == "__main__":
 
     # conversion to PDF using pandoc
     # pandoc -f markdown -t pdf publications.md -o publications.pdf  --pdf-engine=xelatex -V mainfont="Roboto"
+
+    pubmeds = create_list_of_pubmeds(df=df)
+    print(pubmeds)

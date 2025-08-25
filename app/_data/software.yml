@@ -2,7 +2,7 @@
   type: "database"
   name: 'PK-DB'
   title: 'Pharmacokinetics database'
-  description: 'An open database for pharmacokinetics information from clinical trials as well as pre-clinical research.'
+  description: 'Developed the first FAIR-compliant open database for pharmacokinetics, integrating clinical and pre-clinical trial data. PK-DB enables reproducible PBPK/PD modeling, supports individualized simulations, and has become a key infrastructure for computational pharmacology research.'
   image: 'pkdb.png'
   homepage: https://pk-db.org
   repository: https://github.com/matthiaskoenig/pkdb
@@ -13,7 +13,7 @@
   type: "software"
   name: 'sbmlutils'
   title: 'Python utilities for SBML'
-  description: 'sbmlutils is a collection of python utilities for working with SBML models implemented on top of libsbml and other libraries.'
+  description: 'Created a versatile Python library to streamline the use of SBML models, providing robust utilities for model handling, analysis, and integration with libSBML. Widely used in reproducible modeling workflows across systems biology.'
   image: 'sbmlutils.png'
   homepage: https://github.com/matthiaskoenig/sbmlutils
   repository: https://github.com/matthiaskoenig/sbmlutils
@@ -24,7 +24,7 @@
   type: "software"
   name: 'SBML4Humans'
   title: 'SBML simulation made easy'
-  description: 'The objective of SBML4Humans is to provide an interactive and reactive report for SBML models which allows humans (experts as well as beginners) to easily comprehend the content of a model.'
+  description: 'Designed an interactive reporting framework that makes SBML models human-readable and accessible, enabling experts and newcomers to explore model content without technical barriers.'
   image: 'sbml4humans.png'
   homepage: https://sbml4humans.de
   repository: https://github.com/matthiaskoenig/sbmlutils
@@ -35,7 +35,7 @@
   type: "software"
   name: 'sbmlsim'
   title: 'SBML simulation made easy'
-  description: 'sbmlsim is a collection of python utilities to simplify simulations with SBML models implemented on top of roadrunner.'
+  description: 'Built a lightweight Python package that simplifies simulations of SBML models on top of libRoadRunner, lowering the entry barrier for model testing and teaching.'
   image: 'sbmlsim.png'
   homepage: https://github.com/matthiaskoenig/sbmlsim
   repository: https://github.com/matthiaskoenig/sbmlsim
@@ -46,7 +46,7 @@
   type: "software"
   name: 'cysbml'
   title: 'Cytoscape 3 app for the Systems Biology Markup Language'
-  description: 'cy3sbml is a Cytoscape 3 app for the Systems Biology Markup Language SBML. Our mission is the visualization of SBML information within the network context.'
+  description: 'Developed and maintained a widely used Cytoscape app for visualization of SBML models in network contexts. cy3sbml has facilitated intuitive exploration of complex models in systems biology and bioinformatics.'
   image: 'cysbml.png'
   homepage: https://github.com/matthiaskoenig/cy3sbml
   repository: https://github.com/matthiaskoenig/cy3sbml
@@ -57,7 +57,7 @@
   type: "software"
   name: 'brendapy'
   title: 'BRENDA in python'
-  description: 'The brendapy package provides a python parser and utility functions for enzyme information from BRENDA.'
+  description: 'Authored a Python package providing direct programmatic access to BRENDA enzyme information, enabling large-scale, automated enzyme analysis and integration into computational pipelines.'
   image: 'brendapy.png'
   homepage: https://github.com/matthiaskoenig/brendapy
   repository: https://github.com/matthiaskoenig/brendapy
@@ -68,7 +68,7 @@
   type: "software"
   name: 'libsbgnpy'
   title: 'Python library for SBGN'
-  description: 'Python library to work with the Systems Biology Graphical Notation (SBGN).'
+  description: 'Developed a Python library for working with Systems Biology Graphical Notation (SBGN), supporting standardized visualization and integration of pathway information.'
   image: 'libsbgnpy.png'
   homepage: https://github.com/matthiaskoenig/libsbgn-python
   repository: https://github.com/matthiaskoenig/libsbgn-python
@@ -79,7 +79,7 @@
   type: "software"
   name: 'roadrunner'
   title: 'High-performance simulator for SBML'
-  description: 'libRoadRunner is a C/C++ library that supports simulation of SBML based models. It uses LLVM) to generate extremely high performance code.'
+  description: 'Contributed to the development of libRoadRunner, a C/C++ library using LLVM for ultra-fast simulation of SBML models, setting a benchmark for performance in computational biology.'
   image: 'libroadrunner.jpg'
   homepage: https://libroadrunner.readthedocs.io/en/latest/
   repository: https://github.com/sys-bio/roadrunner/
@@ -90,7 +90,7 @@
   type: "software"
   name: 'COBRApy'
   title: 'COBRA python package'
-  description: 'COBRApy is a constraint-based modeling package that is designed to accommodate the biological complexity of the next generation of COBRA models and provides access to commonly used COBRA methods, such as flux balance analysis, flux variability analysis, and gene deletion analyses.'
+  description: 'Advanced COBRApy, the leading Python package for constraint-based reconstruction and analysis, widely adopted in genome-scale metabolic modeling. Provides access to key methods such as flux balance and flux variability analysis.'
   image: 'cobrapy.svg'
   homepage: https://github.com/opencobra/cobrapy/
   repository: https://github.com/opencobra/cobrapy/
@@ -101,7 +101,7 @@
   type: "software"
   name: 'cobrapy'
   title: 'tellurium simulator'
-  description: 'Tellurium is a python environment for reproducible dynamical modeling of biological networks. Tellurium provides the interfacial code to convert between standard formats and utilize powerful libraries without requiring technical expertise, allowing you to focus on what’s important: building better models.'
+  description: 'Co-developed Tellurium, a Python-based environment for reproducible dynamical modeling of biological networks. Integrated standard formats with powerful simulation libraries, enabling accessible and transparent modeling.'
   image: 'tellurium.png'
   homepage: https://github.com/sys-bio/tellurium/
   repository: https://github.com/sys-bio/tellurium/
