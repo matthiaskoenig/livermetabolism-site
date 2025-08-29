@@ -1,3 +1,43 @@
+- id: 'HIP2025_lixisenatide_Olivia.Yau'
+  year: 2025
+  date: 2025-07-07
+  pdf: 'posters/HIP2025_lixisenatide_Olivia.Yau.pdf'
+  image: 'posters/HIP2025_lixisenatide_Olivia.Yau.jpg'
+  authors: 'Olivia Yau<sup>2</sup>, <b>Matthias König</b><sup>1</sup>'
+  affiliations: "<sup>1</sup>Humboldt-Universität zu Berlin, Institute for Theoretical Biology, Berlin, Germany, <sup>2</sup>University of Toronto, Dept. of Pharmacology and Toxicology, Toronto, Canada"
+  title: 'A Physiologically Based Pharmacokinetic and Pharmacodynamic Model of Lixisenatide'
+  meeting: 'HIC conference 2025, Humboldt Internship Program Day, Berlin, 7 July 2025'
+  webpage: 'https://hic.hu-berlin.de/en/internship-program'
+  doi:
+  keywords:
+    - pharmacokinetics
+    - pharmacodynamics
+    - lixisenatide
+    - GLP-1 agonists
+  project:
+  repository:
+  abstract: "This project leverages an open pharmacokinetics database, along with established data curation and model simulation protocols, to develop a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model for the GLP-1 receptor agonist lixisenatide. Since type 2 diabetes mellitus (T2DM) is often accompanied by liver and renal impairments, obesity, and cardiovascular disease, this study aims to assess how these factors influence drug behavior. By developing a PBPK/PD model, we aim to establish a tool to support personalized medicine of T2DM management."
+
+- id: 'HIP2025_dulaglutide_Kim.Minjun'
+  year: 2025
+  date: 2025-07-07
+  pdf: 'posters/HIP2025_dulaglutide_Kim.Minjun.pdf'
+  image: 'posters/HIP2025_dulaglutide_Kim.Minjun.jpg'
+  authors: 'Kim Minjun<sup>2</sup>, <b>Matthias König</b><sup>1</sup>'
+  affiliations: "<sup>1</sup>Humboldt-Universität zu Berlin, Institute for Theoretical Biology, Berlin, Germany, <sup>2</sup>National University of Singapore, Singapore"
+  title: 'A Physiologically Based Pharmacokinetic Model of Dulaglutide'
+  meeting: 'HIC conference 2025, Humboldt Internship Program Day, Berlin, 7 July 2025'
+  webpage: 'https://hic.hu-berlin.de/en/internship-program'
+  doi:
+  keywords:
+    - pharmacokinetics
+    - pharmacodynamics
+    - dulaglutide
+    - GLP-1 agonists
+  project:
+  repository:
+  abstract: "This Humboldt Internship project develops a physiologically based pharmacokinetic (PBPK) model of dulaglutide, a GLP-1 receptor agonist. The objective of this project is to enhance our understanding of dose-dependency of systemic exposure to dulaglutide, and the different underlying causes of intraindividual variability in efficacy of diabetes treatment with dulaglutide."
+
 - id: 'HIP2025_liraglutide_Isabella.Tan'
   year: 2025
   date: 2025-07-07
