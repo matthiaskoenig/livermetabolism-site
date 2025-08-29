@@ -68,5 +68,5 @@ if __name__ == "__main__":
     yaml_file: Path = Path(__file__).parent.parent / "app" / "_data" / "funding.yml"
     df: pd.DataFrame = read_funding(yaml_file=yaml_file)
     create_list_of_funding_typst(
-        typst_path=Path("funding.typ"), df=df
+        typst_path=Path("results/funding.typ"), df=df
     )

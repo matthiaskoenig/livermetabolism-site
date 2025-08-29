@@ -65,6 +65,6 @@ if __name__ == "__main__":
     }
 
     create_list_of_software_typst(
-        typst_path=Path("software.typ"), df=df, k_start=0,
+        typst_path=Path("results/software.typ"), df=df, k_start=0,
         selected=selected,
     )

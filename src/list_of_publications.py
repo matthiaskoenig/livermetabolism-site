@@ -188,7 +188,7 @@ if __name__ == "__main__":
     df_matrix = create_matrix(df=df)
     df_matrix.to_csv("publication_matrix.tsv", index=True, sep="\t")
 
-    markdown_file: Path = Path("publications.md")
+    markdown_file: Path = Path("results/publications.md")
     create_list_of_publications_md(md_path=markdown_file, df=df)
 
     highlights = {
@@ -214,7 +214,7 @@ if __name__ == "__main__":
         "Caffeine_meta_Grzegorzewski2021",
         "Albadry2024_species_comparison",
     }
-    create_list_of_publications_typst(Path("publications_selected1.typ"), df=df, selected=selected1)
+    create_list_of_publications_typst(Path("results/publications_selected1.typ"), df=df, selected=selected1)
 
     selected2 = {
         "Gerhaeusser2024_spt_model",
@@ -222,7 +222,7 @@ if __name__ == "__main__":
         "Kuettner2023_chlorzoxazone",
         "Bartsch2023_simvastatin",
     }
-    create_list_of_publications_typst(Path("publications_selected2.typ"), df=df, selected=selected2)
+    create_list_of_publications_typst(Path("results/publications_selected2.typ"), df=df, selected=selected2)
 
     # conversion to PDF using pandoc
     # pandoc -f markdown -t pdf publications.md -o publications.pdf  --pdf-engine=xelatex -V mainfont="Roboto"

@@ -9,3 +9,4 @@ logs
 livermetabolism
 Gemfile.lock
 .venv
+src/__pycache__/
