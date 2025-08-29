@@ -1,3 +1,23 @@
+- id: 'HIP2025_liraglutide_Isabella.Tan'
+  year: 2025
+  date: 2025-07-07
+  pdf: 'posters/HIP2025_liraglutide_Isabella.Tan.pdf'
+  image: 'posters/HIP2025_liraglutide_Isabella.Tan.jpg'
+  authors: 'Isabella Tan<sup>2</sup>, <b>Matthias König</b><sup>1</sup>'
+  affiliations: "<sup>1</sup>Humboldt-Universität zu Berlin, Institute for Theoretical Biology, Berlin, Germany, <sup>2</sup>University of Toronto, Dept. Pharmacology & Biomedical Toxicology, Toronto, Canada"
+  title: 'A Physiologically-Based Pharmacokinetic and Pharmacodynamic Model of Liraglutide'
+  meeting: 'HIC conference 2025, Humboldt Internship Program Day, Berlin, 7 July 2025'
+  webpage: 'https://hic.hu-berlin.de/en/internship-program'
+  doi:
+  keywords:
+    - pharmacokinetics
+    - pharmacodynamics
+    - liraglutide
+    - GLP-1 agonists
+  project:
+  repository:
+  abstract: "Liraglutide, known commercially as Victoza(R), is a Glucagon-Like Peptide 1 (GLP-1) agonist used in the treatment of type 2 diabetes and obesity. The objective of this study is to develop a physiologically-based pharmacokinetic/pharmacodynamic (PBPK/PD) model of liraglutide. Through this study, the aim is to develop a better understanding of liraglutide pharmacology and improve personalized medicine approaches."
+
 - id: 'HIP2024_PK-LLM_Prerna.Parakkat'
   year: 2024
   date: 2024-07-18
