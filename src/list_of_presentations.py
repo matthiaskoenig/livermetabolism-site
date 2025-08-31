@@ -20,11 +20,13 @@ def create_list_of_talk_typst(typst_path: Path, df: pd.DataFrame,
         authors = authors.replace("</b>", "*")
         authors = authors.replace("<sup>", "#super[")
         authors = authors.replace("</sup>", "]")
+        tokens = e.type.split("_")
+        presentation_type = f", #underline[{' '.join([t.title() for t in tokens])}]" if e.type else ""
 
         video = f'#link("{e.video}")[#fa-icon("file-video")]' if e.video else ""
         slides = f'#link("{e.slides}")[#fa-icon("file-powerpoint")]' if e.slides else ""
 
-        text = f"{video}{slides} *{e.title.strip(".")}*. {authors}; _{e.event}_, {e.date}"
+        text = f"{video}{slides} *{e.title.strip(".")}*. {authors}; _{e.event}_, {e.date}{presentation_type}"
         return text
 
     # create entries

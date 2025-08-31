@@ -1,4 +1,55 @@
+- id: 'SBHD2025_reproducible.digital.twins'
+  type: "selected_talk"
+  title: 'Reproducible Digital Twins for Studying the Effect of Disease on Pharmacokinetics'
+  authors: '<b>Matthias König</b>'
+  slides: 'https://docs.google.com/presentation/d/e/2PACX-1vRagO5Y_EDydUowKwisCO_BFXmJBRl0hzF4xqOSK1lr0Gth2dXAqiJU90UKXPHx7mSdIDGnbcVFhWr2/pub?start=false&loop=false&delayms=3000'
+  video:
+  event: '17th International Conference on Systems Biology of Human Disease (SBHD2025)'
+  event_page: https://www.sbhdberlin.org/index.html
+  date: 2025-06-16
+  dates: June 16-18, 2025
+  location: Berlin
+  repository:
+  publication:
+  abstract: "Digital twins are transforming systems medicine by enabling personalized treatment and decision support through the integration of patient-specific data with predictive computational models. The impact of digital twins in clinical and translational settings relies fundamentally on the reproducibility, transparency, and reusability of the underlying models and workflows.
+In this talk, we present our approach to developing reproducible digital twins for pharmacokinetics (PK), with a focus on understanding the effect of disease on drug disposition. Our physiologically based pharmacokinetic (PBPK) models integrate curated clinical data and capture interindividual variability in physiology and metabolism. This allows us to simulate how conditions such as liver and kidney impairment alter drug absorption, distribution, metabolism, and excretion.
+A key component of our framework is an open pharmacokinetics database containing structured, high-quality data from diverse clinical studies. These data support the development of individualized PBPK models that account for genetic variability, drug-drug interactions, lifestyle factors, and clinical measures such as liver function tests [10.1093/nar/gkaa990, 10.3389/fphar.2021.752826].
+The models are encoded using community standards like the Systems Biology Markup Language (SBML) [10.15252/msb.20199110] and are built hierarchically to reflect organ-level physiology within a whole-body context. We use a suite of open-source tools—sbml4humans, sbmlutils, cy3sbml, and FAIR indicators—to ensure transparency, reproducibility, and model reuse across research and clinical settings.
+We will showcase applications of digital twins in simulating drug responses in patients with altered hepatic function, using SGLT2 inhibitors and GLP-1 receptor agonists as concrete examples. These antidiabetic drug classes are particularly affected by changes in liver and kidney function, and our models demonstrate how patient-specific parameters, including liver function test results, can be integrated into predictive simulations. This talk highlights how disease-aware digital twins can deliver mechanistic insights into pharmacokinetics and support personalized decision-making in precision medicine [10.3389/fphys.2021.730418, 10.3389/fphys.2021.757293, 10.3389/fphar.2022.1029073].
+For more information see: https://livermetabolism.com."
+
+- id: 'CamoSeminar2025_reproducible.pharmacokinetics.models'
+  type: "invited_talk"
+  title: 'Digital Twins of the Liver in Pharmacokinetics'
+  authors: '<b>Matthias König</b>'
+  slides: 'https://docs.google.com/presentation/d/e/2PACX-1vQZlcdg9L-pSjSCgHM8XlyYM8BM7rrTwbZ7ZgwPPSlrp0UI5GVMwLkyXhx1ILISJMXYsLgyv_l0Jl06/pub?start=false&loop=false&delayms=3000'
+  video:
+  event: 'Camo Seminar, KIT Institute of Biomedical Engineering, Computational Cardiac Modeling'
+  event_page:
+  date: 2025-04-24
+  dates:
+  location: Karlsruhe, Online
+  repository:
+  publication:
+  abstract: ""
+
+- id: 'DMCM2025_reproducible_models_libsbgnpy'
+  type: "selected_talk"
+  title: 'Reproducible Digital Twins in Pharmacokinetics'
+  authors: '<b>Matthias König</b>'
+  slides: 'https://docs.google.com/presentation/d/e/2PACX-1vSPDaf-CRtNW2XEJz8_kbVfhJkkPNGiB8AhlB1YTJQk2KWiNbVvQagCrz8skbNWpBy4Q1fzvYUVnd9w/pub?start=false&loop=false&delayms=3000'
+  video:
+  event: '9th Disease Maps Community Meeting (DMCM2025)'
+  event_page: https://disease-maps.io/DMCM2025/
+  date: 2025-04-17
+  dates:
+  location: Leuven, Belgium
+  repository:
+  publication:
+  abstract: ""
+
 - id: 'DiseaseMaps2025_online_reproducible_models'
+  type: "invited_talk"
   title: 'Reproducible digital twins for personalized drug pharmacokinetics'
   authors: '<b>Matthias König</b>'
   slides: 'https://docs.google.com/presentation/d/e/2PACX-1vQN-PLiXLMAxyXgMnspwqFxViKxtLisRLS5kjWnjU3dPnD-cdW-Kl39xsSilhiBVeVItJ-fb3ASqCpV/pub?start=false&loop=false&delayms=3000'
@@ -16,6 +67,7 @@
   Notably, all models and data are readily available and reproducible for reuse, encoded in the Systems Biology Markup Language (SBML) [10.15252/msb.20199110]. We will provide an overview of these PBPK models and demonstrate how SBML and FAIR principles can facilitate model development, coupling, and reuse."
 
 - id: 'Darmstadt2025_reproducible_models'
+  type: "invited_talk"
   title: 'Reproducible digital twins for personalized liver function assessment'
   authors: '<b>Matthias König</b>'
   slides:
@@ -33,6 +85,7 @@
   Notably, all models and data are readily available and reproducible for reuse, encoded in the Systems Biology Markup Language (SBML) [10.15252/msb.20199110]. We will provide an overview of these PBPK models and demonstrate how SBML and FAIR principles can facilitate model development, coupling, and reuse."
 
 - id: 'COMBINE2024_Stuttgart_reproducible_models'
+  type: "selected_talk"
   title: 'Reproducible digital twins for personalized liver function assessment'
   authors: '<b>Matthias König</b>'
   slides: 'https://docs.google.com/presentation/d/1gPYu3N0paUQ_6MAI9L3AcaUhCDGnJCKwlILqd0ld_IQ/pub?start=false&loop=false&delayms=3000'
@@ -50,6 +103,7 @@
   Notably, all models and data are readily available and reproducible for reuse, encoded in the Systems Biology Markup Language (SBML) [10.15252/msb.20199110]. We will provide an overview of these PBPK models and demonstrate how SBML and FAIR principles can facilitate model development, coupling, and reuse."
 
 - id: 'eMed2023_Berlin_talk'
+  type: "selected_talk"
   title: 'Reproducible digital twins for personalized liver function assessment'
   authors: '<b>Matthias König</b>'
   slides: 'https://docs.google.com/presentation/d/1efm3Le1U8hkO5_RHgTz55X1G46lMsS5COlrjcycQQks/edit?usp=sharing'
@@ -68,6 +122,7 @@ Notably, all models and data are readily available and reproducible for reuse, e
 "
 
 - id: 'itb2023_Berlin_talk'
+  type: "invited_talk"
   title: 'Reproducible digital twins for personalized liver function assessment'
   authors: '<b>Matthias König</b>'
   slides: 'https://docs.google.com/presentation/d/1efm3Le1U8hkO5_RHgTz55X1G46lMsS5COlrjcycQQks/edit?usp=sharing'
@@ -86,6 +141,7 @@ Notably, all models and data are readily available and reproducible for reuse, e
 "
 
 - id: 'ICCB2023_Wien_talk'
+  type: "selected_talk"
   title: 'Studying the impact of drug metabolism on the liver tissue: An integrated biomechanical modeling approach'
   authors: '<b>Matthias König</b>, Steffen Gerhäusser, Luis Mandl, Lena Lambers, Uta Dahmen, Hans-Michael Tautenhahn, Tim Ricken'
   slides: 'https://docs.google.com/presentation/d/1K60V-TWxdxdXQB1CCVqv_dv1oq_yhsxhi36DGJdLR5s/edit?usp=sharing'
@@ -108,6 +164,7 @@ Notably, all models and data are readily available and reproducible for reuse, e
 "
 
 - id: 'AstraZeneca_talk'
+  type: "invited_talk"
   title: 'Digital twins for liver function & metabolic phenotyping'
   authors: '<b>Matthias König</b>'
   slides: 'https://docs.google.com/presentation/d/16NHdvLQSYyY5LsPC3xcnE9_A1WKwtGRvTPlg7U1xxFA/edit?usp=sharing'
@@ -129,6 +186,7 @@ A physiologically based pharmacokinetic model for CYP2E1 phenotyping via chlorzo
 "
 
 - id: 'WCMBM2023_Stuttgart_keynote'
+  type: "invited_talk"
   title: 'Advancing Liver Function Assessment: Personalized and Stratified Approaches with Standardized Computational Models and Data'
   authors: '<b>Matthias König</b>'
   slides: 'https://docs.google.com/presentation/d/1hi7-4bwzqFJYiYQkbSBHNQivSPA5T3YHB9OLZqJG0rA/edit?usp=sharing'
@@ -146,6 +204,7 @@ In this study, we provide an overview of PBPK models and demonstrate how SBML [7
 "
 
 - id: 'MBM2023_keynote'
+  type: "invited_talk"
   title: 'Digital twins for liver function & metabolic phenotyping'
   authors: '<b>Matthias König</b>'
   slides: 'https://docs.google.com/presentation/d/13A3xH0ALH_u6_gwPu54bEPtOEW3anM8Pl4FMWfFRupg/edit?usp=sharing'
@@ -167,6 +226,7 @@ A physiologically based pharmacokinetic model for CYP2E1 phenotyping via chlorzo
 "
 
 - id: 'FAIR.sharing.of.reproducible.and.reusable.COVID-19.models_Ramachandran2022'
+  type: "selected_talk"
   title: 'Developing computational models with SBML - sbmlutils & cy3sbml'
   authors: '<b>Matthias König</b>'
   slides: 'https://docs.google.com/presentation/d/1eDTGNMdWx3HYe37C26BuYqzV1xwfiLMzbWsD_qSkrnU/edit?usp=sharing'
