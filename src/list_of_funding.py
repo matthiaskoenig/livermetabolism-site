@@ -51,7 +51,7 @@ def create_list_of_funding_typst(typst_path: Path, df: pd.DataFrame) -> None:
         return text
 
 
-    typst_all = "= List of Funding\n"
+    typst_all = "= Funding\n"
     k = 0
     for key, row in df.iterrows():
         k += 1
@@ -64,9 +64,17 @@ def create_list_of_funding_typst(typst_path: Path, df: pd.DataFrame) -> None:
         f_typst.write(typst_all)
 
 
+def cumulative_funding(df: pd.DataFrame):
+    return df.amount.sum()
+
+
+
 if __name__ == "__main__":
     yaml_file: Path = Path(__file__).parent.parent / "app" / "_data" / "funding.yml"
     df: pd.DataFrame = read_funding(yaml_file=yaml_file)
     create_list_of_funding_typst(
         typst_path=Path("results/funding.typ"), df=df
     )
+
+    amount = cumulative_funding(df)
+    console.print(f"{amount} €")

@@ -1,4 +1,4 @@
-"""Script for creating list of posters."""
+"""Script for creating list of talks."""
 from typing import Optional
 
 from pathlib import Path
@@ -9,9 +9,9 @@ console = Console()
 from list_of_software import read_data
 
 
-def create_list_of_poster_typst(typst_path: Path, df: pd.DataFrame,
+def create_list_of_talk_typst(typst_path: Path, df: pd.DataFrame,
                                   selected: Optional[set] = None, k_start: int = 0) -> None:
-    """Create list of posters in typst."""
+    """Create list of talks in typst."""
 
     def create_entry_typst(e: pd.Series) -> str:
         """Creates typst for a single entry."""
@@ -20,12 +20,11 @@ def create_list_of_poster_typst(typst_path: Path, df: pd.DataFrame,
         authors = authors.replace("</b>", "*")
         authors = authors.replace("<sup>", "#super[")
         authors = authors.replace("</sup>", "]")
-        affiliations = e.affiliations
-        affiliations = affiliations.replace("<sup>", "#super[")
-        affiliations = affiliations.replace("</sup>", "]")
-        pdf = f'#link("https://livermetabolism.com/paper/{e.pdf}")[#fa-icon("file-pdf")]' if e.pdf else ""
 
-        text = f"{pdf} *{e.title.strip(".")}*. \ {authors};  \ _{affiliations}_ \ {e.meeting}; {e.date}"
+        video = f'#link("{e.video}")[#fa-icon("file-video")]' if e.video else ""
+        slides = f'#link("{e.slides}")[#fa-icon("file-powerpoint")]' if e.slides else ""
+
+        text = f"{video}{slides} *{e.title.strip(".")}*. {authors}; _{e.event}_, {e.date}"
         return text
 
     # create entries
@@ -35,26 +34,23 @@ def create_list_of_poster_typst(typst_path: Path, df: pd.DataFrame,
   doc,
 )
 
-== Selected Posters
+== Selected Presentations
 """
     k = k_start
     for key, row in df.iterrows():
         if selected and (row.id not in selected):
             continue
         k += 1
-        text = f"{k}. " + create_entry_typst(e=row) + "\n"
-        console.print(f"<{text}>")
-        typst_all += text
-        console.rule(style="white")
+        typst_all += f"{k}. " + create_entry_typst(e=row) + "\n"
 
     with open(typst_path, "w") as f_typst:
         f_typst.write(typst_all)
 
 
 if __name__ == "__main__":
-    yaml_file: Path = Path(__file__).parent.parent / "app" / "_data" / "posters.yml"
+    yaml_file: Path = Path(__file__).parent.parent / "app" / "_data" / "talks.yml"
     df: pd.DataFrame = read_data(yaml_file=yaml_file)
 
-    create_list_of_poster_typst(
-        typst_path=Path("results/posters.typ"), df=df,
+    create_list_of_talk_typst(
+        typst_path=Path("results/presentations.typ"), df=df,
     )

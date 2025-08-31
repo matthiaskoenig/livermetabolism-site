@@ -134,7 +134,13 @@ def create_list_of_publications_typst(typst_path: Path, df: pd.DataFrame, highli
         impact = f", IF: *{e.impact}*" if e.impact else ""
         pdf = f'#link("https://livermetabolism.com/paper/{e.pdf}")[#fa-icon("file-pdf")]' if e.pdf else ""
         repository = f'#link("{e.repository}")[#fa-icon("git-alt")]' if e.repository else ""
-        text = f"{pdf}{repository} *{e.title.strip(".")}*. {authors}; {e.journal}{doi}{impact}"
+        position = e.position # first, first_equal, index, last_equal, last
+        if position == "index":
+            position_str = ""
+        else:
+            tokens = position.split("_")
+            position_str = f", #underline[{" ".join([t.title() for t in tokens])} Author]"
+        text = f"{pdf}{repository} *{e.title.strip(".")}*. {authors}; {e.journal}{doi}{impact}{position_str}"
         if highlights and e.id in highlights:
             text = f'#highlight(fill:rgb("#30C5FF"))[{text}]'
         return text
@@ -186,7 +192,7 @@ if __name__ == "__main__":
     yaml_file: Path = Path(__file__).parent.parent / "app" / "_data" / "publications.yml"
     df: pd.DataFrame = read_publications(yaml_file=yaml_file)
     df_matrix = create_matrix(df=df)
-    df_matrix.to_csv("publication_matrix.tsv", index=True, sep="\t")
+    df_matrix.to_csv("results/publication_matrix.tsv", index=True, sep="\t")
 
     markdown_file: Path = Path("results/publications.md")
     create_list_of_publications_md(md_path=markdown_file, df=df)
@@ -202,30 +208,24 @@ if __name__ == "__main__":
     # create_list_of_publications_typst(Path("publications.typ"), df=df, highlights=highlights)
 
     # List of selected publications
-    selected1 = {
-        "GlucoseModel_Koenig2012a",
-        "hepatokin_Berndt2018",
-        "HepatoNet1_Gille2010",
-        "Grzegorzewski2022_dextromethorphan",
-        "ICG_model_hepatectomy_Koeller2021",
-        "Maheshvare2023_pancreas",
-        "SBML_Keating2020",
-        "PKDB_Grzegorzewski2020",
-        "Caffeine_meta_Grzegorzewski2021",
-        "Albadry2024_species_comparison",
-    }
-    create_list_of_publications_typst(Path("results/publications_selected1.typ"), df=df, selected=selected1)
+    # selected1 = {
+    #     "GlucoseModel_Koenig2012a",
+    #     "hepatokin_Berndt2018",
+    #     "HepatoNet1_Gille2010",
+    #     "Grzegorzewski2022_dextromethorphan",
+    #     "ICG_model_hepatectomy_Koeller2021",
+    #     "Maheshvare2023_pancreas",
+    #     "SBML_Keating2020",
+    #     "PKDB_Grzegorzewski2020",
+    #     "Caffeine_meta_Grzegorzewski2021",
+    #     "Albadry2024_species_comparison",
+    #     "Gerhaeusser2024_spt_model",
+    #     "StemmerMallol2023_talinolol",
+    #     "Kuettner2023_chlorzoxazone",
+    #     "Bartsch2023_simvastatin",
+    # }
+    create_list_of_publications_typst(Path("results/publications.typ"), df=df)
 
-    selected2 = {
-        "Gerhaeusser2024_spt_model",
-        "StemmerMallol2023_talinolol",
-        "Kuettner2023_chlorzoxazone",
-        "Bartsch2023_simvastatin",
-    }
-    create_list_of_publications_typst(Path("results/publications_selected2.typ"), df=df, selected=selected2)
-
-    # conversion to PDF using pandoc
-    # pandoc -f markdown -t pdf publications.md -o publications.pdf  --pdf-engine=xelatex -V mainfont="Roboto"
 
     pubmeds = create_list_of_pubmeds(df=df)
     print(pubmeds)

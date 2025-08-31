@@ -3,6 +3,8 @@
 #show: doc => conf(
   doc,
 )
+
+== Selected Posters
 1. #link("https://livermetabolism.com/paper/posters/HIP2025_lixisenatide_Olivia.Yau.pdf")[#fa-icon("file-pdf")] *A Physiologically Based Pharmacokinetic and Pharmacodynamic Model of Lixisenatide*. \ Olivia Yau#super[2], *Matthias König*#super[1];  \ _#super[1]Humboldt-Universität zu Berlin, Institute for Theoretical Biology, Berlin, Germany, #super[2]University of Toronto, Dept. of Pharmacology and Toxicology, Toronto, Canada_ \ HIC conference 2025, Humboldt Internship Program Day, Berlin, 7 July 2025; 2025-07-07
 2. #link("https://livermetabolism.com/paper/posters/HIP2025_dulaglutide_Kim.Minjun.pdf")[#fa-icon("file-pdf")] *A Physiologically Based Pharmacokinetic Model of Dulaglutide*. \ Kim Minjun#super[2], *Matthias König*#super[1];  \ _#super[1]Humboldt-Universität zu Berlin, Institute for Theoretical Biology, Berlin, Germany, #super[2]National University of Singapore, Singapore_ \ HIC conference 2025, Humboldt Internship Program Day, Berlin, 7 July 2025; 2025-07-07
 3. #link("https://livermetabolism.com/paper/posters/HIP2025_liraglutide_Isabella.Tan.pdf")[#fa-icon("file-pdf")] *A Physiologically-Based Pharmacokinetic and Pharmacodynamic Model of Liraglutide*. \ Isabella Tan#super[2], *Matthias König*#super[1];  \ _#super[1]Humboldt-Universität zu Berlin, Institute for Theoretical Biology, Berlin, Germany, #super[2]University of Toronto, Dept. Pharmacology & Biomedical Toxicology, Toronto, Canada_ \ HIC conference 2025, Humboldt Internship Program Day, Berlin, 7 July 2025; 2025-07-07
