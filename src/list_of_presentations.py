@@ -56,3 +56,10 @@ if __name__ == "__main__":
     create_list_of_talk_typst(
         typst_path=Path("results/presentations.typ"), df=df,
     )
+
+    yaml_file: Path = Path(__file__).parent.parent / "app" / "_data" / "panels.yml"
+    df: pd.DataFrame = read_data(yaml_file=yaml_file)
+
+    create_list_of_talk_typst(
+        typst_path=Path("results/panels.typ"), df=df,
+    )

@@ -1,0 +1,45 @@
+- id: 'HIP2025_panel'
+  type: "panelist"
+  title: 'Real Work Experiences for a Real Career: What Learnings and Skills Really Matter?'
+  authors: '<b>Matthias König</b>'
+  slides:
+  video:
+  event: 'HIC conference 2025, Humboldt Internship Program Day'
+  event_page: https://hic.hu-berlin.de/en/internship-program
+  date: 2025-07-07
+  location: Berlin, Humboldt-Universität zu Berlin
+  repository:
+  publication:
+  abstract:
+  keywords:
+
+- id: 'BUA_diversity_2025'
+  type: "panelist"
+  title: 'Methods of Inclusion: Designing Research for a Plural World'
+  authors: '<b>Matthias König</b>, Fariha Azad, Lara Bister, Michaela Kreyenfeld'
+  slides:
+  video:
+  event: 'Berlin University Alliance Fellows Forum with Einstein Center Population Diversity'
+  event_page:
+  date: 2025-06-11
+  location: Berlin, Humboldt Graduate School
+  repository:
+  publication:
+  abstract: "The event takes place in cooperation with the Einstein Center Population Diversity and brings together fellows from the Berlin University Alliance, Einstein Stiftung Berlin, and Stiftung Charité. Join us along with the president of Freie Universität Berlin and BUA-spokesperson Professor Günter M. Ziegler and the co-directors of the Einstein Center Population Diversity for an evening of scientific exchange, catered networking, and getting to know some major players from the Berlin research environment.
+  The Forum will explore the Berlin University Alliance and the Einstein Center Population Diversity, and host a joint panel discussion on Methods of Inclusion: Designing Research for a Plural World from a range of disciplinary perspectives. Whatever your scholarly focus, bring your curiosity, thoughts and ideas to the audience and let your peers bring inspiration to the way you approach your research design."
+  keywords:
+
+- id: 'Algonomy2025_panel'
+  type: "panelist"
+  title: 'AI as a medical device - Challenges and regulatory perspective'
+  authors: '<b>Matthias König</b>, Valentina Calderai'
+  slides:
+  video:
+  event: 'Festival della Robotica 2025'
+  event_page: https://roboticafestival.it
+  date: 2025-05-11
+  location: Arsenali Repubblicani, Pisa, Italy
+  repository:
+  publication:
+  abstract:
+  keywords:
