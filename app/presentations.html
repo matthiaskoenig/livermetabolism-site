@@ -1,0 +1,46 @@
+---
+layout: page
+title: Panels & Presentations
+permalink: /presentations/
+---
+
+<div class="row">
+	<table class="table table-hover">
+		{% for presentation in site.data.presentations %}
+		<tr>
+			<td><b>{{ presentation.date }}</b></td>
+			<td>
+				{% if presentation.project %}
+				<a href="{{ presentation.project }}"><img src="../img/project.png" title="Project homepage" height="20"/></a>
+				{% endif %}
+				{% if presentation.repository %}
+				<a href="{{ presentation.repository }}"><img src="../img/repository.png" title="Repository homepage" height="20"/></a>
+				{% endif %}
+                {% if presentation.video %}
+				<a href="{{ presentation.video }}"><img src="../img/video.png" title="Presentation video" height="20"/></a>
+				{% endif %}
+                {% if presentation.slides %}
+				<a href="{{ presentation.slides }}"><img src="../img/presentation.png" title="Presentation slides" height="20"/></a>
+				{% endif %}
+			</td>
+			<td><strong><i>{{ presentation.title }}</i></strong><br />
+				{{ presentation.authors }}<br />
+				{{ presentation.affiliations }}<br />
+				{{ presentation.meeting }}{% if presentation.doi %}. doi:<a href="https://doi.org/{{presentation.doi}}">{{presentation.doi}}</a>{% endif %}
+<!--				{% if presentation.abstract %}-->
+<!--				<p class="abstract text-justify small">{{ presentation.abstract }}</p>-->
+<!--				{% endif %}-->
+				{% if presentation.keywords %}
+				<p class="small">
+				<strong class="small">Keywords:</strong>
+				{% for keyword in presentation.keywords %}
+					{{ keyword }},
+				{% endfor %}
+				</p>
+				{% endif %}
+			</td>
+			<td></td>
+		</tr>
+		{% endfor %}
+	</table>
+</div>
