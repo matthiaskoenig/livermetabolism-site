@@ -163,7 +163,7 @@
   orcid:
   repository: 'https://github.com/oliviaayau'
   homepage:
-  description: "Olivia is developing a PBPK/PD model of the GLP-1 receptor agonist lixisenatide to investigate its kinetics and therapeutic effects on glucose regulation, aiming to support personalized approaches to diabetes treatment."
+  description: "During Program Day at Humboldt-Universität zu Berlin, Isabella Tan, Olivia Yau, and Minjun Kim presented their physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) modeling projects on GLP-1 receptor agonists. Minjun Kim is developing a model of dulaglutide to investigate its absorption, distribution, metabolism, and effects on glucose regulation. Isabella Tan is building a model of liraglutide to study its pharmacological behavior and impact on glucose homeostasis, focusing on individualized treatment strategies. Olivia Yau is working on a model of lixisenatide to explore its kinetics and therapeutic effects, aiming to advance personalized approaches to diabetes therapy."
 
 - id: 'rohinichakraborty'
   status: 'alumni'
