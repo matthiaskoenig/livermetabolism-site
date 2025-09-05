@@ -8,6 +8,15 @@
   abstract: "Dr. Matthias König has successfully completed the Leadership Certificate for Junior Professors and Junior Research Group Leaders at the Berlin Leadership Academy (BLA) of the Berlin University Alliance. This intensive, two-stage program supports participants who are taking on leadership responsibilities for the first time, focusing on the specific challenges of leadership in academia and higher education.  
   Through a combination of workshops, interactive exercises, and case-based discussions, the program covered strategies for effective collaboration, structured organization of research teams, constructive communication across hierarchical levels, and maintaining personal health and resilience in leadership roles. By completing this program, Dr. König has further strengthened his leadership and social competencies, preparing him to guide his research group and collaborative projects with greater impact and confidence."
 
+- id: 'bachelor_ennie_tensil'
+  status: 'current'
+  title: 'Bachelor Thesis Ennie Tensil: Physiologically-Based Pharmacokinetic/Pharmacodynamic Modeling of Losartan'
+  date: '2025-07-15'
+  image: bachelor_ennie_tensil.png
+  link: https://github.com/matthiaskoenig/losartan-model
+  short: "This thesis presents a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of losartan and its metabolite E3174, providing mechanistic insights into how physiological and genetic factors influence therapy and supporting individualized dosing strategies."
+  abstract: "Losartan is an angiotensin II receptor antagonist commonly used in the treatment of hyperten- sion and heart failure. Its pharmacokinetics and pharmacodynamics are influenced by a range of physiological and genetic factors, which may affect therapeutic efficacy. This thesis presents a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of losartan and its active metabolite E3174 to explore these influences systematically. The modular SBML-based model includes submodels for absorption, hepatic metabolism, renal excretion, and pharmacodynamic effects via the renin-angiotensin-aldosterone system (RAAS). Simulations were conducted to investigate the impact of dose, hepatic and renal impairment, as well as CYP2C9 and ABCB1 polymorphisms. The model successfully reproduced observed pharmacological trends, including a dose-dependent increase in pharmacodynamic response, likely reflecting enhanced receptor blockade at higher systemic exposures. Hepatic dysfunction blunted the pharmacodynamic response to losartan, whereas renal impairment reduced metabolite clearance and lead to modest enhancement in pharmacodynamic effect. Genetic variability in CYP2C9 significantly altered E3174 formation and downstream RAAS inhibition, whereas ABCB1 activity had only minor effects on systemic exposure. The model provides mechanistic insight into inter-individual variability in losartan therapy and supports its potential use in individualized dosing strategies."
+
 - id: 'sirolimus_project'
   status: 'current'
   title: 'New PBPK/PD Modeling Project: Rapamycin as a Case Study in Personalized Immunosuppressive Therapy'
