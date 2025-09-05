@@ -1,3 +1,13 @@
+- id: 'leadership_certificate'
+  status: 'current'
+  date: '2025-08-15'
+  image: leadership_certificate.png
+  link: "https://www.tu.berlin/zewk/angebote-nach-themen/wissenschaftliche-weiterbildung/zusammenarbeit-und-leadership/zertifikat-leadership"
+  title: "Leadership Certificate Successfully Completed by Dr. Matthias König"
+  short: "Dr. Matthias König has successfully completed the comprehensive Leadership Certificate of the Berlin Leadership Academy, strengthening his leadership skills for guiding research teams and fostering effective collaboration in academia."
+  abstract: "Dr. Matthias König has successfully completed the Leadership Certificate for Junior Professors and Junior Research Group Leaders at the Berlin Leadership Academy (BLA) of the Berlin University Alliance. This intensive, two-stage program supports participants who are taking on leadership responsibilities for the first time, focusing on the specific challenges of leadership in academia and higher education.  
+  Through a combination of workshops, interactive exercises, and case-based discussions, the program covered strategies for effective collaboration, structured organization of research teams, constructive communication across hierarchical levels, and maintaining personal health and resilience in leadership roles. By completing this program, Dr. König has further strengthened his leadership and social competencies, preparing him to guide his research group and collaborative projects with greater impact and confidence."
+
 - id: 'sirolimus_project'
   status: 'current'
   title: 'New PBPK/PD Modeling Project: Rapamycin as a Case Study in Personalized Immunosuppressive Therapy'
