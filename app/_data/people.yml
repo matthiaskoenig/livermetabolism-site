@@ -22,20 +22,20 @@
   homepage:
   description: 'Mariia works on ATLAS, a decision support tool for hepatocellular carcinoma (HCC). Based on AI methods, ATLAS processes all relevant patient data from databases, systems medicine and continuum biomechanical in silico prognosis models as well as individual patient data. The tool is being developed in a co-design approach by experts in surgical oncology, mathematical modeling and machine learning.'
 
-- id: 'nike'
+- id: 'monajes'
   status: 'current'
-  year: '2024-2025'
-  name: 'Nike Nemitz'
-  position: 'Bachelor project'
-  image: nike.png
+  year: '2025-07/2025-11'
+  name: 'Monika Jesionek'
+  position: 'ERASMUS student'
+  image: monajes.jpg
   orcid:
-  repository: 'https://github.com/nikenemitz'
+  repository: 'https://github.com/monajes'
   homepage:
-  description: 'Nike develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of SGLT2 inhibitor dapagliflozin. The objective is to enhance our understanding of the underlying causes of intraindividual variability in diabetes treatment with SGLT2 inhibitors, e.g., differences in hepatorenal function.'
+  description: "Monika is developing a PBPK model of immune suppressent rapamycin (sirolimus) as part of our contribution to the Immune Digital Twin (IDT)."
 
 - id: 'michelle'
   status: 'current'
-  year: '2024-09/2025-06'
+  year: '2024-09/2025-12'
   name: 'Michelle Elias'
   position: 'Bachelor project and Bachelor thesis'
   image: michelle.jpg
@@ -43,39 +43,6 @@
   repository: 'https://github.com/mii-halina'
   homepage:
   description: 'Michelle develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of the sulfonylurea glimepiride. The objective is to enhance our understanding of the underlying causes of intraindividual variability in insulin secretion and T2DM treatment with sulfonylurea, e.g., differences in hepatorenal function.'
-
-- id: 'ennie'
-  status: 'current'
-  year: '2024-09/2025-06'
-  name: 'Ennie Tensil'
-  position: 'Bachelor project and Bachelor thesis'
-  image: ennie.jpg
-  orcid:
-  repository: 'https://github.com/ennietensil'
-  homepage:
-  description: 'Ennie develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of the direct angiotensin II receptor (ARB) inhibitor losartan. The objective is to enhance our understanding of the underlying causes of intraindividual variability in hyptertension treatment with ARB inhibitors, e.g., differences in hepatorenal function and CYPC29 genotype.'
-
-- id: 'elisabetta'
-  status: 'current'
-  year: '2025-02/2025-07'
-  name: 'Elisabetta Casabianca'
-  position: 'ERASMUS, master thesis'
-  image: elisabetta.jpg
-  orcid:
-  repository: 'https://github.com/elisabettacasabianca11'
-  homepage:
-  description: 'Elisabetta develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of the direct oral anticoagulant (DOAC) rivaroxaban. The objective is to enhance our understanding of the underlying causes of intraindividual variability in anticoagulation treatment with DOACs.'
-
-- id: 'amanda'
-  status: 'current'
-  year: '2023-09/2024-06'
-  name: 'Amanda Lim'
-  position: 'Medical thesis'
-  image: amanda.png
-  orcid:
-  repository: 'https://github.com/amdangelica'
-  homepage:
-  description: 'Amanda develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the diuretic hydrochlorothiazide. The objective is to enhance our understanding of how hydrochlorothiazide changes urinary volume and plasma volume and ion balance (sodium, potassium, chloride).'
 
 - id: 'mariia_babaeva'
   status: 'current'
@@ -88,20 +55,9 @@
   homepage:
   description: 'Mariia workes on a physiologically based model of lisinopril. Key questions are the effect of hepatic and renal disease on lisinopril pharmacokinetics and pharmacodynamics.'
 
-- id: 'helen'
-  status: 'current'
-  year: '2021-'
-  name: 'Helen Leal Pujol'
-  position: 'Bachelor student, student assistant'
-  image: helen.png
-  orcid:
-  repository: 'https://github.com/Lepujolh'
-  homepage:
-  description: 'Helen worked on a physiologically based model of pravastatin. Key questions are the effect of genotypes and hepatic and renal disease on pravastatin pharmacokinetics and coupling to a pharmacodynamic model of LDL-C reduction. Currently, Helen works on a physiologically based model of omeprazol.'
-
 - id: 'antonio'
   status: 'current'
-  year: '2023-10/2024-04'
+  year: '2023-10/2025-12'
   name: 'Antonio Aquiles Alvarez Aguilar'
   position: 'Master thesis'
   image: antonio.png
@@ -109,61 +65,6 @@
   repository: 'https://github.com/MadNietzsche'
   homepage:
   description: "Antonio will delve into the influence of parameter variability in PBPK models, focusing on the consequential effects for dynamic liver function assessments. The overarching objective of this project is to augment our comprehension of how inherent variability in parameters translates into intra-individual variability in pharmacokinetics."
-
-- id: 'kim'
-  status: 'current'
-  year: '2025-05/2025-07'
-  name: 'Kim Minjun'
-  position: 'Humboldt Internship Project (HIP) 2025'
-  image: kim.jpg
-  orcid:
-  repository: 'https://github.com/unfulw'
-  homepage:
-  description: "Kim is developing a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the GLP-1 receptor agonist dulaglutide to better understand its absorption, distribution, metabolism, and effects on glucose regulation."
-
-- id: 'isabella'
-  status: 'current'
-  year: '2025-05/2025-07'
-  name: 'Isabella Tan'
-  position: 'Humboldt Internship Project (HIP) 2025'
-  image: isabella.jpg
-  orcid:
-  repository: 'https://github.com/bellatgy'
-  homepage:
-  description: "Isabella is building a PBPK/PD model of the GLP-1 receptor agonist liraglutide to explore its pharmacological behavior and impact on glucose homeostasis, with a focus on individualized treatment strategies."
-
-- id: 'olivia'
-  status: 'current'
-  year: '2025-05/2025-07'
-  name: 'Olivia Yau'
-  position: 'Humboldt Internship Project (HIP) 2025'
-  image: olivia.png
-  orcid:
-  repository: 'https://github.com/oliviaayau'
-  homepage:
-  description: "Olivia is developing a PBPK/PD model of the GLP-1 receptor agonist lixisenatide to investigate its kinetics and therapeutic effects on glucose regulation, aiming to support personalized approaches to diabetes treatment."
-
-- id: 'emre'
-  status: 'current'
-  year: '2025-05/2025-08'
-  name: 'Emre Hikmet'
-  position: 'Google Summer of Code (GSOC) 2025'
-  image: emre.jpg
-  orcid:
-  repository: 'https://github.com/kyxhik'
-  homepage:
-  description: "Hikmet works on CySBML Reloaded: Smarter, Simpler, Automated focuses on upgrading CySBML — a Cytoscape app for visualizing computational models encoded in SBML. The project will enhance usability, improve stability, and introduce automation features, making it easier for researchers to explore, validate, and interact with complex biomedical models through an intuitive and streamlined interface based on network visualization."
-
-- id: 'monajes'
-  status: 'current'
-  year: '2025-07/2025-11'
-  name: 'Monika Jesionek'
-  position: 'ERASMUS student'
-  image: monajes.jpg
-  orcid:
-  repository: 'https://github.com/monajes'
-  homepage:
-  description: "Monika is developing a PBPK model of immune suppressent rapamycin (sirolimus) as part of our contribution to the Immune Digital Twin (IDT)."
 
 - id: 'juanpablo'
   status: 'current'
@@ -176,9 +77,97 @@
   homepage:
   description: "Juan Pablo is developing a closed-loop control system to optimize anesthesia delivery, aiming to enhance precision and patient safety during surgical procedures."
 
-- id: 'rohinichakraborty'
+- id: 'amanda'
   status: 'current'
-  year: '2024-03'
+  year: '2023-09/2024-06'
+  name: 'Amanda Lim'
+  position: 'Medical thesis'
+  image: amanda.png
+  orcid:
+  repository: 'https://github.com/amdangelica'
+  homepage:
+  description: 'Amanda develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the diuretic hydrochlorothiazide. The objective is to enhance our understanding of how hydrochlorothiazide changes urinary volume and plasma volume and ion balance (sodium, potassium, chloride).'
+
+- id: 'ennie'
+  status: 'alumni'
+  year: '2024-09/2025-06'
+  name: 'Ennie Tensil'
+  position: 'Bachelor project and Bachelor thesis'
+  image: ennie.jpg
+  orcid:
+  repository: 'https://github.com/ennietensil'
+  homepage:
+  description: 'Ennie develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of the direct angiotensin II receptor (ARB) inhibitor losartan. The objective is to enhance our understanding of the underlying causes of intraindividual variability in hyptertension treatment with ARB inhibitors, e.g., differences in hepatorenal function and CYPC29 genotype.'
+
+- id: 'elisabetta'
+  status: 'alumni'
+  year: '2025-02/2025-07'
+  name: 'Elisabetta Casabianca'
+  position: 'ERASMUS, master thesis'
+  image: elisabetta.jpg
+  orcid:
+  repository: 'https://github.com/elisabettacasabianca11'
+  homepage:
+  description: 'Elisabetta develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of the direct oral anticoagulant (DOAC) rivaroxaban. The objective is to enhance our understanding of the underlying causes of intraindividual variability in anticoagulation treatment with DOACs.'
+
+- id: 'helen'
+  status: 'alumni'
+  year: '2021-2025/09'
+  name: 'Helen Leal Pujol'
+  position: 'Bachelor student, student assistant'
+  image: helen.png
+  orcid:
+  repository: 'https://github.com/Lepujolh'
+  homepage:
+  description: 'Helen worked on a physiologically based model of pravastatin. Key questions are the effect of genotypes and hepatic and renal disease on pravastatin pharmacokinetics and coupling to a pharmacodynamic model of LDL-C reduction. Currently, Helen works on a physiologically based model of omeprazol.'
+
+- id: 'nike'
+  status: 'alumni'
+  year: '2024-2025'
+  name: 'Nike Nemitz'
+  position: 'Bachelor project'
+  image: nike.png
+  orcid:
+  repository: 'https://github.com/nikenemitz'
+  homepage:
+  description: 'Nike develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of SGLT2 inhibitor dapagliflozin. The objective is to enhance our understanding of the underlying causes of intraindividual variability in diabetes treatment with SGLT2 inhibitors, e.g., differences in hepatorenal function.'
+
+- id: 'kim'
+  status: 'alumni'
+  year: '2025-05/2025-08'
+  name: 'alumni'
+  position: 'Humboldt Internship Project (HIP) 2025'
+  image: kim.jpg
+  orcid:
+  repository: 'https://github.com/unfulw'
+  homepage:
+  description: "Kim is developing a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the GLP-1 receptor agonist dulaglutide to better understand its absorption, distribution, metabolism, and effects on glucose regulation."
+
+- id: 'isabella'
+  status: 'alumni'
+  year: '2025-05/2025-08'
+  name: 'Isabella Tan'
+  position: 'Humboldt Internship Project (HIP) 2025'
+  image: isabella.jpg
+  orcid:
+  repository: 'https://github.com/bellatgy'
+  homepage:
+  description: "Isabella is building a PBPK/PD model of the GLP-1 receptor agonist liraglutide to explore its pharmacological behavior and impact on glucose homeostasis, with a focus on individualized treatment strategies."
+
+- id: 'olivia'
+  status: 'alumni'
+  year: '2025-05/2025-08'
+  name: 'Olivia Yau'
+  position: 'Humboldt Internship Project (HIP) 2025'
+  image: olivia.png
+  orcid:
+  repository: 'https://github.com/oliviaayau'
+  homepage:
+  description: "Olivia is developing a PBPK/PD model of the GLP-1 receptor agonist lixisenatide to investigate its kinetics and therapeutic effects on glucose regulation, aiming to support personalized approaches to diabetes treatment."
+
+- id: 'rohinichakraborty'
+  status: 'alumni'
+  year: '2024-03/2025-12'
   name: 'Rohini Chakraborty'
   position: 'Data curation'
   image: rohini.png
@@ -188,8 +177,8 @@
   description: 'Rohini supports the data curation for morphine pharmacokinetics.'
 
 - id: 'rohit'
-  status: 'current'
-  year: '2024-05'
+  status: 'alumni'
+  year: '2024-05/2025-12'
   name: 'Rohit Chakraborty'
   position: 'Data curation'
   image: rohit.png
@@ -197,6 +186,28 @@
   repository: 'https://github.com/Rohit-Chakraborty'
   homepage:
   description: 'Rohit supports the data curation for morphine pharmacokinetics.'
+
+- id: 'emre'
+  status: 'alumni'
+  year: '2025-05/2025-08'
+  name: 'Emre Hikmet'
+  position: 'Google Summer of Code (GSOC) 2025'
+  image: emre.jpg
+  orcid:
+  repository: 'https://github.com/kyxhik'
+  homepage:
+  description: "Hikmet works on CySBML Reloaded: Smarter, Simpler, Automated focuses on upgrading CySBML — a Cytoscape app for visualizing computational models encoded in SBML. The project will enhance usability, improve stability, and introduce automation features, making it easier for researchers to explore, validate, and interact with complex biomedical models through an intuitive and streamlined interface based on network visualization."
+
+- id: 'michael_gaas'
+  status: 'alumni'
+  year: '2025-05/2025-08'
+  name: 'Michael Gaas'
+  position: 'Google Summer of Code (GSOC) 2025'
+  image: michael_gaas.png
+  orcid:
+  repository: 'https://github.com/xts-Michi'
+  homepage:
+  description: "Michael Gaas is enhancing the Systems Biology Simulation Core Library (SBSCL) by developing a solver-agnostic framework that enables seamless integration of open-source and commercial optimization solvers. This upgrade will make Flux Balance Analysis faster, more flexible, and fully compatible with modern hardware architectures, empowering researchers worldwide to model complex biological systems more effectively."
 
 - id: 'luca'
   status: 'alumni'
