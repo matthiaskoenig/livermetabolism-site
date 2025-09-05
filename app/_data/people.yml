@@ -22,6 +22,17 @@
   homepage:
   description: 'Mariia works on ATLAS, a decision support tool for hepatocellular carcinoma (HCC). Based on AI methods, ATLAS processes all relevant patient data from databases, systems medicine and continuum biomechanical in silico prognosis models as well as individual patient data. The tool is being developed in a co-design approach by experts in surgical oncology, mathematical modeling and machine learning.'
 
+- id: 'mariia_babaeva'
+  status: 'current'
+  year: '2025-04-2026'
+  name: 'Mariia Babaeva'
+  position: 'Student assistant'
+  image: mariia_babaeva.png
+  orcid:
+  repository: 'https://github.com/icalledmyselfmoon'
+  homepage:
+  description: 'Mariia workes on a physiologically based model of lisinopril. Key questions are the effect of hepatic and renal disease on lisinopril pharmacokinetics and pharmacodynamics.'
+
 - id: 'monajes'
   status: 'current'
   year: '2025-07/2025-11'
@@ -44,17 +55,6 @@
   homepage:
   description: 'Michelle develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of the sulfonylurea glimepiride. The objective is to enhance our understanding of the underlying causes of intraindividual variability in insulin secretion and T2DM treatment with sulfonylurea, e.g., differences in hepatorenal function.'
 
-- id: 'mariia_babaeva'
-  status: 'current'
-  year: '2025-04'
-  name: 'Mariia Babaeva'
-  position: 'Student assistant'
-  image: mariia_babaeva.png
-  orcid:
-  repository: 'https://github.com/icalledmyselfmoon'
-  homepage:
-  description: 'Mariia workes on a physiologically based model of lisinopril. Key questions are the effect of hepatic and renal disease on lisinopril pharmacokinetics and pharmacodynamics.'
-
 - id: 'antonio'
   status: 'current'
   year: '2023-10/2025-12'
@@ -66,20 +66,9 @@
   homepage:
   description: "Antonio will delve into the influence of parameter variability in PBPK models, focusing on the consequential effects for dynamic liver function assessments. The overarching objective of this project is to augment our comprehension of how inherent variability in parameters translates into intra-individual variability in pharmacokinetics."
 
-- id: 'juanpablo'
-  status: 'current'
-  year: '2025-04/2025-10'
-  name: 'Juan Pablo Ramos Mendoza'
-  position: 'Master student'
-  image: juanpablo.png
-  orcid:
-  repository: 'https://github.com/Juan-hub129'
-  homepage:
-  description: "Juan Pablo is developing a closed-loop control system to optimize anesthesia delivery, aiming to enhance precision and patient safety during surgical procedures."
-
 - id: 'amanda'
   status: 'current'
-  year: '2023-09/2024-06'
+  year: '2023-09/2025-12'
   name: 'Amanda Lim'
   position: 'Medical thesis'
   image: amanda.png
@@ -87,6 +76,17 @@
   repository: 'https://github.com/amdangelica'
   homepage:
   description: 'Amanda develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the diuretic hydrochlorothiazide. The objective is to enhance our understanding of how hydrochlorothiazide changes urinary volume and plasma volume and ion balance (sodium, potassium, chloride).'
+
+- id: 'juanpablo'
+  status: 'current'
+  year: '2025-04/2025-09'
+  name: 'Juan Pablo Ramos Mendoza'
+  position: 'Master student'
+  image: juanpablo.png
+  orcid:
+  repository: 'https://github.com/Juan-hub129'
+  homepage:
+  description: "Juan Pablo is developing a closed-loop control system to optimize anesthesia delivery, aiming to enhance precision and patient safety during surgical procedures."
 
 - id: 'ennie'
   status: 'alumni'
