@@ -90,5 +90,12 @@ docker-compose -f docker-compose-build.yml up
 docker-compose up --build -d
 ```
 
+## Python package
+
+```bash
+uv venv
+uv sync
+```
+
 ----
 &copy; 2016-2025 Matthias König.

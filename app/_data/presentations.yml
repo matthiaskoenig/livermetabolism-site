@@ -1,3 +1,20 @@
+- id: 'ITBMeeting2025_reproducibility_glimepiride'
+  type: "invited_talk"
+  title: 'Reproducibility of a Digital Twin of Glimepiride for Personalized and Stratified Diabetes Treatment'
+  authors: 'Michelle Elias and <b>Matthias König</b>'
+  affiliations: 'Humboldt-Universität zu Berlin, Faculty of Life Science, Institute for Biology, Systems Medicine of the Liver'
+  slides: 'https://docs.google.com/presentation/d/e/2PACX-1vSixlmHaKov_XY71QhzLnPTqHfZFywhwwXBqW0ddi_pQ5zPDXNp4lw6ckkLPoPMsBWWgXmbQkSLxBwF/pub?start=false&loop=false&delayms=3000'
+  video:
+  event: 'Institute for Theoretical Biology, Institute Seminar'
+  event_page:
+  date: 2025-09-10
+  dates: September 10, 2025
+  location: Berlin
+  repository: https://github.com/matthiaskoenig/glimeperide-model
+  publication:
+  abstract: "A digital twin in the form of a whole-body physiologically based pharmacokinetic (PBPK) model of glimepiride was developed to systematically evaluate the influence of patient-specific factors on drug disposition. Based on curated data from 20 clinical studies, the model simulates the absorption, distribution, metabolism and excretion (ADME) of the drug while accounting for variability in renal and hepatic function, CYP2C9 genetic variants and bodyweight. The model is implemented in the Systems Biology Markup Language (SBML) standard and simulations are performed using scripts that utilise the libRoadRunner library to run simulations and generate results. Here, we demonstrate the computational reproducibility of the key findings from the primary publication [1], thereby verifying the consistency and reproducibility of the model implementation with the published results."
+  keywords:
+
 - id: 'SBHD2025_reproducible.digital.twins'
   type: "selected_talk"
   title: 'Reproducible Digital Twins for Studying the Effect of Disease on Pharmacokinetics'
