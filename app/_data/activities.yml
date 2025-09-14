@@ -1,0 +1,83 @@
+- id: xstudent-doac-2025
+  year: "2025–2026"
+  title: "Leading X-Student Research Group: Digital Twins in Action — Optimizing Direct Oral Anticoagulant Use"
+  description: "Supervising students in PBPK modeling and advancing precision medicine."
+  link: "https://www.berlin-university-alliance.de/commitments/teaching-learning/sturop/research-groups/archiv/sem_aktuell/Digital-Twins-in-Action/index.html"
+
+- id: workshop-open-science-2025
+  year: "2025"
+  title: "Organizing Workshop Open Science & Reproducibility — For Computational Models in Systems Biology & Medicine"
+  description: "Featuring interactive sessions (LEGO® Serious Play), reproducibility workflows, and open publishing practices."
+  link: "https://livermetabolism.com/paper/flyers/Koenig_Open.Science.Reproducibility_Flyer_2025-10-10.pdf"
+
+- id: rda-immune-digital-twins-2025
+  year: "2025–2026"
+  title: "Member Research Data Alliance (RDA) Working Group: Building Immune Digital Twins"
+  description: "Developing standards and methods for Digital Twins."
+  link: "https://www.rd-alliance.org/groups/building-immune-digital-twins-wg/activity/"
+
+- id: sbml-editor-2018-2027
+  year: "2018–2023, 2025–2027"
+  title: "Elected SBML Editor"
+  description: "Advanced the Systems Biology Markup Language (SBML) standard by coordinating editorial processes, improving specifications, and fostering interoperability."
+  link: "https://sbml.org/about/core/"
+
+- id: open-science-ambassador-2024
+  year: "2024–2026"
+  title: "Open Science Ambassador, Humboldt-University Berlin"
+  description: "Promoted reproducibility, FAIR data, and open science practices within the Berlin University Alliance."
+  link: "https://www.berlin-university-alliance.de/en/commitments/research-quality/open-science/os-botschafter-innen/index.html"
+
+- id: sedml-editor-2017-2027
+  year: "2017–2022, 2024–2027"
+  title: "Elected SED-ML Editor"
+  description: "Enhanced the Simulation Experiment Description Markup Language to improve reproducibility and exchangeability of simulation experiments."
+  link: "https://sed-ml.org/about.html"
+
+- id: petab-editor-2023-2026
+  year: "2023–2026"
+  title: "Elected PEtab Editor"
+  description: "Strengthened the PEtab standard for parameter estimation problems, ensuring community adoption and long-term sustainability."
+  link: "https://petab.readthedocs.io/en/latest/editorial_board.html"
+
+- id: combine-coordinator-2017-2025
+  year: "2017–2025"
+  title: "Elected COMBINE Coordinator"
+  description: "Led international coordination of community standards (SBML, SED-ML, PEtab, etc.), strengthened collaborations, and organized annual COMBINE meetings."
+  link: "https://co.mbine.org/people/"
+
+- id: bua-interview-2025
+  year: "2025"
+  title: "Interview: Reproducibility, Open Science, and the Future of Biological Research"
+  description: "Berlin University Alliance feature highlighting the reproducibility crisis, FAIR data, open standards, and cultural change in academia."
+  link: "https://www.hu-berlin.de/de/pr/themen/in-der-biologischen-forschung-gibt-es-eine-grosse-reproduzierbarkeitskrise"
+
+- id: xstudent-hypertension-2023
+  year: "2023"
+  title: "Led X-Student Research Group: Physiologically Based Digital Twins for Hypertension Therapy"
+  description: "Focused on ACE inhibitors and diuretics."
+  link: "https://www.berlin-university-alliance.de/commitments/teaching-learning/sturop/research-groups/index.html"
+
+- id: pharmvar-cyp1a2-2023
+  year: "2023–2024"
+  title: "Expert Panel Member: PharmVar CYP1A2 Gene Panel"
+  description: "Advanced pharmacogenomics standards in drug metabolism."
+  link: "https://www.pharmvar.org/expert-panels"
+
+- id: elife-open-science-2023
+  year: "2023"
+  title: "Co-authored Open Science Concept: Eleven Strategies for Training Reproducible Research"
+  description: "Implemented institutional strategies for reproducible research and open science training."
+  link: "https://doi.org/10.7554/eLife.89736"
+
+- id: combine-meeting-2022
+  year: "2022"
+  title: "Organized 13th Computational Modeling in Biology Network (COMBINE) Meeting"
+  description: "Brought together global experts in modeling standards in Berlin."
+  link: "https://co.mbine.org/author/combine-2022/"
+
+- id: xstudent-ace-inhibitors-2022
+  year: "2022"
+  title: "Led X-Student Research Group: Physiologically Based Modeling of Drugs — ACE Inhibitors in Hypertension"
+  description: "Mentored interdisciplinary student teams."
+  link: "https://www.berlin-university-alliance.de/commitments/teaching-learning/sturop/research-groups/index.html"

@@ -99,8 +99,8 @@
 
 - id: 'tellurium'
   type: "software"
-  name: 'cobrapy'
-  title: 'tellurium simulator'
+  name: 'tellurium'
+  title: 'systems biology simulation library'
   description: 'Co-developed Tellurium, a Python-based environment for reproducible dynamical modeling of biological networks. Integrated standard formats with powerful simulation libraries, enabling accessible and transparent modeling.'
   image: 'tellurium.png'
   homepage: https://github.com/sys-bio/tellurium/
