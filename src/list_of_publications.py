@@ -148,16 +148,27 @@ def create_list_of_publications_typst(typst_path: Path, df: pd.DataFrame, highli
 
     if not selected:
         typst_all = "= List of Publications\n"
-        for status in ["publication", "review", "proceeding", "preprint", "thesis"]:
-            k_article = 0
-            df_status = df[df["status"] == status]
-            typst_all += f"\n== {status.title()}{'s' if not status.endswith('s') else ''}\n"
-            for key, row in df_status.iterrows():
-                k_article += 1
-                text = f"{k_article}. " + create_entry_typst(e=row) + "\n"
-                console.print(f"<{text}>")
-                typst_all += text
-                console.rule(style="white")
+
+        k_article = 0
+        for key, row in df.iterrows():
+            if row.status not in {"publication", "review", "proceeding"}:
+                continue
+            k_article += 1
+            text = f"{k_article}. " + create_entry_typst(e=row) + "\n"
+            console.print(f"<{text}>")
+            typst_all += text
+            console.rule(style="white")
+
+        # for status in ["publication", "review", "proceeding", "preprint", "thesis"]:
+        #     k_article = 0
+        #     df_status = df[df["status"] == status]
+        #     typst_all += f"\n== {status.title()}{'s' if not status.endswith('s') else ''}\n"
+        #     for key, row in df_status.iterrows():
+        #         k_article += 1
+        #         text = f"{k_article}. " + create_entry_typst(e=row) + "\n"
+        #         console.print(f"<{text}>")
+        #         typst_all += text
+        #         console.rule(style="white")
 
     if selected:
         console.print(selected)
@@ -213,12 +224,13 @@ if __name__ == "__main__":
         "Caffeine_meta_Grzegorzewski2021",
         "Albadry2024_species_comparison",
         "Grzegorzewski2022_dextromethorphan",
-        # "Maheshvare2023_pancreas",
+        "Maheshvare2023_pancreas",
         "ICG_model_hepatectomy_Koeller2021",
-        # "Koeller2021_icg_variability",
+        "Koeller2021_icg_variability",
         "GlucoseModel_Koenig2012a",
-        # "SBML_Keating2020",
-        # "hepatokin_Berndt2018",
+        "SBML_Keating2020",
+        "hepatokin_Berndt2018",
+
         # "Koenig2023_standards",
         # "SED-ML_L1V5",
         # "OMEX_Koenig2020",
