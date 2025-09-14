@@ -208,23 +208,29 @@ if __name__ == "__main__":
     # create_list_of_publications_typst(Path("publications.typ"), df=df, highlights=highlights)
 
     # List of selected publications
-    # selected1 = {
-    #     "GlucoseModel_Koenig2012a",
-    #     "hepatokin_Berndt2018",
-    #     "HepatoNet1_Gille2010",
-    #     "Grzegorzewski2022_dextromethorphan",
-    #     "ICG_model_hepatectomy_Koeller2021",
-    #     "Maheshvare2023_pancreas",
-    #     "SBML_Keating2020",
-    #     "PKDB_Grzegorzewski2020",
-    #     "Caffeine_meta_Grzegorzewski2021",
-    #     "Albadry2024_species_comparison",
-    #     "Gerhaeusser2024_spt_model",
-    #     "StemmerMallol2023_talinolol",
-    #     "Kuettner2023_chlorzoxazone",
-    #     "Bartsch2023_simvastatin",
-    # }
-    create_list_of_publications_typst(Path("results/publications.typ"), df=df)
+    selected = {
+        "PKDB_Grzegorzewski2020",
+        "Koenig2023_standards",
+        "SBML_Keating2020",
+        "SED-ML_L1V5",
+        "OMEX_Koenig2020",
+        "annotations_Neal2018",
+        "Caffeine_meta_Grzegorzewski2021",
+        "Albadry2024_species_comparison",
+        "ICG_model_hepatectomy_Koeller2021",
+        "GlucoseModel_Koenig2012a",
+        # "hepatokin_Berndt2018",
+        # "Kohrs2023_reproducible.research.open.science",
+
+        # "HepatoNet1_Gille2010",
+        # "Grzegorzewski2022_dextromethorphan",
+        # "Maheshvare2023_pancreas",
+        # "Gerhaeusser2024_spt_model",
+        # "StemmerMallol2023_talinolol",
+        # "Kuettner2023_chlorzoxazone",
+        # "Bartsch2023_simvastatin",
+    }
+    create_list_of_publications_typst(Path("results/publications_selected.typ"), df=df, selected=selected)
 
 
     pubmeds = create_list_of_pubmeds(df=df)
