@@ -230,7 +230,8 @@ if __name__ == "__main__":
         # "Kuettner2023_chlorzoxazone",
         # "Bartsch2023_simvastatin",
     }
-    create_list_of_publications_typst(Path("results/publications_selected.typ"), df=df, selected=selected)
+    selected = None
+    create_list_of_publications_typst(Path("results/publications.typ"), df=df, selected=selected)
 
 
     pubmeds = create_list_of_pubmeds(df=df)

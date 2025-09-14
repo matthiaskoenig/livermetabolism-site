@@ -1,3 +1,27 @@
+- id: 'Myshkina2025_preprint'
+  year: 2025
+  date:
+  pdf: 'Myshkina2025_survey_preprint.pdf'
+  authors: 'Mariia Myshkina, Elisabetta Casabianca, Anton Schnurpel, Tim Ricken, Hans-Michael Tautenhahn, <b>Matthias König</b>'
+  title: 'Assessing the Impact of AI and Digital Twins on Clinical Decision-Making in Hepatology and Hepatobiliary Surgery'
+  journal: 'Preprints 2025'
+  journal_short: Preprints
+  status: preprint
+  impact: 0
+  position: last
+  doi:
+  pmid:
+  keywords:
+    - Digital Twins
+    - Artificial Intelligence
+    - Liver
+    - Hepatology
+    - Hepatobiliary Surgery
+    - Survey
+  project:
+  repository: https://doi.org/10.5281/zenodo.15013110
+  abstract: 'Background: Artificial Intelligence (AI) and Digital Twins (DT) are transforming clinical decision-making, particularly in hepatology and hepatobiliary surgery. While these technologies promise more precise diagnostics and individualised treatment planning, their successful integration depends on clinician acceptance, trust, and regulatory clarity. Methods: We conducted an online survey among hepatologists, hepatobiliary surgeons, and related specialists to assess familiarity, perceived value, adoption of clinical decision support systems (CDSS), concerns regarding automation bias and liability, and attitudes toward patient-centred integration. Data from 18 respondents were analysed using descriptive statistics and visualised in Python. Results: Most clinicians rated AI (80%) and DT (79%) as valuable to very valuable. Adoption of CDSS was high, with 93% reporting current or intended use. However, significant concerns emerged: 71% feared automation bias, and 92% expressed uncertainty about legal protection. Additionally, 77% supported incorporating patient preferences into AI- and DT-assisted decisions. Conclusions: Clinicians demonstrate a strong interest in adopting AI and DT, but remain cautious due to concerns over trust, liability, and regulatory gaps. Clear guidelines, clinical validation, and patient-centred approaches are essential for safe and effective integration into hepatology practice.'
+
 - id: 'Master.Thesis.Elisabetta.Casabianca'
   year: 2025
   date: 2025-07-14
