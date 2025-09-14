@@ -142,7 +142,7 @@ def create_list_of_publications_typst(typst_path: Path, df: pd.DataFrame, highli
             position_str = f", #underline[{" ".join([t.title() for t in tokens])} Author]"
         text = f"{pdf}{repository} *{e.title.strip(".")}*. {authors}; {e.journal}{doi}{impact}{position_str}"
         if highlights and e.id in highlights:
-            text = f'#highlight(fill:rgb("#30C5FF"))[{text}]'
+            text = f'#publication_highlight[{text}]'
         return text
 
 
@@ -210,28 +210,32 @@ if __name__ == "__main__":
     # List of selected publications
     selected = {
         "PKDB_Grzegorzewski2020",
-        "Koenig2023_standards",
-        "SBML_Keating2020",
-        "SED-ML_L1V5",
-        "OMEX_Koenig2020",
-        "annotations_Neal2018",
         "Caffeine_meta_Grzegorzewski2021",
         "Albadry2024_species_comparison",
-        "ICG_model_hepatectomy_Koeller2021",
-        "GlucoseModel_Koenig2012a",
-        # "hepatokin_Berndt2018",
-        # "Kohrs2023_reproducible.research.open.science",
-
-        # "HepatoNet1_Gille2010",
-        # "Grzegorzewski2022_dextromethorphan",
+        "Grzegorzewski2022_dextromethorphan",
         # "Maheshvare2023_pancreas",
+        "ICG_model_hepatectomy_Koeller2021",
+        # "Koeller2021_icg_variability",
+        "GlucoseModel_Koenig2012a",
+        # "SBML_Keating2020",
+        # "hepatokin_Berndt2018",
+        # "Koenig2023_standards",
+        # "SED-ML_L1V5",
+        # "OMEX_Koenig2020",
+        # "annotations_Neal2018",
+        # "Kohrs2023_reproducible.research.open.science",
+        # "HepatoNet1_Gille2010",
         # "Gerhaeusser2024_spt_model",
         # "StemmerMallol2023_talinolol",
         # "Kuettner2023_chlorzoxazone",
         # "Bartsch2023_simvastatin",
     }
-    selected = None
-    create_list_of_publications_typst(Path("results/publications.typ"), df=df, selected=selected)
+    create_list_of_publications_typst(
+        Path("results/publications_highlights.typ"),
+        df=df,
+        # selected=selected,
+        highlights=selected,
+    )
 
 
     pubmeds = create_list_of_pubmeds(df=df)
