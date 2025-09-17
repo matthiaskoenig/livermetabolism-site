@@ -1,3 +1,12 @@
+- id: 'Bafna2025_segmentation_preprint'
+  status: 'current'
+  date: '2025-09-16'
+  image: Bafna2025_segmentation_preprint.png
+  link: https://doi.org/10.1101/2025.09.08.674181
+  title: "Automated Segmentation of Hepatic Vessels and Lobules in Whole-Slide Images Using U-Net Models"
+  short: "Our latest preprint introduces a deep-learning pipeline for automated segmentation of hepatic vessels, bile ducts, and lobules in whole-slide liver histology images."
+  abstract: "Automated analysis of hepatic vascular structures and lobules in histological whole-slide images is essential for computational liver histology. In this preprint, Bafna, König, Saalfeld, Moulisova, Liska, Dahmen, and Albadry present a robust deep-learning pipeline based on U-Net models with adaptive patch extraction and weight-boosted nnU-Net architectures. The framework accurately segments lobules (Dice 0.960), central veins (0.801), hepatic arteries (0.909), portal veins (0.609), and bile ducts (0.710) in stained porcine liver sections, while supporting morphometric analyses of structural features. The study demonstrates the potential of adaptable segmentation models to improve precision, reproducibility, and scalability in computational histopathology."
+
 - id: 'myshkina2025_ai_dt_survey'
   status: 'current'
   date: '2025-09-15'
