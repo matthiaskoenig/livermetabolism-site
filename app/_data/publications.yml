@@ -1,3 +1,27 @@
+- id: 'Elias2025_glimepiride_physiome'
+  year: 2025
+  date: 2025-10-01
+  pdf: 'Elias2025_glimepiride_physiome.pdf'
+  authors: 'Michelle Elias, <b>Matthias König</b>'
+  title: 'Reproducibility of a Digital Twin of Glimepiride for Personalized and Stratified Diabetes Treatment'
+  journal: 'Physiome. 2025 October (in revision)'
+  journal_short: "Physiome"
+  status: publication
+  impact:
+  position: last
+  doi: 10.36903/physiome.28379193
+  pmid:
+  keywords:
+    - digital twin
+    - diabetes
+    - Glimepiride
+    - PBPK
+    - physiologically based pharmacokinetic model
+  project:
+  repository: https://github.com/matthiaskoenig/glimepiride-model
+  abstract: 'A digital twin in the form of a whole-body physiologically based pharmacokinetic (PBPK) model of glimepiride was developed to systematically evaluate the inﬂuence of patient-speciﬁc factors on drug disposition. Based on curated data from 20 clinical studies, the model simulates the absorption, distribution, metabolism and excretion (ADME) of the drug while accounting for variability in renal and hepatic function, CYP2C9 genetic variants and bodyweight. The model is implemented in the Systems Biology Markup Language (SBML) standard and simulations are per- formed using scripts that utilise the libRoadRunner library to run simulations and generate results. Here, we demonstrate the computational reproducibility of the key ﬁndings from the primary publication, thereby verifying the consistency and reproducibility of the model implementation with the published results.'
+
+
 - id: 'Elias2025_glimepiride'
   year: 2025
   date: 2025-09-16
