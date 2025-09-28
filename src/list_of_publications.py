@@ -1,6 +1,7 @@
 """Script for creating list of publications."""
 from typing import Optional, List
 
+import numpy as np
 import yaml
 from pathlib import Path
 import pandas as pd
@@ -130,8 +131,9 @@ def create_list_of_publications_typst(typst_path: Path, df: pd.DataFrame, highli
         authors = e.authors
         authors = authors.replace("<b>", "*")
         authors = authors.replace("</b>", "*")
+        impact = e.impact if (e.impact and not np.isnan(e.impact)) else None
         doi = f', #link("https://doi.org/{e.doi}")[{e.doi}]' if e.doi else ""
-        impact = f", IF: *{e.impact}*" if e.impact else ""
+        impact = f", IF: *{impact}*" if impact else ""
         pdf = f'#link("https://livermetabolism.com/paper/{e.pdf}")[#fa-icon("file-pdf")]' if e.pdf else ""
         repository = f'#link("{e.repository}")[#fa-icon("git-alt")]' if e.repository else ""
         position = e.position # first, first_equal, index, last_equal, last
@@ -220,6 +222,7 @@ if __name__ == "__main__":
 
     # List of selected publications
     selected = {
+        "Elias2025_glimepiride_physiome",
         "Elias2025_glimepiride",
         "Albadry2024_species_comparison",
         "SED-ML_L1V5",
@@ -245,10 +248,10 @@ if __name__ == "__main__":
         # "Bartsch2023_simvastatin",
     }
     create_list_of_publications_typst(
-        Path("results/publications_highlights.typ"),
+        Path("results/publications_selected.typ"),
         df=df,
-        # selected=selected,
-        highlights=selected,
+        selected=selected,
+        # highlights=selected,
     )
 
 
