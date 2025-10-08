@@ -1,3 +1,29 @@
+- id: 'Elias2025_glimepiride'
+  year: 2025
+  date: 2025-10-08
+  pdf: 'Elias2025_frontiers.pdf'
+  authors: 'Michelle Elias, <b>Matthias König</b>'
+  title: 'A Digital Twin of Glimepiride for Personalized and Stratified Diabetes Treatment'
+  journal: 'Front. Pharmacol. 16:1686415.'
+  journal_short: "Front Pharmacol"
+  status: publication
+  impact: 4.8
+  position: last
+  doi: 10.3389/fphar.2025.1686415
+  pmid:
+  keywords:
+    - digital twin
+    - diabetes
+    - Glimepiride
+    - PBPK
+    - physiologically based pharmacokinetic model
+  project:
+  repository: https://github.com/matthiaskoenig/glimepiride-model
+  abstract: 'Introduction: Optimizing glimepiride therapy for type 2 diabetes (T2DM) is challenged by pronounced inter-individual variability in pharmacokinetics.
+  Methods: We developed a whole-body physiologically based pharmacokinetic (PBPK) model as a digital twin of glimepiride, enabling systematic evaluation of how patient-specific factors influence drug disposition. Using curated data from 20 clinical studies, the digital twin mechanistically simulates glimepiride’s absorption, distribution, metabolism, and excretion (ADME). It accounts for key determinants of variability including renal and hepatic function, CYP2C9 genotype, and bodyweight. 
+  Results: The model accurately reproduced observed pharmacokinetics and quantified these factors’ impact on drug exposure. Increased glimepiride exposure was predicted in individuals with hepatic dysfunction or specific CYP2C9 variants, highlighting substantial genetic and physiological effects. 
+  Discussion: This digital twin provides mechanistic insights into pharmacokinetic variability and serves as an in silico platform for exploring individualized dosing and patient stratification strategies, laying the foundation for clinical decision support tools to improve T2DM management.'
+
 - id: 'Elias2025_glimepiride_physiome'
   year: 2025
   date: 2025-10-01
@@ -20,31 +46,6 @@
   project:
   repository: https://github.com/matthiaskoenig/glimepiride-model
   abstract: 'A digital twin in the form of a whole-body physiologically based pharmacokinetic (PBPK) model of glimepiride was developed to systematically evaluate the inﬂuence of patient-speciﬁc factors on drug disposition. Based on curated data from 20 clinical studies, the model simulates the absorption, distribution, metabolism and excretion (ADME) of the drug while accounting for variability in renal and hepatic function, CYP2C9 genetic variants and bodyweight. The model is implemented in the Systems Biology Markup Language (SBML) standard and simulations are per- formed using scripts that utilise the libRoadRunner library to run simulations and generate results. Here, we demonstrate the computational reproducibility of the key ﬁndings from the primary publication, thereby verifying the consistency and reproducibility of the model implementation with the published results.'
-
-
-- id: 'Elias2025_glimepiride'
-  year: 2025
-  date: 2025-10-08
-  pdf: 'Elias2025_frontiers.pdf'
-  authors: 'Michelle Elias, <b>Matthias König</b>'
-  title: 'A Digital Twin of Glimepiride for Personalized and Stratified Diabetes Treatment'
-  journal: 'Front. Pharmacol. 16:1686415.'
-  journal_short: "Front Pharmacol"
-  status: publication
-  impact: 4.8
-  position: last
-  doi: 10.3389/fphar.2025.1686415
-  pmid:
-  keywords:
-    - digital twin
-    - diabetes
-    - Glimepiride
-    - PBPK
-    - physiologically based pharmacokinetic model
-  project:
-  repository: https://github.com/matthiaskoenig/glimepiride-model
-  abstract: 'Optimizing glimepiride therapy for type 2 diabetes (T2DM) is challenged by pronounced inter-individual variability in pharmacokinetics. To address this, we developed a whole-body physiologically based pharmacokinetic (PBPK) model as a digital twin of glimepiride. This model enables systematic evaluation of how patient-specific factors influence glimepiride disposition, supporting both personalized and stratified treatment approaches. Using curated data from 19 clinical studies, the digital twin was developed to mechanistically simulate glimepiride’s absorption, distribution, metabolism, and excretion (ADME). It accounts for key determinants of patient variability, such as renal and hepatic function, cytochrome P450 2C9 (CYP2C9) genotype, and bodyweight. The model accurately reproduced observed pharmacokinetics and quantified the impact of these factors on drug exposure. For instance, increased glimepiride exposure was predicted in individuals with hepatic dysfunction or specific CYP2C9 variants, highlighting substantial genetic and physiological effects. This digital twin offers mechanistic insights into pharmacokinetic variability and serves as a robust in silico platform for exploring individualized dosing scenarios and patient stratification strategies, laying the foundation for advanced clinical decision support tools to improve T2DM management.'
-
 
 - id: 'Bafna2025_segmentation_preprint'
   year: 2025
