@@ -24,16 +24,16 @@
 
 - id: 'Elias2025_glimepiride'
   year: 2025
-  date: 2025-09-16
-  pdf: 'Elias2025_preprint.pdf'
+  date: 2025-10-08
+  pdf: 'Elias2025_frontiers.pdf'
   authors: 'Michelle Elias, <b>Matthias König</b>'
   title: 'A Digital Twin of Glimepiride for Personalized and Stratified Diabetes Treatment'
-  journal: 'Front Pharmacol. 2025 September 16 (accepted)'
+  journal: 'Front. Pharmacol. 16:1686415.'
   journal_short: "Front Pharmacol"
   status: publication
   impact: 4.8
   position: last
-  doi:
+  doi: 10.3389/fphar.2025.1686415
   pmid:
   keywords:
     - digital twin
