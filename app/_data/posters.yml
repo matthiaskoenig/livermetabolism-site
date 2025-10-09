@@ -58,6 +58,49 @@
   repository:
   abstract: "Liraglutide, known commercially as Victoza(R), is a Glucagon-Like Peptide 1 (GLP-1) agonist used in the treatment of type 2 diabetes and obesity. The objective of this study is to develop a physiologically-based pharmacokinetic/pharmacodynamic (PBPK/PD) model of liraglutide. Through this study, the aim is to develop a better understanding of liraglutide pharmacology and improve personalized medicine approaches."
 
+- id: 'qualiperf2_P3_poster'
+  year: 2024
+  date: 2024-11-05
+  pdf: 'posters/qualiperf2_P3_poster.pdf'
+  image: 'posters/qualiperf2_P3_poster.jpg'
+  authors: '<b>Matthias König</b><sup>1</sup>'
+  affiliations: "<sup>1</sup>Humboldt-Universität zu Berlin, Faculty of Life Science, Institute for Biology, Systems Medicine of the Liver, Berlin, Germany"
+  title: 'Multi-scale Modelling of Liver Perfusion and Function'
+  meeting: 'Qualiperf 2 Defense, 5 November 2024'
+  webpage: 'https://qualiperf.de'
+  doi:
+  keywords:
+    - pharmacokinetics
+    - pharmacodynamics
+    - digital twin
+    - liver
+    - perfusion
+    - function
+  project:
+  repository:
+  abstract: "Hypothesis: Computational modelling of 3D spatial heterogeneity of perfusion & function will significantly improve functional assessment of the liver. Contribution: A multi-scale model of liver 3D perfusion & function heterogeneity."
+
+- id: 'qualiperf2_DMP_poster'
+  year: 2024
+  date: 2024-11-05
+  pdf: 'posters/qualiperf2_DMP_poster.pdf'
+  image: 'posters/qualiperf2_DMP_poster.jpg'
+  authors: '<b>Matthias König</b><sup>1</sup>, Hans-Michael Tautenhahn<sup>2</sup>'
+  affiliations: "<sup>1</sup>Humboldt-Universität zu Berlin, Faculty of Life Science, Institute for Biology, Systems Medicine of the Liver, Berlin, Germany
+  <sup>2</sup>Department of Visceral, Transplantation, Thoracic and Vascular Surgery, Universitätsklinikum Leipzig"
+  title: 'Data Management Project'
+  meeting: 'Qualiperf 2 Defense, 5 November 2024'
+  webpage: 'https://qualiperf.de'
+  doi:
+  keywords:
+    - data management
+    - FAIR
+
+  project:
+  repository:
+  abstract: "Central data management project."
+
+
 - id: 'HIP2024_PK-LLM_Prerna.Parakkat'
   year: 2024
   date: 2024-07-18
@@ -146,3 +189,22 @@
   [3]	Keating, SM. et al, SBML Level 3: an extensible format for the exchange and reuse of biological models. Mol Syst Biol. 2020 Aug;16(8):e9110. doi: 10.15252/msb.20199110.
 "
 
+- id: 'Spetses2010_blood_glucose_control'
+  year: 2010
+  date: 2010-06-01
+  pdf: 'posters/Spetses2010_blood_glucose_control.pdf'
+  image: 'posters/Spetses2010_blood_glucose_control.jpg'
+  authors: '<b>Matthias König</b><sup>1</sup>, Sascha Bulik</b><sup>1</sup>, Hermann-Georg Holzhütter<sup>1</sup>'
+  affiliations: "<sup>1</sup>Charité University Medicine Berlin, Insitute of Biochemistry, Berlin, Germany"
+  title: 'Blood glucose control by the human hepatocyte'
+  meeting: 'Spetses 2010'
+  webpage:
+  doi:
+  keywords:
+    - glucose
+    - modelling
+  project:
+  repository:
+  abstract: "Introduction: Plasma glucose levels are tightly controlled to ensure a constant glucose supply and to avoid toxic effects of hyperglycemic conditions. The liver is the central organ of glucose homeostasis and the main glucose producer (hepatic glucose production HGP), but also utilizes glucose for biosyntheses and storage in fatty acids (hepatic glucose utilization HGU).
+  Results: We present the first detailed kinetic model of the human hepatocyte glucose metabolism [Fig.1] which comprises allosteric regulation as well as hormonal regulation by insulin and glucagon via inter-convertible enzymes [Fig.2]. The model reproduces fundamental features of hepatic glucose metabolism like glucose dependent switch between HGP and HGU [Fig.3] observed changes in glucose homeostasis in diabetes II [Fig.4] dependency of HGP on gluconeogenic substrates (lactate).
+  Outlook: Possible future applications of the model are analysis of hepatic effects of various diabetic treatments simulations of the influence of temporary changes in the gene expression on the glucose homeostasis (for example circadian rhythms of gene expression)."
