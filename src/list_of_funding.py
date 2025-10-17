@@ -19,9 +19,12 @@ def create_list_of_funding_typst(typst_path: Path, df: pd.DataFrame) -> None:
         funder = f'#link("{e.funder_link}")[{e.funder_short}]' if e.funder_link else e.funder_short
         year_start = e.start.replace("-", "/") # e.start.split("-")[-1]  # get year
         year_end = e.end.split("-")[-1]  # get year
-        money = f", {str(e.amount)[:-3]}.{str(e.amount)[-3:]}{e.currency}" if e.amount != 0 else ""
+        total_money = f", total: {str(e.amount)[:-3]}.{str(e.amount)[-3:]}{e.currency}" if e.amount != 0 else ""
+        personal_money = f", {str(e.personal_amount)[:-3]}.{str(e.personal_amount)[-3:]}{e.currency}" if e.personal_amount != 0 else ""
+        if e.amount == e.personal_amount:
+            total_money = ""
 
-        text = f'#fa-icon("money-bill") {year_start} -- {year_end}, {funder}{money}, \t*{title}.* {e.description}'
+        text = f'#fa-icon("money-bill") {year_start} -- {year_end}, {e.role}, {funder}{personal_money}{total_money}, \t*{title}.* {e.description}'
         return text
 
 

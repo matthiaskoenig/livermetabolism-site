@@ -4,11 +4,12 @@
   funder_link: https://www.bmbf.de
   funder_logo: bua.png
   grant:
-  start: '10-2025'
-  end: '04-2026'
+  start: '10/2025'
+  end: '04/2026'
   title: 'X-Student Research Group - Digital Twins in Action: Optimizing Direct Oral Anticoagulant Use'
   role: Recipient
   amount: 1500
+  personal_amount: 1500
   currency: "€"
   logo:
   project:
@@ -21,11 +22,12 @@
   funder_link: https://www.dfg.de
   funder_logo: dfg.jpeg
   grant: 465194077
-  start: '2025'
-  end: '2026'
+  start: '10/2025'
+  end: '09/2026'
   title: 'SPP2311 - Startup Funding - SPP-FEMVis: Advancing Open Science with Web-Based FEM Visualization'
   role: Recipient
   amount: 15000
+  personal_amount: 15000
   currency: "€"
   logo: 'SPP-FEMVis.png'
   project: https://www.spp2311.uni-stuttgart.de/en/
@@ -41,8 +43,9 @@
   start: '2024'
   end: '2025'
   title: 'AlgoNomy - Algorithmic Regulation Before Medical Liability - Advancing Doctor-Patient Autonomy in AI-Driven Healthcare'
-  role: Recipient
+  role: Co-Investigator
   amount: 10000
+  personal_amount: 0
   currency: "€"
   logo: algonomy_logo.png
   project: https://algonomy.jus.unipi.it/
@@ -50,16 +53,17 @@
   description: "Building an international academic network to investigate the role of algorithms and AI in medical decision support systems, with a focus on legal, ethical, and patient autonomy implications."
 
 - id: 'open_science_ambassador'
-  funder_short: BUA - BMBF
+  funder_short: BMBF
   funder: BUA - Berlin University Alliance
   funder_link: https://www.circle-u.eu/
   funder_logo: bua.png
   grant:
-  start: '2024'
-  end: '2025'
+  start: '01/2024'
+  end: '06/2026'
   title: 'Open Science Ambassador'
   role: Recipient
   amount: 4000
+  personal_amount: 4000
   currency: "€"
   logo:
   project:
@@ -72,11 +76,12 @@
   funder_link: https://www.dfg.de
   funder_logo: dfg.jpeg
   grant: 465194077
-  start: '2024'
-  end: '2027'
+  start: '10/2025'
+  end: '9/2027'
   title: 'SPP2311 - SimLivA - SIMulation supported LIVer Assessment for donor organs'
   role: Recipient
-  amount: 219000
+  amount: 895500
+  personal_amount: 219000
   currency: "€"
   logo:
   project: https://www.spp2311.uni-stuttgart.de/en/
@@ -84,16 +89,17 @@
   description: "Developing computational models and simulation workflows to assess liver function in donor organs, advancing predictive tools for transplantation and improving clinical decision-making."
 
 - id: 'xresearch'
-  funder_short: BUA - BMBF
+  funder_short: BMBF
   funder: Bundesministerium für Bildung und Forschung (BMBF) und dem Land Berlin im Rahmen der Exzellenzstrategie von Bund und Ländern
   funder_link: https://www.bmbf.de
   funder_logo: bua.png
   grant:
-  start: '04-2023'
-  end: '09-2023'
+  start: '04/2023'
+  end: '09/2023'
   title: 'X-Student Research Group - Physiologically based digital twins for the treatment of hypertension with ACE inhibitors and diuretics'
   role: Recipient
   amount: 1500
+  personal_amount: 1500
   currency: "€"
   logo:
   project:
@@ -105,12 +111,13 @@
   funder: Bundesministerium für Bildung und Forschung (BMBF) "Computational Life Sciences"
   funder_link: https://www.bmbf.de
   funder_logo: bmbf.png
-  grant:
-  start: '2023'
-  end: '2026'
+  grant: "031L0304B"
+  start: '03/2023'
+  end: '12/2026'
   title: 'ATLAS - AI and Simulation for Tumor Liver ASessment'
   role: Recipient
-  amount: 311000
+  amount: 1530550
+  personal_amount: 311000
   currency: "€"
   logo: atlas.png
   project:
@@ -118,20 +125,22 @@
   description: "Developing AI-driven and simulation-based methods to improve the assessment of liver tumors, integrating computational modeling with clinical data to support personalized diagnosis and treatment planning."
 
 - id: 'xresearch'
-  funder_short: BUA - BMBF
+  funder_short: BMBF
   funder: Bundesministerium für Bildung und Forschung (BMBF) und dem Land Berlin im Rahmen der Exzellenzstrategie von Bund und Ländern
   funder_link: https://www.bmbf.de
   funder_logo: bua.png
   grant:
-  start: '10-2022'
-  end: '03-2023'
+  start: '10/2022'
+  end: '03/2023'
   title: 'X-Student Research Group - Physiologically based modeling of drugs: ACE inhibitors in the treatment of high blood pressure'
   role: Recipient
   amount: 1500
+  personal_amount: 1500
   currency: "€"
   logo:
   project:
-  repository: "Project-based teaching initiative on physiologically based pharmacokinetic (PBPK) modeling, focusing on optimizing the use of ACE inhibitors in hypertension therapy."
+  repository:
+  description: "Project-based teaching initiative on physiologically based pharmacokinetic (PBPK) modeling, focusing on optimizing the use of ACE inhibitors in hypertension therapy."
 
 - id: 'qualiperf'
   funder_short: DFG
@@ -139,11 +148,12 @@
   funder_link: https://www.dfg.de
   funder_logo: dfg.jpeg
   grant: 436883643
-  start: '2021'
-  end: '2025'
+  start: '07/2021'
+  end: '11/2025'
   title: 'FOR5151 - QuaLiPerF - Quantifying Liver Perfusion-Function Relationship in Complex Resection – A Systems Medicine Approach'
   role: Recipient
-  amount: 425000
+  amount: 3825000
+  personal_amount: 425000
   currency: "€"
   logo:
   project: https://qualiperf.de
@@ -156,11 +166,12 @@
   funder_link: https://www.dfg.de
   funder_logo: dfg.jpeg
   grant: 465194077
-  start: '2020'
-  end: '2023'
+  start: '01/2020'
+  end: '12/2023'
   title: 'SPP2311 - SimLivA - SIMulation supported LIVer Assessment for donor organs'
   role: Co-Investigator
-  amount: 0
+  amount: 658942
+  personal_amount: 0
   currency: "€"
   logo:
   project: https://www.spp2311.uni-stuttgart.de/en/
@@ -173,11 +184,12 @@
   funder_link: https://www.eosc-life.eu/
   funder_logo: eosc.png
   grant: H2020-INFRAEOSC-05-2018-2019
-  start: '2020'
-  end: '2021'
+  start: '06/2020'
+  end: '05/2021'
   title: 'EOSC-Life - Reproducible simulation studies targeting COVID-19'
   role: Recipient
   amount: 25000
+  personal_amount: 5000
   currency: "€"
   project: https://www.ebi.ac.uk/biomodels/covid-19
   repository:
@@ -189,11 +201,12 @@
   funder_link: https://www.bmbf.de
   funder_logo: bmbf.png
   grant: 031L0054
-  start: '2016'
-  end: '2022'
+  start: '06/2016'
+  end: '05/2022'
   title: 'LiSyM - Systems Medicine of the Liver - Junior group leader - Multi-scale models for the personalized evaluation of liver function'
   role: Recipient
   amount: 723000
+  personal_amount: 723000
   currency: "€"
   logo:
   project: https://lisym.org/
