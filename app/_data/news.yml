@@ -1,3 +1,12 @@
+- id: 'Tensil2025_losartan_preprint'
+  status: 'current'
+  title: 'Digital Twin of Losartan for Precision Blood Pressure Therapy'
+  date: '2025-10-14'
+  image: Tensil2025_losartan_preprint.png
+  link: https://github.com/matthiaskoenig/losartan-model
+  short: "We introduce a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of losartan and its active metabolite E3174 as a digital twin to study variability in blood pressure regulation and support individualized antihypertensive therapy."
+  abstract: "In a new preprint, Ennie Tensil and Matthias König present a digital twin of the angiotensin II receptor blocker losartan, providing a mechanistic framework for precision treatment of hypertension and heart failure. The whole-body PBPK/PD model, based on data from 24 clinical trials, describes losartan’s absorption, hepatic metabolism, renal excretion, and pharmacodynamic effects via the renin–angiotensin–aldosterone system (RAAS). Implemented in SBML, the model captures interindividual variability arising from hepatic and renal impairment as well as CYP2C9 and ABCB1 polymorphisms. Simulations reproduce key pharmacokinetic and pharmacodynamic patterns, highlighting the impact of genetic and physiological factors on therapeutic response. This digital twin enables virtual patient studies and provides a quantitative foundation for individualized dosing and precision cardiovascular therapy."
+
 - id: 'Elias2025_glimepiride'
   status: 'current'
   title: 'Digital Twin of Glimepiride Enables Personalized Diabetes Therapy'
