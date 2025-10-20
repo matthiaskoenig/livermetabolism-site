@@ -52,11 +52,11 @@
 
 - id: 'Elias2025_glimepiride_physiome'
   year: 2025
-  date: 2025-09-15
+  date: 2025-10-20
   pdf: 'Elias2025_glimepiride_physiome.pdf'
   authors: 'Michelle Elias, <b>Matthias König</b>'
   title: 'Reproducibility of a Digital Twin of Glimepiride for Personalized and Stratified Diabetes Treatment'
-  journal: 'Physiome. 2025 October (accepted)'
+  journal: 'Physiome. October 20, 2025'
   journal_short: "Physiome"
   status: publication
   impact:

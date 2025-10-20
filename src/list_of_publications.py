@@ -164,7 +164,8 @@ def create_list_of_publications_typst(typst_path: Path, df: pd.DataFrame, highli
         for status in ["publication", "review", "proceeding", "preprint", "thesis"]:
             k_article = 0
             df_status = df[df["status"] == status]
-            typst_all += f"\n== {status.title()}{'s' if not status.endswith('s') else ''}\n"
+            title = status if status != "thesis" else "theses"
+            typst_all += f"\n== {title.title()}{'s' if not title.endswith('s') else ''}\n"
             for key, row in df_status.iterrows():
                 k_article += 1
                 text = f"{k_article}. " + create_entry_typst(e=row) + "\n"
@@ -222,7 +223,7 @@ if __name__ == "__main__":
 
     # List of selected publications
     selected = {
-        "Elias2025_glimepiride_physiome",
+        # "Elias2025_glimepiride_physiome",
         "Elias2025_glimepiride",
         "Albadry2024_species_comparison",
         "SED-ML_L1V5",
@@ -248,9 +249,9 @@ if __name__ == "__main__":
         # "Bartsch2023_simvastatin",
     }
     create_list_of_publications_typst(
-        Path("results/publications_selected.typ"),
+        Path("results/publications.typ"),
         df=df,
-        selected=selected,
+        # selected=selected,
         # highlights=selected,
     )
 
