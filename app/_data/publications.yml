@@ -1,15 +1,15 @@
 - id: 'Tensil2025_losartan_preprint'
   year: 2025
-  date: 2025-10-14
+  date: 2025-10-21
   pdf: 'Tensil2025_losartan_preprint.pdf'
   authors: 'Ennie Tensil, <b>Matthias König</b>'
   title: 'A Digital Twin of the Angiotensin II Receptor Blocker Losartan: Physiologically Based Modeling of Blood Pressure Regulation'
-  journal: 'Preprints 2025, 180871'
+  journal: 'Preprints 2025, 10.20944/preprints202510.1254.v1'
   journal_short: Preprints
   status: preprint
   impact: 0
   position: last
-  doi:
+  doi: 10.20944/preprints202510.1254.v1
   pmid:
   keywords:
     - Losartan
