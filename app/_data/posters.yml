@@ -194,7 +194,7 @@
   date: 2010-06-01
   pdf: 'posters/Spetses2010_blood_glucose_control.pdf'
   image: 'posters/Spetses2010_blood_glucose_control.jpg'
-  authors: '<b>Matthias König</b><sup>1</sup>, Sascha Bulik</b><sup>1</sup>, Hermann-Georg Holzhütter<sup>1</sup>'
+  authors: '<b>Matthias König</b><sup>1</sup>, Sascha Bulik<sup>1</sup>, Hermann-Georg Holzhütter<sup>1</sup>'
   affiliations: "<sup>1</sup>Charité University Medicine Berlin, Insitute of Biochemistry, Berlin, Germany"
   title: 'Blood glucose control by the human hepatocyte'
   meeting: 'Spetses 2010'
