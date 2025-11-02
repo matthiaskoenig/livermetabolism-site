@@ -23,6 +23,38 @@
   short: "We introduce a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of losartan and its active metabolite E3174 as a digital twin to study variability in blood pressure regulation and support individualized antihypertensive therapy."
   abstract: "In a new preprint, Ennie Tensil and Matthias König present a digital twin of the angiotensin II receptor blocker losartan, providing a mechanistic framework for precision treatment of hypertension and heart failure. The whole-body PBPK/PD model, based on data from 24 clinical trials, describes losartan’s absorption, hepatic metabolism, renal excretion, and pharmacodynamic effects via the renin–angiotensin–aldosterone system (RAAS). Implemented in SBML, the model captures interindividual variability arising from hepatic and renal impairment as well as CYP2C9 and ABCB1 polymorphisms. Simulations reproduce key pharmacokinetic and pharmacodynamic patterns, highlighting the impact of genetic and physiological factors on therapeutic response. This digital twin enables virtual patient studies and provides a quantitative foundation for individualized dosing and precision cardiovascular therapy."
 
+- id: 'presentation_combine'
+  status: 'current'
+  title: 'COMBINE & RDA: Reproducibility by Design: Data and Workflows for Pharmacokinetic Digital Twins'
+  date: '2025-10-20'
+  video: https://www.youtube.com/embed/IvKvApzjGtM
+  image:
+  link: https://github.com/matthiaskoenig/glimepiride-model
+  short: 'Presenting at COMBINE2025 and the RDA assembly our approach to reproducible digitial twins.'
+  abstract: 'Dr. Matthias König (Humboldt-Universität zu Berlin) presents how reproducibility and open standards enable trustworthy Digital Twins in pharmacology and medicine.
+Using the example of the glimepiride digital twin for type 2 diabetes, he demonstrates:
+
+- How patient-specific data, genetics, and physiology shape individualized drug responses
+- How open standards (SBML, SED-ML, PEtab, OMEX) ensure interoperability
+- How Executable Simulation Models (EXSIMO) combine model, data, and code for full transparency
+- Independent reproducibility checks by the Physiome Journal and BioModels Team
+
+Explore more:
+🌐 https://livermetabolism.com
+💊 https://glimepiride.de
+📦 Code: https://github.com/matthiaskoenig/glimepiride-model
+📄 Publications:
+- Elias M., König M. Front. Pharmacol. (2025) 16:1686415, https://doi.org/10.3389/fphar.2025.1686415
+- Elias M., König M. Physiome* (2025) doi: https://doi.org/10.36903/physiome.28379193
+Slides: https://docs.google.com/presentation/d/e/2PACX-1vQ93_XwINeHqL4eOK8V7zfwn8ZGvsEw1uHZ3Ka1cECuq6_ir46RgQu4QSgQuLxBrkUu7MEKxHsJ_FAi/pub?start=false&loop=false&delayms=3000
+Biomodels: https://www.ebi.ac.uk/biomodels/MODEL2510140001
+Youtube: https://youtu.be/IvKvApzjGtM
+
+Presented at: COMBINE2025
+https://co.mbine.org/events/
+
+#DigitalTwins #Reproducibility #OpenScience #Pharmacokinetics #SBML #COMBINE #SystemsMedicine #FAIRdata #AIinHealthcare #RDA"'
+
 - id: 'Elias2025_glimepiride'
   status: 'current'
   title: 'Digital Twin of Glimepiride Enables Personalized Diabetes Therapy'
