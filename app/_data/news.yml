@@ -1,3 +1,22 @@
+- id: 'bua_faces_interview'
+  status: 'current'
+  title: 'Faces of the Berlin University Alliance'
+  date: '2025-11-01'
+  image: bua_faces_interview.png
+  link: https://www.youtube.com/playlist?list=PLNPRvG2dBEvvWlnLg0C3WPtTYAOOH110k
+  short: 'We introduce a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of losartan and its active metabolite E3174 as a digital twin to study variability in blood pressure regulation and support individualized antihypertensive therapy."
+  abstract: "I am very honored to be featured in the new film series launched for the 6th anniversary of the Berlin University Alliance (BUA) — the research alliance of FU Berlin, HU Berlin, TU Berlin, and Charité – Universitätsmedizin Berlin.
+   The series highlights researchers who work across institutions, disciplines, and fields to shape Berlin as a place of knowledge and innovation. It shows how collaboration drives new ideas — from molecular research to cultural studies, from clinical practice to digital infrastructures.
+   In my portrait, I talk about our work on digital twins of the liver — computational models that integrate physiology, pharmacokinetics, and clinical data to support personalized medicine, teaching, and open science.
+   
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/tb9QArwsYCg?si=UCmOiHi6sSnB4TRU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+   
+   
+   Watch my short portrait: https://www.youtube.com/watch?v=tb9QArwsYCg
+   Learn more about the Berlin University Alliance: https://www.youtube.com/watch?v=fyX7YAxsfw4
+  Thanks to everyone involved, and to the students, collaborators, and colleagues who make this research possible every day.
+  '
+
 - id: 'Tensil2025_losartan_preprint'
   status: 'current'
   title: 'Digital Twin of Losartan for Precision Blood Pressure Therapy'
