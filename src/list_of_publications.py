@@ -208,8 +208,8 @@ if __name__ == "__main__":
     df_matrix = create_matrix(df=df)
     df_matrix.to_csv("results/publication_matrix.tsv", index=True, sep="\t")
 
-    markdown_file: Path = Path("results/publications.md")
-    create_list_of_publications_md(md_path=markdown_file, df=df)
+    # markdown_file: Path = Path("results/publications.md")
+    # create_list_of_publications_md(md_path=markdown_file, df=df)
 
     highlights = {
         # "PKDB_Grzegorzewski2020",
@@ -226,7 +226,7 @@ if __name__ == "__main__":
         # "Elias2025_glimepiride_physiome",
         "Elias2025_glimepiride",
         "Albadry2024_species_comparison",
-        "SED-ML_L1V5",
+        # "SED-ML_L1V5",
         "Maheshvare2023_pancreas",
         "Caffeine_meta_Grzegorzewski2021",
         "PKDB_Grzegorzewski2020",
@@ -235,8 +235,7 @@ if __name__ == "__main__":
         "Koeller2021_icg_variability",
         # "GlucoseModel_Koenig2012a",
         "SBML_Keating2020",
-
-        # "hepatokin_Berndt2018",
+        "hepatokin_Berndt2018",
         # "Koenig2023_standards",
 
         # "OMEX_Koenig2020",
@@ -249,9 +248,9 @@ if __name__ == "__main__":
         # "Bartsch2023_simvastatin",
     }
     create_list_of_publications_typst(
-        Path("results/publications.typ"),
+        Path("results/publications_selected.typ"),
         df=df,
-        # selected=selected,
+        selected=selected,
         # highlights=selected,
     )
 
