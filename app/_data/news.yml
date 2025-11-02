@@ -11,11 +11,9 @@
    
    <iframe width="560" height="315" src="https://www.youtube.com/embed/tb9QArwsYCg?si=UCmOiHi6sSnB4TRU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
    
-   
-   Watch my short portrait: https://www.youtube.com/watch?v=tb9QArwsYCg
-   Learn more about the Berlin University Alliance: https://www.youtube.com/watch?v=fyX7YAxsfw4
-  Thanks to everyone involved, and to the students, collaborators, and colleagues who make this research possible every day.
-  '
+   Watch my short portrait: <a href="https://www.youtube.com/watch?v=tb9QArwsYCg">🎥</a><br />
+   Learn more about the Berlin University Alliance: <a href="https://www.youtube.com/watch?v=fyX7YAxsfw4">🎥</a><br />
+  Thanks to everyone involved, and to the students, collaborators, and colleagues who make this research possible every day.'
 
 - id: 'Tensil2025_losartan_preprint'
   status: 'current'

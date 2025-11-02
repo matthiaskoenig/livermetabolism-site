@@ -9,21 +9,13 @@ permalink: /news/
     <div class="col-md-12">
         <h4>{{ news.date }}</h4>
         <h3>{{ news.title }}</h3>
-        <table class="table table-hover">
-        <tr>
-		<td>
-			<img src="/img/news/{{ news.image }}" class="img-responsive" height="60" style="float: left;"/>
-            {% if news.image2 %}
-            <img src="/img/news/{{ news.image2 }}" class="img-responsive" height="60" style="float: left;"/>
-            {% endif %}
-		</td>
-		<td>
-            <p>
-                {{ news.short }}
-            </p>
-            <p>
-                <a href="{{ news.link }}" target="_blank">{{ news.link }}</a>
-            </p>
+        <img src="/img/news/{{ news.image }}" class="img-responsive" height="60" style="float: left;"/>
+        <p>
+            {{ news.short }}
+        </p>
+        <p>
+            <a href="{{ news.link }}" target="_blank">{{ news.link }}</a>
+        </p>
         </td>
         </tr>
         </table>
