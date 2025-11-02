@@ -12,7 +12,19 @@ permalink: /news/
         <table class="table table-hover">
         <tr>
 		<td>
+            {% if news.video %}
+            <div class="video-container">
+                <iframe src="{{ news.video }}"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+            </div>
 			<img src="/img/news/{{ news.image }}" class="img-responsive" height="60" style="float: left;"/>
+            {% endif %}
+            {% if news.image %}
+			<img src="/img/news/{{ news.image }}" class="img-responsive" height="60" style="float: left;"/>
+            {% endif %}
             {% if news.image2 %}
             <img src="/img/news/{{ news.image2 }}" class="img-responsive" height="60" style="float: left;"/>
             {% endif %}

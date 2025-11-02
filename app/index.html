@@ -252,9 +252,21 @@ layout: default
         {% if news.status=="current" %}
         <p>
             {{ news.date }} <strong>{{ news.title }}</strong><br />
+
+            {% if news.video %}
+            <div class="video-container">
+                <iframe src="{{ news.video }}"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+            </div>
+            {% endif %}
+            {% if news.image %}
             <a href="{{ news.link }}" target="_blank">
                     <img src="/img/news/{{ news.image }}" class="img-responsive" height="60"/>
             </a>
+            {% endif %}
             {{ news.short }}
         </p>
         {% endif %}
