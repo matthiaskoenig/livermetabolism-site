@@ -251,22 +251,11 @@ layout: default
         {% for news in site.data.news %}
         {% if news.status=="current" %}
         <p>
-            {{ news.date }} <strong>{{ news.title }}</strong>
-        <div class="row">
-            <div class="col-md-6">
-                <a href="{{ news.link }}" target="_blank">
+            {{ news.date }} <strong>{{ news.title }}</strong><br />
+            <a href="{{ news.link }}" target="_blank">
                     <img src="/img/news/{{ news.image }}" class="img-responsive" height="60"/>
-                    {% if news.image2 %}
-                    <img src="/img/news/60/{{ news.image2 }}" class="img-responsive" height="60"/>
-                    {% endif %}
-                </a>
-            </div>
-            <div class="col-md-6">
-                {{ news.short }}<br/>
-            </div>
-        </div>
-
-
+            </a>
+            {{ news.short }}
         </p>
         {% endif %}
         {% endfor %}
