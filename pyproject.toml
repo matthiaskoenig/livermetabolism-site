@@ -10,4 +10,5 @@ dependencies = [
     "rich",
     "markdown",
     "pandoc",
+    "typst>=0.14.1"
 ]
