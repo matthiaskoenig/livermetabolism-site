@@ -1,3 +1,12 @@
+- id: 'Nemitz2025_dapagliflozin_preprint'
+  status: 'current'
+  title: 'A Digital Twin of Dapagliflozin Pharmacokinetics and Pharmacodynamics in Type 2 Diabetes Mellitus'
+  date: '2025-11-13'
+  image: Nemitz2025_dapagliflozin_preprint.png
+  link: https://github.com/matthiaskoenig/dapagliflozin-model
+  short: "We present a physiologically based PBPK/PD digital twin of dapagliflozin to analyze pharmacokinetic and pharmacodynamic variability in type 2 diabetes mellitus, with a focus on dosing, hepatorenal impairment, and food effects."
+  abstract: "In a new preprint, Nike Nemitz, Michelle Elias, and Matthias König introduce a digital twin of the SGLT2 inhibitor dapagliflozin, developed as a whole-body PBPK/PD model based on curated data from 28 clinical studies. The model mechanistically describes the drug’s absorption, distribution, metabolism, excretion, and pharmacodynamic action via urinary glucose excretion. It captures key sources of inter-individual variability—including renal and hepatic impairment, food effects, and dose-dependent kinetics—and successfully reproduces observed clinical PK/PD patterns. Simulations reveal that renal impairment substantially reduces urinary glucose excretion despite preserved plasma exposure, while hepatic impairment has only minor influence. Food intake lowers peak concentrations but still leads to measurable changes in pharmacodynamic response. This digital twin provides mechanistic insight into dapagliflozin variability and supports individualized therapy optimization in type 2 diabetes."
+
 - id: 'bua_faces_interview'
   status: 'current'
   title: 'Faces of the Berlin University Alliance'

@@ -1,3 +1,28 @@
+- id: 'Nemitz2025_dapagliflozin_preprint'
+  year: 2025
+  date: 2025-11-13
+  pdf: 'Nemitz2025_dapagliflozin_preprint.pdf'
+  authors: 'Nike Nemitz, Michelle Elias, <b>Matthias König</b>'
+  title: 'A Digital Twin of Dapagliflozin Pharmacokinetics and Pharmacodynamics in Type 2 Diabetes Mellitus: Modeling Variability in Dosing, Hepatorenal Impairment, and Food Effects'
+  journal: 'Preprints 2025, 10.20944/preprints202511.0981.v1'
+  journal_short: Preprints
+  status: preprint
+  impact: 0
+  position: last
+  doi: 10.20944/preprints202511.0981.v1
+  pmid:
+  keywords:
+    - digital twin
+    - dapagliflozin
+    - type 2 diabetes mellitus
+    - physiologically based pharmacokinetic/pharmacodynamic model (PBPK/PD)
+    - pharmacokinetics
+    - pharmacodynamics
+    - personalized medicine
+  project:
+  repository: https://github.com/matthiaskoenig/dapagliflozin-model
+  abstract: 'Dapagliflozin is an SGLT2 inhibitor prescribed for the management of type 2 diabetes mellitus. The drug lowers blood glucose levels by increasing urinary glucose excretion. Despite established efficacy, dapagliflozin demonstrates significant inter-individual variability in pharmacokinetics (PK) and pharmacodynamics (PD), with potential impact on treatment outcomes. To evaluate the sources of variability, we developed a digital twin of dapagliflozin pharmacokinetics and pharmacodynamics built as a PBPK/PD model using curated data from 28 clinical studies. This constitutes a full mechanistic model that integrates absorption, distribution, metabolism, excretion, and pharmacodynamics. It accounts for key determinants of variability including renal and hepatic function, and food effects. The simulations reproduced dose-dependent pharmacokinetics within the therapeutic range and captured inter-individual differences observed in clinical data. Application of the model revealed that renal impairment markedly reduced urinary glucose excretion despite stable plasma exposure, while hepatic impairment had only minor effects. Although food intake decreased peak plasma concentrations without altering overall exposure (AUC), measurable differences in pharmacodynamic response still occurred. The digital twin provides mechanistic insight into PK/PD variability and a platform for optimizing individualized therapy in type 2 diabetes.'
+
 - id: 'Tensil2025_losartan_preprint'
   year: 2025
   date: 2025-10-21
@@ -36,7 +61,7 @@
   impact: 4.8
   position: last
   doi: 10.3389/fphar.2025.1686415
-  pmid:
+  pmid: 41132528
   keywords:
     - digital twin
     - diabetes
