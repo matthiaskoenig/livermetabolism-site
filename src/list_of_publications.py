@@ -248,9 +248,9 @@ if __name__ == "__main__":
         # "Bartsch2023_simvastatin",
     }
     create_list_of_publications_typst(
-        Path("results/publications_selected.typ"),
+        Path("results/publications.typ"),
         df=df,
-        selected=selected,
+        # selected=selected,
         # highlights=selected,
     )
 
