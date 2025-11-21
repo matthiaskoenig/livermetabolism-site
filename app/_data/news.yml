@@ -1,3 +1,12 @@
+- id: 'Koenig2025_KI_Teaching_Certificate'
+  status: 'current'
+  title: 'Completion of the AI Teaching Certificate (KI-Lehrzertifikat)'
+  date: '2025-11-20'
+  image: Koenig2025_KI_Teaching_Certificate.png
+  link:
+  short: "Successful completion of the AI Teaching Certificate (200 AE) at Humboldt-Universität zu Berlin, covering AI foundations, ethics, and higher education didactics within the KI-Campus 2.0 and AI Skills Initiative."
+  abstract: "Matthias König has successfully completed the AI Teaching Certificate (KI-Lehrzertifikat), a comprehensive 200-unit higher education qualification program offered through KI-Campus 2.0 and the AI Skills Initiative at Humboldt-Universität zu Berlin. The certificate consists of three micro-credentials—AI Foundations (96%), AI Advanced & Ethics (93%), and AI Didactics in Higher Education (91%)—and covers core AI topics including machine learning, neural networks, Python and Jupyter workflows, text and image processing, and responsible AI use. Training followed DGHD-aligned standards in AI ethics, data and algorithmic governance, and regulatory aspects. The program also emphasized AI-supported teaching, such as integrating generative AI, speech assistants, and prompt design into university courses, as well as developing AI-based OER teaching units. The certification was completed with a teaching observation and reflective assessments demonstrating competency in designing and implementing AI-enhanced learning scenarios."
+
 - id: 'huinternship2026'
   status: 'current'
   title: 'Humboldt Internship Program 2026 - Computational Modeling of Drug Detoxification Using Digital Twins – A Systems Medicine Approach'
