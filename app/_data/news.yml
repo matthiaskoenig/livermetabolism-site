@@ -1,3 +1,19 @@
+- id: 'Open_Science_Workshop2025'
+  status: 'current'
+  title: 'Successful Open Science Workshop 2025'
+  date: '2025-11-28'
+  image: Open_Science_Workshop2025.gif
+  link: https://matthiaskoenig.github.io/open-science-workshop
+  short: "The Open Science Workshop 2025 brought together participants from across the Berlin University Alliance for a full-day, hands-on introduction to reproducible research, FAIR data, and open-source workflows."
+  abstract: "The Open Science Workshop 2025 was a great success, welcoming a diverse group of participants from all BUA universities. The workshop covered key aspects of open and reproducible research, including FAIR data principles, version control with Git, transparent workflows, open-source tools, computational reproducibility, and best practices for collaborative science.  
+   
+    All workshop materials—including slides, hands-on exercises, and code examples—are openly available on the workshop website (https://matthiaskoenig.github.io/open-science-workshop), with full source files and datasets provided in the public GitHub repository (https://github.com/matthiaskoenig/open-science-workshop).  
+   
+    A detailed reflection and recap of the workshop, including participant demographics and learning outcomes, is available here:  
+    https://matthiaskoenig.github.io/open-science-workshop/docs/workshop2025.html  
+   
+    The workshop fostered engaging discussions on the future of open science and highlighted the importance of transparency, accessibility, and reproducibility in modern research. Participants reported a significant improvement in their understanding of all presented technologies. Certificates of participation were provided to all attendees."
+
 - id: 'Koenig2025_KI_Teaching_Certificate'
   status: 'current'
   title: 'Completion of the AI Teaching Certificate (KI-Lehrzertifikat)'
