@@ -1,62 +1,60 @@
-user nginx;
-worker_processes 4;
-error_log /logs/error.log;
-pid /var/run/nginx.pid;
-worker_rlimit_nofile 8192;
+# ------------------
+# livermetabolism.com
+# ------------------
+access_log /var/www/logs/livermetabolism.com_access.log;
+error_log /var/www/logs/livermetabolism.com_error.log;
 
-events { 
-  worker_connections 1024; 
-}
- 
-http {
-    include       /etc/nginx/mime.types;
-    default_type  application/octet-stream;
+server {
+    listen 80;
+    listen [::]:80;
 
-    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
-                      '$status $body_bytes_sent "$http_referer" '
-                      '"$http_user_agent" "$http_x_forwarded_for"';
+    server_name livermetabolism.com www.livermetabolism.com;
 
-    access_log  /var/log/nginx/access.log  main;
-
-    sendfile        on;
-    keepalive_timeout  65;
-
-    # http forwards
-    server {
-      listen 80;
-      listen [::]:80;
-
-      server_name www.livermetabolism.com livermetabolism.de www.livermetabolism.de;
-
-      # letsencrypt webroot authenticator
-      location /.well-known/acme-challenge/ {
-          root /usr/share/nginx/letsencrypt;
-      }
-
-      # https redirects
-      location = / {
-          return 301 http://livermetabolism.com$request_uri;
-      }
+    # letsencrypt webroot authenticator
+    location /.well-known/acme-challenge/ {
+        root /usr/share/nginx/letsencrypt;
     }
 
-    server {
-        listen 80;
-        listen [::]:80;
+    # https redirects
+    location = / {
+        return 301 https://livermetabolism.com$request_uri;
+    }
+}
 
-        # site
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+
+    server_name www.livermetabolism.com www.livermetabolism.de livermetabolism.de;
+    ssl_certificate     /etc/letsencrypt/live/livermetabolism.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/livermetabolism.com/privkey.pem;
+
+    return 301 https://livermetabolism.com$request_uri;
+}
+
+server {
+        listen 443 ssl http2;
+        listen [::]:443 ssl http2;
+
+        server_name livermetabolism.com;
+
+        ssl_certificate     /etc/letsencrypt/live/livermetabolism.com/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/livermetabolism.com/privkey.pem;
+        include /etc/nginx/snippets/ssl.conf;
+
         client_max_body_size 100m;
-        add_header X-Frame-Options SAMEORIGIN always;
+        proxy_connect_timeout       900;
+        proxy_send_timeout          900;
+        proxy_read_timeout          900;
+        send_timeout                900;
 
         location / {
-            root   /usr/share/nginx/html;
-            index  index.html index.htm;
+                # denbi-cloud: node5
+                proxy_pass http://192.168.0.175:80;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-for $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+                # port_in_redirect off;
         }
-
-        # redirect server error pages to the static page /50x.html
-        error_page   500 502 503 504  /50x.html;
-        location = /50x.html {
-            root   /usr/share/nginx/html;
-        }
-
-    }
 }

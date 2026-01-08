@@ -1,13 +1,5 @@
 # Serve the development server
-
-# 4000 is the default port that Jekyll uses to serve pages via the jekyll serve command
-# 35729 is the port used by livereload, which you may or may not use? I’m not using it.
-# 3000? IDK
-# 80 is just remapping port 4000 externally.
-
-# https://github.com/envygeeks/jekyll-docker/blob/master/README.md
-
-version: "3"
+# docker compose -f docker-compose-build.yml up
 services:
   jekyll:
     command: jekyll serve
@@ -15,9 +7,9 @@ services:
     volumes:
       - $PWD:/srv/jekyll
       - $PWD/app/vendor/bundle:/usr/local/bundle"
-    environment:
-      JEKYLL_UID: 1001
-      JEKYLL_GID: 1001
+#    environment:
+#      JEKYLL_UID: 1001
+#      JEKYLL_GID: 1001
     ports:
       - "4000:4000"
       - "35731:35729"

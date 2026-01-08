@@ -6,7 +6,7 @@ Code and material for static site at [https://www.livermetabolism.com/](https://
 
 ## License
 
-* Source Code: [LGPLv3](http://opensource.org/licenses/GPL-3.0)
+* Source Code: [MIT](https://opensource.org/licenses/mit)
 * Documentation: [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)
 
 ## Build page
@@ -20,31 +20,16 @@ The page is built using Jekyll with additional site templates
 
 ### Run development server
 
-```
+```bash
 docker compose -f docker-compose-serve.yml up
 ```
 
-Change the web content in the `./app/` folder.
-
-### Update dependencies
-
-Delete the `Gemfile.lock`
-
-```
-docker run --rm --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/local/bundle" -it jekyll/jekyll:4.2.2 bundle update
-```
-
-### Build web content
-
-```
-docker-compose -f docker-compose-build.yml up
-```
 
 ## Deployment
 
-### update
-
-Execute the `./deploy.sh` script which downloads the latest changes and updates the page.
+sudo cp -v /var/git/livermetabolism-site/nginx/livermetabolism.com /etc/nginx/sites-available/
+sudo ln -s /etc/nginx/sites-available/livermetabolism.com /etc/nginx/sites-enabled/
+sudo service nginx status
 
 ### HTTPS certificates
 
@@ -54,16 +39,8 @@ Execute the `./deploy.sh` script which downloads the latest changes and updates 
 # access server
 ssh denbi-head
 
-# https certificates
-sudo add-apt-repository ppa:certbot/certbot
-sudo apt-get update
-sudo apt-get install -y certbot
-
-# initial certificates
-cd /home/mkoenig/git/livermetabolism-site
-docker-compose down
 sudo mkdir -p /usr/share/nginx/letsencrypt
-sudo certbot certonly -d livermetabolism.com -d www.livermetabolism.com -d livermetabolism.de -d www.livermetabolism.de
+sudo certbot certonly --webroot -w /usr/share/nginx/letsencrypt -d livermetabolism.com -d www.livermetabolism.com -d livermetabolism.de -d www.livermetabolism.de --dry-run
 ```
 
 Renew certificates
@@ -71,8 +48,7 @@ Renew certificates
 sudo certbot renew --dry-run
 ```
 
-### deploy
-
+### Update site
 #### Connect to server
 ```bash
 ssh denbi-node-7
@@ -84,6 +60,9 @@ ssh denbi-node-7
 mkdir ~/git
 cd ~/git
 git clone https://github.com/matthiaskoenig/livermetabolism-site.git
+cd livermetabolism-site
+mkdir web
+sudo chown $USER:$USER web
 ```
 
 #### Update page
