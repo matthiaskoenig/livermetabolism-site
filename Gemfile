@@ -1,7 +1,9 @@
 source "https://rubygems.org"
 ruby RUBY_VERSION
 
-gem "jekyll", "3.8.5"
+gem "jekyll", "3.8.6"
+# Fix for mismatched deps: https://github.com/ffi/ffi/issues/1103
+gem "ffi", "< 1.17.0"
 
 # to use GitHub Pages
 # gem "github-pages", group: :jekyll_plugins

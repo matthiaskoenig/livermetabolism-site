@@ -52,7 +52,8 @@ Execute the `./deploy.sh` script which downloads the latest changes and updates 
 
 ```bash
 # access server
-ssh h2389049.stratoserver.net
+ssh denbi-head
+
 # https certificates
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt-get update
@@ -72,30 +73,30 @@ sudo certbot renew --dry-run
 
 ### deploy
 
+#### Connect to server
 ```bash
-# access server
-ssh h2389049.stratoserver.net
+ssh denbi-node-7
+```
 
+#### Initial setup
+```bash
 # download code
-mkdir /home/mkoenig/git
-git clone https://github.com/matthiaskoenig/livermetabolism-site
-# get latest code
-cd /home/mkoenig/git/livermetabolism-site
-git pull
-# stop nginx
-docker-compose down
-# build web content
-docker-compose -f docker-compose-build.yml up
-# start nginx service
-docker-compose up --build -d
+mkdir ~/git
+cd ~/git
+git clone https://github.com/matthiaskoenig/livermetabolism-site.git
+```
+
+#### Update page
+```bash
+cd ~/git/livermetabolism-site
+./deploy.sh
 ```
 
 ## Python package
 
 ```bash
-uv venv
 uv sync
 ```
 
 ----
-&copy; 2016-2025 Matthias König.
+&copy; 2016-2026 Matthias König.

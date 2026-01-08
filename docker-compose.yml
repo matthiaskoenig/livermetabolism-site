@@ -2,7 +2,7 @@ version: "3"
 
 services:
   nginx:
-    image: nginx:1.23.2
+    image: nginx:1.29.4
     volumes:
       - $PWD/web:/usr/share/nginx/html/
       - $PWD/nginx/nginx_ssl.conf:/etc/nginx/nginx.conf
@@ -14,7 +14,6 @@ services:
     ports:
       - "80:80"
       - "443:443"
-    # - "4567:80"
     restart: always
     networks:
       - frontend

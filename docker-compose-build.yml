@@ -10,7 +10,7 @@ services:
   
   jekyll:
     command: jekyll build
-    image: jekyll/jekyll:3.8.5
+    image: jekyll/jekyll:3.8.6
     volumes:
       - $PWD:/srv/jekyll
       - $PWD/app/vendor/bundle:/usr/local/bundle"
