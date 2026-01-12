@@ -196,11 +196,25 @@ def create_list_of_pubmeds(df: pd.DataFrame) -> List[str]:
     import numpy as np
     pmids: List[str] = []
     for key, row in df.iterrows():
-        print(row)
+        # print(row)
 
         if not np.isnan(row.pmid):
             pmids.append(int(row.pmid))
     return pmids
+
+def create_list_of_dois(df: pd.DataFrame, no_pmid: bool = True) -> List[str]:
+    import numpy as np
+    dois: List[str] = []
+    for key, row in df.iterrows():
+        # print(row)
+
+        if row.doi:
+            if no_pmid:
+                if np.isnan(row.pmid):
+                    dois.append(row.doi)
+            else:
+                dois.append(row.doi)
+    return dois
 
 if __name__ == "__main__":
     yaml_file: Path = Path(__file__).parent.parent / "app" / "_data" / "publications.yml"
@@ -247,13 +261,16 @@ if __name__ == "__main__":
         # "Kuettner2023_chlorzoxazone",
         # "Bartsch2023_simvastatin",
     }
-    create_list_of_publications_typst(
-        Path("results/publications.typ"),
-        df=df,
-        # selected=selected,
-        # highlights=selected,
-    )
+    # create_list_of_publications_typst(
+    #     Path("results/publications.typ"),
+    #     df=df,
+    #     # selected=selected,
+    #     # highlights=selected,
+    # )
 
 
     pubmeds = create_list_of_pubmeds(df=df)
     print(pubmeds)
+    dois = create_list_of_dois(df=df)
+    for doi in dois:
+        print(doi)
