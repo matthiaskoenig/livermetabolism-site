@@ -25,7 +25,7 @@ server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
 
-    server_name www.livermetabolism.com www.livermetabolism.de livermetabolism.de;
+    server_name www.livermetabolism.com www.livermetabolism.de livermetabolism.de www.pharma-twin.eu pharma-twin.eu www.pharma-twin.de pharma-twin.de;
     ssl_certificate     /etc/letsencrypt/live/livermetabolism.com/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/livermetabolism.com/privkey.pem;
 

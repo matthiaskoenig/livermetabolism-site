@@ -40,7 +40,7 @@ sudo service nginx status
 ssh denbi-head
 
 sudo mkdir -p /usr/share/nginx/letsencrypt
-sudo certbot certonly --webroot -w /usr/share/nginx/letsencrypt -d livermetabolism.com -d www.livermetabolism.com -d livermetabolism.de -d www.livermetabolism.de --dry-run
+sudo certbot certonly --webroot -w /usr/share/nginx/letsencrypt -d livermetabolism.com -d www.livermetabolism.com -d livermetabolism.de -d www.pharma-twin.eu -d pharma-twin.eu -d www.pharma-twin.de -d pharma-twin.de -d www.livermetabolism.de --dry-run
 ```
 
 Renew certificates
