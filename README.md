@@ -67,6 +67,7 @@ sudo chown $USER:$USER web
 
 #### Update page
 ```bash
+ssh denbi-node-7
 cd ~/git/livermetabolism-site
 ./deploy.sh
 ```
