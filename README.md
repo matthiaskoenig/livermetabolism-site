@@ -18,8 +18,6 @@ The page is built using Jekyll with additional site templates
 
 ## Local development
 
-### Run development server
-
 ```bash
 docker compose -f docker-compose-serve.yml up
 ```
@@ -27,9 +25,11 @@ docker compose -f docker-compose-serve.yml up
 
 ## Deployment
 
+```
 sudo cp -v /var/git/livermetabolism-site/nginx/livermetabolism.com /etc/nginx/sites-available/
 sudo ln -s /etc/nginx/sites-available/livermetabolism.com /etc/nginx/sites-enabled/
 sudo service nginx status
+```
 
 ### HTTPS certificates
 

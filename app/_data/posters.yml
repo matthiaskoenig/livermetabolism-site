@@ -1,3 +1,30 @@
+- id: 'EASL2026_LCS_Poster'
+  year: 2025
+  date: 2025-20-21
+  pdf: 'posters/EASL2026_LCS_Poster.pdf'
+  image: 'posters/EASL2026_LCS_Poster.jpg'
+  authors: 'Mariia Myshkina<sup>1</sup>, Etienne Jessen<sup>2</sup>, Dominik Schillinger<sup>2</sup>, <b>Matthias König</b><sup>1,3</sup>'
+  affiliations: '<sup>1</sup> Department of Biology, Faculty of Life Sciences, Humboldt-Universität zu Berlin, Germany; <sup>2</sup> Institute for Mechanics, Computational Mechanics Group, Technical University of Darmstadt, Darmstadt, Germany; <sup>3</sup> Institute of Structural Mechanics and Dynamics in Aerospace Engineering, University of Stuttgart, Stuttgart, Germany'
+  title: 'Modelling of Patient-Specific Liver Vasculature and Sorafenib Pharmacokinetics in Hepatocellular Carcinoma'
+  meeting: 'EASL Liver Cancer Summit 2026'
+  webpage: 'https://easl.eu/event/liver-cancer-summit-2026/'
+  doi:
+  keywords:
+    - pharmacokinetics
+    - sorafenib
+    - vessel trees
+  project:
+  repository:
+  abstract: 'Background and Aims: Liver cancer is the second leading cause of cancer-related deaths. Despite the various therapeutic options for hepatocellular carcinoma (HCC) treatment, selecting patient-specific therapy remains challenging. A major challenge is predicting the distribution and heterogeneity of anti-cancer medication in the liver due to factors such as liver anatomy, vascular topology, perfusion and tumour location. In this study, we applied a recently published algorithm [1] to generate vessel trees within a defined liver volume and modelled the spatio-temporal pharmacokinetics of the multi-kinase inhibitor sorafenib (NEXAVAR®) within the liver. Our objectives were: (i) to generate physiologically realistic arterial, portal, venous, and biliary vessel trees in a given liver volume; (ii) to develop a mechanistic pharmacokinetic model for substance transport in these trees; (iii) to couple this model with a physiologically based pharmacokinetic (PBPK) model of sorafenib; and (iv) to simulate drug concentration dynamics within the liver.
+  Methods: Substance transport along the vessel and biliary trees was modelled using ordinary differential equations. Each terminal segment of the trees was associated with a terminal liver volume, representing the hepatic tissue supplied by individual terminal arterial, portal, venous, and biliary segments. In each terminal volume, the local sorafenib metabolism and biliary excretion were modelled. Model performance was evaluated using published pharmacokinetic data.
+  Results: The algorithm successfully generated physiologically realistic, non-intersecting arterial, portal, venous, and biliary trees within the liver volume. The surrogate mechanistic–PBPK model reproduced published pharmacokinetic data for sorafenib and enabled spatially resolved predictions of drug concentrations along the vascular and biliary trees and within liver tissue. 
+  Simulations revealed that the time to reach maximum sorafenib concentration in liver tissue was directly related to proximity to the start of inflow trees and inversely to proximity to the end of outflow trees. These results underscore the influence of the liver anatomy, its vascularisation topology and target location on intrahepatic drug exposure, suggesting that individualised dosing strategies could enhance therapeutic response in HCC.
+  Conclusion: The established workflow for simulating the spatial distribution and heterogeneity of anti-cancer medication in a given liver anatomy can provide important information for individual HCC treatment planning.
+  References
+  [1] Jessen E, Steinbach MC, Debbaut C, Schillinger D (2022). Rigorous mathematical optimization of synthetic hepatic vascular trees. Journal of The Royal Society Interface 19:20220087. doi: 10.1098/rsif.2022.0087
+  [2] Okibedi Frances, & König, Matthias. (2023). Physiologically based pharmacokinetic (PBPK) model of sorafenib. Zenodo. https://doi.org/10.5281/zenodo.10432855'
+
+
 - id: 'HIP2025_lixisenatide_Olivia.Yau'
   year: 2025
   date: 2025-07-07

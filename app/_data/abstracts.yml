@@ -1,17 +1,73 @@
+- id: 'GAMM2026_Simliva'
+  year: 2026
+  date: 2026-01-15
+  title: 'Extension of liver biomechanics framework for whole-body applications'
+  pdf: 'GAMM2026_Simliva.pdf'
+  authors: 'Steffen Gerhäusser1, Luis Mandl1,2, Uta Dahmen³, Hans-Michael Tautenhahn2, Tim Ricken1, <b>Matthias König</b>1,4'
+  affiliations: '1Institute of Structural Mechanics and Dynamics in Aerospace Engineering, Faculty of Aerospace Engineering and Geodesy, University of Stuttgart, Germany; 2 Experimental Hepatobiliary Surgery Group, Department of Hepatobiliary Surgery and Visceral Transplantation, University of Leipzig Medical Center, Germany; 3 Experimental Transplantation Surgery, Department of General, Visceral and Vascular Surgery, Jena University Hospital, Germany; 4 Institute for Theoretical Biology, Systems Medicine of Liver, Humboldt University Berlin, Germany, koenigmx@hu-berlin.de, https://orcid.org/0000-0003-1725-179X.'
+  abstract: 'Liver transplantation is the only curative treatment for end‐stage liver disease, but changing demographics and Western lifestyles are leading to an increase in elderly, multi‐morbid donors and recipients. When faced with a marginal graft, surgeons must weigh the risks: accept a suboptimal organ with potential postoperative complications or reject it, increasing the recipient’s chances of dying on the waiting list. Simulation-based risk assessment via a digital liver twin has enormous potential to evaluate and, if necessary, optimise or cancel the planned transplantation process in everyday clinical practice, e.g. modelling patient-specific impairment of liver grafts [1]. During the transplant procedure, the organ changes bodies from donor to recipient, but may also be linked to a perfusion machine as a conservatory measure. An important research question is how the different milieus affect liver function during and after the procedure. To investigate this, the existing tissue-scale model is coupled with an external third scale model (e.g., representing body or perfusion machine) to incorporate the influence of the surrounding environment. This is of particular interest as it enables the use of physiologically more realistic boundary conditions and allows the simulation of reperfusion scenarios compared to the standalone tissue-cell boundary value problem. In this work, the framework for coupling tissue-scale and cellular-scale processes based on FEniCSx [2], libRoadRunner [3], and preCICE [4] will be extended by an additional ODE-based physiologically based pharmacokinetic (PBPK) model [5]. We look into the theory, implementation, validation and challenges behind this ODE-PDE-ODE approach during simulation scenarios with clinical relevance.
+  
+  [1] Tautenhahn H. et al., GAMM-Mitteilungen, DOI:10.1002/gamm.202370003
+  [2] Baratta I. A. et al (2023).  Zenodo. doi: 10.5281/zenodo.10447666.
+  [3] Welsh C. et al., Bioinformatics (2023)39
+  [4] Chourdakis G. et al. Open Research (2022)2
+  [5] Elias M. et al (2025)., Frontiers in Pharmacology (2025)8
+'
+  keywords:
+  meeting: 'GAMM 2026: 96th Annual Meeting of the International Association of Applied Mathematics and Mechanics; Stuttgart 16th - 20th March 2026, Germany'
+  meeting_webpage: 'https://jahrestagung.gamm.org/annual-meeting-2026/96th-annual-meeting-2/'
+  journal:
+  doi:
+  project:
+  repository:
+
+- id: 'EASL_LCS_2026'
+  year: 2025
+  date: 2025-20-21
+  title: 'Modelling of Patient-Specific Liver Vasculature and Sorafenib Pharmacokinetics in Hepatocellular Carcinoma'
+  pdf: 'EASL_LCS_2026_abstract.pdf'
+  authors: 'Mariia Myshkina1, Etienne Jessen2, Dominik Schillinger2, <b>Matthias König</b>1,3'
+  affiliations: '1 Department of Biology, Faculty of Life Sciences, Humboldt-Universität zu Berlin, Germany; 2 Institute for Mechanics, Computational Mechanics Group, Technical University of Darmstadt, Darmstadt, Germany; 3 Institute of Structural Mechanics and Dynamics in Aerospace Engineering, University of Stuttgart, Stuttgart, Germany'
+  abstract: 'Background and Aims: Liver cancer is the second leading cause of cancer-related deaths. Despite the various therapeutic options for hepatocellular carcinoma (HCC) treatment, selecting patient-specific therapy remains challenging. A major challenge is predicting the distribution and heterogeneity of anti-cancer medication in the liver due to factors such as liver anatomy, vascular topology, perfusion and tumour location. In this study, we applied a recently published algorithm [1] to generate vessel trees within a defined liver volume and modelled the spatio-temporal pharmacokinetics of the multi-kinase inhibitor sorafenib (NEXAVAR®) within the liver. Our objectives were: (i) to generate physiologically realistic arterial, portal, venous, and biliary vessel trees in a given liver volume; (ii) to develop a mechanistic pharmacokinetic model for substance transport in these trees; (iii) to couple this model with a physiologically based pharmacokinetic (PBPK) model of sorafenib; and (iv) to simulate drug concentration dynamics within the liver.
+  Methods: Substance transport along the vessel and biliary trees was modelled using ordinary differential equations. Each terminal segment of the trees was associated with a terminal liver volume, representing the hepatic tissue supplied by individual terminal arterial, portal, venous, and biliary segments. In each terminal volume, the local sorafenib metabolism and biliary excretion were modelled. Model performance was evaluated using published pharmacokinetic data.
+  Results: The algorithm successfully generated physiologically realistic, non-intersecting arterial, portal, venous, and biliary trees within the liver volume. The surrogate mechanistic–PBPK model reproduced published pharmacokinetic data for sorafenib and enabled spatially resolved predictions of drug concentrations along the vascular and biliary trees and within liver tissue. 
+  Simulations revealed that the time to reach maximum sorafenib concentration in liver tissue was directly related to proximity to the start of inflow trees and inversely to proximity to the end of outflow trees. These results underscore the influence of the liver anatomy, its vascularisation topology and target location on intrahepatic drug exposure, suggesting that individualised dosing strategies could enhance therapeutic response in HCC.
+  Conclusion: The established workflow for simulating the spatial distribution and heterogeneity of anti-cancer medication in a given liver anatomy can provide important information for individual HCC treatment planning.
+  References
+  [1] Jessen E, Steinbach MC, Debbaut C, Schillinger D (2022). Rigorous mathematical optimization of synthetic hepatic vascular trees. Journal of The Royal Society Interface 19:20220087. doi: 10.1098/rsif.2022.0087
+  [2] Okibedi Frances, & König, Matthias. (2023). Physiologically based pharmacokinetic (PBPK) model of sorafenib. Zenodo. https://doi.org/10.5281/zenodo.10432855'
+  keywords:
+  meeting: 'EASL Liver Cancer Summit 2026'
+  meeting_webpage: 'https://easl.eu/event/liver-cancer-summit-2026/'
+  journal:
+  doi:
+  project:
+  repository: https://github.com/matthiaskoenig/sorafenib-model
+
 - id: 'CFT24_icg_2021'
   year: 2021
+  date:
   pdf: 'CFT24_abstracts_2021.pdf'
   authors: 'Adrian Köller, Jan Grzegorzewski and <b>Matthias König</b>'
+  affiliations:
+  keywords:
+  doi:
   title: '24th Surgical Research Days. Eur Surg Res., Abstract: ID 17, Physiological Based Pharmacokinetic Models of Dynamical Liver Function Tests as a Promising Tool in Hepatectomy'
+  meeting:
   journal: '2021;62(3):161-220. doi: <a href="https://doi.org/10.1159/000518793">10.1159/000518793</a>. Epub 2021 Aug 31. PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/34515110/">34515110</a>.'
   project:
   repository: https://github.com/matthiaskoenig/icg-model
 
 - id: 'CFT24_uncertainty_2021'
   year: 2021
+  date:
   pdf: 'CFT24_uncertainty_2021.pdf'
   authors: 'S. Höpfl, <b>M. König</b>, N. Radde'
+  affiliations:
+  keywords:
+  doi:
   title: '24th Surgical Research Days. Eur Surg Res., Abstract: ID 101, Bayesian Statistics for Uncertainty Quantification of a Physiologically Based Model of Indocyanine Green Liver Function Tests'
+  meeting:
   journal: '2021;62(3):161-220. doi: <a href="https://doi.org/10.1159/000518793">10.1159/000518793</a>. Epub 2021 Aug 31. PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/34515110/">34515110</a>.'
   project:
   repository:
