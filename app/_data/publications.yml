@@ -1,3 +1,28 @@
+- id: 'Tereshchuk2026_canagliflozin_preprint'
+  year: 2026
+  date: 2026-01-27
+  pdf: 'Tereshchuk2026_canagliflozin_preprint.pdf'
+  authors: 'Vera Tereshchuk, Michelle Elias, <b>Matthias König</b>'
+  title: 'A Digital Twin of Canagliflozin Pharmacokinetics and Pharmacodynamics in Type 2 Diabetes Mellitus'
+  journal: 'Preprints 2026, 10.20944/preprints202601.2095.v1'
+  journal_short: Preprints
+  status: preprint
+  impact: 0
+  position: last
+  doi: 10.20944/preprints202601.2095.v1
+  pmid:
+  keywords:
+    - Digital twin
+    - Canagliflozin
+    - Type 2 diabetes mellitus
+    - Physiologically based pharmacokinetic/pharmacodynamic model (PBPK/PD)
+    - Pharmacokinetics
+    - Pharmacodynamics
+    - Personalized medicine
+  project:
+  repository: https://github.com/matthiaskoenig/canagliflozin-model
+  abstract: 'Canagliflozin is an SGLT2 inhibitor prescribed for the management of type 2 diabetes mellitus, lowering blood glucose by increasing urinary glucose excretion (UGE). However, pharmacokinetic (PK) and pharmacodynamic (PD) responses vary across patient populations, complicating dose selection under altered organ function. Here, we developed a whole-body PBPK/PD digital twin of canagliflozin that integrates absorption, distribution, metabolism, and excretion, and explicitly models renal glucose handling. The model represents canagliflozin and its major metabolites (M5, M7, M9) and was calibrated and evaluated using curated PK/PD data from 22 clinical studies spanning healthy individuals, patients with type 2 diabetes, and cohorts with renal or hepatic impairment. Simulations reproduced dose-dependent exposure and UGE across single- and multiple-dose regimens. Renal impairment produced modest changes in parent drug exposure but markedly reduced UGE and increased metabolite exposure, consistent with reduced glucose filtration and impaired metabolite clearance. Under hepatic impairment, simulations predicted increased canagliflozin exposure with altered metabolite profiles, while PD effects were minimal, although evaluation was limited by sparse clinical PD endpoints. All model files, simulation scripts, and curated datasets are provided in open SBML workflows in accordance with FAIR principles, enabling reproducible simulations and reuse for model-informed analyses of canagliflozin PK/PD variability.'
+
 - id: 'Nemitz2025_dapagliflozin_preprint'
   year: 2025
   date: 2025-11-13
