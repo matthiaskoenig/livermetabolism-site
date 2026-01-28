@@ -1,3 +1,13 @@
+- id: 'Tereshchuk2026_canagliflozin_preprint'
+  status: 'current'
+  title: 'Preprint: A Digital Twin of Canagliflozin Pharmacokinetics and Pharmacodynamics in Type 2 Diabetes Mellitus'
+  date: '2026-01-27'
+  image: Tereshchuk2026_graphical.abstract.png
+  link: https://www.preprints.org/manuscript/202601.2095/v1
+  short: "We present a whole-body PBPK/PD digital twin of canagliflozin to investigate pharmacokinetic and pharmacodynamic variability in type 2 diabetes mellitus, with a focus on renal and hepatic impairment, metabolite exposure, and dose-dependent effects."
+  abstract: "In a new preprint, Vera Tereshchuk, Michelle Elias, and Matthias König introduce a physiologically based PBPK/PD digital twin of the SGLT2 inhibitor canagliflozin, developed using curated data from 22 clinical studies. The whole-body model mechanistically represents absorption, distribution, metabolism, and excretion, and explicitly links drug exposure to renal glucose handling and urinary glucose excretion. Simulations reproduce dose-dependent pharmacokinetics and pharmacodynamics across single- and multiple-dose regimens in healthy individuals and patients with type 2 diabetes. Renal impairment results in modest changes in parent drug exposure but markedly reduced urinary glucose excretion and increased metabolite exposure, consistent with impaired glucose filtration and clearance. Under hepatic impairment, simulations predict increased canagliflozin exposure with altered metabolite profiles, while pharmacodynamic effects remain minimal. All models, datasets, and simulation workflows are provided as open, FAIR-compliant SBML resources, enabling reproducible analyses and reuse for model-informed assessment of canagliflozin PK/PD variability."
+
+
 - id: 'Open_Science_Workshop2025'
   status: 'current'
   title: 'Successful Open Science Workshop 2025'
