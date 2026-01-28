@@ -77,8 +77,19 @@
   homepage:
   description: 'Amanda develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the diuretic hydrochlorothiazide. The objective is to enhance our understanding of how hydrochlorothiazide changes urinary volume and plasma volume and ion balance (sodium, potassium, chloride).'
 
-- id: 'juanpablo'
+- id: 'kim'
   status: 'current'
+  year: '2025-05/2025-08, 2025-09/2026-02'
+  name: 'current'
+  position: 'Humboldt Internship Project (HIP) 2025'
+  image: kim.jpg
+  orcid:
+  repository: 'https://github.com/unfulw'
+  homepage:
+  description: "Kim is developing a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the GLP-1 receptor agonist dulaglutide to better understand its absorption, distribution, metabolism, and effects on glucose regulation."
+
+- id: 'juanpablo'
+  status: 'alumni'
   year: '2025-04/2025-09'
   name: 'Juan Pablo Ramos Mendoza'
   position: 'Master student'
