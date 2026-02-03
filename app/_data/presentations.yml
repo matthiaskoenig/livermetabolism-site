@@ -1,3 +1,74 @@
+- id: 'HARMONY2026_libsbgnpy'
+  type: "selected_talk"
+  title: 'libsbgnpy - A Python Library for Handling Systems Biology Graphical Notation (SBGN)'
+  authors: '<b>Matthias König1,2</b>'
+  affiliations: '[1] Humboldt-Universität zu Berlin, Faculty of Life Sciences, Department of Biology, Systems Medicine of the Liver, Unter den Linden 6, 10099 Berlin, Germany; 
+  [2] University of Stuttgart, Institute of Structural Mechanics and Dynamics in Aerospace Engineering, Pfaffenwaldring 27, 70569 Stuttgart, Germany; 
+  slides: 'https://matthiaskoenig.github.io/libsbgnpy/presentations/HARMONY2026/libsbgnpy.html'
+  video:
+  event: 'HARMONY2026 - Computational Modeling in Biology'
+  event_page: https://co.mbine.org/events/
+  date: 2026-02-02
+  dates: February 2-5, 2026
+  location: Auckland, New Zealand (Hybrid)
+  repository: https://github.com/matthiaskoenig/libsbgnpy
+  publication:
+  abstract: "Graphical representations play a crucial role in systems biology and systems medicine by enabling the intuitive visualization and interpretation of complex biological networks. libsbgnpy is an open-source Python library that provides a comprehensive and programmatic interface for working with the Systems Biology Graphical Notation (SBGN), a community standard for the unambiguous graphical representation of biological processes and interactions.
+Built on the SBGN-ML XML schema, libsbgnpy supports reading, writing, and validating SBGN files, ensuring standards compliance and interoperability across computational biology tools and platforms. The library offers a robust and extensible architecture that facilitates the creation, inspection, transformation, and validation of machine-readable graphical models, thereby promoting reproducibility, accessibility, and FAIR modeling practices in systems biology and systems medicine.
+This talk will present the latest release of libsbgnpy, highlighting newly added features and enhanced usability. We will demonstrate how these updates support more efficient handling and validation of large-scale pathway and disease maps, and discuss planned future developments aimed at further strengthening the ecosystem for automated, standards-based SBGN modeling and visualization.
+The source code for libsbgnpy is openly available at
+https://github.com/matthiaskoenig/libsbgnpy
+Documentation, including installation instructions, API references, and usage examples, is provided at https://matthiaskoenig.github.io/libsbgnpy/"
+  keywords: SBGN, visualization, python, reproducibility
+
+- id: 'HARMONY2026_pymetadata'
+  type: "selected_talk"
+  title: 'pymetadata: Python Utilities for Metadata, Semantic Annotation, and COMBINE archives'
+  authors: '<b>Matthias König1,2</b>'
+  affiliations: '[1] Humboldt-Universität zu Berlin, Faculty of Life Sciences, Department of Biology, Systems Medicine of the Liver, Unter den Linden 6, 10099 Berlin, Germany; 
+  [2] University of Stuttgart, Institute of Structural Mechanics and Dynamics in Aerospace Engineering, Pfaffenwaldring 27, 70569 Stuttgart, Germany; 
+  slides: 'https://matthiaskoenig.github.io/pymetadata/presentations/HARMONY2026/pymetadata.html'
+  video:
+  event: 'HARMONY2026 - Computational Modeling in Biology'
+  event_page: https://co.mbine.org/events/
+  date: 2026-02-02
+  dates: February 2-5, 2026
+  location: Auckland, New Zealand (Hybrid)
+  repository: https://github.com/matthiaskoenig/libsbgnpy
+  publication:
+  abstract: "Standardized and machine-readable metadata are essential for interoperability, reproducibility, and long-term reuse of computational models and data in systems biology and systems medicine. In particular, workflows based on COMBINE standards rely on consistent handling of metadata, annotations, and controlled vocabularies across tools and formats.
+pymetadata is an open-source Python library that provides a collection of reusable utilities for working with metadata in the context of COMBINE standards. The library offers native support for COMBINE Archive version 1 (OMEX), enabling programmatic creation, inspection, and validation of standardized model archives. In addition, pymetadata includes structured annotation classes and helper functions that facilitate the consistent application of semantic annotations to models, datasets, and simulation descriptions.
+To support semantic interoperability, the library provides lightweight, typed access to key ontologies commonly used in computational biology, including enumerations for SBO, KiSAO, and ECO terms. This enables robust, explicit, and error-resistant annotation workflows directly within Python-based modeling and analysis pipelines.
+pymetadata is designed to be modular, lightweight, and easily integrable into existing scientific software, continuous integration pipelines, and data publication workflows. By lowering the barrier to correct and consistent metadata handling, the library supports FAIR principles and promotes sustainable, interoperable model development within the COMBINE ecosystem.
+The source code is openly available at
+ https://github.com/matthiaskoenig/pymetadata."
+  keywords: metadata, COMBINE archive (OMEX), semantic annotation, ontologies, SBO, KiSAO
+
+- id: 'HARMONY2026_PEtab2'
+  type: "selected_talk"
+  title: 'Standardizing Parameter Estimation Problems with PEtab 2'
+  authors: '<b>Matthias König1,2</b>, Frank T. Bergmann3, Dilan Pathirana4,5, Daniel Weindl4,5, Sebastian Persson6'
+  affiliations: '[1] Humboldt-Universität zu Berlin, Faculty of Life Sciences, Department of Biology, Systems Medicine of the Liver, Unter den Linden 6, 10099 Berlin, Germany; 
+  [2] University of Stuttgart, Institute of Structural Mechanics and Dynamics in Aerospace Engineering, Pfaffenwaldring 27, 70569 Stuttgart, Germany; 
+  [3] BioQUANT, Heidelberg University, INF 26, 69120 Heidelberg, Germany; 
+  [4] Life and Medical Sciences (LIMES) Institute, University of Bonn, Germany;
+  [5] Bonn Center for Mathematical Life Sciences, University of Bonn, Germany;
+  [6] Dynamics of Living Systems Laboratory, The Francis Crick Institute, United Kingdom'
+  slides: 'https://docs.google.com/presentation/d/e/2PACX-1vT8CCDPNg2bJc1ZchmPLFKLcXUOMja-o5D2YTG5i_8jd51m-KM5ZmUiC8rCWFa1oVhd_HhXNg512Fma/pub?start=false&loop=false&delayms=3000'
+  video:
+  event: 'HARMONY2025 - Computational Modeling in Biology'
+  event_page: https://co.mbine.org/events/
+  date: 2026-02-02
+  dates: February 2-5, 2026
+  location: Auckland, New Zealand (Hybrid)
+  repository: https://petab.readthedocs.io/
+  publication:
+  abstract: "PEtab was introduced as a community-driven standard to provide a clear and tool-independent way to describe parameter estimation problems, including models, data, experimental conditions, and parameters. Since its initial release, PEtab has been adopted by a growing number of modeling tools and research groups.
+In this talk, we present PEtab Version 2, a major update of the specification informed by practical experience from the community and evolving modeling needs. PEtab Version 2 simplifies and clarifies how estimation problems are defined, while also extending the standard to support more complex and realistic experimental setups. Key improvements include support for additional model formats beyond SBML, expanded and improved specification of parameter priors for Bayesian workflows, and a more flexible description of experiments that allows multiple conditions, time periods, and pre-equilibration steps within a single simulation. Additional updates improve the definition of model parameters, measurement noise, and observation models, and remove ambiguous or confusing features from earlier versions. Version 2 also includes a general extension mechanism, to add functionality not covered by the core standard, for example a standard for scientific machine learning. Together, these changes make PEtab easier to understand, more robust to use, and better suited for advanced applications such as large-scale model comparison, uncertainty analysis, and digital twin workflows.
+PEtab Version 2 provides a scalable and interoperable foundation for parameter estimation, helping researchers share, reproduce, and build upon quantitative models across disciplines. The specification and documentation are available at https://petab.readthedocs.io, with a reference Python implementation provided at https://github.com/PEtab-dev/libpetab-python."
+  keywords: PEtab, parameter estimation, reproducible modeling, Bayesian inference, frequentist inference
+
+
 - id: 'COMBINE2025_reproducibility_by_design'
   type: "selected_talk"
   title: 'Reproducibility by Design: Data and Workflows for Pharmacokinetic Digital Twins'
