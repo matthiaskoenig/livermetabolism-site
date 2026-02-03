@@ -1,9 +1,8 @@
 - id: 'HARMONY2026_libsbgnpy'
   type: "selected_talk"
   title: 'libsbgnpy - A Python Library for Handling Systems Biology Graphical Notation (SBGN)'
-  authors: '<b>Matthias König1,2</b>'
-  affiliations: '[1] Humboldt-Universität zu Berlin, Faculty of Life Sciences, Department of Biology, Systems Medicine of the Liver, Unter den Linden 6, 10099 Berlin, Germany; 
-  [2] University of Stuttgart, Institute of Structural Mechanics and Dynamics in Aerospace Engineering, Pfaffenwaldring 27, 70569 Stuttgart, Germany; 
+  authors: '<b>Matthias König</b>'
+  affiliations: '[1] Humboldt-Universität zu Berlin, Faculty of Life Sciences, Department of Biology, Systems Medicine of the Liver, Unter den Linden 6, 10099 Berlin, Germany; [2] University of Stuttgart, Institute of Structural Mechanics and Dynamics in Aerospace Engineering, Pfaffenwaldring 27, 70569 Stuttgart, Germany;'
   slides: 'https://matthiaskoenig.github.io/libsbgnpy/presentations/HARMONY2026/libsbgnpy.html'
   video:
   event: 'HARMONY2026 - Computational Modeling in Biology'
@@ -14,19 +13,17 @@
   repository: https://github.com/matthiaskoenig/libsbgnpy
   publication:
   abstract: "Graphical representations play a crucial role in systems biology and systems medicine by enabling the intuitive visualization and interpretation of complex biological networks. libsbgnpy is an open-source Python library that provides a comprehensive and programmatic interface for working with the Systems Biology Graphical Notation (SBGN), a community standard for the unambiguous graphical representation of biological processes and interactions.
-Built on the SBGN-ML XML schema, libsbgnpy supports reading, writing, and validating SBGN files, ensuring standards compliance and interoperability across computational biology tools and platforms. The library offers a robust and extensible architecture that facilitates the creation, inspection, transformation, and validation of machine-readable graphical models, thereby promoting reproducibility, accessibility, and FAIR modeling practices in systems biology and systems medicine.
-This talk will present the latest release of libsbgnpy, highlighting newly added features and enhanced usability. We will demonstrate how these updates support more efficient handling and validation of large-scale pathway and disease maps, and discuss planned future developments aimed at further strengthening the ecosystem for automated, standards-based SBGN modeling and visualization.
-The source code for libsbgnpy is openly available at
-https://github.com/matthiaskoenig/libsbgnpy
-Documentation, including installation instructions, API references, and usage examples, is provided at https://matthiaskoenig.github.io/libsbgnpy/"
+  Built on the SBGN-ML XML schema, libsbgnpy supports reading, writing, and validating SBGN files, ensuring standards compliance and interoperability across computational biology tools and platforms. The library offers a robust and extensible architecture that facilitates the creation, inspection, transformation, and validation of machine-readable graphical models, thereby promoting reproducibility, accessibility, and FAIR modeling practices in systems biology and systems medicine.
+  This talk will present the latest release of libsbgnpy, highlighting newly added features and enhanced usability. We will demonstrate how these updates support more efficient handling and validation of large-scale pathway and disease maps, and discuss planned future developments aimed at further strengthening the ecosystem for automated, standards-based SBGN modeling and visualization.
+  The source code for libsbgnpy is openly available at https://github.com/matthiaskoenig/libsbgnpy
+  Documentation, including installation instructions, API references, and usage examples, is provided at https://matthiaskoenig.github.io/libsbgnpy/"
   keywords: SBGN, visualization, python, reproducibility
 
 - id: 'HARMONY2026_pymetadata'
   type: "selected_talk"
   title: 'pymetadata: Python Utilities for Metadata, Semantic Annotation, and COMBINE archives'
-  authors: '<b>Matthias König1,2</b>'
-  affiliations: '[1] Humboldt-Universität zu Berlin, Faculty of Life Sciences, Department of Biology, Systems Medicine of the Liver, Unter den Linden 6, 10099 Berlin, Germany; 
-  [2] University of Stuttgart, Institute of Structural Mechanics and Dynamics in Aerospace Engineering, Pfaffenwaldring 27, 70569 Stuttgart, Germany; 
+  authors: '<b>Matthias König</b>'
+  affiliations: '[1] Humboldt-Universität zu Berlin, Faculty of Life Sciences, Department of Biology, Systems Medicine of the Liver, Unter den Linden 6, 10099 Berlin, Germany; [2] University of Stuttgart, Institute of Structural Mechanics and Dynamics in Aerospace Engineering, Pfaffenwaldring 27, 70569 Stuttgart, Germany;'
   slides: 'https://matthiaskoenig.github.io/pymetadata/presentations/HARMONY2026/pymetadata.html'
   video:
   event: 'HARMONY2026 - Computational Modeling in Biology'
@@ -47,7 +44,7 @@ The source code is openly available at
 - id: 'HARMONY2026_PEtab2'
   type: "selected_talk"
   title: 'Standardizing Parameter Estimation Problems with PEtab 2'
-  authors: '<b>Matthias König1,2</b>, Frank T. Bergmann3, Dilan Pathirana4,5, Daniel Weindl4,5, Sebastian Persson6'
+  authors: '<b>Matthias König</b>, Frank T. Bergmann, Dilan Pathirana, Daniel Weindl, Sebastian Persson'
   affiliations: '[1] Humboldt-Universität zu Berlin, Faculty of Life Sciences, Department of Biology, Systems Medicine of the Liver, Unter den Linden 6, 10099 Berlin, Germany; 
   [2] University of Stuttgart, Institute of Structural Mechanics and Dynamics in Aerospace Engineering, Pfaffenwaldring 27, 70569 Stuttgart, Germany; 
   [3] BioQUANT, Heidelberg University, INF 26, 69120 Heidelberg, Germany; 
