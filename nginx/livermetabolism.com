@@ -8,7 +8,7 @@ server {
     listen 80;
     listen [::]:80;
 
-    server_name livermetabolism.com www.livermetabolism.com;
+    server_name www.livermetabolism.com www.livermetabolism.de livermetabolism.de www.pharma-twin.eu pharma-twin.eu www.pharma-twin.de pharma-twin.de www.perfect-kid.eu perfect-kid.eu;
 
     # letsencrypt webroot authenticator
     location /.well-known/acme-challenge/ {
