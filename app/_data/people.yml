@@ -22,28 +22,6 @@
   homepage:
   description: 'Mariia works on ATLAS, a decision support tool for hepatocellular carcinoma (HCC). Based on AI methods, ATLAS processes all relevant patient data from databases, systems medicine and continuum biomechanical in silico prognosis models as well as individual patient data. The tool is being developed in a co-design approach by experts in surgical oncology, mathematical modeling and machine learning.'
 
-- id: 'mariia_babaeva'
-  status: 'current'
-  year: '2025-04-2026'
-  name: 'Mariia Babaeva'
-  position: 'Student assistant'
-  image: mariia_babaeva.png
-  orcid:
-  repository: 'https://github.com/icalledmyselfmoon'
-  homepage:
-  description: 'Mariia workes on a physiologically based model of lisinopril. Key questions are the effect of hepatic and renal disease on lisinopril pharmacokinetics and pharmacodynamics.'
-
-- id: 'monajes'
-  status: 'current'
-  year: '2025-07/2025-11'
-  name: 'Monika Jesionek'
-  position: 'ERASMUS student'
-  image: monajes.jpg
-  orcid:
-  repository: 'https://github.com/monajes'
-  homepage:
-  description: "Monika is developing a PBPK model of immune suppressent rapamycin (sirolimus) as part of our contribution to the Immune Digital Twin (IDT)."
-
 - id: 'michelle'
   status: 'current'
   year: '2024-09/2025-12'
@@ -54,6 +32,17 @@
   repository: 'https://github.com/mii-halina'
   homepage:
   description: 'Michelle develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of the sulfonylurea glimepiride. The objective is to enhance our understanding of the underlying causes of intraindividual variability in insulin secretion and T2DM treatment with sulfonylurea, e.g., differences in hepatorenal function.'
+
+- id: 'mariia_babaeva'
+  status: 'current'
+  year: '2025-04-2026'
+  name: 'Mariia Babaeva'
+  position: 'Student assistant'
+  image: mariia_babaeva.jpg
+  orcid:
+  repository: 'https://github.com/icalledmyselfmoon'
+  homepage:
+  description: 'Mariia workes on a physiologically based model of lisinopril. Key questions are the effect of hepatic and renal disease on lisinopril pharmacokinetics and pharmacodynamics.'
 
 - id: 'antonio'
   status: 'current'
@@ -77,6 +66,18 @@
   homepage:
   description: 'Amanda develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the diuretic hydrochlorothiazide. The objective is to enhance our understanding of how hydrochlorothiazide changes urinary volume and plasma volume and ion balance (sodium, potassium, chloride).'
 
+- id: 'monajes'
+  status: 'current'
+  year: '2025-07/2025-11'
+  name: 'Monika Jesionek'
+  position: 'ERASMUS student'
+  image: monajes.jpg
+  orcid:
+  repository: 'https://github.com/monajes'
+  homepage:
+  description: "Monika is developing a PBPK model of immune suppressent rapamycin (sirolimus) as part of our contribution to the Immune Digital Twin (IDT)."
+
+
 - id: 'kim'
   status: 'current'
   year: '2025-05/2025-08, 2025-09/2026-02'
@@ -87,6 +88,7 @@
   repository: 'https://github.com/unfulw'
   homepage:
   description: "Kim is developing a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the GLP-1 receptor agonist dulaglutide to better understand its absorption, distribution, metabolism, and effects on glucose regulation."
+
 
 - id: 'juanpablo'
   status: 'alumni'

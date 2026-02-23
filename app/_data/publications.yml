@@ -1,3 +1,78 @@
+- id: 'Elias2026_dapagliflozin_physiome'
+  year: 2026
+  date: 2026-02-19
+  pdf: 'Elias2026_dapagliflozin_physiome.pdf'
+  authors: 'Michelle Elias, Mariia Myshkina, Nike Nemitz, <b>Matthias König</b>'
+  title: 'Reproducibility of a Physiologically Based Pharmacokinetic and Pharmacodynamic (PBPK/PD) Model of Dapagliflozin'
+  journal: 'Physiome. February 19, 2026'
+  journal_short: "Physiome"
+  status: publication
+  impact:
+  position: last
+  doi: 10.36903/physiome.31368556
+  pmid:
+  keywords:
+    - Dapagliflozin
+    - PBPK/PD
+    - SBML
+    - Pharmacokinetics
+    - Pharmacodynamics
+    - Computational Model
+  project:
+  repository: https://github.com/matthiaskoenig/dapagliflozin-model
+  abstract: 'A computational model in the form of a whole-body physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of dapagliflozin was developed to systematically evaluate the influence of patient-specific factors on drug disposition. Based on curated data from 28 clinical studies, the model simulates the absorption, distribution, metabolism and excretion (ADME) of the drug as well as its pharmacodynamics. The model accounts for variability in renal and hepatic function, and effects of food intake. The model is implemented in the Systems Biology Markup Language (SBML) standard. Analysis were performed utilizing the libroadrunner simulation library. Here, we demonstrate the computational reproducibility of the key findings from the primary publication, thereby verifying the consistency of the model implementation with the published results.'
+
+
+- id: 'Myshkina2026_losartan_physiome'
+  year: 2026
+  date: 2026-02-02
+  pdf: 'Myshkina2026_losartan_physiome.pdf'
+  authors: 'Mariia Myshkina, Michelle Elias, Ennie Tensil, <b>Matthias König</b>'
+  title: 'Reproducibility of a Digital Twin of the Angiotensin II Receptor Blocker Losartan'
+  journal: 'Physiome. February 2, 2026'
+  journal_short: "Physiome"
+  status: publication
+  impact:
+  position: last
+  doi: 10.36903/physiome.31359823
+  pmid:
+  keywords:
+    - Losartan
+    - PBPK/PD
+    - SBML
+    - Pharmacokinetics
+    - Pharmacodynamics
+    - Computational Model
+  project:
+  repository: https://github.com/matthiaskoenig/losartan-model
+  abstract: 'A digital twin in the form of a whole-body physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of losartan was developed to systematically evaluate the influence of patient-specific factors on drug disposition and effects. Based on curated data from 25 clinical studies, the model simulates the absorption, distribution, metabolism and excretion (ADME) as well as pharmacological effects of the drug. The model accounts for variability caused by the differences in renal and hepatic function, and by genetic polymorphisms of CYP2C9 and ABCB1. The model is implemented in the Systems Biology Markup Language (SBML) standard. Simulations were performed utilising the libroadrunner library. Here, we demonstrate the computational reproducibility of the key findings from the primary publication, thereby verifying the consistency and reproducibility of the model implementation with the published results.'
+
+
+- id: 'Tensil2026_losartan'
+  year: 2026
+  date: 2026-02-19
+  pdf: 'Tensil2026_losartan.pdf'
+  authors: 'Ennie Tensil, Mariia Myshkina, <b>Matthias König</b>'
+  title: 'A Digital Twin of the Angiotensin II Receptor Blocker Losartan: Physiologically Based Modeling of Blood Pressure Regulation'
+  journal: 'Pharmaceutics 2026, 18(2), 262; https://doi.org/10.3390/pharmaceutics18020262'
+  journal_short: Preprints
+  status: preprint
+  impact: 0
+  position: last
+  doi: 10.3390/pharmaceutics18020262
+  pmid:
+  keywords:
+    - losartan
+    - angiotensin II receptor blocker
+    - ARB
+    - PBPK/PD modeling
+    - pharmacokinetics
+    - pharmacodynamics
+    - SBML
+  project:
+  repository: https://github.com/matthiaskoenig/losartan-model
+  abstract: 'Background/Objectives: Losartan, an angiotensin II receptor blocker (ARB) used to treat hypertension and heart failure, shows significant variability in pharmacokinetics (PK) and pharmacodynamics (PD) among individuals. Methods: In this study, we developed a physiologically based pharmacokinetic/ pharmacodynamic (PBPK/PD) model of losartan and its active metabolite, E3174, using curated data from 25 clinical trials. The model mechanistically describes the processes of absorption, hepatic metabolism, renal and fecal excretion, and pharmacodynamic blood pressure regulation. Simulation studies examined the effects of dose, hepatic and renal impairment, and genetic polymorphisms in cytochrome p450 2C9 (CYP2C9) and P-glycoprotein 1, also known as multidrug resistance protein 1 (MDR1) or ATP-binding cassette sub-family B member 1 (ABCB1), on the model. Results: The model successfully reproduced key PK/PD observations, including dose-dependent receptor blockade, attenuated responses with hepatic impairment, modest enhancement with renal impairment, and substantial variability in E3174 formation dependent on CYP2C9; the effects of ABCB1 were minimal. Specifically, dose dependency simulations confirmed the saturable nature of CYP2C9 metabolism, predicting a decreasing E3174-to-losartan ratio and a stronger, sustained suppression of blood pressure and aldosterone at higher doses. Hepatic impairment was predicted to lead to elevated losartan plasma concentrations (increased AUC) and attenuated metabolite formation, confirming the clinical need for dose reduction. Renal impairment simulations predicted stable losartan AUC but showed an overestimation of E3174 accumulation compared to observed data, where E3174 exposure remained stable. Genetic variability (CYP2C9) was the major determinant of response, with simulations confirming that reduced-function alleles lead to a 1.6- to 3-fold increase in losartan AUC and diminished blood pressure reduction. ABCB1 variability resulted in only minor modulation of systemic exposure and blood pressure effects. Conclusions: This mechanistic digital twin framework provides a quantitative basis for understanding variability in losartan therapy and supports its application in individualized dosing strategies.'
+
 - id: 'Tereshchuk2026_canagliflozin_preprint'
   year: 2026
   date: 2026-01-27
@@ -48,30 +123,30 @@
   repository: https://github.com/matthiaskoenig/dapagliflozin-model
   abstract: 'Dapagliflozin is an SGLT2 inhibitor prescribed for the management of type 2 diabetes mellitus. The drug lowers blood glucose levels by increasing urinary glucose excretion. Despite established efficacy, dapagliflozin demonstrates significant inter-individual variability in pharmacokinetics (PK) and pharmacodynamics (PD), with potential impact on treatment outcomes. To evaluate the sources of variability, we developed a digital twin of dapagliflozin pharmacokinetics and pharmacodynamics built as a PBPK/PD model using curated data from 28 clinical studies. This constitutes a full mechanistic model that integrates absorption, distribution, metabolism, excretion, and pharmacodynamics. It accounts for key determinants of variability including renal and hepatic function, and food effects. The simulations reproduced dose-dependent pharmacokinetics within the therapeutic range and captured inter-individual differences observed in clinical data. Application of the model revealed that renal impairment markedly reduced urinary glucose excretion despite stable plasma exposure, while hepatic impairment had only minor effects. Although food intake decreased peak plasma concentrations without altering overall exposure (AUC), measurable differences in pharmacodynamic response still occurred. The digital twin provides mechanistic insight into PK/PD variability and a platform for optimizing individualized therapy in type 2 diabetes.'
 
-- id: 'Tensil2025_losartan_preprint'
-  year: 2025
-  date: 2025-10-21
-  pdf: 'Tensil2025_losartan_preprint.pdf'
-  authors: 'Ennie Tensil, <b>Matthias König</b>'
-  title: 'A Digital Twin of the Angiotensin II Receptor Blocker Losartan: Physiologically Based Modeling of Blood Pressure Regulation'
-  journal: 'Preprints 2025, 10.20944/preprints202510.1254.v1'
-  journal_short: Preprints
-  status: preprint
-  impact: 0
-  position: last
-  doi: 10.20944/preprints202510.1254.v1
-  pmid:
-  keywords:
-    - Losartan
-    - Angiotensin II Receptor Blocker
-    - ARB
-    - PBPK/PD modeling
-    - Pharmacokinetics
-    - Pharmacodynamics
-    - SBML
-  project:
-  repository: https://github.com/matthiaskoenig/losartan-model
-  abstract: 'Losartan, a commonly prescribed angiotensin II receptor blocker (ARB) used to treat hypertension and heart failure, shows significant variability in pharmacokinetics (PK) and pharmacodynamics (PD) among individuals. In this study, we developed a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of losartan and its active metabolite, E3174, using curated data from 24 clinical trials. The model, implemented in SBML, mechanistically describes the processes of absorption, hepatic metabolism, renal excretion, and pharmacodynamic regulation via the renin–angiotensin–aldosterone system (RAAS). Simulation studies examined the effects of dose, hepatic and renal impairment, and genetic polymorphisms in CYP2C9 and ABCB1 on the model. The model successfully reproduced key PK/PD observations, including dose-dependent receptor blockade, attenuated responses with hepatic impairment, modest enhancement with renal impairment, and substantial variability in E3174 formation dependent on CYP2C9; the effects of ABCB1 were minimal. This mechanistic digital twin framework provides a quantitative basis for understanding variability in losartan therapy and supports its application in individualized dosing strategies.'
+#- id: 'Tensil2025_losartan_preprint'
+#  year: 2025
+#  date: 2025-10-21
+#  pdf: 'Tensil2025_losartan_preprint.pdf'
+#  authors: 'Ennie Tensil, <b>Matthias König</b>'
+#  title: 'A Digital Twin of the Angiotensin II Receptor Blocker Losartan: Physiologically Based Modeling of Blood Pressure Regulation'
+#  journal: 'Preprints 2025, 10.20944/preprints202510.1254.v1'
+#  journal_short: Preprints
+#  status: preprint
+#  impact: 0
+#  position: last
+#  doi: 10.20944/preprints202510.1254.v1
+#  pmid:
+#  keywords:
+#    - Losartan
+#    - Angiotensin II Receptor Blocker
+#    - ARB
+#    - PBPK/PD modeling
+#    - Pharmacokinetics
+#    - Pharmacodynamics
+#    - SBML
+#  project:
+#  repository: https://github.com/matthiaskoenig/losartan-model
+#  abstract: 'Losartan, a commonly prescribed angiotensin II receptor blocker (ARB) used to treat hypertension and heart failure, shows significant variability in pharmacokinetics (PK) and pharmacodynamics (PD) among individuals. In this study, we developed a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of losartan and its active metabolite, E3174, using curated data from 24 clinical trials. The model, implemented in SBML, mechanistically describes the processes of absorption, hepatic metabolism, renal excretion, and pharmacodynamic regulation via the renin–angiotensin–aldosterone system (RAAS). Simulation studies examined the effects of dose, hepatic and renal impairment, and genetic polymorphisms in CYP2C9 and ABCB1 on the model. The model successfully reproduced key PK/PD observations, including dose-dependent receptor blockade, attenuated responses with hepatic impairment, modest enhancement with renal impairment, and substantial variability in E3174 formation dependent on CYP2C9; the effects of ABCB1 were minimal. This mechanistic digital twin framework provides a quantitative basis for understanding variability in losartan therapy and supports its application in individualized dosing strategies.'
 
 
 - id: 'Elias2025_glimepiride'
