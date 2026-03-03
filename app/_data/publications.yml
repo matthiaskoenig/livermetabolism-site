@@ -47,31 +47,6 @@
   repository: https://github.com/matthiaskoenig/dapagliflozin-model
   abstract: 'A computational model in the form of a whole-body physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of dapagliflozin was developed to systematically evaluate the influence of patient-specific factors on drug disposition. Based on curated data from 28 clinical studies, the model simulates the absorption, distribution, metabolism and excretion (ADME) of the drug as well as its pharmacodynamics. The model accounts for variability in renal and hepatic function, and effects of food intake. The model is implemented in the Systems Biology Markup Language (SBML) standard. Analysis were performed utilizing the libroadrunner simulation library. Here, we demonstrate the computational reproducibility of the key findings from the primary publication, thereby verifying the consistency of the model implementation with the published results.'
 
-
-- id: 'Myshkina2026_losartan_physiome'
-  year: 2026
-  date: 2026-02-02
-  pdf: 'Myshkina2026_losartan_physiome.pdf'
-  authors: 'Mariia Myshkina, Michelle Elias, Ennie Tensil, <b>Matthias König</b>'
-  title: 'Reproducibility of a Digital Twin of the Angiotensin II Receptor Blocker Losartan'
-  journal: 'Physiome. February 2, 2026'
-  journal_short: "Physiome"
-  status: publication
-  impact:
-  position: last
-  doi: 10.36903/physiome.31359823
-  pmid:
-  keywords:
-    - Losartan
-    - PBPK/PD
-    - SBML
-    - Pharmacokinetics
-    - Pharmacodynamics
-    - Computational Model
-  project:
-  repository: https://github.com/matthiaskoenig/losartan-model
-  abstract: 'A digital twin in the form of a whole-body physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of losartan was developed to systematically evaluate the influence of patient-specific factors on drug disposition and effects. Based on curated data from 25 clinical studies, the model simulates the absorption, distribution, metabolism and excretion (ADME) as well as pharmacological effects of the drug. The model accounts for variability caused by the differences in renal and hepatic function, and by genetic polymorphisms of CYP2C9 and ABCB1. The model is implemented in the Systems Biology Markup Language (SBML) standard. Simulations were performed utilising the libroadrunner library. Here, we demonstrate the computational reproducibility of the key findings from the primary publication, thereby verifying the consistency and reproducibility of the model implementation with the published results.'
-
 - id: 'Tensil2026_losartan'
   year: 2026
   date: 2026-02-19
@@ -96,6 +71,30 @@
   project:
   repository: https://github.com/matthiaskoenig/losartan-model
   abstract: 'Background/Objectives: Losartan, an angiotensin II receptor blocker (ARB) used to treat hypertension and heart failure, shows significant variability in pharmacokinetics (PK) and pharmacodynamics (PD) among individuals. Methods: In this study, we developed a physiologically based pharmacokinetic/ pharmacodynamic (PBPK/PD) model of losartan and its active metabolite, E3174, using curated data from 25 clinical trials. The model mechanistically describes the processes of absorption, hepatic metabolism, renal and fecal excretion, and pharmacodynamic blood pressure regulation. Simulation studies examined the effects of dose, hepatic and renal impairment, and genetic polymorphisms in cytochrome p450 2C9 (CYP2C9) and P-glycoprotein 1, also known as multidrug resistance protein 1 (MDR1) or ATP-binding cassette sub-family B member 1 (ABCB1), on the model. Results: The model successfully reproduced key PK/PD observations, including dose-dependent receptor blockade, attenuated responses with hepatic impairment, modest enhancement with renal impairment, and substantial variability in E3174 formation dependent on CYP2C9; the effects of ABCB1 were minimal. Specifically, dose dependency simulations confirmed the saturable nature of CYP2C9 metabolism, predicting a decreasing E3174-to-losartan ratio and a stronger, sustained suppression of blood pressure and aldosterone at higher doses. Hepatic impairment was predicted to lead to elevated losartan plasma concentrations (increased AUC) and attenuated metabolite formation, confirming the clinical need for dose reduction. Renal impairment simulations predicted stable losartan AUC but showed an overestimation of E3174 accumulation compared to observed data, where E3174 exposure remained stable. Genetic variability (CYP2C9) was the major determinant of response, with simulations confirming that reduced-function alleles lead to a 1.6- to 3-fold increase in losartan AUC and diminished blood pressure reduction. ABCB1 variability resulted in only minor modulation of systemic exposure and blood pressure effects. Conclusions: This mechanistic digital twin framework provides a quantitative basis for understanding variability in losartan therapy and supports its application in individualized dosing strategies.'
+
+- id: 'Myshkina2026_losartan_physiome'
+  year: 2026
+  date: 2026-02-02
+  pdf: 'Myshkina2026_losartan_physiome.pdf'
+  authors: 'Mariia Myshkina, Michelle Elias, Ennie Tensil, <b>Matthias König</b>'
+  title: 'Reproducibility of a Digital Twin of the Angiotensin II Receptor Blocker Losartan'
+  journal: 'Physiome. February 2, 2026'
+  journal_short: "Physiome"
+  status: publication
+  impact:
+  position: last
+  doi: 10.36903/physiome.31359823
+  pmid:
+  keywords:
+    - Losartan
+    - PBPK/PD
+    - SBML
+    - Pharmacokinetics
+    - Pharmacodynamics
+    - Computational Model
+  project:
+  repository: https://github.com/matthiaskoenig/losartan-model
+  abstract: 'A digital twin in the form of a whole-body physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of losartan was developed to systematically evaluate the influence of patient-specific factors on drug disposition and effects. Based on curated data from 25 clinical studies, the model simulates the absorption, distribution, metabolism and excretion (ADME) as well as pharmacological effects of the drug. The model accounts for variability caused by the differences in renal and hepatic function, and by genetic polymorphisms of CYP2C9 and ABCB1. The model is implemented in the Systems Biology Markup Language (SBML) standard. Simulations were performed utilising the libroadrunner library. Here, we demonstrate the computational reproducibility of the key findings from the primary publication, thereby verifying the consistency and reproducibility of the model implementation with the published results.'
 
 - id: 'Tereshchuk2026_canagliflozin_preprint'
   year: 2026
