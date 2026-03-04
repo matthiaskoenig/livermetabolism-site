@@ -93,36 +93,6 @@ def create_matrix(df: pd.DataFrame) -> pd.DataFrame:
     return df_matrix
 
 
-def create_list_of_publications_md(md_path: Path, df: pd.DataFrame) -> None:
-    """Create list of publications in markdown."""
-
-    def create_entry_markdown(e: pd.Series) -> str:
-        """Creates markdown for a single entry."""
-        authors = e.authors
-        authors = authors.replace("<b>", "**")
-        authors = authors.replace("</b>", "**")
-        doi = f", [https://doi.org/{e.doi}](https://doi.org/{e.doi})" if e.doi else ""
-        impact = f", IF: **{e.impact}**" if e.impact else ""
-
-        return f"**{e.title.strip(".")}**. {authors}; {e.journal}{doi}{impact}"
-
-
-    md_all = "# List of Publications\n"
-    for status in ["publication", "review", "proceeding", "preprint", "thesis"]:
-        k_article = 0
-        df_status = df[df["status"] == status]
-        md_all += f"\n## {status.title()}s\n"
-        for key, row in df_status.iterrows():
-            k_article += 1
-            md = f"{k_article}. " + create_entry_markdown(e=row) + "\n"
-            console.print(f"<{md}>")
-            md_all += md
-            # console.print(Markdown(md))
-            console.rule(style="white")
-
-    with open(md_path, "w") as f_md:
-        f_md.write(md_all)
-
 def create_list_of_publications_typst(typst_path: Path, df: pd.DataFrame, highlights: Optional[set] = None, selected: Optional[set] = None) -> None:
     """Create list of publications in typst."""
 
@@ -161,17 +131,34 @@ def create_list_of_publications_typst(typst_path: Path, df: pd.DataFrame, highli
         #     typst_all += text
         #     console.rule(style="white")
 
-        for status in ["publication", "review", "proceeding", "preprint", "thesis"]:
-            k_article = 0
-            df_status = df[df["status"] == status]
-            title = status if status != "thesis" else "theses"
-            typst_all += f"\n== {title.title()}{'s' if not title.endswith('s') else ''}\n"
-            for key, row in df_status.iterrows():
-                k_article += 1
-                text = f"{k_article}. " + create_entry_typst(e=row) + "\n"
-                console.print(f"<{text}>")
-                typst_all += text
-                console.rule(style="white")
+        # categories = {
+        #     "publication": ["publication",],
+        #     "review": ["review",],
+        #     "proceeding": ["proceeding",],
+        #     "preprint": ["preprint",],
+        #     "thesis": ["thesis",],
+        # }
+        categories = {
+            "Original papers": ["publication", ],
+            "Reviews": ["review", ],
+            "Other Publications": ["proceeding", "preprint", "thesis"],
+        }
+
+        for category, status_values in categories.items():
+
+            typst_all += f"\n== {category.title()}{'s' if not category.endswith('s') else ''}\n"
+            for status in status_values:
+                k_article = 0
+                df_status = df[df["status"] == status]
+                if len(status_values) > 1:
+                    title = status if status != "thesis" else "theses"
+                    typst_all += f"\n=== {title.title()}{'s' if not title.endswith('s') else ''}\n"
+                for key, row in df_status.iterrows():
+                    k_article += 1
+                    text = f"{k_article}. " + create_entry_typst(e=row) + "\n"
+                    console.print(f"<{text}>")
+                    typst_all += text
+                    console.rule(style="white")
 
     if selected:
         console.print(selected)
@@ -237,6 +224,8 @@ if __name__ == "__main__":
 
     # List of selected publications
     selected = {
+        "Nemitz2026_dapagliflozin",
+        "Tensil2026_losartan",
         # "Elias2025_glimepiride_physiome",
         "Elias2025_glimepiride",
         "Albadry2024_species_comparison",
@@ -246,9 +235,9 @@ if __name__ == "__main__":
         "PKDB_Grzegorzewski2020",
         "Grzegorzewski2022_dextromethorphan",
         "ICG_model_hepatectomy_Koeller2021",
-        "Koeller2021_icg_variability",
+        # "Koeller2021_icg_variability",
         # "GlucoseModel_Koenig2012a",
-        "SBML_Keating2020",
+        # "SBML_Keating2020",
         "hepatokin_Berndt2018",
         # "Koenig2023_standards",
 
@@ -265,6 +254,12 @@ if __name__ == "__main__":
         Path("results/publications.typ"),
         df=df,
         # selected=selected,
+        # highlights=selected,
+    )
+    create_list_of_publications_typst(
+        Path("results/publications_selected.typ"),
+        df=df,
+        selected=selected,
         # highlights=selected,
     )
 
