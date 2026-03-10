@@ -1,3 +1,41 @@
+- id: 'Olivier2026_fbc-v3'
+  year: 2026
+  date: 2026-03-10
+  pdf: 'Olivier2026_fbc-v3.pdf'
+  authors: 'Brett G. Olivier, Frank T. Bergmann, Sarah Keating, and <b>Matthias König</b>'
+  title: 'SBML Level 3 Package: Flux Balance Constraints version 3'
+  journal: 'J Integr Bioinform. 2026 (accepted)'
+  status: publication
+  impact: 1.5
+  position: last
+  doi:
+  pmid:
+  keywords:
+    - SBML
+    - FBC
+  project: https://sbml.org/documents/specifications/level-3/version-1/fbc/
+  repository: https://github.com/sbmlteam/sbml-specifications
+  abstract: 'Constraint-based modeling is a well-established modeling methodology used to study biological networks at both the medium-scale and genome-scale. Due to their large size and complexity, such steady-state flux models are typically ana- lyzed using constraint-based optimization techniques, such as Flux Balance Anal- ysis (FBA). The Flux Balance Constraints (FBC) Package extends SBML Level 3 to provide a standardized format for encoding, exchanging, and annotating constraint-based models. It includes support for modeling concepts such as objective functions, flux bounds, and annotation of model components that facilitate reaction balanc- ing. Version two extended the original release by adding support for encoding gene-protein associations. Version three builds upon and maintains backwards compatibility with Version two by introducing new elements and attributes that include: user-defined constraints, a new quadratic variable type and key-value pair annotation that can be used to store additional information relevant to constraint-based modeling. The only changes to existing attributes are that a Species charge is no longer restricted to an integer value and chemicalFormula can now include generic components. In addition to providing the elements necessary to uniquely encode constraint- based models, the FBC package provides an open platform that facilitates the continued, cross-community development of an interoperable, constraint-based model encoding format.'
+
+- id: 'Pathirana2026_petab-v2'
+  year: 2026
+  date: 2026-03-10
+  pdf: 'Pathirana2026_petab-v2.pdf'
+  authors: 'Dilan Pathirana, Fabian Fröhlich, Sebastian Persson, Frank T. Bergmann, <b>Matthias König</b>, Paul F. Lang, Severin Bang, Svenja Kemmer, Jan Hasenauer, and Daniel Weindl'
+  title: 'The Parameter Estimation tables (PEtab) format version 2'
+  journal: 'J Integr Bioinform. 2026 (accepted)'
+  status: publication
+  impact: 1.5
+  position: index
+  doi:
+  pmid:
+  keywords:
+    - Parameter estimation
+    - PETab
+  project: https://petab.readthedocs.io/en/latest/
+  repository: https://github.com/PEtab-dev/
+  abstract: 'Parameter estimation is a central task in data-driven computational modeling, and a clear, unambiguous, and commonly understood specification of parameter estimation problems is essential for reproducibility and interoperability. PEtab provides a standardized framework for defining such problems in systems biology and systems medicine, particularly for ordinary differential equation models. This document describes the second version of the PEtab format, PEtab 2.0. PEtab 2.0 simplifies and clarifies how estimation problems are defined, while also extending the standard to support more complex and realistic experimental setups.'
+
 - id: 'Nemitz2026_dapagliflozin'
   year: 2026
   date: 2026-02-26
