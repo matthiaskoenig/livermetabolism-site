@@ -1,3 +1,14 @@
+- id: 'prmt_digital_twins'
+  status: 'current'
+  title: 'Keynote: Digital Twins and Dashboards for Personalized Drug Treatment'
+  date: '2026-03-12'
+  video: https://www.youtube.com/embed/Mu9oXKLtTGI
+  image:
+  link: https://inch.de/roundtable/
+  short: 'At the Patient Monitoring Roundtable (PMRT) at Charité – Universitätsmedizin Berlin, I presented how digital twins and interactive dashboards can support personalized drug treatment and clinical decision-making.'
+  abstract: 'Digital twins are emerging as a powerful concept in data-driven and personalized medicine. At the Patient Monitoring Roundtable (PMRT) hosted at Charité – Universitätsmedizin Berlin, I gave a keynote on how mechanistic computational models and interactive dashboards can be used to simulate individualized drug responses and support clinical decision-making. The talk introduced digital twins in pharmacokinetics based on physiologically based pharmacokinetic (PBPK) models, which represent human physiology in silico and simulate how drugs are absorbed, distributed, metabolized, and eliminated. Using examples such as digital twins of glimepiride and liver function models, I showed how patient-specific factors—including genetics, liver function, renal impairment, and body weight—can influence drug exposure and treatment outcomes. Interactive dashboards allow clinicians and researchers to explore these models intuitively, enabling scenario testing, risk prediction, and shared decision-making with patients. The session was followed by interactive workshops where participants discussed digital twins and dashboards.
+  Many thanks to the organizers and fellow speakers for a fantastic event and inspiring discussions on the future of data-driven healthcare.'
+
 - id: 'Tereshchuk2026_canagliflozin_preprint'
   status: 'current'
   title: 'Preprint: A Digital Twin of Canagliflozin Pharmacokinetics and Pharmacodynamics in Type 2 Diabetes Mellitus'

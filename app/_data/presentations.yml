@@ -1,3 +1,23 @@
+- id: 'PMRT2026_digital_twins'
+  type: "invited_talk"
+  title: 'Digital Twins and Dashboards for Personalized Drug Treatment'
+  authors: '<b>Matthias König</b>'
+  affiliations: '[1] Humboldt-Universität zu Berlin, Faculty of Life Sciences, Department of Biology, Systems Medicine of the Liver, Unter den Linden 6, 10099 Berlin, Germany; [2] University of Stuttgart, Institute of Structural Mechanics and Dynamics in Aerospace Engineering, Pfaffenwaldring 27, 70569 Stuttgart, Germany;'
+  slides: https://docs.google.com/presentation/d/e/2PACX-1vTWwFL5HjDSLMbH_C8ciZYCPoRo3MvRsC34WAxGwARN5yKSyHVOF_YxjqTHRdvNcfX9_feAe3hzQIAH/pub?start=false&loop=false&delayms=3000
+  video: https://www.youtube.com/watch?v=Mu9oXKLtTGI
+  event: 'Patient Monitoring Roundtable (PMRT)'
+  event_page: https://inch.de/roundtable/
+  date: 2026-03-12
+  dates: March 3, 2026
+  location: Berlin, Germany
+  repository:
+  publication:
+  abstract: "In this talk, Dr. Matthias König introduces the concept of Digital Twins in medicine and shows how computational models and interactive dashboards can support personalized drug treatment and clinical decision-making. 
+  Digital twins are virtual representations of patients, built using mechanistic computational models and continuously updated with patient data. They allow researchers and clinicians to simulate how drugs behave in the body — helping to predict individual responses, optimize therapies, and reduce risks.
+  The presentation explores how physiologically based pharmacokinetic (PBPK) models can simulate drug absorption, distribution, metabolism, and elimination (ADME) and how these models can be integrated into interactive dashboards that make complex simulations accessible for clinicians and researchers.
+  Topics covered in the talk • What is a Digital Twin in healthcare? • How computational models simulate drug pharmacokinetics • Why patients respond differently to the same medication • The role of genetics, physiology, and disease in drug metabolism • Virtual patient cohorts and population variability • Interactive clinical dashboards for decision support • Applications in diabetes treatment and liver surgery planning."
+  keywords: Digital twins, dashboard
+
 - id: 'HARMONY2026_libsbgnpy'
   type: "selected_talk"
   title: 'libsbgnpy - A Python Library for Handling Systems Biology Graphical Notation (SBGN)'
