@@ -1,3 +1,22 @@
+- id: 'Corradi2026_llemy_preprint'
+  year: 2026
+  date: 2026-03-12
+  pdf: 'Corradi2026_llemy_preprint.pdf'
+  authors: 'Marie Corradi, Ivo Djidrovski, Luiz Ladeira, Bernard Staumont, Anouk Verhoeven, Julen Sanz Serrano, Adrien Rougny, Ahmad Vaez, Ahmed Hemedan, Alexander Mazein, Anna Niarakis, Arthur de Carvalho e Silva, Charles Auffray, Egon Wilighagen, Eliska Kuchovska, Falk Schreiber, Irina Balaur17, Laurence Calzone, Lisa Matthews, Lorenzo Veschini, Marc E Gillespie, Martina Kutmon, <b>Matthias König</b>, Matti van Welzen, Noriko Hiroi, Oxana Lopata, Pierre Klemmer, Rupert Overall, Tim Hofer, Venkata Satagopam, Reinhard Schneider, Marc Teunis, Liesbet Geris, Marek Ostaszewski'
+  title: 'User-driven development and evaluation of an agentic framework for analysis of large pathway diagrams'
+  journal: 'bioRxiv 2026.03.10.710813'
+  status: preprint
+  impact:
+  position: index
+  doi: 10.64898/2026.03.10.710813
+  pmid:
+  keywords:
+    - SBGN
+    - LLM
+  project: https://llemy.vhp4safety.nl
+  repository: https://github.com/ontox-project/Llemy
+  abstract: 'As biomedical knowledge keeps growing, resources storing available information multiply and grow in size and complexity. Such resources can be in the format of molecular interaction maps, which represent cellular and molecular processes under normal or pathological conditions. However, these maps can be complex and hard to navigate, especially to novice users. Large Language Models (LLMs), particularly in the form of agentic frameworks, have emerged as a promising technology to support this exploration. In this article, we describe a user-driven process of prototyping, development, and user testing of Llemy, an LLM-based system for exploring these molecular interaction maps. By involving domain experts from the very first prototyping in the form of a hackathon and collecting both fine-grained and general feedback on more refined versions, we were able to evaluate the perceived utility and quality of the developed system, in particular for summarising maps and pathways, as well as prioritise the development of future features. We recommend continued user-driven development and benchmarking to keep the community engaged. This will also facilitate the transition towards open-weight LLMs to support the needs of the open research environment in an ever-changing technology landscape.'
+
 - id: 'Olivier2026_fbc-v3'
   year: 2026
   date: 2026-03-10
@@ -23,7 +42,7 @@
   pdf: 'Pathirana2026_petab-v2.pdf'
   authors: 'Dilan Pathirana, Fabian Fröhlich, Sebastian Persson, Frank T. Bergmann, <b>Matthias König</b>, Paul F. Lang, Severin Bang, Svenja Kemmer, Jan Hasenauer, and Daniel Weindl'
   title: 'The Parameter Estimation tables (PEtab) format version 2'
-  journal: 'J Integr Bioinform. 2026 (accepted)'
+  journal: 'J Integr Bioinform. 2026 (revision)'
   status: publication
   impact: 1.5
   position: index
