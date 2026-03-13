@@ -131,18 +131,18 @@ def create_list_of_publications_typst(typst_path: Path, df: pd.DataFrame, highli
         #     typst_all += text
         #     console.rule(style="white")
 
-        # categories = {
-        #     "publication": ["publication",],
-        #     "review": ["review",],
-        #     "proceeding": ["proceeding",],
-        #     "preprint": ["preprint",],
-        #     "thesis": ["thesis",],
-        # }
         categories = {
-            "Original papers": ["publication", ],
-            "Reviews": ["review", ],
-            "Other Publications": ["proceeding", "preprint", "thesis"],
+            "Publications": ["publication",],
+            "Reviews": ["review",],
+            "Proceedings": ["proceeding",],
+            "Preprints": ["preprint",],
+            "Thesis": ["thesis",],
         }
+        # categories = {
+        #     "Original papers": ["publication", ],
+        #     "Reviews": ["review", ],
+        #     "Other Publications": ["proceeding", "preprint", "thesis"],
+        # }
 
         for category, status_values in categories.items():
 
