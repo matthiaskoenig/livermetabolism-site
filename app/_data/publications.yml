@@ -1,3 +1,28 @@
+- id: 'Alejandro2026_empagliflozin_preprint'
+  year: 2026
+  date: 2026-03-20
+  pdf: 'Alejandro2026_empagliflozin_preprint.pdf'
+  authors: 'Jennesse Alejandro, Michelle Elias, Mariia Babaeva, <b>Matthias König</b>'
+  title: 'A Digital Twin of Empagliflozin Pharmacokinetics and Pharmacodynamics'
+  journal: 'Preprints 2026, 10.20944/preprints202603.1559.v1'
+  journal_short: Preprints
+  status: preprint
+  impact: 0
+  position: last
+  doi: 10.20944/preprints202603.1559.v1
+  pmid:
+  keywords:
+    - digital twin
+    - empagliflozin
+    - Type 2 diabetes mellitus
+    - physiologically based pharmacokinetic/pharmacodynamic model (PBPK/PD)
+    - pharmacokinetics
+    - pharmacodynamics
+    - personalized medicine
+  project:
+  repository: https://github.com/matthiaskoenig/empagliflozin-model
+  abstract: "Background/Objectives: Empagliflozin is an SGLT2 inhibitor prescribed for the management of type 2 diabetes mellitus, lowering blood glucose by increasing urinary glucose excretion (UGE) through inhibition of renal glucose reabsorption. PK/PD responses vary substantially across patient populations, complicating dose selection under altered organ function. Here, we developed a whole-body PBPK/PD digital twin integrating absorption, distribution, metabolism, and excretion with explicit modeling of renal glucose handling via the renal threshold for glucose. Methods: The model represents empagliflozin and its glucuronide metabolite, is implemented in SBML, and was calibrated and evaluated against curated PK/PD data from 27 clinical studies spanning healthy individuals, patients with type 2 diabetes, and cohorts with renal or hepatic impairment. Results: The model accurately captured observed clinical PK/PD data across all 27 studies, spanning a wide range of doses, dosing regimens, and patient populations. Good agreement between simulations and observations was obtained under normal and impaired renal and hepatic function, as well as under fasted and fed conditions, demonstrating the model's ability to reproduce empagliflozin disposition and pharmacodynamic response across clinically relevant scenarios. Conclusions: This SBML-based PBPK/PD digital twin provides quantitative insight into empagliflozin dose dependency and the impact of renal impairment, hepatic impairment, and food intake on PK/PD across clinically relevant populations. All model files, simulation scripts, and curated datasets are openly available in accordance with FAIR principles."
+
 - id: 'Corradi2026_llemy_preprint'
   year: 2026
   date: 2026-03-12
