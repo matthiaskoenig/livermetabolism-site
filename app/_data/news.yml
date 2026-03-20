@@ -1,3 +1,12 @@
+- id: 'Alejandro2026_empagliflozin_preprint'
+  status: 'current'
+  title: 'Preprint: A Digital Twin of Empagliflozin Pharmacokinetics and Pharmacodynamics'
+  date: '2026-03-20'
+  image: Alejandro2026_graphical.abstract.png
+  link: https://www.preprints.org/manuscript/202603.1559/v1
+  short: "We present a whole-body PBPK/PD digital twin of empagliflozin to investigate pharmacokinetic and pharmacodynamic variability in type 2 diabetes mellitus, with a focus on renal and hepatic impairment, metabolite exposure, and dose-dependent effects."
+  abstract: "In a new preprint, Jennesse Alejandro, Michelle Elias, Mariia Babaeva, and Matthias König introduce a physiologically based PBPK/PD digital twin of the SGLT2 inhibitor empagliflozin, developed using curated data from 27 clinical studies. The whole-body model mechanistically represents absorption, distribution, metabolism, and excretion, and explicitly links drug exposure to renal glucose handling via the renal threshold for glucose and urinary glucose excretion. Simulations reproduce dose-dependent pharmacokinetics and pharmacodynamics across single- and multiple-dose regimens in healthy individuals and patients with type 2 diabetes. The model captures variability under renal and hepatic impairment as well as fed and fasted conditions, providing quantitative insight into clinically relevant scenarios. All models, datasets, and simulation workflows are provided as open, FAIR-compliant SBML resources, enabling reproducible analyses and reuse for model-informed assessment of empagliflozin PK/PD variability."
+
 - id: 'prmt_digital_twins'
   status: 'current'
   title: 'Keynote: Digital Twins and Dashboards for Personalized Drug Treatment'
