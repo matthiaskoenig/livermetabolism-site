@@ -63,11 +63,11 @@
 
 - id: 'Pathirana2026_petab-v2'
   year: 2026
-  date: 2026-03-10
+  date: 2026-03-20
   pdf: 'Pathirana2026_petab-v2.pdf'
   authors: 'Dilan Pathirana, Fabian Fröhlich, Sebastian Persson, Frank T. Bergmann, <b>Matthias König</b>, Paul F. Lang, Severin Bang, Svenja Kemmer, Jan Hasenauer, and Daniel Weindl'
   title: 'The Parameter Estimation tables (PEtab) format version 2'
-  journal: 'J Integr Bioinform. 2026 (revision)'
+  journal: 'J Integr Bioinform. 2026 (accepted)'
   status: publication
   impact: 1.5
   position: index
