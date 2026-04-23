@@ -133,19 +133,20 @@ Using the example of the glimepiride digital twin for type 2 diabetes, he demons
 - How Executable Simulation Models (EXSIMO) combine model, data, and code for full transparency
 - Independent reproducibility checks by the Physiome Journal and BioModels Team
 
-Explore more:
-🌐 https://livermetabolism.com
-💊 https://glimepiride.de
-📦 Code: https://github.com/matthiaskoenig/glimepiride-model
-📄 Publications:
-- Elias M., König M. Front. Pharmacol. (2025) 16:1686415, https://doi.org/10.3389/fphar.2025.1686415
-- Elias M., König M. Physiome* (2025) doi: https://doi.org/10.36903/physiome.28379193
-Slides: https://docs.google.com/presentation/d/e/2PACX-1vQ93_XwINeHqL4eOK8V7zfwn8ZGvsEw1uHZ3Ka1cECuq6_ir46RgQu4QSgQuLxBrkUu7MEKxHsJ_FAi/pub?start=false&loop=false&delayms=3000
-Biomodels: https://www.ebi.ac.uk/biomodels/MODEL2510140001
-Youtube: https://youtu.be/IvKvApzjGtM
-
-Presented at: COMBINE2025
-https://co.mbine.org/events/
+Explore more:<br />
+🌐 <a href="https://livermetabolism.com">https://livermetabolism.com</a><br />
+💊 <a href="https://glimepiride.de">https://glimepiride.de</a><br />
+📦 Code: <a href="https://github.com/matthiaskoenig/glimepiride-model">https://github.com/matthiaskoenig/glimepiride-model</a><br />
+📄 Publications:<br />
+- Elias M., König M. Front. Pharmacol. (2025) 16:1686415, <a href="https://doi.org/10.3389/fphar.2025.1686415">https://doi.org/10.3389/fphar.2025.1686415</a><br />
+- Elias M., König M. Physiome* (2025) doi: <a href="https://doi.org/10.36903/physiome.28379193">https://doi.org/10.36903/physiome.28379193</a><br />
+Slides: <a href="https://docs.google.com/presentation/d/e/2PACX-1vQ93_XwINeHqL4eOK8V7zfwn8ZGvsEw1uHZ3Ka1cECuq6_ir46RgQu4QSgQuLxBrkUu7MEKxHsJ_FAi/pub?start=false&loop=false&delayms=3000">https://docs.google<br />
+.com/presentation/d/e/2PACX-1vQ93_XwINeHqL4eOK8V7zfwn8ZGvsEw1uHZ3Ka1cECuq6_ir46RgQu4QSgQuLxBrkUu7MEKxHsJ_FAi/pub?start=false&loop=false&delayms=3000</a><br />
+Biomodels: <a href="https://www.ebi.ac.uk/biomodels/MODEL2510140001">https://www.ebi.ac.uk/biomodels/MODEL2510140001</a><br />
+Youtube: <a href="https://youtu.be/IvKvApzjGtM">https://youtu.be/IvKvApzjGtM</a><br />
+<br />
+Presented at: COMBINE2025<br />
+<a href=" https://co.mbine.org/events/>https://co.mbine.org/events/</a><br />
 
 #DigitalTwins #Reproducibility #OpenScience #Pharmacokinetics #SBML #COMBINE #SystemsMedicine #FAIRdata #AIinHealthcare #RDA"'
 

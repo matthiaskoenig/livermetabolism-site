@@ -20,10 +20,11 @@ permalink: /news/
                         allowfullscreen>
                 </iframe>
             </div>
-			<img src="/img/news/{{ news.image }}" class="img-responsive" height="60" style="float: left;"/>
             {% endif %}
+
+
             {% if news.image %}
-			<img src="/img/news/{{ news.image }}" class="img-responsive" height="60" style="float: left;"/>
+			<img src="/img/news/{{ news.image }}" class="img-responsive" height="100" style="float: left;"/>
             {% endif %}
             {% if news.image2 %}
             <img src="/img/news/{{ news.image2 }}" class="img-responsive" height="60" style="float: left;"/>
@@ -35,6 +36,9 @@ permalink: /news/
             </p>
             <p>
                 <a href="{{ news.link }}" target="_blank">{{ news.link }}</a>
+            </p>
+            <p>
+                {{ news.abstract }}
             </p>
         </td>
         </tr>
