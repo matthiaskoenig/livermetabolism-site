@@ -1,3 +1,12 @@
+- id: 'master_thesis_antonio.alvarez'
+  status: 'current'
+  title: 'Master Thesis Antonio Alvarez'
+  date: '2026-04-23'
+  image: master_thesis_antonio.alvarez.png
+  link: '/paper/theses/Master.Thesis.Antonio.Alvarez.pdf'
+  short: "Antonio Alvarez submitted his Master thesis on reproducible Bayesian optimization and uncertainty quantification in pharmacokinetic models"
+  abstract: "Antonio Alvarez developed a reproducible Bayesian framework for parameter estimation in pharmacokinetic (PK) and physiologically-based pharmacokinetic (PBPK) models. Using three models of increasing complexity, he systematically evaluated how key hyperparameters influence Bayesian MCMC performance on synthetic datasets. The study demonstrates that prior specification is the dominant factor for accurate parameter recovery, while other settings mainly affect computational cost. The fully open and FAIR-compliant workflow provides a robust foundation for uncertainty quantification and reproducible PBPK modeling."
+
 - id: 'Alejandro2026_empagliflozin_preprint'
   status: 'current'
   title: 'Preprint: A Digital Twin of Empagliflozin Pharmacokinetics and Pharmacodynamics'
