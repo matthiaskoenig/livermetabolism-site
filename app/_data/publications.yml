@@ -1,3 +1,25 @@
+- id: 'Master.Thesis.Antonio.Alvarez'
+  year: 2026
+  date: 2026-04-23
+  pdf: 'theses/Master.Thesis.Antonio.Alvarez.pdf'
+  authors: 'Antonio Alavarez (supervisor: <b>Matthias König</b>)'
+  title: 'Parameter Uncertainty in the Optimization of Pharmacokinetic Models: A Reproducible Bayesian Approach'
+  journal: 'Master Thesis, April 2026'
+  journal_short:
+  status: thesis
+  impact: 0
+  position: last
+  doi:
+  pmid:
+  keywords:
+    - Baysian
+    - parameter optimization
+    - SBML
+    - PEtab
+  project:
+  repository: https://github.com/matthiaskoenig/parameter-variability
+  abstract: 'Bayesian methods offer a principled framework for parameter estimation and uncertainty quantification in physiologically-based pharmacokinetic (PBPK) modeling, yet the sensitivity of these approaches to key workflow hyperparameters remains insufficiently characterized. This thesis presents a reproducible methodology for evaluating Bayesian Markov Chain Monte Carlo (MCMC) parameter estimation across three pharmacokinetic models of increasing complexity: a simple chain model, a basic pharmacokinetic model, and a clinically validated PBPK model of indocyanine green (ICG). Synthetic pharmacokinetic datasets were generated from known parameter distributions and used to fit Bayesian MCMC samplers under systematically varied hyperparameters — number of timepoints, number of samples, coefficient of variation, and prior type. Posterior accuracy, point bias, computational cost, and sampling efficiency were evaluated across all conditions. Among the four hyperparameters investigated, prior specification emerged as the dominant determinant of posterior accuracy: well-specified priors yielded parameter estimates close to the true values across all models, while biased and incorrect priors introduced substantial and progressive deviations. The remaining hyperparameters had limited influence on estimation accuracy but the number of timepoints and samples directly increased computational cost. The entire workflow — built on SBML, libRoadRunner, PEtab, and pyPESTO — is fully open-source and FAIR-compliant, providing a transparent and reusable framework for validating Bayesian approaches in pharmacokinetic modeling.'
+
 - id: 'Sauro2025_fair_to_cure_preprint'
   year: 2026
   date: 2026-03-27
