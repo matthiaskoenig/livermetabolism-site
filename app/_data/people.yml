@@ -77,11 +77,10 @@
   homepage:
   description: "Monika is developing a PBPK model of immune suppressent rapamycin (sirolimus) as part of our contribution to the Immune Digital Twin (IDT)."
 
-
 - id: 'kim'
   status: 'current'
   year: '2025-05/2025-08, 2025-09/2026-02'
-  name: 'current'
+  name: 'Minjun Kim'
   position: 'Humboldt Internship Project (HIP) 2025'
   image: kim.jpg
   orcid:
@@ -89,6 +88,27 @@
   homepage:
   description: "Kim is developing a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the GLP-1 receptor agonist dulaglutide to better understand its absorption, distribution, metabolism, and effects on glucose regulation."
 
+- id: 'shelee'
+  status: 'current'
+  year: '2026-04/2026-11'
+  name: 'Shelee Bedón'
+  position: 'Internship Project (FU)'
+  image: person.png
+  orcid:
+  repository: 'https://github.com/Shelee97'
+  homepage:
+  description: "Shelee is developing a physiologically based pharmacokinetic (PBPK) model of the multikinase inhibitor lenvatinib to better understand its absorption, distribution, metabolism, and excretion. The project focuses on characterizing interindividual variability in treatment response, with particular emphasis on hepatic metabolism, drug–drug interactions, and the impact of liver function in patients with hepatocellular carcinoma."
+
+- id: 'linh'
+  status: 'current'
+  year: '2026-04/2026-11'
+  name: 'Chang Linh Nguyen'
+  position: 'Bachelor project (HU)'
+  image: person.png
+  orcid:
+  repository: 'https://github.com/changlinh'
+  homepage:
+  description: "Chang Linh is developing a physiologically based pharmacokinetic (PBPK) model of the β2-adrenergic receptor agonist albuterol (salbutamol) to better understand its absorption, distribution, metabolism, and excretion. The project focuses on route-specific pharmacokinetics, particularly inhalation delivery, and investigates variability in drug response across different patient populations, including the impact of formulation, dosing, and pulmonary physiology."
 
 - id: 'juanpablo'
   status: 'alumni'
