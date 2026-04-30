@@ -1,3 +1,27 @@
+- id: 'Bafna2026_segmentation'
+  year: 2026
+  date: 2026-04-30
+  pdf: 'Bafna2026_segmentation_preprint.pdf'
+  authors: 'Mehul Bafna, <b>Matthias König</b>, Sylvia Saalfeld, Vladimira Moulisova, Vaclav Liska, Uta Dahmen, Mohamed Albadry'
+  title: 'Automated Segmentation of Hepatic Vessels and Lobules in Whole-Slide Images Using U-Net Models'
+  journal: 'Front. Bioinform. 6:1713736'
+  journal_short: "Frontiers in Bioinformatics"
+  status: publication
+  impact: 3.9
+  position: index
+  doi: 10.3389/fbinf.2026.1713736
+  pmid:
+  keywords:
+    - Hepatic Vascular Segmentation
+    - Lobule Detection
+    - Histological Image
+    - Analysis
+    - Deep Learning
+    - Lobule Segmentation
+  project:
+  repository: https://doi.org/10.5281/zenodo.17041227
+  abstract: 'Automated analysis of hepatic vascular structures and lobules within whole-slide histological images is critical for ensuring accurate and timely morphometric evaluations and facilitating advancements in computational liver histology. Nonetheless, the intricate morphology of the tissue, variability in staining techniques, and the requirements for high-resolution imaging present substantial challenges to the precision of segmentation processes. We present a robust deep-learning pipeline using adaptive patch extraction and specialized U-Net architectures for segmenting vessels, bile ducts, and lobules in Glutamine Synthetase and Picro-Sirius-Red stained porcine liver sections. Our architecture incorporates a weight-boosted nnU-Net framework to effectively manage class imbalances and improve the detection of smaller vascular structures. Geometric data transformations enhanced the robustness and generalizability of the segmentation models. Evaluations conducted through five-fold cross-validation, as well as assessments utilizing independent test datasets, resulted in Dice similarity scores: 0.960 for lobules, 0.801 for central veins, 0.909 for hepatic arteries, 0.609 for portal veins, and 0.710 for bile ducts. The developed segmentation pipeline additionally supports comprehensive morphometric analyses of structural parameters, including number and size (diameter, area) of vascular structures, bile ducts, and lobules. For e.g., the diameter of hepatic arteries ranges between 30-90 µm. These findings underscore the practical relevance of adaptable segmentation frameworks in advancing computational histological analysis of liver tissue.'
+
 - id: 'Master.Thesis.Antonio.Alvarez'
   year: 2026
   date: 2026-04-23
@@ -40,31 +64,6 @@
   project:
   repository:
   abstract: "Guidelines for managing scientific data have been established under the FAIR principles requiring that data be Findable, Accessible, Interoperable, and Reusable. In many scientific disciplines, especially computational biology, both data and models are key to progress. For this reason, and recognizing that such models are a very special type of 'data', we argue that computational models, especially mechanistic models prevalent in medicine, physiology and systems biology, deserve a complementary set of guidelines. We propose the CURE principles, emphasizing that models should be Credible, Understandable, Reproducible, and Extensible. We delve into each principle, discussing verification, validation, and uncertainty quantification for model credibility; the clarity of model descriptions and annotations for understandability; adherence to standards and open science practices for reproducibility; and the use of open standards and modular code for extensibility and reuse. We outline recommended and baseline requirements for each aspect of CURE, aiming to enhance the impact and trustworthiness of computational models, particularly in biomedical applications where credibility is paramount. Our perspective underscores the need for a more disciplined approach to modeling, aligning with emerging trends such as Digital Twins and emphasizing the importance of data and modeling standards for interoperability and reuse. Finally, we emphasize that given the non-trivial effort required to implement the guidelines, the community moves to automate as many of the guidelines as possible."
-
-- id: 'Bafna2026_segmentation'
-  year: 2026
-  date:
-  pdf: 'Bafna2025_segmentation_preprint.pdf'
-  authors: 'Mehul Bafna, <b>Matthias König</b>, Sylvia Saalfeld, Vladimira Moulisova, Vaclav Liska, Uta Dahmen, Mohamed Albadry'
-  title: 'Automated Segmentation of Hepatic Vessels and Lobules in Whole-Slide Images Using U-Net Models'
-  journal: 'bioRxiv 2025.09.08.674181'
-  journal_short: "Frontiers in Bioinformatics"
-  status: accepted
-  impact: 3.9
-  position: index
-  doi: # 10.1101/2025.09.08.674181
-  pmid:
-  keywords:
-    - Hepatic Vascular Segmentation
-    - Lobule Detection
-    - Histological Image
-    - Analysis
-    - Deep Learning
-    - Lobule Segmentation
-  project:
-  repository: https://doi.org/10.5281/zenodo.17041227
-  abstract: 'Automated analysis of hepatic vascular structures and lobules within whole-slide histological images is critical for ensuring accurate and timely morphometric evaluations and facilitating advancements in computational liver histology. Nonetheless, the intricate morphology of the tissue, variability in staining techniques, and the requirements for high-resolution imaging present substantial challenges to the precision of segmentation processes. We present a robust deep-learning pipeline using adaptive patch extraction and specialized U-Net architectures for segmenting vessels, bile ducts, and lobules in Glutamine Synthetase and Picro-Sirius-Red stained porcine liver sections. Our architecture incorporates a weight-boosted nnU-Net framework to effectively manage class imbalances and improve the detection of smaller vascular structures. Geometric data transformations enhanced the robustness and generalizability of the segmentation models. Evaluations conducted through five-fold cross-validation, as well as assessments utilizing independent test datasets, resulted in Dice similarity scores: 0.960 for lobules, 0.801 for central veins, 0.909 for hepatic arteries, 0.609 for portal veins, and 0.710 for bile ducts. The developed segmentation pipeline additionally supports comprehensive morphometric analyses of structural parameters, including number and size (diameter, area) of vascular structures, bile ducts, and lobules. For e.g., the diameter of hepatic arteries ranges between 30-90 µm. These findings underscore the practical relevance of adaptable segmentation frameworks in advancing computational histological analysis of liver tissue.'
-
 
 - id: 'Alejandro2026_empagliflozin_preprint'
   year: 2026
