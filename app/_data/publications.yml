@@ -1,3 +1,29 @@
+- id: 'Myshkina2026_apixaban_preprint'
+  year: 2026
+  date: 2026-05-05
+  pdf: 'Myshkina2026_apixaban_preprint.pdf'
+  authors: 'Mariia Myshkina, Mariia Babaeva, Linh Chang Nguyen, Shelee Bedón, Johannes Metternich, Michelle Elias, <b>Matthias König</b>'
+  title: 'An Open and Reproducible Digital Twin for Personalised Anticoagulant Therapy: Modelling Apixaban Pharmacokinetics and Pharmacodynamics'
+  journal: 'Preprints 2026, 10.20944/preprints202605.0249.v1'
+  journal_short: Preprints
+  status: preprint
+  impact: 0
+  position: last
+  doi: 10.20944/preprints202605.0249.v1
+  pmid:
+  keywords:
+    - apixaban; anticoagulation
+    - pharmacokinetics/pharmacodynamics
+    - PBPK/PD modelling
+    - digital twin
+    - personalised medicine
+    - special populations
+    - FAIR data
+    - reproducible modelling
+  project:
+  repository: https://github.com/matthiaskoenig/apixaban-model
+  abstract: "Background: Thrombotic events increase with age, necessitating anticoagulants with reliable pharmacokinetic (PK) and pharmacodynamic (PD) profiles. Apixaban has important therapeutic advantages, but individualised dosing remains challenging because exposure and response are influenced by renal and hepatic function, food intake, body weight, and other patient-specific factors. Existing physiologically based pharmacokinetics/pharmacodynamics (PBPK/PD) models are limited by data sources, transparency, and incomplete representation of metabolites and pharmacodynamics. Methods: A systematic literature review identified 35 apixaban PK/PD clinical studies, which were curated and used for model development, parameter optimisation, and evaluation. We developed an expanded whole-body PBPK/PD model of apixaban with explicit metabolite representation and enhanced pharmacodynamic components. The model follows a modular structure and is encoded in SBML to support interoperability and reproducibility. Results: The model reproduced observed clinical PK/PD data across all 35 studies, covering diverse doses, regimens, and populations. Simulations captured apixaban PK and PD under normal conditions and clinically relevant scenarios, including renal and hepatic impairment, fasted and fed states, and obesity. Conclusions: This open PBPK/PD digital twin provides quantitative insight into determinants of apixaban exposure and response. All model files, documentation, simulation scripts, and curated datasets are openly available under MIT and CC-BY licenses following FAIR principles."
+
 - id: 'Bafna2026_segmentation'
   year: 2026
   date: 2026-04-30

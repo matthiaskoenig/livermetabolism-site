@@ -1,3 +1,12 @@
+- id: 'Myshkina2016_apixaban_preprint'
+  status: 'current'
+  title: 'Preprint: An Open and Reproducible Digital Twin for Personalised Anticoagulant Therapy'
+  date: '2026-05-05'
+  image: Myshkina2026_apixaban_model.png
+  link: https://www.preprints.org/manuscript/202605.0249/v1
+  short: "We present an open whole-body PBPK/PD digital twin of apixaban to investigate pharmacokinetic and pharmacodynamic variability in personalised anticoagulant therapy, with a focus on renal and hepatic impairment, food intake, body weight, metabolites, and coagulation-related endpoints."
+  abstract: "In a new preprint, Mariia Myshkina, Mariia Babaeva, Linh Chang Nguyen, Shelee Bedón, Johannes Metternich, Michelle Elias, and Matthias König introduce an open PBPK/PD digital twin of apixaban for personalised anticoagulant therapy. The model was developed from 35 curated clinical PK/PD studies and captures apixaban exposure and anticoagulation-related pharmacodynamic endpoints across dosing regimens, renal and hepatic impairment, food intake, and body weight. All model files, simulation workflows, and curated datasets are openly available under MIT and CC-BY licenses following FAIR principles. The work was developed as part of the Berlin University Alliance (BUA) X-Student Research Group “Digital Twins in Action: Optimizing Direct Oral Anticoagulant Use”, funded by the Bundesministerium für Bildung und Forschung (BMBF) and the State of Berlin as part of the Excellence Strategy of the Federal and State Governments."
+
 - id: 'Bafna2025_segmentation_preprint'
   status: 'current'
   date: '2026-04-30'
