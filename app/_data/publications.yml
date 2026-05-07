@@ -1,3 +1,29 @@
+- id: 'Jesionek2026_rapamycin_preprint'
+  year: 2026
+  date: 2026-05-05
+  pdf: 'Jesionek2026_rapamycin_preprint.pdf'
+  authors: 'Monika Jesionek, <b>Matthias König</b>'
+  title: 'A PBPK Digital Twin of Rapamycin for Predicting Dose–Exposure Relationships, Organ Impairment Effects, and Drug–Drug Interactions'
+  journal: 'Preprints 2026, 10.20944/preprints202605.0249.v1'
+  journal_short: Preprints
+  status: preprint
+  impact: 0
+  position: last
+  doi: 10.20944/preprints202605.0328.v1
+  pmid:
+  keywords:
+  - rapamycin
+  - sirolimus
+  - PBPK modeling
+  - digital twin
+  - mTOR inhibitor
+  - drug–drug interactions
+  - organ impairment
+  - personalized medicine
+  project:
+  repository: https://github.com/matthiaskoenig/rapamycin-model
+  abstract: "Sirolimus is a potent mTOR inhibitor used primarily to prevent acute rejection in transplant recipients. Its clinical management is challenging because of its narrow therapeutic index, low and highly variable oral bioavailability, and pronounced inter-individual variability driven by CYP3A4/5-mediated metabolism and P-glycoprotein efflux. Extensive partitioning into erythrocytes further complicates its disposition and necessitates therapeutic drug monitoring. Here, we developed a mechanistic whole-body physiologically based pharmacokinetic (PBPK) digital twin of rapamycin that integrates complex absorption kinetics, nonlinear distribution, and first-pass metabolism. The SBML-encoded model was calibrated and evaluated against a comprehensive library of curated clinical pharmacokinetic data, comprising studies primarily in healthy volunteers and stable renal transplant recipients. The dataset covers diverse ethnic populations, cohorts with varying degrees of renal and hepatic impairment, and individuals with relevant genetic polymorphisms. The digital twin captured overall trends in rapamycin blood concentrations across a wide range of doses and dosing regimens. Simulations showed good agreement with observed data under hepatic and renal impairment, as well as under fasted and fed conditions. Furthermore, the model reproduced the magnitude of drug--drug interactions involving potent CYP3A4 inhibitors, CYP3A4 inducers, and concomitant immunosuppressive agents. This SBML-based digital twin provides a quantitative framework for characterizing sirolimus dose dependency and the multifactorial effects of intrinsic and extrinsic factors on systemic exposure. By providing the model in a standards-based, executable format together with simulation scripts and curated pharmacokinetic datasets, this work supports independent reproduction, transparent model evaluation, and systematic reuse in accordance with FAIR principles."
+
 - id: 'Myshkina2026_apixaban_preprint'
   year: 2026
   date: 2026-05-05
