@@ -1,16 +1,8 @@
-- id: 'Jesionek2026_rapamycin_preprint'
-  status: 'current'
-  title: 'Preprint: A PBPK Digital Twin of Rapamycin for Predicting Dose–Exposure Relationships, Organ Impairment Effects, and Drug–Drug Interactions'
-  date: '2026-05-05'
-  image: Jesionek2026_rapamycin_preprint.png
-  link: https://www.preprints.org/manuscript/202605.0328/v1
-  short: "We present an open whole-body PBPK digital twin of rapamycin to investigate dose–exposure relationships, organ impairment effects, food effects, genetic variability, and drug–drug interactions relevant for personalised immunosuppressive therapy."
-  abstract: "In a new preprint, Monika Jesionek and Matthias König introduce an open, standards-based whole-body PBPK digital twin of rapamycin/sirolimus. The model integrates complex absorption kinetics, nonlinear distribution, erythrocyte partitioning, first-pass metabolism, CYP3A4/5-mediated clearance, and P-glycoprotein efflux to describe the highly variable pharmacokinetics of this clinically important mTOR inhibitor. The digital twin was calibrated and evaluated using a curated library of clinical pharmacokinetic data covering healthy volunteers, stable renal transplant recipients, diverse ethnic populations, renal and hepatic impairment, genetic polymorphisms, food effects, and relevant drug–drug interactions. Simulations reproduced overall blood concentration–time profiles across a broad range of doses and dosing regimens and captured the effects of potent CYP3A4 inhibitors, CYP3A4 inducers, and concomitant immunosuppressive agents. All model files, simulation workflows, and curated pharmacokinetic datasets are openly available in SBML-based, executable form following FAIR principles, supporting independent reproduction, transparent model evaluation, and systematic reuse for model-informed precision medicine."
 
 - id: 'Myshkina2016_apixaban_preprint'
   status: 'current'
   title: 'Preprint: An Open and Reproducible Digital Twin for Personalised Anticoagulant Therapy'
-  date: '2026-05-05'
+  date: '2026-05-06'
   image: Myshkina2026_apixaban_model.png
   link: https://www.preprints.org/manuscript/202605.0249/v1
   short: "We present an open whole-body PBPK/PD digital twin of apixaban to investigate pharmacokinetic and pharmacodynamic variability in personalised anticoagulant therapy, with a focus on renal and hepatic impairment, food intake, body weight, metabolites, and coagulation-related endpoints."
