@@ -1,3 +1,27 @@
+- id: 'Elias2026_dapagliflozin_physiome'
+  year: 2026
+  date: 2026-05-13
+  pdf: 'Elias2026_dapagliflozin_physiome.pdf'
+  authors: 'Michelle Elias, Mariia Myshkina, Nike Nemitz, <b>Matthias König</b>'
+  title: 'Reproducibility of a Physiologically Based Pharmacokinetic and Pharmacodynamic (PBPK/PD) Model of Dapagliflozin'
+  journal: 'Physiome. May 13, 2026'
+  journal_short: "Physiome"
+  status: publication
+  impact:
+  position: last
+  doi: 10.36903/physiome.31368556
+  pmid:
+  keywords:
+    - Dapagliflozin
+    - PBPK/PD
+    - SBML
+    - Pharmacokinetics
+    - Pharmacodynamics
+    - Computational Model
+  project:
+  repository: https://github.com/matthiaskoenig/dapagliflozin-model
+  abstract: 'A computational model in the form of a whole-body physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of dapagliflozin was developed to systematically evaluate the influence of patient-specific factors on drug disposition. Based on curated data from 28 clinical studies, the model simulates the absorption, distribution, metabolism and excretion (ADME) of the drug as well as its pharmacodynamics. The model accounts for variability in renal and hepatic function, and effects of food intake. The model is implemented in the Systems Biology Markup Language (SBML) standard. Analysis were performed utilizing the libroadrunner simulation library. Here, we demonstrate the computational reproducibility of the key findings from the primary publication, thereby verifying the consistency of the model implementation with the published results.'
+
 - id: 'Jesionek2026_rapamycin_preprint'
   year: 2026
   date: 2026-05-06
@@ -222,31 +246,6 @@
   project:
   repository: https://github.com/matthiaskoenig/dapagliflozin-model
   abstract: 'Background/Objectives: Dapagliflozin is an SGLT2 inhibitor prescribed for the management of type 2 diabetes mellitus. The drug lowers blood glucose levels by increasing urinary glucose excretion (UGE). Despite established efficacy, dapagliflozin demonstrates significant inter-individual variability in pharmacokinetics (PK) and pharmacodynamics (PD), with potential impact on treatment outcomes. Methods: To evaluate the sources of variability and to support patient stratification and model-informed individualized therapy, we developed a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of dapagliflozin using curated data from 28 clinical studies. This framework integrates absorption, distribution, metabolism, excretion, and pharmacodynamics, and accounts for key determinants of variability including renal and hepatic function, and food effects. Results: The simulations reproduced dose-dependent pharmacokinetics with predicted Cmax and AUC values typically within 10–15% of observed data. Renal impairment reduced UGE by 40–60% despite modest changes in plasma exposure, while hepatic impairment produced only small shifts in PK and PD. The model also reproduced the fed-state reduction of peak concentrations, consistent with the 30–50% decrease reported clinically. Conclusions: All model files, code, and curated datasets are openly available in line with FAIR standards and Open Science practices, enabling transparent and reproducible analyses and providing a mechanistic basis for individualized therapy in type 2 diabetes.'
-
-
-- id: 'Elias2026_dapagliflozin_physiome'
-  year: 2026
-  date: 2026-02-19
-  pdf: 'Elias2026_dapagliflozin_physiome.pdf'
-  authors: 'Michelle Elias, Mariia Myshkina, Nike Nemitz, <b>Matthias König</b>'
-  title: 'Reproducibility of a Physiologically Based Pharmacokinetic and Pharmacodynamic (PBPK/PD) Model of Dapagliflozin'
-  journal: 'Physiome. February 19, 2026'
-  journal_short: "Physiome"
-  status: publication
-  impact:
-  position: last
-  doi: 10.36903/physiome.31368556
-  pmid:
-  keywords:
-    - Dapagliflozin
-    - PBPK/PD
-    - SBML
-    - Pharmacokinetics
-    - Pharmacodynamics
-    - Computational Model
-  project:
-  repository: https://github.com/matthiaskoenig/dapagliflozin-model
-  abstract: 'A computational model in the form of a whole-body physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of dapagliflozin was developed to systematically evaluate the influence of patient-specific factors on drug disposition. Based on curated data from 28 clinical studies, the model simulates the absorption, distribution, metabolism and excretion (ADME) of the drug as well as its pharmacodynamics. The model accounts for variability in renal and hepatic function, and effects of food intake. The model is implemented in the Systems Biology Markup Language (SBML) standard. Analysis were performed utilizing the libroadrunner simulation library. Here, we demonstrate the computational reproducibility of the key findings from the primary publication, thereby verifying the consistency of the model implementation with the published results.'
 
 - id: 'Tensil2026_losartan'
   year: 2026
