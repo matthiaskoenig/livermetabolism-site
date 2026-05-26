@@ -17,7 +17,7 @@
   name: 'Mariia Myshkina'
   position: 'Ph.D. student'
   image: myshkina.png
-  orcid:
+  orcid: "0009-0000-7769-2154"
   repository: 'https://github.com/MariiaMysh'
   homepage:
   description: 'Mariia works on ATLAS, a decision support tool for hepatocellular carcinoma (HCC). Based on AI methods, ATLAS processes all relevant patient data from databases, systems medicine and continuum biomechanical in silico prognosis models as well as individual patient data. The tool is being developed in a co-design approach by experts in surgical oncology, mathematical modeling and machine learning.'
@@ -28,7 +28,7 @@
   name: 'Michelle Elias'
   position: 'Bachelor project and Bachelor thesis'
   image: michelle.jpg
-  orcid:
+  orcid: "0009-0005-7959-3164"
   repository: 'https://github.com/mii-halina'
   homepage:
   description: 'Michelle develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of the sulfonylurea glimepiride. The objective is to enhance our understanding of the underlying causes of intraindividual variability in insulin secretion and T2DM treatment with sulfonylurea, e.g., differences in hepatorenal function.'
@@ -39,7 +39,7 @@
   name: 'Mariia Babaeva'
   position: 'Student assistant'
   image: mariia_babaeva.jpg
-  orcid:
+  orcid: "0009-0007-6659-7638"
   repository: 'https://github.com/icalledmyselfmoon'
   homepage:
   description: 'Mariia workes on a physiologically based model of lisinopril. Key questions are the effect of hepatic and renal disease on lisinopril pharmacokinetics and pharmacodynamics.'
@@ -72,7 +72,7 @@
   name: 'Monika Jesionek'
   position: 'ERASMUS student'
   image: monajes.jpg
-  orcid:
+  orcid: "0009-0003-3110-3440"
   repository: 'https://github.com/monajes'
   homepage:
   description: "Monika is developing a PBPK model of immune suppressent rapamycin (sirolimus) as part of our contribution to the Immune Digital Twin (IDT)."
@@ -94,7 +94,7 @@
   name: 'Shelee Bedón'
   position: 'Internship Project (FU)'
   image: shelee.jpg
-  orcid:
+  orcid: "0009-0005-9147-0028"
   repository: 'https://github.com/Shelee97'
   homepage:
   description: "Shelee is developing a physiologically based pharmacokinetic (PBPK) model of the multikinase inhibitor lenvatinib to better understand its absorption, distribution, metabolism, and excretion. The project focuses on characterizing interindividual variability in treatment response, with particular emphasis on hepatic metabolism, drug–drug interactions, and the impact of liver function in patients with hepatocellular carcinoma."
@@ -105,10 +105,21 @@
   name: 'Chang Linh Nguyen'
   position: 'Bachelor project (HU)'
   image: linh.jpg
-  orcid:
+  orcid: "0009-0004-8004-3314"
   repository: 'https://github.com/changlinh'
   homepage:
   description: "Chang Linh is developing a physiologically based pharmacokinetic (PBPK) model of the β2-adrenergic receptor agonist albuterol (salbutamol) to better understand its absorption, distribution, metabolism, and excretion. The project focuses on route-specific pharmacokinetics, particularly inhalation delivery, and investigates variability in drug response across different patient populations, including the impact of formulation, dosing, and pulmonary physiology."
+
+- id: 'sandeep'
+  status: 'current'
+  year: '2026-06/2026-12'
+  name: 'Sandeep Konaka Gautamdas'
+  position: 'Internship project'
+  image: sandeep.jpg
+  orcid: '0000-0002-7855-9715'
+  repository: 'https://github.com/sandeep-konakagautamdas'
+  homepage:
+  description: "Sandeep is developing a physiologically based pharmacokinetic (PBPK) model of the multi-kinase inhibitor regorafenib to better understand its absorption, distribution, metabolism, and excretion. The project focuses on characterizing dose–exposure relationships and interindividual variability, with particular emphasis on hepatic metabolism, active metabolites, organ impairment, and clinically relevant factors affecting regorafenib pharmacokinetics in cancer therapy."
 
 - id: 'juanpablo'
   status: 'alumni'
