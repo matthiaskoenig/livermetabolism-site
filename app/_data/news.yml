@@ -1,3 +1,11 @@
+- id: 'PAGE2026_PKDB_Myshkina_Koenig'
+  status: 'current'
+  title: 'Poster at PAGE 2026: PK-DB 2.0 for Pharmacometric Modeling, AI, and Digital Twins'
+  date: '2026-06-04'
+  image: PAGE2026_PKDB_Myshkina_Koenig.png
+  link: https://www.page-meeting.org/2026-dubrovnik-croatia/
+  short: "We present PK-DB 2.0, an open, FAIR, and AI-ready pharmacokinetics and pharmacodynamics database providing curated PK/PD data from more than 700 clinical studies for pharmacometric modeling, machine learning, and digital twin development."
+  abstract: "At PAGE 2026 in Dubrovnik, Mariia Myshkina presents PK-DB 2.0, an open pharmacokinetics and pharmacodynamics database designed for modern pharmacometric modeling, AI-driven workflows, and digital twin applications. PK-DB 2.0 provides a unified, machine-readable data infrastructure covering study designs, interventions, concentration–time profiles, derived pharmacokinetic parameters, and pharmacodynamic endpoints. The platform currently contains curated data from more than 700 clinical studies and introduces stronger validation rules, automated quality checks, unit normalization, ontology-based semantic annotations, and explicit representation of experimental uncertainties. A redesigned REST API enables fast and reliable programmatic access, while a dedicated Model Context Protocol (MCP) server provides structured access for AI clients and automated modeling workflows. By combining rigorous curation, FAIR data principles, and AI-ready interfaces, PK-DB 2.0 supports reproducible model development, cross-study analyses, machine learning pipelines, PBPK modeling, population pharmacometrics, and next-generation digital twin–enabled decision support."
 
 - id: 'Myshkina2016_apixaban_preprint'
   status: 'current'

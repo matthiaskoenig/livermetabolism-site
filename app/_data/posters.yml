@@ -1,3 +1,5 @@
+
+
 - id: 'SBMC2026_Poster_Albadry2026'
   year: 2026
   date: 2026-05-04
@@ -18,7 +20,7 @@
 
 - id: 'EASL2026_LCS_Poster'
   year: 2025
-  date: 2025-20-21
+  date: 2025-02-21
   pdf: 'posters/EASL2026_LCS_Poster.pdf'
   image: 'posters/EASL2026_LCS_Poster.jpg'
   authors: 'Mariia Myshkina<sup>1</sup>, Etienne Jessen<sup>2</sup>, Dominik Schillinger<sup>2</sup>, <b>Matthias König</b><sup>1,3</sup>'
