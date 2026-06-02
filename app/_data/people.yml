@@ -110,6 +110,17 @@
   homepage:
   description: "Chang Linh is developing a physiologically based pharmacokinetic (PBPK) model of the β2-adrenergic receptor agonist albuterol (salbutamol) to better understand its absorption, distribution, metabolism, and excretion. The project focuses on route-specific pharmacokinetics, particularly inhalation delivery, and investigates variability in drug response across different patient populations, including the impact of formulation, dosing, and pulmonary physiology."
 
+- id: 'jessica'
+  status: 'current'
+  year: '2026-06/2026-09'
+  name: 'Jessica Cruz'
+  position: 'Humboldt Internship Project (HIP)'
+  image: jessica.png
+  orcid: "0009-0006-9067-5547"
+  repository: 'https://github.com/jessicalienx97-wq'
+  homepage:
+  description: "Jessica Cruz is developing a physiologically based pharmacokinetic (PBPK) model of the leukotriene receptor antagonist montelukast to better understand its absorption, distribution, metabolism, and excretion. The project focuses on interindividual variability in montelukast pharmacokinetics, particularly the impact of hepatic metabolism, CYP2C9/CYP3A4 variability, drug-drug interactions, and age-dependent differences in pediatric and adult populations."
+
 - id: 'sandeep'
   status: 'current'
   year: '2026-06/2026-12'
