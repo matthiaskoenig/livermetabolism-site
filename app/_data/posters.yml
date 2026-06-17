@@ -1,4 +1,51 @@
+- id: 'Gaas2026_SBSCL_OptSolvX'
+  year: 2026
+  date: 2026-06-12
+  pdf: 'posters/Gaas2026_SBSCL_OptSolvX.pdf'
+  image: 'posters/Gaas2026_SBSCL_OptSolvX.jpg'
+  authors: 'Michael Gaas<sup>1,2</sup>, Ayush Baranwal<sup>3</sup>, Artur Neumann<sup>1,2</sup>, <b>Matthias König<sup>4,5</sup></b>, Andreas Dräger<sup>6</sup>'
+  affiliations: '
+  <sup>1</sup> German Center for Infection Research (DZIF), partner site Tübingen, Tübingen 72076, DE;
+  <sup>2</sup> Quantitative Biology Center (QBiC), Eberhard Karl University of Tübingen, Tübingen 72076, DE;
+  <sup>3</sup> School of Engineering, Jawaharlal Nehru University, New Dehli, IN;
+  <sup>4</sup>University Hospital Schleswig-Holstein, Campus Lübeck, First Department of Medicine, 23538 Lübeck, Germany;
+  <sup>5</sup> Humboldt-Universität zu Berlin, Faculty of Life Sciences, Department of Biology, Institute of Theoretical Biology, Systems Medicine of the Liver, Unter den Linden 6, 10099 Berlin, Germany; 
+  <sup>6</sup> Data Analytics and Bioinformatics, Institute of Computer Science, Martin Luther University Halle-Wittenberg, Halle (Saale) 06120, DE;'
+  title: 'Simulating Biological Systems with OptSolvX-powered SBSCL'
+  meeting: 'Tübinger ML Bioinformatik Symposium; 12 June 2026'
+  webpage: ''
+  doi:
+  keywords:
+    - SBML
+    - ODE
+    - systems biology
+  project: https://draeger-lab.github.io/SBSCL/
+  repository: https://github.com/draeger-lab/sbscl
+  abstract: 'Studying biological systems increasingly relies on large numerical computations and complex simulation workﬂows. The Systems Biology Simulation Core Library (SBSCL) is a Java-based software library for simulating models and experiments encoded in standard formats such as SBML (Systems Biology Markup Language) and SED-ML (Simulation Experiment Description Markup Language). When simulating complex models, time-varying stiﬀness poses a signiﬁcant numerical challenge. SBSCL’s Java™ implementation of LSODA (Livermore Solver for Ordinary Diﬀerential Equations with Automatic Method Switching) addresses this by automatically switching between suitable ODE integration methods during simulation, decreasing redundant computational cost.'
 
+- id: 'PAGE2026_PKDB_Myshkina_Koenig'
+  year: 2026
+  date: 2026-06-03
+  pdf: 'posters/PAGE2026_PKDB_Myshkina_Koenig.pdf'
+  image: 'posters/PAGE2026_PKDB_Myshkina_Koenig.jpg'
+  authors: 'Mariia Myshkina<sup>1</sup>, <b>Matthias König<sup>1,2</sup></b>'
+  affiliations: '<sup>1</sup> Humboldt-Universität zu Berlin, Faculty of Life Sciences, Department of Biology, Institute of Theoretical Biology, Systems Medicine of the Liver, Unter den Linden 6, 10099 Berlin, Germany; <sup>2</sup>University Hospital Schleswig-Holstein, Campus Lübeck, First Department of Medicine, 23538 Lübeck, Germany'
+  title: 'PK-DB 2.0: An Open Pharmacokinetics and Pharmacodynamics Database for Pharmacometric Modeling, AI, and Digital Twins'
+  meeting: 'PAGE2026: 34th PAGE Meeting, Dubrovnik, 2-5 June, 2026'
+  webpage: 'https://www.page-meeting.org/2026-dubrovnik-croatia/'
+  doi:
+  keywords:
+    - pharmacokinetics
+    - pharmacodynamics
+    - database
+  project: https://pk-db.com
+  repository: https://github.com/matthiaskoenig/pkdb
+  abstract: 'Introduction: The rapid growth of published pharmacokinetics (PK) and pharmacodynamics (PD) data from clinical and preclinical studies requires structured, interoperable, and reproducible data infrastructures. In line with FAIR principles [1], pharmacometric data must be standardized, contextualized, and comparable across studies. We previously developed PK-DB [2], an open database for curated PK/PD data with detailed study and cohort metadata. While successfully used in modeling workflows, the original system was not designed for AI-driven analyses or Digital Twin applications.
+  Objectives:  PK-DB 2.0 aims to provide an open, standardized, and computationally accessible PK/PD platform tailored to pharmacometric modeling, automated workflows, artificial intelligence, and digital twin development, with a focus on data quality, interoperability, and machine-readability.
+  Methods: PK-DB 2.0 implements a unified data model covering study design, interventions, concentration–time profiles, derived PK parameters, and pharmacodynamic endpoints. Data are curated through collaborative workflows with strong validation rules, automated quality checks, unit normalization, explicit representation of experimental uncertainties, and ontology-based semantic annotation. A redesigned REST API provides fast, reliable, bi-directional programmatic access independent of programming language. Importantly, PK-DB 2.0 introduces a dedicated Model Context Protocol (MCP) server, enabling structured, automated access by AI clients and seamless integration into AI-driven modeling and digital twin workflows.
+  Results: PK-DB 2.0 currently contains curated data from more than 700 clinical studies, substantially expanding previous releases. Key advances include extended support for pharmacodynamic endpoints (e.g., coagulation, blood pressure, anthropometric measures), ontology-based annotation of biological and clinical entities, strong structural validation rules, and an AI-ready access layer via REST and MCP. These features enable direct, reproducible integration of curated PK/PD datasets into population modeling, PBPK modeling, machine learning pipelines, and digital twin frameworks.
+  Conclusions: PK-DB 2.0 provides a unified, machine-readable PK/PD data infrastructure for modern pharmacometrics. By combining rigorous curation, standardized representation, and explicit AI integration through a dedicated MCP server, the platform supports reproducible model development, cross-study analyses, and next-generation AI- and Digital Twin–enabled decision support.
+  References: [1] Wilkinson, M.D. et al. 2016. The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data. 3, (Mar. 2016), 160018. DOI:https://doi.org/10.1038/sdata.2016.18. [2] Grzegorzewski, J. et al. 2021. PK-DB: pharmacokinetics database for individualized and stratified computational modeling. Nucleic Acids Research. 49, D1 (Jan. 2021), D1358–D1364. DOI:https://doi.org/10.1093/nar/gkaa990.'
 
 - id: 'SBMC2026_Poster_Albadry2026'
   year: 2026
