@@ -1,6 +1,6 @@
 # livermetabolism-site
 
-Code and material for static site at [https://www.livermetabolism.com/](https://www.livermetabolism.com/).
+Code and material for static group site at [https://www.livermetabolism.com/](https://www.livermetabolism.com/).
 
 **Bug Tracker**: https://github.com/matthiaskoenig/livermetabolism-site/issues
 

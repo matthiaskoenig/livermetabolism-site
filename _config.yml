@@ -5,11 +5,11 @@ url: "http://www.livermetabolism.com"
 
 title: livermetabolism
 description: > # this means to ignore newlines until "baseurl:"
-  LiSyM Junior Group König
+  Research Group König
 baseurl: "" # the subpath of your site, e.g. /blog/
-email: koenigmx@hu-berlin.de
+email: matthias.koenig@uni-luebeck.de
 git_address: https://github.com/matthiaskoenig
-git_edit_address: https://github.com/aksakalli/jekyll-doc-theme/blob/gh-pages
+git_edit_address: https://github.com/matthiaskoenig/gh-pages
 twitter_username: konigmatt
 github_username:  matthiaskoenig
 orcid_username: 0000-0003-1725-179X
