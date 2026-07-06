@@ -1,0 +1,31 @@
+- id: 'Schwaiger2026_hctz'
+- date: '2026-07-06'
+- content: 'New preprint: “A Physiologically Based Pharmacokinetic/Pharmacodynamic Model of the Diuretic Hydrochlorothiazide.”
+
+    In this work, we developed a whole-body PBPK/PD model of the thiazide diuretic hydrochlorothiazide, integrating oral absorption, systemic distribution, renal elimination, renal sodium, chloride, and fluid handling, and blood-pressure regulation.
+
+    The model was calibrated and evaluated using systematically curated PK and PD data from 25 clinical studies in healthy individuals and patients with hypertension, cardiac impairment, hepatic impairment, or renal impairment. Renal impairment was identified as the main driver of altered hydrochlorothiazide exposure and reduced urinary excretion, while hepatic and cardiac impairment affected pharmacokinetics primarily through secondary effects on renal function.
+
+    All model files, SBML code, simulation scripts, and curated datasets are openly accessible in accordance with FAIR principles, supporting transparency, reproducibility, independent validation, and reuse.
+
+    📄 Read the preprint: https://www.preprints.org/manuscript/202607.0306/v1
+    🔗 Computational model (SBML, workflows & data): https://github.com/matthiaskoenig/hctz-model
+    Congrats to Amanda Schwaiger — excellent work! 👏
+    #DigitalTwins #PBPK #Pharmacometrics #SystemsPharmacology #OpenScience #PrecisionMedicine #SBML #Hypertension #Diuretics'
+
+- id: 'Myshkina2026_apixaban'
+- date: '2027-05-07'
+- content: 'New preprint: “An Open and Reproducible Digital Twin for Personalised Anticoagulant Therapy: Modelling Apixaban Pharmacokinetics and Pharmacodynamics.”
+
+    In this work, we developed an open whole-body PBPK/PD digital twin of the direct oral anticoagulant apixaban, linking drug exposure to anticoagulation-related pharmacodynamic endpoints, including INR, PT, mPT, aPTT, and anti-Xa activity.
+
+    The model was built and evaluated using data from 35 curated clinical PK/PD studies, covering diverse dosing regimens and clinically relevant scenarios, including renal and hepatic impairment, food intake, and body weight effects. It captures apixaban pharmacokinetics and pharmacodynamics across these populations and provides a reusable framework for personalised anticoagulant therapy.
+
+    A key focus was reproducibility and openness: all models, simulation workflows, documentation, and curated datasets are openly available and FAIR-compliant, enabling transparent reuse, independent verification, and future extension.
+
+    The work was developed as part of the Berlin University Alliance (BUA) X-Student Research Group “Digital Twins in Action: Optimizing Direct Oral Anticoagulant Use”, funded by the Bundesministerium für Bildung und Forschung (BMBF) and the State of Berlin as part of the Excellence Strategy of the Federal and State Governments.
+
+    📄 Read the preprint: https://www.preprints.org/manuscript/202605.0249
+    🔗 Computational model (SBML, workflows & data): https://github.com/matthiaskoenig/apixaban-model
+    Congrats to Mariia Myshkina, Mariia Babaeva, Linh Chang Nguyen, Shelee Bedón, Johannes Metternich, and Michelle Elias — excellent work! 👏
+    #DigitalTwins #PBPK #Pharmacometrics #SystemsPharmacology #OpenScience #PrecisionMedicine #SBML #Anticoagulation #BUA'
