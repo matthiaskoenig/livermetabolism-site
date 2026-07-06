@@ -1,3 +1,28 @@
+- id: 'Schwaiger2026_hctz_preprint'
+  year: 2026
+  date: 2026-07-06
+  pdf: 'Schwaiger2026_hctz.pdf'
+  authors: 'Amanda Schwaiger, <b>Matthias König</b>'
+  title: 'A Physiologically Based Pharmacokinetic/Pharmacodynamic Model of the Diuretic Hydrochlorothiazide'
+  journal: 'Preprints 2026, 10.20944/preprints202607.0306.v1'
+  journal_short: Preprints
+  status: preprint
+  impact: 0
+  position: last
+  doi: 10.20944/preprints202607.0306.v1
+  pmid:
+  keywords:
+    - digital twin
+    - hydrochlorothiazide
+    - hypertension
+    - physiologically based pharmacokinetic/pharmacodynamic model (PBPK/PD)
+    - pharmacokinetics
+    - pharmacodynamics
+    - personalized medicine
+  project:
+  repository: https://github.com/matthiaskoenig/hctz-model
+  abstract: "Background: Hydrochlorothiazide is a widely prescribed thiazide diuretic used for the treatment of hypertension. Cardiac, hepatic, and renal impairments are common comorbidities in hypertensive patients and may contribute to substantial interindividual variability in pharmacokinetic (PK) and pharmacodynamic (PD) responses. This variability complicates dose optimization, particularly in clinically heterogeneous patient populations. Methods: We developed a whole-body physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of hydrochlorothiazide integrating oral absorption, systemic distribution, renal elimination, renal sodium, chloride, and fluid handling, and blood-pressure regulation. The model was calibrated and evaluated using systematically curated PK and PD data from 25 clinical studies in healthy individuals and patients with hypertension, cardiac impairment, hepatic impairment, or renal impairment. Results: Model predictions were consistent with observed dose-proportional PK and PD and captured variability in hydrochlorothiazide exposure and response across simulated comorbid conditions. Renal impairment was identified as the main driver of altered hydrochlorothiazide exposure and reduced urinary excretion. By contrast, hepatic and cardiac impairment affected PK primarily through secondary effects on renal function, rather than through direct effects on drug metabolism or absorption. Conclusions: The developed PBPK/PD model provides a mechanistic framework for understanding hydrochlorothiazide pharmacology across heterogeneous clinical conditions. It supports model-informed assessment of variability in exposure and response and may contribute to individualized antihypertensive therapy in patients with comorbidities."
+
 - id: 'Li2026_TabularQual_preprint'
   year: 2026
   date: 2026-05-31

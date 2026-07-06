@@ -1,3 +1,12 @@
+- id: 'Schwaiger2026_hctz'
+  status: 'current'
+  title: 'Preprint: A Physiologically Based Pharmacokinetic/Pharmacodynamic Model of the Diuretic Hydrochlorothiazide'
+  date: '2026-07-06'
+  image: Schwaiger2026_hctz.png
+  link: https://www.preprints.org/manuscript/202607.0306/v1
+  short: "We present a whole-body PBPK/PD model of the diuretic hydrochlorothiazide to investigate pharmacokinetic and pharmacodynamic variability in hypertensive patients, with a focus on renal, hepatic, and cardiac impairment."
+  abstract: "In a new preprint, Amanda Schwaiger and Matthias König introduce a whole-body physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the thiazide diuretic hydrochlorothiazide (HCTZ), integrating oral absorption, systemic distribution, renal elimination, renal sodium, chloride, and fluid handling, and blood-pressure regulation. The model was calibrated and evaluated using curated PK and PD data from 25 clinical studies in healthy individuals and patients with hypertension, cardiac impairment, hepatic impairment, or renal impairment. Model predictions were consistent with observed dose-proportional PK and PD and captured variability in HCTZ exposure and response across simulated comorbid conditions. Renal impairment was identified as the main driver of altered HCTZ exposure and reduced urinary excretion, whereas hepatic and cardiac impairment affected PK primarily through secondary effects on renal function rather than direct effects on drug metabolism or absorption. The model provides a mechanistic framework for understanding HCTZ pharmacology across heterogeneous clinical conditions and may contribute to individualized antihypertensive therapy in patients with comorbidities."
+
 - id: 'PAGE2026_PKDB_Myshkina_Koenig'
   status: 'current'
   title: 'Poster at PAGE 2026: PK-DB 2.0 for Pharmacometric Modeling, AI, and Digital Twins'
