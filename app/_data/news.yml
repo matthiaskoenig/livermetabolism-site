@@ -1,3 +1,12 @@
+- id: 'HIP2026_montelukast_Jessica.Cruz'
+  status: 'current'
+  title: 'Poster at HIP 2026 day: A PBPK Model of the Leukotriene Receptor Antagonist Montelukast'
+  date: '2026-07-07'
+  image: HIP2026_montelukast_Jessica.Cruz.png
+  link: 'https://hic.hu-berlin.de/en/internship-program'
+  short: "Jessica Cruz Pérez presents her internship project developing a physiologically based pharmacokinetic (PBPK) model of montelukast to investigate interindividual variability in pharmacokinetics, including effects of hepatic metabolism, CYP2C9/CYP3A4 variability, drug-drug interactions, food effect, and weight-related differences in adult populations."
+  abstract: "At the Humboldt Internship Program (HIP) Day 2026 in Berlin, Jessica Cruz Pérez presented her poster on the development of a physiologically based pharmacokinetic (PBPK) model of montelukast, a leukotriene receptor antagonist used in the treatment of asthma and allergic rhinitis. The project, carried out in the group of Matthias König at Humboldt-Universität zu Berlin, aims to improve our understanding of interindividual variability in montelukast pharmacokinetics, including the effects of hepatic metabolism, CYP2C9/CYP3A4 variability, drug-drug interactions, food effect, and weight-related differences in adult populations. A systematic literature search of over 100 publications was performed using Zotero, and studies were prioritized for data curation in PK-DB. Next steps include dataset digitization and curation in PK-DB, ODE model implementation in SBML, model simulations and variability analysis, and model evaluation using published clinical data."
+
 - id: 'Schwaiger2026_hctz'
   status: 'current'
   title: 'Preprint: A Physiologically Based Pharmacokinetic/Pharmacodynamic Model of the Diuretic Hydrochlorothiazide'
