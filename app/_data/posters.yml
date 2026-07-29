@@ -1,3 +1,23 @@
+- id: 'HIP2026_montelukast_Jessica.Cruz'
+  year: 2026
+  date: 2026-07-07
+  pdf: 'posters/HIP2026_montelukast_Jessica.Cruz.pdf'
+  image: 'posters/HIP2026_montelukast_Jessica.Cruz.jpg'
+  authors: 'Jessica Cruz Pérez<sup>1</sup>, <b>Matthias König</b><sup>2,3</sup>'
+  affiliations: "<sup>1</sup>National Institute of Respiratory Diseases (INER), 14080 Mexico City, Mexico; <sup>2</sup>Humboldt-Universität zu Berlin, Institute for Theoretical Biology, Berlin, Germany; <sup>3</sup>University Hospital Schleswig-Holstein, Campus Lübeck, First Department of Medicine, 23538 Lübeck, Germany"
+  title: 'A physiologically based pharmacokinetic (PBPK) model of the leukotriene receptor antagonist montelukast'
+  meeting: 'HIC conference 2026, Humboldt Internship Program Day, Berlin, 7 July 2026'
+  webpage: 'https://hic.hu-berlin.de/en/internship-program'
+  doi:
+  keywords:
+    - pharmacokinetics
+    - montelukast
+    - PBPK
+    - leukotriene receptor antagonist
+  project:
+  repository:
+  abstract: "In this project, we develop a physiologically based pharmacokinetic (PBPK) model of montelukast. The aim is to improve our understanding of interindividual variability in montelukast pharmacokinetics, including the effects of hepatic metabolism, CYP2C9/CYP3A4 variability, drug-drug interactions, food-effect, and weight-related differences in adult populations. Zotero was used to review over 100 articles and extract relevant information. Studies were prioritized for curation in PK-DB based on predefined criteria. Studies were excluded if they involved non-human species, children, or if neither pharmacokinetic nor pharmacodynamic data were available for montelukast. Based on the curated data, the PBPK model will be developed. Next steps include dataset digitization and curation, integration into PK-DB, development of montelukast PBPK model, ODE model implementation in SBML, model simulations and variability analysis, model evaluation using published clinical data, and manuscript draft preparation."
+
 - id: 'Gaas2026_SBSCL_OptSolvX'
   year: 2026
   date: 2026-06-12
@@ -42,10 +62,10 @@
   repository: https://github.com/matthiaskoenig/pkdb
   abstract: 'Introduction: The rapid growth of published pharmacokinetics (PK) and pharmacodynamics (PD) data from clinical and preclinical studies requires structured, interoperable, and reproducible data infrastructures. In line with FAIR principles [1], pharmacometric data must be standardized, contextualized, and comparable across studies. We previously developed PK-DB [2], an open database for curated PK/PD data with detailed study and cohort metadata. While successfully used in modeling workflows, the original system was not designed for AI-driven analyses or Digital Twin applications.
   Objectives:  PK-DB 2.0 aims to provide an open, standardized, and computationally accessible PK/PD platform tailored to pharmacometric modeling, automated workflows, artificial intelligence, and digital twin development, with a focus on data quality, interoperability, and machine-readability.
-  Methods: PK-DB 2.0 implements a unified data model covering study design, interventions, concentration–time profiles, derived PK parameters, and pharmacodynamic endpoints. Data are curated through collaborative workflows with strong validation rules, automated quality checks, unit normalization, explicit representation of experimental uncertainties, and ontology-based semantic annotation. A redesigned REST API provides fast, reliable, bi-directional programmatic access independent of programming language. Importantly, PK-DB 2.0 introduces a dedicated Model Context Protocol (MCP) server, enabling structured, automated access by AI clients and seamless integration into AI-driven modeling and digital twin workflows.
+  Methods: PK-DB 2.0 implements a unified data model covering study design, interventions, concentration-time profiles, derived PK parameters, and pharmacodynamic endpoints. Data are curated through collaborative workflows with strong validation rules, automated quality checks, unit normalization, explicit representation of experimental uncertainties, and ontology-based semantic annotation. A redesigned REST API provides fast, reliable, bi-directional programmatic access independent of programming language. Importantly, PK-DB 2.0 introduces a dedicated Model Context Protocol (MCP) server, enabling structured, automated access by AI clients and seamless integration into AI-driven modeling and digital twin workflows.
   Results: PK-DB 2.0 currently contains curated data from more than 700 clinical studies, substantially expanding previous releases. Key advances include extended support for pharmacodynamic endpoints (e.g., coagulation, blood pressure, anthropometric measures), ontology-based annotation of biological and clinical entities, strong structural validation rules, and an AI-ready access layer via REST and MCP. These features enable direct, reproducible integration of curated PK/PD datasets into population modeling, PBPK modeling, machine learning pipelines, and digital twin frameworks.
-  Conclusions: PK-DB 2.0 provides a unified, machine-readable PK/PD data infrastructure for modern pharmacometrics. By combining rigorous curation, standardized representation, and explicit AI integration through a dedicated MCP server, the platform supports reproducible model development, cross-study analyses, and next-generation AI- and Digital Twin–enabled decision support.
-  References: [1] Wilkinson, M.D. et al. 2016. The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data. 3, (Mar. 2016), 160018. DOI:https://doi.org/10.1038/sdata.2016.18. [2] Grzegorzewski, J. et al. 2021. PK-DB: pharmacokinetics database for individualized and stratified computational modeling. Nucleic Acids Research. 49, D1 (Jan. 2021), D1358–D1364. DOI:https://doi.org/10.1093/nar/gkaa990.'
+  Conclusions: PK-DB 2.0 provides a unified, machine-readable PK/PD data infrastructure for modern pharmacometrics. By combining rigorous curation, standardized representation, and explicit AI integration through a dedicated MCP server, the platform supports reproducible model development, cross-study analyses, and next-generation AI- and Digital Twin-enabled decision support.
+  References: [1] Wilkinson, M.D. et al. 2016. The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data. 3, (Mar. 2016), 160018. DOI:https://doi.org/10.1038/sdata.2016.18. [2] Grzegorzewski, J. et al. 2021. PK-DB: pharmacokinetics database for individualized and stratified computational modeling. Nucleic Acids Research. 49, D1 (Jan. 2021), D1358-D1364. DOI:https://doi.org/10.1093/nar/gkaa990.'
 
 - id: 'SBMC2026_Poster_Albadry2026'
   year: 2026
