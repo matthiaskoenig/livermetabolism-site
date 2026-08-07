@@ -1,3 +1,12 @@
+- id: 'Sego2026_EFECT_publication'
+  status: 'current'
+  title: 'Publication: EFECT Enables Reliable and Reproducible Stochastic Simulations Across Disciplines'
+  date: '2026-08-05'
+  image: Sego2026_EFECT.png
+  link: 'https://doi.org/10.1038/s44260-026-00094-y'
+  short: "We introduce EFECT, the Empirical Characteristic Function Equality Convergence Test, a universal statistical framework for quantifying the reproducibility of stochastic simulations across systems biology, epidemiology, finance, and machine learning."
+  abstract: "In a new publication in npj Complexity, we introduce the Empirical Characteristic Function Equality Convergence Test (EFECT), a domain-agnostic computational framework for quantifying the statistical reproducibility of stochastic simulations. Reproducibility of stochastic simulations is notoriously hard to assess because every run yields different outcomes, and existing practices focused on sharing code, seeds, data, and software environments do not ensure that results can be independently reproduced. EFECT addresses this gap by defining a normalized EFECT error that measures distributional differences between two sets of simulation outputs over a model- and scale-independent range, together with an EFECT convergence point specifying the minimum sample size needed to reach a chosen reproducibility threshold and significance level. The method applies to any simulation whose results can be represented as bounded, real-valued data, regardless of modelling formalism or source of stochasticity, and is implemented in an open-source software library with a compact, machine-readable standardized report. The framework was rigorously evaluated across more than 40 test cases spanning stochastic differential equations, agent-based models, Boolean networks, and partial differential equations. Applying EFECT to published models in pandemic epidemiology, financial stochastic volatility, and physics-informed neural networks revealed that commonly used sample sizes are often underpowered, with substantial parameter differences going undetected unless thousands of replicates are simulated. By providing a reusable, domain-agnostic statistical reproducibility metric and standardized report format, EFECT offers a practical way to embed quantitative reproducibility and replicability checks into stochastic simulation workflows across data-intensive disciplines."
+
 - id: 'HIP2026_montelukast_Jessica.Cruz'
   status: 'current'
   title: 'Poster at HIP 2026 day: A PBPK Model of the Leukotriene Receptor Antagonist Montelukast'

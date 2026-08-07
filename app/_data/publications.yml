@@ -1,3 +1,22 @@
+- id: 'Sego2026_EFECT'
+  year: 2026
+  date: 2026-07-28
+  pdf: 'Sego2026_EFECT.pdf'
+  authors: 'T. J. Sego, <b>Matthias König</b>, Luis L. Fonseca, Dilan Pathirana, Frank T. Bergmann, Hernán E. Grecco, Mauro Silberberg, Subhasis Ray, Baylor Fain, Adam C. Knapp, Krishna Tiwari, Henning Hermjakob, Herbert M. Sauro, James A. Glazier, Reinhard C. Laubenbacher & Rahuman S. Malik-Sheriff'
+  title: 'EFECT enables reliable and reproducible stochastic simulations across disciplines'
+  journal: 'npj Complex (2026)'
+  status: publication
+  impact: 1.6
+  position: index
+  doi: 10.1038/s44260-026-00094-y
+  pmid:
+  keywords:
+    - COMBINE
+    - reproducibility
+  project:
+  repository: https://github.com/tjsego/ssr_project_2024
+  abstract: "Stochastic simulations underpin computational research in fields from systems biology and epidemiology to finance and physics-informed machine learning, yet their reproducibility is hard to quantify because each run yields different outcomes. Existing practices to improve computational reproducibility focus on sharing code, simulation seeds, data, and software environments but do not ensure independent reproduction of results, limiting scientific rigor. Here we introduce the Empirical Characteristic Function Equality Convergence Test (EFECT), a universal computational framework for quantifying the statistical reproducibility of stochastic simulations based on empirical characteristic functions. EFECT defines a normalized EFECT error that measures distributional differences between two sets of simulation outputs over a model- and scale-independent range, and an EFECT convergence point that specifies the minimum sample size required to achieve a desired reproducibility threshold at a chosen significance level. EFECT applies to any simulation whose results can be represented as bounded, real-valued data, regardless of modelling formalism or source of stochasticity. To facilitate widespread adoption and data exchange, we implemented EFECT in an open-source software library and a compact, machine-readable standardized report. We rigorously evaluated the framework across more than 40 test cases spanning stochastic differential equations, agent- based models, Boolean networks, and partial differential equations. Applying EFECT to published models in pandemic epidemiology, financial stochastic volatility, and physics-informed neural networks reveals that commonly used sample sizes are often underpowered: substantial parameter differences can go undetected unless thousands of replicates are simulated. By providing a domain-agnostic statistical reproducibility metric, reusable software libraries, and a standardized report format, EFECT offers a practical framework for embedding quantitative reproducibility and replicability checks into stochastic simulation workflows across data-intensive disciplines. Thus, EFECT delivers the capability to make scientific inferences and policy decisions on the basis of reliable, reproducible stochastic simulations."
+
 - id: 'Schwaiger2026_hctz_preprint'
   year: 2026
   date: 2026-07-06
@@ -947,24 +966,24 @@ In summary, I have successfully developed and implemented an image analysis work
   repository:
   abstract: "The “COmputational Modeling in BIology NEtwork” (COMBINE) initiative aims to harmonise the development of diverse community standards for computational models in biology. It coordinates standard development to support the associated projects towards establishing a suite of compatible, interoperable and comprehensive standards that address the full spectrum of modeling in systems and synthetic biology."
 
-- id: 'Sego2024_stochastic_reproducibility'
-  year: 2024
-  date: 2024-06-24
-  pdf: 'Sego2024_stochastic_reproducibility.pdf'
-  authors: 'T.J. Sego, <b>Matthias König</b>, Luis L. Fonseca, Baylor Fain, Adam C. Knapp, Krishna Tiwari, Henning Hermjakob, Herbert M. Sauro, James A. Glazier, Reinhard C. Laubenbacher, Rahuman S. Malik-Sheriff'
-  title: 'EFECT – A Method and Metric to Assess the Reproducibility of Stochastic Simulation Studies'
-  journal: 'arXiv:2406.16820'
-  status: preprint
-  impact: 0
-  position: index
-  doi: 10.48550/arXiv.2406.16820
-  pmid:
-  keywords:
-    - COMBINE
-    - reproducibility
-  project:
-  repository:
-  abstract: "Reproducibility is a foundational standard for validating scientific claims in computational research. Stochastic computational models are employed across diverse fields such as systems biology, financial modelling and environmental sciences. Existing infrastructure and software tools support various aspects of reproducible model development, application, and dissemination, but do not adequately address independently reproducing simulation results that form the basis of scientific conclusions. To bridge this gap, we introduce the Empirical Characteristic Function Equality Convergence Test (EFECT), a data-driven, statistically robust method to quantify the reproducibility of stochastic simulation results. EFECT employs empirical characteristic functions to compare reported results with those independently generated by assessing distributional inequality, termed EFECT error, a metric to quantify the likelihood of equality. Additionally, we establish the EFECT convergence point, a quantitative metric for determining the required number of simulation runs to achieve an EFECT error value of a priori statistical significance, setting a reproducibility benchmark. EFECT supports all real-valued and bounded results irrespective of the model or method that produced them, and accommodates stochasticity from intrinsic model variability and random sampling of model inputs. We tested EFECT with stochastic differential equations, agent-based models, and Boolean networks, demonstrating its broad applicability and effectiveness. EFECT standardizes stochastic simulation reproducibility, establishing a workflow that guarantees reliable results, supporting a wide range of stakeholders, and thereby enhancing validation of stochastic simulation studies, across a model's lifecycle. To promote future standardization efforts, we are developing open source Stochastic Simulation Reproducibility software library (libSSR) in diverse programming languages for easy integration of EFECT."
+# - id: 'Sego2024_stochastic_reproducibility'
+#   year: 2024
+#   date: 2024-06-24
+#   pdf: 'Sego2024_stochastic_reproducibility.pdf'
+#   authors: 'T.J. Sego, <b>Matthias König</b>, Luis L. Fonseca, Baylor Fain, Adam C. Knapp, Krishna Tiwari, Henning Hermjakob, Herbert M. Sauro, James A. Glazier, Reinhard C. Laubenbacher, Rahuman S. Malik-Sheriff'
+#   title: 'EFECT – A Method and Metric to Assess the Reproducibility of Stochastic Simulation Studies'
+#   journal: 'arXiv:2406.16820'
+#   status: preprint
+#   impact: 0
+#   position: index
+#   doi: 10.48550/arXiv.2406.16820
+#   pmid:
+#   keywords:
+#     - COMBINE
+#     - reproducibility
+#   project:
+#   repository:
+#   abstract: "Reproducibility is a foundational standard for validating scientific claims in computational research. Stochastic computational models are employed across diverse fields such as systems biology, financial modelling and environmental sciences. Existing infrastructure and software tools support various aspects of reproducible model development, application, and dissemination, but do not adequately address independently reproducing simulation results that form the basis of scientific conclusions. To bridge this gap, we introduce the Empirical Characteristic Function Equality Convergence Test (EFECT), a data-driven, statistically robust method to quantify the reproducibility of stochastic simulation results. EFECT employs empirical characteristic functions to compare reported results with those independently generated by assessing distributional inequality, termed EFECT error, a metric to quantify the likelihood of equality. Additionally, we establish the EFECT convergence point, a quantitative metric for determining the required number of simulation runs to achieve an EFECT error value of a priori statistical significance, setting a reproducibility benchmark. EFECT supports all real-valued and bounded results irrespective of the model or method that produced them, and accommodates stochasticity from intrinsic model variability and random sampling of model inputs. We tested EFECT with stochastic differential equations, agent-based models, and Boolean networks, demonstrating its broad applicability and effectiveness. EFECT standardizes stochastic simulation reproducibility, establishing a workflow that guarantees reliable results, supporting a wide range of stakeholders, and thereby enhancing validation of stochastic simulation studies, across a model's lifecycle. To promote future standardization efforts, we are developing open source Stochastic Simulation Reproducibility software library (libSSR) in diverse programming languages for easy integration of EFECT."
 
 - id: 'Albadry2024_species_comparison'
   year: 2024
