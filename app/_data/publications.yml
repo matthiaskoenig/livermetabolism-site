@@ -169,7 +169,7 @@
   year: 2026
   date: 2026-04-23
   pdf: 'theses/Master.Thesis.Antonio.Alvarez.pdf'
-  authors: 'Antonio Alavarez (supervisor: <b>Matthias König</b>)'
+  authors: 'Antonio Alvarez (supervisor: <b>Matthias König</b>)'
   title: 'Parameter Uncertainty in the Optimization of Pharmacokinetic Models: A Reproducible Bayesian Approach'
   journal: 'Master Thesis, April 2026'
   journal_short:
