@@ -1,13 +1,14 @@
 """Script for creating list of publications."""
-from typing import Optional, List
+
+from pathlib import Path
 
 import numpy as np
-import yaml
-from pathlib import Path
 import pandas as pd
-from rich.markdown import Markdown
+import yaml
 from rich.console import Console
+
 console = Console()
+
 
 def read_publications(yaml_file: Path) -> pd.DataFrame:
     """Read publication in pandas DataFrame"""
@@ -18,20 +19,22 @@ def read_publications(yaml_file: Path) -> pd.DataFrame:
 
     console.print(df.columns)
 
-    df = df[[
-        "id",
-        "title",
-        "authors",
-        "journal",
-        "doi",
-        "year",
-        "pmid",
-        "status",  # thesis, report, preprint, publication, review, proceeding, chapter
-        "impact", # int
-        "position", # first, first_equal, index, last_equal, last
-        "pdf",
-        "repository"
-    ]]
+    df = df[
+        [
+            "id",
+            "title",
+            "authors",
+            "journal",
+            "doi",
+            "year",
+            "pmid",
+            "status",  # thesis, report, preprint, publication, review, proceeding, chapter
+            "impact",  # int
+            "position",  # first, first_equal, index, last_equal, last
+            "pdf",
+            "repository",
+        ]
+    ]
     print(df.status.unique())
     print(df.position.unique())
     print(df.year.unique())
@@ -52,14 +55,8 @@ def create_matrix(df: pd.DataFrame) -> pd.DataFrame:
         count = len(df[df.status == article_type])
         console.print(f"{article_type:<15}{count:>3}")
 
-    articles_if_low = 0
-    articles_if_middle = 0
-    articles_if_high = 0
-    articles_first = 0
-    articles_last = 0
-
     for _, row in rdf.iterrows():
-        if not row.status == "publication":
+        if row.status != "publication":
             continue
 
         # FIXME: cleanup Journal
@@ -75,9 +72,13 @@ def create_matrix(df: pd.DataFrame) -> pd.DataFrame:
                 "high": impact > 15,
                 "middle": 5 <= impact < 15,
                 "low": impact < 5,
-                "first": True if (row["position"] == "first" or row["position"] == "first_equal") else False,
-                "index": True if (row["position"] == "index") else False,
-                "last": True if (row["position"] == "last" or row["position"] == "last_equal") else False,
+                "first": bool(
+                    row["position"] == "first" or row["position"] == "first_equal"
+                ),
+                "index": (row["position"] == "index"),
+                "last": bool(
+                    row["position"] == "last" or row["position"] == "last_equal"
+                ),
             }
         )
 
@@ -93,30 +94,42 @@ def create_matrix(df: pd.DataFrame) -> pd.DataFrame:
     return df_matrix
 
 
-def create_list_of_publications_typst(typst_path: Path, df: pd.DataFrame, highlights: Optional[set] = None, selected: Optional[set] = None) -> None:
+def create_list_of_publications_typst(
+    typst_path: Path,
+    df: pd.DataFrame,
+    highlights: set | None = None,
+    selected: set | None = None,
+) -> None:
     """Create list of publications in typst."""
 
     def create_entry_typst(e: pd.Series) -> str:
         """Creates typst for a single entry."""
         authors = e.authors
-        authors = authors.replace("<b>", "*")
-        authors = authors.replace("</b>", "*")
+        authors = authors.replace("<b>", '#highlight(fill: rgb("#e8e8e8"))[')
+        authors = authors.replace("</b>", "]")
         impact = e.impact if (e.impact and not np.isnan(e.impact)) else None
         doi = f', #link("https://doi.org/{e.doi}")[{e.doi}]' if e.doi else ""
         impact = f", IF: *{impact}*" if impact else ""
-        pdf = f'#link("https://livermetabolism.com/paper/{e.pdf}")[#fa-icon("file-pdf")]' if e.pdf else ""
-        repository = f'#link("{e.repository}")[#fa-icon("git-alt")]' if e.repository else ""
-        position = e.position # first, first_equal, index, last_equal, last
+        pdf = (
+            f'#link("https://livermetabolism.com/paper/{e.pdf}")[#fa-icon("file-pdf")]'
+            if e.pdf
+            else ""
+        )
+        repository = (
+            f'#link("{e.repository}")[#fa-icon("git-alt")]' if e.repository else ""
+        )
+        position = e.position  # first, first_equal, index, last_equal, last
         if position == "index":
             position_str = ""
         else:
             tokens = position.split("_")
-            position_str = f", #underline[{" ".join([t.title() for t in tokens])} Author]"
-        text = f"{pdf}{repository} *{e.title.strip(".")}*. {authors}; {e.journal}{doi}{impact}{position_str}"
+            position_str = (
+                f", #underline[{' '.join([t for t in tokens]).title()} author]"
+            )
+        text = f"{pdf}{repository} *{e.title.strip('.')}*. {authors}; {e.journal}{doi}{impact}{position_str}"
         if highlights and e.id in highlights:
-            text = f'#publication_highlight[{text}]'
+            text = f"#publication_highlight[{text}]"
         return text
-
 
     if not selected:
         typst_all = "= List of Publications\n"
@@ -132,11 +145,21 @@ def create_list_of_publications_typst(typst_path: Path, df: pd.DataFrame, highli
         #     console.rule(style="white")
 
         categories = {
-            "Publications": ["publication",],
-            "Reviews": ["review",],
-            "Proceedings": ["proceeding",],
-            "Preprints": ["preprint",],
-            "Thesis": ["thesis",],
+            "Publications": [
+                "publication",
+            ],
+            "Reviews": [
+                "review",
+            ],
+            "Proceedings": [
+                "proceeding",
+            ],
+            "Preprints": [
+                "preprint",
+            ],
+            "Thesis": [
+                "thesis",
+            ],
         }
         # categories = {
         #     "Original papers": ["publication", ],
@@ -145,10 +168,22 @@ def create_list_of_publications_typst(typst_path: Path, df: pd.DataFrame, highli
         # }
 
         for category, status_values in categories.items():
-
-            typst_all += f"\n== {category.title()}{'s' if not category.endswith('s') else ''}\n"
+            typst_all += (
+                f"\n== {category.title()}{'s' if not category.endswith('s') else ''}\n"
+            )
             for status in status_values:
                 k_article = 0
+                if category == "Reviews":
+                    # offset by publications
+                    k_article = 0 + (df["status"] == "publication").sum()
+                elif category == "Proceedings":
+                    # offset by publications and reviews
+                    k_article = (
+                        0
+                        + (df["status"] == "publication").sum()
+                        + (df["status"] == "review").sum()
+                    )
+
                 df_status = df[df["status"] == status]
                 if len(status_values) > 1:
                     title = status if status != "thesis" else "theses"
@@ -179,9 +214,10 @@ def create_list_of_publications_typst(typst_path: Path, df: pd.DataFrame, highli
         f_typst.write(typst_all)
 
 
-def create_list_of_pubmeds(df: pd.DataFrame) -> List[str]:
+def create_list_of_pubmeds(df: pd.DataFrame) -> list[str]:
     import numpy as np
-    pmids: List[str] = []
+
+    pmids: list[str] = []
     for key, row in df.iterrows():
         # print(row)
 
@@ -189,9 +225,11 @@ def create_list_of_pubmeds(df: pd.DataFrame) -> List[str]:
             pmids.append(int(row.pmid))
     return pmids
 
-def create_list_of_dois(df: pd.DataFrame, no_pmid: bool = True) -> List[str]:
+
+def create_list_of_dois(df: pd.DataFrame, no_pmid: bool = True) -> list[str]:
     import numpy as np
-    dois: List[str] = []
+
+    dois: list[str] = []
     for key, row in df.iterrows():
         # print(row)
 
@@ -203,13 +241,17 @@ def create_list_of_dois(df: pd.DataFrame, no_pmid: bool = True) -> List[str]:
                 dois.append(row.doi)
     return dois
 
+
 if __name__ == "__main__":
-    yaml_file: Path = Path(__file__).parent.parent / "app" / "_data" / "publications.yml"
+    results_dir: Path = Path(__file__).parent / "results"
+    yaml_file: Path = (
+        Path(__file__).parent.parent / "app" / "_data" / "publications.yml"
+    )
     df: pd.DataFrame = read_publications(yaml_file=yaml_file)
     df_matrix = create_matrix(df=df)
-    df_matrix.to_csv("results/publication_matrix.tsv", index=True, sep="\t")
+    df_matrix.to_csv(results_dir / "publication_matrix.tsv", index=True, sep="\t")
 
-    # markdown_file: Path = Path("results/publications.md")
+    # markdown_file: Path = Path(results_dir / "publications.md")
     # create_list_of_publications_md(md_path=markdown_file, df=df)
 
     highlights = {
@@ -222,7 +264,7 @@ if __name__ == "__main__":
     }
     # create_list_of_publications_typst(Path("publications.typ"), df=df, highlights=highlights)
 
-    # List of selected publications
+    # list of selected publications
     selected = {
         "Nemitz2026_dapagliflozin",
         "Tensil2026_losartan",
@@ -240,7 +282,6 @@ if __name__ == "__main__":
         # "SBML_Keating2020",
         "hepatokin_Berndt2018",
         # "Koenig2023_standards",
-
         # "OMEX_Koenig2020",
         # "annotations_Neal2018",
         # "Kohrs2023_reproducible.research.open.science",
@@ -251,18 +292,17 @@ if __name__ == "__main__":
         # "Bartsch2023_simvastatin",
     }
     create_list_of_publications_typst(
-        Path("results/publications.typ"),
+        Path(results_dir / "publications.typ"),
         df=df,
         # selected=selected,
         # highlights=selected,
     )
     create_list_of_publications_typst(
-        Path("results/publications_selected.typ"),
+        Path(results_dir / "publications_selected.typ"),
         df=df,
         selected=selected,
         # highlights=selected,
     )
-
 
     pubmeds = create_list_of_pubmeds(df=df)
     print(pubmeds)
