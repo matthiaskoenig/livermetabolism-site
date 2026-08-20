@@ -223,7 +223,13 @@ layout: default
             {% endunless %}
             <h4>{{ publication.year }}</h4>
             <div class="table-responsive">
-            <table class="table table-hover table-condensed">
+            <table class="table table-hover table-condensed" style="table-layout: fixed; width: 100%;">
+            <colgroup>
+                <col style="width: 55px;">
+                <col style="width: 75px;">
+                <col style="width: 90px;">
+                <col>
+            </colgroup>
             {% assign prev_year = publication.year %}
         {% endunless %}
             <tr>
@@ -240,9 +246,18 @@ layout: default
                                                                 height="20"/></a>
                     {% endif %}
                 </td>
+                <td>
+                    {% for person_id in publication.people %}
+                    {% assign person = site.data.people | where:"id", person_id | first %}
+                    {% if person and person.image %}
+                    <img src="/img/people/{{ person.image }}" class="img-circle" height="30" title="{{ person.name }}"/>
+                    {% endif %}
+                    {% endfor %}
+                </td>
+                <td>{{ publication.status | capitalize }}</td>
                 <td><strong><i>{{ publication.title }}</i></strong><br/>
                     {{ publication.authors }}<br/>
-                    {{ publication.journal }}{% if publication.status %} ({{publication.status}}){% endif %}{% if
+                    {{ publication.journal }}{% if
                     publication.doi %}. doi:<a href="https://doi.org/{{publication.doi}}/">{{publication.doi}}</a>{%
                     endif %}{% if publication.pmid %}. pmid:<a
                             href="https://pubmed.ncbi.nlm.nih.gov/{{publication.pmid}}/">{{publication.pmid}}</a>{%

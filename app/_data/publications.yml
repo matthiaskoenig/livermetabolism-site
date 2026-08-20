@@ -3,6 +3,8 @@
   date: 2026-03-10
   pdf: 'Olivier2026_fbc-v3.pdf'
   authors: 'B. G. Olivier, F. T. Bergmann, S. Keating, and <b>M. König</b>'
+  people:
+    - koenig
   title: 'SBML Level 3 Package: Flux Balance Constraints version 3'
   journal: 'J Integr Bioinform. 2026; 20260006'
   status: publication
@@ -22,6 +24,8 @@
   date: 2026-08-13
   pdf: 'Pathirana2026_petab-v2.pdf'
   authors: 'D. Pathirana, F. Fröhlich, S. Persson, F. T. Bergmann, <b>M. König</b>, P. F. Lang, S. Bang, S. Kemmer, J. Hasenauer, and D. Weindl'
+  people:
+    - koenig
   title: 'The Parameter Estimation tables (PEtab) format version 2'
   journal: 'J Integr Bioinform. '
   status: publication
@@ -41,6 +45,8 @@
   date: 2026-07-28
   pdf: 'Sego2026_EFECT.pdf'
   authors: 'T. J. Sego, <b>M. König</b>, L. L. Fonseca, D. Pathirana, F. T. Bergmann, H. E. Grecco, M. Silberberg, S. Ray, B. Fain, A. C. Knapp, K. Tiwari, H. Hermjakob, H. M. Sauro, J. A. Glazier, R. C. Laubenbacher, and R. S. Malik-Sheriff'
+  people:
+    - koenig
   title: 'EFECT enables reliable and reproducible stochastic simulations across disciplines'
   journal: 'npj Complex (2026)'
   status: publication
@@ -60,6 +66,8 @@
   date: 2026-07-06
   pdf: 'Schwaiger2026_hctz.pdf'
   authors: 'A. Schwaiger and <b>M. König</b>'
+  people:
+    - koenig
   title: 'A Physiologically Based Pharmacokinetic/Pharmacodynamic Model of the Diuretic Hydrochlorothiazide'
   journal: 'Preprints 2026, 10.20944/preprints202607.0306.v1'
   journal_short: Preprints
@@ -85,6 +93,8 @@
   date: 2026-05-31
   pdf: 'Li2026_TabularQual_preprint.pdf'
   authors: 'L. X. Li, C. Bleker, S. Soliman, L. Calzone, N. Hiroi, T. Helikar, <b>M. König</b>, L. Ladeira, P. T. Monteiro, V. Noel, S. Pastva, A. Salazar, D. Safranek, D. Thieffry, E. Tsirvouli, A. Niarakis, and J. Gennari'
+  people:
+    - koenig
   title: 'TabularQual: A spreadsheet-based format for annotating and curating logical models in SBML-qual'
   journal: 'bioRxiv 2026.05.31.727710'
   journal_short: Preprints
@@ -108,6 +118,11 @@
   date: 2026-05-13
   pdf: 'Elias2026_dapagliflozin_physiome.pdf'
   authors: 'M. Elias, M. Myshkina, N. Nemitz, and <b>M. König</b>'
+  people:
+    - michelle
+    - mariia
+    - nike
+    - koenig
   title: 'Reproducibility of a Physiologically Based Pharmacokinetic and Pharmacodynamic (PBPK/PD) Model of Dapagliflozin'
   journal: 'Physiome. May 13, 2026'
   journal_short: "Physiome"
@@ -132,6 +147,9 @@
   date: 2026-05-06
   pdf: 'Jesionek2026_rapamycin_preprint.pdf'
   authors: 'M. Jesionek and <b>M. König</b>'
+  people:
+    - monajes
+    - koenig
   title: 'A PBPK Digital Twin of Rapamycin for Predicting Dose–Exposure Relationships, Organ Impairment Effects, and Drug–Drug Interactions'
   journal: 'Preprints 2026, 10.20944/preprints202605.0249.v1'
   journal_short: Preprints
@@ -158,6 +176,12 @@
   date: 2026-05-05
   pdf: 'Myshkina2026_apixaban_preprint.pdf'
   authors: 'M. Myshkina, M. Babaeva, L. C. Nguyen, S. Bedón, J. Metternich, M. Elias, and <b>M. König</b>'
+  people:
+    - mariia
+    - mariia_babaeva
+    - shelee
+    - michelle
+    - koenig
   title: 'An Open and Reproducible Digital Twin for Personalised Anticoagulant Therapy: Modelling Apixaban Pharmacokinetics and Pharmacodynamics'
   journal: 'Preprints 2026, 10.20944/preprints202605.0249.v1'
   journal_short: Preprints
@@ -184,6 +208,8 @@
   date: 2026-04-30
   pdf: 'Bafna2026_segmentation_preprint.pdf'
   authors: 'M. Bafna, <b>M. König</b>, S. Saalfeld, V. Moulisova, V. Liska, U. Dahmen, and M. Albadry'
+  people:
+    - koenig
   title: 'Automated Segmentation of Hepatic Vessels and Lobules in Whole-Slide Images Using U-Net Models'
   journal: 'Front. Bioinform. 6:1713736'
   journal_short: "Frontiers in Bioinformatics"
@@ -208,6 +234,9 @@
   date: 2026-04-23
   pdf: 'theses/Master.Thesis.Antonio.Alvarez.pdf'
   authors: 'Antonio Alvarez (supervisor: <b>M. König</b>)'
+  people:
+    - antonio
+    - koenig
   title: 'Parameter Uncertainty in the Optimization of Pharmacokinetic Models: A Reproducible Bayesian Approach'
   journal: 'Master Thesis, April 2026'
   journal_short:
@@ -230,6 +259,8 @@
   date: 2026-03-27
   pdf: 'Sauro2026_fair_to_cure.pdf'
   authors: 'H. M. Sauro, E. Agmon, M. L. Blinov, J. H. Gennari, J. Hellerstein, A. Heydarabadipour, P. Hunter, B. E. Jardine, E. May, D. P. Nickerson, L. P. Smith, G. D. Bader, F. Bergmann, P. M. Boyle, A. Drager, J. R. Faeder, S. Feng, J. Freire, F. Frohlich, J. A. Glazier, T. E. Gorochowski, T. Helikar, S. Hoops, P. Imoukhuede, S. M. Keating, <b>M. König</b>, R. Laubenbacher, L. M. Loew, C. F. Lopez, W. W. Lytton, A. McCulloch, P. Mendes, C. J. Myers, J. G. Myers, L. Mulugeta, A. Niarakis, D. D. van Niekerk, B. G. Olivier, A. A. Patrie, E. M. Quardokus, N. Radde, J. M. Rohwer, S. Sahle, J. C. Schaff, T. Sego, J. Shin, J. L. Snoep, R. Vadigepalli, H. S. Wiley, D. Waltemath, and I. Moraru'
+  people:
+    - koenig
   title: 'From FAIR to CURE: Guidelines for Computational Models of Biological Systems'
   journal: 'npj Syst Biol Appl (2026)'
   journal_short: "npj Syst Biol Appl"
@@ -251,6 +282,11 @@
   date: 2026-03-20
   pdf: 'Alejandro2026_empagliflozin_preprint.pdf'
   authors: 'J. Alejandro, M. Elias, M. Babaeva, and <b>M. König</b>'
+  people:
+    - jennesse
+    - michelle
+    - mariia_babaeva
+    - koenig
   title: 'A Digital Twin of Empagliflozin Pharmacokinetics and Pharmacodynamics'
   journal: 'Preprints 2026, 10.20944/preprints202603.1559.v1'
   journal_short: Preprints
@@ -276,6 +312,8 @@
   date: 2026-03-12
   pdf: 'Corradi2026_llemy_preprint.pdf'
   authors: 'M. Corradi, I. Djidrovski, L. Ladeira, B. Staumont, A. Verhoeven, J. S. Serrano, A. Rougny, A. Vaez, A. Hemedan, A. Mazein, A. Niarakis, A. de Carvalho e Silva, C. Auffray, E. Wilighagen, E. Kuchovska, F. Schreiber, I. Balaur17, L. Calzone, L. Matthews, L. Veschini, M. E. Gillespie, M. Kutmon, <b>M. König</b>, M. van Welzen, N. Hiroi, O. Lopata, P. Klemmer, R. Overall, T. Hofer, V. Satagopam, R. Schneider, M. Teunis, L. Geris, and M. Ostaszewski'
+  people:
+    - koenig
   title: 'User-driven development and evaluation of an agentic framework for analysis of large pathway diagrams'
   journal: 'bioRxiv 2026.03.10.710813'
   status: preprint
@@ -295,6 +333,10 @@
   date: 2026-02-26
   pdf: 'Nemitz2026_dapagliflozin.pdf'
   authors: 'N. Nemitz, M. Elias, and <b>M. König</b>'
+  people:
+    - nike
+    - michelle
+    - koenig
   title: 'A Physiologically Based Pharmacokinetic and Pharmacodynamic (PBPK/PD) Model of Dapagliflozin in Type 2 Diabetes Mellitus: The Effect of Dosing, Hepatorenal Impairment, and Food'
   journal: 'Pharmaceutics 2026, 18(3), 287; https://doi.org/10.3390/pharmaceutics18030287'
   journal_short: Pharmaceutics
@@ -319,6 +361,10 @@
   date: 2026-02-19
   pdf: 'Tensil2026_losartan.pdf'
   authors: 'E. Tensil, M. Myshkina, and <b>M. König</b>'
+  people:
+    - ennie
+    - mariia
+    - koenig
   title: 'A Digital Twin of the Angiotensin II Receptor Blocker Losartan: Physiologically Based Modeling of Blood Pressure Regulation'
   journal: 'Pharmaceutics 2026, 18(2), 262; https://doi.org/10.3390/pharmaceutics18020262'
   journal_short: Pharmaceutics
@@ -344,6 +390,11 @@
   date: 2026-02-02
   pdf: 'Myshkina2026_losartan_physiome.pdf'
   authors: 'M. Myshkina, M. Elias, E. Tensil, and <b>M. König</b>'
+  people:
+    - mariia
+    - michelle
+    - ennie
+    - koenig
   title: 'Reproducibility of a Digital Twin of the Angiotensin II Receptor Blocker Losartan'
   journal: 'Physiome. February 2, 2026'
   journal_short: "Physiome"
@@ -368,6 +419,10 @@
   date: 2026-01-27
   pdf: 'Tereshchuk2026_canagliflozin_preprint.pdf'
   authors: 'V. Tereshchuk, M. Elias, and <b>M. König</b>'
+  people:
+    - vera
+    - michelle
+    - koenig
   title: 'A Digital Twin of Canagliflozin Pharmacokinetics and Pharmacodynamics in Type 2 Diabetes Mellitus'
   journal: 'Preprints 2026, 10.20944/preprints202601.2095.v1'
   journal_short: Preprints
@@ -444,6 +499,9 @@
   date: 2025-10-08
   pdf: 'Elias2025_frontiers.pdf'
   authors: 'M. Elias and <b>M. König</b>'
+  people:
+    - michelle
+    - koenig
   title: 'A Digital Twin of Glimepiride for Personalized and Stratified Diabetes Treatment'
   journal: 'Front. Pharmacol. 16:1686415.'
   journal_short: "Front Pharmacol"
@@ -470,6 +528,9 @@
   date: 2025-10-20
   pdf: 'Elias2025_glimepiride_physiome.pdf'
   authors: 'M. Elias and <b>M. König</b>'
+  people:
+    - michelle
+    - koenig
   title: 'Reproducibility of a Digital Twin of Glimepiride for Personalized and Stratified Diabetes Treatment'
   journal: 'Physiome. October 20, 2025'
   journal_short: "Physiome"
@@ -518,6 +579,10 @@
   date:
   pdf: 'Myshkina2025_survey_preprint.pdf'
   authors: 'M. Myshkina, E. Casabianca, A. Schnurpel, T. Ricken, H. Tautenhahn, and <b>M. König</b>'
+  people:
+    - mariia
+    - elisabetta
+    - koenig
   title: 'Assessing the Impact of AI and Digital Twins on Clinical Decision-Making in Hepatology and Hepatobiliary Surgery'
   journal: 'Preprints 2025'
   journal_short: Preprints
@@ -542,6 +607,9 @@
   date: 2025-07-14
   pdf: 'theses/Master.Thesis.Elisabetta.Casabianca.pdf'
   authors: 'Elisabetta Casabianca (supervisor: <b>M. König</b>)'
+  people:
+    - elisabetta
+    - koenig
   title: 'A Systems Pharmacology Approach to Rivaroxaban: Physiologically Based Modeling of Pharmacokinetics and Coagulation Dynamics'
   journal: 'Master Thesis, July 2025'
   journal_short:
@@ -566,6 +634,10 @@
   date: 2025-07-25
   pdf: 'Casabianca2025_rivaroxaban_preprint.pdf'
   authors: 'E. Casabianca, M. Myshkina, and <b>M. König</b>'
+  people:
+    - elisabetta
+    - mariia
+    - koenig
   title: 'A Systems Pharmacology Approach to Rivaroxaban: Physiologically Based Modeling of Pharmacokinetics and Coagulation Dynamics'
   journal: 'Preprints 2025, 202507.1945.'
   journal_short: Preprints
@@ -590,6 +662,9 @@
   date: 2025-07-14
   pdf: 'theses/Bachelor.Thesis.Ennie.Tensil.pdf'
   authors: 'Ennie Tensil (supervisor: <b>M. König</b>)'
+  people:
+    - ennie
+    - koenig
   title: 'A physiological-based pharmacokinetic/ pharmacodynamic (PBPK/PD) model of the angiotensin II receptor blocker (ARB) losartan'
   journal: 'Bachelor Thesis, July 2025'
   journal_short:
@@ -638,6 +713,9 @@
   date: 2025-06-15
   pdf: 'theses/Bachelor.Thesis.Nike.Nemitz.pdf'
   authors: 'Nike Nemitz (supervisor: <b>M. König</b>)'
+  people:
+    - nike
+    - koenig
   title: 'Physiologically-Based Pharmacokinetic/Pharmacodynamic Modeling of Dapagliflozin: Exploring the Impact of Dosing, Hepatorenal Impairment and Food Intake'
   journal: 'Bachelor Thesis, June 2025'
   journal_short:
@@ -668,6 +746,9 @@
   date: 2025-04-03
   pdf: 'theses/Bachelor.Thesis.Michelle.Elias.pdf'
   authors: 'Michelle Elias (supervisor: <b>M. König</b>)'
+  people:
+    - michelle
+    - koenig
   title: 'A physiological-based pharmacokinetic (PBPK) model of the sulfonylurea glimepiride'
   journal: 'Bachelor Thesis, April 2025'
   journal_short:
@@ -692,6 +773,8 @@
   date: 2025-04-17
   pdf: 'Baum2025.pdf'
   authors: 'P. Baum, T. Ebert, N. Klöting, S. Krupka, <b>M. König</b>, S. Paeschke, P. Stock, M. Bulc, M. Blüher, K. Palus, M. Nowicki, and J. Kosacka'
+  people:
+    - koenig
   title: 'Inflammation and autophagy in peripheral nerves of rodent models with metabolic syndrome and type 2 diabetes mellitus'
   journal: 'Neurosci Res. 2025 Apr 17:S0168-0102(25)00070-7'
   journal_short:
@@ -718,6 +801,8 @@
   date: 2025-03-21
   pdf: 'Balaur2025_preprint.pdf'
   authors: 'I. Balaur, D. P. Nickerson, D. Welter, J. A. Wodke, F. Ancien, T. Gebhardt, V. Grouès, H. Hermjakob, <b>M. König</b>, N. Radde, A. Rougny, R. Schneider, R. S. Malik-Sheriff, K. B. Shiferaw, M. Stefan, V. Satagopam, and D. Waltemath'
+  people:
+    - koenig
   title: 'FAIRification of computational models in biology'
   journal: 'bioRxiv 2025.03.21.644517'
   journal_short:
@@ -738,6 +823,9 @@
   date: 2025-03-03
   pdf: 'reports/Internship.Report.Abhinav.Mishra.pdf'
   authors: 'Internship Report Abhinav Mishra (supervisor: <b>M. König</b>)'
+  people:
+    - abhinav
+    - koenig
   title: 'A Physiologically-Based Pharmacokinetic Model of Tirzepatide'
   journal: 'Internship Report, Mar 2025'
   journal_short:
@@ -781,6 +869,8 @@
   date: 2025-01-25
   pdf: 'Eissazadeh2025_endoglin.pdf'
   authors: 'S. Eissazadeh, P. Fikrova, J. U. Rathouska, I. Nemeckova, K. Tripska, M. Vasinova, R. Havelek, S. Mohammadi, I. C. Igreja Sa, C. Theuer, <b>M. König</b>, S. Micuda, and P. Nachtigal'
+  people:
+    - koenig
   title: 'Anti-Endoglin monoclonal antibody prevents the progression of liver sinusoidal endothelial inflammation and fibrosis in MASH'
   journal: 'Life Sci. 2025 Jan 29:123428'
   journal_short: Life Sci.
@@ -803,6 +893,8 @@
   year: 2025
   pdf: 'abstracts/COMBINE2024_abstracts.pdf'
   authors: '<b>M. König</b>'
+  people:
+    - koenig
   title: 'Reproducible digital twins for personalized liver function assessment'
   journal: 'Conference Proceedings, COMBINE 2024 - Conference of the Computational Modeling in Biology Network : September 1-5, 2024'
   journal_short:
@@ -825,6 +917,8 @@
   year: 2025
   pdf: 'abstracts/COMBINE2024_abstracts.pdf'
   authors: '<b>M. König</b>'
+  people:
+    - koenig
   title: 'Computational Model Development Using SBML: sbmlutils, sbm4humans, cy3sbml'
   journal: 'Conference Proceedings, COMBINE 2024 - Conference of the Computational Modeling in Biology Network : September 1-5, 2024'
   journal_short:
@@ -845,6 +939,9 @@
   year: 2025
   pdf: 'theses/Bachelor.Thesis.Yusuf.Ali.Kulanoglu.pdf'
   authors: 'Bachelor Thesis Yusuf Ali Kulanoglu (supervisor: <b>M. König</b>)'
+  people:
+    - yusuf
+    - koenig
   title: 'Physiologically based pharmacokinetic/pharmacodynamic modeling of the direct renin inhibitor aliskiren: Exploring the impact of hepatorenal impairment and drug-drug interactions'
   journal: 'Bachelor Thesis, January 2025'
   journal_short:
@@ -869,6 +966,8 @@
   date: 2024-09-24
   pdf: 'Raman2024_FROG.pdf'
   authors: 'K. Raman, M. Kratochvil, B. G. Olivier, <b>M. König</b>, P. Sengupta, D. K. K. Baskaran, T. V. N. Nguyen, D. Lobo, S. E. Wilken, K. K. Tiwari, A. K. Raghu, I. Palanikumar, L. Raajaraam, M. Ibrahim, S. Balakrishnan, S. Umale, F. Bergmann, T. Malpani, V. P. Satagopam, R. Schneider, M. E. Beber, S. Keating, M. Anton, A. Renz, M. Lakshmanan, D. Lee, L. Koduru, R. Mostolizadeh, O. Dias, E. Cunha, A. Oliveira, Y. Q. Lee, K. Zengler, R. Santibanez-Palominos, M. Kumar, M. Barberis, B. L. Puniya, T. Helikar, H. V. Dinh, P. F. Suthers, C. D. Maranas, I. Casini, S. B. Loghmani, N. Veith, N. Leonidou, F. Li, Y. Chen, J. Nielsen, G. Lee, S. M. Lee, G. B. Kim, P. T. Monteiro, M. C. Teixeira, H. U. Kim, S. Y. Lee, U. W. Liebal, L. M. Blank, C. Lieven, C. Tarzi, C. Angione, M. E. Blaise, C. P. Aytar, M. Kulyashov, L. Akberdin, D. Kim, S. H. Yoon, Z. Xu, J. Gautam, W. T. Scott Jr., P. J. Schaap, J. J. Koehorst, C. Zuniga, G. Canto-Encalada, S. Benito-Vaquerizo, I. P. Olm, M. Suarez-Diez, Q. Yuan, H. Ma, M. M. Islam, J. A. Papin, F. Zorrilla, K. R. Patil, A. Basile, J. Nogales, G. San Leon, F. Castillo-Alfonso, R. Olivares-Hernandez, G. Vigueras-Ramirez, H. Hermjakob, A. Drager, and R. S. Malik-Sheriff'
+  people:
+    - koenig
   title: 'FROG Analysis Ensures the Reproducibility of Genome Scale Metabolic Models'
   journal: 'bioRxiv 2024.09.24.614797'
   journal_short:
@@ -889,6 +988,9 @@
   year: 2024
   pdf: 'theses/Master.Thesis.Jonas.Kuettner.pdf'
   authors: 'Master Thesis Jonas Küttner (supervisor: <b>M. König</b>)'
+  people:
+    - jonaspk98
+    - koenig
   title: 'Quantitative Image Analysis of Hepatic Zonation in Cytochrome P450 and Steatosis Using Whole Slide Scans'
   journal: 'Master Thesis, August 2024'
   journal_short:
@@ -923,6 +1025,8 @@ In summary, I have successfully developed and implemented an image analysis work
   date: 2024-08-20
   pdf: 'Eissazadeh2024_abstract.pdf'
   authors: 'S. Eissazadeh, J. U. Rathouska, I. Nemeckova, <b>M. König</b>, and P. Nachtigal'
+  people:
+    - koenig
   affilitations: "Biological And Medical Sciences, Faculty of Pharmacy, Hradec Kralove, Czech Republic; 2 Institute For Theoretical Biology, Humboldt Universität zu Berlin, Berlin, Germany"
   title: 'Modulation of endoglin and soluble endoglin in NASH: Computational modeling and monoclonal antibody therapeutic benefits'
   journal: 'Atherosclerosis, Volume 395, Supplement 1, August 2024, 118102, EAS Abstracts 2024'
@@ -950,6 +1054,8 @@ In summary, I have successfully developed and implemented an image analysis work
   date: 2024-07-22
   pdf: 'Golebiewski2024_standards.pdf'
   authors: 'M. Golebiewski, G. Bader, P. Gleeson, T. E. Gorochowski, S. M. Keating, <b>M. König</b>, C. J. Myers, D. P. Nickerson, B. Sommer, D. Waltemath, and F. Schreiber'
+  people:
+    - koenig
   title: 'Specifications of standards in systems and synthetic biology: status, developments, and tools in 2024'
   journal: 'J Integr Bioinform. 2024 Jul 22'
   journal_short: 'J Integr Bioinform.'
@@ -989,6 +1095,9 @@ In summary, I have successfully developed and implemented an image analysis work
   year: 2024
   pdf: 'Albadry2024_species_comparison.pdf'
   authors: 'M. Albadry, J. Kuettner, J. Grzegorzewski, O. Dirsch, E. Kindler, R. Klopfleisch, V. Liska, V. Moulisova, S. Nickel, R. Palek, J. Rosendorf, S. Saalfeld, U. Settmacher, H. Tautenhahn, <b>M. KönigΔ</b>, and U. DahmenΔ (Δ equal contribution)'
+  people:
+    - janek
+    - koenig
   title: 'Cross-Species Variability in Lobular Geometry and Cytochrome P450 Hepatic Zonation: Insights into CYP1A2, CYP2E1, CYP2D6 and CYP3A4'
   journal: 'Front Pharmacol. 2024 May 16;15:1404938'
   status: publication
@@ -1011,6 +1120,9 @@ In summary, I have successfully developed and implemented an image analysis work
   year: 2024
   pdf: 'theses/Master.Thesis.Shubhankar.Palwankar.pdf'
   authors: 'Master Thesis Shubhankar Palwankar (supervisor: <b>M. König</b>)'
+  people:
+    - shubhankar
+    - koenig
   title: 'Enhancing Our Understanding of Enalapril’s Pharmacokinetics: A Physiologically Based Modeling Approach'
   journal: 'Master Thesis, May 2024'
   status: thesis
@@ -1036,6 +1148,9 @@ In summary, I have successfully developed and implemented an image analysis work
   year: 2024
   pdf: 'theses/Bachelor.Thesis.Afruja.Hossain.pdf'
   authors: 'Bachelor Thesis Afruja Hossain (supervisor: <b>M. König</b>)'
+  people:
+    - afruja
+    - koenig
   title: 'A systematic overview of protein variability in cytochrome P450 and UDP-glucuronosyltransferase enzymes in the human liver'
   journal: 'Bachelor Thesis, Jan 2024'
   status: thesis
@@ -1068,6 +1183,8 @@ In summary, I have successfully developed and implemented an image analysis work
   year: 2024
   pdf: 'Hoepfl2024_BayModTS.pdf'
   authors: 'S. Höpfl, M. Albadry, U. Dahmen, K. H. Herrmann, E. M. Kindler, <b>M. König</b>, J. R. Reichenbach, H. M. Tautenhahn, W. Wei, W. T. Zhao, and N. E. Radde'
+  people:
+    - koenig
   title: 'Bayesian modelling of time series data (BayModTS)-a FAIR workflow to process sparse and highly variable data'
   journal: 'Bioinformatics. 2024 May 2;40(5):btae312'
   status: publication
@@ -1097,6 +1214,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   date: 2024-04-15
   pdf: 'Smith2024_SED-ML_L1V5.pdf'
   authors: 'L. P. Smith, F. T. Bergmann, A. Garny, T. Helikar, J. Karr, D. Nickerson, H. Sauro, D. Waltemath, and <b>M. König</b>'
+  people:
+    - koenig
   title: 'The simulation experiment description markup language (SED-ML): language specification for level 1 version 5'
   journal: 'J Integr Bioinform. 2024 Apr 15'
   status: publication
@@ -1116,6 +1235,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   date: 2024-03-29
   pdf: 'Gerhaeusser2024_spt_model.pdf'
   authors: 'S. Gerhäusser, L. Lambers, L. Mandl, J. Franquinet, T. Ricken, and <b>M. König</b>'
+  people:
+    - koenig
   title: 'Simulation of zonation-function relationships in the liver using coupled multiscale models: Application to drug-induced liver injury'
   journal: 'bioRxiv 2024.03.26.586870;'
   status: preprint
@@ -1141,6 +1262,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   date: 2024-02-25
   pdf: 'Lambers2024_fat_zonation.pdf'
   authors: 'L. Lambers, N. Waschinsky, J. Schleicher, <b>M. König</b>, H. Tautenhahn, M. Albadry, U. Dahmen, and T. Ricken'
+  people:
+    - koenig
   title: 'Quantifying fat zonation in liver lobules: an integrated multiscale in silico model combining disturbed microperfusion and fat metabolism via a continuum biomechanical bi-scale, tri-phasic approach'
   journal: 'Biomech Model Mechanobiol. 2024 Feb 25.'
   status: publication
@@ -1164,6 +1287,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   date: 2024-01-23
   pdf: 'Tautenhahn2024_simliva.pdf'
   authors: 'H. Tautenhahn, T. Ricken, U. Dahmen, L. Mandl, L. Bütow, S. Gerhäusser, L. Lambers, X. Chen, E. Lehmann, O. Dirsch, and <b>M. König</b>'
+  people:
+    - koenig
   title: 'SimLivA – Modelling ischemia reperfusion injury in the liver: A first step towards a clinical decision support tool.'
   journal: 'GAMM-Mitteilungen. (2024), e202370003'
   status: proceeding
@@ -1186,6 +1311,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2024
   pdf: 'reports/Internship.Report.Frances.Okibedi.pdf'
   authors: 'Internship Report Frances Okibedi (supervisor: <b>M. König</b>)'
+  people:
+    - frances
+    - koenig
   title: 'A physiologically-based pharmacokinetic (PBPK) model of sorafenib for investigating the effect of sorafenib parameters in hepatorenal impairment'
   journal: 'Internship report, July 2024'
   status: report
@@ -1208,6 +1336,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2023
   pdf: 'Kohrs2023_reproducible.research.open.science.pdf'
   authors: 'F. E. Kohrs, S. Auer, A. Bannach-Brown, S. Fiedler, T. L. Haven, V. Heise, C. Holman, F. Azevedo, R. Bernard, A. Bleier, N. Bössel, B. P. Cahill, L. J. Castro, A. Ehrenhofer, K. Eichel, M. Frank, C. Frick, M. Friese, A. Gärtner, K. Gierend, D. J. Grüning, L. Hahn, M. Hülsemann, M. Ihle, S. Illius, L. König, <b>M. König</b>, L. Kulke, A. Kutlin, F. Lammers, D. M. A. Mehler, C. Miehl, A. Müller-Alcazar, C. Neuendorf, H. Niemeyer, F. Pargent, A. Peikert, C. U. Pfeuffer, R. Reinecke, J. P. Röer, J. L. Rohmann, A. Sánchez-Tójar, S. Scherbaum, E. Sixtus, L. Spitzer, V. M. Straßburger, M. Weber, C. J. Whitmire, J. Zerna, D. Zorbek, P. Zumstein, and T. L. Weissgerber'
+  people:
+    - koenig
   title: 'Eleven Strategies for Making Reproducible Research and Open Science Training the Norm at Research Institutions'
   journal: 'eLife (2023) 12:e89736.'
   status: publication
@@ -1227,6 +1357,10 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2023
   pdf: 'StemmerMallol2023_talinolol.pdf'
   authors: 'B. S. Mallol, J. Grzegorzewski, and <b>M. König</b>'
+  people:
+    - stemllb
+    - janek
+    - koenig
   title: 'Insights into Intestinal P-glycoprotein Function using Talinolol: A PBPK Modeling Approach'
   journal: 'bioRxiv 2023.11.21.568168'
   status: preprint
@@ -1251,6 +1385,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2023
   pdf: 'Maheshvare2023_pancreas.pdf'
   authors: 'M. D. Maheshvare, S. Raha, <b>M. KönigΔ</b>, and D. PalΔ (Δ equal contribution)'
+  people:
+    - koenig
   title: 'A pathway model of glucose-stimulated insulin secretion in the pancreatic β-cell'
   journal: 'Front. Endocrinol. 14:1185656'
   status: publication
@@ -1273,6 +1409,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2023
   pdf: 'theses/Bachelor.Thesis.Beatrice.Stemmer.Mallol.pdf'
   authors: 'Bachelor Thesis Beatrice Stemmer Mallol (supervisor: <b>M. König</b>)'
+  people:
+    - stemllb
+    - koenig
   title: 'A physiologically based pharmacokinetic (PBPK) model of the probe drug talinolol for the characterization of intestinal P-glycoprotein'
   journal: 'Bachelor Thesis, July 2023'
   status: thesis
@@ -1298,6 +1437,10 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2023
   pdf: 'Kuettner2023_chlorzoxazone.pdf'
   authors: 'J. Küttner, J. Grzegorzewski, H. M. Tautenhahn, and <b>M. König</b>'
+  people:
+    - jonaspk98
+    - janek
+    - koenig
   title: 'A physiologically based pharmacokinetic model for CYP2E1 phenotyping via chlorzoxazone'
   journal: 'bioRxiv 2023.04.12.536571'
   status: preprint
@@ -1320,6 +1463,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2023
   pdf: 'Koenig2023_standards.pdf'
   authors: '<b>M. König</b>, P. Gleeson, M. Golebiewski, T. Gorochowski, M. Hucka, S. Keating, C. Myers, D. Nickerson, and F. Schreiber'
+  people:
+    - koenig
   title: 'Specifications of Standards in Systems and Synthetic Biology: Status and Developments in 2022 and the COMBINE meeting 2022'
   journal: 'J Integr Bioinform. 2023 Mar 29;20(1).'
   status: publication
@@ -1341,6 +1486,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2023
   pdf: 'Anton2023_standard.GEM.pdf'
   authors: 'M. Anton, E. Almaas, R. Benfeitas, S. Benito-Vaquerizo, L. M. Blank, A. Dräger, J. M. Hancock, C. Kittikunapong, <b>M. König</b>, F. Li, U. W. Liebal, H. Lu, H. Ma, R. Mahadevan, A. Mardinoglu, J. Nielsen, J. Nogales, M. Pagni, J. A. Papin, K. R. Patil, N. D. Price, J. L. Robinson, B. J. Sánchez, M. Suarez-Diez, S. Sulheim, L. T. Svensson, B. Teusink, W. Vongsangnak, H. Wang, A. A. Zeidan, and E. J. Kerkhoven'
+  people:
+    - koenig
   title: 'standard-GEM: standardization of open-source genome-scale metabolic models'
   journal: 'bioRxiv 2023.03.21.512712'
   status: preprint
@@ -1360,6 +1507,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2023
   pdf: 'Bartsch2023_simvastatin.pdf'
   authors: 'F. Bartsch, J. Grzegorzewski, H. Pujol, H. M. Tautenhahn, and <b>M. König</b>'
+  people:
+    - flobar
+    - janek
+    - helen
+    - koenig
   title: 'Simvastatin therapy in different subtypes of hypercholesterolemia - a physiologically based modelling approach'
   journal: 'medRxiv 2023.02.01.23285358'
   status: preprint
@@ -1384,6 +1536,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2023
   pdf: 'theses/PhD.Thesis.Jan.Grzegorzewski.pdf'
   authors: 'Jan Grzegorzewski (supervisor: <b>M. König</b>)'
+  people:
+    - janek
+    - koenig
   title: 'Physiologically based pharmacokinetic (PBPK) modeling for dynamical liver function tests and CYP phenotyping'
   journal: 'PhD Thesis, Jan 2023'
   status: thesis
@@ -1404,6 +1559,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2023
   pdf: 'Welsh2022_libroadrunner_2.0.pdf'
   authors: 'C. Welsh, J. Xu, L. Smith, <b>M. König</b>, K. Choi, and H. M. Sauro'
+  people:
+    - koenig
   title: 'libRoadRunner 2.0: A High-Performance SBML Simulation and Analysis Library'
   status: publication
   impact: 6.0
@@ -1424,6 +1581,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2022
   pdf: 'Albadry2022_Cytochrome.p450.enzymes.in.periportal.steatosis.pdf'
   authors: 'M. Albadry, S. Höpfl, N. Ehteshamzad, <b>M. König</b>, M. Böttcher, J. Neumann, A. Lupp, O. Dirsch, N. Radde, B. Christ, M. Christ, L. Schwen, H. Laue, R. Klopfleisch, and U. Dahmen'
+  people:
+    - koenig
   title: 'Cytochrome p450 enzymes in periportal steatosis: Modulation of drug metabolizing activity but not of pericentral expression pattern'
   journal: 'Sci Rep. 2022 Dec 17;12(1):21825'
   status: publication
@@ -1444,6 +1603,10 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2022
   pdf: 'Grzegorzewski2022_dextromethorphan.pdf'
   authors: 'J. Grzegorzewski, J. Brandhorst, and <b>M. König</b>'
+  people:
+    - janek
+    - brandhorst
+    - koenig
   title: 'Physiologically based pharmacokinetic (PBPK) modeling of the role of CYP2D6 polymorphism for metabolic phenotyping with dextromethorphan'
   journal: 'Front Pharmacol. 2022 Oct 24;13:1029073'
   status: publication
@@ -1466,6 +1629,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2022
   pdf: 'FAIR.sharing.of.reproducible.and.reusable.COVID-19.models_Ramachandran2022.pdf'
   authors: 'K. RamachandranΔ, <b>M. KönigΔ</b>, M. Scharm, T. V. N. Nguyen, H. Hermjakob, D. Waltemath, and R. S. Malik Sheriff (Δ equal contribution)'
+  people:
+    - koenig
   title: 'FAIR Sharing of Reproducible Models of Epidemic and Pandemic Forecast'
   journal: 'Preprints 2022, 2022060137'
   status: preprint
@@ -1488,6 +1653,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2022
   pdf: 'Shaikh2022_biosimulators.pdf'
   authors: 'B. Shaikh, L. P. Smith, D. Vasilescu, G. Marupilla, M. Wilson, E. Agmon, H. Agnew, S. S. Andrews, A. Anwar, M. E. Beber, F. T. Bergmann, D. Brooks, L. Brusch, L. Calzone, K. Choi, J. Cooper, J. Detloff, B. Drawert, M. Dumontier, G. B. Ermentrout, J. R. Faeder, A. P. Freiburger, F. Fröhlich, A. Funahashi, A. Garny, J. H. Gennari, P. Gleeson, A. Goelzer, Z. Haiman, J. Hasenauer, J. L. Hellerstein, H. Hermjakob, S. Hoops, J. C. Ison, D. Jahn, H. V. Jakubowski, R. Jordan, M. Kalaš, <b>M. König</b>, W. Liebermeister, R. S. M. Sheriff, S. Mandal, R. McDougal, J. K. Medley, P. Mendes, R. Müller, C. J. Myers, A. Naldi, T. V. N. Nguyen, D. P. Nickerson, B. G. Olivier, D. Patoliya, L. Paulevé, L. R. Petzold, A. Priya, A. K. Rampadarath, J. M. Rohwer, A. S. Saglam, D. Singh, A. Sinha, J. Snoep, H. Sorby, R. Spangler, J. Starruß, P. J. Thomas, D. van Niekerk, D. Weindl, F. Zhang, A. Zhukova, A. P. Goldberg, J. C. Schaff, M. L. Blinov, H. M. Sauro, I. I. Moraru, and J. R. Karr'
+  people:
+    - koenig
   title: 'BioSimulators: a central registry of simulation engines and services for recommending specific tools'
   journal: 'Nucleic Acids Res. 2022 May 7;50(W1):W108–14'
   status: publication
@@ -1507,6 +1674,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2022
   pdf: 'theses/Bachelor.Thesis.Helena.Leal.Pujol.pdf'
   authors: 'Helena Leal Pujol (supervisor: <b>M. König</b>)'
+  people:
+    - helen
+    - koenig
   title: 'A physiologically based model of pravastatin - The role of genotypes and hepatic or renal impairment on the pharmacokinetics of pravastatin'
   journal: 'Bachelor Thesis, May 2022'
   status: thesis
@@ -1531,6 +1701,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2022
   pdf: 'Koenig2022_dfba.pdf'
   authors: '<b>M. KönigΔ</b>, L. H. WatanabeΔ, J. Grzegorzewski, and C. J. Myers (Δ equal contribution)'
+  people:
+    - koenig
+    - janek
   title: 'Dynamic Flux Balance Analysis Models in SBML'
   journal: 'bioRxiv 245076'
   status: preprint
@@ -1552,6 +1725,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2022
   pdf: 'Caffeine_meta_Grzegorzewski2021.pdf'
   authors: 'J. Grzegorzewski, F. Bartsch, A. Köller, and <b>M. König</b>'
+  people:
+    - janek
+    - flobar
+    - adrian
+    - koenig
   title: 'Pharmacokinetics of caffeine: A systematic analysis of reported data for application in metabolic phenotyping and liver function testing'
   journal: 'Frontiers in Pharmacology 2022, Vol12'
   status: publication
@@ -1576,6 +1754,10 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2021
   pdf: 'ICG_model_hepatectomy_Koeller2021.pdf'
   authors: 'A. Köller, J. Grzegorzewski, M. Tautenhahn, and <b>M. König</b>'
+  people:
+    - adrian
+    - janek
+    - koenig
   title: 'Prediction of survival after hepatectomy using a physiologically based pharmacokinetic model of indocyanine green liver function tests'
   journal: 'Front. Physiol., 22 November 2021'
   status: publication
@@ -1600,6 +1782,10 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2021
   pdf: 'Koeller2021_icg_variability.pdf'
   authors: 'A. Köller, J. Grzegorzewski, and <b>M. König</b>'
+  people:
+    - adrian
+    - janek
+    - koenig
   title: 'Physiologically based modeling of the effect of physiological and anthropometric variability on indocyanine green based liver function tests'
   journal: 'Front Physiol. 2021 Nov 22;12:757293'
   status: publication
@@ -1625,6 +1811,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2021
   pdf: 'Review_Qualiperf2021.pdf'
   authors: 'B. ChristΔ, M. CollatzΔ, U. DahmenΔ, K. HerrmannΔ, S. HöpflΔ, <b>M. KönigΔ</b>, L. LambersΔ, M. MarzΔ, D. MeyerΔ, N. RaddeΔ, J. R. ReichenbachΔ, T. RickenΔ, and H. TautenhahnΔ (Δ equal contribution)'
+  people:
+    - koenig
   title: 'Hepatectomy-Induced Alterations in Hepatic Perfusion and Function - Toward Multi-Scale Computational Modeling for a Better Prediction of Post-hepatectomy Liver Function'
   journal: 'Front Physiol. 2021 Nov 18;12:733868'
   status: review
@@ -1648,6 +1836,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2021
   pdf: 'Standards.in.Systems.and.Synthetic.Biology_Schreiber2021.pdf'
   authors: 'F. Schreiber, P. Gleeson, M. Golebiewski, T. Gorochowski, M. Hucka, S. Keating, <b>M. König</b>, C. Myers, D. Nickerson, and D. Walthemath'
+  people:
+    - koenig
   title: 'Specifications of Standards in Systems and Synthetic Biology: Status and Developments in 2021'
   journal: 'J Integr Bioinform. 2021 Oct 22;18(3):20210026</a>'
   status: publication
@@ -1669,6 +1859,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2021
   pdf: 'theses/Bachelor.Thesis.Suekrue.Balci.pdf'
   authors: 'Sükrü Balci (supervisor: <b>M. König</b>)'
+  people:
+    - balci
+    - koenig
   title: 'Computational modelling of omeprazole - pharmacokinetics and pharmacodynamics'
   journal: 'Bachelor Thesis, October 2021'
   status: thesis
@@ -1691,6 +1884,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2021
   pdf: 'SBMLWebApp_Yamada2021.pdf'
   authors: 'T. G. Yamada, K. Ii, <b>M. König</b>, M. Feierabend, A. Dräger, and A. Funahashi'
+  people:
+    - yamada
+    - koenig
   title: 'SBMLWebApp: Web-based Simulation, Steady-State Analysis, and Parameter Estimation of Systems Biology Models'
   journal: 'Processes 9, no. 10: 1830'
   project: http://simulate-biology.org
@@ -1715,6 +1911,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2021
   pdf: 'Smith2021_sed-ml-L1V4.pdf'
   authors: 'L. P. Smith, F. T. Bergmann, A. Garny, T. Helikar, J. Karr, D. Nickerson, H. Sauro, D. Waltemath, and <b>M. König</b>'
+  people:
+    - koenig
   title: 'The simulation experiment description markup language (SED-ML): language specification for level 1 version 4'
   journal: 'Journal of Integrative Bioinformatics, vol. 18, no. 3, 2021, pp. 20210021'
   status: publication
@@ -1733,6 +1931,10 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2021
   pdf: 'SBSCL_Panchiwala2021.pdf'
   authors: 'H. Panchiwala, S. Shah, H. Planatscher, M. Zakharchuk, <b>M. König</b>, and A. Dräger'
+  people:
+    - hemil
+    - shah
+    - koenig
   title: 'The Systems Biology Simulation Core Library'
   journal: ' Bioinformatics. 2022 Jan 12;38(3):864-865'
   status: publication
@@ -1749,6 +1951,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2021
   pdf: 'Koenig2021_Ten_simple_rules.pdf'
   authors: '<b>M. KönigΔ</b>, J. Grzegorzewski, M. Golebiewski, H. Hermjakob, M. Hucka, B. Olivier, S. M. Keating, D. Nickerson, F. Schreiber, R. Sheriff, and D. Waltemath'
+  people:
+    - koenig
+    - janek
   title: 'Ten Simple Rules for FAIR Sharing of Experimental and Clinical Data with the Modeling Community'
   journal: 'Preprints 2021, 2021080303'
   status: preprint
@@ -1767,6 +1972,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2021
   pdf: 'OMEX_Metadata_Spec.1.2_Gennari2021.pdf'
   authors: 'J. Gennari, <b>M. König</b>, G. Misirli, M. Neal, D. Nickerson, and D. Waltemath'
+  people:
+    - koenig
   title: 'OMEX Metadata Specification Version 1.2'
   journal: 'J Integr Bioinform. 2021 Oct 20;18(3):20210020'
   status: publication
@@ -1783,6 +1990,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2021
   pdf: 'SED-ML_validator_Shaikh2021.pdf'
   authors: 'B. Shaikh, A. P. Freiburger, <b>M. König</b>, F. T. Bergmann, D. P. Nickerson, H. M. Sauro, M. L. Blinov, L. P. Smith, I. I. Moraru, and J. R. Karr'
+  people:
+    - koenig
   title: 'SED-ML Validator: tool for debugging simulation experiments'
   journal: 'arXiV, 2021'
   status: preprint
@@ -1798,6 +2007,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2021
   pdf: 'theses/Bachelor.Thesis.Adrian.Koeller.pdf'
   authors: 'Adrian Köller (supervisor: <b>M. König</b>)'
+  people:
+    - adrian
+    - koenig
   title: 'A Physiologically Based Model of Indocyanine Green Liver Function Tests - Eﬀects of Physiological Factors, Hepatic Disease and Hepatic Surgery'
   journal: 'Bachelor Thesis, March 2021'
   status: thesis
@@ -1814,6 +2026,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2020
   pdf: 'GACM-Report_Qualiperf2020.pdf'
   authors: 'T. Ricken, L. Lambers, B. Christ, U. Dahmen, K. Herrmann, <b>M. König</b>, M. Marz, N. Radde, J. R. Reichenbach, L. O. Schwen, and H. Tautenhahn'
+  people:
+    - koenig
   title: 'QuaLiPerF – Multi-X Liver Modelling'
   journal: 'GACM - German Association for Computational Mechanics Report, winter 2020: No. 13'
   status: proceeding
@@ -1830,6 +2044,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2020
   pdf: 'theses/Bachelor.Thesis.Florian.Bartsch.pdf'
   authors: 'Florian Bartsch (supervisor: <b>M. König</b>)'
+  people:
+    - flobar
+    - koenig
   title: 'Computational Modelling of Simvastatin - Eﬀects on HMG-CoA Reductase Activity and Cholesterol'
   journal: 'Bachelor Thesis, November 2020'
   status: thesis
@@ -1851,6 +2068,9 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2020
   pdf: 'theses/Bachelor.Thesis.Yannick.Duport.pdf'
   authors: 'Yannick Duport (supervisor: <b>M. König</b>)'
+  people:
+    - yannick
+    - koenig
   title: 'Computational Modelling of Midazolam Clearance: Effect of Inhibitors and Inducers'
   journal: 'Bachelor Thesis, August 2020'
   status: thesis
@@ -1872,6 +2092,15 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2020
   pdf: 'PKDB_Grzegorzewski2020.pdf'
   authors: 'J. Grzegorzewski, J. Brandhorst, K. Green, D. Eleftheriadou, Y. Duport, F. Barthorscht, A. Köller, D. Y. J. Ke, S. De Angelis, and <b>M. König</b>'
+  people:
+    - janek
+    - brandhorst
+    - dimitra
+    - yannick
+    - adrian
+    - danny
+    - sara
+    - koenig
   title: 'PK-DB: pharmacokinetics database for individualized and stratified computational modeling'
   journal: 'Nucleic Acids Res. 2021 Jan 8;49(D1):D1358-D1364'
   status: publication
@@ -1888,6 +2117,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2020
   pdf: 'SBML_Keating2019.pdf'
   authors: 'S. M. Keating, D. Waltemath, <b>M. König</b>, F. Zhang, A. Dräger, C. Chaouiya, F. T. Bergmann, A. Finney, C. S. Gillespie, T. Helikar, S. Hoops, R. S. Malik-Sheriff, S. L. Moodie, I. I. Moraru, C. J. Myers, A. Naldi, B. G. Olivier, S. Sahle, J. C. Schaff, L. P. Smith, M. J. Swat, DT, L. Watanabe, D. J. Wilkinson, M. L. Blinov, K. Begley, J. R. Faeder, H. F. Gómez, T. M. Hamm, Y. Inagaki, W. Liebermeister, A. L. Lister, D. Lucio, E. Mjolsness, C. J. Proctor, K. Raman, N. Rodriguez, C. A. Shaffer, B. E. Shapiro, J. Stelling, N. Swainston, N. Tanimura, J. Wagner, M. Meier-Schellersheim, H. M. Sauro, B. Palsson, H. Bolouri, H. Kitano, A. Funahashi, H. Hermjakob, J. C. Doyle, M. Hucka, and SBML Community members'
+  people:
+    - koenig
   title: 'SBML Level 3: an extensible format for the exchange and reuse of biological models'
   journal: 'Mol Syst Biol. 2020;16(8):e9110'
   status: publication
@@ -1909,6 +2140,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2020
   pdf: 'Open.modeling.and.exchange.(OMEX).metadata.specification.version.1.0_Koenig2020.pdf'
   authors: 'M. L. Neal, J. H. Gennari, D. Waltemath, D. P. Nickerson, and <b>M. König</b>'
+  people:
+    - koenig
   title: 'Open modeling and exchange (OMEX) metadata specification version 1.0'
   journal: 'J Integr Bioinform. 2020 Jun 25;17(2-3):20200020'
   status: publication
@@ -1929,6 +2162,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2020
   pdf: 'Standards_in_Systems_and_Synthetic_Biology_Schreiber2020.pdf'
   authors: 'F. Schreiber, B. Sommer, G. Bader, P. Gleeson, M. Golebiewski, T. Gorochowski, M. Hucka, S. Keating, <b>M. König</b>, C. Myers, D. Nickerson, and D. Walthemath'
+  people:
+    - koenig
   title: 'Specifications of Standards in Systems and Synthetic Biology:Status and Developments in 2020'
   journal: 'J Integr Bioinform. 2020 Jun 29;17(2-3):20200022'
   status: publication
@@ -1949,6 +2184,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2020
   pdf: 'COMBINE2019_Waltemath2020.pdf'
   authors: 'D. Waltemath, M. Golebiewski, M. Blinov, P. Gleeson, H. Hermjakob, E. Inau, S. Keating, <b>M. König</b>, O. Krebs, R. Malik-Sheriff, D. Nickerson, E. Oberortner, H. Sauro, F. Schreiber, L. Smith, M. Stefan, U. Wittig, and C. Myers'
+  people:
+    - koenig
   title: 'The first 10 years of the international coordination network for standards in systems and synthetic biology (COMBINE)'
   journal: 'J Integr Bioinform. 2020 Jun 29;17(2-3):20200005'
   status: publication
@@ -1969,6 +2206,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2020
   pdf: 'SBML_distrib_Smith2020.pdf'
   authors: 'L. Smith, S. Moodie, F. Bergmann, C. Gillespie, S. Keating, <b>M. König</b>, C. Myers, M. Swat, D. Wilkinson, and M. Hucka'
+  people:
+    - koenig
   title: 'The Distributions Package for SBML Level 3'
   journal: 'J Integr Bioinform. 2020 Jul 20;17(2-3):20200018'
   status: publication
@@ -1990,6 +2229,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2020
   pdf: 'Memote_Lieven2020.pdf'
   authors: 'C. Lieven, M. E. Beber, B. G. Olivier, F. T. Bergmann, M. Ataman, P. Babaei, J. A. Bartell, L. M. Blank, S. Chauhan, K. Correia, C. Diener, A. Dräger, B. E. Ebert, J. N. Edirisinghe, J. P. Faria, A. Feist, G. Fengos, R. M. T. Fleming, B. Garcia-Jimenez, V. Hatzimanikatis, W. van Helvoirt, C. Henry, H. Hermjakob, M. J. Herrgard, H. U. Kim, Z. King, J. J. Koehorst, <b>M. König</b>, S. Klamt, E. Klipp, M. Lakshmanan, N. Le Novere, D. Lee, S. Y. Lee, S. Lee, N. E. Lewis, H. Ma, D. Machado, R. Mahadevan, P. Maia, A. Mardinoglu, G. L. Medlock, J. Monk, J. Nielsen, L. K. Nielsen, J. Nogales, I. Nookaew, O. Resendis, B. Palsson, J. A. Papin, K. R. Patil, M. Poolman, N. D. Price, A. Richelle, I. Rocha, B. Sanchez, P. Schaap, R. S. Malik Sheriff, S. Shoaie, N. Sonnenschein, B. Teusink, P. Vilaca, J. O. Vik, J. A. Wodke, J. C. Xavier, Q. Yuan, M. Zakhartsev, and C. Zhang'
+  people:
+    - koenig
   title: 'MEMOTE for standardized genome-scale metabolic model testing'
   journal: 'Nat Biotechnol. 2020;38(3):272-276'
   status: publication
@@ -2006,6 +2247,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2020
   pdf: 'EXSIMO_Koenig2020.pdf'
   authors: '<b>M. König</b>'
+  people:
+    - koenig
   title: 'Executable Simulation Model of the Liver'
   journal: 'bioRxiv 2020.01.04.894873'
   status: preprint
@@ -2022,6 +2265,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2019
   pdf: 'MOR_Lambers2019.pdf'
   authors: 'L. Lambers, T. Ricken, and <b>M. König</b>'
+  people:
+    - koenig
   title: 'Model Order Reduction (MOR) of Function-Perfusion-Growth Simulation in the Human Fatty Liver via Artificial Neural Network (ANN)'
   journal: 'Proceedings in Applied Mathematics & Mechanics, PAMM, 2019'
   status: proceeding
@@ -2038,6 +2283,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2019
   pdf: 'combine_editorial_2019.pdf'
   authors: 'F. Schreiber, G. Bader, P. Gleeson, M. Golebiewski, M. Hucka, S. M. Keating, <b>M. König</b>, C. Myers, D. Nickerson, B. Sommer, and D. Waltemath'
+  people:
+    - koenig
   title: 'Specifications of Standards in Systems and Synthetic Biology: Status and Developments in 2019'
   journal: 'J Integr Bioinform. 2019 Jul 13;16(2)'
   status: publication
@@ -2054,6 +2301,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2019
   pdf: 'sbml-level-3-version-2-core.pdf'
   authors: 'M. Hucka, F. Bergmann, C. Chaouiya, A. Dräger, S. Hoops, S. Keating, <b>M. König</b>, N. Le Novere, C. Myers, B. Olivier, S. Sahle, J. Schaff, R. Sheriff, L. Smith, D. Waltemath, D. Wilkinson, and F. Zhang'
+  people:
+    - koenig
   title: 'The Systems Biology Markup Language (SBML): Language Specification for Level 3 Version 2 Core'
   journal: 'J Integr Bioinform. 2019 Jun 20;16(2);'
   status: publication
@@ -2074,6 +2323,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2018
   pdf: 'Tellurium_Choi2018.pdf'
   authors: 'K. Choi, K. Medley, <b>M. König</b>, K. Stocking, L. Smith, S. Gu, and H. M. Sauro'
+  people:
+    - koenig
   title: 'Tellurium: An Extensible Python-based Modeling Environment for Systems and Synthetic Biology'
   journal: 'Biosystems. 2018 Jul 24. pii: S0303-2647(18)30125-4'
   status: publication
@@ -2090,6 +2341,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2018
   pdf: 'hepatokin_Berndt2018.pdf'
   authors: 'N. Berndt, S. Bulik, I. Wallach, T. Wünsch, <b>M. König</b>, M. Stockmann, M. Meierhofer, and H. G. Holzhütter'
+  people:
+    - koenig
   title: 'HEPATOKIN1: A Biochemistry-Based Model of Liver Metabolism Suited for Applications in Medicine and Pharmacology'
   journal: 'Nat Commun. 2018 Jun 19;9(1):2386.'
   status: publication
@@ -2106,6 +2359,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2018
   pdf: 'SED-ML_L1V3_Bergmann2018.pdf'
   authors: 'F. T. Bergmann, J. Cooper, <b>M. KönigΔ</b>, I. Moraru, D. Nickerson, N. Le Novère, B. G. Olivier, S. Sahle, L. Smith, and D. Waltemath <b>Δ corresponding author</b>'
+  people:
+    - koenig
   title: 'Simulation Experiment Description Markup Language (SED-ML) Level 1 Version 3 (L1V3)'
   journal: 'J Integr Bioinform. 2018 Mar 19;15(1)'
   status: publication
@@ -2122,6 +2377,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2018
   pdf: 'Semantic.annotations_Neal2018.pdf'
   authors: 'M. Neal, <b>M. König</b>, D. Nickerson, G. Misirli, R. Kalbasi, A. Dräger, K. Atalag, V. Chelliah, M. Cooling, D. Cook, S. Crook, M. de Alba, S. Friedman, A. Garny, J. Gennari, P. Gleeson, M. Golebiewski, M. Hucka, N. Juty, N. L. Novère, C. Myers, B. Olivier, H. Sauro, M. Scharm, J. Snoep, V. Touré, A. Wipat, O. Wolkenhauer, and D. Waltemath'
+  people:
+    - koenig
   title: 'Harmonizing semantic annotations for computational models in biology'
   journal: 'Brief Bioinform. 2019 Mar 22;20(2):540-550'
   status: publication
@@ -2138,6 +2395,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2018
   pdf: 'Tellurium.Notebook_Medley2018.pdf'
   authors: 'K. Medley, K. Choi, <b>M. König</b>, L. Smith, S. Gu, J. Hellerstein, S. Sealfon, and H. M. Sauro'
+  people:
+    - koenig
   title: 'Tellurium Notebooks — An Environment for Reproducible Dynamical Modeling in Systems Biology.'
   journal: 'PLoS Comput Biol. 2018 Jun 15;14(6):e1006220'
   status: publication
@@ -2154,6 +2413,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2017
   pdf: 'Systems.surgery_Christ2017.pdf'
   authors: 'B. ChristΔ, U. DahmenΔ, K. H. HerrmannΔ, <b>M. KönigΔ</b>, J. R. ReichenbachΔ, T. RickenΔ, J. SchleicherΔ, L. Ole SchwenΔ, S. VlaicΔ, and N. WaschinskyΔ (Δ equal contribution)'
+  people:
+    - koenig
   title: 'Computational Modeling in Liver Surgery'
   journal: 'Front Physiol. 2017 Nov 14;8:906'
   status: review
@@ -2178,6 +2439,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2016
   pdf: 'Systems.biology.standards.in.medical.research_Koenig2016.pdf'
   authors: '<b>M. KönigΔ</b>, A. Oellrich<b>Δ</b>, D. Waltemath<b>Δ</b>, R. Dobson, T. Hubbard, and O. Wolkenhauer (Δ equal contribution)'
+  people:
+    - koenig
   title: 'Challenges and opportunities for system biology standards and tools in medical research'
   journal: 'ODLS, p1-6, 2016'
   status: proceeding
@@ -2194,6 +2457,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2016
   pdf: 'cy3sabiork_Koenig2016.pdf'
   authors: '<b>M. König</b>'
+  people:
+    - koenig
   title: 'cy3sabiork: A Cytoscape app for visualizing kinetic data from SABIO-RK'
   journal: '[version 1; referees: awaiting peer review]. F1000Research 2016, 5:1736'
   status: preprint
@@ -2210,6 +2475,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2016
   pdf: 'Toward.community.standards.and.software.for.whole-cell.modeling_Walthemath2016.pdf'
   authors: 'Wholecell Consortium (<b>M. König</b>)'
+  people:
+    - koenig
   title: 'Toward community standards and software for whole-cell modeling'
   journal: 'IEEE Trans Biomed Eng. 2016 Jun 10.'
   status: publication
@@ -2226,6 +2493,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2015
   pdf: 'Pathobiochemical.signatures_Abshagen2015.pdf'
   authors: 'Kerstin A.<b>Δ</b>, <b>M. KönigΔ</b>, A. Hoppe, M. Thomas, I. Müller, M. Ebert, H. Weng, H. G. Holzhütter, U. M. Zanger, J. Bode, B. Vollmar, and S. Dooley (Δ equal contribution)'
+  people:
+    - koenig
   title: 'Pathobiochemical signatures of cholestatic liver disease in bile duct ligated mice'
   journal: 'BMC Syst Biol. 2015 Nov 20;9(1):83.'
   status: publication
@@ -2242,6 +2511,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2015
   pdf: 
   authors: 'D. Werner, T. Ricken, U. Dahmen, O. Dirsch, H. G. Holzhütter, and <b>M. König</b>'
+  people:
+    - koenig
   title: 'On the Influence of Growth in Perfusion Dependent Biological Systems - at the Example of the Human Liver.'
   journal: 'PAMM 15 (1), 119-120, 2015'
   status: proceeding
@@ -2258,6 +2529,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2015
   pdf: 'libRoadRunner_Somogyi2015.pdf'
   authors: 'E. T. Somogyi, J. M. Bouteiller, J. A. Glazier, <b>M. König</b>, J. K. Medley, M. H. Swat, and H. M. Sauro'
+  people:
+    - koenig
   title: 'LibRoadRunner: a high performance SBML simulation and analysis library.'
   journal: 'Bioinformatics. 2015 Oct 15;31(20):3315-21'
   status: publication
@@ -2274,6 +2547,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2014
   pdf: 'LiverTissue_Ricken2015.pdf'
   authors: 'T. Ricken, D. Werner, H. G. Holzhütter, <b>M. König</b>, U. Dahmen, and O. Dirsch'
+  people:
+    - koenig
   title: 'Modeling function-perfusion behavior in liver lobules including tissue, blood, glucose, lactate and glycogen by use of a coupled two-scale PDE-ODE approach.'
   journal: 'Biomech Model Mechanobiol. 2015 Jun;14(3):515-36'
   status: publication
@@ -2289,6 +2564,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2014
   pdf: systembiologie_Koenig2014.pdf
   authors: '<b>M. König</b> and H. G. Holzhütter'
+  people:
+    - koenig
   title: 'Homeostasis of blood glucose - Computer simulations of central liver functions.'
   journal: 'systembiologie.de 2014; 8:p.53-57'
   status: proceeding
@@ -2304,6 +2581,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2013
   pdf: 'CancerTissue_Koenig2013.pdf'
   authors: '<b>M. König</b>, H. G. Holzhütter, and N. Berndt'
+  people:
+    - koenig
   title: 'Metabolic Gradients as Key Regulators in Zonation of Tumor Energy Metabolism: A Tissue-scale Model Based Study.'
   journal: 'Biotechnol J. 2013 Sep;8(9):1058-69.'
   status: publication
@@ -2319,6 +2598,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2012
   pdf: 'GlucoseModelT2DM_Koenig2012b.pdf'
   authors: '<b>M. König</b> and H. G. Holzhütter'
+  people:
+    - koenig
   title: 'Kinetic Modeling of Human Hepatic Glucose Metabolism in T2DM Predicts Higher Risk of Hypoglycemic Events in Rigorous Insulin Therapy'
   journal: 'J Biol Chem. 2012 Oct 26;287(44):36978-89'
   status: publication
@@ -2334,6 +2615,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2012
   pdf: 'CySBML_Koenig2012.pdf'
   authors: '<b>M. König</b>, A. Dräger, and H. G. Holzhütter'
+  people:
+    - koenig
   title: 'CySBML: a Cytoscape plugin for SBML'
   journal: 'Bioinformatics. 2012 Sep 15;28(18):2402-3'
   status: publication
@@ -2350,6 +2633,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2012
   pdf: 'GlucoseModel_Koenig2012a.pdf'
   authors: '<b>M. König</b>, S. Bulik, and H. G. Holzhütter'
+  people:
+    - koenig
   title: 'Quantifying the Contribution of the Liver to the Homeostasis of Plasma Glucose: A Detailed Kinetic Model of Hepatic Glucose Metabolism Integrated with the Hormonal Control by Insulin, Glucagon and Epinephrine'
   journal: 'PLoS Comput Biol. 2012 Jun;8(6):e1002577. Epub 2012 Jun 21.'
   status: publication
@@ -2366,6 +2651,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2011
   pdf: 'CancerGlucoseReview_Herling2011.pdf'
   authors: 'A. Herling, <b>M. König</b>, S. Bulik, and H. G. Holzhütter'
+  people:
+    - koenig
   title: 'Enzymatic Features of the Glucose Metabolism in Tumor Cells.'
   journal: 'FEBS J. 2011 Jul;<b>278</b>(14):2436-59'
   status: review
@@ -2382,6 +2669,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2011
   pdf: 'FluxViz_Koenig2011.pdf'
   authors: '<b>M. König</b> and H. G. Holzhütter'
+  people:
+    - koenig
   title: 'FluxViz - Cytoscape Plug-in for Vizualisation of Flux Distributions in Networks'
   journal: 'Genome Informatics 2010, Vol.24, p.96-103'
   status: proceeding
@@ -2398,6 +2687,8 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   year: 2010
   pdf: 'HepatoNet1_Gille2010.pdf'
   authors: 'C. Gille, C. Bölling, A. Hoppe, S. Bulik, S. Hoffmann, K. Hübner, A. Karlstädt, R. Ganeshan, <b>M. König</b>, K. Rother, M. Weidlich, J. Behre, and H. G. Holzhütter'
+  people:
+    - koenig
   title: 'HepatoNet1: a comprehensive metabolic reconstruction of the human hepatocyte for the analysis of liver physiology.'
   journal: 'Mol Syst Biol. 2010 Sep 7;6:411'
   status: publication

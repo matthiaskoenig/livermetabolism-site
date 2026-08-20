@@ -14,7 +14,13 @@ permalink: /publications/
 		{% endunless %}
 		<h3>{{ publication.year }}</h3>
 		<div class="table-responsive">
-		<table class="table table-hover table-condensed">
+		<table class="table table-hover table-condensed" style="table-layout: fixed; width: 100%;">
+		<colgroup>
+			<col style="width: 55px;">
+			<col style="width: 75px;">
+			<col style="width: 90px;">
+			<col>
+		</colgroup>
 		{% assign prev_year = publication.year %}
 	{% endunless %}
 		<tr>
@@ -29,9 +35,18 @@ permalink: /publications/
 				<a href="{{ publication.repository }}"><img src="../img/repository.png" title="Repository homepage" height="20"/></a>
 				{% endif %}
 			</td>
+			<td>
+				{% for person_id in publication.people %}
+				{% assign person = site.data.people | where:"id", person_id | first %}
+				{% if person and person.image %}
+				<img src="/img/people/{{ person.image }}" class="img-circle" height="30" title="{{ person.name }}"/>
+				{% endif %}
+				{% endfor %}
+			</td>
+			<td>{{ publication.status | capitalize }}</td>
 			<td><strong><i>{{ publication.title }}</i></strong><br />
 				{{ publication.authors }}<br />
-				{{ publication.journal }}{% if publication.status %} ({{publication.status}}){% endif %}{% if publication.doi %}. doi:<a href="https://doi.org/{{publication.doi}}">{{publication.doi}}</a>{% endif %}{% if publication.pmid %}. pmid:<a href="https://pubmed.ncbi.nlm.nih.gov/{{publication.pmid}}">{{publication.pmid}}</a>{% endif %}
+				{{ publication.journal }}{% if publication.doi %}. doi:<a href="https://doi.org/{{publication.doi}}">{{publication.doi}}</a>{% endif %}{% if publication.pmid %}. pmid:<a href="https://pubmed.ncbi.nlm.nih.gov/{{publication.pmid}}">{{publication.pmid}}</a>{% endif %}
 				{% if publication.abstract or publication.keywords %}
 				<p class="small">
 					<a data-toggle="collapse" href="#abstract-{{ publication.id }}" role="button" aria-expanded="false" aria-controls="abstract-{{ publication.id }}">
