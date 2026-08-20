@@ -31,7 +31,6 @@ html {
 }
 body {
   padding-top: $navbar-height + $navbar-margin-bottom;
-  margin-bottom: 46px;
 }
 
 // ------------------------------------------------------------------
@@ -74,6 +73,16 @@ h3 {
 
 .regular-pad {
   margin-bottom: 0.8em;
+}
+
+.homepage-subtitle {
+  margin-top: 0.5em;
+  margin-bottom: 1.2em;
+  font-family: $font-family-sans-serif;
+  font-size: 1.1em;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: $gray-dark;
 }
 
 // compact, uppercase "journal section" style year dividers used to
@@ -169,13 +178,33 @@ h3 {
   padding-bottom: 20px;
 }
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 46px;
-  padding-top: 10px;
+  margin-top: 3em;
+  padding: 2em 0 1.5em;
   background-color: $gray-lighter;
   color: $gray-dark;
+
+  .footer-brand {
+    margin-bottom: 1.5em;
+
+    h4 {
+      margin-bottom: 0;
+    }
+  }
+
+  .footer-photo {
+    width: 100%;
+    max-width: 110px;
+  }
+
+  .footer-contact {
+    margin-bottom: 1.5em;
+  }
+
+  .footer-addresses {
+    padding-top: 1.5em;
+    border-top: 1px solid darken($gray-lighter, 8%);
+    font-size: 0.9em;
+  }
 }
 
 .post-list-container {
@@ -227,7 +256,7 @@ h3 {
   .news-card {
     flex: 1 1 0;
     min-width: 0;
-    height: 340px;
+    height: 270px;
     display: flex;
     flex-direction: column;
     background-color: $body-bg;
@@ -238,15 +267,15 @@ h3 {
 
   .news-card-image {
     width: 100%;
-    height: 130px;
-    flex: 0 0 130px;
+    height: 100px;
+    flex: 0 0 100px;
     object-fit: cover;
   }
 
   .news-card-body {
     flex: 1;
     min-height: 0;
-    padding: 1em;
+    padding: 0.8em 1em;
 
     h4 {
       margin-top: 0;
@@ -260,7 +289,7 @@ h3 {
     p:last-child {
       margin-bottom: 0;
       display: -webkit-box;
-      -webkit-line-clamp: 4;
+      -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }

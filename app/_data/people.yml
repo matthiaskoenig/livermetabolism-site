@@ -26,7 +26,7 @@
   status: 'current'
   year: '2024-09/2025-12'
   name: 'Michelle Elias'
-  position: 'Bachelor project and Bachelor thesis'
+  position: 'Bachelor thesis, Student assistant, Master thesis'
   image: michelle.jpg
   orcid: "0009-0005-7959-3164"
   repository: 'https://github.com/mii-halina'
@@ -37,7 +37,7 @@
   status: 'current'
   year: '2025-04-2026'
   name: 'Mariia Babaeva'
-  position: 'Student assistant'
+  position: 'Master project, Student assistant'
   image: mariia_babaeva.jpg
   orcid: "0009-0007-6659-7638"
   repository: 'https://github.com/icalledmyselfmoon'
@@ -79,7 +79,7 @@
 
 - id: 'kim'
   status: 'current'
-  year: '2025-05/2025-08, 2025-09/2026-02'
+  year: '2025-05/2025-08, 2025-09/2026-08'
   name: 'Minjun Kim'
   position: 'Humboldt Internship Project (HIP) 2025'
   image: kim.jpg
