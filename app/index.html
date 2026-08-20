@@ -2,11 +2,57 @@
 layout: default
 ---
 
-<img src="/img/banner.png" style="width: 100%; height: auto; aspect-ratio: 2416 / 267.5; object-fit: cover;"/>
+<div class="row">
+    <div class="col-md-12">
+        {% assign current_news = site.data.news | where: "status", "current" %}
+        <div id="newsCarousel" class="carousel slide news-carousel" data-ride="carousel" data-interval="6000">
+            <div class="carousel-inner" role="listbox">
+                {% for news in current_news %}
+                {% assign slide_pos = forloop.index0 | modulo: 3 %}
+                {% if slide_pos == 0 %}
+                <div class="item {% if forloop.first %}active{% endif %}">
+                    <div class="news-slide-row">
+                {% endif %}
+                        <div class="news-card">
+                            {% if news.image %}
+                            <img src="/img/news/{{ news.image }}" class="news-card-image" alt="{{ news.title }}"/>
+                            {% endif %}
+                            <div class="news-card-body">
+                                <p class="news-carousel-date">{{ news.date }}</p>
+                                <h4>
+                                    {% if news.link %}
+                                    <a href="{{ news.link }}" target="_blank" rel="noopener noreferrer">{{ news.title }}</a>
+                                    {% else %}
+                                    {{ news.title }}
+                                    {% endif %}
+                                </h4>
+                                <p>{{ news.short | truncatewords: 28 }}</p>
+                            </div>
+                        </div>
+                {% if slide_pos == 2 or forloop.last %}
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <a class="left carousel-control" href="#newsCarousel" role="button" data-slide="prev">
+                <span class="fa fa-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#newsCarousel" role="button" data-slide="next">
+                <span class="fa fa-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <p class="text-right">
+            <a href="/news/"><i class="fa-solid fa-newspaper-o"></i> All news</a>
+        </p>
+    </div>
+</div>
 
 <div class="row">
 
-    <div class="col-md-8 text-justify">
+    <div class="col-md-12 text-justify">
         <h2 class="header-light regular-pad">Systems Medicine & Biology for Advanced Drug Metabolism and Liver
             Studies</h2>
         <p>
@@ -119,35 +165,6 @@ layout: default
         </p>
 
     </div>
-
-    <div class="col-md-4" style="background-color: #efefef; font-size: 85%">
-        <h3>News</h3>
-        For details see <a href="/news/"><i class="fa-solid fa-newspaper-o"></i> news</a>.
-        {% for news in site.data.news %}
-        {% if news.status=="current" %}
-        <p>
-            {{ news.date }} <strong>{{ news.title }}</strong><br />
-
-            {% if news.video %}
-            <div class="video-container">
-                <iframe src="{{ news.video }}"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                </iframe>
-            </div>
-            {% endif %}
-            {% if news.image %}
-            <a href="{{ news.link }}" target="_blank" rel="noopener noreferrer">
-                    <img src="/img/news/{{ news.image }}" class="img-responsive" height="60"/>
-            </a>
-            {% endif %}
-            {{ news.short }}
-        </p>
-        {% endif %}
-        {% endfor %}
-    </div>
-
 
 </div>
 

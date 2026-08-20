@@ -209,3 +209,89 @@ h3 {
     height: 100%;
     border: 0;
 }
+
+// ------------------------------------------------------------------
+// Homepage news carousel
+// ------------------------------------------------------------------
+
+.news-carousel {
+  margin-bottom: 1.5em;
+  padding: 0 2.5em;
+
+  .news-slide-row {
+    display: flex;
+    align-items: stretch;
+    gap: 1.5em;
+  }
+
+  .news-card {
+    flex: 1 1 0;
+    min-width: 0;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    background-color: $body-bg;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .news-card-image {
+    width: 100%;
+    height: 130px;
+    flex: 0 0 130px;
+    object-fit: cover;
+  }
+
+  .news-card-body {
+    flex: 1;
+    min-height: 0;
+    padding: 1em;
+
+    h4 {
+      margin-top: 0;
+      font-size: 1.05em;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+
+  .news-carousel-date {
+    color: $brand-success;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.2em;
+  }
+
+  .carousel-control {
+    color: $brand-primary;
+    text-shadow: none;
+    width: 5%;
+    background-image: none !important;
+    opacity: 0.5;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+      color: $brand-success;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .news-slide-row {
+      flex-direction: column;
+    }
+  }
+}
