@@ -8,9 +8,7 @@ permalink: /projects/
 <div class="row">
     <h2> {{ project.title}}</h2>
 
-    <!--{% assign publication = site.data.publications | where:"id", project.publication | first %}-->
-
-    <table class="table table-responsive well">
+    <table class="table well">
         <tr>
             <td width="200">
                 {% for author in project.people %}
