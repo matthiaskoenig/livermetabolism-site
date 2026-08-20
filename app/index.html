@@ -2,6 +2,7 @@
 layout: default
 ---
 
+<img src="/img/banner.png" style="width: 100%; height: auto; aspect-ratio: 2416 / 267.5; object-fit: cover;"/>
 
 <div class="row">
 
@@ -213,11 +214,19 @@ layout: default
         </div>
 
         <h3>Publications</h3>
-        <div class="table-responsive">
-        <table class="table table-hover">
-            {% for publication in site.data.publications %}
+        {% assign prev_year = nil %}
+        {% for publication in site.data.publications %}
+        {% unless publication.year == prev_year %}
+            {% unless forloop.first %}
+            </table>
+            </div>
+            {% endunless %}
+            <h4>{{ publication.year }}</h4>
+            <div class="table-responsive">
+            <table class="table table-hover table-condensed">
+            {% assign prev_year = publication.year %}
+        {% endunless %}
             <tr>
-                <td><b>{{ publication.year }}</b></td>
                 <td>
                     {% if publication.pdf %}
                     <a href="/paper/{{ publication.pdf }}"><img src="../img/pdf.png" title="PDF" height="20"/></a>
@@ -238,21 +247,29 @@ layout: default
                     endif %}{% if publication.pmid %}. pmid:<a
                             href="https://pubmed.ncbi.nlm.nih.gov/{{publication.pmid}}/">{{publication.pmid}}</a>{%
                     endif %}
-                    {% if publication.abstract %}
-                    <p class="abstract text-justify small hidden">{{ publication.abstract }}</p>
-                    {% endif %}
-                    {% if publication.keywords %}
-                    <p class="small hidden">
-                        <strong class="small">Keywords:</strong>
-                        {% for keyword in publication.keywords %}
-                        {{ keyword }},
-                        {% endfor %}
+                    {% if publication.abstract or publication.keywords %}
+                    <p class="small">
+                        <a data-toggle="collapse" href="#abstract-{{ publication.id }}" role="button" aria-expanded="false" aria-controls="abstract-{{ publication.id }}">
+                            <i class="fa fa-caret-down" aria-hidden="true"></i> Abstract
+                        </a>
                     </p>
+                    <div class="collapse" id="abstract-{{ publication.id }}">
+                        {% if publication.abstract %}
+                        <p class="abstract text-justify small">{{ publication.abstract }}</p>
+                        {% endif %}
+                        {% if publication.keywords %}
+                        <p class="small">
+                            <strong class="small">Keywords:</strong>
+                            {% for keyword in publication.keywords %}
+                            {{ keyword }}{% unless forloop.last %}, {% endunless %}
+                            {% endfor %}
+                        </p>
+                        {% endif %}
+                    </div>
                     {% endif %}
                 </td>
-                <td></td>
             </tr>
-            {% endfor %}
+        {% endfor %}
         </table>
         </div>
 
