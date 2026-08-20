@@ -67,6 +67,7 @@
   pdf: 'Schwaiger2026_hctz.pdf'
   authors: 'A. Schwaiger and <b>M. König</b>'
   people:
+    - amanda
     - koenig
   title: 'A Physiologically Based Pharmacokinetic/Pharmacodynamic Model of the Diuretic Hydrochlorothiazide'
   journal: 'Preprints 2026, 10.20944/preprints202607.0306.v1'
