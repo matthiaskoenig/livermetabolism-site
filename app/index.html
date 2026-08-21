@@ -3,6 +3,90 @@ layout: default
 ---
 
 <div class="row">
+    <div class="col-md-12 text-justify">
+        <h2 class="header-light regular-pad">Systems Medicine, Digital Twins and AI</h2>
+        <p class="hero-subtitle">Metabolic Inflammation and Carcinogenesis of the Liver</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 text-center vision-statement">
+        <p class="lead">
+            We build <strong>digital twins</strong> of human physiology — mechanistic, AI-powered models that
+            predict how disease and therapy play out in every individual patient.
+        </p>
+    </div>
+</div>
+
+<div class="row core-messages">
+    <div class="col-sm-6 col-md-3 core-message">
+        <i class="fa fa-cube" aria-hidden="true"></i>
+        <h3>Digital Twins</h3>
+        <p>Physiologically based models that mirror individual patients, from molecule to whole body.</p>
+    </div>
+    <div class="col-sm-6 col-md-3 core-message">
+        <i class="fa fa-picture-o" aria-hidden="true"></i>
+        <h3>Digital Pathology</h3>
+        <p>AI-driven analysis of whole-slide histology to quantify liver structure and disease at scale.</p>
+    </div>
+    <div class="col-sm-6 col-md-3 core-message">
+        <i class="fa fa-heartbeat" aria-hidden="true"></i>
+        <h3>Systems Medicine &amp; AI</h3>
+        <p>Mechanistic modeling meets machine learning for predictive, personalized medicine.</p>
+    </div>
+    <div class="col-sm-6 col-md-3 core-message">
+        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+        <h3>Open &amp; FAIR Science</h3>
+        <p>Reproducible, standardized models and data that the community can build on.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 text-center">
+        <div class="people-strip">
+            {% for person in site.data.people %}
+            {% if person.status=="current" and person.image %}
+            <div class="person-avatar" tabindex="0">
+                <img src="/img/people/128/{{ person.image }}" alt="{{ person.name }}"/>
+                <div class="person-card">
+                    <strong>{{ person.name }}</strong>
+                    <span class="person-position">{{ person.position }}</span>
+                    {% if person.description %}
+                    <p>{{ person.description | strip_html | truncatewords: 24 }}</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="row core-messages explore-messages">
+    <div class="col-sm-4 core-message">
+        <a href="/publications/">
+            <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+            <h3>Publications</h3>
+            <p>Peer-reviewed papers, preprints, and open datasets from the lab.</p>
+        </a>
+    </div>
+    <div class="col-sm-4 core-message">
+        <a href="/projects/">
+            <i class="fa fa-cogs" aria-hidden="true"></i>
+            <h3>Projects</h3>
+            <p>Explore our ongoing research projects and digital twin models.</p>
+        </a>
+    </div>
+    <div class="col-sm-4 core-message">
+        <a href="/positions/">
+            <i class="fa fa-users" aria-hidden="true"></i>
+            <h3>Open Positions</h3>
+            <p>Internships, theses, and PhD opportunities — come join us.</p>
+        </a>
+    </div>
+</div>
+
+<div class="row">
     <div class="col-md-12">
         {% assign current_news = site.data.news | where: "status", "current" %}
         <div id="newsCarousel" class="carousel slide news-carousel" data-ride="carousel" data-interval="6000">
@@ -46,73 +130,3 @@ layout: default
         </div>
     </div>
 </div>
-
-<div class="row">
-
-    <div class="col-md-12 text-justify">
-        <h2 class="header-light regular-pad">Systems Medicine, Digital Twins and AI</h2>
-        <p class="homepage-subtitle">Metabolic Inflammation and Carcinogenesis of the Liver</p>
-
-        <p>
-            At the König Lab, we merge the fields of Systems Medicine and Systems Biology to delve deep into drug
-            metabolism and liver function. By harnessing the power of computational modeling, data science,
-            bioinformatics analysis, and machine learning, we analyze and interpret datasets spanning biological,
-            medical, and clinical spheres.
-        </p>
-        <p>
-            {% for person in site.data.people %}
-            {% if person.status=="current" %}
-            {% if person.image %}
-            <img src="/img/people/128/{{ person.image }}" class="img-circle" height="50"
-                 title="{{ person.name }} ({{ person.position }})"/>
-            {% endif %}
-            {% endif %}
-            {% endfor %}
-        </p>
-        <p>
-            Interested in joining the lab, have a look at the <a href="/positions/"><i class="fa fa-users"
-                                                                                       aria-hidden="true"></i> open
-            positions</a>.
-        </p>
-
-        <h3>Core Research</h3>
-        <p>
-        <ul>
-            <li><strong>Predictive Biomedical Modeling</strong>: With a primary emphasis on the liver and kidneys, we
-                strive to foresee how these systems react and interact.
-            </li>
-            <li><strong>Digital Twins Development</strong>: We pioneer in creating digital replicas using
-                physiologically based pharmacokinetic and pharmacodynamic (PBPK/PD) models.
-            </li>
-            <li><strong>Reproducibility and Open Research</strong>: We champion transparent methodologies and workflows,
-                ensuring our work can be revisited and built upon.
-            </li>
-            <li><strong>FAIR Data & Workflows</strong>: Ensuring that our data and workflows are Findable, Accessible,
-                Interoperable, and Reusable is pivotal to our mission.
-            </li>
-        </ul>
-        </p>
-        <h3>Flagship Projects</h3>
-        <p>
-        <ul>
-            <li>Personalized assessments of liver and kidney functions.</li>
-            <li>Multi-scale modeling endeavors for the liver.</li>
-            <li>Advanced pharmacometric strategies.</li>
-            <li>Crafting databases and workflows that serve as cornerstones for reproducible, open, and FAIR research.
-            </li>
-        </ul>
-        </p>
-
-        <p>
-            A hallmark of our research is the generation of predictive digital twins mirroring individual human
-            physiology. These models are instrumental in shedding light on inter-individual variances, paving the way
-            for personalized treatments—from tailoring drug dosages to understanding the nuanced impacts of lifestyle on
-            drug metabolism. For more information, please see our <a href="/publications/"><i class="fa fa-file-pdf-o"
-                                                                                              aria-hidden="true"></i>
-            publications</a> and <a href="/projects/"><i class="fa fa-cogs" aria-hidden="true"></i> projects</a>.
-        </p>
-
-    </div>
-
-</div>
-

@@ -22,6 +22,17 @@
   homepage:
   description: 'Mariia works on ATLAS, a decision support tool for hepatocellular carcinoma (HCC). Based on AI methods, ATLAS processes all relevant patient data from databases, systems medicine and continuum biomechanical in silico prognosis models as well as individual patient data. The tool is being developed in a co-design approach by experts in surgical oncology, mathematical modeling and machine learning.'
 
+- id: 'shubhankar'
+  status: 'current'
+  year: '2023-10/2024-05, 2026-07-'
+  name: 'Shubhankar Palwankar'
+  position: 'Master thesis, Scientific researcher'
+  image: shubhankar.png
+  orcid: "0009-0007-3431-463X"
+  repository: "https://github.com/shubhankarpalwankar"
+  homepage:
+  description: "Shubhankar worked on enhancing our understanding of enalapril's pharmacokinetics and dynamics based on a physiologically based modeling approach. The work will build on top of existing models of the ACE inhibitors lisinopril and ramipril."
+
 - id: 'michelle'
   status: 'current'
   year: '2024-09/2025-12'
@@ -44,17 +55,6 @@
   homepage:
   description: 'Mariia workes on a physiologically based model of lisinopril. Key questions are the effect of hepatic and renal disease on lisinopril pharmacokinetics and pharmacodynamics.'
 
-- id: 'antonio'
-  status: 'current'
-  year: '2023-10/2025-12'
-  name: 'Antonio Aquiles Alvarez Aguilar'
-  position: 'Master thesis'
-  image: antonio.png
-  orcid:
-  repository: 'https://github.com/MadNietzsche'
-  homepage:
-  description: "Antonio will delve into the influence of parameter variability in PBPK models, focusing on the consequential effects for dynamic liver function assessments. The overarching objective of this project is to augment our comprehension of how inherent variability in parameters translates into intra-individual variability in pharmacokinetics."
-
 - id: 'amanda'
   status: 'current'
   year: '2023-09/2026-09'
@@ -66,17 +66,6 @@
   homepage:
   description: 'Amanda develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the diuretic hydrochlorothiazide. The objective is to enhance our understanding of how hydrochlorothiazide changes urinary volume and plasma volume and ion balance (sodium, potassium, chloride).'
 
-- id: 'monajes'
-  status: 'current'
-  year: '2025-07/2025-11'
-  name: 'Monika Jesionek'
-  position: 'ERASMUS student'
-  image: monajes.jpg
-  orcid: "0009-0003-3110-3440"
-  repository: 'https://github.com/monajes'
-  homepage:
-  description: "Monika is developing a PBPK model of immune suppressent rapamycin (sirolimus) as part of our contribution to the Immune Digital Twin (IDT)."
-
 - id: 'kim'
   status: 'current'
   year: '2025-05/2025-08, 2025-09/2026-08'
@@ -87,6 +76,17 @@
   repository: 'https://github.com/unfulw'
   homepage:
   description: "Kim is developing a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the GLP-1 receptor agonist dulaglutide to better understand its absorption, distribution, metabolism, and effects on glucose regulation."
+
+- id: 'jessica'
+  status: 'current'
+  year: '2026-06/2026-09'
+  name: 'Jessica Cruz'
+  position: 'Humboldt Internship Project (HIP)'
+  image: jessica.png
+  orcid: "0009-0006-9067-5547"
+  repository: 'https://github.com/jessicalienx97-wq'
+  homepage:
+  description: "Jessica Cruz is developing a physiologically based pharmacokinetic (PBPK) model of the leukotriene receptor antagonist montelukast to better understand its absorption, distribution, metabolism, and excretion. The project focuses on interindividual variability in montelukast pharmacokinetics, particularly the impact of hepatic metabolism, CYP2C9/CYP3A4 variability, drug-drug interactions, and age-dependent differences in pediatric and adult populations."
 
 - id: 'shelee'
   status: 'current'
@@ -110,17 +110,6 @@
   homepage:
   description: "Chang Linh is developing a physiologically based pharmacokinetic (PBPK) model of the β2-adrenergic receptor agonist albuterol (salbutamol) to better understand its absorption, distribution, metabolism, and excretion. The project focuses on route-specific pharmacokinetics, particularly inhalation delivery, and investigates variability in drug response across different patient populations, including the impact of formulation, dosing, and pulmonary physiology."
 
-- id: 'jessica'
-  status: 'current'
-  year: '2026-06/2026-09'
-  name: 'Jessica Cruz'
-  position: 'Humboldt Internship Project (HIP)'
-  image: jessica.png
-  orcid: "0009-0006-9067-5547"
-  repository: 'https://github.com/jessicalienx97-wq'
-  homepage:
-  description: "Jessica Cruz is developing a physiologically based pharmacokinetic (PBPK) model of the leukotriene receptor antagonist montelukast to better understand its absorption, distribution, metabolism, and excretion. The project focuses on interindividual variability in montelukast pharmacokinetics, particularly the impact of hepatic metabolism, CYP2C9/CYP3A4 variability, drug-drug interactions, and age-dependent differences in pediatric and adult populations."
-
 - id: 'sandeep'
   status: 'current'
   year: '2026-06/2026-12'
@@ -131,6 +120,29 @@
   repository: 'https://github.com/sandeep-konakagautamdas'
   homepage:
   description: "Sandeep is developing a physiologically based pharmacokinetic (PBPK) model of the multi-kinase inhibitor regorafenib to better understand its absorption, distribution, metabolism, and excretion. The project focuses on characterizing dose–exposure relationships and interindividual variability, with particular emphasis on hepatic metabolism, active metabolites, organ impairment, and clinically relevant factors affecting regorafenib pharmacokinetics in cancer therapy."
+
+- id: 'antonio'
+  status: 'alumni'
+  year: '2023-10/2025-12'
+  name: 'Antonio Aquiles Alvarez Aguilar'
+  position: 'Master thesis'
+  image: antonio.png
+  orcid:
+  repository: 'https://github.com/MadNietzsche'
+  homepage:
+  description: "Antonio will delve into the influence of parameter variability in PBPK models, focusing on the consequential effects for dynamic liver function assessments. The overarching objective of this project is to augment our comprehension of how inherent variability in parameters translates into intra-individual variability in pharmacokinetics."
+
+- id: 'monajes'
+  status: 'alumni'
+  year: '2025-07/2025-11'
+  name: 'Monika Jesionek'
+  position: 'ERASMUS student'
+  image: monajes.jpg
+  orcid: "0009-0003-3110-3440"
+  repository: 'https://github.com/monajes'
+  homepage:
+  description: "Monika is developing a PBPK model of immune suppressent rapamycin (sirolimus) as part of our contribution to the Immune Digital Twin (IDT)."
+
 
 - id: 'juanpablo'
   status: 'alumni'
@@ -385,17 +397,6 @@
   repository: 'https://github.com/afruja-h'
   homepage:
   description: 'Afruja worked on a systematic overview of the protein variability of cytochrome P450 (CYP450) isoforms in the human liver.'
-
-- id: 'shubhankar'
-  status: 'alumni'
-  year: '2023-10/2024-05'
-  name: 'Shubhankar Palwankar'
-  position: 'Master thesis'
-  image: shubhankar.png
-  orcid: "0009-0007-3431-463X"
-  repository: "https://github.com/shubhankarpalwankar"
-  homepage:
-  description: "Shubhankar worked on enhancing our understanding of enalapril's pharmacokinetics and dynamics based on a physiologically based modeling approach. The work will build on top of existing models of the ACE inhibitors lisinopril and ramipril."
 
 - id: 'hannah'
   status: 'alumni'
