@@ -55,7 +55,7 @@ layout: default
                 <img src="/img/people/128/{{ person.image }}" alt="{{ person.name }}"/>
                 <div class="person-card">
                     <strong>{{ person.name }}</strong>
-                    <span class="person-position">{{ person.position }}</span>
+                    <span class="person-position">{{ person.position | last }}</span>
                     {% if person.description %}
                     <p>{{ person.description | strip_html | truncatewords: 24 }}</p>
                     {% endif %}
@@ -83,7 +83,7 @@ layout: default
         </a>
     </div>
     <div class="core-message">
-        <a href="/positions/">
+        <a href="/people/#open-positions">
             <i class="fa fa-users" aria-hidden="true"></i>
             <h3>Open Positions</h3>
             <p>Internships, theses, and PhD opportunities — come join us.</p>

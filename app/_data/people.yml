@@ -2,7 +2,8 @@
   status: 'current'
   year: '2016-'
   name: 'Prof. Dr. rer. nat. Matthias König'
-  position: 'Group leader'
+  position:
+    - 'Group leader'
   image: koenig.png
   orcid: '0000-0003-1725-179X'
   repository: 'https://github.com/matthiaskoenig/'
@@ -15,7 +16,8 @@
   status: 'current'
   year: '2024-'
   name: 'Mariia Myshkina'
-  position: 'Ph.D. student'
+  position:
+    - 'Ph.D. student'
   image: myshkina.png
   orcid: "0009-0000-7769-2154"
   repository: 'https://github.com/MariiaMysh'
@@ -26,7 +28,9 @@
   status: 'current'
   year: '2023-10/2024-05, 2026-07-'
   name: 'Shubhankar Palwankar'
-  position: 'Master thesis, Scientific researcher'
+  position:
+    - 'Master thesis'
+    - 'Scientific researcher'
   image: shubhankar.png
   orcid: "0009-0007-3431-463X"
   repository: "https://github.com/shubhankarpalwankar"
@@ -37,7 +41,10 @@
   status: 'current'
   year: '2024-09/2025-12'
   name: 'Michelle Elias'
-  position: 'Bachelor thesis, Student assistant, Master thesis'
+  position:
+    - 'Bachelor thesis'
+    - 'Student assistant'
+    - 'Master thesis'
   image: michelle.jpg
   orcid: "0009-0005-7959-3164"
   repository: 'https://github.com/mii-halina'
@@ -48,7 +55,9 @@
   status: 'current'
   year: '2025-04-2026'
   name: 'Mariia Babaeva'
-  position: 'Master project, Student assistant'
+  position:
+    - 'Master project'
+    - 'Student assistant'
   image: mariia_babaeva.jpg
   orcid: "0009-0007-6659-7638"
   repository: 'https://github.com/icalledmyselfmoon'
@@ -59,7 +68,8 @@
   status: 'current'
   year: '2023-09/2026-09'
   name: 'Amanda Schwaiger'
-  position: 'Medical thesis'
+  position:
+    - 'Medical thesis'
   image: amanda.png
   orcid:
   repository: 'https://github.com/amdangelica'
@@ -70,7 +80,8 @@
   status: 'current'
   year: '2025-05/2025-08, 2025-09/2026-08'
   name: 'Minjun Kim'
-  position: 'Humboldt Internship Project (HIP) 2025'
+  position:
+    - 'Humboldt Internship Project'
   image: kim.jpg
   orcid:
   repository: 'https://github.com/unfulw'
@@ -81,7 +92,8 @@
   status: 'current'
   year: '2026-06/2026-09'
   name: 'Jessica Cruz'
-  position: 'Humboldt Internship Project (HIP)'
+  position:
+    - 'Humboldt Internship Project'
   image: jessica.png
   orcid: "0009-0006-9067-5547"
   repository: 'https://github.com/jessicalienx97-wq'
@@ -92,7 +104,8 @@
   status: 'current'
   year: '2026-04/2026-11'
   name: 'Shelee Bedón'
-  position: 'Internship Project (FU)'
+  position:
+    - 'Internship Project'
   image: shelee.jpg
   orcid: "0009-0005-9147-0028"
   repository: 'https://github.com/Shelee97'
@@ -103,7 +116,8 @@
   status: 'current'
   year: '2026-04/2026-11'
   name: 'Chang Linh Nguyen'
-  position: 'Bachelor project (HU)'
+  position:
+    - 'Bachelor project'
   image: linh.jpg
   orcid: "0009-0004-8004-3314"
   repository: 'https://github.com/changlinh'
@@ -114,7 +128,8 @@
   status: 'current'
   year: '2026-06/2026-12'
   name: 'Sandeep Konaka Gautamdas'
-  position: 'Internship project'
+  position:
+    - 'Internship project'
   image: sandeep.jpg
   orcid: '0000-0002-7855-9715'
   repository: 'https://github.com/sandeep-konakagautamdas'
@@ -125,7 +140,9 @@
   status: 'current'
   year: '2023-10/2025-12'
   name: 'Antonio Aquiles Alvarez Aguilar'
-  position: 'Master thesis'
+  position:
+    - 'Master thesis'
+    - 'Internship project'
   image: antonio.png
   orcid:
   repository: 'https://github.com/MadNietzsche'
@@ -135,8 +152,10 @@
 - id: 'monajes'
   status: 'alumni'
   year: '2025-07/2025-11'
+  end_year: '2025'
   name: 'Monika Jesionek'
-  position: 'ERASMUS student'
+  position:
+    - 'ERASMUS student'
   image: monajes.jpg
   orcid: "0009-0003-3110-3440"
   repository: 'https://github.com/monajes'
@@ -147,8 +166,10 @@
 - id: 'juanpablo'
   status: 'alumni'
   year: '2025-04/2025-09'
+  end_year: '2025'
   name: 'Juan Pablo Ramos Mendoza'
-  position: 'Master student'
+  position:
+    - 'Master student'
   image: juanpablo.png
   orcid:
   repository: 'https://github.com/Juan-hub129'
@@ -158,8 +179,10 @@
 - id: 'ennie'
   status: 'alumni'
   year: '2024-09/2025-06'
+  end_year: '2025'
   name: 'Ennie Tensil'
-  position: 'Bachelor project and Bachelor thesis'
+  position:
+    - 'Bachelor project and Bachelor thesis'
   image: ennie.jpg
   orcid:
   repository: 'https://github.com/ennietensil'
@@ -169,8 +192,11 @@
 - id: 'elisabetta'
   status: 'alumni'
   year: '2025-02/2025-07'
+  end_year: '2025'
   name: 'Elisabetta Casabianca'
-  position: 'ERASMUS, master thesis'
+  position:
+    - 'ERASMUS'
+    - 'master thesis'
   image: elisabetta.jpg
   orcid:
   repository: 'https://github.com/elisabettacasabianca11'
@@ -180,8 +206,11 @@
 - id: 'helen'
   status: 'alumni'
   year: '2021-2025/09'
+  end_year: '2025'
   name: 'Helen Leal Pujol'
-  position: 'Bachelor student, student assistant'
+  position:
+    - 'Bachelor student'
+    - 'student assistant'
   image: helen.png
   orcid:
   repository: 'https://github.com/Lepujolh'
@@ -191,8 +220,10 @@
 - id: 'nike'
   status: 'alumni'
   year: '2024-2025'
+  end_year: '2025'
   name: 'Nike Nemitz'
-  position: 'Bachelor project'
+  position:
+    - 'Bachelor project'
   image: nike.png
   orcid:
   repository: 'https://github.com/nikenemitz'
@@ -202,8 +233,10 @@
 - id: 'kim'
   status: 'alumni'
   year: '2025-05/2025-08'
+  end_year: '2025'
   name: 'alumni'
-  position: 'Humboldt Internship Project (HIP)'
+  position:
+    - 'Humboldt Internship Project (HIP)'
   image: kim.jpg
   orcid:
   repository: 'https://github.com/unfulw'
@@ -213,8 +246,10 @@
 - id: 'isabella'
   status: 'alumni'
   year: '2025-05/2025-08'
+  end_year: '2025'
   name: 'Isabella Tan'
-  position: 'Humboldt Internship Project (HIP) 2025'
+  position:
+    - 'Humboldt Internship Project (HIP) 2025'
   image: isabella.jpg
   orcid:
   repository: 'https://github.com/bellatgy'
@@ -224,8 +259,10 @@
 - id: 'olivia'
   status: 'alumni'
   year: '2025-05/2025-08'
+  end_year: '2025'
   name: 'Olivia Yau'
-  position: 'Humboldt Internship Project (HIP) 2025'
+  position:
+    - 'Humboldt Internship Project (HIP) 2025'
   image: olivia.png
   orcid:
   repository: 'https://github.com/oliviaayau'
@@ -235,8 +272,10 @@
 - id: 'rohinichakraborty'
   status: 'alumni'
   year: '2024-03/2025-12'
+  end_year: '2025'
   name: 'Rohini Chakraborty'
-  position: 'Data curation'
+  position:
+    - 'Data curation'
   image: rohini.png
   orcid:
   repository: 'https://github.com/rohinichakraborty'
@@ -246,8 +285,10 @@
 - id: 'rohit'
   status: 'alumni'
   year: '2024-05/2025-12'
+  end_year: '2025'
   name: 'Rohit Chakraborty'
-  position: 'Data curation'
+  position:
+    - 'Data curation'
   image: rohit.png
   orcid:
   repository: 'https://github.com/Rohit-Chakraborty'
@@ -257,8 +298,10 @@
 - id: 'emre'
   status: 'alumni'
   year: '2025-05/2025-08'
+  end_year: '2025'
   name: 'Emre Hikmet'
-  position: 'Google Summer of Code (GSOC) 2025'
+  position:
+    - 'Google Summer of Code (GSOC) 2025'
   image: emre.jpg
   orcid:
   repository: 'https://github.com/kyxhik'
@@ -268,8 +311,10 @@
 - id: 'michael_gaas'
   status: 'alumni'
   year: '2025-05/2025-08'
+  end_year: '2025'
   name: 'Michael Gaas'
-  position: 'Google Summer of Code (GSOC) 2025'
+  position:
+    - 'Google Summer of Code (GSOC) 2025'
   image: michael_gaas.png
   orcid:
   repository: 'https://github.com/xts-Michi'
@@ -279,8 +324,10 @@
 - id: 'luca'
   status: 'alumni'
   year: '2023-09/2024-01'
+  end_year: '2024'
   name: 'Luca Samuel Sawady'
-  position: 'Internship'
+  position:
+    - 'Internship'
   image: luca.png
   orcid:
   repository: 'https://github.com/SamLuca'
@@ -291,8 +338,10 @@
 - id: 'jennesse'
   status: 'alumni'
   year: '2024-08/2024-11'
+  end_year: '2024'
   name: 'Jennesse Alejandro'
-  position: 'Humboldt-Internship student 2024 (Brown University)'
+  position:
+    - 'Humboldt-Internship student 2024 (Brown University)'
   image: jennesse.jpg
   orcid:
   repository: 'https://github.com/jen-ne-sse'
@@ -302,8 +351,11 @@
 - id: 'deepa'
   status: 'alumni'
   year: '2023-2024'
+  end_year: '2024'
   name: 'Deepa Maheshvare'
-  position: 'Ph.D. student (internship), Humboldt-Internship student 2024'
+  position:
+    - 'Ph.D. student (internship)'
+    - 'Humboldt-Internship student 2024'
   image: deepa.png
   orcid:
   repository: 'https://github.com/DeepaMahm'
@@ -313,8 +365,11 @@
 - id: 'stemllb'
   status: 'alumni'
   year: '2022-2024'
+  end_year: '2024'
   name: 'Beatrice Stemmer Mallol'
-  position: 'Bachelor student, student assistant'
+  position:
+    - 'Bachelor student'
+    - 'student assistant'
   image: stemllb.png
   orcid:
   repository: 'https://github.com/stemllb'
@@ -324,8 +379,10 @@
 - id: 'abhinav'
   status: 'alumni'
   year: '2025-01/2025-03'
+  end_year: '2025'
   name: 'Abhinav Mishra'
-  position: 'Master Internship'
+  position:
+    - 'Master Internship'
   image: abhinav.png
   orcid:
   repository: 'https://github.com/bibymaths'
@@ -335,8 +392,10 @@
 - id: 'yusuf'
   status: 'alumni'
   year: '2024-04 - 2025-01'
+  end_year: '2025'
   name: 'Yusuf Ali Kulanoglu'
-  position: 'Study project and Bachelor thesis Biophysics'
+  position:
+    - 'Study project and Bachelor thesis Biophysics'
   image: yusuf.png
   orcid:
   repository: 'https://github.com/ykulanoglu'
@@ -346,8 +405,10 @@
 - id: 'vera'
   status: 'alumni'
   year: '2024-07/2024-09'
+  end_year: '2024'
   name: 'Vera Tereshchuk'
-  position: 'Humboldt-Internship student 2024'
+  position:
+    - 'Humboldt-Internship student 2024'
   image: vera.jpg
   orcid:
   repository: 'https://github.com/tereshchuk1'
@@ -357,8 +418,10 @@
 - id: 'samira'
   status: 'alumni'
   year: '2024-08/2024-09'
+  end_year: '2024'
   name: 'Samira Eissazedeh'
-  position: 'ERASMUS'
+  position:
+    - 'ERASMUS'
   image: samira.png
   orcid:
   repository: https://github.com/47857078
@@ -368,8 +431,12 @@
 - id: 'jonaspk98'
   status: 'alumni'
   year: '2022-2024'
+  end_year: '2024'
   name: 'Jonas Küttner'
-  position: 'Master project, Master student, QuaLiPerF'
+  position:
+    - 'Master project'
+    - 'Master student'
+    - 'QuaLiPerF'
   image: jonaspk98.png
   orcid:
   repository: 'https://github.com/jonaspk98'
@@ -379,8 +446,10 @@
 - id: 'prerna'
   status: 'alumni'
   year: '2024-05/2024-08'
+  end_year: '2024'
   name: 'Prerna Parakkat'
-  position: 'Humboldt-Internship student 2024'
+  position:
+    - 'Humboldt-Internship student 2024'
   image: prerna.jpg
   orcid:
   repository: 'https://github.com/prerna2023'
@@ -390,8 +459,10 @@
 - id: 'afruja'
   status: 'alumni'
   year: '2022-2024'
+  end_year: '2024'
   name: 'Afruja Hossain'
-  position: 'Bachelor student'
+  position:
+    - 'Bachelor student'
   image: afruja.png
   orcid:
   repository: 'https://github.com/afruja-h'
@@ -401,8 +472,10 @@
 - id: 'hannah'
   status: 'alumni'
   year: '2023-08/2023-10'
+  end_year: '2023'
   name: 'Hannah Menghis'
-  position: 'Humboldt Internship Student (Brown University)'
+  position:
+    - 'Humboldt Internship Student (Brown University)'
   image: hannah.png
   orcid:
   repository: 'https://github.com/hannah3menghis'
@@ -412,8 +485,10 @@
 - id: 'huelya'
   status: 'alumni'
   year: '2023-10/2023-12'
+  end_year: '2023'
   name: 'Hülya Karaboğa'
-  position: 'ERASMUS'
+  position:
+    - 'ERASMUS'
   image: huelya.png
   orcid:
   repository:
@@ -423,8 +498,10 @@
 - id: 'frances'
   status: 'alumni'
   year: '2023-03/2023-12'
+  end_year: '2023'
   name: 'Frances Okibedi'
-  position: 'Internship'
+  position:
+    - 'Internship'
   image: frances.png
   orcid:
   repository: 'https://github.com/fuokibedi'
@@ -434,9 +511,11 @@
 - id: 'sankha'
   status: 'alumni'
   year: '2022-11/2023-05'
+  end_year: '2023'
   name: 'Sankha Das'
   affiliation: 'Birla Institute of Technology and Science Pilani'
-  position: 'Research Internship'
+  position:
+    - 'Research Internship'
   image: 'sankha.png'
   orcid:
   repository: 'https://github.com/sankha555'
@@ -446,8 +525,10 @@
 - id: 'xenia'
   status: 'alumni'
   year: '2023-07/2023-09'
+  end_year: '2023'
   name: 'Xenia Petukhova'
-  position: 'Humboldt Internship Student 2023'
+  position:
+    - 'Humboldt Internship Student 2023'
   image: xenia.png
   orcid:
   repository: 'https://github.com/dzinty'
@@ -457,8 +538,10 @@
 - id: 'samira'
   status: 'alumni'
   year: '2023-09/2023-12'
+  end_year: '2023'
   name: 'Samira Eissazedeh'
-  position: 'ERASMUS'
+  position:
+    - 'ERASMUS'
   image: samira.png
   orcid:
   repository: https://github.com/47857078
@@ -469,8 +552,10 @@
 - id: 'zhara'
   status: 'alumni'
   year: '2023-07/2023-09'
+  end_year: '2023'
   name: 'Zahra Bahri'
-  position: 'Humboldt Internship Student 2023'
+  position:
+    - 'Humboldt Internship Student 2023'
   image: zhara.png
   orcid:
   repository: 'https://github.com/Rain-marine'
@@ -480,8 +565,13 @@
 - id: 'flobar'
   status: 'alumni'
   year: '2020-'
+  end_year: '2020'
   name: 'Florian Bartsch'
-  position: 'Bachelor student, Master project, student assistant, Master project'
+  position:
+    - 'Bachelor student'
+    - 'Master project'
+    - 'student assistant'
+    - 'Master project'
   image: flobar.png
   orcid:
   repository: 'https://github.com/FloBar'
@@ -491,8 +581,12 @@
 - id: 'adrian'
   status: 'alumni'
   year: '2020-2023'
+  end_year: '2023'
   name: 'Adrian Köller'
-  position: 'Bachelor student, Master project, student assistant'
+  position:
+    - 'Bachelor student'
+    - 'Master project'
+    - 'student assistant'
   image: adrian.png
   orcid:
   repository: 'https://github.com/adriankl'
@@ -502,8 +596,10 @@
 - id: 'nurudeen'
   status: 'alumni'
   year: '2023-03/2023-05'
+  end_year: '2023'
   name: 'Nurudeen Sojimade'
-  position: 'Internship'
+  position:
+    - 'Internship'
   image: "nurudeen.png"
   orcid:
   repository: 'https://github.com/Soji4eva'
@@ -513,8 +609,10 @@
 - id: 'janek'
   status: 'alumni'
   year: '2017-2023'
+  end_year: '2023'
   name: 'Jan Grzegorzewski'
-  position: 'Ph.D. student'
+  position:
+    - 'Ph.D. student'
   image: grzegorzewski.png
   orcid: '0000-0002-4588-4925'
   repository: 'https://github.com/janekg89/'
@@ -524,8 +622,10 @@
 - id: 'sophie'
   status: 'alumni'
   year: '2023-05/2023-06'
+  end_year: '2023'
   name: 'Sophie Silberhorn'
-  position: 'Internship'
+  position:
+    - 'Internship'
   image: sophie.png
   orcid:
   repository: 'https://github.com/SophieSilberhorn'
@@ -535,8 +635,10 @@
 - id: 'paula'
   status: 'alumni'
   year: '2020-2022'
+  end_year: '2022'
   name: 'Paula Ogata'
-  position: 'Humboldt Internship Student'
+  position:
+    - 'Humboldt Internship Student'
   image: paula.png
   orcid:
   repository: 'https://github.com/paula-ogata'
@@ -547,8 +649,10 @@
 - id: 'deepa'
   status: 'alumni'
   year: '2019-2023'
+  end_year: '2023'
   name: 'Deepa Maheshvare'
-  position: 'Ph.D. student (internship)'
+  position:
+    - 'Ph.D. student (internship)'
   image: deepa.png
   orcid:
   repository: 'https://github.com/DeepaMahm'
@@ -559,8 +663,10 @@
 - id: 'brandhorst'
   status: 'alumni'
   year: '2019-2022'
+  end_year: '2022'
   name: 'Janosch Brandhorst'
-  position: 'Student assistant'
+  position:
+    - 'Student assistant'
   image: brandhorst.png
   orcid:
   repository: 'https://github.com/JBrandh'
@@ -570,8 +676,10 @@
 - id: 'balci'
   status: 'alumni'
   year: '2020-2021'
+  end_year: '2021'
   name: 'Sükrü Balci'
-  position: 'Bachelor student'
+  position:
+    - 'Bachelor student'
   image: balci.png
   orcid:
   repository: 'https://github.com/SukruBalci'
@@ -581,9 +689,11 @@
 - id: 'sankha'
   status: 'alumni'
   year: '2021'
+  end_year: '2021'
   name: 'Sankha Das'
   affiliation: 'Dhirubhai Institute of ICT'
-  position: 'Google summer of code student (2021)'
+  position:
+    - 'Google summer of code student (2021)'
   image: 'sankha.png'
   orcid:
   repository: 'https://github.com/sankha555'
@@ -594,8 +704,10 @@
 - id: 'yannick'
   status: 'alumni'
   year: '2019-2021'
+  end_year: '2021'
   name: 'Yannick Duport'
-  position: 'Bachelor student'
+  position:
+    - 'Bachelor student'
   image: yannick.png
   orcid:
   repository: 'https://github.com/YannickDuport'
@@ -605,8 +717,10 @@
 - id: 'danny'
   status: 'alumni'
   year: '2020-2021'
+  end_year: '2021'
   name: 'Danny Ke'
-  position: 'Humboldt Internship Student 2020'
+  position:
+    - 'Humboldt Internship Student 2020'
   image: danny.png
   orcid:
   repository: 'https://github.com/dannythekey'
@@ -617,8 +731,10 @@
 - id: 'sara'
   status: 'alumni'
   year: '2020'
+  end_year: '2020'
   name: 'Sara de Angelis'
-  position: 'Humboldt Internship Student 2020'
+  position:
+    - 'Humboldt Internship Student 2020'
   image: sara.png
   orcid:
   repository: 'https://github.com/SaraD-hub'
@@ -629,9 +745,11 @@
 - id: 'hemant'
   status: 'alumni'
   year: '2020'
+  end_year: '2020'
   name: 'Hemant Yadav'
   affiliation: 'Indian Institute of Technology, Roorkee'
-  position: 'Google summer of code student (2020)'
+  position:
+    - 'Google summer of code student (2020)'
   image: hemant.png
   orcid:
   repository: 'https://github.com/hemant27031999/cobrapy'
@@ -642,9 +760,11 @@
 - id: 'hemil'
   status: 'alumni'
   year: '2020'
+  end_year: '2020'
   name: 'Hemil Panchiwala'
   affiliation: 'Indian Institute of Technology, Roorkee'
-  position: 'Google summer of code student (2020)'
+  position:
+    - 'Google summer of code student (2020)'
   image: hemil.png
   orcid:
   repository: 'https://github.com/hemilpanchiwala/SBSCL'
@@ -655,9 +775,11 @@
 - id: 'kaustubh'
   status: 'alumni'
   year: '2019'
+  end_year: '2019'
   name: 'Kaustubh Trivedi'
   affiliation: 'Indian Institute of Technology, Roorkee'
-  position: 'Google summer of code student (2019)'
+  position:
+    - 'Google summer of code student (2019)'
   image: kaustubh.png
   orcid:
   repository: 'https://github.com/codekaust'
@@ -668,8 +790,10 @@
 - id: 'patrick'
   status: 'alumni'
   year: '2017-2019'
+  end_year: '2019'
   name: 'Patrick Pett'
-  position: 'Ph.D. student (mentoring)'
+  position:
+    - 'Ph.D. student (mentoring)'
   image: pett.png
   orcid:
   repository: 'https://bitbucket.org/JPatrickP/'
@@ -680,8 +804,10 @@
 - id: 'schulte'
   status: 'alumni'
   year: '2018'
+  end_year: '2018'
   name: 'Roman Schulte'
-  position: 'Bachelor thesis'
+  position:
+    - 'Bachelor thesis'
   image: schulte.png
   orcid:
   repository: 'https://github.com/anfark'
@@ -691,8 +817,10 @@
 - id: 'shah'
   status: 'alumni'
   year: '2018'
+  end_year: '2018'
   name: 'Shalin Shah'
-  position: 'Google Summer of Code 2018'
+  position:
+    - 'Google Summer of Code 2018'
   image: 'shah.png'
   orcid:
   repository: 'https://github.com/shalinshah1993/SBSCL'
@@ -702,8 +830,10 @@
 - id: 'yamada'
   status: 'alumni'
   year: '2017'
+  end_year: '2017'
   name: 'Takahiro Yamada'
-  position: 'Google Summer of Code 2017'
+  position:
+    - 'Google Summer of Code 2017'
   image: 'yamada.png'
   orcid:
   repository: 'https://github.com/TakahiroYamada/GSOC2017_SBMLModelAnalysisWebApp'
@@ -714,8 +844,10 @@
 - id: 'dimitra'
   status: 'alumni'
   year: '2016-2017'
+  end_year: '2017'
   name: 'Dimitra Eleftheriadou'
-  position: 'Student assistant'
+  position:
+    - 'Student assistant'
   image: eleftheriadou.png
   orcid:
   repository:

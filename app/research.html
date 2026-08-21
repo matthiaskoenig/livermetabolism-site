@@ -3,9 +3,18 @@ layout: page
 title: Research
 permalink: /research/
 sectionid: research
+subnav:
+  - id: software
+    label: Software
+  - id: funding
+    label: Funding
+  - id: editors
+    label: Editors
 ---
 
-<h2>Software</h2>
+{% include subnav.html items=page.subnav %}
+
+<h2 id="software">Software</h2>
 <p>
     We are actively involved in the standardization and reproducibility efforts in Systems Biology and Systems Medicine.
 </p>
@@ -29,7 +38,7 @@ sectionid: research
 </table>
 </div>
 
-<h2>Funding</h2>
+<h2 id="funding">Funding</h2>
 <div class="table-responsive">
 <table class="table table-hover">
     <tr>
@@ -72,7 +81,7 @@ sectionid: research
     This work was supported by the BMBF-funded <a href="https://www.denbi.de/">de.NBI</a> Cloud within the German Network for Bioinformatics Infrastructure (de.NBI) (031A537B, 031A533A, 031A538A, 031A533B, 031A535A, 031A537C, 031A534A, 031A532B).
 </p>
 
-<h2>Editors</h2>
+<h2 id="editors">Editors</h2>
 <p>
     We are actively involved in the standardization and reproducibility efforts in Systems Biology and Systems Medicine.
 </p>

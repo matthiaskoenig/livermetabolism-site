@@ -249,6 +249,152 @@ h3 {
   }
 }
 
+// compact card grid for the current-members roster (see people.html)
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+.member-card {
+  display: flex;
+  gap: 0.8em;
+  padding: 0.8em;
+  border: 1px solid $gray-lighter;
+  border-radius: 6px;
+  background-color: $body-bg;
+  transition: box-shadow 0.15s ease;
+
+  &:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .member-photo {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .member-info {
+    min-width: 0;
+
+    strong {
+      display: block;
+      font-family: $font-serif-display;
+      color: $brand-primary;
+    }
+
+    p {
+      margin: 0.3em 0 0;
+      font-size: 0.85em;
+      color: $gray-dark;
+    }
+  }
+
+  .member-links {
+    margin-top: 0.4em;
+
+    a {
+      margin-right: 0.6em;
+    }
+  }
+}
+
+// dense card grid for the alumni roster (see people.html)
+.alumni-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.6em;
+  margin-bottom: 2em;
+}
+
+.alumni-card {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.5em 0.6em;
+  border: 1px solid $gray-lighter;
+  border-radius: 6px;
+  background-color: $body-bg;
+  transition: box-shadow 0.15s ease;
+
+  &:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .alumni-photo {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .alumni-info {
+    min-width: 0;
+
+    strong {
+      display: block;
+      font-family: $font-serif-display;
+      font-size: 0.9em;
+      color: $brand-primary;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .person-position {
+      font-size: 0.75em;
+      margin-bottom: 0;
+    }
+  }
+}
+
+// sticky in-page jump menu to the sections of a page (see people.html,
+// research.html)
+.subnav {
+  position: sticky;
+  top: $navbar-height + $navbar-margin-bottom;
+  z-index: 10;
+  background-color: $body-bg;
+  border-bottom: 1px solid $gray-lighter;
+  margin-bottom: 1.5em;
+  padding: 0.6em 0;
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    display: inline-block;
+    font-family: $font-family-sans-serif;
+    font-weight: 600;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: $gray-dark;
+    text-decoration: none;
+    padding-bottom: 0.2em;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+
+    &:hover,
+    &:focus {
+      color: $brand-success;
+      border-bottom-color: $brand-success;
+      text-decoration: none;
+    }
+  }
+}
+
 // compact, uppercase "journal section" style year dividers used to
 // group the publication lists (see publications.html / index.html)
 .year-heading {
