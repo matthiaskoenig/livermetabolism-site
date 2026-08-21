@@ -53,7 +53,7 @@
 
 - id: 'mariia_babaeva'
   status: 'current'
-  year: '2025-04-2026'
+  year: '2025-04/2026'
   name: 'Mariia Babaeva'
   position:
     - 'Master project'
@@ -62,7 +62,7 @@
   orcid: "0009-0007-6659-7638"
   repository: 'https://github.com/icalledmyselfmoon'
   homepage:
-  description: 'Mariia workes on a physiologically based model of lisinopril. Key questions are the effect of hepatic and renal disease on lisinopril pharmacokinetics and pharmacodynamics.'
+  description: 'Mariia works on a physiologically based model of lisinopril. Key questions are the effect of hepatic and renal disease on lisinopril pharmacokinetics and pharmacodynamics.'
 
 - id: 'amanda'
   status: 'current'
@@ -105,12 +105,12 @@
   year: '2026-04/2026-11'
   name: 'Shelee Bedón'
   position:
-    - 'Internship Project'
+    - 'Internship project'
   image: shelee.jpg
   orcid: "0009-0005-9147-0028"
   repository: 'https://github.com/Shelee97'
   homepage:
-  description: "Shelee is developing a physiologically based pharmacokinetic (PBPK) model of the multikinase inhibitor lenvatinib to better understand its absorption, distribution, metabolism, and excretion. The project focuses on characterizing interindividual variability in treatment response, with particular emphasis on hepatic metabolism, drug–drug interactions, and the impact of liver function in patients with hepatocellular carcinoma."
+  description: "Shelee is developing a physiologically based pharmacokinetic (PBPK) model of the multikinase inhibitor lenvatinib to better understand its absorption, distribution, metabolism, and excretion. The project focuses on characterizing interindividual variability in treatment response, with particular emphasis on hepatic metabolism, drug-drug interactions, and the impact of liver function in patients with hepatocellular carcinoma."
 
 - id: 'linh'
   status: 'current'
@@ -160,7 +160,7 @@
   orcid: "0009-0003-3110-3440"
   repository: 'https://github.com/monajes'
   homepage:
-  description: "Monika is developing a PBPK model of immune suppressent rapamycin (sirolimus) as part of our contribution to the Immune Digital Twin (IDT)."
+  description: "Monika is developing a PBPK model of immune suppressant rapamycin (sirolimus) as part of our contribution to the Immune Digital Twin (IDT)."
 
 
 - id: 'juanpablo'
@@ -187,7 +187,7 @@
   orcid:
   repository: 'https://github.com/ennietensil'
   homepage:
-  description: 'Ennie develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of the direct angiotensin II receptor (ARB) inhibitor losartan. The objective is to enhance our understanding of the underlying causes of intraindividual variability in hyptertension treatment with ARB inhibitors, e.g., differences in hepatorenal function and CYPC29 genotype.'
+  description: 'Ennie develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of the direct angiotensin II receptor (ARB) inhibitor losartan. The objective is to enhance our understanding of the underlying causes of intraindividual variability in hypertension treatment with ARB inhibitors, e.g., differences in hepatorenal function and CYP2C9 genotype.'
 
 - id: 'elisabetta'
   status: 'alumni'
@@ -196,7 +196,7 @@
   name: 'Elisabetta Casabianca'
   position:
     - 'ERASMUS'
-    - 'master thesis'
+    - 'Master thesis'
   image: elisabetta.jpg
   orcid:
   repository: 'https://github.com/elisabettacasabianca11'
@@ -205,12 +205,12 @@
 
 - id: 'helen'
   status: 'alumni'
-  year: '2021-2025/09'
+  year: '2021/2025-09'
   end_year: '2025'
   name: 'Helen Leal Pujol'
   position:
     - 'Bachelor student'
-    - 'student assistant'
+    - 'Student assistant'
   image: helen.png
   orcid:
   repository: 'https://github.com/Lepujolh'
@@ -234,7 +234,7 @@
   status: 'alumni'
   year: '2025-05/2025-08'
   end_year: '2025'
-  name: 'alumni'
+  name: 'Minjun Kim'
   position:
     - 'Humboldt Internship Project (HIP)'
   image: kim.jpg
@@ -306,7 +306,7 @@
   orcid:
   repository: 'https://github.com/kyxhik'
   homepage:
-  description: "Hikmet works on CySBML Reloaded: Smarter, Simpler, Automated focuses on upgrading CySBML — a Cytoscape app for visualizing computational models encoded in SBML. The project will enhance usability, improve stability, and introduce automation features, making it easier for researchers to explore, validate, and interact with complex biomedical models through an intuitive and streamlined interface based on network visualization."
+  description: "Emre works on CySBML Reloaded: Smarter, Simpler, Automated, a project focused on upgrading CySBML — a Cytoscape app for visualizing computational models encoded in SBML. The project will enhance usability, improve stability, and introduce automation features, making it easier for researchers to explore, validate, and interact with complex biomedical models through an intuitive and streamlined interface based on network visualization."
 
 - id: 'michael_gaas'
   status: 'alumni'
@@ -341,7 +341,7 @@
   end_year: '2024'
   name: 'Jennesse Alejandro'
   position:
-    - 'Humboldt-Internship student 2024 (Brown University)'
+    - 'Humboldt Internship Student 2024 (Brown University)'
   image: jennesse.jpg
   orcid:
   repository: 'https://github.com/jen-ne-sse'
@@ -355,7 +355,7 @@
   name: 'Deepa Maheshvare'
   position:
     - 'Ph.D. student (internship)'
-    - 'Humboldt-Internship student 2024'
+    - 'Humboldt Internship Student 2024'
   image: deepa.png
   orcid:
   repository: 'https://github.com/DeepaMahm'
@@ -369,7 +369,7 @@
   name: 'Beatrice Stemmer Mallol'
   position:
     - 'Bachelor student'
-    - 'student assistant'
+    - 'Student assistant'
   image: stemllb.png
   orcid:
   repository: 'https://github.com/stemllb'
@@ -391,7 +391,7 @@
 
 - id: 'yusuf'
   status: 'alumni'
-  year: '2024-04 - 2025-01'
+  year: '2024-04/2025-01'
   end_year: '2025'
   name: 'Yusuf Ali Kulanoglu'
   position:
@@ -408,7 +408,7 @@
   end_year: '2024'
   name: 'Vera Tereshchuk'
   position:
-    - 'Humboldt-Internship student 2024'
+    - 'Humboldt Internship Student 2024'
   image: vera.jpg
   orcid:
   repository: 'https://github.com/tereshchuk1'
@@ -441,7 +441,7 @@
   orcid:
   repository: 'https://github.com/jonaspk98'
   homepage:
-  description: 'Jonas worked on a physiologically based model of chlorzoxazone for hepatic CYP2E1 phenotyping. Key questions are the effect of CYP2E1 induction/inhibition and zonation on chlorzoxazone phenotyping. Jonas now analyses whole-slide images of the the liver to evaluate zonation patterns in the the liver using digital pathology methods. In his master theses Jonas developed methods for quantitative image analysis of hepatic zonation in cytochrome P450 and steatosis using whole slide scans.'
+  description: 'Jonas worked on a physiologically based model of chlorzoxazone for hepatic CYP2E1 phenotyping. Key questions are the effect of CYP2E1 induction/inhibition and zonation on chlorzoxazone phenotyping. Jonas now analyses whole-slide images of the liver to evaluate zonation patterns in the liver using digital pathology methods. In his master thesis Jonas developed methods for quantitative image analysis of hepatic zonation in cytochrome P450 and steatosis using whole slide scans.'
 
 - id: 'prerna'
   status: 'alumni'
@@ -449,7 +449,7 @@
   end_year: '2024'
   name: 'Prerna Parakkat'
   position:
-    - 'Humboldt-Internship student 2024'
+    - 'Humboldt Internship Student 2024'
   image: prerna.jpg
   orcid:
   repository: 'https://github.com/prerna2023'
@@ -506,7 +506,7 @@
   orcid:
   repository: 'https://github.com/fuokibedi'
   homepage:
-  description: 'Frances works a physiologically based pharmacokinetic (PBPK) model of sorafenib for systemic treatment of hepatocellular carcinoma (HCC). Key questions are to study the effect of OATP activity and CYP3A4 inhibition on sorafenib pharmacokinetics and efficiency.'
+  description: 'Frances works on a physiologically based pharmacokinetic (PBPK) model of sorafenib for systemic treatment of hepatocellular carcinoma (HCC). Key questions are to study the effect of OATP activity and CYP3A4 inhibition on sorafenib pharmacokinetics and efficiency.'
 
 - id: 'sankha'
   status: 'alumni'
@@ -569,8 +569,7 @@
   name: 'Florian Bartsch'
   position:
     - 'Bachelor student'
-    - 'Master project'
-    - 'student assistant'
+    - 'Student assistant'
     - 'Master project'
   image: flobar.png
   orcid:
@@ -586,7 +585,7 @@
   position:
     - 'Bachelor student'
     - 'Master project'
-    - 'student assistant'
+    - 'Student assistant'
   image: adrian.png
   orcid:
   repository: 'https://github.com/adriankl'
@@ -604,7 +603,7 @@
   orcid:
   repository: 'https://github.com/Soji4eva'
   homepage:
-  description: 'Nurudeen works a physiologically based pharmacokinetic (PBPK) model of the contrast agent Gd-EOB-DTPA. Key questions are to study the effect of hepato-renal impairment, perfusion and OATP activity on Gd-EOB-DTPA pharmacokinetics.'
+  description: 'Nurudeen works on a physiologically based pharmacokinetic (PBPK) model of the contrast agent Gd-EOB-DTPA. Key questions are to study the effect of hepatorenal impairment, perfusion and OATP activity on Gd-EOB-DTPA pharmacokinetics.'
 
 - id: 'janek'
   status: 'alumni'
@@ -684,7 +683,7 @@
   orcid:
   repository: 'https://github.com/SukruBalci'
   homepage:
-  description: 'Sükrü Balci works on a physiological based model of omeprazole. Key questions are the effect of omeprazole formulation and dosing on the pharmacodynamic effects of omeprazole.'
+  description: 'Sükrü Balci works on a physiologically based model of omeprazole. Key questions are the effect of omeprazole formulation and dosing on the pharmacodynamic effects of omeprazole.'
 
 - id: 'sankha'
   status: 'alumni'
@@ -693,7 +692,7 @@
   name: 'Sankha Das'
   affiliation: 'Dhirubhai Institute of ICT'
   position:
-    - 'Google summer of code student (2021)'
+    - 'Google Summer of Code Student (2021)'
   image: 'sankha.png'
   orcid:
   repository: 'https://github.com/sankha555'
@@ -712,7 +711,7 @@
   orcid:
   repository: 'https://github.com/YannickDuport'
   homepage:
-  description: 'Yannick Duport works on a physiological based model of midazolam clearance. Key questions are the effect of inhibitors and inducers on the metabolism of midazolam.'
+  description: 'Yannick Duport works on a physiologically based model of midazolam clearance. Key questions are the effect of inhibitors and inducers on the metabolism of midazolam.'
 
 - id: 'danny'
   status: 'alumni'
@@ -725,7 +724,7 @@
   orcid:
   repository: 'https://github.com/dannythekey'
   homepage:
-  description: 'Danny Ke works on a physiological based model of benzodiazepines.
+  description: 'Danny Ke works on a physiologically based model of benzodiazepines.
   Key questions are the effect of genetic variance on clearance of diazepam.'
 
 - id: 'sara'
@@ -739,7 +738,7 @@
   orcid:
   repository: 'https://github.com/SaraD-hub'
   homepage:
-  description: 'Sara de Angelis works on a physiological based model of torasemide.
+  description: 'Sara de Angelis works on a physiologically based model of torasemide.
   Key questions are the effect of sex on torasemide pharmacokinetics and pharmacodynamics.'
 
 - id: 'hemant'
@@ -749,7 +748,7 @@
   name: 'Hemant Yadav'
   affiliation: 'Indian Institute of Technology, Roorkee'
   position:
-    - 'Google summer of code student (2020)'
+    - 'Google Summer of Code Student (2020)'
   image: hemant.png
   orcid:
   repository: 'https://github.com/hemant27031999/cobrapy'
@@ -764,7 +763,7 @@
   name: 'Hemil Panchiwala'
   affiliation: 'Indian Institute of Technology, Roorkee'
   position:
-    - 'Google summer of code student (2020)'
+    - 'Google Summer of Code Student (2020)'
   image: hemil.png
   orcid:
   repository: 'https://github.com/hemilpanchiwala/SBSCL'
@@ -779,7 +778,7 @@
   name: 'Kaustubh Trivedi'
   affiliation: 'Indian Institute of Technology, Roorkee'
   position:
-    - 'Google summer of code student (2019)'
+    - 'Google Summer of Code Student (2019)'
   image: kaustubh.png
   orcid:
   repository: 'https://github.com/codekaust'
