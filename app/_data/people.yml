@@ -122,7 +122,7 @@
   description: "Sandeep is developing a physiologically based pharmacokinetic (PBPK) model of the multi-kinase inhibitor regorafenib to better understand its absorption, distribution, metabolism, and excretion. The project focuses on characterizing dose–exposure relationships and interindividual variability, with particular emphasis on hepatic metabolism, active metabolites, organ impairment, and clinically relevant factors affecting regorafenib pharmacokinetics in cancer therapy."
 
 - id: 'antonio'
-  status: 'alumni'
+  status: 'current'
   year: '2023-10/2025-12'
   name: 'Antonio Aquiles Alvarez Aguilar'
   position: 'Master thesis'
@@ -203,7 +203,7 @@
   status: 'alumni'
   year: '2025-05/2025-08'
   name: 'alumni'
-  position: 'Humboldt Internship Project (HIP) 2025'
+  position: 'Humboldt Internship Project (HIP)'
   image: kim.jpg
   orcid:
   repository: 'https://github.com/unfulw'

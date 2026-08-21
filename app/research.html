@@ -1,0 +1,97 @@
+---
+layout: page
+title: Research
+permalink: /research/
+sectionid: research
+---
+
+<h2>Software</h2>
+<p>
+    We are actively involved in the standardization and reproducibility efforts in Systems Biology and Systems Medicine.
+</p>
+<div class="table-responsive">
+<table class="table table-hover">
+    {% for software in site.data.software %}
+    <tr>
+        <td><b>{{ software.term }}</b></td>
+        <td>
+            {% if software.homepage %}
+            <a href="{{ software.homepage }}"><img src="../img/project.png" title="Project homepage" height="20"/></a>
+            {% endif %}
+            {% if software.repository %}
+            <a href="{{ software.repository }}"><img src="../img/repository.png" title="Repository homepage" height="20"/></a>
+            {% endif %}
+        </td>
+        <td><a href="{{ software.homepage }}"><img src="../img/software/{{ software.image }}" title="{{ software.name }}" height="35"/></a></td>
+        <td><strong>{{ software.name }} - {{ software.title }}</strong> <br />{{ software.description }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+<h2>Funding</h2>
+<div class="table-responsive">
+<table class="table table-hover">
+    <tr>
+        <th>Title</th>
+        <th>Start</th>
+        <th>End</th>
+        <th>Role</th>
+        <th></th>
+        <th>Funder</th>
+        <th>Grant Number</th>
+        <th>Project</th>
+    </tr>
+    {% for funding in site.data.funding %}
+    <tr>
+        <td>
+            <b>{{ funding.title }}</b>
+        </td>
+        <td>{{ funding.start }}</td>
+        <td>{{ funding.end }}</td>
+        <td>
+            {{ funding.role }}
+        </td>
+        <td>
+            <a href="{{ funding.funder_link }}"><img src="../img/{{funding.funder_logo}}" title="{{funding.funder}}" width="100"/></a>
+        </td>
+        <td>
+            {{ funding.funder }}
+        </td>
+        <td>
+            {{ funding.grant }}
+        </td>
+        <td>
+            <a href="{{ funding.project }}">{{ funding.project }}</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+<p>
+    This work was supported by the BMBF-funded <a href="https://www.denbi.de/">de.NBI</a> Cloud within the German Network for Bioinformatics Infrastructure (de.NBI) (031A537B, 031A533A, 031A538A, 031A533B, 031A535A, 031A537C, 031A534A, 031A532B).
+</p>
+
+<h2>Editors</h2>
+<p>
+    We are actively involved in the standardization and reproducibility efforts in Systems Biology and Systems Medicine.
+</p>
+<div class="table-responsive">
+<table class="table table-hover">
+    {% for editor in site.data.editors %}
+    <tr>
+        <td><b>{{ editor.term }}</b></td>
+        <td>
+            {% if editor.homepage %}
+            <a href="{{ editor.homepage }}"><img src="../img/project.png" title="Project homepage" height="20"/></a>
+            {% endif %}
+            {% if editor.repository %}
+            <a href="{{ editor.repository }}"><img src="../img/repository.png" title="Repository homepage" height="20"/></a>
+            {% endif %}
+        </td>
+        <td><a href="{{ editor.homepage }}"><img src="../img/editors/{{ editor.image }}" title="{{ editor.name }}" height="35"/></a></td>
+        <td><strong>{{ editor.name }}</strong> <br />{{ editor.description }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>

@@ -8,27 +8,33 @@
         <span class="icon-bar"></span>
       </button>
             <a class="navbar-brand" href="{{ site.baseurl }}/">
-                <span><img src="{{site.baseurl}}/img/logonav.png"></span>&nbsp;König Lab
+                <svg class="brand-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                    <polygon points="50,4 91,27 91,73 50,96 9,73 9,27" fill="none" stroke="#18BC9C" stroke-width="5"/>
+                    <g stroke="#EAF0F1" stroke-width="3" fill="none">
+                        <line x1="50" y1="30" x2="30" y2="55"/>
+                        <line x1="50" y1="30" x2="70" y2="55"/>
+                        <line x1="30" y1="55" x2="50" y2="75"/>
+                        <line x1="70" y1="55" x2="50" y2="75"/>
+                        <line x1="30" y1="55" x2="70" y2="55"/>
+                    </g>
+                    <circle cx="50" cy="30" r="7" fill="#18BC9C"/>
+                    <circle cx="30" cy="55" r="7" fill="#EAF0F1"/>
+                    <circle cx="70" cy="55" r="7" fill="#EAF0F1"/>
+                    <circle cx="50" cy="75" r="7" fill="#18BC9C"/>
+                </svg>
+                <span class="brand-word">König Lab</span>
             </a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li {% if page.sectionid=='publications' %} class="active" {% endif %}><a href="{{ "/publications/" | prepend: site.baseurl }}">Publications</a></li>
                 <li {% if page.sectionid=='projects' %} class="active" {% endif %}><a href="{{ "/projects/" | prepend: site.baseurl }}">Projects</a></li>
-                <li {% if page.sectionid=='software' %} class="active" {% endif %}><a href="{{ "/software/" | prepend: site.baseurl }}">Software</a></li>
-                <li {% if page.sectionid=='editors' %} class="active" {% endif %}><a href="{{ "/editors/" | prepend: site.baseurl }}">Editors</a></li>
-                <li {% if page.sectionid=='funding' %} class="active" {% endif %}><a href="{{ "/funding/" | prepend: site.baseurl }}">Funding</a></li>
+                <li {% if page.sectionid=='research' %} class="active" {% endif %}><a href="{{ "/research/" | prepend: site.baseurl }}">Research</a></li>
                 <li {% if page.sectionid=='news' %} class="active" {% endif %}><a href="{{ "/news/" | prepend: site.baseurl }}">News</a></li>
                 <li {% if page.sectionid=='teaching' %} class="active" {% endif %}><a href="{{ "/teaching/" | prepend: site.baseurl }}">Teaching</a></li>
                 <li {% if page.sectionid=='people' %} class="active" {% endif %}><a href="{{ "/people/" | prepend: site.baseurl }}">People</a></li>
                 <li {% if page.sectionid=='positions' %} class="active" {% endif %}><a href="{{ "/positions/" | prepend: site.baseurl }}">Open Positions</a></li>
-                <li {% if page.sectionid=='cv' %} class="active" {% endif %}><a href="{{ "/cv/" | prepend: site.baseurl }}">CV</a></li>
             </ul>
-            <div class="navbar-right">
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ site.git_address }}"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
         </div>
     </div>
 </nav>
