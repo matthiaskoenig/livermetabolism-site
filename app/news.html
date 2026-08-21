@@ -5,47 +5,65 @@ permalink: /news/
 sectionid: news
 ---
 
-<div class="row">
+<div class="tag-filter" id="news-tag-filter">
+    <button type="button" class="tag-filter-btn active" data-tag="all">All</button>
+    <button type="button" class="tag-filter-btn tag-digital-twins" data-tag="Digital Twins">Digital Twins</button>
+    <button type="button" class="tag-filter-btn tag-digital-pathology" data-tag="Digital Pathology">Digital Pathology</button>
+    <button type="button" class="tag-filter-btn tag-pharmacometrics-pbpk" data-tag="Pharmacometrics &amp; PBPK">Pharmacometrics &amp; PBPK</button>
+    <button type="button" class="tag-filter-btn tag-systems-medicine-ai" data-tag="Systems Medicine &amp; AI">Systems Medicine &amp; AI</button>
+    <button type="button" class="tag-filter-btn tag-open-fair-science" data-tag="Open &amp; FAIR Science">Open &amp; FAIR Science</button>
+</div>
+
+<div class="project-grid" id="news-grid">
     {% for news in site.data.news %}
-    <div class="col-md-12">
-        <h4>{{ news.date }}</h4>
-        <h3>{{ news.title }}</h3>
-        <div class="table-responsive">
-        <table class="table table-hover">
-        <tr>
-		<td>
-            {% if news.video %}
-            <div class="video-container">
-                <iframe src="{{ news.video }}"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                </iframe>
+    <div class="project-card" data-tags="{{ news.tags | join: '|' | escape }}">
+        {% if news.image %}
+        <img src="/img/news/{{ news.image }}" alt="{{ news.title }}" class="project-image"/>
+        {% elsif news.video %}
+        <img src="https://img.youtube.com/vi/{{ news.video | split: '/embed/' | last }}/hqdefault.jpg" alt="{{ news.title }}" class="project-image"/>
+        {% endif %}
+        <div class="project-body">
+            <p class="news-date">{{ news.date }}</p>
+            <h3>{{ news.title }}</h3>
+            {% if news.tags %}
+            <div class="tag-list">
+                {% for tag in news.tags %}
+                <span class="tag-badge tag-{{ tag | slugify }}">{{ tag }}</span>
+                {% endfor %}
             </div>
             {% endif %}
-
-
-            {% if news.image %}
-			<img src="/img/news/{{ news.image }}" class="img-responsive" height="100" style="float: left;"/>
+            <p>{{ news.short | strip_html | truncatewords: 30 }}</p>
+            {% if news.link %}
+            <div class="project-links">
+                <span class="project-links-spacer"></span>
+                <a href="{{ news.link }}" target="_blank" rel="noopener noreferrer" title="Read more"><img src="../img/project.png" height="16"/></a>
+            </div>
             {% endif %}
-            {% if news.image2 %}
-            <img src="/img/news/{{ news.image2 }}" class="img-responsive" height="60" style="float: left;"/>
-            {% endif %}
-		</td>
-		<td>
-            <p>
-                {{ news.short }}
-            </p>
-            <p>
-                <a href="{{ news.link }}" target="_blank" rel="noopener noreferrer">{{ news.link }}</a>
-            </p>
-            <p>
-                {{ news.abstract }}
-            </p>
-        </td>
-        </tr>
-        </table>
         </div>
     </div>
     {% endfor %}
 </div>
+
+<script>
+(function () {
+    var buttons = document.querySelectorAll('#news-tag-filter .tag-filter-btn');
+    var cards = document.querySelectorAll('#news-grid .project-card');
+
+    buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            buttons.forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+
+            var tag = btn.getAttribute('data-tag');
+            cards.forEach(function (card) {
+                if (tag === 'all') {
+                    card.style.display = '';
+                    return;
+                }
+                var tags = (card.getAttribute('data-tags') || '').split('|');
+                card.style.display = tags.indexOf(tag) !== -1 ? '' : 'none';
+            });
+        });
+    });
+})();
+</script>
