@@ -381,6 +381,13 @@ h3 {
     background-color: $gray-lighter;
   }
 
+  // shown fully, not cropped (logos on research.html)
+  .project-image-contain {
+    box-sizing: border-box;
+    object-fit: contain;
+    padding: 0.8em;
+  }
+
   .project-body {
     display: flex;
     flex: 1;

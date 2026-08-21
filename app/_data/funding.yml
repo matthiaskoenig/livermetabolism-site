@@ -7,6 +7,9 @@
   start: '10/2025'
   end: '04/2026'
   title: 'X-Student Research Group - Digital Twins in Action: Optimizing Direct Oral Anticoagulant Use'
+  tags:
+    - 'Digital Twins'
+    - 'Pharmacometrics & PBPK'
   role: Recipient
   amount: 1500
   personal_amount: 1500
@@ -25,6 +28,8 @@
   start: '10/2025'
   end: '09/2026'
   title: 'SPP2311 - Startup Funding - SPP-FEMVis: Advancing Open Science with Web-Based FEM Visualization'
+  tags:
+    - 'Open & FAIR Science'
   role: Recipient
   amount: 15000
   personal_amount: 15000
@@ -43,6 +48,8 @@
   start: '2024'
   end: '2025'
   title: 'AlgoNomy - Algorithmic Regulation Before Medical Liability - Advancing Doctor-Patient Autonomy in AI-Driven Healthcare'
+  tags:
+    - 'Systems Medicine & AI'
   role: Co-Investigator
   amount: 10000
   personal_amount: 0
@@ -61,6 +68,8 @@
   start: '01/2024'
   end: '06/2026'
   title: 'Open Science Ambassador'
+  tags:
+    - 'Open & FAIR Science'
   role: Recipient
   amount: 4000
   personal_amount: 4000
@@ -79,6 +88,9 @@
   start: '10/2025'
   end: '9/2027'
   title: 'SPP2311 - SimLivA - SIMulation supported LIVer Assessment for donor organs'
+  tags:
+    - 'Digital Twins'
+    - 'Systems Medicine & AI'
   role: Recipient
   amount: 895500
   personal_amount: 219000
@@ -97,6 +109,9 @@
   start: '04/2023'
   end: '09/2023'
   title: 'X-Student Research Group - Physiologically based digital twins for the treatment of hypertension with ACE inhibitors and diuretics'
+  tags:
+    - 'Digital Twins'
+    - 'Pharmacometrics & PBPK'
   role: Recipient
   amount: 1500
   personal_amount: 1500
@@ -115,6 +130,9 @@
   start: '03/2023'
   end: '12/2026'
   title: 'ATLAS - AI and Simulation for Tumor Liver ASessment'
+  tags:
+    - 'Digital Twins'
+    - 'Systems Medicine & AI'
   role: Recipient
   amount: 1530550
   personal_amount: 311000
@@ -133,6 +151,8 @@
   start: '10/2022'
   end: '03/2023'
   title: 'X-Student Research Group - Physiologically based modeling of drugs: ACE inhibitors in the treatment of high blood pressure'
+  tags:
+    - 'Pharmacometrics & PBPK'
   role: Recipient
   amount: 1500
   personal_amount: 1500
@@ -151,6 +171,9 @@
   start: '07/2021'
   end: '11/2025'
   title: 'FOR5151 - QuaLiPerF - Quantifying Liver Perfusion-Function Relationship in Complex Resection – A Systems Medicine Approach'
+  tags:
+    - 'Digital Twins'
+    - 'Systems Medicine & AI'
   role: Recipient
   amount: 3825000
   personal_amount: 425000
@@ -169,6 +192,9 @@
   start: '01/2020'
   end: '12/2023'
   title: 'SPP2311 - SimLivA - SIMulation supported LIVer Assessment for donor organs'
+  tags:
+    - 'Digital Twins'
+    - 'Systems Medicine & AI'
   role: Co-Investigator
   amount: 658942
   personal_amount: 0
@@ -187,6 +213,8 @@
   start: '06/2020'
   end: '05/2021'
   title: 'EOSC-Life - Reproducible simulation studies targeting COVID-19'
+  tags:
+    - 'Open & FAIR Science'
   role: Recipient
   amount: 25000
   personal_amount: 5000
@@ -204,6 +232,9 @@
   start: '06/2016'
   end: '05/2022'
   title: 'LiSyM - Systems Medicine of the Liver - Junior group leader - Multi-scale models for the personalized evaluation of liver function'
+  tags:
+    - 'Digital Twins'
+    - 'Systems Medicine & AI'
   role: Recipient
   amount: 723000
   personal_amount: 723000
