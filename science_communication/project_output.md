@@ -4,7 +4,7 @@ https://livermetabolism.com
 ### TODO
 
 #### Updates and cleanup
-- [~] Collecting information, linking information, updating information
+- [x] Collecting information, linking information, updating information
   - [x] Update open positions
   - [x] Link people to publications
   - [x] Update projects (collect projects)
