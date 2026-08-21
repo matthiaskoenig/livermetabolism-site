@@ -2,39 +2,45 @@
 https://livermetabolism.com
 
 ### TODO
-- [x] Collecting information, linking information, updating information
-  - [ ] Updated open positions
-  - [ ] Updated all projects
-  - [ ] Linking people to publications
-  - [ ] Linking people to projects
-  - [ ] Linking projects, publications, people to core tags (projects)
+
+#### Updates and cleanup
+- [~] Collecting information, linking information, updating information
+  - [x] Update open positions
+  - [x] Link people to publications
+  - [x] Update projects (collect projects)
+  - [x] Link people to projects
+  - [x] Link projects to core tags
+  - [x] link publication to core tag
   
-- [ ] Removed clutter
+- [x] Remove clutter
   - [x] removed duplicate information from landing page (publications, funding, ...)
   - [x] collected all contact information and social links and moved to footer 
   - [x] put news into a news real/carrousel
   - [x] shortened texts and descriptions
   - [x] merged Software, Funding, Editors (roles) in research
-  - [ ] merged People, Open Positions, Social in People 
+  - [x] merge People, Open Positions
   
-- [ ] Addressing stackholders
-  - [ ] Clear description of new orientation of lab with start of professorship in Lübeck
+- [x] Addressing stackholders
+  - [x] Clear description of new orientation of lab with start of professorship in Lübeck
   - [x] Added vision statement 
   - [x] Added core expertise projects
   - [x] Core tags 
   
-- [ ] Design
+- [x] Design
   - [x] simplification, modern styles and fonts
   
+#### Site migration
+- [ ] Technology
+  - [ ] migration from jekyll to astro: static-site philosophy but gives you modern components, TypeScript, MD/MDX, image handling, and the ability to use React/Vue/Svelte components where you actually need them.
+  - [ ] nodejs and tailwind CSS
+  - [ ] Interactive components; reactivity; e.g. statistics overviews; 
+  - [ ] Security updates: remove outdated technology (old ruby and jekyll)
+
 - [ ] Usability
+  - [x] Improved navigation (better navbar, less and more structured items)
   - [ ] mobile friendly design, responsiveness
-  - [ ] Improved navigation (better navbar, less and more structured items)
-  - [ ] Added sites with subnavigation
   - [ ] Added sitemap
-
-- [ ] Security
-  - [ ] Updated Jekyll to latest version with ruby
-
+  - [ ] Search functionality  
 
 Der eigentliche Projekt-Output: In deinem Fall könnte das z.B. dann der Link zur überarbeiteten Website sein, plus eine kurze Übersicht (maximal eine Seite), die erklärt, was konkret gemacht wurde.
 
