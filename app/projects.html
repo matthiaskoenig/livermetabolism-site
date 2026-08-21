@@ -5,70 +5,79 @@ permalink: /projects/
 sectionid: projects
 ---
 
-{% for project in site.data.projects %}
-<div class="row">
-    <h2> {{ project.title}}</h2>
+<div class="tag-filter" id="project-tag-filter">
+    <button type="button" class="tag-filter-btn active" data-tag="all">All</button>
+    <button type="button" class="tag-filter-btn" data-tag="Digital Twins">Digital Twins</button>
+    <button type="button" class="tag-filter-btn" data-tag="Digital Pathology">Digital Pathology</button>
+    <button type="button" class="tag-filter-btn" data-tag="Pharmacometrics &amp; PBPK">Pharmacometrics &amp; PBPK</button>
+    <button type="button" class="tag-filter-btn" data-tag="Systems Medicine &amp; AI">Systems Medicine &amp; AI</button>
+    <button type="button" class="tag-filter-btn" data-tag="Open &amp; FAIR Science">Open &amp; FAIR Science</button>
+</div>
 
-    <table class="table well">
-        <tr>
-            <td width="200">
+<div class="project-grid" id="project-grid">
+    {% for project in site.data.projects %}
+    {% if project.status == "current" %}
+    <div class="project-card" data-tags="{{ project.tags | join: '|' | escape }}">
+        {% for image in project.images limit:1 %}
+        <img src="/img/projects/{{ image }}" alt="{{ project.title }}" class="project-image"/>
+        {% endfor %}
+        <div class="project-body">
+            <h3>{{ project.title }}</h3>
+            {% if project.tags %}
+            <div class="project-tags">
+                {% for tag in project.tags %}
+                <span class="tag-badge">{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <p>{{ project.abstract | strip_html }}</p>
+            <div class="project-links">
                 {% for author in project.people %}
                 {% assign person = site.data.people | where:"id", author | first %}
                 {% if person and person.image %}
-                <img src="/img/people/{{ person.image }}" class="img-circle" height="40" title="{{ person.name }}"/>
+                <img src="/img/people/128/{{ person.image }}" class="project-avatar" title="{{ person.name }}"/>
                 {% endif %}
                 {% endfor %}
-            </td>
-            <td width="200">
-                {% if project.publication %}
-                    {% assign publication = site.data.publications | where:"id", project.publication | first %}
-                    {% if publication.pdf %}
-                    <a href="../paper/{{ publication.pdf }}"><img src="/img/pdf.png" title="pdf" height="20"/></a>
-                    {% endif %}
-                {% else %}
-                    {% assign publication = '' %}
+                <span class="project-links-spacer"></span>
+                {% for pub_id in project.publications %}
+                {% assign publication = site.data.publications | where:"id", pub_id | first %}
+                {% if publication.pdf %}
+                <a href="../paper/{{ publication.pdf }}" title="{{ publication.title }}"><img src="../img/pdf.png" height="16"/></a>
                 {% endif %}
-
+                {% endfor %}
                 {% if project.project %}
-                <a href="{{ project.project }}"><img src="/img/project.png" title="project homepage" height="20"/></a>
+                <a href="{{ project.project }}" target="_blank" rel="noopener noreferrer" title="Project homepage"><img src="../img/project.png" height="16"/></a>
                 {% endif %}
-
                 {% if project.repository %}
-                <a href="{{ project.repository }}"><img src="/img/repository.png" title="repository"
-                                                        height="20"/></a>
+                <a href="{{ project.repository }}" target="_blank" rel="noopener noreferrer" title="Repository homepage"><img src="../img/repository.png" height="16"/></a>
                 {% endif %}
-            </td>
-            <td>
-                {% if project.publication %}
-                    {% assign publication = site.data.publications | where:"id", project.publication | first %}
-                    {{ publication.authors }}<br/>
-                    <i>{{ publication.title }}</i><br/>
-                    {{ publication.journal }}
-                {% else %}
-                    {% assign publication = '' %}
-                {% endif %}
-            </td>
-        </tr>
-    </table>
-    <div class="row">
-        <div class="col-md-6 text-justify">
-            <p>
-                {% for image in project.images %}
-                <img alt="{{ project.title }}" title="{{ project.title }}" src="/img/projects/{{ image }}"
-                     class="img-responsive"/>
-                {% endfor %}
-            </p>
-        </div>
-        <div class="col-md-6 text-justify">
-            <p>
-                {{ project.abstract }}
-            </p>
+            </div>
         </div>
     </div>
+    {% endif %}
+    {% endfor %}
 </div>
-{% endfor %}
 
-<h2>More</h2>
-For more projects see our <strong><a href="{{ "/publications/" | prepend: site.baseurl }}"><i
-    class="fa fa-newspaper-o" aria-hidden="true"></i> Publications</a></strong>.
+<script>
+(function () {
+    var buttons = document.querySelectorAll('#project-tag-filter .tag-filter-btn');
+    var cards = document.querySelectorAll('#project-grid .project-card');
 
+    buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            buttons.forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+
+            var tag = btn.getAttribute('data-tag');
+            cards.forEach(function (card) {
+                if (tag === 'all') {
+                    card.style.display = '';
+                    return;
+                }
+                var tags = (card.getAttribute('data-tags') || '').split('|');
+                card.style.display = tags.indexOf(tag) !== -1 ? '' : 'none';
+            });
+        });
+    });
+})();
+</script>

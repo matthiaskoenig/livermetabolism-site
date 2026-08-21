@@ -1,6 +1,10 @@
 - id: image_analysis
   title: "Analysis of hepatic zonation patterns from whole-slide images"
-  publication:
+  status: 'current'
+  tags:
+    - "Digital Pathology"
+  publications:
+    - 'Albadry2024_species_comparison'
   project:
   repository:
   people:
@@ -9,23 +13,14 @@
   cooperation partners:
   images: image_analysis.png
   image_title: Lobulus segmentation in different species.
-  abstract: '
-  <p>
-  This project explores the critical interplay between lobular geometry and the zonated distribution of cytochrome P450 (CYP)
-enzymes across species. We present an innovative approach to assess lobular geometry and zonation patterns using
-whole slide imaging (WSI). This method allows a detailed, systematic comparison of lobular structures and spatial
-distribution of key CYP450 enzymes and glutamine synthetase in four different species (mouse, rat, pig, and human). Our
-results shed light on species differences in lobular geometry and enzymatic zonation, providing critical insights for drug
-metabolism research. Based on our approach we could determine the minimum number of lobules required for a
-statistically representative analysis, an important piece of information when evaluating liver biopsies and deriving
-information from WSI.
-   </p>
-  '
-
+  abstract: 'A whole-slide imaging pipeline to quantify lobular geometry and the zonation of CYP450 enzymes and glutamine synthetase across species (mouse, rat, pig, human), determining the minimum number of lobules needed for statistically robust liver biopsy analysis.'
 
 - id: creatinine_inulin
   title: "Physiologically based pharmacokinetic (PBPK) model of creatinine and inulin"
-  publication:
+  status: 'current'
+  tags:
+    - "Pharmacometrics & PBPK"
+  publications: []
   project:
   repository:
   people:
@@ -35,18 +30,15 @@ information from WSI.
   cooperation partners:
   images: inulin_creatinine.png
   image_title: Physiologically based pharmacokinetic (PBPK) model of creatinine and inulin.
-  abstract: '
-  <p>
-  The glomerular filtration rate (GFR) is a measure of how well your kidneys are filtering waste and excess fluids from your blood. It is an important indicator of kidney function and is expressed in milliliters per minute (mL/min). GFR is calculated based on factors such as age, gender, body size, and creatinine levels in the blood. It is important to monitor GFR in individuals with kidney disease or at risk of developing kidney disease to ensure appropriate treatment and management of the condition.
-  </p> 
-  <p>
-  In this project, we aim to create a physiologically based pharmacokinetic (PBPK) model for inulin and creatinine to assess the glomerular filtration rate (GFR). Our goal is to gain a deeper understanding of the impact of various inulin protocols on GFR measurement and the influence of physiological factors, such as body composition, on GFR determination using inulin. Furthermore, it should enhance our understanding of how variations in creatinine production, muscle mass, and tubular secretion of creatinine influence eGFR calculations.
-   </p>
-  '
+  abstract: 'A PBPK model of inulin and creatinine to better understand how dosing protocols, body composition, and tubular secretion affect glomerular filtration rate (GFR) measurements.'
 
 - id: dextromethorphan
   title: "Physiologically based pharmacokinetic (PBPK) model of CYP2D6 polymorphism"
-  publication: Grzegorzewski2022_dextromethorphan
+  status: 'current'
+  tags:
+    - "Pharmacometrics & PBPK"
+  publications:
+    - 'Grzegorzewski2022_dextromethorphan'
   project:
   repository: https://github.com/matthiaskoenig/dextromethorphan-model
   people:
@@ -57,21 +49,15 @@ information from WSI.
   images:
     - dex_model.png
   image_title: Physiologically based pharmacokinetic (PBPK) model of dextromethophan.
-  abstract: '
-  <h3>Physiologically based pharmacokinetic (PBPK) model of dextromethorphan</h3>
-  <p>
-  The cytochrome P450 2D6 (CYP2D6) is a key xenobiotic-metabolizing enzyme involved in the clearance of many drugs. Genetic polymorphisms in CYP2D6 contribute to the large inter-individual variability in drug metabolism and could affect metabolic phenotyping of CYP2D6 probe substances such as dextromethorphan (DXM).
-  </p> 
-  <p>
-  To study this question, we (i) established an extensive pharmacokinetics dataset for DXM; and (ii) developed and validated a physiologically based pharmacokinetic (PBPK) model of DXM and its metabolites dextrorphan (DXO) and dextrorphan O-glucuronide (DXO-Glu) based on the data. Drug-gene interactions (DGI) were introduced by accounting for changes in CYP2D6 enzyme kinetics depending on activity score (AS), which in combination with AS for individual polymorphisms allowed us to model CYP2D6 gene variants. Variability in CYP3A4 and CYP2D6 activity was modeled based on in vitro data from human liver microsomes. 
-  </p>
-  Both, model and database are freely available for reuse.
-   </p>
-  '
+  abstract: 'A curated pharmacokinetics dataset and PBPK model of dextromethorphan and its metabolites, capturing CYP2D6 genetic polymorphisms and CYP3A4 variability to explain interindividual differences in drug metabolism. Model and database are freely available.'
 
 - id: protein_distribution
   title: "Protein distributions in the human liver"
-  publication:
+  status: 'current'
+  tags:
+    - "Pharmacometrics & PBPK"
+  publications:
+    - 'Bachelor.Thesis.Afruja.Hossain'
   project:
   repository:
   people:
@@ -82,41 +68,36 @@ information from WSI.
   images:
     - protein_distribution.png
   image_title: Protein distribution of CYP, UGT, SLC and ABC proteins in the human liver.
-  abstract: '
-  <p>
-  Individual variations in the clearance of test substances via specific enzymes and transporters in the liver are substantial. These variations are attributed to genetic polymorphisms and protein abundance in the liver. Understanding protein distributions is an essential input for computational models, such as physiologically based pharmacokinetic (PBPK) models, and for metabolic phenotyping, such as liver function tests, to study drug detoxification.
-  </p>
-  <p>
-  The primary objective of this project is to provide a comprehensive overview of the variability in protein abundance among CYP and UGT enzymes as well as ABC and SLC transporter isoforms in human livers. Furthermore, this project aims to examine relationships between enzymes and transporters, such as correlations, to gain insight into the factors affecting individual drug metabolism. This systematic analysis of proteins will provide a valuable resource for computational modeling of drug detoxification by the liver and enable a better understanding of individualized drug responses.
-  </p>
-  '
+  abstract: 'A systematic analysis of the variability in abundance of CYP and UGT enzymes and ABC/SLC transporters across human livers, providing a key resource for PBPK modeling and understanding individual differences in drug clearance.'
 
 - id: atlas
   title: "ATLAS - AI and Simulation for Tumor Liver ASsessment"
-  publication:
+  status: 'current'
+  tags:
+    - "Digital Twins"
+    - "Systems Medicine & AI"
+  publications:
+    - 'Myshkina2025_preprint'
   project:
   repository:
   people:
     - koenig
+    - mariia
+    - shubhankar
   cooperation partners: Prof. Tim Ricken, Prof. Stefan Staab, Dr. Hans-Michael Tautenhahn
   images:
     - atlas.png
   image_title: ATLAS - AI and Simulation for Tumor Liver ASsessment.
-  abstract: '
-  <p>
-  Liver cancer is the second most common cause of cancer-related death. Diagnosis and treatment are time-critical and require highly patient-specific diagnostic and treatment pathways. Medical decision-making is based on a variety of interdependent factors related to different medical disciplines, past experience and clinical guidelines. Taking into account all decision factors in combination with the possible therapeutic approaches is a major challenge for physicians and often cannot be solved optimally even in an interdisciplinary tumor board.
-   </p>
-   <p>
-   In this project, we are developing ATLAS, a decision support tool that will significantly assist clinicians in meeting this challenge. Based on AI methods, ATLAS processes all relevant patient data from databases, systems medicine and continuum biomechanical in silico prognosis models as well as individual patient data. The tool is being developed in a co-design approach by experts in surgical oncology, mathematical modeling and machine learning. The selected technologies will integrate automated understanding of a highly complex patient situation through simulation of liver functions with expert knowledge and ontology-driven learning with knowledge graphs from retrospective liver tumor cases.
-   </p>
-   <p> 
-   ATLAS will be based on a detailed historical data cohort of more than 6,000 patients with liver tumors and will be evaluated on case studies at the University Hospital of Jena. The integration of medical expert knowledge, mathematical modeling and artificial intelligence represents a highly original and promising approach for high-quality diagnosis and treatment of liver tumors, resulting in patient-specific improvement of prognosis. The scientific knowledge gained from these projects will provide opportunities for transfer to malignancies in other organs, such as the lung, kidney or brain. The development of tools and demonstrators will provide sustainable exploitation pathways for future commercial applications.
-  </p>
-  '
+  abstract: 'A clinical decision-support tool for liver cancer combining AI, systems medicine, and biomechanical simulation with patient data to guide treatment decisions, developed with surgical oncology and machine learning experts and evaluated on a cohort of more than 6,000 liver tumor patients.'
 
 - id: zonation
   title: "Hepatic zonation patterns of Cytochrome P450 enzymes"
-  publication:
+  status: 'current'
+  tags:
+    - "Digital Pathology"
+  publications:
+    - 'Albadry2022_Cytochrome.p450.enzymes.in.periportal.steatosis'
+    - 'Master.Thesis.Jonas.Kuettner'
   project:
   repository:
   people:
@@ -126,19 +107,16 @@ information from WSI.
   images:
     - zonation.png
   image_title: Zonation patterns in the liver.
-  abstract: '
-  <h3>Quantification of hepatic zonation patterns from Immunofluorescence and Immunohistochemistry Images</h3>
-  <p>
-This project implements an image analysis pipeline based on whole slide images (WSI) from brightfield or fluorescence microscopy. The zonation patterns will be quantified.
-  </p>
-  <p>
-  The developed pipeline will be applied to study species differences in zonation patterns of CYP enzymes and changes in zonation due to hepatic steatosis and perfusion changes.
-  </p>
-  '
+  abstract: 'An image analysis pipeline to quantify hepatic zonation patterns from immunofluorescence and immunohistochemistry whole-slide images, applied to study species differences and changes due to steatosis and altered perfusion.'
 
 - id: simvastatin
   title: "Simvastatin therapy in different subtypes of hypercholesterolemia"
-  publication: Bartsch2023_simvastatin
+  status: 'current'
+  tags:
+    - "Pharmacometrics & PBPK"
+  publications:
+    - 'Bartsch2023_simvastatin'
+    - 'Bachelor.Thesis.Florian.Bartsch'
   project:
   repository:
   people:
@@ -149,21 +127,14 @@ This project implements an image analysis pipeline based on whole slide images (
   images:
     - simvastatin.png
   image_title: Computational model of LiMAx test.
-  abstract: '
-  <h3>Simvastatin therapy in different subtypes of hypercholesterolemia</h3>
-  <p>
-  Hypercholesterolemia is a multifaceted plasma lipid disorder with heterogeneous causes including lifestyle and genetic factors. A key feature of hypercholesterolemia is elevated plasma levels of low-density lipoprotein cholesterol (LDL-C). Several genetic variants have been reported to be associated with hypercholesterolemia, known as familial hypercholesterolemia (FH). Important variants affect the LDL receptor (LDLR), which mediates the uptake of LDL-C from the plasma, apoliporotein B (APOB), which is involved in the binding of LDL-C to the LDLR, and proprotein convertase subtilisin/kexin type 9 (PCSK9), which modulates the degradation of the LDLR. A typical treatment for hypercholesterolemia is statin medication, with simvastatin being one of the most commonly prescribed statins. 
-  </p>
-  <p>
-  In this project, the LDL-C lowering therapy with simvastatin in hypercholesterolemia was investigated using a computational modeling approach. A physiologically based pharmacokinetic model of simvastatin integrated with a pharmacodynamic model of plasma LDL-C (PBPK/PD) was developed based on extensive data curation. A key component of the model is LDL-C turnover by the liver, consisting of: hepatic cholesterol synthesis with the key enzymes HMG-CoA reductase and HMG-CoA synthase; cholesterol export from the liver as VLDL-C; de novo synthesis of LDLR; transport of LDLR to the membrane; binding of LDL-C by LDLR via APOB; endocytosis of the LDLR-LDL-C complex; recycling of LDLR from the complex. The model was applied to study the effects of simvastatin therapy in hypercholesterolemia due to different causes in the LDLR pathway corresponding to different subtypes of hypercholesterolemia.
-  </p>
-  </p>
-  Model predictions of LDL-C lowering therapy were validated with independent clinical data sets. Key findings are: (i) hepatic LDLR turnover is highly heterogeneous among FH classes; (ii) despite this heterogeneity, simvastatin therapy results in a consistent reduction in plasma LDL-C regardless of class; and (iii) simvastatin therapy shows a dose-dependent reduction in LDL-C. Our model suggests that the underlying cause of hypercholesterolemia does not influence simvastatin therapy. Furthermore, our model supports the treatment strategy of stepwise dose adjustment to achieve target LDL-C levels. Both the model and the database are freely available for reuse.
-  </p>'
+  abstract: 'A PBPK/PD model of simvastatin and plasma LDL-C, capturing hepatic cholesterol synthesis and LDLR-mediated clearance, shows that simvastatin consistently lowers LDL-C in a dose-dependent manner across genetic subtypes of hypercholesterolemia, supporting stepwise dose titration. Model and database are freely available.'
 
 - id: limax
   title: "Computational Modeling of Dynamical Liver Function Tests: LiMAx"
-  publication:
+  status: 'current'
+  tags:
+    - "Pharmacometrics & PBPK"
+  publications: []
   project: https://github.com/matthiaskoenig/limax
   repository: https://github.com/matthiaskoenig/limax
   people:
@@ -172,21 +143,15 @@ This project implements an image analysis pipeline based on whole slide images (
   images:
     - limax.png
   image_title: Computational model of LiMAx test.
-  abstract: '
-  <h3>Modeling LiMAx liver function test</h3>
-  <p>
-  Assessment of liver function is a key task in hepatology but accurate quantification of hepatic function has remained a clinical challenge. Dynamic liver function tests are a promising tool for the non-invasive evaluation of liver function in vivo. One class of such tests are breath tests based on the conversion of 13C-labeled substrates by the liver to 13CO2 subsequently measured in the breath. A commonly applied substrate is 13C-methacetin, converted to paracetamol and 13CO2 via cytochrome P450 1A2 (CYP1A2), used orally in the methacetin breath test (MBT) and intravenously in the LiMAx test. An important clinical question is which factors can affect MBT and LiMAx results. The aim of our study was to answer this question using computational modeling to derive basic information for a better understanding of the methacetin breath test and factors influencing its results.
-  </p>
-  <p>
-  A physiological based pharmacokinetics (PBPK) model for 13C-methacetin breath tests including absorption, distribution, metabolism and elimination of 13C-methacetin, paracetamol, and 13C-bicarbonate/13CO2 was developed. The model correctly predicts data from more than 20 clinical studies after oral and intravenous application under various dosing regimens of paracetamol, 13C-bicarbonate, and 13C-methacetin, based on retrospective analysis. Model predictions were validated based on data from multiple studies consisting of 13C-bicarbonate kinetics, LiMAx dosing study and retrospective analysis of LiMAx data from healthy smokers and non-smokers. Sensitivity analysis was performed to identify key factors influencing MBT and LiMAx.
-  </p>
-  </p>
-  The model was applied to study the effect of clinically relevant parameters like CYP1A2 content, hepatic perfusion or lifestyle factors like smoking on LiMAx. In summary, we present a valuable tool for the evaluation of dynamical liver function tests based on 13C-methacetin.
-  </p>'
+  abstract: 'A PBPK model of the 13C-methacetin breath test (MBT/LiMAx), validated against more than 20 clinical studies, identifying how CYP1A2 content, hepatic perfusion, and lifestyle factors such as smoking affect liver function test results.'
 
 - id: covid_reproducible
   title: Reproducible simulation studies targeting COVID-19
-  publication: 'Standards_in_Systems_and_Synthetic_Biology_Schreiber2020'
+  status: 'current'
+  tags:
+    - "Open & FAIR Science"
+  publications:
+    - 'FAIR.sharing.of.reproducible.and.reusable.COVID-19.models_Ramachandran2022'
   project: https://wwwdev.ebi.ac.uk/biomodels/covid-19
   repository:
   people:
@@ -195,16 +160,15 @@ This project implements an image analysis pipeline based on whole slide images (
   images:
     - covid_reproducible.png
   image_title: Reproducible archives for COVID-19
-  abstract: '
-  <h3>Interoperable COVID-19 models</h3>
-  <p>In a collaboration between the University of Greifswald, the Humboldt-University Berlin, code ahoi, and the BioModels database at EMBL-EBI, we aim to rapidly disseminate simulation studies of COVID-19 models to the research community, in interoperable formats and in high quality.</p>
-  <p>
-  This project is supported by <a href="http://eoscsecreteriat.eu/">EOSCsecreteriat.eu</a> COVID-19 Fast Track Funding.
-  </p>'
+  abstract: 'With partners at the University of Greifswald, BioModels/EMBL-EBI, and code ahoi, we disseminate COVID-19 simulation models in interoperable, high-quality formats, supported by EOSCsecretariat.eu COVID-19 Fast Track Funding.'
 
 - id: central_metabolism
   title: Modeling Hepatic Central Metabolism
-  publication: hepatokin_Berndt2018
+  status: 'current'
+  tags:
+    - "Systems Medicine & AI"
+  publications:
+    - 'hepatokin_Berndt2018'
   project:
   repository:
   people:
@@ -213,13 +177,16 @@ This project implements an image analysis pipeline based on whole slide images (
   images:
     - hepatokin.png
   image_title: Central Carbon Model of the Liver (HepatoKin1)
-  abstract: '
-  <h3>Modeling hepatic metabolism in health and disease</h3>
-  <p>The epidemic increase of non-alcoholic fatty liver diseases (NAFLD) requires a deeper understanding of the regulatory circuits controlling the response of liver metabolism to nutritional challenges, medical drugs, and genetic enzyme variants. As in vivo studies of human liver metabolism are encumbered with serious ethical and technical issues, we were involved in the development of a comprehensive biochemistry-based kinetic model of the central liver metabolism including the regulation of enzyme activities by their reactants, allosteric effectors, and hormone-dependent phosphorylation.
-  </p>'
+  abstract: 'A comprehensive kinetic model of hepatic central metabolism, capturing regulation of enzyme activity by reactants, allosteric effectors, and hormone-dependent phosphorylation, to better understand metabolic regulation in non-alcoholic fatty liver disease (NAFLD).'
 
 - title: Stratification and personalization of computational models
-  publication: PKDB_Grzegorzewski2019
+  status: 'current'
+  tags:
+    - "Pharmacometrics & PBPK"
+    - "Open & FAIR Science"
+  publications:
+    - 'PKDB_Grzegorzewski2020'
+    - 'PhD.Thesis.Jan.Grzegorzewski'
   project:
   repository: https://github.com/matthiaskoenig/
   people:
@@ -229,19 +196,13 @@ This project implements an image analysis pipeline based on whole slide images (
   images:
     - data_extraction.png
   image_title: Workflow for extraction of pharmacokinetics data
-  abstract: '<h3>Workflow for extraction of pharmacokinetics data</h3>
-  <p>
-  Physiologically based pharmacokinetics (PBPK) models are an important tool for understanding dynamical liver function tests.
-  Such models allow to simulate the absorption, distribution, metabolization and elimination (ADME) of test substances.
-Stratification and personalization of PBPK models is an important task in systems biology and systems medicine, e.g., to simulate different subpopulations like smokers vs. non-smokers, obese vs. lean people, or children vs. adults vs. elderly, or to simulate the individual person based for instance on anthropometric information like age, gender or bodyweight.
-Such PBPK models can be described in standard exchange formats like the systems biology markup language (SBML) which allow a reproducible, exchangable and interoperable encoding of these models. On the other hand data sets for stratification and personalization of such models are available from the research literature or clinical cooperation partners.
-An open task to implement an workflow for the stratification and personalization of PBPK models from existing datasets. This includes the automatic
-extraction of information via literature mining and machine learning, storage of information in a pharmacokinetics database, and parametrization of models base on subsets of information.
-  </p>'
-
+  abstract: 'A workflow to stratify and personalize PBPK models for specific subpopulations (e.g. smokers vs. non-smokers, children vs. adults), combining literature mining and machine learning for data extraction with a pharmacokinetics database for storage and reuse.'
 
 - title: Multi-scale Model of Hepatic Metabolism
-  publication: multiscale_Koenig2018
+  status: 'current'
+  tags:
+    - "Digital Twins"
+  publications: []
   project:
   repository:
   people:
@@ -250,24 +211,22 @@ extraction of information via literature mining and machine learning, storage of
   images:
     - multiscale-galactose.png
   image_title: Multiscale Galactose Model
-  abstract: '
-  <h3>Multiscale model of human galactose metabolism - from single hepatocytes to individual liver function</h3>
-  <p>
-  Understanding how liver function arises from the complex interaction of morphology, perfusion, and metabolism from single cells up to the entire organ requires systems-levels computational approaches. We report a multiscale mathematical model of the Human liver comprising the scales from single hepatocytes, over representation of ultra-structure and micro-circulation in the hepatic tissue, up to the entire organ integrated with perfusion. The model was validated against data on multiple spatial and temporal scales. Herein we describe the model construction and application to hepatic galactose metabolism demonstrating its utility via i) the personalization of liver function tests based on galactose elimination capacity (GEC), ii) the explanation of changes in liver function with aging, and iii) the prediction of population variability in liver function based on variability in liver volume and perfusion. We conclude that physiology- and morphology-based multiscale models can improve the evaluation of individual liver function.
-  </p>
-  <!--
-  <p>
-    Calculation of individual liver function based on Galactose Elimination Capacity (GEC).
-  </p>
-  <p>
-    <a href="https://livermetabolism.com/gec_app" target="_blank">
-    <img src="/img/projects/gec_app.png" />
-    </a>
-  -->
-  </p>'
+  abstract: 'A multiscale model of the human liver spanning single hepatocytes to whole-organ perfusion, applied to galactose metabolism to personalize liver function tests, explain age-related changes, and predict population variability from liver volume and perfusion.'
 
 - title: Liver Function Tests
-  publication:
+  status: 'current'
+  tags:
+    - "Digital Twins"
+  publications:
+    - 'EXSIMO_Koenig2020'
+    - 'ICG_model_hepatectomy_Koeller2021'
+    - 'Koeller2021_icg_variability'
+    - 'Bachelor.Thesis.Adrian.Koeller'
+    - 'Caffeine_meta_Grzegorzewski2021'
+    - 'Bachelor.Thesis.Helena.Leal.Pujol'
+    - 'StemmerMallol2023_talinolol'
+    - 'Bachelor.Thesis.Beatrice.Stemmer.Mallol'
+    - 'Bachelor.Thesis.Yannick.Duport'
   project: https://github.com/matthiaskoenig/
   repository: https://github.com/matthiaskoenig/
   cooperation partners:
@@ -276,36 +235,14 @@ extraction of information via literature mining and machine learning, storage of
     - dimitra
   images:
     - function-tests.png
-  abstract: '<h3>Personalized evaluation of liver function tests</h3>
-  <p>
-  Understanding how liver function results from the complex interaction of hepatic morphology,
-  perfusion and metabolism across multiple spatial scales, from the cellular level up to the
-  entire organ, requires systems levels computational approaches. Despite
-  the importance of quantifying liver function in the clinics, currently no computational model of
-  the human liver is able to utilize the morphological and physiological information from imaging
-  methods for a personalized evaluation of quantitative function tests.
-
-  Our objectives are
-  <ul>
-  <li>providing an open, freely available and reproducible multiscale
-  model of the human
-  liver which can readily be employed to evaluate the hepatic clearance of various test
-  substances used in quantitative liver function tests in the clinics</li>
-
-  <li>providing the infrastructure and methods to integrate experimental and clinical data on
-  all scales (imaging data, anthropomorphic information, perfusion data
-  multipleindicator dilution data, microcirculation and ultrastructure parameters, protein
-  amounts, ...)</li>
-
-  <li>create metabolic modules for the elimination of various test substances and drugs
-  (methacetin, galactose, BSP, ICG, midazolam, codeine, caffeine, torsemide, pravastatin, talinolol)
-  by the liver. This will allow the analysis of a wide range of clinical studies and create
-  an integrative platform for the clearance of these substances by the liver.</li>
-  </ul>
-  </p>'
+  abstract: 'An open, reproducible multiscale liver model and the infrastructure to integrate imaging, perfusion, and clinical data, with metabolic modules for substances used in liver function tests (methacetin, galactose, BSP, ICG, midazolam, codeine, caffeine, torsemide, pravastatin, talinolol).'
 
 - title: "Biomarker signatures in liver disease"
-  publication: Abshagen2015
+  status: 'current'
+  tags:
+    - "Systems Medicine & AI"
+  publications:
+    - 'Abshagen2015'
   project:
   repository:
   cooperation partners:
@@ -313,21 +250,17 @@ extraction of information via literature mining and machine learning, storage of
     - koenig
   images:
     - BDL_correlation_heatmap.png
-  abstract: '
-  <h3>Pathobiochemical signatures of cholestatic liver disease</h3>
-  <p>
-  Disrupted bile secretion leads to liver damage characterized by inflammation, fibrosis,
-  eventually cirrhosis, and hepatocellular cancer. As obstructive cholestasis often progresses
-  insidiously, markers for the diagnosis and staging of the disease are urgently needed.
-  To this end, we compiled a comprehensive data set of serum markers, histological parameters and
-  transcript profiles at 8 time points of disease progression after bile duct ligation (BDL) in mice,
-  aiming at identifying a set of parameters that could be used as robust biomarkers for transition of
-  different disease progression phases.
-  </p>
-  '
+  abstract: 'A comprehensive dataset of serum markers, histology, and transcript profiles across 8 timepoints of bile-duct-ligation-induced cholestatic liver disease in mice, identifying robust biomarkers for disease staging.'
 
 - title: High Performance Simulators and Simulation Software
-  publication: tellurium_Medley2018
+  status: 'current'
+  tags:
+    - "Open & FAIR Science"
+  publications:
+    - 'tellurium_Medley2018'
+    - 'tellurium_Choi2018'
+    - 'Welsh2022_libroadrunner_2.0'
+    - 'libRoadRunner_Somogyi2015'
   project: http://tellurium.analogmachine.org/
   repository: https://github.com/sys-bio/tellurium
   cooperation partners:
@@ -335,23 +268,13 @@ extraction of information via literature mining and machine learning, storage of
     - koenig
   images:
     - tellurium-notebook.png
-  abstract: '
-  <h3>Tellurium Notebooks - An Environment for Dynamical Model Development, Reproducibility, and Reuse</h3>
-  <p>The considerable difficulty encountered in reproducing the results of published dynamical models limits validation, exploration and reuse of this increasingly large biomedical research resource.
-  To address this problem, we have developed Tellurium Notebook, a software system that facilitates
-  building reproducible dynamical models and reusing models by 1) supporting the COMBINE archive
-  format during model development for capturing model information in an exchangeable format and
-  2) enabling users to easily simulate and edit public COMBINE-compliant models from public
-  repositories to facilitate studying model dynamics, variants and test cases.
-  Tellurium Notebook, a Python--based Jupyter--like environment, is designed to seamlessly
-  inter-operate with these community standards by automating conversion between COMBINE standards
-  formulations and corresponding in--line, human--readable representations.
-  Thus, Tellurium brings to systems biology the strategy used by other literate notebook systems such as Mathematica. These capabilities allow users to edit every aspect of the standards--compliant models and simulations, run the simulations in--line, and re--export to standard formats. We provide several use cases illustrating the advantages of our approach and how it  allows development and reuse of models without requiring technical knowledge of standards. Adoption of Tellurium should accelerate model development, reproducibility and reuse.
-  </p>'
-
+  abstract: 'Tellurium Notebook is a Python/Jupyter-based environment for building, simulating, and sharing reproducible dynamical models using the COMBINE archive standard, bringing a literate-programming workflow to systems biology.'
 
 - title: Reproducible simulation experiments
-  publication:
+  status: 'old'
+  tags:
+    - "Open & FAIR Science"
+  publications: []
   project: https://github.com/matthiaskoenig/tellurium-web/
   repository: https://github.com/matthiaskoenig/tellurium-web/
   cooperation partners:
@@ -360,21 +283,13 @@ extraction of information via literature mining and machine learning, storage of
     - janek
   images:
     - tellurium-web.png
-  abstract: '
-  <h3>tellurium-web: An online database for reproducible simulation experiments in computational biology</h3>
-  <p>
-  We present tellurium-web, a free and open online database and simulation tool for reproducible simulation experiments in computational biology.
-  Tellurium-web is build on top of existing standards in computational biology, i.e., the SBML for models, SED-ML for description
-  of simulation experiments and the COMBINE archive format for exchange of simulation studies. Key features are 1) large set of example archives
-  (e.g., simulation studies from biomodels, SED-ML specification examples, SBML testsuite, JWS online, tellurium examples);
-  2) COMBINE archive browser with access to metadata and content of the archives;
-  3) Execution of archives using a high-performance simulator (libroadrunner) integrated into modeling platform for
-  computational biology (tellurium); 4) REST web services for getting, posting and modifying archives providing means
-  for simple integration into computational workflows; and  4) filtering of archives based on tags and users.
-  </p>'
+  abstract: 'tellurium-web is an open online database and simulation tool built on SBML, SED-ML, and COMBINE archives, offering a curated example library, an archive browser, high-performance simulation via libRoadRunner, and a REST API for computational workflows.'
 
 - title: "FluType: Influenza Classification based on Machine Learning"
-  publication:
+  status: 'old'
+  tags:
+    - "Systems Medicine & AI"
+  publications: []
   project: https://www.flutype.de/about/
   repository: https://github.com/janekg89/flutype_webapp
   cooperation partners:
@@ -383,33 +298,4 @@ extraction of information via literature mining and machine learning, storage of
     - koenig
   images:
     - flutype.png
-  abstract: '
-  <h3>Development of an influenza sub-classification platform based on peptides</h3>
-  <p>
-  The FluTypeDB project is a web application for the data management of binding assays for the classification
-  of influenza subtypes. FluTypeDB consists of a database and web interface with focus on various binding
-  assays for the classification of influenza viruses and contains experimental data based on
-  <ul>
-    <li>ELISA antibody binding assays</li>
-    <li>Peptid binding assays on microwell plates</li>
-    <li>Peptid bindings assays on peptide microarrays</li>
-  </ul>
-  </p>'
-
-- title: Visualization of kinetic data for modeling
-  publication: cy3sabiork_Koenig2016
-  project:
-  repository:
-  cooperation partners:
-  people:
-    - koenig
-  images:
-    - cy3sabiork-workflow.png
-  image_title: Multiscale Galactose Model
-  abstract: '
-  <h3>Cytoscape app for visualizing kinetic data from SABIO-RK</h3>
-  <p>
-  Kinetic data of biochemical reactions are essential for the creation of kinetic models of biochemical networks. One of the main resources of such information is SABIO-RK, a curated database for kinetic data of biochemical reactions and their related information. Despite the importance for computational modelling there has been no simple solution to visualize the kinetic data from SABIO-RK.
-In this work, I present cy3sabiork, an app for querying and visualization of kinetic data from SABIO-RK in Cytoscape. The kinetic information is accessible via a combination of graph structure and annotations of nodes, with provided information consisting of: (I) reaction details, enzyme and organism; (II) kinetic law, formula, parameters; (III) experimental conditions; (IV) publication; (V) additional annotations. cy3sabiork creates an intuitive visualization of kinetic entries in form of a species-reaction-kinetics graph, which reflects the reaction-centered approach of  SABIO-RK. Kinetic entries can be imported in SBML format from either the SABIO-RK web interface or via web service queries. The app allows for easy comparison of kinetic data, visual inspection of the elements involved in the kinetic record and simple access to the annotation information of the kinetic record.
-The cy3sabiork approach was applied in the computational modelling of galactose metabolism in the human liver.
-</p>'
+  abstract: 'FluTypeDB is a database and web application for managing peptide- and antibody-based binding assay data (ELISA, microwell, microarray) used to classify influenza subtypes.'
