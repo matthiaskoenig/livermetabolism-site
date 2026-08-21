@@ -5,17 +5,29 @@ permalink: /publications/
 sectionid: publications
 ---
 
-<div class="row">
+<div class="tag-filter" id="publication-tag-filter">
+    <button type="button" class="tag-filter-btn active" data-tag="all">All</button>
+    <button type="button" class="tag-filter-btn tag-digital-twins" data-tag="Digital Twins">Digital Twins</button>
+    <button type="button" class="tag-filter-btn tag-digital-pathology" data-tag="Digital Pathology">Digital Pathology</button>
+    <button type="button" class="tag-filter-btn tag-pharmacometrics-pbpk" data-tag="Pharmacometrics &amp; PBPK">Pharmacometrics &amp; PBPK</button>
+    <button type="button" class="tag-filter-btn tag-systems-medicine-ai" data-tag="Systems Medicine &amp; AI">Systems Medicine &amp; AI</button>
+    <button type="button" class="tag-filter-btn tag-open-fair-science" data-tag="Open &amp; FAIR Science">Open &amp; FAIR Science</button>
+</div>
+
+<div class="row" id="publication-list">
 	{% assign prev_year = nil %}
 	{% for publication in site.data.publications %}
+	{% assign pub_tags = site.data.publication_tags | where:"id", publication.id | first %}
 	{% unless publication.year == prev_year %}
 		{% unless forloop.first %}
 		</table>
 		</div>
+		</div>
 		{% endunless %}
+		<div class="pub-year-group">
 		<h3 class="year-heading">{{ publication.year }}</h3>
 		<div class="table-responsive">
-		<table class="table table-hover table-condensed" style="table-layout: fixed; width: 100%;">
+		<table class="table publication-table" style="table-layout: fixed; width: 100%;">
 		<colgroup>
 			<col style="width: 55px;">
 			<col style="width: 75px;">
@@ -24,7 +36,7 @@ sectionid: publications
 		</colgroup>
 		{% assign prev_year = publication.year %}
 	{% endunless %}
-		<tr>
+		<tr data-tags="{{ pub_tags.tags | join: '|' | escape }}">
 			<td>
 				{% if publication.pdf %}
 				<a href="/paper/{{ publication.pdf }}"><img src="../img/pdf.png" title="PDF" height="20"/></a>
@@ -44,10 +56,19 @@ sectionid: publications
 				{% endif %}
 				{% endfor %}
 			</td>
-			<td>{{ publication.status | capitalize }}</td>
-			<td><strong><i>{{ publication.title }}</i></strong><br />
-				{{ publication.authors }}<br />
-				{{ publication.journal }}{% if publication.doi %}. doi:<a href="https://doi.org/{{publication.doi}}">{{publication.doi}}</a>{% endif %}{% if publication.pmid %}. pmid:<a href="https://pubmed.ncbi.nlm.nih.gov/{{publication.pmid}}">{{publication.pmid}}</a>{% endif %}
+			<td class="publication-status">{{ publication.status | capitalize }}</td>
+			<td>
+				<p class="pub-title"><i>{{ publication.title }}</i></p>
+				{% if pub_tags.tags %}
+				<div class="tag-list">
+					{% for tag in pub_tags.tags %}
+					<span class="tag-badge tag-{{ tag | slugify }}">{{ tag }}</span>
+					{% endfor %}
+				</div>
+				{% endif %}
+				<p class="pub-meta">
+					{{ publication.authors }}; {{ publication.journal }}{% if publication.doi %}. doi:<a href="https://doi.org/{{publication.doi}}">{{publication.doi}}</a>{% endif %}{% if publication.pmid %}. pmid:<a href="https://pubmed.ncbi.nlm.nih.gov/{{publication.pmid}}">{{publication.pmid}}</a>{% endif %}
+				</p>
 				{% if publication.abstract or publication.keywords %}
 				<p class="small">
 					<a data-toggle="collapse" href="#abstract-{{ publication.id }}" role="button" aria-expanded="false" aria-controls="abstract-{{ publication.id }}">
@@ -73,4 +94,38 @@ sectionid: publications
 	{% endfor %}
 	</table>
 	</div>
+	</div>
 </div>
+
+<script>
+(function () {
+    var buttons = document.querySelectorAll('#publication-tag-filter .tag-filter-btn');
+    var rows = document.querySelectorAll('#publication-list tr[data-tags]');
+    var yearGroups = document.querySelectorAll('#publication-list .pub-year-group');
+
+    function updateYearGroups() {
+        yearGroups.forEach(function (group) {
+            var visible = group.querySelectorAll('tr[data-tags]:not([style*="display: none"])').length;
+            group.style.display = visible > 0 ? '' : 'none';
+        });
+    }
+
+    buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            buttons.forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+
+            var tag = btn.getAttribute('data-tag');
+            rows.forEach(function (row) {
+                if (tag === 'all') {
+                    row.style.display = '';
+                    return;
+                }
+                var tags = (row.getAttribute('data-tags') || '').split('|');
+                row.style.display = tags.indexOf(tag) !== -1 ? '' : 'none';
+            });
+            updateYearGroups();
+        });
+    });
+})();
+</script>

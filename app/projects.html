@@ -7,11 +7,11 @@ sectionid: projects
 
 <div class="tag-filter" id="project-tag-filter">
     <button type="button" class="tag-filter-btn active" data-tag="all">All</button>
-    <button type="button" class="tag-filter-btn" data-tag="Digital Twins">Digital Twins</button>
-    <button type="button" class="tag-filter-btn" data-tag="Digital Pathology">Digital Pathology</button>
-    <button type="button" class="tag-filter-btn" data-tag="Pharmacometrics &amp; PBPK">Pharmacometrics &amp; PBPK</button>
-    <button type="button" class="tag-filter-btn" data-tag="Systems Medicine &amp; AI">Systems Medicine &amp; AI</button>
-    <button type="button" class="tag-filter-btn" data-tag="Open &amp; FAIR Science">Open &amp; FAIR Science</button>
+    <button type="button" class="tag-filter-btn tag-digital-twins" data-tag="Digital Twins">Digital Twins</button>
+    <button type="button" class="tag-filter-btn tag-digital-pathology" data-tag="Digital Pathology">Digital Pathology</button>
+    <button type="button" class="tag-filter-btn tag-pharmacometrics-pbpk" data-tag="Pharmacometrics &amp; PBPK">Pharmacometrics &amp; PBPK</button>
+    <button type="button" class="tag-filter-btn tag-systems-medicine-ai" data-tag="Systems Medicine &amp; AI">Systems Medicine &amp; AI</button>
+    <button type="button" class="tag-filter-btn tag-open-fair-science" data-tag="Open &amp; FAIR Science">Open &amp; FAIR Science</button>
 </div>
 
 <div class="project-grid" id="project-grid">
@@ -24,9 +24,9 @@ sectionid: projects
         <div class="project-body">
             <h3>{{ project.title }}</h3>
             {% if project.tags %}
-            <div class="project-tags">
+            <div class="tag-list">
                 {% for tag in project.tags %}
-                <span class="tag-badge">{{ tag }}</span>
+                <span class="tag-badge tag-{{ tag | slugify }}">{{ tag }}</span>
                 {% endfor %}
             </div>
             {% endif %}

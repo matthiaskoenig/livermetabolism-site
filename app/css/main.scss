@@ -40,6 +40,18 @@ body {
 $font-serif-display: "Source Serif 4", Georgia, "Times New Roman", serif;
 $font-brand: "Space Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
+// one color per core research area (Digital Twins, Digital Pathology,
+// Pharmacometrics & PBPK, Systems Medicine & AI, Open & FAIR Science),
+// applied consistently to the homepage/Open-Positions icons and to the
+// tag filters/badges on projects.html and publications.html
+$tag-colors: (
+  "digital-twins": $brand-info,
+  "digital-pathology": $brand-danger,
+  "pharmacometrics-pbpk": $brand-success,
+  "systems-medicine-ai": $brand-warning,
+  "open-fair-science": $brand-primary,
+);
+
 h1, h2, h3,
 .post-title {
   font-family: $font-serif-display;
@@ -67,8 +79,12 @@ h3 {
 }
 
 .header-light {
-  font-weight: 300;
+  font-weight: 700;
   color: $brand-primary;
+  font-size: 2.6em;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
 }
 
 .regular-pad {
@@ -86,10 +102,10 @@ h3 {
 }
 
 .hero-subtitle {
-  margin-top: -0.5em;
+  margin-top: -0.2em;
   margin-bottom: 1.2em;
   font-family: $font-family-sans-serif;
-  font-size: 1.1em;
+  font-size: 1.5em;
   font-weight: 400;
   letter-spacing: 0.03em;
   color: $gray-dark;
@@ -130,6 +146,28 @@ h3 {
       margin-bottom: 0.3em;
     }
 
+    // one color per core research area, matching the tag filters/badges
+    // on projects.html and publications.html
+    .fa-cube {
+      color: map-get($tag-colors, "digital-twins");
+    }
+
+    .fa-picture-o {
+      color: map-get($tag-colors, "digital-pathology");
+    }
+
+    .fa-line-chart {
+      color: map-get($tag-colors, "pharmacometrics-pbpk");
+    }
+
+    .fa-heartbeat {
+      color: map-get($tag-colors, "systems-medicine-ai");
+    }
+
+    .fa-unlock-alt {
+      color: map-get($tag-colors, "open-fair-science");
+    }
+
     h3 {
       display: block;
       margin-top: 0.2em;
@@ -151,10 +189,6 @@ h3 {
       &:focus {
         text-decoration: none;
         color: inherit;
-
-        .fa {
-          color: darken($brand-success, 8%);
-        }
 
         h3 {
           color: $brand-success;
@@ -249,8 +283,7 @@ h3 {
   }
 }
 
-// compact card grid for the current-members roster (see people.html)
-// tag filter bar and badges for the projects overview (see projects.html)
+// tag filter bar and badges, reused on projects.html and publications.html
 .tag-filter {
   display: flex;
   flex-wrap: wrap;
@@ -269,17 +302,31 @@ h3 {
   transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 
   &:hover {
-    border-color: $brand-success;
+    border-color: $brand-primary;
   }
 
   &.active {
-    border-color: $brand-success;
-    background-color: $brand-success;
+    border-color: $brand-primary;
+    background-color: $brand-primary;
     color: #fff;
+  }
+
+  @each $slug, $color in $tag-colors {
+    &.tag-#{$slug} {
+      &:hover {
+        border-color: $color;
+      }
+
+      &.active {
+        border-color: $color;
+        background-color: $color;
+        color: #fff;
+      }
+    }
   }
 }
 
-.project-tags {
+.tag-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.3em;
@@ -296,6 +343,13 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 0.03em;
   white-space: nowrap;
+
+  @each $slug, $color in $tag-colors {
+    &.tag-#{$slug} {
+      background-color: rgba($color, 0.14);
+      color: darken($color, 8%);
+    }
+  }
 }
 
 // compact card grid for the projects overview (see projects.html)
@@ -414,6 +468,7 @@ h3 {
   }
 }
 
+// compact card grid for the current-members roster (see people.html)
 .member-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -578,6 +633,45 @@ h3 {
   margin-bottom: 0.4em;
   padding-bottom: 0.3em;
   border-bottom: 1px solid $gray-lighter;
+}
+
+// cleaner, card-free row styling for the publication list (see publications.html)
+.publication-table {
+  border-collapse: collapse;
+
+  td {
+    padding: 0.8em 0.6em;
+    border-top: 1px solid $gray-lighter;
+    vertical-align: top;
+  }
+
+  tr:first-child td {
+    border-top: none;
+  }
+
+  tr:hover td {
+    background-color: rgba($brand-success, 0.05);
+  }
+
+  .publication-status {
+    color: $gray-dark;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .pub-title {
+    margin: 0 0 0.3em;
+    font-family: $font-serif-display;
+    font-weight: 600;
+    color: $brand-primary;
+  }
+
+  .pub-meta {
+    margin: 0.3em 0 0;
+    color: $gray-dark;
+    font-size: 0.9em;
+  }
 }
 
 // ------------------------------------------------------------------
