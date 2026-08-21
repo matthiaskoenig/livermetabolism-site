@@ -1387,6 +1387,7 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   pdf: 'Maheshvare2023_pancreas.pdf'
   authors: 'M. D. Maheshvare, S. Raha, <b>M. KönigΔ</b>, and D. PalΔ (Δ equal contribution)'
   people:
+    - deepa
     - koenig
   title: 'A pathway model of glucose-stimulated insulin secretion in the pancreatic β-cell'
   journal: 'Front. Endocrinol. 14:1185656'
