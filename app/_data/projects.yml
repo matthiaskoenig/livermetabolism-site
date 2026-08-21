@@ -51,6 +51,139 @@
   image_title: Physiologically based pharmacokinetic (PBPK) model of dextromethophan.
   abstract: 'A curated pharmacokinetics dataset and PBPK model of dextromethorphan and its metabolites, capturing CYP2D6 genetic polymorphisms and CYP3A4 variability to explain interindividual differences in drug metabolism. Model and database are freely available.'
 
+- id: sglt2
+  title: "Digital twins of SGLT2 inhibitors"
+  status: 'current'
+  tags:
+    - "Digital Twins"
+    - "Pharmacometrics & PBPK"
+  publications:
+    - 'Nemitz2026_dapagliflozin'
+    - 'Elias2026_dapagliflozin_physiome'
+    - 'Bachelor.Thesis.Nike.Nemitz'
+    - 'Tereshchuk2026_canagliflozin_preprint'
+    - 'Alejandro2026_empagliflozin_preprint'
+  project:
+  repository:
+  people:
+    - nike
+    - vera
+    - jennesse
+    - michelle
+    - mariia
+    - mariia_babaeva
+    - koenig
+  cooperation partners:
+  images:
+    - dapagliflozin.png
+    - canagliflozin.png
+    - empagliflozin.png
+  abstract: 'PBPK/PD digital twins of the SGLT2 inhibitors dapagliflozin, canagliflozin, and empagliflozin, characterizing interindividual variability in glycemic response in type 2 diabetes, e.g. due to differences in hepatorenal function.'
+
+- id: blood_pressure
+  title: "Digital twins for blood pressure regulation"
+  status: 'current'
+  tags:
+    - "Digital Twins"
+    - "Pharmacometrics & PBPK"
+  publications:
+    - 'Tensil2026_losartan'
+    - 'Myshkina2026_losartan_physiome'
+    - 'Bachelor.Thesis.Ennie.Tensil'
+    - 'Schwaiger2026_hctz_preprint'
+  project:
+  repository:
+  people:
+    - ennie
+    - amanda
+    - mariia
+    - michelle
+    - koenig
+  cooperation partners:
+  images:
+    - losartan.png
+    - hydrochlorothiazide.png
+  abstract: 'PBPK/PD digital twins of the antihypertensive agents losartan and hydrochlorothiazide, modeling blood-pressure regulation to study interindividual variability from hepatorenal impairment and pharmacogenomics.'
+
+- id: glimepiride
+  title: "Digital twin of glimepiride for personalized diabetes therapy"
+  status: 'current'
+  tags:
+    - "Digital Twins"
+    - "Pharmacometrics & PBPK"
+  publications:
+    - 'Elias2025_glimepiride'
+    - 'Elias2025_glimepiride_physiome'
+    - 'Bachelor.Thesis.Michelle.Elias'
+  project:
+  repository:
+  people:
+    - michelle
+    - koenig
+  cooperation partners:
+  images:
+    - glimepiride.png
+  abstract: 'A PBPK/PD digital twin of the sulfonylurea glimepiride, investigating variability in insulin secretion and treatment response in type 2 diabetes, e.g. due to hepatorenal function and CYP2C9 genotype.'
+
+- id: doac
+  title: "Digital twins of direct oral anticoagulants (DOACs)"
+  status: 'current'
+  tags:
+    - "Digital Twins"
+    - "Pharmacometrics & PBPK"
+  publications:
+    - 'Myshkina2026_apixaban_preprint'
+    - 'Cassabianca2025_preprint'
+    - 'Master.Thesis.Elisabetta.Casabianca'
+  project:
+  repository:
+  people:
+    - mariia
+    - elisabetta
+    - mariia_babaeva
+    - shelee
+    - michelle
+    - koenig
+  cooperation partners:
+  images:
+    - apixaban.png
+    - rivaroxaban.png
+  abstract: 'PBPK/PD digital twins of direct oral anticoagulants (DOACs), covering apixaban and rivaroxaban with edoxaban planned, supporting personalized anticoagulation therapy in special populations such as renal or hepatic impairment.'
+
+- id: rapamycin
+  title: "Digital twin of rapamycin for personalized immunosuppressive therapy"
+  status: 'current'
+  tags:
+    - "Digital Twins"
+    - "Pharmacometrics & PBPK"
+  publications:
+    - 'Jesionek2026_rapamycin_preprint'
+  project:
+  repository:
+  people:
+    - monajes
+    - koenig
+  cooperation partners:
+  images:
+    - rapamycin.png
+  abstract: 'A PBPK digital twin of the mTOR inhibitor rapamycin (sirolimus) predicting dose-exposure relationships and organ impairment effects, contributing to the Immune Digital Twin (IDT) initiative.'
+
+- id: montelukast
+  title: "PBPK model of montelukast"
+  status: 'current'
+  tags:
+    - "Pharmacometrics & PBPK"
+  publications:
+  project:
+  repository:
+  people:
+    - jessica
+    - koenig
+  cooperation partners:
+  images:
+    - montelukast.png
+  abstract: 'A PBPK model of the leukotriene receptor antagonist montelukast investigating interindividual variability from hepatic CYP2C9/CYP3A4 metabolism, drug-drug interactions, and age-related differences.'
+
 - id: protein_distribution
   title: "Protein distributions in the human liver"
   status: 'current'
