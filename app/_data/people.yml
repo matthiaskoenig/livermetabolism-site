@@ -3,7 +3,7 @@
   year: '2016-'
   name: 'Prof. Dr. rer. nat. Matthias König'
   position:
-    - 'Group leader'
+    - 'Group Leader'
   image: koenig.png
   orcid: '0000-0003-1725-179X'
   repository: 'https://github.com/matthiaskoenig/'
@@ -17,7 +17,7 @@
   year: '2024-'
   name: 'Mariia Myshkina'
   position:
-    - 'Ph.D. student'
+    - 'Ph.D. Student'
   image: myshkina.png
   orcid: "0009-0000-7769-2154"
   repository: 'https://github.com/MariiaMysh'
@@ -29,8 +29,8 @@
   year: '2023-10/2024-05, 2026-07-'
   name: 'Shubhankar Palwankar'
   position:
-    - 'Master thesis'
-    - 'Scientific researcher'
+    - 'Master Thesis'
+    - 'Scientific Researcher'
   image: shubhankar.png
   orcid: "0009-0007-3431-463X"
   repository: "https://github.com/shubhankarpalwankar"
@@ -42,22 +42,22 @@
   year: '2024-09/2025-12'
   name: 'Michelle Elias'
   position:
-    - 'Bachelor thesis'
-    - 'Student assistant'
-    - 'Master thesis'
+    - 'Bachelor Thesis'
+    - 'Student Assistant'
+    - 'Master Thesis'
   image: michelle.jpg
   orcid: "0009-0005-7959-3164"
   repository: 'https://github.com/mii-halina'
   homepage:
-  description: 'Michelle develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of the sulfonylurea glimepiride. The objective is to enhance our understanding of the underlying causes of intraindividual variability in insulin secretion and T2DM treatment with sulfonylurea, e.g., differences in hepatorenal function.'
+  description: 'Michelle develops a physiologically based pharmacokinetic/ pharmacodynamic (PBPK) model of the sulfonylurea glimepiride. The objective is to enhance our understanding of the underlying causes of intraindividual variability in insulin secretion and T2DM treatment with sulfonylurea, e.g., differences in hepatorenal function.'
 
 - id: 'mariia_babaeva'
   status: 'current'
   year: '2025-04/2026'
   name: 'Mariia Babaeva'
   position:
-    - 'Master project'
-    - 'Student assistant'
+    - 'Master Project'
+    - 'Student Assistant'
   image: mariia_babaeva.jpg
   orcid: "0009-0007-6659-7638"
   repository: 'https://github.com/icalledmyselfmoon'
@@ -69,12 +69,12 @@
   year: '2023-09/2026-09'
   name: 'Amanda Schwaiger'
   position:
-    - 'Medical thesis'
+    - 'Medical Thesis'
   image: amanda.png
-  orcid:
+  orcid: '0000-0002-8993-8569'
   repository: 'https://github.com/amdangelica'
   homepage:
-  description: 'Amanda develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the diuretic hydrochlorothiazide. The objective is to enhance our understanding of how hydrochlorothiazide changes urinary volume and plasma volume and ion balance (sodium, potassium, chloride).'
+  description: 'Amanda develops a physiologically based pharmacokinetic/ pharmacodynamic (PBPK/PD) model of the diuretic hydrochlorothiazide. The objective is to enhance our understanding of how hydrochlorothiazide changes urinary volume and plasma volume and ion balance (sodium, potassium, chloride).'
 
 - id: 'kim'
   status: 'current'
@@ -86,7 +86,7 @@
   orcid:
   repository: 'https://github.com/unfulw'
   homepage:
-  description: "Kim is developing a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the GLP-1 receptor agonist dulaglutide to better understand its absorption, distribution, metabolism, and effects on glucose regulation."
+  description: "Kim is developing a physiologically based pharmacokinetic/ pharmacodynamic (PBPK/PD) model of the GLP-1 receptor agonist dulaglutide to better understand its absorption, distribution, metabolism, and effects on glucose regulation."
 
 - id: 'jessica'
   status: 'current'
@@ -105,7 +105,7 @@
   year: '2026-04/2026-11'
   name: 'Shelee Bedón'
   position:
-    - 'Internship project'
+    - 'Internship Project'
   image: shelee.jpg
   orcid: "0009-0005-9147-0028"
   repository: 'https://github.com/Shelee97'
@@ -117,7 +117,7 @@
   year: '2026-04/2026-11'
   name: 'Chang Linh Nguyen'
   position:
-    - 'Bachelor project'
+    - 'Bachelor Project'
   image: linh.jpg
   orcid: "0009-0004-8004-3314"
   repository: 'https://github.com/changlinh'
@@ -129,7 +129,7 @@
   year: '2026-06/2026-12'
   name: 'Sandeep Konaka Gautamdas'
   position:
-    - 'Internship project'
+    - 'Internship Project'
   image: sandeep.jpg
   orcid: '0000-0002-7855-9715'
   repository: 'https://github.com/sandeep-konakagautamdas'
@@ -141,8 +141,8 @@
   year: '2023-10/2025-12'
   name: 'Antonio Aquiles Alvarez Aguilar'
   position:
-    - 'Master thesis'
-    - 'Internship project'
+    - 'Master Thesis'
+    - 'Internship Project'
   image: antonio.png
   orcid:
   repository: 'https://github.com/MadNietzsche'
@@ -155,7 +155,7 @@
   end_year: '2025'
   name: 'Monika Jesionek'
   position:
-    - 'ERASMUS student'
+    - 'ERASMUS Student'
   image: monajes.jpg
   orcid: "0009-0003-3110-3440"
   repository: 'https://github.com/monajes'
@@ -169,7 +169,7 @@
   end_year: '2025'
   name: 'Juan Pablo Ramos Mendoza'
   position:
-    - 'Master student'
+    - 'Master Student'
   image: juanpablo.png
   orcid:
   repository: 'https://github.com/Juan-hub129'
@@ -182,12 +182,13 @@
   end_year: '2025'
   name: 'Ennie Tensil'
   position:
-    - 'Bachelor project and Bachelor thesis'
+    - 'Bachelor Project'
+    - 'Bachelor Thesis'
   image: ennie.jpg
   orcid:
   repository: 'https://github.com/ennietensil'
   homepage:
-  description: 'Ennie develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of the direct angiotensin II receptor (ARB) inhibitor losartan. The objective is to enhance our understanding of the underlying causes of intraindividual variability in hypertension treatment with ARB inhibitors, e.g., differences in hepatorenal function and CYP2C9 genotype.'
+  description: 'Ennie develops a physiologically based pharmacokinetic/ pharmacodynamic (PBPK) model of the direct angiotensin II receptor (ARB) inhibitor losartan. The objective is to enhance our understanding of the underlying causes of intraindividual variability in hypertension treatment with ARB inhibitors, e.g., differences in hepatorenal function and CYP2C9 genotype.'
 
 - id: 'elisabetta'
   status: 'alumni'
@@ -196,12 +197,12 @@
   name: 'Elisabetta Casabianca'
   position:
     - 'ERASMUS'
-    - 'Master thesis'
+    - 'Master Thesis'
   image: elisabetta.jpg
   orcid:
   repository: 'https://github.com/elisabettacasabianca11'
   homepage:
-  description: 'Elisabetta develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of the direct oral anticoagulant (DOAC) rivaroxaban. The objective is to enhance our understanding of the underlying causes of intraindividual variability in anticoagulation treatment with DOACs.'
+  description: 'Elisabetta develops a physiologically based pharmacokinetic/ pharmacodynamic (PBPK) model of the direct oral anticoagulant (DOAC) rivaroxaban. The objective is to enhance our understanding of the underlying causes of intraindividual variability in anticoagulation treatment with DOACs.'
 
 - id: 'helen'
   status: 'alumni'
@@ -209,8 +210,8 @@
   end_year: '2025'
   name: 'Helen Leal Pujol'
   position:
-    - 'Bachelor student'
-    - 'Student assistant'
+    - 'Bachelor Student'
+    - 'Student Assistant'
   image: helen.png
   orcid:
   repository: 'https://github.com/Lepujolh'
@@ -223,12 +224,12 @@
   end_year: '2025'
   name: 'Nike Nemitz'
   position:
-    - 'Bachelor project'
+    - 'Bachelor Project'
   image: nike.png
   orcid:
   repository: 'https://github.com/nikenemitz'
   homepage:
-  description: 'Nike develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of SGLT2 inhibitor dapagliflozin. The objective is to enhance our understanding of the underlying causes of intraindividual variability in diabetes treatment with SGLT2 inhibitors, e.g., differences in hepatorenal function.'
+  description: 'Nike develops a physiologically based pharmacokinetic/ pharmacodynamic (PBPK) model of SGLT2 inhibitor dapagliflozin. The objective is to enhance our understanding of the underlying causes of intraindividual variability in diabetes treatment with SGLT2 inhibitors, e.g., differences in hepatorenal function.'
 
 - id: 'kim'
   status: 'alumni'
@@ -241,7 +242,7 @@
   orcid:
   repository: 'https://github.com/unfulw'
   homepage:
-  description: "Kim is developing a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the GLP-1 receptor agonist dulaglutide to better understand its absorption, distribution, metabolism, and effects on glucose regulation."
+  description: "Kim is developing a physiologically based pharmacokinetic/ pharmacodynamic (PBPK/PD) model of the GLP-1 receptor agonist dulaglutide to better understand its absorption, distribution, metabolism, and effects on glucose regulation."
 
 - id: 'isabella'
   status: 'alumni'
@@ -249,7 +250,7 @@
   end_year: '2025'
   name: 'Isabella Tan'
   position:
-    - 'Humboldt Internship Project (HIP) 2025'
+    - 'Humboldt Internship Project (HIP)'
   image: isabella.jpg
   orcid:
   repository: 'https://github.com/bellatgy'
@@ -262,12 +263,12 @@
   end_year: '2025'
   name: 'Olivia Yau'
   position:
-    - 'Humboldt Internship Project (HIP) 2025'
+    - 'Humboldt Internship Project (HIP)'
   image: olivia.png
   orcid:
   repository: 'https://github.com/oliviaayau'
   homepage:
-  description: "During Program Day at Humboldt-Universität zu Berlin, Isabella Tan, Olivia Yau, and Minjun Kim presented their physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) modeling projects on GLP-1 receptor agonists. Minjun Kim is developing a model of dulaglutide to investigate its absorption, distribution, metabolism, and effects on glucose regulation. Isabella Tan is building a model of liraglutide to study its pharmacological behavior and impact on glucose homeostasis, focusing on individualized treatment strategies. Olivia Yau is working on a model of lixisenatide to explore its kinetics and therapeutic effects, aiming to advance personalized approaches to diabetes therapy."
+  description: "During Program Day at Humboldt-Universität zu Berlin, Isabella Tan, Olivia Yau, and Minjun Kim presented their physiologically based pharmacokinetic/ pharmacodynamic (PBPK/PD) modeling projects on GLP-1 receptor agonists. Minjun Kim is developing a model of dulaglutide to investigate its absorption, distribution, metabolism, and effects on glucose regulation. Isabella Tan is building a model of liraglutide to study its pharmacological behavior and impact on glucose homeostasis, focusing on individualized treatment strategies. Olivia Yau is working on a model of lixisenatide to explore its kinetics and therapeutic effects, aiming to advance personalized approaches to diabetes therapy."
 
 - id: 'rohinichakraborty'
   status: 'alumni'
@@ -275,7 +276,7 @@
   end_year: '2025'
   name: 'Rohini Chakraborty'
   position:
-    - 'Data curation'
+    - 'Data Curation'
   image: rohini.png
   orcid:
   repository: 'https://github.com/rohinichakraborty'
@@ -288,7 +289,7 @@
   end_year: '2025'
   name: 'Rohit Chakraborty'
   position:
-    - 'Data curation'
+    - 'Data Curation'
   image: rohit.png
   orcid:
   repository: 'https://github.com/Rohit-Chakraborty'
@@ -301,7 +302,7 @@
   end_year: '2025'
   name: 'Emre Hikmet'
   position:
-    - 'Google Summer of Code (GSOC) 2025'
+    - 'Google Summer of Code (GSOC)'
   image: emre.jpg
   orcid:
   repository: 'https://github.com/kyxhik'
@@ -314,7 +315,7 @@
   end_year: '2025'
   name: 'Michael Gaas'
   position:
-    - 'Google Summer of Code (GSOC) 2025'
+    - 'Google Summer of Code (GSOC)'
   image: michael_gaas.png
   orcid:
   repository: 'https://github.com/xts-Michi'
@@ -341,12 +342,12 @@
   end_year: '2024'
   name: 'Jennesse Alejandro'
   position:
-    - 'Humboldt Internship Student 2024 (Brown University)'
+    - 'Humboldt Internship Student (Brown University)'
   image: jennesse.jpg
   orcid:
   repository: 'https://github.com/jen-ne-sse'
   homepage:
-  description: 'Jennesse develops a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of SGLT2 inhibitor canagliflozin. The objective is to enhance our understanding of the underlying causes of intraindividual variability in diabetes treatment with SGLT2 inhibitors, e.g., differences in hepatorenal function.'
+  description: 'Jennesse develops a physiologically based pharmacokinetic/ pharmacodynamic (PBPK) model of SGLT2 inhibitor canagliflozin. The objective is to enhance our understanding of the underlying causes of intraindividual variability in diabetes treatment with SGLT2 inhibitors, e.g., differences in hepatorenal function.'
 
 - id: 'deepa'
   status: 'alumni'
@@ -354,8 +355,8 @@
   end_year: '2024'
   name: 'Deepa Maheshvare'
   position:
-    - 'Ph.D. student (internship)'
-    - 'Humboldt Internship Student 2024'
+    - 'Ph.D. Student (Internship)'
+    - 'Humboldt Internship Student'
   image: deepa.png
   orcid:
   repository: 'https://github.com/DeepaMahm'
@@ -368,8 +369,8 @@
   end_year: '2024'
   name: 'Beatrice Stemmer Mallol'
   position:
-    - 'Bachelor student'
-    - 'Student assistant'
+    - 'Bachelor Student'
+    - 'Student Assistant'
   image: stemllb.png
   orcid:
   repository: 'https://github.com/stemllb'
@@ -395,12 +396,13 @@
   end_year: '2025'
   name: 'Yusuf Ali Kulanoglu'
   position:
-    - 'Study project and Bachelor thesis Biophysics'
+    - 'Study Project'
+    - 'Bachelor Thesis Biophysics'
   image: yusuf.png
   orcid:
   repository: 'https://github.com/ykulanoglu'
   homepage:
-  description: 'Yusuf works on a physiologically based pharmacokinetic/pharmacodynamic model of the direct renin inhibitor aliskiren.'
+  description: 'Yusuf works on a physiologically based pharmacokinetic/ pharmacodynamic model of the direct renin inhibitor aliskiren.'
 
 - id: 'vera'
   status: 'alumni'
@@ -408,12 +410,12 @@
   end_year: '2024'
   name: 'Vera Tereshchuk'
   position:
-    - 'Humboldt Internship Student 2024'
+    - 'Humboldt Internship Student'
   image: vera.jpg
   orcid:
   repository: 'https://github.com/tereshchuk1'
   homepage:
-  description: 'Vera developed a physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of SGLT2 inhibitor canagliflozin. The objective is to enhance our understanding of the underlying causes of intraindividual variability in diabetes treatment with SGLT2 inhibitors, e.g., differences in hepatorenal function.'
+  description: 'Vera developed a physiologically based pharmacokinetic/ pharmacodynamic (PBPK) model of SGLT2 inhibitor canagliflozin. The objective is to enhance our understanding of the underlying causes of intraindividual variability in diabetes treatment with SGLT2 inhibitors, e.g., differences in hepatorenal function.'
 
 - id: 'samira'
   status: 'alumni'
@@ -434,8 +436,8 @@
   end_year: '2024'
   name: 'Jonas Küttner'
   position:
-    - 'Master project'
-    - 'Master student'
+    - 'Master Project'
+    - 'Master Student'
     - 'QuaLiPerF'
   image: jonaspk98.png
   orcid:
@@ -449,7 +451,7 @@
   end_year: '2024'
   name: 'Prerna Parakkat'
   position:
-    - 'Humboldt Internship Student 2024'
+    - 'Humboldt Internship Student'
   image: prerna.jpg
   orcid:
   repository: 'https://github.com/prerna2023'
@@ -462,7 +464,7 @@
   end_year: '2024'
   name: 'Afruja Hossain'
   position:
-    - 'Bachelor student'
+    - 'Bachelor Student'
   image: afruja.png
   orcid:
   repository: 'https://github.com/afruja-h'
@@ -528,7 +530,7 @@
   end_year: '2023'
   name: 'Xenia Petukhova'
   position:
-    - 'Humboldt Internship Student 2023'
+    - 'Humboldt Internship Student'
   image: xenia.png
   orcid:
   repository: 'https://github.com/dzinty'
@@ -555,7 +557,7 @@
   end_year: '2023'
   name: 'Zahra Bahri'
   position:
-    - 'Humboldt Internship Student 2023'
+    - 'Humboldt Internship Student'
   image: zhara.png
   orcid:
   repository: 'https://github.com/Rain-marine'
@@ -568,9 +570,9 @@
   end_year: '2020'
   name: 'Florian Bartsch'
   position:
-    - 'Bachelor student'
-    - 'Student assistant'
-    - 'Master project'
+    - 'Bachelor Student'
+    - 'Student Assistant'
+    - 'Master Project'
   image: flobar.png
   orcid:
   repository: 'https://github.com/FloBar'
@@ -583,9 +585,9 @@
   end_year: '2023'
   name: 'Adrian Köller'
   position:
-    - 'Bachelor student'
-    - 'Master project'
-    - 'Student assistant'
+    - 'Bachelor Student'
+    - 'Master Project'
+    - 'Student Assistant'
   image: adrian.png
   orcid:
   repository: 'https://github.com/adriankl'
@@ -611,7 +613,7 @@
   end_year: '2023'
   name: 'Jan Grzegorzewski'
   position:
-    - 'Ph.D. student'
+    - 'Ph.D. Student'
   image: grzegorzewski.png
   orcid: '0000-0002-4588-4925'
   repository: 'https://github.com/janekg89/'
@@ -651,7 +653,7 @@
   end_year: '2023'
   name: 'Deepa Maheshvare'
   position:
-    - 'Ph.D. student (internship)'
+    - 'Ph.D. Student (Internship)'
   image: deepa.png
   orcid:
   repository: 'https://github.com/DeepaMahm'
@@ -665,7 +667,7 @@
   end_year: '2022'
   name: 'Janosch Brandhorst'
   position:
-    - 'Student assistant'
+    - 'Student Assistant'
   image: brandhorst.png
   orcid:
   repository: 'https://github.com/JBrandh'
@@ -678,7 +680,7 @@
   end_year: '2021'
   name: 'Sükrü Balci'
   position:
-    - 'Bachelor student'
+    - 'Bachelor Student'
   image: balci.png
   orcid:
   repository: 'https://github.com/SukruBalci'
@@ -692,7 +694,7 @@
   name: 'Sankha Das'
   affiliation: 'Dhirubhai Institute of ICT'
   position:
-    - 'Google Summer of Code Student (2021)'
+    - 'Google Summer of Code Student'
   image: 'sankha.png'
   orcid:
   repository: 'https://github.com/sankha555'
@@ -706,7 +708,7 @@
   end_year: '2021'
   name: 'Yannick Duport'
   position:
-    - 'Bachelor student'
+    - 'Bachelor Student'
   image: yannick.png
   orcid:
   repository: 'https://github.com/YannickDuport'
@@ -719,7 +721,7 @@
   end_year: '2021'
   name: 'Danny Ke'
   position:
-    - 'Humboldt Internship Student 2020'
+    - 'Humboldt Internship Student'
   image: danny.png
   orcid:
   repository: 'https://github.com/dannythekey'
@@ -733,7 +735,7 @@
   end_year: '2020'
   name: 'Sara de Angelis'
   position:
-    - 'Humboldt Internship Student 2020'
+    - 'Humboldt Internship Student'
   image: sara.png
   orcid:
   repository: 'https://github.com/SaraD-hub'
@@ -748,7 +750,7 @@
   name: 'Hemant Yadav'
   affiliation: 'Indian Institute of Technology, Roorkee'
   position:
-    - 'Google Summer of Code Student (2020)'
+    - 'Google Summer of Code Student'
   image: hemant.png
   orcid:
   repository: 'https://github.com/hemant27031999/cobrapy'
@@ -763,7 +765,7 @@
   name: 'Hemil Panchiwala'
   affiliation: 'Indian Institute of Technology, Roorkee'
   position:
-    - 'Google Summer of Code Student (2020)'
+    - 'Google Summer of Code Student'
   image: hemil.png
   orcid:
   repository: 'https://github.com/hemilpanchiwala/SBSCL'
@@ -778,7 +780,7 @@
   name: 'Kaustubh Trivedi'
   affiliation: 'Indian Institute of Technology, Roorkee'
   position:
-    - 'Google Summer of Code Student (2019)'
+    - 'Google Summer of Code Student'
   image: kaustubh.png
   orcid:
   repository: 'https://github.com/codekaust'
@@ -792,7 +794,7 @@
   end_year: '2019'
   name: 'Patrick Pett'
   position:
-    - 'Ph.D. student (mentoring)'
+    - 'Ph.D. Student (Mentoring)'
   image: pett.png
   orcid:
   repository: 'https://bitbucket.org/JPatrickP/'
@@ -806,7 +808,7 @@
   end_year: '2018'
   name: 'Roman Schulte'
   position:
-    - 'Bachelor thesis'
+    - 'Bachelor Thesis'
   image: schulte.png
   orcid:
   repository: 'https://github.com/anfark'
@@ -819,7 +821,7 @@
   end_year: '2018'
   name: 'Shalin Shah'
   position:
-    - 'Google Summer of Code 2018'
+    - 'Google Summer of Code'
   image: 'shah.png'
   orcid:
   repository: 'https://github.com/shalinshah1993/SBSCL'
@@ -832,7 +834,7 @@
   end_year: '2017'
   name: 'Takahiro Yamada'
   position:
-    - 'Google Summer of Code 2017'
+    - 'Google Summer of Code'
   image: 'yamada.png'
   orcid:
   repository: 'https://github.com/TakahiroYamada/GSOC2017_SBMLModelAnalysisWebApp'
@@ -846,7 +848,7 @@
   end_year: '2017'
   name: 'Dimitra Eleftheriadou'
   position:
-    - 'Student assistant'
+    - 'Student Assistant'
   image: eleftheriadou.png
   orcid:
   repository:

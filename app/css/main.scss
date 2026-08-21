@@ -62,7 +62,7 @@ h3 {
   font-weight: 600;
   color: $brand-primary;
   padding-bottom: 0.2em;
-  margin-top: 1.6em;
+  margin-top: 0.8em;
   border-bottom: 2px solid $brand-success;
 }
 
@@ -250,6 +250,41 @@ h3 {
 }
 
 // compact card grid for the current-members roster (see people.html)
+// cards for the different kinds of open positions (see people.html)
+.position-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5em;
+  margin: 1.5em 0 2em;
+}
+
+.position-card {
+  padding: 1.2em 1.4em;
+  border: 1px solid $gray-lighter;
+  border-radius: 6px;
+  background-color: $body-bg;
+  transition: box-shadow 0.15s ease;
+
+  &:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  h3 {
+    display: block;
+    margin-top: 0;
+    font-size: 1.15em;
+  }
+
+  p {
+    color: $gray-dark;
+    font-size: 0.95em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
 .member-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -344,6 +379,11 @@ h3 {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+
+      img {
+        vertical-align: middle;
+        margin-top: -2px;
+      }
     }
 
     .person-position {

@@ -20,7 +20,7 @@ subnav:
     {% if person.status=="current" %}
     <div class="member-card">
         {% if person.image %}
-        <img src="/img/people/128/{{ person.image }}" alt="{{ person.name }}" class="member-photo"/>
+        <img src="/img/people/128/{{ person.image }}" alt="{{ person.name }}" class="member-photo" />
         {% endif %}
         <div class="member-info">
             <strong>{{ person.name }}</strong>
@@ -30,13 +30,16 @@ subnav:
             {% endif %}
             <div class="member-links">
                 {% if person.homepage %}
-                <a href="{{ person.homepage }}" target="_blank" rel="noopener noreferrer" title="Homepage"><i class="fa fa-home"></i></a>
+                <a href="{{ person.homepage }}" target="_blank" rel="noopener noreferrer" title="Homepage"><i
+                        class="fa fa-home"></i></a>
                 {% endif %}
                 {% if person.orcid %}
-                <a href="https://orcid.org/{{ person.orcid }}" target="_blank" rel="noopener noreferrer" title="ORCID"><img src="/img/orcid.png" height="16"/></a>
+                <a href="https://orcid.org/{{ person.orcid }}" target="_blank" rel="noopener noreferrer"
+                    title="ORCID"><img src="/img/orcid.png" height="16" /></a>
                 {% endif %}
                 {% if person.repository %}
-                <a href="{{ person.repository }}" target="_blank" rel="noopener noreferrer" title="Repository homepage"><img src="../img/repository.png" height="16"/></a>
+                <a href="{{ person.repository }}" target="_blank" rel="noopener noreferrer"
+                    title="Repository homepage"><img src="../img/repository.png" height="16" /></a>
                 {% endif %}
             </div>
         </div>
@@ -46,90 +49,93 @@ subnav:
 </div>
 
 <h2 id="open-positions">Open Positions</h2>
+
+
+
 <div class="row">
-    <div class="col-md-6 text-justify">
-        <h3><i class="fa fa-user"></i> Research Internships</h3>
-        <div class="row">
-            <div class="col-md-6">
-                <img src="/img/news/xresearch_logo.png" class="img-responsive"/>
-            </div>
-            <div class="col-md-6">
+    <img src="/img/teaching_banner.png" style="width: 100%; height: auto;" />
+</div>
+
+<div class="row">
+    <div class="col-md-12 text-justify">
+        <div class="position-cards">
+            <div class="position-card">
+                <h3>PhD & PostDoc</h3>
                 <p>
-                We offer internships via the Humboldt Internship Program 2024 - Computational Modeling of Drug Detoxification - A Systems Medicine Approach.
-                Application is open from 03 November to 10 December 2023.
-                <a href="https://hic.hu-berlin.de/en/internship-program/projects/201" target="_blank" rel="noopener noreferrer">https://hic.hu-berlin.de/en/internship-program/projects/201</a>
+                    We have a fully funded open position available as PhD or PostDoc in Lübeck as a Research Software
+                    Engineer (RSE) or Informatician.
                 </p>
                 <p>
-                We offer individual research internships (4-12 weeks) for students with a background in computer science, bioinformatics, quantitative/theoretical biology or related fields. We support ERASMUS student internships.
+                    We also supervise doctoral projects if you have a fellowship or similar funding source.
+                </p>
+            </div>
+            <div class="position-card">
+                <h3>Bachelor & Master Thesis</h3>
+                <p>
+                    Undergraduate (Bachelor) and graduate (Master) students are always welcome. 
+
+                    Projects can take place in Lübeck or Berlin.
+                </p>
+            </div>
+            <div class="position-card">
+                <h3>Research Internships</h3>
+                <p>
+                    We offer internships online or in-person for instance via the <a
+                        href="https://hic.hu-berlin.de/en/internship-program/projects/201" target="_blank"
+                        rel="noopener noreferrer">Humboldt Internship Program</a>.
+                </p>
+                <p>
+                    We support ERASMUS student internships.
                 </p>
             </div>
         </div>
-        <p>
-            Please note that we are generally unable to cover living and travel expenses. Therefore, if necessary, third-party funding through scholarships/travel grants must be arranged first.
-        </p>
-        <p>
-            Internships are available as online or in-person internships.<br/>
-        </p>
-        Contact <i class="fa fa-envelope"></i> <a href="mailto:{{ site.email }}">Matthias König</a>
-        </p>
 
-        <h3><i class="fa fa-user"></i> Bachelor & Master Thesis</h3>
         <p>
-        Undergraduate (Bachelor) and graduate (Master) students are always welcome. For students interested in doing a thesis in computational modeling or bioinformatics applied to biological problems, we can offer projects on
-
-        <ul>
-            <li>Physiologically based pharmacokinetics modeling</li>
-            <li>Modeling of hepatic liver metabolism and liver function</li>
-            <li>Image analysis and Machine Learning</li>
-            <li>Data bases, web interface, standardization of computational models, simulation workflows</li>
-            <li>Data integration</li>
-            <li>Systems Biology and Systems Medicine of the liver</li>
-        </ul>
-
-        The projects will be adapted based on your computational background.
+            Interested in joining the group? Contact <i class="fa fa-envelope"></i> <a
+                href="mailto:matthias.koenig@uni-luebeck.de">Matthias König</a>. We offer projects on the following topics
         </p>
-        <p>
-            Contact <i class="fa fa-envelope"></i> <a href="mailto:{{ site.email }}">Matthias König</a>
-        </p>
-                <h3><i class="fa fa-user"></i> PhD</h3>
-        <p>
-        <div class="row">
-            <p>
-                We have an open funded PhD position starting 06/2025 working on development of liver digital twins for clinical decision support within the Simliva 2 project. For more information see: <a href="/simliva2/">SimLivA II</a>.
-            </p>
-            <p>
-                We also supervise doctoral projects if you have a fellowship or similar funding source.
-            </p>
-            <p>
-                Contact <i class="fa fa-envelope"></i> <a href="mailto:{{ site.email }}">Matthias König</a>.
-            </p>
+        <div class="core-messages">
+            <div class="core-message">
+                <i class="fa fa-cube" aria-hidden="true"></i>
+                <h3>Digital Twins</h3>
+                <p>Physiologically based models that mirror individual patients, from molecule to whole body.</p>
+            </div>
+            <div class="core-message">
+                <i class="fa fa-picture-o" aria-hidden="true"></i>
+                <h3>Digital Pathology</h3>
+                <p>AI-driven analysis of whole-slide histology to quantify liver structure and disease at scale.</p>
+            </div>
+            <div class="core-message">
+                <i class="fa fa-line-chart" aria-hidden="true"></i>
+                <h3>Pharmacometrics &amp; PBPK</h3>
+                <p>Physiologically based pharmacokinetic/ pharmacodynamic models for precision dosing.</p>
+            </div>
+            <div class="core-message">
+                <i class="fa fa-heartbeat" aria-hidden="true"></i>
+                <h3>Systems Medicine &amp; AI</h3>
+                <p>Mechanistic modeling meets machine learning for predictive, personalized medicine.</p>
+            </div>
+            <div class="core-message">
+                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                <h3>Open &amp; FAIR Science</h3>
+                <p>Reproducible, standardized models and data that the community can build on.</p>
+            </div>
         </div>
-        </p>
     </div>
-
-    <div class="col-md-6 text-justify">
-        <img src="/img/supervision.png" class="img-responsive"/>
-        <br/>
-        {% highlight python %}
-def participate(you: Student) -> bool:
-    if you.are_motivated and you.can_code:
-        print(f"We are looking for {you}.")
-        return True
-    return False
-        {% endhighlight %}
-    </div>
-
 </div>
 
 <h2 id="alumni">Alumni</h2>
 <div class="alumni-grid">
     {% for person in site.data.people %}
     {% if person.status=="alumni" and person.image %}
-    <div class="alumni-card" {% if person.description %}title="{{ person.description | strip_html }}"{% endif %}>
-        <img src="/img/people/128/{{ person.image }}" alt="{{ person.name }}" class="alumni-photo"/>
+    <div class="alumni-card" {% if person.description %}title="{{ person.description | strip_html }}" {% endif %}>
+        <img src="/img/people/128/{{ person.image }}" alt="{{ person.name }}" class="alumni-photo" />
         <div class="alumni-info">
-            <strong>{{ person.name }}</strong>
-            <span class="person-position">{{ person.position | last }}{% if person.end_year %}, {{ person.end_year }}{% endif %}</span>
+            <strong>{{ person.name }}{% if person.orcid %} <a href="https://orcid.org/{{ person.orcid }}"
+                    target="_blank" rel="noopener noreferrer" title="ORCID"><img src="/img/orcid.png"
+                        height="14" /></a>{% endif %}</strong>
+            <span class="person-position">{{ person.position | last }}{% if person.end_year %}, {{ person.end_year }}{%
+                endif %}</span>
         </div>
     </div>
     {% endif %}
