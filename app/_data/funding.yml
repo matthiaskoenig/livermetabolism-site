@@ -1,6 +1,6 @@
 - id: 'xresearch'
-  funder_short: BMBF
-  funder: Bundesministerium für Bildung und Forschung (BMBF) und dem Land Berlin im Rahmen der Exzellenzstrategie von Bund und Ländern
+  funder_short: BMFTR
+  funder: Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR) und dem Land Berlin im Rahmen der Exzellenzstrategie von Bund und Ländern
   funder_link: https://www.berlin-university-alliance.de/
   funder_logo: bua.png
   grant:
@@ -60,7 +60,7 @@
   description: "Building an international academic network to investigate the role of algorithms and AI in medical decision support systems, with a focus on legal, ethical, and patient autonomy implications."
 
 - id: 'open_science_ambassador'
-  funder_short: BMBF
+  funder_short: BMFTR
   funder: BUA - Berlin University Alliance
   funder_link: https://www.berlin-university-alliance.de/
   funder_logo: bua.png
@@ -101,8 +101,8 @@
   description: "Developing computational models and simulation workflows to assess liver function in donor organs, advancing predictive tools for transplantation and improving clinical decision-making."
 
 - id: 'xresearch'
-  funder_short: BMBF
-  funder: Bundesministerium für Bildung und Forschung (BMBF) und dem Land Berlin im Rahmen der Exzellenzstrategie von Bund und Ländern
+  funder_short: BMFTR
+  funder: Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR) und dem Land Berlin im Rahmen der Exzellenzstrategie von Bund und Ländern
   funder_link: https://www.berlin-university-alliance.de/
   funder_logo: bua.png
   grant:
@@ -122,10 +122,10 @@
   description: "Project-based teaching initiative on digital twins in pharmacology, focusing on physiologically based pharmacokinetic (PBPK) modeling to optimize hypertension therapy with ACE inhibitors and diuretics."
 
 - id: 'atlas'
-  funder_short: BMBF
-  funder: Bundesministerium für Bildung und Forschung (BMBF) "Computational Life Sciences"
-  funder_link: https://www.bmbf.de
-  funder_logo: bmbf.png
+  funder_short: BMFTR
+  funder: Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR) "Computational Life Sciences"
+  funder_link: https://www.bmftr.bund.de
+  funder_logo: bmftr.png
   grant: "031L0304B"
   start: '03/2023'
   end: '12/2026'
@@ -143,8 +143,8 @@
   description: "Developing AI-driven and simulation-based methods to improve the assessment of liver tumors, integrating computational modeling with clinical data to support personalized diagnosis and treatment planning."
 
 - id: 'xresearch'
-  funder_short: BMBF
-  funder: Bundesministerium für Bildung und Forschung (BMBF) und dem Land Berlin im Rahmen der Exzellenzstrategie von Bund und Ländern
+  funder_short: BMFTR
+  funder: Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR) und dem Land Berlin im Rahmen der Exzellenzstrategie von Bund und Ländern
   funder_link: https://www.berlin-university-alliance.de/
   funder_logo: bua.png
   grant:
@@ -224,10 +224,10 @@
   description: "Developed reproducible computational simulation studies to investigate COVID-19 dynamics, integrating standardized workflows and open science practices for rapid and transparent research dissemination."
 
 - id: 'lisym'
-  funder_short: BMBF
-  funder: Bundesministerium für Bildung und Forschung (BMBF)
-  funder_link: https://www.bmbf.de
-  funder_logo: bmbf.png
+  funder_short: BMFTR
+  funder: Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR)
+  funder_link: https://www.bmftr.bund.de
+  funder_logo: bmftr.png
   grant: 031L0054
   start: '06/2016'
   end: '05/2022'
