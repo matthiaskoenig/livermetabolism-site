@@ -7,11 +7,11 @@ sectionid: publications
 
 <div class="tag-filter" id="publication-tag-filter">
     <button type="button" class="tag-filter-btn active" data-tag="all">All</button>
-    <button type="button" class="tag-filter-btn tag-digital-twins" data-tag="Digital Twins">Digital Twins</button>
-    <button type="button" class="tag-filter-btn tag-ai" data-tag="AI">AI</button>
-    <button type="button" class="tag-filter-btn tag-digital-pathology" data-tag="Digital Pathology">Digital Pathology</button>
-    <button type="button" class="tag-filter-btn tag-pharmacometrics" data-tag="Pharmacometrics">Pharmacometrics</button>
-    <button type="button" class="tag-filter-btn tag-open-fair" data-tag="Open &amp; FAIR">Open &amp; FAIR</button>
+    {% for t in site.data.tags %}
+    <button type="button" class="tag-filter-btn tag-{{ t.tag | slugify }}" data-tag="{{ t.tag }}" title="{{ t.short_description }}">
+        <i class="fa {{ t.icon }}" aria-hidden="true"></i> {{ t.tag }}
+    </button>
+    {% endfor %}
 </div>
 
 <div class="row" id="publication-list">
@@ -62,7 +62,8 @@ sectionid: publications
 				{% if pub_tags.tags %}
 				<div class="tag-list">
 					{% for tag in pub_tags.tags %}
-					<span class="tag-badge tag-{{ tag | slugify }}">{{ tag }}</span>
+					{% assign tag_info = site.data.tags | where: "tag", tag | first %}
+					<span class="tag-badge tag-{{ tag | slugify }}">{% if tag_info.icon %}<i class="fa {{ tag_info.icon }}" aria-hidden="true"></i> {% endif %}{{ tag }}</span>
 					{% endfor %}
 				</div>
 				{% endif %}

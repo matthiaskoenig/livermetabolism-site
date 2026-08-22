@@ -28,9 +28,11 @@ $navbar-height: 50px;
 html {
   position: relative;
   min-height: 100%;
+  overflow-x: hidden;
 }
 body {
   padding-top: $navbar-height + $navbar-margin-bottom;
+  overflow-x: hidden;
 }
 
 // ------------------------------------------------------------------
@@ -90,16 +92,6 @@ h3 {
 
 .regular-pad {
   margin-bottom: 0.8em;
-}
-
-.homepage-subtitle {
-  margin-top: 0.5em;
-  margin-bottom: 1.2em;
-  font-family: $font-family-sans-serif;
-  font-size: 1.1em;
-  font-weight: 400;
-  letter-spacing: 0.03em;
-  color: $gray-dark;
 }
 
 .hero-subtitle {
@@ -302,6 +294,10 @@ h3 {
   cursor: pointer;
   transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 
+  .fa {
+    margin-right: 0.35em;
+  }
+
   &:hover {
     border-color: $brand-primary;
   }
@@ -344,6 +340,11 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 0.03em;
   white-space: nowrap;
+
+  .fa {
+    margin-right: 0.3em;
+    font-size: 0.95em;
+  }
 
   @each $slug, $color in $tag-colors {
     &.tag-#{$slug} {
@@ -767,45 +768,92 @@ h3 {
   padding-bottom: 20px;
 }
 .footer {
-  margin-top: 3em;
-  padding: 2em 0 1.5em;
+  margin-top: 2em;
+  padding: 1.2em 0;
   background-color: $gray-lighter;
   color: $gray-dark;
 
-  .footer-brand {
-    margin-bottom: 1.5em;
-
-    h4 {
-      margin-bottom: 0.1em;
-      font-family: $font-serif-display;
-      font-weight: 700;
-      font-size: 1.5em;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-      line-height: 1.15;
-      color: $brand-primary;
-    }
-
-    .homepage-subtitle {
-      margin-top: -0.1em;
-      margin-bottom: 0;
-      font-size: 1em;
-    }
+  .footer-top {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.8em 1.2em;
+    margin-bottom: 0.8em;
   }
 
   .footer-photo {
-    width: 100%;
-    max-width: 110px;
+    flex: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
   }
 
-  .footer-contact {
-    margin-bottom: 1.5em;
+  .footer-title {
+    flex: 1 1 auto;
+    min-width: 200px;
+
+    h4 {
+      margin: 0;
+      font-family: $font-serif-display;
+      font-weight: 700;
+      font-size: 1.15em;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+      color: $brand-primary;
+    }
+
+    .footer-name {
+      margin: 0.15em 0 0;
+      font-size: 0.85em;
+    }
+  }
+
+  .footer-social {
+    flex: none;
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+    font-size: 1.05em;
+
+    a {
+      color: $gray-dark;
+
+      &:hover,
+      &:focus {
+        color: $brand-primary;
+      }
+    }
+
+    img {
+      vertical-align: middle;
+      opacity: 0.75;
+    }
+
+    a:hover img,
+    a:focus img {
+      opacity: 1;
+    }
   }
 
   .footer-addresses {
-    padding-top: 1.5em;
+    padding-top: 0.8em;
     border-top: 1px solid darken($gray-lighter, 8%);
-    font-size: 0.9em;
+    font-size: 0.82em;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 767px) {
+    .footer-top {
+      justify-content: center;
+      text-align: center;
+    }
+
+    .footer-social {
+      justify-content: center;
+      width: 100%;
+    }
   }
 }
 

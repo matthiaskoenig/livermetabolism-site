@@ -21,11 +21,11 @@ subnav:
 
 <div class="tag-filter" id="software-tag-filter">
     <button type="button" class="tag-filter-btn active" data-tag="all">All</button>
-    <button type="button" class="tag-filter-btn tag-digital-twins" data-tag="Digital Twins">Digital Twins</button>
-    <button type="button" class="tag-filter-btn tag-ai" data-tag="AI">AI</button>
-    <button type="button" class="tag-filter-btn tag-digital-pathology" data-tag="Digital Pathology">Digital Pathology</button>
-    <button type="button" class="tag-filter-btn tag-pharmacometrics" data-tag="Pharmacometrics">Pharmacometrics</button>
-    <button type="button" class="tag-filter-btn tag-open-fair" data-tag="Open &amp; FAIR">Open &amp; FAIR</button>
+    {% for t in site.data.tags %}
+    <button type="button" class="tag-filter-btn tag-{{ t.tag | slugify }}" data-tag="{{ t.tag }}" title="{{ t.short_description }}">
+        <i class="fa {{ t.icon }}" aria-hidden="true"></i> {{ t.tag }}
+    </button>
+    {% endfor %}
 </div>
 
 <div class="project-grid" id="software-grid">
@@ -39,7 +39,8 @@ subnav:
             {% if software.tags %}
             <div class="tag-list">
                 {% for tag in software.tags %}
-                <span class="tag-badge tag-{{ tag | slugify }}">{{ tag }}</span>
+                {% assign tag_info = site.data.tags | where: "tag", tag | first %}
+                <span class="tag-badge tag-{{ tag | slugify }}">{% if tag_info.icon %}<i class="fa {{ tag_info.icon }}" aria-hidden="true"></i> {% endif %}{{ tag }}</span>
                 {% endfor %}
             </div>
             {% endif %}
@@ -62,11 +63,11 @@ subnav:
 
 <div class="tag-filter" id="funding-tag-filter">
     <button type="button" class="tag-filter-btn active" data-tag="all">All</button>
-    <button type="button" class="tag-filter-btn tag-digital-twins" data-tag="Digital Twins">Digital Twins</button>
-    <button type="button" class="tag-filter-btn tag-ai" data-tag="AI">AI</button>
-    <button type="button" class="tag-filter-btn tag-digital-pathology" data-tag="Digital Pathology">Digital Pathology</button>
-    <button type="button" class="tag-filter-btn tag-pharmacometrics" data-tag="Pharmacometrics">Pharmacometrics</button>
-    <button type="button" class="tag-filter-btn tag-open-fair" data-tag="Open &amp; FAIR">Open &amp; FAIR</button>
+    {% for t in site.data.tags %}
+    <button type="button" class="tag-filter-btn tag-{{ t.tag | slugify }}" data-tag="{{ t.tag }}" title="{{ t.short_description }}">
+        <i class="fa {{ t.icon }}" aria-hidden="true"></i> {{ t.tag }}
+    </button>
+    {% endfor %}
 </div>
 
 <div class="project-grid" id="funding-grid">
@@ -80,7 +81,8 @@ subnav:
             {% if funding.tags %}
             <div class="tag-list">
                 {% for tag in funding.tags %}
-                <span class="tag-badge tag-{{ tag | slugify }}">{{ tag }}</span>
+                {% assign tag_info = site.data.tags | where: "tag", tag | first %}
+                <span class="tag-badge tag-{{ tag | slugify }}">{% if tag_info.icon %}<i class="fa {{ tag_info.icon }}" aria-hidden="true"></i> {% endif %}{{ tag }}</span>
                 {% endfor %}
             </div>
             {% endif %}
@@ -115,11 +117,11 @@ subnav:
 
 <div class="tag-filter" id="editors-tag-filter">
     <button type="button" class="tag-filter-btn active" data-tag="all">All</button>
-    <button type="button" class="tag-filter-btn tag-digital-twins" data-tag="Digital Twins">Digital Twins</button>
-    <button type="button" class="tag-filter-btn tag-ai" data-tag="AI">AI</button>
-    <button type="button" class="tag-filter-btn tag-digital-pathology" data-tag="Digital Pathology">Digital Pathology</button>
-    <button type="button" class="tag-filter-btn tag-pharmacometrics" data-tag="Pharmacometrics">Pharmacometrics</button>
-    <button type="button" class="tag-filter-btn tag-open-fair" data-tag="Open &amp; FAIR">Open &amp; FAIR</button>
+    {% for t in site.data.tags %}
+    <button type="button" class="tag-filter-btn tag-{{ t.tag | slugify }}" data-tag="{{ t.tag }}" title="{{ t.short_description }}">
+        <i class="fa {{ t.icon }}" aria-hidden="true"></i> {{ t.tag }}
+    </button>
+    {% endfor %}
 </div>
 
 <div class="project-grid" id="editors-grid">
@@ -133,7 +135,8 @@ subnav:
             {% if editor.tags %}
             <div class="tag-list">
                 {% for tag in editor.tags %}
-                <span class="tag-badge tag-{{ tag | slugify }}">{{ tag }}</span>
+                {% assign tag_info = site.data.tags | where: "tag", tag | first %}
+                <span class="tag-badge tag-{{ tag | slugify }}">{% if tag_info.icon %}<i class="fa {{ tag_info.icon }}" aria-hidden="true"></i> {% endif %}{{ tag }}</span>
                 {% endfor %}
             </div>
             {% endif %}

@@ -97,7 +97,7 @@
   name: 'roadrunner'
   title: 'High-performance simulator for SBML'
   description: 'Contributed to the development of libRoadRunner, a C/C++ library using LLVM for ultra-fast simulation of SBML models, setting a benchmark for performance in computational biology.'
-  image: 'libroadrunner.jpg'
+  image: 'libroadrunner.png'
   homepage: https://libroadrunner.readthedocs.io/en/latest/
   repository: https://github.com/sys-bio/roadrunner/
   doi:

@@ -297,6 +297,23 @@
   image_title: Reproducible archives for COVID-19
   abstract: 'With partners at the University of Greifswald, BioModels/EMBL-EBI, and code ahoi, we disseminate COVID-19 simulation models in interoperable, high-quality formats, supported by EOSCsecretariat.eu COVID-19 Fast Track Funding.'
 
+- id: tabularqual
+  title: "TabularQual: A spreadsheet-based format for logical models"
+  status: 'current'
+  tags:
+    - "Open & FAIR"
+  publications:
+    - 'Li2026_TabularQual_preprint'
+  project: https://tabularqual.streamlit.app/
+  repository: https://github.com/sys-bio/TabularQual
+  people:
+    - koenig
+  cooperation partners:
+  images:
+    - tabularqual.png
+  image_title: Example TabularQual spreadsheet representation of a logical model.
+  abstract: 'A spreadsheet-based, community-driven format for annotating and curating Boolean and multi-valued logical models in SBML-qual, with a bidirectional converter and web interface that bridges human-readable spreadsheets and standardized, executable models.'
+
 - id: central_metabolism
   title: Modeling Hepatic Central Metabolism
   status: 'current'
