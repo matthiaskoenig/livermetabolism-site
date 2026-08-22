@@ -14,6 +14,14 @@ sectionid: teaching
     <div class="col-md-12">
         <h3>{{ teaching.title }}</h3>
         <h4>{{ teaching.type }}</h4>
+        {% if teaching.tags %}
+        <div class="tag-list">
+            {% for tag in teaching.tags %}
+            {% assign tag_info = site.data.tags | where: "tag", tag | first %}
+            <span class="tag-badge tag-{{ tag | slugify }}">{% if tag_info.icon %}<i class="fa {{ tag_info.icon }}" aria-hidden="true"></i> {% endif %}{{ tag }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
         <h4>{{ teaching.people }}</h4>
         <h5>{{ teaching.date }} - {{ teaching.location }}</h5>
         <div class="row">

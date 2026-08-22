@@ -1,6 +1,7 @@
 - id: 'pkdb'
   tags:
     - 'Pharmacometrics'
+    - 'Digital Twins'
     - 'Open & FAIR'
   type: "database"
   name: 'PK-DB'
@@ -15,6 +16,7 @@
 - id: 'sbmlutils'
   tags:
     - 'Open & FAIR'
+    - 'Digital Twins'
   type: "software"
   name: 'sbmlutils'
   title: 'Python utilities for SBML'
@@ -28,6 +30,7 @@
 - id: 'sbml4humans'
   tags:
     - 'Open & FAIR'
+    - 'Digital Twins'
   type: "software"
   name: 'SBML4Humans'
   title: 'SBML simulation made easy'
@@ -41,6 +44,8 @@
 - id: 'sbmlsim'
   tags:
     - 'Open & FAIR'
+    - 'Digital Twins'
+    - 'Pharmacometrics'
   type: "software"
   name: 'sbmlsim'
   title: 'SBML simulation made easy'
@@ -54,6 +59,7 @@
 - id: 'cysbml'
   tags:
     - 'Open & FAIR'
+    - 'Digital Twins'
   type: "software"
   name: 'cysbml'
   title: 'Cytoscape 3 app for the Systems Biology Markup Language'
@@ -67,6 +73,7 @@
 - id: 'brendapy'
   tags:
     - 'Open & FAIR'
+    - 'Digital Twins'
   type: "software"
   name: 'brendapy'
   title: 'BRENDA in python'
@@ -80,6 +87,7 @@
 - id: 'libsbgnpy'
   tags:
     - 'Open & FAIR'
+    - 'Digital Twins'
   type: "software"
   name: 'libsbgnpy'
   title: 'Python library for SBGN'
@@ -93,6 +101,7 @@
 - id: 'roadrunner'
   tags:
     - 'Open & FAIR'
+    - 'Digital Twins'
   type: "software"
   name: 'roadrunner'
   title: 'High-performance simulator for SBML'
@@ -106,7 +115,7 @@
 - id: 'cobrapy'
   tags:
     - 'Open & FAIR'
-    - 'AI'
+    - 'Digital Twins'
   type: "software"
   name: 'COBRApy'
   title: 'COBRA python package'
@@ -120,6 +129,7 @@
 - id: 'tellurium'
   tags:
     - 'Open & FAIR'
+    - 'Digital Twins'
   type: "software"
   name: 'tellurium'
   title: 'systems biology simulation library'
@@ -127,5 +137,23 @@
   image: 'tellurium.png'
   homepage: https://github.com/sys-bio/tellurium/
   repository: https://github.com/sys-bio/tellurium/
+  doi:
+  publication:
+
+- id: 'visfem'
+  tags:
+    - 'Digital Twins'
+    - 'AI'
+    - 'Open & FAIR'
+  type: "software"
+  name: 'VisFEM'
+  title: 'Web visualization of FEM models'
+  description: 'A browser-based visualization tool for finite element method (FEM) simulation results, making FEM-based digital twin models interactively explorable and shareable directly from the web to lower the barrier to reproducible computational modeling.'
+  people:
+    - michelle
+    - mariia
+    - koenig
+  homepage: https://github.com/matthiaskoenig/visfem
+  repository: https://github.com/matthiaskoenig/visfem
   doi:
   publication:
