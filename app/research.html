@@ -76,7 +76,7 @@ sectionid: research
     {% for funding in site.data.funding %}
     <div class="project-card" data-tags="{{ funding.tags | join: '|' | escape }}">
         {% if funding.funder_logo %}
-        <img src="/assets/img/{{ funding.funder_logo }}" alt="{{ funding.funder }}" class="project-image project-image-contain"/>
+        <img src="/assets/img/funding/{{ funding.funder_logo }}" alt="{{ funding.funder }}" class="project-image project-image-contain"/>
         {% endif %}
         <div class="project-body">
             <h3>{{ funding.title }}</h3>
