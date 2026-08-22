@@ -38,10 +38,10 @@ sectionid: publications
 		<tr data-tags="{{ pub_tags.tags | join: '|' | escape }}">
 			<td>
 				{% if publication.pdf %}
-				<a href="/paper/{{ publication.pdf }}"><img src="../img/pdf.png" title="PDF" height="20"/></a>
+				<a href="/paper/{{ publication.pdf }}" title="PDF"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
 				{% endif %}
 				{% if publication.project %}
-				<a href="{{ publication.project }}"><img src="../img/project.png" title="Project homepage" height="20"/></a>
+				<a href="{{ publication.project }}" title="Project homepage"><i class="fa fa-globe" aria-hidden="true"></i></a>
 				{% endif %}
 				{% if publication.repository %}
 				<a href="{{ publication.repository }}" title="Repository homepage"><i class="fa fa-github" aria-hidden="true"></i></a>
@@ -62,10 +62,23 @@ sectionid: publications
 				{% for person_id in publication.people %}
 				{% assign person = site.data.people | where:"id", person_id | first %}
 				{% if person and person.image %}
-				{% assign surname = person.name | split: " " | last %}
+				{% assign name_parts = person.name | split: " " %}
+				{% assign parts_size = name_parts | size %}
+				{% assign given_index = parts_size | minus: 2 %}
+				{% assign given = name_parts[given_index] %}
+				{% assign surname = name_parts | last %}
+				{% assign initial = given | slice: 0, 1 %}
 				{% assign avatar_tag = '<img src="/img/people/' | append: person.image | append: '" class="author-avatar" alt="" title="' | append: person.name | append: '"/>' %}
-				{% assign replacement = avatar_tag | append: surname %}
-				{% assign pub_authors_html = pub_authors_html | replace: surname, replacement %}
+				{% assign short_match = initial | append: '. ' | append: surname %}
+				{% assign short_chip = '<span class="person-chip">' | append: avatar_tag | append: '<strong>' | append: short_match | append: '</strong></span>' %}
+				{% assign tried = pub_authors_html | replace: short_match, short_chip %}
+				{% if tried != pub_authors_html %}
+				{% assign pub_authors_html = tried %}
+				{% else %}
+				{% assign full_match = given | append: ' ' | append: surname %}
+				{% assign full_chip = '<span class="person-chip">' | append: avatar_tag | append: '<strong>' | append: full_match | append: '</strong></span>' %}
+				{% assign pub_authors_html = pub_authors_html | replace: full_match, full_chip %}
+				{% endif %}
 				{% endif %}
 				{% endfor %}
 				<p class="pub-meta">

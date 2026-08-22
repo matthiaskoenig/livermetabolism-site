@@ -6,7 +6,7 @@
   tags:
     - "Pharmacometrics"
   semester: SS25
-  people: "HP. Herzel, R. Kempter, S. Schreiber, P. Kuokkanen, R. Steuer, JH. Schleimer, P. Romanczuk, N. Blüthgen, <b>M. König</b>"
+  people: "HP. Herzel, R. Kempter, S. Schreiber, P. Kuokkanen, R. Steuer, JH. Schleimer, P. Romanczuk, N. Blüthgen, M. König"
   people_ids:
     - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
@@ -30,7 +30,7 @@
   tags:
     - "Pharmacometrics"
   semester: SS24
-  people: "HP. Herzel, R. Kempter, S. Schreiber, P. Kuokkanen, R. Steuer, JH. Schleimer, P. Romanczuk, N. Blüthgen, <b>M. König</b>"
+  people: "HP. Herzel, R. Kempter, S. Schreiber, P. Kuokkanen, R. Steuer, JH. Schleimer, P. Romanczuk, N. Blüthgen, M. König"
   people_ids:
     - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
@@ -56,7 +56,7 @@
     - "Digital Twins"
     - "Pharmacometrics"
   semester: SS23
-  people: "<b>M. König</b>"
+  people: "M. König"
   people_ids:
     - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
@@ -83,7 +83,7 @@
   tags:
     - "Pharmacometrics"
   semester: SS23
-  people: "HP. Herzel, R. Kempter, S. Schreiber, P. Kuokkanen, R. Steuer, JH. Schleimer, P. Romanczuk, N. Blüthgen, <b>M. König</b>"
+  people: "HP. Herzel, R. Kempter, S. Schreiber, P. Kuokkanen, R. Steuer, JH. Schleimer, P. Romanczuk, N. Blüthgen, M. König"
   people_ids:
     - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
@@ -109,7 +109,7 @@
     - "Digital Twins"
     - "Pharmacometrics"
   semester: WS22/23
-  people: "<b>M. König</b>"
+  people: "M. König"
   people_ids:
     - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
@@ -139,7 +139,7 @@
   tags:
     - "AI"
   semester: WS21/22
-  people: "R. Steuer, P. Romanczuk, N. Blüthgen, <b>M. König</b>"
+  people: "R. Steuer, P. Romanczuk, N. Blüthgen, M. König"
   people_ids:
     - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
@@ -160,7 +160,7 @@
   tags:
     - "AI"
   semester: WS20/21
-  people: "R. Steuer, P. Romanczuk, N. Blüthgen, <b>M. König</b>"
+  people: "R. Steuer, P. Romanczuk, N. Blüthgen, M. König"
   people_ids:
     - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
@@ -181,7 +181,7 @@
   tags:
     - "AI"
   semester: WS19/20
-  people: "<b>M. König</b>, R. Steuer"
+  people: "M. König, R. Steuer"
   people_ids:
     - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
@@ -202,7 +202,7 @@
   tags:
     - "AI"
   semester: WS19/20
-  people: "N. Blüthgen, <b>M. König</b>, R. Steuer"
+  people: "N. Blüthgen, M. König, R. Steuer"
   people_ids:
     - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
@@ -223,7 +223,7 @@
   tags:
     - "AI"
   semester: WS18/19
-  people: "N. Blüthgen, R. Steuer, <b>M. König</b>"
+  people: "N. Blüthgen, R. Steuer, M. König"
   people_ids:
     - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB

@@ -261,18 +261,22 @@ h3 {
       content: "";
       position: absolute;
       top: 100%;
-      left: 50%;
+      // stays pointing at the avatar even when the card itself is
+      // shifted horizontally to stay within the viewport (see the
+      // people-strip script on index.html)
+      left: calc(50% + var(--arrow-shift, 0px));
       transform: translateX(-50%);
       border: 6px solid transparent;
       border-top-color: $body-bg;
     }
-  }
 
-  &:hover .person-card,
-  &:focus .person-card,
-  &:focus-within .person-card {
-    opacity: 1;
-    visibility: visible;
+    // shown/hidden via JS (click, hover, and keyboard focus all route
+    // through the same open/close logic so only one card is ever
+    // visible at a time and its position can be clamped on-screen)
+    &.is-visible {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 }
 
@@ -672,15 +676,27 @@ h3 {
   border-bottom: 1px solid $gray-lighter;
 }
 
-// small inline headshot spliced into a free-text name list, next to the
-// matching surname (see publications.html pub-meta and teaching.html)
+// small headshot + bold name spliced into a free-text name list, in
+// place of the matching name (see publications.html pub-meta and
+// teaching.html); kept together as one inline unit so the photo and
+// name never wrap apart from each other
+.person-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  white-space: nowrap;
+
+  strong {
+    font-weight: 600;
+  }
+}
+
 .author-avatar {
   width: 18px;
   height: 18px;
-  margin: 0 0.15em -0.3em 0.3em;
   border-radius: 50%;
   object-fit: cover;
-  vertical-align: bottom;
+  flex-shrink: 0;
 }
 
 // cleaner, card-free row styling for the publication list (see publications.html)
@@ -837,9 +853,16 @@ h3 {
     box-shadow: inset 0 -3px 0 $brand-success;
   }
 
-  // navbar dropdowns for Team/Research subsections: plain CSS
+  // navbar dropdowns for Team/Research subsections. Desktop: plain CSS
   // hover-reveal (no JS toggle) so the parent link still navigates
-  // normally on click, with a small caret hinting at the submenu
+  // normally on click, with a small caret hinting at the submenu.
+  // Mobile: the parent link still navigates on tap; a separate toggle
+  // button expands/collapses the submenu (collapsed by default) since
+  // there is no hover on touch.
+  .navbar-nav .dropdown {
+    position: relative;
+  }
+
   .navbar-nav .dropdown > a {
     &::after {
       content: "";
@@ -850,6 +873,27 @@ h3 {
       border-left: 4px solid transparent;
       border-right: 4px solid transparent;
       opacity: 0.7;
+    }
+  }
+
+  .dropdown-toggle-btn {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      border-top: 5px solid currentColor;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      transition: transform 0.15s ease;
+    }
+
+    &[aria-expanded="true"]::after {
+      transform: rotate(180deg);
     }
   }
 
@@ -881,11 +925,23 @@ h3 {
     }
   }
 
-  // collapsed mobile menu: show the subsection links inline and
-  // indented under their parent instead of requiring hover/tap-reveal
+  // collapsed mobile menu: the submenu starts collapsed; the toggle
+  // button (with its own hit target, separate from the parent link)
+  // expands it in place, indented under the parent
   @media (max-width: 767px) {
+    .dropdown-toggle-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 44px;
+      height: 44px;
+    }
+
     .navbar-nav .dropdown-menu {
-      display: block;
+      display: none;
       position: static;
       float: none;
       width: auto;
@@ -903,6 +959,10 @@ h3 {
           background-color: transparent;
         }
       }
+    }
+
+    .navbar-nav .dropdown.open .dropdown-menu {
+      display: block;
     }
   }
 }

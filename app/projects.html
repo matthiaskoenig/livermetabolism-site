@@ -51,11 +51,11 @@ sectionid: projects
                 {% for pub_id in project.publications %}
                 {% assign publication = site.data.publications | where:"id", pub_id | first %}
                 {% if publication.pdf %}
-                <a href="../paper/{{ publication.pdf }}" title="{{ publication.title }}"><img src="../img/pdf.png" height="16"/></a>
+                <a href="../paper/{{ publication.pdf }}" title="{{ publication.title }}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
                 {% endif %}
                 {% endfor %}
                 {% if project.project %}
-                <a href="{{ project.project }}" target="_blank" rel="noopener noreferrer" title="Project homepage"><img src="../img/project.png" height="16"/></a>
+                <a href="{{ project.project }}" target="_blank" rel="noopener noreferrer" title="Project homepage"><i class="fa fa-globe" aria-hidden="true"></i></a>
                 {% endif %}
                 {% if project.repository %}
                 <a href="{{ project.repository }}" target="_blank" rel="noopener noreferrer" title="Repository homepage"><i class="fa fa-github" aria-hidden="true"></i></a>

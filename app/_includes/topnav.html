@@ -31,6 +31,7 @@
                 <li {% if page.sectionid=='publications' %} class="active" {% endif %}><a href="{{ "/publications/" | prepend: site.baseurl }}">Publications</a></li>
                 <li class="dropdown {% if page.sectionid=='people' %}active{% endif %}">
                     <a href="{{ "/people/" | prepend: site.baseurl }}">Team</a>
+                    <button type="button" class="dropdown-toggle-btn" aria-expanded="false" aria-label="Toggle Team submenu"></button>
                     <ul class="dropdown-menu">
                         <li><a href="{{ "/people/#current-members" | prepend: site.baseurl }}">Members</a></li>
                         <li><a href="{{ "/people/#open-positions" | prepend: site.baseurl }}">Open Positions</a></li>
@@ -40,6 +41,7 @@
                 <li {% if page.sectionid=='news' %} class="active" {% endif %}><a href="{{ "/news/" | prepend: site.baseurl }}">News</a></li>
                 <li class="dropdown {% if page.sectionid=='research' %}active{% endif %}">
                     <a href="{{ "/research/" | prepend: site.baseurl }}">Research</a>
+                    <button type="button" class="dropdown-toggle-btn" aria-expanded="false" aria-label="Toggle Research submenu"></button>
                     <ul class="dropdown-menu">
                         <li><a href="{{ "/research/#software" | prepend: site.baseurl }}">Software</a></li>
                         <li><a href="{{ "/research/#funding" | prepend: site.baseurl }}">Funding</a></li>
@@ -51,3 +53,15 @@
         </div>
     </div>
 </nav>
+
+<script>
+(function () {
+    document.querySelectorAll('.navbar-nav .dropdown-toggle-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var li = btn.closest('li.dropdown');
+            var isOpen = li.classList.toggle('open');
+            btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+    });
+})();
+</script>

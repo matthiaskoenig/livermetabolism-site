@@ -12,7 +12,7 @@ permalink: /presentations/
 			<td><b>{{ presentation.date }}</b></td>
 			<td>
 				{% if presentation.project %}
-				<a href="{{ presentation.project }}"><img src="../img/project.png" title="Project homepage" height="20"/></a>
+				<a href="{{ presentation.project }}" title="Project homepage"><i class="fa fa-globe" aria-hidden="true"></i></a>
 				{% endif %}
 				{% if presentation.repository %}
 				<a href="{{ presentation.repository }}" title="Repository homepage"><i class="fa fa-github" aria-hidden="true"></i></a>
@@ -43,7 +43,7 @@ permalink: /presentations/
 			<td><b>{{ poster.date }}</b></td>
 			<td>
 				{% if poster.project %}
-				<a href="{{ poster.project }}"><img src="../img/project.png" title="Project homepage" height="20"/></a>
+				<a href="{{ poster.project }}" title="Project homepage"><i class="fa fa-globe" aria-hidden="true"></i></a>
 				{% endif %}
 				{% if poster.repository %}
 				<a href="{{ poster.repository }}" title="Repository homepage"><i class="fa fa-github" aria-hidden="true"></i></a>
