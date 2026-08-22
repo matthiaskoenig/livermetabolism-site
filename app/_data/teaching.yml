@@ -7,6 +7,8 @@
     - "Pharmacometrics"
   semester: SS25
   people: "HP. Herzel, R. Kempter, S. Schreiber, P. Kuokkanen, R. Steuer, JH. Schleimer, P. Romanczuk, N. Blüthgen, <b>M. König</b>"
+  people_ids:
+    - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
   image: mb19_ss2025.png
   caption: '<strong>Theory, tools and methods in biology - Pharmacokinetic modelling</strong>'
@@ -29,6 +31,8 @@
     - "Pharmacometrics"
   semester: SS24
   people: "HP. Herzel, R. Kempter, S. Schreiber, P. Kuokkanen, R. Steuer, JH. Schleimer, P. Romanczuk, N. Blüthgen, <b>M. König</b>"
+  people_ids:
+    - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
   image: mb19_ss2023.png
   caption: '<strong>Theory, tools and methods in biology - Pharmacokinetic modelling</strong>'
@@ -53,6 +57,8 @@
     - "Pharmacometrics"
   semester: SS23
   people: "<b>M. König</b>"
+  people_ids:
+    - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
   image: xresearch2023.png
   caption: '<strong>Physiologically based digital twins </strong> for the treatment of hypertension with ACE inhibitors and diuretics.'
@@ -78,6 +84,8 @@
     - "Pharmacometrics"
   semester: SS23
   people: "HP. Herzel, R. Kempter, S. Schreiber, P. Kuokkanen, R. Steuer, JH. Schleimer, P. Romanczuk, N. Blüthgen, <b>M. König</b>"
+  people_ids:
+    - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
   image: mb19_ss2023.png
   caption: '<strong>Theory, tools and methods in biology - Pharmacokinetic modelling</strong>'
@@ -102,6 +110,8 @@
     - "Pharmacometrics"
   semester: WS22/23
   people: "<b>M. König</b>"
+  people_ids:
+    - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
   image: xresearch2022.png
   caption: '<strong>Physiological-based pharmacokinetics model</strong> of the ACE inhibitors</strong>. The models will study the absorption (GI tract), distribution (systemic circulation), metabolization (liver) and elimination (kidneys and liver) of the ACE inhibitors lisinopril and ramipril. Organs and plasma volumes are connected via the blood flow (Q).'
@@ -130,6 +140,8 @@
     - "AI"
   semester: WS21/22
   people: "R. Steuer, P. Romanczuk, N. Blüthgen, <b>M. König</b>"
+  people_ids:
+    - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
   image: important_models.png
   caption: '<strong>Important models in quantitative biology</strong>'
@@ -149,6 +161,8 @@
     - "AI"
   semester: WS20/21
   people: "R. Steuer, P. Romanczuk, N. Blüthgen, <b>M. König</b>"
+  people_ids:
+    - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
   image: important_models.png
   caption: '<strong>Important models in quantitative biology</strong>'
@@ -168,6 +182,8 @@
     - "AI"
   semester: WS19/20
   people: "<b>M. König</b>, R. Steuer"
+  people_ids:
+    - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
   image: hepatokin.png
   caption: '<strong>Important models in quantitative biology</strong>'
@@ -187,6 +203,8 @@
     - "AI"
   semester: WS19/20
   people: "N. Blüthgen, <b>M. König</b>, R. Steuer"
+  people_ids:
+    - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
   image: important_models.png
   caption: '<strong>Important models in quantitative biology</strong>'
@@ -206,6 +224,8 @@
     - "AI"
   semester: WS18/19
   people: "N. Blüthgen, R. Steuer, <b>M. König</b>"
+  people_ids:
+    - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
   image: important_models.png
   caption: '<strong>Important models in quantitative biology</strong>'

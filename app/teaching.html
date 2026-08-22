@@ -22,7 +22,17 @@ sectionid: teaching
             {% endfor %}
         </div>
         {% endif %}
-        <h4>{{ teaching.people }}</h4>
+        {% assign teaching_people_html = teaching.people %}
+        {% for person_id in teaching.people_ids %}
+        {% assign person = site.data.people | where:"id", person_id | first %}
+        {% if person and person.image %}
+        {% assign surname = person.name | split: " " | last %}
+        {% assign avatar_tag = '<img src="/img/people/' | append: person.image | append: '" class="author-avatar" alt="" title="' | append: person.name | append: '"/>' %}
+        {% assign replacement = avatar_tag | append: surname %}
+        {% assign teaching_people_html = teaching_people_html | replace: surname, replacement %}
+        {% endif %}
+        {% endfor %}
+        <h4>{{ teaching_people_html }}</h4>
         <h5>{{ teaching.date }} - {{ teaching.location }}</h5>
         <div class="row">
             <div class="col-md-3">

@@ -439,12 +439,19 @@ h3 {
     a {
       margin-left: 0.6em;
 
-      img {
+      img,
+      .fa {
         vertical-align: middle;
         transition: opacity 0.15s ease;
       }
 
-      &:hover img {
+      .fa {
+        font-size: 16px;
+        color: $gray-dark;
+      }
+
+      &:hover img,
+      &:hover .fa {
         opacity: 0.7;
       }
     }
@@ -537,6 +544,12 @@ h3 {
     a {
       margin-right: 0.6em;
     }
+
+    .fa {
+      font-size: 16px;
+      vertical-align: middle;
+      color: $gray-dark;
+    }
   }
 }
 
@@ -582,9 +595,15 @@ h3 {
       overflow: hidden;
       text-overflow: ellipsis;
 
-      img {
+      img,
+      .fa {
         vertical-align: middle;
         margin-top: -2px;
+      }
+
+      .fa {
+        font-size: 0.85em;
+        color: $gray-dark;
       }
     }
 
@@ -653,6 +672,17 @@ h3 {
   border-bottom: 1px solid $gray-lighter;
 }
 
+// small inline headshot spliced into a free-text name list, next to the
+// matching surname (see publications.html pub-meta and teaching.html)
+.author-avatar {
+  width: 18px;
+  height: 18px;
+  margin: 0 0.15em -0.3em 0.3em;
+  border-radius: 50%;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
 // cleaner, card-free row styling for the publication list (see publications.html)
 .publication-table {
   border-collapse: collapse;
@@ -661,6 +691,12 @@ h3 {
     padding: 0.8em 0.6em;
     border-top: 1px solid $gray-lighter;
     vertical-align: top;
+  }
+
+  td:first-child .fa {
+    font-size: 20px;
+    vertical-align: middle;
+    color: $gray-dark;
   }
 
   tr:first-child td {
@@ -691,10 +727,10 @@ h3 {
     font-size: 0.9em;
   }
 
-  // below the tablet breakpoint the fixed-width, four-column table
+  // below the tablet breakpoint the fixed-width, three-column table
   // forces a wide minimum width and scrolls horizontally; instead
-  // collapse each row into a small icons/avatars/status meta line
-  // followed by the full-width title/abstract block
+  // collapse each row into a small icons/status meta line followed by
+  // the full-width title/abstract block
   @media (max-width: 767px) {
     display: block;
     width: 100% !important;
@@ -736,11 +772,18 @@ h3 {
       overflow-wrap: break-word;
     }
 
-    td:nth-child(4) {
+    td:nth-child(3) {
       flex: 1 1 100%;
       order: 4;
     }
   }
+}
+
+// icon links column on the Presentations & Posters page (see presentations.html)
+.table-hover td:nth-child(2) .fa {
+  font-size: 20px;
+  vertical-align: middle;
+  color: $gray-dark;
 }
 
 // ------------------------------------------------------------------
@@ -792,6 +835,75 @@ h3 {
     color: $brand-success;
     background-color: transparent;
     box-shadow: inset 0 -3px 0 $brand-success;
+  }
+
+  // navbar dropdowns for Team/Research subsections: plain CSS
+  // hover-reveal (no JS toggle) so the parent link still navigates
+  // normally on click, with a small caret hinting at the submenu
+  .navbar-nav .dropdown > a {
+    &::after {
+      content: "";
+      display: inline-block;
+      margin-left: 0.4em;
+      vertical-align: middle;
+      border-top: 4px solid currentColor;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      opacity: 0.7;
+    }
+  }
+
+  .navbar-nav .dropdown-menu {
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    padding: 0.4em 0;
+
+    > li > a {
+      color: $text-color;
+      text-transform: none;
+      font-weight: 500;
+      font-size: 0.85em;
+      letter-spacing: 0.02em;
+      padding: 0.5em 1.2em;
+
+      &:hover,
+      &:focus {
+        color: $brand-success;
+        background-color: rgba($brand-success, 0.08);
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .navbar-nav .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+  }
+
+  // collapsed mobile menu: show the subsection links inline and
+  // indented under their parent instead of requiring hover/tap-reveal
+  @media (max-width: 767px) {
+    .navbar-nav .dropdown-menu {
+      display: block;
+      position: static;
+      float: none;
+      width: auto;
+      margin: 0 0 0.3em;
+      padding-left: 1em;
+      background-color: transparent;
+      box-shadow: none;
+
+      > li > a {
+        color: rgba(255, 255, 255, 0.75);
+
+        &:hover,
+        &:focus {
+          color: $brand-success;
+          background-color: transparent;
+        }
+      }
+    }
   }
 }
 
@@ -875,16 +987,6 @@ h3 {
       &:focus {
         color: $brand-primary;
       }
-    }
-
-    img {
-      vertical-align: middle;
-      opacity: 0.75;
-    }
-
-    a:hover img,
-    a:focus img {
-      opacity: 1;
     }
   }
 

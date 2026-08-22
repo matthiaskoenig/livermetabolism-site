@@ -15,7 +15,7 @@ permalink: /presentations/
 				<a href="{{ presentation.project }}"><img src="../img/project.png" title="Project homepage" height="20"/></a>
 				{% endif %}
 				{% if presentation.repository %}
-				<a href="{{ presentation.repository }}"><img src="../img/repository.png" title="Repository homepage" height="20"/></a>
+				<a href="{{ presentation.repository }}" title="Repository homepage"><i class="fa fa-github" aria-hidden="true"></i></a>
 				{% endif %}
                 {% if presentation.video %}
 				<a href="{{ presentation.video }}"><img src="../img/video.png" title="Presentation video" height="20"/></a>
@@ -46,7 +46,7 @@ permalink: /presentations/
 				<a href="{{ poster.project }}"><img src="../img/project.png" title="Project homepage" height="20"/></a>
 				{% endif %}
 				{% if poster.repository %}
-				<a href="{{ poster.repository }}"><img src="../img/repository.png" title="Repository homepage" height="20"/></a>
+				<a href="{{ poster.repository }}" title="Repository homepage"><i class="fa fa-github" aria-hidden="true"></i></a>
 				{% endif %}
 				{% if poster.image %}
 				<a href="/paper/{{ poster.pdf }}"><img src="/paper/{{ poster.image }}" title="Poster" height="200"/></a>

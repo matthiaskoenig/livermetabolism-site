@@ -35,11 +35,11 @@ subnav:
                 {% endif %}
                 {% if person.orcid %}
                 <a href="https://orcid.org/{{ person.orcid }}" target="_blank" rel="noopener noreferrer"
-                    title="ORCID"><img src="/img/orcid.png" height="16" /></a>
+                    title="ORCID"><i class="fa-brands fa-orcid" aria-hidden="true"></i></a>
                 {% endif %}
                 {% if person.repository %}
                 <a href="{{ person.repository }}" target="_blank" rel="noopener noreferrer"
-                    title="Repository homepage"><img src="../img/repository.png" height="16" /></a>
+                    title="Repository homepage"><i class="fa fa-github" aria-hidden="true"></i></a>
                 {% endif %}
             </div>
         </div>
@@ -124,7 +124,7 @@ subnav:
         </div>
         <p>
             Interested in joining the group? Contact <i class="fa fa-envelope"></i> <a
-                href="mailto:matthias.koenig@uni-luebeck.de">Matthias König</a>. 
+                href="mailto:matthias.koenig@uni-luebeck.de">Prof. Matthias König</a>.
         </p>
     </div>
 </div>
@@ -137,8 +137,8 @@ subnav:
         <img src="/img/people/128/{{ person.image }}" alt="{{ person.name }}" class="alumni-photo" />
         <div class="alumni-info">
             <strong>{{ person.name }}{% if person.orcid %} <a href="https://orcid.org/{{ person.orcid }}"
-                    target="_blank" rel="noopener noreferrer" title="ORCID"><img src="/img/orcid.png"
-                        height="14" /></a>{% endif %}</strong>
+                    target="_blank" rel="noopener noreferrer" title="ORCID"><i class="fa-brands fa-orcid"
+                        aria-hidden="true"></i></a>{% endif %}</strong>
             <span class="person-position">{{ person.position | last }}{% if person.end_year %}, {{ person.end_year }}{%
                 endif %}</span>
         </div>
