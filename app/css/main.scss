@@ -690,6 +690,57 @@ h3 {
     color: $gray-dark;
     font-size: 0.9em;
   }
+
+  // below the tablet breakpoint the fixed-width, four-column table
+  // forces a wide minimum width and scrolls horizontally; instead
+  // collapse each row into a small icons/avatars/status meta line
+  // followed by the full-width title/abstract block
+  @media (max-width: 767px) {
+    display: block;
+    width: 100% !important;
+    table-layout: auto !important;
+
+    colgroup {
+      display: none;
+    }
+
+    tbody {
+      display: block;
+      width: 100%;
+    }
+
+    tr {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      column-gap: 0.6em;
+      row-gap: 0.3em;
+      width: 100%;
+      padding: 0.9em 0;
+      border-top: 1px solid $gray-lighter;
+    }
+
+    tr:first-child {
+      border-top: none;
+    }
+
+    td {
+      display: block;
+      width: auto !important;
+      padding: 0;
+      border-top: none;
+      // .table-responsive forces nowrap on cells at this breakpoint to
+      // enable its own horizontal-scroll strategy; this table uses a
+      // stacked layout instead, so text must be allowed to wrap
+      white-space: normal !important;
+      overflow-wrap: break-word;
+    }
+
+    td:nth-child(4) {
+      flex: 1 1 100%;
+      order: 4;
+    }
+  }
 }
 
 // ------------------------------------------------------------------
