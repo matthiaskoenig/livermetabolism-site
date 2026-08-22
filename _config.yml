@@ -43,19 +43,7 @@ defaults:
     layout: post
     sectionid: blog
 
-- scope:
-    path: _docs
-    type: docs
-  values:
-    layout: docs
-    sectionid: docs
-    seo:
-      type: "WebPage"
-
 collections:
-  docs:
-    permalink: /:collection/:path/
-    output: true
   posts:
     permalink: /blog/:year/:month/:day/:title/
     output: true
