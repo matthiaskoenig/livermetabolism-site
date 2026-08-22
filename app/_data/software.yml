@@ -149,6 +149,7 @@
   name: 'VisFEM'
   title: 'Web visualization of FEM models'
   description: 'A browser-based visualization tool for finite element method (FEM) simulation results, making FEM-based digital twin models interactively explorable and shareable directly from the web to lower the barrier to reproducible computational modeling.'
+  image: 'visfem.png'
   people:
     - michelle
     - mariia

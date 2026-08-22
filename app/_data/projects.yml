@@ -314,6 +314,26 @@
   image_title: Example TabularQual spreadsheet representation of a logical model.
   abstract: 'A spreadsheet-based, community-driven format for annotating and curating Boolean and multi-valued logical models in SBML-qual, with a bidirectional converter and web interface that bridges human-readable spreadsheets and standardized, executable models.'
 
+- id: visfem
+  title: "VisFEM: 3D visualization of digital twins"
+  status: 'current'
+  tags:
+    - "Digital Twins"
+    - "AI"
+    - "Open & FAIR"
+  publications: []
+  project: https://github.com/matthiaskoenig/visfem
+  repository: https://github.com/matthiaskoenig/visfem
+  people:
+    - michelle
+    - mariia
+    - koenig
+  cooperation partners:
+  images:
+    - visfem.png
+  image_title: Interactive 3D visualization of a finite element digital twin model.
+  abstract: 'A browser-based visualization tool for finite element method (FEM) simulation results, making FEM-based digital twin models interactively explorable and shareable directly from the web to lower the barrier to reproducible computational modeling.'
+
 - id: central_metabolism
   title: Modeling Hepatic Central Metabolism
   status: 'current'

@@ -29,27 +29,27 @@ sectionid: publications
 		<div class="table-responsive">
 		<table class="table publication-table" style="table-layout: fixed; width: 100%;">
 		<colgroup>
-			<col style="width: 55px;">
-			<col style="width: 90px;">
+			<col style="width: 100px;">
 			<col>
 		</colgroup>
 		{% assign prev_year = publication.year %}
 	{% endunless %}
 		<tr data-tags="{{ pub_tags.tags | join: '|' | escape }}">
-			<td>
-				{% if publication.pdf %}
-				<a href="/paper/{{ publication.pdf }}" title="PDF"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
-				{% endif %}
-				{% if publication.project %}
-				<a href="{{ publication.project }}" title="Project homepage"><i class="fa fa-globe" aria-hidden="true"></i></a>
-				{% endif %}
-				{% if publication.repository %}
-				<a href="{{ publication.repository }}" title="Repository homepage"><i class="fa fa-github" aria-hidden="true"></i></a>
-				{% endif %}
+			<td class="publication-status">
+				<span class="status-badge status-{{ publication.status | slugify }}">{{ publication.status | capitalize }}</span>
+				<div class="pub-links">
+					{% if publication.pdf %}
+					<a href="/paper/{{ publication.pdf }}" title="PDF"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+					{% endif %}
+					{% if publication.project %}
+					<a href="{{ publication.project }}" title="Project homepage"><i class="fa fa-globe" aria-hidden="true"></i></a>
+					{% endif %}
+					{% if publication.repository %}
+					<a href="{{ publication.repository }}" title="Repository homepage"><i class="fa fa-github" aria-hidden="true"></i></a>
+					{% endif %}
+				</div>
 			</td>
-			<td class="publication-status">{{ publication.status | capitalize }}</td>
 			<td>
-				<p class="pub-title"><i>{{ publication.title }}</i></p>
 				{% if pub_tags.tags %}
 				<div class="tag-list">
 					{% for tag in pub_tags.tags %}
@@ -58,6 +58,7 @@ sectionid: publications
 					{% endfor %}
 				</div>
 				{% endif %}
+				<p class="pub-title"><i>{{ publication.title }}</i></p>
 				{% assign pub_authors_html = publication.authors %}
 				{% for person_id in publication.people %}
 				{% assign person = site.data.people | where:"id", person_id | first %}

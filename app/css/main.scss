@@ -557,12 +557,76 @@ h3 {
   }
 }
 
-// dense card grid for the alumni roster (see people.html)
-.alumni-grid {
+// vertical timeline grouping the alumni roster by year, newest at the
+// top; a line with an arrowhead runs the length of it (see people.html)
+.alumni-timeline {
+  position: relative;
+  margin-bottom: 2em;
+  padding-left: 2.2em;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0.55em;
+    top: 0.5em;
+    bottom: 0.3em;
+    width: 2px;
+    background-color: $gray-lighter;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0.55em;
+    top: -3px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid $brand-success;
+  }
+}
+
+.timeline-year-group {
+  position: relative;
+  margin-bottom: 1.6em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.timeline-year-marker {
+  position: relative;
+  margin-bottom: 0.6em;
+
+  .timeline-dot {
+    position: absolute;
+    left: -2.15em;
+    top: 50%;
+    width: 0.8em;
+    height: 0.8em;
+    margin-top: -0.4em;
+    border-radius: 50%;
+    background-color: $brand-success;
+    border: 2px solid $body-bg;
+    box-shadow: 0 0 0 2px $gray-lighter;
+  }
+
+  .timeline-year {
+    font-family: $font-family-sans-serif;
+    font-weight: 700;
+    font-size: 0.95em;
+    letter-spacing: 0.08em;
+    color: $brand-primary;
+  }
+}
+
+.timeline-year-people {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 0.6em;
-  margin-bottom: 2em;
 }
 
 .alumni-card {
@@ -595,9 +659,8 @@ h3 {
       font-family: $font-serif-display;
       font-size: 0.9em;
       color: $brand-primary;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      // full names must stay readable, not truncated with an ellipsis
+      white-space: normal;
 
       img,
       .fa {
@@ -618,46 +681,11 @@ h3 {
   }
 }
 
-// sticky in-page jump menu to the sections of a page (see people.html,
-// research.html)
-.subnav {
-  position: sticky;
-  top: $navbar-height + $navbar-margin-bottom;
-  z-index: 10;
-  background-color: $body-bg;
-  border-bottom: 1px solid $gray-lighter;
-  margin-bottom: 1.5em;
-  padding: 0.6em 0;
-
-  ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5em;
-    margin: 0;
-    padding: 0;
-  }
-
-  a {
-    display: inline-block;
-    font-family: $font-family-sans-serif;
-    font-weight: 600;
-    font-size: 0.85em;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: $gray-dark;
-    text-decoration: none;
-    padding-bottom: 0.2em;
-    border-bottom: 2px solid transparent;
-    transition: color 0.15s ease, border-color 0.15s ease;
-
-    &:hover,
-    &:focus {
-      color: $brand-success;
-      border-bottom-color: $brand-success;
-      text-decoration: none;
-    }
-  }
+// small country flag shown next to a person's name (see the alumni
+// timeline and the team map on people.html)
+.person-flag {
+  font-size: 0.9em;
+  vertical-align: middle;
 }
 
 // compact, uppercase "journal section" style year dividers used to
@@ -709,12 +737,6 @@ h3 {
     vertical-align: top;
   }
 
-  td:first-child .fa {
-    font-size: 20px;
-    vertical-align: middle;
-    color: $gray-dark;
-  }
-
   tr:first-child td {
     border-top: none;
   }
@@ -724,10 +746,68 @@ h3 {
   }
 
   .publication-status {
-    color: $gray-dark;
     font-size: 0.8em;
+  }
+
+  // publication type badge; "publication" (peer-reviewed journal article) is
+  // the most important status and gets a solid, filled badge, while the
+  // other, less central types (thesis, report, preprint, review, proceeding,
+  // chapter) stay as smaller, muted outline pills
+  .status-badge {
+    display: inline-block;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.7em;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.02em;
+    white-space: normal;
+    word-break: break-word;
+    border: 1px solid transparent;
+    background-color: $gray-lighter;
+    color: $gray-dark;
+    border-color: $gray-light;
+  }
+
+  .status-publication {
+    padding: 0.2em 0.5em;
+    font-size: 0.75em;
+    background-color: $brand-success;
+    border-color: $brand-success;
+    color: #fff;
+  }
+
+  .status-review {
+    background-color: rgba($brand-success, 0.12);
+    border-color: rgba($brand-success, 0.5);
+    color: darken($brand-success, 12%);
+  }
+
+  .status-proceeding,
+  .status-chapter {
+    background-color: rgba($brand-primary, 0.1);
+    border-color: rgba($brand-primary, 0.4);
+    color: $brand-primary;
+  }
+
+  .status-preprint {
+    background-color: rgba($brand-warning, 0.15);
+    border-color: rgba($brand-warning, 0.5);
+    color: darken($brand-warning, 8%);
+  }
+
+  .pub-links {
+    display: flex;
+    gap: 0.5em;
+    margin-top: 0.5em;
+
+    .fa {
+      font-size: 20px;
+      vertical-align: middle;
+      color: $gray-dark;
+    }
   }
 
   .pub-title {
@@ -788,9 +868,13 @@ h3 {
       overflow-wrap: break-word;
     }
 
-    td:nth-child(3) {
+    td:nth-child(2) {
       flex: 1 1 100%;
       order: 4;
+    }
+
+    .pub-links {
+      margin-top: 0.3em;
     }
   }
 }
@@ -856,9 +940,9 @@ h3 {
   // navbar dropdowns for Team/Research subsections. Desktop: plain CSS
   // hover-reveal (no JS toggle) so the parent link still navigates
   // normally on click, with a small caret hinting at the submenu.
-  // Mobile: the parent link still navigates on tap; a separate toggle
-  // button expands/collapses the submenu (collapsed by default) since
-  // there is no hover on touch.
+  // Mobile: no hover, so the submenu is just always shown inline,
+  // indented under its parent (no separate expand/collapse step —
+  // that was hiding items behind an extra tap, which was worse).
   .navbar-nav .dropdown {
     position: relative;
   }
@@ -873,27 +957,6 @@ h3 {
       border-left: 4px solid transparent;
       border-right: 4px solid transparent;
       opacity: 0.7;
-    }
-  }
-
-  .dropdown-toggle-btn {
-    display: none;
-    background: none;
-    border: none;
-    padding: 0;
-    color: inherit;
-
-    &::after {
-      content: "";
-      display: inline-block;
-      border-top: 5px solid currentColor;
-      border-left: 5px solid transparent;
-      border-right: 5px solid transparent;
-      transition: transform 0.15s ease;
-    }
-
-    &[aria-expanded="true"]::after {
-      transform: rotate(180deg);
     }
   }
 
@@ -925,32 +988,38 @@ h3 {
     }
   }
 
-  // collapsed mobile menu: the submenu starts collapsed; the toggle
-  // button (with its own hit target, separate from the parent link)
-  // expands it in place, indented under the parent
+  // collapsed mobile menu: compact row heights (Bootstrap's defaults
+  // run ~40px per row, which combined with always-visible submenus
+  // can cover most of a phone screen) and an internal scroll cap so
+  // the open menu never grows taller than the viewport
   @media (max-width: 767px) {
-    .dropdown-toggle-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 44px;
-      height: 44px;
+    .navbar-collapse {
+      max-height: calc(100vh - #{$navbar-height} - #{$navbar-margin-bottom});
+      overflow-y: auto;
+    }
+
+    .navbar-nav {
+      margin: 0.3em 0;
+
+      > li > a {
+        padding-top: 6px;
+        padding-bottom: 6px;
+      }
     }
 
     .navbar-nav .dropdown-menu {
-      display: none;
+      display: block;
       position: static;
       float: none;
       width: auto;
-      margin: 0 0 0.3em;
-      padding-left: 1em;
+      margin: 0;
+      padding: 0 0 0.3em 1em;
       background-color: transparent;
       box-shadow: none;
 
       > li > a {
+        padding-top: 4px;
+        padding-bottom: 4px;
         color: rgba(255, 255, 255, 0.75);
 
         &:hover,
@@ -959,10 +1028,6 @@ h3 {
           background-color: transparent;
         }
       }
-    }
-
-    .navbar-nav .dropdown.open .dropdown-menu {
-      display: block;
     }
   }
 }

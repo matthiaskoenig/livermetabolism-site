@@ -2,6 +2,8 @@
   status: 'current'
   year: '2016-'
   name: 'Prof. Dr. Matthias König'
+  country: 'Germany'
+  flag: '🇩🇪'
   position:
     - 'Group Leader'
   image: koenig.png
@@ -16,6 +18,8 @@
   status: 'current'
   year: '2024-'
   name: 'Mariia Myshkina'
+  country: 'Russia'
+  flag: '🇷🇺'
   position:
     - 'Ph.D. Student'
   image: myshkina.png
@@ -28,6 +32,8 @@
   status: 'current'
   year: '2023-10/2024-05, 2026-07-'
   name: 'Shubhankar Palwankar'
+  country: 'India'
+  flag: '🇮🇳'
   position:
     - 'Master Thesis'
     - 'Scientific Researcher'
@@ -41,6 +47,8 @@
   status: 'current'
   year: '2024-09/2025-12'
   name: 'Michelle Elias'
+  country: 'Germany'
+  flag: '🇩🇪'
   position:
     - 'Bachelor Thesis'
     - 'Student Assistant'
@@ -55,6 +63,8 @@
   status: 'current'
   year: '2025-04/2026'
   name: 'Mariia Babaeva'
+  country: 'Russia'
+  flag: '🇷🇺'
   position:
     - 'Master Project'
     - 'Student Assistant'
@@ -68,6 +78,8 @@
   status: 'current'
   year: '2023-09/2026-09'
   name: 'Amanda Schwaiger'
+  country: 'Germany'
+  flag: '🇩🇪'
   position:
     - 'Medical Thesis'
   image: amanda.png
@@ -80,6 +92,8 @@
   status: 'current'
   year: '2025-05/2025-08, 2025-09/2026-08'
   name: 'Minjun Kim'
+  country: 'South Korea'
+  flag: '🇰🇷'
   position:
     - 'Humboldt Internship Project'
   image: kim.jpg
@@ -92,6 +106,8 @@
   status: 'current'
   year: '2026-06/2026-09'
   name: 'Jessica Cruz'
+  country: 'Mexico'
+  flag: '🇲🇽'
   position:
     - 'Humboldt Internship Project'
   image: jessica.png
@@ -104,6 +120,8 @@
   status: 'current'
   year: '2026-04/2026-11'
   name: 'Shelee Bedón'
+  country: 'Ecuador'
+  flag: '🇪🇨'
   position:
     - 'Internship Project'
   image: shelee.jpg
@@ -116,6 +134,8 @@
   status: 'current'
   year: '2026-04/2026-11'
   name: 'Chang Linh Nguyen'
+  country: 'Germany'
+  flag: '🇩🇪'
   position:
     - 'Bachelor Project'
   image: linh.jpg
@@ -128,6 +148,8 @@
   status: 'current'
   year: '2026-06/2026-12'
   name: 'Sandeep Konaka Gautamdas'
+  country: 'India'
+  flag: '🇮🇳'
   position:
     - 'Internship Project'
   image: sandeep.jpg
@@ -140,6 +162,8 @@
   status: 'current'
   year: '2023-10/2025-12'
   name: 'Antonio Aquiles Alvarez Aguilar'
+  country: 'Ecuador'
+  flag: '🇪🇨'
   position:
     - 'Master Thesis'
     - 'Internship Project'
@@ -154,6 +178,8 @@
   year: '2025-07/2025-11'
   end_year: '2025'
   name: 'Monika Jesionek'
+  country: 'Poland'
+  flag: '🇵🇱'
   position:
     - 'ERASMUS Student'
   image: monajes.jpg
@@ -168,6 +194,8 @@
   year: '2025-04/2025-09'
   end_year: '2025'
   name: 'Juan Pablo Ramos Mendoza'
+  country: 'Mexico'
+  flag: '🇲🇽'
   position:
     - 'Master Student'
   image: juanpablo.png
@@ -181,6 +209,8 @@
   year: '2024-09/2025-06'
   end_year: '2025'
   name: 'Ennie Tensil'
+  country: 'Germany'
+  flag: '🇩🇪'
   position:
     - 'Bachelor Project'
     - 'Bachelor Thesis'
@@ -195,6 +225,8 @@
   year: '2025-02/2025-07'
   end_year: '2025'
   name: 'Elisabetta Casabianca'
+  country: 'Italy'
+  flag: '🇮🇹'
   position:
     - 'ERASMUS'
     - 'Master Thesis'
@@ -209,6 +241,8 @@
   year: '2021/2025-09'
   end_year: '2025'
   name: 'Helen Leal Pujol'
+  country: 'Germany'
+  flag: '🇩🇪'
   position:
     - 'Bachelor Student'
     - 'Student Assistant'
@@ -223,6 +257,8 @@
   year: '2024-2025'
   end_year: '2025'
   name: 'Nike Nemitz'
+  country: 'Germany'
+  flag: '🇩🇪'
   position:
     - 'Bachelor Project'
   image: nike.png
@@ -236,6 +272,8 @@
   year: '2025-05/2025-08'
   end_year: '2025'
   name: 'Isabella Tan'
+  country: 'Canada'
+  flag: '🇨🇦'
   position:
     - 'Humboldt Internship Project (HIP)'
   image: isabella.jpg
@@ -249,6 +287,8 @@
   year: '2025-05/2025-08'
   end_year: '2025'
   name: 'Olivia Yau'
+  country: 'Canada'
+  flag: '🇨🇦'
   position:
     - 'Humboldt Internship Project (HIP)'
   image: olivia.png
@@ -262,6 +302,8 @@
   year: '2024-03/2025-12'
   end_year: '2025'
   name: 'Rohini Chakraborty'
+  country: 'India'
+  flag: '🇮🇳'
   position:
     - 'Data Curation'
   image: rohini.png
@@ -275,6 +317,8 @@
   year: '2024-05/2025-12'
   end_year: '2025'
   name: 'Rohit Chakraborty'
+  country: 'India'
+  flag: '🇮🇳'
   position:
     - 'Data Curation'
   image: rohit.png
@@ -288,6 +332,8 @@
   year: '2025-05/2025-08'
   end_year: '2025'
   name: 'Emre Hikmet'
+  country: 'South Africa'
+  flag: '🇿🇦'
   position:
     - 'Google Summer of Code (GSOC)'
   image: emre.jpg
@@ -301,6 +347,8 @@
   year: '2025-05/2025-08'
   end_year: '2025'
   name: 'Michael Gaas'
+  country: 'Germany'
+  flag: '🇩🇪'
   position:
     - 'Google Summer of Code (GSOC)'
   image: michael_gaas.png
@@ -314,6 +362,8 @@
   year: '2023-09/2024-01'
   end_year: '2024'
   name: 'Luca Samuel Sawady'
+  country: 'Germany'
+  flag: '🇩🇪'
   position:
     - 'Internship'
   image: luca.png
@@ -328,6 +378,8 @@
   year: '2024-08/2024-11'
   end_year: '2024'
   name: 'Jennesse Alejandro'
+  country: 'USA'
+  flag: '🇺🇸'
   position:
     - 'Humboldt Internship Student (Brown University)'
   image: jennesse.jpg
@@ -338,9 +390,11 @@
 
 - id: 'deepa'
   status: 'alumni'
-  year: '2023-2024'
+  year: '2019-2023, 2023-2024'
   end_year: '2024'
   name: 'Deepa Maheshvare'
+  country: 'India'
+  flag: '🇮🇳'
   position:
     - 'Ph.D. Student (Internship)'
     - 'Humboldt Internship Student'
@@ -348,13 +402,15 @@
   orcid:
   repository: 'https://github.com/DeepaMahm'
   homepage:
-  description: 'Deepa works on enhancing our understanding of morphine pharmacokinetics based on a physiologically based modeling approach.'
+  description: 'Deepa worked on a kinetic model of glucose stimulated insulin secretion (GSIS) of the pancreatic beta-cell, studying changes in glycolysis during insulin secretion, and later on enhancing our understanding of morphine pharmacokinetics based on a physiologically based modeling approach.'
 
 - id: 'stemllb'
   status: 'alumni'
   year: '2022-2024'
   end_year: '2024'
   name: 'Beatrice Stemmer Mallol'
+  country: 'Germany'
+  flag: '🇩🇪'
   position:
     - 'Bachelor Student'
     - 'Student Assistant'
@@ -369,6 +425,8 @@
   year: '2025-01/2025-03'
   end_year: '2025'
   name: 'Abhinav Mishra'
+  country: 'Germany'
+  flag: '🇩🇪'
   position:
     - 'Master Internship'
   image: abhinav.png
@@ -382,6 +440,8 @@
   year: '2024-04/2025-01'
   end_year: '2025'
   name: 'Yusuf Ali Kulanoglu'
+  country: 'Germany'
+  flag: '🇩🇪'
   position:
     - 'Study Project'
     - 'Bachelor Thesis Biophysics'
@@ -396,6 +456,8 @@
   year: '2024-07/2024-09'
   end_year: '2024'
   name: 'Vera Tereshchuk'
+  country: 'Russia'
+  flag: '🇷🇺'
   position:
     - 'Humboldt Internship Student'
   image: vera.jpg
@@ -409,6 +471,8 @@
   year: '2023-09/2023-12, 2024-08/2024-09'
   end_year: '2024'
   name: 'Samira Eissazedeh'
+  country: 'Azerbaijan'
+  flag: '🇦🇿'
   position:
     - 'ERASMUS'
   image: samira.png
@@ -422,6 +486,8 @@
   year: '2022-2024'
   end_year: '2024'
   name: 'Jonas Küttner'
+  country: 'Germany'
+  flag: '🇩🇪'
   position:
     - 'Master Project'
     - 'Master Student'
@@ -437,6 +503,8 @@
   year: '2024-05/2024-08'
   end_year: '2024'
   name: 'Prerna Parakkat'
+  country: 'India'
+  flag: '🇮🇳'
   position:
     - 'Humboldt Internship Student'
   image: prerna.jpg
@@ -450,6 +518,8 @@
   year: '2022-2024'
   end_year: '2024'
   name: 'Afruja Hossain'
+  country: 'Germany'
+  flag: '🇩🇪'
   position:
     - 'Bachelor Student'
   image: afruja.png
@@ -463,6 +533,8 @@
   year: '2023-08/2023-10'
   end_year: '2023'
   name: 'Hannah Menghis'
+  country: 'USA'
+  flag: '🇺🇸'
   position:
     - 'Humboldt Internship Student (Brown University)'
   image: hannah.png
@@ -476,6 +548,8 @@
   year: '2023-10/2023-12'
   end_year: '2023'
   name: 'Hülya Karaboğa'
+  country: 'Turkey'
+  flag: '🇹🇷'
   position:
     - 'ERASMUS'
   image: huelya.png
@@ -489,6 +563,8 @@
   year: '2023-03/2023-12'
   end_year: '2023'
   name: 'Frances Okibedi'
+  country: 'Germany'
+  flag: '🇩🇪'
   position:
     - 'Internship'
   image: frances.png
@@ -499,23 +575,28 @@
 
 - id: 'sankha'
   status: 'alumni'
-  year: '2022-11/2023-05'
+  year: '2021, 2022-11/2023-05'
   end_year: '2023'
   name: 'Sankha Das'
+  country: 'India'
+  flag: '🇮🇳'
   affiliation: 'Birla Institute of Technology and Science Pilani'
   position:
+    - 'Google Summer of Code Student'
     - 'Research Internship'
   image: 'sankha.png'
   orcid:
   repository: 'https://github.com/sankha555'
-  homepage:
-  description: 'Sankha works on the analysis and quantification of microcirculation data recorded in Humans and Rats. Within the project a workflow for the analysis of orthogonal polarization spectroscopy (OPS) and IDF will be developed as part of <a href="https://qualiperf.de">QuaLiPerF</a>.'
+  homepage: 'https://sbml4humans-gsoc-2021.blogspot.com/'
+  description: 'Sankha worked on the analysis and quantification of microcirculation data recorded in Humans and Rats, developing a workflow for the analysis of orthogonal polarization spectroscopy (OPS) and IDF as part of <a href="https://qualiperf.de">QuaLiPerF</a>. As part of Google Summer of Code 2021, in cooperation with Ralf Steuer from the Humboldt-University Berlin, he also implemented an SBML report for Humans in <a href="https://github.com/matthiaskoenig/sbmlutils">sbmlutils</a>.'
 
 - id: 'xenia'
   status: 'alumni'
   year: '2023-07/2023-09'
   end_year: '2023'
   name: 'Xenia Petukhova'
+  country: 'Russia'
+  flag: '🇷🇺'
   position:
     - 'Humboldt Internship Student'
   image: xenia.png
@@ -530,6 +611,8 @@
   year: '2023-07/2023-09'
   end_year: '2023'
   name: 'Zahra Bahri'
+  country: 'Iran'
+  flag: '🇮🇷'
   position:
     - 'Humboldt Internship Student'
   image: zhara.png
@@ -543,6 +626,8 @@
   year: '2020-'
   end_year: '2020'
   name: 'Florian Bartsch'
+  country: 'Germany'
+  flag: '🇩🇪'
   position:
     - 'Bachelor Student'
     - 'Student Assistant'
@@ -558,6 +643,8 @@
   year: '2020-2023'
   end_year: '2023'
   name: 'Adrian Köller'
+  country: 'Germany'
+  flag: '🇩🇪'
   position:
     - 'Bachelor Student'
     - 'Master Project'
@@ -573,6 +660,8 @@
   year: '2023-03/2023-05'
   end_year: '2023'
   name: 'Nurudeen Sojimade'
+  country: 'Germany'
+  flag: '🇩🇪'
   position:
     - 'Internship'
   image: "nurudeen.png"
@@ -586,6 +675,8 @@
   year: '2017-2023'
   end_year: '2023'
   name: 'Jan Grzegorzewski'
+  country: 'Germany'
+  flag: '🇩🇪'
   position:
     - 'Ph.D. Student'
   image: grzegorzewski.png
@@ -599,6 +690,8 @@
   year: '2023-05/2023-06'
   end_year: '2023'
   name: 'Sophie Silberhorn'
+  country: 'Germany'
+  flag: '🇩🇪'
   position:
     - 'Internship'
   image: sophie.png
@@ -612,6 +705,8 @@
   year: '2020-2022'
   end_year: '2022'
   name: 'Paula Ogata'
+  country: 'Portugal'
+  flag: '🇵🇹'
   position:
     - 'Humboldt Internship Student'
   image: paula.png
@@ -621,25 +716,13 @@
   description: 'Paula works on a pharmacokinetics/pharmacodynamics model of metoprolol. Key questions are the effect of dosing and formulation on metoprolol pharmacokinetics and exercise heart rate (EHR) reduction.'
 
 
-- id: 'deepa'
-  status: 'alumni'
-  year: '2019-2023'
-  end_year: '2023'
-  name: 'Deepa Maheshvare'
-  position:
-    - 'Ph.D. Student (Internship)'
-  image: deepa.png
-  orcid:
-  repository: 'https://github.com/DeepaMahm'
-  homepage:
-  description: 'Deepa works on a kinetic model of glucose stimulated insulin secretion (GSIS) of the pancreatic beta-cell. Key questions are the changes in glycolysis during insulin secretion.'
-
-
 - id: 'brandhorst'
   status: 'alumni'
   year: '2019-2022'
   end_year: '2022'
   name: 'Janosch Brandhorst'
+  country: 'Germany'
+  flag: '🇩🇪'
   position:
     - 'Student Assistant'
   image: brandhorst.png
@@ -653,6 +736,8 @@
   year: '2020-2021'
   end_year: '2021'
   name: 'Sükrü Balci'
+  country: 'Turkey'
+  flag: '🇹🇷'
   position:
     - 'Bachelor Student'
   image: balci.png
@@ -661,26 +746,13 @@
   homepage:
   description: 'Sükrü Balci works on a physiologically based model of omeprazole. Key questions are the effect of omeprazole formulation and dosing on the pharmacodynamic effects of omeprazole.'
 
-- id: 'sankha'
-  status: 'alumni'
-  year: '2021'
-  end_year: '2021'
-  name: 'Sankha Das'
-  affiliation: 'Dhirubhai Institute of ICT'
-  position:
-    - 'Google Summer of Code Student'
-  image: 'sankha.png'
-  orcid:
-  repository: 'https://github.com/sankha555'
-  homepage: 'https://sbml4humans-gsoc-2021.blogspot.com/'
-  description: 'In cooperation with Ralf Steuer
-  from the Humboldt-University Berlin we are implementing an SBML report for Humans in <a href="https://github.com/matthiaskoenig/sbmlutils">sbmlutils</a>. The full proposal is available <a href="https://docs.google.com/document/d/1agR1obktnBA4magF2wKGOukxnV8WjwmtoDvFVk_GMP4/edit?usp=sharing">here</a>.'
-
 - id: 'yannick'
   status: 'alumni'
   year: '2019-2021'
   end_year: '2021'
   name: 'Yannick Duport'
+  country: 'Germany'
+  flag: '🇩🇪'
   position:
     - 'Bachelor Student'
   image: yannick.png
@@ -694,6 +766,8 @@
   year: '2020-2021'
   end_year: '2021'
   name: 'Danny Ke'
+  country: 'South Korea'
+  flag: '🇰🇷'
   position:
     - 'Humboldt Internship Student'
   image: danny.png
@@ -708,6 +782,8 @@
   year: '2020'
   end_year: '2020'
   name: 'Sara de Angelis'
+  country: 'Great Britain'
+  flag: '🇬🇧'
   position:
     - 'Humboldt Internship Student'
   image: sara.png
@@ -722,6 +798,8 @@
   year: '2020'
   end_year: '2020'
   name: 'Hemant Yadav'
+  country: 'India'
+  flag: '🇮🇳'
   affiliation: 'Indian Institute of Technology, Roorkee'
   position:
     - 'Google Summer of Code Student'
@@ -737,6 +815,8 @@
   year: '2020'
   end_year: '2020'
   name: 'Hemil Panchiwala'
+  country: 'India'
+  flag: '🇮🇳'
   affiliation: 'Indian Institute of Technology, Roorkee'
   position:
     - 'Google Summer of Code Student'
@@ -752,6 +832,8 @@
   year: '2019'
   end_year: '2019'
   name: 'Kaustubh Trivedi'
+  country: 'India'
+  flag: '🇮🇳'
   affiliation: 'Indian Institute of Technology, Roorkee'
   position:
     - 'Google Summer of Code Student'
@@ -767,6 +849,8 @@
   year: '2017-2019'
   end_year: '2019'
   name: 'Patrick Pett'
+  country: 'Germany'
+  flag: '🇩🇪'
   position:
     - 'Ph.D. Student (Mentoring)'
   image: pett.png
@@ -781,6 +865,8 @@
   year: '2018'
   end_year: '2018'
   name: 'Roman Schulte'
+  country: 'Germany'
+  flag: '🇩🇪'
   position:
     - 'Bachelor Thesis'
   image: schulte.png
@@ -794,6 +880,8 @@
   year: '2018'
   end_year: '2018'
   name: 'Shalin Shah'
+  country: 'India'
+  flag: '🇮🇳'
   position:
     - 'Google Summer of Code'
   image: 'shah.png'
@@ -807,6 +895,8 @@
   year: '2017'
   end_year: '2017'
   name: 'Takahiro Yamada'
+  country: 'Japan'
+  flag: '🇯🇵'
   position:
     - 'Google Summer of Code'
   image: 'yamada.png'
@@ -821,6 +911,8 @@
   year: '2016-2017'
   end_year: '2017'
   name: 'Dimitra Eleftheriadou'
+  country: 'Greece'
+  flag: '🇬🇷'
   position:
     - 'Student Assistant'
   image: eleftheriadou.png
