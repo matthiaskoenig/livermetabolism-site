@@ -236,7 +236,7 @@ def create_list_of_publications_typst(
         doi = f', #link("https://doi.org/{e.doi}")[{e.doi}]' if e.doi else ""
         impact = f", IF: *{impact}*" if impact else ""
         pdf = (
-            f'#link("https://livermetabolism.com/paper/{e.pdf}")[#fa-icon("file-pdf")]'
+            f'#link("https://livermetabolism.com/assets/paper/{e.pdf}")[#fa-icon("file-pdf")]'
             if e.pdf
             else ""
         )

@@ -18,7 +18,7 @@ sectionid: news
     {% for news in site.data.news %}
     <div class="project-card" data-tags="{{ news.tags | join: '|' | escape }}">
         {% if news.image %}
-        <img src="/img/news/{{ news.image }}" alt="{{ news.title }}" class="project-image"/>
+        <img src="/assets/img/news/{{ news.image }}" alt="{{ news.title }}" class="project-image"/>
         {% elsif news.video %}
         <img src="https://img.youtube.com/vi/{{ news.video | split: '/embed/' | last }}/hqdefault.jpg" alt="{{ news.title }}" class="project-image"/>
         {% endif %}
@@ -40,14 +40,14 @@ sectionid: news
                 {% if author != 'koenig' %}
                 {% assign person = site.data.people | where:"id", author | first %}
                 {% if person and person.image %}
-                <img src="/img/people/128/{{ person.image }}" class="project-avatar" title="{{ person.name }}"/>
+                <img src="/assets/img/people/128/{{ person.image }}" class="project-avatar" title="{{ person.name }}"/>
                 {% endif %}
                 {% endif %}
                 {% endfor %}
                 {% if news.people contains 'koenig' %}
                 {% assign koenig = site.data.people | where:"id", 'koenig' | first %}
                 {% if koenig and koenig.image %}
-                <img src="/img/people/128/{{ koenig.image }}" class="project-avatar" title="{{ koenig.name }}"/>
+                <img src="/assets/img/people/128/{{ koenig.image }}" class="project-avatar" title="{{ koenig.name }}"/>
                 {% endif %}
                 {% endif %}
                 <span class="project-links-spacer"></span>

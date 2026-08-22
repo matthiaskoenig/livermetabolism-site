@@ -169,10 +169,10 @@ def write_minimal_data_dir(tmp_path):
 
     # referenced-image existence check needs these to actually exist
     app_dir = data_dir.parent
-    (app_dir / "img" / "people" / "128").mkdir(parents=True)
-    (app_dir / "paper").mkdir(parents=True)
-    (app_dir / "paper" / "example.jpg").touch()
-    (app_dir / "paper" / "example.pdf").touch()
+    (app_dir / "assets" / "img" / "people" / "128").mkdir(parents=True)
+    (app_dir / "assets" / "paper").mkdir(parents=True)
+    (app_dir / "assets" / "paper" / "example.jpg").touch()
+    (app_dir / "assets" / "paper" / "example.pdf").touch()
 
     return data_dir
 
