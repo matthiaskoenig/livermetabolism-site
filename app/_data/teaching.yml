@@ -2,12 +2,14 @@
   title: "Theory, tools and methods in biology"
   title_german: "Theorie, Werkzeuge und Methoden der Biologie"
   date: 04/2025 - 09/2025
-  type: <i class="fa-solid fa-person-chalkboard"></i>&nbsp;lecture, <i class="fa-solid fa-laptop-code"></i>&nbsp;course
+  type:
+    - lecture
+    - course
   tags:
     - "Pharmacometrics"
   semester: SS25
-  people: "HP. Herzel, R. Kempter, S. Schreiber, P. Kuokkanen, R. Steuer, JH. Schleimer, P. Romanczuk, N. Blüthgen, M. König"
-  people_ids:
+  authors: "HP. Herzel, R. Kempter, S. Schreiber, P. Kuokkanen, R. Steuer, JH. Schleimer, P. Romanczuk, N. Blüthgen, M. König"
+  people:
     - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
   image: mb19_ss2025.png
@@ -26,12 +28,14 @@
   title: "Theory, tools and methods in biology"
   title_german: "Theorie, Werkzeuge und Methoden der Biologie"
   date: 04/2024 - 09/2024
-  type: <i class="fa-solid fa-person-chalkboard"></i>&nbsp;lecture, <i class="fa-solid fa-laptop-code"></i>&nbsp;course
+  type:
+    - lecture
+    - course
   tags:
     - "Pharmacometrics"
   semester: SS24
-  people: "HP. Herzel, R. Kempter, S. Schreiber, P. Kuokkanen, R. Steuer, JH. Schleimer, P. Romanczuk, N. Blüthgen, M. König"
-  people_ids:
+  authors: "HP. Herzel, R. Kempter, S. Schreiber, P. Kuokkanen, R. Steuer, JH. Schleimer, P. Romanczuk, N. Blüthgen, M. König"
+  people:
     - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
   image: mb19_ss2023.png
@@ -51,13 +55,15 @@
   title: "X-Student Research Group: Physiologically based digital twins for the treatment of hypertension with ACE inhibitors and diuretics"
   title_german: "X-Student Research Group: Physiologisch basierte Digital Twins für die Behandlung von Bluthochdruck mit ACE-Inhibitoren und Diuretika"
   date: 04/2023 - 09/2023
-  type: <i class="fa-solid fa-person-chalkboard"></i>&nbsp;lecture, <i class="fa-solid fa-laptop-code"></i>&nbsp;course
+  type:
+    - lecture
+    - course
   tags:
     - "Digital Twins"
     - "Pharmacometrics"
   semester: SS23
-  people: "M. König"
-  people_ids:
+  authors: "M. König"
+  people:
     - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
   image: xresearch2023.png
@@ -79,12 +85,14 @@
   title: "Theory, tools and methods in biology"
   title_german: "Theorie, Werkzeuge und Methoden der Biologie"
   date: 04/2023 - 09/2023
-  type: <i class="fa-solid fa-person-chalkboard"></i>&nbsp;lecture, <i class="fa-solid fa-laptop-code"></i>&nbsp;course
+  type:
+    - lecture
+    - course
   tags:
     - "Pharmacometrics"
   semester: SS23
-  people: "HP. Herzel, R. Kempter, S. Schreiber, P. Kuokkanen, R. Steuer, JH. Schleimer, P. Romanczuk, N. Blüthgen, M. König"
-  people_ids:
+  authors: "HP. Herzel, R. Kempter, S. Schreiber, P. Kuokkanen, R. Steuer, JH. Schleimer, P. Romanczuk, N. Blüthgen, M. König"
+  people:
     - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
   image: mb19_ss2023.png
@@ -104,13 +112,15 @@
   title: "X-Student Research Group: Physiologically based modeling of drugs: ACE inhibitors in the treatment of high blood pressure"
   title_german: "X-Student Research Group: Physiologisch basierte Modellierung von Arzneimitteln: ACE-Hemmer bei der Behandlung von Bluthochdruck"
   date: 10/2022 - 03/2023
-  type: <i class="fa-solid fa-person-chalkboard"></i>&nbsp;lecture, <i class="fa-solid fa-laptop-code"></i>&nbsp;course
+  type:
+    - lecture
+    - course
   tags:
     - "Digital Twins"
     - "Pharmacometrics"
   semester: WS22/23
-  people: "M. König"
-  people_ids:
+  authors: "M. König"
+  people:
     - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
   image: xresearch2022.png
@@ -135,12 +145,14 @@
   title: "Important models of quantitative biology from the literature"
   title_german: "Wichtige Modelle der Quantitativen Biologie aus der Literatur"
   date: 10/2021 - 03/2022
-  type: <i class="fa-solid fa-book"></i>&nbsp;seminar, <i class="fa-solid fa-laptop-code"></i>&nbsp;course
+  type:
+    - seminar
+    - course
   tags:
     - "AI"
   semester: WS21/22
-  people: "R. Steuer, P. Romanczuk, N. Blüthgen, M. König"
-  people_ids:
+  authors: "R. Steuer, P. Romanczuk, N. Blüthgen, M. König"
+  people:
     - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
   image: important_models.png
@@ -156,12 +168,14 @@
   title: "Important models of quantitative biology from the literature"
   title_german: "Wichtige Modelle der Quantitativen Biologie aus der Literatur"
   date: 10/2020 - 03/2021
-  type: <i class="fa-solid fa-book"></i>&nbsp;seminar, <i class="fa-solid fa-laptop-code"></i>&nbsp;course
+  type:
+    - seminar
+    - course
   tags:
     - "AI"
   semester: WS20/21
-  people: "R. Steuer, P. Romanczuk, N. Blüthgen, M. König"
-  people_ids:
+  authors: "R. Steuer, P. Romanczuk, N. Blüthgen, M. König"
+  people:
     - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
   image: important_models.png
@@ -177,12 +191,13 @@
   title: "Models of cellular processes"
   title_german: "Vorlesung: Modelle zellulärer Prozesse"
   date: 10/2019 - 03/2020
-  type: <i class="fa-solid fa-person-chalkboard"></i>&nbsp;lecture
+  type:
+    - lecture
   tags:
     - "AI"
   semester: WS19/20
-  people: "M. König, R. Steuer"
-  people_ids:
+  authors: "M. König, R. Steuer"
+  people:
     - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
   image: hepatokin.png
@@ -198,12 +213,14 @@
   title: "Important models of quantitative biology from the literature"
   title_german: "Wichtige Modelle der Quantitativen Biologie aus der Literatur"
   date: 10/2019 - 03/2020
-  type: <i class="fa-solid fa-book"></i>&nbsp;seminar, <i class="fa-solid fa-laptop-code"></i>&nbsp;course
+  type:
+    - seminar
+    - course
   tags:
     - "AI"
   semester: WS19/20
-  people: "N. Blüthgen, M. König, R. Steuer"
-  people_ids:
+  authors: "N. Blüthgen, M. König, R. Steuer"
+  people:
     - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
   image: important_models.png
@@ -219,12 +236,14 @@
   title: "Important models of quantitative biology from the literature"
   title_german: "Wichtige Modelle der Quantitativen Biologie aus der Literatur"
   date: 10/2018 - 03/2019
-  type: <i class="fa-solid fa-book"></i>&nbsp;seminar, <i class="fa-solid fa-laptop-code"></i>&nbsp;course
+  type:
+    - seminar
+    - course
   tags:
     - "AI"
   semester: WS18/19
-  people: "N. Blüthgen, R. Steuer, M. König"
-  people_ids:
+  authors: "N. Blüthgen, R. Steuer, M. König"
+  people:
     - koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
   image: important_models.png

@@ -2,7 +2,7 @@
   tags:
     - 'Open & FAIR'
   status: 'current'
-  term: '2020-2025'
+  tenure: '2020-2025'
   name: 'COMBINE coordinator'
   image: combine.png
   repository: 'https://github.com/combine-org'
@@ -13,7 +13,7 @@
   tags:
     - 'Open & FAIR'
   status: 'current'
-  term: '2023-2026'
+  tenure: '2023-2026'
   name: 'PETab editor'
   image: petab.png
   repository: 'https://github.com/PEtab-dev/'
@@ -24,7 +24,7 @@
   tags:
     - 'Open & FAIR'
   status: 'current'
-  term: '2018-2023; 2025-2027'
+  tenure: '2018-2023; 2025-2027'
   name: 'SBML editor'
   image: sbml.png
   repository: 'https://github.com/sbmlteam/'
@@ -35,7 +35,7 @@
   tags:
     - 'Open & FAIR'
   status: 'alumni'
-  term: '2017-2022; 2024-2026'
+  tenure: '2017-2022; 2024-2026'
   name: 'SED-ML editor'
   image: sedml.png
   repository: 'https://github.com/SED-ML'

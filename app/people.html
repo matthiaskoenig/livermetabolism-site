@@ -15,7 +15,7 @@ sectionid: people
         {% endif %}
         <div class="member-info">
             <strong>{{ person.name }}</strong>
-            <span class="person-position">{{ person.position | last }}</span>
+            <span class="person-position">{{ person.role | last }}</span>
             {% if person.description %}
             <p>{{ person.description | strip_html | truncatewords: 20 }}</p>
             {% endif %}
@@ -142,18 +142,18 @@ sectionid: people
                 <div class="person-avatar" tabindex="0">
                     <img src="/img/people/128/{{ person.image }}" alt="{{ person.name }}" class="alumni-photo" />
                     <div class="person-card">
-                        <strong>{{ person.name }}{% if person.flag %} <span class="person-flag" title="{{ person.country }}">{{ person.flag }}</span>{% endif %}</strong>
-                        <span class="person-position">{{ person.position | last }}</span>
+                        <strong>{{ person.name }}{% assign person_flag = site.data.country_flags[person.country] %}{% if person_flag %} <span class="person-flag" title="{{ person.country }}">{{ person_flag }}</span>{% endif %}</strong>
+                        <span class="person-position">{{ person.role | last }}</span>
                         {% if person.description %}
                         <p>{{ person.description | strip_html | truncatewords: 24 }}</p>
                         {% endif %}
                     </div>
                 </div>
                 <div class="alumni-info">
-                    <strong>{{ person.name }}{% if person.flag %} <span class="person-flag" title="{{ person.country }}">{{ person.flag }}</span>{% endif %}{% if person.orcid %} <a href="https://orcid.org/{{ person.orcid }}"
+                    <strong>{{ person.name }}{% assign person_flag = site.data.country_flags[person.country] %}{% if person_flag %} <span class="person-flag" title="{{ person.country }}">{{ person_flag }}</span>{% endif %}{% if person.orcid %} <a href="https://orcid.org/{{ person.orcid }}"
                             target="_blank" rel="noopener noreferrer" title="ORCID"><i class="fa-brands fa-orcid"
                                 aria-hidden="true"></i></a>{% endif %}</strong>
-                    <span class="person-position">{{ person.position | last }}</span>
+                    <span class="person-position">{{ person.role | last }}</span>
                 </div>
             </div>
     {% endfor %}

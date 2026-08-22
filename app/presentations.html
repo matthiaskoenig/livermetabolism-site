@@ -11,9 +11,6 @@ permalink: /presentations/
 		<tr>
 			<td><b>{{ presentation.date }}</b></td>
 			<td>
-				{% if presentation.project %}
-				<a href="{{ presentation.project }}" title="Project homepage"><i class="fa fa-globe" aria-hidden="true"></i></a>
-				{% endif %}
 				{% if presentation.repository %}
 				<a href="{{ presentation.repository }}" title="Repository homepage"><i class="fa fa-github" aria-hidden="true"></i></a>
 				{% endif %}
@@ -42,8 +39,8 @@ permalink: /presentations/
 		<tr>
 			<td><b>{{ poster.date }}</b></td>
 			<td>
-				{% if poster.project %}
-				<a href="{{ poster.project }}" title="Project homepage"><i class="fa fa-globe" aria-hidden="true"></i></a>
+				{% if poster.homepage %}
+				<a href="{{ poster.homepage }}" title="Project homepage"><i class="fa fa-globe" aria-hidden="true"></i></a>
 				{% endif %}
 				{% if poster.repository %}
 				<a href="{{ poster.repository }}" title="Repository homepage"><i class="fa fa-github" aria-hidden="true"></i></a>
@@ -55,7 +52,7 @@ permalink: /presentations/
 			<td><strong><i>{{ poster.title }}</i></strong><br />
 				{{ poster.authors }}<br />
 				{{ poster.affiliations }}<br />
-				{{ poster.meeting }}{% if poster.doi %}. doi:<a href="https://doi.org/{{poster.doi}}">{{poster.doi}}</a>{% endif %}
+				{{ poster.event }}{% if poster.doi %}. doi:<a href="https://doi.org/{{poster.doi}}">{{poster.doi}}</a>{% endif %}
 				{% if poster.abstract %}
 				<p class="abstract text-justify small">{{ poster.abstract }}</p>
 				{% endif %}

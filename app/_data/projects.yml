@@ -6,13 +6,14 @@
     - "AI"
   publications:
     - 'Albadry2024_species_comparison'
-  project:
+  homepage:
   repository:
   people:
     - jonaspk98
     - koenig
-  cooperation partners:
-  images: image_analysis.png
+  cooperation_partners:
+  images:
+    - image_analysis.png
   image_title: Lobulus segmentation in different species.
   abstract: 'A whole-slide imaging pipeline to quantify lobular geometry and the zonation of CYP450 enzymes and glutamine synthetase across species (mouse, rat, pig, human), determining the minimum number of lobules needed for statistically robust liver biopsy analysis.'
 
@@ -22,14 +23,15 @@
   tags:
     - "Pharmacometrics"
   publications: []
-  project:
+  homepage:
   repository:
   people:
     - xenia
     - zhara
     - koenig
-  cooperation partners:
-  images: inulin_creatinine.png
+  cooperation_partners:
+  images:
+    - inulin_creatinine.png
   image_title: Physiologically based pharmacokinetic (PBPK) model of creatinine and inulin.
   abstract: 'A PBPK model of inulin and creatinine to better understand how dosing protocols, body composition, and tubular secretion affect glomerular filtration rate (GFR) measurements.'
 
@@ -40,13 +42,13 @@
     - "Pharmacometrics"
   publications:
     - 'Grzegorzewski2022_dextromethorphan'
-  project:
+  homepage:
   repository: https://github.com/matthiaskoenig/dextromethorphan-model
   people:
     - janek
     - brandhorst
     - koenig
-  cooperation partners:
+  cooperation_partners:
   images:
     - dex_model.png
   image_title: Physiologically based pharmacokinetic (PBPK) model of dextromethophan.
@@ -64,7 +66,7 @@
     - 'Bachelor.Thesis.Nike.Nemitz'
     - 'Tereshchuk2026_canagliflozin_preprint'
     - 'Alejandro2026_empagliflozin_preprint'
-  project:
+  homepage:
   repository:
   people:
     - nike
@@ -74,7 +76,7 @@
     - mariia
     - mariia_babaeva
     - koenig
-  cooperation partners:
+  cooperation_partners:
   images:
     - dapagliflozin.png
     - canagliflozin.png
@@ -92,7 +94,7 @@
     - 'Myshkina2026_losartan_physiome'
     - 'Bachelor.Thesis.Ennie.Tensil'
     - 'Schwaiger2026_hctz_preprint'
-  project:
+  homepage:
   repository:
   people:
     - ennie
@@ -100,7 +102,7 @@
     - mariia
     - michelle
     - koenig
-  cooperation partners:
+  cooperation_partners:
   images:
     - losartan.png
     - hydrochlorothiazide.png
@@ -116,12 +118,12 @@
     - 'Elias2025_glimepiride'
     - 'Elias2025_glimepiride_physiome'
     - 'Bachelor.Thesis.Michelle.Elias'
-  project:
+  homepage:
   repository:
   people:
     - michelle
     - koenig
-  cooperation partners:
+  cooperation_partners:
   images:
     - glimepiride.png
   abstract: 'A PBPK/PD digital twin of the sulfonylurea glimepiride, investigating variability in insulin secretion and treatment response in type 2 diabetes, e.g. due to hepatorenal function and CYP2C9 genotype.'
@@ -136,7 +138,7 @@
     - 'Myshkina2026_apixaban_preprint'
     - 'Cassabianca2025_preprint'
     - 'Master.Thesis.Elisabetta.Casabianca'
-  project:
+  homepage:
   repository:
   people:
     - mariia
@@ -145,7 +147,7 @@
     - shelee
     - michelle
     - koenig
-  cooperation partners:
+  cooperation_partners:
   images:
     - apixaban.png
     - rivaroxaban.png
@@ -159,12 +161,12 @@
     - "Pharmacometrics"
   publications:
     - 'Jesionek2026_rapamycin_preprint'
-  project:
+  homepage:
   repository:
   people:
     - monajes
     - koenig
-  cooperation partners:
+  cooperation_partners:
   images:
     - rapamycin.png
   abstract: 'A PBPK digital twin of the mTOR inhibitor rapamycin (sirolimus) predicting dose-exposure relationships and organ impairment effects, contributing to the Immune Digital Twin (IDT) initiative.'
@@ -175,12 +177,12 @@
   tags:
     - "Pharmacometrics"
   publications:
-  project:
+  homepage:
   repository:
   people:
     - jessica
     - koenig
-  cooperation partners:
+  cooperation_partners:
   images:
     - montelukast.png
   abstract: 'A PBPK model of the leukotriene receptor antagonist montelukast investigating interindividual variability from hepatic CYP2C9/CYP3A4 metabolism, drug-drug interactions, and age-related differences.'
@@ -192,13 +194,13 @@
     - "Pharmacometrics"
   publications:
     - 'Bachelor.Thesis.Afruja.Hossain'
-  project:
+  homepage:
   repository:
   people:
     - afruja
     - sophie
     - koenig
-  cooperation partners:
+  cooperation_partners:
   images:
     - protein_distribution.png
   image_title: Protein distribution of CYP, UGT, SLC and ABC proteins in the human liver.
@@ -212,13 +214,13 @@
     - "AI"
   publications:
     - 'Myshkina2025_preprint'
-  project:
+  homepage:
   repository:
   people:
     - koenig
     - mariia
     - shubhankar
-  cooperation partners: Prof. Tim Ricken, Prof. Stefan Staab, Dr. Hans-Michael Tautenhahn
+  cooperation_partners: Prof. Tim Ricken, Prof. Stefan Staab, Dr. Hans-Michael Tautenhahn
   images:
     - atlas.png
   image_title: ATLAS - AI and Simulation for Tumor Liver ASsessment.
@@ -233,12 +235,12 @@
   publications:
     - 'Albadry2022_Cytochrome.p450.enzymes.in.periportal.steatosis'
     - 'Master.Thesis.Jonas.Kuettner'
-  project:
+  homepage:
   repository:
   people:
     - jonaspk98
     - koenig
-  cooperation partners: Prof. Bruno Christ, Prof. Uta Dahmen
+  cooperation_partners: Prof. Bruno Christ, Prof. Uta Dahmen
   images:
     - zonation.png
   image_title: Zonation patterns in the liver.
@@ -252,13 +254,13 @@
   publications:
     - 'Bartsch2023_simvastatin'
     - 'Bachelor.Thesis.Florian.Bartsch'
-  project:
+  homepage:
   repository:
   people:
     - flobar
     - koenig
     - janek
-  cooperation partners:
+  cooperation_partners:
   images:
     - simvastatin.png
   image_title: Computational model of LiMAx test.
@@ -270,11 +272,11 @@
   tags:
     - "Pharmacometrics"
   publications: []
-  project: https://github.com/matthiaskoenig/limax
+  homepage: https://github.com/matthiaskoenig/limax
   repository: https://github.com/matthiaskoenig/limax
   people:
     - koenig
-  cooperation partners: Prof. Stockmann, Prof. Timmer, Dr. Hans-Michael Tautenhahn
+  cooperation_partners: Prof. Stockmann, Prof. Timmer, Dr. Hans-Michael Tautenhahn
   images:
     - limax.png
   image_title: Computational model of LiMAx test.
@@ -287,11 +289,11 @@
     - "Open & FAIR"
   publications:
     - 'FAIR.sharing.of.reproducible.and.reusable.COVID-19.models_Ramachandran2022'
-  project: https://wwwdev.ebi.ac.uk/biomodels/covid-19
+  homepage: https://wwwdev.ebi.ac.uk/biomodels/covid-19
   repository:
   people:
     - koenig
-  cooperation partners: 'Dagmar Waltemath & Esther Inau (Medical Informatics and Core Unit Research Data Management, University Medicine Greifswald, Germany), Henning Hermjakob & Rahuman Sheriff (BioModels, EMBL-EBI, Cambridge, UK), Martin Scharm (code ahoi software, Germany).'
+  cooperation_partners: 'Dagmar Waltemath & Esther Inau (Medical Informatics and Core Unit Research Data Management, University Medicine Greifswald, Germany), Henning Hermjakob & Rahuman Sheriff (BioModels, EMBL-EBI, Cambridge, UK), Martin Scharm (code ahoi software, Germany).'
   images:
     - covid_reproducible.png
   image_title: Reproducible archives for COVID-19
@@ -304,11 +306,11 @@
     - "Open & FAIR"
   publications:
     - 'Li2026_TabularQual_preprint'
-  project: https://tabularqual.streamlit.app/
+  homepage: https://tabularqual.streamlit.app/
   repository: https://github.com/sys-bio/TabularQual
   people:
     - koenig
-  cooperation partners:
+  cooperation_partners:
   images:
     - tabularqual.png
   image_title: Example TabularQual spreadsheet representation of a logical model.
@@ -322,13 +324,13 @@
     - "AI"
     - "Open & FAIR"
   publications: []
-  project: https://github.com/matthiaskoenig/visfem
+  homepage: https://github.com/matthiaskoenig/visfem
   repository: https://github.com/matthiaskoenig/visfem
   people:
     - michelle
     - mariia
     - koenig
-  cooperation partners:
+  cooperation_partners:
   images:
     - visfem.png
   image_title: Interactive 3D visualization of a finite element digital twin model.
@@ -341,17 +343,18 @@
     - "AI"
   publications:
     - 'hepatokin_Berndt2018'
-  project:
+  homepage:
   repository:
   people:
     - koenig
-  cooperation partners: Prof. Holzhütter
+  cooperation_partners: Prof. Holzhütter
   images:
     - hepatokin.png
   image_title: Central Carbon Model of the Liver (HepatoKin1)
   abstract: 'A comprehensive kinetic model of hepatic central metabolism, capturing regulation of enzyme activity by reactants, allosteric effectors, and hormone-dependent phosphorylation, to better understand metabolic regulation in non-alcoholic fatty liver disease (NAFLD).'
 
-- title: Stratification and personalization of computational models
+- id: stratification_personalization
+  title: Stratification and personalization of computational models
   status: 'current'
   tags:
     - "Pharmacometrics"
@@ -359,33 +362,35 @@
   publications:
     - 'PKDB_Grzegorzewski2020'
     - 'PhD.Thesis.Jan.Grzegorzewski'
-  project:
+  homepage:
   repository: https://github.com/matthiaskoenig/
   people:
     - janek
     - koenig
-  cooperation partners:
+  cooperation_partners:
   images:
     - data_extraction.png
   image_title: Workflow for extraction of pharmacokinetics data
   abstract: 'A workflow to stratify and personalize PBPK models for specific subpopulations (e.g. smokers vs. non-smokers, children vs. adults), combining literature mining and machine learning for data extraction with a pharmacokinetics database for storage and reuse.'
 
-- title: Multi-scale Model of Hepatic Metabolism
+- id: multiscale_hepatic_metabolism
+  title: Multi-scale Model of Hepatic Metabolism
   status: 'current'
   tags:
     - "Digital Twins"
   publications: []
-  project:
+  homepage:
   repository:
   people:
     - koenig
-  cooperation partners:
+  cooperation_partners:
   images:
     - multiscale-galactose.png
   image_title: Multiscale Galactose Model
   abstract: 'A multiscale model of the human liver spanning single hepatocytes to whole-organ perfusion, applied to galactose metabolism to personalize liver function tests, explain age-related changes, and predict population variability from liver volume and perfusion.'
 
-- title: Liver Function Tests
+- id: liver_function_tests
+  title: Liver Function Tests
   status: 'current'
   tags:
     - "Digital Twins"
@@ -399,9 +404,9 @@
     - 'StemmerMallol2023_talinolol'
     - 'Bachelor.Thesis.Beatrice.Stemmer.Mallol'
     - 'Bachelor.Thesis.Yannick.Duport'
-  project: https://github.com/matthiaskoenig/
+  homepage: https://github.com/matthiaskoenig/
   repository: https://github.com/matthiaskoenig/
-  cooperation partners:
+  cooperation_partners:
   people:
     - koenig
     - dimitra
@@ -409,22 +414,24 @@
     - function-tests.png
   abstract: 'An open, reproducible multiscale liver model and the infrastructure to integrate imaging, perfusion, and clinical data, with metabolic modules for substances used in liver function tests (methacetin, galactose, BSP, ICG, midazolam, codeine, caffeine, torsemide, pravastatin, talinolol).'
 
-- title: "Biomarker signatures in liver disease"
+- id: biomarker_signatures
+  title: "Biomarker signatures in liver disease"
   status: 'current'
   tags:
     - "AI"
   publications:
     - 'Abshagen2015'
-  project:
+  homepage:
   repository:
-  cooperation partners:
+  cooperation_partners:
   people:
     - koenig
   images:
     - BDL_correlation_heatmap.png
   abstract: 'A comprehensive dataset of serum markers, histology, and transcript profiles across 8 timepoints of bile-duct-ligation-induced cholestatic liver disease in mice, identifying robust biomarkers for disease staging.'
 
-- title: High Performance Simulators and Simulation Software
+- id: hp_simulators
+  title: High Performance Simulators and Simulation Software
   status: 'current'
   tags:
     - "Open & FAIR"
@@ -433,23 +440,24 @@
     - 'tellurium_Choi2018'
     - 'Welsh2022_libroadrunner_2.0'
     - 'libRoadRunner_Somogyi2015'
-  project: http://tellurium.analogmachine.org/
+  homepage: http://tellurium.analogmachine.org/
   repository: https://github.com/sys-bio/tellurium
-  cooperation partners:
+  cooperation_partners:
   people:
     - koenig
   images:
     - tellurium-notebook.png
   abstract: 'Tellurium Notebook is a Python/Jupyter-based environment for building, simulating, and sharing reproducible dynamical models using the COMBINE archive standard, bringing a literate-programming workflow to systems biology.'
 
-- title: Reproducible simulation experiments
+- id: tellurium_web
+  title: Reproducible simulation experiments
   status: 'old'
   tags:
     - "Open & FAIR"
   publications: []
-  project: https://github.com/matthiaskoenig/tellurium-web/
+  homepage: https://github.com/matthiaskoenig/tellurium-web/
   repository: https://github.com/matthiaskoenig/tellurium-web/
-  cooperation partners:
+  cooperation_partners:
   people:
     - koenig
     - janek
@@ -457,14 +465,15 @@
     - tellurium-web.png
   abstract: 'tellurium-web is an open online database and simulation tool built on SBML, SED-ML, and COMBINE archives, offering a curated example library, an archive browser, high-performance simulation via libRoadRunner, and a REST API for computational workflows.'
 
-- title: "FluType: Influenza Classification based on Machine Learning"
+- id: flutype
+  title: "FluType: Influenza Classification based on Machine Learning"
   status: 'old'
   tags:
     - "AI"
   publications: []
-  project: https://www.flutype.de/about/
+  homepage: https://www.flutype.de/about/
   repository: https://github.com/janekg89/flutype_webapp
-  cooperation partners:
+  cooperation_partners:
   people:
     - janek
     - koenig

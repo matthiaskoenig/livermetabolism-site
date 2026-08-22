@@ -94,8 +94,8 @@ sectionid: research
             </p>
             <div class="project-links">
                 <span class="project-links-spacer"></span>
-                {% if funding.project %}
-                <a href="{{ funding.project }}" target="_blank" rel="noopener noreferrer" title="Project homepage"><i class="fa fa-globe" aria-hidden="true"></i></a>
+                {% if funding.homepage %}
+                <a href="{{ funding.homepage }}" target="_blank" rel="noopener noreferrer" title="Project homepage"><i class="fa fa-globe" aria-hidden="true"></i></a>
                 {% endif %}
                 {% if funding.repository %}
                 <a href="{{ funding.repository }}" target="_blank" rel="noopener noreferrer" title="Repository homepage"><i class="fa fa-github" aria-hidden="true"></i></a>
@@ -142,7 +142,7 @@ sectionid: research
                 {% endfor %}
             </div>
             {% endif %}
-            <p><strong>{{ editor.term }}</strong><br/>{{ editor.description }}</p>
+            <p><strong>{{ editor.tenure }}</strong><br/>{{ editor.description }}</p>
             <div class="project-links">
                 <span class="project-links-spacer"></span>
                 {% if editor.homepage %}

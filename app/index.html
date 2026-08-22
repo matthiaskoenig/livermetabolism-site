@@ -56,7 +56,7 @@ layout: default
                 <img src="/img/people/128/{{ person.image }}" alt="{{ person.name }}"/>
                 <div class="person-card">
                     <strong>{{ person.name }}</strong>
-                    <span class="person-position">{{ person.position | last }}</span>
+                    <span class="person-position">{{ person.role | last }}</span>
                     {% if person.description %}
                     <p>{{ person.description | strip_html | truncatewords: 24 }}</p>
                     {% endif %}

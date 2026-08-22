@@ -1,0 +1,30 @@
+name: Validate data
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        run: uv python install
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Run tests (pydantic data model validation)
+        run: uv run pytest tests/ -v
+
+      - name: Validate app/_data (load + cross-reference check)
+        run: uv run python -m src.data

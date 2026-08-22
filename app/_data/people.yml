@@ -1,10 +1,9 @@
 - id: 'koenig'
   status: 'current'
-  year: '2016-'
+  tenure: '2016-'
   name: 'Prof. Dr. Matthias König'
   country: 'Germany'
-  flag: '🇩🇪'
-  position:
+  role:
     - 'Group Leader'
   image: koenig.png
   orcid: '0000-0003-1725-179X'
@@ -16,11 +15,10 @@
 
 - id: 'mariia'
   status: 'current'
-  year: '2024-'
+  tenure: '2024-'
   name: 'Mariia Myshkina'
   country: 'Russia'
-  flag: '🇷🇺'
-  position:
+  role:
     - 'Ph.D. Student'
   image: myshkina.png
   orcid: "0009-0000-7769-2154"
@@ -30,11 +28,10 @@
 
 - id: 'shubhankar'
   status: 'current'
-  year: '2023-10/2024-05, 2026-07-'
+  tenure: '2023-10/2024-05, 2026-07-'
   name: 'Shubhankar Palwankar'
   country: 'India'
-  flag: '🇮🇳'
-  position:
+  role:
     - 'Master Thesis'
     - 'Scientific Researcher'
   image: shubhankar.png
@@ -45,11 +42,10 @@
 
 - id: 'michelle'
   status: 'current'
-  year: '2024-09/2025-12'
+  tenure: '2024-09/2025-12'
   name: 'Michelle Elias'
   country: 'Germany'
-  flag: '🇩🇪'
-  position:
+  role:
     - 'Bachelor Thesis'
     - 'Student Assistant'
     - 'Master Thesis'
@@ -61,11 +57,10 @@
 
 - id: 'mariia_babaeva'
   status: 'current'
-  year: '2025-04/2026'
+  tenure: '2025-04/2026'
   name: 'Mariia Babaeva'
   country: 'Russia'
-  flag: '🇷🇺'
-  position:
+  role:
     - 'Master Project'
     - 'Student Assistant'
   image: mariia_babaeva.jpg
@@ -76,11 +71,10 @@
 
 - id: 'amanda'
   status: 'current'
-  year: '2023-09/2026-09'
+  tenure: '2023-09/2026-09'
   name: 'Amanda Schwaiger'
   country: 'Germany'
-  flag: '🇩🇪'
-  position:
+  role:
     - 'Medical Thesis'
   image: amanda.png
   orcid: '0000-0002-8993-8569'
@@ -90,11 +84,10 @@
 
 - id: 'kim'
   status: 'current'
-  year: '2025-05/2025-08, 2025-09/2026-08'
+  tenure: '2025-05/2025-08, 2025-09/2026-08'
   name: 'Minjun Kim'
   country: 'South Korea'
-  flag: '🇰🇷'
-  position:
+  role:
     - 'Humboldt Internship Project'
   image: kim.jpg
   orcid:
@@ -104,11 +97,10 @@
 
 - id: 'jessica'
   status: 'current'
-  year: '2026-06/2026-09'
+  tenure: '2026-06/2026-09'
   name: 'Jessica Cruz'
   country: 'Mexico'
-  flag: '🇲🇽'
-  position:
+  role:
     - 'Humboldt Internship Project'
   image: jessica.png
   orcid: "0009-0006-9067-5547"
@@ -118,11 +110,10 @@
 
 - id: 'shelee'
   status: 'current'
-  year: '2026-04/2026-11'
+  tenure: '2026-04/2026-11'
   name: 'Shelee Bedón'
   country: 'Ecuador'
-  flag: '🇪🇨'
-  position:
+  role:
     - 'Internship Project'
   image: shelee.jpg
   orcid: "0009-0005-9147-0028"
@@ -132,11 +123,10 @@
 
 - id: 'linh'
   status: 'current'
-  year: '2026-04/2026-11'
+  tenure: '2026-04/2026-11'
   name: 'Chang Linh Nguyen'
   country: 'Germany'
-  flag: '🇩🇪'
-  position:
+  role:
     - 'Bachelor Project'
   image: linh.jpg
   orcid: "0009-0004-8004-3314"
@@ -146,11 +136,10 @@
 
 - id: 'sandeep'
   status: 'current'
-  year: '2026-06/2026-12'
+  tenure: '2026-06/2026-12'
   name: 'Sandeep Konaka Gautamdas'
   country: 'India'
-  flag: '🇮🇳'
-  position:
+  role:
     - 'Internship Project'
   image: sandeep.jpg
   orcid: '0000-0002-7855-9715'
@@ -160,11 +149,10 @@
 
 - id: 'antonio'
   status: 'current'
-  year: '2023-10/2025-12'
+  tenure: '2023-10/2025-12'
   name: 'Antonio Aquiles Alvarez Aguilar'
   country: 'Ecuador'
-  flag: '🇪🇨'
-  position:
+  role:
     - 'Master Thesis'
     - 'Internship Project'
   image: antonio.png
@@ -175,12 +163,11 @@
 
 - id: 'monajes'
   status: 'alumni'
-  year: '2025-07/2025-11'
+  tenure: '2025-07/2025-11'
   end_year: '2025'
   name: 'Monika Jesionek'
   country: 'Poland'
-  flag: '🇵🇱'
-  position:
+  role:
     - 'ERASMUS Student'
   image: monajes.jpg
   orcid: "0009-0003-3110-3440"
@@ -191,12 +178,11 @@
 
 - id: 'juanpablo'
   status: 'alumni'
-  year: '2025-04/2025-09'
+  tenure: '2025-04/2025-09'
   end_year: '2025'
   name: 'Juan Pablo Ramos Mendoza'
   country: 'Mexico'
-  flag: '🇲🇽'
-  position:
+  role:
     - 'Master Student'
   image: juanpablo.png
   orcid:
@@ -206,12 +192,11 @@
 
 - id: 'ennie'
   status: 'alumni'
-  year: '2024-09/2025-06'
+  tenure: '2024-09/2025-06'
   end_year: '2025'
   name: 'Ennie Tensil'
   country: 'Germany'
-  flag: '🇩🇪'
-  position:
+  role:
     - 'Bachelor Project'
     - 'Bachelor Thesis'
   image: ennie.jpg
@@ -222,12 +207,11 @@
 
 - id: 'elisabetta'
   status: 'alumni'
-  year: '2025-02/2025-07'
+  tenure: '2025-02/2025-07'
   end_year: '2025'
   name: 'Elisabetta Casabianca'
   country: 'Italy'
-  flag: '🇮🇹'
-  position:
+  role:
     - 'ERASMUS'
     - 'Master Thesis'
   image: elisabetta.jpg
@@ -238,12 +222,11 @@
 
 - id: 'helen'
   status: 'alumni'
-  year: '2021/2025-09'
+  tenure: '2021/2025-09'
   end_year: '2025'
   name: 'Helen Leal Pujol'
   country: 'Germany'
-  flag: '🇩🇪'
-  position:
+  role:
     - 'Bachelor Student'
     - 'Student Assistant'
   image: helen.png
@@ -254,12 +237,11 @@
 
 - id: 'nike'
   status: 'alumni'
-  year: '2024-2025'
+  tenure: '2024-2025'
   end_year: '2025'
   name: 'Nike Nemitz'
   country: 'Germany'
-  flag: '🇩🇪'
-  position:
+  role:
     - 'Bachelor Project'
   image: nike.png
   orcid:
@@ -269,12 +251,11 @@
 
 - id: 'isabella'
   status: 'alumni'
-  year: '2025-05/2025-08'
+  tenure: '2025-05/2025-08'
   end_year: '2025'
   name: 'Isabella Tan'
   country: 'Canada'
-  flag: '🇨🇦'
-  position:
+  role:
     - 'Humboldt Internship Project (HIP)'
   image: isabella.jpg
   orcid:
@@ -284,12 +265,11 @@
 
 - id: 'olivia'
   status: 'alumni'
-  year: '2025-05/2025-08'
+  tenure: '2025-05/2025-08'
   end_year: '2025'
   name: 'Olivia Yau'
   country: 'Canada'
-  flag: '🇨🇦'
-  position:
+  role:
     - 'Humboldt Internship Project (HIP)'
   image: olivia.png
   orcid:
@@ -299,12 +279,11 @@
 
 - id: 'rohinichakraborty'
   status: 'alumni'
-  year: '2024-03/2025-12'
+  tenure: '2024-03/2025-12'
   end_year: '2025'
   name: 'Rohini Chakraborty'
   country: 'India'
-  flag: '🇮🇳'
-  position:
+  role:
     - 'Data Curation'
   image: rohini.png
   orcid:
@@ -314,12 +293,11 @@
 
 - id: 'rohit'
   status: 'alumni'
-  year: '2024-05/2025-12'
+  tenure: '2024-05/2025-12'
   end_year: '2025'
   name: 'Rohit Chakraborty'
   country: 'India'
-  flag: '🇮🇳'
-  position:
+  role:
     - 'Data Curation'
   image: rohit.png
   orcid:
@@ -329,12 +307,11 @@
 
 - id: 'emre'
   status: 'alumni'
-  year: '2025-05/2025-08'
+  tenure: '2025-05/2025-08'
   end_year: '2025'
   name: 'Emre Hikmet'
   country: 'South Africa'
-  flag: '🇿🇦'
-  position:
+  role:
     - 'Google Summer of Code (GSOC)'
   image: emre.jpg
   orcid:
@@ -344,12 +321,11 @@
 
 - id: 'michael_gaas'
   status: 'alumni'
-  year: '2025-05/2025-08'
+  tenure: '2025-05/2025-08'
   end_year: '2025'
   name: 'Michael Gaas'
   country: 'Germany'
-  flag: '🇩🇪'
-  position:
+  role:
     - 'Google Summer of Code (GSOC)'
   image: michael_gaas.png
   orcid:
@@ -359,12 +335,11 @@
 
 - id: 'luca'
   status: 'alumni'
-  year: '2023-09/2024-01'
+  tenure: '2023-09/2024-01'
   end_year: '2024'
   name: 'Luca Samuel Sawady'
   country: 'Germany'
-  flag: '🇩🇪'
-  position:
+  role:
     - 'Internship'
   image: luca.png
   orcid:
@@ -375,12 +350,11 @@
 
 - id: 'jennesse'
   status: 'alumni'
-  year: '2024-08/2024-11'
+  tenure: '2024-08/2024-11'
   end_year: '2024'
   name: 'Jennesse Alejandro'
   country: 'USA'
-  flag: '🇺🇸'
-  position:
+  role:
     - 'Humboldt Internship Student (Brown University)'
   image: jennesse.jpg
   orcid:
@@ -390,12 +364,11 @@
 
 - id: 'deepa'
   status: 'alumni'
-  year: '2019-2023, 2023-2024'
+  tenure: '2019-2023, 2023-2024'
   end_year: '2024'
   name: 'Deepa Maheshvare'
   country: 'India'
-  flag: '🇮🇳'
-  position:
+  role:
     - 'Ph.D. Student (Internship)'
     - 'Humboldt Internship Student'
   image: deepa.png
@@ -406,12 +379,11 @@
 
 - id: 'stemllb'
   status: 'alumni'
-  year: '2022-2024'
+  tenure: '2022-2024'
   end_year: '2024'
   name: 'Beatrice Stemmer Mallol'
   country: 'Germany'
-  flag: '🇩🇪'
-  position:
+  role:
     - 'Bachelor Student'
     - 'Student Assistant'
   image: stemllb.png
@@ -422,12 +394,11 @@
 
 - id: 'abhinav'
   status: 'alumni'
-  year: '2025-01/2025-03'
+  tenure: '2025-01/2025-03'
   end_year: '2025'
   name: 'Abhinav Mishra'
   country: 'Germany'
-  flag: '🇩🇪'
-  position:
+  role:
     - 'Master Internship'
   image: abhinav.png
   orcid:
@@ -437,12 +408,11 @@
 
 - id: 'yusuf'
   status: 'alumni'
-  year: '2024-04/2025-01'
+  tenure: '2024-04/2025-01'
   end_year: '2025'
   name: 'Yusuf Ali Kulanoglu'
   country: 'Germany'
-  flag: '🇩🇪'
-  position:
+  role:
     - 'Study Project'
     - 'Bachelor Thesis Biophysics'
   image: yusuf.png
@@ -453,12 +423,11 @@
 
 - id: 'vera'
   status: 'alumni'
-  year: '2024-07/2024-09'
+  tenure: '2024-07/2024-09'
   end_year: '2024'
   name: 'Vera Tereshchuk'
   country: 'Russia'
-  flag: '🇷🇺'
-  position:
+  role:
     - 'Humboldt Internship Student'
   image: vera.jpg
   orcid:
@@ -468,12 +437,11 @@
 
 - id: 'samira'
   status: 'alumni'
-  year: '2023-09/2023-12, 2024-08/2024-09'
+  tenure: '2023-09/2023-12, 2024-08/2024-09'
   end_year: '2024'
   name: 'Samira Eissazedeh'
   country: 'Azerbaijan'
-  flag: '🇦🇿'
-  position:
+  role:
     - 'ERASMUS'
   image: samira.png
   orcid:
@@ -483,12 +451,11 @@
 
 - id: 'jonaspk98'
   status: 'alumni'
-  year: '2022-2024'
+  tenure: '2022-2024'
   end_year: '2024'
   name: 'Jonas Küttner'
   country: 'Germany'
-  flag: '🇩🇪'
-  position:
+  role:
     - 'Master Project'
     - 'Master Student'
     - 'QuaLiPerF'
@@ -500,12 +467,11 @@
 
 - id: 'prerna'
   status: 'alumni'
-  year: '2024-05/2024-08'
+  tenure: '2024-05/2024-08'
   end_year: '2024'
   name: 'Prerna Parakkat'
   country: 'India'
-  flag: '🇮🇳'
-  position:
+  role:
     - 'Humboldt Internship Student'
   image: prerna.jpg
   orcid:
@@ -515,12 +481,11 @@
 
 - id: 'afruja'
   status: 'alumni'
-  year: '2022-2024'
+  tenure: '2022-2024'
   end_year: '2024'
   name: 'Afruja Hossain'
   country: 'Germany'
-  flag: '🇩🇪'
-  position:
+  role:
     - 'Bachelor Student'
   image: afruja.png
   orcid:
@@ -530,12 +495,11 @@
 
 - id: 'hannah'
   status: 'alumni'
-  year: '2023-08/2023-10'
+  tenure: '2023-08/2023-10'
   end_year: '2023'
   name: 'Hannah Menghis'
   country: 'USA'
-  flag: '🇺🇸'
-  position:
+  role:
     - 'Humboldt Internship Student (Brown University)'
   image: hannah.png
   orcid:
@@ -545,12 +509,11 @@
 
 - id: 'huelya'
   status: 'alumni'
-  year: '2023-10/2023-12'
+  tenure: '2023-10/2023-12'
   end_year: '2023'
   name: 'Hülya Karaboğa'
   country: 'Turkey'
-  flag: '🇹🇷'
-  position:
+  role:
     - 'ERASMUS'
   image: huelya.png
   orcid:
@@ -560,12 +523,11 @@
 
 - id: 'frances'
   status: 'alumni'
-  year: '2023-03/2023-12'
+  tenure: '2023-03/2023-12'
   end_year: '2023'
   name: 'Frances Okibedi'
   country: 'Germany'
-  flag: '🇩🇪'
-  position:
+  role:
     - 'Internship'
   image: frances.png
   orcid:
@@ -575,13 +537,12 @@
 
 - id: 'sankha'
   status: 'alumni'
-  year: '2021, 2022-11/2023-05'
+  tenure: '2021, 2022-11/2023-05'
   end_year: '2023'
   name: 'Sankha Das'
   country: 'India'
-  flag: '🇮🇳'
   affiliation: 'Birla Institute of Technology and Science Pilani'
-  position:
+  role:
     - 'Google Summer of Code Student'
     - 'Research Internship'
   image: 'sankha.png'
@@ -592,12 +553,11 @@
 
 - id: 'xenia'
   status: 'alumni'
-  year: '2023-07/2023-09'
+  tenure: '2023-07/2023-09'
   end_year: '2023'
   name: 'Xenia Petukhova'
   country: 'Russia'
-  flag: '🇷🇺'
-  position:
+  role:
     - 'Humboldt Internship Student'
   image: xenia.png
   orcid:
@@ -608,12 +568,11 @@
 
 - id: 'zhara'
   status: 'alumni'
-  year: '2023-07/2023-09'
+  tenure: '2023-07/2023-09'
   end_year: '2023'
   name: 'Zahra Bahri'
   country: 'Iran'
-  flag: '🇮🇷'
-  position:
+  role:
     - 'Humboldt Internship Student'
   image: zhara.png
   orcid:
@@ -623,12 +582,11 @@
 
 - id: 'flobar'
   status: 'alumni'
-  year: '2020-'
+  tenure: '2020-'
   end_year: '2020'
   name: 'Florian Bartsch'
   country: 'Germany'
-  flag: '🇩🇪'
-  position:
+  role:
     - 'Bachelor Student'
     - 'Student Assistant'
     - 'Master Project'
@@ -640,12 +598,11 @@
 
 - id: 'adrian'
   status: 'alumni'
-  year: '2020-2023'
+  tenure: '2020-2023'
   end_year: '2023'
   name: 'Adrian Köller'
   country: 'Germany'
-  flag: '🇩🇪'
-  position:
+  role:
     - 'Bachelor Student'
     - 'Master Project'
     - 'Student Assistant'
@@ -657,12 +614,11 @@
 
 - id: 'nurudeen'
   status: 'alumni'
-  year: '2023-03/2023-05'
+  tenure: '2023-03/2023-05'
   end_year: '2023'
   name: 'Nurudeen Sojimade'
   country: 'Germany'
-  flag: '🇩🇪'
-  position:
+  role:
     - 'Internship'
   image: "nurudeen.png"
   orcid:
@@ -672,12 +628,11 @@
 
 - id: 'janek'
   status: 'alumni'
-  year: '2017-2023'
+  tenure: '2017-2023'
   end_year: '2023'
   name: 'Jan Grzegorzewski'
   country: 'Germany'
-  flag: '🇩🇪'
-  position:
+  role:
     - 'Ph.D. Student'
   image: grzegorzewski.png
   orcid: '0000-0002-4588-4925'
@@ -687,12 +642,11 @@
 
 - id: 'sophie'
   status: 'alumni'
-  year: '2023-05/2023-06'
+  tenure: '2023-05/2023-06'
   end_year: '2023'
   name: 'Sophie Silberhorn'
   country: 'Germany'
-  flag: '🇩🇪'
-  position:
+  role:
     - 'Internship'
   image: sophie.png
   orcid:
@@ -702,12 +656,11 @@
 
 - id: 'paula'
   status: 'alumni'
-  year: '2020-2022'
+  tenure: '2020-2022'
   end_year: '2022'
   name: 'Paula Ogata'
   country: 'Portugal'
-  flag: '🇵🇹'
-  position:
+  role:
     - 'Humboldt Internship Student'
   image: paula.png
   orcid:
@@ -718,12 +671,11 @@
 
 - id: 'brandhorst'
   status: 'alumni'
-  year: '2019-2022'
+  tenure: '2019-2022'
   end_year: '2022'
   name: 'Janosch Brandhorst'
   country: 'Germany'
-  flag: '🇩🇪'
-  position:
+  role:
     - 'Student Assistant'
   image: brandhorst.png
   orcid:
@@ -733,12 +685,11 @@
 
 - id: 'balci'
   status: 'alumni'
-  year: '2020-2021'
+  tenure: '2020-2021'
   end_year: '2021'
   name: 'Sükrü Balci'
   country: 'Turkey'
-  flag: '🇹🇷'
-  position:
+  role:
     - 'Bachelor Student'
   image: balci.png
   orcid:
@@ -748,12 +699,11 @@
 
 - id: 'yannick'
   status: 'alumni'
-  year: '2019-2021'
+  tenure: '2019-2021'
   end_year: '2021'
   name: 'Yannick Duport'
   country: 'Germany'
-  flag: '🇩🇪'
-  position:
+  role:
     - 'Bachelor Student'
   image: yannick.png
   orcid:
@@ -763,12 +713,11 @@
 
 - id: 'danny'
   status: 'alumni'
-  year: '2020-2021'
+  tenure: '2020-2021'
   end_year: '2021'
   name: 'Danny Ke'
   country: 'South Korea'
-  flag: '🇰🇷'
-  position:
+  role:
     - 'Humboldt Internship Student'
   image: danny.png
   orcid:
@@ -779,12 +728,11 @@
 
 - id: 'sara'
   status: 'alumni'
-  year: '2020'
+  tenure: '2020'
   end_year: '2020'
   name: 'Sara de Angelis'
   country: 'Great Britain'
-  flag: '🇬🇧'
-  position:
+  role:
     - 'Humboldt Internship Student'
   image: sara.png
   orcid:
@@ -795,13 +743,12 @@
 
 - id: 'hemant'
   status: 'alumni'
-  year: '2020'
+  tenure: '2020'
   end_year: '2020'
   name: 'Hemant Yadav'
   country: 'India'
-  flag: '🇮🇳'
   affiliation: 'Indian Institute of Technology, Roorkee'
-  position:
+  role:
     - 'Google Summer of Code Student'
   image: hemant.png
   orcid:
@@ -812,13 +759,12 @@
 
 - id: 'hemil'
   status: 'alumni'
-  year: '2020'
+  tenure: '2020'
   end_year: '2020'
   name: 'Hemil Panchiwala'
   country: 'India'
-  flag: '🇮🇳'
   affiliation: 'Indian Institute of Technology, Roorkee'
-  position:
+  role:
     - 'Google Summer of Code Student'
   image: hemil.png
   orcid:
@@ -829,13 +775,12 @@
 
 - id: 'kaustubh'
   status: 'alumni'
-  year: '2019'
+  tenure: '2019'
   end_year: '2019'
   name: 'Kaustubh Trivedi'
   country: 'India'
-  flag: '🇮🇳'
   affiliation: 'Indian Institute of Technology, Roorkee'
-  position:
+  role:
     - 'Google Summer of Code Student'
   image: kaustubh.png
   orcid:
@@ -846,12 +791,11 @@
 
 - id: 'patrick'
   status: 'alumni'
-  year: '2017-2019'
+  tenure: '2017-2019'
   end_year: '2019'
   name: 'Patrick Pett'
   country: 'Germany'
-  flag: '🇩🇪'
-  position:
+  role:
     - 'Ph.D. Student (Mentoring)'
   image: pett.png
   orcid:
@@ -862,12 +806,11 @@
 
 - id: 'schulte'
   status: 'alumni'
-  year: '2018'
+  tenure: '2018'
   end_year: '2018'
   name: 'Roman Schulte'
   country: 'Germany'
-  flag: '🇩🇪'
-  position:
+  role:
     - 'Bachelor Thesis'
   image: schulte.png
   orcid:
@@ -877,12 +820,11 @@
 
 - id: 'shah'
   status: 'alumni'
-  year: '2018'
+  tenure: '2018'
   end_year: '2018'
   name: 'Shalin Shah'
   country: 'India'
-  flag: '🇮🇳'
-  position:
+  role:
     - 'Google Summer of Code'
   image: 'shah.png'
   orcid:
@@ -892,12 +834,11 @@
 
 - id: 'yamada'
   status: 'alumni'
-  year: '2017'
+  tenure: '2017'
   end_year: '2017'
   name: 'Takahiro Yamada'
   country: 'Japan'
-  flag: '🇯🇵'
-  position:
+  role:
     - 'Google Summer of Code'
   image: 'yamada.png'
   orcid:
@@ -908,12 +849,11 @@
 
 - id: 'dimitra'
   status: 'alumni'
-  year: '2016-2017'
+  tenure: '2016-2017'
   end_year: '2017'
   name: 'Dimitra Eleftheriadou'
   country: 'Greece'
-  flag: '🇬🇷'
-  position:
+  role:
     - 'Student Assistant'
   image: eleftheriadou.png
   orcid:

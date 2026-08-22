@@ -11,7 +11,8 @@
   homepage: https://alpha.pk-db.com
   repository: https://github.com/matthiaskoenig/pkdb
   doi: 10.1093/nar/gkaa990
-  publication: 10.1093/nar/gkaa990
+  publications:
+    - 'PKDB_Grzegorzewski2020'
 
 - id: 'sbmlutils'
   tags:
@@ -25,7 +26,7 @@
   homepage: https://github.com/matthiaskoenig/sbmlutils
   repository: https://github.com/matthiaskoenig/sbmlutils
   doi: 10.5281/zenodo.597149
-  publication:
+  publications:
 
 - id: 'sbml4humans'
   tags:
@@ -39,7 +40,7 @@
   homepage: https://sbml4humans.de
   repository: https://github.com/matthiaskoenig/sbmlutils
   doi:
-  publication:
+  publications:
 
 - id: 'sbmlsim'
   tags:
@@ -54,7 +55,7 @@
   homepage: https://github.com/matthiaskoenig/sbmlsim
   repository: https://github.com/matthiaskoenig/sbmlsim
   doi:
-  publication:
+  publications:
 
 - id: 'cysbml'
   tags:
@@ -68,7 +69,7 @@
   homepage: https://github.com/matthiaskoenig/cy3sbml
   repository: https://github.com/matthiaskoenig/cy3sbml
   doi: 10.5281/zenodo.597154
-  publication:
+  publications:
 
 - id: 'brendapy'
   tags:
@@ -82,7 +83,7 @@
   homepage: https://github.com/matthiaskoenig/brendapy
   repository: https://github.com/matthiaskoenig/brendapy
   doi:
-  publication:
+  publications:
 
 - id: 'libsbgnpy'
   tags:
@@ -96,7 +97,7 @@
   homepage: https://github.com/matthiaskoenig/libsbgn-python
   repository: https://github.com/matthiaskoenig/libsbgn-python
   doi:
-  publication:
+  publications:
 
 - id: 'roadrunner'
   tags:
@@ -110,7 +111,7 @@
   homepage: https://libroadrunner.readthedocs.io/en/latest/
   repository: https://github.com/sys-bio/roadrunner/
   doi:
-  publication:
+  publications:
 
 - id: 'cobrapy'
   tags:
@@ -124,7 +125,7 @@
   homepage: https://github.com/opencobra/cobrapy/
   repository: https://github.com/opencobra/cobrapy/
   doi:
-  publication:
+  publications:
 
 - id: 'tellurium'
   tags:
@@ -138,7 +139,7 @@
   homepage: https://github.com/sys-bio/tellurium/
   repository: https://github.com/sys-bio/tellurium/
   doi:
-  publication:
+  publications:
 
 - id: 'visfem'
   tags:
@@ -157,4 +158,4 @@
   homepage: https://github.com/matthiaskoenig/visfem
   repository: https://github.com/matthiaskoenig/visfem
   doi:
-  publication:
+  publications:

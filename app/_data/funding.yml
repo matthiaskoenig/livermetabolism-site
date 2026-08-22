@@ -1,4 +1,4 @@
-- id: 'xresearch'
+- id: 'xresearch2025'
   funder_short: BMFTR
   funder: Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR) und dem Land Berlin im Rahmen der Exzellenzstrategie von Bund und Ländern
   funder_link: https://www.berlin-university-alliance.de/
@@ -10,12 +10,12 @@
   tags:
     - 'Digital Twins'
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   role: Recipient
   amount: 1500
   personal_amount: 1500
   currency: "€"
-  logo:
-  project:
+  homepage:
   repository:
   description: "Project-based teaching initiative on digital twins in medicine, focusing on physiologically based pharmacokinetic (PBPK) modeling to optimize the use of direct oral anticoagulants."
 
@@ -30,12 +30,12 @@
   title: 'SPP2311 - Startup Funding - SPP-FEMVis: Advancing Open Science with Web-Based FEM Visualization'
   tags:
     - 'Open & FAIR'
+    - 'Digital Twins'
   role: Recipient
   amount: 15000
   personal_amount: 15000
   currency: "€"
-  logo: 'SPP-FEMVis.png'
-  project: https://www.spp2311.uni-stuttgart.de/en/
+  homepage: https://www.spp2311.uni-stuttgart.de/en/
   repository:
   description: "Startup funding to develop an open science platform for interactive, web-based visualization of finite element method (FEM) simulations."
 
@@ -54,8 +54,7 @@
   amount: 10000
   personal_amount: 0
   currency: "€"
-  logo: algonomy_logo.png
-  project: https://algonomy.jus.unipi.it/
+  homepage: https://algonomy.jus.unipi.it/
   repository:
   description: "Building an international academic network to investigate the role of algorithms and AI in medical decision support systems, with a focus on legal, ethical, and patient autonomy implications."
 
@@ -74,8 +73,7 @@
   amount: 4000
   personal_amount: 4000
   currency: "€"
-  logo:
-  project:
+  homepage:
   repository:
   description: "Supporting the promotion and implementation of open science practices across research communities at Berlin Universities, with a focus on reproducibility, FAIR data, and fostering collaborative exchange."
 
@@ -86,21 +84,21 @@
   funder_logo: dfg.png
   grant: 465194077
   start: '10/2025'
-  end: '9/2027'
+  end: '09/2027'
   title: 'SPP2311 - SimLivA - SIMulation supported LIVer Assessment for donor organs'
   tags:
     - 'Digital Twins'
+    - 'Digital Pathology'
     - 'AI'
   role: Recipient
   amount: 895500
   personal_amount: 219000
   currency: "€"
-  logo:
-  project: https://www.spp2311.uni-stuttgart.de/en/
+  homepage: https://www.spp2311.uni-stuttgart.de/en/
   repository:
   description: "Developing computational models and simulation workflows to assess liver function in donor organs, advancing predictive tools for transplantation and improving clinical decision-making."
 
-- id: 'xresearch'
+- id: 'xresearch2023'
   funder_short: BMFTR
   funder: Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR) und dem Land Berlin im Rahmen der Exzellenzstrategie von Bund und Ländern
   funder_link: https://www.berlin-university-alliance.de/
@@ -116,8 +114,7 @@
   amount: 1500
   personal_amount: 1500
   currency: "€"
-  logo:
-  project:
+  homepage:
   repository:
   description: "Project-based teaching initiative on digital twins in pharmacology, focusing on physiologically based pharmacokinetic (PBPK) modeling to optimize hypertension therapy with ACE inhibitors and diuretics."
 
@@ -137,12 +134,11 @@
   amount: 1530550
   personal_amount: 311000
   currency: "€"
-  logo: atlas.png
-  project:
+  homepage:
   repository:
   description: "Developing AI-driven and simulation-based methods to improve the assessment of liver tumors, integrating computational modeling with clinical data to support personalized diagnosis and treatment planning."
 
-- id: 'xresearch'
+- id: 'xresearch2022'
   funder_short: BMFTR
   funder: Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR) und dem Land Berlin im Rahmen der Exzellenzstrategie von Bund und Ländern
   funder_link: https://www.berlin-university-alliance.de/
@@ -157,8 +153,7 @@
   amount: 1500
   personal_amount: 1500
   currency: "€"
-  logo:
-  project:
+  homepage:
   repository:
   description: "Project-based teaching initiative on physiologically based pharmacokinetic (PBPK) modeling, focusing on optimizing the use of ACE inhibitors in hypertension therapy."
 
@@ -178,8 +173,7 @@
   amount: 3825000
   personal_amount: 425000
   currency: "€"
-  logo:
-  project: https://qualiperf.de
+  homepage: https://qualiperf.de
   repository:
   description: "Advancing systems medicine by developing computational models to quantify the relationship between liver perfusion and function in complex surgical resections, supporting risk assessment and personalized treatment planning."
 
@@ -199,8 +193,7 @@
   amount: 658942
   personal_amount: 0
   currency: "€"
-  logo:
-  project: https://www.spp2311.uni-stuttgart.de/en/
+  homepage: https://www.spp2311.uni-stuttgart.de/en/
   repository:
   description: "Collaborative project developing simulation approaches to assess donor liver function, aiming to improve transplantation outcomes through predictive computational modeling."
 
@@ -219,7 +212,7 @@
   amount: 25000
   personal_amount: 5000
   currency: "€"
-  project: https://www.ebi.ac.uk/biomodels/covid-19
+  homepage: https://www.ebi.ac.uk/biomodels/covid-19
   repository:
   description: "Developed reproducible computational simulation studies to investigate COVID-19 dynamics, integrating standardized workflows and open science practices for rapid and transparent research dissemination."
 
@@ -239,8 +232,7 @@
   amount: 723000
   personal_amount: 723000
   currency: "€"
-  logo:
-  project: https://lisym.org/
+  homepage: https://lisym.org/
   repository:
   description: "Led a junior research group developing multi-scale computational models to assess and predict liver function, advancing personalized medicine approaches and translational applications in hepatology."
 

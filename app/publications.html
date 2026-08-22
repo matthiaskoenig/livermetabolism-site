@@ -17,7 +17,6 @@ sectionid: publications
 <div class="row" id="publication-list">
 	{% assign prev_year = nil %}
 	{% for publication in site.data.publications %}
-	{% assign pub_tags = site.data.publication_tags | where:"id", publication.id | first %}
 	{% unless publication.year == prev_year %}
 		{% unless forloop.first %}
 		</table>
@@ -34,15 +33,15 @@ sectionid: publications
 		</colgroup>
 		{% assign prev_year = publication.year %}
 	{% endunless %}
-		<tr data-tags="{{ pub_tags.tags | join: '|' | escape }}">
+		<tr data-tags="{{ publication.tags | join: '|' | escape }}">
 			<td class="publication-status">
 				<span class="status-badge status-{{ publication.status | slugify }}">{{ publication.status | capitalize }}</span>
 				<div class="pub-links">
 					{% if publication.pdf %}
 					<a href="/paper/{{ publication.pdf }}" title="PDF"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
 					{% endif %}
-					{% if publication.project %}
-					<a href="{{ publication.project }}" title="Project homepage"><i class="fa fa-globe" aria-hidden="true"></i></a>
+					{% if publication.homepage %}
+					<a href="{{ publication.homepage }}" title="Project homepage"><i class="fa fa-globe" aria-hidden="true"></i></a>
 					{% endif %}
 					{% if publication.repository %}
 					<a href="{{ publication.repository }}" title="Repository homepage"><i class="fa fa-github" aria-hidden="true"></i></a>
@@ -50,9 +49,9 @@ sectionid: publications
 				</div>
 			</td>
 			<td>
-				{% if pub_tags.tags %}
+				{% if publication.tags %}
 				<div class="tag-list">
-					{% for tag in pub_tags.tags %}
+					{% for tag in publication.tags %}
 					{% assign tag_info = site.data.tags | where: "tag", tag | first %}
 					<span class="tag-badge tag-{{ tag | slugify }}">{% if tag_info.icon %}<i class="fa {{ tag_info.icon }}" aria-hidden="true"></i> {% endif %}{{ tag }}</span>
 					{% endfor %}

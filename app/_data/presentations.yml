@@ -1,4 +1,6 @@
 - id: 'PMRT2026_digital_twins'
+  people:
+    - koenig
   type: "invited_talk"
   title: 'Digital Twins and Dashboards for Personalized Drug Treatment'
   authors: '<b>Matthias König</b>'
@@ -8,17 +10,21 @@
   event: 'Patient Monitoring Roundtable (PMRT)'
   event_page: https://inch.de/roundtable/
   date: 2026-03-12
-  dates: March 3, 2026
+  date_display: March 3, 2026
   location: Berlin, Germany
   repository:
-  publication:
+  publications:
   abstract: "In this talk, Dr. Matthias König introduces the concept of Digital Twins in medicine and shows how computational models and interactive dashboards can support personalized drug treatment and clinical decision-making. 
   Digital twins are virtual representations of patients, built using mechanistic computational models and continuously updated with patient data. They allow researchers and clinicians to simulate how drugs behave in the body — helping to predict individual responses, optimize therapies, and reduce risks.
   The presentation explores how physiologically based pharmacokinetic (PBPK) models can simulate drug absorption, distribution, metabolism, and elimination (ADME) and how these models can be integrated into interactive dashboards that make complex simulations accessible for clinicians and researchers.
   Topics covered in the talk • What is a Digital Twin in healthcare? • How computational models simulate drug pharmacokinetics • Why patients respond differently to the same medication • The role of genetics, physiology, and disease in drug metabolism • Virtual patient cohorts and population variability • Interactive clinical dashboards for decision support • Applications in diabetes treatment and liver surgery planning."
-  keywords: Digital twins, dashboard
+  keywords:
+    - Digital twins
+    - dashboard
 
 - id: 'HARMONY2026_libsbgnpy'
+  people:
+    - koenig
   type: "selected_talk"
   title: 'libsbgnpy - A Python Library for Handling Systems Biology Graphical Notation (SBGN)'
   authors: '<b>Matthias König</b>'
@@ -28,18 +34,24 @@
   event: 'HARMONY2026 - Computational Modeling in Biology'
   event_page: https://co.mbine.org/events/
   date: 2026-02-02
-  dates: February 2-5, 2026
+  date_display: February 2-5, 2026
   location: Auckland, New Zealand (Hybrid)
   repository: https://github.com/matthiaskoenig/libsbgnpy
-  publication:
+  publications:
   abstract: "Graphical representations play a crucial role in systems biology and systems medicine by enabling the intuitive visualization and interpretation of complex biological networks. libsbgnpy is an open-source Python library that provides a comprehensive and programmatic interface for working with the Systems Biology Graphical Notation (SBGN), a community standard for the unambiguous graphical representation of biological processes and interactions.
   Built on the SBGN-ML XML schema, libsbgnpy supports reading, writing, and validating SBGN files, ensuring standards compliance and interoperability across computational biology tools and platforms. The library offers a robust and extensible architecture that facilitates the creation, inspection, transformation, and validation of machine-readable graphical models, thereby promoting reproducibility, accessibility, and FAIR modeling practices in systems biology and systems medicine.
   This talk will present the latest release of libsbgnpy, highlighting newly added features and enhanced usability. We will demonstrate how these updates support more efficient handling and validation of large-scale pathway and disease maps, and discuss planned future developments aimed at further strengthening the ecosystem for automated, standards-based SBGN modeling and visualization.
   The source code for libsbgnpy is openly available at https://github.com/matthiaskoenig/libsbgnpy
   Documentation, including installation instructions, API references, and usage examples, is provided at https://matthiaskoenig.github.io/libsbgnpy/"
-  keywords: SBGN, visualization, python, reproducibility
+  keywords:
+    - SBGN
+    - visualization
+    - python
+    - reproducibility
 
 - id: 'HARMONY2026_pymetadata'
+  people:
+    - koenig
   type: "selected_talk"
   title: 'pymetadata: Python Utilities for Metadata, Semantic Annotation, and COMBINE archives'
   authors: '<b>Matthias König</b>'
@@ -49,19 +61,27 @@
   event: 'HARMONY2026 - Computational Modeling in Biology'
   event_page: https://co.mbine.org/events/
   date: 2026-02-02
-  dates: February 2-5, 2026
+  date_display: February 2-5, 2026
   location: Auckland, New Zealand (Hybrid)
   repository: https://github.com/matthiaskoenig/libsbgnpy
-  publication:
+  publications:
   abstract: "Standardized and machine-readable metadata are essential for interoperability, reproducibility, and long-term reuse of computational models and data in systems biology and systems medicine. In particular, workflows based on COMBINE standards rely on consistent handling of metadata, annotations, and controlled vocabularies across tools and formats.
 pymetadata is an open-source Python library that provides a collection of reusable utilities for working with metadata in the context of COMBINE standards. The library offers native support for COMBINE Archive version 1 (OMEX), enabling programmatic creation, inspection, and validation of standardized model archives. In addition, pymetadata includes structured annotation classes and helper functions that facilitate the consistent application of semantic annotations to models, datasets, and simulation descriptions.
 To support semantic interoperability, the library provides lightweight, typed access to key ontologies commonly used in computational biology, including enumerations for SBO, KiSAO, and ECO terms. This enables robust, explicit, and error-resistant annotation workflows directly within Python-based modeling and analysis pipelines.
 pymetadata is designed to be modular, lightweight, and easily integrable into existing scientific software, continuous integration pipelines, and data publication workflows. By lowering the barrier to correct and consistent metadata handling, the library supports FAIR principles and promotes sustainable, interoperable model development within the COMBINE ecosystem.
 The source code is openly available at
  https://github.com/matthiaskoenig/pymetadata."
-  keywords: metadata, COMBINE archive (OMEX), semantic annotation, ontologies, SBO, KiSAO
+  keywords:
+    - metadata
+    - COMBINE archive (OMEX)
+    - semantic annotation
+    - ontologies
+    - SBO
+    - KiSAO
 
 - id: 'HARMONY2026_PEtab2'
+  people:
+    - koenig
   type: "selected_talk"
   title: 'Standardizing Parameter Estimation Problems with PEtab 2'
   authors: '<b>Matthias König</b>, Frank T. Bergmann, Dilan Pathirana, Daniel Weindl, Sebastian Persson'
@@ -76,17 +96,25 @@ The source code is openly available at
   event: 'HARMONY2025 - Computational Modeling in Biology'
   event_page: https://co.mbine.org/events/
   date: 2026-02-02
-  dates: February 2-5, 2026
+  date_display: February 2-5, 2026
   location: Auckland, New Zealand (Hybrid)
   repository: https://petab.readthedocs.io/
-  publication:
+  publications:
   abstract: "PEtab was introduced as a community-driven standard to provide a clear and tool-independent way to describe parameter estimation problems, including models, data, experimental conditions, and parameters. Since its initial release, PEtab has been adopted by a growing number of modeling tools and research groups.
 In this talk, we present PEtab Version 2, a major update of the specification informed by practical experience from the community and evolving modeling needs. PEtab Version 2 simplifies and clarifies how estimation problems are defined, while also extending the standard to support more complex and realistic experimental setups. Key improvements include support for additional model formats beyond SBML, expanded and improved specification of parameter priors for Bayesian workflows, and a more flexible description of experiments that allows multiple conditions, time periods, and pre-equilibration steps within a single simulation. Additional updates improve the definition of model parameters, measurement noise, and observation models, and remove ambiguous or confusing features from earlier versions. Version 2 also includes a general extension mechanism, to add functionality not covered by the core standard, for example a standard for scientific machine learning. Together, these changes make PEtab easier to understand, more robust to use, and better suited for advanced applications such as large-scale model comparison, uncertainty analysis, and digital twin workflows.
 PEtab Version 2 provides a scalable and interoperable foundation for parameter estimation, helping researchers share, reproduce, and build upon quantitative models across disciplines. The specification and documentation are available at https://petab.readthedocs.io, with a reference Python implementation provided at https://github.com/PEtab-dev/libpetab-python."
-  keywords: PEtab, parameter estimation, reproducible modeling, Bayesian inference, frequentist inference
+  keywords:
+    - PEtab
+    - parameter estimation
+    - reproducible modeling
+    - Bayesian inference
+    - frequentist inference
 
 
 - id: 'COMBINE2025_reproducibility_by_design'
+  people:
+    - michelle
+    - koenig
   type: "selected_talk"
   title: 'Reproducibility by Design: Data and Workflows for Pharmacokinetic Digital Twins'
   authors: 'Michelle Elias and <b>Matthias König</b>'
@@ -96,10 +124,10 @@ PEtab Version 2 provides a scalable and interoperable foundation for parameter e
   event: 'COMBINE2025 - Computational Modeling in Biology'
   event_page: https://co.mbine.org/events/
   date: 2025-10-20
-  dates: October 20 - 23, 2025
+  date_display: October 20 - 23, 2025
   location: Madison, WI, USA (Hybrid)
   repository: https://github.com/matthiaskoenig/glimepiride-model
-  publication:
+  publications:
   abstract: "Dr. Matthias König (Humboldt-Universität zu Berlin) presents how reproducibility and open standards enable trustworthy Digital Twins in pharmacology and medicine.
 Using the example of the glimepiride digital twin for type 2 diabetes, he demonstrates:
 
@@ -126,6 +154,9 @@ https://co.mbine.org/events/
   keywords:
 
 - id: 'RDA2025_reproducibility_by_design'
+  people:
+    - michelle
+    - koenig
   type: "invited_talk"
   title: 'Reproducibility by Design: Data and Workflows for Pharmacokinetic Digital Twins'
   authors: 'Michelle Elias and <b>Matthias König</b>'
@@ -135,15 +166,18 @@ https://co.mbine.org/events/
   event: 'RDA 25th Plenary Meeting [part of International Data Week 2025] - Towards reproducible and transparent computational modelling in health and biomedical research'
   event_page: https://www.rd-alliance.org/plenaries/idw-2025/
   date: 2025-10-16
-  dates: October 13 - 16, 2025
+  date_display: October 13 - 16, 2025
   location: Brisbane, Australia and Virtual (Hybrid)
   repository: https://www.rd-alliance.org/members/priyanka-pillai/plenary-participation/?application_id=187747
-  publication:
+  publications:
   abstract: "A digital twin in the form of a whole-body physiologically based pharmacokinetic (PBPK) model of glimepiride was developed to systematically evaluate the influence of patient-specific factors on drug disposition. Based on curated data from 20 clinical studies, the model simulates the absorption, distribution, metabolism and excretion (ADME) of the drug while accounting for variability in renal and hepatic function, CYP2C9 genetic variants and bodyweight. The model is implemented in the Systems Biology Markup Language (SBML) standard and simulations are performed using scripts that utilise the libRoadRunner library to run simulations and generate results. Here, we demonstrate the computational reproducibility of the key findings from the primary publication [1], thereby verifying the consistency and reproducibility of the model implementation with the published results."
   keywords:
 
 
 - id: 'CellML2025_reproducibility_glimepiride'
+  people:
+    - michelle
+    - koenig
   type: "selected_talk"
   title: 'Reproducibility of a Digital Twin of Glimepiride for Personalized and Stratified Diabetes Treatment'
   authors: 'Michelle Elias and <b>Matthias König</b>'
@@ -153,14 +187,17 @@ https://co.mbine.org/events/
   event: '18th International CellML Workshop'
   event_page: https://www.cellml.org/community/events/workshop/2025
   date: 2025-10-14
-  dates: October 13 & 14, 2025
+  date_display: October 13 & 14, 2025
   location: Auckland, New Zealand (online)
   repository: https://github.com/matthiaskoenig/glimeperide-model
-  publication:
+  publications:
   abstract: "A digital twin in the form of a whole-body physiologically based pharmacokinetic (PBPK) model of glimepiride was developed to systematically evaluate the influence of patient-specific factors on drug disposition. Based on curated data from 20 clinical studies, the model simulates the absorption, distribution, metabolism and excretion (ADME) of the drug while accounting for variability in renal and hepatic function, CYP2C9 genetic variants and bodyweight. The model is implemented in the Systems Biology Markup Language (SBML) standard and simulations are performed using scripts that utilise the libRoadRunner library to run simulations and generate results. Here, we demonstrate the computational reproducibility of the key findings from the primary publication [1], thereby verifying the consistency and reproducibility of the model implementation with the published results."
   keywords:
 
 - id: 'ITBMeeting2025_reproducibility_glimepiride'
+  people:
+    - michelle
+    - koenig
   type: "invited_talk"
   title: 'Reproducibility of a Digital Twin of Glimepiride for Personalized and Stratified Diabetes Treatment'
   authors: 'Michelle Elias and <b>Matthias König</b>'
@@ -170,14 +207,16 @@ https://co.mbine.org/events/
   event: 'Institute for Theoretical Biology, Institute Seminar'
   event_page:
   date: 2025-09-10
-  dates: September 10, 2025
+  date_display: September 10, 2025
   location: Berlin
   repository: https://github.com/matthiaskoenig/glimeperide-model
-  publication:
+  publications:
   abstract: "A digital twin in the form of a whole-body physiologically based pharmacokinetic (PBPK) model of glimepiride was developed to systematically evaluate the influence of patient-specific factors on drug disposition. Based on curated data from 20 clinical studies, the model simulates the absorption, distribution, metabolism and excretion (ADME) of the drug while accounting for variability in renal and hepatic function, CYP2C9 genetic variants and bodyweight. The model is implemented in the Systems Biology Markup Language (SBML) standard and simulations are performed using scripts that utilise the libRoadRunner library to run simulations and generate results. Here, we demonstrate the computational reproducibility of the key findings from the primary publication [1], thereby verifying the consistency and reproducibility of the model implementation with the published results."
   keywords:
 
 - id: 'SBHD2025_reproducible.digital.twins'
+  people:
+    - koenig
   type: "selected_talk"
   title: 'Reproducible Digital Twins for Studying the Effect of Disease on Pharmacokinetics'
   authors: '<b>Matthias König</b>'
@@ -187,10 +226,10 @@ https://co.mbine.org/events/
   event: '17th International Conference on Systems Biology of Human Disease (SBHD2025)'
   event_page: https://www.sbhdberlin.org/index.html
   date: 2025-06-16
-  dates: June 16-18, 2025
+  date_display: June 16-18, 2025
   location: Berlin
   repository:
-  publication:
+  publications:
   abstract: "Digital twins are transforming systems medicine by enabling personalized treatment and decision support through the integration of patient-specific data with predictive computational models. The impact of digital twins in clinical and translational settings relies fundamentally on the reproducibility, transparency, and reusability of the underlying models and workflows.
   In this talk, we present our approach to developing reproducible digital twins for pharmacokinetics (PK), with a focus on understanding the effect of disease on drug disposition. Our physiologically based pharmacokinetic (PBPK) models integrate curated clinical data and capture interindividual variability in physiology and metabolism. This allows us to simulate how conditions such as liver and kidney impairment alter drug absorption, distribution, metabolism, and excretion.
   A key component of our framework is an open pharmacokinetics database containing structured, high-quality data from diverse clinical studies. These data support the development of individualized PBPK models that account for genetic variability, drug-drug interactions, lifestyle factors, and clinical measures such as liver function tests [10.1093/nar/gkaa990, 10.3389/fphar.2021.752826].
@@ -200,6 +239,8 @@ https://co.mbine.org/events/
   keywords:
 
 - id: 'CamoSeminar2025_reproducible.pharmacokinetics.models'
+  people:
+    - koenig
   type: "invited_talk"
   title: 'Digital Twins of the Liver in Pharmacokinetics'
   authors: '<b>Matthias König</b>'
@@ -209,14 +250,16 @@ https://co.mbine.org/events/
   event: 'Camo Seminar, KIT Institute of Biomedical Engineering, Computational Cardiac Modeling'
   event_page:
   date: 2025-04-24
-  dates:
+  date_display:
   location: Karlsruhe, Online
   repository:
-  publication:
+  publications:
   abstract:
   keywords:
 
 - id: 'DMCM2025_reproducible_models_libsbgnpy'
+  people:
+    - koenig
   type: "selected_talk"
   title: 'Reproducible Digital Twins in Pharmacokinetics'
   authors: '<b>Matthias König</b>'
@@ -226,14 +269,16 @@ https://co.mbine.org/events/
   event: '9th Disease Maps Community Meeting (DMCM2025)'
   event_page: https://disease-maps.io/DMCM2025/
   date: 2025-04-17
-  dates:
+  date_display:
   location: Leuven, Belgium
   repository:
-  publication:
+  publications:
   abstract:
   keywords:
 
 - id: 'DiseaseMaps2025_online_reproducible_models'
+  people:
+    - koenig
   type: "invited_talk"
   title: 'Reproducible digital twins for personalized drug pharmacokinetics'
   authors: '<b>Matthias König</b>'
@@ -243,10 +288,10 @@ https://co.mbine.org/events/
   event: 'Disease Maps Meeting'
   event_page:
   date: 2025-02-05
-  dates:
+  date_display:
   location: Online, Disease Maps Meeting
   repository:
-  publication:
+  publications:
   abstract: "Essential prerequisites for the practical application and translation of computational models include: i) reproducibility of results; ii) model reusability and extensibility; iii) data availability; and iv) strategies for model stratification and individualization. Here, we present a modeling workflow built around these foundational prerequisites, with a focus on liver function tests.
   Despite the paramount significance of liver function assessment in hepatology, reliable quantification remains a clinical challenge. Dynamic liver function tests offer a promising method for non-invasive in vivo assessment of liver function and metabolic phenotyping. 
   By leveraging whole-body physiologically-based pharmacokinetic (PBPK) models, we're simulating these tests and positioning PBPK models as digital twins for metabolic phenotyping and liver function assessment. To develop and validate our models, we established the open pharmacokinetics database, PK-DB, containing curated data from 600+ clinical studies [10.1093/nar/gkaa990, 10.3389/fphar.2021.752826]. Our models are individualizable and stratifiable, enabling simulation of lifestyle factors and co-administration effects on drug metabolism. Our models have been instrumental in clinical scenarios: from predicting individual outcomes post-hepatectomy [10.3389/fphys.2021.730418, 10.3389/fphys.2021.757293] to discerning the impact of CYP2D6 gene variants on liver function tests [10.3389/fphar.2022.1029073]. These models are constructed hierarchically, describing metabolic and other biological processes in organs like the liver and kidneys, seamlessly integrated with whole-body physiology. 
@@ -254,6 +299,8 @@ https://co.mbine.org/events/
   keywords:
 
 - id: 'Darmstadt2025_reproducible_models'
+  people:
+    - koenig
   type: "invited_talk"
   title: 'Reproducible digital twins for personalized liver function assessment'
   authors: '<b>Matthias König</b>'
@@ -263,10 +310,10 @@ https://co.mbine.org/events/
   event: 'University of Darmstadt, Institute for Mechanics, Institute Seminar'
   event_page:
   date: 2025-02-05
-  dates:
+  date_display:
   location: Darmstadt, Germany
   repository:
-  publication:
+  publications:
   abstract: "Essential prerequisites for the practical application and translation of computational models include: i) reproducibility of results; ii) model reusability and extensibility; iii) data availability; and iv) strategies for model stratification and individualization. Here, we present a modeling workflow built around these foundational prerequisites, with a focus on liver function tests.
   Despite the paramount significance of liver function assessment in hepatology, reliable quantification remains a clinical challenge. Dynamic liver function tests offer a promising method for non-invasive in vivo assessment of liver function and metabolic phenotyping. 
   By leveraging whole-body physiologically-based pharmacokinetic (PBPK) models, we're simulating these tests and positioning PBPK models as digital twins for metabolic phenotyping and liver function assessment. To develop and validate our models, we established the open pharmacokinetics database, PK-DB, containing curated data from 600+ clinical studies [10.1093/nar/gkaa990, 10.3389/fphar.2021.752826]. Our models are individualizable and stratifiable, enabling simulation of lifestyle factors and co-administration effects on drug metabolism. Our models have been instrumental in clinical scenarios: from predicting individual outcomes post-hepatectomy [10.3389/fphys.2021.730418, 10.3389/fphys.2021.757293] to discerning the impact of CYP2D6 gene variants on liver function tests [10.3389/fphar.2022.1029073]. These models are constructed hierarchically, describing metabolic and other biological processes in organs like the liver and kidneys, seamlessly integrated with whole-body physiology. 
@@ -274,6 +321,8 @@ https://co.mbine.org/events/
   keywords:
 
 - id: 'COMBINE2024_Stuttgart_reproducible_models'
+  people:
+    - koenig
   type: "selected_talk"
   title: 'Reproducible digital twins for personalized liver function assessment'
   authors: '<b>Matthias König</b>'
@@ -283,10 +332,10 @@ https://co.mbine.org/events/
   event: 'COMBINE 2024 Stuttgart'
   event_page: "https://co.mine.org/events"
   date: 2024-09-02
-  dates: September 02-03, 2024
+  date_display: September 02-03, 2024
   location: Stuttgart
   repository:
-  publication:
+  publications:
   abstract: "Essential prerequisites for the practical application and translation of computational models include: i) reproducibility of results; ii) model reusability and extensibility; iii) data availability; and iv) strategies for model stratification and individualization. Here, we present a modeling workflow built around these foundational prerequisites, with a focus on liver function tests.
   Despite the paramount significance of liver function assessment in hepatology, reliable quantification remains a clinical challenge. Dynamic liver function tests offer a promising method for non-invasive in vivo assessment of liver function and metabolic phenotyping. 
   By leveraging whole-body physiologically-based pharmacokinetic (PBPK) models, we're simulating these tests and positioning PBPK models as digital twins for metabolic phenotyping and liver function assessment. To develop and validate our models, we established the open pharmacokinetics database, PK-DB, containing curated data from 600+ clinical studies [10.1093/nar/gkaa990, 10.3389/fphar.2021.752826]. Our models are individualizable and stratifiable, enabling simulation of lifestyle factors and co-administration effects on drug metabolism. Our models have been instrumental in clinical scenarios: from predicting individual outcomes post-hepatectomy [10.3389/fphys.2021.730418, 10.3389/fphys.2021.757293] to discerning the impact of CYP2D6 gene variants on liver function tests [10.3389/fphar.2022.1029073]. These models are constructed hierarchically, describing metabolic and other biological processes in organs like the liver and kidneys, seamlessly integrated with whole-body physiology. 
@@ -294,6 +343,8 @@ https://co.mbine.org/events/
   keywords:
 
 - id: 'eMed2023_Berlin_talk'
+  people:
+    - koenig
   type: "selected_talk"
   title: 'Reproducible digital twins for personalized liver function assessment'
   authors: '<b>Matthias König</b>'
@@ -303,10 +354,10 @@ https://co.mbine.org/events/
   event: 'e:Med Meeting 2023 on Systems Medicine'
   event_page: "https://www.sys-med.de/de/meeting/emed-meeting-2023/"
   date: 2023-10-10
-  dates: October 10-11, 2023
+  date_display: October 10-11, 2023
   location: Berlin
   repository:
-  publication:
+  publications:
   abstract: "Essential prerequisites for the practical application and translation of computational models include: i) reproducibility of results; ii) model reusability and extensibility; iii) data availability; and iv) strategies for model stratification and individualization. Here, we present a modeling workflow built around these foundational prerequisites, with a focus on liver function tests.
   Despite the paramount significance of liver function assessment in hepatology, reliable quantification remains a clinical challenge. Dynamic liver function tests offer a promising method for non-invasive in vivo assessment of liver function and metabolic phenotyping. 
   By leveraging whole-body physiologically-based pharmacokinetic (PBPK) models, we're simulating these tests and positioning PBPK models as digital twins for metabolic phenotyping and liver function assessment. To develop and validate our models, we established the open pharmacokinetics database, PK-DB, containing curated data from 600+ clinical studies. Our models are individualizable and stratifiable, enabling simulation of lifestyle factors and co-administration effects on drug metabolism. Our models have been instrumental in clinical scenarios: from predicting individual outcomes post-hepatectomy to discerning the impact of CYP2D6 gene variants on liver function tests. These models are constructed hierarchically, describing metabolic and other biological processes in organs like the liver and kidneys, seamlessly integrated with whole-body physiology. 
@@ -315,6 +366,8 @@ https://co.mbine.org/events/
   keywords:
 
 - id: 'itb2023_Berlin_talk'
+  people:
+    - koenig
   type: "invited_talk"
   title: 'Reproducible digital twins for personalized liver function assessment'
   authors: '<b>Matthias König</b>'
@@ -324,10 +377,10 @@ https://co.mbine.org/events/
   event: 'Institute for Theoretical Biology Meeting'
   event_page: "https://www.sys-med.de/de/meeting/emed-meeting-2023/"
   date: 2023-10-10
-  dates: October 10, 2023
+  date_display: October 10, 2023
   location: Berlin
   repository:
-  publication:
+  publications:
   abstract: "Essential prerequisites for the practical application and translation of computational models include: i) reproducibility of results; ii) model reusability and extensibility; iii) data availability; and iv) strategies for model stratification and individualization. Here, we present a modeling workflow built around these foundational prerequisites, with a focus on liver function tests.
   Despite the paramount significance of liver function assessment in hepatology, reliable quantification remains a clinical challenge. Dynamic liver function tests offer a promising method for non-invasive in vivo assessment of liver function and metabolic phenotyping. 
   By leveraging whole-body physiologically-based pharmacokinetic (PBPK) models, we're simulating these tests and positioning PBPK models as digital twins for metabolic phenotyping and liver function assessment. To develop and validate our models, we established the open pharmacokinetics database, PK-DB, containing curated data from 600+ clinical studies. Our models are individualizable and stratifiable, enabling simulation of lifestyle factors and co-administration effects on drug metabolism. Our models have been instrumental in clinical scenarios: from predicting individual outcomes post-hepatectomy to discerning the impact of CYP2D6 gene variants on liver function tests. These models are constructed hierarchically, describing metabolic and other biological processes in organs like the liver and kidneys, seamlessly integrated with whole-body physiology. 
@@ -336,6 +389,8 @@ https://co.mbine.org/events/
   keywords:
 
 - id: 'ICCB2023_Wien_talk'
+  people:
+    - koenig
   type: "selected_talk"
   title: 'Studying the impact of drug metabolism on the liver tissue: An integrated biomechanical modeling approach'
   authors: '<b>Matthias König</b>, Steffen Gerhäusser, Luis Mandl, Lena Lambers, Uta Dahmen, Hans-Michael Tautenhahn, Tim Ricken'
@@ -346,7 +401,7 @@ https://co.mbine.org/events/
   event_page: "https://iccb2023.conf.tuwien.ac.at/"
   date: 2023-09-22
   repository:
-  publication:
+  publications:
   abstract: "Physiologically-based pharmacokinetic (PBPK) models are powerful tools for studying drug metabolism and its effect on the human body. Here, we present our work on PBPK models for metabolic phenotyping and liver function evaluation [1-5]. To develop and validate our models, we established the first open pharmacokinetics database, PK-DB, which contains curated data from over 600 clinical studies. Our models can be individualized and stratified, allowing us to simulate the effect of lifestyle factors and co-administration on drug metabolism.
    We have applied our models to various clinical questions, such as simulating individual outcomes after hepatectomy using an indocyanine green model and studying the effect of CYP2D6 gene variants using a model of dextromethorphan coupled with drug-gene interactions. These models are constructed hierarchically, describing metabolism and other biological processes of organs such as liver and kidney coupled to whole-body physiology. All models and data are available for reuse in a reproducible manner encoded in the Systems Biology Markup Language (SBML).
    One of the major challenges in PBPK modeling is the integration of these models with cellular and continuum-biomechanical models. By coupling PBPK models with these models, it becomes possible to provide drug concentrations at the site of action as boundary conditions and time-varying inputs to continuum-biomechanical models. This approach enables us to study the impact of systemic chemotherapy on tumor growth or to investigate changes in perfusion and pressure at the whole-body level on transport and biomechanical properties at the tissue scale.
@@ -361,6 +416,8 @@ https://co.mbine.org/events/
   keywords:
 
 - id: 'AstraZeneca_talk'
+  people:
+    - koenig
   type: "invited_talk"
   title: 'Digital twins for liver function & metabolic phenotyping'
   authors: '<b>Matthias König</b>'
@@ -370,7 +427,7 @@ https://co.mbine.org/events/
   event_page: https://www.astrazeneca.com/
   date: 2023-09-01
   repository:
-  publication:
+  publications:
   abstract: "Physiologically-based pharmacokinetic (PBPK) models are powerful tools for studying drug metabolism and its effect on the human body. Here, we present our work on applying PBPK models as digital twins for metabolic phenotyping and liver function evaluation [1-6]. To develop and validate our models, we established the first open pharmacokinetics database, PK-DB, which contains curated data from over 600 clinical studies. Our models can be individualized and stratified, allowing us to simulate the effect of lifestyle factors and co-administration on drug metabolism.
   We have applied our models to various clinical questions, such as simulating individual outcomes after hepatectomy using an indocyanine green model and studying the effect of CYP2D6 gene variants using a model of dextromethorphan coupled with drug-gene interactions. These models are constructed hierarchically, describing metabolism and other biological processes of organs such as liver and kidney coupled to whole-body physiology. All models and data are available for reuse in a reproducible manner encoded in the Systems Biology Markup Language (SBML).
   Here we will give an overview of our PBPK models and how SBML can facilitate model development, coupling and reuse.
@@ -384,6 +441,8 @@ https://co.mbine.org/events/
   keywords:
 
 - id: 'WCMBM2023_Stuttgart_keynote'
+  people:
+    - koenig
   type: "invited_talk"
   title: 'Advancing Liver Function Assessment: Personalized and Stratified Approaches with Standardized Computational Models and Data'
   authors: '<b>Matthias König</b>'
@@ -394,7 +453,7 @@ https://co.mbine.org/events/
   event_page: http://www.biometrische-gesellschaft.de/arbeitsgruppen/statistische-methoden-i-d-bioinformatik/workshop2023.html
   date: 2023-06-19
   repository:
-  publication:
+  publications:
   abstract: "Essential prerequisites for the practical application and translation of computational models include: i) reproducibility of results; ii) reusability and extensibility of models; iii) data availability; and iv) strategies for model stratification and individualization. In this study, we present a modeling workflow tailored to these critical aspects, with a focus on liver function tests.
   Evaluating liver function is a crucial task in hepatology, yet accurately quantifying hepatic function has persisted as a clinical challenge. Dynamic liver function tests offer a promising method for non-invasive in vivo assessment of liver function and metabolic phenotyping. These clinical tests determine liver function through the elimination of a specific test substance, thus revealing information about the liver's metabolic capacity.
   We employed whole-body physiologically-based pharmacokinetic (PBPK) models to simulate these tests, which encompass absorption, distribution, metabolism, and elimination processes. PBPK models serve as powerful instruments for investigating drug metabolism and its impact on the human body. In this research, we showcase our efforts in utilizing PBPK models as digital twins for metabolic phenotyping and liver function evaluation [1-6]. To develop and validate our models, we created the first open pharmacokinetics database, PK-DB, containing curated data from over 600 clinical studies. Our models are individualizable and stratifiable, enabling simulation of lifestyle factors and co-administration effects on drug metabolism.
@@ -404,6 +463,8 @@ https://co.mbine.org/events/
   keywords:
 
 - id: 'MBM2023_keynote'
+  people:
+    - koenig
   type: "invited_talk"
   title: 'Digital twins for liver function & metabolic phenotyping'
   authors: '<b>Matthias König</b>'
@@ -414,7 +475,7 @@ https://co.mbine.org/events/
   event_page: https://mbm.systemsbiology.se
   date: 2023-05-22
   repository:
-  publication:
+  publications:
   abstract: "Physiologically-based pharmacokinetic (PBPK) models are powerful tools for studying drug metabolism and its effect on the human body. Here, we present our work on applying PBPK models as digital twins for metabolic phenotyping and liver function evaluation [1-6]. To develop and validate our models, we established the first open pharmacokinetics database, PK-DB, which contains curated data from over 600 clinical studies. Our models can be individualized and stratified, allowing us to simulate the effect of lifestyle factors and co-administration on drug metabolism.
   We have applied our models to various clinical questions, such as simulating individual outcomes after hepatectomy using an indocyanine green model and studying the effect of CYP2D6 gene variants using a model of dextromethorphan coupled with drug-gene interactions. These models are constructed hierarchically, describing metabolism and other biological processes of organs such as liver and kidney coupled to whole-body physiology. All models and data are available for reuse in a reproducible manner encoded in the Systems Biology Markup Language (SBML).
   Here we will give an overview of our PBPK models and how SBML can facilitate model development, coupling and reuse.
@@ -428,6 +489,8 @@ https://co.mbine.org/events/
   keywords:
 
 - id: 'FAIR.sharing.of.reproducible.and.reusable.COVID-19.models_Ramachandran2022'
+  people:
+    - koenig
   type: "selected_talk"
   title: 'Developing computational models with SBML - sbmlutils & cy3sbml'
   authors: '<b>Matthias König</b>'
@@ -438,6 +501,6 @@ https://co.mbine.org/events/
   event_page:
   date: 2022-07-22
   repository:
-  publication:
+  publications:
   abstract:
   keywords:

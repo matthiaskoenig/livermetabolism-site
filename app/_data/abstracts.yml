@@ -1,4 +1,6 @@
 - id: 'GAMM2026_Simliva'
+  people:
+    - koenig
   year: 2026
   date: 2026-01-15
   title: 'Extension of liver biomechanics framework for whole-body applications'
@@ -14,14 +16,17 @@
   [5] Elias M. et al (2025)., Frontiers in Pharmacology (2025)8
 '
   keywords:
-  meeting: 'GAMM 2026: 96th Annual Meeting of the International Association of Applied Mathematics and Mechanics; Stuttgart 16th - 20th March 2026, Germany'
-  meeting_webpage: 'https://jahrestagung.gamm.org/annual-meeting-2026/96th-annual-meeting-2/'
+  event: 'GAMM 2026: 96th Annual Meeting of the International Association of Applied Mathematics and Mechanics; Stuttgart 16th - 20th March 2026, Germany'
+  event_page: 'https://jahrestagung.gamm.org/annual-meeting-2026/96th-annual-meeting-2/'
   journal:
   doi:
-  project:
+  homepage:
   repository:
 
 - id: 'EASL_LCS_2026'
+  people:
+    - mariia
+    - koenig
   year: 2026
   date: 2026-01-22
   title: 'Modelling of Patient-Specific Liver Vasculature and Sorafenib Pharmacokinetics in Hepatocellular Carcinoma'
@@ -37,14 +42,18 @@
   [1] Jessen E, Steinbach MC, Debbaut C, Schillinger D (2022). Rigorous mathematical optimization of synthetic hepatic vascular trees. Journal of The Royal Society Interface 19:20220087. doi: 10.1098/rsif.2022.0087
   [2] Okibedi Frances, & König, Matthias. (2023). Physiologically based pharmacokinetic (PBPK) model of sorafenib. Zenodo. https://doi.org/10.5281/zenodo.10432855'
   keywords:
-  meeting: 'EASL Liver Cancer Summit 2026'
-  meeting_webpage: 'https://easl.eu/event/liver-cancer-summit-2026/'
+  event: 'EASL Liver Cancer Summit 2026'
+  event_page: 'https://easl.eu/event/liver-cancer-summit-2026/'
   journal:
   doi:
-  project:
+  homepage:
   repository: https://github.com/matthiaskoenig/sorafenib-model
 
 - id: 'CFT24_icg_2021'
+  people:
+    - adrian
+    - janek
+    - koenig
   year: 2021
   date:
   pdf: 'CFT24_abstracts_2021.pdf'
@@ -53,12 +62,14 @@
   keywords:
   doi:
   title: '24th Surgical Research Days. Eur Surg Res., Abstract: ID 17, Physiological Based Pharmacokinetic Models of Dynamical Liver Function Tests as a Promising Tool in Hepatectomy'
-  meeting:
+  event:
   journal: '2021;62(3):161-220. doi: <a href="https://doi.org/10.1159/000518793">10.1159/000518793</a>. Epub 2021 Aug 31. PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/34515110/">34515110</a>.'
-  project:
+  homepage:
   repository: https://github.com/matthiaskoenig/icg-model
 
 - id: 'CFT24_uncertainty_2021'
+  people:
+    - koenig
   year: 2021
   date:
   pdf: 'CFT24_uncertainty_2021.pdf'
@@ -67,7 +78,7 @@
   keywords:
   doi:
   title: '24th Surgical Research Days. Eur Surg Res., Abstract: ID 101, Bayesian Statistics for Uncertainty Quantification of a Physiologically Based Model of Indocyanine Green Liver Function Tests'
-  meeting:
+  event:
   journal: '2021;62(3):161-220. doi: <a href="https://doi.org/10.1159/000518793">10.1159/000518793</a>. Epub 2021 Aug 31. PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/34515110/">34515110</a>.'
-  project:
+  homepage:
   repository:

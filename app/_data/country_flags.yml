@@ -1,0 +1,21 @@
+# Country -> flag emoji lookup, keyed by the `country` values used in
+# _data/people.yml. Single source of truth so the flag doesn't have to be
+# duplicated on every person entry (see people.html for usage).
+Germany: '🇩🇪'
+Russia: '🇷🇺'
+India: '🇮🇳'
+South Korea: '🇰🇷'
+Mexico: '🇲🇽'
+Ecuador: '🇪🇨'
+Poland: '🇵🇱'
+Italy: '🇮🇹'
+Canada: '🇨🇦'
+South Africa: '🇿🇦'
+USA: '🇺🇸'
+Azerbaijan: '🇦🇿'
+Turkey: '🇹🇷'
+Iran: '🇮🇷'
+Portugal: '🇵🇹'
+Great Britain: '🇬🇧'
+Japan: '🇯🇵'
+Greece: '🇬🇷'

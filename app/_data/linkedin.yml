@@ -1,6 +1,6 @@
 - id: 'Schwaiger2026_hctz'
-- date: '2026-07-06'
-- content: 'New preprint: “A Physiologically Based Pharmacokinetic/Pharmacodynamic Model of the Diuretic Hydrochlorothiazide.”
+  date: '2026-07-06'
+  content: 'New preprint: “A Physiologically Based Pharmacokinetic/Pharmacodynamic Model of the Diuretic Hydrochlorothiazide.”
 
     In this work, we developed a whole-body PBPK/PD model of the thiazide diuretic hydrochlorothiazide, integrating oral absorption, systemic distribution, renal elimination, renal sodium, chloride, and fluid handling, and blood-pressure regulation.
 
@@ -14,8 +14,8 @@
     #DigitalTwins #PBPK #Pharmacometrics #SystemsPharmacology #OpenScience #PrecisionMedicine #SBML #Hypertension #Diuretics'
 
 - id: 'Myshkina2026_apixaban'
-- date: '2027-05-07'
-- content: 'New preprint: “An Open and Reproducible Digital Twin for Personalised Anticoagulant Therapy: Modelling Apixaban Pharmacokinetics and Pharmacodynamics.”
+  date: '2026-05-06'
+  content: 'New preprint: “An Open and Reproducible Digital Twin for Personalised Anticoagulant Therapy: Modelling Apixaban Pharmacokinetics and Pharmacodynamics.”
 
     In this work, we developed an open whole-body PBPK/PD digital twin of the direct oral anticoagulant apixaban, linking drug exposure to anticoagulation-related pharmacodynamic endpoints, including INR, PT, mPT, aPTT, and anti-Xa activity.
 
