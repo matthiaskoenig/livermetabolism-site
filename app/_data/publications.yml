@@ -207,7 +207,7 @@
 - id: 'Bafna2026_segmentation'
   year: 2026
   date: 2026-04-30
-  pdf: 'Bafna2026_segmentation_preprint.pdf'
+  pdf: 'Bafna2026_segmentation.pdf'
   authors: 'M. Bafna, <b>M. König</b>, S. Saalfeld, V. Moulisova, V. Liska, U. Dahmen, and M. Albadry'
   people:
     - koenig
@@ -2669,7 +2669,7 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
 
 - id: 'FluxViz_Koenig2011'
   year: 2011
-  pdf: 'FluxViz_Koenig2011.pdf'
+  pdf: 'FluxViz_Koenig2010.pdf'
   authors: '<b>M. König</b> and H. G. Holzhütter'
   people:
     - koenig

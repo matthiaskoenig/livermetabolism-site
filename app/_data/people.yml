@@ -231,19 +231,6 @@
   homepage:
   description: 'Nike develops a physiologically based pharmacokinetic/ pharmacodynamic (PBPK) model of SGLT2 inhibitor dapagliflozin. The objective is to enhance our understanding of the underlying causes of intraindividual variability in diabetes treatment with SGLT2 inhibitors, e.g., differences in hepatorenal function.'
 
-- id: 'kim'
-  status: 'alumni'
-  year: '2025-05/2025-08'
-  end_year: '2025'
-  name: 'Minjun Kim'
-  position:
-    - 'Humboldt Internship Project (HIP)'
-  image: kim.jpg
-  orcid:
-  repository: 'https://github.com/unfulw'
-  homepage:
-  description: "Kim is developing a physiologically based pharmacokinetic/ pharmacodynamic (PBPK/PD) model of the GLP-1 receptor agonist dulaglutide to better understand its absorption, distribution, metabolism, and effects on glucose regulation."
-
 - id: 'isabella'
   status: 'alumni'
   year: '2025-05/2025-08'
@@ -419,7 +406,7 @@
 
 - id: 'samira'
   status: 'alumni'
-  year: '2024-08/2024-09'
+  year: '2023-09/2023-12, 2024-08/2024-09'
   end_year: '2024'
   name: 'Samira Eissazedeh'
   position:
@@ -536,19 +523,6 @@
   repository: 'https://github.com/dzinty'
   homepage:
   description: 'Xenia works on a physiologically based pharmacokinetic (PBPK) model of inulin to assess the glomerular filtration rate (GFR). Our goal is to gain a deeper understanding of the impact of various inulin protocols on GFR measurement and the influence of physiological factors, such as body composition, on GFR determination using inulin.'
-
-- id: 'samira'
-  status: 'alumni'
-  year: '2023-09/2023-12'
-  end_year: '2023'
-  name: 'Samira Eissazedeh'
-  position:
-    - 'ERASMUS'
-  image: samira.png
-  orcid:
-  repository: https://github.com/47857078
-  homepage:
-  description: "Samira works to enhance our understanding of the role of endoglin in TGF-β signaling. She develops a computational model that explores the nuances of L-endoglin's role within this pathway and evaluates the effects of targeted interventions on this signaling."
 
 
 - id: 'zhara'

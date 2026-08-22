@@ -1086,7 +1086,7 @@ Notably, all models and data are readily available and reproducible for reuse, e
   title: 'PhD Defense of Jan Grzegorzewski'
   date: '2023-07-07'
   image: defense_jan_grzegorzewski.png
-  link: '/paper/presentations/2021-07-07_Defense.Jan.Grzegorzewski'
+  link: '/paper/presentations/2021-07-07_Defense.Jan.Grzegorzewski.pdf'
   short: "Jan Grzegorzewski defended his PhD thesis on physiologically based pharmacokinetic modeling (PBPK) for dynamical liver function tests and Cytochrome P450 (CYP) phenotyping."
   abstract: "Congratulations to Jan Grzegorzewski for successfully defending his PhD thesis on physiologically based pharmacokinetic modeling (PBPK) for dynamical liver function tests and Cytochrome P450 (CYP) phenotyping. Jan developed the extensive open pharmacokinetics database, PK-DB, which helped to demonstrate demographic biases and errors in existing pharmacokinetic literature. His research includes a meta-analysis on caffeine pharmacokinetics, discovering multiple factors influencing liver function and CYP1A2 activity. Furthermore, he developed a PBPK model to predict individual plasma concentrations of dextromethorphan based on the CYP2D6 genotype and physiological traits. His work is expected to significantly enhance the precision of dynamic liver function tests and advance personalized medicine."
 
