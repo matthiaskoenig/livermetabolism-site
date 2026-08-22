@@ -1,7 +1,9 @@
 - id: 'Sego2026_EFECT_publication'
   tags:
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   status: 'current'
+  people:
+    - 'koenig'
   title: 'Publication: EFECT Enables Reliable and Reproducible Stochastic Simulations Across Disciplines'
   date: '2026-08-05'
   image: Sego2026_EFECT.png
@@ -11,8 +13,11 @@
 
 - id: 'HIP2026_montelukast_Jessica.Cruz'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
   status: 'current'
+  people:
+    - 'jessica'
+    - 'koenig'
   title: 'Poster at HIP 2026 day: A PBPK Model of the Leukotriene Receptor Antagonist Montelukast'
   date: '2026-07-07'
   image: HIP2026_montelukast_Jessica.Cruz.png
@@ -22,8 +27,11 @@
 
 - id: 'Schwaiger2026_hctz'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
   status: 'current'
+  people:
+    - 'amanda'
+    - 'koenig'
   title: 'Preprint: A Physiologically Based Pharmacokinetic/Pharmacodynamic Model of the Diuretic Hydrochlorothiazide'
   date: '2026-07-06'
   image: Schwaiger2026_hctz.png
@@ -33,10 +41,12 @@
 
 - id: 'PAGE2026_PKDB_Myshkina_Koenig'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
     - 'Digital Twins'
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   status: 'current'
+  people:
+    - 'mariia'
   title: 'Poster at PAGE 2026: PK-DB 2.0 for Pharmacometric Modeling, AI, and Digital Twins'
   date: '2026-06-04'
   image: PAGE2026_PKDB_Myshkina_Koenig.png
@@ -46,9 +56,15 @@
 
 - id: 'Myshkina2016_apixaban_preprint'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
     - 'Digital Twins'
   status: 'current'
+  people:
+    - 'mariia'
+    - 'mariia_babaeva'
+    - 'shelee'
+    - 'michelle'
+    - 'koenig'
   title: 'Preprint: An Open and Reproducible Digital Twin for Personalised Anticoagulant Therapy'
   date: '2026-05-06'
   image: Myshkina2026_apixaban_model.png
@@ -60,6 +76,8 @@
   tags:
     - 'Digital Pathology'
   status: 'current'
+  people:
+    - 'koenig'
   date: '2026-04-30'
   image: Bafna2026_segmentation.png
   link: https://doi.org/10.3389/fbinf.2026.1713736
@@ -69,8 +87,11 @@
 
 - id: 'master_thesis_antonio.alvarez'
   tags:
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   status: 'current'
+  people:
+    - 'antonio'
+    - 'koenig'
   title: 'Master Thesis Antonio Alvarez'
   date: '2026-04-23'
   image: master_thesis_antonio.alvarez.png
@@ -80,9 +101,14 @@
 
 - id: 'Alejandro2026_empagliflozin_preprint'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
     - 'Digital Twins'
   status: 'current'
+  people:
+    - 'jennesse'
+    - 'michelle'
+    - 'mariia_babaeva'
+    - 'koenig'
   title: 'Preprint: A Digital Twin of Empagliflozin Pharmacokinetics and Pharmacodynamics'
   date: '2026-03-20'
   image: Alejandro2026_graphical.abstract.png
@@ -93,8 +119,10 @@
 - id: 'prmt_digital_twins'
   tags:
     - 'Digital Twins'
-    - 'Systems Medicine & AI'
+    - 'AI'
   status: 'current'
+  people:
+    - 'koenig'
   title: 'Keynote: Digital Twins and Dashboards for Personalized Drug Treatment'
   date: '2026-03-12'
   video: https://www.youtube.com/embed/Mu9oXKLtTGI
@@ -106,9 +134,13 @@
 
 - id: 'Tereshchuk2026_canagliflozin_preprint'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
     - 'Digital Twins'
   status: 'current'
+  people:
+    - 'vera'
+    - 'michelle'
+    - 'koenig'
   title: 'Preprint: A Digital Twin of Canagliflozin Pharmacokinetics and Pharmacodynamics in Type 2 Diabetes Mellitus'
   date: '2026-01-27'
   image: Tereshchuk2026_graphical.abstract.png
@@ -120,6 +152,8 @@
   tags:
     - 'Digital Twins'
   status: 'current'
+  people:
+    - 'koenig'
   title: 'Interview: Modelle so komplex wie der Körper selbst – Digitale Zwillinge in der Medizin'
   date: '2026-01-30'
   image: Koenig2026_GI_digital_twins_interview.png
@@ -129,8 +163,10 @@
 
 - id: 'Open_Science_Workshop2025'
   tags:
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   status: 'current'
+  people:
+    - 'koenig'
   title: 'Successful Open Science Workshop 2025'
   date: '2025-11-28'
   image: Open_Science_Workshop2025.gif
@@ -147,6 +183,8 @@
 
 - id: 'Koenig2025_KI_Teaching_Certificate'
   status: 'current'
+  people:
+    - 'koenig'
   title: 'Completion of the AI Teaching Certificate (KI-Lehrzertifikat)'
   date: '2025-11-20'
   image: Koenig2025_KI_Teaching_Certificate.png
@@ -158,6 +196,8 @@
   tags:
     - 'Digital Twins'
   status: 'current'
+  people:
+    - 'koenig'
   title: 'Humboldt Internship Program 2026 - Computational Modeling of Drug Detoxification Using Digital Twins – A Systems Medicine Approach'
   date: '2025-11-13'
   image: humboldt-internship.jpg
@@ -171,9 +211,13 @@
 
 - id: 'Nemitz2025_dapagliflozin_preprint'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
     - 'Digital Twins'
   status: 'current'
+  people:
+    - 'nike'
+    - 'michelle'
+    - 'koenig'
   title: 'A Digital Twin of Dapagliflozin Pharmacokinetics and Pharmacodynamics in Type 2 Diabetes Mellitus'
   date: '2025-11-13'
   image: Nemitz2025_dapagliflozin_preprint.png
@@ -183,6 +227,8 @@
 
 - id: 'bua_faces_interview'
   status: 'current'
+  people:
+    - 'koenig'
   title: 'Faces of the Berlin University Alliance'
   date: '2025-11-01'
   video: https://www.youtube.com/embed/tb9QArwsYCg
@@ -199,9 +245,12 @@
 
 - id: 'Tensil2025_losartan_preprint'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
     - 'Digital Twins'
   status: 'current'
+  people:
+    - 'ennie'
+    - 'koenig'
   title: 'Digital Twin of Losartan for Precision Blood Pressure Therapy'
   date: '2025-10-14'
   image: Tensil2025_losartan_preprint.png
@@ -212,9 +261,11 @@
 - id: 'presentation_combine'
   tags:
     - 'Digital Twins'
-    - 'Pharmacometrics & PBPK'
-    - 'Open & FAIR Science'
+    - 'Pharmacometrics'
+    - 'Open & FAIR'
   status: 'current'
+  people:
+    - 'koenig'
   title: 'COMBINE & RDA: Reproducibility by Design: Data and Workflows for Pharmacokinetic Digital Twins'
   date: '2025-10-20'
   video: https://www.youtube.com/embed/IvKvApzjGtM
@@ -248,9 +299,12 @@ Presented at: COMBINE2025<br />
 
 - id: 'Elias2025_glimepiride'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
     - 'Digital Twins'
   status: 'current'
+  people:
+    - 'michelle'
+    - 'koenig'
   title: 'Digital Twin of Glimepiride Enables Personalized Diabetes Therapy'
   date: '2025-10-08'
   image: Elias2025_glimepiride_preprint.png
@@ -270,8 +324,12 @@ Presented at: COMBINE2025<br />
 - id: 'myshkina2025_ai_dt_survey'
   tags:
     - 'Digital Twins'
-    - 'Systems Medicine & AI'
+    - 'AI'
   status: 'current'
+  people:
+    - 'mariia'
+    - 'elisabetta'
+    - 'koenig'
   date: '2025-09-15'
   image: myshkina2025_ai_dt_survey.png
   link: https://doi.org/10.20944/preprints202509.1164.v1
@@ -281,6 +339,8 @@ Presented at: COMBINE2025<br />
 
 - id: 'leadership_certificate'
   status: 'old'
+  people:
+    - 'koenig'
   date: '2025-08-15'
   image: leadership_certificate.png
   link: "https://www.tu.berlin/zewk/angebote-nach-themen/wissenschaftliche-weiterbildung/zusammenarbeit-und-leadership/zertifikat-leadership"
@@ -291,8 +351,10 @@ Presented at: COMBINE2025<br />
 
 - id: 'bachelor_ennie_tensil'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
   status: 'old'
+  people:
+    - 'ennie'
   title: 'Bachelor Thesis Ennie Tensil: Physiologically-Based Pharmacokinetic/Pharmacodynamic Modeling of Losartan'
   date: '2025-07-15'
   image: bachelor_ennie_tensil.png
@@ -302,8 +364,12 @@ Presented at: COMBINE2025<br />
 
 - id: 'elisabetta_rivaroxaban_preprint'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
   status: 'old'
+  people:
+    - 'elisabetta'
+    - 'mariia'
+    - 'koenig'
   date: '2025-07-14'
   image: elisabetta_rivaroxaban_preprint.png
   link: https://github.com/matthiaskoenig/rivaroxaban-model
@@ -313,8 +379,13 @@ Presented at: COMBINE2025<br />
 
 - id: 'hip_day_2025'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
   status: 'old'
+  people:
+    - 'isabella'
+    - 'olivia'
+    - 'kim'
+    - 'koenig'
   title: 'Humboldt Internship Program Day 2025: Project Report & Panel Discussion'
   date: '2025-07-07'
   image: hip_day_2025.png
@@ -324,9 +395,11 @@ Presented at: COMBINE2025<br />
 
 - id: 'sirolimus_project'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
     - 'Digital Twins'
   status: 'old'
+  people:
+    - 'monajes'
   title: 'New PBPK/PD Modeling Project: Rapamycin as a Case Study in Personalized Immunosuppressive Therapy'
   date: '2025-07-02'
   image: sirolimus_project.jpg
@@ -336,9 +409,12 @@ Presented at: COMBINE2025<br />
 
 - id: 'Elias2025_glimepiride_preprint'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
     - 'Digital Twins'
   status: 'old'
+  people:
+    - 'michelle'
+    - 'koenig'
   title: 'Digital Twin of Glimepiride Enables Personalized Diabetes Therapy'
   date: '2025-06-17'
   image: Elias2025_glimepiride_preprint.png
@@ -348,8 +424,10 @@ Presented at: COMBINE2025<br />
 
 - id: 'bachelor_nike'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
   status: 'old'
+  people:
+    - 'nike'
   title: 'Bachelor Thesis Nike Nemitz: Physiologically-Based Pharmacokinetic/Pharmacodynamic Modeling of Dapagliflozin'
   date: '2025-06-15'
   image: bachelor_nike.png
@@ -361,6 +439,8 @@ Presented at: COMBINE2025<br />
 
 - id: 'bua_panel_diversity'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'Panel Reflections on Inclusion in Research Design'
   date: '2025-06-12'
   image: bua_panel_diversity.png
@@ -375,8 +455,10 @@ Presented at: COMBINE2025<br />
 
 - id: 'mb19_ss2025'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'Course Completed: Pharmacokinetic/Pharmacodynamic Modelling'
   date: '2025-06-12'
   image: mb19_ss2025.png
@@ -386,8 +468,10 @@ Presented at: COMBINE2025<br />
 
 - id: 'spp_startup_funding'
   tags:
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'SPP Startup Funding Awarded for Web-Based FEM Visualization Tool'
   date: '2025-05-10'
   image: spp_startup_funding.png
@@ -399,8 +483,10 @@ Presented at: COMBINE2025<br />
 - id: 'algonomy_pisa'
   tags:
     - 'Digital Twins'
-    - 'Systems Medicine & AI'
+    - 'AI'
   status: 'old'
+  people:
+    - 'mariia'
   title: 'Algonomy at Festival della Robotica 2025: AI and Digital Twins for Liver Surgery'
   date: '2025-05-10'
   image: algonomy_pisa.png
@@ -410,6 +496,11 @@ Presented at: COMBINE2025<br />
 
 - id: 'hip2025'
   status: 'old'
+  people:
+    - 'kim'
+    - 'isabella'
+    - 'olivia'
+    - 'juanpablo'
   title: 'New Projects Launched: Modeling GLP-1 Agonists and Optimizing Anesthesia Control'
   date: '2025-05-10'
   image: hip2025.png
@@ -419,8 +510,10 @@ Presented at: COMBINE2025<br />
 
 - id: 'interview2025_reproducibility'
   tags:
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'Interview: Matthias König on Reproducibility, Open Science, and the Future of Biological Research'
   date: '2025-04-30'
   image: interview2025_reproducibility.png
@@ -431,8 +524,10 @@ Presented at: COMBINE2025<br />
 
 - id: 'bachelor_michelle'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
   status: 'old'
+  people:
+    - 'michelle'
   title: 'Bachelor Thesis Michelle Elias: PBPK Modelling of Glimepiride: Investigating Variability in Type 2 Diabetes Treatment'
   date: '2025-04-15'
   image: bachelor_michelle.png
@@ -442,8 +537,10 @@ Presented at: COMBINE2025<br />
 
 - id: 'sbml_editor'
   tags:
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'SBML editor'
   date: '2025-04-01'
   image: sbml_editor.png
@@ -453,6 +550,8 @@ Presented at: COMBINE2025<br />
 
 - id: 'bua_alumni'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'Featured Fellow - Berlin University Alliance (BUA) - Matthias König'
   date: '2025-04-02'
   image: bua_alumni.png
@@ -464,8 +563,10 @@ Presented at: COMBINE2025<br />
 
 - id: 'fair_to_cure'
   tags:
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'Preprint: From FAIR to CURE: Guidelines for Computational Models of Biological Systems'
   date: '2025-02-21'
   image: fair_to_cure.png
@@ -475,6 +576,10 @@ Presented at: COMBINE2025<br />
 
 - id: 'ep_conference_2025'
   status: 'old'
+  people:
+    - 'mariia'
+    - 'elisabetta'
+    - 'koenig'
   title: 'König Lab at EP PerMed Conference on Personalised Medicine Research'
   date: '2025-02-12'
   image: ep_conference_2025.jpg
@@ -489,8 +594,10 @@ For more details, visit the EP PerMed website: https://www.eppermed.eu/news-even
 
 - id: 'project_rivaroxaban'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
   status: 'old'
+  people:
+    - 'elisabetta'
   title: 'Launch of New Research Internship in PBPK/PD Modeling'
   date: '2025-01-20'
   image: project_rivaroxaban.jpg
@@ -504,8 +611,10 @@ For more details, visit the EP PerMed website: https://www.eppermed.eu/news-even
 
 - id: 'projects_abhinav'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
   status: 'old'
+  people:
+    - 'abhinav'
   title: 'Launch of New Research Internship in PBPK/PD Modeling'
   date: '2025-01-07'
   image: project_tirzepatide.jpg
@@ -515,8 +624,10 @@ For more details, visit the EP PerMed website: https://www.eppermed.eu/news-even
 
 - id: 'algonomy'
   tags:
-    - 'Systems Medicine & AI'
+    - 'AI'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'Circle U. Funds AlgoNomy to Combat Digital Paternalism in AI-Driven Healthcare'
   date: '2024-12-20'
   image: algonomy.png
@@ -526,6 +637,8 @@ For more details, visit the EP PerMed website: https://www.eppermed.eu/news-even
 
 - id: 'huinternship2025'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'Humboldt Internship Program 2025 - Computational Modeling of Drug Detoxification - A Systems Medicine Approach'
   date: '2024-10-01'
   image: humboldt-internship.jpg
@@ -539,8 +652,11 @@ For more details, visit the EP PerMed website: https://www.eppermed.eu/news-even
 
 - id: 'projects_ennie_michelle'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
   status: 'old'
+  people:
+    - 'ennie'
+    - 'michelle'
   title: 'Launch of Two New Research Projects in PBPK/PD Modeling'
   date: '2024-08-30'
   image: projects_ennie_michelle.gif
@@ -558,6 +674,8 @@ For more details, visit the EP PerMed website: https://www.eppermed.eu/news-even
   tags:
     - 'Digital Pathology'
   status: 'old'
+  people:
+    - 'jonaspk98'
   title: 'Master Thesis Jonas Küttner'
   date: '2024-08-28'
   image: master_thesis_jonas.kuettner.png
@@ -572,8 +690,10 @@ For more details, visit the EP PerMed website: https://www.eppermed.eu/news-even
 
 - id: 'bua_open_science_ambassador'
   tags:
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'Open Science Ambassador of the BUA'
   date: '2024-08-08'
   image: bua_open_science_ambassador.jpg
@@ -583,6 +703,8 @@ For more details, visit the EP PerMed website: https://www.eppermed.eu/news-even
 
 - id: 'dhpe'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'Participation in DHPE'
   date: '2024-07-18'
   image: dhpe.gif
@@ -595,6 +717,8 @@ For more details, visit the EP PerMed website: https://www.eppermed.eu/news-even
 
 - id: 'hip2024_day'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'Humboldt Internship Program (HIP) conference'
   date: '2024-07-18'
   image: hip2024_day.jpg
@@ -604,6 +728,8 @@ For more details, visit the EP PerMed website: https://www.eppermed.eu/news-even
 
 - id: 'edith_amsterdam'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'Final ecosystem meeting of EDITH on building the VHT'
   date: '2024-07-15'
   image: edith_amsterdam.jpg
@@ -613,8 +739,10 @@ For more details, visit the EP PerMed website: https://www.eppermed.eu/news-even
 
 - id: 'vera_project'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
   status: 'old'
+  people:
+    - 'vera'
   title: 'New project: Vera Tereshchuk starts SGLT2 PBPK Modeling Project'
   date: '2024-07-01'
   image: vera_project.jpg
@@ -624,6 +752,9 @@ For more details, visit the EP PerMed website: https://www.eppermed.eu/news-even
 
 - id: 'page2024'
   status: 'old'
+  people:
+    - 'mariia'
+    - 'koenig'
   title: 'PAGE2024: Presentation of our research in Rome'
   date: '2024-06-25'
   image: page2024.jpg
@@ -639,6 +770,8 @@ Conclusions: This study successfully establishes a freely accessible, comprehens
 
 - id: 'bachelor_thesis_afruja.hossain'
   status: 'old'
+  people:
+    - 'afruja'
   title: 'Bachelor Thesis Afruja Hossain'
   date: '2024-06-09'
   image: bachelor_thesis_afruja.hossain.png
@@ -657,8 +790,10 @@ Afruja's work offers valuable insights into drug metabolism and could enhance un
 
 - id: 'pkcourse_SS2024'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'Successful Completion of One-Week Pharmacokinetic Modelling Course'
   date: '2024-06-07'
   image: pkcourse_SS2024.png
@@ -669,9 +804,11 @@ Afruja's work offers valuable insights into drug metabolism and could enhance un
 
 - id: 'prerna_pk_llm'
   tags:
-    - 'Pharmacometrics & PBPK'
-    - 'Systems Medicine & AI'
+    - 'Pharmacometrics'
+    - 'AI'
   status: 'old'
+  people:
+    - 'prerna'
   title: 'New Project Launch via Humboldt Internship Program (HIP): PK-LLM by Prerna Parakkat'
   date: '2024-05-23'
   image: prerna_pk_llm.png
@@ -683,6 +820,9 @@ Afruja's work offers valuable insights into drug metabolism and could enhance un
   tags:
     - 'Digital Pathology'
   status: 'old'
+  people:
+    - 'janek'
+    - 'koenig'
   title: 'Preprint: Cross-Species Variability in Lobular Geometry and Cytochrome P450 Hepatic Zonation: Insights into CYP1A2, CYP2E1, CYP2D6 and CYP3A4'
   date: '2024-05-16'
   image: species_comparison_preprint.png
@@ -692,8 +832,11 @@ Afruja's work offers valuable insights into drug metabolism and could enhance un
 
 - id: 'nike_yusuf_projects'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
   status: 'old'
+  people:
+    - 'nike'
+    - 'yusuf'
   title: 'New projects: Nike Nemitz and Yusuf Ali Kulanoglu start PBPK Modeling Projects'
   date: '2024-04-15'
   image: nike_yusuf_projects.png
@@ -703,8 +846,10 @@ Afruja's work offers valuable insights into drug metabolism and could enhance un
 
 - id: 'sedml_l1v5_publication'
   tags:
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'Publication: The Simulation Experiment Description Markup Language (SED-ML): Language Specification for Level 1 Version 5'
   date: '2024-04-15'
   image: sedml_l1v5_publication.png
@@ -721,8 +866,10 @@ For more information about SED-ML and its applications, visit https://sed-ml.org
 
 - id: 'master_thesis_shubhankar.palwankar'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
   status: 'old'
+  people:
+    - 'shubhankar'
   title: 'Master Thesis Shubhankar Palwankar'
   date: '2024-05-05'
   image: master_thesis_shubhankar.palwankar.png
@@ -741,6 +888,8 @@ Congratulations to Shubhankar Palwankar for his significant contributions to pha
     - 'Digital Pathology'
     - 'Digital Twins'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'New multiscale liver model unveils zonation-function dynamics in Drug-Induced Liver Injury (DILI).'
   date: '2024-03-29'
   image: spt_preprint.png
@@ -750,8 +899,12 @@ Congratulations to Shubhankar Palwankar for his significant contributions to pha
 
 - id: 'morphine_project'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
   status: 'old'
+  people:
+    - 'deepa'
+    - 'rohinichakraborty'
+    - 'rohit'
   title: 'PBPK Model of Morphine Project'
   date: '2024-03-01'
   image: morphine_project.png
@@ -762,8 +915,10 @@ Congratulations to Shubhankar Palwankar for his significant contributions to pha
 - id: 'myshkina_atlas'
   tags:
     - 'Digital Twins'
-    - 'Systems Medicine & AI'
+    - 'AI'
   status: 'old'
+  people:
+    - 'mariia'
   title: 'Mariia Myshkina has started her PhD in the ATLAS project.'
   date: '2024-02-01'
   image: myshkina_atlas.jpg
@@ -773,6 +928,8 @@ Congratulations to Shubhankar Palwankar for his significant contributions to pha
 
 - id: 'edith_paris'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'Participation in the First EDITH-CSA Ecosystem Meeting - Advancing the Virtual Human Twin'
   date: '2024-01-18'
   image: edith_paris.jpeg
@@ -784,6 +941,9 @@ Congratulations to Shubhankar Palwankar for his significant contributions to pha
   tags:
     - 'Digital Pathology'
   status: 'old'
+  people:
+    - 'janek'
+    - 'koenig'
   title: 'Preprint: Cross-Species Variability in Lobular Geometry and Cytochrome P450 Hepatic Zonation: Insights into CYP1A2, CYP2E1, CYP2D6 and CYP3A4'
   date: '2023-12-29'
   image: species_comparison_preprint.png
@@ -793,8 +953,10 @@ Congratulations to Shubhankar Palwankar for his significant contributions to pha
 
 - id: 'Kohrs2023_elife'
   tags:
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'Eleven Strategies for Making Reproducible Research and Open Science Training the Norm at Research Institutions'
   date: '2023-11-03'
   image: Kohrs2023_elife.png
@@ -806,6 +968,8 @@ Congratulations to Shubhankar Palwankar for his significant contributions to pha
   tags:
     - 'Digital Twins'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'Your Dietary Digitial Twin (DDtwin)'
   date: '2023-11-03'
   image: dietary_twin.png
@@ -821,6 +985,8 @@ Our participation in this workshop underscores our commitment to advancing healt
 
 - id: 'huinternship2024'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'Humboldt Internship Program 2024 - Computational Modeling of Drug Detoxification - A Systems Medicine Approach'
   date: '2023-10-31'
   image: humboldt-internship.jpg
@@ -837,6 +1003,8 @@ Our participation in this workshop underscores our commitment to advancing healt
     - 'Digital Pathology'
     - 'Digital Twins'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'e:Med Meeting 2023 on Systems Medicine: Quantifying Fat Zonation in Liver Lobules: An Integrated Multiscale In-silico Model'
   date: '2023-10-10'
   image: emed_presentation.png
@@ -855,6 +1023,8 @@ Notably, all models and data are readily available and reproducible for reuse, e
   tags:
     - 'Digital Pathology'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'Preprint: Quantifying Fat Zonation in Liver Lobules: An Integrated Multiscale In-silico Model'
   date: '2023-09-18'
   image: fat_zonation_preprint.png
@@ -864,8 +1034,10 @@ Notably, all models and data are readily available and reproducible for reuse, e
 
 - id: 'brown_university_hannah'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
   status: 'old'
+  people:
+    - 'hannah'
   title: 'Hannah Menghis from Brown University starts her internship'
   date: '2023-08-28'
   image: hannah.png
@@ -875,8 +1047,11 @@ Notably, all models and data are readily available and reproducible for reuse, e
 
 - id: 'pancreas_publication'
   tags:
-    - 'Systems Medicine & AI'
+    - 'AI'
   status: 'old'
+  people:
+    - 'deepa'
+    - 'koenig'
   title: 'A pathway model of glucose-stimulated insulin secretion in the pancreatic β-cell'
   date: '2023-08-02'
   image: pancreas_preprint.png
@@ -886,8 +1061,10 @@ Notably, all models and data are readily available and reproducible for reuse, e
 
 - id: 'bachelor_thesis_beatrice.stemmer.mallol'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
   status: 'old'
+  people:
+    - 'stemllb'
   title: 'Bachelor Thesis Beatrice Stemmer Mallol'
   date: '2023-07-17'
   image: bachelor_thesis_beatrice_stemmer_mallol.png
@@ -902,8 +1079,10 @@ Notably, all models and data are readily available and reproducible for reuse, e
 
 - id: 'defense_jan_grzegorzewski'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
   status: 'old'
+  people:
+    - 'janek'
   title: 'PhD Defense of Jan Grzegorzewski'
   date: '2023-07-07'
   image: defense_jan_grzegorzewski.png
@@ -913,6 +1092,9 @@ Notably, all models and data are readily available and reproducible for reuse, e
 
 - id: 'humboldt_internship'
   status: 'old'
+  people:
+    - 'xenia'
+    - 'zhara'
   title: 'Xenia Petukhova and Zahra Bahri start Humboldt Internship Program'
   date: '2023-07-01'
   image: humboldt-internship.jpg
@@ -923,8 +1105,10 @@ Notably, all models and data are readily available and reproducible for reuse, e
 - id: 'keynote_wcm2023'
   tags:
     - 'Digital Twins'
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'Keynote: Advancing Liver Function Assessment: Personalized and Stratified Approaches with Standardized Computational Models and Data'
   date: '2023-06-16'
   image: WCM2023_keynote.png
@@ -938,8 +1122,10 @@ In this study, we provide an overview of PBPK models and demonstrate how SBML, C
 
 - id: 'reproducible_research_preprint'
   tags:
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'Preprint: Eleven Strategies for Making Reproducible Research and Open Science Training the Norm at Research Institutions'
   date: '2023-05-28'
   image: reproducible_research_preprint.png
@@ -949,8 +1135,12 @@ In this study, we provide an overview of PBPK models and demonstrate how SBML, C
 
 - id: 'chlorzoxazone_preprint'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
   status: 'old'
+  people:
+    - 'jonaspk98'
+    - 'janek'
+    - 'koenig'
   title: 'Preprint: A physiologically based pharmacokinetic model for CYP2E1 phenotyping via chlorzoxazone'
   date: '2023-04-16'
   image: chlorzoxazone_preprint.png
@@ -964,6 +1154,8 @@ In this study, we provide an overview of PBPK models and demonstrate how SBML, C
 
 - id: 'michael_stifel_price'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'Michael Stifel Price to promote interdisciplinary, data-driven research'
   date: '2023-04-03'
   image: michael_stifel_price.png
@@ -975,8 +1167,10 @@ In this study, we provide an overview of PBPK models and demonstrate how SBML, C
 
 - id: 'jib_editorial'
   tags:
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'Publication: Specifications of standards in systems and synthetic biology: status and developments in 2022 and the COMBINE meeting 2022'
   date: '2023-03-29'
   image: jib_editorial.png
@@ -986,8 +1180,11 @@ In this study, we provide an overview of PBPK models and demonstrate how SBML, C
 
 - id: 'pancreas_preprint'
   tags:
-    - 'Systems Medicine & AI'
+    - 'AI'
   status: 'old'
+  people:
+    - 'deepa'
+    - 'koenig'
   title: 'Preprint: A consensus model of glucose-stimulated insulin secretion in the pancreatic beta-cell'
   date: '2023-03-13'
   image: pancreas_preprint.png
@@ -998,8 +1195,10 @@ In this study, we provide an overview of PBPK models and demonstrate how SBML, C
 
 - id: 'frances_narudeem'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
   status: 'old'
+  people:
+    - 'frances'
   title: 'PBPK modelling of sorafenib and Gd-EOB-DTPA'
   date: '2023-02-12'
   image: frances_narudeem.png
@@ -1017,6 +1216,8 @@ In this study, we provide an overview of PBPK models and demonstrate how SBML, C
   tags:
     - 'Digital Twins'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'X-Research Group - Digital twins for the treatment of hypertension'
   date: '2023-02-12'
   image: xresearch_logo.png
@@ -1037,8 +1238,10 @@ In this study, we provide an overview of PBPK models and demonstrate how SBML, C
 
 - id: 'petab_editor'
   tags:
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'M. König has been elected as PEtab editor (2023-2026)'
   date: '2023-02-07'
   image: petab.png
@@ -1049,8 +1252,13 @@ In this study, we provide an overview of PBPK models and demonstrate how SBML, C
 
 - id: 'simvastatin_preprint'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
   status: 'old'
+  people:
+    - 'flobar'
+    - 'janek'
+    - 'helen'
+    - 'koenig'
   title: 'Preprint: Simvastatin therapy in different subtypes of hypercholesterolemia'
   date: '2023-02-03'
   image: simvastatin_preprint.png
@@ -1061,8 +1269,12 @@ In this study, we provide an overview of PBPK models and demonstrate how SBML, C
 - id: 'atlas'
   tags:
     - 'Digital Twins'
-    - 'Systems Medicine & AI'
+    - 'AI'
   status: 'old'
+  people:
+    - 'koenig'
+    - 'mariia'
+    - 'shubhankar'
   title: 'ATLAS - AI and Simulation for Tumor Liver ASsessment'
   date: '2023-02-01'
   image: atlas.png
@@ -1073,6 +1285,8 @@ In this study, we provide an overview of PBPK models and demonstrate how SBML, C
 
 - id: 'afruja'
   status: 'old'
+  people:
+    - 'afruja'
   title: 'New Bachelor Student - Afruja Hossain'
   date: '2022-11-17'
   image: afruja.png
@@ -1081,6 +1295,8 @@ In this study, we provide an overview of PBPK models and demonstrate how SBML, C
 
 - id: 'euparliament'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'Visiting EU parliament and attending STOA AI session'
   date: '2022-11-15'
   image: koenig_eu_parliament.png
@@ -1090,6 +1306,8 @@ EU research funding and science communication by the Berlin University Alliance 
 
 - id: 'huinternship'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'Humboldt Internship Program 2023 - Computational Modeling of Drug Detoxification - A Systems Medicine Approach'
   date: '2022-10-26'
   image: humboldt-internship.jpg
@@ -1098,8 +1316,12 @@ EU research funding and science communication by the Berlin University Alliance 
 
 - id: 'dex'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
   status: 'old'
+  people:
+    - 'janek'
+    - 'brandhorst'
+    - 'koenig'
   title: 'Dextromethorphan publication'
   date: '2022-10-24'
   image: dex_model.png
@@ -1109,6 +1331,8 @@ EU research funding and science communication by the Berlin University Alliance 
 
 - id: 'xresearch2022'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'X-Research Group'
   date: '2022-10-24'
   image: xresearch.png
@@ -1117,8 +1341,10 @@ EU research funding and science communication by the Berlin University Alliance 
 
 - id: 'combine2022'
   tags:
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'COMBINE 2022'
   date: '2022-10-06'
   image: COMBINE2022_logo.png
@@ -1128,8 +1354,10 @@ EU research funding and science communication by the Berlin University Alliance 
 
 - id: 'icsb2022'
   tags:
-    - 'Pharmacometrics & PBPK'
+    - 'Pharmacometrics'
   status: 'old'
+  people:
+    - 'koenig'
   title: 'ICSB 2022 - Presentation and Posters'
   date: '2022-10-10'
   image: ICSB2022_slides.png

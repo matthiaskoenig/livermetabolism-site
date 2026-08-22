@@ -8,10 +8,10 @@ sectionid: news
 <div class="tag-filter" id="news-tag-filter">
     <button type="button" class="tag-filter-btn active" data-tag="all">All</button>
     <button type="button" class="tag-filter-btn tag-digital-twins" data-tag="Digital Twins">Digital Twins</button>
+    <button type="button" class="tag-filter-btn tag-ai" data-tag="AI">AI</button>
     <button type="button" class="tag-filter-btn tag-digital-pathology" data-tag="Digital Pathology">Digital Pathology</button>
-    <button type="button" class="tag-filter-btn tag-pharmacometrics-pbpk" data-tag="Pharmacometrics &amp; PBPK">Pharmacometrics &amp; PBPK</button>
-    <button type="button" class="tag-filter-btn tag-systems-medicine-ai" data-tag="Systems Medicine &amp; AI">Systems Medicine &amp; AI</button>
-    <button type="button" class="tag-filter-btn tag-open-fair-science" data-tag="Open &amp; FAIR Science">Open &amp; FAIR Science</button>
+    <button type="button" class="tag-filter-btn tag-pharmacometrics" data-tag="Pharmacometrics">Pharmacometrics</button>
+    <button type="button" class="tag-filter-btn tag-open-fair" data-tag="Open &amp; FAIR">Open &amp; FAIR</button>
 </div>
 
 <div class="project-grid" id="news-grid">
@@ -33,10 +33,26 @@ sectionid: news
             </div>
             {% endif %}
             <p>{{ news.short | strip_html | truncatewords: 30 }}</p>
-            {% if news.link %}
+            {% if news.people or news.link %}
             <div class="project-links">
+                {% for author in news.people %}
+                {% if author != 'koenig' %}
+                {% assign person = site.data.people | where:"id", author | first %}
+                {% if person and person.image %}
+                <img src="/img/people/128/{{ person.image }}" class="project-avatar" title="{{ person.name }}"/>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+                {% if news.people contains 'koenig' %}
+                {% assign koenig = site.data.people | where:"id", 'koenig' | first %}
+                {% if koenig and koenig.image %}
+                <img src="/img/people/128/{{ koenig.image }}" class="project-avatar" title="{{ koenig.name }}"/>
+                {% endif %}
+                {% endif %}
                 <span class="project-links-spacer"></span>
+                {% if news.link %}
                 <a href="{{ news.link }}" target="_blank" rel="noopener noreferrer" title="Read more"><img src="../img/project.png" height="16"/></a>
+                {% endif %}
             </div>
             {% endif %}
         </div>

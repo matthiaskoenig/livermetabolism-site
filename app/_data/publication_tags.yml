@@ -1,120 +1,120 @@
 - id: Abshagen2015
   tags:
-  - Systems Medicine & AI
+  - AI
 - id: Albadry2022_Cytochrome.p450.enzymes.in.periportal.steatosis
   tags:
   - Digital Pathology
+  - AI
 - id: Albadry2024_species_comparison
   tags:
   - Digital Pathology
+  - AI
 - id: Alejandro2026_empagliflozin_preprint
   tags:
   - Digital Twins
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Anton2023_standard.GEM
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: Bachelor.Thesis.Adrian.Koeller
   tags:
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Bachelor.Thesis.Afruja.Hossain
   tags:
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Bachelor.Thesis.Beatrice.Stemmer.Mallol
   tags:
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Bachelor.Thesis.Ennie.Tensil
   tags:
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Bachelor.Thesis.Florian.Bartsch
   tags:
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Bachelor.Thesis.Helena.Leal.Pujol
   tags:
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Bachelor.Thesis.Michelle.Elias
   tags:
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Bachelor.Thesis.Nike.Nemitz
   tags:
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Bachelor.Thesis.Suekrue.Balci
   tags:
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Bachelor.Thesis.Yannick.Duport
   tags:
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Bachelor.Thesis.Yusuf.Ali.Kolanoglu
   tags:
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Bafna2026_segmentation
   tags:
   - Digital Pathology
+  - AI
 - id: Balaur2025_preprint
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: Bartsch2023_simvastatin
   tags:
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Baum2025
-  tags:
-  - Systems Medicine & AI
+  tags: []
 - id: COMBINE2019_Waltemath2020
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: COMBINE2024_digital_twin
   tags:
   - Digital Twins
-  - Open & FAIR Science
+  - Open & FAIR
 - id: COMBINE2024_tools
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: Caffeine_meta_Grzegorzewski2021
   tags:
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: CancerGlucoseReview_Herling2011
   tags:
-  - Systems Medicine & AI
+  - AI
 - id: CancerTissue_Koenig2013
   tags:
   - Digital Pathology
-  - Systems Medicine & AI
+  - AI
 - id: Cassabianca2025_preprint
   tags:
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Corradi2026_llemy_preprint
   tags:
-  - Systems Medicine & AI
+  - AI
 - id: CySBML_Koenig2012
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: EXSIMO_Koenig2020
   tags:
   - Digital Twins
 - id: Eissazadeh2024_abstract
-  tags:
-  - Systems Medicine & AI
+  tags: []
 - id: Eissazadeh2025_endoglin
-  tags:
-  - Systems Medicine & AI
+  tags: []
 - id: Elias2025_glimepiride
   tags:
   - Digital Twins
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Elias2025_glimepiride_physiome
   tags:
   - Digital Twins
-  - Open & FAIR Science
+  - Open & FAIR
 - id: Elias2026_dapagliflozin_physiome
   tags:
-  - Pharmacometrics & PBPK
-  - Open & FAIR Science
+  - Pharmacometrics
+  - Open & FAIR
 - id: FAIR.sharing.of.reproducible.and.reusable.COVID-19.models_Ramachandran2022
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: FluxViz_Koenig2011
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: GACM-Report_Qualiperf2020
   tags:
   - Digital Twins
@@ -122,64 +122,66 @@
   tags:
   - Digital Twins
   - Digital Pathology
+  - AI
 - id: GlucoseModelT2DM_Koenig2012b
   tags:
-  - Systems Medicine & AI
+  - AI
 - id: GlucoseModel_Koenig2012a
   tags:
-  - Systems Medicine & AI
+  - AI
 - id: Golebiewski2024_standards
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: Grzegorzewski2022_dextromethorphan
   tags:
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: HepatoNet1_Gille2010
   tags:
-  - Systems Medicine & AI
+  - AI
 - id: Hoepfl2024_BayModTS
   tags:
-  - Systems Medicine & AI
-  - Open & FAIR Science
+  - Open & FAIR
+  - AI
 - id: ICG_model_hepatectomy_Koeller2021
   tags:
-  - Pharmacometrics & PBPK
-  - Systems Medicine & AI
+  - Pharmacometrics
+  - AI
 - id: Internship.Report.Abhinav.Mishra
   tags:
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Internship.Report.Frances.Okibedi
   tags:
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Jesionek2026_rapamycin_preprint
   tags:
   - Digital Twins
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Koeller2021_icg_variability
   tags:
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Koenig2021_Ten_simple_rules
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: Koenig2022_dfba
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: Koenig2023_standards
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: Kohrs2023_reproducible.research.open.science
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: Kuettner2023_chlorzoxazone
   tags:
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Lambers2024_fat_zonation
   tags:
   - Digital Pathology
   - Digital Twins
+  - AI
 - id: Li2026_TabularQual_preprint
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: LiverTissue_Ricken2015
   tags:
   - Digital Twins
@@ -188,163 +190,164 @@
   - Digital Twins
 - id: Maheshvare2023_pancreas
   tags:
-  - Systems Medicine & AI
+  - AI
 - id: Master.Thesis.Antonio.Alvarez
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: Master.Thesis.Elisabetta.Casabianca
   tags:
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Master.Thesis.Jonas.Kuettner
   tags:
   - Digital Pathology
+  - AI
 - id: Master.Thesis.Shubhankar.Palwankar
   tags:
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Memote_Lieven2020
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: Myshkina2025_preprint
   tags:
   - Digital Twins
-  - Systems Medicine & AI
+  - AI
 - id: Myshkina2026_apixaban_preprint
   tags:
   - Digital Twins
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Myshkina2026_losartan_physiome
   tags:
   - Digital Twins
-  - Open & FAIR Science
+  - Open & FAIR
 - id: Nemitz2026_dapagliflozin
   tags:
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: OMEX_Koenig2020
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: OMEX_Metadata_Spec.1.2_Gennari2021
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: Olivier2026_fbc-v3
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: PKDB_Grzegorzewski2020
   tags:
-  - Pharmacometrics & PBPK
-  - Open & FAIR Science
+  - Pharmacometrics
+  - Open & FAIR
 - id: Pathirana2026_petab-v2
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: PhD.Thesis.Jan.Grzegorzewski
   tags:
-  - Pharmacometrics & PBPK
-  - Open & FAIR Science
+  - Pharmacometrics
+  - Open & FAIR
 - id: Raman2024_FROG
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: Review_Qualiperf2021
   tags:
   - Digital Twins
-  - Systems Medicine & AI
+  - AI
 - id: SBMLWebApp_Yamada2021
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: SBML_Keating2020
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: SBML_distrib_Smith2020
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: SBSCL_Panchiwala2021
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: SED-ML_L1V5
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: SED-ML_validator_Shaikh2021
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: Sauro2025_fair_to_cure_preprint
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: Schwaiger2026_hctz_preprint
   tags:
   - Digital Twins
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Sego2026_EFECT
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: Shaikh2022_biosimulators
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: Smith2021_sed-ml-L1V4
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: Standards.in.Systems.and.Synthetic.Biology_Schreiber2021
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: Standards_in_Systems_and_Synthetic_Biology_Schreiber2020
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: StemmerMallol2023_talinolol
   tags:
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Tautenhahn2024_simliva
   tags:
   - Digital Twins
-  - Systems Medicine & AI
+  - AI
 - id: Tensil2026_losartan
   tags:
   - Digital Twins
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Tereshchuk2026_canagliflozin_preprint
   tags:
   - Digital Twins
-  - Pharmacometrics & PBPK
+  - Pharmacometrics
 - id: Welsh2022_libroadrunner_2.0
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: Werner2015
   tags:
   - Digital Twins
 - id: Wholecell2016
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: annotations_Neal2018
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: combine_editorial_2019
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: cy3sabiork_Koenig2016
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: hepatokin_Berndt2018
   tags:
-  - Systems Medicine & AI
+  - AI
 - id: libRoadRunner_Somogyi2015
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: models2clinics_Koenig2016
   tags:
-  - Open & FAIR Science
-  - Systems Medicine & AI
+  - Open & FAIR
+  - AI
 - id: sbml-level-3-version-2-core_2019
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: sedml_Bergmann2018
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: surgery_Christ2017
   tags:
-  - Systems Medicine & AI
   - Digital Twins
+  - AI
 - id: systembiologie_Koenig2014
   tags:
-  - Systems Medicine & AI
+  - AI
 - id: tellurium_Choi2018
   tags:
-  - Open & FAIR Science
+  - Open & FAIR
 - id: tellurium_Medley2018
   tags:
-  - Open & FAIR Science
+  - Open & FAIR

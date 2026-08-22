@@ -3,6 +3,7 @@
   status: 'current'
   tags:
     - "Digital Pathology"
+    - "AI"
   publications:
     - 'Albadry2024_species_comparison'
   project:
@@ -19,7 +20,7 @@
   title: "Physiologically based pharmacokinetic (PBPK) model of creatinine and inulin"
   status: 'current'
   tags:
-    - "Pharmacometrics & PBPK"
+    - "Pharmacometrics"
   publications: []
   project:
   repository:
@@ -36,7 +37,7 @@
   title: "Physiologically based pharmacokinetic (PBPK) model of CYP2D6 polymorphism"
   status: 'current'
   tags:
-    - "Pharmacometrics & PBPK"
+    - "Pharmacometrics"
   publications:
     - 'Grzegorzewski2022_dextromethorphan'
   project:
@@ -56,7 +57,7 @@
   status: 'current'
   tags:
     - "Digital Twins"
-    - "Pharmacometrics & PBPK"
+    - "Pharmacometrics"
   publications:
     - 'Nemitz2026_dapagliflozin'
     - 'Elias2026_dapagliflozin_physiome'
@@ -85,7 +86,7 @@
   status: 'current'
   tags:
     - "Digital Twins"
-    - "Pharmacometrics & PBPK"
+    - "Pharmacometrics"
   publications:
     - 'Tensil2026_losartan'
     - 'Myshkina2026_losartan_physiome'
@@ -110,7 +111,7 @@
   status: 'current'
   tags:
     - "Digital Twins"
-    - "Pharmacometrics & PBPK"
+    - "Pharmacometrics"
   publications:
     - 'Elias2025_glimepiride'
     - 'Elias2025_glimepiride_physiome'
@@ -130,7 +131,7 @@
   status: 'current'
   tags:
     - "Digital Twins"
-    - "Pharmacometrics & PBPK"
+    - "Pharmacometrics"
   publications:
     - 'Myshkina2026_apixaban_preprint'
     - 'Cassabianca2025_preprint'
@@ -155,7 +156,7 @@
   status: 'current'
   tags:
     - "Digital Twins"
-    - "Pharmacometrics & PBPK"
+    - "Pharmacometrics"
   publications:
     - 'Jesionek2026_rapamycin_preprint'
   project:
@@ -172,7 +173,7 @@
   title: "PBPK model of montelukast"
   status: 'current'
   tags:
-    - "Pharmacometrics & PBPK"
+    - "Pharmacometrics"
   publications:
   project:
   repository:
@@ -188,7 +189,7 @@
   title: "Protein distributions in the human liver"
   status: 'current'
   tags:
-    - "Pharmacometrics & PBPK"
+    - "Pharmacometrics"
   publications:
     - 'Bachelor.Thesis.Afruja.Hossain'
   project:
@@ -208,7 +209,7 @@
   status: 'current'
   tags:
     - "Digital Twins"
-    - "Systems Medicine & AI"
+    - "AI"
   publications:
     - 'Myshkina2025_preprint'
   project:
@@ -228,6 +229,7 @@
   status: 'current'
   tags:
     - "Digital Pathology"
+    - "AI"
   publications:
     - 'Albadry2022_Cytochrome.p450.enzymes.in.periportal.steatosis'
     - 'Master.Thesis.Jonas.Kuettner'
@@ -246,7 +248,7 @@
   title: "Simvastatin therapy in different subtypes of hypercholesterolemia"
   status: 'current'
   tags:
-    - "Pharmacometrics & PBPK"
+    - "Pharmacometrics"
   publications:
     - 'Bartsch2023_simvastatin'
     - 'Bachelor.Thesis.Florian.Bartsch'
@@ -266,7 +268,7 @@
   title: "Computational Modeling of Dynamical Liver Function Tests: LiMAx"
   status: 'current'
   tags:
-    - "Pharmacometrics & PBPK"
+    - "Pharmacometrics"
   publications: []
   project: https://github.com/matthiaskoenig/limax
   repository: https://github.com/matthiaskoenig/limax
@@ -282,7 +284,7 @@
   title: Reproducible simulation studies targeting COVID-19
   status: 'current'
   tags:
-    - "Open & FAIR Science"
+    - "Open & FAIR"
   publications:
     - 'FAIR.sharing.of.reproducible.and.reusable.COVID-19.models_Ramachandran2022'
   project: https://wwwdev.ebi.ac.uk/biomodels/covid-19
@@ -299,7 +301,7 @@
   title: Modeling Hepatic Central Metabolism
   status: 'current'
   tags:
-    - "Systems Medicine & AI"
+    - "AI"
   publications:
     - 'hepatokin_Berndt2018'
   project:
@@ -315,8 +317,8 @@
 - title: Stratification and personalization of computational models
   status: 'current'
   tags:
-    - "Pharmacometrics & PBPK"
-    - "Open & FAIR Science"
+    - "Pharmacometrics"
+    - "Open & FAIR"
   publications:
     - 'PKDB_Grzegorzewski2020'
     - 'PhD.Thesis.Jan.Grzegorzewski'
@@ -373,7 +375,7 @@
 - title: "Biomarker signatures in liver disease"
   status: 'current'
   tags:
-    - "Systems Medicine & AI"
+    - "AI"
   publications:
     - 'Abshagen2015'
   project:
@@ -388,7 +390,7 @@
 - title: High Performance Simulators and Simulation Software
   status: 'current'
   tags:
-    - "Open & FAIR Science"
+    - "Open & FAIR"
   publications:
     - 'tellurium_Medley2018'
     - 'tellurium_Choi2018'
@@ -406,7 +408,7 @@
 - title: Reproducible simulation experiments
   status: 'old'
   tags:
-    - "Open & FAIR Science"
+    - "Open & FAIR"
   publications: []
   project: https://github.com/matthiaskoenig/tellurium-web/
   repository: https://github.com/matthiaskoenig/tellurium-web/
@@ -421,7 +423,7 @@
 - title: "FluType: Influenza Classification based on Machine Learning"
   status: 'old'
   tags:
-    - "Systems Medicine & AI"
+    - "AI"
   publications: []
   project: https://www.flutype.de/about/
   repository: https://github.com/janekg89/flutype_webapp

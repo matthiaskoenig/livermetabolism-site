@@ -1,7 +1,7 @@
 - id: 'pkdb'
   tags:
-    - 'Pharmacometrics & PBPK'
-    - 'Open & FAIR Science'
+    - 'Pharmacometrics'
+    - 'Open & FAIR'
   type: "database"
   name: 'PK-DB'
   title: 'Pharmacokinetics database'
@@ -14,7 +14,7 @@
 
 - id: 'sbmlutils'
   tags:
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   type: "software"
   name: 'sbmlutils'
   title: 'Python utilities for SBML'
@@ -27,7 +27,7 @@
 
 - id: 'sbml4humans'
   tags:
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   type: "software"
   name: 'SBML4Humans'
   title: 'SBML simulation made easy'
@@ -40,7 +40,7 @@
 
 - id: 'sbmlsim'
   tags:
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   type: "software"
   name: 'sbmlsim'
   title: 'SBML simulation made easy'
@@ -53,7 +53,7 @@
 
 - id: 'cysbml'
   tags:
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   type: "software"
   name: 'cysbml'
   title: 'Cytoscape 3 app for the Systems Biology Markup Language'
@@ -66,7 +66,7 @@
 
 - id: 'brendapy'
   tags:
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   type: "software"
   name: 'brendapy'
   title: 'BRENDA in python'
@@ -79,7 +79,7 @@
 
 - id: 'libsbgnpy'
   tags:
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   type: "software"
   name: 'libsbgnpy'
   title: 'Python library for SBGN'
@@ -92,7 +92,7 @@
 
 - id: 'roadrunner'
   tags:
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   type: "software"
   name: 'roadrunner'
   title: 'High-performance simulator for SBML'
@@ -105,8 +105,8 @@
 
 - id: 'cobrapy'
   tags:
-    - 'Systems Medicine & AI'
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
+    - 'AI'
   type: "software"
   name: 'COBRApy'
   title: 'COBRA python package'
@@ -119,7 +119,7 @@
 
 - id: 'tellurium'
   tags:
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   type: "software"
   name: 'tellurium'
   title: 'systems biology simulation library'

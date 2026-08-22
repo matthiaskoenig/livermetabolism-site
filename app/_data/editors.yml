@@ -1,6 +1,6 @@
 - id: 'combine'
   tags:
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   status: 'current'
   term: '2020-2025'
   name: 'COMBINE coordinator'
@@ -11,7 +11,7 @@
 
 - id: 'petab'
   tags:
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   status: 'current'
   term: '2023-2026'
   name: 'PETab editor'
@@ -22,7 +22,7 @@
 
 - id: 'sbml'
   tags:
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   status: 'current'
   term: '2018-2023; 2025-2027'
   name: 'SBML editor'
@@ -33,7 +33,7 @@
 
 - id: 'sed-ml'
   tags:
-    - 'Open & FAIR Science'
+    - 'Open & FAIR'
   status: 'alumni'
   term: '2017-2022; 2024-2026'
   name: 'SED-ML editor'

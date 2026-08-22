@@ -40,16 +40,16 @@ body {
 $font-serif-display: "Source Serif 4", Georgia, "Times New Roman", serif;
 $font-brand: "Space Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-// one color per core research area (Digital Twins, Digital Pathology,
-// Pharmacometrics & PBPK, Systems Medicine & AI, Open & FAIR Science),
+// one color per core research area (Digital Twins, AI,
+// Digital Pathology, Pharmacometrics, Open & FAIR),
 // applied consistently to the homepage/Open-Positions icons and to the
 // tag filters/badges on projects.html and publications.html
 $tag-colors: (
   "digital-twins": $brand-info,
+  "ai": $brand-warning,
   "digital-pathology": $brand-danger,
-  "pharmacometrics-pbpk": $brand-success,
-  "systems-medicine-ai": $brand-warning,
-  "open-fair-science": $brand-primary,
+  "pharmacometrics": $brand-success,
+  "open-fair": $brand-primary,
 );
 
 h1, h2, h3,
@@ -158,15 +158,15 @@ h3 {
     }
 
     .fa-line-chart {
-      color: map-get($tag-colors, "pharmacometrics-pbpk");
+      color: map-get($tag-colors, "pharmacometrics");
     }
 
     .fa-heartbeat {
-      color: map-get($tag-colors, "systems-medicine-ai");
+      color: map-get($tag-colors, "ai");
     }
 
     .fa-unlock-alt {
-      color: map-get($tag-colors, "open-fair-science");
+      color: map-get($tag-colors, "open-fair");
     }
 
     h3 {
@@ -422,8 +422,8 @@ h3 {
     margin-top: 0.5em;
 
     img.project-avatar {
-      width: 22px;
-      height: 22px;
+      width: 30px;
+      height: 30px;
       margin-right: -8px;
       border: 2px solid $body-bg;
       border-radius: 50%;
