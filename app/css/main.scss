@@ -462,7 +462,7 @@ h3 {
   }
 }
 
-// cards for the different kinds of open positions (see people.html)
+// cards for the different kinds of open positions (see team.html)
 .position-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -497,7 +497,7 @@ h3 {
   }
 }
 
-// compact card grid for the current-members roster (see people.html)
+// compact card grid for the current-members roster (see team.html)
 .member-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -558,7 +558,7 @@ h3 {
 }
 
 // vertical timeline grouping the alumni roster by year, newest at the
-// top; a line with an arrowhead runs the length of it (see people.html)
+// top; a line with an arrowhead runs the length of it (see team.html)
 .alumni-timeline {
   position: relative;
   margin-bottom: 2em;
@@ -682,7 +682,7 @@ h3 {
 }
 
 // small country flag shown next to a person's name (see the alumni
-// timeline and the team map on people.html)
+// timeline and the team map on team.html)
 .person-flag {
   font-size: 0.9em;
   vertical-align: middle;
