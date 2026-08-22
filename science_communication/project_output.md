@@ -19,7 +19,15 @@ https://livermetabolism.com
   - [x] shortened texts and descriptions
   - [x] merged Software, Funding, Editors (roles) in research
   - [x] merge People, Open Positions
-  
+  - [x] fix responsiveness on all pages
+  - [x] simplify an unify teaching content 
+  - [ ] CV as first class webobject (not just an embedded PDF); manage the CV as part of this project; i.e. typst generation and updates;
+
+- [ ] Database
+  - [ ] Validation code for database and entries (pydantic)
+  - [ ] Fixing database errors
+  - [ ] Improving consistency
+
 - [x] Addressing stackholders
   - [x] Clear description of new orientation of lab with start of professorship in Lübeck
   - [x] Added vision statement 
@@ -28,6 +36,7 @@ https://livermetabolism.com
   
 - [x] Design
   - [x] simplification, modern styles and fonts
+  - [x] improved navigation/subnavigation
   
 #### Site migration
 - [ ] Technology
@@ -38,7 +47,9 @@ https://livermetabolism.com
 
 - [ ] Usability
   - [x] Improved navigation (better navbar, less and more structured items)
-  - [ ] mobile friendly design, responsiveness
+  - [x] mobile friendly design, responsiveness
+  - [ ] improve page loading time; especially image sizes; image optimization; asset optimization (e.g. projects takes forever; only small fractions of images are shown)
+  - [ ] host on different server, extremely slow page load times (nginx reverse proxy;) github pages?, other server
   - [ ] Added sitemap
   - [ ] Search functionality  
 

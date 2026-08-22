@@ -6,7 +6,7 @@ import pandas as pd
 from rich.console import Console
 console = Console()
 
-from list_of_software import read_data
+from src.cv.list_of_software import read_data
 
 
 def create_list_of_poster_typst(typst_path: Path, df: pd.DataFrame,
@@ -25,7 +25,7 @@ def create_list_of_poster_typst(typst_path: Path, df: pd.DataFrame,
         affiliations = affiliations.replace("</sup>", "]")
         pdf = f'#link("https://livermetabolism.com/paper/{e.pdf}")[#fa-icon("file-pdf")]' if e.pdf else ""
 
-        text = f"{pdf} *{e.title.strip(".")}*. \ {authors};  \ _{affiliations}_ \ {e.meeting}; {e.date}"
+        text = f"{pdf} *{e.title.strip(".")}*. \ {authors};  \ _{affiliations}_ \ {e.event}; {e.date}"
         return text
 
     # create entries

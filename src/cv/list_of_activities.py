@@ -6,7 +6,7 @@ from pathlib import Path
 import pandas as pd
 from rich.console import Console
 
-from src.list_of_software import read_data
+from src.cv.list_of_software import read_data
 
 console = Console()
 
@@ -17,7 +17,7 @@ def create_list_of_activity_typst(typst_path: Path, df: pd.DataFrame, highlights
 
     def create_entry_typst(e: pd.Series) -> str:
         """Creates typst for a single entry."""
-        text = f'#link("{e.link}")[#fa-icon("square-arrow-up-right")] {e.year}: *{e.title}* - {e.description}'
+        text = f'#link("{e.link}")[#fa-icon("square-arrow-up-right")] {e.tenure}: *{e.title}* - {e.description}'
         return text
 
 

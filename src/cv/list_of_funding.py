@@ -5,7 +5,7 @@ from pathlib import Path
 import pandas as pd
 from rich.console import Console
 
-from src.list_of_software import read_data
+from src.cv.list_of_software import read_data
 
 console = Console()
 

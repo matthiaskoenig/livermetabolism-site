@@ -6,7 +6,7 @@ import pandas as pd
 from rich.console import Console
 console = Console()
 
-from list_of_software import read_data
+from src.cv.list_of_software import read_data
 
 
 def create_list_of_talk_typst(typst_path: Path, df: pd.DataFrame,
