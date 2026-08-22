@@ -8,7 +8,7 @@ Static site source for the König research group site (https://www.livermetaboli
 
 ## Repository layout
 
-- `app/` — Jekyll site source (`source: app` in `_config.yml`). Pages are `.html` files at the top level; `_data/*.yml` holds structured content (publications, people, projects, software, presentations, posters, funding, news, activities, editors, panels, teaching, abstracts, linkedin, plus `tags` and `country_flags` reference tables); `_includes/`, `_layouts/`, `_sass/` follow standard Jekyll conventions from the Jekyll Doc Theme; `assets/` holds static files (`cv/`, `img/`, `paper/`, `presentations/`) served at `/assets/...`.
+- `app/` — Jekyll site source (`source: app` in `_config.yml`). Pages are `.html` files at the top level; `_data/*.yml` holds structured content (publications, people, projects, software, presentations, posters, funding, news, activities, editors, panels, teaching, abstracts, linkedin, plus `tags` and `country_flags` reference tables); `_includes/`, `_layouts/`, `_sass/` follow standard Jekyll conventions from the Jekyll Doc Theme; `assets/` holds static files (`cv/`, `image/`, `pdf/`, `presentations/`) served at `/assets/...`.
 - `web/` — Jekyll build output (`destination: web`), gitignored. Served by nginx in production.
 - `src/` — standalone Python package (not part of the Jekyll build). `src/data.py` is the pydantic data model for `app/_data/*.yml` (see below). Each `list_of_*.py` script reads one `app/_data/*.yml` file into a pandas DataFrame and renders it to a Typst (`.typ`) file in `src/results/`, e.g. for the CV. Scripts are run directly (`if __name__ == "__main__"`), not via a CLI entrypoint — edit the `selected`/`highlights` sets at the bottom of a script to change what gets included in a given output. Not every `_data/*.yml` file has a corresponding generator script.
 - `tests/` — pytest suite for `src/data.py` (model validators, cross-reference checks, end-to-end YAML loading). Run via `uv run pytest tests/`; also runs in CI (`.github/workflows/validate-data.yml`) on every push/PR.
@@ -17,7 +17,7 @@ Static site source for the König research group site (https://www.livermetaboli
 
 ## Data model & validation
 
-`src/data.py` defines a pydantic model for every table in `app/_data/*.yml`, and cross-validates the relationships between them: `people: list[str]` fields (on publications/projects/software/news/teaching/presentations/posters/panels/abstracts) must resolve to real `people.yml` ids, `tags: list[str]` must be tags defined in `tags.yml`, `publications: list[str]` (on projects/software/presentations/panels) must resolve to real `publications.yml` ids, ids must be unique within their table, and referenced image/pdf files must exist under `app/assets/img/`/`app/assets/paper/`.
+`src/data.py` defines a pydantic model for every table in `app/_data/*.yml`, and cross-validates the relationships between them: `people: list[str]` fields (on publications/projects/software/news/teaching/presentations/posters/panels/abstracts) must resolve to real `people.yml` ids, `tags: list[str]` must be tags defined in `tags.yml`, `publications: list[str]` (on projects/software/presentations/panels) must resolve to real `publications.yml` ids, ids must be unique within their table, and referenced image/pdf files must exist under `app/assets/image/`/`app/assets/pdf/`.
 
 After **any** manual edit to `app/_data/*.yml`, run:
 ```bash

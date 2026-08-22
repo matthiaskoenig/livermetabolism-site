@@ -19,7 +19,7 @@ sectionid: projects
     {% if project.status == "current" %}
     <div class="project-card" data-tags="{{ project.tags | join: '|' | escape }}">
         {% for image in project.images limit:1 %}
-        <img src="/assets/img/projects/{{ image }}" alt="{{ project.title }}" class="project-image"/>
+        <img src="/assets/image/projects/{{ image }}" alt="{{ project.title }}" class="project-image"/>
         {% endfor %}
         <div class="project-body">
             <h3>{{ project.title }}</h3>
@@ -34,17 +34,17 @@ sectionid: projects
             <p>{{ project.abstract | strip_html }}</p>
             <div class="project-links">
                 {% for author in project.people %}
-                {% if author != 'koenig' %}
+                {% if author != 'matthias_koenig' %}
                 {% assign person = site.data.people | where:"id", author | first %}
                 {% if person and person.image %}
-                <img src="/assets/img/people/128/{{ person.image }}" class="project-avatar" title="{{ person.name }}"/>
+                <img src="/assets/image/people/128/{{ person.image }}" class="project-avatar" title="{{ person.name }}"/>
                 {% endif %}
                 {% endif %}
                 {% endfor %}
-                {% if project.people contains 'koenig' %}
-                {% assign koenig = site.data.people | where:"id", 'koenig' | first %}
+                {% if project.people contains 'matthias_koenig' %}
+                {% assign koenig = site.data.people | where:"id", 'matthias_koenig' | first %}
                 {% if koenig and koenig.image %}
-                <img src="/assets/img/people/128/{{ koenig.image }}" class="project-avatar" title="{{ koenig.name }}"/>
+                <img src="/assets/image/people/128/{{ koenig.image }}" class="project-avatar" title="{{ koenig.name }}"/>
                 {% endif %}
                 {% endif %}
                 <span class="project-links-spacer"></span>

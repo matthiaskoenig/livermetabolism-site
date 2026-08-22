@@ -1,11 +1,11 @@
-- id: 'koenig'
+- id: 'matthias_koenig'
   status: 'current'
   tenure: '2016-'
   name: 'Prof. Dr. Matthias König'
   country: 'Germany'
   role:
     - 'Group Leader'
-  image: koenig.png
+  image: matthias_koenig.png
   orcid: '0000-0003-1725-179X'
   repository: 'https://github.com/matthiaskoenig/'
   homepage: 'https://livermetabolism.com/cv/'
@@ -13,20 +13,20 @@
   <br />
   Research projects on glucose homeostasis in normal and diabetic subjects, personalization of liver function tests to improve diagnosis, and stratification and individualization of computational models for precision medicine.'
 
-- id: 'mariia'
+- id: 'mariia_myshkina'
   status: 'current'
   tenure: '2024-'
   name: 'Mariia Myshkina'
   country: 'Russia'
   role:
     - 'Ph.D. Student'
-  image: myshkina.png
+  image: mariia_myshkina.png
   orcid: "0009-0000-7769-2154"
   repository: 'https://github.com/MariiaMysh'
   homepage:
   description: 'Mariia works on ATLAS, a decision support tool for hepatocellular carcinoma (HCC). Based on AI methods, ATLAS processes all relevant patient data from databases, systems medicine and continuum biomechanical in silico prognosis models as well as individual patient data. The tool is being developed in a co-design approach by experts in surgical oncology, mathematical modeling and machine learning.'
 
-- id: 'shubhankar'
+- id: 'shubhankar_palwankar'
   status: 'current'
   tenure: '2023-10/2024-05, 2026-07-'
   name: 'Shubhankar Palwankar'
@@ -34,13 +34,13 @@
   role:
     - 'Master Thesis'
     - 'Scientific Researcher'
-  image: shubhankar.png
+  image: shubhankar_palwankar.png
   orcid: "0009-0007-3431-463X"
   repository: "https://github.com/shubhankarpalwankar"
   homepage:
   description: "Shubhankar worked on enhancing our understanding of enalapril's pharmacokinetics and dynamics based on a physiologically based modeling approach. The work will build on top of existing models of the ACE inhibitors lisinopril and ramipril."
 
-- id: 'michelle'
+- id: 'michelle_elias'
   status: 'current'
   tenure: '2024-09/2025-12'
   name: 'Michelle Elias'
@@ -49,7 +49,7 @@
     - 'Bachelor Thesis'
     - 'Student Assistant'
     - 'Master Thesis'
-  image: michelle.jpg
+  image: michelle_elias.jpg
   orcid: "0009-0005-7959-3164"
   repository: 'https://github.com/mii-halina'
   homepage:
@@ -69,85 +69,85 @@
   homepage:
   description: 'Mariia works on a physiologically based model of lisinopril. Key questions are the effect of hepatic and renal disease on lisinopril pharmacokinetics and pharmacodynamics.'
 
-- id: 'amanda'
+- id: 'amanda_schwaiger'
   status: 'current'
   tenure: '2023-09/2026-09'
   name: 'Amanda Schwaiger'
   country: 'Germany'
   role:
     - 'Medical Thesis'
-  image: amanda.png
+  image: amanda_schwaiger.png
   orcid: '0000-0002-8993-8569'
   repository: 'https://github.com/amdangelica'
   homepage:
   description: 'Amanda develops a physiologically based pharmacokinetic/ pharmacodynamic (PBPK/PD) model of the diuretic hydrochlorothiazide. The objective is to enhance our understanding of how hydrochlorothiazide changes urinary volume and plasma volume and ion balance (sodium, potassium, chloride).'
 
-- id: 'kim'
+- id: 'minjun_kim'
   status: 'current'
   tenure: '2025-05/2025-08, 2025-09/2026-08'
   name: 'Minjun Kim'
   country: 'South Korea'
   role:
     - 'Humboldt Internship Project'
-  image: kim.jpg
+  image: minjun_kim.jpg
   orcid:
   repository: 'https://github.com/unfulw'
   homepage:
   description: "Kim is developing a physiologically based pharmacokinetic/ pharmacodynamic (PBPK/PD) model of the GLP-1 receptor agonist dulaglutide to better understand its absorption, distribution, metabolism, and effects on glucose regulation."
 
-- id: 'jessica'
+- id: 'jessica_cruz'
   status: 'current'
   tenure: '2026-06/2026-09'
   name: 'Jessica Cruz'
   country: 'Mexico'
   role:
     - 'Humboldt Internship Project'
-  image: jessica.png
+  image: jessica_cruz.png
   orcid: "0009-0006-9067-5547"
   repository: 'https://github.com/jessicalienx97-wq'
   homepage:
   description: "Jessica Cruz is developing a physiologically based pharmacokinetic (PBPK) model of the leukotriene receptor antagonist montelukast to better understand its absorption, distribution, metabolism, and excretion. The project focuses on interindividual variability in montelukast pharmacokinetics, particularly the impact of hepatic metabolism, CYP2C9/CYP3A4 variability, drug-drug interactions, and age-dependent differences in pediatric and adult populations."
 
-- id: 'shelee'
+- id: 'shelee_bedon'
   status: 'current'
   tenure: '2026-04/2026-11'
   name: 'Shelee Bedón'
   country: 'Ecuador'
   role:
     - 'Internship Project'
-  image: shelee.jpg
+  image: shelee_bedon.jpg
   orcid: "0009-0005-9147-0028"
   repository: 'https://github.com/Shelee97'
   homepage:
   description: "Shelee is developing a physiologically based pharmacokinetic (PBPK) model of the multikinase inhibitor lenvatinib to better understand its absorption, distribution, metabolism, and excretion. The project focuses on characterizing interindividual variability in treatment response, with particular emphasis on hepatic metabolism, drug-drug interactions, and the impact of liver function in patients with hepatocellular carcinoma."
 
-- id: 'linh'
+- id: 'chang_nguyen'
   status: 'current'
   tenure: '2026-04/2026-11'
   name: 'Chang Linh Nguyen'
   country: 'Germany'
   role:
     - 'Bachelor Project'
-  image: linh.jpg
+  image: chang_nguyen.jpg
   orcid: "0009-0004-8004-3314"
   repository: 'https://github.com/changlinh'
   homepage:
   description: "Chang Linh is developing a physiologically based pharmacokinetic (PBPK) model of the β2-adrenergic receptor agonist albuterol (salbutamol) to better understand its absorption, distribution, metabolism, and excretion. The project focuses on route-specific pharmacokinetics, particularly inhalation delivery, and investigates variability in drug response across different patient populations, including the impact of formulation, dosing, and pulmonary physiology."
 
-- id: 'sandeep'
+- id: 'sandeep_gautamdas'
   status: 'current'
   tenure: '2026-06/2026-12'
   name: 'Sandeep Konaka Gautamdas'
   country: 'India'
   role:
     - 'Internship Project'
-  image: sandeep.jpg
+  image: sandeep_gautamdas.jpg
   orcid: '0000-0002-7855-9715'
   repository: 'https://github.com/sandeep-konakagautamdas'
   homepage:
   description: "Sandeep is developing a physiologically based pharmacokinetic (PBPK) model of the multi-kinase inhibitor regorafenib to better understand its absorption, distribution, metabolism, and excretion. The project focuses on characterizing dose–exposure relationships and interindividual variability, with particular emphasis on hepatic metabolism, active metabolites, organ impairment, and clinically relevant factors affecting regorafenib pharmacokinetics in cancer therapy."
 
-- id: 'antonio'
+- id: 'antonio_aguilar'
   status: 'current'
   tenure: '2023-10/2025-12'
   name: 'Antonio Aquiles Alvarez Aguilar'
@@ -155,13 +155,13 @@
   role:
     - 'Master Thesis'
     - 'Internship Project'
-  image: antonio.png
+  image: antonio_aguilar.png
   orcid:
   repository: 'https://github.com/MadNietzsche'
   homepage:
   description: "Antonio will delve into the influence of parameter variability in PBPK models, focusing on the consequential effects for dynamic liver function assessments. The overarching objective of this project is to augment our comprehension of how inherent variability in parameters translates into intra-individual variability in pharmacokinetics."
 
-- id: 'monajes'
+- id: 'monika_jesionek'
   status: 'alumni'
   tenure: '2025-07/2025-11'
   end_year: '2025'
@@ -169,14 +169,14 @@
   country: 'Poland'
   role:
     - 'ERASMUS Student'
-  image: monajes.jpg
+  image: monika_jesionek.jpg
   orcid: "0009-0003-3110-3440"
   repository: 'https://github.com/monajes'
   homepage:
   description: "Monika is developing a PBPK model of immune suppressant rapamycin (sirolimus) as part of our contribution to the Immune Digital Twin (IDT)."
 
 
-- id: 'juanpablo'
+- id: 'juan_mendoza'
   status: 'alumni'
   tenure: '2025-04/2025-09'
   end_year: '2025'
@@ -184,13 +184,13 @@
   country: 'Mexico'
   role:
     - 'Master Student'
-  image: juanpablo.png
+  image: juan_mendoza.png
   orcid:
   repository: 'https://github.com/Juan-hub129'
   homepage:
   description: "Juan Pablo is developing a closed-loop control system to optimize anesthesia delivery, aiming to enhance precision and patient safety during surgical procedures."
 
-- id: 'ennie'
+- id: 'ennie_tensil'
   status: 'alumni'
   tenure: '2024-09/2025-06'
   end_year: '2025'
@@ -199,13 +199,13 @@
   role:
     - 'Bachelor Project'
     - 'Bachelor Thesis'
-  image: ennie.jpg
+  image: ennie_tensil.jpg
   orcid:
   repository: 'https://github.com/ennietensil'
   homepage:
   description: 'Ennie develops a physiologically based pharmacokinetic/ pharmacodynamic (PBPK) model of the direct angiotensin II receptor (ARB) inhibitor losartan. The objective is to enhance our understanding of the underlying causes of intraindividual variability in hypertension treatment with ARB inhibitors, e.g., differences in hepatorenal function and CYP2C9 genotype.'
 
-- id: 'elisabetta'
+- id: 'elisabetta_casabianca'
   status: 'alumni'
   tenure: '2025-02/2025-07'
   end_year: '2025'
@@ -214,13 +214,13 @@
   role:
     - 'ERASMUS'
     - 'Master Thesis'
-  image: elisabetta.jpg
+  image: elisabetta_casabianca.jpg
   orcid:
   repository: 'https://github.com/elisabettacasabianca11'
   homepage:
   description: 'Elisabetta develops a physiologically based pharmacokinetic/ pharmacodynamic (PBPK) model of the direct oral anticoagulant (DOAC) rivaroxaban. The objective is to enhance our understanding of the underlying causes of intraindividual variability in anticoagulation treatment with DOACs.'
 
-- id: 'helen'
+- id: 'helen_pujol'
   status: 'alumni'
   tenure: '2021/2025-09'
   end_year: '2025'
@@ -229,13 +229,13 @@
   role:
     - 'Bachelor Student'
     - 'Student Assistant'
-  image: helen.png
+  image: helen_pujol.png
   orcid:
   repository: 'https://github.com/Lepujolh'
   homepage:
   description: 'Helen worked on a physiologically based model of pravastatin. Key questions are the effect of genotypes and hepatic and renal disease on pravastatin pharmacokinetics and coupling to a pharmacodynamic model of LDL-C reduction. Currently, Helen works on a physiologically based model of omeprazol.'
 
-- id: 'nike'
+- id: 'nike_nemitz'
   status: 'alumni'
   tenure: '2024-2025'
   end_year: '2025'
@@ -243,13 +243,13 @@
   country: 'Germany'
   role:
     - 'Bachelor Project'
-  image: nike.png
+  image: nike_nemitz.png
   orcid:
   repository: 'https://github.com/nikenemitz'
   homepage:
   description: 'Nike develops a physiologically based pharmacokinetic/ pharmacodynamic (PBPK) model of SGLT2 inhibitor dapagliflozin. The objective is to enhance our understanding of the underlying causes of intraindividual variability in diabetes treatment with SGLT2 inhibitors, e.g., differences in hepatorenal function.'
 
-- id: 'isabella'
+- id: 'isabella_tan'
   status: 'alumni'
   tenure: '2025-05/2025-08'
   end_year: '2025'
@@ -257,13 +257,13 @@
   country: 'Canada'
   role:
     - 'Humboldt Internship Project (HIP)'
-  image: isabella.jpg
+  image: isabella_tan.jpg
   orcid:
   repository: 'https://github.com/bellatgy'
   homepage:
   description: "Isabella is building a PBPK/PD model of the GLP-1 receptor agonist liraglutide to explore its pharmacological behavior and impact on glucose homeostasis, with a focus on individualized treatment strategies."
 
-- id: 'olivia'
+- id: 'olivia_yau'
   status: 'alumni'
   tenure: '2025-05/2025-08'
   end_year: '2025'
@@ -271,13 +271,13 @@
   country: 'Canada'
   role:
     - 'Humboldt Internship Project (HIP)'
-  image: olivia.png
+  image: olivia_yau.png
   orcid:
   repository: 'https://github.com/oliviaayau'
   homepage:
   description: "During Program Day at Humboldt-Universität zu Berlin, Isabella Tan, Olivia Yau, and Minjun Kim presented their physiologically based pharmacokinetic/ pharmacodynamic (PBPK/PD) modeling projects on GLP-1 receptor agonists. Minjun Kim is developing a model of dulaglutide to investigate its absorption, distribution, metabolism, and effects on glucose regulation. Isabella Tan is building a model of liraglutide to study its pharmacological behavior and impact on glucose homeostasis, focusing on individualized treatment strategies. Olivia Yau is working on a model of lixisenatide to explore its kinetics and therapeutic effects, aiming to advance personalized approaches to diabetes therapy."
 
-- id: 'rohinichakraborty'
+- id: 'rohini_chakraborty'
   status: 'alumni'
   tenure: '2024-03/2025-12'
   end_year: '2025'
@@ -285,13 +285,13 @@
   country: 'India'
   role:
     - 'Data Curation'
-  image: rohini.png
+  image: rohini_chakraborty.png
   orcid:
   repository: 'https://github.com/rohinichakraborty'
   homepage:
   description: 'Rohini supports the data curation for morphine pharmacokinetics.'
 
-- id: 'rohit'
+- id: 'rohit_chakraborty'
   status: 'alumni'
   tenure: '2024-05/2025-12'
   end_year: '2025'
@@ -299,13 +299,13 @@
   country: 'India'
   role:
     - 'Data Curation'
-  image: rohit.png
+  image: rohit_chakraborty.png
   orcid:
   repository: 'https://github.com/Rohit-Chakraborty'
   homepage:
   description: 'Rohit supports the data curation for morphine pharmacokinetics.'
 
-- id: 'emre'
+- id: 'emre_hikmet'
   status: 'alumni'
   tenure: '2025-05/2025-08'
   end_year: '2025'
@@ -313,7 +313,7 @@
   country: 'South Africa'
   role:
     - 'Google Summer of Code (GSOC)'
-  image: emre.jpg
+  image: emre_hikmet.jpg
   orcid:
   repository: 'https://github.com/kyxhik'
   homepage:
@@ -333,7 +333,7 @@
   homepage:
   description: "Michael Gaas is enhancing the Systems Biology Simulation Core Library (SBSCL) by developing a solver-agnostic framework that enables seamless integration of open-source and commercial optimization solvers. This upgrade will make Flux Balance Analysis faster, more flexible, and fully compatible with modern hardware architectures, empowering researchers worldwide to model complex biological systems more effectively."
 
-- id: 'luca'
+- id: 'luca_sawady'
   status: 'alumni'
   tenure: '2023-09/2024-01'
   end_year: '2024'
@@ -341,14 +341,14 @@
   country: 'Germany'
   role:
     - 'Internship'
-  image: luca.png
+  image: luca_sawady.png
   orcid:
   repository: 'https://github.com/SamLuca'
   homepage:
   description: 'Luca works on a physiologically based model of the oral contraceptive component ethinylestradiol. By the end of this project, we offer a robust and validated PBPK model for ethinylestradiol that can serve as a valuable tool for researchers, clinicians, and the pharmaceutical industry.'
 
 
-- id: 'jennesse'
+- id: 'jennesse_alejandro'
   status: 'alumni'
   tenure: '2024-08/2024-11'
   end_year: '2024'
@@ -356,13 +356,13 @@
   country: 'USA'
   role:
     - 'Humboldt Internship Student (Brown University)'
-  image: jennesse.jpg
+  image: jennesse_alejandro.jpg
   orcid:
   repository: 'https://github.com/jen-ne-sse'
   homepage:
   description: 'Jennesse develops a physiologically based pharmacokinetic/ pharmacodynamic (PBPK) model of SGLT2 inhibitor canagliflozin. The objective is to enhance our understanding of the underlying causes of intraindividual variability in diabetes treatment with SGLT2 inhibitors, e.g., differences in hepatorenal function.'
 
-- id: 'deepa'
+- id: 'deepa_maheshvare'
   status: 'alumni'
   tenure: '2019-2023, 2023-2024'
   end_year: '2024'
@@ -371,13 +371,13 @@
   role:
     - 'Ph.D. Student (Internship)'
     - 'Humboldt Internship Student'
-  image: deepa.png
+  image: deepa_maheshvare.png
   orcid:
   repository: 'https://github.com/DeepaMahm'
   homepage:
   description: 'Deepa worked on a kinetic model of glucose stimulated insulin secretion (GSIS) of the pancreatic beta-cell, studying changes in glycolysis during insulin secretion, and later on enhancing our understanding of morphine pharmacokinetics based on a physiologically based modeling approach.'
 
-- id: 'stemllb'
+- id: 'beatrice_mallol'
   status: 'alumni'
   tenure: '2022-2024'
   end_year: '2024'
@@ -386,13 +386,13 @@
   role:
     - 'Bachelor Student'
     - 'Student Assistant'
-  image: stemllb.png
+  image: beatrice_mallol.png
   orcid:
   repository: 'https://github.com/stemllb'
   homepage:
   description: 'Beatrice works on a physiologically based model to characterize intestinal P-glycoprotein using talinolol as a probe drug.'
 
-- id: 'abhinav'
+- id: 'abhinav_mishra'
   status: 'alumni'
   tenure: '2025-01/2025-03'
   end_year: '2025'
@@ -400,13 +400,13 @@
   country: 'Germany'
   role:
     - 'Master Internship'
-  image: abhinav.png
+  image: abhinav_mishra.png
   orcid:
   repository: 'https://github.com/bibymaths'
   homepage:
   description: 'Abhinav develops a physiologically based pharmacokinetic (PBPK) model of the GIP and GLP-1 receptor agonist tirzepatide (Mounjaro). The objective is to enhance our understanding of the underlying causes of intraindividual variability in weight loss.'
 
-- id: 'yusuf'
+- id: 'yusuf_kulanoglu'
   status: 'alumni'
   tenure: '2024-04/2025-01'
   end_year: '2025'
@@ -415,13 +415,13 @@
   role:
     - 'Study Project'
     - 'Bachelor Thesis Biophysics'
-  image: yusuf.png
+  image: yusuf_kulanoglu.png
   orcid:
   repository: 'https://github.com/ykulanoglu'
   homepage:
   description: 'Yusuf works on a physiologically based pharmacokinetic/ pharmacodynamic model of the direct renin inhibitor aliskiren.'
 
-- id: 'vera'
+- id: 'vera_tereshchuk'
   status: 'alumni'
   tenure: '2024-07/2024-09'
   end_year: '2024'
@@ -429,13 +429,13 @@
   country: 'Russia'
   role:
     - 'Humboldt Internship Student'
-  image: vera.jpg
+  image: vera_tereshchuk.jpg
   orcid:
   repository: 'https://github.com/tereshchuk1'
   homepage:
   description: 'Vera developed a physiologically based pharmacokinetic/ pharmacodynamic (PBPK) model of SGLT2 inhibitor canagliflozin. The objective is to enhance our understanding of the underlying causes of intraindividual variability in diabetes treatment with SGLT2 inhibitors, e.g., differences in hepatorenal function.'
 
-- id: 'samira'
+- id: 'samira_eissazedeh'
   status: 'alumni'
   tenure: '2023-09/2023-12, 2024-08/2024-09'
   end_year: '2024'
@@ -443,13 +443,13 @@
   country: 'Azerbaijan'
   role:
     - 'ERASMUS'
-  image: samira.png
+  image: samira_eissazedeh.png
   orcid:
   repository: https://github.com/47857078
   homepage:
   description: "Samira works to enhance our understanding of the role of endoglin in TGF-β signaling. She develops a computational model that explores the nuances of L-endoglin's role within this pathway and evaluates the effects of targeted interventions on this signaling."
 
-- id: 'jonaspk98'
+- id: 'jonas_kuettner'
   status: 'alumni'
   tenure: '2022-2024'
   end_year: '2024'
@@ -459,13 +459,13 @@
     - 'Master Project'
     - 'Master Student'
     - 'QuaLiPerF'
-  image: jonaspk98.png
+  image: jonas_kuettner.png
   orcid:
   repository: 'https://github.com/jonaspk98'
   homepage:
   description: 'Jonas worked on a physiologically based model of chlorzoxazone for hepatic CYP2E1 phenotyping. Key questions are the effect of CYP2E1 induction/inhibition and zonation on chlorzoxazone phenotyping. Jonas now analyses whole-slide images of the liver to evaluate zonation patterns in the liver using digital pathology methods. In his master thesis Jonas developed methods for quantitative image analysis of hepatic zonation in cytochrome P450 and steatosis using whole slide scans.'
 
-- id: 'prerna'
+- id: 'prerna_parakkat'
   status: 'alumni'
   tenure: '2024-05/2024-08'
   end_year: '2024'
@@ -473,13 +473,13 @@
   country: 'India'
   role:
     - 'Humboldt Internship Student'
-  image: prerna.jpg
+  image: prerna_parakkat.jpg
   orcid:
   repository: 'https://github.com/prerna2023'
   homepage:
   description: 'Prerna worked on an advanced Large Language Model (LLM) to serve as an expert system for efficiently and accurately curating pharmacokinetic data from scientific literature.'
 
-- id: 'afruja'
+- id: 'afruja_hossain'
   status: 'alumni'
   tenure: '2022-2024'
   end_year: '2024'
@@ -487,13 +487,13 @@
   country: 'Germany'
   role:
     - 'Bachelor Student'
-  image: afruja.png
+  image: afruja_hossain.png
   orcid:
   repository: 'https://github.com/afruja-h'
   homepage:
   description: 'Afruja worked on a systematic overview of the protein variability of cytochrome P450 (CYP450) isoforms in the human liver.'
 
-- id: 'hannah'
+- id: 'hannah_menghis'
   status: 'alumni'
   tenure: '2023-08/2023-10'
   end_year: '2023'
@@ -501,13 +501,13 @@
   country: 'USA'
   role:
     - 'Humboldt Internship Student (Brown University)'
-  image: hannah.png
+  image: hannah_menghis.png
   orcid:
   repository: 'https://github.com/hannah3menghis'
   homepage:
   description: 'Hannah will establish a pharmacokinetic dataset of semaglutide and develop an initial version of a physiologically based pharmacokinetic (PBPK) model of the GLP-1 inhibitor semaglutide. The objective is to enhance our understanding of the underlying causes of intraindividual variability in semaglutide treatment, e.g., differences in renal function.'
 
-- id: 'huelya'
+- id: 'huelya_karaboga'
   status: 'alumni'
   tenure: '2023-10/2023-12'
   end_year: '2023'
@@ -515,13 +515,13 @@
   country: 'Turkey'
   role:
     - 'ERASMUS'
-  image: huelya.png
+  image: huelya_karaboga.png
   orcid:
   repository:
   homepage:
   description: "Huelya will develop a physiologically based pharmacokinetic (PBPK) model of the ACE inhibitor captopril."
 
-- id: 'frances'
+- id: 'frances_okibedi'
   status: 'alumni'
   tenure: '2023-03/2023-12'
   end_year: '2023'
@@ -529,13 +529,13 @@
   country: 'Germany'
   role:
     - 'Internship'
-  image: frances.png
+  image: frances_okibedi.png
   orcid:
   repository: 'https://github.com/fuokibedi'
   homepage:
   description: 'Frances works on a physiologically based pharmacokinetic (PBPK) model of sorafenib for systemic treatment of hepatocellular carcinoma (HCC). Key questions are to study the effect of OATP activity and CYP3A4 inhibition on sorafenib pharmacokinetics and efficiency.'
 
-- id: 'sankha'
+- id: 'sankha_das'
   status: 'alumni'
   tenure: '2021, 2022-11/2023-05'
   end_year: '2023'
@@ -545,13 +545,13 @@
   role:
     - 'Google Summer of Code Student'
     - 'Research Internship'
-  image: 'sankha.png'
+  image: 'sankha_das.png'
   orcid:
   repository: 'https://github.com/sankha555'
   homepage: 'https://sbml4humans-gsoc-2021.blogspot.com/'
   description: 'Sankha worked on the analysis and quantification of microcirculation data recorded in Humans and Rats, developing a workflow for the analysis of orthogonal polarization spectroscopy (OPS) and IDF as part of <a href="https://qualiperf.de">QuaLiPerF</a>. As part of Google Summer of Code 2021, in cooperation with Ralf Steuer from the Humboldt-University Berlin, he also implemented an SBML report for Humans in <a href="https://github.com/matthiaskoenig/sbmlutils">sbmlutils</a>.'
 
-- id: 'xenia'
+- id: 'xenia_petukhova'
   status: 'alumni'
   tenure: '2023-07/2023-09'
   end_year: '2023'
@@ -559,14 +559,14 @@
   country: 'Russia'
   role:
     - 'Humboldt Internship Student'
-  image: xenia.png
+  image: xenia_petukhova.png
   orcid:
   repository: 'https://github.com/dzinty'
   homepage:
   description: 'Xenia works on a physiologically based pharmacokinetic (PBPK) model of inulin to assess the glomerular filtration rate (GFR). Our goal is to gain a deeper understanding of the impact of various inulin protocols on GFR measurement and the influence of physiological factors, such as body composition, on GFR determination using inulin.'
 
 
-- id: 'zhara'
+- id: 'zahra_bahri'
   status: 'alumni'
   tenure: '2023-07/2023-09'
   end_year: '2023'
@@ -574,13 +574,13 @@
   country: 'Iran'
   role:
     - 'Humboldt Internship Student'
-  image: zhara.png
+  image: zahra_bahri.png
   orcid:
   repository: 'https://github.com/Rain-marine'
   homepage:
   description: 'Zhara works on a physiologically based pharmacokinetic (PBPK) model to estimate the glomerular filtration rate (eGFR) using creatinine. The objective is to enhance our understanding of how variations in creatinine production, muscle mass, and tubular secretion of creatinine influence eGFR calculations.'
 
-- id: 'flobar'
+- id: 'florian_bartsch'
   status: 'alumni'
   tenure: '2020-'
   end_year: '2020'
@@ -590,13 +590,13 @@
     - 'Bachelor Student'
     - 'Student Assistant'
     - 'Master Project'
-  image: flobar.png
+  image: florian_bartsch.png
   orcid:
   repository: 'https://github.com/FloBar'
   homepage:
   description: 'Florian works on a physiologically based model of statin clearance. Key questions are the effect of statins (atorvastatin and simvastatin) on cholesterol plasma levels and drug-drug interactions.'
 
-- id: 'adrian'
+- id: 'adrian_koeller'
   status: 'alumni'
   tenure: '2020-2023'
   end_year: '2023'
@@ -606,13 +606,13 @@
     - 'Bachelor Student'
     - 'Master Project'
     - 'Student Assistant'
-  image: adrian.png
+  image: adrian_koeller.png
   orcid:
   repository: 'https://github.com/adriankl'
   homepage:
   description: 'Adrian worked on a physiologically based model of indocyanine green (ICG) clearance. Key questions are the effect of blood flow and plasma proteins on ICG clearance and related liver function tests. Currently, Adrian analyzes the changes in OGTT during impaired glucose tolerance and diabetes type 2.'
 
-- id: 'nurudeen'
+- id: 'nurudeen_sojimade'
   status: 'alumni'
   tenure: '2023-03/2023-05'
   end_year: '2023'
@@ -620,13 +620,13 @@
   country: 'Germany'
   role:
     - 'Internship'
-  image: "nurudeen.png"
+  image: "nurudeen_sojimade.png"
   orcid:
   repository: 'https://github.com/Soji4eva'
   homepage:
   description: 'Nurudeen works on a physiologically based pharmacokinetic (PBPK) model of the contrast agent Gd-EOB-DTPA. Key questions are to study the effect of hepatorenal impairment, perfusion and OATP activity on Gd-EOB-DTPA pharmacokinetics.'
 
-- id: 'janek'
+- id: 'jan_grzegorzewski'
   status: 'alumni'
   tenure: '2017-2023'
   end_year: '2023'
@@ -634,13 +634,13 @@
   country: 'Germany'
   role:
     - 'Ph.D. Student'
-  image: grzegorzewski.png
+  image: jan_grzegorzewski.png
   orcid: '0000-0002-4588-4925'
   repository: 'https://github.com/janekg89/'
   homepage: 'https://github.com/janekg89/'
   description: 'Jan worked on the stratification and personalization of computational models. He develops methods and software for semi-automatic data curation of pharmacokinetic information and a pharmacokinetic database for storage and the storage and FAIR access of such data (<a href="https://pk-db.com">PK-DB</a>).'
 
-- id: 'sophie'
+- id: 'sophie_silberhorn'
   status: 'alumni'
   tenure: '2023-05/2023-06'
   end_year: '2023'
@@ -648,13 +648,13 @@
   country: 'Germany'
   role:
     - 'Internship'
-  image: sophie.png
+  image: sophie_silberhorn.png
   orcid:
   repository: 'https://github.com/SophieSilberhorn'
   homepage:
   description: 'Sophie worked on a systematic overview of the protein variability of ABC and SLC transporters in the human liver.'
 
-- id: 'paula'
+- id: 'paula_ogata'
   status: 'alumni'
   tenure: '2020-2022'
   end_year: '2022'
@@ -662,14 +662,14 @@
   country: 'Portugal'
   role:
     - 'Humboldt Internship Student'
-  image: paula.png
+  image: paula_ogata.png
   orcid:
   repository: 'https://github.com/paula-ogata'
   homepage:
   description: 'Paula works on a pharmacokinetics/pharmacodynamics model of metoprolol. Key questions are the effect of dosing and formulation on metoprolol pharmacokinetics and exercise heart rate (EHR) reduction.'
 
 
-- id: 'brandhorst'
+- id: 'janosch_brandhorst'
   status: 'alumni'
   tenure: '2019-2022'
   end_year: '2022'
@@ -677,13 +677,13 @@
   country: 'Germany'
   role:
     - 'Student Assistant'
-  image: brandhorst.png
+  image: janosch_brandhorst.png
   orcid:
   repository: 'https://github.com/JBrandh'
   homepage:
   description: 'Janosch works on the computational modeling of acetaminophen through the liver and curates data for the pharmacokinetics database PK-DB.'
 
-- id: 'balci'
+- id: 'suekrue_balci'
   status: 'alumni'
   tenure: '2020-2021'
   end_year: '2021'
@@ -691,13 +691,13 @@
   country: 'Turkey'
   role:
     - 'Bachelor Student'
-  image: balci.png
+  image: suekrue_balci.png
   orcid:
   repository: 'https://github.com/SukruBalci'
   homepage:
   description: 'Sükrü Balci works on a physiologically based model of omeprazole. Key questions are the effect of omeprazole formulation and dosing on the pharmacodynamic effects of omeprazole.'
 
-- id: 'yannick'
+- id: 'yannick_duport'
   status: 'alumni'
   tenure: '2019-2021'
   end_year: '2021'
@@ -705,13 +705,13 @@
   country: 'Germany'
   role:
     - 'Bachelor Student'
-  image: yannick.png
+  image: yannick_duport.png
   orcid:
   repository: 'https://github.com/YannickDuport'
   homepage:
   description: 'Yannick Duport works on a physiologically based model of midazolam clearance. Key questions are the effect of inhibitors and inducers on the metabolism of midazolam.'
 
-- id: 'danny'
+- id: 'danny_ke'
   status: 'alumni'
   tenure: '2020-2021'
   end_year: '2021'
@@ -719,14 +719,14 @@
   country: 'South Korea'
   role:
     - 'Humboldt Internship Student'
-  image: danny.png
+  image: danny_ke.png
   orcid:
   repository: 'https://github.com/dannythekey'
   homepage:
   description: 'Danny Ke works on a physiologically based model of benzodiazepines.
   Key questions are the effect of genetic variance on clearance of diazepam.'
 
-- id: 'sara'
+- id: 'sara_angelis'
   status: 'alumni'
   tenure: '2020'
   end_year: '2020'
@@ -734,14 +734,14 @@
   country: 'Great Britain'
   role:
     - 'Humboldt Internship Student'
-  image: sara.png
+  image: sara_angelis.png
   orcid:
   repository: 'https://github.com/SaraD-hub'
   homepage:
   description: 'Sara de Angelis works on a physiologically based model of torasemide.
   Key questions are the effect of sex on torasemide pharmacokinetics and pharmacodynamics.'
 
-- id: 'hemant'
+- id: 'hemant_yadav'
   status: 'alumni'
   tenure: '2020'
   end_year: '2020'
@@ -750,14 +750,14 @@
   affiliation: 'Indian Institute of Technology, Roorkee'
   role:
     - 'Google Summer of Code Student'
-  image: hemant.png
+  image: hemant_yadav.png
   orcid:
   repository: 'https://github.com/hemant27031999/cobrapy'
   homepage: 'https://hemant-gsoc2020.blogspot.com/'
   description: 'In cooperation with <a href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/systembiologie/team/jun-prof-dr-andreas-draeger/">Andreas Dräger</a>
   from the University of Tübingen we are extending SBML and JSON support for <a href="https://github.com/opencobra/cobrapy">cobrapy</a>. The full proposal is available <a href="https://docs.google.com/document/d/1f0PknoPUpcWRHS8jljEOX5439us4ZD9qjNlbbfGk8Y8/edit?usp=sharing">here</a>.'
 
-- id: 'hemil'
+- id: 'hemil_panchiwala'
   status: 'alumni'
   tenure: '2020'
   end_year: '2020'
@@ -766,14 +766,14 @@
   affiliation: 'Indian Institute of Technology, Roorkee'
   role:
     - 'Google Summer of Code Student'
-  image: hemil.png
+  image: hemil_panchiwala.png
   orcid:
   repository: 'https://github.com/hemilpanchiwala/SBSCL'
   homepage: 'https://gsoc20hemil.blogspot.com'
   description: 'In cooperation with <a href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/systembiologie/team/jun-prof-dr-andreas-draeger/">Andreas Dräger</a>
   from the University of Tübingen we are extending SBML support for <a href="https://github.com/draeger-lab/SBSCL">The Systems Biology Simulation Core Library</a>. The full proposal is available <a href="https://docs.google.com/document/d/1XKAXN28gKWWR5hTLJtV9IlWYwp6aEI9JE_009rtVLCA/edit#heading=h.89yl7tg5fubi">here</a>.'
 
-- id: 'kaustubh'
+- id: 'kaustubh_trivedi'
   status: 'alumni'
   tenure: '2019'
   end_year: '2019'
@@ -782,14 +782,14 @@
   affiliation: 'Indian Institute of Technology, Roorkee'
   role:
     - 'Google Summer of Code Student'
-  image: kaustubh.png
+  image: kaustubh_trivedi.png
   orcid:
   repository: 'https://github.com/codekaust'
   homepage: 'https://kt-gsoc19.blogspot.com/'
   description: 'In cooperation with <a href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/systembiologie/team/jun-prof-dr-andreas-draeger/">Andreas Dräger</a>
   from the University of Tübingen we are working on the extension of <a href="https://github.com/draeger-lab/ModelPolisher">ModelPolisher</a> to a universal annotation tool.'
 
-- id: 'patrick'
+- id: 'patrick_pett'
   status: 'alumni'
   tenure: '2017-2019'
   end_year: '2019'
@@ -797,14 +797,14 @@
   country: 'Germany'
   role:
     - 'Ph.D. Student (Mentoring)'
-  image: pett.png
+  image: patrick_pett.png
   orcid:
   repository: 'https://bitbucket.org/JPatrickP/'
   homepage:
   description: 'Patrick works on the analysis of mammalian circadian clock in the human liver based on the analysis
   of OMICS datasets.'
 
-- id: 'schulte'
+- id: 'roman_schulte'
   status: 'alumni'
   tenure: '2018'
   end_year: '2018'
@@ -812,13 +812,13 @@
   country: 'Germany'
   role:
     - 'Bachelor Thesis'
-  image: schulte.png
+  image: roman_schulte.png
   orcid:
   repository: 'https://github.com/anfark'
   homepage: 'https://github.com/draeger-lab/insilico'
-  description: '<img src="../img/projects/insilico_logo.png" title="InSilico" height="80" align="left"/> Within his thesis the concept of an Modular Research Environment (MRE) was developed. An MRE is a modular application framework that can be extended with plugins to create a new tool. InSilico is the working proof-of-principle implementation of such an MRE and was developed alongside this work. The created infrastructure of InSilico can be used to create, share and reuse custom research tools with less effort, time, and resources compared to the traditional approach.'
+  description: '<img src="/assets/image/projects/insilico_logo.png" title="InSilico" height="80" align="left"/> Within his thesis the concept of an Modular Research Environment (MRE) was developed. An MRE is a modular application framework that can be extended with plugins to create a new tool. InSilico is the working proof-of-principle implementation of such an MRE and was developed alongside this work. The created infrastructure of InSilico can be used to create, share and reuse custom research tools with less effort, time, and resources compared to the traditional approach.'
 
-- id: 'shah'
+- id: 'shalin_shah'
   status: 'alumni'
   tenure: '2018'
   end_year: '2018'
@@ -826,13 +826,13 @@
   country: 'India'
   role:
     - 'Google Summer of Code'
-  image: 'shah.png'
+  image: 'shalin_shah.png'
   orcid:
   repository: 'https://github.com/shalinshah1993/SBSCL'
   homepage: 'https://github.com/shalinshah1993'
-  description: '<img src="../img/gsoc.jpg" title="GSOC" height="80" align="left"/> The Systems Biology Simulation Core Library (SBSCL) provides an efficient and exhaustive Java™ implementation of methods to interpret the content of models encoded in the Systems Biology Markup Language (SBML) and its numerical solution. This library is based on the JSBML project and can be used on every operating system for which a Java Virtual Machine is available. Within this project SBSCL was extended among others with better support for SED-ML and COMBINE archives. See also <a href="https://ssdoesgsoc.wordpress.com/" target="_blank">https://ssdoesgsoc.wordpress.com/</a>.'
+  description: '<img src="/assets/image/gsoc.jpg" title="GSOC" height="80" align="left"/> The Systems Biology Simulation Core Library (SBSCL) provides an efficient and exhaustive Java™ implementation of methods to interpret the content of models encoded in the Systems Biology Markup Language (SBML) and its numerical solution. This library is based on the JSBML project and can be used on every operating system for which a Java Virtual Machine is available. Within this project SBSCL was extended among others with better support for SED-ML and COMBINE archives. See also <a href="https://ssdoesgsoc.wordpress.com/" target="_blank">https://ssdoesgsoc.wordpress.com/</a>.'
 
-- id: 'yamada'
+- id: 'takahiro_yamada'
   status: 'alumni'
   tenure: '2017'
   end_year: '2017'
@@ -840,14 +840,14 @@
   country: 'Japan'
   role:
     - 'Google Summer of Code'
-  image: 'yamada.png'
+  image: 'takahiro_yamada.png'
   orcid:
   repository: 'https://github.com/TakahiroYamada/GSOC2017_SBMLModelAnalysisWebApp'
   homepage: 'https://github.com/TakahiroYamada'
-  description: '<img src="../img/gsoc.jpg" title="GSOC" height="80" align="left"/> Within this project as part of Google Summer of Code 2017 a Web App for SBML models was implemented which provides functionality for time course simulation, steady state analysis, and parameter estimation. The Web App provides options for uploading SBML models and experimental data files and run the respective simulations with the models. See also <a href="https://gsoc2017developwebservice.blogspot.com/" target="_blank">https://gsoc2017developwebservice.blogspot.com/</a>.'
+  description: '<img src="/assets/image/gsoc.jpg" title="GSOC" height="80" align="left"/> Within this project as part of Google Summer of Code 2017 a Web App for SBML models was implemented which provides functionality for time course simulation, steady state analysis, and parameter estimation. The Web App provides options for uploading SBML models and experimental data files and run the respective simulations with the models. See also <a href="https://gsoc2017developwebservice.blogspot.com/" target="_blank">https://gsoc2017developwebservice.blogspot.com/</a>.'
 
 
-- id: 'dimitra'
+- id: 'dimitra_eleftheriadou'
   status: 'alumni'
   tenure: '2016-2017'
   end_year: '2017'
@@ -855,7 +855,7 @@
   country: 'Greece'
   role:
     - 'Student Assistant'
-  image: eleftheriadou.png
+  image: dimitra_eleftheriadou.png
   orcid:
   repository:
   homepage:

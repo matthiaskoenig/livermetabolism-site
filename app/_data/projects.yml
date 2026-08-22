@@ -9,8 +9,8 @@
   homepage:
   repository:
   people:
-    - jonaspk98
-    - koenig
+    - jonas_kuettner
+    - matthias_koenig
   cooperation_partners:
   images:
     - image_analysis.png
@@ -26,9 +26,9 @@
   homepage:
   repository:
   people:
-    - xenia
-    - zhara
-    - koenig
+    - xenia_petukhova
+    - zahra_bahri
+    - matthias_koenig
   cooperation_partners:
   images:
     - inulin_creatinine.png
@@ -45,9 +45,9 @@
   homepage:
   repository: https://github.com/matthiaskoenig/dextromethorphan-model
   people:
-    - janek
-    - brandhorst
-    - koenig
+    - jan_grzegorzewski
+    - janosch_brandhorst
+    - matthias_koenig
   cooperation_partners:
   images:
     - dex_model.png
@@ -69,13 +69,13 @@
   homepage:
   repository:
   people:
-    - nike
-    - vera
-    - jennesse
-    - michelle
-    - mariia
+    - nike_nemitz
+    - vera_tereshchuk
+    - jennesse_alejandro
+    - michelle_elias
+    - mariia_myshkina
     - mariia_babaeva
-    - koenig
+    - matthias_koenig
   cooperation_partners:
   images:
     - dapagliflozin.png
@@ -97,11 +97,11 @@
   homepage:
   repository:
   people:
-    - ennie
-    - amanda
-    - mariia
-    - michelle
-    - koenig
+    - ennie_tensil
+    - amanda_schwaiger
+    - mariia_myshkina
+    - michelle_elias
+    - matthias_koenig
   cooperation_partners:
   images:
     - losartan.png
@@ -121,8 +121,8 @@
   homepage:
   repository:
   people:
-    - michelle
-    - koenig
+    - michelle_elias
+    - matthias_koenig
   cooperation_partners:
   images:
     - glimepiride.png
@@ -141,12 +141,12 @@
   homepage:
   repository:
   people:
-    - mariia
-    - elisabetta
+    - mariia_myshkina
+    - elisabetta_casabianca
     - mariia_babaeva
-    - shelee
-    - michelle
-    - koenig
+    - shelee_bedon
+    - michelle_elias
+    - matthias_koenig
   cooperation_partners:
   images:
     - apixaban.png
@@ -164,8 +164,8 @@
   homepage:
   repository:
   people:
-    - monajes
-    - koenig
+    - monika_jesionek
+    - matthias_koenig
   cooperation_partners:
   images:
     - rapamycin.png
@@ -180,8 +180,8 @@
   homepage:
   repository:
   people:
-    - jessica
-    - koenig
+    - jessica_cruz
+    - matthias_koenig
   cooperation_partners:
   images:
     - montelukast.png
@@ -197,9 +197,9 @@
   homepage:
   repository:
   people:
-    - afruja
-    - sophie
-    - koenig
+    - afruja_hossain
+    - sophie_silberhorn
+    - matthias_koenig
   cooperation_partners:
   images:
     - protein_distribution.png
@@ -217,9 +217,9 @@
   homepage:
   repository:
   people:
-    - koenig
-    - mariia
-    - shubhankar
+    - matthias_koenig
+    - mariia_myshkina
+    - shubhankar_palwankar
   cooperation_partners: Prof. Tim Ricken, Prof. Stefan Staab, Dr. Hans-Michael Tautenhahn
   images:
     - atlas.png
@@ -238,8 +238,8 @@
   homepage:
   repository:
   people:
-    - jonaspk98
-    - koenig
+    - jonas_kuettner
+    - matthias_koenig
   cooperation_partners: Prof. Bruno Christ, Prof. Uta Dahmen
   images:
     - zonation.png
@@ -257,9 +257,9 @@
   homepage:
   repository:
   people:
-    - flobar
-    - koenig
-    - janek
+    - florian_bartsch
+    - matthias_koenig
+    - jan_grzegorzewski
   cooperation_partners:
   images:
     - simvastatin.png
@@ -275,7 +275,7 @@
   homepage: https://github.com/matthiaskoenig/limax
   repository: https://github.com/matthiaskoenig/limax
   people:
-    - koenig
+    - matthias_koenig
   cooperation_partners: Prof. Stockmann, Prof. Timmer, Dr. Hans-Michael Tautenhahn
   images:
     - limax.png
@@ -292,7 +292,7 @@
   homepage: https://wwwdev.ebi.ac.uk/biomodels/covid-19
   repository:
   people:
-    - koenig
+    - matthias_koenig
   cooperation_partners: 'Dagmar Waltemath & Esther Inau (Medical Informatics and Core Unit Research Data Management, University Medicine Greifswald, Germany), Henning Hermjakob & Rahuman Sheriff (BioModels, EMBL-EBI, Cambridge, UK), Martin Scharm (code ahoi software, Germany).'
   images:
     - covid_reproducible.png
@@ -309,7 +309,7 @@
   homepage: https://tabularqual.streamlit.app/
   repository: https://github.com/sys-bio/TabularQual
   people:
-    - koenig
+    - matthias_koenig
   cooperation_partners:
   images:
     - tabularqual.png
@@ -327,9 +327,9 @@
   homepage: https://github.com/matthiaskoenig/visfem
   repository: https://github.com/matthiaskoenig/visfem
   people:
-    - michelle
-    - mariia
-    - koenig
+    - michelle_elias
+    - mariia_myshkina
+    - matthias_koenig
   cooperation_partners:
   images:
     - visfem.png
@@ -346,7 +346,7 @@
   homepage:
   repository:
   people:
-    - koenig
+    - matthias_koenig
   cooperation_partners: Prof. Holzhütter
   images:
     - hepatokin.png
@@ -365,8 +365,8 @@
   homepage:
   repository: https://github.com/matthiaskoenig/
   people:
-    - janek
-    - koenig
+    - jan_grzegorzewski
+    - matthias_koenig
   cooperation_partners:
   images:
     - data_extraction.png
@@ -382,7 +382,7 @@
   homepage:
   repository:
   people:
-    - koenig
+    - matthias_koenig
   cooperation_partners:
   images:
     - multiscale-galactose.png
@@ -408,8 +408,8 @@
   repository: https://github.com/matthiaskoenig/
   cooperation_partners:
   people:
-    - koenig
-    - dimitra
+    - matthias_koenig
+    - dimitra_eleftheriadou
   images:
     - function-tests.png
   abstract: 'An open, reproducible multiscale liver model and the infrastructure to integrate imaging, perfusion, and clinical data, with metabolic modules for substances used in liver function tests (methacetin, galactose, BSP, ICG, midazolam, codeine, caffeine, torsemide, pravastatin, talinolol).'
@@ -425,7 +425,7 @@
   repository:
   cooperation_partners:
   people:
-    - koenig
+    - matthias_koenig
   images:
     - BDL_correlation_heatmap.png
   abstract: 'A comprehensive dataset of serum markers, histology, and transcript profiles across 8 timepoints of bile-duct-ligation-induced cholestatic liver disease in mice, identifying robust biomarkers for disease staging.'
@@ -444,7 +444,7 @@
   repository: https://github.com/sys-bio/tellurium
   cooperation_partners:
   people:
-    - koenig
+    - matthias_koenig
   images:
     - tellurium-notebook.png
   abstract: 'Tellurium Notebook is a Python/Jupyter-based environment for building, simulating, and sharing reproducible dynamical models using the COMBINE archive standard, bringing a literate-programming workflow to systems biology.'
@@ -459,8 +459,8 @@
   repository: https://github.com/matthiaskoenig/tellurium-web/
   cooperation_partners:
   people:
-    - koenig
-    - janek
+    - matthias_koenig
+    - jan_grzegorzewski
   images:
     - tellurium-web.png
   abstract: 'tellurium-web is an open online database and simulation tool built on SBML, SED-ML, and COMBINE archives, offering a curated example library, an archive browser, high-performance simulation via libRoadRunner, and a REST API for computational workflows.'
@@ -475,8 +475,8 @@
   repository: https://github.com/janekg89/flutype_webapp
   cooperation_partners:
   people:
-    - janek
-    - koenig
+    - jan_grzegorzewski
+    - matthias_koenig
   images:
     - flutype.png
   abstract: 'FluTypeDB is a database and web application for managing peptide- and antibody-based binding assay data (ELISA, microwell, microarray) used to classify influenza subtypes.'

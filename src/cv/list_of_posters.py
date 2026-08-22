@@ -23,7 +23,7 @@ def create_list_of_poster_typst(typst_path: Path, df: pd.DataFrame,
         affiliations = e.affiliations
         affiliations = affiliations.replace("<sup>", "#super[")
         affiliations = affiliations.replace("</sup>", "]")
-        pdf = f'#link("https://livermetabolism.com/assets/paper/{e.pdf}")[#fa-icon("file-pdf")]' if e.pdf else ""
+        pdf = f'#link("https://livermetabolism.com/assets/pdf/{e.pdf}")[#fa-icon("file-pdf")]' if e.pdf else ""
 
         text = f"{pdf} *{e.title.strip(".")}*. \ {authors};  \ _{affiliations}_ \ {e.event}; {e.date}"
         return text

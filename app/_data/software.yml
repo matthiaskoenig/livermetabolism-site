@@ -152,9 +152,9 @@
   description: 'A browser-based visualization tool for finite element method (FEM) simulation results, making FEM-based digital twin models interactively explorable and shareable directly from the web to lower the barrier to reproducible computational modeling.'
   image: 'visfem.png'
   people:
-    - michelle
-    - mariia
-    - koenig
+    - michelle_elias
+    - mariia_myshkina
+    - matthias_koenig
   homepage: https://github.com/matthiaskoenig/visfem
   repository: https://github.com/matthiaskoenig/visfem
   doi:

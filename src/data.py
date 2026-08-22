@@ -498,13 +498,13 @@ PUBLICATION_LINKED_TABLES = ("projects", "software", "presentations", "panels")
 
 # image fields: table -> [(field name, base dir *relative to the app/ dir*, one_or_many)]
 IMAGE_FIELDS: dict[str, list[tuple[str, str, bool]]] = {
-    "people": [("image", "assets/img/people/128", False)],
-    "editors": [("image", "assets/img/editors", False)],
-    "software": [("image", "assets/img/software", False)],
-    "news": [("image", "assets/img/news", False), ("image2", "assets/img/news", False)],
-    "projects": [("images", "assets/img/projects", True)],
-    "teaching": [("image", "assets/img/teaching", False)],
-    "posters": [("image", "assets/paper", False), ("pdf", "assets/paper", False)],
+    "people": [("image", "assets/image/people/128", False)],
+    "editors": [("image", "assets/image/editors", False)],
+    "software": [("image", "assets/image/software", False)],
+    "news": [("image", "assets/image/news", False), ("image2", "assets/image/news", False)],
+    "projects": [("images", "assets/image/projects", True)],
+    "teaching": [("image", "assets/image/teaching", False)],
+    "posters": [("image", "assets/pdf", False), ("pdf", "assets/pdf", False)],
 }
 
 

@@ -38,7 +38,7 @@ sectionid: publications
 				<span class="status-badge status-{{ publication.status | slugify }}">{{ publication.status | capitalize }}</span>
 				<div class="pub-links">
 					{% if publication.pdf %}
-					<a href="/assets/paper/{{ publication.pdf }}" title="PDF"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+					<a href="/assets/pdf/{{ publication.pdf }}" title="PDF"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
 					{% endif %}
 					{% if publication.homepage %}
 					<a href="{{ publication.homepage }}" title="Project homepage"><i class="fa fa-globe" aria-hidden="true"></i></a>
@@ -68,7 +68,7 @@ sectionid: publications
 				{% assign given = name_parts[given_index] %}
 				{% assign surname = name_parts | last %}
 				{% assign initial = given | slice: 0, 1 %}
-				{% assign avatar_tag = '<img src="/assets/img/people/' | append: person.image | append: '" class="author-avatar" alt="" title="' | append: person.name | append: '"/>' %}
+				{% assign avatar_tag = '<img src="/assets/image/people/' | append: person.image | append: '" class="author-avatar" alt="" title="' | append: person.name | append: '"/>' %}
 				{% assign short_match = initial | append: '. ' | append: surname %}
 				{% assign short_chip = '<span class="person-chip">' | append: avatar_tag | append: '<strong>' | append: short_match | append: '</strong></span>' %}
 				{% assign tried = pub_authors_html | replace: short_match, short_chip %}

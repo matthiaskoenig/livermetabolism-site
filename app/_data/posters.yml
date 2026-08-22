@@ -1,7 +1,7 @@
 - id: 'HIP2026_montelukast_Jessica.Cruz'
   people:
-    - jessica
-    - koenig
+    - jessica_cruz
+    - matthias_koenig
   year: 2026
   date: 2026-07-07
   pdf: 'posters/HIP2026_montelukast_Jessica.Cruz.pdf'
@@ -24,7 +24,7 @@
 - id: 'Gaas2026_SBSCL_OptSolvX'
   people:
     - michael_gaas
-    - koenig
+    - matthias_koenig
   year: 2026
   date: 2026-06-12
   pdf: 'posters/Gaas2026_SBSCL_OptSolvX.pdf'
@@ -51,8 +51,8 @@
 
 - id: 'PAGE2026_PKDB_Myshkina_Koenig'
   people:
-    - mariia
-    - koenig
+    - mariia_myshkina
+    - matthias_koenig
   year: 2026
   date: 2026-06-03
   pdf: 'posters/PAGE2026_PKDB_Myshkina_Koenig.pdf'
@@ -78,7 +78,7 @@
 
 - id: 'SBMC2026_Poster_Albadry2026'
   people:
-    - koenig
+    - matthias_koenig
   year: 2026
   date: 2026-05-04
   pdf: 'posters/SBMC2026_Poster_Albadry2026.pdf'
@@ -98,8 +98,8 @@
 
 - id: 'EASL2026_LCS_Poster'
   people:
-    - mariia
-    - koenig
+    - mariia_myshkina
+    - matthias_koenig
   year: 2026
   date: 2026-02-21
   pdf: 'posters/EASL2026_LCS_Poster.pdf'
@@ -128,8 +128,8 @@
 
 - id: 'HIP2025_lixisenatide_Olivia.Yau'
   people:
-    - olivia
-    - koenig
+    - olivia_yau
+    - matthias_koenig
   year: 2025
   date: 2025-07-07
   pdf: 'posters/HIP2025_lixisenatide_Olivia.Yau.pdf'
@@ -151,8 +151,8 @@
 
 - id: 'HIP2025_dulaglutide_Kim.Minjun'
   people:
-    - kim
-    - koenig
+    - minjun_kim
+    - matthias_koenig
   year: 2025
   date: 2025-07-07
   pdf: 'posters/HIP2025_dulaglutide_Kim.Minjun.pdf'
@@ -174,8 +174,8 @@
 
 - id: 'HIP2025_liraglutide_Isabella.Tan'
   people:
-    - isabella
-    - koenig
+    - isabella_tan
+    - matthias_koenig
   year: 2025
   date: 2025-07-07
   pdf: 'posters/HIP2025_liraglutide_Isabella.Tan.pdf'
@@ -197,7 +197,7 @@
 
 - id: 'qualiperf2_P3_poster'
   people:
-    - koenig
+    - matthias_koenig
   year: 2024
   date: 2024-11-05
   pdf: 'posters/qualiperf2_P3_poster.pdf'
@@ -221,7 +221,7 @@
 
 - id: 'qualiperf2_DMP_poster'
   people:
-    - koenig
+    - matthias_koenig
   year: 2024
   date: 2024-11-05
   pdf: 'posters/qualiperf2_DMP_poster.pdf'
@@ -244,8 +244,8 @@
 
 - id: 'HIP2024_PK-LLM_Prerna.Parakkat'
   people:
-    - prerna
-    - koenig
+    - prerna_parakkat
+    - matthias_koenig
   year: 2024
   date: 2024-07-18
   pdf: 'posters/HIP2024_PK-LLM_Prerna.Parakkat.pdf'
@@ -267,8 +267,8 @@
 
 - id: 'HIP2024_canagliflozin_Vera.Tereshchuk'
   people:
-    - vera
-    - koenig
+    - vera_tereshchuk
+    - matthias_koenig
   year: 2024
   date: 2024-07-18
   pdf: 'posters/HIP2024_canagliflozin_Vera.Tereshchuk.pdf'
@@ -288,10 +288,10 @@
 
 - id: 'HIP2024_morphine_Deepa.Maheshvare'
   people:
-    - deepa
-    - rohinichakraborty
-    - rohit
-    - koenig
+    - deepa_maheshvare
+    - rohini_chakraborty
+    - rohit_chakraborty
+    - matthias_koenig
   year: 2024
   date: 2024-07-18
   pdf: 'posters/HIP2024_morphine_Deepa.Maheshvare.pdf'
@@ -311,8 +311,8 @@
 
 - id: 'PAGE2024_captopril_Myshkina_Koenig'
   people:
-    - mariia
-    - koenig
+    - mariia_myshkina
+    - matthias_koenig
   year: 2024
   date: 2024-06-26
   pdf: 'posters/PAGE2024_captopril_Myshkina_Koenig.pdf'
@@ -346,7 +346,7 @@
 
 - id: 'Spetses2010_blood_glucose_control'
   people:
-    - koenig
+    - matthias_koenig
   year: 2010
   date: 2010-06-01
   pdf: 'posters/Spetses2010_blood_glucose_control.pdf'

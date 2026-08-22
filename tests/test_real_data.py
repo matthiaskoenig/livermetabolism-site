@@ -21,6 +21,6 @@ def test_real_data_has_no_duplicate_ids():
 
 def test_koenig_is_in_people_and_current():
     db = load_database(DATA_DIR)
-    koenig = next(p for p in db.people if p.id == "koenig")
+    koenig = next(p for p in db.people if p.id == "matthias_koenig")
     assert koenig.status == "current"
     assert "Group Leader" in koenig.role
