@@ -3,6 +3,8 @@
 ---
 @charset "utf-8";
 
+@use "sass:color";
+
 // Import partials from `sass_dir` (defaults to `_sass`)
 
 // Bootstrap 5 sizes the navbar from padding rather than a fixed-height
@@ -341,7 +343,7 @@ h3 {
   padding: 0.1em 0.5em;
   border-radius: 999px;
   background-color: rgba($success, 0.12);
-  color: darken($success, 12%);
+  color: color.adjust($success, $lightness: -12%);
   font-size: 0.65em;
   font-weight: 600;
   text-transform: uppercase;
@@ -356,7 +358,7 @@ h3 {
   @each $slug, $color in $tag-colors {
     &.tag-#{$slug} {
       background-color: rgba($color, 0.14);
-      color: darken($color, 8%);
+      color: color.adjust($color, $lightness: -8%);
     }
   }
 }
@@ -791,7 +793,7 @@ h3 {
   .status-review {
     background-color: rgba($success, 0.12);
     border-color: rgba($success, 0.5);
-    color: darken($success, 12%);
+    color: color.adjust($success, $lightness: -12%);
   }
 
   .status-proceeding,
@@ -804,7 +806,7 @@ h3 {
   .status-preprint {
     background-color: rgba($warning, 0.15);
     border-color: rgba($warning, 0.5);
-    color: darken($warning, 8%);
+    color: color.adjust($warning, $lightness: -8%);
   }
 
   .pub-links {
@@ -1103,7 +1105,7 @@ h3 {
 
   .footer-addresses {
     padding-top: 0.8em;
-    border-top: 1px solid darken($gray-200, 8%);
+    border-top: 1px solid color.adjust($gray-200, $lightness: -8%);
     font-size: 0.82em;
     line-height: 1.6;
   }
