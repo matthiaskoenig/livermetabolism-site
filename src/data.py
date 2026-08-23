@@ -436,6 +436,23 @@ class Abstract(PeopleLinked):
     _keywords_none = field_validator("keywords", mode="before")(_none_to_list)
 
 
+class Meeting(Taggable, PeopleLinked):
+    """A meeting/workshop the group organized or hosted (as opposed to
+    ``presentations``/``posters``/``panels``, which are talks *given* at
+    someone else's event)."""
+
+    id: str
+    title: str
+    description: str
+    date: Date
+    date_display: str | None = None
+    location: str
+    homepage: str | None = None
+    pdf: str | None = None
+    image: str | None = None
+    repository: str | None = None
+
+
 # ---------------------------------------------------------------------------
 # Activities, LinkedIn
 # ---------------------------------------------------------------------------
@@ -473,6 +490,7 @@ TABLES: dict[str, tuple[str, type[StrictModel]]] = {
     "posters": ("posters.yml", Poster),
     "panels": ("panels.yml", Panel),
     "abstracts": ("abstracts.yml", Abstract),
+    "meetings": ("meetings.yml", Meeting),
     "activities": ("activities.yml", Activity),
     "linkedin": ("linkedin.yml", LinkedInPost),
 }
@@ -488,10 +506,20 @@ PEOPLE_LINKED_TABLES = (
     "posters",
     "panels",
     "abstracts",
+    "meetings",
 )
 
 # tables whose rows carry a `tags: list[str]` referencing tags.yml
-TAGGED_TABLES = ("publications", "projects", "software", "editors", "funding", "news", "teaching")
+TAGGED_TABLES = (
+    "publications",
+    "projects",
+    "software",
+    "editors",
+    "funding",
+    "news",
+    "teaching",
+    "meetings",
+)
 
 # tables whose rows carry a `publications: list[str]` referencing publications.yml
 PUBLICATION_LINKED_TABLES = ("projects", "software", "presentations", "panels")
@@ -505,6 +533,7 @@ IMAGE_FIELDS: dict[str, list[tuple[str, str, bool]]] = {
     "projects": [("images", "assets/image/projects", True)],
     "teaching": [("image", "assets/image/teaching", False)],
     "posters": [("image", "assets/pdf", False), ("pdf", "assets/pdf", False)],
+    "meetings": [("image", "assets/image/meetings", False), ("pdf", "assets/pdf", False)],
 }
 
 
@@ -549,6 +578,7 @@ class Database(BaseModel):
     posters: list[Poster]
     panels: list[Panel]
     abstracts: list[Abstract]
+    meetings: list[Meeting]
     activities: list[Activity]
     linkedin: list[LinkedInPost]
 

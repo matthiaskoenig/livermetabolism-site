@@ -126,6 +126,15 @@ MINIMAL_ROWS = {
             "authors": "J. Doe",
         }
     ],
+    "meetings.yml": [
+        {
+            "id": "example-meeting",
+            "title": "Example meeting",
+            "description": "An example meeting.",
+            "date": "2020-01-01",
+            "location": "Somewhere",
+        }
+    ],
     "activities.yml": [
         {
             "id": "example-activity",

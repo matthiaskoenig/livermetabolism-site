@@ -1,0 +1,48 @@
+---
+layout: page
+title: Meetings
+permalink: /meetings/
+sectionid: meetings
+---
+
+<h2 id="meetings">Meetings</h2>
+<p>Meetings, workshops, and events we organized or hosted.</p>
+
+{% include tag_filter.html id="meeting" target="meetings-grid" %}
+
+<div class="project-grid" id="meetings-grid">
+    {% assign sorted_meetings = site.data.meetings | sort: "date" | reverse %}
+    {% for meeting in sorted_meetings %}
+    <div class="project-card" data-tags="{{ meeting.tags | join: '|' | escape }}">
+        {% if meeting.image %}
+        <img src="{{ "/assets/image/meetings/" | prepend: site.baseurl }}{{ meeting.image }}" alt="{{ meeting.title }}" class="project-image"/>
+        {% endif %}
+        <div class="project-body">
+            <p class="news-date">{{ meeting.date_display | default: meeting.date }}{% if meeting.location %} &middot; {{ meeting.location }}{% endif %}</p>
+            <h3>{{ meeting.title }}</h3>
+            {% if meeting.tags %}
+            <div class="tag-list">
+                {% for tag in meeting.tags %}
+                {% assign tag_info = site.data.tags | where: "tag", tag | first %}
+                <span class="tag-badge tag-{{ tag | slugify }}">{% if tag_info.icon %}<i class="fa {{ tag_info.icon }}" aria-hidden="true"></i> {% endif %}{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <p>{{ meeting.description }}</p>
+            <div class="project-links">
+                {% include people_avatars.html people=meeting.people %}
+                <span class="project-links-spacer"></span>
+                {% if meeting.pdf %}
+                <a href="{{ "/assets/pdf/" | prepend: site.baseurl }}{{ meeting.pdf }}" target="_blank" rel="noopener noreferrer" title="PDF"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+                {% endif %}
+                {% if meeting.homepage %}
+                <a href="{{ meeting.homepage }}" target="_blank" rel="noopener noreferrer" title="Meeting homepage"><i class="fa fa-globe" aria-hidden="true"></i></a>
+                {% endif %}
+                {% if meeting.repository %}
+                <a href="{{ meeting.repository }}" target="_blank" rel="noopener noreferrer" title="Repository"><i class="fa fa-github" aria-hidden="true"></i></a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

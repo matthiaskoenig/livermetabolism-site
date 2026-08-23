@@ -17,6 +17,7 @@ from src.data import (
     Editor,
     Funding,
     LinkedInPost,
+    Meeting,
     News,
     Panel,
     Person,
@@ -200,6 +201,18 @@ def make_abstract(**overrides) -> Abstract:
     return Abstract(**data)
 
 
+def make_meeting(**overrides) -> Meeting:
+    data = dict(
+        id="example-meeting",
+        title="Example meeting",
+        description="An example meeting.",
+        date=date(2020, 1, 1),
+        location="Somewhere",
+    )
+    data.update(overrides)
+    return Meeting(**data)
+
+
 def make_activity(**overrides) -> Activity:
     data = dict(
         id="example-activity",
@@ -241,6 +254,7 @@ def make_database(**overrides) -> Database:
         posters=[],
         panels=[],
         abstracts=[],
+        meetings=[],
         activities=[],
         linkedin=[],
     )

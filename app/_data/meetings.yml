@@ -1,0 +1,28 @@
+# Meetings and workshops the group organized or hosted (as opposed to
+# presentations.yml/posters.yml/panels.yml, which are talks *given* at
+# someone else's event). Rendered on meetings.html.
+
+- id: 'combine2022'
+  tags:
+    - 'Open & FAIR'
+  people:
+    - 'matthias_koenig'
+  title: '13th COMBINE Meeting'
+  description: 'We organized the Computational Modeling in Biology Network (COMBINE) meeting in Berlin, bringing together more than 100 international experts in computational modeling standards for systems and synthetic biology (SBML, SED-ML, SBGN, COMBINE archive, and related standards).'
+  date: 2022-10-06
+  date_display: '6–8 October 2022'
+  location: 'Berlin, Germany'
+  homepage: 'https://co.mbine.org/author/combine-2022/'
+  image: 'COMBINE2022_participants.png'
+
+- id: 'open-science-workshop-2025'
+  tags:
+    - 'Open & FAIR'
+  people:
+    - 'matthias_koenig'
+  title: 'Workshop: Open Science & Reproducibility — For Computational Models in Systems Biology & Medicine'
+  description: 'A hands-on workshop on open science and reproducibility for computational models, featuring interactive sessions (LEGO® Serious Play), reproducibility workflows, and open publishing practices.'
+  date: 2025-10-10
+  date_display: '10 October 2025'
+  location: 'Berlin, Germany'
+  pdf: 'misc/2025-10-10_open.science.pdf'
