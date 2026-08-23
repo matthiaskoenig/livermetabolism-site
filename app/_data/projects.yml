@@ -5,7 +5,7 @@
     - "Digital Pathology"
     - "AI"
   publications:
-    - 'Albadry2024_species_comparison'
+    - 'Albadry2024_species.comparison'
   homepage:
   repository:
   people:
@@ -62,10 +62,10 @@
     - "Pharmacometrics"
   publications:
     - 'Nemitz2026_dapagliflozin'
-    - 'Elias2026_dapagliflozin_physiome'
-    - 'Nemitz2025_Bachelor_Thesis'
-    - 'Tereshchuk2026_canagliflozin_preprint'
-    - 'Alejandro2026_empagliflozin_preprint'
+    - 'Elias2026_dapagliflozin.physiome'
+    - 'Nemitz2025_bachelor.thesis'
+    - 'Tereshchuk2026_canagliflozin'
+    - 'Alejandro2026_empagliflozin'
   homepage:
   repository:
   people:
@@ -91,9 +91,9 @@
     - "Pharmacometrics"
   publications:
     - 'Tensil2026_losartan'
-    - 'Myshkina2026_losartan_physiome'
-    - 'Tensil2025_Bachelor_Thesis'
-    - 'Schwaiger2026_hctz_preprint'
+    - 'Myshkina2026_losartan.physiome'
+    - 'Tensil2025_bachelor.thesis'
+    - 'Schwaiger2026_hctz'
   homepage:
   repository:
   people:
@@ -116,8 +116,8 @@
     - "Pharmacometrics"
   publications:
     - 'Elias2025_glimepiride'
-    - 'Elias2025_glimepiride_physiome'
-    - 'Elias2025_Bachelor_Thesis'
+    - 'Elias2025_glimepiride.physiome'
+    - 'Elias2025_bachelor.thesis'
   homepage:
   repository:
   people:
@@ -135,9 +135,9 @@
     - "Digital Twins"
     - "Pharmacometrics"
   publications:
-    - 'Myshkina2026_apixaban_preprint'
-    - 'Casabianca2025_preprint'
-    - 'Casabianca2025_Master_Thesis'
+    - 'Myshkina2026_apixaban'
+    - 'Casabianca2025_rivaroxaban'
+    - 'Casabianca2025_master.thesis'
   homepage:
   repository:
   people:
@@ -160,7 +160,7 @@
     - "Digital Twins"
     - "Pharmacometrics"
   publications:
-    - 'Jesionek2026_rapamycin_preprint'
+    - 'Jesionek2026_rapamycin'
   homepage:
   repository:
   people:
@@ -193,7 +193,7 @@
   tags:
     - "Pharmacometrics"
   publications:
-    - 'Hossain2024_systematic_overview_protein'
+    - 'Hossain2024_bachelor.thesis'
   homepage:
   repository:
   people:
@@ -213,7 +213,7 @@
     - "Digital Twins"
     - "AI"
   publications:
-    - 'Myshkina2025_preprint'
+    - 'Myshkina2025_digital.twins'
   homepage:
   repository:
   people:
@@ -233,8 +233,8 @@
     - "Digital Pathology"
     - "AI"
   publications:
-    - 'Albadry2022_Cytochrome_p450_enzymes_in_periportal_steatosis'
-    - 'Kuettner2024_Quantitative_Image_Analysis'
+    - 'Albadry2022_cyp450.steatosis'
+    - 'Kuettner2024_master.thesis'
   homepage:
   repository:
   people:
@@ -253,7 +253,7 @@
     - "Pharmacometrics"
   publications:
     - 'Bartsch2023_simvastatin'
-    - 'Bartsch2020_Bachelor_Thesis'
+    - 'Bartsch2020_bachelor.thesis'
   homepage:
   repository:
   people:
@@ -288,7 +288,7 @@
   tags:
     - "Open & FAIR"
   publications:
-    - 'Ramachandran2022_FAIR_sharing_of_reproducible_and_reusable_COVID-19_models'
+    - 'Ramachandran2022_covid19.models'
   homepage: https://wwwdev.ebi.ac.uk/biomodels/covid-19
   repository:
   people:
@@ -305,7 +305,7 @@
   tags:
     - "Open & FAIR"
   publications:
-    - 'Li2026_TabularQual_preprint'
+    - 'Li2026_tabularqual'
   homepage: https://tabularqual.streamlit.app/
   repository: https://github.com/sys-bio/TabularQual
   people:
@@ -360,8 +360,8 @@
     - "Pharmacometrics"
     - "Open & FAIR"
   publications:
-    - 'Grzegorzewski2020_PKDB'
-    - 'Grzegorzewski2023_PhD_Thesis'
+    - 'Grzegorzewski2020_pkdb'
+    - 'Grzegorzewski2023_phd.thesis'
   homepage:
   repository: https://github.com/matthiaskoenig/
   people:
@@ -395,15 +395,15 @@
   tags:
     - "Digital Twins"
   publications:
-    - 'Koenig2020_EXSIMO'
-    - 'Koeller2021_ICG_model_hepatectomy'
-    - 'Koeller2021_icg_variability'
-    - 'Koeller2021_Bachelor_Thesis'
-    - 'Grzegorzewski2022_Caffeine_meta'
-    - 'Pujol2022_Bachelor_Thesis'
+    - 'Koenig2020_exsimo'
+    - 'Koeller2021_icg.hepatectomy'
+    - 'Koeller2021_icg.variability'
+    - 'Koeller2021_bachelor.thesis'
+    - 'Grzegorzewski2022_caffeine.meta'
+    - 'Pujol2022_bachelor.thesis'
     - 'StemmerMallol2023_talinolol'
-    - 'Mallol2023_physiologically_based_pharmacokinetic'
-    - 'Duport2020_Bachelor_Thesis'
+    - 'Mallol2023_bachelor.thesis'
+    - 'Duport2020_bachelor.thesis'
   homepage: https://github.com/matthiaskoenig/
   repository: https://github.com/matthiaskoenig/
   cooperation_partners:
@@ -420,7 +420,7 @@
   tags:
     - "AI"
   publications:
-    - 'Abshagen2015_Pathobiochemical_signatures_cholestatic'
+    - 'Abshagen2015_cholestasis'
   homepage:
   repository:
   cooperation_partners:
@@ -438,8 +438,8 @@
   publications:
     - 'Medley2018_tellurium'
     - 'Choi2018_tellurium'
-    - 'Welsh2023_libroadrunner_2_0'
-    - 'Somogyi2015_libRoadRunner'
+    - 'Welsh2023_libroadrunner.2.0'
+    - 'Somogyi2015_libroadrunner'
   homepage: http://tellurium.analogmachine.org/
   repository: https://github.com/sys-bio/tellurium
   cooperation_partners:

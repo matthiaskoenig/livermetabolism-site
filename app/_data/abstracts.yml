@@ -1,10 +1,10 @@
-- id: 'GAMM2026_Simliva'
+- id: 'Gerhaeusser2026_gamm2026_abstract_simliva'
   people:
     - matthias_koenig
   year: 2026
   date: 2026-01-15
   title: 'Extension of liver biomechanics framework for whole-body applications'
-  pdf: 'GAMM2026_Simliva.pdf'
+  pdf: 'abstract/Gerhaeusser2026_gamm2026_abstract_simliva.pdf'
   authors: 'Steffen Gerhäusser1, Luis Mandl1,2, Uta Dahmen³, Hans-Michael Tautenhahn2, Tim Ricken1, <b>Matthias König</b>1,4'
   affiliations: '1Institute of Structural Mechanics and Dynamics in Aerospace Engineering, Faculty of Aerospace Engineering and Geodesy, University of Stuttgart, Germany; 2 Experimental Hepatobiliary Surgery Group, Department of Hepatobiliary Surgery and Visceral Transplantation, University of Leipzig Medical Center, Germany; 3 Experimental Transplantation Surgery, Department of General, Visceral and Vascular Surgery, Jena University Hospital, Germany; 4 Institute for Theoretical Biology, Systems Medicine of Liver, Humboldt University Berlin, Germany, koenigmx@hu-berlin.de, https://orcid.org/0000-0003-1725-179X.'
   abstract: 'Liver transplantation is the only curative treatment for end‐stage liver disease, but changing demographics and Western lifestyles are leading to an increase in elderly, multi‐morbid donors and recipients. When faced with a marginal graft, surgeons must weigh the risks: accept a suboptimal organ with potential postoperative complications or reject it, increasing the recipient’s chances of dying on the waiting list. Simulation-based risk assessment via a digital liver twin has enormous potential to evaluate and, if necessary, optimise or cancel the planned transplantation process in everyday clinical practice, e.g. modelling patient-specific impairment of liver grafts [1]. During the transplant procedure, the organ changes bodies from donor to recipient, but may also be linked to a perfusion machine as a conservatory measure. An important research question is how the different milieus affect liver function during and after the procedure. To investigate this, the existing tissue-scale model is coupled with an external third scale model (e.g., representing body or perfusion machine) to incorporate the influence of the surrounding environment. This is of particular interest as it enables the use of physiologically more realistic boundary conditions and allows the simulation of reperfusion scenarios compared to the standalone tissue-cell boundary value problem. In this work, the framework for coupling tissue-scale and cellular-scale processes based on FEniCSx [2], libRoadRunner [3], and preCICE [4] will be extended by an additional ODE-based physiologically based pharmacokinetic (PBPK) model [5]. We look into the theory, implementation, validation and challenges behind this ODE-PDE-ODE approach during simulation scenarios with clinical relevance.
@@ -23,14 +23,14 @@
   homepage:
   repository:
 
-- id: 'EASL_LCS_2026'
+- id: 'Myshkina2026_easllcs2026_abstract_sorafenib'
   people:
     - mariia_myshkina
     - matthias_koenig
   year: 2026
   date: 2026-01-22
   title: 'Modelling of Patient-Specific Liver Vasculature and Sorafenib Pharmacokinetics in Hepatocellular Carcinoma'
-  pdf: 'EASL_LCS_2026_abstract.pdf'
+  pdf: 'abstract/Myshkina2026_easllcs2026_abstract_sorafenib.pdf'
   authors: 'Mariia Myshkina1, Etienne Jessen2, Dominik Schillinger2, <b>Matthias König</b>1,3'
   affiliations: '1 Department of Biology, Faculty of Life Sciences, Humboldt-Universität zu Berlin, Germany; 2 Institute for Mechanics, Computational Mechanics Group, Technical University of Darmstadt, Darmstadt, Germany; 3 Institute of Structural Mechanics and Dynamics in Aerospace Engineering, University of Stuttgart, Stuttgart, Germany'
   abstract: 'Background and Aims: Liver cancer is the second leading cause of cancer-related deaths. Despite the various therapeutic options for hepatocellular carcinoma (HCC) treatment, selecting patient-specific therapy remains challenging. A major challenge is predicting the distribution and heterogeneity of anti-cancer medication in the liver due to factors such as liver anatomy, vascular topology, perfusion and tumour location. In this study, we applied a recently published algorithm [1] to generate vessel trees within a defined liver volume and modelled the spatio-temporal pharmacokinetics of the multi-kinase inhibitor sorafenib (NEXAVAR®) within the liver. Our objectives were: (i) to generate physiologically realistic arterial, portal, venous, and biliary vessel trees in a given liver volume; (ii) to develop a mechanistic pharmacokinetic model for substance transport in these trees; (iii) to couple this model with a physiologically based pharmacokinetic (PBPK) model of sorafenib; and (iv) to simulate drug concentration dynamics within the liver.
@@ -49,14 +49,14 @@
   homepage:
   repository: https://github.com/matthiaskoenig/sorafenib-model
 
-- id: 'CFT24_icg_2021'
+- id: 'Koeller2021_srd2021_abstract_icg'
   people:
     - adrian_koeller
     - jan_grzegorzewski
     - matthias_koenig
   year: 2021
   date:
-  pdf: 'CFT24_abstracts_2021.pdf'
+  pdf: 'abstract/Koeller2021_srd2021_abstract_icg.pdf'
   authors: 'Adrian Köller, Jan Grzegorzewski and <b>Matthias König</b>'
   affiliations:
   keywords:
@@ -67,12 +67,12 @@
   homepage:
   repository: https://github.com/matthiaskoenig/icg-model
 
-- id: 'CFT24_uncertainty_2021'
+- id: 'Hoepfl2021_srd2021_abstract_uncertainty'
   people:
     - matthias_koenig
   year: 2021
   date:
-  pdf: 'CFT24_uncertainty_2021.pdf'
+  pdf: 'abstract/Hoepfl2021_srd2021_abstract_uncertainty.pdf'
   authors: 'S. Höpfl, <b>M. König</b>, N. Radde'
   affiliations:
   keywords:

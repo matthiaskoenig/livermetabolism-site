@@ -1,9 +1,9 @@
-- id: 'Olivier2026_fbc-v3'
+- id: 'Olivier2026_fbc.v3'
   tags:
     - 'Open & FAIR'
   year: 2026
   date: 2026-03-10
-  pdf: 'publication/Olivier2026_fbc-v3.pdf'
+  pdf: 'publication/Olivier2026_fbc.v3.pdf'
   authors: 'B. G. Olivier, F. T. Bergmann, S. Keating, and M. König'
   people:
     - matthias_koenig
@@ -21,12 +21,12 @@
   repository: https://github.com/sbmlteam/sbml-specifications
   abstract: 'Constraint-based modeling is a well-established modeling methodology used to study biological networks at both the medium-scale and genome-scale. Due to their large size and complexity, such steady-state flux models are typically ana- lyzed using constraint-based optimization techniques, such as Flux Balance Anal- ysis (FBA). The Flux Balance Constraints (FBC) Package extends SBML Level 3 to provide a standardized format for encoding, exchanging, and annotating constraint-based models. It includes support for modeling concepts such as objective functions, flux bounds, and annotation of model components that facilitate reaction balanc- ing. Version two extended the original release by adding support for encoding gene-protein associations. Version three builds upon and maintains backwards compatibility with Version two by introducing new elements and attributes that include: user-defined constraints, a new quadratic variable type and key-value pair annotation that can be used to store additional information relevant to constraint-based modeling. The only changes to existing attributes are that a Species charge is no longer restricted to an integer value and chemicalFormula can now include generic components. In addition to providing the elements necessary to uniquely encode constraint- based models, the FBC package provides an open platform that facilitates the continued, cross-community development of an interoperable, constraint-based model encoding format.'
 
-- id: 'Pathirana2026_petab-v2'
+- id: 'Pathirana2026_petab.v2'
   tags:
     - 'Open & FAIR'
   year: 2026
   date: 2026-08-13
-  pdf: 'publication/Pathirana2026_petab-v2.pdf'
+  pdf: 'publication/Pathirana2026_petab.v2.pdf'
   authors: 'D. Pathirana, F. Fröhlich, S. Persson, F. T. Bergmann, M. König, P. F. Lang, S. Bang, S. Kemmer, J. Hasenauer, and D. Weindl'
   people:
     - matthias_koenig
@@ -44,12 +44,12 @@
   repository: https://github.com/PEtab-dev/
   abstract: 'Parameter estimation is a central task in data-driven computational modeling, and a clear, unambiguous, and commonly understood specification of parameter estimation problems is essential for reproducibility and interoperability. PEtab provides a standardized framework for defining such problems in systems biology and systems medicine, particularly for ordinary differential equation models. This document describes the second version of the PEtab format, PEtab 2.0. PEtab 2.0 simplifies and clarifies how estimation problems are defined, while also extending the standard to support more complex and realistic experimental setups.'
 
-- id: 'Sego2026_EFECT'
+- id: 'Sego2026_efect'
   tags:
     - 'Open & FAIR'
   year: 2026
   date: 2026-07-28
-  pdf: 'publication/Sego2026_EFECT.pdf'
+  pdf: 'publication/Sego2026_efect.pdf'
   authors: 'T. J. Sego, M. König, L. L. Fonseca, D. Pathirana, F. T. Bergmann, H. E. Grecco, M. Silberberg, S. Ray, B. Fain, A. C. Knapp, K. Tiwari, H. Hermjakob, H. M. Sauro, J. A. Glazier, R. C. Laubenbacher, and R. S. Malik-Sheriff'
   people:
     - matthias_koenig
@@ -67,13 +67,13 @@
   repository: https://github.com/tjsego/ssr_project_2024
   abstract: "Stochastic simulations underpin computational research in fields from systems biology and epidemiology to finance and physics-informed machine learning, yet their reproducibility is hard to quantify because each run yields different outcomes. Existing practices to improve computational reproducibility focus on sharing code, simulation seeds, data, and software environments but do not ensure independent reproduction of results, limiting scientific rigor. Here we introduce the Empirical Characteristic Function Equality Convergence Test (EFECT), a universal computational framework for quantifying the statistical reproducibility of stochastic simulations based on empirical characteristic functions. EFECT defines a normalized EFECT error that measures distributional differences between two sets of simulation outputs over a model- and scale-independent range, and an EFECT convergence point that specifies the minimum sample size required to achieve a desired reproducibility threshold at a chosen significance level. EFECT applies to any simulation whose results can be represented as bounded, real-valued data, regardless of modelling formalism or source of stochasticity. To facilitate widespread adoption and data exchange, we implemented EFECT in an open-source software library and a compact, machine-readable standardized report. We rigorously evaluated the framework across more than 40 test cases spanning stochastic differential equations, agent- based models, Boolean networks, and partial differential equations. Applying EFECT to published models in pandemic epidemiology, financial stochastic volatility, and physics-informed neural networks reveals that commonly used sample sizes are often underpowered: substantial parameter differences can go undetected unless thousands of replicates are simulated. By providing a domain-agnostic statistical reproducibility metric, reusable software libraries, and a standardized report format, EFECT offers a practical framework for embedding quantitative reproducibility and replicability checks into stochastic simulation workflows across data-intensive disciplines. Thus, EFECT delivers the capability to make scientific inferences and policy decisions on the basis of reliable, reproducible stochastic simulations."
 
-- id: 'Schwaiger2026_hctz_preprint'
+- id: 'Schwaiger2026_hctz'
   tags:
     - 'Digital Twins'
     - 'Pharmacometrics'
   year: 2026
   date: 2026-07-06
-  pdf: 'preprint/Schwaiger2026_hctz_preprint.pdf'
+  pdf: 'preprint/Schwaiger2026_hctz.pdf'
   authors: 'A. Schwaiger and M. König'
   people:
     - amanda_schwaiger
@@ -98,12 +98,12 @@
   repository: https://github.com/matthiaskoenig/hctz-model
   abstract: "Background: Hydrochlorothiazide is a widely prescribed thiazide diuretic used for the treatment of hypertension. Cardiac, hepatic, and renal impairments are common comorbidities in hypertensive patients and may contribute to substantial interindividual variability in pharmacokinetic (PK) and pharmacodynamic (PD) responses. This variability complicates dose optimization, particularly in clinically heterogeneous patient populations. Methods: We developed a whole-body physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of hydrochlorothiazide integrating oral absorption, systemic distribution, renal elimination, renal sodium, chloride, and fluid handling, and blood-pressure regulation. The model was calibrated and evaluated using systematically curated PK and PD data from 25 clinical studies in healthy individuals and patients with hypertension, cardiac impairment, hepatic impairment, or renal impairment. Results: Model predictions were consistent with observed dose-proportional PK and PD and captured variability in hydrochlorothiazide exposure and response across simulated comorbid conditions. Renal impairment was identified as the main driver of altered hydrochlorothiazide exposure and reduced urinary excretion. By contrast, hepatic and cardiac impairment affected PK primarily through secondary effects on renal function, rather than through direct effects on drug metabolism or absorption. Conclusions: The developed PBPK/PD model provides a mechanistic framework for understanding hydrochlorothiazide pharmacology across heterogeneous clinical conditions. It supports model-informed assessment of variability in exposure and response and may contribute to individualized antihypertensive therapy in patients with comorbidities."
 
-- id: 'Li2026_TabularQual_preprint'
+- id: 'Li2026_tabularqual'
   tags:
     - 'Open & FAIR'
   year: 2026
   date: 2026-05-31
-  pdf: 'preprint/Li2026_TabularQual_preprint.pdf'
+  pdf: 'preprint/Li2026_tabularqual.pdf'
   authors: 'L. X. Li, C. Bleker, S. Soliman, L. Calzone, N. Hiroi, T. Helikar, M. König, L. Ladeira, P. T. Monteiro, V. Noel, S. Pastva, A. Salazar, D. Safranek, D. Thieffry, E. Tsirvouli, A. Niarakis, and J. Gennari'
   people:
     - matthias_koenig
@@ -125,13 +125,13 @@
   repository: https://github.com/sys-bio/TabularQual
   abstract: "Logical models are widely used to study regulatory and signaling systems, yet their reuse, annotation, and exchange across tools remain challenging. Although SBML Level 3 Qualitative Models (SBML-qual) provides a standard representation, its XML-based syntax is difficult to inspect and edit directly. Here we introduce TabularQual, a spreadsheet-based, community-driven representation for Boolean and multi-valued logical models, together with a bidirectional converter between spreadsheets and SBML-qual. The converter is accessible programmatically and via a web interface to support diverse user workflows. We further describe two integration strategies that enable existing modeling tools to operate with TabularQual, either through SBML-qual exchange or via direct support. Case studies using the Stress Knowledge Map and CaSQ demonstrate how this integration supports model construction, curation, and reuse. TabularQual provides a practical bridge between human-readable model representations and standardized executable formats, supporting reproducibility, interoperability, and community-driven model development."
 
-- id: 'Elias2026_dapagliflozin_physiome'
+- id: 'Elias2026_dapagliflozin.physiome'
   tags:
     - 'Pharmacometrics'
     - 'Open & FAIR'
   year: 2026
   date: 2026-05-13
-  pdf: 'publication/Elias2026_dapagliflozin_physiome.pdf'
+  pdf: 'publication/Elias2026_dapagliflozin.physiome.pdf'
   authors: 'M. Elias, M. Myshkina, N. Nemitz, and M. König'
   people:
     - michelle_elias
@@ -157,13 +157,13 @@
   repository: https://github.com/matthiaskoenig/dapagliflozin-model
   abstract: 'A computational model in the form of a whole-body physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of dapagliflozin was developed to systematically evaluate the influence of patient-specific factors on drug disposition. Based on curated data from 28 clinical studies, the model simulates the absorption, distribution, metabolism and excretion (ADME) of the drug as well as its pharmacodynamics. The model accounts for variability in renal and hepatic function, and effects of food intake. The model is implemented in the Systems Biology Markup Language (SBML) standard. Analysis were performed utilizing the libroadrunner simulation library. Here, we demonstrate the computational reproducibility of the key findings from the primary publication, thereby verifying the consistency of the model implementation with the published results.'
 
-- id: 'Jesionek2026_rapamycin_preprint'
+- id: 'Jesionek2026_rapamycin'
   tags:
     - 'Digital Twins'
     - 'Pharmacometrics'
   year: 2026
   date: 2026-05-06
-  pdf: 'preprint/Jesionek2026_rapamycin_preprint.pdf'
+  pdf: 'preprint/Jesionek2026_rapamycin.pdf'
   authors: 'M. Jesionek and M. König'
   people:
     - monika_jesionek
@@ -189,13 +189,13 @@
   repository: https://github.com/matthiaskoenig/rapamycin-model
   abstract: "Sirolimus is a potent mTOR inhibitor used primarily to prevent acute rejection in transplant recipients. Its clinical management is challenging because of its narrow therapeutic index, low and highly variable oral bioavailability, and pronounced inter-individual variability driven by CYP3A4/5-mediated metabolism and P-glycoprotein efflux. Extensive partitioning into erythrocytes further complicates its disposition and necessitates therapeutic drug monitoring. Here, we developed a mechanistic whole-body physiologically based pharmacokinetic (PBPK) digital twin of rapamycin that integrates complex absorption kinetics, nonlinear distribution, and first-pass metabolism. The SBML-encoded model was calibrated and evaluated against a comprehensive library of curated clinical pharmacokinetic data, comprising studies primarily in healthy volunteers and stable renal transplant recipients. The dataset covers diverse ethnic populations, cohorts with varying degrees of renal and hepatic impairment, and individuals with relevant genetic polymorphisms. The digital twin captured overall trends in rapamycin blood concentrations across a wide range of doses and dosing regimens. Simulations showed good agreement with observed data under hepatic and renal impairment, as well as under fasted and fed conditions. Furthermore, the model reproduced the magnitude of drug--drug interactions involving potent CYP3A4 inhibitors, CYP3A4 inducers, and concomitant immunosuppressive agents. This SBML-based digital twin provides a quantitative framework for characterizing sirolimus dose dependency and the multifactorial effects of intrinsic and extrinsic factors on systemic exposure. By providing the model in a standards-based, executable format together with simulation scripts and curated pharmacokinetic datasets, this work supports independent reproduction, transparent model evaluation, and systematic reuse in accordance with FAIR principles."
 
-- id: 'Myshkina2026_apixaban_preprint'
+- id: 'Myshkina2026_apixaban'
   tags:
     - 'Digital Twins'
     - 'Pharmacometrics'
   year: 2026
   date: 2026-05-05
-  pdf: 'preprint/Myshkina2026_apixaban_preprint.pdf'
+  pdf: 'preprint/Myshkina2026_apixaban.pdf'
   authors: 'M. Myshkina, M. Babaeva, L. C. Nguyen, S. Bedón, J. Metternich, M. Elias, and M. König'
   people:
     - mariia_myshkina
@@ -253,12 +253,12 @@
   repository: https://doi.org/10.5281/zenodo.17041227
   abstract: 'Automated analysis of hepatic vascular structures and lobules within whole-slide histological images is critical for ensuring accurate and timely morphometric evaluations and facilitating advancements in computational liver histology. Nonetheless, the intricate morphology of the tissue, variability in staining techniques, and the requirements for high-resolution imaging present substantial challenges to the precision of segmentation processes. We present a robust deep-learning pipeline using adaptive patch extraction and specialized U-Net architectures for segmenting vessels, bile ducts, and lobules in Glutamine Synthetase and Picro-Sirius-Red stained porcine liver sections. Our architecture incorporates a weight-boosted nnU-Net framework to effectively manage class imbalances and improve the detection of smaller vascular structures. Geometric data transformations enhanced the robustness and generalizability of the segmentation models. Evaluations conducted through five-fold cross-validation, as well as assessments utilizing independent test datasets, resulted in Dice similarity scores: 0.960 for lobules, 0.801 for central veins, 0.909 for hepatic arteries, 0.609 for portal veins, and 0.710 for bile ducts. The developed segmentation pipeline additionally supports comprehensive morphometric analyses of structural parameters, including number and size (diameter, area) of vascular structures, bile ducts, and lobules. For e.g., the diameter of hepatic arteries ranges between 30-90 µm. These findings underscore the practical relevance of adaptable segmentation frameworks in advancing computational histological analysis of liver tissue.'
 
-- id: 'Alvarez2026_Master_Thesis'
+- id: 'Alvarez2026_master.thesis'
   tags:
     - 'Open & FAIR'
   year: 2026
   date: 2026-04-23
-  pdf: 'thesis/Alvarez2026_Master_Thesis.pdf'
+  pdf: 'thesis/Alvarez2026_master.thesis.pdf'
   authors: 'Antonio Alvarez (supervisor: M. König)'
   people:
     - antonio_aguilar
@@ -280,12 +280,12 @@
   repository: https://github.com/matthiaskoenig/parameter-variability
   abstract: 'Bayesian methods offer a principled framework for parameter estimation and uncertainty quantification in physiologically-based pharmacokinetic (PBPK) modeling, yet the sensitivity of these approaches to key workflow hyperparameters remains insufficiently characterized. This thesis presents a reproducible methodology for evaluating Bayesian Markov Chain Monte Carlo (MCMC) parameter estimation across three pharmacokinetic models of increasing complexity: a simple chain model, a basic pharmacokinetic model, and a clinically validated PBPK model of indocyanine green (ICG). Synthetic pharmacokinetic datasets were generated from known parameter distributions and used to fit Bayesian MCMC samplers under systematically varied hyperparameters — number of timepoints, number of samples, coefficient of variation, and prior type. Posterior accuracy, point bias, computational cost, and sampling efficiency were evaluated across all conditions. Among the four hyperparameters investigated, prior specification emerged as the dominant determinant of posterior accuracy: well-specified priors yielded parameter estimates close to the true values across all models, while biased and incorrect priors introduced substantial and progressive deviations. The remaining hyperparameters had limited influence on estimation accuracy but the number of timepoints and samples directly increased computational cost. The entire workflow — built on SBML, libRoadRunner, PEtab, and pyPESTO — is fully open-source and FAIR-compliant, providing a transparent and reusable framework for validating Bayesian approaches in pharmacokinetic modeling.'
 
-- id: 'Sauro2026_fair_to_cure_preprint'
+- id: 'Sauro2026_fair.to.cure'
   tags:
     - 'Open & FAIR'
   year: 2026
   date: 2026-03-27
-  pdf: 'publication/Sauro2026_fair_to_cure_preprint.pdf'
+  pdf: 'publication/Sauro2026_fair.to.cure.pdf'
   authors: 'H. M. Sauro, E. Agmon, M. L. Blinov, J. H. Gennari, J. Hellerstein, A. Heydarabadipour, P. Hunter, B. E. Jardine, E. May, D. P. Nickerson, L. P. Smith, G. D. Bader, F. Bergmann, P. M. Boyle, A. Drager, J. R. Faeder, S. Feng, J. Freire, F. Frohlich, J. A. Glazier, T. E. Gorochowski, T. Helikar, S. Hoops, P. Imoukhuede, S. M. Keating, M. König, R. Laubenbacher, L. M. Loew, C. F. Lopez, W. W. Lytton, A. McCulloch, P. Mendes, C. J. Myers, J. G. Myers, L. Mulugeta, A. Niarakis, D. D. van Niekerk, B. G. Olivier, A. A. Patrie, E. M. Quardokus, N. Radde, J. M. Rohwer, S. Sahle, J. C. Schaff, T. Sego, J. Shin, J. L. Snoep, R. Vadigepalli, H. S. Wiley, D. Waltemath, and I. Moraru'
   people:
     - matthias_koenig
@@ -305,13 +305,13 @@
   repository:
   abstract: "Guidelines for managing scientific data have been established under the FAIR principles requiring that data be Findable, Accessible, Interoperable, and Reusable. In many scientific disciplines, especially computational biology, both data and models are key to progress. For this reason, and recognizing that such models are a very special type of 'data', we argue that computational models, especially mechanistic models prevalent in medicine, physiology and systems biology, deserve a complementary set of guidelines. We propose the CURE principles, emphasizing that models should be Credible, Understandable, Reproducible, and Extensible. We delve into each principle, discussing verification, validation, and uncertainty quantification for model credibility; the clarity of model descriptions and annotations for understandability; adherence to standards and open science practices for reproducibility; and the use of open standards and modular code for extensibility and reuse. We outline recommended and baseline requirements for each aspect of CURE, aiming to enhance the impact and trustworthiness of computational models, particularly in biomedical applications where credibility is paramount. Our perspective underscores the need for a more disciplined approach to modeling, aligning with emerging trends such as Digital Twins and emphasizing the importance of data and modeling standards for interoperability and reuse. Finally, we emphasize that given the non-trivial effort required to implement the guidelines, the community moves to automate as many of the guidelines as possible."
 
-- id: 'Alejandro2026_empagliflozin_preprint'
+- id: 'Alejandro2026_empagliflozin'
   tags:
     - 'Digital Twins'
     - 'Pharmacometrics'
   year: 2026
   date: 2026-03-20
-  pdf: 'preprint/Alejandro2026_empagliflozin_preprint.pdf'
+  pdf: 'preprint/Alejandro2026_empagliflozin.pdf'
   authors: 'J. Alejandro, M. Elias, M. Babaeva, and M. König'
   people:
     - jennesse_alejandro
@@ -338,12 +338,12 @@
   repository: https://github.com/matthiaskoenig/empagliflozin-model
   abstract: "Background/Objectives: Empagliflozin is an SGLT2 inhibitor prescribed for the management of type 2 diabetes mellitus, lowering blood glucose by increasing urinary glucose excretion (UGE) through inhibition of renal glucose reabsorption. PK/PD responses vary substantially across patient populations, complicating dose selection under altered organ function. Here, we developed a whole-body PBPK/PD digital twin integrating absorption, distribution, metabolism, and excretion with explicit modeling of renal glucose handling via the renal threshold for glucose. Methods: The model represents empagliflozin and its glucuronide metabolite, is implemented in SBML, and was calibrated and evaluated against curated PK/PD data from 27 clinical studies spanning healthy individuals, patients with type 2 diabetes, and cohorts with renal or hepatic impairment. Results: The model accurately captured observed clinical PK/PD data across all 27 studies, spanning a wide range of doses, dosing regimens, and patient populations. Good agreement between simulations and observations was obtained under normal and impaired renal and hepatic function, as well as under fasted and fed conditions, demonstrating the model's ability to reproduce empagliflozin disposition and pharmacodynamic response across clinically relevant scenarios. Conclusions: This SBML-based PBPK/PD digital twin provides quantitative insight into empagliflozin dose dependency and the impact of renal impairment, hepatic impairment, and food intake on PK/PD across clinically relevant populations. All model files, simulation scripts, and curated datasets are openly available in accordance with FAIR principles."
 
-- id: 'Corradi2026_llemy_preprint'
+- id: 'Corradi2026_llemy'
   tags:
     - 'AI'
   year: 2026
   date: 2026-03-12
-  pdf: 'preprint/Corradi2026_llemy_preprint.pdf'
+  pdf: 'preprint/Corradi2026_llemy.pdf'
   authors: 'M. Corradi, I. Djidrovski, L. Ladeira, B. Staumont, A. Verhoeven, J. S. Serrano, A. Rougny, A. Vaez, A. Hemedan, A. Mazein, A. Niarakis, A. de Carvalho e Silva, C. Auffray, E. Wilighagen, E. Kuchovska, F. Schreiber, I. Balaur17, L. Calzone, L. Matthews, L. Veschini, M. E. Gillespie, M. Kutmon, M. König, M. van Welzen, N. Hiroi, O. Lopata, P. Klemmer, R. Overall, T. Hofer, V. Satagopam, R. Schneider, M. Teunis, L. Geris, and M. Ostaszewski'
   people:
     - matthias_koenig
@@ -423,13 +423,13 @@
   repository: https://github.com/matthiaskoenig/losartan-model
   abstract: 'Background/Objectives: Losartan, an angiotensin II receptor blocker (ARB) used to treat hypertension and heart failure, shows significant variability in pharmacokinetics (PK) and pharmacodynamics (PD) among individuals. Methods: In this study, we developed a physiologically based pharmacokinetic/ pharmacodynamic (PBPK/PD) model of losartan and its active metabolite, E3174, using curated data from 25 clinical trials. The model mechanistically describes the processes of absorption, hepatic metabolism, renal and fecal excretion, and pharmacodynamic blood pressure regulation. Simulation studies examined the effects of dose, hepatic and renal impairment, and genetic polymorphisms in cytochrome p450 2C9 (CYP2C9) and P-glycoprotein 1, also known as multidrug resistance protein 1 (MDR1) or ATP-binding cassette sub-family B member 1 (ABCB1), on the model. Results: The model successfully reproduced key PK/PD observations, including dose-dependent receptor blockade, attenuated responses with hepatic impairment, modest enhancement with renal impairment, and substantial variability in E3174 formation dependent on CYP2C9; the effects of ABCB1 were minimal. Specifically, dose dependency simulations confirmed the saturable nature of CYP2C9 metabolism, predicting a decreasing E3174-to-losartan ratio and a stronger, sustained suppression of blood pressure and aldosterone at higher doses. Hepatic impairment was predicted to lead to elevated losartan plasma concentrations (increased AUC) and attenuated metabolite formation, confirming the clinical need for dose reduction. Renal impairment simulations predicted stable losartan AUC but showed an overestimation of E3174 accumulation compared to observed data, where E3174 exposure remained stable. Genetic variability (CYP2C9) was the major determinant of response, with simulations confirming that reduced-function alleles lead to a 1.6- to 3-fold increase in losartan AUC and diminished blood pressure reduction. ABCB1 variability resulted in only minor modulation of systemic exposure and blood pressure effects. Conclusions: This mechanistic digital twin framework provides a quantitative basis for understanding variability in losartan therapy and supports its application in individualized dosing strategies.'
 
-- id: 'Myshkina2026_losartan_physiome'
+- id: 'Myshkina2026_losartan.physiome'
   tags:
     - 'Digital Twins'
     - 'Open & FAIR'
   year: 2026
   date: 2026-02-02
-  pdf: 'publication/Myshkina2026_losartan_physiome.pdf'
+  pdf: 'publication/Myshkina2026_losartan.physiome.pdf'
   authors: 'M. Myshkina, M. Elias, E. Tensil, and M. König'
   people:
     - mariia_myshkina
@@ -455,13 +455,13 @@
   repository: https://github.com/matthiaskoenig/losartan-model
   abstract: 'A digital twin in the form of a whole-body physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of losartan was developed to systematically evaluate the influence of patient-specific factors on drug disposition and effects. Based on curated data from 25 clinical studies, the model simulates the absorption, distribution, metabolism and excretion (ADME) as well as pharmacological effects of the drug. The model accounts for variability caused by the differences in renal and hepatic function, and by genetic polymorphisms of CYP2C9 and ABCB1. The model is implemented in the Systems Biology Markup Language (SBML) standard. Simulations were performed utilising the libroadrunner library. Here, we demonstrate the computational reproducibility of the key findings from the primary publication, thereby verifying the consistency and reproducibility of the model implementation with the published results.'
 
-- id: 'Tereshchuk2026_canagliflozin_preprint'
+- id: 'Tereshchuk2026_canagliflozin'
   tags:
     - 'Digital Twins'
     - 'Pharmacometrics'
   year: 2026
   date: 2026-01-27
-  pdf: 'preprint/Tereshchuk2026_canagliflozin_preprint.pdf'
+  pdf: 'preprint/Tereshchuk2026_canagliflozin.pdf'
   authors: 'V. Tereshchuk, M. Elias, and M. König'
   people:
     - vera_tereshchuk
@@ -520,13 +520,13 @@
   Results: The model accurately reproduced observed pharmacokinetics and quantified these factors’ impact on drug exposure. Increased glimepiride exposure was predicted in individuals with hepatic dysfunction or specific CYP2C9 variants, highlighting substantial genetic and physiological effects. 
   Discussion: This digital twin provides mechanistic insights into pharmacokinetic variability and serves as an in silico platform for exploring individualized dosing and patient stratification strategies, laying the foundation for clinical decision support tools to improve T2DM management.'
 
-- id: 'Elias2025_glimepiride_physiome'
+- id: 'Elias2025_glimepiride.physiome'
   tags:
     - 'Digital Twins'
     - 'Open & FAIR'
   year: 2025
   date: 2025-10-20
-  pdf: 'publication/Elias2025_glimepiride_physiome.pdf'
+  pdf: 'publication/Elias2025_glimepiride.physiome.pdf'
   authors: 'M. Elias and M. König'
   people:
     - michelle_elias
@@ -550,13 +550,13 @@
   abstract: 'A digital twin in the form of a whole-body physiologically based pharmacokinetic (PBPK) model of glimepiride was developed to systematically evaluate the inﬂuence of patient-speciﬁc factors on drug disposition. Based on curated data from 20 clinical studies, the model simulates the absorption, distribution, metabolism and excretion (ADME) of the drug while accounting for variability in renal and hepatic function, CYP2C9 genetic variants and bodyweight. The model is implemented in the Systems Biology Markup Language (SBML) standard and simulations are per- formed using scripts that utilise the libRoadRunner library to run simulations and generate results. Here, we demonstrate the computational reproducibility of the key ﬁndings from the primary publication, thereby verifying the consistency and reproducibility of the model implementation with the published results.'
 
 
-- id: 'Myshkina2025_preprint'
+- id: 'Myshkina2025_digital.twins'
   tags:
     - 'Digital Twins'
     - 'AI'
   year: 2025
   date:
-  pdf: 'preprint/Myshkina2025_preprint.pdf'
+  pdf: 'preprint/Myshkina2025_digital.twins.pdf'
   authors: 'M. Myshkina, E. Casabianca, A. Schnurpel, T. Ricken, H. Tautenhahn, and M. König'
   people:
     - mariia_myshkina
@@ -581,12 +581,12 @@
   repository: https://doi.org/10.5281/zenodo.15013110
   abstract: 'Background: Artificial Intelligence (AI) and Digital Twins (DT) are transforming clinical decision-making, particularly in hepatology and hepatobiliary surgery. While these technologies promise more precise diagnostics and individualised treatment planning, their successful integration depends on clinician acceptance, trust, and regulatory clarity. Methods: We conducted an online survey among hepatologists, hepatobiliary surgeons, and related specialists to assess familiarity, perceived value, adoption of clinical decision support systems (CDSS), concerns regarding automation bias and liability, and attitudes toward patient-centred integration. Data from 18 respondents were analysed using descriptive statistics and visualised in Python. Results: Most clinicians rated AI (80%) and DT (79%) as valuable to very valuable. Adoption of CDSS was high, with 93% reporting current or intended use. However, significant concerns emerged: 71% feared automation bias, and 92% expressed uncertainty about legal protection. Additionally, 77% supported incorporating patient preferences into AI- and DT-assisted decisions. Conclusions: Clinicians demonstrate a strong interest in adopting AI and DT, but remain cautious due to concerns over trust, liability, and regulatory gaps. Clear guidelines, clinical validation, and patient-centred approaches are essential for safe and effective integration into hepatology practice.'
 
-- id: 'Casabianca2025_Master_Thesis'
+- id: 'Casabianca2025_master.thesis'
   tags:
     - 'Pharmacometrics'
   year: 2025
   date: 2025-07-14
-  pdf: 'thesis/Casabianca2025_Master_Thesis.pdf'
+  pdf: 'thesis/Casabianca2025_master.thesis.pdf'
   authors: 'Elisabetta Casabianca (supervisor: M. König)'
   people:
     - elisabetta_casabianca
@@ -610,12 +610,12 @@
   repository: https://github.com/matthiaskoenig/rivaroxaban-model
   abstract: 'Rivaroxaban, a direct oral anticoagulant (DOAC), is a widely used drug for the prevention and treatment of thromboembolic disorders. While its fixed dosing regimen and predictable anticoagulation profile improve clinical usability, significant inter-individual variability in pharmacokinetics (PK) and pharmacodynamics (PD) exists, particularly in patients with altered physiology or comorbidities. This study established an open database of rivaroxaban PK and PD data from 14 clinical studies. The data were used to develop and validate a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of rivaroxaban that captures its absorption, distribution, metabolism, excretion, and coagulation effects. The model incorporates the effects of dose, food intake, hepatic and renal function, and allows simulation of activated Factor X (Factor Xa) inhibition, prothrombin time (PT), and activated partial thromboplastin time (aPTT). Simulations accurately reproduced observed plasma concentration-time and coagulation profiles across a range of doses, fed/fasting conditions, as well as with different degrees of cirrhosis and renal impairment. This mechanistic PBPK/PD model provides a framework for exploring variability in rivaroxaban response across diverse clinical scenarios and supports its use in personalized dosing strategies, clinical trial design, and regulatory evaluation.'
 
-- id: 'Casabianca2025_preprint'
+- id: 'Casabianca2025_rivaroxaban'
   tags:
     - 'Pharmacometrics'
   year: 2025
   date: 2025-07-25
-  pdf: 'preprint/Casabianca2025_preprint.pdf'
+  pdf: 'preprint/Casabianca2025_rivaroxaban.pdf'
   authors: 'E. Casabianca, M. Myshkina, and M. König'
   people:
     - elisabetta_casabianca
@@ -640,12 +640,12 @@
   repository: https://github.com/matthiaskoenig/rivaroxaban-model
   abstract: 'Rivaroxaban, a direct oral anticoagulant (DOAC), is a widely used drug for the prevention and treatment of thromboembolic disorders. While its fixed dosing regimen and predictable anticoagulation profile improve clinical usability, significant inter-individual variability in pharmacokinetics (PK) and pharmacodynamics (PD) exists, particularly in patients with altered physiology or comorbidities. This study established an open database of rivaroxaban PK and PD data from 14 clinical studies. The data were used to develop and validate a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of rivaroxaban that captures its absorption, distribution, metabolism, excretion, and coagulation effects. The model incorporates the effects of dose, food intake, hepatic and renal function, and allows simulation of activated Factor X (Factor Xa) inhibition, prothrombin time (PT), and activated partial thromboplastin time (aPTT). Simulations accurately reproduced observed plasma concentration-time and coagulation profiles across a range of doses, fed/fasting conditions, as well as with different degrees of cirrhosis and renal impairment. This mechanistic PBPK/PD model provides a framework for exploring variability in rivaroxaban response across diverse clinical scenarios and supports its use in personalized dosing strategies, clinical trial design, and regulatory evaluation.'
 
-- id: 'Tensil2025_Bachelor_Thesis'
+- id: 'Tensil2025_bachelor.thesis'
   tags:
     - 'Pharmacometrics'
   year: 2025
   date: 2025-07-14
-  pdf: 'thesis/Tensil2025_Bachelor_Thesis.pdf'
+  pdf: 'thesis/Tensil2025_bachelor.thesis.pdf'
   authors: 'Ennie Tensil (supervisor: M. König)'
   people:
     - ennie_tensil
@@ -670,12 +670,12 @@
   repository: https://github.com/matthiaskoenig/losartan-model
   abstract: 'Losartan is an angiotensin II receptor antagonist commonly used in the treatment of hyperten- sion and heart failure. Its pharmacokinetics and pharmacodynamics are influenced by a range of physiological and genetic factors, which may affect therapeutic efficacy. This thesis presents a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of losartan and its active metabolite E3174 to explore these influences systematically. The modular SBML-based model includes submodels for absorption, hepatic metabolism, renal excretion, and pharmacodynamic effects via the renin-angiotensin-aldosterone system (RAAS). Simulations were conducted to investigate the impact of dose, hepatic and renal impairment, as well as CYP2C9 and ABCB1 polymorphisms. The model successfully reproduced observed pharmacological trends, including a dose-dependent increase in pharmacodynamic response, likely reflecting enhanced receptor blockade at higher systemic exposures. Hepatic dysfunction blunted the pharmacodynamic response to losartan, whereas renal impairment reduced metabolite clearance and lead to modest enhancement in pharmacodynamic effect. Genetic variability in CYP2C9 significantly altered E3174 formation and downstream RAAS inhibition, whereas ABCB1 activity had only minor effects on systemic exposure. The model provides mechanistic insight into inter-individual variability in losartan therapy and supports its potential use in individualized dosing strategies.'
 
-- id: 'Nemitz2025_Bachelor_Thesis'
+- id: 'Nemitz2025_bachelor.thesis'
   tags:
     - 'Pharmacometrics'
   year: 2025
   date: 2025-06-15
-  pdf: 'thesis/Nemitz2025_Bachelor_Thesis.pdf'
+  pdf: 'thesis/Nemitz2025_bachelor.thesis.pdf'
   authors: 'Nike Nemitz (supervisor: M. König)'
   people:
     - nike_nemitz
@@ -705,12 +705,12 @@
   In addition, the model enabled direct comparison of urinary glucose excretion (UGE) under renal and hepatic impairment. Results showed that renal dysfunction substantially reduces UGE, while hepatic impairment has only a minor effect. Furthermore, the simulations revealed that food intake, although not altering total systemic exposure (AUC), significantly affects peak concentrations (Cmax), which in turn influences pharmacodynamic outcomes such as UGE. This suggests a clinically relevant food effect that is often underestimated.<br />
   Despite some limitations, the model offers mechanistic insight into the sources of PK/PD variability and supports individualized dosing strategies, contributing to predictive tools for personalized diabetes management and pharmacotherapy optimization.'
 
-- id: 'Elias2025_Bachelor_Thesis'
+- id: 'Elias2025_bachelor.thesis'
   tags:
     - 'Pharmacometrics'
   year: 2025
   date: 2025-04-03
-  pdf: 'thesis/Elias2025_Bachelor_Thesis.pdf'
+  pdf: 'thesis/Elias2025_bachelor.thesis.pdf'
   authors: 'Michelle Elias (supervisor: M. König)'
   people:
     - michelle_elias
@@ -734,11 +734,11 @@
   repository: https://github.com/matthiaskoenig/glimepiride-model
   abstract: 'Glimepiride is a second-generation sulfonylurea used in the management of type 2 diabetes. Its pharmacokinetics exhibit significant inter-individual variability influenced by patient-specific factors, potentially affecting therapeutic outcomes. This study developed a physiologically based pharmacokinetic (PBPK) model to systematically evaluate how these factors affect glimepiride disposition. Using curated data from 19 clinical studies, a modular SBML-based model was developed with submodels for intestinal absorption, hepatic metabolism, and renal excretion. Parameter optimization achieved good alignment with observed pharmacokinetic profiles. The validated model reproduced dose-proportional kinetics within the therapeutic range and pre- dicted differential impacts of physiological variability. Renal impairment primarily affected metabolite clearance, while hepatic dysfunction led to increased glimepiride exposure via reduced cytochrome P450 2C9 (CYP2C9)-mediated metabolism. Bodyweight and CYP2C9 variants also influenced drug disposition. Despite CYP2C9 genotypes significantly affected individual pharmacokinetics, population-level differences across biogeographical groups were modest. While some limitations remain, particularly regarding data availability in severe organ dysfunction, the model offers mechanistic insights into pharmacokinetic variability. It provides a basis for individualized dosing strategies and supports the ongoing development of clinically applicable decision support tools for type 2 diabetes therapy.'
 
-- id: 'Baum2025_Inflammation_autophagy_peripheral'
+- id: 'Baum2025_diabetic.neuropathy'
   tags:
   year: 2025
   date: 2025-04-17
-  pdf: 'publication/Baum2025_Inflammation_autophagy_peripheral.pdf'
+  pdf: 'publication/Baum2025_diabetic.neuropathy.pdf'
   authors: 'P. Baum, T. Ebert, N. Klöting, S. Krupka, M. König, S. Paeschke, P. Stock, M. Bulc, M. Blüher, K. Palus, M. Nowicki, and J. Kosacka'
   people:
     - matthias_koenig
@@ -763,12 +763,12 @@
   repository:
   abstract: 'Metabolic syndrome (MetS) and type 2 diabetes mellitus (T2D) are associated with inflammation and the accumulation of macrophages in peripheral nerves, which increases the risk of developing peripheral neuropathy (PN). We have previously investigated that macrophage infiltration in the peripheral nerves of animals with T2D (leptin-deficient ob/ob mice, leptin receptor-deficient db/db) correlated with PN, whereas this process in animals with MetS (Wistar Ottawa Karlsburg W (RT1u) WOKW rat) did not lead to neuropathic changes. Additional data presented in this study suggest an association between increased mRNA expression of the anti-inflammatory marker IL-10 and autophagy in the prevention of neuropathy.'
 
-- id: 'Balaur2025_preprint'
+- id: 'Balaur2025_fairification'
   tags:
     - 'Open & FAIR'
   year: 2025
   date: 2025-03-21
-  pdf: 'preprint/Balaur2025_preprint.pdf'
+  pdf: 'preprint/Balaur2025_fairification.pdf'
   authors: 'I. Balaur, D. P. Nickerson, D. Welter, J. A. Wodke, F. Ancien, T. Gebhardt, V. Grouès, H. Hermjakob, M. König, N. Radde, A. Rougny, R. Schneider, R. S. Malik-Sheriff, K. B. Shiferaw, M. Stefan, V. Satagopam, and D. Waltemath'
   people:
     - matthias_koenig
@@ -787,12 +787,12 @@
   repository: https://github.com/matthiaskoenig/fair-ca-visualization
   abstract: 'Computational models are essential for studying complex systems which, particularly in clinical settings, need to be quality-approved and transparent. To enhance the communication of a model’s features and capabilities, we propose an adaptation of the Findability, Accessibility, Interoperability and Reusability (FAIR) indicators published by the Research Data Alliance to assess models encoded in domain-specific standards, such as those established by COMBINE. The assessments guide FAIRification and add value to models.'
 
-- id: 'Mishra2025_Physiologically_Based_Pharmacokinetic'
+- id: 'Mishra2025_internship_report'
   tags:
     - 'Pharmacometrics'
   year: 2025
   date: 2025-03-03
-  pdf: 'report/Mishra2025_Physiologically_Based_Pharmacokinetic.pdf'
+  pdf: 'thesis/Mishra2025_internship_report.pdf'
   authors: 'Internship Report Abhinav Mishra (supervisor: M. König)'
   people:
     - abhinav_mishra
@@ -800,7 +800,7 @@
   title: 'A Physiologically-Based Pharmacokinetic Model of Tirzepatide'
   journal: 'Internship Report, Mar 2025'
   journal_short:
-  status: report
+  status: thesis
   impact: 0
   position: last
   doi:
@@ -840,12 +840,12 @@
   repository:
   abstract: "Liver sinusoidal endothelial inflammation/dysfunction and fibrosis are a crucial part of Metabolic Dysfunction Associated Steatohepatitis (MASH) development. TRC105 and M1043 are anti-endoglin (ENG) monoclonal antibodies that bind ENG. In this study, we hypothesized that treatment with anti-ENG antibodies would prevent the progression of LSECs inflammation and fibrosis in vivo and in vitro. MASH was induced in male C57BL/6 mice fed a choline-deficient L-amino acid-defined high-fat diet (CDAA-HFD) for 4 or 8 weeks. In the rescue study, mice were divided into three groups: a control group (chow diet), a MASH group (CDAA-HFD + IgG), and a rescue group (CDAA-HFD + M1043). Later, two groups received rat IgG1 (10 mg/kg) and M1043 (10 mg/kg). In vitro experiments, inflammation was induced in human LSECs by ox-LDL (50 μg/mL) and treated with TRC105 (300 μg/mL). Liver sinusoidal endothelial inflammation/dysfunction in MASH animals was characterized by endothelial overexpression of ENG, VCAM-1, and ICAM-1 and reduced VE-cadherin and p-eNOS/eNOS expression. M1043 treatment prevented the overexpression of ENG, VCAM-1, and ICAM-1, the progression of liver fibrosis, and the increase of liver-to-body weight ratio. In vitro experiments with TRC105 confirmed the prevention of LSECs inflammation development by reduced ENG and VCAM-1 expression, as well as decreased THP-1 monocytic cell adhesion in ox-LDL activated LSECs. In conclusion, we demonstrate that anti-ENG antibody treatment can prevent LSECs inflammation and fibrosis progression in a MASH animal model and LSECs inflammation in vitro. Thus, we propose directly targeted ENG may represent a promising pharmacological approach for addressing LSECs inflammation and liver fibrosis."
 
-- id: 'Koenig2025_digital_twin'
+- id: 'Koenig2025_combine2024_abstract_digital.twin'
   tags:
     - 'Digital Twins'
     - 'Open & FAIR'
   year: 2025
-  pdf: 'abstract/Koenig2025_digital_twin.pdf'
+  pdf: 'abstract/Koenig2025_combine2024_abstract_digital.twin.pdf'
   authors: 'M. König'
   people:
     - matthias_koenig
@@ -867,11 +867,11 @@
   repository:
   abstract: 'Essential prerequisites for the practical application and translation of computational models include: i) reproducibility of results; ii) model reusability and extensibility; iii) data availability; and iv) strategies for model stratification and individualization. Here, we present a modeling workflow built around these foundational prerequisites, with a focus on liver function tests. Despite the paramount significance of liver function assessment in hepatology, reliable quantification remains a clinical challenge. Dynamic liver function tests offer a promising method for non-invasive in vivo assessment of liver function and metabolic phenotyping. By leveraging whole-body physiologically-based pharmacokinetic (PBPK) models, we are simulating these tests and positioning PBPK models as digital twins for metabolic phenotyping and liver function assessment. To develop and validate our models, we established the open pharmacokinetics database, PK-DB, containing curated data from 600+ clinical studies (10.1093/nar/gkaa990, 10.3389/fphar.2021.752826). Our models are individualizable and stratifiable, enabling simulation of lifestyle factors and co-administration effects on drug metabolism. Our models have been instrumental in clinical scenarios: from predicting individual outcomes post-hepatectomy (10.3389/fphys.2021.730418, 10.3389/fphys.2021.757293) to discerning the impact of CYP2D6 gene variants on liver function tests (10.3389/fphar.2022.1029073). These models are constructed hierarchically, describing metabolic and other biological processes in organs like the liver and kidneys, seamlessly integrated with whole-body physiology. Notably, all models and data are readily available and reproducible for reuse, encoded in the Systems Biology Markup Language (SBML) (10.15252/msb.20199110). We will provide an overview of these PBPK models and demonstrate how SBML and FAIR principles can facilitate model development, coupling, and reuse.'
 
-- id: 'Koenig2025_tools'
+- id: 'Koenig2025_combine2024_abstract_tools'
   tags:
     - 'Open & FAIR'
   year: 2025
-  pdf: 'abstract/Koenig2025_tools.pdf'
+  pdf: 'abstract/Koenig2025_combine2024_abstract_tools.pdf'
   authors: 'M. König'
   people:
     - matthias_koenig
@@ -891,11 +891,11 @@
   repository:
   abstract: 'The Systems Biology Markup Language (SBML) (Keating et al., 2020) is recognized as the standard framework for representing and exchanging complex mathematical models in biological systems research. SBML facilitates the depiction of a diverse array of biological phenomena, encom- passing metabolic networks, signaling pathways, and regulatory networks. It is versatile enough to handle models ranging from simple individual processes to intricate multi-scale representations. One of the primary challenges faced by newcomers in computational biology is the encoding and development of ordinary differential equation (ODE) models within the SBML framework. Addressing this hurdle, we introduce two innovative Python tools: sbmlutils (https://github. com/matthiaskoenig/sbmlutils), sbml4humans (https://sbml4humans.de), and the Cytoscape application cy3sbml (https://github.com/matthiaskoenig/cy3sbml). These tools collectively streamline the process of SBML model creation, enhancing both the programmatic aspect and the user experience. Specifically, sbmlutils facilitates the programmatic construction of SBML models, while sbml4humans generates user-friendly reports for model interpretation. Furthermore, cy3sbml integrates with Cytoscape to offer advanced visualization capabilities, thereby augmenting the comprehension and analysis of SBML-encoded models. These advancements significantly contribute to the ease of SBML model development and interpretation, fostering greater accessibility and understanding for those entering the field of computational systems biology.'
 
-- id: 'Kulanoglu2025_Kolanoglu'
+- id: 'Kulanoglu2025_bachelor.thesis'
   tags:
     - 'Pharmacometrics'
   year: 2025
-  pdf: 'thesis/Kulanoglu2025_Kolanoglu.pdf'
+  pdf: 'thesis/Kulanoglu2025_bachelor.thesis.pdf'
   authors: 'Bachelor Thesis Yusuf Ali Kulanoglu (supervisor: M. König)'
   people:
     - yusuf_kulanoglu
@@ -919,12 +919,12 @@
 
    The PBPK/PD model enables the prediction of aliskiren concentration-time profiles following oral and intravenous administration and provides detailed insights into the factors that affect its pharmacological efficacy. By exploring these influences, the study offers a foundation for developing optimized therapeutic strategies tailored to individual patients.'
 
-- id: 'Raman2024_FROG'
+- id: 'Raman2024_frog'
   tags:
     - 'Open & FAIR'
   year: 2024
   date: 2024-09-24
-  pdf: 'preprint/Raman2024_FROG.pdf'
+  pdf: 'preprint/Raman2024_frog.pdf'
   authors: 'K. Raman, M. Kratochvil, B. G. Olivier, M. König, P. Sengupta, D. K. K. Baskaran, T. V. N. Nguyen, D. Lobo, S. E. Wilken, K. K. Tiwari, A. K. Raghu, I. Palanikumar, L. Raajaraam, M. Ibrahim, S. Balakrishnan, S. Umale, F. Bergmann, T. Malpani, V. P. Satagopam, R. Schneider, M. E. Beber, S. Keating, M. Anton, A. Renz, M. Lakshmanan, D. Lee, L. Koduru, R. Mostolizadeh, O. Dias, E. Cunha, A. Oliveira, Y. Q. Lee, K. Zengler, R. Santibanez-Palominos, M. Kumar, M. Barberis, B. L. Puniya, T. Helikar, H. V. Dinh, P. F. Suthers, C. D. Maranas, I. Casini, S. B. Loghmani, N. Veith, N. Leonidou, F. Li, Y. Chen, J. Nielsen, G. Lee, S. M. Lee, G. B. Kim, P. T. Monteiro, M. C. Teixeira, H. U. Kim, S. Y. Lee, U. W. Liebal, L. M. Blank, C. Lieven, C. Tarzi, C. Angione, M. E. Blaise, C. P. Aytar, M. Kulyashov, L. Akberdin, D. Kim, S. H. Yoon, Z. Xu, J. Gautam, W. T. Scott Jr., P. J. Schaap, J. J. Koehorst, C. Zuniga, G. Canto-Encalada, S. Benito-Vaquerizo, I. P. Olm, M. Suarez-Diez, Q. Yuan, H. Ma, M. M. Islam, J. A. Papin, F. Zorrilla, K. R. Patil, A. Basile, J. Nogales, G. San Leon, F. Castillo-Alfonso, R. Olivares-Hernandez, G. Vigueras-Ramirez, H. Hermjakob, A. Drager, and R. S. Malik-Sheriff'
   people:
     - matthias_koenig
@@ -944,12 +944,12 @@
   repository:
   abstract: "Genome scale metabolic models (GEMs) and other constraint-based models (CBMs) play a pivotal role in understanding biological phenotypes and advancing research in areas like metabolic engineering, human disease modelling, drug discovery, and personalized medicine. Despite their growing application, a significant challenge remains in ensuring the reproducibility of GEMs, primarily due to inconsistent reporting and inadequate model documentation of model results. Addressing this gap, we introduce FROG analysis, a community driven initiative aimed at standardizing reproducibility assessments of CBMs and GEMs. The FROG framework encompasses four key analyses including Flux variability, Reaction deletion, Objective function, and Gene deletion to produce standardized, numerically reproducible FROG reports. These reports serve as reference datasets, enabling model evaluators, curators, and independent researchers to verify the reproducibility of GEMs systematically. BioModels, a leading repository of systems biology models, has integrated FROG analysis into its curation workflow, enhancing the reproducibility and reusability of submitted GEMs. In our study evaluating 65 GEM submissions from the community, approximately 40% reproduced without intervention, 28% requiring minor adjustments, and 32% needing input from authors. The standardization introduced by FROG analysis facilitated the detection and resolution of issues, ultimately leading to the successful reproduction of all models. By establishing a standardized and comprehensive approach to evaluating GEM reproducibility, FROG analysis significantly contributes to making CBMs and GEMs more transparent, reusable, and reliable for the broader scientific community."
 
-- id: 'Kuettner2024_Quantitative_Image_Analysis'
+- id: 'Kuettner2024_master.thesis'
   tags:
     - 'Digital Pathology'
     - 'AI'
   year: 2024
-  pdf: 'thesis/Kuettner2024_Quantitative_Image_Analysis.pdf'
+  pdf: 'thesis/Kuettner2024_master.thesis.pdf'
   authors: 'Master Thesis Jonas Küttner (supervisor: M. König)'
   people:
     - jonas_kuettner
@@ -983,11 +983,11 @@ Key findings were that there was significant variability in lobular geometry wit
 In summary, I have successfully developed and implemented an image analysis workflow for whole slide images (WSIs) that allows detailed examination of liver lobule geometry and macrosteatosis droplets. Furthermore, the resulting datasets were integrated to facilitate a comprehensive analysis of the zonal distribution of CYP protein expression and macrosteatosis within the lobules.'
 
 
-- id: 'Eissazadeh2024_abstract'
+- id: 'Eissazadeh2024_eas2024_abstract_endoglin'
   tags:
   year: 2024
   date: 2024-08-20
-  pdf: 'abstract/Eissazadeh2024_abstract.pdf'
+  pdf: 'abstract/Eissazadeh2024_eas2024_abstract_endoglin.pdf'
   authors: 'S. Eissazadeh, J. U. Rathouska, I. Nemeckova, M. König, and P. Nachtigal'
   people:
     - matthias_koenig
@@ -1038,12 +1038,12 @@ In summary, I have successfully developed and implemented an image analysis work
   repository:
   abstract: "The “COmputational Modeling in BIology NEtwork” (COMBINE) initiative aims to harmonise the development of diverse community standards for computational models in biology. It coordinates standard development to support the associated projects towards establishing a suite of compatible, interoperable and comprehensive standards that address the full spectrum of modeling in systems and synthetic biology."
 
-- id: 'Albadry2024_species_comparison'
+- id: 'Albadry2024_species.comparison'
   tags:
     - 'Digital Pathology'
     - 'AI'
   year: 2024
-  pdf: 'publication/Albadry2024_species_comparison.pdf'
+  pdf: 'publication/Albadry2024_species.comparison.pdf'
   authors: 'M. Albadry, J. Kuettner, J. Grzegorzewski, O. Dirsch, E. Kindler, R. Klopfleisch, V. Liska, V. Moulisova, S. Nickel, R. Palek, J. Rosendorf, S. Saalfeld, U. Settmacher, H. Tautenhahn, M. KönigΔ, and U. DahmenΔ (Δ equal contribution)'
   people:
     - jan_grzegorzewski
@@ -1066,11 +1066,11 @@ In summary, I have successfully developed and implemented an image analysis work
   repository: https://github.com/matthiaskoenig/zonation-image-analysis
   abstract: "There is a lack of systematic research exploring cross-species variation in liver lobular geometry and zonation patterns of critical drug-metabolizing enzymes, a knowledge gap essential for translational studies. This study investigated the critical interplay between lobular geometry and key cytochrome P450 (CYP) zonation in four species: mouse, rat, pig, and human. We developed an automated pipeline based on whole slide images (WSI) of hematoxylin-eosin-stained liver sections and immunohistochemistry. This pipeline allows accurate quantification of both lobular geometry and zonation patterns of essential CYP proteins. Our analysis of CYP zonal expression shows that all CYP enzymes (besides CYP2D6 with panlobular expression) were observed in the pericentral region in all species, but with distinct differences. Comparison of normalized gradient intensity shows a high similarity between mice and humans, followed by rats. Specifically, CYP1A2 was expressed throughout the pericentral region in mice and humans, whereas it was restricted to a narrow pericentral rim in rats and showed a panlobular pattern in pigs. Similarly, CYP3A4 is present in the pericentral region, but its extent varies considerably in rats and appears panlobular in pigs. CYP2D6 zonal expression consistently shows a panlobular pattern in all species, although the intensity varies. CYP2E1 zonal expression covered the entire pericentral region with extension into the midzone in all four species, suggesting its potential for further cross-species analysis. Analysis of lobular geometry revealed an increase in lobular size with increasing species size, whereas lobular compactness was similar. Based on our results, zonated CYP expression in mice is most similar to humans. Therefore, mice appear to be the most appropriate species for drug metabolism studies unless larger species are required for other purposes, e.g., surgical reasons. CYP selection should be based on species, with CYP2E1 and CYP2D6 being the most preferable to compare four species. CYP1A2 could be considered as an additional CYP for rodent versus human comparisons, and CYP3A4 for mouse/human comparisons. In conclusion, our image analysis pipeline together with suggestions for species and CYP selection can serve to improve future cross-species and translational drug metabolism studies."
 
-- id: 'Palwankar2024_Enhancing_Our_Understanding'
+- id: 'Palwankar2024_master.thesis'
   tags:
     - 'Pharmacometrics'
   year: 2024
-  pdf: 'thesis/Palwankar2024_Enhancing_Our_Understanding.pdf'
+  pdf: 'thesis/Palwankar2024_master.thesis.pdf'
   authors: 'Master Thesis Shubhankar Palwankar (supervisor: M. König)'
   people:
     - shubhankar_palwankar
@@ -1096,11 +1096,11 @@ In summary, I have successfully developed and implemented an image analysis work
   repository: https://github.com/matthiaskoenig/enalapril-model
   abstract: 'Enalapril is a medication used to treat high blood pressure and a num- ber of other cardiovascular conditions. The renin-angiotensin-aldosterone system (RAAS) is the main component involved in the regulation of blood pressure in the body. One of the key steps in this process is the conver- sion of angiotensin I to angiotensin II by angiotensin converting enzyme (ACE). Enalapril is an ACE inhibitor and therefore helps to lower blood pressure. Pharmacokinetics is the branch of pharmacology that studies how the body absorbs, distributes, metabolizes, and eliminates drugs over time. After administration as enalapril maleate, it is absorbed in the intestine and converted by carboxylesterase 1 (CES1) in the liver to the active metabolite, enalaprilat. Enalapril and enalaprilat are eliminated from the body by re- nal clearance. A physiologically based pharmacokinetic (PBPK) model was developed to investigate the pharmacokinetics of enalapril and the factors influencing it. As part of the work, an extensive database of enalapril phar- macokinetics consisting of data from 49 clinical trials was established and used to parameterize and validate the computational model. The model was used to investigate the effect of renal impairment, hepatic impairment and changes in CES1 activity on the pharmacokinetics of enalapril and enalapri- lat, as these three factors are known to have a major influence on the phar- macokinetics of enalapril. The model shows good agreement with a wide range of enalapril and enalaprilat data in serum, plasma and urine under different conditions (healthy, renal impairment, hepatic impairment, CES1 mutations). The model is available in SBML under a CC-BY 4.0 license with all data freely available from the PK-DB pharmacokinetics database.'
 
-- id: 'Hossain2024_systematic_overview_protein'
+- id: 'Hossain2024_bachelor.thesis'
   tags:
     - 'Pharmacometrics'
   year: 2024
-  pdf: 'thesis/Hossain2024_systematic_overview_protein.pdf'
+  pdf: 'thesis/Hossain2024_bachelor.thesis.pdf'
   authors: 'Bachelor Thesis Afruja Hossain (supervisor: M. König)'
   people:
     - afruja_hossain
@@ -1133,12 +1133,12 @@ In summary, I have successfully developed and implemented an image analysis work
 
 
 
-- id: 'Hoepfl2024_BayModTS'
+- id: 'Hoepfl2024_baymodts'
   tags:
     - 'Open & FAIR'
     - 'AI'
   year: 2024
-  pdf: 'publication/Hoepfl2024_BayModTS.pdf'
+  pdf: 'publication/Hoepfl2024_baymodts.pdf'
   authors: 'S. Höpfl, M. Albadry, U. Dahmen, K. H. Herrmann, E. M. Kindler, M. König, J. R. Reichenbach, H. M. Tautenhahn, W. Wei, W. T. Zhao, and N. E. Radde'
   people:
     - matthias_koenig
@@ -1166,12 +1166,12 @@ Results: We present BayModTS (Bayesian modelling of time series data), a new FAI
 Availability and implementation: The BayModTS codebase is available on GitHub at https://github.com/Systems-Theory-in-Systems-Biology/BayModTS. The repository contains a Python script for the executable BayModTS workflow and a widely applicable SBML (systems biology markup language) model for retarded transient functions. In addition, all examples from the paper are included in the repository. Data and code of the application examples are stored on DaRUS: https://doi.org/10.18419/darus-3876. The raw MRI ROI voxel data were uploaded to DaRUS: https://doi.org/10.18419/darus-3878. The steatosis metabolite data are published on FairdomHub: 10.15490/fairdomhub.1.study.1070.1."
 
 
-- id: 'Smith2024_SED-ML_L1V5'
+- id: 'Smith2024_sed.ml.l1v5'
   tags:
     - 'Open & FAIR'
   year: 2024
   date: 2024-04-15
-  pdf: 'publication/Smith2024_SED-ML_L1V5.pdf'
+  pdf: 'publication/Smith2024_sed.ml.l1v5.pdf'
   authors: 'L. P. Smith, F. T. Bergmann, A. Garny, T. Helikar, J. Karr, D. Nickerson, H. Sauro, D. Waltemath, and M. König'
   people:
     - matthias_koenig
@@ -1189,14 +1189,14 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository: 'https://github.com/SED-ML/sed-ml'
   abstract: "Modern biological research is increasingly informed by computational simulation experiments, which necessitate the development of methods for annotating, archiving, sharing, and reproducing the conducted experiments. These simulations increasingly require extensive collaboration among modelers, experimentalists, and engineers. The Minimum Information About a Simulation Experiment (MIASE) guidelines outline the information needed to share simulation experiments. SED-ML is a computer-readable format for the information outlined by MIASE, created as a community project and supported by many investigators and software tools. Level 1 Version 5 of SED-ML expands the ability of modelers to define simulations in SED-ML using the Kinetic Simulation Algorithm Onotoloy (KiSAO). While it was possible in Version 4 to define a simulation entirely using KiSAO, Version 5 now allows users to define tasks, model changes, ranges, and outputs using the ontology as well. SED-ML is supported by a growing ecosystem of investigators, model languages, and software tools, including various languages for constraint-based, kinetic, qualitative, rule-based, and spatial models, and many simulation tools, visual editors, model repositories, and validators. Additional information about SED-ML is available at https://sed-ml.org/."
 
-- id: 'Gerhaeusser2024_spt_model'
+- id: 'Gerhaeusser2024_spt.model'
   tags:
     - 'Digital Twins'
     - 'Digital Pathology'
     - 'AI'
   year: 2024
   date: 2024-03-29
-  pdf: 'preprint/Gerhaeusser2024_spt_model.pdf'
+  pdf: 'preprint/Gerhaeusser2024_spt.model.pdf'
   authors: 'S. Gerhäusser, L. Lambers, L. Mandl, J. Franquinet, T. Ricken, and M. König'
   people:
     - matthias_koenig
@@ -1220,14 +1220,14 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository:
   abstract: "Multiscale modeling requires the coupling of models on different scales, often based on different mathematical approaches and developed by different research teams. This poses many challenges, such as defining interfaces for coupling, reproducible exchange of submodels, efficient simulation of the models, or reproducibility of results. Here, we present a multiscale digital twin of the liver that couples a partial differential equation (PDE)-based porous media approach for the hepatic lobule with cellular-scale ordinary differential equation (ODE)-based models. The models based on the theory of porous media describe transport, tissue mechanical properties, and deformations at the lobular scale, while the cellular models describe hepatic metabolism in terms of drug metabolism and damage in terms of necrosis. The resulting multiscale model of the liver was used to simulate perfusion-zonation-function relationships in the liver spanning scales from single cell to the lobulus. The model was applied to study the effects of (i) protein zonation patterns (metabolic zonation) and (ii) drug concentration dependence on spatially heterogeneous liver damage in the form of necrosis. Depending on the zonation pattern, different liver damage patterns could be reproduced, including periportal and pericentral necrosis as seen in drug-induced liver injury (DILI). Increasing the drug concentration led to an increase in the observed damage pattern. A key point for the success was the integration of domain-specific simulators based on standard exchange formats, i.e., libroadrunner for the high-performance simulation of ODE-based systems and FEBio for the simulation of the continuum-biomechanical part. This allows a standardized and reproducible exchange of cellular scale models in the Systems Biology Markup Language (SBML) between research groups."
 
-- id: 'Lambers2024_fat_zonation'
+- id: 'Lambers2024_fat.zonation'
   tags:
     - 'Digital Pathology'
     - 'Digital Twins'
     - 'AI'
   year: 2024
   date: 2024-02-25
-  pdf: 'publication/Lambers2024_fat_zonation.pdf'
+  pdf: 'publication/Lambers2024_fat.zonation.pdf'
   authors: 'L. Lambers, N. Waschinsky, J. Schleicher, M. König, H. Tautenhahn, M. Albadry, U. Dahmen, and T. Ricken'
   people:
     - matthias_koenig
@@ -1255,7 +1255,7 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
     - 'AI'
   year: 2024
   date: 2024-01-23
-  pdf: 'proceeding/Tautenhahn2024_simliva.pdf'
+  pdf: 'publication/Tautenhahn2024_simliva.pdf'
   authors: 'H. Tautenhahn, T. Ricken, U. Dahmen, L. Mandl, L. Bütow, S. Gerhäusser, L. Lambers, X. Chen, E. Lehmann, O. Dirsch, and M. König'
   people:
     - matthias_koenig
@@ -1277,18 +1277,18 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository:
   abstract: "The SIMulation supported LIVer Assessment for donor organs (SimLivA) project aims to develop a mathematical model to accurately simulate the influence of mechanical alterations in marginal liver grafts (specifically steatotic ones) and cold ischemia on early ischemia-reperfusion injury (IRI) during liver transplantation. Our project tackles significant research challenges, including the co-development of computational methodologies, experimental studies, clinical processes, and technical workflows. We aim to refine a continuum-biomechanical model for enhanced IRI prediction, collect pivotal experimental and clinical data, and assess the clinical applicability of our model. Our efforts involve augmenting and tailoring a coupled continuum-biomechanical, multiphase, and multi-scale partial differential equation-ordinary differential equation (PDE-ODE) model of the liver lobule, allowing us to numerically simulate IRI depending on the degree of steatosis and the duration of ischemia. The envisaged model will intertwine the structure, perfusion, and function of the liver, serving as a crucial aid in clinical decision-making processes. We view this as the initial step towards an in-silico clinical decision support tool aimed at enhancing the outcomes of liver transplantation. In this paper, we provide an overview of the SimLivA project and our preliminary findings, which include: a cellular model that delineates critical processes in the context of IRI during transplantation; and the integration of this model into a multi-scale PDE-ODE model using a homogenized, multi-scale, multi-component approach within the Theory of Porous Media (TPM) framework. The model has successfully simulated the interconnected relationship between structure, perfusion, and function—all of which are integral to IRI. Initial results show simulations at the cellular scale that describe critical processes related to IRI during transplantation. After integrating this model into a multiscale PDE-ODE model, first simulations were performed on the spatial distribution of key functions during warm and cold ischaemia. In addition, we were able to study the effect of tissue perfusion and temperature, two critical parameters in the context of liver transplantation and IRI."
 
-- id: 'Okibedi2024_physiologically_based_pharmacokinetic'
+- id: 'Okibedi2024_internship_report'
   tags:
     - 'Pharmacometrics'
   year: 2024
-  pdf: 'report/Okibedi2024_physiologically_based_pharmacokinetic.pdf'
+  pdf: 'thesis/Okibedi2024_internship_report.pdf'
   authors: 'Internship Report Frances Okibedi (supervisor: M. König)'
   people:
     - frances_okibedi
     - matthias_koenig
   title: 'A physiologically-based pharmacokinetic (PBPK) model of sorafenib for investigating the effect of sorafenib parameters in hepatorenal impairment'
   journal: 'Internship report, July 2024'
-  status: report
+  status: thesis
   impact: 0
   position: last
   doi:
@@ -1304,11 +1304,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository: https://github.com/matthiaskoenig/sorafenib-model
   abstract: 'Liver cancer ranks second in cancer-related deaths thereby making timely diagnosis and personalized treatment crucial. Hepatocellular carcinoma (HCC) patients often get diagnosed at advanced stages, hindering curative options like resection and ablation. Systemic treatment has become the standard therapy and sorafenib has been the primary systemic treatment for advanced HCC for the last ten years, being the first approved drug for this purpose. Sorafenib (Nexavar), is a multi-kinase inhibitor medication approved for primarily treating advanced renal cell carcinoma, hepatocellular carcinoma or other cancers. After oral administration, sorafenib enters hepatocytes via OATP1B-type carriers. It undergoes CYP3A4-mediated oxidative metabolism to sorafenib-N-oxide (M2) and UGT1A9-mediated glucuronidation forming sorafenib-glucuronide (SG). SG is secreted into bile mainly by ABCC2, with a fraction reuptaken by ABCC3, preventing ABCC2 saturation. In bile, SG can be excreted via the feces or converted back to sorafenib by a bacterial β-glucuronidase. Sorafenib is absorbed in the intestine, reentering the systemic circulation, contributing to elimination and detoxification. Sorafenib is excreted mainly by the feces (77%) and urine (19%). Hepatic and renal impairment could have a large impact on the pharmacokinetics of sorafenib. Within this work the pharmacokinetics of sorafenib were analyzed by developing a physiologically-based pharmacokinetic (PBPK) model based on extensive data curation of sorafenib data. The model allowed to simulate the time-concentration courses of sorafenib in various tissues and to calculate the pharmacokinetic parameters for sorafenib under single and multiple dosing regimes. The model was applied to study the dose-dependency of sorafenib treatment and to investigate the effect of hepatic and renal impairment on sorafenib pharmacokinetics.'
 
-- id: 'Kohrs2023_reproducible_research_open_science'
+- id: 'Kohrs2023_open.science'
   tags:
     - 'Open & FAIR'
   year: 2023
-  pdf: 'publication/Kohrs2023_reproducible_research_open_science.pdf'
+  pdf: 'publication/Kohrs2023_open.science.pdf'
   authors: 'F. E. Kohrs, S. Auer, A. Bannach-Brown, S. Fiedler, T. L. Haven, V. Heise, C. Holman, F. Azevedo, R. Bernard, A. Bleier, N. Bössel, B. P. Cahill, L. J. Castro, A. Ehrenhofer, K. Eichel, M. Frank, C. Frick, M. Friese, A. Gärtner, K. Gierend, D. J. Grüning, L. Hahn, M. Hülsemann, M. Ihle, S. Illius, L. König, M. König, L. Kulke, A. Kutlin, F. Lammers, D. M. A. Mehler, C. Miehl, A. Müller-Alcazar, C. Neuendorf, H. Niemeyer, F. Pargent, A. Peikert, C. U. Pfeuffer, R. Reinecke, J. P. Röer, J. L. Rohmann, A. Sánchez-Tójar, S. Scherbaum, E. Sixtus, L. Spitzer, V. M. Straßburger, M. Weber, C. J. Whitmire, J. Zerna, D. Zorbek, P. Zumstein, and T. L. Weissgerber'
   people:
     - matthias_koenig
@@ -1384,11 +1384,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository: https://github.com/matthiaskoenig/pancreas-model
   abstract: "The pancreas plays a critical role in maintaining glucose homeostasis through the secretion of hormones from the islets of Langerhans. Glucose-stimulated insulin secretion (GSIS) by the pancreatic β-cell is the main mechanism for reducing elevated plasma glucose. Here we present a systematic modeling workflow for the development of kinetic pathway models using the Systems Biology Markup Language (SBML). Steps include retrieval of information from databases, curation of experimental and clinical data for model calibration and validation, integration of heterogeneous data including absolute and relative measurements, unit normalization, data normalization, and model annotation. An important factor was the reproducibility and exchangeability of the model, which allowed the use of various existing tools. The workflow was applied to construct a novel data-driven kinetic model of GSIS in the pancreatic β-cell based on experimental and clinical data from 39 studies spanning 50 years of pancreatic, islet, and β-cell research in humans, rats, mice, and cell lines. The model consists of detailed glycolysis and phenomenological equations for insulin secretion coupled to cellular energy state, ATP dynamics and (ATP/ADP ratio). Key findings of our work are that in GSIS there is a glucose-dependent increase in almost all intermediates of glycolysis. This increase in glycolytic metabolites is accompanied by an increase in energy metabolites, especially ATP and NADH. One of the few decreasing metabolites is ADP, which, in combination with the increase in ATP, results in a large increase in ATP/ADP ratios in the β-cell with increasing glucose. Insulin secretion is dependent on ATP/ADP, resulting in glucose-stimulated insulin secretion. The observed glucose-dependent increase in glycolytic intermediates and the resulting change in ATP/ADP ratios and insulin secretion is a robust phenomenon observed across data sets, experimental systems and species. Model predictions of the glucose-dependent response of glycolytic intermediates and biphasic insulin secretion are in good agreement with experimental measurements. Our model predicts that factors affecting ATP consumption, ATP formation, hexokinase, phosphofructokinase, and ATP/ADP-dependent insulin secretion have a major effect on GSIS. In conclusion, we have developed and applied a systematic modeling workflow for pathway models that allowed us to gain insight into key mechanisms in GSIS in the pancreatic β-cell."
 
-- id: 'Mallol2023_physiologically_based_pharmacokinetic'
+- id: 'Mallol2023_bachelor.thesis'
   tags:
     - 'Pharmacometrics'
   year: 2023
-  pdf: 'thesis/Mallol2023_physiologically_based_pharmacokinetic.pdf'
+  pdf: 'thesis/Mallol2023_bachelor.thesis.pdf'
   authors: 'Bachelor Thesis Beatrice Stemmer Mallol (supervisor: M. König)'
   people:
     - beatrice_mallol
@@ -1467,11 +1467,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository:
   abstract: "This special issue of the Journal of Integrative Bioinformatics contains updated specifications of COMBINE standards in systems and synthetic biology. The 2022 special issue presents three updates to the standards: CellML 2.0.1, SBML Level 3 Package: Spatial Processes, Version 1, Release 1, and Synthetic Biology Open Language (SBOL) Version 3.1.0. This document can also be used to identify the latest specifications for all COMBINE standards. In addition, this editorial provides a brief overview of the COMBINE 2022 meeting in Berlin."
 
-- id: 'Anton2023_standard_GEM'
+- id: 'Anton2023_standard.gem'
   tags:
     - 'Open & FAIR'
   year: 2023
-  pdf: 'preprint/Anton2023_standard_GEM.pdf'
+  pdf: 'preprint/Anton2023_standard.gem.pdf'
   authors: 'M. Anton, E. Almaas, R. Benfeitas, S. Benito-Vaquerizo, L. M. Blank, A. Dräger, J. M. Hancock, C. Kittikunapong, M. König, F. Li, U. W. Liebal, H. Lu, H. Ma, R. Mahadevan, A. Mardinoglu, J. Nielsen, J. Nogales, M. Pagni, J. A. Papin, K. R. Patil, N. D. Price, J. L. Robinson, B. J. Sánchez, M. Suarez-Diez, S. Sulheim, L. T. Svensson, B. Teusink, W. Vongsangnak, H. Wang, A. A. Zeidan, and E. J. Kerkhoven'
   people:
     - matthias_koenig
@@ -1521,12 +1521,12 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository: https://github.com/matthiaskoenig/simvastatin-model
   abstract: "Hypercholesterolemia is a multifaceted plasma lipid disorder with heterogeneous causes including lifestyle and genetic factors. A key feature of hypercholesterolemia is elevated plasma levels of low-density lipoprotein cholesterol (LDL-C). Several genetic variants have been reported to be associated with hypercholesterolemia, known as familial hypercholesterolemia (FH). Important variants affect the LDL receptor (LDLR), which mediates the uptake of LDL-C from the plasma, apoliporotein B (APOB), which is involved in the binding of LDL-C to the LDLR, and proprotein convertase subtilisin/kexin type 9 (PCSK9), which modulates the degradation of the LDLR. A typical treatment for hypercholesterolemia is statin medication, with simvastatin being one of the most commonly prescribed statins. In this work, the LDL-C lowering therapy with simvastatin in hypercholesterolemia was investigated using a computational modeling approach. A physiologically based pharmacokinetic model of simvastatin integrated with a pharmacodynamic model of plasma LDL-C (PBPK/PD) was developed based on extensive data curation. A key component of the model is LDL-C turnover by the liver, consisting of: hepatic cholesterol synthesis with the key enzymes HMG-CoA reductase and HMG-CoA synthase; cholesterol export from the liver as VLDL-C; de novo synthesis of LDLR; transport of LDLR to the membrane; binding of LDL-C by LDLR via APOB; endocytosis of the LDLR-LDL-C complex; recycling of LDLR from the complex. The model was applied to study the effects of simvastatin therapy in hypercholesterolemia due to different causes in the LDLR pathway corresponding to different subtypes of hypercholesterolemia. Model predictions of LDL-C lowering therapy were validated with independent clinical data sets. Key findings are: (i) hepatic LDLR turnover is highly heterogeneous among FH classes; (ii) despite this heterogeneity, simvastatin therapy results in a consistent reduction in plasma LDL-C regardless of class; and (iii) simvastatin therapy shows a dose-dependent reduction in LDL-C. Our model suggests that the underlying cause of hypercholesterolemia does not influence simvastatin therapy. Furthermore, our model supports the treatment strategy of stepwise dose adjustment to achieve target LDL-C levels. Both the model and the database are freely available for reuse."
 
-- id: 'Grzegorzewski2023_PhD_Thesis'
+- id: 'Grzegorzewski2023_phd.thesis'
   tags:
     - 'Pharmacometrics'
     - 'Open & FAIR'
   year: 2023
-  pdf: 'thesis/Grzegorzewski2023_PhD_Thesis.pdf'
+  pdf: 'thesis/Grzegorzewski2023_phd.thesis.pdf'
   authors: 'Jan Grzegorzewski (supervisor: M. König)'
   people:
     - jan_grzegorzewski
@@ -1547,11 +1547,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository: https://github.com/matthiaskoenig/dextromethorphan-model
   abstract: 'Cytochrome P450 (CYP) phenotyping and dynamic liver function testing are essential methods in clinical practice. These methods utilize the pharmacokinetics (PK) of test substances and their metabolites to gain insight into the liver’s metabolic capacity and the activity of enzymes and transporters. Despite an extensive body of literature, many aspects affecting liver function and CYP activity are not well understood. Liver function tests are not only influenced by numerous characteristics of a studied subject but also by the specifics of individual study procedures. A key challenge is to disentangle the various factors which influence the outcome of the measurements from each other to study their influence on the dynamic liver function and CYP phenotype. In this work, the challenge was addressed through meta-analysis and physiologically based pharmacokinetic (PBPK) modeling. As a foundation, an open pharmacokinetics database (https://pk-db.com) was developed and pharmacokinetics data were curated for a wide range of test substances. To my knowledge, PK-DB currently contains the largest open pharmacokinetic dataset on substances used for phenotyping and dynamical liver function testing. The dataset allowed for identifying and quantifying demographic and racial bias (sex, ethnicity, age, health), reporting errors, and inconsistencies in pharmacokinetic literature. Based on the data, a caffeine pharmacokinetics meta-analysis was conducted concerning various factors affecting liver function and CYP1A2 activity. In particular, meta-analysis and data integration solidified existing knowledge on the effects of smoking, oral contraceptives, multiple diseases, and co-medications on caffeine pharmacokinetics. Similarly, the measurement accuracy of caffeine concentration in saliva versus plasma was quantified, and the effect of dosing amount and sampling timing for phenotyping were analyzed. In addition, the impact of CYP2D6 polymorphism was investigated. Therefore, a PBPK model of dextromethorphan (DXM) and its metabolites dextrorphan (DXO) and dextrorphan O-glucuronide (DXO-Glu) was developed, and calibrated and validated with pharmacokinetics data. The variability in CYP activity was modeled based on in vitro data. The model can predict individual plasma concentrations and urinary amounts of DXM, DXO, and DXO-Glu and the metabolic phenotype based on the individual’s CYP2D6 genotype and physiological characteristics. The analyses suggest that most of the variability in the pharmacokinetics of dextromethorphan can be attributed to the variability in CYP2D6 and CYP3A4 enzyme kinetics. Among various other investigations, the influence of ethnicity on CYP2D6 activity was also investigated. Contributions to PK data curation and PBPK model development were also made for other phenotyping and liver function test substances (chlorzoxazone, codeine, diazepam, galactose, indocyanine green (ICG), metoprolol, midazolam, omeprazole, pravastatin, simvastatin, talinolol, and torasemide). For ICG, in particular, the impact of hepatic blood flow, cardiac output, and body weight, as well as the survival probability after partial hepatectomy, were investigated by PBPK modeling. Notably, the studying of the various test substances was only made possible by a systematic and standardized workflow that facilitated data integration, data sharing, the creation of reproducible PBPK models, and the standardized integration of data and models. In conclusion, a pharmacokinetic database, methods, and workflows for the analysis of test compounds used in dynamical liver function testing and CYP phenotyping were established. Factors affecting CYP phenotyping and liver function testing were investigated by meta-analysis and PBPK modeling. The models developed in this effort have the potential to impact personalized medicine and to increase the precision of dynamic liver function tests in clinics.'
 
-- id: 'Welsh2023_libroadrunner_2_0'
+- id: 'Welsh2023_libroadrunner.2.0'
   tags:
     - 'Open & FAIR'
   year: 2023
-  pdf: 'publication/Welsh2023_libroadrunner_2_0.pdf'
+  pdf: 'publication/Welsh2023_libroadrunner.2.0.pdf'
   authors: 'C. Welsh, J. Xu, L. Smith, M. König, K. Choi, and H. M. Sauro'
   people:
     - matthias_koenig
@@ -1571,12 +1571,12 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   abstract: "Motivation: This paper presents libRoadRunner 2.0, an extensible, high-performance, cross-platform, open-source software library for the simulation and analysis of models expressed using the Systems Biology Markup Language (SBML). Results: libRoadRunner is a self-contained library, able to run either as a component inside other tools via its C ++, C and Python APIs, or interactively through its Python or Julia interface. libRoadRunner uses a custom Just-In-Time (JIT) compiler built on the widely-used LLVM JIT compiler framework. It compiles SBML-specified models directly into native machine code for a large variety of processors, making it fast enough to simulate extremely large models or repeated runs in reasonable timeframes. libRoadRunner is flexible, supporting the bulk of the SBML specification (except for delay and nonlinear algebraic equations) as well as several SBML extensions such as hierarchical composition and probability distributions. It offers multiple deterministic and stochastic integrators, as well as tools for steady-state, sensitivity, stability and structural analyses. Availability: libRoadRunner binary distributions for Windows, Mac OS, and Linux, Julia and Python bindings, source code, and documentation are all available at https://github.com/sys-bio/roadrunner, and Python bindings are also available via pip. The source code can be compiled for the supported systems as well as in principle any system supported by LLVM-13, such as ARM-based computers like the Raspberry Pi. The library is licensed under the Apache License Version 2.0."
 
 
-- id: 'Albadry2022_Cytochrome_p450_enzymes_in_periportal_steatosis'
+- id: 'Albadry2022_cyp450.steatosis'
   tags:
     - 'Digital Pathology'
     - 'AI'
   year: 2022
-  pdf: 'publication/Albadry2022_Cytochrome_p450_enzymes_in_periportal_steatosis.pdf'
+  pdf: 'publication/Albadry2022_cyp450.steatosis.pdf'
   authors: 'M. Albadry, S. Höpfl, N. Ehteshamzad, M. König, M. Böttcher, J. Neumann, A. Lupp, O. Dirsch, N. Radde, B. Christ, M. Christ, L. Schwen, H. Laue, R. Klopfleisch, and U. Dahmen'
   people:
     - matthias_koenig
@@ -1624,11 +1624,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository: https://github.com/matthiaskoenig/dextromethorphan-model
   abstract: "The cytochrome P450 2D6 (CYP2D6) is a key xenobiotic-metabolizing enzyme involved in the clearance of many drugs. Genetic polymorphisms in CYP2D6 contribute to the large inter-individual variability in drug metabolism and could affect metabolic phenotyping of CYP2D6 probe substances such as dextromethorphan (DXM). To study this question, we (i) established an extensive pharmacokinetics dataset for DXM; and (ii) developed and validated a physiologically based pharmacokinetic (PBPK) model of dextromethorphan (DXM) and its metabolites dextrorphan (DXO) and dextrorphan O-glucuronide (DXO-Glu) based on the data. Drug-gene interactions (DGI) were introduced by accounting for changes in CYP2D6 enzyme kinetics depending on activity score (AS), which in combination with AS for individual polymorphisms allowed us to model of CYP2D6 gene variants. Variability in CYP3A4 and CYP2D6 activity was modeled based on in vitro data from human liver microsomes. Model predictions are in very good agreement with pharmacokinetics data for CYP2D6 polymorphisms, CYP2D6 activity as measured by AS, and CYP2D6 metabolic phenotypes (UM, EM, IM, PM). The model was applied to investigate the genotype-phenotype association and the role of CYP2D6 polymorphisms for metabolic phenotyping with dextromethorphan using the urinary cumulative metabolic ratio DXM/(DXO+DXO-Glu) (UCMR). The effect of parameters on UCMR was studied via sensitivity analysis. Model predictions indicate very good robustness against the intervention protocol (i.e. application form, dosing amount, dissolution rate, and sampling time) and good robustness against physiological variation. The model is capable of estimating the UCMR dispersion within and across populations depending on activity scores. Moreover, the distribution of UCMR and the risk of genotype-phenotype mismatch could be estimated for populations with known CYP2D6 genotype frequencies. The model can be applied as a tool for individual prediction of UCMR and metabolic phenotype based on CYP2D6 genotype. Both, model and database are freely available for reuse."
 
-- id: 'Ramachandran2022_FAIR_sharing_of_reproducible_and_reusable_COVID-19_models'
+- id: 'Ramachandran2022_covid19.models'
   tags:
     - 'Open & FAIR'
   year: 2022
-  pdf: 'preprint/Ramachandran2022_FAIR_sharing_of_reproducible_and_reusable_COVID-19_models.pdf'
+  pdf: 'preprint/Ramachandran2022_covid19.models.pdf'
   authors: 'K. RamachandranΔ, M. KönigΔ, M. Scharm, T. V. N. Nguyen, H. Hermjakob, D. Waltemath, and R. S. Malik Sheriff (Δ equal contribution)'
   people:
     - matthias_koenig
@@ -1673,11 +1673,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository: https://github.com/biosimulators
   abstract: "Computational models have great potential to accelerate bioscience, bioengineering, and medicine. However, it remains challenging to reproduce and reuse simulations, in part, because the numerous formats and methods for simulating various subsystems and scales remain siloed by different software tools. For example, each tool must be executed through a distinct interface. To help investigators find and use simulation tools, we developed BioSimulators (https://biosimulators.org), a central registry of the capabilities of simulation tools and consistent Python, command-line and containerized interfaces to each version of each tool. The foundation of BioSimulators is standards, such as CellML, SBML, SED-ML and the COMBINE archive format, and validation tools for simulation projects and simulation tools that ensure these standards are used consistently. To help modelers find tools for particular projects, we have also used the registry to develop recommendation services. We anticipate that BioSimulators will help modelers exchange, reproduce, and combine simulations."
 
-- id: 'Pujol2022_Bachelor_Thesis'
+- id: 'Pujol2022_bachelor.thesis'
   tags:
     - 'Pharmacometrics'
   year: 2022
-  pdf: 'thesis/Pujol2022_Bachelor_Thesis.pdf'
+  pdf: 'thesis/Pujol2022_bachelor.thesis.pdf'
   authors: 'Helena Leal Pujol (supervisor: M. König)'
   people:
     - helen_pujol
@@ -1728,11 +1728,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository: 'http://www.github.com/matthiaskoenig/dfba'
   abstract: 'Computational models in systems biology and systems medicine are typically simulated using a single formalism such as ordinary differential equations (ODE). However, more complex models require the coupling of multiple formalisms since different biological phenomena are better described by different methods. For example, metabolism in steady state is often modeled using flux-balance analysis (FBA) whereas dynamic changes of model components are better described via ODEs. The coupling of FBA and ODE modeling formalisms results in dynamic FBA models. A major challenge is how to describe such hybrid models that couple multiple formalisms in a standardized way so that they can be exchanged between tools and simulated consistently in a reproducible manner. This paper presents a scheme for encoding and implementation of dynamic FBA models in the Systems Biology Markup Language (SBML), thereby enabling the exchange of multi-framework computational models between software tools. We demonstrate the feasibility of the approach using various example models and show that different tools are able to simulate the hybrid models and agree on the results. As part of this work, two independent implementations of a multi-framework simulation method for dynamic FBA have been developed supporting such models: iBioSim and sbmlutils.'
 
-- id: 'Grzegorzewski2022_Caffeine_meta'
+- id: 'Grzegorzewski2022_caffeine.meta'
   tags:
     - 'Pharmacometrics'
   year: 2022
-  pdf: 'publication/Grzegorzewski2022_Caffeine_meta.pdf'
+  pdf: 'publication/Grzegorzewski2022_caffeine.meta.pdf'
   authors: 'J. Grzegorzewski, F. Bartsch, A. Köller, and M. König'
   people:
     - jan_grzegorzewski
@@ -1759,12 +1759,12 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository:
   abstract: 'Caffeine is by far the most ubiquitous psychostimulant worldwide found in tea, coffee, cocoa, energy drinks, and many other beverages and food. Caffeine is almost exclusively metabolized in the liver by the cytochrome P-450 enzyme system to the main product paraxanthine and the additional products theobromine and theophylline. Besides its stimulating properties, two important applications of caffeine are metabolic phenotyping of cytochrome P450 1A2 (CYP1A2) and liver function testing. An open challenge in this context is to identify underlying causes of the large inter-individual variability in caffeine pharmacokinetics. Data is urgently needed to understand and quantify confounding factors such as lifestyle (e.g., smoking), the effects of drug-caffeine interactions (e.g., medication metabolized via CYP1A2), and the effect of disease. Here we report the first integrative and systematic analysis of data on caffeine pharmacokinetics from 141 publications and provide a comprehensive high-quality data set on the pharmacokinetics of caffeine, caffeine metabolites, and their metabolic ratios in human adults. The data set is enriched by meta-data on the characteristics of studied patient cohorts and subjects (e.g., age, body weight, smoking status, health status), the applied interventions (e.g., dosing, substance, route of application), measured pharmacokinetic time-courses, and pharmacokinetic parameters (e.g., clearance, half-life, area under the curve). We demonstrate via multiple applications how the data set can be used to solidify existing knowledge and gain new insights relevant for metabolic phenotyping and liver function testing based on caffeine. Specifically, we analyzed 1) the alteration of caffeine pharmacokinetics with smoking and use of oral contraceptives; 2) drug-drug interactions with caffeine as possible confounding factors of caffeine pharmacokinetics or source of adverse effects; 3) alteration of caffeine pharmacokinetics in disease; and 4) the applicability of caffeine as a salivary test substance by comparison of plasma and saliva data. In conclusion, our data set and analyses provide important resources which could enable more accurate caffeine-based metabolic phenotyping and liver function testing.'
 
-- id: 'Koeller2021_ICG_model_hepatectomy'
+- id: 'Koeller2021_icg.hepatectomy'
   tags:
     - 'Pharmacometrics'
     - 'AI'
   year: 2021
-  pdf: 'publication/Koeller2021_ICG_model_hepatectomy.pdf'
+  pdf: 'publication/Koeller2021_icg.hepatectomy.pdf'
   authors: 'A. Köller, J. Grzegorzewski, M. Tautenhahn, and M. König'
   people:
     - adrian_koeller
@@ -1790,11 +1790,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository: https://github.com/matthiaskoenig/icg-model.git
   abstract: 'The evaluation of hepatic function and functional capacity of the liver are essential tasks in hepatology as well as in hepatobiliary surgery. Indocyanine green (ICG) is a widely applied test compound that is used in clinical routine to evaluate hepatic function. Important questions for the functional evaluation with ICG in the context of hepatectomy are how liver disease such as cirrhosis alters ICG elimination, and if postoperative survival can be predicted from preoperative ICG measurements. Within this work a physiologically based pharmacokinetic (PBPK) model of ICG was developed and applied to the prediction of the effects of a liver resection under various degrees of cirrhosis. For the parametrization of the computational model and validation of model predictions a database of ICG pharmacokinetic data was established. The model was applied (i) to study the effect of liver cirrhosis and liver resection on ICG pharmacokinetics; and (ii) to evaluate the model-based prediction of postoperative ICG-R15 (retention ratio 15 min after administration) as a measure for postoperative outcome. Key results are the accurate prediction of changes in ICG pharmacokinetics caused by liver cirrhosis and postoperative changes of ICG-elimination after liver resection, as validated with a wide range of data sets. Based on the PBPK model, individual survival after liver resection could be classified, demonstrating its potential value as a clinical tool.'
 
-- id: 'Koeller2021_icg_variability'
+- id: 'Koeller2021_icg.variability'
   tags:
     - 'Pharmacometrics'
   year: 2021
-  pdf: 'publication/Koeller2021_icg_variability.pdf'
+  pdf: 'publication/Koeller2021_icg.variability.pdf'
   authors: 'A. Köller, J. Grzegorzewski, and M. König'
   people:
     - adrian_koeller
@@ -1821,12 +1821,12 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository: https://github.com/matthiaskoenig/icg-model
   abstract: 'Accurate evaluation of liver function is a central task in hepatology. Dynamic liver function tests (DLFT) based on the time-dependent elimination of a test substance provide an important tool for such a functional assessment. These tests are used in the diagnosis and monitoring of liver disease as well as in the planning of hepatobiliary surgery. A key challenge in the evaluation of liver function with DLFTs is the large inter-individual variability. Indocyanine green (ICG) is a widely applied test compound used for the evaluation of liver function. After an intravenous administration, pharmacokinetic (PK) parameters are calculated from the plasma disappearance curve of ICG which provide an estimate of liver function. The hepatic elimination of ICG is affected by physiological factors such as hepatic blood flow or binding of ICG to plasma proteins, anthropometric factors such as body weight, age, and sex, or the protein amount of the organic anion-transporting polypeptide 1B3 (OATP1B3) mediating the hepatic uptake of ICG. Being able to account for and better understand these various sources of inter-individual variability would allow to improve the power of ICG based DLFTs and move toward an individualized evaluation of liver function. Within this work we systematically analyzed the effect of various factors on ICG elimination by the means of computational modeling. For the analysis, a recently developed and validated physiologically based pharmacokinetics (PBPK) model of ICG distribution and hepatic elimination was utilized. Key results are (i) a systematic analysis of the variability in ICG elimination due to hepatic blood flow, cardiac output, OATP1B3 abundance, liver volume, body weight and plasma bilirubin level; (ii) the evaluation of the inter-individual variability in ICG elimination via a large in silico cohort of n = 100,000 subjects based on the NHANES cohort with special focus on stratification by age, sex, and body weight; (iii) the evaluation of the effect of various degrees of cirrhosis on variability in ICG elimination. The presented results are an important step toward individualizing liver function tests by elucidating the effects of confounding physiological and anthropometric parameters in the evaluation of liver function via ICG.'
 
-- id: 'Christ2021_Review'
+- id: 'Christ2021_review'
   tags:
     - 'Digital Twins'
     - 'AI'
   year: 2021
-  pdf: 'review/Christ2021_Review.pdf'
+  pdf: 'publication/Christ2021_review.pdf'
   authors: 'B. ChristΔ, M. CollatzΔ, U. DahmenΔ, K. HerrmannΔ, S. HöpflΔ, M. KönigΔ, L. LambersΔ, M. MarzΔ, D. MeyerΔ, N. RaddeΔ, J. R. ReichenbachΔ, T. RickenΔ, and H. TautenhahnΔ (Δ equal contribution)'
   people:
     - matthias_koenig
@@ -1849,11 +1849,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository:
   abstract: 'Liver resection causes marked perfusion alterations in the liver remnant both on the organ scale (vascular anatomy) and on the microscale (sinusoidal blood flow on tissue level). These changes in perfusion affect hepatic functions via direct alterations in blood supply and drainage, followed by indirect changes of biomechanical tissue properties and cellular function. Changes in blood flow impose compression, tension and shear forces on the liver tissue. These forces are perceived by mechanosensors on parenchymal and non-parenchymal cells of the liver and regulate cell-cell and cell-matrix interactions as well as cellular signaling and metabolism. These interactions are key players in tissue growth and remodeling, a prerequisite to restore tissue function after PHx. Their dysregulation is associated with metabolic impairment of the liver eventually leading to liver failure, a serious post-hepatectomy complication with high morbidity and mortality. Though certain links are known, the overall functional change after liver surgery is not understood due to complex feedback loops, non-linearities, spatial heterogeneities and different time-scales of events. Computational modeling is a unique approach to gain a better understanding of complex biomedical systems. This approach allows (i) integration of heterogeneous data and knowledge on multiple scales into a consistent view of how perfusion is related to hepatic function; (ii) testing and generating hypotheses based on predictive models, which must be validated experimentally and clinically. In the long term, computational modeling will (iii) support surgical planning by predicting surgery-induced perfusion perturbations and their functional (metabolic) consequences; and thereby (iv) allow minimizing surgical risks for the individual patient. Here, we review the alterations of hepatic perfusion, biomechanical properties and function associated with hepatectomy. Specifically, we provide an overview over the clinical problem, preoperative diagnostics, functional imaging approaches, experimental approaches in animal models, mechanoperception in the liver and impact on cellular metabolism, omics approaches with a focus on transcriptomics, data integration and uncertainty analysis, and computational modeling on multiple scales. Finally, we provide a perspective on how multi-scale computational models, which couple perfusion changes to hepatic function, could become part of clinical workflows to predict and optimize patient outcome after complex liver surgery.'
 
-- id: 'Schreiber2021_Standards_in_Systems_and_Synthetic_Biology'
+- id: 'Schreiber2021_synthetic.biology'
   tags:
     - 'Open & FAIR'
   year: 2021
-  pdf: 'publication/Schreiber2021_Standards_in_Systems_and_Synthetic_Biology.pdf'
+  pdf: 'publication/Schreiber2021_synthetic.biology.pdf'
   authors: 'F. Schreiber, P. Gleeson, M. Golebiewski, T. Gorochowski, M. Hucka, S. Keating, M. König, C. Myers, D. Nickerson, and D. Walthemath'
   people:
     - matthias_koenig
@@ -1874,11 +1874,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository:
   abstract: "This special issue of the Journal of Integrative Bioinformatics contains updated specifications of COMBINE standards in systems and synthetic biology. The 2021 special issue presents four updates of standards: Synthetic Biology Open Language Visual Version 2.3, Synthetic Biology Open Language Visual Version 3.0, Simulation Experiment Description Markup Language Level 1 Version 4, and OMEX Metadata specification Version 1.2. This document can also be consulted to identify the latest specifications of all COMBINE standards."
 
-- id: 'Balci2021_Bachelor_Thesis'
+- id: 'Balci2021_bachelor.thesis'
   tags:
     - 'Pharmacometrics'
   year: 2021
-  pdf: 'thesis/Balci2021_Bachelor_Thesis.pdf'
+  pdf: 'thesis/Balci2021_bachelor.thesis.pdf'
   authors: 'Sükrü Balci (supervisor: M. König)'
   people:
     - suekrue_balci
@@ -1901,11 +1901,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository: https://github.com/matthiaskoenig/omeprazole-model
   abstract: 'Proton pump inhibitors (PPIs) are one of the most commonly used drugs whose main action is to inhibit the formation of gastric acid. Among the PPIs, omeprazole is one of the most important and most prescribed. Omeprazole is rapidly absorbed by the stomach and has a short half-life of around 1-2 hours in plasma. Omeprazole reduces gastric acid secretion via non-competitive selective inhibition of the H+/K+-ATPases in the gastric parietal cells, resulting in an increase in stomach pH. After cessation of omeprazole treatment, it takes a few days until the gastric acid secretion returns to baseline due to protein turnover of the proton pumps. Repeated dosing with omeprazole results in a dose-potentiation due to an increased absorption of omeprazole with increasing pH. Within this thesis, the pharmacokinetics and pharmacodynamics of omeprazole were studied using a computational modeling approach. Based on extensive curation of clinical data of omeprazole a physiological-based pharmacokinetics/pharmacodynamics model of omeprazole and its effect on stomach pH was developed. The model allowed to simulate the pharmacokinetics of omeprazole under varying doses and treatment regimens and to study the resulting inhibition of the proton pumps and changes in stomach pH. Key questions studied in this thesis were (i) how gastric acid output and pH change with omeprazole dosing and treatment regime, and ii) what the effects of repeated dosing on omeprazole absorption and pH are.'
 
-- id: 'Yamada2021_SBMLWebApp'
+- id: 'Yamada2021_sbmlwebapp'
   tags:
     - 'Open & FAIR'
   year: 2021
-  pdf: 'publication/Yamada2021_SBMLWebApp.pdf'
+  pdf: 'publication/Yamada2021_sbmlwebapp.pdf'
   authors: 'T. G. Yamada, K. Ii, M. König, M. Feierabend, A. Dräger, and A. Funahashi'
   people:
     - takahiro_yamada
@@ -1930,11 +1930,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository: https://github.com/TakahiroYamada/SBMLWebApp
   abstract: 'In systems biology, biological phenomena are often modeled by Ordinary Differential Equations (ODEs) and distributed in the de facto standard file format SBML. The primary analyses performed with such models are dynamic simulation, steady-state analysis, and parameter estimation. These methodologies are mathematically formalized, and libraries for such analyses have been published. Several tools exist to create, simulate, or visualize models encoded in SBML. However, setting up and establishing analysis environments is a crucial hurdle for non-modelers. Therefore, easy access to perform fundamental analyses of ODE models is a significant challenge. We developed SBMLWebApp, a web-based service to execute SBML-based simulation, steady-state analysis, and parameter estimation directly in the browser without the need for any setup or prior knowledge to address this issue. SBMLWebApp visualizes the result and numerical table of each analysis and provides a download of the results. SBMLWebApp allows users to select and analyze SBML models directly from the BioModels Database. Taken together, SBMLWebApp provides barrier-free access to an SBML analysis environment for simulation, steady-state analysis, and parameter estimation for SBML models. SBMLWebApp is implemented in Java™ based on an Apache Tomcat® web server using COPASI, the Systems Biology Simulation Core Library (SBSCL), and LibSBMLSim as simulation engines. SBMLWebApp is licensed under MIT with source code freely available. At the end of this article, the Data Availability Statement gives the internet links to the two websites to find the source code and run the program online.'
 
-- id: 'Smith2021_sed-ml-L1V4'
+- id: 'Smith2021_sed.ml.l1v4'
   tags:
     - 'Open & FAIR'
   year: 2021
-  pdf: 'publication/Smith2021_sed-ml-L1V4.pdf'
+  pdf: 'publication/Smith2021_sed.ml.l1v4.pdf'
   authors: 'L. P. Smith, F. T. Bergmann, A. Garny, T. Helikar, J. Karr, D. Nickerson, H. Sauro, D. Waltemath, and M. König'
   people:
     - matthias_koenig
@@ -1952,11 +1952,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository: https://github.com/SED-ML/
   abstract: 'Computational simulation experiments increasingly inform modern biological research, and bring with them the need to provide ways to annotate, archive, share and reproduce the experiments performed. These simulations increasingly require extensive collaboration among modelers, experimentalists, and engineers. The Minimum Information About a Simulation Experiment (MIASE) guidelines outline the information needed to share simulation experiments. SED-ML is a computer-readable format for the information outlined by MIASE, created as a community project and supported by many investigators and software tools. The first versions of SED-ML focused on deterministic and stochastic simulations of models. Level 1 Version 4 of SED-ML substantially expands these capabilities to cover additional types of models, model languages, parameter estimations, simulations and analyses of models, and analyses and visualizations of simulation results. To facilitate consistent practices across the community, Level 1 Version 4 also more clearly describes the use of SED-ML constructs, and includes numerous concrete validation rules. SED-ML is supported by a growing ecosystem of investigators, model languages, and software tools, including eight languages for constraint-based, kinetic, qualitative, rule-based, and spatial models, over 20 simulation tools, visual editors, model repositories, and validators. Additional information about SED-ML is available at https://sed-ml.org/.'
 
-- id: 'Panchiwala2021_SBSCL'
+- id: 'Panchiwala2021_sbscl'
   tags:
     - 'Open & FAIR'
   year: 2021
-  pdf: 'publication/Panchiwala2021_SBSCL.pdf'
+  pdf: 'publication/Panchiwala2021_sbscl.pdf'
   authors: 'H. Panchiwala, S. Shah, H. Planatscher, M. Zakharchuk, M. König, and A. Dräger'
   people:
     - hemil_panchiwala
@@ -1974,11 +1974,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository: https://github.com/draeger-lab/SBSCL
   abstract: 'Summary: Studying biological systems generally relies on computational modeling and simulation, e.g., model-driven discovery and hypothesis testing. Progress in standardization efforts led to the development of interrelated file formats to exchange and reuse models in systems biology, such as SBML, the Simulation Experiment Description Markup Language (SED-ML) or the Open Modeling EXchange format. Conducting simulation experiments based on these formats requires efficient and reusable implementations to make them accessible to the broader scientific community and to ensure the reproducibility of the results. The Systems Biology Simulation Core Library (SBSCL) provides interpreters and solvers for these standards as a versatile open-source API in JavaTM. The library simulates even complex bio-models and supports deterministic Ordinary Differential Equations; Stochastic Differential Equations; constraint-based analyses; recent SBML and SED-ML versions; exchange of results, and visualization of in silico experiments; open modeling exchange formats (COMBINE archives); hierarchically structured models; and compatibility with standard testing systems, including the Systems Biology Test Suite and published models from the BioModels and BiGG databases.'
 
-- id: 'Koenig2021_Ten_simple_rules'
+- id: 'Koenig2021_ten.simple.rules'
   tags:
     - 'Open & FAIR'
   year: 2021
-  pdf: 'preprint/Koenig2021_Ten_simple_rules.pdf'
+  pdf: 'preprint/Koenig2021_ten.simple.rules.pdf'
   authors: 'M. KönigΔ, J. Grzegorzewski, M. Golebiewski, H. Hermjakob, M. Hucka, B. Olivier, S. M. Keating, D. Nickerson, F. Schreiber, R. Sheriff, and D. Waltemath'
   people:
     - matthias_koenig
@@ -1997,11 +1997,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository:
   abstract: 'Science continues to become more interdisciplinary and to involve increasingly complex data sets. Many projects in the biomedical and health-related sciences follow or aim to follow the principles of FAIR data sharing, which has been demonstrated to foster collaboration, to lead to better research outcomes, and to help ensure reproducibility of results. Data generated in the course of biomedical and health research present specific challenges for FAIR sharing in the sense that they are heterogeneous and highly sensitive to context and the needs of protection and privacy. Data sharing must respect these features without impeding timely dissemination of results, so that they can contribute to time-critical advances in medical therapy and treatment. Modeling and simulation of biomedical processes have become established tools, and a global community has been developing algorithms, methodologies, and standards for applying biomedical simulation models in clinical research. However, it can be difficult for clinician scientists to follow the specific rules and recommendations for FAIR data sharing within this domain. We seek to clarify the standard workflow for sharing experimental and clinical data with the simulation modeling community. By following these recommendations, data sharing will be improved, collaborations will become more effective, and the FAIR publication and subsequent reuse of data will become possible at the level of quality necessary to support biomedical and health-related sciences.'
 
-- id: 'Gennari2021_OMEX_Metadata_Spec_1_2'
+- id: 'Gennari2021_omex.spec.1.2'
   tags:
     - 'Open & FAIR'
   year: 2021
-  pdf: 'publication/Gennari2021_OMEX_Metadata_Spec_1_2.pdf'
+  pdf: 'publication/Gennari2021_omex.spec.1.2.pdf'
   authors: 'J. Gennari, M. König, G. Misirli, M. Neal, D. Nickerson, and D. Waltemath'
   people:
     - matthias_koenig
@@ -2017,11 +2017,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository:
   abstract: 'A standardized approach to annotating computational biomedical models and their associated files can facilitate model reuse and reproducibility among research groups, enhance search and retrieval of models and data, and enable semantic comparisons between models. Motivated by these potential benefits and guided by consensus across the COmputational Modeling in BIology NEtwork (COMBINE) community, we have developed a specification for encoding annotations in Open Modeling and EXchange (OMEX)-formatted archives. This document details version 1.2 of the specification, which builds on version 1.0 published last year in this journal. In particular, this version includes a set of initial model-level annotations (whereas v 1.0 described exclusively annotations at a smaller scale). Additionally, this version uses best practices for namespaces, and introduces omex-library.org as a common root for all annotations. Distributing modeling projects within an OMEX archive is a best practice established by COMBINE, and the OMEX metadata specification presented here provides a harmonized, community-driven approach for annotating a variety of standardized model representations. This specification acts as a technical guideline for developing software tools that can support this standard, and thereby encourages broad advances in model reuse, discovery, and semantic analyses.'
 
-- id: 'Shaikh2021_SED-ML_validator'
+- id: 'Shaikh2021_sed.ml.validator'
   tags:
     - 'Open & FAIR'
   year: 2021
-  pdf: 'preprint/Shaikh2021_SED-ML_validator.pdf'
+  pdf: 'preprint/Shaikh2021_sed.ml.validator.pdf'
   authors: 'B. Shaikh, A. P. Freiburger, M. König, F. T. Bergmann, D. P. Nickerson, H. M. Sauro, M. L. Blinov, L. P. Smith, I. I. Moraru, and J. R. Karr'
   people:
     - matthias_koenig
@@ -2036,11 +2036,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   homepage: https://run.biosimulations.org/utils/validate
   repository: https://github.com/biosimulators/Biosimulators_utils
 
-- id: 'Koeller2021_Bachelor_Thesis'
+- id: 'Koeller2021_bachelor.thesis'
   tags:
     - 'Pharmacometrics'
   year: 2021
-  pdf: 'thesis/Koeller2021_Bachelor_Thesis.pdf'
+  pdf: 'thesis/Koeller2021_bachelor.thesis.pdf'
   authors: 'Adrian Köller (supervisor: M. König)'
   people:
     - adrian_koeller
@@ -2057,11 +2057,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository:
   abstract: 'The evaluation of hepatic function and functional capacity are essential tasks in hepatology. Indocyanine Green (ICG) is a widely applied test compound that is used in clinical routine to evaluate hepatic function. Accurate assessment of liver-function through ICG pharmacokinetics is challenging because the elimination of ICG is influenced by physiological factors such as liver perfusion as well as the health status of the patient. Important questions for the functional evaluation are how blood flow, plasma protein binding or surgical interventions can influence the distribution and elimination of ICG. In the course of this project, these questions were studied by the means of computational modeling to evaluate ICG dynamics in silico. Within this work a physiological-based model of ICG pharmacokinetics was developed. For the parameterization and validation of the model a database of ICG pharmacokinetic data was established. The model was applied to study (i) the effect of liver disease, specifically liver cirrhosis, on ICG pharmacokinetics; (ii) how hepatic blood flow and other cardiovascular parameters affect ICG-elimination; and (iii) the role of plasma protein binding of ICG and its impact on ICG pharmacokinetics. Finally, the model was applied to analyse the effect of liver resection (hepatectomy) on ICG-elimination and the value of ICG as a predictive measure for postoperative outcome. The model is able to accurately predict changes in ICG pharmacokinetics caused by changes in blood flow and plasma proteins as well as liver cirrhosis. Furthermore, the model is able to accurately predict postoperative changes of ICG-elimination after liver resection, showing its potential value as a clinical tool.'
 
-- id: 'Ricken2020_GACM-Report'
+- id: 'Ricken2020_gacm.report'
   tags:
     - 'Digital Twins'
   year: 2020
-  pdf: 'proceeding/Ricken2020_GACM-Report.pdf'
+  pdf: 'publication/Ricken2020_gacm.report.pdf'
   authors: 'T. Ricken, L. Lambers, B. Christ, U. Dahmen, K. Herrmann, M. König, M. Marz, N. Radde, J. R. Reichenbach, L. O. Schwen, and H. Tautenhahn'
   people:
     - matthias_koenig
@@ -2077,11 +2077,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository:
   abstract:
 
-- id: 'Bartsch2020_Bachelor_Thesis'
+- id: 'Bartsch2020_bachelor.thesis'
   tags:
     - 'Pharmacometrics'
   year: 2020
-  pdf: 'thesis/Bartsch2020_Bachelor_Thesis.pdf'
+  pdf: 'thesis/Bartsch2020_bachelor.thesis.pdf'
   authors: 'Florian Bartsch (supervisor: M. König)'
   people:
     - florian_bartsch
@@ -2103,11 +2103,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository:
   abstract: 'Cholesterol is one of the most important molecules in biology. Elevated plasma levels are associated with an increased risk for arteriosclerosis and cardiovascular diseases. A common treatment for hypercholesterolemic patients are statins, which are capable of reducing total plasma cholesterol levels. Within this thesis the effects of the statin simvastatin on cholesterol levels were studied using a computational modelling approach. Based on extensive data curation, a kinetic model of simvastatin pharmacokinetics coupled to a pharmacodynamic model of cholesterol metabolism was developed. The resulting pharmacokinetic/ pharmacodynamic (PK/PD) model was applied to study the effects of simvastatin on hepatic HMG-CoA reductase activity, hepatic cholesterol homeostasis and plasma cholesterol levels.'
 
-- id: 'Duport2020_Bachelor_Thesis'
+- id: 'Duport2020_bachelor.thesis'
   tags:
     - 'Pharmacometrics'
   year: 2020
-  pdf: 'thesis/Duport2020_Bachelor_Thesis.pdf'
+  pdf: 'thesis/Duport2020_bachelor.thesis.pdf'
   authors: 'Yannick Duport (supervisor: M. König)'
   people:
     - yannick_duport
@@ -2129,12 +2129,12 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository:
   abstract: 'Midazolam is one of the most effective and safe medicines used for anesthesia and procedural sedation, as well as treating trouble sleeping and severe agitation. Midazolam is metabolised in the liver as well as in the small intestine to cytochrome P450 3A4 (CYP3A4). Many factors can alter the pharmacokinetics of midazolam due to inhibition or induction of hepatic and/or intestinal metabolism, resulting in either (i) adverse effects due to increased plasma midazolam concentrations in case of inhibition of metabolism or (ii) ineffectiveness as a consequence of too low concentrations if metabolism is induced. Within this thesis the clearance and pharmacokinetics of midazolam were studied, using a computational modeling approach. A large data base of midazolam pharmacokinetics data was established and utilized to develop a physiological-based pharmacokinetics model of midazolam. The model was applied to study the following questions: (i) What are the effects of CYP3A4 inhibition and induction on midazolam pharmacokinetics? (ii) What are the differences of intestinal and hepatic CYP3A4 inhibition and induction on midazolam pharmacokinetics?'
 
-- id: 'Grzegorzewski2020_PKDB'
+- id: 'Grzegorzewski2020_pkdb'
   tags:
     - 'Pharmacometrics'
     - 'Open & FAIR'
   year: 2020
-  pdf: 'publication/Grzegorzewski2020_PKDB.pdf'
+  pdf: 'publication/Grzegorzewski2020_pkdb.pdf'
   authors: 'J. Grzegorzewski, J. Brandhorst, K. Green, D. Eleftheriadou, Y. Duport, F. Barthorscht, A. Köller, D. Y. J. Ke, S. De Angelis, and M. König'
   people:
     - jan_grzegorzewski
@@ -2157,11 +2157,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository: https://github.com/matthiaskoenig/pkdb
   abstract: 'A multitude of pharmacokinetics studies have been published. However, due to the lack of an open database, pharmacokinetics data, as well as the corresponding meta-information, have been difficult to access. We present PK-DB (https://pk-db.com), an open database for pharmacokinetics information from clinical trials. PK-DB provides curated information on (i) characteristics of studied patient cohorts and subjects (e.g. age, bodyweight, smoking status, genetic variants); (ii) applied interventions (e.g. dosing, substance, route of application); (iii) pharmacokinetic parameters (e.g. clearance, half-life, area under the curve) and (iv) measured pharmacokinetic time-courses. Key features are the representation of experimental errors, the normalization of measurement units, annotation of information to biological ontologies, calculation of pharmacokinetic parameters from concentration-time profiles, a workflow for collaborative data curation, strong validation rules on the data, computational access via a REST API as well as human access via a web interface. PK-DB enables meta-analysis based on data from multiple studies and data integration with computational models. A special focus lies on meta-data relevant for individualized and stratified computational modeling with methods like physiologically based pharmacokinetic (PBPK), pharmacokinetic/pharmacodynamic (PK/PD), or population pharmacokinetic (pop PK) modeling.'
 
-- id: 'Keating2020_SBML'
+- id: 'Keating2020_sbml'
   tags:
     - 'Open & FAIR'
   year: 2020
-  pdf: 'publication/Keating2020_SBML.pdf'
+  pdf: 'publication/Keating2020_sbml.pdf'
   authors: 'S. M. Keating, D. Waltemath, M. König, F. Zhang, A. Dräger, C. Chaouiya, F. T. Bergmann, A. Finney, C. S. Gillespie, T. Helikar, S. Hoops, R. S. Malik-Sheriff, S. L. Moodie, I. I. Moraru, C. J. Myers, A. Naldi, B. G. Olivier, S. Sahle, J. C. Schaff, L. P. Smith, M. J. Swat, DT, L. Watanabe, D. J. Wilkinson, M. L. Blinov, K. Begley, J. R. Faeder, H. F. Gómez, T. M. Hamm, Y. Inagaki, W. Liebermeister, A. L. Lister, D. Lucio, E. Mjolsness, C. J. Proctor, K. Raman, N. Rodriguez, C. A. Shaffer, B. E. Shapiro, J. Stelling, N. Swainston, N. Tanimura, J. Wagner, M. Meier-Schellersheim, H. M. Sauro, B. Palsson, H. Bolouri, H. Kitano, A. Funahashi, H. Hermjakob, J. C. Doyle, M. Hucka, and SBML Community members'
   people:
     - matthias_koenig
@@ -2182,11 +2182,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository: https://sourceforge.net/projects/sbml/
   abstract: 'Systems biology has experienced dramatic growth in the number, size, and complexity of computational models. To reproduce simulation results and reuse models, researchers must exchange unambiguous model descriptions. We review the latest edition of the Systems Biology Markup Language (SBML), a format designed for this purpose. A community of modelers and software authors developed SBML Level 3 over the past decade. Its modular form consists of a core suited to representing reaction-based models and packages that extend the core with features suited to other model types including constraint-based models, reaction-diffusion models, logical network models, and rule-based models. The format leverages two decades of SBML and a rich software ecosystem that transformed how systems biologists build and interact with models. More recently, the rise of multiscale models of whole cells and organs, and new data sources such as single-cell measurements and live imaging, has precipitated new ways of integrating data with models. We provide our perspectives on the challenges presented by these developments and how SBML Level 3 provides the foundation needed to support this evolution.'
 
-- id: 'Neal2020_OMEX'
+- id: 'Neal2020_omex'
   tags:
     - 'Open & FAIR'
   year: 2020
-  pdf: 'publication/Neal2020_OMEX.pdf'
+  pdf: 'publication/Neal2020_omex.pdf'
   authors: 'M. L. Neal, J. H. Gennari, D. Waltemath, D. P. Nickerson, and M. König'
   people:
     - matthias_koenig
@@ -2206,11 +2206,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository:
   abstract: 'A standardized approach to annotating computational biomedical models and their associated files can facilitate model reuse and reproducibility among research groups, enhance search and retrieval of models and data, and enable semantic comparisons between models. Motivated by these potential benefits and guided by consensus across the COmputational Modeling in BIology NEtwork (COMBINE) community, we have developed a specification for encoding annotations in Open Modeling and EXchange (OMEX)-formatted archives. Distributing modeling projects within these archives is a best practice established by COMBINE, and the OMEX metadata specification presented here provides a harmonized, community-driven approach for annotating a variety of standardized model and data representation formats within an archive. The specification primarily includes technical guidelines for encoding archive metadata, so that software tools can more easily utilize and exchange it, thereby spurring broad advancements in model reuse, discovery, and semantic analyses.'
 
-- id: 'Schreiber2020_Standards_in_Systems_and_Synthetic_Biology'
+- id: 'Schreiber2020_synthetic.biology'
   tags:
     - 'Open & FAIR'
   year: 2020
-  pdf: 'publication/Schreiber2020_Standards_in_Systems_and_Synthetic_Biology.pdf'
+  pdf: 'publication/Schreiber2020_synthetic.biology.pdf'
   authors: 'F. Schreiber, B. Sommer, G. Bader, P. Gleeson, M. Golebiewski, T. Gorochowski, M. Hucka, S. Keating, M. König, C. Myers, D. Nickerson, and D. Walthemath'
   people:
     - matthias_koenig
@@ -2230,11 +2230,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository:
   abstract: 'This special issue of the Journal of Integrative Bioinformatics presents papers related to the 10th COMBINE meeting together with the annual update of COMBINE standards in systems and synthetic biology.'
 
-- id: 'Waltemath2020_COMBINE2019'
+- id: 'Waltemath2020_combine2019'
   tags:
     - 'Open & FAIR'
   year: 2020
-  pdf: 'publication/Waltemath2020_COMBINE2019.pdf'
+  pdf: 'publication/Waltemath2020_combine2019.pdf'
   authors: 'D. Waltemath, M. Golebiewski, M. Blinov, P. Gleeson, H. Hermjakob, E. Inau, S. Keating, M. König, O. Krebs, R. Malik-Sheriff, D. Nickerson, E. Oberortner, H. Sauro, F. Schreiber, L. Smith, M. Stefan, U. Wittig, and C. Myers'
   people:
     - matthias_koenig
@@ -2254,11 +2254,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository:
   abstract: 'This paper presents a report on outcomes of the 10th Computational Modeling in Biology Network (COMBINE) meeting that was held in Heidelberg, Germany, in July of 2019. The annual event brings together researchers, biocurators and software engineers to present recent results and discuss future work in the area of standards for systems and synthetic biology. The COMBINE initiative coordinates the development of various community standards and formats for computational models in the life sciences. Over the past 10 years, COMBINE has brought together standard communities that have further developed and harmonized their standards for better interoperability of models and data. COMBINE 2019 was co-located with a stakeholder workshop of the European EU-STANDS4PM initiative that aims at harmonized data and model standardization for in silico models in the field of personalized medicine, as well as with the FAIRDOM PALs meeting to discuss findable, accessible, interoperable and reusable (FAIR) data sharing. This report briefly describes the work discussed in invited and contributed talks as well as during breakout sessions. It also highlights recent advancements in data, model, and annotation standardization efforts. Finally, this report concludes with some challenges and opportunities that this community will face during the next 10 years.'
 
-- id: 'Smith2020_SBML_distrib'
+- id: 'Smith2020_sbml.distrib'
   tags:
     - 'Open & FAIR'
   year: 2020
-  pdf: 'publication/Smith2020_SBML_distrib.pdf'
+  pdf: 'publication/Smith2020_sbml.distrib.pdf'
   authors: 'L. Smith, S. Moodie, F. Bergmann, C. Gillespie, S. Keating, M. König, C. Myers, M. Swat, D. Wilkinson, and M. Hucka'
   people:
     - matthias_koenig
@@ -2279,11 +2279,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository:
   abstract: 'Biological models often contain elements that have inexact numerical values, since they are based on values that are stochastic in nature or data that contains uncertainty. The Systems Biology Markup Language (SBML) Level 3 Core specification does not include an explicit mechanism to include inexact or stochastic values in a model, but it does provide a mechanism for SBML packages to extend the Core specification and add additional syntactic constructs. The SBML Distributions package for SBML Level 3 adds the necessary features to allow models to encode information about the distribution and uncertainty of values underlying a quantity.'
 
-- id: 'Lieven2020_Memote'
+- id: 'Lieven2020_memote'
   tags:
     - 'Open & FAIR'
   year: 2020
-  pdf: 'publication/Lieven2020_Memote.pdf'
+  pdf: 'publication/Lieven2020_memote.pdf'
   authors: 'C. Lieven, M. E. Beber, B. G. Olivier, F. T. Bergmann, M. Ataman, P. Babaei, J. A. Bartell, L. M. Blank, S. Chauhan, K. Correia, C. Diener, A. Dräger, B. E. Ebert, J. N. Edirisinghe, J. P. Faria, A. Feist, G. Fengos, R. M. T. Fleming, B. Garcia-Jimenez, V. Hatzimanikatis, W. van Helvoirt, C. Henry, H. Hermjakob, M. J. Herrgard, H. U. Kim, Z. King, J. J. Koehorst, M. König, S. Klamt, E. Klipp, M. Lakshmanan, N. Le Novere, D. Lee, S. Y. Lee, S. Lee, N. E. Lewis, H. Ma, D. Machado, R. Mahadevan, P. Maia, A. Mardinoglu, G. L. Medlock, J. Monk, J. Nielsen, L. K. Nielsen, J. Nogales, I. Nookaew, O. Resendis, B. Palsson, J. A. Papin, K. R. Patil, M. Poolman, N. D. Price, A. Richelle, I. Rocha, B. Sanchez, P. Schaap, R. S. Malik Sheriff, S. Shoaie, N. Sonnenschein, B. Teusink, P. Vilaca, J. O. Vik, J. A. Wodke, J. C. Xavier, Q. Yuan, M. Zakhartsev, and C. Zhang'
   people:
     - matthias_koenig
@@ -2299,11 +2299,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository: https://github.com/opencobra/memote
   abstract: 'Reconstructing metabolic reaction networks enables the development of testable hypotheses of an organism’s metabolism under different conditions. State-of-the-art genome-scale metabolic models (GEMs) can include thousands of metabolites and reactions that are assigned to subcellular locations. Gene–protein–reaction (GPR) rules and annotations using database information can add meta-information to GEMs. GEMs with metadata can be built using standard reconstruction protocols, and guidelines have been put in place for tracking provenance and enabling interoperability, but a standardized means of quality control for GEMs is lacking. Here we report a community effort to develop a test suite named MEMOTE (for metabolic model tests) to assess GEM quality.'
 
-- id: 'Koenig2020_EXSIMO'
+- id: 'Koenig2020_exsimo'
   tags:
     - 'Digital Twins'
   year: 2020
-  pdf: 'preprint/Koenig2020_EXSIMO.pdf'
+  pdf: 'preprint/Koenig2020_exsimo.pdf'
   authors: 'M. König'
   people:
     - matthias_koenig
@@ -2319,11 +2319,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository: https://github.com/matthiaskoenig/exsimo
   abstract: 'To address the issue of reproducibility in computational modeling we developed the concept of an executable simulation model (EXSIMO). An EXSIMO combines model, data and code with the execution environment to run the computational analysis in an automated manner using tools from software engineering. Key components are i) models, data and code for the computational analysis; ii) tests for models, data and code; and iii) an automation layer to run tests and execute the analysis. An EXSIMO combines version control, model, data, units, annotations, analysis, reports, execution environment, testing, continuous integration and release. We applied the concept to perform a replication study of a computational analysis of hepatic glucose metabolism in the liver. The corresponding EXSIMO is available from https://github.com/matthiaskoenig/exsimo'
 
-- id: 'Lambers2019_MOR'
+- id: 'Lambers2019_mor'
   tags:
     - 'Digital Twins'
   year: 2019
-  pdf: 'proceeding/Lambers2019_MOR.pdf'
+  pdf: 'publication/Lambers2019_mor.pdf'
   authors: 'L. Lambers, T. Ricken, and M. König'
   people:
     - matthias_koenig
@@ -2339,11 +2339,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository:
   abstract: 'Numerical modeling of biological systems has become an important assistance for understanding and predicting hepatic diseases like non-alcoholic fatty liver disease (NAFLD) or the detoxification of drugs and toxines by the liver. We developed a model for the simulation of hepatic function-perfusion processes using a multiscale and multiphase approach. Here, the liver lobules are described using a homogenization approach with a coupled set of partial differential equations (PDE) based on the Theory of Porous Media (TPM) to describe the coupled blood transport and tissue deformation. For the description of metabolic processes on cellular scale ordinary differential equations (ODE) are used. For many practical and clinical applications, e.g. optimization procedures or uncertainty quantification, a fast but reliable computation is required. Thus, we use a non-linear model order reduction (MOR) based on an artificial neural network (ANN) for the prediction of simulation results. The practicability of this approach is shown in a comparison between the high fidelity numerical simulation of a NAFLD and the predicted results by the ANN.'
 
-- id: 'Schreiber2019_combine_editorial'
+- id: 'Schreiber2019_combine.editorial'
   tags:
     - 'Open & FAIR'
   year: 2019
-  pdf: 'publication/Schreiber2019_combine_editorial.pdf'
+  pdf: 'publication/Schreiber2019_combine.editorial.pdf'
   authors: 'F. Schreiber, G. Bader, P. Gleeson, M. Golebiewski, M. Hucka, S. M. Keating, M. König, C. Myers, D. Nickerson, B. Sommer, and D. Waltemath'
   people:
     - matthias_koenig
@@ -2359,11 +2359,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository:
   abstract: 'This special issue of the Journal of Integrative Bioinformatics presents an overview of COMBINE standards and their latest specifications. The standards cover representation formats for computational modeling in synthetic and systems biology and include BioPAX, CellML, NeuroML, SBML, SBGN, SBOL and SED-ML. The articles in this issue contain updated specifications of SBGN Process Description Level 1 Version 2, SBML Level 3 Core Version 2 Release 2, SBOL Version 2.3.0, and SBOL Visual Version 2.1.'
 
-- id: 'Hucka2019_sbml-level-3-version-2-core'
+- id: 'Hucka2019_sbml.l3v2.core'
   tags:
     - 'Open & FAIR'
   year: 2019
-  pdf: 'publication/Hucka2019_sbml-level-3-version-2-core.pdf'
+  pdf: 'publication/Hucka2019_sbml.l3v2.core.pdf'
   authors: 'M. Hucka, F. Bergmann, C. Chaouiya, A. Dräger, S. Hoops, S. Keating, M. König, N. Le Novere, C. Myers, B. Olivier, S. Sahle, J. Schaff, R. Sheriff, L. Smith, D. Waltemath, D. Wilkinson, and F. Zhang'
   people:
     - matthias_koenig
@@ -2488,7 +2488,7 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
     - 'Digital Twins'
     - 'AI'
   year: 2017
-  pdf: 'review/Christ2017_surgery.pdf'
+  pdf: 'publication/Christ2017_surgery.pdf'
   authors: 'B. ChristΔ, U. DahmenΔ, K. H. HerrmannΔ, M. KönigΔ, J. R. ReichenbachΔ, T. RickenΔ, J. SchleicherΔ, L. Ole SchwenΔ, S. VlaicΔ, and N. WaschinskyΔ (Δ equal contribution)'
   people:
     - matthias_koenig
@@ -2517,7 +2517,7 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
     - 'Open & FAIR'
     - 'AI'
   year: 2016
-  pdf: 'proceeding/Koenig2016_models2clinics.pdf'
+  pdf: 'publication/Koenig2016_models2clinics.pdf'
   authors: 'M. KönigΔ, A. Oellrich<b>Δ</b>, D. Waltemath<b>Δ</b>, R. Dobson, T. Hubbard, and O. Wolkenhauer (Δ equal contribution)'
   people:
     - matthias_koenig
@@ -2553,11 +2553,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository: 'http://www.github.com/matthiaskoenig/cy3sabiork'
   abstract: 'Kinetic data of biochemical reactions are essential for the creation of kinetic models of biochemical networks. One of the main resources of such information is SABIO-RK, a curated database for kinetic data of biochemical reactions and their related information. Despite the importance for computational modelling there has been no simple solution to visualize the kinetic data from SABIO-RK. In this work, I present cy3sabiork, an app for querying and visualization of kinetic data from SABIO-RK in Cytoscape. The kinetic information is accessible via a combination of graph structure and annotations of nodes, with provided information consisting of: (I) reaction details, enzyme and organism; (II) kinetic law, formula, parameters; (III) experimental conditions; (IV) publication; (V) additional annotations. cy3sabiork creates an intuitive visualization of kinetic entries in form of a species-reaction-kinetics graph, which reflects the reaction-centered approach of  SABIO-RK. Kinetic entries can be imported in SBML format from either the SABIO-RK web interface or via web service queries. The app allows for easy comparison of kinetic data, visual inspection of the elements involved in the kinetic record and simple access to the annotation information of the kinetic record. I applied cy3sabiork in the computational modelling of galactose metabolism in the human liver.'
 
-- id: 'Wholecell2016_Toward_community_standards'
+- id: 'Wholecell2016_community.standards'
   tags:
     - 'Open & FAIR'
   year: 2016
-  pdf: 'publication/Wholecell2016_Toward_community_standards.pdf'
+  pdf: 'publication/Wholecell2016_community.standards.pdf'
   authors: 'Wholecell Consortium (M. König)'
   people:
     - matthias_koenig
@@ -2573,11 +2573,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository: 'https://github.com/whole-cell-tutors'
   abstract: 'Objective: Whole-cell (WC) modeling is a promising tool for biological research, bioengineering, and medicine. However, substantial work remains to create accurate comprehensive models of complex cells. Methods: We organized the 2015 Whole-Cell Modeling Summer School to teach WC modeling and evaluate the need for new WC modeling standards and software by recoding a recently published WC model in the Systems Biology Markup Language. Results: Our analysis revealed several challenges to representing WC models using the current standards. Conclusion: We, therefore, propose several new WC modeling standards, software, and databases. Significance: We anticipate that these new standards and software will enable more comprehensive models.'
 
-- id: 'Abshagen2015_Pathobiochemical_signatures_cholestatic'
+- id: 'Abshagen2015_cholestasis'
   tags:
     - 'AI'
   year: 2015
-  pdf: 'publication/Abshagen2015_Pathobiochemical_signatures_cholestatic.pdf'
+  pdf: 'publication/Abshagen2015_cholestasis.pdf'
   authors: 'Kerstin A.<b>Δ</b>, M. KönigΔ, A. Hoppe, M. Thomas, I. Müller, M. Ebert, H. Weng, H. G. Holzhütter, U. M. Zanger, J. Bode, B. Vollmar, and S. Dooley (Δ equal contribution)'
   people:
     - matthias_koenig
@@ -2593,11 +2593,12 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository: 'http://github.com/matthiaskoenig/bdl-analysis/'
   abstract: 'Background: Disrupted bile secretion leads to liver damage characterized by inflammation, fibrosis, eventually cirrhosis, and hepatocellular cancer. As obstructive cholestasis often progresses insidiously, markers for the diagnosis and staging of the disease are urgently needed. To this end, we compiled a comprehensive data set of serum markers, histological parameters and transcript profiles at 8 time points of disease progression after bile duct ligation (BDL) in mice, aiming at identifying a set of parameters that could be used as robust biomarkers for transition of different disease progression phases. Results: Statistical analysis of the more than 6,000 data points revealed distinct temporal phases of disease. Time course correlation analysis of biochemical, histochemical and mRNA transcript parameters (=factors) defined 6 clusters for different phases of disease progression. The number of CTGF-positive cells provided the most reliable overall measure for disease progression at histological level, bilirubin at biochemical level, and metalloproteinase inhibitor 1 (Timp1) at transcript level. Prominent molecular events exhibited by strong transcript peaks are found for the transcriptional regulator Nr0b2 (Shp) and 1,25-dihydroxyvitamin D(3) 24-hydroxylase (Cyp24a1) at 6 h. Based on these clusters, we constructed a decision tree of factor combinations potentially useful as markers for different time intervals of disease progression. Best prediction for onset of disease is achieved by fibronectin (Fn1), for early disease phase by Cytochrome P450 1A2 (Cyp1a2), passage to perpetuation phase by collagen1α-1 (Col1a1), and transition to the progression phase by interleukin 17-a (Il17a), with early and late progression separated by Col1a1. Notably, these predictions remained stable even for randomly chosen small sub-sets of factors selected from the clusters. Conclusion: Our detailed time-resolved explorative study of liver homogenates following BDL revealed a well-coordinated response, resulting in disease phase dependent parameter modulations at morphological, biochemical, metabolic and gene expression levels. Interestingly, a small set of selected parameters can be used as diagnostic markers to predict disease stages in mice with cholestatic liver disease.'
 
-- id: 'Werner2015_Influence_Growth_Perfusion'
+- id: 'Werner2015_growth.perfusion'
   tags:
     - 'Digital Twins'
   year: 2015
   pdf: 
+
   authors: 'D. Werner, T. Ricken, U. Dahmen, O. Dirsch, H. G. Holzhütter, and M. König'
   people:
     - matthias_koenig
@@ -2613,11 +2614,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository:
   abstract: 'Biochemical reactions in the liver are a complex non-linear and time depending coupled function-perfusion-mechanisms. The metabolism of the liver, e.g. nutrient storage, is directly coupled to its blood perfusion. Growth phenomena, such as accumulation of fat, have a strong impact onto micro-perfusion within the liver. Here, we present the results of a computational model that describes selected coupled functionalities. The metabolic processes take place in the liver cells, the hepatocytes, which are arranged in a delicate system of capillaries, so called sinusoids. Nutrients, oxygen, and other components of the blood are transported through the sinusoids. Due to this highly complex inner structure of the lobules it is impracticable to give a microscopic geometrical description in a continuum mechanical manner. Therefore, a homogenization scheme based on the theory of porous media (TPM) is used;. In case of the presented liver model we consider a porous solid body, that consists of tissue and fat, and a fluid representing blood. In each phase several miscible components are considered. For the microscopic cell level use has been made of an embedded set of ordinary differential equations (ODE) that mimics a simplified metabolism, e.g. glucose utilization and production;. In case of growth of the fat phase we follow a phenomenological approach. Numerical examples for this coupled process are presented and discussed.'
 
-- id: 'Somogyi2015_libRoadRunner'
+- id: 'Somogyi2015_libroadrunner'
   tags:
     - 'Open & FAIR'
   year: 2015
-  pdf: 'publication/Somogyi2015_libRoadRunner.pdf'
+  pdf: 'publication/Somogyi2015_libroadrunner.pdf'
   authors: 'E. T. Somogyi, J. M. Bouteiller, J. A. Glazier, M. König, J. K. Medley, M. H. Swat, and H. M. Sauro'
   people:
     - matthias_koenig
@@ -2633,11 +2634,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository: 'https://github.com/sys-bio/roadrunner'
   abstract: 'Motivation: This article presents libRoadRunner, an extensible, high-performance, cross-platform, open-source software library for the simulation and analysis of models expressed using Systems Biology Markup Language (SBML). SBML is the most widely used standard for representing dynamic networks, especially biochemical networks. libRoadRunner is fast enough to support large-scale problems such as tissue models, studies that require large numbers of repeated runs and interactive simulations. Results: libRoadRunner is a self-contained library, able to run both as a component inside other tools via its C++ and C bindings, and interactively through its Python interface. Its Python Application Programming Interface (API) is similar to the APIs of MATLAB and SciPy, making it fast and easy to learn. libRoadRunner uses a custom Just-In-Time (JIT) compiler built on the widely used LLVM JIT compiler framework. It compiles SBML-specified models directly into native machine code for a variety of processors, making it appropriate for solving extremely large models or repeated runs. libRoadRunner is flexible, supporting the bulk of the SBML specification (except for delay and non-linear algebraic equations) including several SBML extensions (composition and distributions). It offers multiple deterministic and stochastic integrators, as well as tools for steady-state analysis, stability analysis and structural analysis of the stoichiometric matrix. Availability and implementation: libRoadRunner binary distributions are available for Mac OS X, Linux and Windows. The library is licensed under Apache License Version 2.0. libRoadRunner is also available for ARM-based computers such as the Raspberry Pi. http://www.libroadrunner.org provides online documentation, full build instructions, binaries and a git source repository.'
 
-- id: 'Ricken2014_LiverTissue'
+- id: 'Ricken2014_livertissue'
   tags:
     - 'Digital Twins'
   year: 2014
-  pdf: 'publication/Ricken2014_LiverTissue.pdf'
+  pdf: 'publication/Ricken2014_livertissue.pdf'
   authors: 'T. Ricken, D. Werner, H. G. Holzhütter, M. König, U. Dahmen, and O. Dirsch'
   people:
     - matthias_koenig
@@ -2656,7 +2657,7 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   tags:
     - 'AI'
   year: 2014
-  pdf: proceeding/Koenig2014_systembiologie.pdf
+  pdf: publication/Koenig2014_systembiologie.pdf
   authors: 'M. König and H. G. Holzhütter'
   people:
     - matthias_koenig
@@ -2671,12 +2672,12 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   homepage:
   abstract: 'The liver performs a multitude of important physiological functions such as synthesising plasma proteins, producing bile and hormones, detoxifying toxic compounds and precisely regulating the concentration of various substances in the blood (homeostasis). In particular, the liver plays a crucial role in the regulation of blood glucose levels. Modelling hepatic glucose metabolism helps to understand central liver functions and basic regulation mechanisms and thereby provides insights in the role of the liver in systemic diseases such as diabetes.'
 
-- id: 'Koenig2013_CancerTissue'
+- id: 'Koenig2013_cancertissue'
   tags:
     - 'Digital Pathology'
     - 'AI'
   year: 2013
-  pdf: 'publication/Koenig2013_CancerTissue.pdf'
+  pdf: 'publication/Koenig2013_cancertissue.pdf'
   authors: 'M. König, H. G. Holzhütter, and N. Berndt'
   people:
     - matthias_koenig
@@ -2691,11 +2692,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   homepage:
   abstract: 'Characteristics of many tumor types are the reprogramming of metabolism and the occurrence of regional hypoxia. In this work, we investigated the hypothesis that metabolic reprogramming in combination with metabolic zonation of cellular energy metabolism are important factors in promotion of the growth capacity of solid tumors. A tissue-scale model of the two main ATP delivering pathways, glycolysis (GLY) and oxidative phosphorylation (OXP), was used to simulate the energy metabolism within solid tumors under various metabolic strategies. Remarkably, despite the high diversity in the usage of glucose, lactate and oxygen in various spatial regions, the tumor as a whole clearly displays the hallmark of the so-called Warburg effect, i.e. a high rate of glucose consumption and lactate production in the presence of sufficiently high levels of oxygen. Our simulations suggest that an increase in GLY capacity and concomitant decrease in OXP capacity from the periphery towards the center of the tumor improves the availability of oxygen to pericentral tumor cells. The found relationship between the regional oxygen level and the relative share of GLY and OXP capacities supports the view that metabolite availability functions as key regulator of tumor energy metabolism.'
 
-- id: 'Koenig2012b_GlucoseModelT2DM'
+- id: 'Koenig2012b_glucosemodelt2dm'
   tags:
     - 'AI'
   year: 2012
-  pdf: 'publication/Koenig2012b_GlucoseModelT2DM.pdf'
+  pdf: 'publication/Koenig2012b_glucosemodelt2dm.pdf'
   authors: 'M. König and H. G. Holzhütter'
   people:
     - matthias_koenig
@@ -2710,11 +2711,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   homepage:
   abstract: 'A major problem in the insulin therapy of patients with diabetes type 2 (T2DM) is the increased occurrence of hypoglycemic events which, if left untreated, may cause confusion or fainting and in severe cases seizures, coma, and even death. To elucidate the potential contribution of the liver to hypoglycemia in T2DM we applied a detailed kinetic model of human hepatic glucose metabolism to simulate changes in glycolysis, gluconeogenesis, and glycogen metabolism induced by deviations of the hormones insulin, glucagon, and epinephrine from their normal plasma profiles. Our simulations reveal in line with experimental and clinical data from a multitude of studies in T2DM, (i) significant changes in the relative contribution of glycolysis, gluconeogenesis, and glycogen metabolism to hepatic glucose production and hepatic glucose utilization; (ii) decreased postprandial glycogen storage as well as increased glycogen depletion in overnight fasting and short term fasting; and (iii) a shift of the set point defining the switch between hepatic glucose production and hepatic glucose utilization to elevated plasma glucose levels, respectively, in T2DM relative to normal, healthy subjects. Intriguingly, our model simulations predict a restricted gluconeogenic response of the liver under impaired hormonal signals observed in T2DM, resulting in an increased risk of hypoglycemia. The inability of hepatic glucose metabolism to effectively counterbalance a decline of the blood glucose level becomes even more pronounced in case of tightly controlled insulin treatment. Given this Janus face mode of action of insulin, our model simulations underline the great potential that normalization of the plasma glucagon profile may have for the treatment of T2DM.'
 
-- id: 'Koenig2012_CySBML'
+- id: 'Koenig2012_cysbml'
   tags:
     - 'Open & FAIR'
   year: 2012
-  pdf: 'publication/Koenig2012_CySBML.pdf'
+  pdf: 'publication/Koenig2012_cysbml.pdf'
   authors: 'M. König, A. Dräger, and H. G. Holzhütter'
   people:
     - matthias_koenig
@@ -2730,11 +2731,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository: 'https://github.com/matthiaskoenig/cy3sbml'
   abstract: 'Summary: CySBML is a plugin designed to work with Systems Biology Markup Language (SBML) in Cytoscape having the following features: SBML import, support of the SBML layout and qualitative model packages, navigation in network layouts based on SBML structure, access to MIRIAM and SBO-based annotations and SBML validation. CySBML includes an importer for BioModels to load SBML from standard repositories. Availability and implementation: Freely available for non-commercial purposes through the Cytoscape plugin manager or for download at http://sourceforge.net/projects/cysbml/. Contact: cysbml-team@lists.sourceforge.net. Supplementary information: Tutorial, usage guide, installation instructions and additional figures are available for download at http://www.charite.de/sysbio/people/koenig/software/cysbml/.'
 
-- id: 'Koenig2012a_GlucoseModel'
+- id: 'Koenig2012a_glucosemodel'
   tags:
     - 'AI'
   year: 2012
-  pdf: 'publication/Koenig2012a_GlucoseModel.pdf'
+  pdf: 'publication/Koenig2012a_glucosemodel.pdf'
   authors: 'M. König, S. Bulik, and H. G. Holzhütter'
   people:
     - matthias_koenig
@@ -2750,11 +2751,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository:
   abstract: 'Despite the crucial role of the liver in glucose homeostasis, a detailed mathematical model of human hepatic glucose metabolism is lacking so far. Here we present a detailed kinetic model of glycolysis, gluconeogenesis and glycogen metabolism in human hepatocytes integrated with the hormonal control of these pathways by insulin, glucagon and epinephrine. Model simulations are in good agreement with experimental data on (i) the quantitative contributions of glycolysis, gluconeogenesis, and glycogen metabolism to hepatic glucose production and hepatic glucose utilization under varying physiological states. (ii) the time courses of postprandial glycogen storage as well as glycogen depletion in overnight fasting and short term fasting (iii) the switch from net hepatic glucose production under hypoglycemia to net hepatic glucose utilization under hyperglycemia essential for glucose homeostasis (iv) hormone perturbations of hepatic glucose metabolism. Response analysis reveals an extra high capacity of the liver to counteract changes of plasma glucose level below 5 mM (hypoglycemia) and above 7.5 mM (hyperglycemia). Our model may serve as an important module of a whole-body model of human glucose metabolism and as a valuable tool for understanding the role of the liver in glucose homeostasis under normal conditions and in diseases like diabetes or glycogen storage diseases.'
 
-- id: 'Herling2011_CancerGlucoseReview'
+- id: 'Herling2011_cancerglucosereview'
   tags:
     - 'AI'
   year: 2011
-  pdf: 'review/Herling2011_CancerGlucoseReview.pdf'
+  pdf: 'publication/Herling2011_cancerglucosereview.pdf'
   authors: 'A. Herling, M. König, S. Bulik, and H. G. Holzhütter'
   people:
     - matthias_koenig
@@ -2770,11 +2771,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository:
   abstract: 'Many tumor types exhibit an impaired Pasteur effect, i.e. despite the presence of oxygen, glucose is consumed at an extraordinarily high rate compared with the tissue from which they originate - the so-called "Warburg effect". Glucose has to serve as the source for a diverse array of cellular functions, including energy production, synthesis of nucleotides and lipids, membrane synthesis and generation of redox equivalents for antioxidative defense. Tumor cells acquire specific enzyme-regulatory mechanisms to direct the main flux of glucose carbons to those pathways most urgently required under challenging external conditions such as varying substrate availability, presence of anti-cancer drugs or different phases of the cell cycle. In this review we summarize the currently available information on tumor-specific expression, activity and kinetic properties of enzymes involved in the main pathways of glucose metabolism with due regard to the explanation of the regulatory basis and physiological significance of the Warburg effect. We conclude that, besides the expression level of the metabolic enzymes involved in the glucose metabolism of tumor cells, the unique tumor-specific pattern of isozymes and accompanying changes in the metabolic regulation below the translation level enable tumor cells to drain selfishly the blood glucose pool that non-transformed cells use as sparingly as possible.'
 
-- id: 'Koenig2011_FluxViz'
+- id: 'Koenig2011_fluxviz'
   tags:
     - 'Open & FAIR'
   year: 2011
-  pdf: 'proceeding/Koenig2011_FluxViz.pdf'
+  pdf: 'publication/Koenig2011_fluxviz.pdf'
   authors: 'M. König and H. G. Holzhütter'
   people:
     - matthias_koenig
@@ -2790,11 +2791,11 @@ Availability and implementation: The BayModTS codebase is available on GitHub at
   repository: 'https://github.com/matthiaskoenig/cy2fluxviz'
   abstract: 'Motivation: Methods like FBA and kinetic modeling are widely used to calculate fluxes in metabolic networks. For the analysis and understanding of simulation results and experimentally measured fluxes visualization software within the network context is indispensable. Results: We present Flux Viz, an open-source Cytoscape plug-in for the visualization of flux distributions in molecular interaction networks. FluxViz supports (i) import of networks in a variety of formats (SBML, GML, XGMML, SIF, BioPAX, PSI-MI) (ii) import of flux distributions as CSV, Cytoscape attributes or VAL files (iii) limitation of views to flux carrying reactions (flux subnetwork) or network attributes like localization (iv) export of generated views (SVG, EPS, PDF, BMP, PNG). Though FluxViz was primarily developed as tool for the visualization of fluxes in metabolic networks and the analysis of simulation results from FASIMU, a flexible software for batch flux-balance computation in large metabolic networks, it is not limited to biochemical reaction networks and FBA but can be applied to the visualization of arbitrary fluxes in arbitrary graphs. Availability: The platform-independent program is an open-source project, freely available at http://sourceforge.net/projects/fluxvizplugin/ under GNU public license, including manual, tutorial and examples.'
 
-- id: 'Gille2010_HepatoNet1'
+- id: 'Gille2010_hepatonet1'
   tags:
     - 'AI'
   year: 2010
-  pdf: 'publication/Gille2010_HepatoNet1.pdf'
+  pdf: 'publication/Gille2010_hepatonet1.pdf'
   authors: 'C. Gille, C. Bölling, A. Hoppe, S. Bulik, S. Hoffmann, K. Hübner, A. Karlstädt, R. Ganeshan, M. König, K. Rother, M. Weidlich, J. Behre, and H. G. Holzhütter'
   people:
     - matthias_koenig
