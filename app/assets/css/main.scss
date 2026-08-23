@@ -5,10 +5,15 @@
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 
-// Override before the bootswatch/bootstrap defaults are set, so a
-// slim navbar cascades through Bootstrap's own vertical-centering
-// math instead of being patched on afterwards.
+// Bootstrap 5 sizes the navbar from padding rather than a fixed-height
+// variable; $navbar-padding-y controls Bootstrap's own navbar rules for
+// a slim navbar, while $navbar-height/$navbar-margin-bottom are this
+// site's own tracking constants (matching that padding) used below for
+// the fixed-navbar body offset, brand-mark sizing, and the mobile
+// menu's max-height.
+$navbar-padding-y: .5rem;
 $navbar-height: 50px;
+$navbar-margin-bottom: 0;
 
 @import
   {% if site.bootwatch %}
@@ -36,6 +41,12 @@ body {
 // Typography
 // ------------------------------------------------------------------
 
+// Bootstrap 5 dropped the .text-justify utility; still used on a few
+// long-form paragraphs (see index.html, team.html, publications.html).
+.text-justify {
+  text-align: justify;
+}
+
 $font-serif-display: "Source Serif 4", Georgia, "Times New Roman", serif;
 $font-brand: "Space Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
@@ -44,11 +55,11 @@ $font-brand: "Space Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
 // applied consistently to the homepage/Open-Positions icons and to the
 // tag filters/badges on projects.html and publications.html
 $tag-colors: (
-  "digital-twins": $brand-info,
-  "ai": $brand-warning,
-  "digital-pathology": $brand-danger,
-  "pharmacometrics": $brand-success,
-  "open-fair": $brand-primary,
+  "digital-twins": $info,
+  "ai": $warning,
+  "digital-pathology": $danger,
+  "pharmacometrics": $success,
+  "open-fair": $primary,
 );
 
 h1, h2, h3 {
@@ -58,27 +69,27 @@ h1, h2, h3 {
 h1 {
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: $brand-primary;
+  color: $primary;
 }
 
 h2 {
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: $brand-primary;
+  color: $primary;
 }
 
 h3 {
   display: inline-block;
   font-weight: 600;
-  color: $brand-primary;
+  color: $primary;
   padding-bottom: 0.2em;
   margin-top: 0.8em;
-  border-bottom: 2px solid $brand-success;
+  border-bottom: 2px solid $success;
 }
 
 .header-light {
   font-weight: 700;
-  color: $brand-primary;
+  color: $primary;
   font-size: 2.6em;
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -93,7 +104,7 @@ h3 {
   font-size: 1.5em;
   font-weight: 400;
   letter-spacing: 0.03em;
-  color: $gray-dark;
+  color: $gray-800;
 }
 
 // ------------------------------------------------------------------
@@ -108,7 +119,7 @@ h3 {
     font-size: 1.6em;
     font-weight: 400;
     line-height: 1.4;
-    color: $brand-primary;
+    color: $primary;
     max-width: 780px;
     margin: 0 auto;
   }
@@ -127,7 +138,7 @@ h3 {
     .fa {
       display: block;
       font-size: 2.2em;
-      color: $brand-success;
+      color: $success;
       margin-bottom: 0.3em;
     }
 
@@ -160,7 +171,7 @@ h3 {
     }
 
     p {
-      color: $gray-dark;
+      color: $gray-800;
       font-size: 0.95em;
       margin-bottom: 0;
     }
@@ -176,7 +187,7 @@ h3 {
         color: inherit;
 
         h3 {
-          color: $brand-success;
+          color: $success;
         }
       }
     }
@@ -218,7 +229,7 @@ h3 {
     transform: translateX(-50%);
     width: 230px;
     background-color: $body-bg;
-    color: $text-color;
+    color: $body-color;
     border-radius: 4px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     padding: 0.9em 1em;
@@ -232,12 +243,12 @@ h3 {
     strong {
       display: block;
       font-family: $font-serif-display;
-      color: $brand-primary;
+      color: $primary;
     }
 
     .person-position {
       display: block;
-      color: $brand-success;
+      color: $success;
       font-size: 0.85em;
       text-transform: uppercase;
       letter-spacing: 0.04em;
@@ -246,7 +257,7 @@ h3 {
 
     p {
       margin: 0;
-      color: $gray-dark;
+      color: $gray-800;
     }
 
     &::after {
@@ -282,10 +293,10 @@ h3 {
 
 .tag-filter-btn {
   padding: 0.35em 0.9em;
-  border: 1px solid $gray-lighter;
+  border: 1px solid $gray-200;
   border-radius: 999px;
   background-color: $body-bg;
-  color: $gray-dark;
+  color: $gray-800;
   font-size: 0.85em;
   cursor: pointer;
   transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
@@ -295,12 +306,12 @@ h3 {
   }
 
   &:hover {
-    border-color: $brand-primary;
+    border-color: $primary;
   }
 
   &.active {
-    border-color: $brand-primary;
-    background-color: $brand-primary;
+    border-color: $primary;
+    background-color: $primary;
     color: #fff;
   }
 
@@ -329,8 +340,8 @@ h3 {
 .tag-badge {
   padding: 0.1em 0.5em;
   border-radius: 999px;
-  background-color: rgba($brand-success, 0.12);
-  color: darken($brand-success, 12%);
+  background-color: rgba($success, 0.12);
+  color: darken($success, 12%);
   font-size: 0.65em;
   font-weight: 600;
   text-transform: uppercase;
@@ -362,7 +373,7 @@ h3 {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border: 1px solid $gray-lighter;
+  border: 1px solid $gray-200;
   border-radius: 6px;
   background-color: $body-bg;
   transition: box-shadow 0.15s ease;
@@ -375,7 +386,7 @@ h3 {
     width: 100%;
     height: 110px;
     object-fit: cover;
-    background-color: $gray-lighter;
+    background-color: $gray-200;
   }
 
   // shown fully, not cropped (logos on research.html)
@@ -399,14 +410,14 @@ h3 {
 
     p {
       flex: 1;
-      color: $gray-dark;
+      color: $gray-800;
       font-size: 0.82em;
     }
 
     .news-date {
       flex: none;
       margin-bottom: 0.2em;
-      color: $gray-light;
+      color: $gray-600;
       font-size: 0.72em;
       text-transform: uppercase;
       letter-spacing: 0.04em;
@@ -443,7 +454,7 @@ h3 {
 
       .fa {
         font-size: 16px;
-        color: $gray-dark;
+        color: $gray-800;
       }
 
       &:hover img,
@@ -464,7 +475,7 @@ h3 {
 
 .position-card {
   padding: 1.2em 1.4em;
-  border: 1px solid $gray-lighter;
+  border: 1px solid $gray-200;
   border-radius: 6px;
   background-color: $body-bg;
   transition: box-shadow 0.15s ease;
@@ -480,7 +491,7 @@ h3 {
   }
 
   p {
-    color: $gray-dark;
+    color: $gray-800;
     font-size: 0.95em;
 
     &:last-child {
@@ -501,7 +512,7 @@ h3 {
   display: flex;
   gap: 0.8em;
   padding: 0.8em;
-  border: 1px solid $gray-lighter;
+  border: 1px solid $gray-200;
   border-radius: 6px;
   background-color: $body-bg;
   transition: box-shadow 0.15s ease;
@@ -524,13 +535,13 @@ h3 {
     strong {
       display: block;
       font-family: $font-serif-display;
-      color: $brand-primary;
+      color: $primary;
     }
 
     p {
       margin: 0.3em 0 0;
       font-size: 0.85em;
-      color: $gray-dark;
+      color: $gray-800;
     }
   }
 
@@ -544,7 +555,7 @@ h3 {
     .fa {
       font-size: 16px;
       vertical-align: middle;
-      color: $gray-dark;
+      color: $gray-800;
     }
   }
 }
@@ -563,7 +574,7 @@ h3 {
     top: 0.5em;
     bottom: 0.3em;
     width: 2px;
-    background-color: $gray-lighter;
+    background-color: $gray-200;
   }
 
   &::after {
@@ -576,7 +587,7 @@ h3 {
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-bottom: 8px solid $brand-success;
+    border-bottom: 8px solid $success;
   }
 }
 
@@ -601,9 +612,9 @@ h3 {
     height: 0.8em;
     margin-top: -0.4em;
     border-radius: 50%;
-    background-color: $brand-success;
+    background-color: $success;
     border: 2px solid $body-bg;
-    box-shadow: 0 0 0 2px $gray-lighter;
+    box-shadow: 0 0 0 2px $gray-200;
   }
 
   .timeline-year {
@@ -611,7 +622,7 @@ h3 {
     font-weight: 700;
     font-size: 0.95em;
     letter-spacing: 0.08em;
-    color: $brand-primary;
+    color: $primary;
   }
 }
 
@@ -626,7 +637,7 @@ h3 {
   align-items: center;
   gap: 0.6em;
   padding: 0.5em 0.6em;
-  border: 1px solid $gray-lighter;
+  border: 1px solid $gray-200;
   border-radius: 6px;
   background-color: $body-bg;
   transition: box-shadow 0.15s ease;
@@ -650,7 +661,7 @@ h3 {
       display: block;
       font-family: $font-serif-display;
       font-size: 0.9em;
-      color: $brand-primary;
+      color: $primary;
       // full names must stay readable, not truncated with an ellipsis
       white-space: normal;
 
@@ -662,7 +673,7 @@ h3 {
 
       .fa {
         font-size: 0.85em;
-        color: $gray-dark;
+        color: $gray-800;
       }
     }
 
@@ -689,11 +700,11 @@ h3 {
   font-size: 0.85em;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: $brand-success;
+  color: $success;
   margin-top: 1.6em;
   margin-bottom: 0.4em;
   padding-bottom: 0.3em;
-  border-bottom: 1px solid $gray-lighter;
+  border-bottom: 1px solid $gray-200;
 }
 
 // small headshot + bold name spliced into a free-text name list, in
@@ -731,7 +742,7 @@ h3 {
 
   td {
     padding: 0.8em 0.6em;
-    border-top: 1px solid $gray-lighter;
+    border-top: 1px solid $gray-200;
     vertical-align: top;
   }
 
@@ -740,7 +751,7 @@ h3 {
   }
 
   tr:hover td {
-    background-color: rgba($brand-success, 0.05);
+    background-color: rgba($success, 0.05);
   }
 
   .publication-status {
@@ -764,36 +775,36 @@ h3 {
     white-space: normal;
     word-break: break-word;
     border: 1px solid transparent;
-    background-color: $gray-lighter;
-    color: $gray-dark;
-    border-color: $gray-light;
+    background-color: $gray-200;
+    color: $gray-800;
+    border-color: $gray-600;
   }
 
   .status-publication {
     padding: 0.2em 0.5em;
     font-size: 0.75em;
-    background-color: $brand-success;
-    border-color: $brand-success;
+    background-color: $success;
+    border-color: $success;
     color: #fff;
   }
 
   .status-review {
-    background-color: rgba($brand-success, 0.12);
-    border-color: rgba($brand-success, 0.5);
-    color: darken($brand-success, 12%);
+    background-color: rgba($success, 0.12);
+    border-color: rgba($success, 0.5);
+    color: darken($success, 12%);
   }
 
   .status-proceeding,
   .status-chapter {
-    background-color: rgba($brand-primary, 0.1);
-    border-color: rgba($brand-primary, 0.4);
-    color: $brand-primary;
+    background-color: rgba($primary, 0.1);
+    border-color: rgba($primary, 0.4);
+    color: $primary;
   }
 
   .status-preprint {
-    background-color: rgba($brand-warning, 0.15);
-    border-color: rgba($brand-warning, 0.5);
-    color: darken($brand-warning, 8%);
+    background-color: rgba($warning, 0.15);
+    border-color: rgba($warning, 0.5);
+    color: darken($warning, 8%);
   }
 
   .pub-links {
@@ -804,7 +815,7 @@ h3 {
     .fa {
       font-size: 20px;
       vertical-align: middle;
-      color: $gray-dark;
+      color: $gray-800;
     }
   }
 
@@ -812,12 +823,12 @@ h3 {
     margin: 0 0 0.3em;
     font-family: $font-serif-display;
     font-weight: 600;
-    color: $brand-primary;
+    color: $primary;
   }
 
   .pub-meta {
     margin: 0.3em 0 0;
-    color: $gray-dark;
+    color: $gray-800;
     font-size: 0.9em;
   }
 
@@ -847,7 +858,7 @@ h3 {
       row-gap: 0.3em;
       width: 100%;
       padding: 0.9em 0;
-      border-top: 1px solid $gray-lighter;
+      border-top: 1px solid $gray-200;
     }
 
     tr:first-child {
@@ -901,13 +912,13 @@ h3 {
   }
 }
 
-.navbar-default {
-  background-color: $brand-primary;
+.site-navbar {
+  background-color: $primary;
   border-color: transparent;
-  border-bottom: 3px solid $brand-success;
+  border-bottom: 3px solid $success;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
 
-  .navbar-nav > li > a {
+  .navbar-nav .nav-link {
     text-transform: uppercase;
     font-size: 0.8em;
     font-weight: 700;
@@ -915,17 +926,17 @@ h3 {
     transition: color 0.2s ease;
   }
 
-  .navbar-nav > li > a:hover,
-  .navbar-nav > li > a:focus {
-    color: $brand-success;
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link:focus {
+    color: $success;
   }
 
-  .navbar-nav > .active > a,
-  .navbar-nav > .active > a:hover,
-  .navbar-nav > .active > a:focus {
-    color: $brand-success;
+  .navbar-nav > .active > .nav-link,
+  .navbar-nav > .active > .nav-link:hover,
+  .navbar-nav > .active > .nav-link:focus {
+    color: $success;
     background-color: transparent;
-    box-shadow: inset 0 -3px 0 $brand-success;
+    box-shadow: inset 0 -3px 0 $success;
   }
 
   // navbar dropdowns for Team/Research subsections. Desktop: plain CSS
@@ -938,7 +949,7 @@ h3 {
     position: relative;
   }
 
-  .navbar-nav .dropdown > a {
+  .navbar-nav .dropdown > .nav-link {
     &::after {
       content: "";
       display: inline-block;
@@ -957,8 +968,8 @@ h3 {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     padding: 0.4em 0;
 
-    > li > a {
-      color: $text-color;
+    .dropdown-item {
+      color: $body-color;
       text-transform: none;
       font-weight: 500;
       font-size: 0.85em;
@@ -967,8 +978,8 @@ h3 {
 
       &:hover,
       &:focus {
-        color: $brand-success;
-        background-color: rgba($brand-success, 0.08);
+        color: $success;
+        background-color: rgba($success, 0.08);
       }
     }
   }
@@ -992,7 +1003,7 @@ h3 {
     .navbar-nav {
       margin: 0.3em 0;
 
-      > li > a {
+      .nav-link {
         padding-top: 6px;
         padding-bottom: 6px;
       }
@@ -1008,14 +1019,14 @@ h3 {
       background-color: transparent;
       box-shadow: none;
 
-      > li > a {
+      .dropdown-item {
         padding-top: 4px;
         padding-bottom: 4px;
         color: rgba(255, 255, 255, 0.75);
 
         &:hover,
         &:focus {
-          color: $brand-success;
+          color: $success;
           background-color: transparent;
         }
       }
@@ -1033,8 +1044,8 @@ h3 {
 .footer {
   margin-top: 2em;
   padding: 1.2em 0;
-  background-color: $gray-lighter;
-  color: $gray-dark;
+  background-color: $gray-200;
+  color: $gray-800;
 
   .footer-top {
     display: flex;
@@ -1064,7 +1075,7 @@ h3 {
       text-transform: uppercase;
       letter-spacing: 0.02em;
       line-height: 1.2;
-      color: $brand-primary;
+      color: $primary;
     }
 
     .footer-name {
@@ -1081,18 +1092,18 @@ h3 {
     font-size: 1.05em;
 
     a {
-      color: $gray-dark;
+      color: $gray-800;
 
       &:hover,
       &:focus {
-        color: $brand-primary;
+        color: $primary;
       }
     }
   }
 
   .footer-addresses {
     padding-top: 0.8em;
-    border-top: 1px solid darken($gray-lighter, 8%);
+    border-top: 1px solid darken($gray-200, 8%);
     font-size: 0.82em;
     line-height: 1.6;
   }

@@ -1,39 +1,6 @@
-/*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
-
-// Only the bootstrap-sass partials this site's markup actually uses are
-// imported here (checked against every class/data-attribute in app/*.html,
-// app/_includes/*.html, and app/_data/*.yml) — components like modals,
-// carousel, alerts, tooltips/popovers, glyphicons, etc. have no matching
-// markup anywhere on the site, so their partials are skipped rather than
-// shipped as dead CSS. (bootstrap/forms is the one exception — see below.)
-
-// Core variables and mixins
-@import "bootstrap/variables";
-@import "bootstrap/mixins";
-
-// Reset and dependencies
-@import "bootstrap/normalize";
-@import "bootstrap/print";
-
-// Core CSS
-@import "bootstrap/scaffolding";
-@import "bootstrap/type";
-@import "bootstrap/grid";
-@import "bootstrap/tables";
-// no <form> markup anywhere on the site, but bootstrap/navbar's
-// .navbar-form rule needs the form-inline mixin this file defines
-@import "bootstrap/forms";
-@import "bootstrap/buttons";
-
-// Components
-@import "bootstrap/component-animations";
-@import "bootstrap/dropdowns";
-@import "bootstrap/navs";
-@import "bootstrap/navbar";
-
-// Utility classes
-@import "bootstrap/utilities";
+// Vendored from the `bootstrap` npm package (scss/), version 5.3.8.
+// Imports every Bootstrap 5 component; once the migration is verified,
+// a follow-up pass trims this down to only the components this site's
+// markup actually uses (mirroring the same audit already done for the
+// old Bootstrap 3 setup).
+@import "bootstrap/bootstrap";
