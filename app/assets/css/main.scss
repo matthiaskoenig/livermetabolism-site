@@ -114,7 +114,7 @@ h3 {
 .header-light {
   font-weight: 700;
   color: $primary;
-  font-size: 2.6em;
+  font-size: 2.2em;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1.15;
@@ -123,9 +123,9 @@ h3 {
 
 .hero-subtitle {
   margin-top: -0.2em;
-  margin-bottom: 1.2em;
+  margin-bottom: 0.6em;
   font-family: $font-family-sans-serif;
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: 400;
   letter-spacing: 0.03em;
   color: $gray-800;
@@ -136,13 +136,13 @@ h3 {
 // ------------------------------------------------------------------
 
 .vision-statement {
-  margin: 1em 0 2em;
+  margin: 0.5em 0 1em;
 
   .lead {
     font-family: $font-serif-display;
-    font-size: 1.6em;
+    font-size: 1.35em;
     font-weight: 400;
-    line-height: 1.4;
+    line-height: 1.35;
     color: $primary;
     max-width: 780px;
     margin: 0 auto;
@@ -152,8 +152,8 @@ h3 {
 .core-messages {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 1.5em;
-  margin-bottom: 2.5em;
+  gap: 1em;
+  margin-bottom: 1.3em;
 
   .core-message {
     text-align: center;
@@ -161,9 +161,9 @@ h3 {
 
     .fa {
       display: block;
-      font-size: 2.2em;
+      font-size: 1.8em;
       color: $success;
-      margin-bottom: 0.3em;
+      margin-bottom: 0.2em;
     }
 
     // one color per core research area, matching the tag filters/badges
@@ -227,7 +227,10 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 4em 0;
+  // .tag-section overrides this with its own (larger) padding below;
+  // this smaller value is what #home (the only non-.tag-section user of
+  // this class) actually gets
+  padding: 1.5em 0;
   box-sizing: border-box;
   scroll-snap-align: start;
   // keeps section content (and #id anchor jumps) clear of the fixed navbar
@@ -339,14 +342,15 @@ h3 {
   }
 }
 
+// normal flex-flow items (not position: absolute) so they sit right
+// next to the content instead of pinned to the section's outer edge -
+// with compact content that doesn't fill a full 100vh section, an
+// edge-pinned cue ends up stranded far below/above the content it's
+// supposed to relate to
 .section-scroll-cue {
-  position: absolute;
-  left: 50%;
-  bottom: 1.2em;
-  transform: translateX(-50%);
+  align-self: center;
   font-size: 1.4em;
   opacity: 0.7;
-  animation: section-scroll-cue-bounce 2s ease-in-out infinite;
   color: $primary;
 
   .tag-section & {
@@ -360,12 +364,31 @@ h3 {
   }
 }
 
-@keyframes section-scroll-cue-bounce {
+.section-scroll-cue-up {
+  margin: 0 auto 1em;
+  animation: section-scroll-cue-bounce-up 2s ease-in-out infinite;
+}
+
+.section-scroll-cue-down {
+  margin: 1em auto 0;
+  animation: section-scroll-cue-bounce-down 2s ease-in-out infinite;
+}
+
+@keyframes section-scroll-cue-bounce-down {
   0%, 100% {
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
   }
   50% {
-    transform: translateX(-50%) translateY(6px);
+    transform: translateY(6px);
+  }
+}
+
+@keyframes section-scroll-cue-bounce-up {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
   }
 }
 
@@ -373,8 +396,8 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.6em;
-  margin-bottom: 3em;
+  gap: 0.4em;
+  margin-bottom: 1.2em;
 }
 
 .person-avatar {
@@ -383,8 +406,8 @@ h3 {
   outline: none;
 
   img {
-    width: 68px;
-    height: 68px;
+    width: 52px;
+    height: 52px;
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid $body-bg;
@@ -1219,12 +1242,34 @@ h3 {
 
 .page-content {
   padding-bottom: 20px;
+
+  // the homepage's full-bleed sections should butt straight up against
+  // the footer, not leave a gap of plain background behind them
+  html.onepager & {
+    padding-bottom: 0;
+  }
 }
 .footer {
   margin-top: 2em;
   padding: 1.2em 0;
   background-color: $gray-200;
   color: $gray-800;
+
+  // see .page-content above - no gap between the homepage's last
+  // full-bleed section and the footer
+  html.onepager & {
+    margin-top: 0;
+    scroll-snap-align: start;
+    scroll-margin-top: $navbar-height + $navbar-margin-bottom;
+  }
+
+  // the up-cue is a direct child of .footer (not a flex parent, unlike
+  // .page-section), so center it with auto margins instead of align-self
+  > .section-scroll-cue-up {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 1em;
+  }
 
   .footer-top {
     display: flex;

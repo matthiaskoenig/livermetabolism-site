@@ -1,4 +1,9 @@
-<footer class="footer">
+<footer class="footer" id="footer">
+    {% if page.url == "/" %}
+    <a class="section-scroll-cue section-scroll-cue-up" href="#open-fair" aria-label="Scroll to Open & FAIR">
+        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+    </a>
+    {% endif %}
     <div class="container">
 
         <div class="footer-top">
