@@ -15,13 +15,11 @@ $navbar-height: 50px;
     "bootswatch/{{site.bootwatch | downcase}}/variables",
   {% endif %}
 
-  "bootstrap",
+  "bootstrap"
 
   {% if site.bootwatch %}
-    "bootswatch/{{site.bootwatch | downcase}}/bootswatch",
+    , "bootswatch/{{site.bootwatch | downcase}}/bootswatch"
   {% endif %}
-
-  "syntax-highlighting"
 ;
 
 html {
@@ -53,12 +51,11 @@ $tag-colors: (
   "open-fair": $brand-primary,
 );
 
-h1, h2, h3,
-.post-title {
+h1, h2, h3 {
   font-family: $font-serif-display;
 }
 
-h1, .post-title {
+h1 {
   font-weight: 700;
   letter-spacing: -0.02em;
   color: $brand-primary;
@@ -87,10 +84,6 @@ h3 {
   letter-spacing: 0.02em;
   line-height: 1.15;
   margin-bottom: 0.1em;
-}
-
-.regular-pad {
-  margin-bottom: 0.8em;
 }
 
 .hero-subtitle {
@@ -728,7 +721,13 @@ h3 {
 
 // cleaner, card-free row styling for the publication list (see publications.html)
 .publication-table {
+  table-layout: fixed;
+  width: 100%;
   border-collapse: collapse;
+
+  .publication-status-col {
+    width: 100px;
+  }
 
   td {
     padding: 0.8em 0.6em;
@@ -828,8 +827,8 @@ h3 {
   // the full-width title/abstract block
   @media (max-width: 767px) {
     display: block;
-    width: 100% !important;
-    table-layout: auto !important;
+    width: 100%;
+    table-layout: auto;
 
     colgroup {
       display: none;
@@ -876,13 +875,6 @@ h3 {
       margin-top: 0.3em;
     }
   }
-}
-
-// icon links column on the Presentations & Posters page (see presentations.html)
-.table-hover td:nth-child(2) .fa {
-  font-size: 20px;
-  vertical-align: middle;
-  color: $gray-dark;
 }
 
 // ------------------------------------------------------------------
@@ -1118,34 +1110,10 @@ h3 {
   }
 }
 
-.post-list-container {
-  li a.active {
-    font-weight: bold;
-  }
-}
 *[id]:before {
   display: block;
   content: " ";
   margin-top: -75px;
   height: 75px;
   visibility: hidden;
-}
-.navbar-form .has-feedback .form-control-feedback{
-  top:10px
-}
-.video-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    overflow: hidden;
-    max-width: 1280px;
-    margin: 0 auto;
-}
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
 }
