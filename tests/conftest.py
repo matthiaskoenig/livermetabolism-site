@@ -37,6 +37,7 @@ def make_tag(**overrides) -> Tag:
         icon="fa-cube",
         short_description="short",
         description="long",
+        vision="vision statement",
     )
     data.update(overrides)
     return Tag(**data)

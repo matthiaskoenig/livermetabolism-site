@@ -155,6 +155,7 @@ TAGS_YML = [
         "icon": "fa-cube",
         "short_description": "short",
         "description": "long",
+        "vision": "vision statement",
     }
 ]
 

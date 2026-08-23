@@ -7,6 +7,8 @@
 # just the modifier, e.g. "fa-cube" is used as `class="fa {{ tag.icon }}"`).
 # Colors are assigned separately in app/css/main.scss ($tag-colors), keyed
 # by the same slug produced by Liquid's `slugify` filter on "tag".
+# "vision" is the mission-statement copy for this tag's full-screen section
+# on index.html (distinct from "description", which is more matter-of-fact).
 
 - tag: "Digital Twins"
   icon: fa-cube
@@ -15,6 +17,10 @@
     Mechanistic, patient-specific models spanning molecule to whole body that
     mirror an individual's physiology, enabling simulation-based prediction
     of disease progression and treatment response.
+  vision: >
+    Every patient becomes a model. We build physiologically based digital
+    twins — living simulations that mirror an individual from molecule to
+    whole body — so care can be planned before it is given.
 
 - tag: "AI"
   icon: fa-heartbeat
@@ -23,6 +29,10 @@
     Machine learning combined with mechanistic modeling to extract patterns
     from complex biomedical data and support predictive, personalized
     decision-making in medicine.
+  vision: >
+    Data alone cannot explain a patient — mechanism can. We fuse machine
+    learning with physiological models to turn complex biomedical data into
+    predictions clinicians can trust.
 
 - tag: "Digital Pathology"
   icon: fa-picture-o
@@ -30,6 +40,10 @@
   description: >
     Computational and AI-driven analysis of whole-slide histology images to
     quantify tissue structure, zonation, and disease patterns at scale.
+  vision: >
+    A biopsy holds a whole organ's story. We use AI to read whole-slide
+    histology at scale, quantifying liver structure and disease with a
+    precision no eye can match.
 
 - tag: "Pharmacometrics"
   icon: fa-line-chart
@@ -38,6 +52,10 @@
     Physiologically based pharmacokinetic and pharmacodynamic (PBPK/PD)
     modeling of drug absorption, distribution, metabolism, and excretion to
     support precision dosing.
+  vision: >
+    The right dose is never one-size-fits-all. Our PBPK/PD models simulate
+    how each body absorbs, distributes, and clears a drug, turning
+    population averages into individual precision.
 
 - tag: "Open & FAIR"
   icon: fa-unlock-alt
@@ -46,3 +64,7 @@
     Open, FAIR (Findable, Accessible, Interoperable, Reusable), and
     reproducible models, data, and software that the research community can
     build on.
+  vision: >
+    Science that cannot be reproduced cannot be trusted. Every model,
+    dataset, and line of code we publish is open, FAIR, and built for the
+    community to verify, reuse, and extend.

@@ -34,6 +34,12 @@ html {
   min-height: 100%;
   overflow-x: hidden;
 }
+// homepage-only "single page app" navigation: each .page-section (the
+// hero content plus one full-screen section per research tag) snaps
+// into place as the visitor scrolls, matched by scroll-snap-align below
+html.onepager {
+  scroll-snap-type: y mandatory;
+}
 body {
   padding-top: $navbar-height + $navbar-margin-bottom;
   overflow-x: hidden;
@@ -193,6 +199,97 @@ h3 {
         }
       }
     }
+  }
+}
+
+// Homepage full-screen sections: the hero content (#home) plus one
+// section per research tag, navigated one at a time via scroll-snap
+// (see html.onepager above) and the chevron links between them.
+.page-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4em 0;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+  // keeps section content (and #id anchor jumps) clear of the fixed navbar
+  scroll-margin-top: $navbar-height + $navbar-margin-bottom;
+}
+
+// full-bleed: break out of the centered .container this is nested in
+// so the tag color fills the entire viewport width
+.tag-section {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  text-align: center;
+
+  @each $slug, $color in $tag-colors {
+    &.tag-#{$slug} {
+      // the raw tag colors (esp. warning/success) don't have enough
+      // contrast against white text at this scale; darken a bit while
+      // staying clearly "that" color
+      background-color: color.adjust($color, $lightness: -12%);
+    }
+  }
+}
+
+.tag-section-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.5em;
+  color: #fff;
+
+  .fa {
+    display: block;
+    font-size: 3.5em;
+    margin-bottom: 0.3em;
+  }
+
+  h2 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 0.4em;
+  }
+
+  .lead {
+    font-family: $font-serif-display;
+    font-size: 1.4em;
+    font-weight: 400;
+    line-height: 1.5;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.section-scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 1.5em;
+  transform: translateX(-50%);
+  font-size: 1.4em;
+  opacity: 0.7;
+  animation: section-scroll-cue-bounce 2s ease-in-out infinite;
+  color: $primary;
+
+  .tag-section & {
+    color: #fff;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+    color: inherit;
+  }
+}
+
+@keyframes section-scroll-cue-bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(6px);
   }
 }
 

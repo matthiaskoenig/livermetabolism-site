@@ -156,6 +156,7 @@ class Tag(StrictModel):
     icon: str
     short_description: str
     description: str
+    vision: str
 
 
 # ---------------------------------------------------------------------------
