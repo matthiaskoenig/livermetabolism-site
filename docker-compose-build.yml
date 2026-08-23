@@ -8,7 +8,11 @@
 services:
   
   jekyll:
-    command: bash -c "bundle install && bundle exec jekyll build"
+    # Gemfile.lock is gitignored/regenerated fresh each run (not committed) -
+    # dropping it here guards against a stale lockfile left on disk from
+    # before a Gemfile change (e.g. pinning an old Bundler version that's
+    # incompatible with this image's Ruby, which crashes bundle install).
+    command: bash -c "rm -f Gemfile.lock && bundle install && bundle exec jekyll build"
     image: jekyll/jekyll:4.4.1
     volumes:
       - $PWD:/srv/jekyll

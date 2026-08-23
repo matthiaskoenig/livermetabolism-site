@@ -2,7 +2,8 @@
 # docker compose -f docker-compose-build.yml up
 services:
   jekyll:
-    command: bash -c "bundle install && bundle exec jekyll serve --host 0.0.0.0"
+    # see docker-compose-build.yml for why Gemfile.lock is dropped first
+    command: bash -c "rm -f Gemfile.lock && bundle install && bundle exec jekyll serve --host 0.0.0.0"
     image: jekyll/jekyll:4.4.1
     volumes:
       - $PWD:/srv/jekyll
