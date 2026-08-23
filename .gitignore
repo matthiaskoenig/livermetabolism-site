@@ -2,7 +2,6 @@
 .Rhistory
 .idea
 app/vendor/
-vendor
 web
 .sass-cache
 logs
