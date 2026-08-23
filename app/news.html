@@ -5,20 +5,13 @@ permalink: /news/
 sectionid: news
 ---
 
-<div class="tag-filter" id="news-tag-filter">
-    <button type="button" class="tag-filter-btn active" data-tag="all">All</button>
-    {% for t in site.data.tags %}
-    <button type="button" class="tag-filter-btn tag-{{ t.tag | slugify }}" data-tag="{{ t.tag }}" title="{{ t.short_description }}">
-        <i class="fa {{ t.icon }}" aria-hidden="true"></i> {{ t.tag }}
-    </button>
-    {% endfor %}
-</div>
+{% include tag_filter.html id="news" target="news-grid" %}
 
 <div class="project-grid" id="news-grid">
     {% for news in site.data.news %}
     <div class="project-card" data-tags="{{ news.tags | join: '|' | escape }}">
         {% if news.image %}
-        <img src="/assets/image/news/{{ news.image }}" alt="{{ news.title }}" class="project-image"/>
+        <img src="{{ "/assets/image/news/" | prepend: site.baseurl }}{{ news.image }}" alt="{{ news.title }}" class="project-image"/>
         {% elsif news.video %}
         <img src="https://img.youtube.com/vi/{{ news.video | split: '/embed/' | last }}/hqdefault.jpg" alt="{{ news.title }}" class="project-image"/>
         {% endif %}
@@ -36,20 +29,7 @@ sectionid: news
             <p>{{ news.short | strip_html | truncatewords: 30 }}</p>
             {% if news.people or news.link %}
             <div class="project-links">
-                {% for author in news.people %}
-                {% if author != 'matthias_koenig' %}
-                {% assign person = site.data.people | where:"id", author | first %}
-                {% if person and person.image %}
-                <img src="/assets/image/people/128/{{ person.image }}" class="project-avatar" title="{{ person.name }}"/>
-                {% endif %}
-                {% endif %}
-                {% endfor %}
-                {% if news.people contains 'matthias_koenig' %}
-                {% assign koenig = site.data.people | where:"id", 'matthias_koenig' | first %}
-                {% if koenig and koenig.image %}
-                <img src="/assets/image/people/128/{{ koenig.image }}" class="project-avatar" title="{{ koenig.name }}"/>
-                {% endif %}
-                {% endif %}
+                {% include people_avatars.html people=news.people %}
                 <span class="project-links-spacer"></span>
                 {% if news.link %}
                 <a href="{{ news.link }}" target="_blank" rel="noopener noreferrer" title="Read more"><i class="fa fa-globe" aria-hidden="true"></i></a>
@@ -60,27 +40,3 @@ sectionid: news
     </div>
     {% endfor %}
 </div>
-
-<script>
-(function () {
-    var buttons = document.querySelectorAll('#news-tag-filter .tag-filter-btn');
-    var cards = document.querySelectorAll('#news-grid .project-card');
-
-    buttons.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-            buttons.forEach(function (b) { b.classList.remove('active'); });
-            btn.classList.add('active');
-
-            var tag = btn.getAttribute('data-tag');
-            cards.forEach(function (card) {
-                if (tag === 'all') {
-                    card.style.display = '';
-                    return;
-                }
-                var tags = (card.getAttribute('data-tags') || '').split('|');
-                card.style.display = tags.indexOf(tag) !== -1 ? '' : 'none';
-            });
-        });
-    });
-})();
-</script>

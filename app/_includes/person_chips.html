@@ -1,0 +1,32 @@
+{% comment %}
+  Splices a small avatar + bold name into a free-text author/people
+  string, in place of the matching name ("Initial. Surname" matched
+  first, falling back to "Given Surname"); used by publications.html's
+  pub-meta line and teaching.html's instructor line.
+  Usage: {% raw %}{% include person_chips.html text=publication.authors people=publication.people %}{% endraw %}
+{% endcomment %}
+{%- assign person_chips_html = include.text -%}
+{%- for person_id in include.people -%}
+{%- assign person = site.data.people | where:"id", person_id | first -%}
+{%- if person and person.image -%}
+{%- assign name_parts = person.name | split: " " -%}
+{%- assign parts_size = name_parts | size -%}
+{%- assign given_index = parts_size | minus: 2 -%}
+{%- assign given = name_parts[given_index] -%}
+{%- assign surname = name_parts | last -%}
+{%- assign initial = given | slice: 0, 1 -%}
+{%- assign avatar_src = person.image | prepend: "/assets/image/people/128/" | prepend: site.baseurl -%}
+{%- assign avatar_tag = '<img src="' | append: avatar_src | append: '" class="author-avatar" alt="" title="' | append: person.name | append: '"/>' -%}
+{%- assign short_match = initial | append: '. ' | append: surname -%}
+{%- assign short_chip = '<span class="person-chip">' | append: avatar_tag | append: '<strong>' | append: short_match | append: '</strong></span>' -%}
+{%- assign tried = person_chips_html | replace: short_match, short_chip -%}
+{%- if tried != person_chips_html -%}
+{%- assign person_chips_html = tried -%}
+{%- else -%}
+{%- assign full_match = given | append: ' ' | append: surname -%}
+{%- assign full_chip = '<span class="person-chip">' | append: avatar_tag | append: '<strong>' | append: full_match | append: '</strong></span>' -%}
+{%- assign person_chips_html = person_chips_html | replace: full_match, full_chip -%}
+{%- endif -%}
+{%- endif -%}
+{%- endfor -%}
+{{- person_chips_html -}}

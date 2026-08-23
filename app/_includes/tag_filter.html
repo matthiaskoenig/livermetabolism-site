@@ -1,0 +1,14 @@
+{% comment %}
+  Tag-filter bar: an "All" button plus one button per site.data.tags entry.
+  Wired up by the generic .tag-filter[data-filter-target] handler in main.js,
+  which shows/hides the [data-tags] items inside #{{ include.target }}.
+  Usage: {% raw %}{% include tag_filter.html id="news" target="news-grid" %}{% endraw %}
+{% endcomment %}
+<div class="tag-filter" id="{{ include.id }}-tag-filter" data-filter-target="{{ include.target }}">
+    <button type="button" class="tag-filter-btn active" data-tag="all">All</button>
+    {% for t in site.data.tags %}
+    <button type="button" class="tag-filter-btn tag-{{ t.tag | slugify }}" data-tag="{{ t.tag }}" title="{{ t.short_description }}">
+        <i class="fa {{ t.icon }}" aria-hidden="true"></i> {{ t.tag }}
+    </button>
+    {% endfor %}
+</div>

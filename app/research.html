@@ -7,20 +7,13 @@ sectionid: research
 
 <h2 id="software">Software</h2>
 
-<div class="tag-filter" id="software-tag-filter">
-    <button type="button" class="tag-filter-btn active" data-tag="all">All</button>
-    {% for t in site.data.tags %}
-    <button type="button" class="tag-filter-btn tag-{{ t.tag | slugify }}" data-tag="{{ t.tag }}" title="{{ t.short_description }}">
-        <i class="fa {{ t.icon }}" aria-hidden="true"></i> {{ t.tag }}
-    </button>
-    {% endfor %}
-</div>
+{% include tag_filter.html id="software" target="software-grid" %}
 
 <div class="project-grid" id="software-grid">
     {% for software in site.data.software %}
     <div class="project-card" data-tags="{{ software.tags | join: '|' | escape }}">
         {% if software.image %}
-        <img src="/assets/image/software/{{ software.image }}" alt="{{ software.name }}" class="project-image project-image-contain"/>
+        <img src="{{ "/assets/image/software/" | prepend: site.baseurl }}{{ software.image }}" alt="{{ software.name }}" class="project-image project-image-contain"/>
         {% endif %}
         <div class="project-body">
             <h3>{{ software.name }}</h3>
@@ -34,20 +27,7 @@ sectionid: research
             {% endif %}
             <p><strong>{{ software.title }}</strong><br/>{{ software.description }}</p>
             <div class="project-links">
-                {% for author in software.people %}
-                {% if author != 'matthias_koenig' %}
-                {% assign person = site.data.people | where:"id", author | first %}
-                {% if person and person.image %}
-                <img src="/assets/image/people/128/{{ person.image }}" class="project-avatar" title="{{ person.name }}"/>
-                {% endif %}
-                {% endif %}
-                {% endfor %}
-                {% if software.people contains 'matthias_koenig' %}
-                {% assign koenig = site.data.people | where:"id", 'matthias_koenig' | first %}
-                {% if koenig and koenig.image %}
-                <img src="/assets/image/people/128/{{ koenig.image }}" class="project-avatar" title="{{ koenig.name }}"/>
-                {% endif %}
-                {% endif %}
+                {% include people_avatars.html people=software.people %}
                 <span class="project-links-spacer"></span>
                 {% if software.homepage %}
                 <a href="{{ software.homepage }}" target="_blank" rel="noopener noreferrer" title="Project homepage"><i class="fa fa-globe" aria-hidden="true"></i></a>
@@ -63,20 +43,13 @@ sectionid: research
 
 <h2 id="funding">Funding</h2>
 
-<div class="tag-filter" id="funding-tag-filter">
-    <button type="button" class="tag-filter-btn active" data-tag="all">All</button>
-    {% for t in site.data.tags %}
-    <button type="button" class="tag-filter-btn tag-{{ t.tag | slugify }}" data-tag="{{ t.tag }}" title="{{ t.short_description }}">
-        <i class="fa {{ t.icon }}" aria-hidden="true"></i> {{ t.tag }}
-    </button>
-    {% endfor %}
-</div>
+{% include tag_filter.html id="funding" target="funding-grid" %}
 
 <div class="project-grid" id="funding-grid">
     {% for funding in site.data.funding %}
     <div class="project-card" data-tags="{{ funding.tags | join: '|' | escape }}">
         {% if funding.funder_logo %}
-        <img src="/assets/image/funding/{{ funding.funder_logo }}" alt="{{ funding.funder }}" class="project-image project-image-contain"/>
+        <img src="{{ "/assets/image/funding/" | prepend: site.baseurl }}{{ funding.funder_logo }}" alt="{{ funding.funder }}" class="project-image project-image-contain"/>
         {% endif %}
         <div class="project-body">
             <h3>{{ funding.title }}</h3>
@@ -117,20 +90,13 @@ sectionid: research
     We are actively involved in the standardization and reproducibility efforts in Systems Biology and Systems Medicine.
 </p>
 
-<div class="tag-filter" id="editors-tag-filter">
-    <button type="button" class="tag-filter-btn active" data-tag="all">All</button>
-    {% for t in site.data.tags %}
-    <button type="button" class="tag-filter-btn tag-{{ t.tag | slugify }}" data-tag="{{ t.tag }}" title="{{ t.short_description }}">
-        <i class="fa {{ t.icon }}" aria-hidden="true"></i> {{ t.tag }}
-    </button>
-    {% endfor %}
-</div>
+{% include tag_filter.html id="editors" target="editors-grid" %}
 
 <div class="project-grid" id="editors-grid">
     {% for editor in site.data.editors %}
     <div class="project-card" data-tags="{{ editor.tags | join: '|' | escape }}">
         {% if editor.image %}
-        <img src="/assets/image/editors/{{ editor.image }}" alt="{{ editor.name }}" class="project-image project-image-contain"/>
+        <img src="{{ "/assets/image/editors/" | prepend: site.baseurl }}{{ editor.image }}" alt="{{ editor.name }}" class="project-image project-image-contain"/>
         {% endif %}
         <div class="project-body">
             <h3>{{ editor.name }}</h3>
@@ -156,35 +122,3 @@ sectionid: research
     </div>
     {% endfor %}
 </div>
-
-<script>
-(function () {
-    var groups = [
-        { filter: 'software-tag-filter', grid: 'software-grid' },
-        { filter: 'funding-tag-filter', grid: 'funding-grid' },
-        { filter: 'editors-tag-filter', grid: 'editors-grid' }
-    ];
-
-    groups.forEach(function (group) {
-        var buttons = document.querySelectorAll('#' + group.filter + ' .tag-filter-btn');
-        var cards = document.querySelectorAll('#' + group.grid + ' .project-card');
-
-        buttons.forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                buttons.forEach(function (b) { b.classList.remove('active'); });
-                btn.classList.add('active');
-
-                var tag = btn.getAttribute('data-tag');
-                cards.forEach(function (card) {
-                    if (tag === 'all') {
-                        card.style.display = '';
-                        return;
-                    }
-                    var tags = (card.getAttribute('data-tags') || '').split('|');
-                    card.style.display = tags.indexOf(tag) !== -1 ? '' : 'none';
-                });
-            });
-        });
-    });
-})();
-</script>

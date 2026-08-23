@@ -5,21 +5,14 @@ permalink: /projects/
 sectionid: projects
 ---
 
-<div class="tag-filter" id="project-tag-filter">
-    <button type="button" class="tag-filter-btn active" data-tag="all">All</button>
-    {% for t in site.data.tags %}
-    <button type="button" class="tag-filter-btn tag-{{ t.tag | slugify }}" data-tag="{{ t.tag }}" title="{{ t.short_description }}">
-        <i class="fa {{ t.icon }}" aria-hidden="true"></i> {{ t.tag }}
-    </button>
-    {% endfor %}
-</div>
+{% include tag_filter.html id="project" target="project-grid" %}
 
 <div class="project-grid" id="project-grid">
     {% for project in site.data.projects %}
     {% if project.status == "current" %}
     <div class="project-card" data-tags="{{ project.tags | join: '|' | escape }}">
         {% for image in project.images limit:1 %}
-        <img src="/assets/image/projects/{{ image }}" alt="{{ project.title }}" class="project-image"/>
+        <img src="{{ "/assets/image/projects/" | prepend: site.baseurl }}{{ image }}" alt="{{ project.title }}" class="project-image"/>
         {% endfor %}
         <div class="project-body">
             <h3>{{ project.title }}</h3>
@@ -33,25 +26,12 @@ sectionid: projects
             {% endif %}
             <p>{{ project.abstract | strip_html }}</p>
             <div class="project-links">
-                {% for author in project.people %}
-                {% if author != 'matthias_koenig' %}
-                {% assign person = site.data.people | where:"id", author | first %}
-                {% if person and person.image %}
-                <img src="/assets/image/people/128/{{ person.image }}" class="project-avatar" title="{{ person.name }}"/>
-                {% endif %}
-                {% endif %}
-                {% endfor %}
-                {% if project.people contains 'matthias_koenig' %}
-                {% assign koenig = site.data.people | where:"id", 'matthias_koenig' | first %}
-                {% if koenig and koenig.image %}
-                <img src="/assets/image/people/128/{{ koenig.image }}" class="project-avatar" title="{{ koenig.name }}"/>
-                {% endif %}
-                {% endif %}
+                {% include people_avatars.html people=project.people %}
                 <span class="project-links-spacer"></span>
                 {% for pub_id in project.publications %}
                 {% assign publication = site.data.publications | where:"id", pub_id | first %}
                 {% if publication.pdf %}
-                <a href="../paper/{{ publication.pdf }}" title="{{ publication.title }}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+                <a href="{{ "/assets/pdf/" | prepend: site.baseurl }}{{ publication.pdf }}" title="{{ publication.title }}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
                 {% endif %}
                 {% endfor %}
                 {% if project.homepage %}
@@ -66,27 +46,3 @@ sectionid: projects
     {% endif %}
     {% endfor %}
 </div>
-
-<script>
-(function () {
-    var buttons = document.querySelectorAll('#project-tag-filter .tag-filter-btn');
-    var cards = document.querySelectorAll('#project-grid .project-card');
-
-    buttons.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-            buttons.forEach(function (b) { b.classList.remove('active'); });
-            btn.classList.add('active');
-
-            var tag = btn.getAttribute('data-tag');
-            cards.forEach(function (card) {
-                if (tag === 'all') {
-                    card.style.display = '';
-                    return;
-                }
-                var tags = (card.getAttribute('data-tags') || '').split('|');
-                card.style.display = tags.indexOf(tag) !== -1 ? '' : 'none';
-            });
-        });
-    });
-})();
-</script>

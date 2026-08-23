@@ -1,0 +1,20 @@
+{% comment %}
+  Renders .project-avatar thumbnails for each id in include.people, with
+  matthias_koenig (if present) moved to the end; used in the project-links
+  row on news/projects/research(software) cards.
+  Usage: {% raw %}{% include people_avatars.html people=project.people %}{% endraw %}
+{% endcomment %}
+{%- for author in include.people -%}
+{%- if author != 'matthias_koenig' -%}
+{%- assign person = site.data.people | where:"id", author | first -%}
+{%- if person and person.image -%}
+<img src="{{ "/assets/image/people/128/" | prepend: site.baseurl }}{{ person.image }}" class="project-avatar" title="{{ person.name }}"/>
+{%- endif -%}
+{%- endif -%}
+{%- endfor -%}
+{%- if include.people contains 'matthias_koenig' -%}
+{%- assign koenig = site.data.people | where:"id", 'matthias_koenig' | first -%}
+{%- if koenig and koenig.image -%}
+<img src="{{ "/assets/image/people/128/" | prepend: site.baseurl }}{{ koenig.image }}" class="project-avatar" title="{{ koenig.name }}"/>
+{%- endif -%}
+{%- endif -%}

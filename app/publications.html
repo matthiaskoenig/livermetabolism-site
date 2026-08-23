@@ -7,14 +7,7 @@ sectionid: publications
 
 <h2 id="publications">Publications</h2>
 
-<div class="tag-filter" id="publication-tag-filter">
-    <button type="button" class="tag-filter-btn active" data-tag="all">All</button>
-    {% for t in site.data.tags %}
-    <button type="button" class="tag-filter-btn tag-{{ t.tag | slugify }}" data-tag="{{ t.tag }}" title="{{ t.short_description }}">
-        <i class="fa {{ t.icon }}" aria-hidden="true"></i> {{ t.tag }}
-    </button>
-    {% endfor %}
-</div>
+{% include tag_filter.html id="publication" target="publication-list" %}
 
 <div class="row" id="publication-list">
 	{% assign prev_year = nil %}
@@ -40,7 +33,7 @@ sectionid: publications
 				<span class="status-badge status-{{ publication.status | slugify }}">{{ publication.status | capitalize }}</span>
 				<div class="pub-links">
 					{% if publication.pdf %}
-					<a href="/assets/pdf/{{ publication.pdf }}" title="PDF"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+					<a href="{{ "/assets/pdf/" | prepend: site.baseurl }}{{ publication.pdf }}" title="PDF"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
 					{% endif %}
 					{% if publication.homepage %}
 					<a href="{{ publication.homepage }}" title="Project homepage"><i class="fa fa-globe" aria-hidden="true"></i></a>
@@ -60,31 +53,8 @@ sectionid: publications
 				</div>
 				{% endif %}
 				<p class="pub-title"><i>{{ publication.title }}</i></p>
-				{% assign pub_authors_html = publication.authors %}
-				{% for person_id in publication.people %}
-				{% assign person = site.data.people | where:"id", person_id | first %}
-				{% if person and person.image %}
-				{% assign name_parts = person.name | split: " " %}
-				{% assign parts_size = name_parts | size %}
-				{% assign given_index = parts_size | minus: 2 %}
-				{% assign given = name_parts[given_index] %}
-				{% assign surname = name_parts | last %}
-				{% assign initial = given | slice: 0, 1 %}
-				{% assign avatar_tag = '<img src="/assets/image/people/' | append: person.image | append: '" class="author-avatar" alt="" title="' | append: person.name | append: '"/>' %}
-				{% assign short_match = initial | append: '. ' | append: surname %}
-				{% assign short_chip = '<span class="person-chip">' | append: avatar_tag | append: '<strong>' | append: short_match | append: '</strong></span>' %}
-				{% assign tried = pub_authors_html | replace: short_match, short_chip %}
-				{% if tried != pub_authors_html %}
-				{% assign pub_authors_html = tried %}
-				{% else %}
-				{% assign full_match = given | append: ' ' | append: surname %}
-				{% assign full_chip = '<span class="person-chip">' | append: avatar_tag | append: '<strong>' | append: full_match | append: '</strong></span>' %}
-				{% assign pub_authors_html = pub_authors_html | replace: full_match, full_chip %}
-				{% endif %}
-				{% endif %}
-				{% endfor %}
 				<p class="pub-meta">
-					{{ pub_authors_html }}; {{ publication.journal }}{% if publication.doi %}. doi:<a href="https://doi.org/{{publication.doi}}">{{publication.doi}}</a>{% endif %}{% if publication.pmid %}. pmid:<a href="https://pubmed.ncbi.nlm.nih.gov/{{publication.pmid}}">{{publication.pmid}}</a>{% endif %}
+					{% include person_chips.html text=publication.authors people=publication.people %}; {{ publication.journal }}{% if publication.doi %}. doi:<a href="https://doi.org/{{publication.doi}}">{{publication.doi}}</a>{% endif %}{% if publication.pmid %}. pmid:<a href="https://pubmed.ncbi.nlm.nih.gov/{{publication.pmid}}">{{publication.pmid}}</a>{% endif %}
 				</p>
 				{% if publication.abstract or publication.keywords %}
 				<p class="small">
@@ -113,39 +83,6 @@ sectionid: publications
 	</div>
 	</div>
 </div>
-
-<script>
-(function () {
-    var buttons = document.querySelectorAll('#publication-tag-filter .tag-filter-btn');
-    var rows = document.querySelectorAll('#publication-list tr[data-tags]');
-    var yearGroups = document.querySelectorAll('#publication-list .pub-year-group');
-
-    function updateYearGroups() {
-        yearGroups.forEach(function (group) {
-            var visible = group.querySelectorAll('tr[data-tags]:not([style*="display: none"])').length;
-            group.style.display = visible > 0 ? '' : 'none';
-        });
-    }
-
-    buttons.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-            buttons.forEach(function (b) { b.classList.remove('active'); });
-            btn.classList.add('active');
-
-            var tag = btn.getAttribute('data-tag');
-            rows.forEach(function (row) {
-                if (tag === 'all') {
-                    row.style.display = '';
-                    return;
-                }
-                var tags = (row.getAttribute('data-tags') || '').split('|');
-                row.style.display = tags.indexOf(tag) !== -1 ? '' : 'none';
-            });
-            updateYearGroups();
-        });
-    });
-})();
-</script>
 
 <h2 id="presentations">Presentations</h2>
 
@@ -184,8 +121,8 @@ sectionid: publications
     {% for poster in site.data.posters %}
     <div class="project-card">
         {% if poster.image %}
-        <a href="/assets/pdf/{{ poster.pdf }}" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/pdf/{{ poster.image }}" alt="{{ poster.title }}" class="project-image"/>
+        <a href="{{ "/assets/pdf/" | prepend: site.baseurl }}{{ poster.pdf }}" target="_blank" rel="noopener noreferrer">
+            <img src="{{ "/assets/pdf/" | prepend: site.baseurl }}{{ poster.image }}" alt="{{ poster.title }}" class="project-image"/>
         </a>
         {% endif %}
         <div class="project-body">
@@ -195,7 +132,7 @@ sectionid: publications
             <div class="project-links">
                 <span class="project-links-spacer"></span>
                 {% if poster.pdf %}
-                <a href="/assets/pdf/{{ poster.pdf }}" target="_blank" rel="noopener noreferrer" title="PDF"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+                <a href="{{ "/assets/pdf/" | prepend: site.baseurl }}{{ poster.pdf }}" target="_blank" rel="noopener noreferrer" title="PDF"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
                 {% endif %}
                 {% if poster.homepage %}
                 <a href="{{ poster.homepage }}" target="_blank" rel="noopener noreferrer" title="Homepage"><i class="fa fa-globe" aria-hidden="true"></i></a>
@@ -223,7 +160,7 @@ sectionid: publications
             <div class="project-links">
                 <span class="project-links-spacer"></span>
                 {% if abstract.pdf %}
-                <a href="/assets/pdf/{{ abstract.pdf }}" target="_blank" rel="noopener noreferrer" title="PDF"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+                <a href="{{ "/assets/pdf/" | prepend: site.baseurl }}{{ abstract.pdf }}" target="_blank" rel="noopener noreferrer" title="PDF"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
                 {% endif %}
                 {% if abstract.homepage %}
                 <a href="{{ abstract.homepage }}" target="_blank" rel="noopener noreferrer" title="Homepage"><i class="fa fa-globe" aria-hidden="true"></i></a>

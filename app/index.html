@@ -53,7 +53,7 @@ layout: default
             {% for person in site.data.people %}
             {% if person.status=="current" and person.image %}
             <div class="person-avatar" tabindex="0">
-                <img src="/assets/image/people/128/{{ person.image }}" alt="{{ person.name }}"/>
+                <img src="{{ "/assets/image/people/128/" | prepend: site.baseurl }}{{ person.image }}" alt="{{ person.name }}"/>
                 <div class="person-card">
                     <strong>{{ person.name }}</strong>
                     <span class="person-position">{{ person.role | last }}</span>
@@ -76,7 +76,7 @@ layout: default
     </div>
 </div>
 
-<div class="core-messages explore-messages">
+<div class="core-messages">
     <div class="core-message">
         <a href="/projects/">
             <i class="fa fa-cogs" aria-hidden="true"></i>
