@@ -208,3 +208,34 @@ sectionid: publications
     </div>
     {% endfor %}
 </div>
+
+<h2 id="abstracts">Abstracts</h2>
+
+<div class="project-grid" id="abstracts-grid">
+    {% for abstract in site.data.abstracts %}
+    <div class="project-card">
+        <div class="project-body">
+            <p class="news-date">{{ abstract.date | default: abstract.year }}</p>
+            <h3>{{ abstract.title }}</h3>
+            <p>
+                {{ abstract.event }}{% if abstract.authors %}<br/>{{ abstract.authors | strip_html }}{% endif %}
+            </p>
+            <div class="project-links">
+                <span class="project-links-spacer"></span>
+                {% if abstract.pdf %}
+                <a href="/assets/pdf/{{ abstract.pdf }}" target="_blank" rel="noopener noreferrer" title="PDF"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+                {% endif %}
+                {% if abstract.homepage %}
+                <a href="{{ abstract.homepage }}" target="_blank" rel="noopener noreferrer" title="Homepage"><i class="fa fa-globe" aria-hidden="true"></i></a>
+                {% endif %}
+                {% if abstract.repository %}
+                <a href="{{ abstract.repository }}" target="_blank" rel="noopener noreferrer" title="Repository"><i class="fa fa-github" aria-hidden="true"></i></a>
+                {% endif %}
+                {% if abstract.event_page %}
+                <a href="{{ abstract.event_page }}" target="_blank" rel="noopener noreferrer" title="Event page"><i class="fa fa-globe" aria-hidden="true"></i></a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

@@ -3,7 +3,7 @@ https://livermetabolism.com
 
 ### TODO
 
-#### Updates and cleanup
+#### Updates, cleanups, improvements
 - [x] Collecting information, linking information, updating information
   - [x] Update open positions
   - [x] Link people to publications
@@ -22,9 +22,9 @@ https://livermetabolism.com
   - [x] fix responsiveness on all pages
   - [x] simplify an unify teaching content 
   - [x] remove unused assets and code (e.g. pdfs)
-  - [ ] CV as first class webobject (not just an embedded PDF); manage the CV as part of this project; i.e. typst generation and updates;
+  - [x] cleanup posters, abstracts, presentations entries with own page.
 
-- [ ] Database
+- [x] Database
   - [x] Validation code for database and entries (pydantic)
   - [x] Fixing database errors
   - [x] Improving consistency; fixing all naming; establishing naming patterns for files and ids
