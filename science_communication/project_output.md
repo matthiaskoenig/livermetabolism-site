@@ -21,12 +21,13 @@ https://livermetabolism.com
   - [x] merge People, Open Positions
   - [x] fix responsiveness on all pages
   - [x] simplify an unify teaching content 
+  - [x] remove unused assets and code (e.g. pdfs)
   - [ ] CV as first class webobject (not just an embedded PDF); manage the CV as part of this project; i.e. typst generation and updates;
 
 - [ ] Database
-  - [ ] Validation code for database and entries (pydantic)
-  - [ ] Fixing database errors
-  - [ ] Improving consistency
+  - [x] Validation code for database and entries (pydantic)
+  - [x] Fixing database errors
+  - [x] Improving consistency; fixing all naming; establishing naming patterns for files and ids
 
 - [x] Addressing stackholders
   - [x] Clear description of new orientation of lab with start of professorship in Lübeck
