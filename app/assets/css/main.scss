@@ -70,6 +70,22 @@ $tag-colors: (
   "open-fair": $primary,
 );
 
+// Dedicated palette for the full-screen homepage sections (see
+// .tag-section below) - kept in the same hue family as $tag-colors above
+// (so the icon/badge <-> section association still holds) but re-tuned as
+// a coordinated set: shared saturation/lightness recipe and hues spread
+// further apart, rather than a flat darken() of the raw Bootstrap
+// semantic colors (which made e.g. the orange read muddy while still
+// under-contrasting white text). Each independently checked for >=4.5:1
+// contrast against white.
+$hero-section-colors: (
+  "digital-twins": #2766a5,
+  "ai": #a7661b,
+  "digital-pathology": #ae294a,
+  "pharmacometrics": #157965,
+  "open-fair": #282f5d,
+);
+
 h1, h2, h3 {
   font-family: $font-serif-display;
 }
@@ -224,49 +240,109 @@ h3 {
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  text-align: center;
+  padding: 4em 0;
 
-  @each $slug, $color in $tag-colors {
+  @each $slug, $color in $hero-section-colors {
     &.tag-#{$slug} {
-      // the raw tag colors (esp. warning/success) don't have enough
-      // contrast against white text at this scale; darken a bit while
-      // staying clearly "that" color
-      background-color: color.adjust($color, $lightness: -12%);
+      background-color: $color;
     }
   }
 }
 
-.tag-section-content {
-  max-width: 720px;
+// vision statement on the left, linked-icons list on the right
+.tag-section-columns {
+  display: flex;
+  align-items: center;
+  gap: 4em;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 1.5em;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    gap: 2.5em;
+    text-align: center;
+  }
+}
+
+.tag-section-content {
+  flex: 1 1 50%;
   color: #fff;
 
   .fa {
     display: block;
-    font-size: 3.5em;
-    margin-bottom: 0.3em;
+    font-size: 2.6em;
+    margin-bottom: 0.2em;
   }
 
   h2 {
     color: #fff;
     margin-top: 0;
-    margin-bottom: 0.4em;
+    margin-bottom: 0.3em;
   }
 
   .lead {
     font-family: $font-serif-display;
-    font-size: 1.4em;
+    font-size: 1.2em;
     font-weight: 400;
     line-height: 1.5;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
   }
 }
 
+.tag-section-links {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4em;
+}
+
+.tag-section-link {
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+  color: #fff;
+  text-decoration: none;
+
+  @media (max-width: 767px) {
+    align-items: center;
+  }
+
+  .fa {
+    flex: none;
+    margin-top: 0.15em;
+    font-size: 1.8em;
+    opacity: 0.85;
+    transition: opacity 0.15s ease;
+  }
+
+  strong {
+    display: block;
+    font-family: $font-serif-display;
+    font-weight: 700;
+  }
+
+  span span {
+    display: block;
+    font-size: 0.9em;
+    opacity: 0.85;
+  }
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    text-decoration: none;
+
+    .fa {
+      opacity: 1;
+    }
+  }
+}
+
 .section-scroll-cue {
   position: absolute;
   left: 50%;
-  bottom: 1.5em;
+  bottom: 1.2em;
   transform: translateX(-50%);
   font-size: 1.4em;
   opacity: 0.7;
@@ -1012,7 +1088,11 @@ h3 {
 }
 
 .site-navbar {
-  background-color: $primary;
+  // neutral dark grey rather than $primary (navy) - it was too close in
+  // hue/darkness to a couple of the homepage section colors (esp. Open &
+  // FAIR), muddying the contrast between the fixed navbar and whichever
+  // section is currently in view
+  background-color: $gray-900;
   border-color: transparent;
   border-bottom: 3px solid $success;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);

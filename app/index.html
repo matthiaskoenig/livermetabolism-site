@@ -112,11 +112,48 @@ layout: default
 {% assign slug = t.tag | slugify %}
 {% assign next_index = forloop.index0 | plus: 1 %}
 {% assign next_tag = site.data.tags[next_index] %}
+{% assign want_tag = t.tag %}
+{% assign tag_publication_count = site.data.publications | where_exp: "item", "item.tags contains want_tag" | size %}
+{% assign tag_project_count = site.data.projects | where_exp: "item", "item.tags contains want_tag" | where_exp: "item", "item.status == 'current'" | size %}
+{% assign tag_software_count = site.data.software | where_exp: "item", "item.tags contains want_tag" | size %}
 <section class="page-section tag-section tag-{{ slug }}" id="{{ slug }}">
-    <div class="tag-section-content">
-        <i class="fa {{ t.icon }}" aria-hidden="true"></i>
-        <h2>{{ t.tag }}</h2>
-        <p class="lead">{{ t.vision }}</p>
+    <div class="tag-section-columns">
+        <div class="tag-section-content">
+            <i class="fa {{ t.icon }}" aria-hidden="true"></i>
+            <h2>{{ t.tag }}</h2>
+            <p class="lead">{{ t.vision }}</p>
+        </div>
+        {% if tag_publication_count > 0 or tag_project_count > 0 or tag_software_count > 0 %}
+        <div class="tag-section-links">
+            {% if tag_publication_count > 0 %}
+            <a class="tag-section-link" href="{{ "/publications/" | prepend: site.baseurl }}?tag={{ t.tag | url_encode }}">
+                <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                <span>
+                    <strong>Publications</strong>
+                    <span>Papers, reviews, and preprints on {{ t.tag }}.</span>
+                </span>
+            </a>
+            {% endif %}
+            {% if tag_project_count > 0 %}
+            <a class="tag-section-link" href="{{ "/projects/" | prepend: site.baseurl }}?tag={{ t.tag | url_encode }}">
+                <i class="fa fa-cogs" aria-hidden="true"></i>
+                <span>
+                    <strong>Projects</strong>
+                    <span>Ongoing {{ t.tag }} research projects.</span>
+                </span>
+            </a>
+            {% endif %}
+            {% if tag_software_count > 0 %}
+            <a class="tag-section-link" href="{{ "/research/" | prepend: site.baseurl }}?tag={{ t.tag | url_encode }}#software">
+                <i class="fa fa-code" aria-hidden="true"></i>
+                <span>
+                    <strong>Software</strong>
+                    <span>Open-source tools for {{ t.tag }}.</span>
+                </span>
+            </a>
+            {% endif %}
+        </div>
+        {% endif %}
     </div>
     {% if next_tag %}
     <a class="section-scroll-cue" href="#{{ next_tag.tag | slugify }}" aria-label="Scroll to {{ next_tag.tag }}">
