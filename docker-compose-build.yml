@@ -8,11 +8,11 @@
 services:
   
   jekyll:
-    command: jekyll build
-    image: jekyll/jekyll:3.8.6
+    command: bash -c "bundle install && bundle exec jekyll build"
+    image: jekyll/jekyll:4.4.1
     volumes:
       - $PWD:/srv/jekyll
-      - $PWD/app/vendor/bundle:/usr/local/bundle"
+      - $PWD/app/vendor/bundle:/usr/local/bundle
     environment:
       - JEKYLL_ENV=production
     ports:

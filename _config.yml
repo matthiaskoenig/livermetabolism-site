@@ -23,7 +23,13 @@ bootwatch: flatly
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
 highlighter: rouge
+sass:
+  style: compressed
+  sourcemap: never
+strict_front_matter: true
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
@@ -35,15 +41,3 @@ exclude:
   - Gemfile.lock
   - vendor
 timezone: Europe/Berlin
-defaults:
-- scope:
-    path: _posts
-    type: posts
-  values:
-    layout: post
-    sectionid: blog
-
-collections:
-  posts:
-    permalink: /blog/:year/:month/:day/:title/
-    output: true

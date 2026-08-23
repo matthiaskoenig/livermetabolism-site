@@ -2,11 +2,11 @@
 # docker compose -f docker-compose-build.yml up
 services:
   jekyll:
-    command: jekyll serve
-    image: jekyll/jekyll:3.8.6
+    command: bash -c "bundle install && bundle exec jekyll serve --host 0.0.0.0"
+    image: jekyll/jekyll:4.4.1
     volumes:
       - $PWD:/srv/jekyll
-      - $PWD/app/vendor/bundle:/usr/local/bundle"
+      - $PWD/app/vendor/bundle:/usr/local/bundle
 #    environment:
 #      JEKYLL_UID: 1001
 #      JEKYLL_GID: 1001
