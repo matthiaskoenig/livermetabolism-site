@@ -13,7 +13,7 @@
     - matthias_koenig
   cooperation_partners:
   images:
-    - image_analysis.png
+    - image_analysis.webp
   image_title: Lobulus segmentation in different species.
   abstract: 'A whole-slide imaging pipeline to quantify lobular geometry and the zonation of CYP450 enzymes and glutamine synthetase across species (mouse, rat, pig, human), determining the minimum number of lobules needed for statistically robust liver biopsy analysis.'
 
@@ -31,7 +31,7 @@
     - matthias_koenig
   cooperation_partners:
   images:
-    - inulin_creatinine.png
+    - inulin_creatinine.webp
   image_title: Physiologically based pharmacokinetic (PBPK) model of creatinine and inulin.
   abstract: 'A PBPK model of inulin and creatinine to better understand how dosing protocols, body composition, and tubular secretion affect glomerular filtration rate (GFR) measurements.'
 
@@ -50,7 +50,7 @@
     - matthias_koenig
   cooperation_partners:
   images:
-    - dex_model.png
+    - dex_model.webp
   image_title: Physiologically based pharmacokinetic (PBPK) model of dextromethophan.
   abstract: 'A curated pharmacokinetics dataset and PBPK model of dextromethorphan and its metabolites, capturing CYP2D6 genetic polymorphisms and CYP3A4 variability to explain interindividual differences in drug metabolism. Model and database are freely available.'
 
@@ -78,9 +78,9 @@
     - matthias_koenig
   cooperation_partners:
   images:
-    - dapagliflozin.png
-    - canagliflozin.png
-    - empagliflozin.png
+    - dapagliflozin.webp
+    - canagliflozin.webp
+    - empagliflozin.webp
   abstract: 'PBPK/PD digital twins of the SGLT2 inhibitors dapagliflozin, canagliflozin, and empagliflozin, characterizing interindividual variability in glycemic response in type 2 diabetes, e.g. due to differences in hepatorenal function.'
 
 - id: blood_pressure
@@ -104,8 +104,8 @@
     - matthias_koenig
   cooperation_partners:
   images:
-    - losartan.png
-    - hydrochlorothiazide.png
+    - losartan.webp
+    - hydrochlorothiazide.webp
   abstract: 'PBPK/PD digital twins of the antihypertensive agents losartan and hydrochlorothiazide, modeling blood-pressure regulation to study interindividual variability from hepatorenal impairment and pharmacogenomics.'
 
 - id: glimepiride
@@ -125,7 +125,7 @@
     - matthias_koenig
   cooperation_partners:
   images:
-    - glimepiride.png
+    - glimepiride.webp
   abstract: 'A PBPK/PD digital twin of the sulfonylurea glimepiride, investigating variability in insulin secretion and treatment response in type 2 diabetes, e.g. due to hepatorenal function and CYP2C9 genotype.'
 
 - id: doac
@@ -149,8 +149,8 @@
     - matthias_koenig
   cooperation_partners:
   images:
-    - apixaban.png
-    - rivaroxaban.png
+    - apixaban.webp
+    - rivaroxaban.webp
   abstract: 'PBPK/PD digital twins of direct oral anticoagulants (DOACs), covering apixaban and rivaroxaban with edoxaban planned, supporting personalized anticoagulation therapy in special populations such as renal or hepatic impairment.'
 
 - id: rapamycin
@@ -168,7 +168,7 @@
     - matthias_koenig
   cooperation_partners:
   images:
-    - rapamycin.png
+    - rapamycin.webp
   abstract: 'A PBPK digital twin of the mTOR inhibitor rapamycin (sirolimus) predicting dose-exposure relationships and organ impairment effects, contributing to the Immune Digital Twin (IDT) initiative.'
 
 - id: montelukast
@@ -184,7 +184,7 @@
     - matthias_koenig
   cooperation_partners:
   images:
-    - montelukast.png
+    - montelukast.webp
   abstract: 'A PBPK model of the leukotriene receptor antagonist montelukast investigating interindividual variability from hepatic CYP2C9/CYP3A4 metabolism, drug-drug interactions, and age-related differences.'
 
 - id: protein_distribution
@@ -202,7 +202,7 @@
     - matthias_koenig
   cooperation_partners:
   images:
-    - protein_distribution.png
+    - protein_distribution.webp
   image_title: Protein distribution of CYP, UGT, SLC and ABC proteins in the human liver.
   abstract: 'A systematic analysis of the variability in abundance of CYP and UGT enzymes and ABC/SLC transporters across human livers, providing a key resource for PBPK modeling and understanding individual differences in drug clearance.'
 
@@ -222,7 +222,7 @@
     - shubhankar_palwankar
   cooperation_partners: Prof. Tim Ricken, Prof. Stefan Staab, Dr. Hans-Michael Tautenhahn
   images:
-    - atlas.png
+    - atlas.webp
   image_title: ATLAS - AI and Simulation for Tumor Liver ASsessment.
   abstract: 'A clinical decision-support tool for liver cancer combining AI, systems medicine, and biomechanical simulation with patient data to guide treatment decisions, developed with surgical oncology and machine learning experts and evaluated on a cohort of more than 6,000 liver tumor patients.'
 
@@ -242,7 +242,7 @@
     - matthias_koenig
   cooperation_partners: Prof. Bruno Christ, Prof. Uta Dahmen
   images:
-    - zonation.png
+    - zonation.webp
   image_title: Zonation patterns in the liver.
   abstract: 'An image analysis pipeline to quantify hepatic zonation patterns from immunofluorescence and immunohistochemistry whole-slide images, applied to study species differences and changes due to steatosis and altered perfusion.'
 
@@ -262,7 +262,7 @@
     - jan_grzegorzewski
   cooperation_partners:
   images:
-    - simvastatin.png
+    - simvastatin.webp
   image_title: Computational model of LiMAx test.
   abstract: 'A PBPK/PD model of simvastatin and plasma LDL-C, capturing hepatic cholesterol synthesis and LDLR-mediated clearance, shows that simvastatin consistently lowers LDL-C in a dose-dependent manner across genetic subtypes of hypercholesterolemia, supporting stepwise dose titration. Model and database are freely available.'
 
@@ -278,7 +278,7 @@
     - matthias_koenig
   cooperation_partners: Prof. Stockmann, Prof. Timmer, Dr. Hans-Michael Tautenhahn
   images:
-    - limax.png
+    - limax.webp
   image_title: Computational model of LiMAx test.
   abstract: 'A PBPK model of the 13C-methacetin breath test (MBT/LiMAx), validated against more than 20 clinical studies, identifying how CYP1A2 content, hepatic perfusion, and lifestyle factors such as smoking affect liver function test results.'
 
@@ -295,7 +295,7 @@
     - matthias_koenig
   cooperation_partners: 'Dagmar Waltemath & Esther Inau (Medical Informatics and Core Unit Research Data Management, University Medicine Greifswald, Germany), Henning Hermjakob & Rahuman Sheriff (BioModels, EMBL-EBI, Cambridge, UK), Martin Scharm (code ahoi software, Germany).'
   images:
-    - covid_reproducible.png
+    - covid_reproducible.webp
   image_title: Reproducible archives for COVID-19
   abstract: 'With partners at the University of Greifswald, BioModels/EMBL-EBI, and code ahoi, we disseminate COVID-19 simulation models in interoperable, high-quality formats, supported by EOSCsecretariat.eu COVID-19 Fast Track Funding.'
 
@@ -312,7 +312,7 @@
     - matthias_koenig
   cooperation_partners:
   images:
-    - tabularqual.png
+    - tabularqual.webp
   image_title: Example TabularQual spreadsheet representation of a logical model.
   abstract: 'A spreadsheet-based, community-driven format for annotating and curating Boolean and multi-valued logical models in SBML-qual, with a bidirectional converter and web interface that bridges human-readable spreadsheets and standardized, executable models.'
 
@@ -332,7 +332,7 @@
     - matthias_koenig
   cooperation_partners:
   images:
-    - visfem.png
+    - visfem.webp
   image_title: Interactive 3D visualization of a finite element digital twin model.
   abstract: 'A browser-based visualization tool for finite element method (FEM) simulation results, making FEM-based digital twin models interactively explorable and shareable directly from the web to lower the barrier to reproducible computational modeling.'
 
@@ -349,7 +349,7 @@
     - matthias_koenig
   cooperation_partners: Prof. Holzhütter
   images:
-    - hepatokin.png
+    - hepatokin.webp
   image_title: Central Carbon Model of the Liver (HepatoKin1)
   abstract: 'A comprehensive kinetic model of hepatic central metabolism, capturing regulation of enzyme activity by reactants, allosteric effectors, and hormone-dependent phosphorylation, to better understand metabolic regulation in non-alcoholic fatty liver disease (NAFLD).'
 
@@ -369,7 +369,7 @@
     - matthias_koenig
   cooperation_partners:
   images:
-    - data_extraction.png
+    - data_extraction.webp
   image_title: Workflow for extraction of pharmacokinetics data
   abstract: 'A workflow to stratify and personalize PBPK models for specific subpopulations (e.g. smokers vs. non-smokers, children vs. adults), combining literature mining and machine learning for data extraction with a pharmacokinetics database for storage and reuse.'
 
@@ -385,7 +385,7 @@
     - matthias_koenig
   cooperation_partners:
   images:
-    - multiscale-galactose.png
+    - multiscale-galactose.webp
   image_title: Multiscale Galactose Model
   abstract: 'A multiscale model of the human liver spanning single hepatocytes to whole-organ perfusion, applied to galactose metabolism to personalize liver function tests, explain age-related changes, and predict population variability from liver volume and perfusion.'
 
@@ -411,7 +411,7 @@
     - matthias_koenig
     - dimitra_eleftheriadou
   images:
-    - function-tests.png
+    - function-tests.webp
   abstract: 'An open, reproducible multiscale liver model and the infrastructure to integrate imaging, perfusion, and clinical data, with metabolic modules for substances used in liver function tests (methacetin, galactose, BSP, ICG, midazolam, codeine, caffeine, torsemide, pravastatin, talinolol).'
 
 - id: biomarker_signatures
@@ -427,7 +427,7 @@
   people:
     - matthias_koenig
   images:
-    - BDL_correlation_heatmap.png
+    - BDL_correlation_heatmap.webp
   abstract: 'A comprehensive dataset of serum markers, histology, and transcript profiles across 8 timepoints of bile-duct-ligation-induced cholestatic liver disease in mice, identifying robust biomarkers for disease staging.'
 
 - id: hp_simulators
@@ -446,7 +446,7 @@
   people:
     - matthias_koenig
   images:
-    - tellurium-notebook.png
+    - tellurium-notebook.webp
   abstract: 'Tellurium Notebook is a Python/Jupyter-based environment for building, simulating, and sharing reproducible dynamical models using the COMBINE archive standard, bringing a literate-programming workflow to systems biology.'
 
 - id: tellurium_web
@@ -462,7 +462,7 @@
     - matthias_koenig
     - jan_grzegorzewski
   images:
-    - tellurium-web.png
+    - tellurium-web.webp
   abstract: 'tellurium-web is an open online database and simulation tool built on SBML, SED-ML, and COMBINE archives, offering a curated example library, an archive browser, high-performance simulation via libRoadRunner, and a REST API for computational workflows.'
 
 - id: flutype
@@ -478,5 +478,5 @@
     - jan_grzegorzewski
     - matthias_koenig
   images:
-    - flutype.png
+    - flutype.webp
   abstract: 'FluTypeDB is a database and web application for managing peptide- and antibody-based binding assay data (ELISA, microwell, microarray) used to classify influenza subtypes.'

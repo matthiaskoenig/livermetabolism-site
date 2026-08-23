@@ -5,7 +5,7 @@
   year: 2026
   date: 2026-07-07
   pdf: 'poster/Cruz2026_montelukast.pdf'
-  image: 'poster/Cruz2026_montelukast.jpg'
+  image: 'poster/Cruz2026_montelukast.webp'
   authors: 'Jessica Cruz Pérez<sup>1</sup>, <b>Matthias König</b><sup>2,3</sup>'
   affiliations: "<sup>1</sup>National Institute of Respiratory Diseases (INER), 14080 Mexico City, Mexico; <sup>2</sup>Humboldt-Universität zu Berlin, Institute for Theoretical Biology, Berlin, Germany; <sup>3</sup>University Hospital Schleswig-Holstein, Campus Lübeck, First Department of Medicine, 23538 Lübeck, Germany"
   title: 'A physiologically based pharmacokinetic (PBPK) model of the leukotriene receptor antagonist montelukast'
@@ -28,7 +28,7 @@
   year: 2026
   date: 2026-06-12
   pdf: 'poster/Gaas2026_sbscl.optsolvx.pdf'
-  image: 'poster/Gaas2026_sbscl.optsolvx.jpg'
+  image: 'poster/Gaas2026_sbscl.optsolvx.webp'
   authors: 'Michael Gaas<sup>1,2</sup>, Ayush Baranwal<sup>3</sup>, Artur Neumann<sup>1,2</sup>, <b>Matthias König<sup>4,5</sup></b>, Andreas Dräger<sup>6</sup>'
   affiliations: '
   <sup>1</sup> German Center for Infection Research (DZIF), partner site Tübingen, Tübingen 72076, DE;
@@ -56,7 +56,7 @@
   year: 2026
   date: 2026-06-03
   pdf: 'poster/Myshkina2026_pkdb.pdf'
-  image: 'poster/Myshkina2026_pkdb.jpg'
+  image: 'poster/Myshkina2026_pkdb.webp'
   authors: 'Mariia Myshkina<sup>1</sup>, <b>Matthias König<sup>1,2</sup></b>'
   affiliations: '<sup>1</sup> Humboldt-Universität zu Berlin, Faculty of Life Sciences, Department of Biology, Institute of Theoretical Biology, Systems Medicine of the Liver, Unter den Linden 6, 10099 Berlin, Germany; <sup>2</sup>University Hospital Schleswig-Holstein, Campus Lübeck, First Department of Medicine, 23538 Lübeck, Germany'
   title: 'PK-DB 2.0: An Open Pharmacokinetics and Pharmacodynamics Database for Pharmacometric Modeling, AI, and Digital Twins'
@@ -82,7 +82,7 @@
   year: 2026
   date: 2026-05-04
   pdf: 'poster/Albadry2026_sbmc.pdf'
-  image: 'poster/Albadry2026_sbmc.jpg'
+  image: 'poster/Albadry2026_sbmc.webp'
   authors: 'Mohamed Albadry<sup>1,2</sup>, <b>Matthias König<sup>3,4</sup></b>, Fangcong Li<sup>1</sup>, Karl-Heinz Herrmann<sup>5</sup>, Wan-Ting Zhao<sup>5</sup>, Weiwei Wei<sup>1,6</sup>, Joanna Kosacka<sup>1,7</sup>, Xin Pei<sup>1</sup>, FengMing Xu<sup>1,8,9</sup>, Mohamed I. A Hassan<sup>1</sup>, Michael Kiehntopf<sup>10</sup>, Amelie Lupp<sup>11</sup>, Michael Böttcher<sup>12</sup>, Jasna Neumann<sup>12</sup>, Sebastian Höpfl<sup>13</sup>, Nicole Radde<sup>13,14</sup>, Olaf Dirsch<sup>15</sup>, Utz Settmacher<sup>1,6</sup>, Jürgen R. Reichenbach<sup>3</sup>, Hans-Michael Tautenhahn<sup>1,16</sup>, Uta Dahmen<sup>1</sup>'
   affiliations: '<sup>1</sup>Experimental Transplantation Surgery, Department of General, Visceral and Vascular Surgery, Jena University Hospital, Friedrich Schiller University Jena, Jena, Germany; <sup>2</sup>Department of Pathology, Faculty of Veterinary Medicine, Menoufia University, Shebin El Kom, Egypt; <sup>3</sup>Institute of Structural Mechanics and Dynamics in Aerospace Engineering, University of Stuttgart, Stuttgart, Germany; <sup>4</sup>Institute for Biology, Faculty of Life Science, Humboldt-Universität zu Berlin, Berlin, Germany; <sup>5</sup>Medical Physics Group, Institute of Diagnostic and Interventional Radiology, Jena University Hospital, Friedrich Schiller University Jena, Jena, Germany; <sup>6</sup>Department of General, Visceral and Vascular Surgery, Jena University Hospital, Friedrich Schiller University Jena, Jena, Germany; <sup>7</sup>Department of Neurology, University of Leipzig, Leipzig, Germany; <sup>8</sup>Department of Infectious Diseases, The First Affiliated Hospital of Zhejiang Chinese Medical University, Hangzhou 310006, China; <sup>9</sup>Else Kröner Graduate School for Medical Students “JSAM”, Jena University Hospital, Jena, Germany; <sup>10</sup>Department of Clinical Chemistry and Laboratory Diagnostics and Integrated Biobank Jena (IBBJ), Jena University Hospital - Friedrich Schiller University Jena, Jena, Germany; <sup>11</sup>Institute of Pharmacology and Toxicology, Jena University Hospital, Friedrich Schiller University Jena, Jena, Germany; <sup>12</sup>MVZ Medizinische Labore Dessau Kassel GmbH, Bauhüttenstraße 6, 06847, Dessau-Roßlau, Germany; <sup>13</sup>Institute for Systems Theory and Automatic Control, Faculty of Engineering Design, Production Engineering and Automotive Engineering, University of Stuttgart, Stuttgart, Germany; <sup>14</sup>Institute for Stochastics and Applications, University of Stuttgart, Stuttgart, Germany; <sup>15</sup>BG Klinikum Unfallkrankenhaus Berlin, Institute of Pathology, Berlin, Germany; <sup>16</sup>Department of Visceral, Transplantation, Thoracic and Vascular Surgery, University of Leipzig Medical Center, Leipzig, Germany'
   title: 'Modelling of Patient-Specific Liver Vasculature and Sorafenib Pharmacokinetics in Hepatocellular Carcinoma'
@@ -103,7 +103,7 @@
   year: 2026
   date: 2026-02-21
   pdf: 'poster/Myshkina2026_easl.lcs.pdf'
-  image: 'poster/Myshkina2026_easl.lcs.jpg'
+  image: 'poster/Myshkina2026_easl.lcs.webp'
   authors: 'Mariia Myshkina<sup>1</sup>, Etienne Jessen<sup>2</sup>, Dominik Schillinger<sup>2</sup>, <b>Matthias König</b><sup>1,3</sup>'
   affiliations: '<sup>1</sup> Department of Biology, Faculty of Life Sciences, Humboldt-Universität zu Berlin, Germany; <sup>2</sup> Institute for Mechanics, Computational Mechanics Group, Technical University of Darmstadt, Darmstadt, Germany; <sup>3</sup> Institute of Structural Mechanics and Dynamics in Aerospace Engineering, University of Stuttgart, Stuttgart, Germany'
   title: 'Modelling of Patient-Specific Liver Vasculature and Sorafenib Pharmacokinetics in Hepatocellular Carcinoma'
@@ -133,7 +133,7 @@
   year: 2025
   date: 2025-07-07
   pdf: 'poster/Yau2025_lixisenatide.pdf'
-  image: 'poster/Yau2025_lixisenatide.jpg'
+  image: 'poster/Yau2025_lixisenatide.webp'
   authors: 'Olivia Yau<sup>2</sup>, <b>Matthias König</b><sup>1</sup>'
   affiliations: "<sup>1</sup>Humboldt-Universität zu Berlin, Institute for Theoretical Biology, Berlin, Germany, <sup>2</sup>University of Toronto, Dept. of Pharmacology and Toxicology, Toronto, Canada"
   title: 'A Physiologically Based Pharmacokinetic and Pharmacodynamic Model of Lixisenatide'
@@ -156,7 +156,7 @@
   year: 2025
   date: 2025-07-07
   pdf: 'poster/Kim2025_dulaglutide.pdf'
-  image: 'poster/Kim2025_dulaglutide.jpg'
+  image: 'poster/Kim2025_dulaglutide.webp'
   authors: 'Kim Minjun<sup>2</sup>, <b>Matthias König</b><sup>1</sup>'
   affiliations: "<sup>1</sup>Humboldt-Universität zu Berlin, Institute for Theoretical Biology, Berlin, Germany, <sup>2</sup>National University of Singapore, Singapore"
   title: 'A Physiologically Based Pharmacokinetic Model of Dulaglutide'
@@ -179,7 +179,7 @@
   year: 2025
   date: 2025-07-07
   pdf: 'poster/Tan2025_liraglutide.pdf'
-  image: 'poster/Tan2025_liraglutide.jpg'
+  image: 'poster/Tan2025_liraglutide.webp'
   authors: 'Isabella Tan<sup>2</sup>, <b>Matthias König</b><sup>1</sup>'
   affiliations: "<sup>1</sup>Humboldt-Universität zu Berlin, Institute for Theoretical Biology, Berlin, Germany, <sup>2</sup>University of Toronto, Dept. Pharmacology & Biomedical Toxicology, Toronto, Canada"
   title: 'A Physiologically-Based Pharmacokinetic and Pharmacodynamic Model of Liraglutide'
@@ -201,7 +201,7 @@
   year: 2024
   date: 2024-11-05
   pdf: 'poster/Koenig2024_qualiperf2.p3.pdf'
-  image: 'poster/Koenig2024_qualiperf2.p3.jpg'
+  image: 'poster/Koenig2024_qualiperf2.p3.webp'
   authors: '<b>Matthias König</b><sup>1</sup>'
   affiliations: "<sup>1</sup>Humboldt-Universität zu Berlin, Faculty of Life Science, Institute for Biology, Systems Medicine of the Liver, Berlin, Germany"
   title: 'Multi-scale Modelling of Liver Perfusion and Function'
@@ -225,7 +225,7 @@
   year: 2024
   date: 2024-11-05
   pdf: 'poster/Koenig2024_qualiperf2.dmp.pdf'
-  image: 'poster/Koenig2024_qualiperf2.dmp.jpg'
+  image: 'poster/Koenig2024_qualiperf2.dmp.webp'
   authors: '<b>Matthias König</b><sup>1</sup>, Hans-Michael Tautenhahn<sup>2</sup>'
   affiliations: "<sup>1</sup>Humboldt-Universität zu Berlin, Faculty of Life Science, Institute for Biology, Systems Medicine of the Liver, Berlin, Germany
   <sup>2</sup>Department of Visceral, Transplantation, Thoracic and Vascular Surgery, Universitätsklinikum Leipzig"
@@ -249,7 +249,7 @@
   year: 2024
   date: 2024-07-18
   pdf: 'poster/Parakkat2024_pk.llm.pdf'
-  image: 'poster/Parakkat2024_pk.llm.jpg'
+  image: 'poster/Parakkat2024_pk.llm.webp'
   authors: 'Prerna Parakkat<sup>2</sup>, <b>Matthias König</b><sup>1</sup>'
   affiliations: "<sup>1</sup>Humboldt-University of Berlin, Institute for Theoretical Biology, Berlin, Germany, <sup>2</sup>Vellore Institute of Technology, Chennai, India"
   title: 'PK-LLM : Large Language Model (LLM) for Pharmacokinetic (PK) Data Curation'
@@ -272,7 +272,7 @@
   year: 2024
   date: 2024-07-18
   pdf: 'poster/Tereshchuk2024_canagliflozin.pdf'
-  image: 'poster/Tereshchuk2024_canagliflozin.jpg'
+  image: 'poster/Tereshchuk2024_canagliflozin.webp'
   authors: 'Vera Tereshchuk<sup>1</sup>, <b>Matthias König</b><sup>2</sup>'
   affiliations: "<sup>1</sup>Moscow Institute of Physics and Technology, <sup>2</sup>Humboldt-University of Berlin, Institute for Theoretical Biology, Berlin, Germany"
   title: 'Canagliflozin'
@@ -295,7 +295,7 @@
   year: 2024
   date: 2024-07-18
   pdf: 'poster/Maheshvare2024_morphine.pdf'
-  image: 'poster/Maheshvare2024_morphine.jpg'
+  image: 'poster/Maheshvare2024_morphine.webp'
   authors: 'Deepa Maheshvare<sup>2</sup>, Rohini Chakraborty<sup>2</sup>, Rohit Chakraborty<sup>2</sup>, <b>Matthias König</b><sup>1</sup>'
   affiliations: "<sup>2</sup>Humboldt-University of Berlin, Institute for Theoretical Biology, Berlin, Germany, <sup>2</sup>Indian Institute of Science, Bengaluru, India"
   title: 'A physiologically based pharmacokinetic model of morphine'
@@ -316,7 +316,7 @@
   year: 2024
   date: 2024-06-26
   pdf: 'poster/Myshkina2024_captopril.pdf'
-  image: 'poster/Myshkina2024_captopril.jpg'
+  image: 'poster/Myshkina2024_captopril.webp'
   authors: 'Mariia Myshkina<sup>1</sup>, <b>Matthias König</b><sup>1</sup>'
   affiliations: "<sup>1</sup>Humboldt-University of Berlin, Institute for Theoretical Biology, Berlin, Germany"
   title: 'Captopril in Focus: Establishing an Open Pharmacokinetic Dataset and PBPK Modeling'
@@ -350,7 +350,7 @@
   year: 2010
   date: 2010-06-01
   pdf: 'poster/Koenig2010_blood.glucose.pdf'
-  image: 'poster/Koenig2010_blood.glucose.jpg'
+  image: 'poster/Koenig2010_blood.glucose.webp'
   authors: '<b>Matthias König</b><sup>1</sup>, Sascha Bulik<sup>1</sup>, Hermann-Georg Holzhütter<sup>1</sup>'
   affiliations: "<sup>1</sup>Charité University Medicine Berlin, Insitute of Biochemistry, Berlin, Germany"
   title: 'Blood glucose control by the human hepatocyte'

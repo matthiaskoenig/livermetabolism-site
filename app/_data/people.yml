@@ -5,7 +5,7 @@
   country: 'Germany'
   role:
     - 'Group Leader'
-  image: matthias_koenig.png
+  image: matthias_koenig.webp
   orcid: '0000-0003-1725-179X'
   repository: 'https://github.com/matthiaskoenig/'
   homepage: 'https://livermetabolism.com/cv/'
@@ -20,7 +20,7 @@
   country: 'Russia'
   role:
     - 'Ph.D. Student'
-  image: mariia_myshkina.png
+  image: mariia_myshkina.webp
   orcid: "0009-0000-7769-2154"
   repository: 'https://github.com/MariiaMysh'
   homepage:
@@ -34,7 +34,7 @@
   role:
     - 'Master Thesis'
     - 'Scientific Researcher'
-  image: shubhankar_palwankar.png
+  image: shubhankar_palwankar.webp
   orcid: "0009-0007-3431-463X"
   repository: "https://github.com/shubhankarpalwankar"
   homepage:
@@ -49,7 +49,7 @@
     - 'Bachelor Thesis'
     - 'Student Assistant'
     - 'Master Thesis'
-  image: michelle_elias.jpg
+  image: michelle_elias.webp
   orcid: "0009-0005-7959-3164"
   repository: 'https://github.com/mii-halina'
   homepage:
@@ -63,7 +63,7 @@
   role:
     - 'Master Project'
     - 'Student Assistant'
-  image: mariia_babaeva.jpg
+  image: mariia_babaeva.webp
   orcid: "0009-0007-6659-7638"
   repository: 'https://github.com/icalledmyselfmoon'
   homepage:
@@ -76,7 +76,7 @@
   country: 'Germany'
   role:
     - 'Medical Thesis'
-  image: amanda_schwaiger.png
+  image: amanda_schwaiger.webp
   orcid: '0000-0002-8993-8569'
   repository: 'https://github.com/amdangelica'
   homepage:
@@ -89,7 +89,7 @@
   country: 'South Korea'
   role:
     - 'Humboldt Internship Project'
-  image: minjun_kim.jpg
+  image: minjun_kim.webp
   orcid:
   repository: 'https://github.com/unfulw'
   homepage:
@@ -102,7 +102,7 @@
   country: 'Mexico'
   role:
     - 'Humboldt Internship Project'
-  image: jessica_cruz.png
+  image: jessica_cruz.webp
   orcid: "0009-0006-9067-5547"
   repository: 'https://github.com/jessicalienx97-wq'
   homepage:
@@ -115,7 +115,7 @@
   country: 'Ecuador'
   role:
     - 'Internship Project'
-  image: shelee_bedon.jpg
+  image: shelee_bedon.webp
   orcid: "0009-0005-9147-0028"
   repository: 'https://github.com/Shelee97'
   homepage:
@@ -128,7 +128,7 @@
   country: 'Germany'
   role:
     - 'Bachelor Project'
-  image: chang_nguyen.jpg
+  image: chang_nguyen.webp
   orcid: "0009-0004-8004-3314"
   repository: 'https://github.com/changlinh'
   homepage:
@@ -141,7 +141,7 @@
   country: 'India'
   role:
     - 'Internship Project'
-  image: sandeep_gautamdas.jpg
+  image: sandeep_gautamdas.webp
   orcid: '0000-0002-7855-9715'
   repository: 'https://github.com/sandeep-konakagautamdas'
   homepage:
@@ -155,7 +155,7 @@
   role:
     - 'Master Thesis'
     - 'Internship Project'
-  image: antonio_aguilar.png
+  image: antonio_aguilar.webp
   orcid:
   repository: 'https://github.com/MadNietzsche'
   homepage:
@@ -169,7 +169,7 @@
   country: 'Poland'
   role:
     - 'ERASMUS Student'
-  image: monika_jesionek.jpg
+  image: monika_jesionek.webp
   orcid: "0009-0003-3110-3440"
   repository: 'https://github.com/monajes'
   homepage:
@@ -184,7 +184,7 @@
   country: 'Mexico'
   role:
     - 'Master Student'
-  image: juan_mendoza.png
+  image: juan_mendoza.webp
   orcid:
   repository: 'https://github.com/Juan-hub129'
   homepage:
@@ -199,7 +199,7 @@
   role:
     - 'Bachelor Project'
     - 'Bachelor Thesis'
-  image: ennie_tensil.jpg
+  image: ennie_tensil.webp
   orcid:
   repository: 'https://github.com/ennietensil'
   homepage:
@@ -214,7 +214,7 @@
   role:
     - 'ERASMUS'
     - 'Master Thesis'
-  image: elisabetta_casabianca.jpg
+  image: elisabetta_casabianca.webp
   orcid:
   repository: 'https://github.com/elisabettacasabianca11'
   homepage:
@@ -229,7 +229,7 @@
   role:
     - 'Bachelor Student'
     - 'Student Assistant'
-  image: helen_pujol.png
+  image: helen_pujol.webp
   orcid:
   repository: 'https://github.com/Lepujolh'
   homepage:
@@ -243,7 +243,7 @@
   country: 'Germany'
   role:
     - 'Bachelor Project'
-  image: nike_nemitz.png
+  image: nike_nemitz.webp
   orcid:
   repository: 'https://github.com/nikenemitz'
   homepage:
@@ -257,7 +257,7 @@
   country: 'Canada'
   role:
     - 'Humboldt Internship Project (HIP)'
-  image: isabella_tan.jpg
+  image: isabella_tan.webp
   orcid:
   repository: 'https://github.com/bellatgy'
   homepage:
@@ -271,7 +271,7 @@
   country: 'Canada'
   role:
     - 'Humboldt Internship Project (HIP)'
-  image: olivia_yau.png
+  image: olivia_yau.webp
   orcid:
   repository: 'https://github.com/oliviaayau'
   homepage:
@@ -285,7 +285,7 @@
   country: 'India'
   role:
     - 'Data Curation'
-  image: rohini_chakraborty.png
+  image: rohini_chakraborty.webp
   orcid:
   repository: 'https://github.com/rohinichakraborty'
   homepage:
@@ -299,7 +299,7 @@
   country: 'India'
   role:
     - 'Data Curation'
-  image: rohit_chakraborty.png
+  image: rohit_chakraborty.webp
   orcid:
   repository: 'https://github.com/Rohit-Chakraborty'
   homepage:
@@ -313,7 +313,7 @@
   country: 'South Africa'
   role:
     - 'Google Summer of Code (GSOC)'
-  image: emre_hikmet.jpg
+  image: emre_hikmet.webp
   orcid:
   repository: 'https://github.com/kyxhik'
   homepage:
@@ -327,7 +327,7 @@
   country: 'Germany'
   role:
     - 'Google Summer of Code (GSOC)'
-  image: michael_gaas.png
+  image: michael_gaas.webp
   orcid:
   repository: 'https://github.com/xts-Michi'
   homepage:
@@ -341,7 +341,7 @@
   country: 'Germany'
   role:
     - 'Internship'
-  image: luca_sawady.png
+  image: luca_sawady.webp
   orcid:
   repository: 'https://github.com/SamLuca'
   homepage:
@@ -356,7 +356,7 @@
   country: 'USA'
   role:
     - 'Humboldt Internship Student (Brown University)'
-  image: jennesse_alejandro.jpg
+  image: jennesse_alejandro.webp
   orcid:
   repository: 'https://github.com/jen-ne-sse'
   homepage:
@@ -371,7 +371,7 @@
   role:
     - 'Ph.D. Student (Internship)'
     - 'Humboldt Internship Student'
-  image: deepa_maheshvare.png
+  image: deepa_maheshvare.webp
   orcid:
   repository: 'https://github.com/DeepaMahm'
   homepage:
@@ -386,7 +386,7 @@
   role:
     - 'Bachelor Student'
     - 'Student Assistant'
-  image: beatrice_mallol.png
+  image: beatrice_mallol.webp
   orcid:
   repository: 'https://github.com/stemllb'
   homepage:
@@ -400,7 +400,7 @@
   country: 'Germany'
   role:
     - 'Master Internship'
-  image: abhinav_mishra.png
+  image: abhinav_mishra.webp
   orcid:
   repository: 'https://github.com/bibymaths'
   homepage:
@@ -415,7 +415,7 @@
   role:
     - 'Study Project'
     - 'Bachelor Thesis Biophysics'
-  image: yusuf_kulanoglu.png
+  image: yusuf_kulanoglu.webp
   orcid:
   repository: 'https://github.com/ykulanoglu'
   homepage:
@@ -429,7 +429,7 @@
   country: 'Russia'
   role:
     - 'Humboldt Internship Student'
-  image: vera_tereshchuk.jpg
+  image: vera_tereshchuk.webp
   orcid:
   repository: 'https://github.com/tereshchuk1'
   homepage:
@@ -443,7 +443,7 @@
   country: 'Azerbaijan'
   role:
     - 'ERASMUS'
-  image: samira_eissazedeh.png
+  image: samira_eissazedeh.webp
   orcid:
   repository: https://github.com/47857078
   homepage:
@@ -459,7 +459,7 @@
     - 'Master Project'
     - 'Master Student'
     - 'QuaLiPerF'
-  image: jonas_kuettner.png
+  image: jonas_kuettner.webp
   orcid:
   repository: 'https://github.com/jonaspk98'
   homepage:
@@ -473,7 +473,7 @@
   country: 'India'
   role:
     - 'Humboldt Internship Student'
-  image: prerna_parakkat.jpg
+  image: prerna_parakkat.webp
   orcid:
   repository: 'https://github.com/prerna2023'
   homepage:
@@ -487,7 +487,7 @@
   country: 'Germany'
   role:
     - 'Bachelor Student'
-  image: afruja_hossain.png
+  image: afruja_hossain.webp
   orcid:
   repository: 'https://github.com/afruja-h'
   homepage:
@@ -501,7 +501,7 @@
   country: 'USA'
   role:
     - 'Humboldt Internship Student (Brown University)'
-  image: hannah_menghis.png
+  image: hannah_menghis.webp
   orcid:
   repository: 'https://github.com/hannah3menghis'
   homepage:
@@ -515,7 +515,7 @@
   country: 'Turkey'
   role:
     - 'ERASMUS'
-  image: huelya_karaboga.png
+  image: huelya_karaboga.webp
   orcid:
   repository:
   homepage:
@@ -529,7 +529,7 @@
   country: 'Germany'
   role:
     - 'Internship'
-  image: frances_okibedi.png
+  image: frances_okibedi.webp
   orcid:
   repository: 'https://github.com/fuokibedi'
   homepage:
@@ -545,7 +545,7 @@
   role:
     - 'Google Summer of Code Student'
     - 'Research Internship'
-  image: 'sankha_das.png'
+  image: 'sankha_das.webp'
   orcid:
   repository: 'https://github.com/sankha555'
   homepage: 'https://sbml4humans-gsoc-2021.blogspot.com/'
@@ -559,7 +559,7 @@
   country: 'Russia'
   role:
     - 'Humboldt Internship Student'
-  image: xenia_petukhova.png
+  image: xenia_petukhova.webp
   orcid:
   repository: 'https://github.com/dzinty'
   homepage:
@@ -574,7 +574,7 @@
   country: 'Iran'
   role:
     - 'Humboldt Internship Student'
-  image: zahra_bahri.png
+  image: zahra_bahri.webp
   orcid:
   repository: 'https://github.com/Rain-marine'
   homepage:
@@ -590,7 +590,7 @@
     - 'Bachelor Student'
     - 'Student Assistant'
     - 'Master Project'
-  image: florian_bartsch.png
+  image: florian_bartsch.webp
   orcid:
   repository: 'https://github.com/FloBar'
   homepage:
@@ -606,7 +606,7 @@
     - 'Bachelor Student'
     - 'Master Project'
     - 'Student Assistant'
-  image: adrian_koeller.png
+  image: adrian_koeller.webp
   orcid:
   repository: 'https://github.com/adriankl'
   homepage:
@@ -620,7 +620,7 @@
   country: 'Germany'
   role:
     - 'Internship'
-  image: "nurudeen_sojimade.png"
+  image: "nurudeen_sojimade.webp"
   orcid:
   repository: 'https://github.com/Soji4eva'
   homepage:
@@ -634,7 +634,7 @@
   country: 'Germany'
   role:
     - 'Ph.D. Student'
-  image: jan_grzegorzewski.png
+  image: jan_grzegorzewski.webp
   orcid: '0000-0002-4588-4925'
   repository: 'https://github.com/janekg89/'
   homepage: 'https://github.com/janekg89/'
@@ -648,7 +648,7 @@
   country: 'Germany'
   role:
     - 'Internship'
-  image: sophie_silberhorn.png
+  image: sophie_silberhorn.webp
   orcid:
   repository: 'https://github.com/SophieSilberhorn'
   homepage:
@@ -662,7 +662,7 @@
   country: 'Portugal'
   role:
     - 'Humboldt Internship Student'
-  image: paula_ogata.png
+  image: paula_ogata.webp
   orcid:
   repository: 'https://github.com/paula-ogata'
   homepage:
@@ -677,7 +677,7 @@
   country: 'Germany'
   role:
     - 'Student Assistant'
-  image: janosch_brandhorst.png
+  image: janosch_brandhorst.webp
   orcid:
   repository: 'https://github.com/JBrandh'
   homepage:
@@ -691,7 +691,7 @@
   country: 'Turkey'
   role:
     - 'Bachelor Student'
-  image: suekrue_balci.png
+  image: suekrue_balci.webp
   orcid:
   repository: 'https://github.com/SukruBalci'
   homepage:
@@ -705,7 +705,7 @@
   country: 'Germany'
   role:
     - 'Bachelor Student'
-  image: yannick_duport.png
+  image: yannick_duport.webp
   orcid:
   repository: 'https://github.com/YannickDuport'
   homepage:
@@ -719,7 +719,7 @@
   country: 'South Korea'
   role:
     - 'Humboldt Internship Student'
-  image: danny_ke.png
+  image: danny_ke.webp
   orcid:
   repository: 'https://github.com/dannythekey'
   homepage:
@@ -734,7 +734,7 @@
   country: 'Great Britain'
   role:
     - 'Humboldt Internship Student'
-  image: sara_angelis.png
+  image: sara_angelis.webp
   orcid:
   repository: 'https://github.com/SaraD-hub'
   homepage:
@@ -750,7 +750,7 @@
   affiliation: 'Indian Institute of Technology, Roorkee'
   role:
     - 'Google Summer of Code Student'
-  image: hemant_yadav.png
+  image: hemant_yadav.webp
   orcid:
   repository: 'https://github.com/hemant27031999/cobrapy'
   homepage: 'https://hemant-gsoc2020.blogspot.com/'
@@ -766,7 +766,7 @@
   affiliation: 'Indian Institute of Technology, Roorkee'
   role:
     - 'Google Summer of Code Student'
-  image: hemil_panchiwala.png
+  image: hemil_panchiwala.webp
   orcid:
   repository: 'https://github.com/hemilpanchiwala/SBSCL'
   homepage: 'https://gsoc20hemil.blogspot.com'
@@ -782,7 +782,7 @@
   affiliation: 'Indian Institute of Technology, Roorkee'
   role:
     - 'Google Summer of Code Student'
-  image: kaustubh_trivedi.png
+  image: kaustubh_trivedi.webp
   orcid:
   repository: 'https://github.com/codekaust'
   homepage: 'https://kt-gsoc19.blogspot.com/'
@@ -797,7 +797,7 @@
   country: 'Germany'
   role:
     - 'Ph.D. Student (Mentoring)'
-  image: patrick_pett.png
+  image: patrick_pett.webp
   orcid:
   repository: 'https://bitbucket.org/JPatrickP/'
   homepage:
@@ -812,7 +812,7 @@
   country: 'Germany'
   role:
     - 'Bachelor Thesis'
-  image: roman_schulte.png
+  image: roman_schulte.webp
   orcid:
   repository: 'https://github.com/anfark'
   homepage: 'https://github.com/draeger-lab/insilico'
@@ -826,7 +826,7 @@
   country: 'India'
   role:
     - 'Google Summer of Code'
-  image: 'shalin_shah.png'
+  image: 'shalin_shah.webp'
   orcid:
   repository: 'https://github.com/shalinshah1993/SBSCL'
   homepage: 'https://github.com/shalinshah1993'
@@ -840,7 +840,7 @@
   country: 'Japan'
   role:
     - 'Google Summer of Code'
-  image: 'takahiro_yamada.png'
+  image: 'takahiro_yamada.webp'
   orcid:
   repository: 'https://github.com/TakahiroYamada/GSOC2017_SBMLModelAnalysisWebApp'
   homepage: 'https://github.com/TakahiroYamada'
@@ -855,7 +855,7 @@
   country: 'Greece'
   role:
     - 'Student Assistant'
-  image: dimitra_eleftheriadou.png
+  image: dimitra_eleftheriadou.webp
   orcid:
   repository:
   homepage:

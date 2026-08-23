@@ -4,7 +4,7 @@
   status: 'current'
   tenure: '2020-2025'
   name: 'COMBINE coordinator'
-  image: combine.png
+  image: combine.webp
   repository: 'https://github.com/combine-org'
   homepage: 'https://co.mbine.org'
   description: 'The COmputational Modeling in BIology NEtwork (COMBINE) is an initiative to coordinate the development of the various community standards and formats for computational models.'
@@ -15,7 +15,7 @@
   status: 'current'
   tenure: '2023-2026'
   name: 'PETab editor'
-  image: petab.png
+  image: petab.webp
   repository: 'https://github.com/PEtab-dev/'
   homepage: 'https://petab.readthedocs.io/en/latest/'
   description: 'PEtab is a data format for specifying parameter estimation problems in systems biology.'
@@ -26,7 +26,7 @@
   status: 'current'
   tenure: '2018-2023; 2025-2027'
   name: 'SBML editor'
-  image: sbml.png
+  image: sbml.webp
   repository: 'https://github.com/sbmlteam/'
   homepage: 'https://sbml.org/'
   description: 'The Systems Biology Markup Language (SBML) is a software data format for describing models in biology. '
@@ -37,7 +37,7 @@
   status: 'alumni'
   tenure: '2017-2022; 2024-2026'
   name: 'SED-ML editor'
-  image: sedml.png
+  image: sedml.webp
   repository: 'https://github.com/SED-ML'
   homepage: 'https://sed-ml.org/'
   description: 'The Simulation Experiment Description Markup Language (SED-ML) is a format for encoding simulation setups, to ensure exchangeability and reproducibility of simulation experiments.'

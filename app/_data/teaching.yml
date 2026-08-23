@@ -12,7 +12,7 @@
   people:
     - matthias_koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
-  image: mb19_ss2025.png
+  image: mb19_ss2025.webp
   caption: '<strong>Theory, tools and methods in biology - Pharmacokinetic modelling</strong>'
   funding:
   content: '
@@ -38,7 +38,7 @@
   people:
     - matthias_koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
-  image: mb19_ss2023.png
+  image: mb19_ss2023.webp
   caption: '<strong>Theory, tools and methods in biology - Pharmacokinetic modelling</strong>'
   funding:
   content: '
@@ -66,7 +66,7 @@
   people:
     - matthias_koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
-  image: xresearch2023.png
+  image: xresearch2023.webp
   caption: '<strong>Physiologically based digital twins </strong> for the treatment of hypertension with ACE inhibitors and diuretics.'
   funding: 'Funded under the Excellence Strategy of the Federal Government and the Länder by the <a href="https://www.berlin-university-alliance.de/">Berlin University Alliance</a>.'
   content: '
@@ -95,7 +95,7 @@
   people:
     - matthias_koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
-  image: mb19_ss2023.png
+  image: mb19_ss2023.webp
   caption: '<strong>Theory, tools and methods in biology - Pharmacokinetic modelling</strong>'
   funding:
   content: '
@@ -123,7 +123,7 @@
   people:
     - matthias_koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
-  image: xresearch2022.png
+  image: xresearch2022.webp
   caption: '<strong>Physiological-based pharmacokinetics model</strong> of the ACE inhibitors</strong>. The models will study the absorption (GI tract), distribution (systemic circulation), metabolization (liver) and elimination (kidneys and liver) of the ACE inhibitors lisinopril and ramipril. Organs and plasma volumes are connected via the blood flow (Q).'
   funding: 'Funded under the Excellence Strategy of the Federal Government and the Länder by the <a href="https://www.berlin-university-alliance.de/">Berlin University Alliance</a>.'
   content: '
@@ -155,7 +155,7 @@
   people:
     - matthias_koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
-  image: important_models.png
+  image: important_models.webp
   caption: '<strong>Important models in quantitative biology</strong>'
   funding:
   content: '
@@ -178,7 +178,7 @@
   people:
     - matthias_koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
-  image: important_models.png
+  image: important_models.webp
   caption: '<strong>Important models in quantitative biology</strong>'
   funding:
   content: '
@@ -200,7 +200,7 @@
   people:
     - matthias_koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
-  image: hepatokin.png
+  image: hepatokin.webp
   caption: '<strong>Important models in quantitative biology</strong>'
   funding:
   content: '
@@ -223,7 +223,7 @@
   people:
     - matthias_koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
-  image: important_models.png
+  image: important_models.webp
   caption: '<strong>Important models in quantitative biology</strong>'
   funding:
   content: '
@@ -246,7 +246,7 @@
   people:
     - matthias_koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
-  image: important_models.png
+  image: important_models.webp
   caption: '<strong>Important models in quantitative biology</strong>'
   funding:
   content: '

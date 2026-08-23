@@ -13,7 +13,7 @@ sectionid: research
     {% for software in site.data.software %}
     <div class="project-card" data-tags="{{ software.tags | join: '|' | escape }}">
         {% if software.image %}
-        <img src="{{ "/assets/image/software/" | prepend: site.baseurl }}{{ software.image }}" alt="{{ software.name }}" class="project-image project-image-contain"/>
+        <img src="{{ "/assets/image/software/" | prepend: site.baseurl }}{{ software.image }}" alt="{{ software.name }}" loading="lazy" class="project-image project-image-contain"/>
         {% endif %}
         <div class="project-body">
             <h3>{{ software.name }}</h3>
@@ -49,7 +49,7 @@ sectionid: research
     {% for funding in site.data.funding %}
     <div class="project-card" data-tags="{{ funding.tags | join: '|' | escape }}">
         {% if funding.funder_logo %}
-        <img src="{{ "/assets/image/funding/" | prepend: site.baseurl }}{{ funding.funder_logo }}" alt="{{ funding.funder }}" class="project-image project-image-contain"/>
+        <img src="{{ "/assets/image/funding/" | prepend: site.baseurl }}{{ funding.funder_logo }}" alt="{{ funding.funder }}" loading="lazy" class="project-image project-image-contain"/>
         {% endif %}
         <div class="project-body">
             <h3>{{ funding.title }}</h3>
@@ -96,7 +96,7 @@ sectionid: research
     {% for editor in site.data.editors %}
     <div class="project-card" data-tags="{{ editor.tags | join: '|' | escape }}">
         {% if editor.image %}
-        <img src="{{ "/assets/image/editors/" | prepend: site.baseurl }}{{ editor.image }}" alt="{{ editor.name }}" class="project-image project-image-contain"/>
+        <img src="{{ "/assets/image/editors/" | prepend: site.baseurl }}{{ editor.image }}" alt="{{ editor.name }}" loading="lazy" class="project-image project-image-contain"/>
         {% endif %}
         <div class="project-body">
             <h3>{{ editor.name }}</h3>

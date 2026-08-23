@@ -7,7 +7,7 @@
   name: 'PK-DB'
   title: 'Pharmacokinetics database'
   description: 'Developed the first FAIR-compliant open database for pharmacokinetics, integrating clinical and pre-clinical trial data. PK-DB enables reproducible PBPK/PD modeling, supports individualized simulations, and has become a key infrastructure for computational pharmacology research.'
-  image: 'pkdb.png'
+  image: 'pkdb.webp'
   homepage: https://alpha.pk-db.com
   repository: https://github.com/matthiaskoenig/pkdb
   doi: 10.1093/nar/gkaa990
@@ -22,7 +22,7 @@
   name: 'sbmlutils'
   title: 'Python utilities for SBML'
   description: 'Created a versatile Python library to streamline the use of SBML models, providing robust utilities for model handling, analysis, and integration with libSBML. Widely used in reproducible modeling workflows across systems biology.'
-  image: 'sbmlutils.png'
+  image: 'sbmlutils.webp'
   homepage: https://github.com/matthiaskoenig/sbmlutils
   repository: https://github.com/matthiaskoenig/sbmlutils
   doi: 10.5281/zenodo.597149
@@ -36,7 +36,7 @@
   name: 'SBML4Humans'
   title: 'SBML simulation made easy'
   description: 'Designed an interactive reporting framework that makes SBML models human-readable and accessible, enabling experts and newcomers to explore model content without technical barriers.'
-  image: 'sbml4humans.png'
+  image: 'sbml4humans.webp'
   homepage: https://sbml4humans.de
   repository: https://github.com/matthiaskoenig/sbmlutils
   doi:
@@ -51,7 +51,7 @@
   name: 'sbmlsim'
   title: 'SBML simulation made easy'
   description: 'Built a lightweight Python package that simplifies simulations of SBML models on top of libRoadRunner, lowering the entry barrier for model testing and teaching.'
-  image: 'sbmlsim.png'
+  image: 'sbmlsim.webp'
   homepage: https://github.com/matthiaskoenig/sbmlsim
   repository: https://github.com/matthiaskoenig/sbmlsim
   doi:
@@ -65,7 +65,7 @@
   name: 'cysbml'
   title: 'Cytoscape 3 app for the Systems Biology Markup Language'
   description: 'Developed and maintained a widely used Cytoscape app for visualization of SBML models in network contexts. cy3sbml has facilitated intuitive exploration of complex models in systems biology and bioinformatics.'
-  image: 'cysbml.png'
+  image: 'cysbml.webp'
   homepage: https://github.com/matthiaskoenig/cy3sbml
   repository: https://github.com/matthiaskoenig/cy3sbml
   doi: 10.5281/zenodo.597154
@@ -79,7 +79,7 @@
   name: 'brendapy'
   title: 'BRENDA in python'
   description: 'Authored a Python package providing direct programmatic access to BRENDA enzyme information, enabling large-scale, automated enzyme analysis and integration into computational pipelines.'
-  image: 'brendapy.png'
+  image: 'brendapy.webp'
   homepage: https://github.com/matthiaskoenig/brendapy
   repository: https://github.com/matthiaskoenig/brendapy
   doi:
@@ -93,7 +93,7 @@
   name: 'libsbgnpy'
   title: 'Python library for SBGN'
   description: 'Developed a Python library for working with Systems Biology Graphical Notation (SBGN), supporting standardized visualization and integration of pathway information.'
-  image: 'libsbgnpy.png'
+  image: 'libsbgnpy.webp'
   homepage: https://github.com/matthiaskoenig/libsbgn-python
   repository: https://github.com/matthiaskoenig/libsbgn-python
   doi:
@@ -107,7 +107,7 @@
   name: 'roadrunner'
   title: 'High-performance simulator for SBML'
   description: 'Contributed to the development of libRoadRunner, a C/C++ library using LLVM for ultra-fast simulation of SBML models, setting a benchmark for performance in computational biology.'
-  image: 'libroadrunner.png'
+  image: 'libroadrunner.webp'
   homepage: https://libroadrunner.readthedocs.io/en/latest/
   repository: https://github.com/sys-bio/roadrunner/
   doi:
@@ -135,7 +135,7 @@
   name: 'tellurium'
   title: 'systems biology simulation library'
   description: 'Co-developed Tellurium, a Python-based environment for reproducible dynamical modeling of biological networks. Integrated standard formats with powerful simulation libraries, enabling accessible and transparent modeling.'
-  image: 'tellurium.png'
+  image: 'tellurium.webp'
   homepage: https://github.com/sys-bio/tellurium/
   repository: https://github.com/sys-bio/tellurium/
   doi:
@@ -150,7 +150,7 @@
   name: 'VisFEM'
   title: 'Web visualization of FEM models'
   description: 'A browser-based visualization tool for finite element method (FEM) simulation results, making FEM-based digital twin models interactively explorable and shareable directly from the web to lower the barrier to reproducible computational modeling.'
-  image: 'visfem.png'
+  image: 'visfem.webp'
   people:
     - michelle_elias
     - mariia_myshkina

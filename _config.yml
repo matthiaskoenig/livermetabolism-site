@@ -46,4 +46,15 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+  # High-quality source images are kept in the repo (app/assets/image,
+  # app/assets/pdf/poster) as masters, but every page now references the
+  # generated .webp rendition instead - excluding the raster originals
+  # keeps them out of the deployed site so nothing ships them unused.
+  - assets/image/**/*.png
+  - assets/image/**/*.jpg
+  - assets/image/**/*.jpeg
+  - assets/image/**/*.gif
+  - assets/pdf/poster/*.jpg
+  - assets/pdf/poster/*.jpeg
+  - assets/pdf/poster/*.png
 timezone: Europe/Berlin

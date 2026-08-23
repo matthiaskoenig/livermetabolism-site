@@ -122,7 +122,7 @@ sectionid: publications
     <div class="project-card">
         {% if poster.image %}
         <a href="{{ "/assets/pdf/" | prepend: site.baseurl }}{{ poster.pdf }}" target="_blank" rel="noopener noreferrer">
-            <img src="{{ "/assets/pdf/" | prepend: site.baseurl }}{{ poster.image }}" alt="{{ poster.title }}" class="project-image"/>
+            <img src="{{ "/assets/pdf/" | prepend: site.baseurl }}{{ poster.image }}" alt="{{ poster.title }}" loading="lazy" class="project-image"/>
         </a>
         {% endif %}
         <div class="project-body">

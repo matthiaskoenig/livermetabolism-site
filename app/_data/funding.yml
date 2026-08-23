@@ -2,7 +2,7 @@
   funder_short: BMFTR
   funder: Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR) und dem Land Berlin im Rahmen der Exzellenzstrategie von Bund und Ländern
   funder_link: https://www.berlin-university-alliance.de/
-  funder_logo: bua.png
+  funder_logo: bua.webp
   grant:
   start: '10/2025'
   end: '04/2026'
@@ -23,7 +23,7 @@
   funder_short: DFG
   funder: Deutsche Forschungsgemeinschaft (DFG)
   funder_link: https://www.dfg.de
-  funder_logo: dfg.png
+  funder_logo: dfg.webp
   grant: 465194077
   start: '10/2025'
   end: '09/2026'
@@ -43,7 +43,7 @@
   funder_short: Circle U.
   funder: Circle U. - European University Alliance
   funder_link: https://www.circle-u.eu/
-  funder_logo: circleu.png
+  funder_logo: circleu.webp
   grant:
   start: '2024'
   end: '2025'
@@ -62,7 +62,7 @@
   funder_short: BMFTR
   funder: BUA - Berlin University Alliance
   funder_link: https://www.berlin-university-alliance.de/
-  funder_logo: bua.png
+  funder_logo: bua.webp
   grant:
   start: '01/2024'
   end: '06/2026'
@@ -81,7 +81,7 @@
   funder_short: DFG
   funder: Deutsche Forschungsgemeinschaft (DFG)
   funder_link: https://www.dfg.de
-  funder_logo: dfg.png
+  funder_logo: dfg.webp
   grant: 465194077
   start: '10/2025'
   end: '09/2027'
@@ -102,7 +102,7 @@
   funder_short: BMFTR
   funder: Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR) und dem Land Berlin im Rahmen der Exzellenzstrategie von Bund und Ländern
   funder_link: https://www.berlin-university-alliance.de/
-  funder_logo: bua.png
+  funder_logo: bua.webp
   grant:
   start: '04/2023'
   end: '09/2023'
@@ -122,7 +122,7 @@
   funder_short: BMFTR
   funder: Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR) "Computational Life Sciences"
   funder_link: https://www.bmftr.bund.de
-  funder_logo: bmftr.png
+  funder_logo: bmftr.webp
   grant: "031L0304B"
   start: '03/2023'
   end: '12/2026'
@@ -142,7 +142,7 @@
   funder_short: BMFTR
   funder: Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR) und dem Land Berlin im Rahmen der Exzellenzstrategie von Bund und Ländern
   funder_link: https://www.berlin-university-alliance.de/
-  funder_logo: bua.png
+  funder_logo: bua.webp
   grant:
   start: '10/2022'
   end: '03/2023'
@@ -161,7 +161,7 @@
   funder_short: DFG
   funder: Deutsche Forschungsgemeinschaft (DFG)
   funder_link: https://www.dfg.de
-  funder_logo: dfg.png
+  funder_logo: dfg.webp
   grant: 436883643
   start: '07/2021'
   end: '11/2025'
@@ -181,7 +181,7 @@
   funder_short: DFG
   funder: Deutsche Forschungsgemeinschaft (DFG)
   funder_link: https://www.dfg.de
-  funder_logo: dfg.png
+  funder_logo: dfg.webp
   grant: 465194077
   start: '01/2020'
   end: '12/2023'
@@ -201,7 +201,7 @@
   funder_short: EOSC-life
   funder: EOSCsecretariat.eu - EU Horizon Program - EOSC-life
   funder_link: https://www.eosc-life.eu/
-  funder_logo: eosc.png
+  funder_logo: eosc.webp
   grant: H2020-INFRAEOSC-05-2018-2019
   start: '06/2020'
   end: '05/2021'
@@ -220,7 +220,7 @@
   funder_short: BMFTR
   funder: Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR)
   funder_link: https://www.bmftr.bund.de
-  funder_logo: bmftr.png
+  funder_logo: bmftr.webp
   grant: 031L0054
   start: '06/2016'
   end: '05/2022'

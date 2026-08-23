@@ -12,7 +12,7 @@ sectionid: projects
     {% if project.status == "current" %}
     <div class="project-card" data-tags="{{ project.tags | join: '|' | escape }}">
         {% for image in project.images limit:1 %}
-        <img src="{{ "/assets/image/projects/" | prepend: site.baseurl }}{{ image }}" alt="{{ project.title }}" class="project-image"/>
+        <img src="{{ "/assets/image/projects/" | prepend: site.baseurl }}{{ image }}" alt="{{ project.title }}" loading="lazy" class="project-image"/>
         {% endfor %}
         <div class="project-body">
             <h3>{{ project.title }}</h3>

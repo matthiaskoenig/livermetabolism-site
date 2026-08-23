@@ -11,9 +11,9 @@ sectionid: news
     {% for news in site.data.news %}
     <div class="project-card" data-tags="{{ news.tags | join: '|' | escape }}">
         {% if news.image %}
-        <img src="{{ "/assets/image/news/" | prepend: site.baseurl }}{{ news.image }}" alt="{{ news.title }}" class="project-image"/>
+        <img src="{{ "/assets/image/news/" | prepend: site.baseurl }}{{ news.image }}" alt="{{ news.title }}" loading="lazy" class="project-image"/>
         {% elsif news.video %}
-        <img src="https://img.youtube.com/vi/{{ news.video | split: '/embed/' | last }}/hqdefault.jpg" alt="{{ news.title }}" class="project-image"/>
+        <img src="https://img.youtube.com/vi/{{ news.video | split: '/embed/' | last }}/hqdefault.jpg" alt="{{ news.title }}" loading="lazy" class="project-image"/>
         {% endif %}
         <div class="project-body">
             <p class="news-date">{{ news.date }}</p>

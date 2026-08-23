@@ -11,7 +11,7 @@ sectionid: people
     {% if person.status=="current" %}
     <div class="member-card">
         {% if person.image %}
-        <img src="{{ "/assets/image/people/128/" | prepend: site.baseurl }}{{ person.image }}" alt="{{ person.name }}" class="member-photo" />
+        <img src="{{ "/assets/image/people/128/" | prepend: site.baseurl }}{{ person.image }}" alt="{{ person.name }}" loading="lazy" class="member-photo" />
         {% endif %}
         <div class="member-info">
             <strong>{{ person.name }}</strong>
@@ -45,7 +45,7 @@ sectionid: people
 
 <div class="row">
     <div class="col-md-12">
-        <img src="{{ "/assets/image/teaching/teaching_banner.png" | prepend: site.baseurl }}" alt="" class="img-fluid" />
+        <img src="{{ "/assets/image/teaching/teaching_banner.webp" | prepend: site.baseurl }}" alt="" class="img-fluid" />
     </div>
 </div>
 
@@ -158,7 +158,7 @@ sectionid: people
     {% endunless %}
             <div class="alumni-card">
                 <div class="person-avatar" tabindex="0">
-                    <img src="{{ "/assets/image/people/128/" | prepend: site.baseurl }}{{ person.image }}" alt="{{ person.name }}" class="alumni-photo" />
+                    <img src="{{ "/assets/image/people/128/" | prepend: site.baseurl }}{{ person.image }}" alt="{{ person.name }}" loading="lazy" class="alumni-photo" />
                     <div class="person-card">
                         <strong>{{ person.name }}{% assign person_flag = site.data.country_flags[person.country] %}{% if person_flag %} <span class="person-flag" title="{{ person.country }}">{{ person_flag }}</span>{% endif %}</strong>
                         <span class="person-position">{{ person.role | last }}</span>

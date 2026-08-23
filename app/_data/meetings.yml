@@ -13,7 +13,7 @@
   date_display: '6–8 October 2022'
   location: 'Berlin, Germany'
   homepage: 'https://co.mbine.org/author/combine-2022/'
-  image: 'COMBINE2022_participants.png'
+  image: 'COMBINE2022_participants.webp'
 
 - id: 'open-science-workshop-2025'
   tags:
@@ -26,4 +26,4 @@
   date_display: '10 October 2025'
   location: 'Berlin, Germany'
   pdf: 'misc/2025-10-10_open.science.pdf'
-  image: 'Open_Science_Workshop2025.gif'
+  image: 'Open_Science_Workshop2025.webp'

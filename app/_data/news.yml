@@ -6,7 +6,7 @@
     - 'matthias_koenig'
   title: 'Publication: EFECT Enables Reliable and Reproducible Stochastic Simulations Across Disciplines'
   date: '2026-08-05'
-  image: Sego2026_EFECT.png
+  image: Sego2026_EFECT.webp
   link: 'https://doi.org/10.1038/s44260-026-00094-y'
   short: "We introduce EFECT, the Empirical Characteristic Function Equality Convergence Test, a universal statistical framework for quantifying the reproducibility of stochastic simulations across systems biology, epidemiology, finance, and machine learning."
   abstract: "In a new publication in npj Complexity, we introduce the Empirical Characteristic Function Equality Convergence Test (EFECT), a domain-agnostic computational framework for quantifying the statistical reproducibility of stochastic simulations. Reproducibility of stochastic simulations is notoriously hard to assess because every run yields different outcomes, and existing practices focused on sharing code, seeds, data, and software environments do not ensure that results can be independently reproduced. EFECT addresses this gap by defining a normalized EFECT error that measures distributional differences between two sets of simulation outputs over a model- and scale-independent range, together with an EFECT convergence point specifying the minimum sample size needed to reach a chosen reproducibility threshold and significance level. The method applies to any simulation whose results can be represented as bounded, real-valued data, regardless of modelling formalism or source of stochasticity, and is implemented in an open-source software library with a compact, machine-readable standardized report. The framework was rigorously evaluated across more than 40 test cases spanning stochastic differential equations, agent-based models, Boolean networks, and partial differential equations. Applying EFECT to published models in pandemic epidemiology, financial stochastic volatility, and physics-informed neural networks revealed that commonly used sample sizes are often underpowered, with substantial parameter differences going undetected unless thousands of replicates are simulated. By providing a reusable, domain-agnostic statistical reproducibility metric and standardized report format, EFECT offers a practical way to embed quantitative reproducibility and replicability checks into stochastic simulation workflows across data-intensive disciplines."
@@ -20,7 +20,7 @@
     - 'matthias_koenig'
   title: 'Poster at HIP 2026 day: A PBPK Model of the Leukotriene Receptor Antagonist Montelukast'
   date: '2026-07-07'
-  image: HIP2026_montelukast_Jessica.Cruz.png
+  image: HIP2026_montelukast_Jessica.Cruz.webp
   link: 'https://hic.hu-berlin.de/en/internship-program'
   short: "Jessica Cruz Pérez presents her internship project developing a physiologically based pharmacokinetic (PBPK) model of montelukast to investigate interindividual variability in pharmacokinetics, including effects of hepatic metabolism, CYP2C9/CYP3A4 variability, drug-drug interactions, food effect, and weight-related differences in adult populations."
   abstract: "At the Humboldt Internship Program (HIP) Day 2026 in Berlin, Jessica Cruz Pérez presented her poster on the development of a physiologically based pharmacokinetic (PBPK) model of montelukast, a leukotriene receptor antagonist used in the treatment of asthma and allergic rhinitis. The project, carried out in the group of Matthias König at Humboldt-Universität zu Berlin, aims to improve our understanding of interindividual variability in montelukast pharmacokinetics, including the effects of hepatic metabolism, CYP2C9/CYP3A4 variability, drug-drug interactions, food effect, and weight-related differences in adult populations. A systematic literature search of over 100 publications was performed using Zotero, and studies were prioritized for data curation in PK-DB. Next steps include dataset digitization and curation in PK-DB, ODE model implementation in SBML, model simulations and variability analysis, and model evaluation using published clinical data."
@@ -34,7 +34,7 @@
     - 'matthias_koenig'
   title: 'Preprint: A Physiologically Based Pharmacokinetic/Pharmacodynamic Model of the Diuretic Hydrochlorothiazide'
   date: '2026-07-06'
-  image: Schwaiger2026_hctz.png
+  image: Schwaiger2026_hctz.webp
   link: https://www.preprints.org/manuscript/202607.0306/v1
   short: "We present a whole-body PBPK/PD model of the diuretic hydrochlorothiazide to investigate pharmacokinetic and pharmacodynamic variability in hypertensive patients, with a focus on renal, hepatic, and cardiac impairment."
   abstract: "In a new preprint, Amanda Schwaiger and Matthias König introduce a whole-body physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the thiazide diuretic hydrochlorothiazide (HCTZ), integrating oral absorption, systemic distribution, renal elimination, renal sodium, chloride, and fluid handling, and blood-pressure regulation. The model was calibrated and evaluated using curated PK and PD data from 25 clinical studies in healthy individuals and patients with hypertension, cardiac impairment, hepatic impairment, or renal impairment. Model predictions were consistent with observed dose-proportional PK and PD and captured variability in HCTZ exposure and response across simulated comorbid conditions. Renal impairment was identified as the main driver of altered HCTZ exposure and reduced urinary excretion, whereas hepatic and cardiac impairment affected PK primarily through secondary effects on renal function rather than direct effects on drug metabolism or absorption. The model provides a mechanistic framework for understanding HCTZ pharmacology across heterogeneous clinical conditions and may contribute to individualized antihypertensive therapy in patients with comorbidities."
@@ -49,7 +49,7 @@
     - 'mariia_myshkina'
   title: 'Poster at PAGE 2026: PK-DB 2.0 for Pharmacometric Modeling, AI, and Digital Twins'
   date: '2026-06-04'
-  image: PAGE2026_PKDB_Myshkina_Koenig.png
+  image: PAGE2026_PKDB_Myshkina_Koenig.webp
   link: https://www.page-meeting.org/2026-dubrovnik-croatia/
   short: "We present PK-DB 2.0, an open, FAIR, and AI-ready pharmacokinetics and pharmacodynamics database providing curated PK/PD data from more than 700 clinical studies for pharmacometric modeling, machine learning, and digital twin development."
   abstract: "At PAGE 2026 in Dubrovnik, Mariia Myshkina presents PK-DB 2.0, an open pharmacokinetics and pharmacodynamics database designed for modern pharmacometric modeling, AI-driven workflows, and digital twin applications. PK-DB 2.0 provides a unified, machine-readable data infrastructure covering study designs, interventions, concentration–time profiles, derived pharmacokinetic parameters, and pharmacodynamic endpoints. The platform currently contains curated data from more than 700 clinical studies and introduces stronger validation rules, automated quality checks, unit normalization, ontology-based semantic annotations, and explicit representation of experimental uncertainties. A redesigned REST API enables fast and reliable programmatic access, while a dedicated Model Context Protocol (MCP) server provides structured access for AI clients and automated modeling workflows. By combining rigorous curation, FAIR data principles, and AI-ready interfaces, PK-DB 2.0 supports reproducible model development, cross-study analyses, machine learning pipelines, PBPK modeling, population pharmacometrics, and next-generation digital twin–enabled decision support."
@@ -67,7 +67,7 @@
     - 'matthias_koenig'
   title: 'Preprint: An Open and Reproducible Digital Twin for Personalised Anticoagulant Therapy'
   date: '2026-05-06'
-  image: Myshkina2026_apixaban_model.png
+  image: Myshkina2026_apixaban_model.webp
   link: https://www.preprints.org/manuscript/202605.0249/v1
   short: "We present an open whole-body PBPK/PD digital twin of apixaban to investigate pharmacokinetic and pharmacodynamic variability in personalised anticoagulant therapy, with a focus on renal and hepatic impairment, food intake, body weight, metabolites, and coagulation-related endpoints."
   abstract: "In a new preprint, Mariia Myshkina, Mariia Babaeva, Linh Chang Nguyen, Shelee Bedón, Johannes Metternich, Michelle Elias, and Matthias König introduce an open PBPK/PD digital twin of apixaban for personalised anticoagulant therapy. The model was developed from 35 curated clinical PK/PD studies and captures apixaban exposure and anticoagulation-related pharmacodynamic endpoints across dosing regimens, renal and hepatic impairment, food intake, and body weight. All model files, simulation workflows, and curated datasets are openly available under MIT and CC-BY licenses following FAIR principles. The work was developed as part of the Berlin University Alliance (BUA) X-Student Research Group “Digital Twins in Action: Optimizing Direct Oral Anticoagulant Use”, funded by the Bundesministerium für Bildung und Forschung (BMBF) and the State of Berlin as part of the Excellence Strategy of the Federal and State Governments."
@@ -79,7 +79,7 @@
   people:
     - 'matthias_koenig'
   date: '2026-04-30'
-  image: Bafna2026_segmentation.png
+  image: Bafna2026_segmentation.webp
   link: https://doi.org/10.3389/fbinf.2026.1713736
   title: "Automated Segmentation of Hepatic Vessels and Lobules in Whole-Slide Images Using U-Net Models"
   short: "Our latest publication introduces a deep-learning pipeline for automated segmentation of hepatic vessels, bile ducts, and lobules in whole-slide liver histology images."
@@ -94,7 +94,7 @@
     - 'matthias_koenig'
   title: 'Master Thesis Antonio Alvarez'
   date: '2026-04-23'
-  image: master_thesis_antonio.alvarez.png
+  image: master_thesis_antonio.alvarez.webp
   link: '/assets/pdf/thesis/Alvarez2026_master.thesis.pdf'
   short: "Antonio Alvarez submitted his Master thesis on reproducible Bayesian optimization and uncertainty quantification in pharmacokinetic models"
   abstract: "Antonio Alvarez developed a reproducible Bayesian framework for parameter estimation in pharmacokinetic (PK) and physiologically-based pharmacokinetic (PBPK) models. Using three models of increasing complexity, he systematically evaluated how key hyperparameters influence Bayesian MCMC performance on synthetic datasets. The study demonstrates that prior specification is the dominant factor for accurate parameter recovery, while other settings mainly affect computational cost. The fully open and FAIR-compliant workflow provides a robust foundation for uncertainty quantification and reproducible PBPK modeling."
@@ -111,7 +111,7 @@
     - 'matthias_koenig'
   title: 'Preprint: A Digital Twin of Empagliflozin Pharmacokinetics and Pharmacodynamics'
   date: '2026-03-20'
-  image: Alejandro2026_graphical.abstract.png
+  image: Alejandro2026_graphical.abstract.webp
   link: https://www.preprints.org/manuscript/202603.1559/v1
   short: "We present a whole-body PBPK/PD digital twin of empagliflozin to investigate pharmacokinetic and pharmacodynamic variability in type 2 diabetes mellitus, with a focus on renal and hepatic impairment, metabolite exposure, and dose-dependent effects."
   abstract: "In a new preprint, Jennesse Alejandro, Michelle Elias, Mariia Babaeva, and Matthias König introduce a physiologically based PBPK/PD digital twin of the SGLT2 inhibitor empagliflozin, developed using curated data from 27 clinical studies. The whole-body model mechanistically represents absorption, distribution, metabolism, and excretion, and explicitly links drug exposure to renal glucose handling via the renal threshold for glucose and urinary glucose excretion. Simulations reproduce dose-dependent pharmacokinetics and pharmacodynamics across single- and multiple-dose regimens in healthy individuals and patients with type 2 diabetes. The model captures variability under renal and hepatic impairment as well as fed and fasted conditions, providing quantitative insight into clinically relevant scenarios. All models, datasets, and simulation workflows are provided as open, FAIR-compliant SBML resources, enabling reproducible analyses and reuse for model-informed assessment of empagliflozin PK/PD variability."
@@ -143,7 +143,7 @@
     - 'matthias_koenig'
   title: 'Preprint: A Digital Twin of Canagliflozin Pharmacokinetics and Pharmacodynamics in Type 2 Diabetes Mellitus'
   date: '2026-01-27'
-  image: Tereshchuk2026_graphical.abstract.png
+  image: Tereshchuk2026_graphical.abstract.webp
   link: https://www.preprints.org/manuscript/202601.2095/v1
   short: "We present a whole-body PBPK/PD digital twin of canagliflozin to investigate pharmacokinetic and pharmacodynamic variability in type 2 diabetes mellitus, with a focus on renal and hepatic impairment, metabolite exposure, and dose-dependent effects."
   abstract: "In a new preprint, Vera Tereshchuk, Michelle Elias, and Matthias König introduce a physiologically based PBPK/PD digital twin of the SGLT2 inhibitor canagliflozin, developed using curated data from 22 clinical studies. The whole-body model mechanistically represents absorption, distribution, metabolism, and excretion, and explicitly links drug exposure to renal glucose handling and urinary glucose excretion. Simulations reproduce dose-dependent pharmacokinetics and pharmacodynamics across single- and multiple-dose regimens in healthy individuals and patients with type 2 diabetes. Renal impairment results in modest changes in parent drug exposure but markedly reduced urinary glucose excretion and increased metabolite exposure, consistent with impaired glucose filtration and clearance. Under hepatic impairment, simulations predict increased canagliflozin exposure with altered metabolite profiles, while pharmacodynamic effects remain minimal. All models, datasets, and simulation workflows are provided as open, FAIR-compliant SBML resources, enabling reproducible analyses and reuse for model-informed assessment of canagliflozin PK/PD variability."
@@ -156,7 +156,7 @@
     - 'matthias_koenig'
   title: 'Interview: Modelle so komplex wie der Körper selbst – Digitale Zwillinge in der Medizin'
   date: '2026-01-30'
-  image: Koenig2026_GI_digital_twins_interview.png
+  image: Koenig2026_GI_digital_twins_interview.webp
   link: https://inf.gi.de/12/modelle-so-komplex-wie-der-koerper-selbst
   short: "In an interview with Matthias König, the Gesellschaft für Informatik explores how digital twins are becoming as complex as the human body itself and how they enable personalized prediction, simulation, and decision support in medicine."
   abstract: "In this interview published by the Gesellschaft für Informatik, Matthias König discusses the concept of digital twins in medicine and how increasingly detailed computational models can reflect the complexity of the human body across scales. The interview highlights the role of systems biology, physiologically based pharmacokinetic and pharmacodynamic modeling, and data-driven approaches in building predictive digital twins for organs and whole-body physiology. Key application areas include personalized therapy optimization, drug development, and clinical decision support. The conversation also addresses current challenges such as model validation, data integration, interoperability, and reproducibility, emphasizing the importance of open, FAIR, and community-driven modeling standards for the future of precision and systems medicine."
@@ -169,7 +169,7 @@
     - 'matthias_koenig'
   title: 'Successful Open Science Workshop 2025'
   date: '2025-11-28'
-  image: Open_Science_Workshop2025.gif
+  image: Open_Science_Workshop2025.webp
   link: https://matthiaskoenig.github.io/open-science-workshop
   short: "The Open Science Workshop 2025 brought together participants from across the Berlin University Alliance for a full-day, hands-on introduction to reproducible research, FAIR data, and open-source workflows."
   abstract: "The Open Science Workshop 2025 was a great success, welcoming a diverse group of participants from all BUA universities. The workshop covered key aspects of open and reproducible research, including FAIR data principles, version control with Git, transparent workflows, open-source tools, computational reproducibility, and best practices for collaborative science.  
@@ -187,7 +187,7 @@
     - 'matthias_koenig'
   title: 'Completion of the AI Teaching Certificate (KI-Lehrzertifikat)'
   date: '2025-11-20'
-  image: Koenig2025_KI_Teaching_Certificate.png
+  image: Koenig2025_KI_Teaching_Certificate.webp
   link:
   short: "Successful completion of the AI Teaching Certificate (200 AE) at Humboldt-Universität zu Berlin, covering AI foundations, ethics, and higher education didactics within the KI-Campus 2.0 and AI Skills Initiative."
   abstract: "Matthias König has successfully completed the AI Teaching Certificate (KI-Lehrzertifikat), a comprehensive 200-unit higher education qualification program offered through KI-Campus 2.0 and the AI Skills Initiative at Humboldt-Universität zu Berlin. The certificate consists of three micro-credentials—AI Foundations (96%), AI Advanced & Ethics (93%), and AI Didactics in Higher Education (91%)—and covers core AI topics including machine learning, neural networks, Python and Jupyter workflows, text and image processing, and responsible AI use. Training followed DGHD-aligned standards in AI ethics, data and algorithmic governance, and regulatory aspects. The program also emphasized AI-supported teaching, such as integrating generative AI, speech assistants, and prompt design into university courses, as well as developing AI-based OER teaching units. The certification was completed with a teaching observation and reflective assessments demonstrating competency in designing and implementing AI-enhanced learning scenarios."
@@ -200,7 +200,7 @@
     - 'matthias_koenig'
   title: 'Humboldt Internship Program 2026 - Computational Modeling of Drug Detoxification Using Digital Twins – A Systems Medicine Approach'
   date: '2025-11-13'
-  image: humboldt-internship.jpg
+  image: humboldt-internship.webp
   link: 'https://hic.hu-berlin.de/en/internship-program/projects/201'
   short: 'We offer Internships in 2026, academic three-month research stays at Humboldt-Universität zu Berlin. The application for the Summer Term Internships 2026 is open from 05 November to 18 December 2025.'
   abstract: 'Humboldt Internship Program is an international short-term program for subject-specific, experiential learning. It allows participants to work with teams in research projects and university-related start-ups for three months.<br /><br />
@@ -220,7 +220,7 @@
     - 'matthias_koenig'
   title: 'A Digital Twin of Dapagliflozin Pharmacokinetics and Pharmacodynamics in Type 2 Diabetes Mellitus'
   date: '2025-11-13'
-  image: Nemitz2025_dapagliflozin_preprint.png
+  image: Nemitz2025_dapagliflozin_preprint.webp
   link: https://github.com/matthiaskoenig/dapagliflozin-model
   short: "We present a physiologically based PBPK/PD digital twin of dapagliflozin to analyze pharmacokinetic and pharmacodynamic variability in type 2 diabetes mellitus, with a focus on dosing, hepatorenal impairment, and food effects."
   abstract: "In a new preprint, Nike Nemitz, Michelle Elias, and Matthias König introduce a digital twin of the SGLT2 inhibitor dapagliflozin, developed as a whole-body PBPK/PD model based on curated data from 28 clinical studies. The model mechanistically describes the drug’s absorption, distribution, metabolism, excretion, and pharmacodynamic action via urinary glucose excretion. It captures key sources of inter-individual variability—including renal and hepatic impairment, food effects, and dose-dependent kinetics—and successfully reproduces observed clinical PK/PD patterns. Simulations reveal that renal impairment substantially reduces urinary glucose excretion despite preserved plasma exposure, while hepatic impairment has only minor influence. Food intake lowers peak concentrations but still leads to measurable changes in pharmacodynamic response. This digital twin provides mechanistic insight into dapagliflozin variability and supports individualized therapy optimization in type 2 diabetes."
@@ -253,7 +253,7 @@
     - 'matthias_koenig'
   title: 'Digital Twin of Losartan for Precision Blood Pressure Therapy'
   date: '2025-10-14'
-  image: Tensil2025_losartan_preprint.png
+  image: Tensil2025_losartan_preprint.webp
   link: https://github.com/matthiaskoenig/losartan-model
   short: "We introduce a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of losartan and its active metabolite E3174 as a digital twin to study variability in blood pressure regulation and support individualized antihypertensive therapy."
   abstract: "In a new preprint, Ennie Tensil and Matthias König present a digital twin of the angiotensin II receptor blocker losartan, providing a mechanistic framework for precision treatment of hypertension and heart failure. The whole-body PBPK/PD model, based on data from 24 clinical trials, describes losartan’s absorption, hepatic metabolism, renal excretion, and pharmacodynamic effects via the renin–angiotensin–aldosterone system (RAAS). Implemented in SBML, the model captures interindividual variability arising from hepatic and renal impairment as well as CYP2C9 and ABCB1 polymorphisms. Simulations reproduce key pharmacokinetic and pharmacodynamic patterns, highlighting the impact of genetic and physiological factors on therapeutic response. This digital twin enables virtual patient studies and provides a quantitative foundation for individualized dosing and precision cardiovascular therapy."
@@ -307,7 +307,7 @@ Presented at: COMBINE2025<br />
     - 'matthias_koenig'
   title: 'Digital Twin of Glimepiride Enables Personalized Diabetes Therapy'
   date: '2025-10-08'
-  image: Elias2025_glimepiride_preprint.png
+  image: Elias2025_glimepiride_preprint.webp
   link: https://github.com/matthiaskoenig/glimepiride-model
   short: "We present a digital pharmacokinetic twin of glimepiride that simulates how patient-specific factors affect drug behavior, supporting individualized and stratified treatment of type 2 diabetes."
   abstract: "In a new publication, Michelle Elias and Matthias König introduce a whole-body physiologically based pharmacokinetic (PBPK) model of glimepiride as a digital twin for precision diabetes care. Developed using curated data from 19 clinical studies, the model captures glimepiride’s ADME processes and quantitatively integrates key sources of interindividual variability—including hepatic and renal function, CYP2C9 genotype, and bodyweight. The digital twin accurately reflects observed pharmacokinetics and demonstrates how genetic and physiological factors can significantly alter drug exposure. By enabling virtual patient simulations, this model offers a mechanistic platform for personalized dosing and patient stratification, advancing digital decision-support tools for more effective and individualized treatment of type 2 diabetes."
@@ -322,7 +322,7 @@ Presented at: COMBINE2025<br />
     - 'elisabetta_casabianca'
     - 'matthias_koenig'
   date: '2025-09-15'
-  image: myshkina2025_ai_dt_survey.png
+  image: myshkina2025_ai_dt_survey.webp
   link: https://doi.org/10.20944/preprints202509.1164.v1
   title: 'Assessing the Impact of AI and Digital Twins on Clinical Decision-Making in Hepatology and Hepatobiliary Surgery'
   short: "Our latest preprint presents results from a survey study exploring how clinicians in hepatology and hepatobiliary surgery perceive artificial intelligence (AI) and digital twins in clinical decision-making, highlighting both enthusiasm for innovation and concerns about trust, liability, and regulation."
@@ -333,7 +333,7 @@ Presented at: COMBINE2025<br />
   people:
     - 'matthias_koenig'
   date: '2025-08-15'
-  image: leadership_certificate.png
+  image: leadership_certificate.webp
   link: "https://www.tu.berlin/zewk/angebote-nach-themen/wissenschaftliche-weiterbildung/zusammenarbeit-und-leadership/zertifikat-leadership"
   title: "Leadership Certificate Successfully Completed by Dr. Matthias König"
   short: "Dr. Matthias König has successfully completed the comprehensive Leadership Certificate of the Berlin Leadership Academy, strengthening his leadership skills for guiding research teams and fostering effective collaboration in academia."
@@ -348,7 +348,7 @@ Presented at: COMBINE2025<br />
     - 'ennie_tensil'
   title: 'Bachelor Thesis Ennie Tensil: Physiologically-Based Pharmacokinetic/Pharmacodynamic Modeling of Losartan'
   date: '2025-07-15'
-  image: bachelor_ennie_tensil.png
+  image: bachelor_ennie_tensil.webp
   link: https://github.com/matthiaskoenig/losartan-model
   short: "This thesis presents a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of losartan and its metabolite E3174, providing mechanistic insights into how physiological and genetic factors influence therapy and supporting individualized dosing strategies."
   abstract: "Losartan is an angiotensin II receptor antagonist commonly used in the treatment of hyperten- sion and heart failure. Its pharmacokinetics and pharmacodynamics are influenced by a range of physiological and genetic factors, which may affect therapeutic efficacy. This thesis presents a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of losartan and its active metabolite E3174 to explore these influences systematically. The modular SBML-based model includes submodels for absorption, hepatic metabolism, renal excretion, and pharmacodynamic effects via the renin-angiotensin-aldosterone system (RAAS). Simulations were conducted to investigate the impact of dose, hepatic and renal impairment, as well as CYP2C9 and ABCB1 polymorphisms. The model successfully reproduced observed pharmacological trends, including a dose-dependent increase in pharmacodynamic response, likely reflecting enhanced receptor blockade at higher systemic exposures. Hepatic dysfunction blunted the pharmacodynamic response to losartan, whereas renal impairment reduced metabolite clearance and lead to modest enhancement in pharmacodynamic effect. Genetic variability in CYP2C9 significantly altered E3174 formation and downstream RAAS inhibition, whereas ABCB1 activity had only minor effects on systemic exposure. The model provides mechanistic insight into inter-individual variability in losartan therapy and supports its potential use in individualized dosing strategies."
@@ -362,7 +362,7 @@ Presented at: COMBINE2025<br />
     - 'mariia_myshkina'
     - 'matthias_koenig'
   date: '2025-07-14'
-  image: elisabetta_rivaroxaban_preprint.png
+  image: elisabetta_rivaroxaban_preprint.webp
   link: https://github.com/matthiaskoenig/rivaroxaban-model
   title: 'A Systems Pharmacology Approach to Rivaroxaban: Physiologically Based Modeling of Pharmacokinetics and Coagulation Dynamics'
   short: "Our latest preprint introduces a comprehensive physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of rivaroxaban, enabling the simulation of drug absorption, distribution, metabolism, excretion, and coagulation dynamics under diverse clinical conditions."
@@ -379,7 +379,7 @@ Presented at: COMBINE2025<br />
     - 'matthias_koenig'
   title: 'Humboldt Internship Program Day 2025: Project Report & Panel Discussion'
   date: '2025-07-07'
-  image: hip_day_2025.png
+  image: hip_day_2025.webp
   link: https://github.com/matthiaskoenig/losartan-model
   short: "Isabella Tan, Olivia Yau and Minjun Kim presented there PBPK/PD modeling projects on GLP-1 agonists for Program Day here at Humboldt Universität-zu Berlin."
   abstract: "During Program Day at Humboldt-Universität zu Berlin, Isabella Tan, Olivia Yau, and Minjun Kim presented their physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) modeling projects on GLP-1 receptor agonists. Minjun Kim is developing a model of dulaglutide to investigate its absorption, distribution, metabolism, and effects on glucose regulation. Isabella Tan is building a model of liraglutide to study its pharmacological behavior and impact on glucose homeostasis, focusing on individualized treatment strategies. Olivia Yau is working on a model of lixisenatide to explore its kinetics and therapeutic effects, aiming to advance personalized approaches to diabetes therapy. Additionally, Matthias König contributed as a panelist to the discussion 'Real Work Experiences for a Real Career: What Learnings and Skills Really Matter?'"
@@ -393,7 +393,7 @@ Presented at: COMBINE2025<br />
     - 'monika_jesionek'
   title: 'New PBPK/PD Modeling Project: Rapamycin as a Case Study in Personalized Immunosuppressive Therapy'
   date: '2025-07-02'
-  image: sirolimus_project.jpg
+  image: sirolimus_project.webp
   link:
   short: "Monika Jesionek has started a new ERASMUS project to develop a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of rapamycin, aiming to better understand interindividual variability and support the development of an immune digital twin."
   abstract: "As part of her ERASMUS research stay, Monika Jesionek is developing a whole-body PBPK/PD model of the mTOR inhibitor rapamycin (sirolimus). Rapamycin plays a crucial role in immunosuppressive therapy, but its clinical use is challenged by narrow therapeutic margins, complex pharmacokinetics, and high interindividual variability. The project integrates literature data and mechanistic modeling to simulate rapamycin’s absorption, distribution, metabolism, and immune-modulating effects across diverse physiological and pathological conditions. This digital twin approach aims to optimize dosing strategies and contribute to personalized medicine efforts, particularly within the broader context of building an immune digital twin (IDT)."
@@ -408,7 +408,7 @@ Presented at: COMBINE2025<br />
     - 'matthias_koenig'
   title: 'Digital Twin of Glimepiride Enables Personalized Diabetes Therapy'
   date: '2025-06-17'
-  image: Elias2025_glimepiride_preprint.png
+  image: Elias2025_glimepiride_preprint.webp
   link: https://github.com/matthiaskoenig/glimepiride-model
   short: "We present a digital pharmacokinetic twin of glimepiride that simulates how patient-specific factors affect drug behavior, supporting individualized and stratified treatment of type 2 diabetes."
   abstract: "In a new preprint, Michelle Elias and Matthias König introduce a whole-body physiologically based pharmacokinetic (PBPK) model of glimepiride as a digital twin for precision diabetes care. Developed using curated data from 19 clinical studies, the model captures glimepiride’s ADME processes and quantitatively integrates key sources of interindividual variability—including hepatic and renal function, CYP2C9 genotype, and bodyweight. The digital twin accurately reflects observed pharmacokinetics and demonstrates how genetic and physiological factors can significantly alter drug exposure. By enabling virtual patient simulations, this model offers a mechanistic platform for personalized dosing and patient stratification, advancing digital decision-support tools for more effective and individualized treatment of type 2 diabetes."
@@ -421,7 +421,7 @@ Presented at: COMBINE2025<br />
     - 'nike_nemitz'
   title: 'Bachelor Thesis Nike Nemitz: Physiologically-Based Pharmacokinetic/Pharmacodynamic Modeling of Dapagliflozin'
   date: '2025-06-15'
-  image: bachelor_nike.png
+  image: bachelor_nike.webp
   link: https://github.com/matthiaskoenig/dapagliflozin-model
   short: "In this bachelor thesis, a PBPK/PD model of dapagliflozin was developed to investigate how physiological and external factors such as hepatorenal impairment and food intake influence drug behavior and therapeutic efficacy in type 2 diabetes treatment."
   abstract: "Dapagliflozin, an SGLT2 inhibitor for type 2 diabetes, reduces plasma glucose levels by enhancing urinary glucose excretion (UGE). However, its pharmacokinetics and pharmacodynamics are subject to considerable interindividual variability influenced by dosing, organ function, and food intake. This study presents a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model, constructed using SBML and data from 27 clinical trials, with modular representations of intestinal absorption, hepatic metabolism, and renal excretion.  
@@ -434,7 +434,7 @@ Presented at: COMBINE2025<br />
     - 'matthias_koenig'
   title: 'Panel Reflections on Inclusion in Research Design'
   date: '2025-06-12'
-  image: bua_panel_diversity.png
+  image: bua_panel_diversity.webp
   link:
   short: "Dr. Matthias König joined an interdisciplinary panel at the Berlin University Alliance Fellows Club to discuss how inclusive design influences research across fields. The event highlighted diverse approaches—from AI in healthcare to quantum computing—to advance pluralistic and equitable science."
   abstract: "Methods of Inclusion: Designing Research for a Plural World” — part of the Berlin University Alliance Fellows Club meets... the Einstein Center Population Diversity on June 11.
@@ -452,7 +452,7 @@ Presented at: COMBINE2025<br />
     - 'matthias_koenig'
   title: 'Course Completed: Pharmacokinetic/Pharmacodynamic Modelling'
   date: '2025-06-12'
-  image: mb19_ss2025.png
+  image: mb19_ss2025.webp
   link: https://matthiaskoenig.github.io/dhpe-pkpd/
   short: "From June 3–6, we successfully conducted our redesigned course on Pharmacokinetic/Pharmacodynamic (PK/PD) Modelling. Developed as part of the Digital Health Profession Educator (DHPE) program, the course emphasized interactivity and hands-on learning in the context of clinical pharmacology."
   abstract: "The Pharmacokinetic/Pharmacodynamic (PK/PD) Modelling course was completely restructured for enhanced interactivity as part of a teaching innovation project within the Digital Health Profession Educator (DHPE) program. The course provided a comprehensive introduction to how drugs are absorbed, distributed, metabolized, and excreted in the body—and how these processes affect drug action. Students explored both classical compartment models and physiologically based pharmacokinetic (PBPK) models, learning how to simulate drug behavior and optimize dosing strategies. The redesigned format integrated active learning components, practical modeling exercises, and real-world case studies to deepen understanding. Topics also included pharmacodynamics, drug-drug interactions, and the application of models in drug development and personalized therapy. The course successfully combined conceptual knowledge with applied skills, preparing participants to use PK/PD models as tools for translational and clinical research."
@@ -465,7 +465,7 @@ Presented at: COMBINE2025<br />
     - 'matthias_koenig'
   title: 'SPP Startup Funding Awarded for Web-Based FEM Visualization Tool'
   date: '2025-05-10'
-  image: spp_startup_funding.png
+  image: spp_startup_funding.webp
   link: "https://www.spp2311.de/"
   short: "Matthias König has been awarded €15,000 in startup funding from the DFG Priority Programme SPP2311 to develop SPP-FEMVis, a web-based visualization platform for Finite Element Method (FEM) simulations supporting open science and interdisciplinary collaboration."
   abstract: "We are pleased to announce that Matthias König has received startup funding from the DFG Priority Programme SPP2311 – Robust Coupling of Continuum Biomechanical In Silico Models to Biomedical Data. His project, SPP-FEMVis: Advancing Open Science with Web-Based FEM Visualizations, aims to create an interactive, browser-based visualization tool for FEM simulation results using PyVista and Trame. With €15,000 in funding, the project will support the development of a flexible visualization framework integrated into websites and Jupyter Notebooks, enabling seamless sharing and exploration of simulation data. 
@@ -480,7 +480,7 @@ Presented at: COMBINE2025<br />
     - 'mariia_myshkina'
   title: 'Algonomy at Festival della Robotica 2025: AI and Digital Twins for Liver Surgery'
   date: '2025-05-10'
-  image: algonomy_pisa.png
+  image: algonomy_pisa.webp
   link:
   short: "At the Festival della Robotica 2025 in Pisa, Mariia Myshkina presented our research from the Algonomy project, highlighting how AI and Digital Twins can support decision-making in hepatobiliary surgery."
   abstract: "The Algonomy project, which investigates the ethical and practical integration of AI in clinical decision-making, was featured at the Festival della Robotica 2025 in Pisa. Representing the team, Mariia Myshkina presented our latest research on Digital Twins in hepatobiliary surgery—demonstrating how computational models of liver anatomy and function, powered by AI, can enhance surgical planning and individualized treatment strategies. Our contribution emphasized the central mission of Algonomy: combining algorithmic intelligence with clinical expertise while ensuring transparency, reproducibility, and shared decision-making in medicine."
@@ -494,7 +494,7 @@ Presented at: COMBINE2025<br />
     - 'juan_mendoza'
   title: 'New Projects Launched: Modeling GLP-1 Agonists and Optimizing Anesthesia Control'
   date: '2025-05-10'
-  image: hip2025.png
+  image: hip2025.webp
   link:
   short: "We’re excited to announce new research projects in our group focusing on personalized treatment strategies for diabetes and improved anesthesia management through computational modeling and control systems."
   abstract: "Kim, Isabella, and Olivia have launched new projects developing physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) models of the GLP-1 receptor agonists dulaglutide, liraglutide, and lixisenatide, respectively. Their work aims to enhance our understanding of these drugs’ behavior and effects on glucose regulation, contributing to more individualized approaches to diabetes treatment. In parallel, Juan Pablo is working on a closed-loop control system for optimizing anesthesia delivery, with the goal of improving precision and patient safety in clinical settings."
@@ -507,7 +507,7 @@ Presented at: COMBINE2025<br />
     - 'matthias_koenig'
   title: 'Interview: Matthias König on Reproducibility, Open Science, and the Future of Biological Research'
   date: '2025-04-30'
-  image: interview2025_reproducibility.png
+  image: interview2025_reproducibility.webp
   link: https://www.hu-berlin.de/de/pr/themen/in-der-biologischen-forschung-gibt-es-eine-grosse-reproduzierbarkeitskrise
   short: "In an interview for the Berlin University Alliance, Matthias König discusses the reproducibility crisis in biology and the transformative potential of Open Science. As a BUA Open Science Ambassador, he highlights the importance of FAIR data, open standards, and cultural change in academia."
   abstract: "On April 30, 2025, Matthias König, BUA Open Science Ambassador, was interviewed about the role of Open Science in improving reproducibility and collaboration in biological research. Drawing from his work on computational modeling and digital twins, König outlines how open data, FAIR principles, and transparent code are essential for reproducible science. He points to systemic barriers—such as incentive structures focused solely on publications—and calls for alternative evaluation criteria that recognize Open Science engagement. He also emphasizes the importance of community-driven initiatives, institutional support, and education to build a more open and collaborative research culture. The interview underscores the critical role of Open Science in enabling responsible AI development and long-term progress in life sciences."
@@ -521,7 +521,7 @@ Presented at: COMBINE2025<br />
     - 'michelle_elias'
   title: 'Bachelor Thesis Michelle Elias: PBPK Modelling of Glimepiride: Investigating Variability in Type 2 Diabetes Treatment'
   date: '2025-04-15'
-  image: bachelor_michelle.png
+  image: bachelor_michelle.webp
   link: https://github.com/matthiaskoenig/glimepiride-model
   short: "Michelle Elias has successfully completed her Bachelor thesis on a physiologically based pharmacokinetic (PBPK) model of glimepiride, focusing on interindividual variability, hepatorenal impairment, and pharmacogenomics."
   abstract: "Glimepiride, a widely used sulfonylurea for type 2 diabetes, shows significant interindividual variability in pharmacokinetics due to factors such as organ function and genetic polymorphisms. In her thesis, Michelle Elias developed a modular, SBML-based PBPK model using data from 19 clinical studies to simulate glimepiride absorption, hepatic CYP2C9-mediated metabolism, and renal excretion. The model accurately reproduced dose-dependent pharmacokinetics and revealed the distinct impacts of renal and hepatic impairment, as well as the influence of CYP2C9 genotypes and bodyweight. While limitations exist regarding data in severely impaired populations, the model offers mechanistic insights into variability and supports individualized dosing strategies for improved diabetes care."
@@ -534,7 +534,7 @@ Presented at: COMBINE2025<br />
     - 'matthias_koenig'
   title: 'SBML editor'
   date: '2025-04-01'
-  image: sbml_editor.png
+  image: sbml_editor.webp
   link: 'https://www.berlin-university-alliance.de/commitments/international/bua-fellows-club/bua-featured-fellows/inhaltselemente/profile-matthias-koenig.html'
   short: "Matthias König elected as an SBML Editor for the 2025–2027 term."
   abstract: "Honored to be elected as an SBML Editor for the 2025–2027 term alongside Brett Olivier. Grateful for the trust of the community and excited to contribute to the future of SBML. A big thank you to outgoing editors Sarah Keating and Rahuman Sheriff for their dedicated work! #SBML #SystemsBiology #ComputationalModeling #OpenScience"
@@ -545,7 +545,7 @@ Presented at: COMBINE2025<br />
     - 'matthias_koenig'
   title: 'Featured Fellow - Berlin University Alliance (BUA) - Matthias König'
   date: '2025-04-02'
-  image: bua_alumni.png
+  image: bua_alumni.webp
   link: 'https://www.berlin-university-alliance.de/commitments/international/bua-fellows-club/bua-featured-fellows/inhaltselemente/profile-matthias-koenig.html'
   short: "As a featured BUA Fellow at Humboldt-Universität, Matthias König advances digital medicine and systems biology at the intersection of data, modeling, and clinical research."
   abstract: "Meet Matthias König, BUA Fellow and systems biologist at Humboldt-Universität zu Berlin. He develops computational models—so-called digital twins—that simulate human metabolism and organ function to advance personalized medicine.
@@ -560,7 +560,7 @@ Presented at: COMBINE2025<br />
     - 'matthias_koenig'
   title: 'Preprint: From FAIR to CURE: Guidelines for Computational Models of Biological Systems'
   date: '2025-02-21'
-  image: fair_to_cure.png
+  image: fair_to_cure.webp
   link: 'https://doi.org/10.48550/arXiv.2502.15597/'
   short: "Our latest preprint, From FAIR to CURE: Guidelines for Computational Models of Biological Systems, introduces the CURE principles—Credible, Understandable, Reproducible, and Extensible—as a framework to improve the development and use of computational models in biology and medicine."
   abstract: "Guidelines for managing scientific data have been established under the FAIR principles requiring that data be Findable, Accessible, Interoperable, and Reusable. In many scientific disciplines, especially computational biology, both data and models are key to progress. For this reason, and recognizing that such models are a very special type of 'data', we argue that computational models, especially mechanistic models prevalent in medicine, physiology and systems biology, deserve a complementary set of guidelines. We propose the CURE principles, emphasizing that models should be Credible, Understandable, Reproducible, and Extensible. We delve into each principle, discussing verification, validation, and uncertainty quantification for model credibility; the clarity of model descriptions and annotations for understandability; adherence to standards and open science practices for reproducibility; and the use of open standards and modular code for extensibility and reuse. We outline recommended and baseline requirements for each aspect of CURE, aiming to enhance the impact and trustworthiness of computational models, particularly in biomedical applications where credibility is paramount. Our perspective underscores the need for a more disciplined approach to modeling, aligning with emerging trends such as Digital Twins and emphasizing the importance of data and modeling standards for interoperability and reuse. Finally, we emphasize that given the non-trivial effort required to implement the guidelines, the community moves to automate as many of the guidelines as possible."
@@ -573,7 +573,7 @@ Presented at: COMBINE2025<br />
     - 'matthias_koenig'
   title: 'König Lab at EP PerMed Conference on Personalised Medicine Research'
   date: '2025-02-12'
-  image: ep_conference_2025.jpg
+  image: ep_conference_2025.webp
   link: https://www.eppermed.eu/news-events/events/ep-permed-conference-on-personalised-medicine-research/
   short: "We are excited to announce that Mariia Myshkina, Elisabetta Casabianca, and Matthias König participated in the EP PerMed Conference on Personalised Medicine Research, taking place on February 11–12, 2025, in Berlin, Germany."
   abstract: "We are excited to announce that Mariia Myshkina, Elisabetta Casabianca, and Matthias König participated in the EP PerMed Conference on Personalised Medicine Research, taking place on February 11–12, 2025, in Berlin, Germany.
@@ -591,7 +591,7 @@ For more details, visit the EP PerMed website: https://www.eppermed.eu/news-even
     - 'elisabetta_casabianca'
   title: 'Launch of New Research Internship in PBPK/PD Modeling'
   date: '2025-01-20'
-  image: project_rivaroxaban.jpg
+  image: project_rivaroxaban.webp
   link:
   short: "PBPK Model Development for Tirzepatide in Diabetes and Obesity Treatment"
   abstract: "We are pleased to announce that Elisabetta Cassabianca will be joining the König Lab to work on an exciting new project focused on developing a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the direct oral anticoagulant (DOAC) rivaroxaban.
@@ -608,7 +608,7 @@ For more details, visit the EP PerMed website: https://www.eppermed.eu/news-even
     - 'abhinav_mishra'
   title: 'Launch of New Research Internship in PBPK/PD Modeling'
   date: '2025-01-07'
-  image: project_tirzepatide.jpg
+  image: project_tirzepatide.webp
   link:
   short: "PBPK Model Development for Tirzepatide in Diabetes and Obesity Treatment"
   abstract: "Abhinav Mishra, a Master Intern, will develop a Physiologically Based Pharmacokinetic (PBPK) model for tirzepatide (Mounjaro, Zepbound), a dual agonist for GLP-1 and GIP receptors used in treating type 2 diabetes mellitus (T2DM) and obesity. The project will focus on analyzing the drug’s pharmacokinetics (PK) and pharmacodynamics (PD), with particular attention to the effects of renal and hepatic impairments. By building a computational model and integrating patient-specific data, the research aims to better understand factors influencing individual responses and improve the clinical use of tirzepatide in diverse patient populations."
@@ -621,7 +621,7 @@ For more details, visit the EP PerMed website: https://www.eppermed.eu/news-even
     - 'matthias_koenig'
   title: 'Circle U. Funds AlgoNomy to Combat Digital Paternalism in AI-Driven Healthcare'
   date: '2024-12-20'
-  image: algonomy.png
+  image: algonomy.webp
   link: 'https://www.circle-u.eu/resources/seed-funded-projects/'
   short: "Circle U. has funded AlgoNomy: Advancing Doctor-Patient Autonomy in AI-Driven Healthcare, a collaborative project tackling the issue of digital paternalism—where algorithms dominate healthcare decisions over human collaboration. Partnering with six leading European universities, AlgoNomy aims to develop ethical, transparent, and patient-centered AI systems that preserve autonomy and promote shared decision-making."
   abstract: "The Circle U. European University Alliance has announced funding for AlgoNomy: Advancing Doctor-Patient Autonomy in AI-Driven Healthcare, a pioneering project aimed at tackling the emerging issue of digital paternalism—an adaptation of medical paternalism where healthcare decisions are increasingly driven by algorithms rather than collaborative input from patients and physicians. Led by a consortium of six leading universities—UniPi (University of Pisa), KCL (King's College London), PC (Université Paris Cité), BU (University of Belgrade), UW (University of Vienna), and HU (Humboldt Universität zu Berlin)—AlgoNomy will focus on developing ethical, technical, and practical solutions to ensure AI empowers rather than replaces human autonomy in clinical decision-making. Funded under the Circle U. initiative, AlgoNomy is dedicated to fostering transparent, patient-centered, and clinician-friendly AI systems that promote shared decision-making and responsible innovation in healthcare. This ambitious project marks a significant step in redefining the role of AI in medicine, ensuring technology serves as a tool for collaboration, not control. Stay tuned for updates on how AlgoNomy is shaping the future of ethical AI in healthcare!"
@@ -632,7 +632,7 @@ For more details, visit the EP PerMed website: https://www.eppermed.eu/news-even
     - 'matthias_koenig'
   title: 'Humboldt Internship Program 2025 - Computational Modeling of Drug Detoxification - A Systems Medicine Approach'
   date: '2024-10-01'
-  image: humboldt-internship.jpg
+  image: humboldt-internship.webp
   link: 'https://hic.hu-berlin.de/en/internship-program/projects/201'
   short: 'We offer Internships in 2025, academic three-month research stays at Humboldt-Universität zu Berlin. The application for the Summer Term Internships 2025 is open from 11 November to 20 December 2024.'
   abstract: 'Humboldt Internship Program is an international short-term program for subject-specific, experiential learning. It allows participants to work with teams in research projects and university-related start-ups for three months.<br /><br />
@@ -650,7 +650,7 @@ For more details, visit the EP PerMed website: https://www.eppermed.eu/news-even
     - 'michelle_elias'
   title: 'Launch of Two New Research Projects in PBPK/PD Modeling'
   date: '2024-08-30'
-  image: projects_ennie_michelle.gif
+  image: projects_ennie_michelle.webp
   link:
   short: "Ennie Tensil and Michelle Elias start Bachelor projects on losartan and glimeperide"
   abstract: "We are excited to announce the initiation of two  projects within our group, focusing on the development of Physiologically-Based Pharmacokinetic/Pharmacodynamic (PBPK/PD) models. These projects aim to deepen our understanding of drug action and variability in treatment responses, contributing significantly to personalized medicine.
@@ -669,7 +669,7 @@ For more details, visit the EP PerMed website: https://www.eppermed.eu/news-even
     - 'jonas_kuettner'
   title: 'Master Thesis Jonas Küttner'
   date: '2024-08-28'
-  image: master_thesis_jonas.kuettner.png
+  image: master_thesis_jonas.kuettner.webp
   link: '/assets/pdf/thesis/Kuettner2024_master.thesis.pdf'
   short: "Jonas Küttner submitted his Master thesis developing a workflow for image analysis in the liver"
   abstract: "The mammalian liver is organized into three-dimensional structures called lobules that are integral to its function. According to the widely accepted hexagonal model, the cross-section of each lobule is characterized by a central vein and portal triads at the corners. These portal triads consist of a hepatic portal vein, a hepatic arteriole, and a bile duct. Blood is delivered through the hepatic artery and portal vein and flows inward from the outer periportal region toward the central vein through sinusoids lined with hepatocytes. These hepatocytes express a wide variety of metabolic enzymes, including cytochrome P450 (CYP) isoforms that are critical for xenobiotic metabolism. Notably, many hepatic enzymes, including CYPs, exhibit differential expression along the periportal-to-perivenous axis, a spatial variation known as liver zonation.
@@ -687,7 +687,7 @@ For more details, visit the EP PerMed website: https://www.eppermed.eu/news-even
     - 'matthias_koenig'
   title: 'Open Science Ambassador of the BUA'
   date: '2024-08-08'
-  image: bua_open_science_ambassador.jpg
+  image: bua_open_science_ambassador.webp
   link: 'https://www.berlin-university-alliance.de/en/commitments/research-quality/open-science/index.html'
   short: "Proud to be selected as Open Science Ambassador of the Berlin University Alliance (BUA) in 2024."
   abstract: 'To find discipline-specific and accessible solutions to be implemented into everyday research routines, we have applied for Open Science Ambassador. As part of the work we will work on the reproducibility of computational models.'
@@ -698,7 +698,7 @@ For more details, visit the EP PerMed website: https://www.eppermed.eu/news-even
     - 'matthias_koenig'
   title: 'Participation in DHPE'
   date: '2024-07-18'
-  image: dhpe.gif
+  image: dhpe.webp
   link: 'https://dsfz.charite.de/hochschuldidaktik/digital_health_professions_educator/'
   short: "Matthias König selected for the Digital Health Professions Educator (DHPE) Program"
   abstract: 'We are excited to announce that Matthias König has been selected to participate in the "Digital Health Professions Educator" (DHPE) program for 2024/25. This program, part of the "HEDS: Handlungs- und Entscheidungskompetenz Digital Stärken" project, aims to enhance digital teaching skills at Charité. Running from June 2024 to June 2025, the program includes monthly in-person sessions and digital self-study units, leading to a nationally recognized certification (MQ II).
@@ -712,7 +712,7 @@ For more details, visit the EP PerMed website: https://www.eppermed.eu/news-even
     - 'matthias_koenig'
   title: 'Humboldt Internship Program (HIP) conference'
   date: '2024-07-18'
-  image: hip2024_day.jpg
+  image: hip2024_day.webp
   link: 'https://hic.hu-berlin.de/en/internship-program'
   short: "Proud to participate in Humboldt Internship Program 2024. Great work by Vera, Deepa and Prerna."
   abstract: 'Students presented their results during the Humboldt Internship Program 2024. Great work by Vera, Deepa and Prerna.'
@@ -723,7 +723,7 @@ For more details, visit the EP PerMed website: https://www.eppermed.eu/news-even
     - 'matthias_koenig'
   title: 'Final ecosystem meeting of EDITH on building the VHT'
   date: '2024-07-15'
-  image: edith_amsterdam.jpg
+  image: edith_amsterdam.webp
   link: 'https://www.edith-csa.eu'
   short: "Proud to participate in the final ecosystem meeting of EDITH on building the virtual human twin (VHT) in Amsterdam."
   abstract: 'The first day was dedicated to a plenary session on the EDITH proof of concept infrastructure, presented from the users’ perspective, where Researchers, Communities, together with Healthcare Providers and Patients were well represented to connect resources and enlighten the federated nature of the VHT, as well as to deploy VHT at bed side in clinical workflows and allow patients to upload their own data in the VHT, while representatives from Industry explored possible interaction of services within VHT.'
@@ -736,7 +736,7 @@ For more details, visit the EP PerMed website: https://www.eppermed.eu/news-even
     - 'vera_tereshchuk'
   title: 'New project: Vera Tereshchuk starts SGLT2 PBPK Modeling Project'
   date: '2024-07-01'
-  image: vera_project.jpg
+  image: vera_project.webp
   link: ''
   short: "Vera Tereshchuk will develop a PBPK models for canagliflozin, aiming to enhance understanding of pharmacokinetics and pharmacodynamics in diabetes."
   abstract: 'Vera Tereshchuk is developing a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the SGLT2 inhibitor canagliflozin. The objective is to enhance understanding of intraindividual variability in diabetes treatment with SGLT2 inhibitors, focusing on differences in hepatorenal function.'
@@ -748,7 +748,7 @@ For more details, visit the EP PerMed website: https://www.eppermed.eu/news-even
     - 'matthias_koenig'
   title: 'PAGE2024: Presentation of our research in Rome'
   date: '2024-06-25'
-  image: page2024.jpg
+  image: page2024.webp
   link: ''
   short: "Mariia Myshkina and Matthias König presented our captopril modeling results during the PAGE2024 (Population Approach Group Europe) meeting in Rome."
   abstract: 'Introduction: Angiotensin-converting enzyme (ACE) inhibitors, such as captopril, are widely prescribed for the treatment of hypertension and heart failure. Captopril, the first ACE inhibitor developed in the 1980s, is primarily taken orally and is rapidly absorbed, reaching peak plasma concentrations within an hour. Its half-life is approximately 2 hours, but several factors, including renal function, heart disease, age and sex, can affect its pharmacokinetics.
@@ -765,7 +765,7 @@ Conclusions: This study successfully establishes a freely accessible, comprehens
     - 'afruja_hossain'
   title: 'Bachelor Thesis Afruja Hossain'
   date: '2024-06-09'
-  image: bachelor_thesis_afruja.hossain.png
+  image: bachelor_thesis_afruja.hossain.webp
   link: '/assets/pdf/thesis/Hossain2024_bachelor.thesis.pdf'
   short: "Afruja Hossain finished her Bachelor thesis developing a database of CYP and UGT enzymes"
   abstract: "Afruja Hossain has successfully finished her Bachelor thesis titled 'A Systematic Overview of Protein Variability in Cytochrome P450 and UDP-glucuronosyltransferase Enzymes in the Human Liver.'
@@ -787,7 +787,7 @@ Afruja's work offers valuable insights into drug metabolism and could enhance un
     - 'matthias_koenig'
   title: 'Successful Completion of One-Week Pharmacokinetic Modelling Course'
   date: '2024-06-07'
-  image: pkcourse_SS2024.png
+  image: pkcourse_SS2024.webp
   link:
   short: "We are excited to announce the successful completion of our one-week intensive course on Pharmacokinetic Modelling, where students delved into principles, drug distribution, clearance, elimination, and various modelling techniques to enhance drug therapy and development."
   abstract: 'Pharmacokinetic modelling is the study of how drugs are absorbed, distributed, metabolised and excreted in the body. The pharmacokinetic modelling course covers topics such as pharmacokinetic principles, drug distribution, clearance and elimination and the factors that influence these processes. Students will learn about different models used to describe pharmacokinetics, such as compartmental models and physiologically based pharmacokinetic models, and how these models can be used to predict drug concentrations and optimise dosing regimens. Other topics that may be covered include pharmacodynamics, drug-drug interactions and the use of pharmacokinetic modelling in drug development and clinical practice. Overall, a course in pharmacokinetic modelling will provide students with a comprehensive understanding of the principles and techniques used to describe the movement of drugs through the body and how this knowledge can be applied to improve drug therapy.'
@@ -802,7 +802,7 @@ Afruja's work offers valuable insights into drug metabolism and could enhance un
     - 'prerna_parakkat'
   title: 'New Project Launch via Humboldt Internship Program (HIP): PK-LLM by Prerna Parakkat'
   date: '2024-05-23'
-  image: prerna_pk_llm.png
+  image: prerna_pk_llm.webp
   link:
   short: "We are excited to announce the start of a new project under the Humboldt Internship Program (HIP) by Prerna Parakkat. Prerna will be working on PK-LLM: Implementing a Large Language Model (LLM) as an Expert System for Pharmacokinetic (PK) Data Curation from Scientific Publications."
   abstract: 'The project focuses on creating a specialized LLM tailored to interpret and extract pharmacokinetic data from diverse scientific texts, automating the extraction of key data such as parameters, dosing information, and subject details. It also aims to integrate this system with existing pharmacokinetic databases and computational modeling workflows for digital twins. We anticipate significant improvements in the accuracy and efficiency of pharmacokinetic data extraction and curation, setting a new standard in the field.'
@@ -816,7 +816,7 @@ Afruja's work offers valuable insights into drug metabolism and could enhance un
     - 'matthias_koenig'
   title: 'Preprint: Cross-Species Variability in Lobular Geometry and Cytochrome P450 Hepatic Zonation: Insights into CYP1A2, CYP2E1, CYP2D6 and CYP3A4'
   date: '2024-05-16'
-  image: species_comparison_preprint.png
+  image: species_comparison_preprint.webp
   link: 'https://www.frontiersin.org/journals/pharmacology/articles/10.3389/fphar.2024.1404938/full'
   short: "Our latest publication on 'Cross-Species Variability in Lobular Geometry & Cytochrome P450 Hepatic Zonation' reveals insights into liver function across species using WSI technology."
   abstract: 'This study explores the critical interplay between lobular geometry and the zonated distribution of cytochrome P450 (CYP) enzymes across species. We present an innovative approach to assess lobular geometry and zonation patterns using whole slide imaging (WSI). This method allows a detailed, systematic comparison of lobular structures and spatial distribution of key CYP450 enzymes and glutamine synthetase in four different species (mouse, rat, pig, and human). Our results shed light on species differences in lobular geometry and enzymatic zonation, providing critical insights for drug metabolism research. Based on our approach we could determine the minimum number of lobules required for a statistically representative analysis, an important piece of information when evaluating liver biopsies and deriving information from WSI.'
@@ -830,7 +830,7 @@ Afruja's work offers valuable insights into drug metabolism and could enhance un
     - 'yusuf_kulanoglu'
   title: 'New projects: Nike Nemitz and Yusuf Ali Kulanoglu start PBPK Modeling Projects'
   date: '2024-04-15'
-  image: nike_yusuf_projects.png
+  image: nike_yusuf_projects.webp
   link: ''
   short: "Nike Nemitz and Yusuf Ali Kulanoglu will develop PBPK models for dapagliflozin and aliskiren, respectively, aiming to enhance understanding of pharmacokinetics and pharmacodynamics in diabetes and cardiovascular treatments."
   abstract: 'Nike Nemitz is developing a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the SGLT2 inhibitor dapagliflozin. The objective is to enhance understanding of intraindividual variability in diabetes treatment with SGLT2 inhibitors, focusing on differences in hepatorenal function. Yusuf Ali Kulanoglu is working on a PBPK model of the direct renin inhibitor aliskiren to improve understanding of its pharmacokinetics and the influencing factors. Both projects aim to provide deeper insights into drug behavior and variability, potentially improving therapeutic outcomes.'
@@ -843,7 +843,7 @@ Afruja's work offers valuable insights into drug metabolism and could enhance un
     - 'matthias_koenig'
   title: 'Publication: The Simulation Experiment Description Markup Language (SED-ML): Language Specification for Level 1 Version 5'
   date: '2024-04-15'
-  image: sedml_l1v5_publication.png
+  image: sedml_l1v5_publication.webp
   link: 'https://www.degruyter.com/document/doi/10.1515/jib-2024-0008/html'
   short: "Level 1 Version 5 of SED-ML enhances the ability to annotate, archive, share, and reproduce computational simulation experiments by allowing modelers to define tasks, model changes, ranges, and outputs using the Kinetic Simulation Algorithm Ontology (KiSAO)."
   abstract: 'We are excited to announce the latest publication titled "The Simulation Experiment Description Markup Language (SED-ML): Language Specification for Level 1 Version 5." This publication addresses the growing need in modern biological research for methods to annotate, archive, share, and reproduce computational simulation experiments.
@@ -863,7 +863,7 @@ For more information about SED-ML and its applications, visit https://sed-ml.org
     - 'shubhankar_palwankar'
   title: 'Master Thesis Shubhankar Palwankar'
   date: '2024-05-05'
-  image: master_thesis_shubhankar.palwankar.png
+  image: master_thesis_shubhankar.palwankar.webp
   link: '/assets/pdf/thesis/Palwankar2024_master.thesis.pdf'
   short: "Shubhankar Palwankar defended his Master Thesis developing a PBPK model of enalapril"
   abstract: "We are pleased to announce that Shubhankar Palwankar has successfully defended his Master Thesis, which focuses on the development of a Physiologically Based Pharmacokinetic (PBPK) model of enalapril, a key medication used to treat high blood pressure and other cardiovascular conditions.
@@ -883,7 +883,7 @@ Congratulations to Shubhankar Palwankar for his significant contributions to pha
     - 'matthias_koenig'
   title: 'New multiscale liver model unveils zonation-function dynamics in Drug-Induced Liver Injury (DILI).'
   date: '2024-03-29'
-  image: spt_preprint.png
+  image: spt_preprint.webp
   link: https://doi.org/10.1101/2024.03.26.586870
   short: "We're excited to announce the preprint of our latest research, 'Simulation of zonation-function relationships in the liver using coupled multiscale models: Application to drug-induced liver injury.' This study introduces a multiscale digital twin of the liver, integrating models from cellular to lobular scales, and sheds light on how liver zonation patterns influence drug-induced liver injury."
   abstract: 'Multiscale modeling requires the coupling of models on different scales, often based on different mathematical approaches and developed by different research teams. This poses many challenges, such as defining interfaces for coupling, reproducible exchange of submodels, efficient simulation of the models, or reproducibility of results. Here, we present a multiscale digital twin of the liver that couples a partial differential equation (PDE)-based porous media approach for the hepatic lobule with cellular-scale ordinary differential equation (ODE)-based models. The models based on the theory of porous media describe transport, tissue mechanical properties, and deformations at the lobular scale, while the cellular models describe hepatic metabolism in terms of drug metabolism and damage in terms of necrosis. The resulting multiscale model of the liver was used to simulate perfusion-zonation-function relationships in the liver spanning scales from single cell to the lobulus. The model was applied to study the effects of (i) protein zonation patterns (metabolic zonation) and (ii) drug concentration dependence on spatially heterogeneous liver damage in the form of necrosis. Depending on the zonation pattern, different liver damage patterns could be reproduced, including periportal and pericentral necrosis as seen in drug-induced liver injury (DILI). Increasing the drug concentration led to an increase in the observed damage pattern. A key point for the success was the integration of domain-specific simulators based on standard exchange formats, i.e., libroadrunner for the high-performance simulation of ODE-based systems and FEBio for the simulation of the continuum-biomechanical part. This allows a standardized and reproducible exchange of cellular scale models in the Systems Biology Markup Language (SBML) between research groups.'
@@ -898,7 +898,7 @@ Congratulations to Shubhankar Palwankar for his significant contributions to pha
     - 'rohit_chakraborty'
   title: 'PBPK Model of Morphine Project'
   date: '2024-03-01'
-  image: morphine_project.png
+  image: morphine_project.webp
   link:
   short: "New Internship Project Launch: Development of a Physiologically Based Pharmacokinetics Model of Morphine. Deepa supported by Rohini and Rohit will develop a PBPK model of morphine."
   abstract: 'Deepa supported by Rohini and Rohit will  develop a physiologically based pharmacokinetic (PBPK) model of morphine. Morphine, a potent analgesic derived from the opium poppy, is essential for pain management but poses significant pharmacokinetic challenges. This project aims to address intra-individual variability in morphine treatment by establishing a comprehensive pharmacokinetics/pharmacodynamics database and constructing a whole-body computational model. Key areas of focus include the role of the liver and kidney in morphine metabolism and excretion, the effects of renal and hepatic impairment, and the effects of different morphine formulations and delivery methods. This research aims to improve the safe and effective use of morphine in clinical settings, taking into account factors such as age and genetic polymorphisms.'
@@ -912,7 +912,7 @@ Congratulations to Shubhankar Palwankar for his significant contributions to pha
     - 'mariia_myshkina'
   title: 'Mariia Myshkina has started her PhD in the ATLAS project.'
   date: '2024-02-01'
-  image: myshkina_atlas.jpg
+  image: myshkina_atlas.webp
   link:
   short: "We welcome Mariia to our team who will be working on computational modeling of the liver within ATLAS."
   abstract: 'Mariia will develop PBPK models of the liver in HCC coupled with machine learning approaches.'
@@ -923,7 +923,7 @@ Congratulations to Shubhankar Palwankar for his significant contributions to pha
     - 'matthias_koenig'
   title: 'Participation in the First EDITH-CSA Ecosystem Meeting - Advancing the Virtual Human Twin'
   date: '2024-01-18'
-  image: edith_paris.jpeg
+  image: edith_paris.webp
   link: 'https://www.vph-institute.org/news/advancing-the-virtual-human-twin-insights-from-the-first-edith-csa-ecosystem-meeting.html'
   short: "We participated in the first EDITH-CSA 'Ecosystem meeting on building the Virtual Human Twin was held at the École Polytechnique de Paris on January 18 and 19, 2024."
   abstract: 'After the official launch of the Virtual Human Twin initiative and the VHT Manifesto in December, the first open community meeting attracted over 180 registered guests from the EDITH-CSA consortium and the wider ecosystem. The enthusiasm of the wider community to travel to Paris (amidst difficult weather conditions) and proactively contributing towards developing the roadmap for the VHT was inspiring.'
@@ -937,7 +937,7 @@ Congratulations to Shubhankar Palwankar for his significant contributions to pha
     - 'matthias_koenig'
   title: 'Preprint: Cross-Species Variability in Lobular Geometry and Cytochrome P450 Hepatic Zonation: Insights into CYP1A2, CYP2E1, CYP2D6 and CYP3A4'
   date: '2023-12-29'
-  image: species_comparison_preprint.png
+  image: species_comparison_preprint.webp
   link: 'https://www.biorxiv.org/content/10.1101/2023.12.28.573567v1'
   short: "Our latest preprint on 'Cross-Species Variability in Lobular Geometry & Cytochrome P450 Hepatic Zonation' reveals insights into liver function across species using WSI technology."
   abstract: 'This study explores the critical interplay between lobular geometry and the zonated distribution of cytochrome P450 (CYP) enzymes across species. We present an innovative approach to assess lobular geometry and zonation patterns using whole slide imaging (WSI). This method allows a detailed, systematic comparison of lobular structures and spatial distribution of key CYP450 enzymes and glutamine synthetase in four different species (mouse, rat, pig, and human). Our results shed light on species differences in lobular geometry and enzymatic zonation, providing critical insights for drug metabolism research. Based on our approach we could determine the minimum number of lobules required for a statistically representative analysis, an important piece of information when evaluating liver biopsies and deriving information from WSI.'
@@ -950,7 +950,7 @@ Congratulations to Shubhankar Palwankar for his significant contributions to pha
     - 'matthias_koenig'
   title: 'Eleven Strategies for Making Reproducible Research and Open Science Training the Norm at Research Institutions'
   date: '2023-11-03'
-  image: Kohrs2023_elife.png
+  image: Kohrs2023_elife.webp
   link: 'https://elifesciences.org/articles/89736'
   short: 'We are pleased to announce our latest paper in eLife that provides a roadmap for integrating reproducible research and open science practices into academic work.'
   abstract: 'We are excited to announce that our recent paper, "Eleven Strategies for Making Reproducible Research and Open Science Training the Norm at Research Institutions," has been published in eLife, offering a roadmap for integrating reproducible research and open science practices into academic work. Developed in collaboration with the German Reproducibility Network, the paper proposes eleven strategies focusing on modifying research assessment criteria, enhancing training, and fostering community support. This work aims to encourage researchers and institutions to adopt practices that increase the reliability and accessibility of scientific research.'
@@ -963,7 +963,7 @@ Congratulations to Shubhankar Palwankar for his significant contributions to pha
     - 'matthias_koenig'
   title: 'Your Dietary Digitial Twin (DDtwin)'
   date: '2023-11-03'
-  image: dietary_twin.png
+  image: dietary_twin.webp
   link: 'https://www.lorentzcenter.nl/your-dietary-digital-twin-ddtwin.html'
   short: 'Advancing Precision Nutrition: Workshop Success on Dietary Digital Twin, a workshop in Leiden from 30 October - 3 November 2023.'
   abstract: 'We are excited to announce our participation in a groundbreaking workshop dedicated to the development of the Dietary Digital Twin (DDtwin) technology platform. This innovative endeavor aims to provide precision nutrition by integrating biology-based and data-driven models with real-life data, harnessing the power of wearable sensors and applications.<br /><br />
@@ -980,7 +980,7 @@ Our participation in this workshop underscores our commitment to advancing healt
     - 'matthias_koenig'
   title: 'Humboldt Internship Program 2024 - Computational Modeling of Drug Detoxification - A Systems Medicine Approach'
   date: '2023-10-31'
-  image: humboldt-internship.jpg
+  image: humboldt-internship.webp
   link: 'https://hic.hu-berlin.de/en/internship-program/projects/201'
   short: 'We offer Internships in 2024, academic three-month research stays at Humboldt-Universität zu Berlin. The application for the Summer Term Internships 2024 is open from 03 November to 10 December 2023.'
   abstract: 'Humboldt Internship Program is an international short-term program for subject-specific, experiential learning. It allows participants to work with teams in research projects and university-related start-ups for three months.<br /><br />
@@ -998,7 +998,7 @@ Our participation in this workshop underscores our commitment to advancing healt
     - 'matthias_koenig'
   title: 'e:Med Meeting 2023 on Systems Medicine: Quantifying Fat Zonation in Liver Lobules: An Integrated Multiscale In-silico Model'
   date: '2023-10-10'
-  image: emed_presentation.png
+  image: emed_presentation.webp
   link: 'https://www.youtube.com/watch?v=6faFifoXUeo'
   short: 'We successfully presented our research on reproducible digital twins for personalized liver function assessment at the e:Med Meeting 2023 on Systems Medicine.'
   abstract: "Essential prerequisites for the practical application and translation of computational models include: i) reproducibility of results; ii) model reusability and extensibility; iii) data availability; and iv) strategies for model stratification and individualization. Here, we present a modeling workflow built around these foundational prerequisites, with a focus on liver function tests.<br /><br />
@@ -1018,7 +1018,7 @@ Notably, all models and data are readily available and reproducible for reuse, e
     - 'matthias_koenig'
   title: 'Preprint: Quantifying Fat Zonation in Liver Lobules: An Integrated Multiscale In-silico Model'
   date: '2023-09-18'
-  image: fat_zonation_preprint.png
+  image: fat_zonation_preprint.webp
   link: 'https://doi.org/10.21203/rs.3.rs-3348101/v1'
   short: 'Our latest preprint is now out: An integrated multiscale model for quantifying fat zonation in liver lobules.'
   abstract: 'We have developed a sophisticated computer model to explore how various factors contribute to the distribution and accumulation of fat in the liver, a phenomenon known as "metabolic zonation." This model will help in understanding how liver health is affected by different conditions and could play a crucial role in studying diseases like MASLD (metabolic dysfunction-associated steatotic liver disease). By simulating liver functions, the model considers interactions between blood flow, oxygen levels, and fat metabolism within liver lobules.'
@@ -1031,7 +1031,7 @@ Notably, all models and data are readily available and reproducible for reuse, e
     - 'hannah_menghis'
   title: 'Hannah Menghis from Brown University starts her internship'
   date: '2023-08-28'
-  image: hannah.png
+  image: hannah.webp
   link:
   short: 'We welcome Hannah Menghis who will establish a PBPK model of semaglutide.'
   abstract: 'Hannah will establish a pharmacokinetic dataset of semaglutide and develop an initial version of a physiologically based pharmacokinetic (PBPK) model of the GLP-1 inhibitor semaglutide. The objective is to enhance our understanding of the underlying causes of intraindividual variability in semaglutide treatment, e.g., differences in renal function.'
@@ -1045,7 +1045,7 @@ Notably, all models and data are readily available and reproducible for reuse, e
     - 'matthias_koenig'
   title: 'A pathway model of glucose-stimulated insulin secretion in the pancreatic β-cell'
   date: '2023-08-02'
-  image: pancreas_preprint.png
+  image: pancreas_preprint.webp
   link: 'https://doi.org/10.3389/fendo.2023.1185656'
   short: 'Our latest publication is now on Frontiers of Endocrinology: A pathway model of glucose-stimulated insulin secretion in the pancreatic β-cell'
   abstract: 'The pancreas plays a critical role in maintaining glucose homeostasis through the secretion of hormones from the islets of Langerhans. Glucose-stimulated insulin secretion (GSIS) by the pancreatic β-cell is the main mechanism for reducing elevated plasma glucose. Here we present a systematic modeling workflow for the development of kinetic pathway models using the Systems Biology Markup Language (SBML). Steps include retrieval of information from databases, curation of experimental and clinical data for model calibration and validation, integration of heterogeneous data including absolute and relative measurements, unit normalization, data normalization, and model annotation. An important factor was the reproducibility and exchangeability of the model, which allowed the use of various existing tools. The workflow was applied to construct a novel data-driven kinetic model of GSIS in the pancreatic β-cell based on experimental and clinical data from 39 studies spanning 50 years of pancreatic, islet, and β-cell research in humans, rats, mice, and cell lines. The model consists of detailed glycolysis and phenomenological equations for insulin secretion coupled to cellular energy state, ATP dynamics and (ATP/ADP ratio). Key findings of our work are that in GSIS there is a glucose-dependent increase in almost all intermediates of glycolysis. This increase in glycolytic metabolites is accompanied by an increase in energy metabolites, especially ATP and NADH. One of the few decreasing metabolites is ADP, which, in combination with the increase in ATP, results in a large increase in ATP/ADP ratios in the β-cell with increasing glucose. Insulin secretion is dependent on ATP/ADP, resulting in glucose-stimulated insulin secretion. The observed glucose-dependent increase in glycolytic intermediates and the resulting change in ATP/ADP ratios and insulin secretion is a robust phenomenon observed across data sets, experimental systems and species. Model predictions of the glucose-dependent response of glycolytic intermediates and biphasic insulin secretion are in good agreement with experimental measurements. Our model predicts that factors affecting ATP consumption, ATP formation, hexokinase, phosphofructokinase, and ATP/ADP-dependent insulin secretion have a major effect on GSIS. In conclusion, we have developed and applied a systematic modeling workflow for pathway models that allowed us to gain insight into key mechanisms in GSIS in the pancreatic β-cell.'
@@ -1058,7 +1058,7 @@ Notably, all models and data are readily available and reproducible for reuse, e
     - 'beatrice_mallol'
   title: 'Bachelor Thesis Beatrice Stemmer Mallol'
   date: '2023-07-17'
-  image: bachelor_thesis_beatrice_stemmer_mallol.png
+  image: bachelor_thesis_beatrice_stemmer_mallol.webp
   link: '/assets/pdf/thesis/Mallol2023_bachelor.thesis.pdf'
   short: "Beatrice Stemmer Mallol submitted her Bachelor thesis developing a PBPK model of talinolol"
   abstract: "Congratulations to Bea for successfully submitting her Bachelor thesis on a physiologically based pharmacokinetic (PBPK) model of the probe drug talinolol for the characterization of intestinal P-glycoprotein.
@@ -1076,7 +1076,7 @@ Notably, all models and data are readily available and reproducible for reuse, e
     - 'jan_grzegorzewski'
   title: 'PhD Defense of Jan Grzegorzewski'
   date: '2023-07-07'
-  image: defense_jan_grzegorzewski.png
+  image: defense_jan_grzegorzewski.webp
   link: '/assets/pdf/presentation/2021-07-07_defense.grzegorzewski.pdf'
   short: "Jan Grzegorzewski defended his PhD thesis on physiologically based pharmacokinetic modeling (PBPK) for dynamical liver function tests and Cytochrome P450 (CYP) phenotyping."
   abstract: "Congratulations to Jan Grzegorzewski for successfully defending his PhD thesis on physiologically based pharmacokinetic modeling (PBPK) for dynamical liver function tests and Cytochrome P450 (CYP) phenotyping. Jan developed the extensive open pharmacokinetics database, PK-DB, which helped to demonstrate demographic biases and errors in existing pharmacokinetic literature. His research includes a meta-analysis on caffeine pharmacokinetics, discovering multiple factors influencing liver function and CYP1A2 activity. Furthermore, he developed a PBPK model to predict individual plasma concentrations of dextromethorphan based on the CYP2D6 genotype and physiological traits. His work is expected to significantly enhance the precision of dynamic liver function tests and advance personalized medicine."
@@ -1088,7 +1088,7 @@ Notably, all models and data are readily available and reproducible for reuse, e
     - 'zahra_bahri'
   title: 'Xenia Petukhova and Zahra Bahri start Humboldt Internship Program'
   date: '2023-07-01'
-  image: humboldt-internship.jpg
+  image: humboldt-internship.webp
   link:
   short: "Humboldt Internship Program 2023 - Computational Modeling of Drug Detoxification - A Systems Medicine Approach"
   abstract: "We welcome Xenia and Zhara in our group for the Humboldt Internship Program 2023. Xenia and Zhara will develop a physiologically based pharmacokinetic (PBPK) model for inulin and creatinine to assess the glomerular filtration rate (GFR). Our goal is to gain a deeper understanding of the impact of various inulin protocols on GFR measurement and the influence of physiological factors, such as body composition, on GFR determination using inulin. Furthermore, it should enhance our understanding of how variations in creatinine production, muscle mass, and tubular secretion of creatinine influence eGFR calculations."
@@ -1102,7 +1102,7 @@ Notably, all models and data are readily available and reproducible for reuse, e
     - 'matthias_koenig'
   title: 'Keynote: Advancing Liver Function Assessment: Personalized and Stratified Approaches with Standardized Computational Models and Data'
   date: '2023-06-16'
-  image: WCM2023_keynote.png
+  image: WCM2023_keynote.webp
   link: 'https://docs.google.com/presentation/d/1hi7-4bwzqFJYiYQkbSBHNQivSPA5T3YHB9OLZqJG0rA/edit?usp=sharing'
   short: "Keynote talk at the Workshop on Computational Models in Biology and Medicine 2023 organized by Nicole Radde and Sebastian Höpfl."
   abstract: "Essential prerequisites for the practical application and translation of computational models include: i) reproducibility of results; ii) reusability and extensibility of models; iii) data availability; and iv) strategies for model stratification and individualization. In this study, we present a modeling workflow tailored to these critical aspects, with a focus on liver function tests.
@@ -1119,7 +1119,7 @@ In this study, we provide an overview of PBPK models and demonstrate how SBML, C
     - 'matthias_koenig'
   title: 'Preprint: Eleven Strategies for Making Reproducible Research and Open Science Training the Norm at Research Institutions'
   date: '2023-05-28'
-  image: reproducible_research_preprint.png
+  image: reproducible_research_preprint.webp
   link: 'https://www.biorxiv.org/content/10.1101/2023.04.12.536571'
   short: "We present 11 strategies for making  #OpenScience & #ReproducibleResearch the norm at research  institutions, with tips for implementation & resources. Let's join hands to make these practices standard in the scientific community!"
   abstract: 'Across disciplines, researchers increasingly recognize that open science and reproducible research practices may accelerate scientific progress by allowing others to reuse research outputs and by promoting rigorous research that is more likely to yield trustworthy results. While initiatives, training programs, and funder policies encourage researchers to adopt reproducible research and open science practices, these practices are uncommon in many fields. Researchers need training to integrate these practices into their daily work. We organized a virtual brainstorming event, in collaboration with the German Reproducibility Network, to discuss strategies for making reproducible research and open science training the norm at research institutions. Here, we outline eleven strategies, concentrated in three areas: (1) offering training, (2) adapting research assessment criteria and program requirements, and (3) building communities. We provide a brief overview of each strategy, offer tips for implementation, and provide links to resources. Our goal is to encourage members of the research community to think creatively about the many ways they can contribute and collaborate to build communities, and make reproducible research and open science training the norm. Researchers may act in their roles as scientists, supervisors, mentors, instructors, and members of curriculum, hiring or evaluation committees. Institutional leadership and research administration and support staff can accelerate progress by implementing change across their institutions.'
@@ -1134,7 +1134,7 @@ In this study, we provide an overview of PBPK models and demonstrate how SBML, C
     - 'matthias_koenig'
   title: 'Preprint: A physiologically based pharmacokinetic model for CYP2E1 phenotyping via chlorzoxazone'
   date: '2023-04-16'
-  image: chlorzoxazone_preprint.png
+  image: chlorzoxazone_preprint.webp
   link: 'https://www.biorxiv.org/content/10.1101/2023.04.12.536571'
   short: 'Our latest preprint is now on bioRxiv: A physiologically based pharmacokinetic model for CYP2E1 phenotyping via chlorzoxazone'
   abstract: 'We have developed a physiologically based pharmacokinetic (PBPK) model for CYP2E1 phenotyping via chlorzoxazone. This model takes into account various factors that can influence the activity of CYP enzymes, such as genetics, diet, age, environmental factors, and disease, making it a highly effective and reliable tool for assessing the in vivo activity of the CYP2E1 enzyme.
@@ -1149,7 +1149,7 @@ In this study, we provide an overview of PBPK models and demonstrate how SBML, C
     - 'matthias_koenig'
   title: 'Michael Stifel Price to promote interdisciplinary, data-driven research'
   date: '2023-04-03'
-  image: michael_stifel_price.png
+  image: michael_stifel_price.webp
   link: 'https://livermetabolism.com/news'
   short: 'M. Albadry, S. Höpfl, and M. König won the QuaLiPerF Michael Stifel Price for interdisciplinary, data-driven research.'
   abstract: 'M. Albadry, S. Höpfl, and M. König won the QuaLiPerF Michael Stifel Price for interdisciplinary, data-driven research for the study<br><br> 
@@ -1164,7 +1164,7 @@ In this study, we provide an overview of PBPK models and demonstrate how SBML, C
     - 'matthias_koenig'
   title: 'Publication: Specifications of standards in systems and synthetic biology: status and developments in 2022 and the COMBINE meeting 2022'
   date: '2023-03-29'
-  image: jib_editorial.png
+  image: jib_editorial.webp
   link: 'https://doi.org/10.1515/jib-2023-0004'
   short: 'Our overview of specifications in systems and synthetic biology with a brief overview of the COMBINE 2022 is available.'
   abstract: 'The Journal of Integrative Bioinformatics has published our editorial for a special issue providing updated specifications of the COMBINE standards in systems and synthetic biology. The 2022 issue includes three updates to the standards, namely CellML 2.0.1, SBML Level 3 Package: Spatial Processes, Version 1, Release 1, and Synthetic Biology Open Language (SBOL) Version 3.1.0. This publication is a valuable resource for researchers looking to keep up with the latest developments in COMBINE standards. Additionally, the editorial section of the issue provides a brief overview of the COMBINE 2022 meeting held in Berlin.'
@@ -1178,7 +1178,7 @@ In this study, we provide an overview of PBPK models and demonstrate how SBML, C
     - 'matthias_koenig'
   title: 'Preprint: A consensus model of glucose-stimulated insulin secretion in the pancreatic beta-cell'
   date: '2023-03-13'
-  image: pancreas_preprint.png
+  image: pancreas_preprint.webp
   link: 'https://www.biorxiv.org/content/10.1101/2023.03.10.532028v1'
   short: 'Our latest preprint is now on bioRxiv: A consensus model of glucose-stimulated insulin secretion in the pancreatic beta-cell'
   abstract: 'The pancreas plays a critical role in maintaining glucose homeostasis through the secretion of hormones from the islets of Langerhans. Glucose-stimulated insulin secretion (GSIS) by the pancreatic beta-cell is the main mechanism for reducing elevated plasma glucose. Here we present a systematic modeling workflow for the development of kinetic pathway models using the Systems Biology Markup Language (SBML). The workflow was applied to construct the first consensus model of GSIS in the pancreatic beta-cell based on experimental and clinical data from 39 studies spanning 50 years of pancreatic, islet, and beta-cell research in humans, rats, mice, and cell lines. The model consists of detailed glycolysis and equations for insulin secretion coupled to cellular energy state (ATP/ADP ratio). Key findings of our work are that in GSIS there is a glucose-dependent increase in almost all intermediates of glycolysis. This increase in glycolytic metabolites is accompanied by an increase in energy metabolites, especially ATP and NADH. One of the few decreasing metabolites is ADP, which, in combination with the increase in ATP, results in a large increase in ATP/ADP ratios in the beta-cell with increasing glucose. Insulin secretion is dependent on ATP/ADP, resulting in glucose-stimulated insulin secretion. The observed glucose-dependent increase in glycolytic intermediates and the resulting change in ATP/ADP ratios and insulin secretion is a robust phenomenon observed across data sets, experimental systems and species.'
@@ -1192,7 +1192,7 @@ In this study, we provide an overview of PBPK models and demonstrate how SBML, C
     - 'frances_okibedi'
   title: 'PBPK modelling of sorafenib and Gd-EOB-DTPA'
   date: '2023-02-12'
-  image: frances_narudeem.png
+  image: frances_narudeem.webp
   link: '/people/'
   short: 'Frances Okibedi and Narudeem Sojimade will develop models of the anticancer drug sorafenib in HCC and the liver contrast agent Gd-EOB-DTPA.'
   abstract: '<p>
@@ -1211,7 +1211,7 @@ In this study, we provide an overview of PBPK models and demonstrate how SBML, C
     - 'matthias_koenig'
   title: 'X-Research Group - Digital twins for the treatment of hypertension'
   date: '2023-02-12'
-  image: xresearch_logo.png
+  image: xresearch_logo.webp
   link: '/teaching/'
   short: 'M. König receives funding of the Berlin University Alliance and the DFG for the X-Student Research Group: Digital twins for the treatment of hypertension'
   abstract: '<p>
@@ -1235,7 +1235,7 @@ In this study, we provide an overview of PBPK models and demonstrate how SBML, C
     - 'matthias_koenig'
   title: 'M. König has been elected as PEtab editor (2023-2026)'
   date: '2023-02-07'
-  image: petab.png
+  image: petab.webp
   link: 'https://petab.readthedocs.io/en/latest/'
   short: 'Proud to be elected editor for PEtab, a data format for specifying parameter estimation problems in systems biology.'
   abstract: 'PEtab is a data format for specifying parameter estimation problems in systems biology. PEtab is built around SBML and is based on tab-separated values (TSV) files. It is intended as a standardized way to provide information for parameter estimation that is beyond the current scope of SBML. This includes, for example: (1) specifying and linking measurements to models; (2) defining model outputs; (3) specifying noise models; (4) specifying parameter bounds for optimization; (5) specifying multiple simulation conditions with potentially shared parameters. 
@@ -1252,7 +1252,7 @@ In this study, we provide an overview of PBPK models and demonstrate how SBML, C
     - 'matthias_koenig'
   title: 'Preprint: Simvastatin therapy in different subtypes of hypercholesterolemia'
   date: '2023-02-03'
-  image: simvastatin_preprint.png
+  image: simvastatin_preprint.webp
   link: 'https://www.medrxiv.org/content/10.1101/2023.02.01.23285358v1'
   short: 'Our latest preprint is now on medRxiv: Simvastatin therapy in different subtypes of hypercholesterolemia - a physiologically based modelling approach.'
   abstract: 'Hypercholesterolemia is a multifaceted plasma lipid disorder with heterogeneous causes including lifestyle and genetic factors. A key feature of hypercholesterolemia is elevated plasma levels of low-density lipoprotein cholesterol (LDL-C). Several genetic variants have been reported to be associated with hypercholesterolemia, known as familial hypercholesterolemia (FH). Important variants affect the LDL receptor (LDLR), which mediates the uptake of LDL-C from the plasma, apoliporotein B (APOB), which is involved in the binding of LDL-C to the LDLR, and proprotein convertase subtilisin/kexin type 9 (PCSK9), which modulates the degradation of the LDLR. A typical treatment for hypercholesterolemia is statin medication, with simvastatin being one of the most commonly prescribed statins. In this work, the LDL-C lowering therapy with simvastatin in hypercholesterolemia was investigated using a computational modeling approach. A physiologically based pharmacokinetic model of simvastatin integrated with a pharmacodynamic model of plasma LDL-C (PBPK/PD) was developed based on extensive data curation. A key component of the model is LDL-C turnover by the liver, consisting of: hepatic cholesterol synthesis with the key enzymes HMG-CoA reductase and HMG-CoA synthase; cholesterol export from the liver as VLDL-C; de novo synthesis of LDLR; transport of LDLR to the membrane; binding of LDL-C by LDLR via APOB; endocytosis of the LDLR-LDL-C complex; recycling of LDLR from the complex. The model was applied to study the effects of simvastatin therapy in hypercholesterolemia due to different causes in the LDLR pathway corresponding to different subtypes of hypercholesterolemia. Model predictions of LDL-C lowering therapy were validated with independent clinical data sets. Key findings are: (i) hepatic LDLR turnover is highly heterogeneous among FH classes; (ii) despite this heterogeneity, simvastatin therapy results in a consistent reduction in plasma LDL-C regardless of class; and (iii) simvastatin therapy shows a dose-dependent reduction in LDL-C. Our model suggests that the underlying cause of hypercholesterolemia does not influence simvastatin therapy. Furthermore, our model supports the treatment strategy of stepwise dose adjustment to achieve target LDL-C levels. Both the model and the database are freely available for reuse.'
@@ -1268,7 +1268,7 @@ In this study, we provide an overview of PBPK models and demonstrate how SBML, C
     - 'shubhankar_palwankar'
   title: 'ATLAS - AI and Simulation for Tumor Liver ASsessment'
   date: '2023-02-01'
-  image: atlas.png
+  image: atlas.webp
   link: 'https://www.simtech.uni-stuttgart.de/press/SimTech-collaborates-across-disciplines-in-joint-ATLAS-project/'
   short: 'The BMBF is funding our joint project ATLAS in the "Computational Life Sciences - AI Methods for Systems Medicine".'
   abstract: 'Liver cancer is the second most common cause of cancer-related death. Diagnosis and treatment are time-critical and require highly patient-specific diagnostic and treatment pathways. Medical decision-making is based on a variety of interdependent factors related to different medical disciplines, past experience and clinical guidelines. Taking into account all decision factors in combination with the possible therapeutic approaches is a major challenge for physicians and often cannot be solved optimally even in an interdisciplinary tumor board. In this project, we are developing ATLAS, a decision support tool that will significantly assist clinicians in meeting this challenge. Based on AI methods, ATLAS processes all relevant patient data from databases, systems medicine and continuum biomechanical in silico prognosis models as well as individual patient data. The tool is being developed in a co-design approach by experts in surgical oncology, mathematical modeling and machine learning. The selected technologies will integrate automated understanding of a highly complex patient situation through simulation of liver functions with expert knowledge and ontology-driven learning with knowledge graphs from retrospective liver tumor cases. ATLAS will be based on a detailed historical data cohort of more than 6,000 patients with liver tumors and will be evaluated on case studies at the University Hospital of Jena. The integration of medical expert knowledge, mathematical modeling and artificial intelligence represents a highly original and promising approach for high-quality diagnosis and treatment of liver tumors, resulting in patient-specific improvement of prognosis. The scientific knowledge gained from these projects will provide opportunities for transfer to malignancies in other organs, such as the lung, kidney or brain. The development of tools and demonstrators will provide sustainable exploitation pathways for future commercial applications.'
@@ -1279,7 +1279,7 @@ In this study, we provide an overview of PBPK models and demonstrate how SBML, C
     - 'afruja_hossain'
   title: 'New Bachelor Student - Afruja Hossain'
   date: '2022-11-17'
-  image: afruja.png
+  image: afruja.webp
   link: 'https://livermetabolism.com/people/'
   short: 'Afruja Hossain started working in our lab on a systematic overview of the protein variability of cytochrome P450 (CYP450) isoforms in the human liver.'
 
@@ -1289,7 +1289,7 @@ In this study, we provide an overview of PBPK models and demonstrate how SBML, C
     - 'matthias_koenig'
   title: 'Visiting EU parliament and attending STOA AI session'
   date: '2022-11-15'
-  image: koenig_eu_parliament.png
+  image: koenig_eu_parliament.webp
   link: 'https://www.berlin-university-alliance.de/news/items/2022/221017-bruessel-reise.html'
   short: 'We were selected to participate in an European policy journey on the topic
 EU research funding and science communication by the Berlin University Alliance (BUA).'
@@ -1300,7 +1300,7 @@ EU research funding and science communication by the Berlin University Alliance 
     - 'matthias_koenig'
   title: 'Humboldt Internship Program 2023 - Computational Modeling of Drug Detoxification - A Systems Medicine Approach'
   date: '2022-10-26'
-  image: humboldt-internship.jpg
+  image: humboldt-internship.webp
   link: 'https://hic.hu-berlin.de/en/internship-program/projects/201'
   short: 'We offer Internships in 2023, application open from 01 Nov - 09 Dec 2022.'
 
@@ -1314,7 +1314,7 @@ EU research funding and science communication by the Berlin University Alliance 
     - 'matthias_koenig'
   title: 'Dextromethorphan publication'
   date: '2022-10-24'
-  image: dex_model.png
+  image: dex_model.webp
   link: 'https://www.frontiersin.org/articles/10.3389/fphar.2022.1029073/full'
   short: 'How does CYP2D6 genotype effect metabolic phenotyping? See our latest paper in Frontiers in Pharmacology for answers.'
   abstract: ''
@@ -1325,7 +1325,7 @@ EU research funding and science communication by the Berlin University Alliance 
     - 'matthias_koenig'
   title: 'X-Research Group'
   date: '2022-10-24'
-  image: xresearch.png
+  image: xresearch.webp
   link: '/teaching/'
   short: 'M. König receives funding of the Berlin University Alliance and the DFG for the X-Student Research Group: Physiologically based modeling of drugs: ACE inhibitors'
 
@@ -1337,7 +1337,7 @@ EU research funding and science communication by the Berlin University Alliance 
     - 'matthias_koenig'
   title: 'COMBINE 2022'
   date: '2022-10-06'
-  image: COMBINE2022_logo.png
+  image: COMBINE2022_logo.webp
   image2: COMBINE2022_participants.png
   link: 'http://co.mbine.org/events/'
   short: 'We organized the Computational Modeling in Biology Network (COMBINE) meeting in Berlin this year with > 100 participants from 06-08 October 2022.'
@@ -1350,6 +1350,6 @@ EU research funding and science communication by the Berlin University Alliance 
     - 'matthias_koenig'
   title: 'ICSB 2022 - Presentation and Posters'
   date: '2022-10-10'
-  image: ICSB2022_slides.png
+  image: ICSB2022_slides.webp
   link: 'https://t.co/XmLdd2VhQ2'
   short: 'We could present our work on physiologically based pharmacokinetics (PBPK) modeling at <a href="https://www.icsb2022.berlin/">ICSB2022</a>.'
