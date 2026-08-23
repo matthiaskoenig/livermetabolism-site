@@ -5,6 +5,8 @@ permalink: /publications/
 sectionid: publications
 ---
 
+<h2 id="publications">Publications</h2>
+
 <div class="tag-filter" id="publication-tag-filter">
     <button type="button" class="tag-filter-btn active" data-tag="all">All</button>
     {% for t in site.data.tags %}
@@ -144,3 +146,65 @@ sectionid: publications
     });
 })();
 </script>
+
+<h2 id="presentations">Presentations</h2>
+
+<div class="project-grid" id="presentations-grid">
+    {% for presentation in site.data.presentations %}
+    <div class="project-card">
+        <div class="project-body">
+            <p class="news-date">{{ presentation.date }}</p>
+            <h3>{{ presentation.title }}</h3>
+            <p>
+                {{ presentation.event }}{% if presentation.location %}<br/>{{ presentation.location }}{% endif %}
+            </p>
+            <div class="project-links">
+                <span class="project-links-spacer"></span>
+                {% if presentation.slides %}
+                <a href="{{ presentation.slides }}" target="_blank" rel="noopener noreferrer" title="Slides"><i class="fa fa-desktop" aria-hidden="true"></i></a>
+                {% endif %}
+                {% if presentation.video %}
+                <a href="{{ presentation.video }}" target="_blank" rel="noopener noreferrer" title="Video"><i class="fa fa-video-camera" aria-hidden="true"></i></a>
+                {% endif %}
+                {% if presentation.repository %}
+                <a href="{{ presentation.repository }}" target="_blank" rel="noopener noreferrer" title="Repository"><i class="fa fa-github" aria-hidden="true"></i></a>
+                {% endif %}
+                {% if presentation.event_page %}
+                <a href="{{ presentation.event_page }}" target="_blank" rel="noopener noreferrer" title="Event page"><i class="fa fa-globe" aria-hidden="true"></i></a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<h2 id="posters">Posters</h2>
+
+<div class="project-grid" id="posters-grid">
+    {% for poster in site.data.posters %}
+    <div class="project-card">
+        {% if poster.image %}
+        <a href="/assets/pdf/{{ poster.pdf }}" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/pdf/{{ poster.image }}" alt="{{ poster.title }}" class="project-image"/>
+        </a>
+        {% endif %}
+        <div class="project-body">
+            <p class="news-date">{{ poster.date }}</p>
+            <h3>{{ poster.title }}</h3>
+            <p>{{ poster.event }}</p>
+            <div class="project-links">
+                <span class="project-links-spacer"></span>
+                {% if poster.pdf %}
+                <a href="/assets/pdf/{{ poster.pdf }}" target="_blank" rel="noopener noreferrer" title="PDF"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+                {% endif %}
+                {% if poster.homepage %}
+                <a href="{{ poster.homepage }}" target="_blank" rel="noopener noreferrer" title="Homepage"><i class="fa fa-globe" aria-hidden="true"></i></a>
+                {% endif %}
+                {% if poster.repository %}
+                <a href="{{ poster.repository }}" target="_blank" rel="noopener noreferrer" title="Repository"><i class="fa fa-github" aria-hidden="true"></i></a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
