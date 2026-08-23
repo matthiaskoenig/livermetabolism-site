@@ -12,7 +12,7 @@
   repository: https://github.com/matthiaskoenig/pkdb
   doi: 10.1093/nar/gkaa990
   publications:
-    - 'PKDB_Grzegorzewski2020'
+    - 'Grzegorzewski2020_PKDB'
 
 - id: 'sbmlutils'
   tags:

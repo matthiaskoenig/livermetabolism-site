@@ -63,7 +63,7 @@
   publications:
     - 'Nemitz2026_dapagliflozin'
     - 'Elias2026_dapagliflozin_physiome'
-    - 'Bachelor.Thesis.Nike.Nemitz'
+    - 'Nemitz2025_Bachelor_Thesis'
     - 'Tereshchuk2026_canagliflozin_preprint'
     - 'Alejandro2026_empagliflozin_preprint'
   homepage:
@@ -92,7 +92,7 @@
   publications:
     - 'Tensil2026_losartan'
     - 'Myshkina2026_losartan_physiome'
-    - 'Bachelor.Thesis.Ennie.Tensil'
+    - 'Tensil2025_Bachelor_Thesis'
     - 'Schwaiger2026_hctz_preprint'
   homepage:
   repository:
@@ -117,7 +117,7 @@
   publications:
     - 'Elias2025_glimepiride'
     - 'Elias2025_glimepiride_physiome'
-    - 'Bachelor.Thesis.Michelle.Elias'
+    - 'Elias2025_Bachelor_Thesis'
   homepage:
   repository:
   people:
@@ -136,8 +136,8 @@
     - "Pharmacometrics"
   publications:
     - 'Myshkina2026_apixaban_preprint'
-    - 'Cassabianca2025_preprint'
-    - 'Master.Thesis.Elisabetta.Casabianca'
+    - 'Casabianca2025_preprint'
+    - 'Casabianca2025_Master_Thesis'
   homepage:
   repository:
   people:
@@ -193,7 +193,7 @@
   tags:
     - "Pharmacometrics"
   publications:
-    - 'Bachelor.Thesis.Afruja.Hossain'
+    - 'Hossain2024_systematic_overview_protein'
   homepage:
   repository:
   people:
@@ -233,8 +233,8 @@
     - "Digital Pathology"
     - "AI"
   publications:
-    - 'Albadry2022_Cytochrome.p450.enzymes.in.periportal.steatosis'
-    - 'Master.Thesis.Jonas.Kuettner'
+    - 'Albadry2022_Cytochrome_p450_enzymes_in_periportal_steatosis'
+    - 'Kuettner2024_Quantitative_Image_Analysis'
   homepage:
   repository:
   people:
@@ -253,7 +253,7 @@
     - "Pharmacometrics"
   publications:
     - 'Bartsch2023_simvastatin'
-    - 'Bachelor.Thesis.Florian.Bartsch'
+    - 'Bartsch2020_Bachelor_Thesis'
   homepage:
   repository:
   people:
@@ -288,7 +288,7 @@
   tags:
     - "Open & FAIR"
   publications:
-    - 'FAIR.sharing.of.reproducible.and.reusable.COVID-19.models_Ramachandran2022'
+    - 'Ramachandran2022_FAIR_sharing_of_reproducible_and_reusable_COVID-19_models'
   homepage: https://wwwdev.ebi.ac.uk/biomodels/covid-19
   repository:
   people:
@@ -342,7 +342,7 @@
   tags:
     - "AI"
   publications:
-    - 'hepatokin_Berndt2018'
+    - 'Berndt2018_hepatokin'
   homepage:
   repository:
   people:
@@ -360,8 +360,8 @@
     - "Pharmacometrics"
     - "Open & FAIR"
   publications:
-    - 'PKDB_Grzegorzewski2020'
-    - 'PhD.Thesis.Jan.Grzegorzewski'
+    - 'Grzegorzewski2020_PKDB'
+    - 'Grzegorzewski2023_PhD_Thesis'
   homepage:
   repository: https://github.com/matthiaskoenig/
   people:
@@ -395,15 +395,15 @@
   tags:
     - "Digital Twins"
   publications:
-    - 'EXSIMO_Koenig2020'
-    - 'ICG_model_hepatectomy_Koeller2021'
+    - 'Koenig2020_EXSIMO'
+    - 'Koeller2021_ICG_model_hepatectomy'
     - 'Koeller2021_icg_variability'
-    - 'Bachelor.Thesis.Adrian.Koeller'
-    - 'Caffeine_meta_Grzegorzewski2021'
-    - 'Bachelor.Thesis.Helena.Leal.Pujol'
+    - 'Koeller2021_Bachelor_Thesis'
+    - 'Grzegorzewski2022_Caffeine_meta'
+    - 'Pujol2022_Bachelor_Thesis'
     - 'StemmerMallol2023_talinolol'
-    - 'Bachelor.Thesis.Beatrice.Stemmer.Mallol'
-    - 'Bachelor.Thesis.Yannick.Duport'
+    - 'Mallol2023_physiologically_based_pharmacokinetic'
+    - 'Duport2020_Bachelor_Thesis'
   homepage: https://github.com/matthiaskoenig/
   repository: https://github.com/matthiaskoenig/
   cooperation_partners:
@@ -420,7 +420,7 @@
   tags:
     - "AI"
   publications:
-    - 'Abshagen2015'
+    - 'Abshagen2015_Pathobiochemical_signatures_cholestatic'
   homepage:
   repository:
   cooperation_partners:
@@ -436,10 +436,10 @@
   tags:
     - "Open & FAIR"
   publications:
-    - 'tellurium_Medley2018'
-    - 'tellurium_Choi2018'
-    - 'Welsh2022_libroadrunner_2.0'
-    - 'libRoadRunner_Somogyi2015'
+    - 'Medley2018_tellurium'
+    - 'Choi2018_tellurium'
+    - 'Welsh2023_libroadrunner_2_0'
+    - 'Somogyi2015_libRoadRunner'
   homepage: http://tellurium.analogmachine.org/
   repository: https://github.com/sys-bio/tellurium
   cooperation_partners:
