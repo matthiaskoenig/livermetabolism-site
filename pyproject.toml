@@ -1,16 +1,17 @@
 [project]
 name = "livermetabolism-site"
-version = "0.2.0"
-description = "Add your description here"
+version = "0.3.0"
+description = "KoenigLab Website"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.14"
 dependencies = [
-    "pandas",
-    "pyyaml",
-    "rich",
-    "markdown",
-    "pandoc",
-    "typst>=0.14.1",
+    "pandas>=3.0.5",
+    "pyyaml>=6.0.3",
+    "rich>=15.0.0",
+    "markdown>=3.10.3",
+    "pygments>=2.21.0",
+    "pandoc>=2.4",
+    "typst>=0.15.0",
     "pydantic>=2.13.4",
     "pytest>=9.1.1",
 ]

@@ -132,7 +132,22 @@ layout: default
 {% assign tag_publication_count = site.data.publications | where_exp: "item", "item.tags contains want_tag" | size %}
 {% assign tag_project_count = site.data.projects | where_exp: "item", "item.tags contains want_tag" | where_exp: "item", "item.status == 'current'" | size %}
 {% assign tag_software_count = site.data.software | where_exp: "item", "item.tags contains want_tag" | size %}
+{% case slug %}
+  {% when "digital-twins" %}
+    {% assign tag_graphic = "digital_twins_upscayl_3x_digital-art-4x.webp" %}
+  {% when "ai" %}
+    {% assign tag_graphic = "ai_upscayl_3x_digital-art-4x.webp" %}
+  {% when "digital-pathology" %}
+    {% assign tag_graphic = "digital_pathology_upscayl_3x_digital-art-4x.webp" %}
+  {% when "pharmacometrics" %}
+    {% assign tag_graphic = "pharmacometrics_upscayl_3x_digital-art-4x.webp" %}
+  {% when "open-fair" %}
+    {% assign tag_graphic = "fair_open_upscayl_3x_digital-art-4x.webp" %}
+{% endcase %}
 <section class="page-section tag-section tag-{{ slug }}" id="{{ slug }}">
+    {% if tag_graphic %}
+    <img class="tag-section-graphic" src="{{ "/assets/image/tags/" | prepend: site.baseurl }}{{ tag_graphic }}" alt="" aria-hidden="true" loading="lazy" />
+    {% endif %}
     <a class="section-scroll-cue section-scroll-cue-up" href="#{{ prev_slug }}" aria-label="Scroll to {{ prev_label }}">
         <i class="fa fa-chevron-up" aria-hidden="true"></i>
     </a>

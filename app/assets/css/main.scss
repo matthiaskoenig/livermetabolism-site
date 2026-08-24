@@ -10,11 +10,17 @@
 // Bootstrap 5 sizes the navbar from padding rather than a fixed-height
 // variable; $navbar-padding-y controls Bootstrap's own navbar rules for
 // a slim navbar, while $navbar-height/$navbar-margin-bottom are this
-// site's own tracking constants (matching that padding) used below for
-// the fixed-navbar body offset, brand-mark sizing, and the mobile
-// menu's max-height.
+// site's own tracking constants used below for the fixed-navbar body
+// offset, scroll-margin on anchor targets, and the mobile menu's
+// max-height. $navbar-height must track the navbar's actual rendered
+// height (padding + nav-link/brand content + the 3px border-bottom on
+// .site-navbar) - measured at 64px, not the padding value above, since
+// the nav-link/brand content is taller than that padding alone would
+// suggest. Getting this wrong under-offsets every page below the fixed
+// navbar, clipping the top of whatever comes first (e.g. publications.html's
+// "Publications" <h2>, most visible on narrow viewports).
 $navbar-padding-y: .5rem;
-$navbar-height: 50px;
+$navbar-height: 64px;
 $navbar-margin-bottom: 0;
 
 @import
@@ -43,6 +49,17 @@ html.onepager {
 body {
   padding-top: $navbar-height + $navbar-margin-bottom;
   overflow-x: hidden;
+}
+
+// any #id anchor jump (nav dropdown links, homepage tag links, a pasted
+// #hash URL) scrolls its target flush to the viewport top, which is then
+// covered by the fixed navbar - e.g. publications.html's "Publications"
+// h2 or team.html's "Alumni" h2 getting its top clipped. Keep every such
+// target clear of the navbar sitewide (.page-section on the homepage
+// already sets this itself, for scroll-snap sections outside the flow
+// of a URL hash change).
+:target {
+  scroll-margin-top: $navbar-height + $navbar-margin-bottom;
 }
 
 // ------------------------------------------------------------------
@@ -252,8 +269,33 @@ h3 {
   }
 }
 
+// large decorative diagram (see app/assets/image/tags/) as a faint
+// background wash behind the section's own content - low opacity so it
+// stays legible-behind rather than competing with .tag-section-columns
+// (stacked above it, see below), hidden once the columns stack on
+// narrow viewports where there's no clean space left for it
+.tag-section-graphic {
+  position: absolute;
+  top: 50%;
+  right: -3vw;
+  transform: translateY(-50%);
+  max-width: 36vw;
+  max-height: 85%;
+  width: auto;
+  height: auto;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+
+  @media (max-width: 991px) {
+    display: none;
+  }
+}
+
 // vision statement on the left, linked-icons list on the right
 .tag-section-columns {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   gap: 4em;
@@ -719,6 +761,10 @@ h3 {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
 
+  .member-photo-link {
+    flex-shrink: 0;
+  }
+
   .member-photo {
     width: 56px;
     height: 56px;
@@ -755,6 +801,41 @@ h3 {
       vertical-align: middle;
       color: $gray-800;
     }
+  }
+}
+
+// wraps a person's photo/name on the member grid, alumni timeline, and
+// the alumni hover-card - opens the matching #person-modal-<id> (see
+// person_modal.html) without inheriting default link styling
+.member-photo-link,
+.member-name-link {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.member-name-link:hover strong,
+.member-name-link:focus strong {
+  text-decoration: underline;
+}
+
+// "Full profile" call to action, reused inside .member-card, the alumni
+// hover-card (.person-card), and .alumni-info
+.member-more {
+  display: inline-block;
+  margin-top: 0.3em;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: $success;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
   }
 }
 
@@ -887,6 +968,72 @@ h3 {
 .person-flag {
   font-size: 0.9em;
   vertical-align: middle;
+}
+
+// full-profile modal opened from the member grid / alumni timeline (see
+// person_modal.html): photo + role/links header, full description, and
+// the publications/projects/software cross-referenced via people:
+.person-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1em;
+
+  .person-position {
+    display: block;
+    color: $success;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .person-tenure {
+    display: block;
+    color: $gray-600;
+    font-size: 0.85em;
+  }
+
+  .member-links {
+    margin-top: 0.4em;
+
+    a {
+      margin-right: 0.6em;
+    }
+
+    .fa {
+      font-size: 16px;
+      vertical-align: middle;
+      color: $gray-800;
+    }
+  }
+}
+
+.person-modal-photo {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.person-modal-description {
+  color: $gray-800;
+}
+
+.person-modal-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.2em;
+  font-size: 0.9em;
+
+  li {
+    padding: 0.3em 0;
+    border-bottom: 1px solid $gray-200;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
 }
 
 // compact, uppercase "journal section" style year dividers used to
@@ -1097,7 +1244,10 @@ h3 {
   white-space: nowrap;
 
   .brand-mark {
-    height: $navbar-height - 16px;
+    // sized on its own, not derived from $navbar-height - that constant
+    // now tracks the navbar's real total height (see top of file), which
+    // is taller than this icon needs to be
+    height: 34px;
     width: auto;
     flex-shrink: 0;
   }
@@ -1343,12 +1493,4 @@ h3 {
       width: 100%;
     }
   }
-}
-
-*[id]:before {
-  display: block;
-  content: " ";
-  margin-top: -75px;
-  height: 75px;
-  visibility: hidden;
 }

@@ -1,0 +1,73 @@
+{% comment %}
+  Full-profile modal for one person.yml entry: full (untruncated)
+  description plus every publication/project/software they're listed
+  on via a `people:` id list. Usage: {% raw %}{% include person_modal.html person=person %}{% endraw %}
+{% endcomment %}
+{% assign p = include.person %}
+{% assign p_flag = site.data.country_flags[p.country] %}
+{% assign p_pubs = site.data.publications | where_exp: "item", "item.people contains p.id" | sort: "year" | reverse %}
+{% assign p_projects = site.data.projects | where_exp: "item", "item.people contains p.id" %}
+{% assign p_software = site.data.software | where_exp: "item", "item.people contains p.id" %}
+<div class="modal fade person-modal" id="person-modal-{{ p.id }}" tabindex="-1" aria-labelledby="person-modal-{{ p.id }}-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="person-modal-{{ p.id }}-label">{{ p.name }}{% if p_flag %} <span class="person-flag" title="{{ p.country }}">{{ p_flag }}</span>{% endif %}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="person-modal-header">
+                    {% if p.image %}
+                    <img src="{{ "/assets/image/people/128/" | prepend: site.baseurl }}{{ p.image }}" alt="{{ p.name }}" loading="lazy" class="person-modal-photo" />
+                    {% endif %}
+                    <div>
+                        {% if p.role %}<span class="person-position">{{ p.role | join: " &middot; " }}</span>{% endif %}
+                        <span class="person-tenure">{{ p.tenure }}{% if p.affiliation %} &middot; {{ p.affiliation }}{% endif %}</span>
+                        <div class="member-links">
+                            {% if p.homepage %}
+                            <a href="{{ p.homepage }}" target="_blank" rel="noopener noreferrer" title="Homepage"><i class="fa fa-home" aria-hidden="true"></i></a>
+                            {% endif %}
+                            {% if p.orcid %}
+                            <a href="https://orcid.org/{{ p.orcid }}" target="_blank" rel="noopener noreferrer" title="ORCID"><i class="fa-brands fa-orcid" aria-hidden="true"></i></a>
+                            {% endif %}
+                            {% if p.repository %}
+                            <a href="{{ p.repository }}" target="_blank" rel="noopener noreferrer" title="Repository"><i class="fa fa-github" aria-hidden="true"></i></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                {% if p.description %}
+                <p class="person-modal-description">{{ p.description }}</p>
+                {% endif %}
+
+                {% if p_pubs.size > 0 %}
+                <h6>Publications ({{ p_pubs.size }})</h6>
+                <ul class="person-modal-list">
+                    {% for pub in p_pubs %}
+                    <li><a href="{{ "/publications/" | prepend: site.baseurl }}#pub-{{ pub.id }}">{{ pub.title }}</a> <span class="text-muted">({{ pub.year }})</span></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                {% if p_projects.size > 0 %}
+                <h6>Projects ({{ p_projects.size }})</h6>
+                <ul class="person-modal-list">
+                    {% for proj in p_projects %}
+                    <li>{% if proj.homepage %}<a href="{{ proj.homepage }}" target="_blank" rel="noopener noreferrer">{{ proj.title }}</a>{% else %}{{ proj.title }}{% endif %}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                {% if p_software.size > 0 %}
+                <h6>Software ({{ p_software.size }})</h6>
+                <ul class="person-modal-list">
+                    {% for sw in p_software %}
+                    <li>{% if sw.homepage %}<a href="{{ sw.homepage }}" target="_blank" rel="noopener noreferrer">{{ sw.name }}</a>{% else %}{{ sw.name }}{% endif %} &mdash; {{ sw.title }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

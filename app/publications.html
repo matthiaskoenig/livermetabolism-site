@@ -28,7 +28,7 @@ sectionid: publications
 		</colgroup>
 		{% assign prev_year = publication.year %}
 	{% endunless %}
-		<tr data-tags="{{ publication.tags | join: '|' | escape }}">
+		<tr id="pub-{{ publication.id }}" data-tags="{{ publication.tags | join: '|' | escape }}">
 			<td class="publication-status">
 				<span class="status-badge status-{{ publication.status | slugify }}">{{ publication.status | capitalize }}</span>
 				<div class="pub-links">
