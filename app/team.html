@@ -109,31 +109,16 @@ sectionid: people
             We offer projects on the following topics
         </p>
         <div class="core-messages">
+            {% for t in site.data.tags %}
+            {% assign slug = t.tag | slugify %}
             <div class="core-message">
-                <i class="fa fa-cube" aria-hidden="true"></i>
-                <h3>Digital Twins</h3>
-                <p>Physiologically based models that mirror individual patients, from molecule to whole body.</p>
+                <a href="{{ "/" | prepend: site.baseurl }}#{{ slug }}">
+                    <i class="fa {{ t.icon }}" aria-hidden="true"></i>
+                    <h3>{{ t.tag }}</h3>
+                    <p>{{ t.short_description }}</p>
+                </a>
             </div>
-            <div class="core-message">
-                <i class="fa fa-heartbeat" aria-hidden="true"></i>
-                <h3>AI</h3>
-                <p>Mechanistic modeling meets machine learning for predictive, personalized medicine.</p>
-            </div>
-            <div class="core-message">
-                <i class="fa fa-picture-o" aria-hidden="true"></i>
-                <h3>Digital Pathology</h3>
-                <p>AI-driven analysis of whole-slide histology to quantify liver structure and disease at scale.</p>
-            </div>
-            <div class="core-message">
-                <i class="fa fa-line-chart" aria-hidden="true"></i>
-                <h3>Pharmacometrics</h3>
-                <p>Physiologically based pharmacokinetic/ pharmacodynamic models for precision dosing.</p>
-            </div>
-            <div class="core-message">
-                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                <h3>Open &amp; FAIR</h3>
-                <p>Reproducible, standardized models and data that the community can build on.</p>
-            </div>
+            {% endfor %}
         </div>
         <p>
             Interested in joining the group? Contact <i class="fa fa-envelope"></i> <a
