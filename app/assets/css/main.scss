@@ -10,11 +10,17 @@
 // Bootstrap 5 sizes the navbar from padding rather than a fixed-height
 // variable; $navbar-padding-y controls Bootstrap's own navbar rules for
 // a slim navbar, while $navbar-height/$navbar-margin-bottom are this
-// site's own tracking constants (matching that padding) used below for
-// the fixed-navbar body offset, brand-mark sizing, and the mobile
-// menu's max-height.
+// site's own tracking constants used below for the fixed-navbar body
+// offset, scroll-margin on anchor targets, and the mobile menu's
+// max-height. $navbar-height must track the navbar's actual rendered
+// height (padding + nav-link/brand content + the 3px border-bottom on
+// .site-navbar) - measured at 64px, not the padding value above, since
+// the nav-link/brand content is taller than that padding alone would
+// suggest. Getting this wrong under-offsets every page below the fixed
+// navbar, clipping the top of whatever comes first (e.g. publications.html's
+// "Publications" <h2>, most visible on narrow viewports).
 $navbar-padding-y: .5rem;
-$navbar-height: 50px;
+$navbar-height: 64px;
 $navbar-margin-bottom: 0;
 
 @import
@@ -43,6 +49,17 @@ html.onepager {
 body {
   padding-top: $navbar-height + $navbar-margin-bottom;
   overflow-x: hidden;
+}
+
+// any #id anchor jump (nav dropdown links, homepage tag links, a pasted
+// #hash URL) scrolls its target flush to the viewport top, which is then
+// covered by the fixed navbar - e.g. publications.html's "Publications"
+// h2 or team.html's "Alumni" h2 getting its top clipped. Keep every such
+// target clear of the navbar sitewide (.page-section on the homepage
+// already sets this itself, for scroll-snap sections outside the flow
+// of a URL hash change).
+:target {
+  scroll-margin-top: $navbar-height + $navbar-margin-bottom;
 }
 
 // ------------------------------------------------------------------
@@ -1097,7 +1114,10 @@ h3 {
   white-space: nowrap;
 
   .brand-mark {
-    height: $navbar-height - 16px;
+    // sized on its own, not derived from $navbar-height - that constant
+    // now tracks the navbar's real total height (see top of file), which
+    // is taller than this icon needs to be
+    height: 34px;
     width: auto;
     flex-shrink: 0;
   }
