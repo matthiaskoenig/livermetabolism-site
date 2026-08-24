@@ -11,14 +11,17 @@ sectionid: people
     {% if person.status=="current" %}
     <div class="member-card">
         {% if person.image %}
-        <img src="{{ "/assets/image/people/128/" | prepend: site.baseurl }}{{ person.image }}" alt="{{ person.name }}" loading="lazy" class="member-photo" />
+        <a href="#person-modal-{{ person.id }}" data-bs-toggle="modal" class="member-photo-link" aria-label="View full profile of {{ person.name }}">
+            <img src="{{ "/assets/image/people/128/" | prepend: site.baseurl }}{{ person.image }}" alt="{{ person.name }}" loading="lazy" class="member-photo" />
+        </a>
         {% endif %}
         <div class="member-info">
-            <strong>{{ person.name }}</strong>
+            <a href="#person-modal-{{ person.id }}" data-bs-toggle="modal" class="member-name-link"><strong>{{ person.name }}</strong></a>
             <span class="person-position">{{ person.role | last }}</span>
             {% if person.description %}
             <p>{{ person.description | strip_html | truncatewords: 20 }}</p>
             {% endif %}
+            <a href="#person-modal-{{ person.id }}" data-bs-toggle="modal" class="member-more">Full profile &rarr;</a>
             <div class="member-links">
                 {% if person.homepage %}
                 <a href="{{ person.homepage }}" target="_blank" rel="noopener noreferrer" title="Homepage"><i
@@ -35,6 +38,7 @@ sectionid: people
             </div>
         </div>
     </div>
+    {% include person_modal.html person=person %}
     {% endif %}
     {% endfor %}
 </div>
@@ -165,15 +169,17 @@ sectionid: people
                         {% if person.description %}
                         <p>{{ person.description | strip_html | truncatewords: 24 }}</p>
                         {% endif %}
+                        <a href="#person-modal-{{ person.id }}" data-bs-toggle="modal" class="member-more">Full profile &rarr;</a>
                     </div>
                 </div>
                 <div class="alumni-info">
-                    <strong>{{ person.name }}{% assign person_flag = site.data.country_flags[person.country] %}{% if person_flag %} <span class="person-flag" title="{{ person.country }}">{{ person_flag }}</span>{% endif %}{% if person.orcid %} <a href="https://orcid.org/{{ person.orcid }}"
+                    <a href="#person-modal-{{ person.id }}" data-bs-toggle="modal" class="member-name-link"><strong>{{ person.name }}{% assign person_flag = site.data.country_flags[person.country] %}{% if person_flag %} <span class="person-flag" title="{{ person.country }}">{{ person_flag }}</span>{% endif %}</strong></a>{% if person.orcid %} <a href="https://orcid.org/{{ person.orcid }}"
                             target="_blank" rel="noopener noreferrer" title="ORCID"><i class="fa-brands fa-orcid"
-                                aria-hidden="true"></i></a>{% endif %}</strong>
+                                aria-hidden="true"></i></a>{% endif %}
                     <span class="person-position">{{ person.role | last }}</span>
                 </div>
             </div>
+            {% include person_modal.html person=person %}
     {% endfor %}
             </div>
         </div>

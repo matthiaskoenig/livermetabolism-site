@@ -736,6 +736,10 @@ h3 {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
 
+  .member-photo-link {
+    flex-shrink: 0;
+  }
+
   .member-photo {
     width: 56px;
     height: 56px;
@@ -772,6 +776,41 @@ h3 {
       vertical-align: middle;
       color: $gray-800;
     }
+  }
+}
+
+// wraps a person's photo/name on the member grid, alumni timeline, and
+// the alumni hover-card - opens the matching #person-modal-<id> (see
+// person_modal.html) without inheriting default link styling
+.member-photo-link,
+.member-name-link {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.member-name-link:hover strong,
+.member-name-link:focus strong {
+  text-decoration: underline;
+}
+
+// "Full profile" call to action, reused inside .member-card, the alumni
+// hover-card (.person-card), and .alumni-info
+.member-more {
+  display: inline-block;
+  margin-top: 0.3em;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: $success;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
   }
 }
 
@@ -904,6 +943,72 @@ h3 {
 .person-flag {
   font-size: 0.9em;
   vertical-align: middle;
+}
+
+// full-profile modal opened from the member grid / alumni timeline (see
+// person_modal.html): photo + role/links header, full description, and
+// the publications/projects/software cross-referenced via people:
+.person-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1em;
+
+  .person-position {
+    display: block;
+    color: $success;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .person-tenure {
+    display: block;
+    color: $gray-600;
+    font-size: 0.85em;
+  }
+
+  .member-links {
+    margin-top: 0.4em;
+
+    a {
+      margin-right: 0.6em;
+    }
+
+    .fa {
+      font-size: 16px;
+      vertical-align: middle;
+      color: $gray-800;
+    }
+  }
+}
+
+.person-modal-photo {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.person-modal-description {
+  color: $gray-800;
+}
+
+.person-modal-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.2em;
+  font-size: 0.9em;
+
+  li {
+    padding: 0.3em 0;
+    border-bottom: 1px solid $gray-200;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
 }
 
 // compact, uppercase "journal section" style year dividers used to
