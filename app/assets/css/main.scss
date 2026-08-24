@@ -269,8 +269,33 @@ h3 {
   }
 }
 
+// large decorative diagram (see app/assets/image/tags/) as a faint
+// background wash behind the section's own content - low opacity so it
+// stays legible-behind rather than competing with .tag-section-columns
+// (stacked above it, see below), hidden once the columns stack on
+// narrow viewports where there's no clean space left for it
+.tag-section-graphic {
+  position: absolute;
+  top: 50%;
+  right: -3vw;
+  transform: translateY(-50%);
+  max-width: 36vw;
+  max-height: 85%;
+  width: auto;
+  height: auto;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+
+  @media (max-width: 991px) {
+    display: none;
+  }
+}
+
 // vision statement on the left, linked-icons list on the right
 .tag-section-columns {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   gap: 4em;
