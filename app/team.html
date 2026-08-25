@@ -149,7 +149,7 @@ sectionid: people
                 <div class="person-avatar" tabindex="0">
                     <img src="{{ "/assets/image/people/128/" | prepend: site.baseurl }}{{ person.image }}" alt="{{ person.name }}" loading="lazy" class="alumni-photo" />
                     <div class="person-card">
-                        <strong>{{ person.name }}{% assign person_flag = site.data.country_flags[person.country] %}{% if person_flag %} <span class="person-flag" title="{{ person.country }}">{{ person_flag }}</span>{% endif %}</strong>
+                        <strong>{{ person.name }}</strong>
                         <span class="person-position">{{ person.role | last }}</span>
                         {% if person.description %}
                         <p>{{ person.description | strip_html | truncatewords: 24 }}</p>
@@ -158,7 +158,7 @@ sectionid: people
                     </div>
                 </div>
                 <div class="alumni-info">
-                    <a href="#person-modal-{{ person.id }}" data-bs-toggle="modal" class="member-name-link"><strong>{{ person.name }}{% assign person_flag = site.data.country_flags[person.country] %}{% if person_flag %} <span class="person-flag" title="{{ person.country }}">{{ person_flag }}</span>{% endif %}</strong></a>{% if person.orcid %} <a href="https://orcid.org/{{ person.orcid }}"
+                    <a href="#person-modal-{{ person.id }}" data-bs-toggle="modal" class="member-name-link"><strong>{{ person.name }}</strong></a>{% if person.orcid %} <a href="https://orcid.org/{{ person.orcid }}"
                             target="_blank" rel="noopener noreferrer" title="ORCID"><i class="fa-brands fa-orcid"
                                 aria-hidden="true"></i></a>{% endif %}
                     <span class="person-position">{{ person.role | last }}</span>

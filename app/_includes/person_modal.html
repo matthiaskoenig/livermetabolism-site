@@ -4,7 +4,6 @@
   on via a `people:` id list. Usage: {% raw %}{% include person_modal.html person=person %}{% endraw %}
 {% endcomment %}
 {% assign p = include.person %}
-{% assign p_flag = site.data.country_flags[p.country] %}
 {% assign p_pubs = site.data.publications | where_exp: "item", "item.people contains p.id" | sort: "year" | reverse %}
 {% assign p_projects = site.data.projects | where_exp: "item", "item.people contains p.id" %}
 {% assign p_software = site.data.software | where_exp: "item", "item.people contains p.id" %}
@@ -12,7 +11,7 @@
     <div class="modal-dialog modal-dialog-scrollable modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="person-modal-{{ p.id }}-label">{{ p.name }}{% if p_flag %} <span class="person-flag" title="{{ p.country }}">{{ p_flag }}</span>{% endif %}</h5>
+                <h5 class="modal-title" id="person-modal-{{ p.id }}-label">{{ p.name }}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">

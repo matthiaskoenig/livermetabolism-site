@@ -40,6 +40,19 @@
   homepage:
   description: "Shubhankar worked on enhancing our understanding of enalapril's pharmacokinetics and dynamics based on a physiologically based modeling approach. The work will build on top of existing models of the ACE inhibitors lisinopril and ramipril."
 
+- id: 'martina_grohs'
+  status: 'current'
+  tenure: '2026-06-'
+  name: 'Martina Grohs'
+  country: 'Germany'
+  role:
+    - 'Technische Assistentin (TA)'
+  image: martina_grohs.webp
+  orcid:
+  repository:
+  homepage:
+  description: 'Martina works on data management and metadata of clinical samples.'
+
 - id: 'michelle_elias'
   status: 'current'
   tenure: '2024-09/2025-12'
