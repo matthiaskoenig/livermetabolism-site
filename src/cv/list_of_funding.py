@@ -5,7 +5,7 @@ from pathlib import Path
 import pandas as pd
 from rich.console import Console
 
-from src.cv.list_of_software import read_data
+from src.cv.list_of_software import read_data, is_missing
 
 console = Console()
 
@@ -16,7 +16,7 @@ def create_list_of_funding_typst(typst_path: Path, df: pd.DataFrame) -> None:
     def create_entry_typst(e: pd.Series) -> str:
         """Creates typst for a single entry."""
         title = e.title[-1] if e.title.endswith(".") else e.title
-        funder = f'#link("{e.funder_link}")[{e.funder_short}]' if e.funder_link else e.funder_short
+        funder = f'#link("{e.funder_link}")[{e.funder_short}]' if not is_missing(e.funder_link) else e.funder_short
         year_start = e.start.replace("-", "/") # e.start.split("-")[-1]  # get year
         year_end = e.end.split("-")[-1]  # get year
         total_money = f", total: {str(e.amount)[:-3]}.{str(e.amount)[-3:]}{e.currency}" if e.amount != 0 else ""
@@ -48,10 +48,10 @@ def cumulative_funding(df: pd.DataFrame):
 
 
 if __name__ == "__main__":
-    yaml_file: Path = Path(__file__).parent.parent / "app" / "_data" / "funding.yml"
+    yaml_file: Path = Path(__file__).parent.parent.parent / "app" / "_data" / "funding.yml"
     df: pd.DataFrame = read_data(yaml_file=yaml_file)
     create_list_of_funding_typst(
-        typst_path=Path("results/funding.typ"), df=df
+        typst_path=Path(__file__).parent / "results/funding.typ", df=df
     )
 
     amount = cumulative_funding(df)

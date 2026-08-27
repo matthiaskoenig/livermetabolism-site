@@ -6,7 +6,7 @@ import pandas as pd
 from rich.console import Console
 console = Console()
 
-from src.cv.list_of_software import read_data
+from src.cv.list_of_software import read_data, is_missing
 
 
 def create_list_of_poster_typst(typst_path: Path, df: pd.DataFrame,
@@ -23,7 +23,7 @@ def create_list_of_poster_typst(typst_path: Path, df: pd.DataFrame,
         affiliations = e.affiliations
         affiliations = affiliations.replace("<sup>", "#super[")
         affiliations = affiliations.replace("</sup>", "]")
-        pdf = f'#link("https://livermetabolism.com/assets/pdf/{e.pdf}")[#fa-icon("file-pdf")]' if e.pdf else ""
+        pdf = f'#link("https://livermetabolism.com/assets/pdf/{e.pdf}")[#fa-icon("file-pdf")]' if not is_missing(e.pdf) else ""
 
         text = f"{pdf} *{e.title.strip(".")}*. \ {authors};  \ _{affiliations}_ \ {e.event}; {e.date}"
         return text
@@ -52,9 +52,9 @@ def create_list_of_poster_typst(typst_path: Path, df: pd.DataFrame,
 
 
 if __name__ == "__main__":
-    yaml_file: Path = Path(__file__).parent.parent / "app" / "_data" / "posters.yml"
+    yaml_file: Path = Path(__file__).parent.parent.parent / "app" / "_data" / "posters.yml"
     df: pd.DataFrame = read_data(yaml_file=yaml_file)
 
     create_list_of_poster_typst(
-        typst_path=Path("results/posters.typ"), df=df,
+        typst_path=Path(__file__).parent / "results/posters.typ", df=df,
     )

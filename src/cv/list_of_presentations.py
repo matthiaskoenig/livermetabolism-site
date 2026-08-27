@@ -6,7 +6,7 @@ import pandas as pd
 from rich.console import Console
 console = Console()
 
-from src.cv.list_of_software import read_data
+from src.cv.list_of_software import read_data, is_missing
 
 
 def create_list_of_talk_typst(typst_path: Path, df: pd.DataFrame,
@@ -23,8 +23,8 @@ def create_list_of_talk_typst(typst_path: Path, df: pd.DataFrame,
         tokens = e.type.split("_")
         presentation_type = f", #underline[{' '.join([t.title() for t in tokens])}]" if e.type else ""
 
-        video = f'#link("{e.video}")[#fa-icon("file-video")]' if e.video else ""
-        slides = f'#link("{e.slides}")[#fa-icon("file-powerpoint")]' if e.slides else ""
+        video = f'#link("{e.video}")[#fa-icon("file-video")]' if not is_missing(e.video) else ""
+        slides = f'#link("{e.slides}")[#fa-icon("file-powerpoint")]' if not is_missing(e.slides) else ""
 
         text = f"{video}{slides} *{e.title.strip(".")}*. {authors}; _{e.event}_, {e.date}{presentation_type}"
         return text
@@ -50,16 +50,16 @@ def create_list_of_talk_typst(typst_path: Path, df: pd.DataFrame,
 
 
 if __name__ == "__main__":
-    yaml_file: Path = Path(__file__).parent.parent / "app" / "_data" / "presentations.yml"
+    yaml_file: Path = Path(__file__).parent.parent.parent / "app" / "_data" / "presentations.yml"
     df: pd.DataFrame = read_data(yaml_file=yaml_file)
 
     create_list_of_talk_typst(
-        typst_path=Path("results/presentations.typ"), df=df,
+        typst_path=Path(__file__).parent / "results/presentations.typ", df=df,
     )
 
-    yaml_file: Path = Path(__file__).parent.parent / "app" / "_data" / "panels.yml"
+    yaml_file: Path = Path(__file__).parent.parent.parent / "app" / "_data" / "panels.yml"
     df: pd.DataFrame = read_data(yaml_file=yaml_file)
 
     create_list_of_talk_typst(
-        typst_path=Path("results/panels.typ"), df=df,
+        typst_path=Path(__file__).parent / "results/panels.typ", df=df,
     )

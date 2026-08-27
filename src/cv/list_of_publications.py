@@ -7,6 +7,8 @@ import pandas as pd
 import yaml
 from rich.console import Console
 
+from src.cv.list_of_software import is_missing
+
 console = Console()
 
 # The five core research areas of the group (see app/index.html core-messages).
@@ -233,19 +235,25 @@ def create_list_of_publications_typst(
         authors = authors.replace("<b>", '#highlight(fill: rgb("#e8e8e8"))[')
         authors = authors.replace("</b>", "]")
         impact = e.impact if (e.impact and not np.isnan(e.impact)) else None
-        doi = f', #link("https://doi.org/{e.doi}")[{e.doi}]' if e.doi else ""
+        doi = (
+            f', #link("https://doi.org/{e.doi}")[{e.doi}]'
+            if not is_missing(e.doi)
+            else ""
+        )
         impact = f", IF: *{impact}*" if impact else ""
         pdf = (
             f'#link("https://livermetabolism.com/assets/pdf/{e.pdf}")[#fa-icon("file-pdf")]'
-            if e.pdf
+            if not is_missing(e.pdf)
             else ""
         )
         repository = (
-            f'#link("{e.repository}")[#fa-icon("git-alt")]' if e.repository else ""
+            f'#link("{e.repository}")[#fa-icon("git-alt")]' if not is_missing(e.repository) else ""
         )
         position = e.position  # first, first_equal, index, last_equal, last
         if position == "index":
             position_str = ""
+        elif e.status == "thesis" and position in ("last", "last_equal"):
+            position_str = ", #underline[Supervisor]"
         else:
             tokens = position.split("_")
             position_str = (
@@ -282,7 +290,7 @@ def create_list_of_publications_typst(
             "Preprints": [
                 "preprint",
             ],
-            "Thesis": [
+            "Theses": [
                 "thesis",
             ],
         }
@@ -382,7 +390,7 @@ def create_list_of_dois(df: pd.DataFrame, no_pmid: bool = True) -> list[str]:
     for key, row in df.iterrows():
         # print(row)
 
-        if row.doi:
+        if not is_missing(row.doi):
             if no_pmid:
                 if np.isnan(row.pmid):
                     dois.append(row.doi)
@@ -394,14 +402,14 @@ def create_list_of_dois(df: pd.DataFrame, no_pmid: bool = True) -> list[str]:
 if __name__ == "__main__":
     results_dir: Path = Path(__file__).parent / "results"
     yaml_file: Path = (
-        Path(__file__).parent.parent / "app" / "_data" / "publications.yml"
+        Path(__file__).parent.parent.parent / "app" / "_data" / "publications.yml"
     )
     df: pd.DataFrame = read_publications(yaml_file=yaml_file)
     df_matrix = create_matrix(df=df)
     df_matrix.to_csv(results_dir / "publication_matrix.tsv", index=True, sep="\t")
 
     publication_tags_yaml: Path = (
-        Path(__file__).parent.parent / "app" / "_data" / "publication_tags.yml"
+        Path(__file__).parent.parent.parent / "app" / "_data" / "publication_tags.yml"
     )
     write_publication_tags(df=df, tags=PUBLICATION_TAGS, yaml_path=publication_tags_yaml)
 
@@ -420,16 +428,17 @@ if __name__ == "__main__":
 
     # list of selected publications
     selected = {
+        "Bafna2026_segmentation",
         "Nemitz2026_dapagliflozin",
-        "Tensil2026_losartan",
+        # "Tensil2026_losartan",
         # "Elias2025_glimepiride.physiome",
         "Elias2025_glimepiride",
         "Albadry2024_species.comparison",
         # "Smith2024_sed.ml.l1v5",
         "Maheshvare2023_pancreas",
-        "Grzegorzewski2022_caffeine.meta",
-        "Grzegorzewski2020_pkdb",
+        # "Grzegorzewski2022_caffeine.meta",
         "Grzegorzewski2022_dextromethorphan",
+        "Grzegorzewski2020_pkdb",
         "Koeller2021_icg.hepatectomy",
         # "Koeller2021_icg.variability",
         # "Koenig2012a_glucosemodel",
@@ -444,6 +453,7 @@ if __name__ == "__main__":
         # "StemmerMallol2023_talinolol",
         # "Kuettner2023_chlorzoxazone",
         # "Bartsch2023_simvastatin",
+        "Koenig2012a_glucosemodel"
     }
     create_list_of_publications_typst(
         Path(results_dir / "publications.typ"),
