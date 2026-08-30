@@ -46,7 +46,6 @@ https://livermetabolism.com
   - [x] mobile friendly design, responsiveness
   - [x] improve page loading time; especially image sizes; image optimization; asset optimization (e.g. projects takes forever; only small fractions of images are shown)
   - [x] host on different server, extremely slow page load times (nginx reverse proxy;) github pages?, other server
-  - [ ] Added sitemap
   - [ ] Search functionality () 
 
 #### Site migration
