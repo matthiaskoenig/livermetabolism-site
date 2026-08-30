@@ -355,12 +355,13 @@ class Teaching(Taggable, PeopleLinked):
 # ---------------------------------------------------------------------------
 
 
-class Presentation(PeopleLinked):
+class Presentation(Taggable, PeopleLinked):
     id: str
     type: TalkType
     title: str
     authors: str
     affiliations: str | None = None
+    image: str | None = None
     slides: str | None = None
     video: str | None = None
     event: str
@@ -377,7 +378,7 @@ class Presentation(PeopleLinked):
     _keywords_none = field_validator("keywords", mode="before")(_none_to_list)
 
 
-class Poster(PeopleLinked):
+class Poster(Taggable, PeopleLinked):
     id: str
     year: int
     date: Date
@@ -520,6 +521,8 @@ TAGGED_TABLES = (
     "news",
     "teaching",
     "meetings",
+    "presentations",
+    "posters",
 )
 
 # tables whose rows carry a `publications: list[str]` referencing publications.yml
@@ -534,6 +537,7 @@ IMAGE_FIELDS: dict[str, list[tuple[str, str, bool]]] = {
     "projects": [("images", "assets/image/projects", True)],
     "teaching": [("image", "assets/image/teaching", False)],
     "posters": [("image", "assets/pdf", False), ("pdf", "assets/pdf", False)],
+    "presentations": [("image", "assets/pdf", False)],
     "meetings": [("image", "assets/image/meetings", False), ("pdf", "assets/pdf", False)],
 }
 

@@ -11,6 +11,8 @@ https://livermetabolism.com
   - [x] Link people to projects
   - [x] Link projects to core tags
   - [x] link publication to core tag
+  - [x] link presentations and posters to core tags
+  - [ ] link presentations and posters to people 
   
 - [x] Remove clutter
   - [x] removed duplicate information from landing page (publications, funding, ...)
@@ -39,20 +41,20 @@ https://livermetabolism.com
   - [x] simplification, modern styles and fonts
   - [x] improved navigation/subnavigation
   
+- [ ] Usability
+  - [x] Improved navigation (better navbar, less and more structured items)
+  - [x] mobile friendly design, responsiveness
+  - [x] improve page loading time; especially image sizes; image optimization; asset optimization (e.g. projects takes forever; only small fractions of images are shown)
+  - [x] host on different server, extremely slow page load times (nginx reverse proxy;) github pages?, other server
+  - [ ] Added sitemap
+  - [ ] Search functionality () 
+
 #### Site migration
 - [ ] Technology
   - [ ] migration from jekyll to astro: static-site philosophy but gives you modern components, TypeScript, MD/MDX, image handling, and the ability to use React/Vue/Svelte components where you actually need them.
   - [ ] nodejs and tailwind CSS
   - [ ] Interactive components; reactivity; e.g. statistics overviews; 
   - [ ] Security updates: remove outdated technology (old ruby and jekyll)
-
-- [ ] Usability
-  - [x] Improved navigation (better navbar, less and more structured items)
-  - [x] mobile friendly design, responsiveness
-  - [ ] improve page loading time; especially image sizes; image optimization; asset optimization (e.g. projects takes forever; only small fractions of images are shown)
-  - [ ] host on different server, extremely slow page load times (nginx reverse proxy;) github pages?, other server
-  - [ ] Added sitemap
-  - [ ] Search functionality  
 
 Der eigentliche Projekt-Output: In deinem Fall könnte das z.B. dann der Link zur überarbeiteten Website sein, plus eine kurze Übersicht (maximal eine Seite), die erklärt, was konkret gemacht wurde.
 

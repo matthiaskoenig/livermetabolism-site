@@ -88,13 +88,30 @@ sectionid: publications
 
 <div class="project-grid" id="presentations-grid">
     {% for presentation in site.data.presentations %}
-    <div class="project-card">
+    <div class="project-card" data-tags="{{ presentation.tags | join: '|' | escape }}">
+        {% if presentation.image %}
+        {% if presentation.slides %}
+        <a href="{{ presentation.slides }}" target="_blank" rel="noopener noreferrer">
+            <img src="{{ "/assets/pdf/" | prepend: site.baseurl }}{{ presentation.image }}" alt="{{ presentation.title }}" loading="lazy" class="project-image"/>
+        </a>
+        {% else %}
+        <img src="{{ "/assets/pdf/" | prepend: site.baseurl }}{{ presentation.image }}" alt="{{ presentation.title }}" loading="lazy" class="project-image"/>
+        {% endif %}
+        {% endif %}
         <div class="project-body">
             <p class="news-date">{{ presentation.date }}</p>
             <h3>{{ presentation.title }}</h3>
             <p>
                 {{ presentation.event }}{% if presentation.location %}<br/>{{ presentation.location }}{% endif %}
             </p>
+            {% if presentation.tags %}
+            <div class="tag-list">
+                {% for tag in presentation.tags %}
+                {% assign tag_info = site.data.tags | where: "tag", tag | first %}
+                <span class="tag-badge tag-{{ tag | slugify }}">{% if tag_info.icon %}<i class="fa {{ tag_info.icon }}" aria-hidden="true"></i> {% endif %}{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
             <div class="project-links">
                 <span class="project-links-spacer"></span>
                 {% if presentation.slides %}
@@ -119,7 +136,7 @@ sectionid: publications
 
 <div class="project-grid" id="posters-grid">
     {% for poster in site.data.posters %}
-    <div class="project-card">
+    <div class="project-card" data-tags="{{ poster.tags | join: '|' | escape }}">
         {% if poster.image %}
         <a href="{{ "/assets/pdf/" | prepend: site.baseurl }}{{ poster.pdf }}" target="_blank" rel="noopener noreferrer">
             <img src="{{ "/assets/pdf/" | prepend: site.baseurl }}{{ poster.image }}" alt="{{ poster.title }}" loading="lazy" class="project-image"/>
@@ -129,6 +146,14 @@ sectionid: publications
             <p class="news-date">{{ poster.date }}</p>
             <h3>{{ poster.title }}</h3>
             <p>{{ poster.event }}</p>
+            {% if poster.tags %}
+            <div class="tag-list">
+                {% for tag in poster.tags %}
+                {% assign tag_info = site.data.tags | where: "tag", tag | first %}
+                <span class="tag-badge tag-{{ tag | slugify }}">{% if tag_info.icon %}<i class="fa {{ tag_info.icon }}" aria-hidden="true"></i> {% endif %}{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
             <div class="project-links">
                 <span class="project-links-spacer"></span>
                 {% if poster.pdf %}

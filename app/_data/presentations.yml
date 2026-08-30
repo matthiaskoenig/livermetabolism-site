@@ -1,7 +1,41 @@
+- id: 'EKF2026_digital.twins'
+  people:
+    - matthias_koenig
+  type: "invited_talk"
+  tags:
+    - Digital Twins
+    - Pharmacometrics
+    - Open & FAIR
+  title: 'Reproducible Digital Twins for Personalized & Stratified Treatment'
+  authors: '<b>Matthias König</b>'
+  affiliations: "University Hospital Schleswig-Holstein, Campus Lübeck, First Department of Medicine, 23538 Lübeck, Germany; Humboldt-Universität zu Berlin, Institute for Theoretical Biology, 10115 Berlin, Germany"
+  image: 'presentation/2026-08-25_ekf.msg.digital.twins.webp'
+  slides: '/assets/pdf/presentation/2026-08-25_ekf.msg.digital.twins.pdf'
+  video:
+  event: 'EKF MSG Seminar Series'
+  event_page:
+  date: 2026-08-25
+  date_display: August 25, 2026
+  location: Lübeck, Germany
+  repository:
+  publications:
+  abstract: "This talk introduces digital twins as virtual, patient-specific representations built from mechanistic computational models and updated with patient data, and shows how physiologically based pharmacokinetic (PBPK) modeling turns this concept into a tool for personalized and stratified treatment.
+  Using indocyanine green (ICG) as an example, the talk demonstrates how a PBPK-based digital liver function test predicts patient-specific outcomes after hepatectomy more accurately than clinical data alone. It then surveys the range of digital twins developed for other compounds and applications, including caffeine, LiMAx/metacetin, pravastatin, dextromethorphan, chlorzoxazone, glimepiride, and other CYP- and transporter-based liver function tests, and connects these single-substance PBPK models to multiscale models of liver metabolism, zonation, and drug-induced injury at the lobule scale.
+  The talk concludes that digital twins built on reproducible, FAIR computational models allow individualization and stratification of treatment based on a patient's physiology, genetics, and disease state, rather than population averages."
+  keywords:
+    - digital twins
+    - PBPK
+    - personalized medicine
+    - liver function tests
+    - pharmacokinetics
+
 - id: 'PMRT2026_digital_twins'
   people:
     - matthias_koenig
   type: "invited_talk"
+  tags:
+    - Digital Twins
+    - Pharmacometrics
   title: 'Digital Twins and Dashboards for Personalized Drug Treatment'
   authors: '<b>Matthias König</b>'
   affiliations: '[1] Humboldt-Universität zu Berlin, Faculty of Life Sciences, Department of Biology, Systems Medicine of the Liver, Unter den Linden 6, 10099 Berlin, Germany; [2] University of Stuttgart, Institute of Structural Mechanics and Dynamics in Aerospace Engineering, Pfaffenwaldring 27, 70569 Stuttgart, Germany;'
@@ -26,6 +60,8 @@
   people:
     - matthias_koenig
   type: "selected_talk"
+  tags:
+    - Open & FAIR
   title: 'libsbgnpy - A Python Library for Handling Systems Biology Graphical Notation (SBGN)'
   authors: '<b>Matthias König</b>'
   affiliations: '[1] Humboldt-Universität zu Berlin, Faculty of Life Sciences, Department of Biology, Systems Medicine of the Liver, Unter den Linden 6, 10099 Berlin, Germany; [2] University of Stuttgart, Institute of Structural Mechanics and Dynamics in Aerospace Engineering, Pfaffenwaldring 27, 70569 Stuttgart, Germany;'
@@ -53,6 +89,8 @@
   people:
     - matthias_koenig
   type: "selected_talk"
+  tags:
+    - Open & FAIR
   title: 'pymetadata: Python Utilities for Metadata, Semantic Annotation, and COMBINE archives'
   authors: '<b>Matthias König</b>'
   affiliations: '[1] Humboldt-Universität zu Berlin, Faculty of Life Sciences, Department of Biology, Systems Medicine of the Liver, Unter den Linden 6, 10099 Berlin, Germany; [2] University of Stuttgart, Institute of Structural Mechanics and Dynamics in Aerospace Engineering, Pfaffenwaldring 27, 70569 Stuttgart, Germany;'
@@ -83,6 +121,8 @@ The source code is openly available at
   people:
     - matthias_koenig
   type: "selected_talk"
+  tags:
+    - Open & FAIR
   title: 'Standardizing Parameter Estimation Problems with PEtab 2'
   authors: '<b>Matthias König</b>, Frank T. Bergmann, Dilan Pathirana, Daniel Weindl, Sebastian Persson'
   affiliations: '[1] Humboldt-Universität zu Berlin, Faculty of Life Sciences, Department of Biology, Systems Medicine of the Liver, Unter den Linden 6, 10099 Berlin, Germany; 
@@ -116,6 +156,10 @@ PEtab Version 2 provides a scalable and interoperable foundation for parameter e
     - michelle_elias
     - matthias_koenig
   type: "selected_talk"
+  tags:
+    - Digital Twins
+    - Pharmacometrics
+    - Open & FAIR
   title: 'Reproducibility by Design: Data and Workflows for Pharmacokinetic Digital Twins'
   authors: 'Michelle Elias and <b>Matthias König</b>'
   affiliations: 'Humboldt-Universität zu Berlin, Faculty of Life Science, Institute for Biology, Systems Medicine of the Liver'
@@ -158,6 +202,10 @@ https://co.mbine.org/events/
     - michelle_elias
     - matthias_koenig
   type: "invited_talk"
+  tags:
+    - Digital Twins
+    - Pharmacometrics
+    - Open & FAIR
   title: 'Reproducibility by Design: Data and Workflows for Pharmacokinetic Digital Twins'
   authors: 'Michelle Elias and <b>Matthias König</b>'
   affiliations: 'Humboldt-Universität zu Berlin, Faculty of Life Science, Institute for Biology, Systems Medicine of the Liver'
@@ -179,6 +227,10 @@ https://co.mbine.org/events/
     - michelle_elias
     - matthias_koenig
   type: "selected_talk"
+  tags:
+    - Digital Twins
+    - Pharmacometrics
+    - Open & FAIR
   title: 'Reproducibility of a Digital Twin of Glimepiride for Personalized and Stratified Diabetes Treatment'
   authors: 'Michelle Elias and <b>Matthias König</b>'
   affiliations: 'Humboldt-Universität zu Berlin, Faculty of Life Science, Institute for Biology, Systems Medicine of the Liver'
@@ -199,6 +251,10 @@ https://co.mbine.org/events/
     - michelle_elias
     - matthias_koenig
   type: "invited_talk"
+  tags:
+    - Digital Twins
+    - Pharmacometrics
+    - Open & FAIR
   title: 'Reproducibility of a Digital Twin of Glimepiride for Personalized and Stratified Diabetes Treatment'
   authors: 'Michelle Elias and <b>Matthias König</b>'
   affiliations: 'Humboldt-Universität zu Berlin, Faculty of Life Science, Institute for Biology, Systems Medicine of the Liver'
@@ -218,6 +274,9 @@ https://co.mbine.org/events/
   people:
     - matthias_koenig
   type: "selected_talk"
+  tags:
+    - Digital Twins
+    - Pharmacometrics
   title: 'Reproducible Digital Twins for Studying the Effect of Disease on Pharmacokinetics'
   authors: '<b>Matthias König</b>'
   affiliations:
@@ -242,6 +301,9 @@ https://co.mbine.org/events/
   people:
     - matthias_koenig
   type: "invited_talk"
+  tags:
+    - Digital Twins
+    - Pharmacometrics
   title: 'Digital Twins of the Liver in Pharmacokinetics'
   authors: '<b>Matthias König</b>'
   affiliations:
@@ -261,6 +323,9 @@ https://co.mbine.org/events/
   people:
     - matthias_koenig
   type: "selected_talk"
+  tags:
+    - Digital Twins
+    - Pharmacometrics
   title: 'Reproducible Digital Twins in Pharmacokinetics'
   authors: '<b>Matthias König</b>'
   affiliations:
@@ -280,6 +345,10 @@ https://co.mbine.org/events/
   people:
     - matthias_koenig
   type: "invited_talk"
+  tags:
+    - Digital Twins
+    - Pharmacometrics
+    - Open & FAIR
   title: 'Reproducible digital twins for personalized drug pharmacokinetics'
   authors: '<b>Matthias König</b>'
   affiliations:
@@ -302,6 +371,10 @@ https://co.mbine.org/events/
   people:
     - matthias_koenig
   type: "invited_talk"
+  tags:
+    - Digital Twins
+    - Pharmacometrics
+    - Open & FAIR
   title: 'Reproducible digital twins for personalized liver function assessment'
   authors: '<b>Matthias König</b>'
   affiliations:
@@ -324,6 +397,10 @@ https://co.mbine.org/events/
   people:
     - matthias_koenig
   type: "selected_talk"
+  tags:
+    - Digital Twins
+    - Pharmacometrics
+    - Open & FAIR
   title: 'Reproducible digital twins for personalized liver function assessment'
   authors: '<b>Matthias König</b>'
   affiliations:
@@ -346,6 +423,10 @@ https://co.mbine.org/events/
   people:
     - matthias_koenig
   type: "selected_talk"
+  tags:
+    - Digital Twins
+    - Pharmacometrics
+    - Open & FAIR
   title: 'Reproducible digital twins for personalized liver function assessment'
   authors: '<b>Matthias König</b>'
   affiliations:
@@ -369,6 +450,10 @@ https://co.mbine.org/events/
   people:
     - matthias_koenig
   type: "invited_talk"
+  tags:
+    - Digital Twins
+    - Pharmacometrics
+    - Open & FAIR
   title: 'Reproducible digital twins for personalized liver function assessment'
   authors: '<b>Matthias König</b>'
   affiliations:
@@ -392,6 +477,9 @@ https://co.mbine.org/events/
   people:
     - matthias_koenig
   type: "selected_talk"
+  tags:
+    - Digital Twins
+    - Pharmacometrics
   title: 'Studying the impact of drug metabolism on the liver tissue: An integrated biomechanical modeling approach'
   authors: '<b>Matthias König</b>, Steffen Gerhäusser, Luis Mandl, Lena Lambers, Uta Dahmen, Hans-Michael Tautenhahn, Tim Ricken'
   affiliations:
@@ -419,6 +507,10 @@ https://co.mbine.org/events/
   people:
     - matthias_koenig
   type: "invited_talk"
+  tags:
+    - Digital Twins
+    - Pharmacometrics
+    - Open & FAIR
   title: 'Digital twins for liver function & metabolic phenotyping'
   authors: '<b>Matthias König</b>'
   slides: 'https://docs.google.com/presentation/d/16NHdvLQSYyY5LsPC3xcnE9_A1WKwtGRvTPlg7U1xxFA/edit?usp=sharing'
@@ -444,6 +536,10 @@ https://co.mbine.org/events/
   people:
     - matthias_koenig
   type: "invited_talk"
+  tags:
+    - Digital Twins
+    - Pharmacometrics
+    - Open & FAIR
   title: 'Advancing Liver Function Assessment: Personalized and Stratified Approaches with Standardized Computational Models and Data'
   authors: '<b>Matthias König</b>'
   affiliations:
@@ -466,6 +562,10 @@ https://co.mbine.org/events/
   people:
     - matthias_koenig
   type: "invited_talk"
+  tags:
+    - Digital Twins
+    - Pharmacometrics
+    - Open & FAIR
   title: 'Digital twins for liver function & metabolic phenotyping'
   authors: '<b>Matthias König</b>'
   affiliations:
@@ -492,6 +592,8 @@ https://co.mbine.org/events/
   people:
     - matthias_koenig
   type: "selected_talk"
+  tags:
+    - Open & FAIR
   title: 'Developing computational models with SBML - sbmlutils & cy3sbml'
   authors: '<b>Matthias König</b>'
   affiliations:
