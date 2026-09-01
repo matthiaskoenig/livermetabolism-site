@@ -13,7 +13,7 @@
   impact: 1.5
   position: last
   doi: 10.1515/jib-2026-0006
-  pmid:
+  pmid: 42590802
   keywords:
     - SBML
     - FBC
@@ -36,7 +36,7 @@
   impact: 1.5
   position: index
   doi: 10.1515/jib-2026-0004
-  pmid:
+  pmid: 42590806
   keywords:
     - Parameter estimation
     - PETab
@@ -59,7 +59,7 @@
   impact: 1.6
   position: index
   doi: 10.1038/s44260-026-00094-y
-  pmid:
+  pmid: 
   keywords:
     - COMBINE
     - reproducibility
