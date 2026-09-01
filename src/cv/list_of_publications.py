@@ -11,132 +11,6 @@ from src.cv.list_of_software import is_missing
 
 console = Console()
 
-# The five core research areas of the group (see app/index.html core-messages).
-CORE_TAGS = [
-    "Digital Twins",
-    "Digital Pathology",
-    "Pharmacometrics & PBPK",
-    "Systems Medicine & AI",
-    "Open & FAIR Science",
-]
-
-# Mapping of publication id (see app/_data/publications.yml) to a list of
-# CORE_TAGS. This is the single source of truth for publication tags; run
-# this script to (re-)generate app/_data/publication_tags.yml consumed by
-# the Jekyll site.
-PUBLICATION_TAGS: dict[str, list[str]] = {
-    "Olivier2026_fbc.v3": ["Open & FAIR Science"],
-    "Pathirana2026_petab.v2": ["Open & FAIR Science"],
-    "Sego2026_efect": ["Open & FAIR Science"],
-    "Schwaiger2026_hctz": ["Digital Twins", "Pharmacometrics & PBPK"],
-    "Li2026_tabularqual": ["Open & FAIR Science"],
-    "Elias2026_dapagliflozin.physiome": ["Pharmacometrics & PBPK", "Open & FAIR Science"],
-    "Jesionek2026_rapamycin": ["Digital Twins", "Pharmacometrics & PBPK"],
-    "Myshkina2026_apixaban": ["Digital Twins", "Pharmacometrics & PBPK"],
-    "Bafna2026_segmentation": ["Digital Pathology"],
-    "Alvarez2026_master.thesis": ["Open & FAIR Science"],
-    "Sauro2026_fair.to.cure": ["Open & FAIR Science"],
-    "Alejandro2026_empagliflozin": ["Digital Twins", "Pharmacometrics & PBPK"],
-    "Corradi2026_llemy": ["Systems Medicine & AI"],
-    "Nemitz2026_dapagliflozin": ["Pharmacometrics & PBPK"],
-    "Tensil2026_losartan": ["Digital Twins", "Pharmacometrics & PBPK"],
-    "Myshkina2026_losartan.physiome": ["Digital Twins", "Open & FAIR Science"],
-    "Tereshchuk2026_canagliflozin": ["Digital Twins", "Pharmacometrics & PBPK"],
-    "Elias2025_glimepiride": ["Digital Twins", "Pharmacometrics & PBPK"],
-    "Elias2025_glimepiride.physiome": ["Digital Twins", "Open & FAIR Science"],
-    "Myshkina2025_digital.twins": ["Digital Twins", "Systems Medicine & AI"],
-    "Casabianca2025_master.thesis": ["Pharmacometrics & PBPK"],
-    "Casabianca2025_rivaroxaban": ["Pharmacometrics & PBPK"],
-    "Tensil2025_bachelor.thesis": ["Pharmacometrics & PBPK"],
-    "Nemitz2025_bachelor.thesis": ["Pharmacometrics & PBPK"],
-    "Elias2025_bachelor.thesis": ["Pharmacometrics & PBPK"],
-    "Baum2025_diabetic.neuropathy": ["Systems Medicine & AI"],
-    "Balaur2025_fairification": ["Open & FAIR Science"],
-    "Mishra2025_internship_report": ["Pharmacometrics & PBPK"],
-    "Eissazadeh2025_endoglin": ["Systems Medicine & AI"],
-    "Koenig2025_combine2024_abstract_digital.twin": ["Digital Twins", "Open & FAIR Science"],
-    "Koenig2025_combine2024_abstract_tools": ["Open & FAIR Science"],
-    "Kulanoglu2025_bachelor.thesis": ["Pharmacometrics & PBPK"],
-    "Raman2024_frog": ["Open & FAIR Science"],
-    "Kuettner2024_master.thesis": ["Digital Pathology"],
-    "Eissazadeh2024_eas2024_abstract_endoglin": ["Systems Medicine & AI"],
-    "Golebiewski2024_standards": ["Open & FAIR Science"],
-    "Albadry2024_species.comparison": ["Digital Pathology"],
-    "Palwankar2024_master.thesis": ["Pharmacometrics & PBPK"],
-    "Hossain2024_bachelor.thesis": ["Pharmacometrics & PBPK"],
-    "Hoepfl2024_baymodts": ["Systems Medicine & AI", "Open & FAIR Science"],
-    "Smith2024_sed.ml.l1v5": ["Open & FAIR Science"],
-    "Gerhaeusser2024_spt.model": ["Digital Twins", "Digital Pathology"],
-    "Lambers2024_fat.zonation": ["Digital Pathology", "Digital Twins"],
-    "Tautenhahn2024_simliva": ["Digital Twins", "Systems Medicine & AI"],
-    "Okibedi2024_internship_report": ["Pharmacometrics & PBPK"],
-    "Kohrs2023_open.science": ["Open & FAIR Science"],
-    "StemmerMallol2023_talinolol": ["Pharmacometrics & PBPK"],
-    "Maheshvare2023_pancreas": ["Systems Medicine & AI"],
-    "Mallol2023_bachelor.thesis": ["Pharmacometrics & PBPK"],
-    "Kuettner2023_chlorzoxazone": ["Pharmacometrics & PBPK"],
-    "Koenig2023_standards": ["Open & FAIR Science"],
-    "Anton2023_standard.gem": ["Open & FAIR Science"],
-    "Bartsch2023_simvastatin": ["Pharmacometrics & PBPK"],
-    "Grzegorzewski2023_phd.thesis": ["Pharmacometrics & PBPK", "Open & FAIR Science"],
-    "Welsh2023_libroadrunner.2.0": ["Open & FAIR Science"],
-    "Albadry2022_cyp450.steatosis": ["Digital Pathology"],
-    "Grzegorzewski2022_dextromethorphan": ["Pharmacometrics & PBPK"],
-    "Ramachandran2022_covid19.models": ["Open & FAIR Science"],
-    "Shaikh2022_biosimulators": ["Open & FAIR Science"],
-    "Pujol2022_bachelor.thesis": ["Pharmacometrics & PBPK"],
-    "Koenig2022_dfba": ["Open & FAIR Science"],
-    "Grzegorzewski2022_caffeine.meta": ["Pharmacometrics & PBPK"],
-    "Koeller2021_icg.hepatectomy": ["Pharmacometrics & PBPK", "Systems Medicine & AI"],
-    "Koeller2021_icg.variability": ["Pharmacometrics & PBPK"],
-    "Christ2021_review": ["Digital Twins", "Systems Medicine & AI"],
-    "Schreiber2021_synthetic.biology": ["Open & FAIR Science"],
-    "Balci2021_bachelor.thesis": ["Pharmacometrics & PBPK"],
-    "Yamada2021_sbmlwebapp": ["Open & FAIR Science"],
-    "Smith2021_sed.ml.l1v4": ["Open & FAIR Science"],
-    "Panchiwala2021_sbscl": ["Open & FAIR Science"],
-    "Koenig2021_ten.simple.rules": ["Open & FAIR Science"],
-    "Gennari2021_omex.spec.1.2": ["Open & FAIR Science"],
-    "Shaikh2021_sed.ml.validator": ["Open & FAIR Science"],
-    "Koeller2021_bachelor.thesis": ["Pharmacometrics & PBPK"],
-    "Ricken2020_gacm.report": ["Digital Twins"],
-    "Bartsch2020_bachelor.thesis": ["Pharmacometrics & PBPK"],
-    "Duport2020_bachelor.thesis": ["Pharmacometrics & PBPK"],
-    "Grzegorzewski2020_pkdb": ["Pharmacometrics & PBPK", "Open & FAIR Science"],
-    "Keating2020_sbml": ["Open & FAIR Science"],
-    "Neal2020_omex": ["Open & FAIR Science"],
-    "Schreiber2020_synthetic.biology": ["Open & FAIR Science"],
-    "Waltemath2020_combine2019": ["Open & FAIR Science"],
-    "Smith2020_sbml.distrib": ["Open & FAIR Science"],
-    "Lieven2020_memote": ["Open & FAIR Science"],
-    "Koenig2020_exsimo": ["Digital Twins"],
-    "Lambers2019_mor": ["Digital Twins"],
-    "Schreiber2019_combine.editorial": ["Open & FAIR Science"],
-    "Hucka2019_sbml.l3v2.core": ["Open & FAIR Science"],
-    "Choi2018_tellurium": ["Open & FAIR Science"],
-    "Berndt2018_hepatokin": ["Systems Medicine & AI"],
-    "Bergmann2018_sedml": ["Open & FAIR Science"],
-    "Neal2018_annotations": ["Open & FAIR Science"],
-    "Medley2018_tellurium": ["Open & FAIR Science"],
-    "Christ2017_surgery": ["Systems Medicine & AI", "Digital Twins"],
-    "Koenig2016_models2clinics": ["Open & FAIR Science", "Systems Medicine & AI"],
-    "Koenig2016_cy3sabiork": ["Open & FAIR Science"],
-    "Wholecell2016_community.standards": ["Open & FAIR Science"],
-    "Abshagen2015_cholestasis": ["Systems Medicine & AI"],
-    "Werner2015_growth.perfusion": ["Digital Twins"],
-    "Somogyi2015_libroadrunner": ["Open & FAIR Science"],
-    "Ricken2014_livertissue": ["Digital Twins"],
-    "Koenig2014_systembiologie": ["Systems Medicine & AI"],
-    "Koenig2013_cancertissue": ["Digital Pathology", "Systems Medicine & AI"],
-    "Koenig2012b_glucosemodelt2dm": ["Systems Medicine & AI"],
-    "Koenig2012_cysbml": ["Open & FAIR Science"],
-    "Koenig2012a_glucosemodel": ["Systems Medicine & AI"],
-    "Herling2011_cancerglucosereview": ["Systems Medicine & AI"],
-    "Koenig2011_fluxviz": ["Open & FAIR Science"],
-    "Gille2010_hepatonet1": ["Systems Medicine & AI"],
-}
-
-
 def read_publications(yaml_file: Path) -> pd.DataFrame:
     """Read publication in pandas DataFrame"""
     with open(yaml_file, "r", encoding="utf-8") as file:
@@ -347,30 +221,6 @@ def create_list_of_publications_typst(
         f_typst.write(typst_all)
 
 
-def write_publication_tags(
-    df: pd.DataFrame, tags: dict[str, list[str]], yaml_path: Path
-) -> None:
-    """Write PUBLICATION_TAGS as a Jekyll data file keyed by publication id.
-
-    Consumed by app/publications.html to render tag badges and the tag
-    filter. Warns about ids in `tags` that no longer exist in `df`, and
-    about publications without any tags.
-    """
-    known_ids = set(df["id"])
-    unknown = sorted(set(tags) - known_ids)
-    if unknown:
-        console.print(f"[red]Unknown publication ids in PUBLICATION_TAGS: {unknown}")
-
-    untagged = sorted(known_ids - set(tags))
-    if untagged:
-        console.print(f"[yellow]Publications without tags: {untagged}")
-
-    entries = [{"id": pub_id, "tags": tags[pub_id]} for pub_id in sorted(tags)]
-    with open(yaml_path, "w", encoding="utf-8") as f_yaml:
-        yaml.safe_dump(entries, f_yaml, sort_keys=False, allow_unicode=True)
-    console.print(f"Wrote {len(entries)} publication tag entries to {yaml_path}")
-
-
 def create_list_of_pubmeds(df: pd.DataFrame) -> list[str]:
     import numpy as np
 
@@ -407,11 +257,6 @@ if __name__ == "__main__":
     df: pd.DataFrame = read_publications(yaml_file=yaml_file)
     df_matrix = create_matrix(df=df)
     df_matrix.to_csv(results_dir / "publication_matrix.tsv", index=True, sep="\t")
-
-    publication_tags_yaml: Path = (
-        Path(__file__).parent.parent.parent / "app" / "_data" / "publication_tags.yml"
-    )
-    write_publication_tags(df=df, tags=PUBLICATION_TAGS, yaml_path=publication_tags_yaml)
 
     # markdown_file: Path = Path(results_dir / "publications.md")
     # create_list_of_publications_md(md_path=markdown_file, df=df)

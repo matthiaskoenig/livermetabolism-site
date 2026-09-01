@@ -1,6 +1,6 @@
 # Single source of truth for the 5 research-area tags used to categorize
 # projects, publications, news, software, funding, and editorial roles
-# (app/_data/{projects,publication_tags,news,software,funding,editors}.yml).
+# (app/_data/{projects,publications,news,software,funding,editors}.yml).
 #
 # "tag" must exactly match the strings used in those files' `tags:` lists.
 # "icon" is a Font Awesome 4 class name (without the leading "fa fa-" prefix,
