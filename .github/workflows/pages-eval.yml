@@ -1,0 +1,116 @@
+name: Build eval site (old-site vs new-site)
+
+# One-off comparison build for evaluation: builds the frozen `old-site` and
+# `new-site` branches into subfolders of a single GitHub Pages deployment.
+# Does NOT touch old-site/new-site themselves, so they stay exact snapshots
+# of the commits they were cut from. Re-run manually (Actions tab -> this
+# workflow -> "Run workflow") if either branch is ever repointed.
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [master]
+    paths: [".github/workflows/pages-eval.yml"]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-eval
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout old-site
+        uses: actions/checkout@v4
+        with:
+          ref: old-site
+          path: old-site-src
+
+      - name: Checkout new-site
+        uses: actions/checkout@v4
+        with:
+          ref: new-site
+          path: new-site-src
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+
+      - name: Install gems (old-site)
+        working-directory: old-site-src
+        run: bundle install
+
+      - name: Install gems (new-site)
+        working-directory: new-site-src
+        run: bundle install
+
+      - name: Build old-site
+        working-directory: old-site-src
+        run: |
+          bundle exec jekyll build \
+            --source app \
+            --destination "$GITHUB_WORKSPACE/dist/old-site" \
+            --baseurl "/livermetabolism-site/old-site"
+
+      - name: Build new-site
+        working-directory: new-site-src
+        run: |
+          bundle exec jekyll build \
+            --source app \
+            --destination "$GITHUB_WORKSPACE/dist/new-site" \
+            --baseurl "/livermetabolism-site/new-site"
+
+      - name: Add comparison landing page
+        run: |
+          OLD_SHA=$(git -C old-site-src rev-parse --short HEAD)
+          OLD_MSG=$(git -C old-site-src log -1 --format='%s')
+          OLD_DATE=$(git -C old-site-src log -1 --format='%ad' --date=short)
+          NEW_SHA=$(git -C new-site-src rev-parse --short HEAD)
+          NEW_MSG=$(git -C new-site-src log -1 --format='%s')
+          NEW_DATE=$(git -C new-site-src log -1 --format='%ad' --date=short)
+          cat > dist/index.html <<EOF
+          <!doctype html>
+          <html lang="en">
+          <head>
+          <meta charset="utf-8">
+          <title>Site evaluation: old vs new</title>
+          <style>
+            body { font-family: system-ui, sans-serif; max-width: 640px; margin: 4rem auto; padding: 0 1rem; color: #222; }
+            h1 { font-size: 1.3rem; }
+            .card { border: 1px solid #ddd; border-radius: 8px; padding: 1.25rem 1.5rem; margin: 1rem 0; }
+            .card a { font-size: 1.1rem; font-weight: 600; text-decoration: none; }
+            .meta { color: #666; font-size: 0.9rem; margin-top: 0.25rem; }
+            code { background: #f2f2f2; padding: 0.1rem 0.3rem; border-radius: 3px; }
+          </style>
+          </head>
+          <body>
+          <h1>livermetabolism-site: evaluation build</h1>
+          <p>Two versions of the site, built from fixed commits for side-by-side review.</p>
+          <div class="card">
+            <a href="old-site/">Old site &rarr;</a>
+            <div class="meta">commit <code>${OLD_SHA}</code> (${OLD_DATE}) &mdash; ${OLD_MSG}</div>
+          </div>
+          <div class="card">
+            <a href="new-site/">New site &rarr;</a>
+            <div class="meta">commit <code>${NEW_SHA}</code> (${NEW_DATE}) &mdash; ${NEW_MSG}</div>
+          </div>
+          </body>
+          </html>
+          EOF
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
