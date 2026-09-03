@@ -45,6 +45,7 @@ Within this project, a new version of the group website was developed based on t
   - [x] Added a vision statement
   - [x] Added core-expertise project highlights
   - [x] Introduced core tags
+  - [x] Structured and framed the site's content around the target audiences defined in `communication_concept.md` (patients, physicians, funders, collaborators, students, press)
 
 - [x] Design
   - [x] Simplified, modern styling and fonts
