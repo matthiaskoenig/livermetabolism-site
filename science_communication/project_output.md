@@ -1,71 +1,106 @@
-# Project output
-https://livermetabolism.com
+# Project Output
 
-### TODO
+**Live site:** https://livermetabolism.com
 
-#### Updates, cleanups, improvements
-- [x] Collecting information, linking information, updating information
-  - [x] Update open positions
-  - [x] Link people to publications
-  - [x] Update projects (collect projects)
-  - [x] Link people to projects
-  - [x] Link projects to core tags
-  - [x] link publication to core tag
-  - [x] link presentations and posters to core tags
-  - [ ] link presentations and posters to people 
-  
-- [x] Remove clutter
-  - [x] removed duplicate information from landing page (publications, funding, ...)
-  - [x] collected all contact information and social links and moved to footer 
-  - [x] put news into a news real/carrousel
-  - [x] shortened texts and descriptions
-  - [x] merged Software, Funding, Editors (roles) in research
-  - [x] merge People, Open Positions
-  - [x] fix responsiveness on all pages
-  - [x] simplify an unify teaching content 
-  - [x] remove unused assets and code (e.g. pdfs)
-  - [x] cleanup posters, abstracts, presentations entries with own page.
+Within this project, a new version of the group website was developed based on the science-communication principles covered in the course.
+
+## Why a relaunch was needed
+
+- The old site was very outdated.
+- Too much clutter and information.
+- No clear structure.
+- No communication strategy or defined target audience.
+
+## Delivered updates, cleanups & improvements
+
+- [x] Collecting, linking, and updating information
+  - [x] Updated open positions
+  - [x] Linked people to publications
+  - [x] Updated projects (collected all current projects)
+  - [x] Linked people to projects
+  - [x] Linked projects to core tags
+  - [x] Linked publications to core tags
+  - [x] Linked presentations and posters to core tags
+  - [ ] Link presentations and posters to people
+
+- [x] Removed clutter
+  - [x] Removed duplicate information from the landing page (publications, funding, ...)
+  - [x] Collected all contact information and social links into the footer
+  - [x] Moved news into a scrollable news reel/carousel
+  - [x] Shortened texts and descriptions
+  - [x] Merged Software, Funding, and Editorial roles into the Research page
+  - [x] Merged People and Open Positions
+  - [x] Fixed responsiveness on all pages
+  - [x] Simplified and unified teaching content
+  - [x] Removed unused assets and code (e.g. stale PDFs)
+  - [x] Gave posters, abstracts, and presentations their own dedicated entries
 
 - [x] Database
-  - [x] Validation code for database and entries (pydantic)
-  - [x] Fixing database errors
-  - [x] Improving consistency; fixing all naming; establishing naming patterns for files and ids
+  - [x] Added validation code for the database and its entries (pydantic)
+  - [x] Fixed database errors
+  - [x] Improved consistency: unified naming, established naming patterns for files and ids
 
-- [x] Addressing stackholders
-  - [x] Clear description of new orientation of lab with start of professorship in Lübeck
-  - [x] Added vision statement 
-  - [x] Added core expertise projects
-  - [x] Core tags 
-  
+- [x] Addressing stakeholders
+  - [x] Clear description of the lab's new orientation with the start of the professorship in Lübeck
+  - [x] Added a vision statement
+  - [x] Added core-expertise project highlights
+  - [x] Introduced core tags
+
 - [x] Design
-  - [x] simplification, modern styles and fonts
-  - [x] improved navigation/subnavigation
-  
+  - [x] Simplified, modern styling and fonts
+  - [x] Improved navigation/sub-navigation
+  - [x] Added a logo (brand mark) and full favicon set
+
 - [ ] Usability
-  - [x] Improved navigation (better navbar, less and more structured items)
-  - [x] mobile friendly design, responsiveness
-  - [x] improve page loading time; especially image sizes; image optimization; asset optimization (e.g. projects takes forever; only small fractions of images are shown)
-  - [x] host on different server, extremely slow page load times (nginx reverse proxy;) github pages?, other server
-  - [ ] Search functionality () 
+  - [x] Improved navigation (clearer navbar, fewer and better-structured items)
+  - [x] Mobile-friendly design, responsive layout
+  - [x] Improved page load time — especially image sizes/asset optimization (the Projects page used to take forever to load with only a fraction of images visible)
+  - [x] Moved hosting to a different server to fix extremely slow page load times (nginx reverse proxy; GitHub Pages considered as an alternative)
+  - [x] Split current members and alumni on the Team page
+  - [ ] Search functionality
+  - [ ] More personal people profiles (hobbies, additional bio info)
 
-#### Site migration
+- [ ] Control & follow-up (see `communication_concept.md` → Control)
+  - [x] Google Analytics (GA4) installed for traffic tracking
+  - [ ] Legal safeguards: Impressum / privacy & cookie notice — still missing
+  - [ ] Regular feedback rounds in group meetings
+
+## Site migration (future project)
+
 - [ ] Technology
-  - [ ] migration from jekyll to astro: static-site philosophy but gives you modern components, TypeScript, MD/MDX, image handling, and the ability to use React/Vue/Svelte components where you actually need them.
-  - [ ] nodejs and tailwind CSS
-  - [ ] Interactive components; reactivity; e.g. statistics overviews; 
-  - [ ] Security updates: remove outdated technology (old ruby and jekyll)
+  - [ ] Migrate from Jekyll to Astro: keeps the static-site philosophy but adds modern components, TypeScript, MD/MDX, better image handling, and the option to use React/Vue/Svelte components where actually needed
+  - [ ] Node.js and Tailwind CSS
+  - [ ] Interactive components / reactivity (e.g. statistics overviews)
+  - [ ] Security updates: remove outdated technology (old Ruby and Jekyll)
 
-Der eigentliche Projekt-Output: In deinem Fall könnte das z.B. dann der Link zur überarbeiteten Website sein, plus eine kurze Übersicht (maximal eine Seite), die erklärt, was konkret gemacht wurde.
+## Summary
 
+Based on the science-communication principles from this course, the group's
+website (https://livermetabolism.com) was relaunched. The prior site was
+outdated, cluttered, and unstructured, with no clear communication strategy
+or target audience — a communication concept (`communication_concept.md`)
+was developed first to define target audiences, positioning, and concrete
+actions, and this project delivered on that plan.
 
-Project output: https://livermetabolism.com
+Key results:
+- **Restructured content**: all people, projects, publications, software,
+  presentations, and posters now live in a validated, cross-linked database
+  (YAML + a pydantic schema checked in CI), enabling consistent tagging and
+  linking throughout the site.
+- **Decluttered, focused design**: redundant content removed from the
+  landing page, news moved into a compact carousel, contact information
+  consolidated into the footer, and navigation simplified.
+- **Clearer positioning**: a vision statement and description of the lab's
+  new orientation (following the move to the professorship in Lübeck) were
+  added, along with a logo and consistent modern styling.
+- **Better usability and performance**: responsive/mobile-friendly design
+  across all pages, faster page loads through image/asset optimization and
+  improved hosting, and Google Analytics for ongoing traffic tracking.
 
-Within this project a new version of our project webpage was developed based on the science communication principles learned in the course. This was necessary becauase
+Open items carried forward as future work: site search, linking
+presentations/posters to people, more personal People-page profiles, and a
+still-missing legal Impressum/privacy notice. A larger migration from
+Jekyll to a modern framework (e.g. Astro) is planned as a separate follow-up
+project. The full checklist above documents each change against the plan in
+`communication_concept.md`.
 
-- the old side was very outdated
-- there was too much clutter and information
-- no structure
-- no communication strategy or target audience.
-
-## reporting
-https://programm.zewk.tu-berlin.de/de/my_account/my_events/0194ac79-6b74-7b82-82d4-a956a88e2caf?scopeFilter%5Bmy_application_not_states%5D%5B0%5D=created&scopeFilter%5Bmy_application_not_states%5D%5B1%5D=canceled&page%5Bnumber%5D=1&page%5Bsize%5D=50&page%5Btotal%5D=1&sort%5B0%5D=-pinned&sort%5B1%5D=start_at&sort%5B2%5D=title&bq%5Btab%5D=my&bqns=my&tab=forms
