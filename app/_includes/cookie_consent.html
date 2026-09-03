@@ -1,0 +1,14 @@
+{% comment %}
+  Cookie-consent banner gating Google Analytics behind opt-in. No GA script
+  is requested from Google until the visitor accepts; see
+  /assets/js/cookie-consent.js and /privacy/ for details.
+{% endcomment %}
+<div id="cookie-consent-banner" class="cookie-consent" data-ga-id="{{ site.google_analytics }}" hidden>
+    <p class="cookie-consent-text">
+        This site uses Google Analytics to understand how it's used. It only runs if you accept — see the <a href="{{ site.baseurl }}/privacy/">privacy policy</a> for details.
+    </p>
+    <div class="cookie-consent-actions">
+        <button type="button" id="cookie-consent-decline" class="btn btn-outline-secondary btn-sm">Decline</button>
+        <button type="button" id="cookie-consent-accept" class="btn btn-primary btn-sm">Accept</button>
+    </div>
+</div>

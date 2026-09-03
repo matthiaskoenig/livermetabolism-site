@@ -8,6 +8,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Research Group König
 baseurl: "" # the subpath of your site, e.g. /blog/
 email: matthias.koenig@uni-luebeck.de
+google_analytics: "G-FDNGDW6G09"
 git_address: https://github.com/matthiaskoenig
 git_edit_address: https://github.com/matthiaskoenig/gh-pages
 twitter_username: konigmatt

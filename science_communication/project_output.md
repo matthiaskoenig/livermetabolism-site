@@ -63,7 +63,7 @@ Within this project, a new version of the group website was developed based on t
 - [x] Control & follow-up (see `communication_concept.md` → Control)
   - [x] Google Analytics (GA4) installed for traffic tracking
   - [x] Legal safeguards: added `/impressum/` and `/privacy/` pages, linked from the footer on every page (Lübeck address, per § 5 TMG / § 18 MStV; Datenschutzerklärung covers server logs and Google Analytics)
-  - [ ] Cookie-consent banner gating Google Analytics behind opt-in (flagged as an open gap in the privacy page itself)
+  - [x] Cookie-consent banner gating Google Analytics behind opt-in (GA script only requested from Google after Accept; choice changeable anytime from the privacy page)
   - [x] Regular feedback rounds in group meetings
 
  - [x] Security updates: removed outdated technology (old Ruby and Jekyll, removed old/deprecated npm packages)
@@ -85,5 +85,5 @@ Key results:
 - **Clearer positioning**: a vision statement and description of the lab's new orientation (following the move to the professorship in Lübeck) were added, along with a logo and consistent modern styling.
 - **Better usability and performance**: responsive/mobile-friendly design across all pages, faster page loads through image/asset optimization and improved hosting, and Google Analytics for ongoing traffic tracking.
 
-Open items carried forward as future work: site search, more personal People-page profiles, and a cookie-consent banner to gate Google Analytics behind opt-in (the Impressum and Datenschutzerklärung pages themselves are now in place). A larger migration from Jekyll to a modern framework (e.g. Astro) is planned as a separate follow-up project. The full checklist above documents each change against the plan in `communication_concept.md`.
+Open items carried forward as future work: site search and more personal People-page profiles (the Impressum, Datenschutzerklärung, and a cookie-consent banner gating Google Analytics are now all in place). A larger migration from Jekyll to a modern framework (e.g. Astro) is planned as a separate follow-up project. The full checklist above documents each change against the plan in `communication_concept.md`.
 
