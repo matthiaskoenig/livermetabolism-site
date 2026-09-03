@@ -11,7 +11,7 @@ sectionid: teaching
         <img src="{{ "/assets/image/teaching/teaching_banner.webp" | prepend: site.baseurl }}" alt="" class="img-fluid"/>
     </div>
     {% for teaching in site.data.teaching %}
-    <div class="col-md-12">
+    <div class="col-md-12" id="teaching-{{ teaching.id }}">
         <h3>{{ teaching.title }}</h3>
         <h4>
             {% for t in teaching.type %}

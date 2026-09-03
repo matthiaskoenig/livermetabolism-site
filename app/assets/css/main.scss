@@ -1267,6 +1267,33 @@ h3 {
   }
 }
 
+.navbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.search-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: $gray-100;
+  font-size: 1.1em;
+  transition: background-color 0.15s ease, color 0.15s ease;
+
+  &:hover,
+  &:focus {
+    background-color: rgba($gray-100, 0.12);
+    color: $success;
+  }
+}
+
 .site-navbar {
   // neutral dark grey rather than $primary (navy) - it was too close in
   // hue/darkness to a couple of the homepage section colors (esp. Open &
@@ -1519,6 +1546,83 @@ h3 {
       width: 100%;
     }
   }
+}
+
+// briefly highlights the card/row a search result (see search.html/search.js)
+// or any other #anchor link jumps to, so it stands out among otherwise
+// identical-looking cards
+.search-highlight {
+  animation: search-highlight-pulse 2.5s ease-out;
+}
+
+@keyframes search-highlight-pulse {
+  0% {
+    background-color: rgba($success, 0.25);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.site-search-input {
+  margin-bottom: 1em;
+}
+
+.site-search-results {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+  max-height: 55vh;
+  overflow-y: auto;
+}
+
+.site-search-hint,
+.site-search-empty {
+  color: $gray-600;
+  font-size: 0.9em;
+  margin: 0.5em 0;
+}
+
+.site-search-result {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+  padding: 0.6em 0.7em;
+  border-radius: 6px;
+  color: $gray-900;
+  text-decoration: none;
+
+  i {
+    flex: none;
+    width: 1.2em;
+    text-align: center;
+    color: $success;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $gray-200;
+  }
+}
+
+.site-search-result-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.site-search-result-title {
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.site-search-result-type {
+  font-size: 0.78em;
+  color: $gray-600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 .cookie-consent {

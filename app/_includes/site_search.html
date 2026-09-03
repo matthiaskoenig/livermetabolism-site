@@ -1,0 +1,24 @@
+{% comment %}
+  Full-text search modal over search.json (people, publications,
+  presentations, posters, abstracts, projects, software, funding, editorial
+  roles, news, meetings, teaching, research areas). Filtering/rendering
+  happens client-side in search.js; results link straight to the matching
+  card/row/profile (see the id="type-id" anchors added throughout the site
+  and the hash-focus handling in main.js).
+{% endcomment %}
+<div class="modal fade" id="site-search-modal" data-search-url="{{ "/search.json" | prepend: site.baseurl }}" tabindex="-1" aria-labelledby="site-search-modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="site-search-modal-label">Search</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="search" id="site-search-input" class="form-control site-search-input" placeholder="Search publications, people, projects, software, news, ..." autocomplete="off" aria-label="Search" />
+                <div id="site-search-results" class="site-search-results">
+                    <p class="site-search-hint">Start typing to search publications, people, projects, software, news, and more.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

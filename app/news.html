@@ -9,7 +9,7 @@ sectionid: news
 
 <div class="project-grid" id="news-grid">
     {% for news in site.data.news %}
-    <div class="project-card" data-tags="{{ news.tags | join: '|' | escape }}">
+    <div class="project-card" id="news-{{ news.id }}" data-tags="{{ news.tags | join: '|' | escape }}">
         {% if news.image %}
         <img src="{{ "/assets/image/news/" | prepend: site.baseurl }}{{ news.image }}" alt="{{ news.title }}" loading="lazy" class="project-image"/>
         {% elsif news.video %}

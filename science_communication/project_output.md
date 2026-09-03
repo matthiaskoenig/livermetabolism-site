@@ -26,7 +26,7 @@ Within this project, a new version of the group website was developed based on t
 - [x] Removed clutter
   - [x] Removed duplicate information from the landing page (publications, funding, ...)
   - [x] Collected all contact information and social links into the footer
-  - [x] Moved news into a scrollable news reel/carousel
+  - [x] Moved news into a scrollable news card section
   - [x] Shortened texts and descriptions
   - [x] Merged Software, Funding, and Editorial roles into the Research page
   - [x] Merged People and Open Positions
@@ -58,8 +58,7 @@ Within this project, a new version of the group website was developed based on t
   - [x] Improved page load time — especially image sizes/asset optimization (the Projects page used to take forever to load with only a fraction of images visible)
   - [x] Moved hosting to a different server to fix extremely slow page load times (nginx reverse proxy; GitHub Pages considered as an alternative)
   - [x] Split current members and alumni on the Team page
-  - [ ] Search functionality
-  
+  - [x] Search functionality: a full-text search modal (open via the navbar icon, `/`, or Cmd/Ctrl+K) over a build-time JSON index (`search.json`) covering every publication, presentation, poster, abstract, project, software entry, funding source, editorial role, news item, meeting, teaching entry, person, research area, and static page, each result linking straight to the matching card/row/profile
 
 - [x] Control & follow-up (see `communication_concept.md` → Control)
   - [x] Google Analytics (GA4) installed for traffic tracking

@@ -1,0 +1,138 @@
+---
+layout: null
+permalink: /search.json
+---
+[
+{% assign first = true %}
+
+{% comment %} ---------- Publications ---------- {% endcomment %}
+{% for publication in site.data.publications %}
+{% unless first %},{% endunless %}{% assign first = false %}
+{% capture text %}{{ publication.authors | strip_html }} {{ publication.journal }} {{ publication.year }} {{ publication.status }} {{ publication.tags | join: ", " }} {{ publication.abstract | strip_html }} {{ publication.keywords | join: ", " }}{% endcapture %}
+{% assign text = text | strip_newlines | strip %}
+{"type":"Publication","title":{{ publication.title | strip_html | jsonify }},"text":{{ text | jsonify }},"url":{{ "/publications/" | prepend: site.baseurl | append: "#pub-" | append: publication.id | jsonify }}}
+{% endfor %}
+
+{% comment %} ---------- Presentations ---------- {% endcomment %}
+{% for presentation in site.data.presentations %}
+{% unless first %},{% endunless %}{% assign first = false %}
+{% capture text %}{{ presentation.authors | strip_html }} {{ presentation.event }} {{ presentation.location }} {{ presentation.tags | join: ", " }} {{ presentation.abstract | strip_html }} {{ presentation.keywords | join: ", " }}{% endcapture %}
+{% assign text = text | strip_newlines | strip %}
+{"type":"Presentation","title":{{ presentation.title | strip_html | jsonify }},"text":{{ text | jsonify }},"url":{{ "/publications/" | prepend: site.baseurl | append: "#presentation-" | append: presentation.id | jsonify }}}
+{% endfor %}
+
+{% comment %} ---------- Posters ---------- {% endcomment %}
+{% for poster in site.data.posters %}
+{% unless first %},{% endunless %}{% assign first = false %}
+{% capture text %}{{ poster.authors | strip_html }} {{ poster.event }} {{ poster.tags | join: ", " }} {{ poster.abstract | strip_html }} {{ poster.keywords | join: ", " }}{% endcapture %}
+{% assign text = text | strip_newlines | strip %}
+{"type":"Poster","title":{{ poster.title | strip_html | jsonify }},"text":{{ text | jsonify }},"url":{{ "/publications/" | prepend: site.baseurl | append: "#poster-" | append: poster.id | jsonify }}}
+{% endfor %}
+
+{% comment %} ---------- Abstracts ---------- {% endcomment %}
+{% for abstract in site.data.abstracts %}
+{% unless first %},{% endunless %}{% assign first = false %}
+{% capture text %}{{ abstract.authors | strip_html }} {{ abstract.event }} {{ abstract.abstract | strip_html }} {{ abstract.keywords | join: ", " }}{% endcapture %}
+{% assign text = text | strip_newlines | strip %}
+{"type":"Abstract","title":{{ abstract.title | strip_html | jsonify }},"text":{{ text | jsonify }},"url":{{ "/publications/" | prepend: site.baseurl | append: "#abstract-" | append: abstract.id | jsonify }}}
+{% endfor %}
+
+{% comment %} ---------- Projects (current) ---------- {% endcomment %}
+{% for project in site.data.projects %}
+{% if project.status == "current" %}
+{% unless first %},{% endunless %}{% assign first = false %}
+{% capture text %}{{ project.tags | join: ", " }} {{ project.abstract | strip_html }}{% endcapture %}
+{% assign text = text | strip_newlines | strip %}
+{"type":"Project","title":{{ project.title | strip_html | jsonify }},"text":{{ text | jsonify }},"url":{{ "/projects/" | prepend: site.baseurl | append: "#project-" | append: project.id | jsonify }}}
+{% endif %}
+{% endfor %}
+
+{% comment %} ---------- Software ---------- {% endcomment %}
+{% for software in site.data.software %}
+{% unless first %},{% endunless %}{% assign first = false %}
+{% capture text %}{{ software.title }} {{ software.description | strip_html }} {{ software.tags | join: ", " }}{% endcapture %}
+{% assign text = text | strip_newlines | strip %}
+{"type":"Software","title":{{ software.name | strip_html | jsonify }},"text":{{ text | jsonify }},"url":{{ "/research/" | prepend: site.baseurl | append: "#software-" | append: software.id | jsonify }}}
+{% endfor %}
+
+{% comment %} ---------- Funding ---------- {% endcomment %}
+{% for funding in site.data.funding %}
+{% unless first %},{% endunless %}{% assign first = false %}
+{% capture text %}{{ funding.funder }} {{ funding.funder_short }} {{ funding.description | strip_html }} {{ funding.tags | join: ", " }}{% endcapture %}
+{% assign text = text | strip_newlines | strip %}
+{"type":"Funding","title":{{ funding.title | strip_html | jsonify }},"text":{{ text | jsonify }},"url":{{ "/research/" | prepend: site.baseurl | append: "#funding-" | append: funding.id | jsonify }}}
+{% endfor %}
+
+{% comment %} ---------- Editorial roles ---------- {% endcomment %}
+{% for editor in site.data.editors %}
+{% unless first %},{% endunless %}{% assign first = false %}
+{% capture text %}{{ editor.tenure }} {{ editor.description | strip_html }} {{ editor.tags | join: ", " }}{% endcapture %}
+{% assign text = text | strip_newlines | strip %}
+{"type":"Editorial role","title":{{ editor.name | strip_html | jsonify }},"text":{{ text | jsonify }},"url":{{ "/research/" | prepend: site.baseurl | append: "#editor-" | append: editor.id | jsonify }}}
+{% endfor %}
+
+{% comment %} ---------- News ---------- {% endcomment %}
+{% for news in site.data.news %}
+{% unless first %},{% endunless %}{% assign first = false %}
+{% capture text %}{{ news.short | strip_html }} {{ news.tags | join: ", " }}{% endcapture %}
+{% assign text = text | strip_newlines | strip %}
+{"type":"News","title":{{ news.title | strip_html | jsonify }},"text":{{ text | jsonify }},"url":{{ "/news/" | prepend: site.baseurl | append: "#news-" | append: news.id | jsonify }}}
+{% endfor %}
+
+{% comment %} ---------- Meetings ---------- {% endcomment %}
+{% for meeting in site.data.meetings %}
+{% unless first %},{% endunless %}{% assign first = false %}
+{% capture text %}{{ meeting.location }} {{ meeting.description | strip_html }} {{ meeting.tags | join: ", " }}{% endcapture %}
+{% assign text = text | strip_newlines | strip %}
+{"type":"Meeting","title":{{ meeting.title | strip_html | jsonify }},"text":{{ text | jsonify }},"url":{{ "/meetings/" | prepend: site.baseurl | append: "#meeting-" | append: meeting.id | jsonify }}}
+{% endfor %}
+
+{% comment %} ---------- Teaching ---------- {% endcomment %}
+{% for teaching in site.data.teaching %}
+{% unless first %},{% endunless %}{% assign first = false %}
+{% capture text %}{{ teaching.type | join: ", " }} {{ teaching.location }} {{ teaching.content | strip_html }} {{ teaching.tags | join: ", " }}{% endcapture %}
+{% assign text = text | strip_newlines | strip %}
+{"type":"Teaching","title":{{ teaching.title | strip_html | jsonify }},"text":{{ text | jsonify }},"url":{{ "/teaching/" | prepend: site.baseurl | append: "#teaching-" | append: teaching.id | jsonify }}}
+{% endfor %}
+
+{% comment %} ---------- People (current members, and alumni with a photo - the only ones with a rendered profile) ---------- {% endcomment %}
+{% for person in site.data.people %}
+{% if person.status == "current" or person.image %}
+{% unless first %},{% endunless %}{% assign first = false %}
+{% capture text %}{{ person.role | join: ", " }} {{ person.affiliation }} {{ person.tenure }} {{ person.description | strip_html }}{% endcapture %}
+{% assign text = text | strip_newlines | strip %}
+{"type":"Person","title":{{ person.name | strip_html | jsonify }},"text":{{ text | jsonify }},"url":{{ "/people/" | prepend: site.baseurl | append: "#person-modal-" | append: person.id | jsonify }}}
+{% endif %}
+{% endfor %}
+
+{% comment %} ---------- Research areas (homepage tag sections) ---------- {% endcomment %}
+{% for t in site.data.tags %}
+{% assign slug = t.tag | slugify %}
+{% unless first %},{% endunless %}{% assign first = false %}
+{% capture text %}{{ t.short_description }} {{ t.vision | strip_newlines }}{% endcapture %}
+{% assign text = text | strip_newlines | strip %}
+{"type":"Research area","title":{{ t.tag | jsonify }},"text":{{ text | jsonify }},"url":{{ "/" | prepend: site.baseurl | append: "#" | append: slug | jsonify }}}
+{% endfor %}
+
+{% comment %}
+  ---------- Static pages/sections ----------
+  Prose content that isn't part of any app/_data/*.yml table, so it can't
+  be picked up by a loop above - kept short and hand-written since these
+  pages rarely change.
+{% endcomment %}
+{% assign static_pages = "Team|Current members and alumni of the group.|/people/
+Open Positions|Internships, Bachelor and Master theses, PhD and PostDoc positions - in Lübeck or Berlin.|/people/#open-positions
+Research|Software, funding, and editorial roles.|/research/
+Projects|Ongoing research projects.|/projects/
+Publications|Publications, presentations, posters, and abstracts.|/publications/
+News|Recent news and updates from the group.|/news/
+Meetings|Meetings, workshops, and events organized or hosted by the group.|/meetings/
+Teaching|Project-based teaching in digital health and shared decision-making, Open Science, and interdisciplinary collaboration.|/teaching/
+Impressum|Legal notice: contact details, address, and person responsible for content per section 5 TMG.|/impressum/
+Datenschutzerklärung|Privacy policy: server logs, Google Analytics, cookie consent, and data subject rights.|/privacy/" | newline_to_br | strip_newlines | split: "<br />" %}
+{% for row in static_pages %}
+{% assign fields = row | split: "|" %}
+{% unless first %},{% endunless %}{% assign first = false %}
+{"type":"Page","title":{{ fields[0] | jsonify }},"text":{{ fields[1] | jsonify }},"url":{{ fields[2] | prepend: site.baseurl | jsonify }}}
+{% endfor %}
+]

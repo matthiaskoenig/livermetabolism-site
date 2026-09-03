@@ -11,7 +11,7 @@ sectionid: research
 
 <div class="project-grid" id="software-grid">
     {% for software in site.data.software %}
-    <div class="project-card" data-tags="{{ software.tags | join: '|' | escape }}">
+    <div class="project-card" id="software-{{ software.id }}" data-tags="{{ software.tags | join: '|' | escape }}">
         {% if software.image %}
         <img src="{{ "/assets/image/software/" | prepend: site.baseurl }}{{ software.image }}" alt="{{ software.name }}" loading="lazy" class="project-image project-image-contain"/>
         {% endif %}
@@ -47,7 +47,7 @@ sectionid: research
 
 <div class="project-grid" id="funding-grid">
     {% for funding in site.data.funding %}
-    <div class="project-card" data-tags="{{ funding.tags | join: '|' | escape }}">
+    <div class="project-card" id="funding-{{ funding.id }}" data-tags="{{ funding.tags | join: '|' | escape }}">
         {% if funding.funder_logo %}
         <img src="{{ "/assets/image/funding/" | prepend: site.baseurl }}{{ funding.funder_logo }}" alt="{{ funding.funder }}" loading="lazy" class="project-image project-image-contain"/>
         {% endif %}
@@ -94,7 +94,7 @@ sectionid: research
 
 <div class="project-grid" id="editors-grid">
     {% for editor in site.data.editors %}
-    <div class="project-card" data-tags="{{ editor.tags | join: '|' | escape }}">
+    <div class="project-card" id="editor-{{ editor.id }}" data-tags="{{ editor.tags | join: '|' | escape }}">
         {% if editor.image %}
         <img src="{{ "/assets/image/editors/" | prepend: site.baseurl }}{{ editor.image }}" alt="{{ editor.name }}" loading="lazy" class="project-image project-image-contain"/>
         {% endif %}

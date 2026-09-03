@@ -122,3 +122,31 @@
         }
     });
 })();
+
+// opens the matching Bootstrap modal, or briefly highlights the matching
+// card/row, when the page loads (or its hash changes) with a
+// #person-modal-<id> or #<type>-<id> target - used by the site search
+// (search.json, search.js) to jump straight to one entry among many
+// otherwise identical-looking cards
+(function () {
+    function focusHashTarget() {
+        var hash = window.location.hash;
+        if (!hash || hash.length < 2) return;
+        var el = document.getElementById(hash.slice(1));
+        if (!el) return;
+
+        if (el.classList.contains('modal') && window.bootstrap) {
+            bootstrap.Modal.getOrCreateInstance(el).show();
+            return;
+        }
+
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.classList.add('search-highlight');
+        setTimeout(function () {
+            el.classList.remove('search-highlight');
+        }, 2500);
+    }
+
+    focusHashTarget();
+    window.addEventListener('hashchange', focusHashTarget);
+})();

@@ -88,7 +88,7 @@ sectionid: publications
 
 <div class="project-grid" id="presentations-grid">
     {% for presentation in site.data.presentations %}
-    <div class="project-card" data-tags="{{ presentation.tags | join: '|' | escape }}">
+    <div class="project-card" id="presentation-{{ presentation.id }}" data-tags="{{ presentation.tags | join: '|' | escape }}">
         {% if presentation.image %}
         {% if presentation.slides %}
         <a href="{{ presentation.slides }}" target="_blank" rel="noopener noreferrer">
@@ -137,7 +137,7 @@ sectionid: publications
 
 <div class="project-grid" id="posters-grid">
     {% for poster in site.data.posters %}
-    <div class="project-card" data-tags="{{ poster.tags | join: '|' | escape }}">
+    <div class="project-card" id="poster-{{ poster.id }}" data-tags="{{ poster.tags | join: '|' | escape }}">
         {% if poster.image %}
         <a href="{{ "/assets/pdf/" | prepend: site.baseurl }}{{ poster.pdf }}" target="_blank" rel="noopener noreferrer">
             <img src="{{ "/assets/pdf/" | prepend: site.baseurl }}{{ poster.image }}" alt="{{ poster.title }}" loading="lazy" class="project-image"/>
@@ -177,7 +177,7 @@ sectionid: publications
 
 <div class="project-grid" id="abstracts-grid">
     {% for abstract in site.data.abstracts %}
-    <div class="project-card">
+    <div class="project-card" id="abstract-{{ abstract.id }}">
         <div class="project-body">
             <p class="news-date">{{ abstract.date | default: abstract.year }}</p>
             <h3>{{ abstract.title }}</h3>

@@ -17,9 +17,14 @@
             </svg>
             <span class="brand-word">König Lab</span>
         </a>
-        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="navbar-controls">
+            <button type="button" class="search-toggle" data-bs-toggle="modal" data-bs-target="#site-search-modal" aria-label="Search" title="Search (/)">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="navbar-nav">
                 <li class="nav-item {% if page.sectionid=='projects' %}active{% endif %}"><a class="nav-link" href="{{ "/projects/" | prepend: site.baseurl }}">Projects</a></li>

@@ -10,7 +10,7 @@ sectionid: projects
 <div class="project-grid" id="project-grid">
     {% for project in site.data.projects %}
     {% if project.status == "current" %}
-    <div class="project-card" data-tags="{{ project.tags | join: '|' | escape }}">
+    <div class="project-card" id="project-{{ project.id }}" data-tags="{{ project.tags | join: '|' | escape }}">
         {% for image in project.images limit:1 %}
         <img src="{{ "/assets/image/projects/" | prepend: site.baseurl }}{{ image }}" alt="{{ project.title }}" loading="lazy" class="project-image"/>
         {% endfor %}
