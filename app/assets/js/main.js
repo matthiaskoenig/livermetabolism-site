@@ -150,3 +150,25 @@
     focusHashTarget();
     window.addEventListener('hashchange', focusHashTarget);
 })();
+
+// makes .project-card.is-clickable cards (projects.html, news.html) open
+// their detail modal (project_modal.html/news_modal.html) on click or
+// Enter/Space, without the .project-links icons inside them (PDF,
+// homepage, repository, "read more") double-triggering the modal on top
+// of their own navigation
+(function () {
+    document.querySelectorAll('.project-card.is-clickable').forEach(function (card) {
+        card.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                card.click();
+            }
+        });
+    });
+
+    document.querySelectorAll('.project-card.is-clickable .project-links a').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+    });
+})();

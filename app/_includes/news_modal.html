@@ -1,0 +1,57 @@
+{% comment %}
+  Full-detail modal for one news.yml entry: the full (untruncated)
+  abstract - the card only shows a 30-word teaser - plus a video embed
+  when present and the full people credit list.
+  Usage: {% raw %}{% include news_modal.html news=news %}{% endraw %}
+{% endcomment %}
+{% assign item = include.news %}
+<div class="modal fade" id="news-modal-{{ item.id }}" tabindex="-1" aria-labelledby="news-modal-{{ item.id }}-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="news-modal-{{ item.id }}-label">{{ item.title }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="news-date">{{ item.date }}</p>
+
+                {% if item.video %}
+                <div class="modal-video-embed">
+                    <iframe src="{{ item.video }}" title="{{ item.title }}" loading="lazy" allowfullscreen></iframe>
+                </div>
+                {% elsif item.image %}
+                <img src="{{ "/assets/image/news/" | prepend: site.baseurl }}{{ item.image }}" alt="{{ item.title }}" loading="lazy" class="modal-image-single" />
+                {% endif %}
+
+                {% if item.tags %}
+                <div class="tag-list">
+                    {% for tag in item.tags %}
+                    {% assign tag_info = site.data.tags | where: "tag", tag | first %}
+                    <span class="tag-badge tag-{{ tag | slugify }}">{% if tag_info.icon %}<i class="fa {{ tag_info.icon }}" aria-hidden="true"></i> {% endif %}{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <p class="person-modal-description">{{ item.abstract | default: item.short | strip_html }}</p>
+
+                {% if item.people.size > 0 %}
+                <h6>People</h6>
+                <ul class="person-modal-list">
+                    {% for pid in item.people %}
+                    {% assign person = site.data.people | where: "id", pid | first %}
+                    {% if person %}
+                    <li><a href="{{ "/people/" | prepend: site.baseurl }}#person-modal-{{ person.id }}">{{ person.name }}</a></li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                {% if item.link %}
+                <div class="member-links">
+                    <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer" title="Read more"><i class="fa fa-globe" aria-hidden="true"></i></a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

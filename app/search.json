@@ -43,7 +43,7 @@ permalink: /search.json
 {% unless first %},{% endunless %}{% assign first = false %}
 {% capture text %}{{ project.tags | join: ", " }} {{ project.abstract | strip_html }}{% endcapture %}
 {% assign text = text | strip_newlines | strip %}
-{"type":"Project","title":{{ project.title | strip_html | jsonify }},"text":{{ text | jsonify }},"url":{{ "/projects/" | prepend: site.baseurl | append: "#project-" | append: project.id | jsonify }}}
+{"type":"Project","title":{{ project.title | strip_html | jsonify }},"text":{{ text | jsonify }},"url":{{ "/projects/" | prepend: site.baseurl | append: "#project-modal-" | append: project.id | jsonify }}}
 {% endif %}
 {% endfor %}
 
@@ -76,7 +76,7 @@ permalink: /search.json
 {% unless first %},{% endunless %}{% assign first = false %}
 {% capture text %}{{ news.short | strip_html }} {{ news.tags | join: ", " }}{% endcapture %}
 {% assign text = text | strip_newlines | strip %}
-{"type":"News","title":{{ news.title | strip_html | jsonify }},"text":{{ text | jsonify }},"url":{{ "/news/" | prepend: site.baseurl | append: "#news-" | append: news.id | jsonify }}}
+{"type":"News","title":{{ news.title | strip_html | jsonify }},"text":{{ text | jsonify }},"url":{{ "/news/" | prepend: site.baseurl | append: "#news-modal-" | append: news.id | jsonify }}}
 {% endfor %}
 
 {% comment %} ---------- Meetings ---------- {% endcomment %}

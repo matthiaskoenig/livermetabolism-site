@@ -1,0 +1,80 @@
+{% comment %}
+  Full-detail modal for one projects.yml entry: every image (the card only
+  shows the first), cooperation partners, linked publications, and the full
+  people credit list - everything the compact project card leaves out.
+  Usage: {% raw %}{% include project_modal.html project=project %}{% endraw %}
+{% endcomment %}
+{% assign proj = include.project %}
+<div class="modal fade" id="project-modal-{{ proj.id }}" tabindex="-1" aria-labelledby="project-modal-{{ proj.id }}-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="project-modal-{{ proj.id }}-label">{{ proj.title }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                {% if proj.images.size > 0 %}
+                <div class="modal-image-gallery">
+                    {% for image in proj.images %}
+                    <img src="{{ "/assets/image/projects/" | prepend: site.baseurl }}{{ image }}" alt="{{ proj.image_title | default: proj.title }}" loading="lazy" />
+                    {% endfor %}
+                </div>
+                {% if proj.image_title %}
+                <p class="modal-image-caption">{{ proj.image_title }}</p>
+                {% endif %}
+                {% endif %}
+
+                {% if proj.tags %}
+                <div class="tag-list">
+                    {% for tag in proj.tags %}
+                    {% assign tag_info = site.data.tags | where: "tag", tag | first %}
+                    <span class="tag-badge tag-{{ tag | slugify }}">{% if tag_info.icon %}<i class="fa {{ tag_info.icon }}" aria-hidden="true"></i> {% endif %}{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <p class="person-modal-description">{{ proj.abstract | strip_html }}</p>
+
+                {% if proj.people.size > 0 %}
+                <h6>People</h6>
+                <ul class="person-modal-list">
+                    {% for pid in proj.people %}
+                    {% assign person = site.data.people | where: "id", pid | first %}
+                    {% if person %}
+                    <li><a href="{{ "/people/" | prepend: site.baseurl }}#person-modal-{{ person.id }}">{{ person.name }}</a>{% if person.role %} <span class="text-muted">&middot; {{ person.role | last }}</span>{% endif %}</li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                {% if proj.cooperation_partners %}
+                <h6>Cooperation partners</h6>
+                <p>{{ proj.cooperation_partners }}</p>
+                {% endif %}
+
+                {% if proj.publications.size > 0 %}
+                <h6>Publications</h6>
+                <ul class="person-modal-list">
+                    {% for pub_id in proj.publications %}
+                    {% assign publication = site.data.publications | where: "id", pub_id | first %}
+                    {% if publication %}
+                    <li><a href="{{ "/publications/" | prepend: site.baseurl }}#pub-{{ publication.id }}">{{ publication.title }}</a> <span class="text-muted">({{ publication.year }})</span></li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                {% if proj.homepage or proj.repository %}
+                <div class="member-links">
+                    {% if proj.homepage %}
+                    <a href="{{ proj.homepage }}" target="_blank" rel="noopener noreferrer" title="Project homepage"><i class="fa fa-globe" aria-hidden="true"></i></a>
+                    {% endif %}
+                    {% if proj.repository %}
+                    <a href="{{ proj.repository }}" target="_blank" rel="noopener noreferrer" title="Repository"><i class="fa fa-github" aria-hidden="true"></i></a>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
