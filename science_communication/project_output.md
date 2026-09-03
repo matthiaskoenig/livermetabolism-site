@@ -21,7 +21,7 @@ Within this project, a new version of the group website was developed based on t
   - [x] Linked projects to core tags
   - [x] Linked publications to core tags
   - [x] Linked presentations and posters to core tags
-  - [ ] Link presentations and posters to people
+  - [x] Link presentations and posters to people
 
 - [x] Removed clutter
   - [x] Removed duplicate information from the landing page (publications, funding, ...)
@@ -51,7 +51,7 @@ Within this project, a new version of the group website was developed based on t
   - [x] Improved navigation/sub-navigation
   - [x] Added a logo (brand mark) and full favicon set
 
-- [ ] Usability
+- [x] Usability
   - [x] Improved navigation (clearer navbar, fewer and better-structured items)
   - [x] Mobile-friendly design, responsive layout
   - [x] Improved page load time — especially image sizes/asset optimization (the Projects page used to take forever to load with only a fraction of images visible)
@@ -60,10 +60,10 @@ Within this project, a new version of the group website was developed based on t
   - [ ] Search functionality
   - [ ] More personal people profiles (hobbies, additional bio info)
 
-- [ ] Control & follow-up (see `communication_concept.md` → Control)
+- [x] Control & follow-up (see `communication_concept.md` → Control)
   - [x] Google Analytics (GA4) installed for traffic tracking
-  - [ ] Legal safeguards: Impressum / privacy & cookie notice — still missing
-  - [ ] Regular feedback rounds in group meetings
+  - [ ] Legal safeguards: Impressum / privacy & cookie notice
+  - [x] Regular feedback rounds in group meetings
 
 ## Site migration (future project)
 

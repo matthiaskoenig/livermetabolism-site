@@ -113,6 +113,7 @@ sectionid: publications
             </div>
             {% endif %}
             <div class="project-links">
+                {% include people_avatars.html people=presentation.people %}
                 <span class="project-links-spacer"></span>
                 {% if presentation.slides %}
                 <a href="{{ presentation.slides }}" target="_blank" rel="noopener noreferrer" title="Slides"><i class="fa fa-desktop" aria-hidden="true"></i></a>
@@ -155,6 +156,7 @@ sectionid: publications
             </div>
             {% endif %}
             <div class="project-links">
+                {% include people_avatars.html people=poster.people %}
                 <span class="project-links-spacer"></span>
                 {% if poster.pdf %}
                 <a href="{{ "/assets/pdf/" | prepend: site.baseurl }}{{ poster.pdf }}" target="_blank" rel="noopener noreferrer" title="PDF"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
