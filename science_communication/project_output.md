@@ -58,7 +58,7 @@ Within this project, a new version of the group website was developed based on t
   - [x] Moved hosting to a different server to fix extremely slow page load times (nginx reverse proxy; GitHub Pages considered as an alternative)
   - [x] Split current members and alumni on the Team page
   - [ ] Search functionality
-  - [ ] More personal people profiles (hobbies, additional bio info)
+  
 
 - [x] Control & follow-up (see `communication_concept.md` → Control)
   - [x] Google Analytics (GA4) installed for traffic tracking
@@ -66,14 +66,15 @@ Within this project, a new version of the group website was developed based on t
   - [x] Cookie-consent banner gating Google Analytics behind opt-in (GA script only requested from Google after Accept; choice changeable anytime from the privacy page)
   - [x] Regular feedback rounds in group meetings
 
- - [x] Security updates: removed outdated technology (old Ruby and Jekyll, removed old/deprecated npm packages)
+ - [x] Security updates
+   - [x] removed outdated technology (old Ruby and Jekyll)
+   - [x] removed old/deprecated npm packages)
 
-## Site migration (future project)
+## Future work
 
-- [ ] Technology
-  - [ ] Migrate from Jekyll to Astro: keeps the static-site philosophy but adds modern components, TypeScript, MD/MDX, better image handling, and the option to use React/Vue/Svelte components where actually needed
-  - [ ] Node.js and Tailwind CSS
-  - [ ] Interactive components / reactivity (e.g. statistics overviews)
+As a separate follow-up project, the site could migrate from Jekyll to a modern framework such as Astro: keeping the static-site philosophy while adding modern components, TypeScript, MD/MDX, better image handling, Node.js/Tailwind CSS tooling, and the option to use React/Vue/Svelte components (e.g. interactive statistics overviews) where actually needed.
+
+The People page profiles could also be made more personal, adding details such as hobbies and other personal information alongside the current professional bios.
 
 ## Summary
 
@@ -85,5 +86,4 @@ Key results:
 - **Clearer positioning**: a vision statement and description of the lab's new orientation (following the move to the professorship in Lübeck) were added, along with a logo and consistent modern styling.
 - **Better usability and performance**: responsive/mobile-friendly design across all pages, faster page loads through image/asset optimization and improved hosting, and Google Analytics for ongoing traffic tracking.
 
-Open items carried forward as future work: site search and more personal People-page profiles (the Impressum, Datenschutzerklärung, and a cookie-consent banner gating Google Analytics are now all in place). A larger migration from Jekyll to a modern framework (e.g. Astro) is planned as a separate follow-up project. The full checklist above documents each change against the plan in `communication_concept.md`.
-
+A larger migration from Jekyll to a modern framework (e.g. Astro) is planned as a separate follow-up project. The full checklist above documents each change against the plan in `communication_concept.md`.
