@@ -8,6 +8,10 @@
   title: 'Pharmacokinetics database'
   description: 'Developed the first FAIR-compliant open database for pharmacokinetics, integrating clinical and pre-clinical trial data. PK-DB enables reproducible PBPK/PD modeling, supports individualized simulations, and has become a key infrastructure for computational pharmacology research.'
   image: 'pkdb.webp'
+  people:
+    - jan_grzegorzewski
+    - mariia_myshkina
+    - matthias_koenig
   homepage: https://alpha.pk-db.com
   repository: https://github.com/matthiaskoenig/pkdb
   doi: 10.1093/nar/gkaa990
@@ -23,6 +27,8 @@
   title: 'Python utilities for SBML'
   description: 'Created a versatile Python library to streamline the use of SBML models, providing robust utilities for model handling, analysis, and integration with libSBML. Widely used in reproducible modeling workflows across systems biology.'
   image: 'sbmlutils.webp'
+  people:
+    - matthias_koenig
   homepage: https://github.com/matthiaskoenig/sbmlutils
   repository: https://github.com/matthiaskoenig/sbmlutils
   doi: 10.5281/zenodo.597149
@@ -37,6 +43,8 @@
   title: 'SBML simulation made easy'
   description: 'Designed an interactive reporting framework that makes SBML models human-readable and accessible, enabling experts and newcomers to explore model content without technical barriers.'
   image: 'sbml4humans.webp'
+  people:
+    - matthias_koenig
   homepage: https://sbml4humans.de
   repository: https://github.com/matthiaskoenig/sbmlutils
   doi:
@@ -52,6 +60,8 @@
   title: 'SBML simulation made easy'
   description: 'Built a lightweight Python package that simplifies simulations of SBML models on top of libRoadRunner, lowering the entry barrier for model testing and teaching.'
   image: 'sbmlsim.webp'
+  people:
+    - matthias_koenig
   homepage: https://github.com/matthiaskoenig/sbmlsim
   repository: https://github.com/matthiaskoenig/sbmlsim
   doi:
@@ -66,6 +76,8 @@
   title: 'Cytoscape 3 app for the Systems Biology Markup Language'
   description: 'Developed and maintained a widely used Cytoscape app for visualization of SBML models in network contexts. cy3sbml has facilitated intuitive exploration of complex models in systems biology and bioinformatics.'
   image: 'cysbml.webp'
+  people:
+    - matthias_koenig
   homepage: https://github.com/matthiaskoenig/cy3sbml
   repository: https://github.com/matthiaskoenig/cy3sbml
   doi: 10.5281/zenodo.597154
@@ -80,6 +92,8 @@
   title: 'BRENDA in python'
   description: 'Authored a Python package providing direct programmatic access to BRENDA enzyme information, enabling large-scale, automated enzyme analysis and integration into computational pipelines.'
   image: 'brendapy.webp'
+  people:
+    - matthias_koenig
   homepage: https://github.com/matthiaskoenig/brendapy
   repository: https://github.com/matthiaskoenig/brendapy
   doi:
@@ -94,6 +108,8 @@
   title: 'Python library for SBGN'
   description: 'Developed a Python library for working with Systems Biology Graphical Notation (SBGN), supporting standardized visualization and integration of pathway information.'
   image: 'libsbgnpy.webp'
+  people:
+    - matthias_koenig
   homepage: https://github.com/matthiaskoenig/libsbgn-python
   repository: https://github.com/matthiaskoenig/libsbgn-python
   doi:
@@ -108,6 +124,8 @@
   title: 'High-performance simulator for SBML'
   description: 'Contributed to the development of libRoadRunner, a C/C++ library using LLVM for ultra-fast simulation of SBML models, setting a benchmark for performance in computational biology.'
   image: 'libroadrunner.webp'
+  people:
+    - matthias_koenig
   homepage: https://libroadrunner.readthedocs.io/en/latest/
   repository: https://github.com/sys-bio/roadrunner/
   doi:
@@ -122,6 +140,8 @@
   title: 'COBRA python package'
   description: 'Advanced COBRApy, the leading Python package for constraint-based reconstruction and analysis, widely adopted in genome-scale metabolic modeling. Provides access to key methods such as flux balance and flux variability analysis.'
   image: 'cobrapy.svg'
+  people:
+    - matthias_koenig
   homepage: https://github.com/opencobra/cobrapy/
   repository: https://github.com/opencobra/cobrapy/
   doi:
@@ -136,6 +156,8 @@
   title: 'systems biology simulation library'
   description: 'Co-developed Tellurium, a Python-based environment for reproducible dynamical modeling of biological networks. Integrated standard formats with powerful simulation libraries, enabling accessible and transparent modeling.'
   image: 'tellurium.webp'
+  people:
+    - matthias_koenig
   homepage: https://github.com/sys-bio/tellurium/
   repository: https://github.com/sys-bio/tellurium/
   doi:
