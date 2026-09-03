@@ -62,10 +62,11 @@ Generates Typst-formatted documents (CV, selected publications, funding, present
 
 ```bash
 uv sync
-uv run python src/cv/list_of_publications.py
+mkdir -p src/cv/results   # gitignored output dir; the scripts don't create it themselves
+uv run python -m src.cv.list_of_publications
 ```
 
-Scripts are run directly, not via a CLI entrypoint — edit the `selected`/`highlights` sets at the bottom of a script to change what's included in a given output. Compiling the CV itself additionally requires the `typst` CLI and local fonts (see the comment header in `src/cv/cv.py`).
+Scripts cross-import each other, so run them as modules (`-m src.cv.<script>`) from the repo root rather than invoking the file directly — not via a CLI entrypoint either. Edit the `selected`/`highlights` sets at the bottom of a script to change what's included in a given output. Compiling the CV itself additionally requires the `typst` CLI and local fonts (see the comment header in `src/cv/cv.py`).
 
 ## Deployment
 
