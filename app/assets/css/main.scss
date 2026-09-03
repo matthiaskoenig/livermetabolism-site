@@ -1489,6 +1489,25 @@ h3 {
     line-height: 1.6;
   }
 
+  .footer-legal {
+    margin-top: 0.6em;
+    font-size: 0.78em;
+    color: $gray-700;
+
+    a {
+      color: $gray-700;
+
+      &:hover,
+      &:focus {
+        color: $primary;
+      }
+    }
+
+    span {
+      margin: 0 0.4em;
+    }
+  }
+
   @media (max-width: 767px) {
     .footer-top {
       justify-content: center;

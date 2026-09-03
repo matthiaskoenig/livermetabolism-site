@@ -154,7 +154,7 @@ Guiding principle: clarity and focus — **3-4 core messages maximum**, prioriti
 
 - Rebuilt and maintained as a static site using Visual Studio Code & Claude Code.
 - Change management via GitHub.
-- Legal safeguards: Impressum, privacy/cookie notice, etc. — still an open item, see Control below.
+- Legal safeguards: Impressum and Datenschutzerklärung pages added; a cookie-consent banner to gate Google Analytics behind opt-in is still an open item, see Control below.
 
 ---
 
