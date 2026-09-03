@@ -44,13 +44,21 @@ jobs:
         with:
           ruby-version: "3.3"
 
+      # old-site pins Jekyll 3.8.6 -> kramdown 1.17.0, whose HTML parser
+      # requires rexml, which Ruby no longer auto-loads. Patch the Gemfile
+      # in this ephemeral checkout only (never committed to old-site) so
+      # the branch itself stays an untouched snapshot of its commit.
       - name: Install gems (old-site)
         working-directory: old-site-src
-        run: bundle install
+        run: |
+          echo 'gem "rexml"' >> Gemfile
+          bundle install
 
       - name: Install gems (new-site)
         working-directory: new-site-src
-        run: bundle install
+        run: |
+          echo 'gem "rexml"' >> Gemfile
+          bundle install
 
       - name: Build old-site
         working-directory: old-site-src
