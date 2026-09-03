@@ -75,32 +75,13 @@ Within this project, a new version of the group website was developed based on t
 
 ## Summary
 
-Based on the science-communication principles from this course, the group's
-website (https://livermetabolism.com) was relaunched. The prior site was
-outdated, cluttered, and unstructured, with no clear communication strategy
-or target audience — a communication concept (`communication_concept.md`)
-was developed first to define target audiences, positioning, and concrete
-actions, and this project delivered on that plan.
+Based on the science-communication principles from this course, the group's website (https://livermetabolism.com) was relaunched. The prior site was outdated, cluttered, and unstructured, with no clear communication strategy or target audience — a communication concept (`communication_concept.md`) was developed first to define target audiences, positioning, and concrete actions, and this project delivered on that plan.
 
 Key results:
-- **Restructured content**: all people, projects, publications, software,
-  presentations, and posters now live in a validated, cross-linked database
-  (YAML + a pydantic schema checked in CI), enabling consistent tagging and
-  linking throughout the site.
-- **Decluttered, focused design**: redundant content removed from the
-  landing page, news moved into a compact carousel, contact information
-  consolidated into the footer, and navigation simplified.
-- **Clearer positioning**: a vision statement and description of the lab's
-  new orientation (following the move to the professorship in Lübeck) were
-  added, along with a logo and consistent modern styling.
-- **Better usability and performance**: responsive/mobile-friendly design
-  across all pages, faster page loads through image/asset optimization and
-  improved hosting, and Google Analytics for ongoing traffic tracking.
+- **Restructured content**: all people, projects, publications, software, presentations, and posters now live in a validated, cross-linked database (YAML + a pydantic schema checked in CI), enabling consistent tagging and linking throughout the site.
+- **Decluttered, focused design**: redundant content removed from the landing page, news moved into a compact carousel, contact information consolidated into the footer, and navigation simplified.
+- **Clearer positioning**: a vision statement and description of the lab's new orientation (following the move to the professorship in Lübeck) were added, along with a logo and consistent modern styling.
+- **Better usability and performance**: responsive/mobile-friendly design across all pages, faster page loads through image/asset optimization and improved hosting, and Google Analytics for ongoing traffic tracking.
 
-Open items carried forward as future work: site search, linking
-presentations/posters to people, more personal People-page profiles, and a
-still-missing legal Impressum/privacy notice. A larger migration from
-Jekyll to a modern framework (e.g. Astro) is planned as a separate follow-up
-project. The full checklist above documents each change against the plan in
-`communication_concept.md`.
+Open items carried forward as future work: site search, more personal People-page profiles, and a still-missing legal Impressum/privacy notice. A larger migration from Jekyll to a modern framework (e.g. Astro) is planned as a separate follow-up project. The full checklist above documents each change against the plan in `communication_concept.md`.
 
