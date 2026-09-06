@@ -64,8 +64,8 @@
     - 'Nemitz2026_dapagliflozin'
     - 'Elias2026_dapagliflozin.physiome'
     - 'Nemitz2025_bachelor.thesis'
-    - 'Tereshchuk2026_canagliflozin'
-    - 'Alejandro2026_empagliflozin'
+    - 'Tereshchuk2026_canagliflozin_preprint'
+    - 'Alejandro2026_empagliflozin_preprint'
   homepage:
   repository:
   people:
@@ -93,7 +93,7 @@
     - 'Tensil2026_losartan'
     - 'Myshkina2026_losartan.physiome'
     - 'Tensil2025_bachelor.thesis'
-    - 'Schwaiger2026_hctz'
+    - 'Schwaiger2026_hctz_preprint'
   homepage:
   repository:
   people:
@@ -135,8 +135,8 @@
     - "Digital Twins"
     - "Pharmacometrics"
   publications:
-    - 'Myshkina2026_apixaban'
-    - 'Casabianca2025_rivaroxaban'
+    - 'Myshkina2026_apixaban_preprint'
+    - 'Casabianca2025_rivaroxaban_preprint'
     - 'Casabianca2025_master.thesis'
   homepage:
   repository:
@@ -160,7 +160,7 @@
     - "Digital Twins"
     - "Pharmacometrics"
   publications:
-    - 'Jesionek2026_rapamycin'
+    - 'Jesionek2026_rapamycin_preprint'
   homepage:
   repository:
   people:
@@ -213,7 +213,7 @@
     - "Digital Twins"
     - "AI"
   publications:
-    - 'Myshkina2025_digital.twins'
+    - 'Myshkina2025_digital.twins_preprint'
   homepage:
   repository:
   people:
@@ -252,7 +252,7 @@
   tags:
     - "Pharmacometrics"
   publications:
-    - 'Bartsch2023_simvastatin'
+    - 'Bartsch2023_simvastatin_preprint'
     - 'Bartsch2020_bachelor.thesis'
   homepage:
   repository:
@@ -288,7 +288,7 @@
   tags:
     - "Open & FAIR"
   publications:
-    - 'Ramachandran2022_covid19.models'
+    - 'Ramachandran2022_covid19.models_preprint'
   homepage: https://wwwdev.ebi.ac.uk/biomodels/covid-19
   repository:
   people:
@@ -305,7 +305,7 @@
   tags:
     - "Open & FAIR"
   publications:
-    - 'Li2026_tabularqual'
+    - 'Li2026_tabularqual_preprint'
   homepage: https://tabularqual.streamlit.app/
   repository: https://github.com/sys-bio/TabularQual
   people:
@@ -395,13 +395,13 @@
   tags:
     - "Digital Twins"
   publications:
-    - 'Koenig2020_exsimo'
+    - 'Koenig2020_exsimo_preprint'
     - 'Koeller2021_icg.hepatectomy'
     - 'Koeller2021_icg.variability'
     - 'Koeller2021_bachelor.thesis'
     - 'Grzegorzewski2022_caffeine.meta'
     - 'Pujol2022_bachelor.thesis'
-    - 'StemmerMallol2023_talinolol'
+    - 'StemmerMallol2023_talinolol_preprint'
     - 'Mallol2023_bachelor.thesis'
     - 'Duport2020_bachelor.thesis'
   homepage: https://github.com/matthiaskoenig/

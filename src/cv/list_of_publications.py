@@ -294,10 +294,10 @@ if __name__ == "__main__":
         # "Neal2018_annotations",
         # "Kohrs2023_open.science",
         # "Gille2010_hepatonet1",
-        # "Gerhaeusser2024_spt.model",
-        # "StemmerMallol2023_talinolol",
-        # "Kuettner2023_chlorzoxazone",
-        # "Bartsch2023_simvastatin",
+        # "Gerhaeusser2024_spt.model_preprint",
+        # "StemmerMallol2023_talinolol_preprint",
+        # "Kuettner2023_chlorzoxazone_preprint",
+        # "Bartsch2023_simvastatin_preprint",
         "Koenig2012a_glucosemodel"
     }
     create_list_of_publications_typst(
