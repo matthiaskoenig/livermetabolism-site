@@ -140,6 +140,14 @@
             return;
         }
 
+        // the homepage chevrons (index.html) are plain #anchor links between
+        // the full-screen scroll-snap sections, not search results: the pulse
+        // would animate `background-color` (and so outrank the section's own
+        // .tag-<slug> color, washing it out to the white body background for
+        // the 2.5s the class is on), and the re-scroll would fight the native,
+        // scroll-margin-aware anchor jump. Leave both to the browser.
+        if (el.classList.contains('page-section') || el.classList.contains('footer')) return;
+
         el.scrollIntoView({ behavior: 'smooth', block: 'center' });
         el.classList.add('search-highlight');
         setTimeout(function () {
