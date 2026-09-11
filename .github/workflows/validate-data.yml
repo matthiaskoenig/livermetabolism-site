@@ -26,5 +26,5 @@ jobs:
       - name: Run tests (pydantic data model validation)
         run: uv run pytest tests/ -v
 
-      - name: Validate app/_data (load + cross-reference check)
+      - name: Validate data/ (load + cross-reference check)
         run: uv run python -m src.data

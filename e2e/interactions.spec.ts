@@ -10,6 +10,14 @@ test('project card opens its modal, links inside do not', async ({ page }) => {
   await expect(page.locator(`dialog#${id}`)).not.toHaveAttribute('open', '');
 });
 
+test('news card opens its modal', async ({ page }) => {
+  await page.goto('news/');
+  const card = page.locator('.project-card.is-clickable').first();
+  const id = (await card.getAttribute('data-modal-target'))!; // "news-modal-<id>"
+  await card.click();
+  await expect(page.locator(`dialog#${id}`)).toHaveAttribute('open', '');
+});
+
 test('deep link opens a person modal', async ({ page }) => {
   await page.goto('people/#person-modal-matthias_koenig');
   await expect(page.locator('dialog#person-modal-matthias_koenig')).toHaveAttribute('open', '');
@@ -41,7 +49,7 @@ test('search opens with "/", finds a publication, result navigates', async ({ pa
   const first = page.locator('.site-search-result').first();
   await expect(first).toBeVisible();
   await first.click();
-  await expect(page).toHaveURL(/#/);
+  await expect(page).toHaveURL(/#(pub|presentation|poster|abstract|project-modal|software|funding|editor|news-modal|meeting|teaching|person-modal)-|#[a-z-]+$/);
 });
 
 test('analytics loads only after consent', async ({ page }) => {

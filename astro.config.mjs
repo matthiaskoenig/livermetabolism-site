@@ -17,8 +17,9 @@ export default defineConfig({
   srcDir: './site',
   output: 'static',
   trailingSlash: 'always',
-  // Astro 7 defaults to 'jsx' whitespace rules, which drop the spaces
-  // between adjacent inline elements (icons next to text, author chips).
+  // true keeps HTML whitespace rules (vs. Astro's 'jsx' option), so the
+  // inline spacing between adjacent elements (icons next to text, author
+  // chips) survives; this is already Astro's default, kept explicit here.
   compressHTML: true,
   integrations: [vue(), sitemap()],
   vite: { plugins: [tailwindcss()] },
