@@ -1,0 +1,21 @@
+# Production build in a container, writing dist/ for docker-compose.yml.
+#   docker compose -f docker-compose-build.yml run --rm -T site
+# node_modules lives in a named volume so the container's (musl) native
+# binaries never overwrite a host install; SITE/BASE match the self-hosted
+# domain (GitHub Pages sets its own in .github/workflows/site.yml); the final
+# chown hands dist/ to the invoking host user (deploy.sh exports HOST_UID/GID)
+# so a root Docker daemon does not leave root-owned output behind.
+services:
+  site:
+    image: node:24-alpine
+    working_dir: /app
+    command: sh -c "npm ci --no-audit --no-fund && npm run build && chown -R ${HOST_UID:-1000}:${HOST_GID:-1000} dist .astro"
+    environment:
+      - SITE=https://livermetabolism.com
+      - BASE=/
+    volumes:
+      - $PWD:/app
+      - site_node_modules:/app/node_modules
+
+volumes:
+  site_node_modules:
