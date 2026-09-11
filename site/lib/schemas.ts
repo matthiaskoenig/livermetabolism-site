@@ -2,9 +2,13 @@
  * Zod mirror of src/data.py. pydantic stays the schema of record; this
  * makes the Astro build fail on the same malformed data, with the same
  * normalisation: "" and null both mean "unset", a blank list field means
- * [], a bare scalar in a list field means a one-element list, unknown
- * keys are errors. Dates come out as ISO YYYY-MM-DD strings so every
- * value is a plain, serialisable island prop.
+ * [], unknown keys are errors. A bare scalar coercing to a one-element
+ * list is *not* general: pydantic's `_as_list` only applies to
+ * `Project.images` (see `scalarOrList`) — every other list field
+ * (`tags`, `people`, `publications`, `keywords`, `role`) only gets
+ * `_none_to_list`, so a bare scalar there is a validation error, same as
+ * pydantic. Dates come out as ISO YYYY-MM-DD strings so every value is a
+ * plain, serialisable island prop.
  */
 import { z } from 'astro/zod';
 
@@ -13,12 +17,22 @@ const toIsoDate = (d: Date) => d.toISOString().slice(0, 10);
 
 export const optStr = z.preprocess(blankToNull, z.string().nullable().optional());
 export const reqStr = z.preprocess(blankToNull, z.string());
-// pydantic's `int | None` field (e.g. Person.end_year) is lax: it coerces
-// a numeric string like end_year: '2025' (quoted in the YAML) to int, so
-// this preprocess step mirrors that instead of rejecting real data.
+// pydantic's lax `int` fields (e.g. Person.end_year, Publication.year)
+// coerce a numeric string (some are quoted in the YAML, e.g.
+// end_year: '2025') to int, so these preprocess/coerce steps mirror that
+// instead of rejecting real data.
 export const optInt = z.preprocess(blankToNull, z.coerce.number().int().nullable().optional());
+export const reqInt = z.coerce.number().int();
 export const optNum = z.preprocess(blankToNull, z.number().nullable().optional());
+// null/blank -> []; anything else must already be an array (mirrors
+// pydantic's `_none_to_list`, which does NOT wrap a bare scalar).
 export const strList = z.preprocess(
+  (v) => (v == null || v === '' ? [] : v),
+  z.array(z.string()),
+);
+// null/blank -> []; a bare scalar -> a one-element list; an array is kept
+// as-is (mirrors pydantic's `_as_list`, used only by `Project.images`).
+export const scalarOrList = z.preprocess(
   (v) => (v == null || v === '' ? [] : Array.isArray(v) ? v : [v]),
   z.array(z.string()),
 );
@@ -55,7 +69,7 @@ export const personSchema = z.object({
 }).strict().refine((p) => p.status !== 'alumni' || p.end_year != null, { message: 'alumni need end_year' });
 
 export const publicationSchema = z.object({
-  id, tags: strList, people: strList, year: z.number().int(), date: optDate, pdf: optStr,
+  id, tags: strList, people: strList, year: reqInt, date: optDate, pdf: optStr,
   authors: reqStr, affiliations: optStr, title: reqStr, journal: reqStr, journal_short: optStr,
   status: PublicationStatus, impact: optNum, position: AuthorPosition, doi: optStr, pmid: optInt,
   keywords: strList, homepage: optStr, repository: optStr, abstract: optStr,
@@ -63,7 +77,7 @@ export const publicationSchema = z.object({
 
 export const projectSchema = z.object({
   id, tags: strList, people: strList, title: reqStr, status: ContentStatus, publications: strList,
-  homepage: optStr, repository: optStr, cooperation_partners: optStr, images: strList,
+  homepage: optStr, repository: optStr, cooperation_partners: optStr, images: scalarOrList,
   image_title: optStr, abstract: reqStr,
 }).strict();
 
@@ -80,8 +94,8 @@ export const editorSchema = z.object({
 export const fundingSchema = z.object({
   id, tags: strList, funder_short: reqStr, funder: reqStr, funder_link: optStr, funder_logo: optStr,
   grant: z.preprocess((v) => (v == null || v === '' ? null : String(v)), z.string().nullable().optional()),
-  start: reqStr, end: reqStr, title: reqStr, role: FundingRole, amount: z.number().int(),
-  personal_amount: z.number().int(), currency: reqStr, homepage: optStr, repository: optStr, description: reqStr,
+  start: reqStr, end: reqStr, title: reqStr, role: FundingRole, amount: reqInt,
+  personal_amount: reqInt, currency: reqStr, homepage: optStr, repository: optStr, description: reqStr,
 }).strict();
 
 export const newsSchema = z.object({
@@ -103,7 +117,7 @@ export const presentationSchema = z.object({
 }).strict();
 
 export const posterSchema = z.object({
-  id, tags: strList, people: strList, year: z.number().int(), date: reqDate, pdf: reqStr,
+  id, tags: strList, people: strList, year: reqInt, date: reqDate, pdf: reqStr,
   image: reqStr, authors: reqStr, affiliations: reqStr, title: reqStr, event: reqStr,
   event_page: optStr, doi: optStr, keywords: strList, homepage: optStr, repository: optStr, abstract: reqStr,
 }).strict();
@@ -115,7 +129,7 @@ export const panelSchema = z.object({
 }).strict();
 
 export const abstractSchema = z.object({
-  id, people: strList, year: z.number().int(), date: optDate, title: reqStr, pdf: optStr,
+  id, people: strList, year: reqInt, date: optDate, title: reqStr, pdf: optStr,
   authors: reqStr, affiliations: optStr, abstract: optStr, keywords: strList, event: optStr,
   event_page: optStr, journal: optStr, doi: optStr, homepage: optStr, repository: optStr,
 }).strict();

@@ -57,6 +57,21 @@ describe('schemas mirror data/*.yml', () => {
     expect(p.images).toEqual(['one.webp']);
   });
 
+  it('rejects a bare scalar for a plain list field, but still coerces Project.images', () => {
+    expect(() =>
+      s.projectSchema.parse({ id: 'p', title: 't', status: 'current', abstract: 'a', tags: 'AI' }),
+    ).toThrow();
+    const p = s.projectSchema.parse({ id: 'p', title: 't', status: 'current', abstract: 'a', images: 'one.webp' });
+    expect(p.images).toEqual(['one.webp']);
+  });
+
+  it('coerces a numeric string to int for required int fields', () => {
+    const pub = s.publicationSchema.parse({
+      id: 'x', year: '2024', authors: 'A', title: 'T', journal: 'J', status: 'publication', position: 'first',
+    });
+    expect(pub.year).toBe(2024);
+  });
+
   it('rejects unknown keys like the pydantic StrictModel', () => {
     expect(() => s.personSchema.parse({ id: 'a', status: 'current', tenure: '2020-', name: 'A', flag: 'x' })).toThrow();
   });
