@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Head from '../components/Head.astro';
 import TopNav from '../components/TopNav.astro';
 import Footer from '../components/Footer.astro';
+import SiteSearch from '../components/SiteSearch.vue';
 import { url } from '../lib/url';
 
 interface Props { title?: string; description?: string; sectionid?: string }
@@ -23,6 +24,7 @@ const isHome = Astro.url.pathname === url('/');
       </div>
     </div>
     <Footer home={isHome} />
+    <SiteSearch client:idle searchUrl={url('/search.json')} />
     <slot name="global" />
   </body>
 </html>
