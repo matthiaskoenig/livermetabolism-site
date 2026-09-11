@@ -252,7 +252,7 @@ def create_list_of_dois(df: pd.DataFrame, no_pmid: bool = True) -> list[str]:
 if __name__ == "__main__":
     results_dir: Path = Path(__file__).parent / "results"
     yaml_file: Path = (
-        Path(__file__).parent.parent.parent / "app" / "_data" / "publications.yml"
+        Path(__file__).parent.parent.parent / "data" / "publications.yml"
     )
     df: pd.DataFrame = read_publications(yaml_file=yaml_file)
     df_matrix = create_matrix(df=df)

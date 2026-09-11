@@ -1,13 +1,13 @@
 """Pydantic data model for the König Lab website content.
 
-This module defines the schema for every YAML file under ``app/_data/``,
+This module defines the schema for every YAML file under ``data/``,
 loads them into typed, validated objects, and cross-checks the references
 between them (e.g. the ``people`` id-lists on publications/projects/... must
 point at real entries in ``people.yml``; ``tags`` must be tags that are
 actually defined in ``tags.yml``).
 
 Run directly to validate the live data (this is the "load and validate"
-step that should be run after any change to ``app/_data/*.yml``, and is
+step that should be run after any change to ``data/*.yml``, and is
 what the ``validate-data`` GitHub Actions workflow / pytest suite call):
 
     uv run python -m src.data
@@ -35,8 +35,10 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator, model_valida
 # ---------------------------------------------------------------------------
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-APP_DIR = REPO_ROOT / "app"
-DATA_DIR = APP_DIR / "_data"
+DATA_DIR = REPO_ROOT / "data"
+# static files served at /assets/... on the site; image/pdf existence is
+# checked relative to this directory
+PUBLIC_DIR = REPO_ROOT / "public"
 
 
 class DataValidationError(Exception):
@@ -528,7 +530,7 @@ TAGGED_TABLES = (
 # tables whose rows carry a `publications: list[str]` referencing publications.yml
 PUBLICATION_LINKED_TABLES = ("projects", "software", "presentations", "panels")
 
-# image fields: table -> [(field name, base dir *relative to the app/ dir*, one_or_many)]
+# image fields: table -> [(field name, base dir *relative to the public/ dir*, one_or_many)]
 IMAGE_FIELDS: dict[str, list[tuple[str, str, bool]]] = {
     "people": [("image", "assets/image/people/128", False)],
     "editors": [("image", "assets/image/editors", False)],
@@ -589,10 +591,10 @@ class Database(BaseModel):
 
     @model_validator(mode="after")
     def _check_references(self, info: Any) -> "Database":
-        # image existence is checked relative to the app/ dir the data was
-        # loaded from (APP_DIR by default; overridden via validation
+        # image existence is checked relative to the public/ dir the data was
+        # loaded from (PUBLIC_DIR by default; overridden via validation
         # context so tests can point this at a throwaway fixture tree)
-        app_dir: Path = (info.context or {}).get("app_dir", APP_DIR)
+        app_dir: Path = (info.context or {}).get("app_dir", PUBLIC_DIR)
         errors: list[str] = []
 
         # --- unique ids per table --------------------------------------
@@ -660,8 +662,8 @@ class Database(BaseModel):
         return self
 
 
-def load_database(data_dir: Path = DATA_DIR) -> Database:
-    """Load every ``app/_data/*.yml`` file into a validated `Database`.
+def load_database(data_dir: Path = DATA_DIR, public_dir: Path = PUBLIC_DIR) -> Database:
+    """Load every ``data/*.yml`` file into a validated `Database`.
 
     Raises `DataValidationError` (parse errors, one field's worth of bad
     data) or a pydantic `ValidationError` (via `Database`'s cross-reference
@@ -700,7 +702,7 @@ def load_database(data_dir: Path = DATA_DIR) -> Database:
                 "country_flags": country_flags,
                 **tables,
             },
-            context={"app_dir": data_dir.parent},
+            context={"app_dir": public_dir},
         )
     except Exception as e:
         raise DataValidationError([str(e)]) from e

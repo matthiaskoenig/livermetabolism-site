@@ -69,9 +69,9 @@ Within this project, a new version of the group website was developed based on t
   - [x] Cookie-consent banner gating Google Analytics behind opt-in (GA script only requested from Google after Accept; choice changeable anytime from the privacy page)
   - [x] Regular feedback rounds in group meetings
 
-## Future work
+- [x] Migrated the site from Jekyll to Astro (Vue islands, Tailwind, GitHub Pages deployment via GitHub Actions) — same pages, URLs, and features
 
-As a separate follow-up project, the site could migrate from Jekyll to a modern framework such as Astro: keeping the static-site philosophy while adding modern components, TypeScript, MD/MDX, better image handling, Node.js/Tailwind CSS tooling, and the option to use React/Vue/Svelte components (e.g. interactive statistics overviews) where actually needed.
+## Future work
 
 The People page profiles could also be made more personal, adding details such as hobbies and other personal information alongside the current professional bios.
 
@@ -86,4 +86,4 @@ Key results:
 - **Better usability and performance**: responsive/mobile-friendly design across all pages, faster page loads through image/asset optimization and improved hosting, full-text site search, and click-to-open detail views for projects and news.
 - **Legal compliance**: Impressum and Datenschutzerklärung pages, with Google Analytics gated behind a cookie-consent banner rather than loading unconditionally.
 
-A larger migration from Jekyll to a modern framework (e.g. Astro) is planned as a separate follow-up project. The full checklist above documents each change against the plan in `communication_concept.md`.
+The site has since been migrated from Jekyll to Astro (Vue islands, Tailwind, GitHub Pages deployment via GitHub Actions), keeping the same pages, URLs, and features. The full checklist above documents each change against the plan in `communication_concept.md`.

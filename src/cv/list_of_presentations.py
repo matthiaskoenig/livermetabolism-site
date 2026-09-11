@@ -50,14 +50,14 @@ def create_list_of_talk_typst(typst_path: Path, df: pd.DataFrame,
 
 
 if __name__ == "__main__":
-    yaml_file: Path = Path(__file__).parent.parent.parent / "app" / "_data" / "presentations.yml"
+    yaml_file: Path = Path(__file__).parent.parent.parent / "data" / "presentations.yml"
     df: pd.DataFrame = read_data(yaml_file=yaml_file)
 
     create_list_of_talk_typst(
         typst_path=Path(__file__).parent / "results/presentations.typ", df=df,
     )
 
-    yaml_file: Path = Path(__file__).parent.parent.parent / "app" / "_data" / "panels.yml"
+    yaml_file: Path = Path(__file__).parent.parent.parent / "data" / "panels.yml"
     df: pd.DataFrame = read_data(yaml_file=yaml_file)
 
     create_list_of_talk_typst(

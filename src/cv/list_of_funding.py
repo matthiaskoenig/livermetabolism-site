@@ -48,7 +48,7 @@ def cumulative_funding(df: pd.DataFrame):
 
 
 if __name__ == "__main__":
-    yaml_file: Path = Path(__file__).parent.parent.parent / "app" / "_data" / "funding.yml"
+    yaml_file: Path = Path(__file__).parent.parent.parent / "data" / "funding.yml"
     df: pd.DataFrame = read_data(yaml_file=yaml_file)
     create_list_of_funding_typst(
         typst_path=Path(__file__).parent / "results/funding.typ", df=df

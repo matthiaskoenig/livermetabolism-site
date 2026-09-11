@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import NewsSection from '../components/NewsSection.vue';
+import { getNews, getPeople, getPeopleMap, getTags } from '../lib/data';
+import { asset, url } from '../lib/url';
+
+const [tagInfo, people, peopleMap, news] = await Promise.all([getTags(), getPeople(), getPeopleMap(), getNews()]);
+const peopleLite = people.map(({ id, name }) => ({ id, name }));
+---
+<Base title="News" sectionid="news">
+  <NewsSection client:idle items={news} tagInfo={tagInfo} peopleMap={peopleMap} people={peopleLite} imageBase={asset('image/news/')} avatarBase={asset('image/people/128/')} peopleUrl={url('/people/')} />
+</Base>

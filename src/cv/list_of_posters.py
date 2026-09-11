@@ -52,7 +52,7 @@ def create_list_of_poster_typst(typst_path: Path, df: pd.DataFrame,
 
 
 if __name__ == "__main__":
-    yaml_file: Path = Path(__file__).parent.parent.parent / "app" / "_data" / "posters.yml"
+    yaml_file: Path = Path(__file__).parent.parent.parent / "data" / "posters.yml"
     df: pd.DataFrame = read_data(yaml_file=yaml_file)
 
     create_list_of_poster_typst(

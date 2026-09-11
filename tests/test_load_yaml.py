@@ -189,7 +189,7 @@ def write_minimal_data_dir(tmp_path):
 
 def test_minimal_data_dir_loads(tmp_path):
     data_dir = write_minimal_data_dir(tmp_path)
-    db = load_database(data_dir)
+    db = load_database(data_dir, public_dir=data_dir.parent)
     assert db.people[0].id == "jdoe"
 
 
@@ -200,7 +200,7 @@ def test_unknown_field_reported(tmp_path):
     yaml.safe_dump(rows, open(data_dir / "people.yml", "w"), allow_unicode=True)
 
     with pytest.raises(DataValidationError) as exc_info:
-        load_database(data_dir)
+        load_database(data_dir, public_dir=data_dir.parent)
     assert "people.yml" in str(exc_info.value)
 
 
@@ -210,14 +210,14 @@ def test_not_a_list_reported(tmp_path):
         yaml.safe_dump({"not": "a list"}, f)
 
     with pytest.raises(DataValidationError) as exc_info:
-        load_database(data_dir)
+        load_database(data_dir, public_dir=data_dir.parent)
     assert "expected a top-level YAML list" in str(exc_info.value)
 
 
 def test_blank_file_treated_as_empty_table(tmp_path):
     data_dir = write_minimal_data_dir(tmp_path)
     (data_dir / "linkedin.yml").write_text("")
-    db = load_database(data_dir)
+    db = load_database(data_dir, public_dir=data_dir.parent)
     assert db.linkedin == []
 
 
@@ -232,7 +232,7 @@ def test_multiple_errors_collected_in_one_pass(tmp_path):
     yaml.safe_dump(pub_rows, open(data_dir / "publications.yml", "w"), allow_unicode=True)
 
     with pytest.raises(DataValidationError) as exc_info:
-        load_database(data_dir)
+        load_database(data_dir, public_dir=data_dir.parent)
     message = str(exc_info.value)
     assert "people.yml" in message
     assert "publications.yml" in message
