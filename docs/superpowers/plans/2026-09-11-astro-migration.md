@@ -1,5 +1,7 @@
 # Jekyll to Astro Migration Implementation Plan
 
+**Status:** executed in full and merged into `main` via pull request #14 on 2026-09-11. Kept as the record of how the migration was carried out.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Replace the Jekyll build of livermetabolism.com with an Astro site that reproduces every page, URL, interaction, and visual of the current site, without Bootstrap, deployed to GitHub Pages by GitHub Actions.

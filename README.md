@@ -16,7 +16,7 @@ Structured content (publications, people, projects, software, news, funding, …
 | `site/` | Astro source: `pages/`, `layouts/`, `components/` (Vue), `lib/`, `styles/`, `content.config.ts` |
 | `src/` | `uv`-managed Python package; `src/data.py` is the pydantic schema of the YAML, `src/cv/list_of_*.py` render tables to Typst |
 | `tests/` | Pytest suite for `src/data.py` |
-| `e2e/` | Playwright end-to-end tests and the screenshot comparison script |
+| `e2e/` | Playwright end-to-end tests |
 | `science_communication/` | Planning notes (not part of the build) |
 
 See [`CLAUDE.md`](./CLAUDE.md) for a more detailed guide to the codebase and data model.

@@ -71,10 +71,6 @@ Within this project, a new version of the group website was developed based on t
 
 - [x] Migrated the site from Jekyll to Astro (Vue islands, Tailwind, GitHub Pages deployment via GitHub Actions) — same pages, URLs, and features
 
-## Future work
-
-The People page profiles could also be made more personal, adding details such as hobbies and other personal information alongside the current professional bios.
-
 ## Summary
 
 Based on the science-communication principles from this course, the group's website (https://livermetabolism.com) was relaunched. The prior site was outdated, cluttered, and unstructured, with no clear communication strategy or target audience — a communication concept (`communication_concept.md`) was developed first to define target audiences, positioning, and concrete actions, and this project delivered on that plan.
