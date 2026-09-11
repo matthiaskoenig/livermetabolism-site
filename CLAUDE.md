@@ -14,7 +14,7 @@ Static site source for the König research group site (https://www.livermetaboli
 - `assets_src/` — raster masters of the images; not served, only their `.webp` renditions under `public/assets/image/` are.
 - `src/` — standalone Python package (not part of the Astro build). `src/data.py` is the pydantic data model for `data/*.yml` (see below). Each `src/cv/list_of_*.py` script reads one `data/*.yml` file into a pandas DataFrame and renders it to a Typst (`.typ`) file in `src/cv/results/`, e.g. for the CV. Scripts are invoked as modules (`uv run python -m src.cv.list_of_publications`), not via a CLI entrypoint — edit the `selected`/`highlights` sets at the bottom of a script to change what gets included in a given output. Not every `data/*.yml` file has a corresponding generator script.
 - `tests/` — pytest suite for `src/data.py` (model validators, cross-reference checks, end-to-end YAML loading). Run via `uv run pytest tests/`; also runs in CI (`.github/workflows/validate-data.yml` and the `validate` job of `.github/workflows/site.yml`) on every push/PR.
-- `e2e/` — Playwright specs (`interactions.spec.ts`, `pages.spec.ts`) using base-relative paths (see `playwright.config.ts`, which derives `baseURL` from the `BASE` env var), plus `screenshots.ts`, a side-by-side screenshot comparison tool against a Jekyll build in `web/` (needs `npx serve web -l 4400` and `npm run preview` running).
+- `e2e/` — Playwright specs (`interactions.spec.ts`, `pages.spec.ts`) using base-relative paths (see `playwright.config.ts`, which derives `baseURL` from the `BASE` env var).
 - `scripts/fetch-icons.sh` — downloads the Font Awesome 4 icon set into `site/icons/*.svg` (39 SVGs); `data/tags.yml` keeps the FA4 `icon` names that select among them.
 - `science_communication/` — planning notes and strategy documents (not part of the build).
 
@@ -75,8 +75,6 @@ uv run python -m src.data
 uv run pytest tests/
 ```
 
-`site/lib/parity.test.ts` compares the Astro `dist/` output against a Jekyll build in `web/` and skips automatically when either is absent — it's a leftover migration aid, not something day-to-day edits need to satisfy. `e2e/screenshots.ts` does the same comparison visually; it needs `npx serve web -l 4400` and `npm run preview` running side by side.
-
 Typst CV compilation requires the `typst` CLI and local fonts installed (see comment header in `src/cv/cv.py` for font setup); invoked via the `typst` Python package.
 
 ## Notable conventions
@@ -89,10 +87,3 @@ Typst CV compilation requires the `typst` CLI and local fonts installed (see com
 ## Branches and deployment
 
 `main` is protected by a repository ruleset (pull requests only, linear history, squash or rebase merges, required status checks `validate` and `build`); there is no `develop` branch — work on a topic branch and open a PR against `main`. `.github/workflows/site.yml` runs on every push and PR: `validate` (Python: pytest + `src.data`), then `build` (Node: `astro check`, vitest, `astro build`, Playwright e2e against the built site), then — only on a push to `main`, not on a PR — `deploy`, which publishes `dist/` to GitHub Pages via `actions/deploy-pages`. The build currently targets the interim project-pages URL (`SITE=https://matthiaskoenig.github.io`, `BASE=/livermetabolism-site/`); switching to the custom domain means changing those two env vars to `SITE=https://livermetabolism.com`/`BASE=/`, adding `public/CNAME`, and configuring the domain in the repository's Pages settings. `.github/workflows/validate-data.yml` still runs the Python-only validation independently of `site.yml`.
-
-## Follow-ups
-
-- SVG icon sprite: done in this branch — `dist/publications/index.html` went from 1,220,680 bytes (196,144 gzipped) to 832,409 bytes (176,234 gzipped), and the `Icon*.js` client chunk from ~32 KB to ~1.3 KB, by switching from one inline `<svg>` per icon to a single shared `<symbol>` sprite referenced via `<use>`.
-- Astro image pipeline: raster images under `public/assets/image/` bypass Astro's `<Image>`/`astro:assets` optimization (resizing, format negotiation, `srcset`) — worth adopting to shrink page weight further.
-- Self-hosted fonts: Google Fonts are loaded from `fonts.googleapis.com`/`fonts.gstatic.com` at request time; self-hosting would drop that third-party request and its render-blocking connection setup.
-- PDFs vs the Pages 1 GB limit: `public/assets/pdf` is already ~871 MB against GitHub Pages' 1 GB per-site limit — needs a plan (external storage, Git LFS, pruning) before it grows further.

@@ -1,7 +1,7 @@
 # Jekyll to Astro migration: design
 
 Date: 2026-09-11
-Status: approved design, awaiting implementation plan
+Status: implemented; merged into `main` via pull request #14 on 2026-09-11
 
 ## Goal
 
@@ -309,7 +309,7 @@ configure the domain in repository settings. Templates need no change.
 paths, branch rules, and deployment. `science_communication/project_output.md`
 marks the migration item done.
 
-## Follow-ups (out of scope)
+## Out of scope
 
 - GitHub Pages size: the built site is 892 MB, 881 MB of it PDFs, against a
   1 GB site limit and a 100 GB per month bandwidth soft limit. Options when it
