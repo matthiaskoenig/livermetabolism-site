@@ -60,7 +60,7 @@ def create_list_of_software_typst(typst_path: Path, df: pd.DataFrame, highlights
 
 
 if __name__ == "__main__":
-    yaml_file: Path = Path(__file__).parent.parent.parent / "app" / "_data" / "software.yml"
+    yaml_file: Path = Path(__file__).parent.parent.parent / "data" / "software.yml"
     df: pd.DataFrame = read_data(yaml_file=yaml_file)
 
     selected = {

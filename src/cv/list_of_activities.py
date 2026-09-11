@@ -39,7 +39,7 @@ def create_list_of_activity_typst(typst_path: Path, df: pd.DataFrame, highlights
 
 
 if __name__ == "__main__":
-    yaml_file: Path = Path(__file__).parent.parent.parent / "app" / "_data" / "activities.yml"
+    yaml_file: Path = Path(__file__).parent.parent.parent / "data" / "activities.yml"
     df: pd.DataFrame = read_data(yaml_file=yaml_file)
 
     selected = {

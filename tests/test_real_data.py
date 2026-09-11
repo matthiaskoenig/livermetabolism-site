@@ -1,4 +1,4 @@
-"""Regression test: the actual app/_data/*.yml files must always load and
+"""Regression test: the actual data/*.yml files must always load and
 validate cleanly. This is what CI runs on every commit/PR to catch a bad
 edit to the data before it reaches the live site."""
 
