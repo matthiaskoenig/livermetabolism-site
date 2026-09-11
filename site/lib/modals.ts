@@ -37,40 +37,33 @@ function focusHashTarget(): void {
 }
 
 export function installModalRouter(): void {
-  // Listener registration happens once (multiple Modal.vue instances each
-  // call this on mount); the initial-hash check below still runs on every
-  // call, since it is what lets a freshly-mounted page/dialog pick up a
-  // hash that was already in the URL - re-running it is idempotent in
-  // effect (openModal/scroll-highlight are no-ops on an already-open
-  // dialog / already-applied class).
-  if (!installed) {
-    installed = true;
+  if (installed) return;
+  installed = true;
 
-    document.addEventListener('click', (e) => {
-      const target = e.target as HTMLElement | null;
-      if (!target) return;
-      // backdrop click closes (the dialog itself is the event target then)
-      if (target instanceof HTMLDialogElement && target.classList.contains('modal')) { target.close(); return; }
-      if (target.closest('[data-modal-close]')) { target.closest('dialog')?.close(); return; }
-      const trigger = target.closest<HTMLElement>('[data-modal-target]');
-      if (!trigger) return;
-      // links inside a clickable card navigate on their own
-      const link = target.closest('a');
-      if (link && trigger.contains(link) && link !== trigger) return;
-      e.preventDefault();
-      openModal(trigger.dataset.modalTarget!);
-    });
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement | null;
+    if (!target) return;
+    // backdrop click closes (the dialog itself is the event target then)
+    if (target instanceof HTMLDialogElement && target.classList.contains('modal')) { target.close(); return; }
+    if (target.closest('[data-modal-close]')) { target.closest('dialog')?.close(); return; }
+    const trigger = target.closest<HTMLElement>('[data-modal-target]');
+    if (!trigger) return;
+    // links inside a clickable card navigate on their own
+    const link = target.closest('a');
+    if (link && trigger.contains(link) && link !== trigger) return;
+    e.preventDefault();
+    openModal(trigger.dataset.modalTarget!);
+  });
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key !== 'Enter' && e.key !== ' ') return;
-      const target = e.target as HTMLElement | null;
-      const card = target?.closest<HTMLElement>('[data-modal-target][role="button"]');
-      if (!card) return;
-      e.preventDefault();
-      openModal(card.dataset.modalTarget!);
-    });
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    const target = e.target as HTMLElement | null;
+    const card = target?.closest<HTMLElement>('[data-modal-target][role="button"]');
+    if (!card) return;
+    e.preventDefault();
+    openModal(card.dataset.modalTarget!);
+  });
 
-    window.addEventListener('hashchange', focusHashTarget);
-  }
+  window.addEventListener('hashchange', focusHashTarget);
   focusHashTarget();
 }
