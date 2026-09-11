@@ -1,10 +1,30 @@
-import type { PersonData, ProjectData, PublicationData, SoftwareData } from './schemas';
+import type { PersonData, ProjectData, PublicationData, SoftwareData, TagData } from './schemas';
+import { slugify } from './text';
 
 /** A collection entry flattened to its data plus the guaranteed entry id. */
 export type Entry<T> = Omit<T, 'id'> & { id: string };
 
 export interface TagInfo {
   tag: string; slug: string; icon: string; short_description: string; description: string; vision: string;
+}
+
+/**
+ * lib/data.ts's getTags(): sort rows by the file-order `order` field
+ * content.config.ts's tags loader injects (getCollection() doesn't
+ * preserve tags.yml's order — see content.config.ts) and shape them into
+ * the exact TagInfo the homepage's tag sections expect. Built explicitly,
+ * field by field — no spread — so neither `order` nor `id` (both present
+ * on the raw TagData row) can leak into the serialised `tagInfo` island
+ * props.
+ */
+export function toTagInfo(rows: TagData[]): TagInfo[] {
+  return rows
+    .slice()
+    .sort((a, b) => a.order - b.order)
+    .map((d) => ({
+      tag: d.tag, slug: slugify(d.tag), icon: d.icon,
+      short_description: d.short_description, description: d.description, vision: d.vision,
+    }));
 }
 
 /** Consecutive runs of the same year, in the given order (Liquid's prev_year loop). */

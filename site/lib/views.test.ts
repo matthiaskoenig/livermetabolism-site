@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { alumniByYear, crossRefs, groupByYear, tagCounts } from './views';
+import { alumniByYear, crossRefs, groupByYear, tagCounts, toTagInfo } from './views';
 
 describe('groupByYear', () => {
   it('groups consecutive runs in file order like the Liquid template', () => {
@@ -28,6 +28,18 @@ describe('crossRefs', () => {
     expect(refs.publications.map((p) => p.id)).toEqual(['p2', 'p1']);
     expect(refs.projects.map((p) => p.id)).toEqual(['pr']);
     expect(refs.software).toEqual([]);
+  });
+});
+
+describe('toTagInfo', () => {
+  it('sorts by file order and shapes exactly TagInfo — no order, no id', () => {
+    const t = (order: number, tag: string) =>
+      ({ id: tag, order, tag, icon: 'icon-' + tag, short_description: 'short', description: 'long', vision: 'vision' });
+    const rows = [t(2, 'Open & FAIR'), t(0, 'Digital Twins'), t(1, 'AI')];
+    const info = toTagInfo(rows as never);
+    expect(info.map((i) => i.tag)).toEqual(['Digital Twins', 'AI', 'Open & FAIR']);
+    for (const i of info) expect(Object.keys(i)).toEqual(['tag', 'slug', 'icon', 'short_description', 'description', 'vision']);
+    expect(info[0]).toEqual({ tag: 'Digital Twins', slug: 'digital-twins', icon: 'icon-Digital Twins', short_description: 'short', description: 'long', vision: 'vision' });
   });
 });
 

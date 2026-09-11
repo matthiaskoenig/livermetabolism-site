@@ -1,7 +1,7 @@
 import { getCollection, type CollectionEntry, type CollectionKey } from 'astro:content';
 import type { PeopleMap } from './people';
 import type * as S from './schemas';
-import { slugify } from './text';
+import { toTagInfo } from './views';
 import type { Entry, TagInfo } from './views';
 
 type Ref = { collection: string; id: string };
@@ -32,17 +32,12 @@ async function all<K extends CollectionKey, T>(key: K): Promise<Entry<T>[]> {
 
 export async function getTags(): Promise<TagInfo[]> {
   // getCollection() does not preserve tags.yml's file order (see
-  // content.config.ts) — restore it via the injected `order` field before
-  // dropping it, since callers (the homepage tag sections) depend on file
-  // order but must not see the internal `order` bookkeeping field itself.
-  // Routed through the same plain() used by all() below so both paths
-  // share one place that strips it.
+  // content.config.ts) — toTagInfo() (lib/views.ts) restores it via the
+  // injected `order` field and shapes the exact TagInfo, so neither
+  // `order` nor `id` (both present on the raw row) can leak into the
+  // homepage tag sections' island props.
   const tags = await getCollection('tags');
-  return tags
-    .slice()
-    .sort((a, b) => a.data.order - b.data.order)
-    .map((t) => plain<'tags', S.TagData>(t))
-    .map((t) => ({ ...t, slug: slugify(t.tag) }));
+  return toTagInfo(tags.map((t) => t.data as S.TagData));
 }
 export const getPeople = () => all<'people', S.PersonData>('people');
 export const getPublications = () => all<'publications', S.PublicationData>('publications');
