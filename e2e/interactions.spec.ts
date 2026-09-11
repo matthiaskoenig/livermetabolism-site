@@ -43,6 +43,9 @@ test('tag filter hides non-matching publications and honours ?tag=', async ({ pa
 
 test('search opens with "/", finds a publication, result navigates', async ({ page }) => {
   await page.goto('');
+  // the search island hydrates client:idle; Astro drops the `ssr` attribute
+  // once the keyboard shortcut listener is live (slow CI runners race this)
+  await page.locator('astro-island[component-url*="SiteSearch"]:not([ssr])').waitFor({ state: 'attached' });
   await page.keyboard.press('/');
   await expect(page.locator('dialog#site-search-modal')).toHaveAttribute('open', '');
   await page.locator('#site-search-input').fill('liver');

@@ -56,6 +56,9 @@ npm run preview    # serve dist/
 npm run check      # astro check (types)
 npm test           # vitest — unit tests live next to the code as site/**/*.test.ts
 npm run e2e        # playwright (needs a build); specs in e2e/ use base-relative paths
+# Under an AI-agent environment (e.g. Claude Code) `astro preview` backgrounds itself,
+# so Playwright's webServer cannot attach: start `npx astro preview --background` first,
+# run `npm run e2e` (it reuses the running server), then `npx astro preview stop`.
 ```
 
 Python package (`src/`) setup and running a generator script:
