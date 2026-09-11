@@ -1,0 +1,61 @@
+import type { PersonData, ProjectData, PublicationData, SoftwareData } from './schemas';
+
+/** A collection entry flattened to its data plus the guaranteed entry id. */
+export type Entry<T> = Omit<T, 'id'> & { id: string };
+
+export interface TagInfo {
+  tag: string; slug: string; icon: string; short_description: string; description: string; vision: string;
+}
+
+/** Consecutive runs of the same year, in the given order (Liquid's prev_year loop). */
+export function groupByYear<T extends { year: number }>(items: T[]): { year: number; items: T[] }[] {
+  const groups: { year: number; items: T[] }[] = [];
+  for (const item of items) {
+    const last = groups[groups.length - 1];
+    if (last && last.year === item.year) last.items.push(item);
+    else groups.push({ year: item.year, items: [item] });
+  }
+  return groups;
+}
+
+/** team.html alumni timeline: alumni with a photo, sorted by end_year desc, grouped. */
+export function alumniByYear<T extends Pick<PersonData, 'status' | 'end_year' | 'image'>>(people: T[]): { year: number; people: T[] }[] {
+  const alumni = people
+    .filter((p) => p.status === 'alumni' && !!p.image && p.end_year != null)
+    .sort((a, b) => (b.end_year as number) - (a.end_year as number));
+  const groups: { year: number; people: T[] }[] = [];
+  for (const p of alumni) {
+    const last = groups[groups.length - 1];
+    if (last && last.year === p.end_year) last.people.push(p);
+    else groups.push({ year: p.end_year as number, people: [p] });
+  }
+  return groups;
+}
+
+/** person_modal.html: everything a person is credited on via `people:`. */
+export function crossRefs(
+  personId: string,
+  publications: Entry<PublicationData>[],
+  projects: Entry<ProjectData>[],
+  software: Entry<SoftwareData>[],
+) {
+  return {
+    publications: publications.filter((p) => p.people.includes(personId)).sort((a, b) => b.year - a.year),
+    projects: projects.filter((p) => p.people.includes(personId)),
+    software: software.filter((s) => s.people.includes(personId)),
+  };
+}
+
+/** index.html tag sections: counts behind the Publications/Projects/Software links. */
+export function tagCounts(
+  tag: string,
+  publications: Pick<PublicationData, 'tags'>[],
+  projects: Pick<ProjectData, 'tags' | 'status'>[],
+  software: Pick<SoftwareData, 'tags'>[],
+) {
+  return {
+    publications: publications.filter((p) => p.tags.includes(tag)).length,
+    projects: projects.filter((p) => p.tags.includes(tag) && p.status === 'current').length,
+    software: software.filter((s) => s.tags.includes(tag)).length,
+  };
+}
