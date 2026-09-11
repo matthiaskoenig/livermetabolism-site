@@ -33,12 +33,16 @@ async function all<K extends CollectionKey, T>(key: K): Promise<Entry<T>[]> {
 export async function getTags(): Promise<TagInfo[]> {
   // getCollection() does not preserve tags.yml's file order (see
   // content.config.ts) — restore it via the injected `order` field before
-  // dropping it, since callers (the homepage tag sections) depend on it.
+  // dropping it, since callers (the homepage tag sections) depend on file
+  // order but must not see the internal `order` bookkeeping field itself.
+  // Routed through the same plain() used by all() below so both paths
+  // share one place that strips it.
   const tags = await getCollection('tags');
   return tags
     .slice()
     .sort((a, b) => a.data.order - b.data.order)
-    .map((t) => ({ ...t.data, tag: t.data.tag, slug: slugify(t.data.tag) }));
+    .map((t) => plain<'tags', S.TagData>(t))
+    .map((t) => ({ ...t, slug: slugify(t.tag) }));
 }
 export const getPeople = () => all<'people', S.PersonData>('people');
 export const getPublications = () => all<'publications', S.PublicationData>('publications');

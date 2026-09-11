@@ -40,6 +40,26 @@ describe('schemas mirror data/*.yml', () => {
     expect(s.countryFlagsSchema.parse(raw)).toEqual(raw);
   });
 
+  // content.config.ts's `yml`/tags loaders inject a row-position `order`
+  // field into every parsed row so lib/data.ts can restore a YAML file's
+  // original order (getCollection() doesn't preserve it). That field is
+  // bookkeeping only: every path that returns data to a page (all()'s
+  // plain(), and getTags(), which now shares plain()) must strip it back
+  // out before the row reaches a page or an island prop, or it leaks into
+  // the serialised HTML (e.g. `tagInfo` props on the homepage's *Section
+  // islands). This mirrors that strip so a regression is caught without
+  // needing astro:content.
+  it('order (injected for file-order sorting) never survives past the strip lib/data.ts applies', () => {
+    const raw = rows('tags').map((row, order) => ({ order, ...row }));
+    const parsed = s.tagSchema.array().parse(raw);
+    expect(parsed.length).toBeGreaterThan(0);
+    for (const row of parsed) {
+      expect(row).toHaveProperty('order');
+      const { order: _order, ...stripped } = row;
+      expect(stripped).not.toHaveProperty('order');
+    }
+  });
+
   it('renders dates as YYYY-MM-DD strings', () => {
     const pub = s.publicationSchema.parse({
       id: 'x', year: 2026, date: new Date('2026-09-05T00:00:00Z'), authors: 'A', title: 'T',
