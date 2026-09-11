@@ -3,6 +3,7 @@ import { computed } from 'vue';
 import Icon from './Icon.vue';
 import PeopleAvatars from './PeopleAvatars.vue';
 import TagList from './TagList.vue';
+import { link } from '../lib/url';
 import type { PeopleMap } from '../lib/people';
 import type { NewsData } from '../lib/schemas';
 import { stripHtml, truncateWords } from '../lib/text';
@@ -27,7 +28,7 @@ const thumb = computed(() => {
       <div v-if="item.people.length || item.link" class="project-links">
         <PeopleAvatars :people="item.people" :people-map="peopleMap" :avatar-base="avatarBase" />
         <span class="project-links-spacer"></span>
-        <a v-if="item.link" :href="item.link" target="_blank" rel="noopener noreferrer" title="Read more"><Icon name="globe" /></a>
+        <a v-if="item.link" :href="link(item.link)" target="_blank" rel="noopener noreferrer" title="Read more"><Icon name="globe" /></a>
       </div>
     </div>
   </div>

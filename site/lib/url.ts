@@ -14,3 +14,14 @@ export function url(path: string): string {
 export function asset(relPath: string): string {
   return url(`/assets/${relPath.replace(/^\/+/, '')}`);
 }
+
+/**
+ * For free-text data fields (`slides`, `link`, …) that hold either a
+ * root-absolute site path (e.g. '/assets/pdf/x.pdf', a leftover from the
+ * pre-base-path data) or a fully external URL. Root-absolute paths get the
+ * base prefix via `url()`; everything else (http(s):, mailto:, #anchor,
+ * protocol-relative //) passes through unchanged.
+ */
+export function link(href: string): string {
+  return /^\/(?!\/)/.test(href) ? url(href) : href;
+}
