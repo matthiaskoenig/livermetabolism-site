@@ -1,6 +1,109 @@
 ---
 import Base from '../layouts/Base.astro';
+import CoreMessages from '../components/CoreMessages.astro';
+import Icon from '../components/Icon.vue';
+import PersonAvatar from '../components/PersonAvatar.vue';
+import { getPeople, getProjects, getPublications, getSoftware, getTags } from '../lib/data';
+import { stripHtml, truncateWords } from '../lib/text';
+import { asset, url } from '../lib/url';
+import { tagCounts } from '../lib/views';
+
+const [tags, people, publications, projects, software] = await Promise.all([getTags(), getPeople(), getPublications(), getProjects(), getSoftware()]);
+const strip = people.filter((p) => p.status === 'current' && p.image);
+
+// decorative background per section (app/assets/image/tags/)
+const graphics: Record<string, string> = {
+  'digital-twins': 'digital_twins_upscayl_3x_digital-art-4x.webp',
+  'ai': 'ai_upscayl_3x_digital-art-4x.webp',
+  'digital-pathology': 'digital_pathology_upscayl_3x_digital-art-4x.webp',
+  'pharmacometrics': 'pharmacometrics_upscayl_3x_digital-art-4x.webp',
+  'open-fair': 'fair_open_upscayl_3x_digital-art-4x.webp',
+};
+
+const sections = tags.map((t, i) => {
+  const prev = i === 0 ? { slug: 'home', label: 'Home' } : { slug: tags[i - 1].slug, label: tags[i - 1].tag };
+  const next = i === tags.length - 1 ? { slug: 'footer', label: 'Footer' } : { slug: tags[i + 1].slug, label: tags[i + 1].tag };
+  return { ...t, prev, next, counts: tagCounts(t.tag, publications, projects, software), graphic: graphics[t.slug] };
+});
+const quickLinks = [
+  { href: url('/projects/'), icon: 'cogs', title: 'Projects', text: 'Explore our ongoing research projects and digital twin models.' },
+  { href: url('/publications/'), icon: 'file-pdf-o', title: 'Publications', text: 'Peer-reviewed papers, preprints, and open datasets from the lab.' },
+  { href: url('/research/#software'), icon: 'code', title: 'Software', text: 'Open-source tools and models we build to make research reproducible, reusable, and trustworthy.' },
+  { href: url('/people/'), icon: 'user-circle-o', title: 'Team', text: 'Get to know the researchers, engineers, and students turning ideas into digital twins.' },
+  { href: url('/people/#open-positions'), icon: 'users', title: 'Open Positions', text: 'Internships, theses, and PhD opportunities — come join us.' },
+];
 ---
 <Base>
-  <h2>scaffold</h2>
+  <section class="page-section" id="home">
+    <div class="text-justify">
+      <h2 class="header-light">Systems Medicine, Digital Twins &amp; AI</h2>
+      <p class="hero-subtitle">Metabolic Inflammation and Carcinogenesis of the Liver</p>
+    </div>
+
+    <CoreMessages tags={tags} />
+
+    <div class="text-center vision-statement">
+      <p class="lead">
+        We build open, FAIR <strong>digital twins</strong> of human physiology — AI-powered models that
+        predict disease and therapy, patient by patient.
+      </p>
+    </div>
+
+    <div class="text-center">
+      <div class="people-strip">
+        {strip.map((p) => (
+          <PersonAvatar client:idle name={p.name} src={asset(`image/people/128/${p.image}`)} position={p.role[p.role.length - 1] ?? ''}
+            description={p.description ? truncateWords(stripHtml(p.description), 24) : null} />
+        ))}
+      </div>
+    </div>
+
+    <div class="text-center vision-statement">
+      <p class="lead">What if every medical model served you, not the average — and belonged to everyone?</p>
+    </div>
+
+    <div class="core-messages">
+      {quickLinks.map((q) => (
+        <div class="core-message">
+          <a href={q.href}><Icon name={q.icon} /><h3>{q.title}</h3><p>{q.text}</p></a>
+        </div>
+      ))}
+    </div>
+
+    <a class="section-scroll-cue section-scroll-cue-down" href={`#${tags[0].slug}`} aria-label={`Scroll to ${tags[0].tag}`}><Icon name="chevron-down" /></a>
+  </section>
+
+  {sections.map((s) => (
+    <section class:list={['page-section', 'tag-section', `tag-${s.slug}`]} id={s.slug}>
+      {s.graphic && <img class="tag-section-graphic" src={asset(`image/tags/${s.graphic}`)} alt="" aria-hidden="true" loading="lazy" />}
+      <a class="section-scroll-cue section-scroll-cue-up" href={`#${s.prev.slug}`} aria-label={`Scroll to ${s.prev.label}`}><Icon name="chevron-up" /></a>
+      <div class="tag-section-columns">
+        <div class="tag-section-content">
+          <Icon name={s.icon.replace(/^fa-/, '')} />
+          <h2>{s.tag}</h2>
+          <p class="lead">{s.vision}</p>
+        </div>
+        {(s.counts.publications > 0 || s.counts.projects > 0 || s.counts.software > 0) && (
+          <div class="tag-section-links">
+            {s.counts.publications > 0 && (
+              <a class="tag-section-link" href={`${url('/publications/')}?tag=${encodeURIComponent(s.tag)}`}>
+                <Icon name="file-pdf-o" /><span><strong>Publications</strong><span>Papers, reviews, and preprints on {s.tag}.</span></span>
+              </a>
+            )}
+            {s.counts.projects > 0 && (
+              <a class="tag-section-link" href={`${url('/projects/')}?tag=${encodeURIComponent(s.tag)}`}>
+                <Icon name="cogs" /><span><strong>Projects</strong><span>Ongoing {s.tag} research projects.</span></span>
+              </a>
+            )}
+            {s.counts.software > 0 && (
+              <a class="tag-section-link" href={`${url('/research/')}?tag=${encodeURIComponent(s.tag)}#software`}>
+                <Icon name="code" /><span><strong>Software</strong><span>Open-source tools for {s.tag}.</span></span>
+              </a>
+            )}
+          </div>
+        )}
+      </div>
+      <a class="section-scroll-cue section-scroll-cue-down" href={`#${s.next.slug}`} aria-label={`Scroll to ${s.next.label}`}><Icon name="chevron-down" /></a>
+    </section>
+  ))}
 </Base>
