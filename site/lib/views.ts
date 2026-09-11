@@ -1,8 +1,8 @@
 import type { PersonData, ProjectData, PublicationData, SoftwareData, TagData } from './schemas';
 import { slugify } from './text';
 
-/** A collection entry flattened to its data plus the guaranteed entry id. */
-export type Entry<T> = Omit<T, 'id'> & { id: string };
+/** A collection entry flattened to its data plus the guaranteed entry id (never the file-order bookkeeping field). */
+export type Entry<T> = Omit<T, 'id' | 'order'> & { id: string };
 
 export interface TagInfo {
   tag: string; slug: string; icon: string; short_description: string; description: string; vision: string;

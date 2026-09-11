@@ -9,7 +9,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check",
+    "check": "astro check && vue-tsc --noEmit",
     "test": "vitest run",
     "e2e": "playwright test",
     "fetch-icons": "bash scripts/fetch-icons.sh"
@@ -32,6 +32,7 @@
     "serve": "^14.2.6",
     "tsx": "^4.23.13",
     "typescript": "^5.9.0",
-    "vitest": "^5.0.0"
+    "vitest": "^5.0.0",
+    "vue-tsc": "^3.3.11"
   }
 }

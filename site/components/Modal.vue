@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
-import { installModalRouter } from '../lib/modals';
+import { installModalRouter, openModal } from '../lib/modals';
 
 const props = defineProps<{ id: string; title: string; centered?: boolean }>();
 const emit = defineEmits<{ open: []; close: [] }>();
@@ -10,6 +10,10 @@ onMounted(() => {
   installModalRouter();
   el.value?.addEventListener('modal:open', () => emit('open'));
   el.value?.addEventListener('close', () => emit('close'));
+  // installModalRouter() only checks the URL hash on its own first call, so
+  // whichever Modal island hydrates first decides which deep link opens;
+  // re-check here on every mount (openModal is a no-op if already open).
+  if (window.location.hash === `#${props.id}`) openModal(props.id);
 });
 </script>
 

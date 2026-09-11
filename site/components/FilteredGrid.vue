@@ -3,9 +3,9 @@ import TagFilterBar from './TagFilterBar.vue';
 import { useTagFilter } from '../lib/tagFilter';
 import type { TagInfo } from '../lib/views';
 
-defineProps<{ filterId: string; gridId: string; tags: TagInfo[]; items: T[] }>();
+const props = defineProps<{ filterId: string; gridId: string; tags: TagInfo[]; items: T[] }>();
 defineSlots<{ item(props: { item: T }): unknown }>();
-const { activeTag, setTag, matches } = useTagFilter();
+const { activeTag, setTag, matches } = useTagFilter(props.tags.map((t) => t.tag));
 </script>
 
 <template>

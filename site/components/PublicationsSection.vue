@@ -8,7 +8,7 @@ import { useTagFilter } from '../lib/tagFilter';
 import { groupByYear, type Entry, type TagInfo } from '../lib/views';
 
 const props = defineProps<{ publications: Entry<PublicationData>[]; tagInfo: TagInfo[]; peopleMap: PeopleMap; pdfBase: string; avatarBase: string }>();
-const { activeTag, setTag, matches } = useTagFilter();
+const { activeTag, setTag, matches } = useTagFilter(props.tagInfo.map((t) => t.tag));
 const groups = computed(() => groupByYear(props.publications).map((g) => ({ ...g, visible: g.items.filter((p) => matches(p.tags)) })));
 </script>
 

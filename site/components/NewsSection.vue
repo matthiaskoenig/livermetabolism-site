@@ -7,8 +7,8 @@ import type { NewsData } from '../lib/schemas';
 import { useTagFilter } from '../lib/tagFilter';
 import type { Entry, TagInfo } from '../lib/views';
 
-defineProps<{ items: Entry<NewsData>[]; tagInfo: TagInfo[]; peopleMap: PeopleMap; people: { id: string; name: string }[]; imageBase: string; avatarBase: string; peopleUrl: string }>();
-const { activeTag, setTag, matches } = useTagFilter();
+const props = defineProps<{ items: Entry<NewsData>[]; tagInfo: TagInfo[]; peopleMap: PeopleMap; people: { id: string; name: string }[]; imageBase: string; avatarBase: string; peopleUrl: string }>();
+const { activeTag, setTag, matches } = useTagFilter(props.tagInfo.map((t) => t.tag));
 </script>
 
 <template>
