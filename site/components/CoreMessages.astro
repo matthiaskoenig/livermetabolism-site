@@ -1,0 +1,18 @@
+---
+import Icon from './Icon.vue';
+import type { TagInfo } from '../lib/views';
+
+interface Props { tags: TagInfo[]; hrefPrefix?: string }
+const { tags, hrefPrefix = '' } = Astro.props;
+---
+<div class="core-messages">
+  {tags.map((t) => (
+    <div class="core-message">
+      <a href={`${hrefPrefix}#${t.slug}`}>
+        <Icon name={t.icon.replace(/^fa-/, '')} />
+        <h3>{t.tag}</h3>
+        <p>{t.short_description}</p>
+      </a>
+    </div>
+  ))}
+</div>
