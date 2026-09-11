@@ -25,7 +25,7 @@ See [`CLAUDE.md`](./CLAUDE.md) for a more detailed guide to the codebase and dat
 
 ```bash
 npm install
-npm run dev        # http://localhost:4321
+npm run dev        # http://localhost:4321 (or: docker compose -f docker-compose-serve.yml up)
 npm run build      # static output in dist/
 npm run preview    # serve dist/
 npm run check      # astro check (types)
@@ -47,9 +47,31 @@ The Astro build validates the same data again through Zod schemas (`site/lib/sch
 
 ## Branches and deployment
 
-`main` is protected (ruleset "main": pull requests only, linear history, squash or rebase merges, required checks `validate` and `build`). Work on a branch and open a pull request. Merging to `main` builds and deploys the site to GitHub Pages through `.github/workflows/site.yml`.
+`main` is protected (ruleset "main": pull requests only, linear history, squash or rebase merges, required checks `validate` and `build`). Work on a branch and open a pull request.
 
-Domain switch: set `SITE`/`BASE` in the workflow, add `public/CNAME`, configure the domain in the repository's Pages settings.
+The site has two deployment paths:
+
+**GitHub Pages** (automatic): merging to `main` builds and deploys through `.github/workflows/site.yml`. Domain switch: set `SITE`/`BASE` in the workflow, add `public/CNAME`, configure the domain in the repository's Pages settings.
+
+**Self-hosted with nginx** (Docker): the same site served by an `nginx` container behind the host's reverse proxy.
+
+```bash
+docker compose -f docker-compose-build.yml run --rm -T site   # build dist/ in a node container
+docker compose up -d                                          # serve dist/ with nginx on port 80
+docker compose down                                           # stop
+```
+
+On the production host, `./deploy.sh` does all of that (pull, build, restart nginx). A local test can bind another port: `NGINX_PORT=8080 docker compose up -d`. The host-level nginx reverse proxy and certificate configs live in `nginx/` (`livermetabolism.com`, `nginx_ssl.conf`, `ssl.conf`); the container's own config is `nginx/nginx.conf`.
+
+Initial server setup and certificates:
+
+```bash
+sudo cp -v nginx/livermetabolism.com /etc/nginx/sites-available/
+sudo ln -s /etc/nginx/sites-available/livermetabolism.com /etc/nginx/sites-enabled/
+sudo mkdir -p /usr/share/nginx/letsencrypt
+sudo certbot certonly --webroot -w /usr/share/nginx/letsencrypt -d livermetabolism.com -d www.livermetabolism.com -d livermetabolism.de -d www.livermetabolism.de -d www.pharma-twin.eu -d pharma-twin.eu -d www.pharma-twin.de -d pharma-twin.de -d www.perfect-kid.eu -d perfect-kid.eu --dry-run
+sudo certbot renew --dry-run   # renewal
+```
 
 ## Python package (`src/`)
 

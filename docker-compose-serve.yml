@@ -1,0 +1,16 @@
+# Development server in a container (http://localhost:4321, hot reload).
+#   docker compose -f docker-compose-serve.yml up
+# Plain `npm run dev` does the same without Docker.
+services:
+  site:
+    image: node:24-alpine
+    working_dir: /app
+    command: sh -c "npm ci --no-audit --no-fund && npm run dev -- --host 0.0.0.0"
+    ports:
+      - "4321:4321"
+    volumes:
+      - $PWD:/app
+      - site_node_modules:/app/node_modules
+
+volumes:
+  site_node_modules:
