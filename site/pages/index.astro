@@ -1,10 +1,6 @@
 ---
-import { getCollection } from 'astro:content';
-import '../styles/global.css';
-const counts = await Promise.all(
-  (['tags', 'countryFlags', 'people', 'publications', 'projects', 'software', 'editors', 'funding', 'news', 'teaching', 'presentations', 'posters', 'panels', 'abstracts', 'meetings', 'activities', 'linkedin'] as const)
-    .map(async (c) => [c, (await getCollection(c)).length] as const),
-);
+import Base from '../layouts/Base.astro';
 ---
-<html lang="en"><head><meta charset="utf-8" /><title>scaffold</title></head>
-<body><pre>{JSON.stringify(Object.fromEntries(counts), null, 2)}</pre></body></html>
+<Base>
+  <h2>scaffold</h2>
+</Base>

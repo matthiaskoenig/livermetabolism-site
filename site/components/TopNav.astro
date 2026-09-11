@@ -1,0 +1,70 @@
+---
+import Icon from './Icon.vue';
+import NavToggle from './NavToggle.vue';
+import { asset, url } from '../lib/url';
+
+interface Props { sectionid?: string }
+const { sectionid } = Astro.props;
+const active = (...ids: string[]) => (sectionid && ids.includes(sectionid) ? 'active' : '');
+---
+<nav class="navbar site-navbar">
+  <div class="container navbar-container">
+    <a class="navbar-brand" href={url('/')}>
+      <svg class="brand-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <polygon points="50,4 91,27 91,73 50,96 9,73 9,27" fill="none" stroke="#18BC9C" stroke-width="5"></polygon>
+        <g stroke="#EAF0F1" stroke-width="3" fill="none">
+          <line x1="50" y1="30" x2="30" y2="55"></line>
+          <line x1="50" y1="30" x2="70" y2="55"></line>
+          <line x1="30" y1="55" x2="50" y2="75"></line>
+          <line x1="70" y1="55" x2="50" y2="75"></line>
+          <line x1="30" y1="55" x2="70" y2="55"></line>
+        </g>
+        <circle cx="50" cy="30" r="7" fill="#18BC9C"></circle>
+        <circle cx="30" cy="55" r="7" fill="#EAF0F1"></circle>
+        <circle cx="70" cy="55" r="7" fill="#EAF0F1"></circle>
+        <circle cx="50" cy="75" r="7" fill="#18BC9C"></circle>
+      </svg>
+      <span class="brand-word">König Lab</span>
+    </a>
+    <div class="navbar-controls">
+      <button type="button" class="search-toggle" data-modal-target="site-search-modal" aria-label="Search" title="Search (/)">
+        <Icon name="search" />
+      </button>
+      <NavToggle client:load />
+    </div>
+    <div id="navbar" class="navbar-collapse">
+      <ul class="navbar-nav">
+        <li class:list={['nav-item', active('projects')]}><a class="nav-link" href={url('/projects/')}>Projects</a></li>
+        <li class:list={['nav-item', 'dropdown', active('publications')]}>
+          <a class="nav-link" href={url('/publications/')}>Publications</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href={url('/publications/#publications')}>Publications</a></li>
+            <li><a class="dropdown-item" href={url('/publications/#presentations')}>Presentations</a></li>
+            <li><a class="dropdown-item" href={url('/publications/#posters')}>Posters</a></li>
+            <li><a class="dropdown-item" href={url('/publications/#abstracts')}>Abstracts</a></li>
+          </ul>
+        </li>
+        <li class:list={['nav-item', 'dropdown', active('people')]}>
+          <a class="nav-link" href={url('/people/')}>Team</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href={url('/people/#current-members')}>Team</a></li>
+            <li><a class="dropdown-item" href={url('/people/#open-positions')}>Open Positions</a></li>
+            <li><a class="dropdown-item" href={url('/people/#alumni')}>Alumni</a></li>
+          </ul>
+        </li>
+        <li class:list={['nav-item', 'dropdown', active('research', 'meetings')]}>
+          <a class="nav-link" href={url('/research/')}>Research</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href={url('/research/#software')}>Software</a></li>
+            <li><a class="dropdown-item" href={url('/research/#funding')}>Funding</a></li>
+            <li><a class="dropdown-item" href={url('/research/#editors')}>Editors</a></li>
+            <li><a class="dropdown-item" href={url('/meetings/')}>Meetings</a></li>
+          </ul>
+        </li>
+        <li class:list={['nav-item', active('news')]}><a class="nav-link" href={url('/news/')}>News</a></li>
+        <li class:list={['nav-item', active('teaching')]}><a class="nav-link" href={url('/teaching/')}>Teaching</a></li>
+        <li class="nav-item"><a class="nav-link" href={asset('cv/Koenig_CV.pdf')} target="_blank" rel="noopener">CV</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

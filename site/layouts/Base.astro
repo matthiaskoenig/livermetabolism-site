@@ -1,0 +1,28 @@
+---
+import '../styles/global.css';
+import Head from '../components/Head.astro';
+import TopNav from '../components/TopNav.astro';
+import Footer from '../components/Footer.astro';
+import { url } from '../lib/url';
+
+interface Props { title?: string; description?: string; sectionid?: string }
+const { title, description, sectionid } = Astro.props;
+const isHome = Astro.url.pathname === url('/');
+---
+<html lang="en" class:list={[{ onepager: isHome }]}>
+  <head>
+    <Head title={title} description={description} />
+  </head>
+  <body>
+    <TopNav sectionid={sectionid} />
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="container">
+          <slot />
+        </div>
+      </div>
+    </div>
+    <Footer home={isHome} />
+    <slot name="global" />
+  </body>
+</html>
