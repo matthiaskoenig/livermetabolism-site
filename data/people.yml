@@ -829,7 +829,7 @@
   orcid:
   repository: 'https://github.com/anfark'
   homepage: 'https://github.com/draeger-lab/insilico'
-  description: '<img src="/assets/image/projects/insilico_logo.png" title="InSilico" height="80" align="left"/> Within his thesis the concept of an Modular Research Environment (MRE) was developed. An MRE is a modular application framework that can be extended with plugins to create a new tool. InSilico is the working proof-of-principle implementation of such an MRE and was developed alongside this work. The created infrastructure of InSilico can be used to create, share and reuse custom research tools with less effort, time, and resources compared to the traditional approach.'
+  description: 'Within his thesis the concept of an Modular Research Environment (MRE) was developed. An MRE is a modular application framework that can be extended with plugins to create a new tool. InSilico is the working proof-of-principle implementation of such an MRE and was developed alongside this work. The created infrastructure of InSilico can be used to create, share and reuse custom research tools with less effort, time, and resources compared to the traditional approach.'
 
 - id: 'shalin_shah'
   status: 'alumni'
@@ -843,7 +843,7 @@
   orcid:
   repository: 'https://github.com/shalinshah1993/SBSCL'
   homepage: 'https://github.com/shalinshah1993'
-  description: '<img src="/assets/image/gsoc.jpg" title="GSOC" height="80" align="left"/> The Systems Biology Simulation Core Library (SBSCL) provides an efficient and exhaustive Java™ implementation of methods to interpret the content of models encoded in the Systems Biology Markup Language (SBML) and its numerical solution. This library is based on the JSBML project and can be used on every operating system for which a Java Virtual Machine is available. Within this project SBSCL was extended among others with better support for SED-ML and COMBINE archives. See also <a href="https://ssdoesgsoc.wordpress.com/" target="_blank">https://ssdoesgsoc.wordpress.com/</a>.'
+  description: 'The Systems Biology Simulation Core Library (SBSCL) provides an efficient and exhaustive Java™ implementation of methods to interpret the content of models encoded in the Systems Biology Markup Language (SBML) and its numerical solution. This library is based on the JSBML project and can be used on every operating system for which a Java Virtual Machine is available. Within this project SBSCL was extended among others with better support for SED-ML and COMBINE archives. See also <a href="https://ssdoesgsoc.wordpress.com/" target="_blank">https://ssdoesgsoc.wordpress.com/</a>.'
 
 - id: 'takahiro_yamada'
   status: 'alumni'
@@ -857,7 +857,7 @@
   orcid:
   repository: 'https://github.com/TakahiroYamada/GSOC2017_SBMLModelAnalysisWebApp'
   homepage: 'https://github.com/TakahiroYamada'
-  description: '<img src="/assets/image/gsoc.jpg" title="GSOC" height="80" align="left"/> Within this project as part of Google Summer of Code 2017 a Web App for SBML models was implemented which provides functionality for time course simulation, steady state analysis, and parameter estimation. The Web App provides options for uploading SBML models and experimental data files and run the respective simulations with the models. See also <a href="https://gsoc2017developwebservice.blogspot.com/" target="_blank">https://gsoc2017developwebservice.blogspot.com/</a>.'
+  description: 'Within this project as part of Google Summer of Code 2017 a Web App for SBML models was implemented which provides functionality for time course simulation, steady state analysis, and parameter estimation. The Web App provides options for uploading SBML models and experimental data files and run the respective simulations with the models. See also <a href="https://gsoc2017developwebservice.blogspot.com/" target="_blank">https://gsoc2017developwebservice.blogspot.com/</a>.'
 
 
 - id: 'dimitra_eleftheriadou'

@@ -6,14 +6,27 @@ import * as s from './lib/schemas';
 
 // tags.yml rows have no `id`; the tag name itself is the id so that the
 // `tags: ['Digital Twins']` lists on other tables resolve with reference().
+// `order` records the row's position in the YAML file: Astro's content
+// layer persists collections sorted alphabetically by id for deterministic
+// build caching, so `getCollection('tags')` does not preserve file order —
+// callers that care about display order (the homepage tag sections) must
+// sort by this field themselves.
 const tagsLoader = file('data/tags.yml', {
-  parser: (text) => (load(text) as { tag: string }[]).map((t) => ({ id: t.tag, ...t })),
+  parser: (text) => (load(text) as { tag: string }[]).map((t, order) => ({ id: t.tag, order, ...t })),
 });
 // country_flags.yml is a map country -> emoji, not a list.
 const countryFlagsLoader = file('data/country_flags.yml', {
   parser: (text) => Object.entries(load(text) as Record<string, string>).map(([id, flag]) => ({ id, flag })),
 });
-const yml = (name: string) => file(`data/${name}.yml`);
+// Astro's content layer persists every collection sorted alphabetically by
+// id for deterministic build caching (astro/dist/content/data-store-writer.js),
+// so getCollection() does not preserve a YAML file's row order — several
+// pages rely on that order (e.g. research.astro's software cards,
+// projects.astro, the funding section), so `order` records each row's
+// original position and `all()` in lib/data.ts restores it.
+const yml = (name: string) => file(`data/${name}.yml`, {
+  parser: (text) => (load(text) as Record<string, unknown>[]).map((row, order) => ({ order, ...row })),
+});
 
 const refList = (collection: 'people' | 'tags' | 'publications') =>
   z.preprocess((v) => (v == null || v === '' ? [] : v), z.array(reference(collection)));

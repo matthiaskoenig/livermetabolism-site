@@ -13,7 +13,7 @@ function close() { open.value = false; if (card.value) { card.value.style.transf
 function closeOthers() { for (const fn of registry) if (fn !== close) fn(); }
 
 /** keep the card inside the viewport by shifting it off its centered position */
-function position() {
+function clampToViewport() {
   const el = card.value; if (!el) return;
   const margin = 8;
   el.style.transform = 'translateX(-50%)';
@@ -23,7 +23,7 @@ function position() {
   else if (rect.right > window.innerWidth - margin) shift = window.innerWidth - margin - rect.right;
   if (shift !== 0) { el.style.transform = `translateX(calc(-50% + ${shift}px))`; el.style.setProperty('--arrow-shift', `${-shift}px`); }
 }
-function show() { closeOthers(); open.value = true; requestAnimationFrame(position); }
+function show() { closeOthers(); open.value = true; requestAnimationFrame(clampToViewport); }
 function toggle() { const was = open.value; closeOthers(); if (was) close(); else show(); }
 function onDocClick(e: MouseEvent) { if (!(e.target as HTMLElement).closest('.person-avatar')) close(); }
 

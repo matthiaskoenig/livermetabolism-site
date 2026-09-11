@@ -56,94 +56,94 @@ export const TeachingType = z.enum(['lecture', 'course', 'seminar']);
 const id = z.string().optional();
 
 export const tagSchema = z.object({
-  id, tag: reqStr, icon: reqStr, short_description: reqStr, description: reqStr, vision: reqStr,
+  id, order: z.number().default(0), tag: reqStr, icon: reqStr, short_description: reqStr, description: reqStr, vision: reqStr,
 }).strict();
 
 export const countryFlagsSchema = z.record(z.string(), z.string());
 export const countryFlagSchema = z.object({ id, flag: reqStr }).strict();
 
 export const personSchema = z.object({
-  id, status: PersonStatus, tenure: reqStr, name: reqStr, country: optStr, role: strList,
+  id, order: z.number().default(0), status: PersonStatus, tenure: reqStr, name: reqStr, country: optStr, role: strList,
   image: optStr, orcid: optStr, repository: optStr, homepage: optStr, affiliation: optStr,
   description: optStr, end_year: optInt,
 }).strict().refine((p) => p.status !== 'alumni' || p.end_year != null, { message: 'alumni need end_year' });
 
 export const publicationSchema = z.object({
-  id, tags: strList, people: strList, year: reqInt, date: optDate, pdf: optStr,
+  id, order: z.number().default(0), tags: strList, people: strList, year: reqInt, date: optDate, pdf: optStr,
   authors: reqStr, affiliations: optStr, title: reqStr, journal: reqStr, journal_short: optStr,
   status: PublicationStatus, impact: optNum, position: AuthorPosition, doi: optStr, pmid: optInt,
   keywords: strList, homepage: optStr, repository: optStr, abstract: optStr,
 }).strict();
 
 export const projectSchema = z.object({
-  id, tags: strList, people: strList, title: reqStr, status: ContentStatus, publications: strList,
+  id, order: z.number().default(0), tags: strList, people: strList, title: reqStr, status: ContentStatus, publications: strList,
   homepage: optStr, repository: optStr, cooperation_partners: optStr, images: scalarOrList,
   image_title: optStr, abstract: reqStr,
 }).strict();
 
 export const softwareSchema = z.object({
-  id, tags: strList, people: strList, type: SoftwareType, name: reqStr, title: reqStr,
+  id, order: z.number().default(0), tags: strList, people: strList, type: SoftwareType, name: reqStr, title: reqStr,
   description: reqStr, image: optStr, publications: strList, homepage: optStr, repository: optStr, doi: optStr,
 }).strict();
 
 export const editorSchema = z.object({
-  id, tags: strList, status: PersonStatus, tenure: reqStr, name: reqStr, image: optStr,
+  id, order: z.number().default(0), tags: strList, status: PersonStatus, tenure: reqStr, name: reqStr, image: optStr,
   repository: optStr, homepage: optStr, description: reqStr,
 }).strict();
 
 export const fundingSchema = z.object({
-  id, tags: strList, funder_short: reqStr, funder: reqStr, funder_link: optStr, funder_logo: optStr,
+  id, order: z.number().default(0), tags: strList, funder_short: reqStr, funder: reqStr, funder_link: optStr, funder_logo: optStr,
   grant: z.preprocess((v) => (v == null || v === '' ? null : String(v)), z.string().nullable().optional()),
   start: reqStr, end: reqStr, title: reqStr, role: FundingRole, amount: reqInt,
   personal_amount: reqInt, currency: reqStr, homepage: optStr, repository: optStr, description: reqStr,
 }).strict();
 
 export const newsSchema = z.object({
-  id, tags: strList, people: strList, status: ContentStatus, title: reqStr, date: reqDate,
+  id, order: z.number().default(0), tags: strList, people: strList, status: ContentStatus, title: reqStr, date: reqDate,
   image: optStr, image2: optStr, link: optStr, short: reqStr, abstract: optStr, video: optStr,
 }).strict();
 
 export const teachingSchema = z.object({
-  id, tags: strList, people: strList, title: reqStr, title_german: optStr, date: reqStr,
+  id, order: z.number().default(0), tags: strList, people: strList, title: reqStr, title_german: optStr, date: reqStr,
   type: z.preprocess((v) => (v == null ? [] : v), z.array(TeachingType)), semester: reqStr,
   authors: reqStr, location: reqStr, image: optStr, caption: optStr, funding: optStr, content: reqStr,
 }).strict();
 
 export const presentationSchema = z.object({
-  id, tags: strList, people: strList, type: TalkType, title: reqStr, authors: reqStr,
+  id, order: z.number().default(0), tags: strList, people: strList, type: TalkType, title: reqStr, authors: reqStr,
   affiliations: optStr, image: optStr, slides: optStr, video: optStr, event: reqStr,
   event_page: optStr, date: reqDate, date_display: optStr, location: optStr, repository: optStr,
   publications: strList, abstract: optStr, keywords: strList,
 }).strict();
 
 export const posterSchema = z.object({
-  id, tags: strList, people: strList, year: reqInt, date: reqDate, pdf: reqStr,
+  id, order: z.number().default(0), tags: strList, people: strList, year: reqInt, date: reqDate, pdf: reqStr,
   image: reqStr, authors: reqStr, affiliations: reqStr, title: reqStr, event: reqStr,
   event_page: optStr, doi: optStr, keywords: strList, homepage: optStr, repository: optStr, abstract: reqStr,
 }).strict();
 
 export const panelSchema = z.object({
-  id, people: strList, type: PanelType, title: reqStr, authors: reqStr, slides: optStr,
+  id, order: z.number().default(0), people: strList, type: PanelType, title: reqStr, authors: reqStr, slides: optStr,
   video: optStr, event: reqStr, event_page: optStr, date: reqDate, location: reqStr,
   repository: optStr, publications: strList, abstract: optStr, keywords: strList,
 }).strict();
 
 export const abstractSchema = z.object({
-  id, people: strList, year: reqInt, date: optDate, title: reqStr, pdf: optStr,
+  id, order: z.number().default(0), people: strList, year: reqInt, date: optDate, title: reqStr, pdf: optStr,
   authors: reqStr, affiliations: optStr, abstract: optStr, keywords: strList, event: optStr,
   event_page: optStr, journal: optStr, doi: optStr, homepage: optStr, repository: optStr,
 }).strict();
 
 export const meetingSchema = z.object({
-  id, tags: strList, people: strList, title: reqStr, description: reqStr, date: reqDate,
+  id, order: z.number().default(0), tags: strList, people: strList, title: reqStr, description: reqStr, date: reqDate,
   date_display: optStr, location: reqStr, homepage: optStr, pdf: optStr, image: optStr, repository: optStr,
 }).strict();
 
 export const activitySchema = z.object({
-  id, tenure: reqStr, title: reqStr, description: reqStr, link: reqStr,
+  id, order: z.number().default(0), tenure: reqStr, title: reqStr, description: reqStr, link: reqStr,
 }).strict();
 
-export const linkedInSchema = z.object({ id, date: reqDate, content: reqStr }).strict();
+export const linkedInSchema = z.object({ id, order: z.number().default(0), date: reqDate, content: reqStr }).strict();
 
 export type TagData = z.output<typeof tagSchema>;
 export type CountryFlagData = z.output<typeof countryFlagSchema>;
