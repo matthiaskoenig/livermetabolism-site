@@ -1,0 +1,4 @@
+The SVG files in this directory are from Font Awesome Free 6
+(https://fontawesome.com), licensed CC BY 4.0
+(https://creativecommons.org/licenses/by/4.0/). Files were renamed to the
+Font Awesome 4 class names used by this site.
