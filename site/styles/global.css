@@ -1756,7 +1756,9 @@
     color: var(--color-gray-900);
     text-decoration: none;
 
-    i {
+    /* was a bare `i` (Font Awesome <i>); icons are now inline
+       <svg class="fa fa-<name> icon"> */
+    .fa {
       flex: none;
       width: 1.2em;
       text-align: center;
