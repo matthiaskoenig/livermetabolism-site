@@ -87,30 +87,31 @@ describe('citationsPerYearOption', () => {
 });
 
 describe('citationHistoryOption', () => {
-  const point = (date: string, citations: number) => ({ date, citations, hIndex: 26, i10Index: 36 });
+  const day = (date: string, citations: number) => ({ date, citations, source: 'day' as const });
+  const year = (date: string, citations: number) => ({ date, citations, source: 'year' as const });
 
-  it('draws one line point per day, ascending', () => {
-    const option = citationHistoryOption([point('2026-09-13', 3830), point('2026-09-12', 3827)]);
-    expect(option.xAxis.data).toEqual(['2026-09-12', '2026-09-13']);
+  it('draws the points on a time axis, ascending, year ends hollow and days filled', () => {
+    const option = citationHistoryOption([day('2026-09-13', 3830), year('2025-12-31', 3445), day('2026-09-12', 3827)]);
+    expect(option.xAxis.type).toBe('time');
     expect(option.series[0]!.type).toBe('line');
-    expect(option.series[0]!.data).toEqual([3827, 3830]);
+    expect(option.series[0]!.data.map((d) => d.value)).toEqual([['2025-12-31', 3445], ['2026-09-12', 3827], ['2026-09-13', 3830]]);
+    expect(option.series[0]!.data.map((d) => d.symbol)).toEqual(['emptyCircle', 'circle', 'circle']);
     expect(option.series[0]!.lineStyle.color).toBe(PALETTE[1]);
   });
 
   it('shows the symbol, so a one-point history is visible at all', () => {
-    const option = citationHistoryOption([point('2026-09-12', 3827)]);
-    expect(option.series[0]!.data).toEqual([3827]);
+    const option = citationHistoryOption([day('2026-09-12', 3827)]);
+    expect(option.series[0]!.data).toHaveLength(1);
     expect(option.series[0]!.showSymbol).toBe(true);
-    expect(option.series[0]!.symbol).toBe('circle');
     // a total that grows slowly must not look flat against a 0 baseline
     expect(option.yAxis.scale).toBe(true);
   });
 
   it('renders its tooltip inside the canvas (CSP)', () => {
-    const { tooltip } = citationHistoryOption([point('2026-09-12', 3827)]);
+    const { tooltip } = citationHistoryOption([day('2026-09-12', 3827)]);
     expect(tooltip.renderMode).toBe('richText');
     expect(tooltip.trigger).toBe('axis');
-    expect(tooltip.formatter([{ name: '2026-09-12', value: 3827 }])).toBe('2026-09-12\n3827 citations');
+    expect(tooltip.formatter([{ name: '2026-09-12', value: ['2026-09-12', 3827] }])).toBe('2026-09-12\n3827 citations');
   });
 });
 

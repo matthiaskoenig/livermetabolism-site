@@ -19,8 +19,12 @@ import { scholarProfileUrl, type Scholar } from './scholarSchema';
 /** One bar of the citations-per-year chart. */
 export interface PerYearRow { year: number; count: number }
 
-/** One point of the citations-over-time line (one daily snapshot reading). */
-export interface HistoryRow { date: string; citations: number }
+/**
+ * One point of the citations-over-time line: a `'year'` point is a year-end
+ * total accumulated from Scholar's per-year histogram, a `'day'` point is a
+ * daily snapshot reading.
+ */
+export interface HistoryRow { date: string; citations: number; source: 'year' | 'day' }
 
 /** What the summary strip shows; `known` is false for `emptyScholar()`. */
 export interface StripValues {
@@ -43,14 +47,33 @@ export function perYearRows(scholar: Scholar): PerYearRow[] {
 }
 
 /**
- * The accumulated daily readings, ascending by date and at most one per date
- * (the last reading of a date wins, as `mergeHistory` in the fetch script
- * already guarantees).
+ * The citations-over-time points: year-end totals derived from the histogram
+ * for every year that ended before the first daily reading, followed by the
+ * daily readings (ascending, at most one per date — the last reading of a
+ * date wins, as `mergeHistory` in the fetch script already guarantees).
+ *
+ * The histogram does not date every citation (Scholar's total is a little
+ * larger than its sum), so the undated remainder is added as a constant
+ * baseline and the yearly curve meets today's total. Without a daily reading
+ * (a snapshot without history) the year points run up to the last year that
+ * ended before `fetchedAt`.
  */
 export function historyRows(scholar: Scholar): HistoryRow[] {
   const byDate = new Map<string, HistoryRow>();
-  for (const p of scholar.history) byDate.set(p.date, { date: p.date, citations: p.citations });
-  return [...byDate.values()].sort((a, b) => a.date.localeCompare(b.date));
+  for (const p of scholar.history) byDate.set(p.date, { date: p.date, citations: p.citations, source: 'day' });
+  const days = [...byDate.values()].sort((a, b) => a.date.localeCompare(b.date));
+  const cutoff = days[0]?.date ?? (hasData(scholar.fetchedAt) ? scholar.fetchedAt.slice(0, 10) : '');
+  const years = [...scholar.citationsPerYear].sort((a, b) => a.year - b.year);
+  const dated = years.reduce((sum, y) => sum + y.count, 0);
+  const baseline = Math.max(0, scholar.citations.all - dated);
+  const yearRows: HistoryRow[] = [];
+  let total = baseline;
+  for (const y of years) {
+    total += y.count;
+    const date = `${y.year}-12-31`;
+    if (cutoff && date < cutoff) yearRows.push({ date, citations: total, source: 'year' });
+  }
+  return [...yearRows, ...days];
 }
 
 /**
@@ -82,10 +105,17 @@ export function stripValues(scholar: Scholar): StripValues {
 }
 
 /**
- * The caption addition of the history chart: returns the "history starts
- * <date>" note for fewer than two points that have a date (i.e. exactly one
- * point; zero points give an empty note, same as two or more).
+ * The caption addition of the history chart, describing where its points come
+ * from: the year-end totals derived from the histogram (up to their last
+ * year) and the daily readings (from their first date). A single daily point
+ * without year points keeps the "history starts <date>" wording.
  */
 export function historyNote(rows: HistoryRow[]): string {
-  return rows.length === 1 ? `history starts ${shortDate(`${rows[0]!.date}T00:00:00Z`)}` : '';
+  const years = rows.filter((r) => r.source === 'year');
+  const days = rows.filter((r) => r.source === 'day');
+  const parts: string[] = [];
+  if (years.length) parts.push(`yearly totals from the citation histogram up to ${years[years.length - 1]!.date.slice(0, 4)}`);
+  if (days.length && years.length) parts.push(`daily readings from ${shortDate(`${days[0]!.date}T00:00:00Z`)}`);
+  else if (days.length === 1) parts.push(`history starts ${shortDate(`${days[0]!.date}T00:00:00Z`)}`);
+  return parts.join(', ');
 }
