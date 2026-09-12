@@ -1,25 +1,37 @@
 ---
 import Base from '../layouts/Base.astro';
-import EditorsSection from '../components/EditorsSection.vue';
-import FundingSection from '../components/FundingSection.vue';
-import SoftwareSection from '../components/SoftwareSection.vue';
+import EditorCard from '../components/EditorCard.vue';
+import FundingCard from '../components/FundingCard.vue';
+import SoftwareCard from '../components/SoftwareCard.vue';
+import TagFilter from '../components/TagFilter.vue';
 import { getEditors, getFunding, getPeopleMap, getSoftware, getTags } from '../lib/data';
 import { asset } from '../lib/url';
 
 const [tagInfo, peopleMap, software, funding, editors] = await Promise.all([getTags(), getPeopleMap(), getSoftware(), getFunding(), getEditors()]);
 const avatarBase = asset('image/people/128/');
+// three independent TagFilter islands; each reads the same ?tag= on mount,
+// so a /research/?tag=AI link still pre-filters all three grids
 ---
 <Base title="Research" sectionid="research">
   <h2 id="software">Software</h2>
-  <SoftwareSection client:visible items={software} tagInfo={tagInfo} peopleMap={peopleMap} imageBase={asset('image/software/')} avatarBase={avatarBase} />
+  <TagFilter client:idle id="software" tags={tagInfo} target="software-grid" />
+  <div class="project-grid" id="software-grid">
+    {software.map((item) => <SoftwareCard item={item} tagInfo={tagInfo} peopleMap={peopleMap} imageBase={asset('image/software/')} avatarBase={avatarBase} />)}
+  </div>
 
   <h2 id="funding">Funding</h2>
-  <FundingSection client:visible items={funding} tagInfo={tagInfo} imageBase={asset('image/funding/')} />
+  <TagFilter client:idle id="funding" tags={tagInfo} target="funding-grid" />
+  <div class="project-grid" id="funding-grid">
+    {funding.map((item) => <FundingCard item={item} tagInfo={tagInfo} imageBase={asset('image/funding/')} />)}
+  </div>
   <p>
     This work was supported by the BMFTR-funded <a href="https://www.denbi.de/">de.NBI</a> Cloud within the German Network for Bioinformatics Infrastructure (de.NBI) (031A537B, 031A533A, 031A538A, 031A533B, 031A535A, 031A537C, 031A534A, 031A532B).
   </p>
 
   <h2 id="editors">Editors</h2>
   <p>We are actively involved in the standardization and reproducibility efforts in Systems Biology and Systems Medicine.</p>
-  <EditorsSection client:visible items={editors} tagInfo={tagInfo} imageBase={asset('image/editors/')} />
+  <TagFilter client:idle id="editors" tags={tagInfo} target="editors-grid" />
+  <div class="project-grid" id="editors-grid">
+    {editors.map((item) => <EditorCard item={item} tagInfo={tagInfo} imageBase={asset('image/editors/')} />)}
+  </div>
 </Base>
