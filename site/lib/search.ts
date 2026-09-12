@@ -8,7 +8,7 @@ export const SEARCH_TYPE_ICONS: Record<string, string> = {
 };
 
 /** every token must appear; title-start 15, title 10, text 1; -1 when any token is missing */
-export function scoreRecord(record: SearchRecord, tokens: string[]): number {
+function scoreRecord(record: SearchRecord, tokens: string[]): number {
   const title = record.title.toLowerCase();
   const text = record.text.toLowerCase();
   let total = 0;

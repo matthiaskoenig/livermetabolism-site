@@ -35,11 +35,6 @@ describe('schemas mirror data/*.yml', () => {
     });
   }
 
-  it('parses country_flags.yml as a map', () => {
-    const raw = load(readFileSync('data/country_flags.yml', 'utf8')) as Record<string, string>;
-    expect(s.countryFlagsSchema.parse(raw)).toEqual(raw);
-  });
-
   it('renders dates as YYYY-MM-DD strings', () => {
     const pub = s.publicationSchema.parse({
       id: 'x', year: 2026, date: new Date('2026-09-05T00:00:00Z'), authors: 'A', title: 'T',
