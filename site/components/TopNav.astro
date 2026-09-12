@@ -39,6 +39,7 @@ const active = (...ids: string[]) => (sectionid && ids.includes(sectionid) ? 'ac
         <li class:list={['nav-item', 'dropdown', active('publications')]}>
           <a class="nav-link" href={url('/publications/')}>Publications</a>
           <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href={url('/publications/#scholar')}>Citations</a></li>
             <li><a class="dropdown-item" href={url('/publications/#publications')}>Publications</a></li>
             <li><a class="dropdown-item" href={url('/publications/#presentations')}>Presentations</a></li>
             <li><a class="dropdown-item" href={url('/publications/#posters')}>Posters</a></li>
