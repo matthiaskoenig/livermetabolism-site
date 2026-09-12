@@ -22,8 +22,8 @@ const known = hasData(fetchedAt);
 ---
 
 <div class="publication-order" id="publication-order" role="group" aria-label="Order publications">
-  <button type="button" class="order-btn active" data-order="year">Year</button>
-  <button type="button" class="order-btn" data-order="cited">Most cited</button>
+  <button type="button" class="order-btn active" data-order="year" aria-pressed="true">Year</button>
+  <button type="button" class="order-btn" data-order="cited" aria-pressed="false">Most cited</button>
   <p class="citations-note" data-citations-note>
     Citations from <a href="https://openalex.org" target="_blank" rel="noopener noreferrer">OpenAlex</a>, updated
     <time data-field="updated" data-empty="never" data-iso={fetchedAt} datetime={known ? fetchedAt : undefined}>{known ? relativeDate(fetchedAt) : 'never'}</time>.
@@ -44,7 +44,9 @@ const known = hasData(fetchedAt);
       current = order;
       applyOrder(list, order);
       for (const btn of toggle.querySelectorAll<HTMLElement>('[data-order]')) {
-        btn.classList.toggle('active', btn.dataset.order === order);
+        const on = btn.dataset.order === order;
+        btn.classList.toggle('active', on);
+        btn.setAttribute('aria-pressed', String(on));
       }
     };
 

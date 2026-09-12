@@ -59,6 +59,19 @@ describe('applyScholar', () => {
     expect((el('[data-field="updated"]') as HTMLTimeElement).dateTime).toBe(scholar.fetchedAt);
   });
 
+  // shared refreshNote(): the machine-readable date must not keep the value a
+  // weeks-old build rendered once a newer snapshot arrives in the browser
+  it("refreshes the note's datetime, not only its text", () => {
+    const stale = '2026-08-01T05:00:00.000Z';
+    const note = el('[data-field="updated"]') as HTMLTimeElement;
+    note.dateTime = stale;
+    note.dataset.iso = stale;
+    applyScholar(scholar, document, now);
+    expect(note.dateTime).toBe(scholar.fetchedAt);
+    expect(note.dataset.iso).toBe(scholar.fetchedAt);
+    expect(note.textContent).toBe('yesterday');
+  });
+
   it('reveals the metric figures the build left hidden', () => {
     expect([...document.querySelectorAll<HTMLElement>('[data-scholar-metric]')].every((e) => e.hidden)).toBe(true);
     applyScholar(scholar, document, now);
