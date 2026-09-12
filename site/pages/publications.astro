@@ -6,11 +6,13 @@ import CitationsPerYearChart from '../components/CitationsPerYearChart.vue';
 import PosterCard from '../components/PosterCard.vue';
 import PresentationCard from '../components/PresentationCard.vue';
 import PublicationRow from '../components/PublicationRow.vue';
+import PublicationsChart from '../components/PublicationsChart.vue';
 import PublicationsOrder from '../components/PublicationsOrder.astro';
 import ScholarStats from '../components/ScholarStats.astro';
 import TagFilter from '../components/TagFilter.vue';
 import { citationFor, loadCitations } from '../lib/citations';
 import { getAbstracts, getPeopleMap, getPosters, getPresentations, getPublications, getTags } from '../lib/data';
+import { publicationsPerYear } from '../lib/publicationRows';
 import { loadScholar } from '../lib/scholar';
 import { historyRows, perYearRows } from '../lib/scholarRows';
 import { asset } from '../lib/url';
@@ -40,6 +42,9 @@ const citations = await loadCitations();
 // data/publications.yml (theses, reports, preprints and abstracts excluded)
 const PEER_REVIEWED = new Set(['publication', 'review', 'proceeding', 'chapter']);
 const publicationCount = publications.filter((p) => PEER_REVIEWED.has(p.status)).length;
+// papers per year for the chart island: build-time only (no snapshot, no
+// fetch) — the island's props are these aggregates, not the publications
+const chartRows = publicationsPerYear(publications, tagInfo);
 ---
 <Base title="Publications" sectionid="publications">
   <section id="scholar">
@@ -49,6 +54,12 @@ const publicationCount = publications.filter((p) => PEER_REVIEWED.has(p.status))
       <CitationsPerYearChart client:visible rows={perYear} fetchedAt={scholar.fetchedAt} />
       <CitationHistoryChart client:visible rows={history} fetchedAt={scholar.fetchedAt} />
     </div>
+  </section>
+
+  <section id="publications-chart">
+    <h2>Publications over time</h2>
+    <PublicationsChart client:visible rows={chartRows} />
+    <p class="chart-note">Clicking a bar filters the list below by that research area; clicking a year jumps to it. A paper with several research areas counts once per area.</p>
   </section>
 
   <h2 id="publications">Publications</h2>

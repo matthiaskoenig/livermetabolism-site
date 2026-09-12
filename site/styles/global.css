@@ -1083,6 +1083,34 @@
     min-height: 220px;
   }
 
+  /* ----------------------------------------------------------------
+     Publications over time (PublicationsChart.vue): the Research area
+     / Status switch, the chart container and the caption. Build-time
+     data, but the same canvas rules as above — the height comes from
+     useChart.ts through the CSSOM, never as a style= attribute.
+     ---------------------------------------------------------------- */
+  .publications-plot {
+    margin: 0 0 2em;
+  }
+
+  .chart-modes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin: 0 0 0.6em;
+  }
+
+  .publications-chart {
+    width: 100%;
+    min-height: 240px;
+  }
+
+  .chart-note {
+    margin: 0.4em 0 0;
+    color: var(--color-gray-600);
+    font-size: 0.8em;
+  }
+
   /* cards for the different kinds of open positions (see team.html) */
   .position-cards {
     display: grid;
@@ -1510,8 +1538,11 @@
     margin: -0.8em 0 1.5em;
   }
 
-  /* same pill as .tag-filter-btn; the active one is the order in effect */
-  .order-btn {
+  /* same pill as .tag-filter-btn; the active one is the order in effect
+     (and the mode in effect for the chart's Research area / Status switch,
+     PublicationsChart.vue, which is the same control in a different place) */
+  .order-btn,
+  .chart-mode-btn {
     padding: 0.35em 0.9em;
     border: 1px solid var(--color-gray-200);
     border-radius: 999px;
