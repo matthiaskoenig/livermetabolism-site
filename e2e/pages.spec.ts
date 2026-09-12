@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { expect, test } from '@playwright/test';
 
 // base-relative (no leading slash): see playwright.config.ts
-const pages = ['', 'projects/', 'publications/', 'people/', 'research/', 'meetings/', 'news/', 'teaching/', 'cv/', 'impressum/', 'privacy/'];
+const pages = ['', 'projects/', 'publications/', 'people/', 'research/', 'meetings/', 'network/', 'news/', 'teaching/', 'cv/', 'impressum/', 'privacy/'];
 
 // read once so the footer-version assertion never drifts from the released version
 const { version } = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')) as { version: string };
