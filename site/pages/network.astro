@@ -34,8 +34,9 @@ try {
   console.warn(`[network] no graph thumbnails at ${thumbRoot} (${error}); nodes fall back to circles`);
 }
 
-// Rows and hrefs are built once here; the island only draws them (about
-// 110 kB of props for a page whose content is the graph).
+// Rows and hrefs are built once here; the island only draws them and filters
+// them by research area (about 100 kB of props for a page whose content is
+// the graph).
 const rows = graphRows({ tags, people, publications, projects, software, citations, base: import.meta.env.BASE_URL, thumbs });
 const topics = tags.map(({ tag, slug }) => ({ tag, slug }));
 const counts = {
@@ -46,17 +47,16 @@ const counts = {
 };
 ---
 <Base title="Network" sectionid="network"
-  description="Interactive network graph of the research areas, people, publications, projects, and software of the König group.">
+  description="Interactive network graph of the people, publications, projects, and software of the König group.">
   <h2 id="network">Network</h2>
   <p>
-    How the work of the group hangs together: the five research areas are the hubs, around them
-    {counts.people} people, {counts.publications} publications, {counts.projects} projects and {counts.software} software
-    tools, linked by authorship, membership and topic. A publication is a dot in its research area's colour, sized by how
-    often it was cited; people, projects and software carry their own picture.
+    How the work of the group hangs together: {counts.people} people, {counts.publications} publications,
+    {counts.projects} projects and {counts.software} software tools, linked by authorship and membership. People,
+    projects and software carry their own picture.
   </p>
   <p>
-    Pick a research area to focus it, or click its hub in the graph; clicking any other node opens that person, paper,
-    project or tool on the site.
+    Pick a research area to show only its people, publications, projects and software; clicking a node opens it on the
+    site. A publication is a dot in its research area's colour, sized by citations.
   </p>
   <div id="network-graph">
     <NetworkGraph client:load rows={rows} topics={topics} />

@@ -2,20 +2,18 @@ import { describe, expect, it } from 'vitest';
 import { TAG_PALETTE } from './chartOptions';
 import type { GraphRows } from './graphRows';
 import {
-  CATEGORY_COLOR, CATEGORY_LABEL, CATEGORY_ORDER, DIM_OPACITY, HUB_RADIUS, PUBLICATION_SIZE_CAP,
-  networkOption, neighbourhood, publicationSymbolSize, type NetworkSize,
+  CATEGORY_COLOR, CATEGORY_LABEL, CATEGORY_ORDER, LAYOUT_FRICTION, PUBLICATION_SIZE_CAP, SETTLE_FRICTION,
+  filterRows, networkOption, publicationSymbolSize,
 } from './networkOptions';
 
 /**
- * Two topics, two people, a project, a software entry and three publications
- * — enough to have an item of one topic (`person:ada`) whose neighbour
- * (`software:tool`) belongs to the other, which is what `neighbourhood()`
- * has to pull in.
+ * Two research areas over seven nodes: `person:ada` is in `ai` only through
+ * the paper she co-authored (a person carries no tags of their own), and
+ * `software:tool` belongs to the other area although a person of the first
+ * one is a member — so filtering must drop it together with the link.
  */
 const rows: GraphRows = {
   nodes: [
-    { id: 'topic:ai', type: 'topic', label: 'AI', detail: 'Machine learning for the liver', href: '/#ai', image: '/assets/image/graph/topics/ai.webp', topics: ['ai'], value: 3 },
-    { id: 'topic:pharmacometrics', type: 'topic', label: 'Pharmacometrics', detail: 'PBPK models', href: '/#pharmacometrics', image: null, topics: ['pharmacometrics'], value: 4 },
     { id: 'person:ada', type: 'person', label: 'Ada Lovelace', detail: 'PostDoc', href: '/people/#person-modal-ada', image: '/assets/image/graph/people/ada.webp', topics: ['ai'], value: 3 },
     { id: 'person:bob', type: 'person', label: 'Bob Stone', detail: 'PhD student', href: '/people/#person-modal-bob', image: null, topics: ['pharmacometrics'], value: 1 },
     { id: 'project:atlas', type: 'project', label: 'Atlas', detail: 'Atlas', href: '/projects/#project-modal-atlas', image: '/assets/image/graph/projects/atlas.webp', topics: ['ai'], value: 2 },
@@ -25,34 +23,45 @@ const rows: GraphRows = {
     { id: 'publication:p3', type: 'publication', label: 'An untagged paper', detail: '2019 · Other', href: '/publications/#pub-p3', image: null, topics: [], value: 5 },
   ],
   links: [
-    { source: 'publication:p1', target: 'topic:ai', kind: 'topic' },
     { source: 'publication:p1', target: 'person:ada', kind: 'author' },
-    { source: 'publication:p2', target: 'topic:pharmacometrics', kind: 'topic' },
     { source: 'publication:p2', target: 'person:bob', kind: 'author' },
-    { source: 'project:atlas', target: 'topic:ai', kind: 'topic' },
-    { source: 'software:tool', target: 'topic:pharmacometrics', kind: 'topic' },
     { source: 'software:tool', target: 'publication:p3', kind: 'software' },
     { source: 'person:ada', target: 'project:atlas', kind: 'member' },
     { source: 'person:ada', target: 'software:tool', kind: 'member' },
   ],
 };
 
-const series = (focus: string | null, size?: NetworkSize) => networkOption(rows, focus, size).series[0]!;
-const node = (focus: string | null, id: string) => series(focus).data.find((n) => n.id === id)!;
-const link = (focus: string | null, source: string, target: string) =>
-  series(focus).links.find((l) => l.source === source && l.target === target)!;
+const series = (topic: string | null, settled?: boolean) => networkOption(rows, topic, settled).series[0]!;
+const node = (topic: string | null, id: string) => series(topic).data.find((n) => n.id === id)!;
+const ids = (topic: string | null) => series(topic).data.map((n) => n.id);
 
-describe('neighbourhood', () => {
-  it('holds the topic, its items and their direct neighbours', () => {
-    expect(neighbourhood(rows, 'ai')).toEqual(new Set([
-      'topic:ai', // the hub itself
-      'person:ada', 'project:atlas', 'publication:p1', // its items
-      'software:tool', // a direct neighbour of ada, tagged pharmacometrics
-    ]));
+describe('filterRows', () => {
+  it('keeps the nodes of one research area, including a person who got it from a paper', () => {
+    expect(filterRows(rows, 'ai').nodes.map((n) => n.id)).toEqual(['person:ada', 'project:atlas', 'publication:p1']);
+  });
+
+  it('drops a publication without the tag', () => {
+    expect(filterRows(rows, 'ai').nodes.some((n) => n.id === 'publication:p2')).toBe(false);
+    expect(filterRows(rows, 'ai').nodes.some((n) => n.id === 'publication:p3')).toBe(false);
+  });
+
+  it('drops every link to a removed node', () => {
+    const { links } = filterRows(rows, 'ai');
+    const kept = new Set(filterRows(rows, 'ai').nodes.map((n) => n.id));
+    for (const l of links) {
+      expect(kept.has(l.source)).toBe(true);
+      expect(kept.has(l.target)).toBe(true);
+    }
+    // ada is a member of a pharmacometrics tool: the edge goes with the tool
+    expect(links.map((l) => `${l.source}->${l.target}`)).toEqual(['publication:p1->person:ada', 'person:ada->project:atlas']);
+  });
+
+  it('returns the rows unchanged without a slug', () => {
+    expect(filterRows(rows, null)).toBe(rows);
   });
 
   it('is empty for an unknown slug', () => {
-    expect(neighbourhood(rows, 'nope')).toEqual(new Set());
+    expect(filterRows(rows, 'nope')).toEqual({ nodes: [], links: [] });
   });
 });
 
@@ -67,95 +76,37 @@ describe('networkOption', () => {
     expect(s.draggable).toBe(true);
     expect(s.force.repulsion).toBe(200);
     expect(s.force.gravity).toBe(0.03);
-    expect(s.force.friction).toBe(0.6);
-    // a topic edge is the long one, every other edge the short one: the force
-    // layout maps the range to the link `value` (larger value, shorter edge)
     expect(s.force.edgeLength).toEqual([60, 220]);
-    expect(link(null, 'publication:p1', 'topic:ai').value).toBeLessThan(link(null, 'publication:p1', 'person:ada').value);
     expect(s.labelLayout).toEqual({ hideOverlap: true });
   });
 
-  describe('pinned hubs', () => {
-    const size: NetworkSize = { width: 1000, height: 600 };
-    const hubs = () => series(null, size).data.filter((n) => n.type === 'topic');
-
-    it('pins every topic on a pentagon inside the canvas', () => {
-      expect(hubs()).toHaveLength(2); // the fixture has two topics
-      for (const hub of hubs()) {
-        expect(hub.fixed).toBe(true);
-        expect(hub.x).toBeGreaterThan(0);
-        expect(hub.x).toBeLessThan(size.width);
-        expect(hub.y).toBeGreaterThan(0);
-        expect(hub.y).toBeLessThan(size.height);
-        // every hub sits on the same circle around the centre
-        const dx = hub.x! - size.width / 2;
-        const dy = hub.y! - size.height / 2;
-        expect(Math.hypot(dx, dy)).toBeCloseTo(HUB_RADIUS * Math.min(size.width, size.height), 6);
-      }
-      // the first hub is at 12 o'clock
-      expect(hubs()[0]!.x).toBeCloseTo(size.width / 2, 6);
-      expect(hubs()[0]!.y).toBeLessThan(size.height / 2);
-    });
-
-    it('keeps the hubs at least 200 px apart from each other', () => {
-      const points = hubs().map((h) => [h.x!, h.y!] as const);
-      for (let i = 0; i < points.length; i++) {
-        for (let j = i + 1; j < points.length; j++) {
-          expect(Math.hypot(points[i]![0] - points[j]![0], points[i]![1] - points[j]![1])).toBeGreaterThanOrEqual(200);
-        }
-      }
-    });
-
-    it('keeps five hubs on the real canvas well clear of each other', () => {
-      // the site has five research areas; 1116x630 is the live chart at a
-      // 1280x900 viewport
-      const five: GraphRows = {
-        nodes: ['one', 'two', 'three', 'four', 'five'].map((slug) => ({
-          id: `topic:${slug}`, type: 'topic' as const, label: slug, detail: slug, href: `/#${slug}`,
-          image: null, topics: [slug], value: 0,
-        })),
-        links: [],
-      };
-      const hubs = networkOption(five, null, { width: 1116, height: 630 }).series[0]!.data;
-      expect(hubs).toHaveLength(5);
-      for (let i = 0; i < hubs.length; i++) {
-        for (let j = i + 1; j < hubs.length; j++) {
-          expect(Math.hypot(hubs[i]!.x! - hubs[j]!.x!, hubs[i]!.y! - hubs[j]!.y!)).toBeGreaterThanOrEqual(200);
-        }
-      }
-    });
-
-    it('pins nothing without a size, or with an empty one', () => {
-      for (const s of [series(null), series(null, { width: 0, height: 600 })]) {
-        for (const n of s.data) {
-          expect(n.x).toBeUndefined();
-          expect(n.y).toBeUndefined();
-          expect(n.fixed).toBeUndefined();
-        }
-      }
-    });
-
-    it('pins only the topics', () => {
-      for (const n of series(null, size).data.filter((n) => n.type !== 'topic')) {
-        expect(n.fixed).toBeUndefined();
-      }
-    });
+  it('lays the graph out once and only settles afterwards', () => {
+    expect(series(null).force.friction).toBe(LAYOUT_FRICTION);
+    expect(series(null, true).force.friction).toBe(SETTLE_FRICTION);
+    // 0: a re-render cannot move a node, so a filter keeps the positions
+    expect(SETTLE_FRICTION).toBe(0);
   });
 
-  it('has the five node categories in legend order, with their colours', () => {
+  it('holds only the nodes and links of a filtered research area', () => {
+    expect(ids(null)).toHaveLength(rows.nodes.length);
+    expect(ids('ai')).toEqual(['person:ada', 'project:atlas', 'publication:p1']);
+    expect(series('ai').links.map((l) => l.source)).toEqual(['publication:p1', 'person:ada']);
+    expect(ids('nope')).toEqual([]);
+  });
+
+  it('has the four node categories in legend order, with their colours', () => {
     const s = series(null);
-    expect(CATEGORY_ORDER).toEqual(['topic', 'person', 'project', 'software', 'publication']);
+    expect(CATEGORY_ORDER).toEqual(['person', 'project', 'software', 'publication']);
     expect(s.categories.map((c) => c.name)).toEqual(CATEGORY_ORDER.map((t) => CATEGORY_LABEL[t]));
     expect(s.categories.map((c) => c.itemStyle.color)).toEqual(CATEGORY_ORDER.map((t) => CATEGORY_COLOR[t]));
-    // every node points at its own category, and the legend toggles them
     expect(node(null, 'person:ada').category).toBe(CATEGORY_ORDER.indexOf('person'));
     expect(node(null, 'publication:p1').category).toBe(CATEGORY_ORDER.indexOf('publication'));
     expect(networkOption(rows, null).legend.data).toEqual(s.categories.map((c) => c.name));
   });
 
   it('draws a thumbnail as an image symbol and everything else as a circle', () => {
-    expect(node(null, 'topic:ai').symbol).toBe('image:///assets/image/graph/topics/ai.webp');
     expect(node(null, 'person:ada').symbol).toBe('image:///assets/image/graph/people/ada.webp');
+    expect(node(null, 'project:atlas').symbol).toBe('image:///assets/image/graph/projects/atlas.webp');
     expect(node(null, 'person:bob').symbol).toBe('circle');
     expect(node(null, 'publication:p1').symbol).toBe('circle');
     expect(series(null).symbolKeepAspect).toBe(true);
@@ -169,13 +120,11 @@ describe('networkOption', () => {
     expect(node(null, 'publication:p2').symbolSize).toBe(6);
     expect(node(null, 'publication:p1').symbolSize).toBeCloseTo(publicationSymbolSize(17), 6);
     // the other types carry a degree in `value` — never a size
-    const topic = node(null, 'topic:ai');
-    const person = node(null, 'person:ada');
-    expect(topic.symbolSize).toBeGreaterThan(person.symbolSize);
-    expect(person.symbolSize).toBeGreaterThan(PUBLICATION_SIZE_CAP);
+    expect(node(null, 'person:ada').symbolSize).toBeGreaterThan(PUBLICATION_SIZE_CAP);
+    expect(node(null, 'project:atlas').symbolSize).toBe(36);
   });
 
-  it('colours a publication by its first topic and falls back to the category colour', () => {
+  it('colours a publication by its first research area and falls back to the category colour', () => {
     expect(node(null, 'publication:p1').itemStyle.color).toBe(TAG_PALETTE.ai);
     expect(node(null, 'publication:p2').itemStyle.color).toBe(TAG_PALETTE.pharmacometrics);
     expect(node(null, 'publication:p3').itemStyle.color).toBe(CATEGORY_COLOR.publication);
@@ -183,16 +132,11 @@ describe('networkOption', () => {
     expect(node(null, 'person:ada').itemStyle.color).toBeUndefined();
   });
 
-  it('labels the topics on the canvas and everything else on hover only', () => {
+  it('labels a node on hover only', () => {
     const s = series(null);
     expect(s.label.show).toBe(false);
     expect(s.emphasis.label.show).toBe(true);
     expect(s.emphasis.focus).toBe('adjacency');
-    expect(node(null, 'topic:ai').label!.show).toBe(true);
-    // below the node and on a white pill, so it reads over the artwork
-    expect(node(null, 'topic:ai').label!.position).toBe('bottom');
-    expect(node(null, 'topic:ai').label!.backgroundColor).toBe('#fff');
-    expect(node(null, 'person:ada').label).toBeUndefined();
     // the node name is what ECharts draws; the id is what the links resolve by
     expect(node(null, 'person:ada').name).toBe('Ada Lovelace');
   });
@@ -203,10 +147,10 @@ describe('networkOption', () => {
     expect(n.type).toBe('project');
     expect(n.value).toBe(2);
     // every link endpoint resolves to a node id
-    const ids = new Set(series(null).data.map((d) => d.id));
+    const known = new Set(ids(null));
     for (const l of series(null).links) {
-      expect(ids.has(l.source)).toBe(true);
-      expect(ids.has(l.target)).toBe(true);
+      expect(known.has(l.source)).toBe(true);
+      expect(known.has(l.target)).toBe(true);
     }
   });
 
@@ -219,34 +163,11 @@ describe('networkOption', () => {
       .toBe('A paper on AI\nPublication · 2026 · Nature\n17 citations');
     expect(tooltip.formatter({ dataType: 'node', data: node(null, 'publication:p2') }))
       .toBe('A paper on PK\nPublication · 2020 · JPKPD\n0 citations');
-    expect(tooltip.formatter({ dataType: 'node', data: node(null, 'topic:ai') }))
-      .toBe('AI\nResearch area · Machine learning for the liver');
+    expect(tooltip.formatter({ dataType: 'node', data: node(null, 'person:ada') }))
+      .toBe('Ada Lovelace\nPerson · PostDoc');
     // a project's detail is its title, which is already the label: no second time
     expect(tooltip.formatter({ dataType: 'node', data: node(null, 'project:atlas') })).toBe('Atlas\nProject');
     // edges have no tooltip
     expect(tooltip.formatter({ dataType: 'edge', data: undefined })).toBe('');
-  });
-
-  it('leaves every node and link fully opaque without a focus', () => {
-    expect(series(null).data.every((n) => n.itemStyle.opacity === 1)).toBe(true);
-    expect(series(null).links.every((l) => l.lineStyle.opacity === 1)).toBe(true);
-  });
-
-  it('dims everything outside the focused neighbourhood', () => {
-    expect(DIM_OPACITY).toBe(0.15);
-    const inside = neighbourhood(rows, 'ai');
-    for (const n of series('ai').data) {
-      expect(n.itemStyle.opacity).toBe(inside.has(n.id) ? 1 : DIM_OPACITY);
-    }
-    // a link stays bright only while both of its endpoints do
-    expect(link('ai', 'publication:p1', 'person:ada').lineStyle.opacity).toBe(1);
-    expect(link('ai', 'person:ada', 'software:tool').lineStyle.opacity).toBe(1);
-    expect(link('ai', 'software:tool', 'topic:pharmacometrics').lineStyle.opacity).toBe(DIM_OPACITY);
-    expect(link('ai', 'publication:p2', 'person:bob').lineStyle.opacity).toBe(DIM_OPACITY);
-  });
-
-  it('ignores an unknown focus rather than dimming the whole graph', () => {
-    expect(series('nope').data.every((n) => n.itemStyle.opacity === 1)).toBe(true);
-    expect(series('nope').links.every((l) => l.lineStyle.opacity === 1)).toBe(true);
   });
 });
