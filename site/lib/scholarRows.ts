@@ -20,7 +20,7 @@ import { scholarProfileUrl, type Scholar } from './scholarSchema';
 export interface PerYearRow { year: number; count: number }
 
 /** One point of the citations-over-time line (one daily snapshot reading). */
-export interface HistoryRow { date: string; citations: number; hIndex: number; i10Index: number }
+export interface HistoryRow { date: string; citations: number }
 
 /** What the summary strip shows; `known` is false for `emptyScholar()`. */
 export interface StripValues {
@@ -49,7 +49,7 @@ export function perYearRows(scholar: Scholar): PerYearRow[] {
  */
 export function historyRows(scholar: Scholar): HistoryRow[] {
   const byDate = new Map<string, HistoryRow>();
-  for (const p of scholar.history) byDate.set(p.date, { date: p.date, citations: p.citations, hIndex: p.hIndex, i10Index: p.i10Index });
+  for (const p of scholar.history) byDate.set(p.date, { date: p.date, citations: p.citations });
   return [...byDate.values()].sort((a, b) => a.date.localeCompare(b.date));
 }
 
@@ -82,9 +82,9 @@ export function stripValues(scholar: Scholar): StripValues {
 }
 
 /**
- * The caption addition of the history chart. The series starts on the day the
- * first snapshot was taken, so with one or two points the chart would look
- * broken without saying why.
+ * The caption addition of the history chart: returns the "history starts
+ * <date>" note for fewer than two points that have a date (i.e. exactly one
+ * point; zero points give an empty note, same as two or more).
  */
 export function historyNote(rows: HistoryRow[]): string {
   return rows.length === 1 ? `history starts ${shortDate(`${rows[0]!.date}T00:00:00Z`)}` : '';

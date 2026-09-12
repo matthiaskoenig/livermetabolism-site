@@ -36,7 +36,7 @@ describe('perYearRows', () => {
 
 describe('historyRows', () => {
   it('returns the single recorded point', () => {
-    expect(historyRows(scholar)).toEqual([{ date: '2026-09-12', citations: 3827, hIndex: 26, i10Index: 36 }]);
+    expect(historyRows(scholar)).toEqual([{ date: '2026-09-12', citations: 3827 }]);
   });
 
   it('sorts ascending and keeps the last reading of a repeated date', () => {
