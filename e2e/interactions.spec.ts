@@ -260,7 +260,7 @@ test('homepage at-a-glance strip shows six linked figures', async ({ page }) => 
   await expect(page.locator('.home-stats script')).toHaveCount(0);
 });
 
-test('network page draws the graph and ?topic= focuses one research area', async ({ page }) => {
+test('network page draws the graph and filters by research area', async ({ page }) => {
   const errors: string[] = [];
   page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
   page.on('pageerror', (e) => errors.push(e.message));
@@ -268,21 +268,23 @@ test('network page draws the graph and ?topic= focuses one research area', async
 
   // client:load island: the canvas is up without scrolling anywhere
   await expect(page.locator('#network-graph canvas').first()).toBeVisible();
+  // "All" plus the five research areas; the areas are filters, not nodes
   const buttons = page.locator('#network-graph .network-topic-btn');
-  await expect(buttons).toHaveCount(5);
-  await expect(buttons.first()).toHaveText(/\S/);
+  await expect(buttons).toHaveCount(6);
+  await expect(buttons.first()).toHaveText('All');
   // the wheel is left to the page, so zooming is by button
   await expect(page.locator('#network-graph [aria-label="Zoom in"]')).toBeVisible();
   await expect(page.locator('#network-graph [aria-label="Zoom out"]')).toBeVisible();
-  // nothing focused yet, and the loading note is gone
-  await expect(page.locator('#network-graph .chart-mode-btn.active')).toHaveCount(0);
+  // "All" is the state on arrival, and the loading note is gone
+  await expect(page.locator('#network-graph .network-topic-btn.active')).toHaveText('All');
   await expect(page.getByText('Loading the network…')).toHaveCount(0);
   await expect(page.locator('nav.site-navbar .nav-item.active .nav-link')).toHaveText('Network');
 
-  // a node click is not reliably hittable on a canvas; assert that a button
-  // focus re-renders the graph (setOption) without throwing instead
-  await buttons.first().click();
-  await expect(page.locator('#network-graph .chart-mode-btn.active')).toHaveCount(1);
+  // a node click is not reliably hittable on a canvas; assert that a filter
+  // re-renders the graph (setOption) without throwing instead
+  await buttons.nth(1).click();
+  await expect(page.locator('#network-graph .network-topic-btn.active')).toHaveCount(1);
+  await expect(page.locator('#network-graph .network-topic-btn').first()).not.toHaveClass(/active/);
   await expect(page.locator('#network-graph canvas').first()).toBeVisible();
 
   // the zoom and reset controls re-render without throwing either
@@ -291,10 +293,14 @@ test('network page draws the graph and ?topic= focuses one research area', async
   await page.locator('#network-graph .chart-mode-btn', { hasText: 'Reset' }).click();
   await expect(page.locator('#network-graph canvas').first()).toBeVisible();
 
+  // and back to the whole graph
+  await buttons.first().click();
+  await expect(page.locator('#network-graph .network-topic-btn.active')).toHaveText('All');
+
   expect(errors).toEqual([]);
 });
 
-test('network page pre-applies ?topic= to the matching research area', async ({ page }) => {
+test('network page pre-selects ?topic= as the research-area filter', async ({ page }) => {
   const errors: string[] = [];
   page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
   page.on('pageerror', (e) => errors.push(e.message));
@@ -304,11 +310,13 @@ test('network page pre-applies ?topic= to the matching research area', async ({ 
   await expect(active).toHaveCount(1);
   await expect(active).toHaveText('AI');
   await expect(active).toHaveAttribute('aria-pressed', 'true');
+  // "All" is off while an area is selected
+  await expect(page.locator('#network-graph .network-topic-btn').first()).toHaveAttribute('aria-pressed', 'false');
   await expect(page.locator('#network-graph canvas').first()).toBeVisible();
 
-  // an unknown topic is ignored rather than dimming the whole graph
+  // an unknown area is ignored: the whole graph is shown
   await page.goto('network/?topic=nope');
-  await expect(page.locator('#network-graph .network-topic-btn.active')).toHaveCount(0);
+  await expect(page.locator('#network-graph .network-topic-btn.active')).toHaveText('All');
 
   expect(errors).toEqual([]);
 });
