@@ -6,7 +6,7 @@
 // page was built from, patches every citation badge in place (and reorders
 // again if the list is currently in "Most cited" order).
 //
-// Plain TypeScript in a bundled <script>, not a Vue island (see CLAUDE.md):
+// Plain TypeScript in a bundled script block, not a Vue island (see CLAUDE.md):
 // the buttons are static markup and the rows are moved, never re-rendered —
 // there is only ever one copy of them in the DOM.
 import { hasData, relativeDate } from '../lib/githubRows';

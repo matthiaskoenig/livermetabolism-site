@@ -5,7 +5,7 @@
 // script that keeps both current: it re-dates the note against today and,
 // when the snapshot on the `github-data` branch is newer than the one this
 // page was built from, patches every number in place. Plain TypeScript in a
-// bundled <script>, not a Vue island (see CLAUDE.md): the strip is static
+// bundled script block, not a Vue island (see CLAUDE.md): the strip is static
 // HTML and only its text nodes change.
 import { relativeDate } from '../lib/githubRows';
 import { stripValues } from '../lib/scholarRows';
