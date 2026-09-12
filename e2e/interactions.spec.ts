@@ -244,3 +244,18 @@ test('publications-over-time chart draws and the mode switch re-renders it', asy
 
   expect(errors).toEqual([]);
 });
+
+test('homepage at-a-glance strip shows six linked figures', async ({ page }) => {
+  await page.goto('');
+  const stats = page.locator('.home-stat');
+  // six figures with the snapshots CI builds against (Scholar citations and
+  // h-index are omitted only when the snapshot cannot be read at all)
+  await expect(stats).toHaveCount(6);
+  for (let i = 0; i < 6; i++) {
+    const stat = stats.nth(i);
+    await expect(stat.locator('.home-stat-value')).toHaveText(/^\d+$/);
+    await expect(stat).toHaveAttribute('href', /\/(publications|people|research)\//);
+  }
+  // build-time only: the strip adds no script of its own to the homepage
+  await expect(page.locator('.home-stats script')).toHaveCount(0);
+});

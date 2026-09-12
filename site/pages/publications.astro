@@ -12,6 +12,7 @@ import ScholarStats from '../components/ScholarStats.astro';
 import TagFilter from '../components/TagFilter.vue';
 import { citationFor, loadCitations } from '../lib/citations';
 import { getAbstracts, getPeopleMap, getPosters, getPresentations, getPublications, getTags } from '../lib/data';
+import { countPeerReviewed } from '../lib/homeStats';
 import { publicationsPerYear } from '../lib/publicationRows';
 import { loadScholar } from '../lib/scholar';
 import { historyRows, perYearRows } from '../lib/scholarRows';
@@ -39,9 +40,9 @@ const history = historyRows(scholar);
 // PublicationsOrder.astro's script, which also drives the ordering toggle.
 const citations = await loadCitations();
 // the site's own count, not a Scholar number: peer-reviewed entries of
-// data/publications.yml (theses, reports, preprints and abstracts excluded)
-const PEER_REVIEWED = new Set(['publication', 'review', 'proceeding', 'chapter']);
-const publicationCount = publications.filter((p) => PEER_REVIEWED.has(p.status)).length;
+// data/publications.yml (theses, reports, preprints and abstracts excluded).
+// Shared with the homepage strip so the two figures cannot drift apart.
+const publicationCount = countPeerReviewed(publications);
 // papers per year for the chart island: build-time only (no snapshot, no
 // fetch) — the island's props are these aggregates, not the publications
 const chartRows = publicationsPerYear(publications, tagInfo);
