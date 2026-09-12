@@ -1,0 +1,71 @@
+---
+// The Year / Most cited toggle of the publications list, its "Citations from
+// OpenAlex, updated …" note and the script that drives both: it re-dates the
+// note against today, applies `?order=cited` on load, reorders on a click and,
+// when the snapshot on the `github-data` branch is newer than the one this
+// page was built from, patches every citation badge in place (and reorders
+// again if the list is currently in "Most cited" order).
+//
+// Plain TypeScript in a bundled <script>, not a Vue island (see CLAUDE.md):
+// the buttons are static markup and the rows are moved, never re-rendered —
+// there is only ever one copy of them in the DOM.
+import { hasData, relativeDate } from '../lib/githubRows';
+
+interface Props {
+  /** `fetchedAt` of the build's citation snapshot. */
+  fetchedAt: string;
+}
+const { fetchedAt } = Astro.props;
+// a build that could not read the snapshot renders emptyCitations()'s epoch:
+// that is "never", not "56 years ago" (the browser then fills the page in)
+const known = hasData(fetchedAt);
+---
+
+<div class="publication-order" id="publication-order" role="group" aria-label="Order publications">
+  <button type="button" class="order-btn active" data-order="year">Year</button>
+  <button type="button" class="order-btn" data-order="cited">Most cited</button>
+  <p class="citations-note" data-citations-note>
+    Citations from <a href="https://openalex.org" target="_blank" rel="noopener noreferrer">OpenAlex</a>, updated
+    <time data-field="updated" data-empty="never" data-iso={fetchedAt} datetime={known ? fetchedAt : undefined}>{known ? relativeDate(fetchedAt) : 'never'}</time>.
+  </p>
+</div>
+
+<script>
+  import { isCitationsFresherThan, loadLiveCitations } from '../lib/citationsLive';
+  import { applyCitations, refreshNote } from '../lib/citationsStats';
+  import { applyOrder, type PubOrder } from '../lib/pubOrder';
+
+  const toggle = document.getElementById('publication-order');
+  const list = document.getElementById('publication-list');
+  if (toggle && list) {
+    let current: PubOrder = new URLSearchParams(window.location.search).get('order') === 'cited' ? 'cited' : 'year';
+
+    const setOrder = (order: PubOrder): void => {
+      current = order;
+      applyOrder(list, order);
+      for (const btn of toggle.querySelectorAll<HTMLElement>('[data-order]')) {
+        btn.classList.toggle('active', btn.dataset.order === order);
+      }
+    };
+
+    toggle.addEventListener('click', (event) => {
+      const btn = (event.target as HTMLElement | null)?.closest<HTMLElement>('[data-order]');
+      if (btn) setOrder(btn.dataset.order === 'cited' ? 'cited' : 'year');
+    });
+    // ?order=cited pre-applies; "year" is a no-op on a freshly rendered list
+    setOrder(current);
+
+    const note = document.querySelector<HTMLElement>('[data-citations-note] [data-field="updated"]');
+    const builtAt = note?.dataset.iso ?? '';
+    // 1. the build may be weeks old: re-date what it rendered
+    refreshNote(note, builtAt);
+    // 2. and take the newer snapshot if there is one (shared, memoized fetch)
+    void loadLiveCitations().then((citations) => {
+      if (!isCitationsFresherThan(citations, builtAt)) return;
+      applyCitations(document, citations);
+      refreshNote(note, citations.fetchedAt);
+      // the counts just changed: the flat order has to be recomputed
+      if (current === 'cited') applyOrder(list, 'cited');
+    });
+  }
+</script>

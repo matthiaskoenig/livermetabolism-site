@@ -16,7 +16,7 @@
  */
 import { load } from 'js-yaml';
 import { z } from 'astro/zod';
-import type { CitationEntry, Citations } from '../../site/lib/citationsSchema.ts';
+import { normalizeDoi, type CitationEntry, type Citations } from '../../site/lib/citationsSchema.ts';
 
 const API = 'https://api.openalex.org/works';
 /** OpenAlex asks unauthenticated clients to identify themselves. */
@@ -78,20 +78,12 @@ export const apiWorksResponseSchema = z.object({
 export type ApiWork = z.output<typeof apiWorkSchema>;
 
 /**
- * `10.1515/JIB-2026-0006`, `https://doi.org/10.1/x`, `doi:10.1/x` and a padded
- * ` 10.1/x ` all normalise to the lowercase bare DOI; anything that is not a
- * DOI (empty, a note, a prefix without a suffix) yields null. The snapshot and
- * every lookup use this form.
+ * DOI normalisation lives with the snapshot schema (`site/lib/citationsSchema.ts`),
+ * because the publications page must key its lookups exactly the way this
+ * script keys the file it writes; re-exported here so the fetch pipeline and
+ * its tests keep one import.
  */
-export function normalizeDoi(raw: string): string | null {
-  const bare = String(raw ?? '')
-    .trim()
-    .replace(/^https?:\/\/(?:dx\.)?doi\.org\//i, '')
-    .replace(/^doi:\s*/i, '')
-    .trim()
-    .toLowerCase();
-  return /^10\.\d+\/\S+$/.test(bare) ? bare : null;
-}
+export { normalizeDoi };
 
 /**
  * The DOIs of `data/publications.yml`, normalised, unique and in file order.

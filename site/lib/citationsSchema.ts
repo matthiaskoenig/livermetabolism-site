@@ -12,9 +12,11 @@
  * key means the writer and the reader have drifted apart.
  *
  * It is keyed by the **normalised** DOI (lowercase, no resolver prefix; see
- * `normalizeDoi()` in `scripts/lib/openalex.ts`), which is how the publications
- * page looks an entry up from `data/publications.yml`. A DOI OpenAlex does not
- * know is absent rather than zero.
+ * `normalizeDoi()` below), which is how the publications page looks an entry up
+ * from `data/publications.yml`. A DOI OpenAlex does not know is absent rather
+ * than zero. `normalizeDoi()` lives here, and not next to the fetch client,
+ * because the writer and every reader must key the snapshot identically;
+ * `scripts/lib/openalex.ts` re-exports it.
  *
  * Numbers and two short strings only: `openalexId` is constrained to `^W\d+$`
  * so it can be interpolated into an `openalex.org` link, and `oaStatus` is a
@@ -24,6 +26,22 @@ import { z } from 'astro/zod';
 
 /** Raw URL of the daily snapshot on the `github-data` branch. */
 export const CITATIONS_URL = 'https://raw.githubusercontent.com/matthiaskoenig/livermetabolism-site/github-data/citations.json';
+
+/**
+ * `10.1515/JIB-2026-0006`, `https://doi.org/10.1/x`, `doi:10.1/x` and a padded
+ * ` 10.1/x ` all normalise to the lowercase bare DOI; anything that is not a
+ * DOI (empty, a note, a prefix without a suffix) yields null. The snapshot and
+ * every lookup use this form.
+ */
+export function normalizeDoi(raw: string): string | null {
+  const bare = String(raw ?? '')
+    .trim()
+    .replace(/^https?:\/\/(?:dx\.)?doi\.org\//i, '')
+    .replace(/^doi:\s*/i, '')
+    .trim()
+    .toLowerCase();
+  return /^10\.\d+\/\S+$/.test(bare) ? bare : null;
+}
 
 /** Landing page of an OpenAlex work, e.g. `https://openalex.org/W1969067437`. */
 export function openalexWorkUrl(openalexId: string): string {
