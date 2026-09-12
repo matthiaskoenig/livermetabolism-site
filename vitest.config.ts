@@ -4,7 +4,7 @@ import { getViteConfig } from 'astro/config';
 export default getViteConfig({
   test: {
     environment: 'happy-dom',
-    include: ['site/**/*.test.ts'],
+    include: ['site/**/*.test.ts', 'scripts/**/*.test.ts'],
     // consent.test.ts appends a real <script src="https://googletagmanager.com/...">;
     // happy-dom disables remote script loading by default and logs a DOMException to
     // the console for it. Treat that as a successful (no-op) load instead so the

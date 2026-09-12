@@ -1,0 +1,84 @@
+[
+  {
+    "sha": "a2809f1feb22782bc43cddb66639b235892578f2",
+    "node_id": "C_kwDOA1XFz9oAKGEyODA5ZjFmZWIyMjc4MmJjNDNjZGRiNjY2MzliMjM1ODkyNTc4ZjI",
+    "commit": {
+      "author": {
+        "name": "Matthias K\u00f6nig",
+        "email": "konigmatt@googlemail.com",
+        "date": "2026-09-08T20:26:03Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-09-08T20:26:03Z"
+      },
+      "message": "Release 0.10.2 (#468)\n\n* Release notes for 0.10.2, pymetadata >= 0.6.2 and zensical >= 0.0.60\n\nCo-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01QBzahedfz2qsfcXoeDyKdx\n\n* Bump version: 0.10.1 \u2192 0.10.2\n\n* Exclude antimony 3.2.0 on Windows\n\nThe win_amd64 wheel of antimony 3.2.0 raises a C++ exception in\nloadAntimonyString, which fails the antimony round trip of the tests.\n\nCo-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01QBzahedfz2qsfcXoeDyKdx\n\n---------\n\nCo-authored-by: Claude Fable 5.1 <noreply@anthropic.com>",
+      "tree": {
+        "sha": "b83c7e01ea308d7b50a7253524d6b0f5c6e1f1e7",
+        "url": "https://api.github.com/repos/matthiaskoenig/sbmlutils/git/trees/b83c7e01ea308d7b50a7253524d6b0f5c6e1f1e7"
+      },
+      "url": "https://api.github.com/repos/matthiaskoenig/sbmlutils/git/commits/a2809f1feb22782bc43cddb66639b235892578f2",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqoG9bCRC1aQ7uu5UhlAAAvSwQACjWQSuaTVGdcVEH1SnrCqnG\nuiUQGxGLqBJSy200pTK7pUWARhznVWheDesCfdb7iRaWmtjnCNDEPmf0HoLg/iU+\n0IopRpNORjr2qxDY3UecztSz/gEnCw0mYEBLyXY8YivHiN2bAFQ35lPtyYjIZR3i\nlOIXnfW3WGc7ZimC5H7/pAXBBmUvtErIHOTf1qGIGJqbd7ri8TxktqKluF18itty\nvMF3sRs/6f1WNOFvZNww/Fc6CLJIDzunPEdFA6qY2KBSi0+OdGVRr4YbePVWFhcc\nD4zdAmYE8mfMaAlMwwbnodJcJV8MP24VW7KURHfE2/p10rZwHYRvqYzNM2EeKWDw\n6U3pGrWa1q0Z81uu9ReyUNFe/XHYyFjx1XF7cIlJwdlKYR5adbGCw18nXprd0g7C\n2b058FgAeq3/ySZqkyK49p2dBtWV9o0k033fJWzvBfCZHV6+0qCFFBt7bdMeGFkD\nko3s9+kjGcVLBb+VA4o5vklLN4y/fz/wZdwF12G/3LOKgWVBjdigTtwvexPDgZTa\nsSyfF4E4zPX2NpTcbVamooXYihza+hP84vj/ZH7XXfBLXdrNd9gBKm5jKR1ixamp\nzWKJ/ScD5aOJwk2DjHRxT8DTKqv6NmGiAJB7rSw4WQbx3tFRYoV13Jw5dmCI+ign\nWn+uuYA91Gg0HoVFBW4K\n=SlIt\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree b83c7e01ea308d7b50a7253524d6b0f5c6e1f1e7\nparent a011d7c88551fedbc5028588708671e1252a2d01\nauthor Matthias K\u00f6nig <konigmatt@googlemail.com> 1788899163 +0200\ncommitter GitHub <noreply@github.com> 1788899163 +0000\n\nRelease 0.10.2 (#468)\n\n* Release notes for 0.10.2, pymetadata >= 0.6.2 and zensical >= 0.0.60\n\nCo-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01QBzahedfz2qsfcXoeDyKdx\n\n* Bump version: 0.10.1 \u2192 0.10.2\n\n* Exclude antimony 3.2.0 on Windows\n\nThe win_amd64 wheel of antimony 3.2.0 raises a C++ exception in\nloadAntimonyString, which fails the antimony round trip of the tests.\n\nCo-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01QBzahedfz2qsfcXoeDyKdx\n\n---------\n\nCo-authored-by: Claude Fable 5.1 <noreply@anthropic.com>",
+        "verified_at": "2026-09-08T20:26:04Z"
+      }
+    },
+    "url": "https://api.github.com/repos/matthiaskoenig/sbmlutils/commits/a2809f1feb22782bc43cddb66639b235892578f2",
+    "html_url": "https://github.com/matthiaskoenig/sbmlutils/commit/a2809f1feb22782bc43cddb66639b235892578f2",
+    "comments_url": "https://api.github.com/repos/matthiaskoenig/sbmlutils/commits/a2809f1feb22782bc43cddb66639b235892578f2/comments",
+    "author": {
+      "login": "matthiaskoenig",
+      "id": 900538,
+      "node_id": "MDQ6VXNlcjkwMDUzOA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/900538?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/matthiaskoenig",
+      "html_url": "https://github.com/matthiaskoenig",
+      "followers_url": "https://api.github.com/users/matthiaskoenig/followers",
+      "following_url": "https://api.github.com/users/matthiaskoenig/following{/other_user}",
+      "gists_url": "https://api.github.com/users/matthiaskoenig/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/matthiaskoenig/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/matthiaskoenig/subscriptions",
+      "organizations_url": "https://api.github.com/users/matthiaskoenig/orgs",
+      "repos_url": "https://api.github.com/users/matthiaskoenig/repos",
+      "events_url": "https://api.github.com/users/matthiaskoenig/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/matthiaskoenig/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "a011d7c88551fedbc5028588708671e1252a2d01",
+        "url": "https://api.github.com/repos/matthiaskoenig/sbmlutils/commits/a011d7c88551fedbc5028588708671e1252a2d01",
+        "html_url": "https://github.com/matthiaskoenig/sbmlutils/commit/a011d7c88551fedbc5028588708671e1252a2d01"
+      }
+    ]
+  }
+]

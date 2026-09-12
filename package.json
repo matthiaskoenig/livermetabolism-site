@@ -13,7 +13,8 @@
     "check": "astro check && vue-tsc --noEmit",
     "test": "vitest run",
     "e2e": "playwright test",
-    "fetch-icons": "bash scripts/fetch-icons.sh"
+    "fetch-icons": "bash scripts/fetch-icons.sh",
+    "fetch:github": "node scripts/fetch-github.ts"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

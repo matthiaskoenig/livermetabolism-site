@@ -10,3 +10,4 @@ dist/
 playwright-report/
 test-results/
 src/cv/results/
+/github.json
