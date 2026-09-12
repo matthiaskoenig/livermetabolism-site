@@ -56,7 +56,8 @@ export default defineConfig({
         "default-src 'self'",
         "img-src 'self' data: https://img.youtube.com https://www.google-analytics.com",
         "font-src 'self' https://fonts.gstatic.com",
-        "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com",
+        // raw.githubusercontent.com: the daily GitHub snapshot the research page refetches (see CLAUDE.md)
+        "connect-src 'self' https://raw.githubusercontent.com https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com",
         "frame-src https://www.youtube.com https://www.youtube-nocookie.com",
         "object-src 'self'",
         "base-uri 'self'",
