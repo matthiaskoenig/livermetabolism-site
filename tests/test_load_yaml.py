@@ -20,6 +20,7 @@ MINIMAL_ROWS = {
             "journal": "J. Examples",
             "status": "publication",
             "position": "first",
+            "pdf": "example.pdf",
         }
     ],
     "projects.yml": [
@@ -61,6 +62,7 @@ MINIMAL_ROWS = {
             "personal_amount": 1000,
             "currency": "€",
             "description": "An example grant.",
+            "funder_logo": "example_funder.png",
         }
     ],
     "news.yml": [
@@ -183,6 +185,8 @@ def write_minimal_data_dir(tmp_path):
     (app_dir / "assets" / "pdf").mkdir(parents=True)
     (app_dir / "assets" / "pdf" / "example.jpg").touch()
     (app_dir / "assets" / "pdf" / "example.pdf").touch()
+    (app_dir / "assets" / "image" / "funding").mkdir(parents=True)
+    (app_dir / "assets" / "image" / "funding" / "example_funder.png").touch()
 
     return data_dir
 

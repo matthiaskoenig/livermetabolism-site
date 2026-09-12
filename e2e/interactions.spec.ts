@@ -52,19 +52,25 @@ test('search opens with "/", finds a publication, result navigates', async ({ pa
   const first = page.locator('.site-search-result').first();
   await expect(first).toBeVisible();
   await first.click();
-  await expect(page).toHaveURL(/#(pub|presentation|poster|abstract|project-modal|software|funding|editor|news-modal|meeting|teaching|person-modal)-|#[a-z-]+$/);
+  await expect(page).toHaveURL(/#(pub|presentation|poster|abstract|project-modal|software|funding|editor|news-modal|meeting|teaching|person-modal)-/);
 });
 
 test('analytics loads only after consent', async ({ page }) => {
   const ga: string[] = [];
+  const errors: string[] = [];
+  page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
   page.on('request', (r) => { if (r.url().includes('googletagmanager.com')) ga.push(r.url()); });
   await page.goto('');
   await expect(page.locator('#cookie-consent-banner')).toBeVisible();
   expect(ga).toEqual([]);
+  const gaRequest = page.waitForRequest((r) => r.url().includes('googletagmanager.com'));
   await page.locator('#cookie-consent-accept').click();
-  await page.waitForTimeout(500);
+  await gaRequest;
   expect(ga.length).toBeGreaterThan(0);
   await expect(page.locator('#cookie-consent-banner')).toBeHidden();
+  // the CSP allows googletagmanager.com/google-analytics.com explicitly (see
+  // astro.config.mjs); a blocked request would show up as a console error
+  expect(errors).toEqual([]);
 });
 
 test('mobile navbar toggles', async ({ page }) => {

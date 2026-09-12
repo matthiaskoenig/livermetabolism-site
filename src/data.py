@@ -541,6 +541,8 @@ IMAGE_FIELDS: dict[str, list[tuple[str, str, bool]]] = {
     "posters": [("image", "assets/pdf", False), ("pdf", "assets/pdf", False)],
     "presentations": [("image", "assets/pdf", False)],
     "meetings": [("image", "assets/image/meetings", False), ("pdf", "assets/pdf", False)],
+    "publications": [("pdf", "assets/pdf", False)],
+    "funding": [("funder_logo", "assets/image/funding", False)],
 }
 
 

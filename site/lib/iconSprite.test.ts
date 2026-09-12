@@ -13,4 +13,10 @@ describe('iconSprite', () => {
       expect(sprite).toContain(`<symbol id="icon-${n}"`);
     }
   });
+
+  it('has exactly one icon source file per name in iconNames(), and vice versa', () => {
+    const files = import.meta.glob('../icons/*.svg', { query: '?raw', import: 'default', eager: true }) as Record<string, string>;
+    const stems = new Set(Object.keys(files).map((path) => path.slice(path.lastIndexOf('/') + 1, -'.svg'.length)));
+    expect(stems).toEqual(new Set(iconNames()));
+  });
 });
