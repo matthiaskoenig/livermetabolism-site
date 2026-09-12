@@ -130,6 +130,12 @@ test('research page renders the live GitHub data: stats lines, release feed, cha
   await expect(release).toHaveText(/\d/);
   await expect(page.locator('[data-github-note] [data-field="updated"]')).not.toBeEmpty();
 
+  // a renamed repository keeps the data/software.yml key as data-repo, which is
+  // what the browser-side refresh looks it up by (GitHub calls it libsbgnpy now)
+  const renamed = page.locator('.software-stats[data-repo="matthiaskoenig/libsbgn-python"]');
+  await expect(renamed.locator('[data-field="stars"]')).toHaveText(/\d/);
+  await expect(renamed.locator('a').first()).toHaveAttribute('href', /libsbgnpy\/releases\/tag\//);
+
   expect(await page.locator('#releases .release-row').count()).toBeGreaterThan(0);
 
   // the charts are client:visible islands: nothing is drawn before each one

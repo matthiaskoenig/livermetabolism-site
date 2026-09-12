@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { emptySnapshot, type Snapshot } from './githubSchema';
-import { activityRows, latestReleases, relativeDate, releaseTimelineRows, shortDate, starsRows, statsFor } from './githubRows';
+import { activityRows, hasData, latestReleases, relativeDate, releaseTimelineRows, releaseUrl, shortDate, starsRows, statsFor } from './githubRows';
 
 const repo = (fullName: string, over: Partial<Snapshot['repos'][string]> = {}): Snapshot['repos'][string] => {
   const [owner, name] = fullName.split('/');
@@ -64,15 +64,24 @@ const snapshot: Snapshot = {
       ],
     }),
     'matthiaskoenig/visfem': repo('matthiaskoenig/visfem', { stars: 0, commitActivity: [{ week: '2026-09-06', total: 0 }] }),
+    // keyed by the data/software.yml name, renamed on GitHub since (fullName
+    // and htmlUrl are what GitHub calls it today)
+    'matthiaskoenig/libsbgn-python': repo('matthiaskoenig/libsbgn-python', {
+      name: 'libsbgnpy',
+      fullName: 'matthiaskoenig/libsbgnpy',
+      htmlUrl: 'https://github.com/matthiaskoenig/libsbgnpy',
+      stars: 12,
+    }),
   },
   releases: {
     'matthiaskoenig/sbmlutils': [release('0.10.2', '2026-09-08T20:30:07Z'), release('0.10.1', '2026-05-01T10:00:00Z')],
     'opencobra/cobrapy': [release('0.32.1', '2025-06-10T10:00:00Z', { prerelease: true })],
     'matthiaskoenig/visfem': [],
+    'matthiaskoenig/libsbgn-python': [release('0.6.1', '2026-09-07T10:00:00Z')],
   },
 };
 
-const repos = ['matthiaskoenig/sbmlutils', 'opencobra/cobrapy', 'matthiaskoenig/visfem'];
+const repos = ['matthiaskoenig/sbmlutils', 'opencobra/cobrapy', 'matthiaskoenig/visfem', 'matthiaskoenig/libsbgn-python'];
 
 describe('statsFor', () => {
   it('maps a repository to the fields the card stats line shows', () => {
@@ -88,6 +97,14 @@ describe('statsFor', () => {
     });
   });
 
+  it('reports the key it was asked for, not the name GitHub uses today', () => {
+    // the card's data-repo must be the key the browser refresh looks up again
+    const stats = statsFor(snapshot, 'matthiaskoenig/libsbgn-python');
+    expect(stats?.fullName).toBe('matthiaskoenig/libsbgn-python');
+    expect(stats?.htmlUrl).toBe('https://github.com/matthiaskoenig/libsbgnpy');
+    expect(statsFor(snapshot, 'matthiaskoenig/libsbgnpy')).toBeNull();
+  });
+
   it('keeps a repository without a release, and returns null for an unknown one', () => {
     expect(statsFor(snapshot, 'matthiaskoenig/visfem')?.release).toBeNull();
     expect(statsFor(snapshot, 'nope/nope')).toBeNull();
@@ -100,14 +117,15 @@ describe('latestReleases', () => {
     const rows = latestReleases(snapshot, repos, 730, now);
     expect(rows.map((r) => [r.repo, r.tag])).toEqual([
       ['matthiaskoenig/sbmlutils', '0.10.2'],
+      ['matthiaskoenig/libsbgn-python', '0.6.1'],
       ['opencobra/cobrapy', '0.32.1'],
     ]);
     expect(rows[0]).toMatchObject({ name: 'sbmlutils', summary: 'Notes for 0.10.2', prerelease: false, htmlUrl: 'https://github.com/x/y/releases/tag/0.10.2' });
-    expect(rows[1].prerelease).toBe(true);
+    expect(rows[2].prerelease).toBe(true);
   });
 
   it('drops releases older than the window and repositories without releases', () => {
-    expect(latestReleases(snapshot, repos, 365, now).map((r) => r.repo)).toEqual(['matthiaskoenig/sbmlutils']);
+    expect(latestReleases(snapshot, repos, 365, now).map((r) => r.repo)).toEqual(['matthiaskoenig/sbmlutils', 'matthiaskoenig/libsbgn-python']);
     expect(latestReleases(emptySnapshot(), repos, 730, now)).toEqual([]);
   });
 
@@ -120,10 +138,16 @@ describe('latestReleases', () => {
 describe('releaseTimelineRows', () => {
   it('lists every release per repository oldest first, rows by most recent release', () => {
     const rows = releaseTimelineRows(snapshot, repos);
-    expect(rows.map((r) => r.repo)).toEqual(['matthiaskoenig/sbmlutils', 'opencobra/cobrapy']);
+    expect(rows.map((r) => r.repo)).toEqual(['matthiaskoenig/sbmlutils', 'matthiaskoenig/libsbgn-python', 'opencobra/cobrapy']);
     expect(rows[0].name).toBe('sbmlutils');
     expect(rows[0].points.map((p) => p.tag)).toEqual(['0.10.1', '0.10.2']);
-    expect(rows[0].points[0]).toEqual({ date: '2026-05-01T10:00:00Z', tag: '0.10.1', url: 'https://github.com/x/y/releases/tag/0.10.1' });
+    expect(rows[0].points[0]).toEqual({ date: '2026-05-01T10:00:00Z', tag: '0.10.1' });
+  });
+
+  it('carries the repository URL once per lane, so releaseUrl can build the rest', () => {
+    const rows = releaseTimelineRows(snapshot, repos);
+    expect(rows[1].htmlUrl).toBe('https://github.com/matthiaskoenig/libsbgnpy');
+    expect(releaseUrl(rows[1], '0.6.1')).toBe('https://github.com/matthiaskoenig/libsbgnpy/releases/tag/0.6.1');
   });
 });
 
@@ -133,7 +157,10 @@ describe('starsRows', () => {
     expect(rows.map((r) => [r.name, r.stars])).toEqual([
       ['cobrapy', 586],
       ['sbmlutils', 41],
+      ['libsbgnpy', 12],
     ]);
+    // keyed by the snapshot key, linked to where the repository lives now
+    expect(rows[2]).toMatchObject({ repo: 'matthiaskoenig/libsbgn-python', url: 'https://github.com/matthiaskoenig/libsbgnpy' });
     expect(rows[0]).toMatchObject({ repo: 'opencobra/cobrapy', language: null, url: 'https://github.com/opencobra/cobrapy' });
   });
 });
@@ -174,6 +201,14 @@ describe('relativeDate', () => {
 
   it('returns an empty string for a date it cannot read', () => {
     expect(at('not a date')).toBe('');
+  });
+});
+
+describe('hasData', () => {
+  it('treats the empty snapshot\'s epoch timestamp as no data', () => {
+    expect(hasData('2026-09-12T05:00:00.000Z')).toBe(true);
+    expect(hasData(new Date(0).toISOString())).toBe(false);
+    expect(hasData('nope')).toBe(false);
   });
 });
 

@@ -6,15 +6,17 @@
 // `.software-stats` line in place. Plain TypeScript in a bundled <script>,
 // not a Vue island (see CLAUDE.md): the stats lines are static HTML rendered
 // by SoftwareCard.vue and only their text nodes change.
-import { relativeDate } from '../lib/githubRows';
+import { hasData, relativeDate } from '../lib/githubRows';
 
 interface Props { fetchedAt: string }
 const { fetchedAt } = Astro.props;
-const updated = relativeDate(fetchedAt);
+// a build that could not read the snapshot renders emptySnapshot()'s epoch:
+// that is "never", not "56 years ago" (the browser then fills the page in)
+const known = hasData(fetchedAt);
 ---
 <p class="github-note" data-github-note>
   Data from <a href="https://github.com/matthiaskoenig" target="_blank" rel="noopener noreferrer">GitHub</a>, updated
-  <time data-field="updated" data-iso={fetchedAt} datetime={fetchedAt}>{updated || 'never'}</time>.
+  <time data-field="updated" data-empty="never" data-iso={fetchedAt} datetime={known ? fetchedAt : undefined}>{known ? relativeDate(fetchedAt) : 'never'}</time>.
 </p>
 
 <script>

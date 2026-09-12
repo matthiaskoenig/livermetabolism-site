@@ -3,16 +3,17 @@ import { commitActivityOption, languageColor, PALETTE, releaseTimelineOption, st
 
 describe('releaseTimelineOption', () => {
   const rows = [
-    { repo: 'a/one', name: 'one', points: [{ date: '2026-01-01T00:00:00Z', tag: '1.0', url: 'https://github.com/a/one/releases/tag/1.0' }] },
-    { repo: 'b/two', name: 'two', points: [{ date: '2025-01-01T00:00:00Z', tag: '2.0', url: 'https://github.com/b/two/releases/tag/2.0' }] },
+    { repo: 'a/one', name: 'one', htmlUrl: 'https://github.com/a/one', points: [{ date: '2026-01-01T00:00:00Z', tag: '1.0' }] },
+    { repo: 'b/two', name: 'two', htmlUrl: 'https://github.com/b/two', points: [{ date: '2025-01-01T00:00:00Z', tag: '2.0' }] },
   ];
 
-  it('puts one point per release on its repository lane, carrying the URL for the click handler', () => {
+  it('puts one point per release on its repository lane, as [date, lane, tag]', () => {
     const option = releaseTimelineOption(rows);
     expect(option.yAxis.data).toEqual(['one', 'two']);
+    // no per-point URL: the click handler builds it from the lane (releaseUrl)
     expect(option.series[0]!.data.map((d) => d.value)).toEqual([
-      ['2026-01-01T00:00:00Z', 0, '1.0', 'https://github.com/a/one/releases/tag/1.0'],
-      ['2025-01-01T00:00:00Z', 1, '2.0', 'https://github.com/b/two/releases/tag/2.0'],
+      ['2026-01-01T00:00:00Z', 0, '1.0'],
+      ['2025-01-01T00:00:00Z', 1, '2.0'],
     ]);
   });
 

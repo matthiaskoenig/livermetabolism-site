@@ -30,16 +30,23 @@ export interface ReleaseRow {
   repo: string;
   name: string;
   tag: string;
-  title: string;
   publishedAt: string;
   htmlUrl: string;
   prerelease: boolean;
   summary: string;
 }
 
-export interface TimelinePoint { date: string; tag: string; url: string }
-/** One lane of the release timeline: every release of one repository. */
-export interface TimelineRow { repo: string; name: string; points: TimelinePoint[] }
+export interface TimelinePoint { date: string; tag: string }
+/**
+ * One lane of the release timeline: every release of one repository. A point
+ * carries only its date and tag; its release URL is built from the lane's
+ * `htmlUrl` (`<repository>/releases/tag/<tag>`) in the component, which keeps
+ * ~150 URLs out of the island's serialised props.
+ */
+export interface TimelineRow { repo: string; name: string; htmlUrl: string; points: TimelinePoint[] }
+
+/** The URL of one release, from its lane and tag. */
+export const releaseUrl = (row: Pick<TimelineRow, 'htmlUrl'>, tag: string) => `${row.htmlUrl}/releases/tag/${tag}`;
 
 /** One bar of the stars chart. */
 export interface StarRow { repo: string; name: string; stars: number; language: string | null; url: string }
@@ -58,12 +65,20 @@ function known(snapshot: Snapshot, repos: string[]): string[] {
 
 const displayName = (snapshot: Snapshot, fullName: string) => snapshot.repos[fullName]?.name ?? fullName;
 
-/** The stats of one repository, or null when the snapshot does not cover it. */
+/**
+ * The stats of one repository, or null when the snapshot does not cover it.
+ *
+ * `fullName` is the key that was asked for — the `owner/name` derived from
+ * `data/software.yml` — not `repo.fullName`, which is what GitHub calls the
+ * repository today: `matthiaskoenig/libsbgn-python` was renamed to
+ * `matthiaskoenig/libsbgnpy`, and the card's `data-repo` attribute has to be
+ * the key the browser-side refresh looks the repository up by again.
+ */
 export function statsFor(snapshot: Snapshot, fullName: string): RepoStats | null {
   const repo = snapshot.repos[fullName];
   if (!repo) return null;
   return {
-    fullName: repo.fullName,
+    fullName,
     htmlUrl: repo.htmlUrl,
     stars: repo.stars,
     openIssues: repo.openIssues,
@@ -90,7 +105,6 @@ export function latestReleases(snapshot: Snapshot, repos: string[], sinceDays = 
       repo,
       name: displayName(snapshot, repo),
       tag: latest.tag,
-      title: latest.name,
       publishedAt: latest.publishedAt,
       htmlUrl: latest.htmlUrl,
       prerelease: latest.prerelease,
@@ -112,21 +126,22 @@ export function releaseTimelineRows(snapshot: Snapshot, repos: string[]): Timeli
     rows.push({
       repo,
       name: displayName(snapshot, repo),
+      htmlUrl: snapshot.repos[repo]!.htmlUrl,
       points: [...list]
         .sort((a, b) => a.publishedAt.localeCompare(b.publishedAt))
-        .map((r) => ({ date: r.publishedAt, tag: r.tag, url: r.htmlUrl })),
+        .map((r) => ({ date: r.publishedAt, tag: r.tag })),
     });
   }
   return rows.sort((a, b) => b.points[b.points.length - 1].date.localeCompare(a.points[a.points.length - 1].date));
 }
 
-/** Starred repositories, most stars first. */
+/** Starred repositories, most stars first; `repo` is the snapshot key (see `statsFor`). */
 export function starsRows(snapshot: Snapshot, repos: string[]): StarRow[] {
   return known(snapshot, repos)
-    .map((repo) => snapshot.repos[repo]!)
-    .filter((r) => r.stars > 0)
-    .sort((a, b) => b.stars - a.stars || a.fullName.localeCompare(b.fullName))
-    .map((r) => ({ repo: r.fullName, name: r.name, stars: r.stars, language: r.language, url: r.htmlUrl }));
+    .map((repo) => ({ repo, entry: snapshot.repos[repo]! }))
+    .filter(({ entry }) => entry.stars > 0)
+    .sort((a, b) => b.entry.stars - a.entry.stars || a.repo.localeCompare(b.repo))
+    .map(({ repo, entry }) => ({ repo, name: entry.name, stars: entry.stars, language: entry.language, url: entry.htmlUrl }));
 }
 
 /**
@@ -154,6 +169,16 @@ export function activityRows(snapshot: Snapshot, repos: string[], weeks = 52): A
   }
   series.sort((a, b) => b.values.reduce((s, v) => s + v, 0) - a.values.reduce((s, v) => s + v, 0));
   return { weeks: axis, series };
+}
+
+/**
+ * False for the epoch timestamp of `emptySnapshot()` (and for anything
+ * unreadable): that is "no snapshot", not "1970", and must not be rendered as
+ * "56 years ago".
+ */
+export function hasData(iso: string): boolean {
+  const t = Date.parse(iso);
+  return Number.isFinite(t) && t > 0;
 }
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
