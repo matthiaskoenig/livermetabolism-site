@@ -41,14 +41,16 @@ export default defineConfig({
         "form-action 'self'",
       ],
       scriptDirective: { resources: ["'self'", 'https://www.googletagmanager.com'] },
-      // 'unsafe-inline' is required here (never for script-src): PersonAvatar.vue
-      // sets a runtime `transform`/`--arrow-shift` inline style to clamp its
-      // hover card inside the viewport, and the value depends on the
-      // viewport width at hover time, so it cannot be pre-hashed at build
-      // time. Astro drops style hashes entirely once 'unsafe-inline' is
-      // present (browsers ignore a hash alongside 'unsafe-inline' per the
-      // CSP spec), so this reduces style-src (only) to 'unsafe-inline'.
-      styleDirective: { resources: ["'self'", 'https://fonts.googleapis.com', "'unsafe-inline'"] },
+      // No 'unsafe-inline' here: CSP's style-src only governs `<style>`
+      // elements and `style=` attributes, which Astro hashes/avoids
+      // automatically, not CSSOM writes like `el.style.transform`.
+      // PersonAvatar.vue sets a runtime `transform`/`--arrow-shift` via the
+      // CSSOM (`el.style.transform = ...`, `el.style.setProperty(...)`) to
+      // clamp its hover card inside the viewport, which CSP does not
+      // restrict at all, so it needs no allowance here. Any real `style=`
+      // attribute (e.g. the CV page's PDF embed) instead gets its own class
+      // in global.css (see CLAUDE.md) — never re-add 'unsafe-inline'.
+      styleDirective: { resources: ["'self'", 'https://fonts.googleapis.com'] },
     },
   },
 });

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import Icon from './Icon.vue';
-import type { TagInfo } from '../lib/views';
+import type { TagFilterEntry } from '../lib/views';
 
-defineProps<{ id: string; tags: TagInfo[]; modelValue: string }>();
+defineProps<{ id: string; tags: TagFilterEntry[]; modelValue: string }>();
 const emit = defineEmits<{ 'update:modelValue': [tag: string] }>();
 </script>
 

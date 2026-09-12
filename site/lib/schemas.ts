@@ -75,7 +75,6 @@ export const tagSchema = z.object({
   id, order: z.number().default(0), tag: reqStr, icon: reqStr, short_description: reqStr, description: reqStr, vision: reqStr,
 }).strict();
 
-export const countryFlagsSchema = z.record(z.string(), z.string());
 export const countryFlagSchema = z.object({ id, flag: reqStr }).strict();
 
 export const personSchema = z.object({

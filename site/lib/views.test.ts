@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { alumniByYear, crossRefs, groupByYear, tagCounts, toTagInfo } from './views';
+import { alumniByYear, crossRefs, groupByYear, tagCounts, toTagFilterEntries, toTagInfo } from './views';
 
 describe('groupByYear', () => {
   it('groups consecutive runs in file order like the Liquid template', () => {
@@ -40,6 +40,17 @@ describe('toTagInfo', () => {
     expect(info.map((i) => i.tag)).toEqual(['Digital Twins', 'AI', 'Open & FAIR']);
     for (const i of info) expect(Object.keys(i)).toEqual(['tag', 'slug', 'icon', 'short_description', 'description', 'vision']);
     expect(info[0]).toEqual({ tag: 'Digital Twins', slug: 'digital-twins', icon: 'icon-Digital Twins', short_description: 'short', description: 'long', vision: 'vision' });
+  });
+});
+
+describe('toTagFilterEntries', () => {
+  it('narrows TagInfo down to the fields the tag-filter bar renders — no description, no vision', () => {
+    const info = toTagInfo([
+      { id: 'AI', order: 0, tag: 'AI', icon: 'fa-robot', short_description: 'short', description: 'long', vision: 'vision' },
+    ] as never);
+    const entries = toTagFilterEntries(info);
+    expect(entries).toEqual([{ tag: 'AI', slug: 'ai', icon: 'fa-robot', short_description: 'short' }]);
+    expect(Object.keys(entries[0])).toEqual(['tag', 'slug', 'icon', 'short_description']);
   });
 });
 

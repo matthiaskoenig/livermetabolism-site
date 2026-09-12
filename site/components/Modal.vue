@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps<{ id: string; title: string; centered?: boolean }>();
+defineProps<{ id: string; title: string }>();
 
 // Every Modal renders statically (no client directive) and needs no JS of
 // its own: Base.astro installs the document-level router once and opens
@@ -9,7 +9,7 @@ defineProps<{ id: string; title: string; centered?: boolean }>();
 </script>
 
 <template>
-  <dialog :id="id" class="modal" :class="{ 'modal-centered': centered }" :aria-labelledby="`${id}-label`">
+  <dialog :id="id" class="modal" :aria-labelledby="`${id}-label`">
     <div class="modal-header">
       <h5 class="modal-title" :id="`${id}-label`">{{ title }}</h5>
       <button type="button" class="btn-close" data-modal-close aria-label="Close"></button>
