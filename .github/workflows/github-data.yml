@@ -1,0 +1,54 @@
+name: GitHub data
+
+# Daily snapshot of the GitHub data (stars, releases, commits, activity) of
+# every repository in data/software.yml, committed as github.json to the
+# orphan branch `github-data`. The research page reads it from the raw URL at
+# build time and in the browser, so the numbers stay fresh without a redeploy.
+# The site workflow only runs on main and pull requests, so this push never
+# triggers a deployment.
+
+on:
+  schedule:
+    - cron: "0 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: github-data
+  cancel-in-progress: false
+
+jobs:
+  github-data:
+    name: github-data
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run fetch:github -- github.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit to the github-data branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin github-data; then
+            git fetch origin github-data
+            git worktree add ../data origin/github-data
+          else
+            git worktree add --detach ../data
+            git -C ../data checkout --orphan github-data
+            git -C ../data rm -rfq . || true
+          fi
+          cp github.json ../data/github.json
+          cd ../data
+          git add github.json
+          if git diff --cached --quiet; then echo "no change"; exit 0; fi
+          git commit -m "Update GitHub snapshot $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push origin HEAD:github-data
