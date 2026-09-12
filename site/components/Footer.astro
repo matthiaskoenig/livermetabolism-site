@@ -5,6 +5,10 @@ import { asset, url } from '../lib/url';
 interface Props { home?: boolean }
 const { home = false } = Astro.props;
 const email = 'matthias.koenig@uni-luebeck.de';
+// Injected by vite.define in astro.config.mjs (see site/env.d.ts).
+const version = __SITE_VERSION__;
+const commit = __SITE_COMMIT__;
+const repo = 'https://github.com/matthiaskoenig/livermetabolism-site';
 ---
 <footer class="footer" id="footer">
   {home && (
@@ -45,6 +49,9 @@ const email = 'matthias.koenig@uni-luebeck.de';
       <a href={url('/impressum/')}>Impressum</a>
       <span aria-hidden="true">&middot;</span>
       <a href={url('/privacy/')}>Datenschutzerklärung</a>
+      <span aria-hidden="true">&middot;</span>
+      <a class="footer-version" href={`${repo}/releases/tag/${version}`} title="Release notes">v{version}</a>
+      <a class="footer-version" href={`${repo}/commit/${commit}`} title="Deployed commit">{commit}</a>
     </div>
   </div>
 </footer>

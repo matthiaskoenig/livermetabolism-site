@@ -1710,6 +1710,12 @@
       }
     }
 
+    /* version + commit of the deployed build, next to the legal links */
+    .footer-version {
+      font-family: ui-monospace, monospace;
+      font-size: 0.95em;
+    }
+
     @media (max-width: 767px) {
       .footer-top {
         justify-content: center;

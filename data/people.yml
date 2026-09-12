@@ -10,8 +10,8 @@
   repository: 'https://github.com/matthiaskoenig/'
   homepage: 'https://livermetabolism.com/cv/'
   description: 'Data scientist, data analyst, computational modeler, bioinformatician, group leader. Application of computational modeling and machine learning to biological, medical and clinical questions and data sets. Predictive modeling of physiological processes and systems with a focus on metabolic research.
-  <br />
-  Research projects on glucose homeostasis in normal and diabetic subjects, personalization of liver function tests to improve diagnosis, and stratification and individualization of computational models for precision medicine.'
+    <br />
+    Research projects on glucose homeostasis in normal and diabetic subjects, personalization of liver function tests to improve diagnosis, and stratification and individualization of computational models for precision medicine.'
 
 - id: 'mariia_myshkina'
   status: 'current'
@@ -737,7 +737,7 @@
   repository: 'https://github.com/dannythekey'
   homepage:
   description: 'Danny Ke works on a physiologically based model of benzodiazepines.
-  Key questions are the effect of genetic variance on clearance of diazepam.'
+    Key questions are the effect of genetic variance on clearance of diazepam.'
 
 - id: 'sara_angelis'
   status: 'alumni'
@@ -752,7 +752,7 @@
   repository: 'https://github.com/SaraD-hub'
   homepage:
   description: 'Sara de Angelis works on a physiologically based model of torasemide.
-  Key questions are the effect of sex on torasemide pharmacokinetics and pharmacodynamics.'
+    Key questions are the effect of sex on torasemide pharmacokinetics and pharmacodynamics.'
 
 - id: 'hemant_yadav'
   status: 'alumni'
@@ -768,7 +768,7 @@
   repository: 'https://github.com/hemant27031999/cobrapy'
   homepage: 'https://hemant-gsoc2020.blogspot.com/'
   description: 'In cooperation with <a href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/systembiologie/team/jun-prof-dr-andreas-draeger/">Andreas Dräger</a>
-  from the University of Tübingen we are extending SBML and JSON support for <a href="https://github.com/opencobra/cobrapy">cobrapy</a>. The full proposal is available <a href="https://docs.google.com/document/d/1f0PknoPUpcWRHS8jljEOX5439us4ZD9qjNlbbfGk8Y8/edit?usp=sharing">here</a>.'
+    from the University of Tübingen we are extending SBML and JSON support for <a href="https://github.com/opencobra/cobrapy">cobrapy</a>. The full proposal is available <a href="https://docs.google.com/document/d/1f0PknoPUpcWRHS8jljEOX5439us4ZD9qjNlbbfGk8Y8/edit?usp=sharing">here</a>.'
 
 - id: 'hemil_panchiwala'
   status: 'alumni'
@@ -784,7 +784,7 @@
   repository: 'https://github.com/hemilpanchiwala/SBSCL'
   homepage: 'https://gsoc20hemil.blogspot.com'
   description: 'In cooperation with <a href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/systembiologie/team/jun-prof-dr-andreas-draeger/">Andreas Dräger</a>
-  from the University of Tübingen we are extending SBML support for <a href="https://github.com/draeger-lab/SBSCL">The Systems Biology Simulation Core Library</a>. The full proposal is available <a href="https://docs.google.com/document/d/1XKAXN28gKWWR5hTLJtV9IlWYwp6aEI9JE_009rtVLCA/edit#heading=h.89yl7tg5fubi">here</a>.'
+    from the University of Tübingen we are extending SBML support for <a href="https://github.com/draeger-lab/SBSCL">The Systems Biology Simulation Core Library</a>. The full proposal is available <a href="https://docs.google.com/document/d/1XKAXN28gKWWR5hTLJtV9IlWYwp6aEI9JE_009rtVLCA/edit#heading=h.89yl7tg5fubi">here</a>.'
 
 - id: 'kaustubh_trivedi'
   status: 'alumni'
@@ -800,7 +800,7 @@
   repository: 'https://github.com/codekaust'
   homepage: 'https://kt-gsoc19.blogspot.com/'
   description: 'In cooperation with <a href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/systembiologie/team/jun-prof-dr-andreas-draeger/">Andreas Dräger</a>
-  from the University of Tübingen we are working on the extension of <a href="https://github.com/draeger-lab/ModelPolisher">ModelPolisher</a> to a universal annotation tool.'
+    from the University of Tübingen we are working on the extension of <a href="https://github.com/draeger-lab/ModelPolisher">ModelPolisher</a> to a universal annotation tool.'
 
 - id: 'patrick_pett'
   status: 'alumni'
@@ -815,7 +815,7 @@
   repository: 'https://bitbucket.org/JPatrickP/'
   homepage:
   description: 'Patrick works on the analysis of mammalian circadian clock in the human liver based on the analysis
-  of OMICS datasets.'
+    of OMICS datasets.'
 
 - id: 'roman_schulte'
   status: 'alumni'
