@@ -16,7 +16,8 @@
     "fetch-icons": "bash scripts/fetch-icons.sh",
     "fetch:github": "node scripts/fetch-github.ts",
     "fetch:scholar": "node scripts/fetch-scholar.ts",
-    "fetch:citations": "node scripts/fetch-citations.ts"
+    "fetch:citations": "node scripts/fetch-citations.ts",
+    "graph:thumbs": "node scripts/graph-thumbs.ts"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

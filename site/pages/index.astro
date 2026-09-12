@@ -5,6 +5,7 @@ import HomeStats from '../components/HomeStats.astro';
 import Icon from '../components/Icon.vue';
 import PersonAvatar from '../components/PersonAvatar.vue';
 import { getPeople, getProjects, getPublications, getSoftware, getTags } from '../lib/data';
+import { TAG_GRAPHICS } from '../lib/tagGraphics';
 import { stripHtml, truncateWords } from '../lib/text';
 import { asset, url } from '../lib/url';
 import { tagCounts } from '../lib/views';
@@ -12,19 +13,10 @@ import { tagCounts } from '../lib/views';
 const [tags, people, publications, projects, software] = await Promise.all([getTags(), getPeople(), getPublications(), getProjects(), getSoftware()]);
 const strip = people.filter((p) => p.status === 'current' && p.image);
 
-// decorative background per section (app/assets/image/tags/)
-const graphics: Record<string, string> = {
-  'digital-twins': 'digital_twins_upscayl_3x_digital-art-4x.webp',
-  'ai': 'ai_upscayl_3x_digital-art-4x.webp',
-  'digital-pathology': 'digital_pathology_upscayl_3x_digital-art-4x.webp',
-  'pharmacometrics': 'pharmacometrics_upscayl_3x_digital-art-4x.webp',
-  'open-fair': 'fair_open_upscayl_3x_digital-art-4x.webp',
-};
-
 const sections = tags.map((t, i) => {
   const prev = i === 0 ? { slug: 'home', label: 'Home' } : { slug: tags[i - 1].slug, label: tags[i - 1].tag };
   const next = i === tags.length - 1 ? { slug: 'footer', label: 'Footer' } : { slug: tags[i + 1].slug, label: tags[i + 1].tag };
-  return { ...t, prev, next, counts: tagCounts(t.tag, publications, projects, software), graphic: graphics[t.slug] };
+  return { ...t, prev, next, counts: tagCounts(t.tag, publications, projects, software), graphic: TAG_GRAPHICS[t.slug] };
 });
 const quickLinks = [
   { href: url('/projects/'), icon: 'cogs', title: 'Projects', text: 'Explore our ongoing research projects and digital twin models.' },
