@@ -4,7 +4,7 @@ import CoreMessages from '../components/CoreMessages.astro';
 import Icon from '../components/Icon.vue';
 import PersonAvatar from '../components/PersonAvatar.vue';
 import PersonCard from '../components/PersonCard.vue';
-import PersonModals from '../components/PersonModals.vue';
+import PersonModal from '../components/PersonModal.vue';
 import { getPeople, getProjects, getPublications, getSoftware, getTags } from '../lib/data';
 import { stripHtml, truncateWords } from '../lib/text';
 import { asset, url } from '../lib/url';
@@ -14,8 +14,9 @@ const [tags, people, publications, projects, software] = await Promise.all([getT
 const avatarBase = asset('image/people/128/');
 const current = people.filter((p) => p.status === 'current');
 const alumniGroups = alumniByYear(people);
-const withModal = [...current, ...alumniGroups.flatMap((g) => g.people)];
-const modalItems = withModal.map((person) => {
+// every person shown on the page gets a static <dialog>; ModalRouter (in
+// Base.astro) opens it on click and on a #person-modal-<id> deep link
+const modalItems = [...current, ...alumniGroups.flatMap((g) => g.people)].map((person) => {
   const r = crossRefs(person.id, publications, projects, software);
   return {
     person,
@@ -77,5 +78,5 @@ const positions = [
     ))}
   </div>
 
-  <PersonModals client:idle items={modalItems} avatarBase={avatarBase} publicationsUrl={url('/publications/')} />
+  {modalItems.map((it) => <PersonModal person={it.person} refs={it.refs} avatarBase={avatarBase} publicationsUrl={url('/publications/')} />)}
 </Base>
