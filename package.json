@@ -15,7 +15,8 @@
     "e2e": "playwright test",
     "fetch-icons": "bash scripts/fetch-icons.sh",
     "fetch:github": "node scripts/fetch-github.ts",
-    "fetch:scholar": "node scripts/fetch-scholar.ts"
+    "fetch:scholar": "node scripts/fetch-scholar.ts",
+    "fetch:citations": "node scripts/fetch-citations.ts"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

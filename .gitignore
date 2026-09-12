@@ -12,3 +12,4 @@ test-results/
 src/cv/results/
 /github.json
 /scholar.json
+/citations.json
