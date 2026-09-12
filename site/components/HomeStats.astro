@@ -1,0 +1,30 @@
+---
+// The homepage's at-a-glance strip under the hero subtitle: six figures
+// (publications, citations, h-index, team, software, funded projects), each a
+// link into the page that details it.
+//
+// Build-time only by design (see CLAUDE.md): static markup, no <script>, no
+// client: directive and no runtime fetch, so the homepage keeps shipping only
+// the site chrome's JavaScript. The two snapshots are read here exactly as the
+// publications and research pages read them, and the daily scheduled build
+// keeps the rendered numbers at most a day old. A snapshot the build cannot
+// read leaves its figures out rather than showing a 0.
+import { getFunding, getPeople, getPublications, getSoftware } from '../lib/data';
+import { loadSnapshot } from '../lib/github';
+import { homeFigures } from '../lib/homeStats';
+import { loadScholar } from '../lib/scholar';
+
+const [publications, people, software, funding, github, scholar] = await Promise.all([
+  getPublications(), getPeople(), getSoftware(), getFunding(), loadSnapshot(), loadScholar(),
+]);
+const figures = homeFigures({ publications, people, software, funding, github, scholar });
+---
+<div class="home-stats">
+  {figures.map((f) => (
+    <a class="home-stat" href={f.href} data-stat={f.id}>
+      <span class="home-stat-value">{f.value}</span>
+      <span class="home-stat-label">{f.label}</span>
+      {f.sub && <span class="home-stat-sub">{f.sub}</span>}
+    </a>
+  ))}
+</div>

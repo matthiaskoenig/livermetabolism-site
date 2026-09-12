@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import CoreMessages from '../components/CoreMessages.astro';
+import HomeStats from '../components/HomeStats.astro';
 import Icon from '../components/Icon.vue';
 import PersonAvatar from '../components/PersonAvatar.vue';
 import { getPeople, getProjects, getPublications, getSoftware, getTags } from '../lib/data';
@@ -39,6 +40,8 @@ const quickLinks = [
       <h2 class="header-light">Systems Medicine, Digital Twins &amp; AI</h2>
       <p class="hero-subtitle">Metabolic Inflammation and Carcinogenesis of the Liver</p>
     </div>
+
+    <HomeStats />
 
     <CoreMessages tags={tags} />
 
