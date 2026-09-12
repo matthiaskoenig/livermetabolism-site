@@ -4,7 +4,7 @@ import { useTagFilter } from '../lib/tagFilter';
 import type { TagInfo } from '../lib/views';
 
 const props = defineProps<{ filterId: string; gridId: string; tags: TagInfo[]; items: T[] }>();
-defineSlots<{ item(props: { item: T }): unknown }>();
+defineSlots<{ item(props: { item: T }): unknown; modal?(props: { item: T }): unknown }>();
 const { activeTag, setTag, matches } = useTagFilter(props.tags.map((t) => t.tag));
 </script>
 
@@ -15,4 +15,7 @@ const { activeTag, setTag, matches } = useTagFilter(props.tags.map((t) => t.tag)
       <div v-show="matches(it.tags)" class="contents"><slot name="item" :item="it" /></div>
     </template>
   </div>
+  <template v-for="it in items" :key="`m-${it.id}`">
+    <slot name="modal" :item="it" />
+  </template>
 </template>

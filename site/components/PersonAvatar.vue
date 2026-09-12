@@ -6,8 +6,13 @@ const root = ref<HTMLElement | null>(null);
 const card = ref<HTMLElement | null>(null);
 const open = ref(false);
 
+declare global {
+  var __personAvatarCloseAll: Set<() => void> | undefined;
+}
+
 // module-level registry so only one card is visible across all islands
-const registry: Set<() => void> = ((globalThis as any).__personAvatarCloseAll ??= new Set());
+globalThis.__personAvatarCloseAll ??= new Set();
+const registry: Set<() => void> = globalThis.__personAvatarCloseAll;
 
 function close() { open.value = false; if (card.value) { card.value.style.transform = ''; card.value.style.removeProperty('--arrow-shift'); } }
 function closeOthers() { for (const fn of registry) if (fn !== close) fn(); }
