@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { commitActivityOption, languageColor, PALETTE, releaseTimelineOption, starsLanguages, starsOption } from './chartOptions';
+import { citationHistoryOption, citationsPerYearOption, commitActivityOption, languageColor, PALETTE, releaseTimelineOption, starsLanguages, starsOption } from './chartOptions';
 
 describe('releaseTimelineOption', () => {
   const rows = [
@@ -61,5 +61,55 @@ describe('commitActivityOption', () => {
   it('labels only the first week of each month', () => {
     const { formatter } = commitActivityOption(data).xAxis.axisLabel;
     expect(data.weeks.map((w, i) => formatter(w, i))).toEqual(['Jan 26', '', 'Feb 26']);
+  });
+});
+
+describe('citationsPerYearOption', () => {
+  // rows arrive ascending from perYearRows; the builder must not depend on it
+  const rows = [{ year: 2012, count: 46 }, { year: 2011, count: 25 }, { year: 2013, count: 93 }];
+
+  it('puts the years ascending on the x axis with their counts as bars', () => {
+    const option = citationsPerYearOption(rows);
+    expect(option.xAxis.data).toEqual(['2011', '2012', '2013']);
+    expect(option.series[0]!.type).toBe('bar');
+    expect(option.series[0]!.data).toEqual([25, 46, 93]);
+    expect(option.series[0]!.itemStyle.color).toBe(PALETTE[0]);
+  });
+
+  it('renders its tooltip inside the canvas (CSP)', () => {
+    expect(citationsPerYearOption(rows).tooltip.renderMode).toBe('richText');
+    expect(citationsPerYearOption(rows).tooltip.formatter({ name: '2011', value: 25 })).toBe('2011\n25 citations');
+  });
+
+  it('survives an empty histogram', () => {
+    expect(citationsPerYearOption([]).series[0]!.data).toEqual([]);
+  });
+});
+
+describe('citationHistoryOption', () => {
+  const point = (date: string, citations: number) => ({ date, citations, hIndex: 26, i10Index: 36 });
+
+  it('draws one line point per day, ascending', () => {
+    const option = citationHistoryOption([point('2026-09-13', 3830), point('2026-09-12', 3827)]);
+    expect(option.xAxis.data).toEqual(['2026-09-12', '2026-09-13']);
+    expect(option.series[0]!.type).toBe('line');
+    expect(option.series[0]!.data).toEqual([3827, 3830]);
+    expect(option.series[0]!.lineStyle.color).toBe(PALETTE[1]);
+  });
+
+  it('shows the symbol, so a one-point history is visible at all', () => {
+    const option = citationHistoryOption([point('2026-09-12', 3827)]);
+    expect(option.series[0]!.data).toEqual([3827]);
+    expect(option.series[0]!.showSymbol).toBe(true);
+    expect(option.series[0]!.symbol).toBe('circle');
+    // a total that grows slowly must not look flat against a 0 baseline
+    expect(option.yAxis.scale).toBe(true);
+  });
+
+  it('renders its tooltip inside the canvas (CSP)', () => {
+    const { tooltip } = citationHistoryOption([point('2026-09-12', 3827)]);
+    expect(tooltip.renderMode).toBe('richText');
+    expect(tooltip.trigger).toBe('axis');
+    expect(tooltip.formatter([{ name: '2026-09-12', value: 3827 }])).toBe('2026-09-12\n3827 citations');
   });
 });
