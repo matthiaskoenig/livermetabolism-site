@@ -5,9 +5,12 @@ name: GitHub data
 #                  data/software.yml, read by the research page.
 #   scholar.json — the citation metrics of the Google Scholar profile, read by
 #                  the publications page.
-# Both are read from the raw URL at build time and in the browser, so the
-# numbers stay fresh without a redeploy. The site workflow only runs on main
-# and pull requests, so this push never triggers a deployment.
+#   citations.json — the per-paper citation counts and open-access status from
+#                  OpenAlex, by DOI, read by the publications page.
+# All three are read from the raw URL at build time and in the browser, so the
+# numbers stay fresh without a redeploy. The site workflow only runs on main,
+# pull requests and its own daily schedule, so this push never triggers a
+# deployment.
 
 on:
   schedule:
@@ -57,11 +60,23 @@ jobs:
       - name: Fetch Google Scholar
         continue-on-error: true
         run: npm run fetch:scholar -- ../data/scholar.json
+      # OpenAlex needs no key; OPENALEX_MAILTO (a repository variable, unset by
+      # default) only asks for the polite pool. A failed fetch writes nothing,
+      # so the previous citations.json is committed again unchanged.
+      - name: Fetch citations
+        continue-on-error: true
+        run: npm run fetch:citations -- ../data/citations.json
+        env:
+          OPENALEX_MAILTO: ${{ vars.OPENALEX_MAILTO }}
       - name: Commit to the github-data branch
         run: |
           cp github.json ../data/github.json
           cd ../data
-          git add github.json scholar.json 2>/dev/null || git add github.json
+          git add github.json
+          # The two continue-on-error fetches may not have produced a file yet.
+          for f in scholar.json citations.json; do
+            if [ -f "$f" ]; then git add "$f"; fi
+          done
           if git diff --cached --quiet; then echo "no change"; exit 0; fi
           git commit -m "Update data snapshots $(date -u +%Y-%m-%dT%H:%MZ)"
           git push origin HEAD:github-data

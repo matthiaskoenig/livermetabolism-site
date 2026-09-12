@@ -4,6 +4,12 @@ on:
   pull_request:
   push:
     branches: [main]
+  # One hour after the data workflow (github-data.yml, 05:00 UTC), so every
+  # build-time number — the publication citations, the Scholar metrics, the
+  # GitHub stars, the homepage strip — is at most a day old. The deploy job's
+  # condition (not a pull request, ref refs/heads/main) covers a scheduled run.
+  schedule:
+    - cron: "0 6 * * *"
   workflow_dispatch:
 
 permissions:
