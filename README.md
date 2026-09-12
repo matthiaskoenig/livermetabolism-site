@@ -45,6 +45,8 @@ uv run pytest tests/
 
 The Astro build validates the same data again through Zod schemas (`site/lib/schemas.ts`) and fails on dangling `people`/`tags`/`publications` references.
 
+After adding a person, project, software entry or research area, run `npm run graph:thumbs` to regenerate the committed network-graph node thumbnails in `public/assets/image/graph/`.
+
 ## Live GitHub, Scholar and citation data
 
 `scripts/fetch-github.ts` collects stars, releases, the latest commit and the weekly commit activity of every repository listed in `data/software.yml` and writes them as one snapshot, `github.json`. `scripts/fetch-scholar.ts` parses the public Google Scholar profile and writes a second snapshot, `scholar.json`, with the citation metrics, the citations per year, and one history point per day accumulated from the previous snapshot. `scripts/fetch-citations.ts` asks OpenAlex for the citation count and open-access status of every DOI in `data/publications.yml` and writes a third snapshot, `citations.json`. The workflow `.github/workflows/github-data.yml` runs all three daily (05:00 UTC, plus manual dispatch) and commits the results to the orphan branch [`github-data`](https://github.com/matthiaskoenig/livermetabolism-site/tree/github-data), from where the site reads them — at build time and again in the browser — so the numbers stay current without a redeploy. The Scholar and citation steps are `continue-on-error`: if the source blocks or fails, nothing is written and the previous snapshot stays in place. The site itself is also rebuilt and deployed daily at 06:00 UTC, an hour later, so the numbers rendered at build time stay fresh too.
