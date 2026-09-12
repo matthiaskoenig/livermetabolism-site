@@ -10,8 +10,8 @@ import { toTagInfo } from './views';
 const BASE = '/livermetabolism-site/';
 
 const tags: GraphTopic[] = [
-  { tag: 'AI', slug: 'ai', description: 'Machine learning for liver research.' },
-  { tag: 'Digital Twins', slug: 'digital-twins', description: 'Patient-specific models.' },
+  { tag: 'AI', slug: 'ai' },
+  { tag: 'Digital Twins', slug: 'digital-twins' },
 ];
 
 const people: GraphPerson[] = [
@@ -40,7 +40,7 @@ const citations: Citations = {
 function input(over: Partial<GraphRowsInput> = {}): GraphRowsInput {
   return {
     tags, people, publications, projects, software, citations, base: BASE,
-    thumbs: new Set(['assets/image/graph/people/ada.webp', 'assets/image/graph/projects/atlas.webp', 'assets/image/graph/topics/ai.webp']),
+    thumbs: new Set(['assets/image/graph/people/ada.webp', 'assets/image/graph/projects/atlas.webp']),
     ...over,
   };
 }
@@ -50,18 +50,18 @@ describe('graphRows', () => {
   const byId = new Map(rows.nodes.map((n) => [n.id, n]));
   const linkKeys = new Set(rows.links.map((l) => `${l.source}->${l.target}:${l.kind}`));
 
-  it('makes one node per topic, person, publication, project and software entry', () => {
+  it('makes one node per person, publication, project and software entry, and none per research area', () => {
     const count = (type: string) => rows.nodes.filter((n) => n.type === type).length;
-    expect(count('topic')).toBe(2);
     expect(count('person')).toBe(2);
     expect(count('publication')).toBe(2);
     expect(count('project')).toBe(1);
     expect(count('software')).toBe(1);
-    expect(rows.nodes).toHaveLength(8);
+    expect(rows.nodes).toHaveLength(6);
+    // the five research areas filter the graph, they are not in it
+    expect(rows.nodes.some((n) => n.id.startsWith('topic:'))).toBe(false);
   });
 
   it('prefixes ids with the node type and keeps them unique', () => {
-    expect([...byId.keys()]).toContain('topic:ai');
     expect([...byId.keys()]).toContain('person:ada');
     expect([...byId.keys()]).toContain('publication:Ada2026_ai');
     expect([...byId.keys()]).toContain('project:atlas');
@@ -83,12 +83,9 @@ describe('graphRows', () => {
     expect(rows.links.filter((l) => l.kind === 'author')).toHaveLength(3);
   });
 
-  it('links items to their topics, and never a person', () => {
-    expect(linkKeys).toContain('publication:Ada2026_ai->topic:ai:topic');
-    expect(linkKeys).toContain('publication:Bob2025_twin->topic:digital-twins:topic');
-    expect(linkKeys).toContain('project:atlas->topic:ai:topic');
-    expect(linkKeys).toContain('software:sbmlutils->topic:digital-twins:topic');
-    expect(rows.links.some((l) => l.source.startsWith('person:') && l.kind === 'topic')).toBe(false);
+  it('draws no research-area link at all', () => {
+    expect(rows.links.some((l) => l.source.startsWith('topic:') || l.target.startsWith('topic:'))).toBe(false);
+    expect(rows.links.map((l) => l.kind)).not.toContain('topic');
   });
 
   it('links a project and a software entry to their publications', () => {
@@ -112,7 +109,9 @@ describe('graphRows', () => {
     expect(byId.get('person:ada')?.topics).toEqual(['ai']);
     expect(byId.get('person:bob')?.topics).toEqual(['ai', 'digital-twins']);
     expect(byId.get('publication:Bob2025_twin')?.topics).toEqual(['digital-twins', 'ai']);
-    expect(byId.get('topic:ai')?.topics).toEqual(['ai']);
+    // projects and software carry their own tags' slugs
+    expect(byId.get('project:atlas')?.topics).toEqual(['ai']);
+    expect(byId.get('software:sbmlutils')?.topics).toEqual(['digital-twins']);
   });
 
   it('sizes a publication by its citation count, 0 without a DOI or entry', () => {
@@ -123,12 +122,11 @@ describe('graphRows', () => {
 
   it('counts the connected items as the value of every other node type', () => {
     expect(byId.get('person:ada')?.value).toBe(3); // one publication, one project, one software
-    expect(byId.get('topic:ai')?.value).toBe(3); // two publications, one project
+    expect(byId.get('project:atlas')?.value).toBe(2); // one publication, one member
   });
 
   it('builds every href from the base path', () => {
     for (const node of rows.nodes) expect(node.href.startsWith(BASE)).toBe(true);
-    expect(byId.get('topic:ai')?.href).toBe(`${BASE}#ai`);
     expect(byId.get('person:ada')?.href).toBe(`${BASE}people/#person-modal-ada`);
     expect(byId.get('project:atlas')?.href).toBe(`${BASE}projects/#project-modal-atlas`);
     expect(byId.get('software:sbmlutils')?.href).toBe(`${BASE}research/#software-sbmlutils`);
@@ -139,7 +137,6 @@ describe('graphRows', () => {
 
   it('uses a thumbnail only when the file exists, and null otherwise', () => {
     expect(byId.get('person:ada')?.image).toBe(`${BASE}assets/image/graph/people/ada.webp`);
-    expect(byId.get('topic:ai')?.image).toBe(`${BASE}assets/image/graph/topics/ai.webp`);
     expect(byId.get('project:atlas')?.image).toBe(`${BASE}assets/image/graph/projects/atlas.webp`);
     expect(byId.get('person:bob')?.image).toBeNull();
     expect(byId.get('software:sbmlutils')?.image).toBeNull();
@@ -147,7 +144,6 @@ describe('graphRows', () => {
   });
 
   it('labels nodes and adds a detail line per type', () => {
-    expect(byId.get('topic:ai')).toMatchObject({ label: 'AI', detail: 'Machine learning for liver research.' });
     expect(byId.get('person:ada')).toMatchObject({ label: 'Ada L.', detail: 'Group Leader' });
     expect(byId.get('person:bob')?.detail).toBe('Alumni');
     expect(byId.get('publication:Ada2026_ai')).toMatchObject({ label: 'Deep liver', detail: '2026 · J Hepatol' });
@@ -179,13 +175,14 @@ describe('graphRows over the real data', () => {
   const graph = graphRows({ ...data, citations: emptyCitations(), base: '/', thumbs });
   const byId = new Map(graph.nodes.map((n) => [n.id, n]));
 
-  it('has one node per row of every table', () => {
-    expect(graph.nodes.filter((n) => n.type === 'topic')).toHaveLength(5);
+  it('has one node per row of every table and 208 nodes with 306 links in total', () => {
     expect(graph.nodes.filter((n) => n.type === 'person')).toHaveLength(data.people.length);
     expect(graph.nodes.filter((n) => n.type === 'publication')).toHaveLength(data.publications.length);
     expect(graph.nodes.filter((n) => n.type === 'project')).toHaveLength(data.projects.length);
     expect(graph.nodes.filter((n) => n.type === 'software')).toHaveLength(data.software.length);
     expect(byId.size).toBe(graph.nodes.length);
+    expect(graph.nodes).toHaveLength(208);
+    expect(graph.links).toHaveLength(306);
   });
 
   it('links only existing nodes and draws no duplicate edge', () => {
@@ -197,10 +194,10 @@ describe('graphRows over the real data', () => {
     expect(new Set(keys).size).toBe(keys.length);
   });
 
-  it('gives every person and every topic a thumbnail, and every node a base-relative href', () => {
+  it('gives every person a thumbnail, and every node a base-relative href', () => {
     for (const node of graph.nodes) {
       expect(node.href.startsWith('/')).toBe(true);
-      if (node.type === 'person' || node.type === 'topic') expect(node.image).not.toBeNull();
+      if (node.type === 'person') expect(node.image).not.toBeNull();
     }
   });
 

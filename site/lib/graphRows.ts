@@ -1,8 +1,11 @@
 /**
  * Pure projection of `data/*.yml` into the nodes and links of the network
- * graph (`/network/`): the five research topics as hubs, plus every person,
- * publication, project and software entry, connected by authorship,
- * membership and topic.
+ * graph (`/network/`): every person, publication, project and software entry,
+ * connected by authorship and membership.
+ *
+ * The five research areas are **not** nodes — they filter the graph (see
+ * `filterRows()` in `networkOptions.ts`), which is what the `topics` slugs on
+ * every node are for.
  *
  * Free of DOM, Vue and ECharts imports (like `publicationRows.ts`), and
  * computed once in `network.astro`'s frontmatter — the rows are handed to the
@@ -28,21 +31,21 @@ import type { Citations } from './citationsSchema';
 import type { Entry, TagInfo } from './views';
 import type { PersonData, ProjectData, PublicationData, SoftwareData } from './schemas';
 
-export type NodeType = 'topic' | 'person' | 'project' | 'software' | 'publication';
+export type NodeType = 'person' | 'project' | 'software' | 'publication';
 
 export interface GraphNode {
-  /** `<type>:<data id>`, `topic:<slug>` for a topic. */
+  /** `<type>:<data id>`. */
   id: string;
   type: NodeType;
   /** Name shown on the canvas and as the first tooltip line. */
   label: string;
-  /** Second tooltip line: year and journal, roles, the full title, the topic description. */
+  /** Second tooltip line: year and journal, roles, the full title, the tool's name. */
   detail: string;
   /** Site-internal link the node navigates to on click. */
   href: string;
   /** Asset URL of the node's thumbnail, or null when there is none. */
   image: string | null;
-  /** Topic slugs this node belongs to (a person's are derived from their publications). */
+  /** Research-area slugs this node belongs to — what the page filters by (a person's are derived from their publications). */
   topics: string[];
   /** Citations for a publication, the number of connected items for every other type. */
   value: number;
@@ -51,12 +54,13 @@ export interface GraphNode {
 export interface GraphLink {
   source: string;
   target: string;
-  kind: 'topic' | 'author' | 'project' | 'software' | 'member';
+  kind: 'author' | 'project' | 'software' | 'member';
 }
 
 export interface GraphRows { nodes: GraphNode[]; links: GraphLink[] }
 
-export type GraphTopic = Pick<TagInfo, 'tag' | 'slug' | 'description'>;
+/** Only the tag-name-to-slug mapping is needed: the research areas are filters, not nodes. */
+export type GraphTopic = Pick<TagInfo, 'tag' | 'slug'>;
 export type GraphPerson = Pick<Entry<PersonData>, 'id' | 'name' | 'role' | 'status'>;
 export type GraphPublication = Pick<Entry<PublicationData>, 'id' | 'title' | 'year' | 'journal' | 'journal_short' | 'people' | 'tags' | 'doi'>;
 export type GraphProject = Pick<Entry<ProjectData>, 'id' | 'title' | 'people' | 'publications' | 'tags' | 'images'>;
@@ -76,9 +80,9 @@ export interface GraphRowsInput {
   thumbs: Set<string>;
 }
 
-/** Directory under `assets/image/graph/` per node type (`topic` writes to `topics/`). */
+/** Directory under `assets/image/graph/` per node type that has a thumbnail. */
 const THUMB_DIR: Record<Exclude<NodeType, 'publication'>, string> = {
-  topic: 'topics', person: 'people', project: 'projects', software: 'software',
+  person: 'people', project: 'projects', software: 'software',
 };
 
 function nodeId(type: NodeType, id: string): string {
@@ -114,12 +118,6 @@ export function graphRows(input: GraphRowsInput): GraphRows {
   const nodes: GraphNode[] = [];
   const push = (node: Omit<GraphNode, 'value'>) => nodes.push({ ...node, value: 0 });
 
-  for (const topic of input.tags) {
-    push({
-      id: nodeId('topic', topic.slug), type: 'topic', label: topic.tag, detail: topic.description,
-      href: `${base}#${topic.slug}`, image: image('topic', topic.slug), topics: [topic.slug],
-    });
-  }
   for (const person of input.people) {
     push({
       id: nodeId('person', person.id), type: 'person', label: person.name,
@@ -167,25 +165,22 @@ export function graphRows(input: GraphRowsInput): GraphRows {
 
   for (const pub of input.publications) {
     const id = nodeId('publication', pub.id);
-    for (const slug of topicsOf(pub.tags)) link(id, nodeId('topic', slug), 'topic');
     for (const person of pub.people) link(id, nodeId('person', person), 'author');
   }
   for (const project of input.projects) {
     const id = nodeId('project', project.id);
-    for (const slug of topicsOf(project.tags)) link(id, nodeId('topic', slug), 'topic');
     for (const pub of project.publications) link(id, nodeId('publication', pub), 'project');
     for (const person of project.people) link(nodeId('person', person), id, 'member');
   }
   for (const entry of input.software) {
     const id = nodeId('software', entry.id);
-    for (const slug of topicsOf(entry.tags)) link(id, nodeId('topic', slug), 'topic');
     for (const pub of entry.publications) link(id, nodeId('publication', pub), 'software');
     for (const person of entry.people) link(nodeId('person', person), id, 'member');
   }
 
   // --- derived node fields ---------------------------------------------
-  // A person carries no tags of their own: their topics are the union of the
-  // topics of the publications they co-authored, in first-seen order.
+  // A person carries no tags of their own: their research areas are the union
+  // of those of the publications they co-authored, in first-seen order.
   for (const pub of input.publications) {
     const slugs = topicsOf(pub.tags);
     if (!slugs.length) continue;
