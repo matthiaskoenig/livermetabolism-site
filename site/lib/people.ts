@@ -17,7 +17,7 @@ export function personChips(text: string, peopleIds: string[], people: PeopleMap
     const parts = person.name.split(' ');
     const given = parts[parts.length - 2] ?? '';
     const surname = parts[parts.length - 1] ?? '';
-    const avatar = `<img src="${avatarBase}${person.image}" class="author-avatar" alt="" title="${escapeHtml(person.name)}"/>`;
+    const avatar = `<img src="${avatarBase}${person.image}" decoding="async" width="18" height="18" class="author-avatar" alt="" title="${escapeHtml(person.name)}"/>`;
     const chip = (label: string) => `<span class="person-chip">${avatar}<strong>${label}</strong></span>`;
     const short = `${given.charAt(0)}. ${surname}`;
     if (html.includes(short)) {

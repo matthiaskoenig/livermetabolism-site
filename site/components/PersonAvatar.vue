@@ -38,7 +38,7 @@ onBeforeUnmount(() => { registry.delete(close); document.removeEventListener('cl
 
 <template>
   <div ref="root" class="person-avatar" tabindex="0" @mouseenter="show" @mouseleave="close" @focus="show" @blur="close" @click="toggle">
-    <img :src="src" :alt="name" loading="lazy" :class="imgClass" />
+    <img :src="src" :alt="name" loading="lazy" decoding="async" :width="imgClass === 'alumni-photo' ? 40 : 52" :height="imgClass === 'alumni-photo' ? 40 : 52" :class="imgClass" />
     <div ref="card" class="person-card" :class="{ 'is-visible': open }">
       <strong>{{ name }}</strong>
       <span class="person-position">{{ position }}</span>

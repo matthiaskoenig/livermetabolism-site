@@ -11,7 +11,7 @@ defineProps<{ item: Entry<SoftwareData>; tagInfo: TagInfo[]; peopleMap: PeopleMa
 
 <template>
   <div class="project-card" :id="`software-${item.id}`" :data-tags="item.tags.join('|')">
-    <img v-if="item.image" :src="imageBase + item.image" :alt="item.name" loading="lazy" class="project-image project-image-contain" />
+    <img v-if="item.image" :src="imageBase + item.image" :alt="item.name" loading="lazy" decoding="async" class="project-image project-image-contain" />
     <div class="project-body">
       <h3>{{ item.name }}</h3>
       <TagList :tags="item.tags" :tag-info="tagInfo" />

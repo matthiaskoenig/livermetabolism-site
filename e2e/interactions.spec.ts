@@ -27,6 +27,11 @@ test('deep link opens a person modal', async ({ page }) => {
 test('alumni hover card shows on hover', async ({ page }) => {
   await page.goto('people/');
   const avatar = page.locator('.alumni-card .person-avatar').first();
+  // PersonAvatar hydrates client:visible; scroll it into view and wait for
+  // hydration (Astro drops the `ssr` attribute) before hovering, otherwise
+  // the hover can race the island mounting its @mouseenter listener.
+  await avatar.scrollIntoViewIfNeeded();
+  await page.locator('astro-island[component-url*="PersonAvatar"]:not([ssr])').first().waitFor({ state: 'attached' });
   await avatar.hover();
   await expect(avatar.locator('.person-card')).toHaveClass(/is-visible/);
 });

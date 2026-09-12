@@ -16,7 +16,7 @@ const persons = computed(() => props.item.people.map((id) => props.people.find((
   <Modal :id="`news-modal-${item.id}`" :title="item.title">
     <p class="news-date">{{ item.date }}</p>
     <div v-if="item.video" class="modal-video-embed"><iframe :src="item.video" :title="item.title" loading="lazy" allowfullscreen></iframe></div>
-    <img v-else-if="item.image" :src="imageBase + item.image" :alt="item.title" loading="lazy" class="modal-image-single" />
+    <img v-else-if="item.image" :src="imageBase + item.image" :alt="item.title" loading="lazy" decoding="async" class="modal-image-single" />
     <TagList :tags="item.tags" :tag-info="tagInfo" />
     <p class="person-modal-description">{{ stripHtml(item.abstract ?? item.short) }}</p>
     <template v-if="persons.length">

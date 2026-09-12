@@ -18,7 +18,7 @@ const pubs = computed(() => props.project.publications.map((id) => props.publica
   <Modal :id="`project-modal-${project.id}`" :title="project.title">
     <template v-if="project.images.length">
       <div class="modal-image-gallery">
-        <img v-for="img in project.images" :key="img" :src="imageBase + img" :alt="project.image_title ?? project.title" loading="lazy" />
+        <img v-for="img in project.images" :key="img" :src="imageBase + img" :alt="project.image_title ?? project.title" loading="lazy" decoding="async" />
       </div>
       <p v-if="project.image_title" class="modal-image-caption">{{ project.image_title }}</p>
     </template>

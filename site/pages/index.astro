@@ -52,7 +52,7 @@ const quickLinks = [
     <div class="text-center">
       <div class="people-strip">
         {strip.map((p) => (
-          <PersonAvatar client:idle name={p.name} src={asset(`image/people/128/${p.image}`)} position={p.role[p.role.length - 1] ?? ''}
+          <PersonAvatar client:visible name={p.name} src={asset(`image/people/128/${p.image}`)} position={p.role[p.role.length - 1] ?? ''}
             description={p.description ? truncateWords(stripHtml(p.description), 24) : null} />
         ))}
       </div>
@@ -75,7 +75,7 @@ const quickLinks = [
 
   {sections.map((s) => (
     <section class:list={['page-section', 'tag-section', `tag-${s.slug}`]} id={s.slug}>
-      {s.graphic && <img class="tag-section-graphic" src={asset(`image/tags/${s.graphic}`)} alt="" aria-hidden="true" loading="lazy" />}
+      {s.graphic && <img class="tag-section-graphic" src={asset(`image/tags/${s.graphic}`)} alt="" aria-hidden="true" loading="lazy" decoding="async" />}
       <a class="section-scroll-cue section-scroll-cue-up" href={`#${s.prev.slug}`} aria-label={`Scroll to ${s.prev.label}`}><Icon name="chevron-up" /></a>
       <div class="tag-section-columns">
         <div class="tag-section-content">

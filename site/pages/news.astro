@@ -8,5 +8,5 @@ const [tagInfo, people, peopleMap, news] = await Promise.all([getTags(), getPeop
 const peopleLite = people.map(({ id, name }) => ({ id, name }));
 ---
 <Base title="News" sectionid="news">
-  <NewsSection client:idle items={news} tagInfo={tagInfo} peopleMap={peopleMap} people={peopleLite} imageBase={asset('image/news/')} avatarBase={asset('image/people/128/')} peopleUrl={url('/people/')} />
+  <NewsSection client:visible items={news} tagInfo={tagInfo} peopleMap={peopleMap} people={peopleLite} imageBase={asset('image/news/')} avatarBase={asset('image/people/128/')} peopleUrl={url('/people/')} />
 </Base>

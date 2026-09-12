@@ -9,5 +9,5 @@ const [tagInfo, peopleMap, meetings] = await Promise.all([getTags(), getPeopleMa
 <Base title="Meetings" sectionid="meetings">
   <h2 id="meetings">Meetings</h2>
   <p>Meetings, workshops, and events we organized or hosted.</p>
-  <MeetingsSection client:idle items={meetings} tagInfo={tagInfo} peopleMap={peopleMap} imageBase={asset('image/meetings/')} pdfBase={asset('pdf/')} avatarBase={asset('image/people/128/')} />
+  <MeetingsSection client:visible items={meetings} tagInfo={tagInfo} peopleMap={peopleMap} imageBase={asset('image/meetings/')} pdfBase={asset('pdf/')} avatarBase={asset('image/people/128/')} />
 </Base>

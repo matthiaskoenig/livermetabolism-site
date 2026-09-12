@@ -13,8 +13,8 @@ defineProps<{ item: Entry<PresentationData>; tagInfo: TagInfo[]; peopleMap: Peop
 <template>
   <div class="project-card" :id="`presentation-${item.id}`" :data-tags="item.tags.join('|')">
     <template v-if="item.image">
-      <a v-if="item.slides" :href="link(item.slides)" target="_blank" rel="noopener noreferrer"><img :src="pdfBase + item.image" :alt="item.title" loading="lazy" class="project-image" /></a>
-      <img v-else :src="pdfBase + item.image" :alt="item.title" loading="lazy" class="project-image" />
+      <a v-if="item.slides" :href="link(item.slides)" target="_blank" rel="noopener noreferrer"><img :src="pdfBase + item.image" :alt="item.title" loading="lazy" decoding="async" class="project-image" /></a>
+      <img v-else :src="pdfBase + item.image" :alt="item.title" loading="lazy" decoding="async" class="project-image" />
     </template>
     <div class="project-body">
       <p class="news-date">{{ item.date }}</p>

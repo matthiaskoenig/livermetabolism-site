@@ -8,6 +8,6 @@ const [tagInfo, peopleMap, teaching] = await Promise.all([getTags(), getPeopleMa
 ---
 <Base title="Teaching" sectionid="teaching">
   <p>Welcome to our teaching page! Our focus is on project-based learning that empowers students to actively engage with real-world challenges in digital health and shared decision-making. Through interdisciplinary collaboration, innovative digital formats, and a strong commitment to Open Science and ethical research, we create hands-on, inclusive learning environments. By supporting early-career researchers—especially women—and integrating digital competencies, we prepare the next generation of professionals to shape the future of healthcare.</p>
-  <img src={asset('image/teaching/teaching_banner.webp')} alt="" class="img-fluid" />
+  <img src={asset('image/teaching/teaching_banner.webp')} alt="" decoding="async" width="1800" height="191" class="img-fluid" />
   {teaching.map((t) => <TeachingCard item={t} tagInfo={tagInfo} peopleMap={peopleMap} imageBase={asset('image/teaching/')} avatarBase={asset('image/people/128/')} />)}
 </Base>

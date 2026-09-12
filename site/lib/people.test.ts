@@ -11,8 +11,8 @@ describe('personChips', () => {
   it('splices an avatar + bold name for "Initial. Surname" first', () => {
     const html = personChips('J. Doe, M. König and X. Y', ['jane_doe', 'matthias_koenig'], people, '/assets/image/people/128/');
     expect(html).toBe(
-      '<span class="person-chip"><img src="/assets/image/people/128/jane_doe.webp" class="author-avatar" alt="" title="Jane Doe"/><strong>J. Doe</strong></span>, ' +
-      '<span class="person-chip"><img src="/assets/image/people/128/matthias_koenig.webp" class="author-avatar" alt="" title="Prof. Dr. Matthias König"/><strong>M. König</strong></span> and X. Y',
+      '<span class="person-chip"><img src="/assets/image/people/128/jane_doe.webp" decoding="async" width="18" height="18" class="author-avatar" alt="" title="Jane Doe"/><strong>J. Doe</strong></span>, ' +
+      '<span class="person-chip"><img src="/assets/image/people/128/matthias_koenig.webp" decoding="async" width="18" height="18" class="author-avatar" alt="" title="Prof. Dr. Matthias König"/><strong>M. König</strong></span> and X. Y',
     );
   });
   it('falls back to "Given Surname" and replaces every occurrence', () => {

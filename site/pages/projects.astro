@@ -10,6 +10,6 @@ const current = projects.filter((p) => p.status === 'current');
 const pubsLite = publications.map(({ id, title, year, pdf }) => ({ id, title, year, pdf }));
 ---
 <Base title="Projects" sectionid="projects">
-  <ProjectsSection client:idle projects={current} tagInfo={tagInfo} peopleMap={peopleMap} people={people} publications={pubsLite}
+  <ProjectsSection client:visible projects={current} tagInfo={tagInfo} peopleMap={peopleMap} people={people} publications={pubsLite}
     imageBase={asset('image/projects/')} pdfBase={asset('pdf/')} avatarBase={asset('image/people/128/')} peopleUrl={url('/people/')} publicationsUrl={url('/publications/')} />
 </Base>
