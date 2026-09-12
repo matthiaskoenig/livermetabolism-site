@@ -13,6 +13,15 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    ignore:
+      # vue-tsc and @astrojs/check cannot run on the TypeScript 7 (Go) compiler
+      # yet; lift once they support it.
+      - dependency-name: "typescript"
+        versions: [">=7"]
+      # js-yaml 5's YAML 1.2 parser rejects the indentation in several data/*.yml
+      # files; only trusted local YAML is parsed, so 4.x is fine.
+      - dependency-name: "js-yaml"
+        versions: [">=5"]
     groups:
       npm-minor-patch:
         patterns: ["*"]
