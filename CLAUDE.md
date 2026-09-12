@@ -16,7 +16,7 @@ Static site source for the König research group site (https://www.livermetaboli
 - `tests/` — pytest suite for `src/data.py` (model validators, cross-reference checks, end-to-end YAML loading). Run via `uv run pytest tests/`; also runs in CI (the `validate` job of `.github/workflows/site.yml`) on every push/PR.
 - `e2e/` — Playwright specs (`interactions.spec.ts`, `pages.spec.ts`) using base-relative paths (see `playwright.config.ts`, which derives `baseURL` from the `BASE` env var).
 - `nginx/`, `docker-compose*.yml`, `deploy.sh` — self-hosted deployment (see Branches and deployment).
-- `scripts/fetch-icons.sh` — downloads the Font Awesome 4 icon set into `site/icons/*.svg` (39 SVGs); `data/tags.yml` keeps the FA4 `icon` names that select among them.
+- `scripts/fetch-icons.sh` — downloads the Font Awesome Free 6 SVGs into `site/icons/*.svg` (39 SVGs), named by the Font Awesome 4 class names the site uses; `data/tags.yml` keeps the FA4 `icon` names that select among them. `scripts/reindent_yaml.py` — one-off/maintenance fixer for the YAML indentation rule below.
 - `science_communication/` — planning notes and strategy documents (not part of the build).
 
 ## Data model & validation
@@ -28,6 +28,8 @@ After **any** manual edit to `data/*.yml`, run:
 uv run python -m src.data
 ```
 This loads and validates all of it, printing every problem found (not just the first) and exiting non-zero on failure — the same check `tests/test_real_data.py` runs in CI, so a bad edit fails the build before merge rather than silently breaking the live site.
+
+`js-yaml` (the parser the Astro build uses) follows YAML 1.2, which requires the continuation lines of a multi-line quoted string to be indented **deeper than their key** — PyYAML accepts them flush with the key, `js-yaml` rejects the file with "deficient indentation". Keep new multi-line values indented, or run `uv run python scripts/reindent_yaml.py` (`--check` reports without writing), which re-indents only those continuation lines and refuses to write if `yaml.safe_load()` no longer returns the same object.
 
 The Astro build re-validates the same YAML independently through `site/lib/schemas.ts` (Zod schemas wired into `content.config.ts`'s collection loaders) and fails the build on a dangling `people`/`tags`/`publications` reference — the two schemas must be kept in sync by hand when a field is added or changed.
 
@@ -99,5 +101,9 @@ Typst CV compilation requires the `typst` CLI and local fonts installed (see com
 ## Branches and deployment
 
 `main` is protected by a repository ruleset (pull requests only, linear history, squash or rebase merges, required status checks `validate` and `build`); there is no `develop` branch — work on a topic branch and open a PR against `main`. `.github/workflows/site.yml` runs on every push and PR: `validate` (Python: pytest + `src.data`), then `build` (Node: `astro check`, vitest, `astro build`, Playwright e2e against the built site), then — only on a push to `main`, not on a PR — `deploy`, which publishes `dist/` to GitHub Pages via `actions/deploy-pages`. The build currently targets the interim project-pages URL (`SITE=https://matthiaskoenig.github.io`, `BASE=/livermetabolism-site/`); switching to the custom domain means changing those two env vars to `SITE=https://livermetabolism.com`/`BASE=/`, adding `public/CNAME`, and configuring the domain in the repository's Pages settings.
+
+Releases are cut from `main`: bump `package.json` and `pyproject.toml` (plus `uv lock`) to the new version, add `release-notes/<version>.md`, merge that through a PR, then `git tag <version> && git push origin <version>` — tags carry no `v` prefix. `.github/workflows/release.yml` fires on such a tag, verifies it matches both version fields and that the notes file exists, and creates the GitHub release from those notes.
+
+`astro.config.mjs` injects the `package.json` version and the build's commit (`SITE_COMMIT`, else `GITHUB_SHA`, else `git rev-parse HEAD`, else `'unknown'`) as the `__SITE_VERSION__`/`__SITE_COMMIT__` Vite defines (declared in `site/env.d.ts`), which `Footer.astro` renders as links to the release and the commit. The `node:24-alpine` build container has no git, so `deploy.sh` exports `SITE_COMMIT` and `docker-compose-build.yml` forwards it; GitHub Actions needs nothing.
 
 Two deployment paths exist and must both keep working: GitHub Pages (`.github/workflows/site.yml`, base path `/livermetabolism-site/` until the domain moves) and the self-hosted nginx container (`docker-compose.yml` serves `dist/` built by `docker-compose-build.yml` with `SITE=https://livermetabolism.com`, `BASE=/`; `deploy.sh` runs both on the server; `nginx/` holds the container config plus the host reverse-proxy/SSL configs). `docker-compose-serve.yml` is the containerised `npm run dev`. `dist/` is gitignored and built on the server.

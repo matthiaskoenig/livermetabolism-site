@@ -73,6 +73,21 @@ sudo certbot certonly --webroot -w /usr/share/nginx/letsencrypt -d livermetaboli
 sudo certbot renew --dry-run   # renewal
 ```
 
+## Releases
+
+1. bump the version in `package.json` and `pyproject.toml` (and run `uv lock`, which records it), keeping the two in sync;
+2. write the release notes for the new version in `release-notes/<version>.md` (sbmlutils style: breaking changes, features, fixes, …);
+3. merge all of that to `main` through a pull request;
+4. tag the merge commit and push the tag:
+
+```bash
+git tag 0.5.0 && git push origin 0.5.0
+```
+
+`.github/workflows/release.yml` then creates the GitHub release with `release-notes/<tag>.md` as its body, after checking that the tag matches both version fields and that the notes exist.
+
+Tags carry **no** `v` prefix (`0.5.0`, not `v0.5.0`; the old `v0.1.0` tag predates this convention). The footer of the deployed site shows the version and the commit it was built from, linking to the release and to the commit on GitHub.
+
 ## Python package (`src/`)
 
 Generates Typst-formatted documents (CV, selected publications, funding, presentations, …) from the same `data/*.yml` used by the site.
