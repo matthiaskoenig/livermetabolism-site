@@ -20,8 +20,8 @@ test('footer states the build version and commit', async ({ page }) => {
   await page.goto('');
   const footer = page.locator('footer.footer .footer-legal');
   const version = footer.locator('a', { hasText: /^v\d+\.\d+\.\d+$/ });
-  await expect(version).toHaveText('v0.5.0');
-  await expect(version).toHaveAttribute('href', /\/releases\/tag\/0\.5\.0$/);
+  await expect(version).toHaveText('v0.6.0');
+  await expect(version).toHaveAttribute('href', /\/releases\/tag\/0\.6\.0$/);
   // the commit is a short SHA, or 'unknown' where the build had no git
   const commit = footer.locator('a.footer-version').last();
   const sha = (await commit.innerText()).trim();
