@@ -45,12 +45,15 @@ uv run pytest tests/
 
 The Astro build validates the same data again through Zod schemas (`site/lib/schemas.ts`) and fails on dangling `people`/`tags`/`publications` references.
 
-## Live GitHub data
+## Live GitHub and Scholar data
 
-`scripts/fetch-github.ts` collects stars, releases, the latest commit and the weekly commit activity of every repository listed in `data/software.yml` and writes them as one snapshot, `github.json`. The workflow `.github/workflows/github-data.yml` runs it daily (05:00 UTC, plus manual dispatch) and commits the result to the orphan branch [`github-data`](https://github.com/matthiaskoenig/livermetabolism-site/tree/github-data), from where the site reads it — at build time and again in the browser — so the numbers stay current without a redeploy. Run it locally with a token (the file is gitignored):
+`scripts/fetch-github.ts` collects stars, releases, the latest commit and the weekly commit activity of every repository listed in `data/software.yml` and writes them as one snapshot, `github.json`. `scripts/fetch-scholar.ts` parses the public Google Scholar profile and writes a second snapshot, `scholar.json`, with the citation metrics, the citations per year, and one history point per day accumulated from the previous snapshot. The workflow `.github/workflows/github-data.yml` runs both daily (05:00 UTC, plus manual dispatch) and commits the results to the orphan branch [`github-data`](https://github.com/matthiaskoenig/livermetabolism-site/tree/github-data), from where the site reads them — at build time and again in the browser — so the numbers stay current without a redeploy. The Scholar step is `continue-on-error`: if Google blocks the runner, nothing is written and the previous snapshot stays in place.
+
+Run them locally (both files are gitignored; the GitHub token only needs public read access):
 
 ```bash
 GITHUB_TOKEN=$(gh auth token) npm run fetch:github -- github.json
+npm run fetch:scholar -- scholar.json
 ```
 
 ## Branches and deployment

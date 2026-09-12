@@ -14,7 +14,8 @@
     "test": "vitest run",
     "e2e": "playwright test",
     "fetch-icons": "bash scripts/fetch-icons.sh",
-    "fetch:github": "node scripts/fetch-github.ts"
+    "fetch:github": "node scripts/fetch-github.ts",
+    "fetch:scholar": "node scripts/fetch-scholar.ts"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
