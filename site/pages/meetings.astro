@@ -1,13 +1,20 @@
 ---
 import Base from '../layouts/Base.astro';
-import MeetingsSection from '../components/MeetingsSection.vue';
+import MeetingCard from '../components/MeetingCard.vue';
+import TagFilter from '../components/TagFilter.vue';
 import { getMeetings, getPeopleMap, getTags } from '../lib/data';
 import { asset } from '../lib/url';
 
 const [tagInfo, peopleMap, meetings] = await Promise.all([getTags(), getPeopleMap(), getMeetings()]);
+const imageBase = asset('image/meetings/');
+const pdfBase = asset('pdf/');
+const avatarBase = asset('image/people/128/');
 ---
 <Base title="Meetings" sectionid="meetings">
   <h2 id="meetings">Meetings</h2>
   <p>Meetings, workshops, and events we organized or hosted.</p>
-  <MeetingsSection client:visible items={meetings} tagInfo={tagInfo} peopleMap={peopleMap} imageBase={asset('image/meetings/')} pdfBase={asset('pdf/')} avatarBase={asset('image/people/128/')} />
+  <TagFilter client:idle id="meeting" tags={tagInfo} target="meetings-grid" />
+  <div class="project-grid" id="meetings-grid">
+    {meetings.map((item) => <MeetingCard item={item} tagInfo={tagInfo} peopleMap={peopleMap} imageBase={imageBase} pdfBase={pdfBase} avatarBase={avatarBase} />)}
+  </div>
 </Base>

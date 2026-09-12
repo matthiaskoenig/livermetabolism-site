@@ -3,17 +3,35 @@ import Base from '../layouts/Base.astro';
 import AbstractCard from '../components/AbstractCard.vue';
 import PosterCard from '../components/PosterCard.vue';
 import PresentationCard from '../components/PresentationCard.vue';
-import PublicationsSection from '../components/PublicationsSection.vue';
+import PublicationRow from '../components/PublicationRow.vue';
+import TagFilter from '../components/TagFilter.vue';
 import { getAbstracts, getPeopleMap, getPosters, getPresentations, getPublications, getTags } from '../lib/data';
 import { asset } from '../lib/url';
+import { groupByYear } from '../lib/views';
 
 const [tagInfo, peopleMap, publications, presentations, posters, abstracts] = await Promise.all([getTags(), getPeopleMap(), getPublications(), getPresentations(), getPosters(), getAbstracts()]);
 const pdfBase = asset('pdf/');
 const avatarBase = asset('image/people/128/');
+// rows are static HTML; TagFilter hides the non-matching ones (and any
+// year group left empty) client-side, so nothing is serialised twice
+const years = groupByYear(publications);
 ---
 <Base title="Publications" sectionid="publications">
   <h2 id="publications">Publications</h2>
-  <PublicationsSection client:visible publications={publications} tagInfo={tagInfo} peopleMap={peopleMap} pdfBase={pdfBase} avatarBase={avatarBase} />
+  <TagFilter client:idle id="publication" tags={tagInfo} target="publication-list" />
+  <div id="publication-list">
+    {years.map((g) => (
+      <div class="pub-year-group">
+        <h3 class="year-heading">{g.year}</h3>
+        <table class="table publication-table">
+          <colgroup><col class="publication-status-col" /><col /></colgroup>
+          <tbody>
+            {g.items.map((p) => <PublicationRow pub={p} tagInfo={tagInfo} peopleMap={peopleMap} pdfBase={pdfBase} avatarBase={avatarBase} />)}
+          </tbody>
+        </table>
+      </div>
+    ))}
+  </div>
 
   <h2 id="presentations">Presentations</h2>
   <div class="project-grid" id="presentations-grid">

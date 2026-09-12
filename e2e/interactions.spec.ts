@@ -39,11 +39,33 @@ test('alumni hover card shows on hover', async ({ page }) => {
 test('tag filter hides non-matching publications and honours ?tag=', async ({ page }) => {
   await page.goto('publications/?tag=AI');
   await expect(page.locator('#publication-tag-filter .tag-filter-btn.active')).toHaveText(/AI/);
-  const hidden = await page.locator('#publication-list tr[data-tags]:not([data-tags*="AI"])').evaluateAll((rows) => rows.filter((r) => (r as HTMLElement).style.display === 'none').length);
-  const nonMatching = await page.locator('#publication-list tr[data-tags]:not([data-tags*="AI"])').count();
-  expect(hidden).toBe(nonMatching);
+  // rows are static HTML now; TagFilter toggles the `hidden` attribute on them
+  const nonMatching = page.locator('#publication-list tr[data-tags]:not([data-tags*="AI"])');
+  const hidden = await nonMatching.evaluateAll((rows) => rows.filter((r) => (r as HTMLElement).hidden).length);
+  expect(hidden).toBe(await nonMatching.count());
+  expect(hidden).toBeGreaterThan(0);
+  // a year group with no matching row left hides too
+  const emptyGroups = await page.locator('#publication-list .pub-year-group').evaluateAll(
+    (groups) => groups.filter((g) => !g.querySelector('tr[data-tags]:not([hidden])')).every((g) => (g as HTMLElement).hidden),
+  );
+  expect(emptyGroups).toBe(true);
   await page.locator('#publication-tag-filter [data-tag="all"]').click();
   await expect(page.locator('#publication-list tr[data-tags]').first()).toBeVisible();
+  await expect(page.locator('#publication-list tr[data-tags][hidden]')).toHaveCount(0);
+});
+
+test('research pre-applies ?tag= to each of its three filter bars', async ({ page }) => {
+  await page.goto('research/?tag=Open%20%26%20FAIR');
+  for (const id of ['software', 'funding', 'editors']) {
+    await expect(page.locator(`#${id}-tag-filter .tag-filter-btn.active`)).toHaveText(/Open & FAIR/);
+    const grid = page.locator(`#${id}-grid`);
+    await expect(grid.locator('[data-tags*="Open & FAIR"]').first()).toBeVisible();
+    const off = grid.locator('[data-tags]:not([data-tags*="Open & FAIR"])');
+    for (let i = 0; i < await off.count(); i++) await expect(off.nth(i)).toBeHidden();
+  }
+  // "All" on one bar only affects that bar's grid
+  await page.locator('#funding-tag-filter [data-tag="all"]').click();
+  await expect(page.locator('#funding-grid [data-tags]:not([data-tags*="Open & FAIR"])').first()).toBeVisible();
 });
 
 test('search opens with "/", finds a publication, result navigates', async ({ page }) => {
