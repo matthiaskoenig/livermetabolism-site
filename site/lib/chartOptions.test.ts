@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { citationHistoryOption, citationsPerYearOption, commitActivityOption, languageColor, PALETTE, releaseTimelineOption, starsLanguages, starsOption } from './chartOptions';
+import { citationHistoryOption, citationsPerYearOption, commitActivityOption, languageColor, PALETTE, publicationsOption, releaseTimelineOption, starsLanguages, starsOption, TAG_PALETTE } from './chartOptions';
 
 describe('releaseTimelineOption', () => {
   const rows = [
@@ -111,5 +111,67 @@ describe('citationHistoryOption', () => {
     expect(tooltip.renderMode).toBe('richText');
     expect(tooltip.trigger).toBe('axis');
     expect(tooltip.formatter([{ name: '2026-09-12', value: 3827 }])).toBe('2026-09-12\n3827 citations');
+  });
+});
+
+describe('publicationsOption', () => {
+  const rows = {
+    years: [2020, 2021, 2022],
+    byTag: [
+      { tag: 'AI', slug: 'ai', counts: [0, 1, 2] },
+      { tag: 'Open & FAIR', slug: 'open-fair', counts: [1, 0, 3] },
+      { tag: 'New Area', slug: 'new-area', counts: [0, 0, 1] },
+    ],
+    byStatus: [
+      { status: 'publication' as const, counts: [1, 1, 4] },
+      { status: 'preprint' as const, counts: [0, 0, 2] },
+    ],
+  };
+
+  it('stacks one bar series per research area in the tag colours', () => {
+    const option = publicationsOption(rows, 'tag');
+    expect(option.xAxis.data).toEqual(['2020', '2021', '2022']);
+    expect(option.series.map((s) => [s.name, s.type, s.stack])).toEqual([
+      ['AI', 'bar', 'publications'],
+      ['Open & FAIR', 'bar', 'publications'],
+      ['New Area', 'bar', 'publications'],
+    ]);
+    // the tag colours mirror the --color-tag-* tokens of global.css; a tag
+    // that has no token yet falls back to the generic palette
+    expect(option.series.map((s) => s.itemStyle.color)).toEqual([TAG_PALETTE.ai, TAG_PALETTE['open-fair'], PALETTE[2]]);
+    // the series name is what the click handler looks up as [data-tag="…"]
+    expect(option.series[1]!.name).toBe(rows.byTag[1]!.tag);
+  });
+
+  it('swaps to one series per status, coloured by the status order', () => {
+    const option = publicationsOption(rows, 'status');
+    expect(option.series.map((s) => s.name)).toEqual(['Publication', 'Preprint']);
+    expect(option.series.map((s) => s.data)).toEqual([[1, 1, 4], [0, 0, 2]]);
+    // PALETTE index = index in STATUS_ORDER, so a missing status does not
+    // shift the colours of the others
+    expect(option.series.map((s) => s.itemStyle.color)).toEqual([PALETTE[0], PALETTE[4]]);
+  });
+
+  it('lets a click reach the year labels and keeps whole-number ticks', () => {
+    const option = publicationsOption(rows, 'tag');
+    expect(option.xAxis.triggerEvent).toBe(true);
+    expect(option.yAxis.minInterval).toBe(1);
+  });
+
+  it('renders its tooltip inside the canvas, with the stack total (CSP)', () => {
+    const { tooltip } = publicationsOption(rows, 'tag');
+    expect(tooltip.renderMode).toBe('richText');
+    expect(tooltip.trigger).toBe('axis');
+    expect(tooltip.formatter([
+      { name: '2022', seriesName: 'AI', value: 2 },
+      { name: '2022', seriesName: 'Open & FAIR', value: 3 },
+      { name: '2022', seriesName: 'New Area', value: 0 },
+    ])).toBe('2022\nAI: 2\nOpen & FAIR: 3\ntotal: 5');
+  });
+
+  it('survives a page without publications', () => {
+    const empty = publicationsOption({ years: [], byTag: [], byStatus: [] }, 'tag');
+    expect(empty.xAxis.data).toEqual([]);
+    expect(empty.series).toEqual([]);
   });
 });

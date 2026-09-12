@@ -221,3 +221,26 @@ test('the tag filter still applies in "Most cited" order (?tag= and ?order=)', a
   );
   expect(groupsOk).toBe(true);
 });
+
+test('publications-over-time chart draws and the mode switch re-renders it', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto('publications/');
+
+  // client:visible island: nothing is drawn before the section is in view
+  await page.locator('#publications-chart').scrollIntoViewIfNeeded();
+  const canvas = page.locator('#publications-chart canvas').first();
+  await expect(canvas).toBeVisible();
+  await expect(page.locator('#publications-chart .chart-mode-btn[aria-pressed="true"]')).toHaveText('Research area');
+
+  // clicking a bar segment is not reliably hittable on a canvas; assert that
+  // the switch swaps the series (setOption) without throwing instead
+  await page.locator('#publications-chart .chart-mode-btn').nth(1).click();
+  await expect(page.locator('#publications-chart .chart-mode-btn.active')).toHaveText('Status');
+  await expect(canvas).toBeVisible();
+  await page.locator('#publications-chart .chart-mode-btn').first().click();
+  await expect(page.locator('#publications-chart .chart-mode-btn.active')).toHaveText('Research area');
+
+  expect(errors).toEqual([]);
+});

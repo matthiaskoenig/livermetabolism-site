@@ -1,8 +1,9 @@
 /**
  * ECharts option builders for the research page's three chart islands and the
- * publications page's two Scholar charts. Pure functions over the rows from
- * `githubRows.ts` / `scholarRows.ts` — no ECharts import here, so they stay
- * testable and the chart library is pulled in only by `useChart.ts`.
+ * publications page's three charts (two Scholar ones plus publications over
+ * time). Pure functions over the rows from `githubRows.ts` /
+ * `scholarRows.ts` / `publicationRows.ts` — no ECharts import here, so they
+ * stay testable and the chart library is pulled in only by `useChart.ts`.
  *
  * The colours mirror the `@theme` tokens of `site/styles/global.css`
  * (--color-success, --color-info, --color-warning, --color-danger,
@@ -16,9 +17,26 @@
  * cannot turn snapshot text into markup.
  */
 import type { ActivityRows, StarRow, TimelineRow } from './githubRows';
+import { STATUS_ORDER, type PublicationYearRows } from './publicationRows';
 import type { HistoryRow, PerYearRow } from './scholarRows';
+import { capitalize } from './text';
 
 export const PALETTE = ['#18bc9c', '#3498db', '#f39c12', '#e74c3c', '#2c3e50', '#8e44ad', '#16a085', '#d35400', '#2980b9', '#7f8c8d', '#c0392b'];
+
+/**
+ * The research-area colours of the publications chart, by tag slug
+ * (`slugify(tag)`, as on `TagInfo.slug`). These repeat the `--color-tag-*`
+ * tokens of `site/styles/global.css` for the same reason as `PALETTE` above —
+ * a canvas cannot read CSS custom properties — so keep the two in sync; a tag
+ * without an entry here falls back to `PALETTE`.
+ */
+export const TAG_PALETTE: Record<string, string> = {
+  'digital-twins': '#3498db',
+  ai: '#f39c12',
+  'digital-pathology': '#e74c3c',
+  pharmacometrics: '#18bc9c',
+  'open-fair': '#2c3e50',
+};
 const MUTED = '#95a5a6';
 const INK = '#212529';
 const GRID = '#ecf0f1';
@@ -191,3 +209,55 @@ export function citationHistoryOption(rows: HistoryRow[]) {
 }
 
 export const HISTORY_HEIGHT = 260;
+
+/* ------------------------------------------------------------------
+   Publications over time (rows from `publicationRows.ts`, computed at
+   build time — this chart has no live part). Same rules as above:
+   pure, no ECharts import, richText tooltip.
+   ------------------------------------------------------------------ */
+
+/** Which split the publications chart stacks by (the two mode buttons). */
+export type PublicationsMode = 'tag' | 'status';
+
+/**
+ * Papers per year as stacked bars, split by research area or by status.
+ *
+ * `xAxis.triggerEvent` is on so a click on a year label reaches the
+ * component's handler (it scrolls to that year's group); the series names are
+ * the plain tag names, which is what the handler presses in the tag filter as
+ * `[data-tag="…"]`.
+ */
+export function publicationsOption(rows: PublicationYearRows, mode: PublicationsMode) {
+  const series = mode === 'status'
+    ? rows.byStatus.map((s) => ({
+        name: capitalize(s.status), type: 'bar', stack: 'publications', data: s.counts,
+        itemStyle: { color: color(STATUS_ORDER.indexOf(s.status)) },
+      }))
+    : rows.byTag.map((s, i) => ({
+        name: s.tag, type: 'bar', stack: 'publications', data: s.counts,
+        itemStyle: { color: TAG_PALETTE[s.slug] ?? color(i) },
+      }));
+  return {
+    animation: false,
+    tooltip: tooltip((ps: { name: string; seriesName: string; value: number }[]) => {
+      const lines = ps.filter((p) => p.value > 0).map((p) => `${p.seriesName}: ${p.value}`);
+      const total = ps.reduce((s, p) => s + p.value, 0);
+      return [ps[0]?.name ?? '', ...lines, `total: ${total}`].join('\n');
+    }, 'axis'),
+    legend: { type: 'scroll', bottom: 0, itemHeight: 8, itemWidth: 12, textStyle: axisLabel() },
+    grid: { left: 8, right: 14, top: 10, bottom: 34, containLabel: true },
+    xAxis: {
+      type: 'category',
+      data: rows.years.map(String),
+      // a click on a year label must reach the chart's click handler
+      triggerEvent: true,
+      axisLabel: { ...axisLabel(), hideOverlap: true },
+      axisTick: { show: false },
+    },
+    // whole papers only: no 0.5 gridline on a year with a single paper
+    yAxis: { type: 'value', minInterval: 1, axisLabel: axisLabel(), splitLine: { lineStyle: { color: GRID } } },
+    series,
+  };
+}
+
+export const PUBLICATIONS_HEIGHT = 320;
