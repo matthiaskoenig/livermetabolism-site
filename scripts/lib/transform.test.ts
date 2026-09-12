@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { snapshotSchema } from '../../site/lib/githubSchema.ts';
 import { apiCommitActivitySchema, apiCommitSchema, apiReleaseSchema, apiRepoSchema } from './github-client.ts';
-import { buildSnapshot, latestRelease, summarize, toReleaseEntries, toRepoEntry } from './transform.ts';
+import { buildSnapshot, latestRelease, summarize, toReleaseEntries, toRepoEntry, weeksFromParticipation } from './transform.ts';
 import { z } from 'astro/zod';
 
 const fixture = (name: string) => JSON.parse(readFileSync(`tests/fixtures/github/${name}.json`, 'utf8'));
@@ -160,5 +160,28 @@ describe('buildSnapshot', () => {
     const json = JSON.stringify(snapshot);
     expect(json).not.toContain('<img');
     expect(json).not.toContain('![');
+  });
+});
+
+describe('weeksFromParticipation', () => {
+  it('dates the totals back from the Sunday of the current week', () => {
+    // 2026-09-12 is a Saturday; its statistics week starts on 2026-09-06.
+    const weeks = weeksFromParticipation([1, 2, 3], new Date('2026-09-12T10:00:00Z'));
+    const entry = toRepoEntry(repoApi, null, null, weeks);
+    expect(entry.commitActivity).toEqual([
+      { week: '2026-08-23', total: 1 },
+      { week: '2026-08-30', total: 2 },
+      { week: '2026-09-06', total: 3 },
+    ]);
+  });
+
+  it('matches the weeks of the commit-activity endpoint for the same repository', () => {
+    // Both fixtures were recorded on 2026-09-12 from the same repository.
+    const totals = activityApi.map((w) => w.total);
+    expect(weeksFromParticipation(totals, new Date('2026-09-12T10:00:00Z')).map((w) => w.week)).toEqual(activityApi.map((w) => w.week));
+  });
+
+  it('returns nothing for an empty list', () => {
+    expect(weeksFromParticipation([], new Date('2026-09-12T10:00:00Z'))).toEqual([]);
   });
 });

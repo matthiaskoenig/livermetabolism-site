@@ -87,6 +87,21 @@ export function toReleaseEntries(fullName: string, api: ApiRelease[], limit = 20
     .slice(0, limit);
 }
 
+const WEEK_MS = 7 * 24 * 3600 * 1000;
+
+/**
+ * Turns the dateless weekly totals of `/stats/participation` into the same
+ * shape `/stats/commit_activity` returns: the list ends with the week `now`
+ * falls into, and GitHub's statistics weeks start on Sunday, 00:00 UTC. The
+ * two endpoints are cached separately, so this is the fallback for a
+ * repository whose commit activity is still being computed.
+ */
+export function weeksFromParticipation(totals: number[], now: Date): ApiCommitActivity[] {
+  const sunday = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()) - now.getUTCDay() * 24 * 3600 * 1000;
+  const last = totals.length - 1;
+  return totals.map((total, i) => ({ week: (sunday - (last - i) * WEEK_MS) / 1000, total, days: [] }));
+}
+
 /**
  * GitHub's own "latest release" semantics: the newest stable release — with
  * the newest prerelease as a fallback for a repository that has only those.
