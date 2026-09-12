@@ -16,6 +16,21 @@ for (const path of pages) {
   });
 }
 
+test('footer states the build version and commit', async ({ page }) => {
+  await page.goto('');
+  const footer = page.locator('footer.footer .footer-legal');
+  const version = footer.locator('a', { hasText: /^v\d+\.\d+\.\d+$/ });
+  await expect(version).toHaveText('v0.5.0');
+  await expect(version).toHaveAttribute('href', /\/releases\/tag\/0\.5\.0$/);
+  // the commit is a short SHA, or 'unknown' where the build had no git
+  const commit = footer.locator('a.footer-version').last();
+  const sha = (await commit.innerText()).trim();
+  if (sha !== 'unknown') {
+    expect(sha).toMatch(/^[0-9a-f]{7}$/);
+    await expect(commit).toHaveAttribute('href', new RegExp(`/commit/${sha}$`));
+  }
+});
+
 test('404 page', async ({ page }) => {
   const res = await page.goto('does-not-exist/');
   expect(res?.status()).toBe(404);

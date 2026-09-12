@@ -13,6 +13,9 @@ services:
     environment:
       - SITE=https://livermetabolism.com
       - BASE=/
+      # the container has no git: deploy.sh exports the commit it built from
+      # (shown in the footer, see astro.config.mjs)
+      - SITE_COMMIT=${SITE_COMMIT:-unknown}
     volumes:
       - $PWD:/app
       - site_node_modules:/app/node_modules

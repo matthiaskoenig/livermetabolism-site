@@ -1,8 +1,24 @@
 // @ts-check
+import { execSync } from 'node:child_process';
+import fs from 'node:fs';
 import { defineConfig } from 'astro/config';
 import vue from '@astrojs/vue';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
+
+// Version and commit of this build, shown in the footer (see
+// site/components/Footer.astro). The container build has no git, so
+// docker-compose-build.yml/deploy.sh pass SITE_COMMIT; GitHub Actions sets
+// GITHUB_SHA; locally we ask git and fall back to 'unknown'.
+const version = JSON.parse(fs.readFileSync('./package.json', 'utf8')).version;
+const tryGit = () => {
+  try {
+    return execSync('git rev-parse HEAD', { encoding: 'utf8' }).trim();
+  } catch {
+    return 'unknown';
+  }
+};
+const commit = (process.env.SITE_COMMIT || process.env.GITHUB_SHA || tryGit()).slice(0, 7);
 
 // SITE/BASE are set by .github/workflows/site.yml for GitHub Pages
 // (https://matthiaskoenig.github.io + /livermetabolism-site/); the
@@ -22,7 +38,13 @@ export default defineConfig({
   // chips) survives; this is already Astro's default, kept explicit here.
   compressHTML: true,
   integrations: [vue(), sitemap()],
-  vite: { plugins: [tailwindcss()] },
+  vite: {
+    plugins: [tailwindcss()],
+    define: {
+      __SITE_VERSION__: JSON.stringify(version),
+      __SITE_COMMIT__: JSON.stringify(commit),
+    },
+  },
   // Content-Security-Policy, rendered as a per-page <meta http-equiv> tag.
   // Astro hashes its own bundled/inline scripts and styles (including the
   // Vue island hydration runtime) automatically; only third-party hosts
