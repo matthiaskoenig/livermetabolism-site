@@ -7,7 +7,7 @@ import PublicationRow from '../components/PublicationRow.vue';
 import TagFilter from '../components/TagFilter.vue';
 import { getAbstracts, getPeopleMap, getPosters, getPresentations, getPublications, getTags } from '../lib/data';
 import { asset } from '../lib/url';
-import { groupByYear } from '../lib/views';
+import { groupByYear, toTagFilterEntries } from '../lib/views';
 
 const [tagInfo, peopleMap, publications, presentations, posters, abstracts] = await Promise.all([getTags(), getPeopleMap(), getPublications(), getPresentations(), getPosters(), getAbstracts()]);
 const pdfBase = asset('pdf/');
@@ -15,10 +15,11 @@ const avatarBase = asset('image/people/128/');
 // rows are static HTML; TagFilter hides the non-matching ones (and any
 // year group left empty) client-side, so nothing is serialised twice
 const years = groupByYear(publications);
+const tagFilterEntries = toTagFilterEntries(tagInfo);
 ---
 <Base title="Publications" sectionid="publications">
   <h2 id="publications">Publications</h2>
-  <TagFilter client:idle id="publication" tags={tagInfo} target="publication-list" />
+  <TagFilter client:idle id="publication" tags={tagFilterEntries} target="publication-list" />
   <div id="publication-list">
     {years.map((g) => (
       <div class="pub-year-group">

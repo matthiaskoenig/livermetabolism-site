@@ -6,21 +6,23 @@ import SoftwareCard from '../components/SoftwareCard.vue';
 import TagFilter from '../components/TagFilter.vue';
 import { getEditors, getFunding, getPeopleMap, getSoftware, getTags } from '../lib/data';
 import { asset } from '../lib/url';
+import { toTagFilterEntries } from '../lib/views';
 
 const [tagInfo, peopleMap, software, funding, editors] = await Promise.all([getTags(), getPeopleMap(), getSoftware(), getFunding(), getEditors()]);
 const avatarBase = asset('image/people/128/');
+const tagFilterEntries = toTagFilterEntries(tagInfo);
 // three independent TagFilter islands; each reads the same ?tag= on mount,
 // so a /research/?tag=AI link still pre-filters all three grids
 ---
 <Base title="Research" sectionid="research">
   <h2 id="software">Software</h2>
-  <TagFilter client:idle id="software" tags={tagInfo} target="software-grid" />
+  <TagFilter client:idle id="software" tags={tagFilterEntries} target="software-grid" />
   <div class="project-grid" id="software-grid">
     {software.map((item) => <SoftwareCard item={item} tagInfo={tagInfo} peopleMap={peopleMap} imageBase={asset('image/software/')} avatarBase={avatarBase} />)}
   </div>
 
   <h2 id="funding">Funding</h2>
-  <TagFilter client:idle id="funding" tags={tagInfo} target="funding-grid" />
+  <TagFilter client:idle id="funding" tags={tagFilterEntries} target="funding-grid" />
   <div class="project-grid" id="funding-grid">
     {funding.map((item) => <FundingCard item={item} tagInfo={tagInfo} imageBase={asset('image/funding/')} />)}
   </div>
@@ -30,7 +32,7 @@ const avatarBase = asset('image/people/128/');
 
   <h2 id="editors">Editors</h2>
   <p>We are actively involved in the standardization and reproducibility efforts in Systems Biology and Systems Medicine.</p>
-  <TagFilter client:idle id="editors" tags={tagInfo} target="editors-grid" />
+  <TagFilter client:idle id="editors" tags={tagFilterEntries} target="editors-grid" />
   <div class="project-grid" id="editors-grid">
     {editors.map((item) => <EditorCard item={item} tagInfo={tagInfo} imageBase={asset('image/editors/')} />)}
   </div>

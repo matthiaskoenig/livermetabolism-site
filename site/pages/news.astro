@@ -5,14 +5,16 @@ import NewsModal from '../components/NewsModal.vue';
 import TagFilter from '../components/TagFilter.vue';
 import { getNews, getPeople, getPeopleMap, getTags } from '../lib/data';
 import { asset, url } from '../lib/url';
+import { toTagFilterEntries } from '../lib/views';
 
 const [tagInfo, people, peopleMap, news] = await Promise.all([getTags(), getPeople(), getPeopleMap(), getNews()]);
 const imageBase = asset('image/news/');
 const avatarBase = asset('image/people/128/');
 const peopleUrl = url('/people/');
+const tagFilterEntries = toTagFilterEntries(tagInfo);
 ---
 <Base title="News" sectionid="news">
-  <TagFilter client:idle id="news" tags={tagInfo} target="news-grid" />
+  <TagFilter client:idle id="news" tags={tagFilterEntries} target="news-grid" />
   <div class="project-grid" id="news-grid">
     {news.map((n) => <NewsCard item={n} tagInfo={tagInfo} peopleMap={peopleMap} imageBase={imageBase} avatarBase={avatarBase} />)}
   </div>

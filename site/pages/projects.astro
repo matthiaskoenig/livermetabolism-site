@@ -5,6 +5,7 @@ import ProjectModal from '../components/ProjectModal.vue';
 import TagFilter from '../components/TagFilter.vue';
 import { getPeople, getPeopleMap, getProjects, getPublications, getTags } from '../lib/data';
 import { asset, url } from '../lib/url';
+import { toTagFilterEntries } from '../lib/views';
 
 const [tagInfo, people, peopleMap, projects, publications] = await Promise.all([getTags(), getPeople(), getPeopleMap(), getProjects(), getPublications()]);
 const current = projects.filter((p) => p.status === 'current');
@@ -13,9 +14,10 @@ const pdfBase = asset('pdf/');
 const avatarBase = asset('image/people/128/');
 const peopleUrl = url('/people/');
 const publicationsUrl = url('/publications/');
+const tagFilterEntries = toTagFilterEntries(tagInfo);
 ---
 <Base title="Projects" sectionid="projects">
-  <TagFilter client:idle id="project" tags={tagInfo} target="project-grid" />
+  <TagFilter client:idle id="project" tags={tagFilterEntries} target="project-grid" />
   <div class="project-grid" id="project-grid">
     {current.map((p) => <ProjectCard project={p} tagInfo={tagInfo} peopleMap={peopleMap} publications={publications} imageBase={imageBase} pdfBase={pdfBase} avatarBase={avatarBase} />)}
   </div>

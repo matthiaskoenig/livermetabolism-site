@@ -2,7 +2,7 @@
 import { onMounted, watch } from 'vue';
 import TagFilterBar from './TagFilterBar.vue';
 import { useTagFilter } from '../lib/tagFilter';
-import type { TagInfo } from '../lib/views';
+import type { TagFilterEntry } from '../lib/views';
 
 /**
  * The only interactive part of a list page: the cards/rows themselves are
@@ -13,7 +13,7 @@ import type { TagInfo } from '../lib/views';
  * went away.
  */
 const props = withDefaults(
-  defineProps<{ id: string; tags: TagInfo[]; target: string; groupSelector?: string }>(),
+  defineProps<{ id: string; tags: TagFilterEntry[]; target: string; groupSelector?: string }>(),
   { groupSelector: '.pub-year-group' },
 );
 
