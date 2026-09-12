@@ -87,7 +87,7 @@ sudo certbot renew --dry-run   # renewal
 
 ## Releases
 
-1. bump the version in `package.json` and `pyproject.toml` (and run `uv lock`, which records it), keeping the two in sync;
+1. bump the version in `package.json` and `pyproject.toml` (then run `npm install --package-lock-only` and `uv lock`, which record it in both lockfiles), keeping the two in sync;
 2. write the release notes for the new version in `release-notes/<version>.md` (sbmlutils style: breaking changes, features, fixes, …);
 3. merge all of that to `main` through a pull request;
 4. tag the merge commit and push the tag:
