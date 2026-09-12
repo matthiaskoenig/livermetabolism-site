@@ -3,7 +3,7 @@
 // server-rendered GitHub bits of the research page current: it re-renders the
 // relative dates against today and, when the snapshot on the `github-data`
 // branch is newer than the one this page was built from, patches every
-// `.software-stats` line in place. Plain TypeScript in a bundled <script>,
+// `.software-stats` line in place. Plain TypeScript in a bundled script block,
 // not a Vue island (see CLAUDE.md): the stats lines are static HTML rendered
 // by SoftwareCard.vue and only their text nodes change.
 import { hasData, relativeDate } from '../lib/githubRows';
