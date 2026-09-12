@@ -4,6 +4,7 @@ import { load } from 'js-yaml';
 import { describe, expect, it } from 'vitest';
 import { emptyCitations, type Citations } from './citationsSchema';
 import { graphRows, type GraphPerson, type GraphProject, type GraphPublication, type GraphRowsInput, type GraphSoftware, type GraphTopic } from './graphRows';
+import { filterRows } from './networkOptions';
 import * as s from './schemas';
 import { toTagInfo } from './views';
 
@@ -40,7 +41,7 @@ const citations: Citations = {
 function input(over: Partial<GraphRowsInput> = {}): GraphRowsInput {
   return {
     tags, people, publications, projects, software, citations, base: BASE,
-    thumbs: new Set(['assets/image/graph/people/ada.webp', 'assets/image/graph/projects/atlas.webp']),
+    thumbs: new Set(['assets/image/graph/people/ada.webp']),
     ...over,
   };
 }
@@ -114,15 +115,23 @@ describe('graphRows', () => {
     expect(byId.get('software:sbmlutils')?.topics).toEqual(['digital-twins']);
   });
 
-  it('sizes a publication by its citation count, 0 without a DOI or entry', () => {
-    expect(byId.get('publication:Ada2026_ai')?.value).toBe(17);
-    expect(byId.get('publication:Bob2025_twin')?.value).toBe(0);
-    expect(graphRows(input({ citations: emptyCitations() })).nodes.find((n) => n.id === 'publication:Ada2026_ai')?.value).toBe(0);
+  it('carries a publication’s citation count beside its degree, 0 without a DOI or entry', () => {
+    expect(byId.get('publication:Ada2026_ai')?.citations).toBe(17);
+    expect(byId.get('publication:Bob2025_twin')?.citations).toBe(0);
+    expect(graphRows(input({ citations: emptyCitations() })).nodes.find((n) => n.id === 'publication:Ada2026_ai')?.citations).toBe(0);
+    // only a publication has one: the tooltip is the only place it is shown
+    for (const node of rows.nodes) if (node.type !== 'publication') expect(node.citations).toBeNull();
   });
 
-  it('counts the connected items as the value of every other node type', () => {
+  it('counts the connected items as the value of every node type', () => {
     expect(byId.get('person:ada')?.value).toBe(3); // one publication, one project, one software
     expect(byId.get('project:atlas')?.value).toBe(2); // one publication, one member
+    expect(byId.get('publication:Ada2026_ai')?.value).toBe(3); // two authors, one project
+    expect(byId.get('publication:Bob2025_twin')?.value).toBe(2); // one known author, one software entry
+    // every value is the node's own link count
+    for (const node of rows.nodes) {
+      expect(node.value).toBe(rows.links.filter((l) => l.source === node.id || l.target === node.id).length);
+    }
   });
 
   it('builds every href from the base path', () => {
@@ -135,12 +144,16 @@ describe('graphRows', () => {
     expect(local.nodes.find((n) => n.id === 'person:ada')?.href).toBe('/people/#person-modal-ada');
   });
 
-  it('uses a thumbnail only when the file exists, and null otherwise', () => {
+  it('gives a photo to people only, and only when the file exists', () => {
     expect(byId.get('person:ada')?.image).toBe(`${BASE}assets/image/graph/people/ada.webp`);
-    expect(byId.get('project:atlas')?.image).toBe(`${BASE}assets/image/graph/projects/atlas.webp`);
     expect(byId.get('person:bob')?.image).toBeNull();
+    // projects and software are drawn as shapes now
+    expect(byId.get('project:atlas')?.image).toBeNull();
     expect(byId.get('software:sbmlutils')?.image).toBeNull();
     expect(byId.get('publication:Ada2026_ai')?.image).toBeNull();
+    // a project thumbnail lying around is not picked up any more
+    const withStale = graphRows(input({ thumbs: new Set(['assets/image/graph/projects/atlas.webp']) }));
+    expect(withStale.nodes.find((n) => n.id === 'project:atlas')?.image).toBeNull();
   });
 
   it('labels nodes and adds a detail line per type', () => {
@@ -194,10 +207,25 @@ describe('graphRows over the real data', () => {
     expect(new Set(keys).size).toBe(keys.length);
   });
 
-  it('gives every person a thumbnail, and every node a base-relative href', () => {
+  it('gives every person a photo and nothing else an image, and every node a base-relative href', () => {
     for (const node of graph.nodes) {
       expect(node.href.startsWith('/')).toBe(true);
       if (node.type === 'person') expect(node.image).not.toBeNull();
+      else expect(node.image).toBeNull();
+    }
+  });
+
+  it('has 23 people without a single link, which the drawn view drops', () => {
+    const isolated = graph.nodes.filter((n) => !graph.links.some((l) => l.source === n.id || l.target === n.id));
+    // people with no publication, project or software entry of their own
+    expect(isolated.every((n) => n.type === 'person')).toBe(true);
+    expect(isolated).toHaveLength(23);
+    // filterRows() draws only what is connected (see networkOptions.ts)
+    const view = filterRows(graph, null);
+    expect(view.nodes).toHaveLength(graph.nodes.length - isolated.length);
+    expect(view.nodes).toHaveLength(185);
+    for (const node of view.nodes) {
+      expect(view.links.some((l) => l.source === node.id || l.target === node.id)).toBe(true);
     }
   });
 

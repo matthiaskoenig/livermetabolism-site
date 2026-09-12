@@ -320,3 +320,87 @@ test('network page pre-selects ?topic= as the research-area filter', async ({ pa
 
   expect(errors).toEqual([]);
 });
+
+test('network graph: dragging a node moves the node, not the whole view', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto('network/');
+  const canvas = page.locator('#network-graph canvas').first();
+  await expect(canvas).toBeVisible();
+  // the force layout needs a moment to settle before the pixels mean anything
+  await page.waitForTimeout(6000);
+
+  const box = (await canvas.boundingBox())!;
+  const centre = { x: box.x + box.width / 2, y: box.y + box.height / 2 };
+
+  // a node sets the container's cursor to `pointer` (ECharts on a canvas has
+  // no DOM to query), so hunt for one near the middle
+  let node: { x: number; y: number } | null = null;
+  for (let dx = -80; dx <= 80 && !node; dx += 10) {
+    for (let dy = -80; dy <= 80 && !node; dy += 10) {
+      await page.mouse.move(centre.x + dx, centre.y + dy);
+      const cursor = await page.evaluate(() => getComputedStyle(document.querySelector('#network-graph canvas')!.parentElement!).cursor);
+      if (cursor === 'pointer') node = { x: centre.x + dx, y: centre.y + dy };
+    }
+  }
+  expect(node, 'a node under the cursor near the middle of the canvas').not.toBeNull();
+
+  /** The canvas, sampled every 4th pixel, as flat r,g,b bytes over white. */
+  const pixels = () => page.evaluate(() => {
+    const c = document.querySelector('#network-graph canvas') as HTMLCanvasElement;
+    const { width, height } = c;
+    const px = c.getContext('2d')!.getImageData(0, 0, width, height).data;
+    const rgb: number[] = [];
+    for (let y = 0; y < height; y += 4) {
+      for (let x = 0; x < width; x += 4) {
+        const i = (y * width + x) * 4;
+        // composite over the page's white background, so a faded edge reads as
+        // the light grey it looks like rather than as "no ink"
+        const a = px[i + 3]! / 255;
+        for (let ch = 0; ch < 3; ch++) rgb.push(Math.round(px[i + ch]! * a + 255 * (1 - a)));
+      }
+    }
+    return { rgb, width, height };
+  });
+
+  /** Share of the pixels further than 300 px from `from` that changed visibly. */
+  const changedFar = (before: { rgb: number[]; width: number }, after: { rgb: number[] }, from: { x: number; y: number }) => {
+    const cols = Math.ceil(before.width / 4);
+    let far = 0;
+    let changed = 0;
+    for (let i = 0; i < before.rgb.length; i += 3) {
+      const sample = i / 3;
+      const x = (sample % cols) * 4;
+      const y = Math.floor(sample / cols) * 4;
+      if (Math.hypot(x - from.x, y - from.y) <= 300) continue;
+      far++;
+      const d = Math.abs(before.rgb[i]! - after.rgb[i]!)
+        + Math.abs(before.rgb[i + 1]! - after.rgb[i + 1]!)
+        + Math.abs(before.rgb[i + 2]! - after.rgb[i + 2]!);
+      if (d > 40) changed++;
+    }
+    expect(far).toBeGreaterThan(1000);
+    return changed / far;
+  };
+
+  const drag = async (from: { x: number; y: number }) => {
+    await page.mouse.move(from.x, from.y);
+    await page.waitForTimeout(400);
+    const before = await pixels();
+    await page.mouse.down();
+    for (let i = 1; i <= 20; i++) await page.mouse.move(from.x + i * 12, from.y - i * 8);
+    await page.mouse.up();
+    await page.waitForTimeout(1500);
+    return changedFar(before, await pixels(), { x: from.x - box.x, y: from.y - box.y });
+  };
+
+  // A node drag moves that node and re-projects the rest a little (measured
+  // at 8-9 % of the far pixels); the bug this guards against — the drag
+  // panning the whole view, because the image symbol under the cursor is not
+  // the draggable element — moves everything (~19 %). See the task report for
+  // the manual check with .superpowers/.../drag-check.cjs.
+  expect(await drag(node!)).toBeLessThan(0.15);
+
+  expect(errors).toEqual([]);
+});

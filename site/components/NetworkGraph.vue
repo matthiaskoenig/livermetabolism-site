@@ -8,9 +8,9 @@
 // page because this island is hydrated anyway (see CLAUDE.md, "Site chrome",
 // for why static chrome is done the other way round).
 import { onBeforeUnmount, onMounted, ref } from 'vue';
-import { resetChart, roamChart, useChart } from './useChart';
+import { enableNodeDragging, resetChart, roamChart, useChart } from './useChart';
 import type { GraphRows } from '../lib/graphRows';
-import { networkOption } from '../lib/networkOptions';
+import { ROAM, networkOption } from '../lib/networkOptions';
 
 const props = defineProps<{
   rows: GraphRows;
@@ -33,17 +33,18 @@ const height = ref(560);
 /** False until the chart is up, so the static render carries a short note. */
 const ready = ref(false);
 /**
- * False for the very first draw only: from then on a re-render must keep the
- * arrangement the layout found instead of simulating it again, so the nodes
- * that survive a filter stay where they are (see `SETTLE_FRICTION`).
+ * Whether the next render re-runs the force layout. A filter change does (the
+ * remaining nodes find a new arrangement and spread over the canvas, drawn
+ * from scratch so ECharts seeds them afresh); a resize does not, or a changed
+ * viewport height would reshuffle the graph.
  */
-const settled = ref(false);
+const relayout = ref(true);
 
 const chartHeight = () => Math.max(480, Math.round(window.innerHeight * 0.7));
 
 function measure(): void {
-  // a re-measure is always a re-render of a graph that already has its shape
-  if (ready.value) settled.value = true;
+  // a re-measure must keep the arrangement the layout already found
+  if (ready.value) relayout.value = false;
   height.value = chartHeight();
 }
 
@@ -74,9 +75,10 @@ onBeforeUnmount(() => {
 
 /** A filter button: `null` is "All". */
 function select(slug: string | null): void {
-  // set first: both refs change in one tick, so the graph re-renders once and
-  // the surviving nodes keep their positions
-  settled.value = true;
+  if (slug === topic.value) return;
+  // set first: both refs change in one tick, so the graph re-renders once —
+  // from scratch, so the remaining nodes are laid out afresh
+  relayout.value = true;
   topic.value = slug;
 }
 
@@ -92,14 +94,20 @@ function onClick(params: unknown): void {
   if (typeof href === 'string' && href.startsWith(import.meta.env.BASE_URL)) location.assign(href);
 }
 
-// notMerge: false — a filter or a height change must not restart the force
-// layout, which would rescramble every node (see useChart's ChartOptions)
+// notMerge follows `relayout`: a filter change is drawn from scratch, so the
+// force layout starts over and re-arranges what is left; a resize merges, so
+// the preserved node positions survive it (see useChart's ChartOptions)
 const el = useChart(
-  () => networkOption(props.rows, topic.value, settled.value),
+  () => networkOption(props.rows, topic.value, { relayout: relayout.value }),
   () => height.value,
   onClick,
-  { notMerge: false },
+  { notMerge: () => relayout.value },
 );
+
+// after useChart's own onMounted, so the chart instance exists
+let unbindDrag: () => void = () => {};
+onMounted(() => { unbindDrag = enableNodeDragging(el.value, ROAM); });
+onBeforeUnmount(() => unbindDrag());
 
 /** Zoom around the middle of the canvas: the wheel is left to the page. */
 function zoom(factor: number): void {
@@ -109,7 +117,6 @@ function zoom(factor: number): void {
 
 /** Throw the zoom and the panning away and lay the nodes out afresh. */
 function reset(): void {
-  settled.value = false;
   resetChart(el.value, networkOption(props.rows, topic.value));
 }
 </script>
@@ -132,9 +139,11 @@ function reset(): void {
     <div ref="el" class="network-graph" role="img"
       aria-label="Network of the people, publications, projects and software of the group"></div>
     <figcaption class="chart-note">
-      Pick a research area to show only its people, publications, projects and software. Drag a node to move it, drag
-      the background to pan, use the buttons to zoom. Clicking a node opens it on the site. A publication is a dot in
-      its research area's colour, sized by citations.
+      Pick a research area to show only its people, publications, projects and software; the graph re-arranges itself
+      around what is left. Drag a node to move it, drag the background to pan, use the buttons to zoom. Clicking a node
+      opens it on the site. People carry their photo, projects are squares and software diamonds; a publication is a
+      dot in its research area's colour. Every node is sized by how many people, papers, projects and tools it
+      connects to.
     </figcaption>
   </figure>
 </template>
