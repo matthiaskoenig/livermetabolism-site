@@ -95,6 +95,9 @@ const quickLinks = [
                 <Icon name="code" /><span><strong>Software</strong><span>Open-source tools for {s.tag}.</span></span>
               </a>
             )}
+            <a class="tag-section-link" href={`${url('/network/')}?topic=${encodeURIComponent(s.tag)}`}>
+              <Icon name="share-alt" /><span><strong>Network</strong><span>People, papers, and tools around {s.tag}.</span></span>
+            </a>
           </div>
         )}
       </div>

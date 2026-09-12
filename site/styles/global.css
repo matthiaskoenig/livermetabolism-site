@@ -1172,6 +1172,21 @@
     font-size: 0.8em;
   }
 
+  /* ----------------------------------------------------------------
+     The network graph (/network/, NetworkGraph.vue): the research-area
+     buttons reuse .chart-mode-btn above; the container's exact height
+     is ~70 vh, set by useChart.ts through the CSSOM on mount and on
+     every resize (never as a style= attribute — CSP).
+     ---------------------------------------------------------------- */
+  .network-plot {
+    margin: 0 0 2em;
+  }
+
+  .network-graph {
+    width: 100%;
+    min-height: 480px;
+  }
+
   /* cards for the different kinds of open positions (see team.html) */
   .position-cards {
     display: grid;

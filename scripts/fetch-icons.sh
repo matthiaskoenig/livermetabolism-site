@@ -51,6 +51,7 @@ graduation-cap solid/graduation-cap
 flask solid/flask
 compass regular/compass
 file-o regular/file
+share-alt solid/share-nodes
 MAP
 cat > site/icons/LICENSE.txt <<'TXT'
 The SVG files in this directory are from Font Awesome Free 6
