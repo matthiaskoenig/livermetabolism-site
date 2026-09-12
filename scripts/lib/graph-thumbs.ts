@@ -1,18 +1,21 @@
 /**
  * Pure path mapping of the network graph's node thumbnails: which source
  * image under `public/assets/image/` becomes which file under
- * `public/assets/image/graph/`, at what size and in what shape. The research
- * areas have no thumbnails: they filter the graph rather than appear in it.
+ * `public/assets/image/graph/`, at what size and in what shape.
+ *
+ * Only people have thumbnails: the research areas filter the graph rather
+ * than appear in it, and projects, software and publications are drawn as
+ * plain symbols (see `networkOptions.ts`).
  *
  * No filesystem and no `sharp` here — `scripts/graph-thumbs.ts` does the
  * reading, resizing and writing, so the mapping (and with it the file names
  * `site/lib/graphRows.ts` expects) stays unit-testable against the real YAML.
  *
- * A row without a source image yields no job at all: the script never
- * warns about it and the graph node falls back to a plain circle.
+ * A person without a photo yields no job at all: the script never warns
+ * about it and their node falls back to a plain circle.
  */
-/** Round photos for people, centre-cropped squares for the rest. */
-export type ThumbShape = 'circle' | 'square';
+/** Round photos for people (the only thumbnails the graph has). */
+export type ThumbShape = 'circle';
 
 /** A ring drawn inside the edge of a circular thumbnail. */
 export interface ThumbRing {
@@ -37,30 +40,20 @@ export interface ThumbJob {
 /** White outline that lifts a round photo off the graph's edges. */
 export const PERSON_RING: ThumbRing = { width: 2, color: '#ffffff' };
 
-/** Person photos: the graph draws them at ~40 px, 96 px covers retina zoom. */
+/** Person photos: the graph draws them at 24-56 px, 96 px covers retina zoom. */
 export const PERSON_THUMB_SIZE = 96;
-/** Project and software thumbnails. */
-export const ITEM_THUMB_SIZE = 96;
+
 export interface ThumbInput {
   /** `public/assets/image` for the real run; both sources and targets are relative to it. */
   imageRoot: string;
   people: { id: string; image?: string | null }[];
-  /** `images` may be a bare scalar in the YAML (pydantic/Zod coerce it to a list). */
-  projects: { id: string; images?: string | string[] | null }[];
-  software: { id: string; image?: string | null }[];
 }
 
 function join(root: string, rest: string): string {
   return root ? `${root.replace(/\/+$/, '')}/${rest}` : rest;
 }
 
-function first(images: string | string[] | null | undefined): string | null {
-  if (!images) return null;
-  const list = Array.isArray(images) ? images : [images];
-  return list.find((i) => !!i) ?? null;
-}
-
-/** Every thumbnail the graph needs, in the order people, projects, software. */
+/** Every thumbnail the graph needs: one round photo per person who has one. */
 export function thumbJobs(input: ThumbInput): ThumbJob[] {
   const { imageRoot: root } = input;
   const jobs: ThumbJob[] = [];
@@ -73,25 +66,6 @@ export function thumbJobs(input: ThumbInput): ThumbJob[] {
       size: PERSON_THUMB_SIZE,
       shape: 'circle',
       ring: PERSON_RING,
-    });
-  }
-  for (const project of input.projects) {
-    const image = first(project.images);
-    if (!image) continue;
-    jobs.push({
-      source: join(root, `projects/${image}`),
-      target: join(root, `graph/projects/${project.id}.webp`),
-      size: ITEM_THUMB_SIZE,
-      shape: 'square',
-    });
-  }
-  for (const entry of input.software) {
-    if (!entry.image) continue;
-    jobs.push({
-      source: join(root, `software/${entry.image}`),
-      target: join(root, `graph/software/${entry.id}.webp`),
-      size: ITEM_THUMB_SIZE,
-      shape: 'square',
     });
   }
   return jobs;

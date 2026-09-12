@@ -12,10 +12,11 @@
  * island as props, so nothing here runs in the browser.
  *
  * Two build-time inputs come from outside the YAML: the citation snapshot
- * (`site/lib/citations.ts`, it sizes the publication nodes) and `thumbs`, the
- * set of thumbnail files that actually exist under `public/` (written by
- * `npm run graph:thumbs`, see `scripts/lib/graph-thumbs.ts`) — a node whose
- * thumbnail is missing gets `image: null` and the chart draws a plain circle.
+ * (`site/lib/citations.ts`, shown in a publication's tooltip) and `thumbs`,
+ * the set of thumbnail files that actually exist under `public/` (written by
+ * `npm run graph:thumbs`, see `scripts/lib/graph-thumbs.ts`) — only people
+ * carry a photo, and a person whose thumbnail is missing gets `image: null`
+ * and is drawn as a plain circle.
  *
  * Every `href` is a site-internal path built from `base` (the deploy's
  * `import.meta.env.BASE_URL`, always ending in `/`) and an id the schemas
@@ -43,12 +44,14 @@ export interface GraphNode {
   detail: string;
   /** Site-internal link the node navigates to on click. */
   href: string;
-  /** Asset URL of the node's thumbnail, or null when there is none. */
+  /** Asset URL of a person's photo thumbnail; null for every other type (they are drawn as shapes). */
   image: string | null;
   /** Research-area slugs this node belongs to — what the page filters by (a person's are derived from their publications). */
   topics: string[];
-  /** Citations for a publication, the number of connected items for every other type. */
+  /** The number of items this node is connected to in the whole graph (the chart re-counts it per filtered view). */
   value: number;
+  /** Citation count of a publication (tooltip only); null for every other type. */
+  citations: number | null;
 }
 
 export interface GraphLink {
@@ -72,7 +75,7 @@ export interface GraphRowsInput {
   publications: GraphPublication[];
   projects: GraphProject[];
   software: GraphSoftware[];
-  /** The OpenAlex snapshot; `emptyCitations()` is fine and makes every publication value 0. */
+  /** The OpenAlex snapshot; `emptyCitations()` is fine and leaves every publication at 0 citations. */
   citations: Citations;
   /** `import.meta.env.BASE_URL`: `/` locally, `/livermetabolism-site/` on GitHub Pages. */
   base: string;
@@ -80,10 +83,8 @@ export interface GraphRowsInput {
   thumbs: Set<string>;
 }
 
-/** Directory under `assets/image/graph/` per node type that has a thumbnail. */
-const THUMB_DIR: Record<Exclude<NodeType, 'publication'>, string> = {
-  person: 'people', project: 'projects', software: 'software',
-};
+/** The only thumbnails the graph uses: one photo per person, under `assets/image/graph/people/`. */
+const PEOPLE_THUMB_DIR = 'people';
 
 function nodeId(type: NodeType, id: string): string {
   return `${type}:${id}`;
@@ -109,34 +110,36 @@ export function graphRows(input: GraphRowsInput): GraphRows {
     return slugs;
   };
 
-  const image = (type: Exclude<NodeType, 'publication'>, id: string): string | null => {
-    const path = `assets/image/graph/${THUMB_DIR[type]}/${id}.webp`;
+  /** A person's photo, or null when the thumbnail has not been generated. */
+  const photo = (id: string): string | null => {
+    const path = `assets/image/graph/${PEOPLE_THUMB_DIR}/${id}.webp`;
     return thumbs.has(path) ? `${base}${path}` : null;
   };
 
   // --- nodes, in the category order of the chart legend -----------------
   const nodes: GraphNode[] = [];
-  const push = (node: Omit<GraphNode, 'value'>) => nodes.push({ ...node, value: 0 });
+  const push = (node: Omit<GraphNode, 'value' | 'citations'> & { citations?: number }) =>
+    nodes.push({ citations: null, ...node, value: 0 });
 
   for (const person of input.people) {
     push({
       id: nodeId('person', person.id), type: 'person', label: person.name,
       detail: person.role.length ? person.role.join(', ') : capitalized(person.status),
-      href: `${base}people/#person-modal-${person.id}`, image: image('person', person.id),
+      href: `${base}people/#person-modal-${person.id}`, image: photo(person.id),
       topics: [], // filled in from their publications below
     });
   }
   for (const project of input.projects) {
     push({
       id: nodeId('project', project.id), type: 'project', label: project.title, detail: project.title,
-      href: `${base}projects/#project-modal-${project.id}`, image: image('project', project.id),
+      href: `${base}projects/#project-modal-${project.id}`, image: null,
       topics: topicsOf(project.tags),
     });
   }
   for (const entry of input.software) {
     push({
       id: nodeId('software', entry.id), type: 'software', label: entry.name, detail: entry.title,
-      href: `${base}research/#software-${entry.id}`, image: image('software', entry.id),
+      href: `${base}research/#software-${entry.id}`, image: null,
       topics: topicsOf(entry.tags),
     });
   }
@@ -146,7 +149,7 @@ export function graphRows(input: GraphRowsInput): GraphRows {
       detail: `${pub.year} · ${pub.journal_short || pub.journal}`,
       href: `${base}publications/#pub-${pub.id}`, image: null,
       topics: topicsOf(pub.tags),
-      // value is the citation count; the degree below only fills the others.
+      citations: citationFor(citations, pub.doi)?.citedByCount ?? 0,
     });
   }
 
@@ -191,16 +194,14 @@ export function graphRows(input: GraphRowsInput): GraphRows {
     }
   }
 
+  // Every node is sized by how much it connects to; the chart counts the
+  // degree again per filtered view, so this is the whole graph's count.
   const degree = new Map<string, number>();
   for (const l of links) {
     degree.set(l.source, (degree.get(l.source) ?? 0) + 1);
     degree.set(l.target, (degree.get(l.target) ?? 0) + 1);
   }
   for (const node of nodes) node.value = degree.get(node.id) ?? 0;
-  for (const pub of input.publications) {
-    const node = byId.get(nodeId('publication', pub.id));
-    if (node) node.value = citationFor(citations, pub.doi)?.citedByCount ?? 0;
-  }
 
   return { nodes, links };
 }

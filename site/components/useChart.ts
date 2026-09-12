@@ -23,17 +23,19 @@ use([BarChart, LineChart, ScatterChart, GraphChart, GridComponent, TooltipCompon
 
 export interface ChartOptions {
   /**
-   * Whether a re-render throws the previous option away (ECharts' `notMerge`).
+   * Whether a re-render throws the previous option away (ECharts' `notMerge`),
+   * either fixed or decided per render by a predicate.
+   *
    * True — the default — is what the bar/line/scatter charts want: their
    * series are rebuilt from scratch and a stale series must not survive.
    *
-   * The network graph passes false: `notMerge` rebuilds the whole
-   * `GlobalModel`, which discards the force layout's `preservedPoints` (the
-   * node positions it resumes from, keyed by node id), so every focus change
-   * and every height change would rescramble all 213 nodes. In merge mode the
-   * series model survives and only the new styles are applied.
+   * The network graph decides per render: `notMerge` rebuilds the whole
+   * `GlobalModel` and discards the force layout's `preservedPoints` (the node
+   * positions it resumes from, keyed by node id), which is exactly right when
+   * a filter change should re-arrange the graph and exactly wrong when a
+   * height change should not move anything.
    */
-  notMerge?: boolean;
+  notMerge?: boolean | (() => boolean);
 }
 
 /**
@@ -61,7 +63,7 @@ export function useChart(option: () => EChartsCoreOption, height: () => number, 
     if (!chart || !el.value) return;
     el.value.style.height = `${h}px`;
     chart.resize();
-    chart.setOption(next, notMerge);
+    chart.setOption(next, typeof notMerge === 'function' ? notMerge() : notMerge);
   });
 
   onBeforeUnmount(() => {
@@ -90,6 +92,46 @@ export function roamChart(el: HTMLElement | null, action: { type: string; zoom?:
  */
 export function resetChart(el: HTMLElement | null, option: EChartsCoreOption): void {
   if (el) getInstanceByDom(el)?.setOption(option, true);
+}
+
+/**
+ * Lets a node of a graph series be dragged without panning the whole view.
+ *
+ * ECharts' `RoamController` decides between "drag the thing under the cursor"
+ * and "pan the view" from `e.target.draggable`; for a node drawn as an
+ * `image://` symbol the target is the inner image, which is not draggable, so
+ * the controller starts a pan while zrender's own drag logic moves the node —
+ * and the pan wins visually. Switching `roam` off for the duration of the
+ * drag leaves only the node moving, and the background still pans because a
+ * drag that starts on empty canvas has no node under it.
+ *
+ * `force.friction: 0` rides along so the merge-render this needs cannot
+ * restart the simulation mid-drag. Returns the unbind function.
+ */
+export function enableNodeDragging(el: HTMLElement | null, roam: string): () => void {
+  const chart = el ? getInstanceByDom(el) : null;
+  if (!chart) return () => {};
+  let dragging = false;
+  const setRoam = (value: string | boolean) => chart.setOption({ series: [{ roam: value, force: { friction: 0 } }] });
+  const onDown = (params: unknown) => {
+    if ((params as { dataType?: string })?.dataType !== 'node' || dragging) return;
+    dragging = true;
+    setRoam(false);
+  };
+  const release = () => {
+    if (!dragging) return;
+    dragging = false;
+    setRoam(roam);
+  };
+  chart.on('mousedown', onDown);
+  const zr = chart.getZr();
+  zr.on('mouseup', release);
+  zr.on('globalout', release);
+  return () => {
+    chart.off('mousedown', onDown);
+    zr.off('mouseup', release);
+    zr.off('globalout', release);
+  };
 }
 
 /** Opens a chart item's URL in a new tab (click handler of the timeline and stars charts). */

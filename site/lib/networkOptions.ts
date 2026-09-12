@@ -48,13 +48,39 @@ export const CATEGORY_COLOR: Record<NodeType, string> = {
   person: PALETTE[1]!, project: PALETTE[2]!, software: PALETTE[5]!, publication: PALETTE[9]!,
 };
 
-/** Symbol size of the types that have no citation count. */
-export const SYMBOL_SIZE: Record<Exclude<NodeType, 'publication'>, number> = {
-  person: 32, project: 36, software: 36,
+/**
+ * The symbol per node type. A person is drawn as their photo (the `image://`
+ * symbol below) and falls back to a circle without one; nothing else has a
+ * thumbnail, so projects are rounded squares, software diamonds and
+ * publications circles, each in its category colour.
+ */
+export const SYMBOL: Record<NodeType, string> = {
+  person: 'circle', project: 'roundRect', software: 'diamond', publication: 'circle',
 };
 
-/** Largest publication symbol, however often the paper was cited. */
-export const PUBLICATION_SIZE_CAP = 20;
+/**
+ * How a node's size follows its degree — the number of nodes it is connected
+ * to *in the view being drawn*, so a filtered graph re-sizes with it:
+ * `min + k · sqrt(degree)`, capped. An isolated node is drawn at `min`.
+ */
+export const SIZE: Record<NodeType, { min: number; k: number; cap: number }> = {
+  person: { min: 24, k: 6, cap: 56 },
+  project: { min: 10, k: 4, cap: 32 },
+  software: { min: 10, k: 4, cap: 32 },
+  publication: { min: 6, k: 3, cap: 22 },
+};
+
+/**
+ * How the view may be roamed: 'move' and not `true`, because a wheel over a
+ * 630 px canvas would zoom the graph instead of scrolling the page (the
+ * component has zoom buttons, and it switches roaming off while a node is
+ * dragged — see `enableNodeDragging()`).
+ */
+export const ROAM = 'move';
+
+/** Zoom of the initial view: the whole graph is wide, one research area is not. */
+export const ZOOM_ALL = 0.6;
+export const ZOOM_TOPIC = 1;
 
 /**
  * `force.friction` of the first layout: ECharts scales every step by it and
@@ -64,18 +90,30 @@ export const PUBLICATION_SIZE_CAP = 20;
 export const LAYOUT_FRICTION = 0.6;
 
 /**
- * `force.friction` of every later render. A re-render (a research-area
- * filter, a height change) builds a *new* force instance, which starts at
- * `force.friction` again: at the full 0.6 every node would swing right across
+ * `force.friction` of a render that must not move anything: a re-render
+ * builds a *new* force instance, which starts at `force.friction` again, so
+ * at the full 0.6 a mere height change would swing every node right across
  * the canvas even though ECharts seeds it from the positions it preserved.
  * At 0 the restarted simulation moves nothing at all and stops after its
- * first step, so the nodes that survive a filter keep their places.
+ * first step. Used for resizes only — a filter change is meant to
+ * re-arrange (see `NetworkRender.relayout`).
  */
 export const SETTLE_FRICTION = 0;
 
-/** `6 + 3·ln(1 + citations)`, capped: visible at 0 citations, never crowding the rest. */
-export function publicationSymbolSize(citations: number): number {
-  return Math.min(PUBLICATION_SIZE_CAP, 6 + 3 * Math.log(1 + Math.max(0, citations)));
+/** `min + k · sqrt(degree)` for the type, capped (see `SIZE`). */
+export function symbolSize(type: NodeType, degree: number): number {
+  const { min, k, cap } = SIZE[type];
+  return Math.min(cap, min + k * Math.sqrt(Math.max(0, degree)));
+}
+
+/** How many links of `rows` touch each node id (0 is simply absent). */
+export function degrees(rows: GraphRows): Map<string, number> {
+  const degree = new Map<string, number>();
+  for (const l of rows.links) {
+    degree.set(l.source, (degree.get(l.source) ?? 0) + 1);
+    degree.set(l.target, (degree.get(l.target) ?? 0) + 1);
+  }
+  return degree;
 }
 
 /** Every edge is drawn at the same length (see `force.edgeLength`). */
@@ -89,10 +127,13 @@ export interface NetworkNode {
   category: number;
   symbol: string;
   symbolSize: number;
+  /** The node's degree in the view being drawn — what its size comes from. */
   value: number;
   type: NodeType;
   detail: string;
   href: string;
+  /** Citations of a publication, for the tooltip; null for every other type. */
+  citations: number | null;
   itemStyle: { color?: string };
 }
 
@@ -103,40 +144,58 @@ export interface NetworkLink {
 }
 
 /**
- * The rows of one research area: every node whose `topics` include `slug`
- * (a person's are derived from their publications, so a co-author of an AI
- * paper stays in the AI graph) and every link between two of them. `null`
- * returns the rows unchanged.
+ * The drawn graph: with a `slug`, every node whose `topics` include it (a
+ * person's are derived from their publications, so a co-author of an AI paper
+ * stays in the AI graph) and every link between two of them; without one, the
+ * whole graph.
+ *
+ * Either way only *connected* nodes are kept: a node whose links all went to
+ * another research area would be a lone symbol in the void, so the view
+ * always is a network.
  */
 export function filterRows(rows: GraphRows, slug: string | null): GraphRows {
-  if (!slug) return rows;
-  const nodes = rows.nodes.filter((n) => n.topics.includes(slug));
-  const kept = new Set(nodes.map((n) => n.id));
-  return { nodes, links: rows.links.filter((l) => kept.has(l.source) && kept.has(l.target)) };
+  const inArea = slug ? rows.nodes.filter((n) => n.topics.includes(slug)) : rows.nodes;
+  const kept = new Set(inArea.map((n) => n.id));
+  const links = rows.links.filter((l) => kept.has(l.source) && kept.has(l.target));
+  const connected = new Set(links.flatMap((l) => [l.source, l.target]));
+  return { nodes: inArea.filter((n) => connected.has(n.id)), links };
+}
+
+export interface NetworkRender {
+  /**
+   * True — the default — runs the force layout: the first draw and every
+   * filter change, where the remaining nodes must find a new arrangement and
+   * spread over the canvas. False keeps the positions the layout found (a
+   * resize, which must not reshuffle the graph); see `SETTLE_FRICTION`.
+   */
+  relayout?: boolean;
 }
 
 /**
  * The force-directed graph, either whole (`topic` null) or narrowed to one
  * research area.
  *
- * `settled` says this is a re-render of a graph that has already found its
- * shape, so the layout must not start over (see `SETTLE_FRICTION`).
+ * Node sizes come from the degree *within the drawn view*, so filtering to
+ * one area re-sizes every node by how much of that area it connects to.
  */
-export function networkOption(rows: GraphRows, topic: string | null, settled = false) {
+export function networkOption(rows: GraphRows, topic: string | null, { relayout = true }: NetworkRender = {}) {
   const shown = filterRows(rows, topic);
+  const degree = degrees(shown);
 
   const data: NetworkNode[] = shown.nodes.map((n) => ({
     id: n.id,
     name: n.label,
     category: CATEGORY_ORDER.indexOf(n.type),
-    symbol: n.image ? `image://${n.image}` : 'circle',
-    symbolSize: n.type === 'publication' ? publicationSymbolSize(n.value) : SYMBOL_SIZE[n.type],
-    value: n.value,
+    // only a person carries a photo; everything else is a plain symbol
+    symbol: n.image ? `image://${n.image}` : SYMBOL[n.type],
+    symbolSize: symbolSize(n.type, degree.get(n.id) ?? 0),
+    value: degree.get(n.id) ?? 0,
     type: n.type,
     detail: n.detail,
     href: n.href,
+    citations: n.citations,
     itemStyle: {
-      // a publication has no thumbnail: it is a dot in its first area's colour
+      // a publication is a dot in its first research area's colour
       ...(n.type === 'publication' ? { color: TAG_PALETTE[n.topics[0] ?? ''] ?? CATEGORY_COLOR.publication } : {}),
     },
   }));
@@ -153,11 +212,11 @@ export function networkOption(rows: GraphRows, topic: string | null, settled = f
       const type = TYPE_LABEL[n.type];
       // a project's detail is its title, which is the label already
       const second = n.detail && n.detail !== n.name ? `${type} · ${n.detail}` : type;
-      // `value` is a citation count on a publication and a degree elsewhere,
-      // which means nothing to a reader — only the citations are shown
-      return n.type === 'publication'
-        ? `${n.name}\n${second}\n${n.value} citation${n.value === 1 ? '' : 's'}`
-        : `${n.name}\n${second}`;
+      // the size is the degree; a paper's citation count is worth a line of
+      // its own, and it is the only number a reader can interpret
+      return n.citations === null
+        ? `${n.name}\n${second}`
+        : `${n.name}\n${second}\n${n.citations} citation${n.citations === 1 ? '' : 's'}`;
     }),
     legend: {
       data: categories.map((c) => c.name),
@@ -170,16 +229,23 @@ export function networkOption(rows: GraphRows, topic: string | null, settled = f
       {
         type: 'graph',
         layout: 'force',
-        // 'move' and not true: a wheel over a 630 px canvas would zoom instead
-        // of scrolling the page, so panning is by drag and zooming by button
-        roam: 'move',
+        roam: ROAM,
+        // the whole canvas pans, not only the graph's own bounding rect
+        // (ECharts' default), so a drag on empty space always works
+        roamTrigger: 'global',
         draggable: true,
-        // without the research areas as anchors the graph is one wide star
-        // around the most prolific author, so it is drawn well zoomed out;
-        // the zoom buttons take it from there
-        zoom: 0.6,
+        // the whole graph is one wide star around the most prolific author, so
+        // it is drawn zoomed out; one research area fills the canvas at 1
+        zoom: topic ? ZOOM_TOPIC : ZOOM_ALL,
+        // only matters for the photo symbols of the people
         symbolKeepAspect: true,
-        force: { repulsion: 200, gravity: 0.03, friction: settled ? SETTLE_FRICTION : LAYOUT_FRICTION, edgeLength: [60, 220] },
+        force: {
+          repulsion: 200, gravity: 0.03, edgeLength: [60, 220],
+          friction: relayout ? LAYOUT_FRICTION : SETTLE_FRICTION,
+          // seeds a fresh layout (one drawn without the previous positions,
+          // i.e. after a filter change) on a circle instead of at random
+          initLayout: 'circular',
+        },
         // safety net for the labels, which are shown on hover
         labelLayout: { hideOverlap: true },
         categories,

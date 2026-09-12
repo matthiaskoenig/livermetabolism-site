@@ -1,9 +1,9 @@
 /**
  * Writes the node thumbnails of the network graph (`/network/`) into
- * `public/assets/image/graph/`: one round 96 px photo per person (ringed in
- * white) and one square 96 px crop per project and per software entry. The
- * research areas filter the graph instead of appearing in it, so they have no
- * thumbnail.
+ * `public/assets/image/graph/`: one round 96 px photo per person, ringed in
+ * white. Nothing else has a thumbnail — the research areas filter the graph
+ * instead of appearing in it, and projects, software and publications are
+ * drawn as plain symbols.
  *
  * Usage:
  *   npm run graph:thumbs
@@ -11,7 +11,7 @@
  * The output is committed (like the 128 px avatars) — the graph page reads it
  * as a static asset, so nothing is generated at build time. The run is
  * idempotent: every target is rewritten from its source, so re-running after
- * a new person, project, software entry or artwork only adds files. Which
+ * a new person only adds files. Which
  * source maps to which target lives in `scripts/lib/graph-thumbs.ts` (pure,
  * unit-tested against the real YAML); this script only reads, resizes and
  * writes. A job whose source image is missing is skipped with a warning and
@@ -88,26 +88,17 @@ export async function runThumbs(jobs: ThumbJob[]): Promise<ThumbRun> {
   return run;
 }
 
-/** The people, projects and software of `data/*.yml`, as `thumbJobs()` wants them. */
+/** The people of `data/people.yml`, as `thumbJobs()` wants them. */
 export function jobsFromData(dataRoot: string, imageRoot: string): ThumbJob[] {
   const rows = <T>(name: string): T[] => (load(readFileSync(`${dataRoot}${name}.yml`, 'utf8')) ?? []) as T[];
-  return thumbJobs({
-    imageRoot,
-    people: rows<{ id: string; image?: string | null }>('people'),
-    projects: rows<{ id: string; images?: string | string[] | null }>('projects'),
-    software: rows<{ id: string; image?: string | null }>('software'),
-  });
+  return thumbJobs({ imageRoot, people: rows<{ id: string; image?: string | null }>('people') });
 }
 
 if (import.meta.main) {
   const root = fileURLToPath(new URL('..', import.meta.url));
   const imageRoot = `${root}public/assets/image`;
   const jobs = jobsFromData(`${root}data/`, imageRoot);
-  const byType = (type: string) => jobs.filter((j) => j.target.includes(`/graph/${type}/`)).length;
-  console.log(
-    `Rendering ${jobs.length} graph thumbnails (${byType('people')} people, ${byType('projects')} projects, ` +
-      `${byType('software')} software) into ${imageRoot}/graph/`,
-  );
+  console.log(`Rendering ${jobs.length} graph thumbnails (people) into ${imageRoot}/graph/people/`);
   const run = await runThumbs(jobs);
   const existing = jobs.filter((j) => existsSync(j.target)).reduce((sum, j) => sum + statSync(j.target).size, 0);
   console.log(
