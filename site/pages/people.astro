@@ -41,7 +41,7 @@ const positions = [
   </div>
 
   <h2 id="open-positions">Open Positions</h2>
-  <img src={asset('image/teaching/teaching_banner.webp')} alt="" class="img-fluid" />
+  <img src={asset('image/teaching/teaching_banner.webp')} alt="" decoding="async" width="1800" height="191" class="img-fluid" />
   <div class="text-justify">
     <div class="position-cards">
       {positions.map((pos) => (
@@ -64,7 +64,7 @@ const positions = [
         <div class="timeline-year-people">
           {g.people.map((p) => (
             <div class="alumni-card">
-              <PersonAvatar client:idle name={p.name} src={avatarBase + p.image} position={p.role[p.role.length - 1] ?? ''}
+              <PersonAvatar client:visible name={p.name} src={avatarBase + p.image} position={p.role[p.role.length - 1] ?? ''}
                 description={p.description ? truncateWords(stripHtml(p.description), 24) : null} modalId={`person-modal-${p.id}`} imgClass="alumni-photo" />
               <div class="alumni-info">
                 <a href={`#person-modal-${p.id}`} data-modal-target={`person-modal-${p.id}`} class="member-name-link"><strong>{p.name}</strong></a>{p.orcid && (<> <a href={`https://orcid.org/${p.orcid}`} target="_blank" rel="noopener noreferrer" title="ORCID"><Icon name="orcid" /></a></>)}

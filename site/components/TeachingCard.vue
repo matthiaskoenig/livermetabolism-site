@@ -21,7 +21,7 @@ const TYPE_ICONS: Record<string, string> = { lecture: 'person-chalkboard', cours
     <h5>{{ item.date }} - {{ item.location }}</h5>
     <div class="grid md:grid-cols-4 gap-x-6">
       <div>
-        <img v-if="item.image" :src="imageBase + item.image" :alt="item.title" class="img-fluid" />
+        <img v-if="item.image" :src="imageBase + item.image" :alt="item.title" loading="lazy" decoding="async" class="img-fluid" />
         <span v-if="item.caption" v-html="item.caption"></span>
       </div>
       <div class="md:col-span-3">

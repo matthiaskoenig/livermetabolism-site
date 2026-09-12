@@ -9,7 +9,7 @@ defineProps<{ item: Entry<FundingData>; tagInfo: TagInfo[]; imageBase: string }>
 
 <template>
   <div class="project-card" :id="`funding-${item.id}`" :data-tags="item.tags.join('|')">
-    <img v-if="item.funder_logo" :src="imageBase + item.funder_logo" :alt="item.funder" loading="lazy" class="project-image project-image-contain" />
+    <img v-if="item.funder_logo" :src="imageBase + item.funder_logo" :alt="item.funder" loading="lazy" decoding="async" class="project-image project-image-contain" />
     <div class="project-body">
       <h3>{{ item.title }}</h3>
       <TagList :tags="item.tags" :tag-info="tagInfo" />

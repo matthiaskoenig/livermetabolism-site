@@ -6,8 +6,13 @@ const root = ref<HTMLElement | null>(null);
 const card = ref<HTMLElement | null>(null);
 const open = ref(false);
 
+declare global {
+  var __personAvatarCloseAll: Set<() => void> | undefined;
+}
+
 // module-level registry so only one card is visible across all islands
-const registry: Set<() => void> = ((globalThis as any).__personAvatarCloseAll ??= new Set());
+globalThis.__personAvatarCloseAll ??= new Set();
+const registry: Set<() => void> = globalThis.__personAvatarCloseAll;
 
 function close() { open.value = false; if (card.value) { card.value.style.transform = ''; card.value.style.removeProperty('--arrow-shift'); } }
 function closeOthers() { for (const fn of registry) if (fn !== close) fn(); }
@@ -33,7 +38,7 @@ onBeforeUnmount(() => { registry.delete(close); document.removeEventListener('cl
 
 <template>
   <div ref="root" class="person-avatar" tabindex="0" @mouseenter="show" @mouseleave="close" @focus="show" @blur="close" @click="toggle">
-    <img :src="src" :alt="name" loading="lazy" :class="imgClass" />
+    <img :src="src" :alt="name" loading="lazy" decoding="async" :width="imgClass === 'alumni-photo' ? 40 : 52" :height="imgClass === 'alumni-photo' ? 40 : 52" :class="imgClass" />
     <div ref="card" class="person-card" :class="{ 'is-visible': open }">
       <strong>{{ name }}</strong>
       <span class="person-position">{{ position }}</span>

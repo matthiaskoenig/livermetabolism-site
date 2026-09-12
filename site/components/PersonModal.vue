@@ -15,7 +15,7 @@ defineProps<{ person: Entry<PersonData>; refs: PersonRefs; avatarBase: string; p
 <template>
   <Modal :id="`person-modal-${person.id}`" :title="person.name">
     <div class="person-modal-header">
-      <img v-if="person.image" :src="avatarBase + person.image" :alt="person.name" loading="lazy" class="person-modal-photo" />
+      <img v-if="person.image" :src="avatarBase + person.image" :alt="person.name" loading="lazy" decoding="async" width="96" height="96" class="person-modal-photo" />
       <div>
         <span v-if="person.role.length" class="person-position">{{ person.role.join(' · ') }}</span>
         <span class="person-tenure">{{ person.tenure }}<template v-if="person.affiliation"> &middot; {{ person.affiliation }}</template></span>

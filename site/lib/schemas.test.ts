@@ -76,6 +76,17 @@ describe('schemas mirror data/*.yml', () => {
     expect(() => s.personSchema.parse({ id: 'a', status: 'current', tenure: '2020-', name: 'A', flag: 'x' })).toThrow();
   });
 
+  it('news.video accepts a youtube.com/youtube-nocookie.com embed URL, null, or absent, and rejects anything else', () => {
+    const base = { id: 'n', status: 'current', title: 'T', date: '2026-01-01', short: 'short' };
+    expect(s.newsSchema.parse({ ...base, video: 'https://www.youtube.com/embed/abc' }).video).toBe('https://www.youtube.com/embed/abc');
+    expect(s.newsSchema.parse({ ...base, video: 'https://www.youtube-nocookie.com/embed/abc' }).video).toBe('https://www.youtube-nocookie.com/embed/abc');
+    expect(s.newsSchema.parse({ ...base, video: null }).video).toBeNull();
+    expect(s.newsSchema.parse({ ...base, video: '' }).video).toBeNull();
+    expect(s.newsSchema.parse(base).video).toBeUndefined();
+    expect(() => s.newsSchema.parse({ ...base, video: 'https://www.youtube.com/watch?v=abc' })).toThrow();
+    expect(() => s.newsSchema.parse({ ...base, video: 'https://evil.example.com/embed/abc' })).toThrow();
+  });
+
   it('cross-references resolve (people, tags, publications)', () => {
     const personIds = new Set(rows('people').map((r) => r.id as string));
     const tagNames = new Set(rows('tags').map((r) => r.tag as string));

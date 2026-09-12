@@ -7,5 +7,5 @@ const list = computed(() => avatarPeople(props.people, props.peopleMap));
 </script>
 
 <template>
-  <img v-for="p in list" :key="p.id" :src="avatarBase + p.image" :alt="p.name" class="project-avatar" :title="p.name" />
+  <img v-for="p in list" :key="p.id" :src="avatarBase + p.image" :alt="p.name" loading="lazy" decoding="async" width="30" height="30" class="project-avatar" :title="p.name" />
 </template>

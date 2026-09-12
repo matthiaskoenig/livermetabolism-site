@@ -10,7 +10,7 @@ defineProps<{ person: Entry<PersonData>; avatarBase: string }>();
 <template>
   <div class="member-card">
     <a v-if="person.image" :href="`#person-modal-${person.id}`" :data-modal-target="`person-modal-${person.id}`" class="member-photo-link" :aria-label="`View full profile of ${person.name}`">
-      <img :src="avatarBase + person.image" :alt="person.name" loading="lazy" class="member-photo" />
+      <img :src="avatarBase + person.image" :alt="person.name" loading="lazy" decoding="async" width="56" height="56" class="member-photo" />
     </a>
     <div class="member-info">
       <a :href="`#person-modal-${person.id}`" :data-modal-target="`person-modal-${person.id}`" class="member-name-link"><strong>{{ person.name }}</strong></a>

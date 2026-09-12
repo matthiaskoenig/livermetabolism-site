@@ -41,6 +41,22 @@ export const optDate = z
   .transform((d) => (d ? toIsoDate(d) : null));
 export const reqDate = z.coerce.date().transform(toIsoDate);
 
+// news.yml's `video` embeds a YouTube player directly (see NewsModal.vue);
+// restrict it to the two hosts astro.config.mjs's CSP frame-src allows, so a
+// bad or hand-edited URL fails the data build instead of a silently-blocked
+// iframe on the live site.
+const YOUTUBE_EMBED_PREFIXES = ['https://www.youtube.com/embed/', 'https://www.youtube-nocookie.com/embed/'] as const;
+export const optYoutubeEmbedUrl = z.preprocess(
+  blankToNull,
+  z
+    .string()
+    .refine((v) => YOUTUBE_EMBED_PREFIXES.some((p) => v.startsWith(p)), {
+      message: `video must start with ${YOUTUBE_EMBED_PREFIXES.join(' or ')}`,
+    })
+    .nullable()
+    .optional(),
+);
+
 export const PersonStatus = z.enum(['current', 'alumni']);
 export const ContentStatus = z.enum(['current', 'old']);
 export const PublicationStatus = z.enum(['thesis', 'report', 'preprint', 'publication', 'review', 'proceeding', 'chapter', 'abstract']);
@@ -100,7 +116,7 @@ export const fundingSchema = z.object({
 
 export const newsSchema = z.object({
   id, order: z.number().default(0), tags: strList, people: strList, status: ContentStatus, title: reqStr, date: reqDate,
-  image: optStr, image2: optStr, link: optStr, short: reqStr, abstract: optStr, video: optStr,
+  image: optStr, image2: optStr, link: optStr, short: reqStr, abstract: optStr, video: optYoutubeEmbedUrl,
 }).strict();
 
 export const teachingSchema = z.object({
