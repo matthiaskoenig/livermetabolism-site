@@ -13,6 +13,11 @@
  * .github/workflows/github-data.yml, where the step is `continue-on-error`:
  * a run Google blocks must never fail the GitHub snapshot, and it writes
  * nothing, so the previous good file stays in place.
+ *
+ * The fetch itself is retried up to 3 attempts (30 s, then 60 s apart) when
+ * Google answers with a transient "blocked" — GitHub-hosted runner IPs get an
+ * occasional 403 that a plain retry clears. A `no stats table` (page layout
+ * changed) or any other error is not transient and is never retried.
  */
 import { existsSync, readFileSync, renameSync, writeFileSync } from 'node:fs';
 import { scholarSchema, SCHOLAR_USER_ID, type Scholar } from '../site/lib/scholarSchema.ts';
@@ -38,12 +43,47 @@ function writeJsonAtomic(path: string, data: unknown): number {
   return Buffer.byteLength(text);
 }
 
-export async function runFetch(opts: { userId: string; outPath: string; now?: Date; fetchImpl?: typeof fetch }): Promise<Scholar> {
+/** The wait before each retry, in order (also the max number of retries). */
+const RETRY_DELAYS_MS = [30_000, 60_000];
+
+async function defaultSleep(ms: number): Promise<void> {
+  await new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/**
+ * Retries `fetchProfileHtml` up to 3 attempts total (1 + `RETRY_DELAYS_MS.length`)
+ * when the failure is a transient "blocked" (see `fetchProfileHtml`'s docstring);
+ * a `no stats table` or any other error is never transient and is rethrown
+ * immediately. Logs one line per failed attempt; the last failure is rethrown
+ * so `runFetch` still fails the step and writes nothing. `sleep` is injectable
+ * so the unit test never actually waits.
+ */
+export async function fetchProfileHtmlWithRetry(
+  userId: string,
+  fetchImpl: typeof fetch,
+  sleep: (ms: number) => Promise<void> = defaultSleep,
+): Promise<string> {
+  for (let attempt = 1; ; attempt++) {
+    try {
+      return await fetchProfileHtml(userId, fetchImpl);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      const delay = RETRY_DELAYS_MS[attempt - 1];
+      if (!message.startsWith('blocked') || delay === undefined) throw err;
+      console.warn(`Attempt ${attempt} failed: ${message} — retrying in ${delay / 1000} s`);
+      await sleep(delay);
+    }
+  }
+}
+
+export async function runFetch(opts: {
+  userId: string; outPath: string; now?: Date; fetchImpl?: typeof fetch; sleep?: (ms: number) => Promise<void>;
+}): Promise<Scholar> {
   const now = opts.now ?? new Date();
   console.log(`Fetching ${profileUrl(opts.userId)} as of ${now.toISOString()}`);
 
   const previous = readPrevious(opts.outPath);
-  const html = await fetchProfileHtml(opts.userId, opts.fetchImpl ?? fetch);
+  const html = await fetchProfileHtmlWithRetry(opts.userId, opts.fetchImpl ?? fetch, opts.sleep);
   const parsed = parseProfile(html);
   // Parsing our own output catches a drift between the writer and the site,
   // which reads the file through the very same schema.
