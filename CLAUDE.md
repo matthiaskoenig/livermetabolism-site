@@ -16,6 +16,7 @@ Static site source for the König research group site (https://www.livermetaboli
 - `tests/` — pytest suite for `src/data.py` (model validators, cross-reference checks, end-to-end YAML loading). Run via `uv run pytest tests/`; also runs in CI (the `validate` job of `.github/workflows/site.yml`) on every push/PR.
 - `e2e/` — Playwright specs (`interactions.spec.ts`, `pages.spec.ts`) using base-relative paths (see `playwright.config.ts`, which derives `baseURL` from the `BASE` env var).
 - `nginx/`, `docker-compose*.yml`, `deploy.sh` — self-hosted deployment (see Branches and deployment).
+- `scripts/` — standalone Node/TypeScript tooling, run directly by Node 24 (no build step, so imports inside `scripts/` and into `site/lib/` carry the `.ts` extension). `fetch-github.ts` writes the GitHub snapshot (see "Live GitHub data"), with `lib/repos.ts`, `lib/github-client.ts` and `lib/transform.ts` beside it, each with a co-located `*.test.ts` run by the same vitest config as `site/`; recorded GitHub API responses used by those tests live in `tests/fixtures/github/`.
 - `scripts/fetch-icons.sh` — downloads the Font Awesome Free 6 SVGs into `site/icons/*.svg` (39 SVGs), named by the Font Awesome 4 class names the site uses; `data/tags.yml` keeps the FA4 `icon` names that select among them. `scripts/reindent_yaml.py` — one-off/maintenance fixer for the YAML indentation rule below.
 - `science_communication/` — planning notes and strategy documents (not part of the build).
 
@@ -38,6 +39,22 @@ Astro's content layer does **not** preserve a YAML file's row order (it persists
 `site/lib/data.ts`'s `all<K extends keyof CollectionData>(key: K)` infers its return type from `key` alone via a `CollectionData` interface mapping every collection it serves to its schema type — add a new collection there (not as a caller-supplied generic) when adding a `get*()` wrapper.
 
 Field names are unified across tables for the same concept: `people` is always the internal-person-id list (as opposed to `authors`, the free-text bibliographic string with affiliations/superscripts); `tags` always references `tags.yml`; `homepage` is always "this thing's own/associated external URL" (not `project`); `event`/`event_page` is always the conference/meeting a talk/poster/abstract belongs to (not `meeting`/`webpage`); `tenure` is always a free-text period range like `"2020-2025"` (not `year`/`term`, which were ambiguous with the single-year `int` used on bibliographic entries); `role` is a person's list of positions held (not `position`, which on `Publication` means author-order instead). Country flags are looked up from `country_flags.yml` by `person.country` rather than stored per-person.
+
+## Live GitHub data
+
+The software/research page shows live GitHub data (stars, latest release, issues, last push, release feed, commit activity) that must stay current **without a redeploy**, so it does not go through the Astro build's data pipeline:
+
+- `scripts/fetch-github.ts` reads the `repository` URL of every `data/software.yml` entry (normalised to `owner/name` and deduplicated by `scripts/lib/repos.ts` — two entries may share a repository), calls the GitHub REST API per repository (metadata, up to 20 releases, the latest commit, 52 weeks of commit activity; `scripts/lib/github-client.ts`, four repositories in flight), transforms the responses into the snapshot shape (`scripts/lib/transform.ts`, pure and unit-tested against the fixtures) and writes `github.json` atomically to the path given as its argument (default `./github.json`, gitignored).
+- `.github/workflows/github-data.yml` (`github-data` job, daily at 05:00 UTC plus `workflow_dispatch`) runs the fetch with the Action's default `GITHUB_TOKEN` and commits `github.json` to the **orphan branch `github-data`**, which holds nothing else. `site.yml` runs only on `main` and pull requests, so that push never triggers a build or deploy — keep it that way.
+- The site reads the snapshot from `SNAPSHOT_URL` (`https://raw.githubusercontent.com/.../github-data/github.json`) at build time and again in the browser.
+- `site/lib/githubSchema.ts` is the single source of truth for the snapshot shape (`fetchedAt`, `repos[fullName]`, `releases[fullName]`), shared by the script that writes it and every read; all schemas are `.strict()`, and the fetch parses its own output before writing, so writer and reader can never drift apart silently. `emptySnapshot()` (`fetchedAt` = epoch, so any real snapshot is newer) is the fallback when a read fails.
+- The snapshot carries **text only**: release bodies are reduced to a plain-text `summary` (first paragraph, markdown stripped, ≤300 characters, `summarize()`). Never insert snapshot content as HTML.
+
+Run the fetch locally (the token only needs public read access):
+
+```bash
+GITHUB_TOKEN=$(gh auth token) npm run fetch:github -- github.json
+```
 
 ## UI conventions
 
@@ -67,7 +84,7 @@ npm run dev        # http://localhost:4321
 npm run build      # static output in dist/
 npm run preview    # serve dist/
 npm run check      # astro check (types)
-npm test           # vitest — unit tests live next to the code as site/**/*.test.ts
+npm test           # vitest — unit tests live next to the code as site/**/*.test.ts and scripts/**/*.test.ts
 npm run e2e        # playwright (needs a build); specs in e2e/ use base-relative paths
 # Under an AI-agent environment (e.g. Claude Code) `astro preview` backgrounds itself,
 # so Playwright's webServer cannot attach: start `npx astro preview --background` first,

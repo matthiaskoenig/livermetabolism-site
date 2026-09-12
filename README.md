@@ -45,6 +45,14 @@ uv run pytest tests/
 
 The Astro build validates the same data again through Zod schemas (`site/lib/schemas.ts`) and fails on dangling `people`/`tags`/`publications` references.
 
+## Live GitHub data
+
+`scripts/fetch-github.ts` collects stars, releases, the latest commit and the weekly commit activity of every repository listed in `data/software.yml` and writes them as one snapshot, `github.json`. The workflow `.github/workflows/github-data.yml` runs it daily (05:00 UTC, plus manual dispatch) and commits the result to the orphan branch [`github-data`](https://github.com/matthiaskoenig/livermetabolism-site/tree/github-data), from where the site reads it — at build time and again in the browser — so the numbers stay current without a redeploy. Run it locally with a token (the file is gitignored):
+
+```bash
+GITHUB_TOKEN=$(gh auth token) npm run fetch:github -- github.json
+```
+
 ## Branches and deployment
 
 `main` is protected (ruleset "main": pull requests only, linear history, squash or rebase merges, required checks `validate` and `build`). Work on a branch and open a pull request.
