@@ -1,8 +1,8 @@
 <script setup lang="ts">
-// Total citations over time, one point per daily snapshot (client:visible
-// island, see CitationsPerYearChart.vue for the refresh pattern). The series
-// only grows with the snapshots, so it starts as a single point — the symbol
-// is shown and the caption says when the history began.
+// Total citations over time (client:visible island, see
+// CitationsPerYearChart.vue for the refresh pattern): year-end totals derived
+// from Scholar's histogram, then one point per daily snapshot. The caption
+// says where the points come from.
 import { computed, onMounted, ref } from 'vue';
 import { useChart } from './useChart';
 import { citationHistoryOption, HISTORY_HEIGHT } from '../lib/chartOptions';
@@ -27,6 +27,6 @@ const el = useChart(
 <template>
   <figure class="scholar-plot">
     <div ref="el" class="scholar-chart" role="img" aria-label="Total citations over time"></div>
-    <figcaption>Total citations over time, from the daily snapshots<span v-if="note"> ({{ note }})</span>.</figcaption>
+    <figcaption>Total citations over time<span v-if="note"> ({{ note }})</span>.</figcaption>
   </figure>
 </template>

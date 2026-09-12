@@ -183,12 +183,12 @@ export function citationHistoryOption(rows: HistoryRow[]) {
   const points = [...rows].sort((a, b) => a.date.localeCompare(b.date));
   return {
     animation: false,
-    tooltip: tooltip((ps: { name: string; value: number }[]) => `${ps[0]?.name ?? ''}\n${ps[0]?.value ?? 0} citations`, 'axis'),
+    tooltip: tooltip((ps: { name: string; value: [string, number] }[]) => `${ps[0]?.name ?? ''}\n${ps[0]?.value[1] ?? 0} citations`, 'axis'),
     grid: { left: 8, right: 14, top: 14, bottom: 8, containLabel: true },
+    // a time axis, so the year-end totals and the daily readings sit at their
+    // true distances instead of one slot per point
     xAxis: {
-      type: 'category',
-      data: points.map((r) => r.date),
-      boundaryGap: false,
+      type: 'time',
       axisLabel: { ...axisLabel(), hideOverlap: true },
       axisTick: { show: false },
     },
@@ -197,7 +197,8 @@ export function citationHistoryOption(rows: HistoryRow[]) {
     series: [
       {
         type: 'line',
-        data: points.map((r) => r.citations),
+        // year-end totals as hollow circles, daily readings as filled ones
+        data: points.map((r) => ({ name: r.date, value: [r.date, r.citations] as [string, number], symbol: r.source === 'year' ? 'emptyCircle' : 'circle' })),
         showSymbol: true,
         symbol: 'circle',
         symbolSize: 7,
