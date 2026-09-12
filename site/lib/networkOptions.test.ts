@@ -2,8 +2,8 @@ import { describe, expect, it } from 'vitest';
 import { TAG_PALETTE } from './chartOptions';
 import type { GraphRows } from './graphRows';
 import {
-  CATEGORY_COLOR, CATEGORY_LABEL, CATEGORY_ORDER, DIM_OPACITY, PUBLICATION_SIZE_CAP,
-  networkOption, neighbourhood, publicationSymbolSize,
+  CATEGORY_COLOR, CATEGORY_LABEL, CATEGORY_ORDER, DIM_OPACITY, HUB_RADIUS, PUBLICATION_SIZE_CAP,
+  networkOption, neighbourhood, publicationSymbolSize, type NetworkSize,
 } from './networkOptions';
 
 /**
@@ -37,7 +37,7 @@ const rows: GraphRows = {
   ],
 };
 
-const series = (focus: string | null) => networkOption(rows, focus).series[0]!;
+const series = (focus: string | null, size?: NetworkSize) => networkOption(rows, focus, size).series[0]!;
 const node = (focus: string | null, id: string) => series(focus).data.find((n) => n.id === id)!;
 const link = (focus: string | null, source: string, target: string) =>
   series(focus).links.find((l) => l.source === source && l.target === target)!;
@@ -57,19 +57,89 @@ describe('neighbourhood', () => {
 });
 
 describe('networkOption', () => {
-  it('is a roamable force-layout graph', () => {
+  it('is a pannable force-layout graph that does not trap the wheel', () => {
     const s = series(null);
     expect(s.type).toBe('graph');
     expect(s.layout).toBe('force');
-    expect(networkOption(rows, null).series[0]!.roam).toBe(true);
+    // 'move', not true: the wheel must keep scrolling the page (the component
+    // has zoom buttons instead)
+    expect(s.roam).toBe('move');
     expect(s.draggable).toBe(true);
-    expect(s.force.repulsion).toBe(120);
-    expect(s.force.gravity).toBe(0.08);
+    expect(s.force.repulsion).toBe(200);
+    expect(s.force.gravity).toBe(0.03);
     expect(s.force.friction).toBe(0.6);
     // a topic edge is the long one, every other edge the short one: the force
     // layout maps the range to the link `value` (larger value, shorter edge)
-    expect(s.force.edgeLength).toEqual([60, 160]);
+    expect(s.force.edgeLength).toEqual([60, 220]);
     expect(link(null, 'publication:p1', 'topic:ai').value).toBeLessThan(link(null, 'publication:p1', 'person:ada').value);
+    expect(s.labelLayout).toEqual({ hideOverlap: true });
+  });
+
+  describe('pinned hubs', () => {
+    const size: NetworkSize = { width: 1000, height: 600 };
+    const hubs = () => series(null, size).data.filter((n) => n.type === 'topic');
+
+    it('pins every topic on a pentagon inside the canvas', () => {
+      expect(hubs()).toHaveLength(2); // the fixture has two topics
+      for (const hub of hubs()) {
+        expect(hub.fixed).toBe(true);
+        expect(hub.x).toBeGreaterThan(0);
+        expect(hub.x).toBeLessThan(size.width);
+        expect(hub.y).toBeGreaterThan(0);
+        expect(hub.y).toBeLessThan(size.height);
+        // every hub sits on the same circle around the centre
+        const dx = hub.x! - size.width / 2;
+        const dy = hub.y! - size.height / 2;
+        expect(Math.hypot(dx, dy)).toBeCloseTo(HUB_RADIUS * Math.min(size.width, size.height), 6);
+      }
+      // the first hub is at 12 o'clock
+      expect(hubs()[0]!.x).toBeCloseTo(size.width / 2, 6);
+      expect(hubs()[0]!.y).toBeLessThan(size.height / 2);
+    });
+
+    it('keeps the hubs at least 200 px apart from each other', () => {
+      const points = hubs().map((h) => [h.x!, h.y!] as const);
+      for (let i = 0; i < points.length; i++) {
+        for (let j = i + 1; j < points.length; j++) {
+          expect(Math.hypot(points[i]![0] - points[j]![0], points[i]![1] - points[j]![1])).toBeGreaterThanOrEqual(200);
+        }
+      }
+    });
+
+    it('keeps five hubs on the real canvas well clear of each other', () => {
+      // the site has five research areas; 1116x630 is the live chart at a
+      // 1280x900 viewport
+      const five: GraphRows = {
+        nodes: ['one', 'two', 'three', 'four', 'five'].map((slug) => ({
+          id: `topic:${slug}`, type: 'topic' as const, label: slug, detail: slug, href: `/#${slug}`,
+          image: null, topics: [slug], value: 0,
+        })),
+        links: [],
+      };
+      const hubs = networkOption(five, null, { width: 1116, height: 630 }).series[0]!.data;
+      expect(hubs).toHaveLength(5);
+      for (let i = 0; i < hubs.length; i++) {
+        for (let j = i + 1; j < hubs.length; j++) {
+          expect(Math.hypot(hubs[i]!.x! - hubs[j]!.x!, hubs[i]!.y! - hubs[j]!.y!)).toBeGreaterThanOrEqual(200);
+        }
+      }
+    });
+
+    it('pins nothing without a size, or with an empty one', () => {
+      for (const s of [series(null), series(null, { width: 0, height: 600 })]) {
+        for (const n of s.data) {
+          expect(n.x).toBeUndefined();
+          expect(n.y).toBeUndefined();
+          expect(n.fixed).toBeUndefined();
+        }
+      }
+    });
+
+    it('pins only the topics', () => {
+      for (const n of series(null, size).data.filter((n) => n.type !== 'topic')) {
+        expect(n.fixed).toBeUndefined();
+      }
+    });
   });
 
   it('has the five node categories in legend order, with their colours', () => {
@@ -92,10 +162,11 @@ describe('networkOption', () => {
   });
 
   it('sizes a publication by its citation count and the rest by type', () => {
-    expect(publicationSymbolSize(0)).toBe(8);
+    expect(publicationSymbolSize(0)).toBe(6);
     expect(publicationSymbolSize(1e6)).toBe(PUBLICATION_SIZE_CAP);
-    expect(publicationSymbolSize(17)).toBeCloseTo(8 + 4 * Math.log(18), 6);
-    expect(node(null, 'publication:p2').symbolSize).toBe(8);
+    expect(PUBLICATION_SIZE_CAP).toBe(20);
+    expect(publicationSymbolSize(17)).toBeCloseTo(6 + 3 * Math.log(18), 6);
+    expect(node(null, 'publication:p2').symbolSize).toBe(6);
     expect(node(null, 'publication:p1').symbolSize).toBeCloseTo(publicationSymbolSize(17), 6);
     // the other types carry a degree in `value` — never a size
     const topic = node(null, 'topic:ai');
@@ -118,6 +189,9 @@ describe('networkOption', () => {
     expect(s.emphasis.label.show).toBe(true);
     expect(s.emphasis.focus).toBe('adjacency');
     expect(node(null, 'topic:ai').label!.show).toBe(true);
+    // below the node and on a white pill, so it reads over the artwork
+    expect(node(null, 'topic:ai').label!.position).toBe('bottom');
+    expect(node(null, 'topic:ai').label!.backgroundColor).toBe('#fff');
     expect(node(null, 'person:ada').label).toBeUndefined();
     // the node name is what ECharts draws; the id is what the links resolve by
     expect(node(null, 'person:ada').name).toBe('Ada Lovelace');
@@ -139,8 +213,12 @@ describe('networkOption', () => {
   it('renders the tooltip inside the canvas as "label\\ntype · detail"', () => {
     const { tooltip } = networkOption(rows, null);
     expect(tooltip.renderMode).toBe('richText');
+    // a publication also gets its citation count, the only `value` that means
+    // something to a reader (every other type carries a degree)
     expect(tooltip.formatter({ dataType: 'node', data: node(null, 'publication:p1') }))
-      .toBe('A paper on AI\nPublication · 2026 · Nature');
+      .toBe('A paper on AI\nPublication · 2026 · Nature\n17 citations');
+    expect(tooltip.formatter({ dataType: 'node', data: node(null, 'publication:p2') }))
+      .toBe('A paper on PK\nPublication · 2020 · JPKPD\n0 citations');
     expect(tooltip.formatter({ dataType: 'node', data: node(null, 'topic:ai') }))
       .toBe('AI\nResearch area · Machine learning for the liver');
     // a project's detail is its title, which is already the label: no second time
