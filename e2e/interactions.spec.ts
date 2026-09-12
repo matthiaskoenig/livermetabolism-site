@@ -117,3 +117,28 @@ test('mobile navbar toggles', async ({ page }) => {
   await page.locator('#navbar-toggler').click();
   await expect(page.locator('#navbar')).toBeVisible();
 });
+
+test('research page renders the live GitHub data: stats lines, release feed, charts', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto('research/');
+
+  // the stats line is server-rendered from the build's snapshot and patched
+  // in place by SoftwareLive.astro's script (two cards share this repository)
+  const release = page.locator('.software-stats[data-repo="matthiaskoenig/sbmlutils"] [data-field="release"]').first();
+  await expect(release).toHaveText(/\d/);
+  await expect(page.locator('[data-github-note] [data-field="updated"]')).not.toBeEmpty();
+
+  expect(await page.locator('#releases .release-row').count()).toBeGreaterThan(0);
+
+  // the charts are client:visible islands: nothing is drawn before each one
+  // scrolls into view, so visit both sections
+  await page.locator('#releases .github-chart').scrollIntoViewIfNeeded();
+  await expect(page.locator('#releases canvas').first()).toBeVisible();
+  await page.locator('#activity').scrollIntoViewIfNeeded();
+  await expect(page.locator('#activity canvas').first()).toBeVisible();
+
+  // no CSP violation from the snapshot fetch or from ECharts (see astro.config.mjs)
+  expect(errors).toEqual([]);
+});

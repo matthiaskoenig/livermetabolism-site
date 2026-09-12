@@ -1,0 +1,34 @@
+---
+// The "Data from GitHub, updated …" note plus the script that keeps the
+// server-rendered GitHub bits of the research page current: it re-renders the
+// relative dates against today and, when the snapshot on the `github-data`
+// branch is newer than the one this page was built from, patches every
+// `.software-stats` line in place. Plain TypeScript in a bundled <script>,
+// not a Vue island (see CLAUDE.md): the stats lines are static HTML rendered
+// by SoftwareCard.vue and only their text nodes change.
+import { relativeDate } from '../lib/githubRows';
+
+interface Props { fetchedAt: string }
+const { fetchedAt } = Astro.props;
+const updated = relativeDate(fetchedAt);
+---
+<p class="github-note" data-github-note>
+  Data from <a href="https://github.com/matthiaskoenig" target="_blank" rel="noopener noreferrer">GitHub</a>, updated
+  <time data-field="updated" data-iso={fetchedAt} datetime={fetchedAt}>{updated || 'never'}</time>.
+</p>
+
+<script>
+  import { isFresherThan, loadLiveSnapshot } from '../lib/githubLive';
+  import { applyStats, refreshRelativeDates } from '../lib/githubStats';
+
+  const note = document.querySelector<HTMLElement>('[data-github-note] [data-field="updated"]');
+  if (note) {
+    // 1. the build may be weeks old: re-date what it rendered
+    refreshRelativeDates();
+    // 2. and take the newer snapshot if there is one (shared, memoized fetch)
+    const builtAt = note.dataset.iso ?? '';
+    void loadLiveSnapshot().then((snapshot) => {
+      if (isFresherThan(snapshot, builtAt)) applyStats(snapshot);
+    });
+  }
+</script>

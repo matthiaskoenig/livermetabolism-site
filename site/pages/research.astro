@@ -1,10 +1,18 @@
 ---
 import Base from '../layouts/Base.astro';
+import CommitActivityChart from '../components/CommitActivityChart.vue';
 import EditorCard from '../components/EditorCard.vue';
 import FundingCard from '../components/FundingCard.vue';
+import ReleaseFeed from '../components/ReleaseFeed.vue';
+import ReleaseTimeline from '../components/ReleaseTimeline.vue';
 import SoftwareCard from '../components/SoftwareCard.vue';
+import SoftwareLive from '../components/SoftwareLive.astro';
+import StarsChart from '../components/StarsChart.vue';
 import TagFilter from '../components/TagFilter.vue';
+import { repoFullName } from '../../scripts/lib/repos';
 import { getEditors, getFunding, getPeopleMap, getSoftware, getTags } from '../lib/data';
+import { loadSnapshot } from '../lib/github';
+import { activityRows, latestReleases, releaseTimelineRows, starsRows, statsFor } from '../lib/githubRows';
 import { asset } from '../lib/url';
 import { toTagFilterEntries } from '../lib/views';
 
@@ -13,13 +21,51 @@ const avatarBase = asset('image/people/128/');
 const tagFilterEntries = toTagFilterEntries(tagInfo);
 // three independent TagFilter islands; each reads the same ?tag= on mount,
 // so a /research/?tag=AI link still pre-filters all three grids
+
+// Live GitHub data (see CLAUDE.md, "Live GitHub data"): read the daily
+// snapshot once here and server-render the stats lines, the release feed and
+// the chart rows from it. The islands below refetch it in the browser, so the
+// page keeps up with the data branch without a redeploy; a failed read yields
+// an empty snapshot and the GitHub parts simply render empty.
+const snapshot = await loadSnapshot();
+const repos = [...new Set(software.map((s) => (s.repository ? repoFullName(s.repository) : null)).filter((r): r is string => r !== null))];
+const releaseRows = latestReleases(snapshot, repos);
+const timelineRows = releaseTimelineRows(snapshot, repos);
+const stars = starsRows(snapshot, repos);
+const activity = activityRows(snapshot, repos);
 ---
 <Base title="Research" sectionid="research">
   <h2 id="software">Software</h2>
   <TagFilter client:idle id="software" tags={tagFilterEntries} target="software-grid" />
   <div class="project-grid" id="software-grid">
-    {software.map((item) => <SoftwareCard item={item} tagInfo={tagInfo} peopleMap={peopleMap} imageBase={asset('image/software/')} avatarBase={avatarBase} />)}
+    {software.map((item) => (
+      <SoftwareCard
+        item={item}
+        tagInfo={tagInfo}
+        peopleMap={peopleMap}
+        imageBase={asset('image/software/')}
+        avatarBase={avatarBase}
+        stats={item.repository ? statsFor(snapshot, repoFullName(item.repository) ?? '') : null}
+      />
+    ))}
   </div>
+  <SoftwareLive fetchedAt={snapshot.fetchedAt} />
+
+  <section id="releases">
+    <h2>Releases</h2>
+    <h3>Latest releases</h3>
+    <ReleaseFeed client:visible rows={releaseRows} repos={repos} fetchedAt={snapshot.fetchedAt} />
+    <h3>Release history</h3>
+    <ReleaseTimeline client:visible rows={timelineRows} repos={repos} fetchedAt={snapshot.fetchedAt} />
+  </section>
+
+  <section id="activity">
+    <h2>Activity</h2>
+    <h3>Commit activity</h3>
+    <CommitActivityChart client:visible data={activity} repos={repos} fetchedAt={snapshot.fetchedAt} />
+    <h3>Stars</h3>
+    <StarsChart client:visible rows={stars} repos={repos} fetchedAt={snapshot.fetchedAt} />
+  </section>
 
   <h2 id="funding">Funding</h2>
   <TagFilter client:idle id="funding" tags={tagFilterEntries} target="funding-grid" />
