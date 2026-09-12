@@ -1,12 +1,20 @@
 ---
 import Base from '../layouts/Base.astro';
-import NewsSection from '../components/NewsSection.vue';
+import NewsCard from '../components/NewsCard.vue';
+import NewsModal from '../components/NewsModal.vue';
+import TagFilter from '../components/TagFilter.vue';
 import { getNews, getPeople, getPeopleMap, getTags } from '../lib/data';
 import { asset, url } from '../lib/url';
 
 const [tagInfo, people, peopleMap, news] = await Promise.all([getTags(), getPeople(), getPeopleMap(), getNews()]);
-const peopleLite = people.map(({ id, name }) => ({ id, name }));
+const imageBase = asset('image/news/');
+const avatarBase = asset('image/people/128/');
+const peopleUrl = url('/people/');
 ---
 <Base title="News" sectionid="news">
-  <NewsSection client:visible items={news} tagInfo={tagInfo} peopleMap={peopleMap} people={peopleLite} imageBase={asset('image/news/')} avatarBase={asset('image/people/128/')} peopleUrl={url('/people/')} />
+  <TagFilter client:idle id="news" tags={tagInfo} target="news-grid" />
+  <div class="project-grid" id="news-grid">
+    {news.map((n) => <NewsCard item={n} tagInfo={tagInfo} peopleMap={peopleMap} imageBase={imageBase} avatarBase={avatarBase} />)}
+  </div>
+  {news.map((n) => <NewsModal item={n} tagInfo={tagInfo} people={people} imageBase={imageBase} peopleUrl={peopleUrl} />)}
 </Base>
