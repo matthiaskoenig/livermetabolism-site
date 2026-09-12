@@ -35,17 +35,6 @@ describe('Modal', () => {
     // it no longer re-checks the hash on mount either: that is ModalRouter's job
     w.unmount();
   });
-
-  it('emits open/close for a hydrated user of those events (SiteSearch)', () => {
-    const w = mount(Modal, { props: { id: 'm1', title: 'M1' }, attachTo: document.body });
-    const dlg = w.find('dialog').element as HTMLDialogElement;
-    dlg.showModal();
-    dlg.dispatchEvent(new CustomEvent('modal:open'));
-    expect(w.emitted('open')).toHaveLength(1);
-    dlg.close();
-    expect(w.emitted('close')).toHaveLength(1);
-    w.unmount();
-  });
 });
 
 describe('ModalRouter', () => {

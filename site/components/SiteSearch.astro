@@ -1,0 +1,117 @@
+---
+// Site search: plain TypeScript, no Vue island (this is on every page).
+// The dialog is static markup; opening/closing goes through the shared
+// modal router (the navbar button carries data-modal-target), and the
+// index is fetched lazily the first time the dialog opens.
+interface Props { searchUrl: string }
+const { searchUrl } = Astro.props;
+const MODAL_ID = 'site-search-modal';
+---
+<dialog id={MODAL_ID} class="modal modal-centered" aria-labelledby={`${MODAL_ID}-label`} data-search-url={searchUrl}>
+  <div class="modal-header">
+    <h5 class="modal-title" id={`${MODAL_ID}-label`}>Search</h5>
+    <button type="button" class="btn-close" data-modal-close aria-label="Close"></button>
+  </div>
+  <div class="modal-body">
+    <input type="search" id="site-search-input" class="form-control site-search-input"
+      placeholder="Search publications, people, projects, software, news, ..." autocomplete="off" aria-label="Search" />
+    <div id="site-search-results" class="site-search-results">
+      <p class="site-search-hint">Start typing to search publications, people, projects, software, news, and more.</p>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  import { iconSvg } from '../lib/icons';
+  import { closeModal, openModal } from '../lib/modals';
+  import { rankRecords, SEARCH_TYPE_ICONS, type SearchRecord } from '../lib/search';
+
+  const MODAL_ID = 'site-search-modal';
+  const HINT = 'Start typing to search publications, people, projects, software, news, and more.';
+
+  function init(dialog: HTMLElement, input: HTMLInputElement, list: HTMLElement): void {
+    const searchUrl = dialog.dataset.searchUrl ?? '';
+    let records: SearchRecord[] | null = null;
+    let failed = false;
+    let loading: Promise<void> | null = null;
+
+    function load(): Promise<void> {
+      if (!loading) {
+        loading = fetch(searchUrl)
+          .then((r) => r.json())
+          .then((data: SearchRecord[]) => { records = data; })
+          .catch(() => { failed = true; });
+      }
+      return loading;
+    }
+
+    function message(className: string, text: string): HTMLParagraphElement {
+      const p = document.createElement('p');
+      p.className = className;
+      p.textContent = text;
+      return p;
+    }
+
+    /** Built element by element - no record field is ever interpolated into HTML. */
+    function resultLink(record: SearchRecord): HTMLAnchorElement {
+      const link = document.createElement('a');
+      link.className = 'site-search-result';
+      link.href = record.url;
+      const icon = document.createElement('span');
+      icon.className = 'icon-wrap';
+      // iconSvg only emits <use> references to the page's sprite and rejects
+      // names outside its allow-list, so this markup never carries record data
+      icon.insertAdjacentHTML('beforeend', iconSvg(SEARCH_TYPE_ICONS[record.type] ?? 'file-o'));
+      const body = document.createElement('span');
+      body.className = 'site-search-result-body';
+      const title = document.createElement('span');
+      title.className = 'site-search-result-title';
+      title.textContent = record.title;
+      const type = document.createElement('span');
+      type.className = 'site-search-result-type';
+      type.textContent = record.type;
+      body.append(title, type);
+      link.append(icon, body);
+      return link;
+    }
+
+    function render(): void {
+      const query = input.value.trim();
+      list.replaceChildren();
+      if (failed) { list.append(message('site-search-empty', 'Search is temporarily unavailable.')); return; }
+      if (!query) { list.append(message('site-search-hint', HINT)); return; }
+      const found = records ? rankRecords(records, query) : [];
+      if (found.length === 0) { list.append(message('site-search-empty', `No results for “${query}”.`)); return; }
+      list.append(...found.map(resultLink));
+    }
+
+    input.addEventListener('input', render);
+
+    // the modal router opens the dialog and announces it with modal:open
+    dialog.addEventListener('modal:open', () => {
+      input.focus();
+      load().then(render);
+    });
+    dialog.addEventListener('close', () => {
+      input.value = '';
+      render();
+    });
+
+    list.addEventListener('click', (e) => {
+      if ((e.target as HTMLElement | null)?.closest('.site-search-result')) closeModal(MODAL_ID);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      const tag = document.activeElement?.tagName;
+      const inField = tag === 'INPUT' || tag === 'TEXTAREA';
+      const isSlash = e.key === '/' && !inField;
+      const isCtrlK = (e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k';
+      if (isSlash || isCtrlK) { e.preventDefault(); openModal(MODAL_ID); }
+    });
+  }
+
+  const dialog = document.getElementById(MODAL_ID);
+  const input = document.getElementById('site-search-input');
+  const list = document.getElementById('site-search-results');
+  if (dialog && input instanceof HTMLInputElement && list) init(dialog, input, list);
+</script>

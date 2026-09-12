@@ -70,9 +70,8 @@ test('research pre-applies ?tag= to each of its three filter bars', async ({ pag
 
 test('search opens with "/", finds a publication, result navigates', async ({ page }) => {
   await page.goto('');
-  // the search island hydrates client:idle; Astro drops the `ssr` attribute
-  // once the keyboard shortcut listener is live (slow CI runners race this)
-  await page.locator('astro-island[component-url*="SiteSearch"]:not([ssr])').waitFor({ state: 'attached' });
+  // the search script is a bundled module: it runs before the load event
+  // page.goto() waits for, so the shortcut listener is live here
   await page.keyboard.press('/');
   await expect(page.locator('dialog#site-search-modal')).toHaveAttribute('open', '');
   await page.locator('#site-search-input').fill('liver');

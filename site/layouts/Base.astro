@@ -5,7 +5,7 @@ import IconSprite from '../components/IconSprite.astro';
 import TopNav from '../components/TopNav.astro';
 import Footer from '../components/Footer.astro';
 import ModalRouter from '../components/ModalRouter.vue';
-import SiteSearch from '../components/SiteSearch.vue';
+import SiteSearch from '../components/SiteSearch.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import { url } from '../lib/url';
 
@@ -30,7 +30,7 @@ const isHome = Astro.url.pathname === url('/');
     <Footer home={isHome} />
     <ModalRouter client:idle />
     <CookieConsent gaId="G-FDNGDW6G09" privacyUrl={url('/privacy/')} />
-    <SiteSearch client:idle searchUrl={url('/search.json')} />
+    <SiteSearch searchUrl={url('/search.json')} />
     <slot name="global" />
   </body>
 </html>
