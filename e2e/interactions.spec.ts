@@ -39,11 +39,19 @@ test('alumni hover card shows on hover', async ({ page }) => {
 test('tag filter hides non-matching publications and honours ?tag=', async ({ page }) => {
   await page.goto('publications/?tag=AI');
   await expect(page.locator('#publication-tag-filter .tag-filter-btn.active')).toHaveText(/AI/);
-  const hidden = await page.locator('#publication-list tr[data-tags]:not([data-tags*="AI"])').evaluateAll((rows) => rows.filter((r) => (r as HTMLElement).style.display === 'none').length);
-  const nonMatching = await page.locator('#publication-list tr[data-tags]:not([data-tags*="AI"])').count();
-  expect(hidden).toBe(nonMatching);
+  // rows are static HTML now; TagFilter toggles the `hidden` attribute on them
+  const nonMatching = page.locator('#publication-list tr[data-tags]:not([data-tags*="AI"])');
+  const hidden = await nonMatching.evaluateAll((rows) => rows.filter((r) => (r as HTMLElement).hidden).length);
+  expect(hidden).toBe(await nonMatching.count());
+  expect(hidden).toBeGreaterThan(0);
+  // a year group with no matching row left hides too
+  const emptyGroups = await page.locator('#publication-list .pub-year-group').evaluateAll(
+    (groups) => groups.filter((g) => !g.querySelector('tr[data-tags]:not([hidden])')).every((g) => (g as HTMLElement).hidden),
+  );
+  expect(emptyGroups).toBe(true);
   await page.locator('#publication-tag-filter [data-tag="all"]').click();
   await expect(page.locator('#publication-list tr[data-tags]').first()).toBeVisible();
+  await expect(page.locator('#publication-list tr[data-tags][hidden]')).toHaveCount(0);
 });
 
 test('search opens with "/", finds a publication, result navigates', async ({ page }) => {
