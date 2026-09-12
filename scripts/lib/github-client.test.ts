@@ -102,18 +102,32 @@ describe('GitHubClient.commitActivity', () => {
     expect(f.calls).toHaveLength(3);
   });
 
-  it('gives up after five attempts and returns an empty list', async () => {
+  it('gives up after eight attempts and returns an empty list', async () => {
     const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
-    const { c, f } = client(Array.from({ length: 5 }, () => ({ status: 202, text: '{}' })));
+    const { c, f } = client(Array.from({ length: 8 }, () => ({ status: 202, text: '{}' })));
     await expect(c.commitActivity('o/r')).resolves.toEqual([]);
-    expect(f.calls).toHaveLength(5);
+    expect(f.calls).toHaveLength(8);
     expect(warn).toHaveBeenCalledWith(expect.stringContaining('o/r'));
+    warn.mockRestore();
+  });
+
+  it('falls back to the participation endpoint, which is cached separately', async () => {
+    const { c, f } = client([{ status: 200, body: { all: [1, 2, 3], owner: [1, 0, 0] } }]);
+    await expect(c.participation('o/r')).resolves.toEqual([1, 2, 3]);
+    expect(f.calls[0]).toBe('https://api.github.com/repos/o/r/stats/participation');
+  });
+
+  it('reports participation as unavailable after three 202s', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const { c, f } = client(Array.from({ length: 3 }, () => ({ status: 202, text: '{}' })));
+    await expect(c.participation('o/r')).resolves.toBeNull();
+    expect(f.calls).toHaveLength(3);
     warn.mockRestore();
   });
 
   it('treats the empty 204 of a repository without commits as no activity', async () => {
     const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
-    const { c } = client(Array.from({ length: 5 }, () => ({ status: 204 })));
+    const { c } = client(Array.from({ length: 8 }, () => ({ status: 204 })));
     await expect(c.commitActivity('o/r')).resolves.toEqual([]);
     warn.mockRestore();
   });

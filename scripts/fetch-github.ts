@@ -16,7 +16,7 @@ import { fileURLToPath } from 'node:url';
 import { snapshotSchema, type Snapshot } from '../site/lib/githubSchema.ts';
 import { GitHubClient } from './lib/github-client.ts';
 import { reposFromSoftware } from './lib/repos.ts';
-import { buildSnapshot, type RepoFetch } from './lib/transform.ts';
+import { buildSnapshot, weeksFromParticipation, type RepoFetch } from './lib/transform.ts';
 
 const CONCURRENCY = 4;
 
@@ -48,7 +48,7 @@ export async function runFetch(opts: {
   softwarePath: string;
   outPath: string;
   now?: Date;
-  client?: Pick<GitHubClient, 'repo' | 'releases' | 'latestCommit' | 'commitActivity'>;
+  client?: Pick<GitHubClient, 'repo' | 'releases' | 'latestCommit' | 'commitActivity' | 'participation'>;
 }): Promise<Snapshot> {
   const fetchedAt = (opts.now ?? new Date()).toISOString();
   const client = opts.client ?? new GitHubClient({ token: opts.token });
@@ -61,7 +61,14 @@ export async function runFetch(opts: {
     const repo = await client.repo(fullName);
     const releases = await client.releases(fullName);
     const latestCommit = await client.latestCommit(fullName);
-    const commitActivity = await client.commitActivity(fullName);
+    let commitActivity = await client.commitActivity(fullName);
+    if (!commitActivity.length) {
+      // /stats/commit_activity is cold for a repository that was pushed to
+      // recently; /stats/participation holds the same weekly totals and is
+      // cached separately, so it usually answers when the other does not.
+      const participation = await client.participation(fullName);
+      if (participation?.length) commitActivity = weeksFromParticipation(participation, new Date(fetchedAt));
+    }
     console.log(`  ${fullName}: ${repo.stargazers_count} stars, ${releases.length} releases, ${commitActivity.length} activity weeks`);
     return { fullName, repo, releases, latestCommit, commitActivity };
   });

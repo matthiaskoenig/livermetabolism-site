@@ -35,9 +35,15 @@ export class GitHubNetworkError extends Error {
 
 const RETRY_STATUS = new Set([403, 429, 500, 502, 503, 504]);
 const BACKOFF_MS = [1000, 2000, 4000];
-/** GitHub computes the statistics endpoints asynchronously and answers 202 meanwhile. */
-const STATS_ATTEMPTS = 5;
-const STATS_BACKOFF_MS = 2000;
+/**
+ * GitHub computes the statistics endpoints asynchronously and answers 202
+ * meanwhile. A repository pushed to recently (this one is, every day, by the
+ * snapshot commit itself) has a cold cache on every run, and computing it can
+ * take the better part of a minute, so the wait is generous.
+ */
+const STATS_ATTEMPTS = 8;
+const PARTICIPATION_ATTEMPTS = 3;
+const STATS_BACKOFF_MS = [2000, 4000, 6000, 8000, 8000, 8000, 8000];
 const TIMEOUT_MS = 30_000;
 
 // ---------------------------------------------------------------------------
@@ -87,6 +93,12 @@ export const apiCommitActivitySchema = z.object({
   week: z.number(),
   total: z.number(),
   days: z.array(z.number()).default([]),
+});
+
+/** `/stats/participation`: weekly commit totals of the last 52 weeks, without dates. */
+export const apiParticipationSchema = z.object({
+  all: z.array(z.number()),
+  owner: z.array(z.number()).default([]),
 });
 
 export type ApiRepo = z.output<typeof apiRepoSchema>;
@@ -184,21 +196,39 @@ export class GitHubClient {
   }
 
   /**
-   * Commits per week for the last year. GitHub computes this asynchronously
-   * and answers 202 with an empty body while the cache is cold, so the call
-   * is repeated a few times; an empty list is returned if it never warms up
-   * (or the repository has no commits, which answers 204).
+   * One of the statistics endpoints, which GitHub computes asynchronously and
+   * answers with 202 and an empty body while the cache is cold (204 when the
+   * repository has no commits at all). Returns null if it never warms up.
+   */
+  private async stats(fullName: string, endpoint: string, attempts: number): Promise<unknown | null> {
+    for (let attempt = 0; attempt < attempts; attempt++) {
+      const { status, body } = await this.request(`/repos/${fullName}/stats/${endpoint}`);
+      if (status !== 202 && body != null) return body;
+      if (attempt < attempts - 1) await this.sleep(STATS_BACKOFF_MS[Math.min(attempt, STATS_BACKOFF_MS.length - 1)]);
+    }
+    console.warn(`${endpoint} for ${fullName} was still being computed after ${attempts} attempts`);
+    return null;
+  }
+
+  /**
+   * Commits per week for the last year, week by week. An empty list is
+   * returned when GitHub does not produce the statistics in time — the caller
+   * then falls back to `participation()`, which is computed separately and is
+   * usually ready when this one is not.
    */
   async commitActivity(fullName: string): Promise<ApiCommitActivity[]> {
-    for (let attempt = 0; attempt < STATS_ATTEMPTS; attempt++) {
-      const { status, body } = await this.request(`/repos/${fullName}/stats/commit_activity`);
-      if (status === 202 || body == null) {
-        if (attempt < STATS_ATTEMPTS - 1) await this.sleep(STATS_BACKOFF_MS * (attempt + 1));
-        continue;
-      }
-      return z.array(apiCommitActivitySchema).parse(body);
-    }
-    console.warn(`commit activity for ${fullName} was still being computed after ${STATS_ATTEMPTS} attempts`);
-    return [];
+    const body = await this.stats(fullName, 'commit_activity', STATS_ATTEMPTS);
+    return body == null ? [] : z.array(apiCommitActivitySchema).parse(body);
   }
+
+  /**
+   * The weekly commit totals of the last 52 weeks (`all`), oldest first and
+   * ending with the current week, without the week dates. GitHub's second,
+   * independently cached view of the same numbers; null when unavailable.
+   */
+  async participation(fullName: string): Promise<number[] | null> {
+    const body = await this.stats(fullName, 'participation', PARTICIPATION_ATTEMPTS);
+    return body == null ? null : apiParticipationSchema.parse(body).all;
+  }
+
 }
