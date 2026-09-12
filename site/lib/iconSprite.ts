@@ -28,5 +28,9 @@ export function iconSprite(): string {
       return toSymbol(name, raw);
     })
     .join('');
-  return `<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">${symbols}</svg>`;
+  // CSP forbids inline `style` attributes injected via raw HTML (Astro can
+  // only hash style/script content it sees statically in .astro templates,
+  // not markup produced by a helper like this one), so hide the sprite with
+  // a stylesheet class instead (`.icon-sprite` in global.css).
+  return `<svg xmlns="http://www.w3.org/2000/svg" class="icon-sprite" aria-hidden="true">${symbols}</svg>`;
 }

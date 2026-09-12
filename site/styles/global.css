@@ -95,6 +95,11 @@
   /* Icon.vue wraps the inline svg; make the wrapper layout-transparent */
   .icon-wrap { display: contents; }
   svg.icon { width: 1em; height: 1em; vertical-align: -0.125em; }
+  /* IconSprite.astro's hidden <symbol> definitions: a class instead of an
+     inline `style` attribute, since that markup is injected via `set:html`
+     and Astro's CSP hasher only sees literal style/script content in
+     .astro templates, not raw strings produced by a helper. */
+  .icon-sprite { display: none; }
 }
 
 /* ------------------------------------------------------------------
