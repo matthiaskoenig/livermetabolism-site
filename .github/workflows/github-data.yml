@@ -1,11 +1,13 @@
 name: GitHub data
 
-# Daily snapshot of the GitHub data (stars, releases, commits, activity) of
-# every repository in data/software.yml, committed as github.json to the
-# orphan branch `github-data`. The research page reads it from the raw URL at
-# build time and in the browser, so the numbers stay fresh without a redeploy.
-# The site workflow only runs on main and pull requests, so this push never
-# triggers a deployment.
+# Daily snapshots committed to the orphan branch `github-data`:
+#   github.json  — stars, releases, commits and activity of every repository in
+#                  data/software.yml, read by the research page.
+#   scholar.json — the citation metrics of the Google Scholar profile, read by
+#                  the publications page.
+# Both are read from the raw URL at build time and in the browser, so the
+# numbers stay fresh without a redeploy. The site workflow only runs on main
+# and pull requests, so this push never triggers a deployment.
 
 on:
   schedule:
@@ -34,7 +36,10 @@ jobs:
       - run: npm run fetch:github -- github.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Commit to the github-data branch
+      # The worktree is prepared before the Scholar fetch so that the previous
+      # scholar.json is in place: the script reads its accumulated history from
+      # the very path it writes. A missing file is normal on the first run.
+      - name: Prepare the github-data worktree
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -46,9 +51,17 @@ jobs:
             git -C ../data checkout --orphan github-data
             git -C ../data rm -rfq . || true
           fi
+      # Scholar has no API and may block the runner. That must never fail the
+      # GitHub snapshot, and a failed fetch writes nothing, so the previous
+      # scholar.json is committed again unchanged.
+      - name: Fetch Google Scholar
+        continue-on-error: true
+        run: npm run fetch:scholar -- ../data/scholar.json
+      - name: Commit to the github-data branch
+        run: |
           cp github.json ../data/github.json
           cd ../data
-          git add github.json
+          git add github.json scholar.json 2>/dev/null || git add github.json
           if git diff --cached --quiet; then echo "no change"; exit 0; fi
-          git commit -m "Update GitHub snapshot $(date -u +%Y-%m-%dT%H:%MZ)"
+          git commit -m "Update data snapshots $(date -u +%Y-%m-%dT%H:%MZ)"
           git push origin HEAD:github-data
