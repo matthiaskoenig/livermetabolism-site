@@ -1,0 +1,48 @@
+---
+// Cookie banner: plain TypeScript, no Vue island (this is on every page).
+// The banner renders hidden and the script below unhides it unless a
+// choice is already stored, so a returning visitor never sees it flash.
+interface Props { gaId: string; privacyUrl: string }
+const { gaId, privacyUrl } = Astro.props;
+---
+<div id="cookie-consent-banner" class="cookie-consent" data-ga-id={gaId} hidden>
+  <p class="cookie-consent-text">
+    This site uses Google Analytics to understand how it's used. It only runs if you accept — see the <a href={privacyUrl}>privacy policy</a> for details.
+  </p>
+  <div class="cookie-consent-actions">
+    <button type="button" id="cookie-consent-decline" class="btn btn-outline-secondary btn-sm">Decline</button>
+    <button type="button" id="cookie-consent-accept" class="btn btn-primary btn-sm">Accept</button>
+  </div>
+</div>
+
+<script>
+  import { clearConsent, deleteGoogleAnalyticsCookies, getConsent, loadGoogleAnalytics, setConsent } from '../lib/consent';
+
+  const banner = document.getElementById('cookie-consent-banner');
+  if (banner) {
+    const gaId = banner.dataset.gaId ?? '';
+    const show = (visible: boolean) => { banner.hidden = !visible; };
+
+    document.getElementById('cookie-consent-accept')?.addEventListener('click', () => {
+      setConsent('accepted');
+      loadGoogleAnalytics(gaId);
+      show(false);
+    });
+    document.getElementById('cookie-consent-decline')?.addEventListener('click', () => {
+      setConsent('declined');
+      deleteGoogleAnalyticsCookies();
+      show(false);
+    });
+    // "Cookie-Einstellungen ändern" button on /privacy/ — withdrawing must be as easy as giving
+    document.getElementById('cookie-consent-reset')?.addEventListener('click', () => {
+      clearConsent();
+      deleteGoogleAnalyticsCookies();
+      window.gaLoaded = false;
+      show(true);
+    });
+
+    const consent = getConsent();
+    if (consent === 'accepted') loadGoogleAnalytics(gaId);
+    else if (consent !== 'declined') show(true);
+  }
+</script>

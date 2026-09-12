@@ -100,6 +100,17 @@ test('analytics loads only after consent', async ({ page }) => {
   expect(errors).toEqual([]);
 });
 
+test('privacy page reset button brings the banner back after declining', async ({ page }) => {
+  await page.goto('privacy/');
+  await expect(page.locator('#cookie-consent-banner')).toBeVisible();
+  await page.locator('#cookie-consent-decline').click();
+  await expect(page.locator('#cookie-consent-banner')).toBeHidden();
+  await page.reload();
+  await expect(page.locator('#cookie-consent-banner')).toBeHidden();
+  await page.locator('#cookie-consent-reset').click();
+  await expect(page.locator('#cookie-consent-banner')).toBeVisible();
+});
+
 test('mobile navbar toggles', async ({ page }) => {
   await page.setViewportSize({ width: 400, height: 800 });
   await page.goto('');
