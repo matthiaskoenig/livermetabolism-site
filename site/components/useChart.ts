@@ -1,9 +1,9 @@
 /**
- * Shared ECharts setup for the chart islands of the research and publications
- * pages.
+ * Shared ECharts setup for the chart islands of the research, publications
+ * and network pages.
  *
  * Only the pieces those charts use are registered (`echarts/core` plus the
- * bar/line/scatter series and the grid, tooltip, legend and data-zoom
+ * bar/line/scatter/graph series and the grid, tooltip, legend and data-zoom
  * components), so the chunk stays far below the full `echarts` bundle. The
  * canvas renderer is deliberate: it draws everything inside one <canvas>, so
  * no chart internals can produce inline styles or markup — the site's CSP has
@@ -14,11 +14,12 @@
  */
 import { onBeforeUnmount, onMounted, ref, watch, type Ref } from 'vue';
 import { init, use, type EChartsCoreOption, type ECharts } from 'echarts/core';
-import { BarChart, LineChart, ScatterChart } from 'echarts/charts';
+import { BarChart, GraphChart, LineChart, ScatterChart } from 'echarts/charts';
 import { DataZoomComponent, GridComponent, LegendComponent, TooltipComponent } from 'echarts/components';
 import { CanvasRenderer } from 'echarts/renderers';
 
-use([BarChart, LineChart, ScatterChart, GridComponent, TooltipComponent, LegendComponent, DataZoomComponent, CanvasRenderer]);
+// GraphChart is the force-directed network of /network/ (NetworkGraph.vue)
+use([BarChart, LineChart, ScatterChart, GraphChart, GridComponent, TooltipComponent, LegendComponent, DataZoomComponent, CanvasRenderer]);
 
 /**
  * Renders `option()` into the returned element ref and keeps it in sync:

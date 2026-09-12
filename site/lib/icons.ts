@@ -14,7 +14,7 @@ const ICON_NAMES = [
   'desktop', 'envelope', 'file-o', 'file-pdf-o', 'file-text-o', 'flask', 'github', 'globe',
   'google', 'graduation-cap', 'heartbeat', 'home', 'image', 'laptop-code', 'line-chart',
   'linkedin', 'money', 'newspaper-o', 'orcid', 'pencil', 'person-chalkboard', 'phone',
-  'picture-o', 'registered', 'search', 'unlock-alt', 'user', 'user-circle-o', 'users',
+  'picture-o', 'registered', 'search', 'share-alt', 'unlock-alt', 'user', 'user-circle-o', 'users',
   'video-camera', 'youtube',
 ] as const;
 

@@ -37,16 +37,22 @@ export const TAG_PALETTE: Record<string, string> = {
   pharmacometrics: '#18bc9c',
   'open-fair': '#2c3e50',
 };
-const MUTED = '#95a5a6';
-const INK = '#212529';
+/** Muted grey of the axis labels and the legend text. */
+export const MUTED = '#95a5a6';
+/** Body ink of the theme, used wherever a chart draws real text. */
+export const INK = '#212529';
 const GRID = '#ecf0f1';
-const FONT = 'Lato, -apple-system, "Segoe UI", Roboto, Arial, sans-serif';
+/** The site's body font stack, repeated for the canvas (see above). */
+export const FONT = 'Lato, -apple-system, "Segoe UI", Roboto, Arial, sans-serif';
 
 /** Palette entry `i`, wrapping around — also for the -1 of an unlisted language. */
 const color = (i: number) => PALETTE[((i % PALETTE.length) + PALETTE.length) % PALETTE.length]!;
 
-/** Dark tooltip drawn inside the canvas (no HTML, no inline styles). */
-const tooltip = <T>(formatter: (p: T) => string, trigger: 'item' | 'axis' = 'item') => ({
+/**
+ * Dark tooltip drawn inside the canvas (no HTML, no inline styles). Exported
+ * for `networkOptions.ts`, which builds a chart of its own on the same rules.
+ */
+export const tooltip = <T>(formatter: (p: T) => string, trigger: 'item' | 'axis' = 'item') => ({
   trigger,
   renderMode: 'richText' as const,
   backgroundColor: '#2c3e50',

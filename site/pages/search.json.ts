@@ -32,6 +32,7 @@ export const GET: APIRoute = async () => {
     ['Research', 'Software, funding, and editorial roles.', '/research/'],
     ['Projects', 'Ongoing research projects.', '/projects/'],
     ['Publications', 'Publications, presentations, posters, and abstracts.', '/publications/'],
+    ['Network', 'Interactive network graph of the research areas, people, publications, projects, and software of the group.', '/network/'],
     ['News', 'Recent news and updates from the group.', '/news/'],
     ['Meetings', 'Meetings, workshops, and events organized or hosted by the group.', '/meetings/'],
     ['Teaching', 'Project-based teaching in digital health and shared decision-making, Open Science, and interdisciplinary collaboration.', '/teaching/'],

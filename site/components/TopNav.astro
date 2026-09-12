@@ -65,6 +65,7 @@ const active = (...ids: string[]) => (sectionid && ids.includes(sectionid) ? 'ac
             <li><a class="dropdown-item" href={url('/meetings/')}>Meetings</a></li>
           </ul>
         </li>
+        <li class:list={['nav-item', active('network')]}><a class="nav-link" href={url('/network/')}>Network</a></li>
         <li class:list={['nav-item', active('news')]}><a class="nav-link" href={url('/news/')}>News</a></li>
         <li class:list={['nav-item', active('teaching')]}><a class="nav-link" href={url('/teaching/')}>Teaching</a></li>
         <li class="nav-item"><a class="nav-link" href={asset('cv/Koenig_CV.pdf')} target="_blank" rel="noopener noreferrer">CV</a></li>

@@ -259,3 +259,47 @@ test('homepage at-a-glance strip shows six linked figures', async ({ page }) => 
   // build-time only: the strip adds no script of its own to the homepage
   await expect(page.locator('.home-stats script')).toHaveCount(0);
 });
+
+test('network page draws the graph and ?topic= focuses one research area', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto('network/');
+
+  // client:load island: the canvas is up without scrolling anywhere
+  await expect(page.locator('#network-graph canvas').first()).toBeVisible();
+  const buttons = page.locator('#network-graph .chart-mode-btn');
+  await expect(buttons).toHaveCount(5);
+  await expect(buttons.first()).toHaveText(/\S/);
+  // nothing focused yet, and the loading note is gone
+  await expect(page.locator('#network-graph .chart-mode-btn.active')).toHaveCount(0);
+  await expect(page.getByText('Loading the network…')).toHaveCount(0);
+  await expect(page.locator('nav.site-navbar .nav-item.active .nav-link')).toHaveText('Network');
+
+  // a node click is not reliably hittable on a canvas; assert that a button
+  // focus re-renders the graph (setOption) without throwing instead
+  await buttons.first().click();
+  await expect(page.locator('#network-graph .chart-mode-btn.active')).toHaveCount(1);
+  await expect(page.locator('#network-graph canvas').first()).toBeVisible();
+
+  expect(errors).toEqual([]);
+});
+
+test('network page pre-applies ?topic= to the matching research area', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto('network/?topic=AI');
+
+  const active = page.locator('#network-graph .chart-mode-btn.active');
+  await expect(active).toHaveCount(1);
+  await expect(active).toHaveText('AI');
+  await expect(active).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('#network-graph canvas').first()).toBeVisible();
+
+  // an unknown topic is ignored rather than dimming the whole graph
+  await page.goto('network/?topic=nope');
+  await expect(page.locator('#network-graph .chart-mode-btn.active')).toHaveCount(0);
+
+  expect(errors).toEqual([]);
+});
