@@ -169,3 +169,55 @@ test('publications page renders the live Scholar data: summary strip and charts'
   // no CSP violation from the snapshot fetch or from ECharts (see astro.config.mjs)
   expect(errors).toEqual([]);
 });
+
+test('publication rows show citation badges and the Year / Most cited toggle reorders', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto('publications/');
+
+  // the badges are server-rendered from the build's snapshot (a row without a
+  // DOI has no badge at all) and patched in place by PublicationsOrder's script
+  const cited = page.locator('#publication-list .pub-cites [data-field="cited"]:not([hidden])');
+  expect(await cited.count()).toBeGreaterThan(0);
+  await expect(cited.first()).toHaveText(/^cited \d+$/);
+  await expect(cited.first()).toHaveAttribute('href', /^https:\/\/openalex\.org\/W\d+$/);
+  await expect(page.locator('#publication-list .pub-badge-oa:not([hidden])').first()).toHaveText('open access');
+  await expect(page.locator('[data-citations-note] [data-field="updated"]')).not.toBeEmpty();
+
+  // "Most cited" moves the existing rows into the flat table, most cited first
+  const counts = await page.locator('#publication-list tr[data-tags]').evaluateAll(
+    (rows) => rows.map((r) => Number((r as HTMLElement).dataset.cited)),
+  );
+  await page.locator('#publication-order [data-order="cited"]').click();
+  await expect(page.locator('#publication-list-flat')).toBeVisible();
+  await expect(page.locator('#publication-list .pub-year-group').first()).toBeHidden();
+  const first = page.locator('#publication-list tr[data-tags]:not([hidden])').first();
+  expect(Number(await first.getAttribute('data-cited'))).toBe(Math.max(...counts));
+  // still one copy of every row, and the year headings come back
+  expect(await page.locator('#publication-list tr[data-tags]').count()).toBe(counts.length);
+  await page.locator('#publication-order [data-order="year"]').click();
+  await expect(page.locator('#publication-list .year-heading').first()).toBeVisible();
+  await expect(page.locator('#publication-list-flat')).toBeHidden();
+
+  expect(errors).toEqual([]);
+});
+
+test('the tag filter still applies in "Most cited" order (?tag= and ?order=)', async ({ page }) => {
+  await page.goto('publications/?tag=AI&order=cited');
+  await expect(page.locator('#publication-order [data-order="cited"]')).toHaveClass(/active/);
+  await expect(page.locator('#publication-list-flat')).toBeVisible();
+  // TagFilter hydrates client:idle and filters the rows wherever they now sit
+  await expect(page.locator('#publication-list tr[data-tags][hidden]').first()).toBeAttached();
+  const visible = page.locator('#publication-list tr[data-tags]:not([hidden])');
+  expect(await visible.count()).toBeGreaterThan(0);
+  const tags = await visible.evaluateAll((rows) => rows.map((r) => (r as HTMLElement).dataset.tags ?? ''));
+  expect(tags.every((t) => t.split('|').includes('AI'))).toBe(true);
+
+  // back to year order: only the groups that still hold a matching row show
+  await page.locator('#publication-order [data-order="year"]').click();
+  const groupsOk = await page.locator('#publication-list .pub-year-group').evaluateAll(
+    (groups) => groups.every((g) => (g as HTMLElement).hidden === !g.querySelector('tr[data-tags]:not([hidden])')),
+  );
+  expect(groupsOk).toBe(true);
+});
