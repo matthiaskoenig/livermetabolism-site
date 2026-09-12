@@ -1,9 +1,9 @@
 /**
  * Writes the node thumbnails of the network graph (`/network/`) into
  * `public/assets/image/graph/`: one round 96 px photo per person (ringed in
- * white), one square 96 px crop per project and per software entry, and one
- * round 160 px crop per research topic (the hub nodes, ringed in the area's
- * own colour so the five are told apart at a glance).
+ * white) and one square 96 px crop per project and per software entry. The
+ * research areas filter the graph instead of appearing in it, so they have no
+ * thumbnail.
  *
  * Usage:
  *   npm run graph:thumbs
@@ -25,7 +25,6 @@ import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { load } from 'js-yaml';
 import sharp, { type OverlayOptions } from 'sharp';
-import { slugify } from '../site/lib/text.ts';
 import { thumbJobs, type ThumbJob, type ThumbRing } from './lib/graph-thumbs.ts';
 
 /** `sharp`'s webp quality; 82 keeps a 96 px photo at a few kB. */
@@ -89,7 +88,7 @@ export async function runThumbs(jobs: ThumbJob[]): Promise<ThumbRun> {
   return run;
 }
 
-/** The five topics, people, projects and software of `data/*.yml`, as `thumbJobs()` wants them. */
+/** The people, projects and software of `data/*.yml`, as `thumbJobs()` wants them. */
 export function jobsFromData(dataRoot: string, imageRoot: string): ThumbJob[] {
   const rows = <T>(name: string): T[] => (load(readFileSync(`${dataRoot}${name}.yml`, 'utf8')) ?? []) as T[];
   return thumbJobs({
@@ -97,7 +96,6 @@ export function jobsFromData(dataRoot: string, imageRoot: string): ThumbJob[] {
     people: rows<{ id: string; image?: string | null }>('people'),
     projects: rows<{ id: string; images?: string | string[] | null }>('projects'),
     software: rows<{ id: string; image?: string | null }>('software'),
-    tags: rows<{ tag: string }>('tags').map((t) => ({ slug: slugify(t.tag) })),
   });
 }
 
@@ -108,7 +106,7 @@ if (import.meta.main) {
   const byType = (type: string) => jobs.filter((j) => j.target.includes(`/graph/${type}/`)).length;
   console.log(
     `Rendering ${jobs.length} graph thumbnails (${byType('people')} people, ${byType('projects')} projects, ` +
-      `${byType('software')} software, ${byType('topics')} topics) into ${imageRoot}/graph/`,
+      `${byType('software')} software) into ${imageRoot}/graph/`,
   );
   const run = await runThumbs(jobs);
   const existing = jobs.filter((j) => existsSync(j.target)).reduce((sum, j) => sum + statSync(j.target).size, 0);

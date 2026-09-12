@@ -1,7 +1,8 @@
 /**
  * Pure path mapping of the network graph's node thumbnails: which source
  * image under `public/assets/image/` becomes which file under
- * `public/assets/image/graph/`, at what size and in what shape.
+ * `public/assets/image/graph/`, at what size and in what shape. The research
+ * areas have no thumbnails: they filter the graph rather than appear in it.
  *
  * No filesystem and no `sharp` here — `scripts/graph-thumbs.ts` does the
  * reading, resizing and writing, so the mapping (and with it the file names
@@ -10,9 +11,7 @@
  * A row without a source image yields no job at all: the script never
  * warns about it and the graph node falls back to a plain circle.
  */
-import { TAG_GRAPHICS, TAG_PALETTE } from '../../site/lib/tagGraphics.ts';
-
-/** Round photos for people and topics, centre-cropped squares for the rest. */
+/** Round photos for people, centre-cropped squares for the rest. */
 export type ThumbShape = 'circle' | 'square';
 
 /** A ring drawn inside the edge of a circular thumbnail. */
@@ -37,18 +36,11 @@ export interface ThumbJob {
 
 /** White outline that lifts a round photo off the graph's edges. */
 export const PERSON_RING: ThumbRing = { width: 2, color: '#ffffff' };
-/** Width of the topic ring, drawn in the research area's own colour. */
-export const TOPIC_RING_WIDTH = 6;
-/** Ring colour of a topic whose slug is not in `TAG_PALETTE`. */
-export const TOPIC_RING_FALLBACK = '#18bc9c';
 
 /** Person photos: the graph draws them at ~40 px, 96 px covers retina zoom. */
 export const PERSON_THUMB_SIZE = 96;
 /** Project and software thumbnails. */
 export const ITEM_THUMB_SIZE = 96;
-/** The five topic hubs are the largest nodes of the graph. */
-export const TOPIC_THUMB_SIZE = 160;
-
 export interface ThumbInput {
   /** `public/assets/image` for the real run; both sources and targets are relative to it. */
   imageRoot: string;
@@ -56,8 +48,6 @@ export interface ThumbInput {
   /** `images` may be a bare scalar in the YAML (pydantic/Zod coerce it to a list). */
   projects: { id: string; images?: string | string[] | null }[];
   software: { id: string; image?: string | null }[];
-  /** Topics by tag slug; the artwork comes from `TAG_GRAPHICS`. */
-  tags: { slug: string }[];
 }
 
 function join(root: string, rest: string): string {
@@ -70,7 +60,7 @@ function first(images: string | string[] | null | undefined): string | null {
   return list.find((i) => !!i) ?? null;
 }
 
-/** Every thumbnail the graph needs, in the order people, projects, software, topics. */
+/** Every thumbnail the graph needs, in the order people, projects, software. */
 export function thumbJobs(input: ThumbInput): ThumbJob[] {
   const { imageRoot: root } = input;
   const jobs: ThumbJob[] = [];
@@ -102,19 +92,6 @@ export function thumbJobs(input: ThumbInput): ThumbJob[] {
       target: join(root, `graph/software/${entry.id}.webp`),
       size: ITEM_THUMB_SIZE,
       shape: 'square',
-    });
-  }
-  for (const tag of input.tags) {
-    const graphic = TAG_GRAPHICS[tag.slug];
-    if (!graphic) continue;
-    jobs.push({
-      source: join(root, `tags/${graphic}`),
-      target: join(root, `graph/topics/${tag.slug}.webp`),
-      size: TOPIC_THUMB_SIZE,
-      // a hub is a disc ringed in its own research-area colour: the square
-      // artwork alone was too faint to tell the five apart in the graph
-      shape: 'circle',
-      ring: { width: TOPIC_RING_WIDTH, color: TAG_PALETTE[tag.slug] ?? TOPIC_RING_FALLBACK },
     });
   }
   return jobs;

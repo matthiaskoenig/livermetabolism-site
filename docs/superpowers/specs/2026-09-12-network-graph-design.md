@@ -2,6 +2,7 @@
 
 Date: 2026-09-12
 Status: approved; implemented by `docs/superpowers/plans/2026-09-12-network-graph.md`
+Amended 2026-09-12: research areas are filters, not nodes (user decision); the Nodes/Edges/Density rows below describe the first version.
 
 ## Goal
 
