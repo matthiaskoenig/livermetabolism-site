@@ -13,7 +13,7 @@ Structured content (publications, people, projects, software, news, funding, …
 | `data/` | The YAML tables (publications, people, projects, …) — the single database for the site and the Python tooling |
 | `public/` | Static files served as-is (`/assets/...`, favicon) |
 | `assets_src/` | Raster masters of the images; not served (only the `.webp` renditions in `public/` are) |
-| `site/` | Astro source: `pages/`, `layouts/`, `components/` (Vue), `lib/`, `styles/`, `content.config.ts` |
+| `site/` | Astro source: `pages/`, `layouts/`, `components/` (`.astro` templates and Vue single-file components, rendered statically; `TagFilter`/`PersonAvatar` hydrate), `lib/`, `styles/`, `content.config.ts` |
 | `src/` | `uv`-managed Python package; `src/data.py` is the pydantic schema of the YAML, `src/cv/list_of_*.py` render tables to Typst |
 | `tests/` | Pytest suite for `src/data.py` |
 | `e2e/` | Playwright end-to-end tests |
