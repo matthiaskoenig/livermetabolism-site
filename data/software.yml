@@ -139,7 +139,7 @@
   name: 'COBRApy'
   title: 'COBRA python package'
   description: 'Advanced COBRApy, the leading Python package for constraint-based reconstruction and analysis, widely adopted in genome-scale metabolic modeling. Provides access to key methods such as flux balance and flux variability analysis.'
-  image: 'cobrapy.svg'
+  image: 'cobrapy.webp'
   people:
     - matthias_koenig
   homepage: https://github.com/opencobra/cobrapy/
