@@ -1,0 +1,70 @@
+---
+// The Google Scholar summary strip of the publications page (citations,
+// h-index, i10-index — each "all" and "since <year>" as Scholar shows them —
+// plus the site's own publication count), its "last update …" note and the
+// script that keeps both current: it re-dates the note against today and,
+// when the snapshot on the `github-data` branch is newer than the one this
+// page was built from, patches every number in place. Plain TypeScript in a
+// bundled <script>, not a Vue island (see CLAUDE.md): the strip is static
+// HTML and only its text nodes change.
+import { relativeDate } from '../lib/githubRows';
+import { stripValues } from '../lib/scholarRows';
+import type { Scholar } from '../lib/scholarSchema';
+
+interface Props {
+  scholar: Scholar;
+  /** Peer-reviewed entries of `data/publications.yml` (not a Scholar number). */
+  publications: number;
+}
+const { scholar, publications } = Astro.props;
+const v = stripValues(scholar);
+// a build that could not read the snapshot renders emptyScholar()'s epoch and
+// zeros: hide the metric figures and let the browser fill them in
+const known = v.known;
+const num = (n: number) => (known ? String(n) : '');
+const since = known ? `since ${v.sinceYear}` : 'since';
+---
+<div class="scholar-strip" data-scholar-strip>
+  <div class="scholar-figure" data-scholar-metric hidden={!known}>
+    <span class="scholar-value" data-field="citations">{num(v.citations)}</span>
+    <span class="scholar-label">Citations</span>
+    <span class="scholar-since"><span data-since-year>{since}</span>: <span data-field="citations-since">{num(v.citationsSince)}</span></span>
+  </div>
+  <div class="scholar-figure" data-scholar-metric hidden={!known}>
+    <span class="scholar-value" data-field="h-index">{num(v.hIndex)}</span>
+    <span class="scholar-label">h-index</span>
+    <span class="scholar-since"><span data-since-year>{since}</span>: <span data-field="h-index-since">{num(v.hIndexSince)}</span></span>
+  </div>
+  <div class="scholar-figure" data-scholar-metric hidden={!known}>
+    <span class="scholar-value" data-field="i10-index">{num(v.i10Index)}</span>
+    <span class="scholar-label">i10-index</span>
+    <span class="scholar-since"><span data-since-year>{since}</span>: <span data-field="i10-index-since">{num(v.i10IndexSince)}</span></span>
+  </div>
+  <div class="scholar-figure">
+    <span class="scholar-value">{publications}</span>
+    <span class="scholar-label">Publications</span>
+    <span class="scholar-since">peer-reviewed</span>
+  </div>
+</div>
+
+<p class="scholar-note" data-scholar-note>
+  Citation metrics from
+  <a href={v.href} target="_blank" rel="noopener noreferrer">Google Scholar</a><span data-scholar-name hidden={!v.name}> (<span data-field="profile-name">{v.name}</span>)</span>, last update
+  <time data-field="updated" data-empty="none yet" data-iso={v.fetchedAt} datetime={known ? v.fetchedAt : undefined}>{known ? relativeDate(v.fetchedAt) : 'none yet'}</time>.
+</p>
+
+<script>
+  import { isScholarFresherThan, loadLiveScholar } from '../lib/scholarLive';
+  import { applyScholar, refreshRelativeDates } from '../lib/scholarStats';
+
+  const note = document.querySelector<HTMLElement>('[data-scholar-note] [data-field="updated"]');
+  if (note) {
+    // 1. the build may be weeks old: re-date what it rendered
+    refreshRelativeDates(document);
+    // 2. and take the newer snapshot if there is one (shared, memoized fetch)
+    const builtAt = note.dataset.iso ?? '';
+    void loadLiveScholar().then((scholar) => {
+      if (isScholarFresherThan(scholar, builtAt)) applyScholar(scholar);
+    });
+  }
+</script>

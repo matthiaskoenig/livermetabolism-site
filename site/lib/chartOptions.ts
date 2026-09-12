@@ -1,7 +1,8 @@
 /**
- * ECharts option builders for the research page's three chart islands. Pure
- * functions over the rows from `githubRows.ts` — no ECharts import here, so
- * they stay testable and the chart library is pulled in only by `useChart.ts`.
+ * ECharts option builders for the research page's three chart islands and the
+ * publications page's two Scholar charts. Pure functions over the rows from
+ * `githubRows.ts` / `scholarRows.ts` — no ECharts import here, so they stay
+ * testable and the chart library is pulled in only by `useChart.ts`.
  *
  * The colours mirror the `@theme` tokens of `site/styles/global.css`
  * (--color-success, --color-info, --color-warning, --color-danger,
@@ -15,6 +16,7 @@
  * cannot turn snapshot text into markup.
  */
 import type { ActivityRows, StarRow, TimelineRow } from './githubRows';
+import type { HistoryRow, PerYearRow } from './scholarRows';
 
 export const PALETTE = ['#18bc9c', '#3498db', '#f39c12', '#e74c3c', '#2c3e50', '#8e44ad', '#16a085', '#d35400', '#2980b9', '#7f8c8d', '#c0392b'];
 const MUTED = '#95a5a6';
@@ -120,3 +122,72 @@ export function commitActivityOption({ weeks, series }: ActivityRows) {
 }
 
 export const ACTIVITY_HEIGHT = 340;
+
+/* ------------------------------------------------------------------
+   Google Scholar charts of the publications page (rows from
+   `scholarRows.ts`); same rules as above — pure, no ECharts import,
+   richText tooltips.
+   ------------------------------------------------------------------ */
+
+/** Scholar's citations-per-year histogram as bars, years ascending. */
+export function citationsPerYearOption(rows: PerYearRow[]) {
+  const years = [...rows].sort((a, b) => a.year - b.year);
+  return {
+    animation: false,
+    tooltip: tooltip((p: { name: string; value: number }) => `${p.name}\n${p.value} citations`),
+    grid: { left: 8, right: 14, top: 14, bottom: 8, containLabel: true },
+    xAxis: {
+      type: 'category',
+      data: years.map((r) => String(r.year)),
+      axisLabel: { ...axisLabel(), hideOverlap: true },
+      axisTick: { show: false },
+    },
+    yAxis: { type: 'value', axisLabel: axisLabel(), splitLine: { lineStyle: { color: GRID } } },
+    series: [
+      {
+        type: 'bar',
+        data: years.map((r) => r.count),
+        barCategoryGap: '25%',
+        itemStyle: { color: color(0) },
+      },
+    ],
+  };
+}
+
+export const PER_YEAR_HEIGHT = 260;
+
+/**
+ * Total citations over time, one point per daily snapshot. `symbol` is shown
+ * on purpose: the series starts with a single point (the first snapshot), and
+ * a line through one point would draw nothing at all.
+ */
+export function citationHistoryOption(rows: HistoryRow[]) {
+  const points = [...rows].sort((a, b) => a.date.localeCompare(b.date));
+  return {
+    animation: false,
+    tooltip: tooltip((ps: { name: string; value: number }[]) => `${ps[0]?.name ?? ''}\n${ps[0]?.value ?? 0} citations`, 'axis'),
+    grid: { left: 8, right: 14, top: 14, bottom: 8, containLabel: true },
+    xAxis: {
+      type: 'category',
+      data: points.map((r) => r.date),
+      boundaryGap: false,
+      axisLabel: { ...axisLabel(), hideOverlap: true },
+      axisTick: { show: false },
+    },
+    // `scale` so a slowly growing total does not look flat against a 0 baseline
+    yAxis: { type: 'value', scale: true, axisLabel: axisLabel(), splitLine: { lineStyle: { color: GRID } } },
+    series: [
+      {
+        type: 'line',
+        data: points.map((r) => r.citations),
+        showSymbol: true,
+        symbol: 'circle',
+        symbolSize: 7,
+        lineStyle: { color: color(1), width: 2 },
+        itemStyle: { color: color(1) },
+      },
+    ],
+  };
+}
+
+export const HISTORY_HEIGHT = 260;

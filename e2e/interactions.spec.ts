@@ -148,3 +148,24 @@ test('research page renders the live GitHub data: stats lines, release feed, cha
   // no CSP violation from the snapshot fetch or from ECharts (see astro.config.mjs)
   expect(errors).toEqual([]);
 });
+
+test('publications page renders the live Scholar data: summary strip and charts', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto('publications/');
+
+  // the strip is server-rendered from the build's snapshot and patched in
+  // place by ScholarStats.astro's script
+  await expect(page.locator('#scholar [data-field="citations"]')).toHaveText(/\d/);
+  await expect(page.locator('#scholar [data-field="h-index"]')).toHaveText(/\d/);
+  await expect(page.locator('#scholar [data-scholar-note] [data-field="updated"]')).not.toBeEmpty();
+
+  // both charts are client:visible islands: nothing is drawn before the
+  // section scrolls into view
+  await page.locator('#scholar .scholar-charts').scrollIntoViewIfNeeded();
+  await expect(page.locator('#scholar canvas').first()).toBeVisible();
+
+  // no CSP violation from the snapshot fetch or from ECharts (see astro.config.mjs)
+  expect(errors).toEqual([]);
+});

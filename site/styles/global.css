@@ -1010,6 +1010,79 @@
     .chart-swatch-10 { background-color: #c0392b; }
   }
 
+  /* ----------------------------------------------------------------
+     Live Google Scholar data on the publications page (see CLAUDE.md):
+     the summary strip, its note and the two chart containers. Like the
+     GitHub charts these draw into a <canvas> whose height is set from
+     JS through the CSSOM (useChart.ts), so nothing here needs a
+     style= attribute.
+     ---------------------------------------------------------------- */
+
+  /* one wrapping row of big-number figures */
+  .scholar-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8em 2.6em;
+    margin: 0 0 0.6em;
+  }
+
+  .scholar-figure {
+    display: flex;
+    min-width: 6em;
+    flex-direction: column;
+  }
+
+  .scholar-value {
+    color: var(--color-primary);
+    font-family: var(--font-brand);
+    font-size: 1.9em;
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  /* no text-transform: "h-index" and "i10-index" are spelled lower case */
+  .scholar-label {
+    color: var(--color-gray-800);
+    font-size: 0.86em;
+    font-weight: 700;
+  }
+
+  .scholar-since {
+    color: var(--color-gray-600);
+    font-size: 0.78em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .scholar-note {
+    margin-bottom: 1.6em;
+    color: var(--color-gray-600);
+    font-size: 0.8em;
+  }
+
+  /* the two charts side by side on wide screens, stacked when narrow */
+  .scholar-charts {
+    display: grid;
+    gap: 0 2em;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+
+  .scholar-plot {
+    margin: 0 0 2em;
+
+    figcaption {
+      margin-top: 0.4em;
+      color: var(--color-gray-600);
+      font-size: 0.8em;
+    }
+  }
+
+  /* the ECharts container; useChart.ts sets the exact height on mount */
+  .scholar-chart {
+    width: 100%;
+    min-height: 220px;
+  }
+
   /* cards for the different kinds of open positions (see team.html) */
   .position-cards {
     display: grid;

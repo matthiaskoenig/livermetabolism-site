@@ -1,11 +1,16 @@
 ---
 import Base from '../layouts/Base.astro';
 import AbstractCard from '../components/AbstractCard.vue';
+import CitationHistoryChart from '../components/CitationHistoryChart.vue';
+import CitationsPerYearChart from '../components/CitationsPerYearChart.vue';
 import PosterCard from '../components/PosterCard.vue';
 import PresentationCard from '../components/PresentationCard.vue';
 import PublicationRow from '../components/PublicationRow.vue';
+import ScholarStats from '../components/ScholarStats.astro';
 import TagFilter from '../components/TagFilter.vue';
 import { getAbstracts, getPeopleMap, getPosters, getPresentations, getPublications, getTags } from '../lib/data';
+import { loadScholar } from '../lib/scholar';
+import { historyRows, perYearRows } from '../lib/scholarRows';
 import { asset } from '../lib/url';
 import { groupByYear, toTagFilterEntries } from '../lib/views';
 
@@ -16,8 +21,30 @@ const avatarBase = asset('image/people/128/');
 // year group left empty) client-side, so nothing is serialised twice
 const years = groupByYear(publications);
 const tagFilterEntries = toTagFilterEntries(tagInfo);
+
+// Live Google Scholar data (see CLAUDE.md, "Live GitHub and Scholar data"):
+// read the daily snapshot once here and server-render the summary strip and
+// both chart rows from it; the strip updater and the two islands refetch it in
+// the browser, so the numbers keep up with the data branch without a redeploy.
+// A failed read yields an empty snapshot and the strip renders without values.
+const scholar = await loadScholar();
+const perYear = perYearRows(scholar);
+const history = historyRows(scholar);
+// the site's own count, not a Scholar number: peer-reviewed entries of
+// data/publications.yml (theses, reports, preprints and abstracts excluded)
+const PEER_REVIEWED = new Set(['publication', 'review', 'proceeding', 'chapter']);
+const publicationCount = publications.filter((p) => PEER_REVIEWED.has(p.status)).length;
 ---
 <Base title="Publications" sectionid="publications">
+  <section id="scholar">
+    <h2>Citations</h2>
+    <ScholarStats scholar={scholar} publications={publicationCount} />
+    <div class="scholar-charts">
+      <CitationsPerYearChart client:visible rows={perYear} fetchedAt={scholar.fetchedAt} />
+      <CitationHistoryChart client:visible rows={history} fetchedAt={scholar.fetchedAt} />
+    </div>
+  </section>
+
   <h2 id="publications">Publications</h2>
   <TagFilter client:idle id="publication" tags={tagFilterEntries} target="publication-list" />
   <div id="publication-list">
