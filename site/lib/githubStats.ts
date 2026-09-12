@@ -42,6 +42,25 @@ export function refreshRelativeDates(root: ParentNode = document, now: Date = ne
 }
 
 /**
+ * Re-render one "updated …" note from a snapshot's `fetchedAt`: a page built
+ * weeks ago must not keep claiming "yesterday", and the epoch of an empty
+ * snapshot falls back to the element's `data-empty` text ("never") instead of
+ * reading as "56 years ago". `data-iso` (what the live updaters compare
+ * against) and, on a `<time>`, `datetime` are kept in step with the text.
+ *
+ * Shared by the three live-data notes: GitHub (`applyStats` below), Scholar
+ * (`applyScholar`) and citations (`PublicationsOrder.astro`, via the
+ * re-export in `citationsStats.ts`).
+ */
+export function refreshNote(el: HTMLElement | null, fetchedAt: string, now: Date = new Date()): void {
+  if (!el) return;
+  const known = hasData(fetchedAt);
+  el.dataset.iso = fetchedAt;
+  el.textContent = known ? relativeDate(fetchedAt, now) : (el.dataset.empty ?? '');
+  if (el instanceof HTMLTimeElement) el.dateTime = known ? fetchedAt : '';
+}
+
+/**
  * Patch every stats line and the "updated" note from `snapshot`. A card whose
  * repository the snapshot does not cover keeps what the build rendered.
  */
@@ -63,10 +82,5 @@ export function applyStats(snapshot: Snapshot, root: ParentNode = document, now:
     set(line, 'language', stats.language);
     set(line, 'license', stats.license);
   }
-  const note = root.querySelector<HTMLElement>('[data-github-note] [data-field="updated"]');
-  if (note) {
-    note.dataset.iso = snapshot.fetchedAt;
-    note.textContent = hasData(snapshot.fetchedAt) ? relativeDate(snapshot.fetchedAt, now) : (note.dataset.empty ?? '');
-    if (note instanceof HTMLTimeElement) note.dateTime = snapshot.fetchedAt;
-  }
+  refreshNote(root.querySelector<HTMLElement>('[data-github-note] [data-field="updated"]'), snapshot.fetchedAt, now);
 }

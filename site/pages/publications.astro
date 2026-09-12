@@ -23,8 +23,11 @@ const [tagInfo, peopleMap, publications, presentations, posters, abstracts] = aw
 const pdfBase = asset('pdf/');
 const avatarBase = asset('image/people/128/');
 // rows are static HTML; TagFilter hides the non-matching ones (and any
-// year group left empty) client-side, so nothing is serialised twice
-const years = groupByYear(publications);
+// year group left empty) client-side, so nothing is serialised twice.
+// Sorted by year descending first: the "Most cited" order of
+// PublicationsOrder.astro keeps the rendered order as its tie-break, so the
+// rows must not depend on where an entry sits in publications.yml.
+const years = groupByYear([...publications].sort((a, b) => b.year - a.year));
 const tagFilterEntries = toTagFilterEntries(tagInfo);
 
 // Live Google Scholar data (see CLAUDE.md, "Live GitHub and Scholar data"):

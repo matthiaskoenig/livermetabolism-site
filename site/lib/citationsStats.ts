@@ -14,7 +14,6 @@
  * island — see CLAUDE.md).
  */
 import { openalexWorkUrl, type Citations } from './citationsSchema';
-import { hasData, relativeDate } from './githubRows';
 
 /**
  * Patch every `.pub-cites` badge group and its row's `data-cited` from
@@ -47,15 +46,9 @@ export function applyCitations(root: ParentNode, citations: Citations): void {
 }
 
 /**
- * Re-render the "updated …" note of the citation data from `fetchedAt`: a page
- * built weeks ago must not keep claiming "yesterday", and the epoch of
- * `emptyCitations()` falls back to the element's `data-empty` text ("never")
- * instead of reading as "56 years ago".
+ * Re-exported for the bundled script of `PublicationsOrder.astro`: the
+ * "Citations from OpenAlex, updated …" note is re-dated and then updated from
+ * the live snapshot by the one routine the GitHub and Scholar notes use too
+ * (`githubStats.ts`, covered by `githubStats.test.ts`).
  */
-export function refreshNote(el: HTMLElement | null, fetchedAt: string, now: Date = new Date()): void {
-  if (!el) return;
-  const known = hasData(fetchedAt);
-  el.dataset.iso = fetchedAt;
-  el.textContent = known ? relativeDate(fetchedAt, now) : (el.dataset.empty ?? '');
-  if (el instanceof HTMLTimeElement) el.dateTime = known ? fetchedAt : '';
-}
+export { refreshNote } from './githubStats';

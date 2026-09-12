@@ -11,7 +11,7 @@
  * `ScholarStats.astro` (site chrome is plain TypeScript, not a Vue island —
  * see CLAUDE.md).
  */
-import { relativeDate } from './githubRows';
+import { refreshNote } from './githubStats';
 import { stripValues } from './scholarRows';
 import type { Scholar } from './scholarSchema';
 
@@ -49,12 +49,7 @@ export function applyScholar(scholar: Scholar, root: ParentNode = document, now:
     const wrap = name.closest<HTMLElement>('[data-scholar-name]');
     if (wrap) wrap.hidden = false;
   }
-  const updated = note.querySelector<HTMLElement>('[data-field="updated"]');
-  if (updated) {
-    updated.dataset.iso = v.fetchedAt;
-    updated.textContent = v.known ? relativeDate(v.fetchedAt, now) : (updated.dataset.empty ?? '');
-    if (updated instanceof HTMLTimeElement) updated.dateTime = v.known ? v.fetchedAt : '';
-  }
+  refreshNote(note.querySelector<HTMLElement>('[data-field="updated"]'), v.fetchedAt, now);
 }
 
 /**

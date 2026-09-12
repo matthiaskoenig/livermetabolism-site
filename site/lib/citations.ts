@@ -29,7 +29,7 @@ export async function loadCitations(fetchImpl: typeof fetch = globalThis.fetch, 
 
 /**
  * The entry for a publication's raw `doi` field, or null when it has no DOI or
- * OpenAlex does not know it (24 of the 110 entries have no DOI at all). The
+ * OpenAlex does not know it (23 of the 110 entries have no DOI at all). The
  * snapshot is keyed by the normalised DOI, so the lookup normalises too.
  */
 export function citationFor(citations: Citations, doi: string | null | undefined): CitationEntry | null {
