@@ -1,6 +1,5 @@
 ---
 import Icon from './Icon.vue';
-import NavToggle from './NavToggle.vue';
 import { asset, url } from '../lib/url';
 
 interface Props { sectionid?: string }
@@ -30,7 +29,9 @@ const active = (...ids: string[]) => (sectionid && ids.includes(sectionid) ? 'ac
       <button type="button" class="search-toggle" data-modal-target="site-search-modal" aria-label="Search" title="Search (/)">
         <Icon name="search" />
       </button>
-      <NavToggle client:load />
+      <button type="button" class="navbar-toggler" id="navbar-toggler" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
     </div>
     <div id="navbar" class="navbar-collapse">
       <ul class="navbar-nav">
@@ -68,3 +69,15 @@ const active = (...ids: string[]) => (sectionid && ids.includes(sectionid) ? 'ac
     </div>
   </div>
 </nav>
+
+<script>
+  // Mobile navbar toggle (plain TypeScript, bundled by Astro: no Vue island
+  // for site chrome that is on every page).
+  const toggler = document.getElementById('navbar-toggler');
+  const navbar = document.getElementById('navbar');
+  toggler?.addEventListener('click', () => {
+    const open = !(toggler.getAttribute('aria-expanded') === 'true');
+    toggler.setAttribute('aria-expanded', open ? 'true' : 'false');
+    navbar?.classList.toggle('show', open);
+  });
+</script>

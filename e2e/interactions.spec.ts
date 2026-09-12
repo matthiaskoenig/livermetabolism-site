@@ -70,9 +70,8 @@ test('research pre-applies ?tag= to each of its three filter bars', async ({ pag
 
 test('search opens with "/", finds a publication, result navigates', async ({ page }) => {
   await page.goto('');
-  // the search island hydrates client:idle; Astro drops the `ssr` attribute
-  // once the keyboard shortcut listener is live (slow CI runners race this)
-  await page.locator('astro-island[component-url*="SiteSearch"]:not([ssr])').waitFor({ state: 'attached' });
+  // the search script is a bundled module: it runs before the load event
+  // page.goto() waits for, so the shortcut listener is live here
   await page.keyboard.press('/');
   await expect(page.locator('dialog#site-search-modal')).toHaveAttribute('open', '');
   await page.locator('#site-search-input').fill('liver');
@@ -98,6 +97,17 @@ test('analytics loads only after consent', async ({ page }) => {
   // the CSP allows googletagmanager.com/google-analytics.com explicitly (see
   // astro.config.mjs); a blocked request would show up as a console error
   expect(errors).toEqual([]);
+});
+
+test('privacy page reset button brings the banner back after declining', async ({ page }) => {
+  await page.goto('privacy/');
+  await expect(page.locator('#cookie-consent-banner')).toBeVisible();
+  await page.locator('#cookie-consent-decline').click();
+  await expect(page.locator('#cookie-consent-banner')).toBeHidden();
+  await page.reload();
+  await expect(page.locator('#cookie-consent-banner')).toBeHidden();
+  await page.locator('#cookie-consent-reset').click();
+  await expect(page.locator('#cookie-consent-banner')).toBeVisible();
 });
 
 test('mobile navbar toggles', async ({ page }) => {

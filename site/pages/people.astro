@@ -14,8 +14,9 @@ const [tags, people, publications, projects, software] = await Promise.all([getT
 const avatarBase = asset('image/people/128/');
 const current = people.filter((p) => p.status === 'current');
 const alumniGroups = alumniByYear(people);
-// every person shown on the page gets a static <dialog>; ModalRouter (in
-// Base.astro) opens it on click and on a #person-modal-<id> deep link
+// every person shown on the page gets a static <dialog>; the modal router
+// (installed in Base.astro) opens it on click and on a #person-modal-<id>
+// deep link
 const modalItems = [...current, ...alumniGroups.flatMap((g) => g.people)].map((person) => {
   const r = crossRefs(person.id, publications, projects, software);
   return {
