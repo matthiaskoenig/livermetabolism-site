@@ -12,8 +12,8 @@
 @layer theme, base, components, utilities, overrides;
 
 /* Flatly (Bootswatch 5.3.8) palette + this site's own tokens, formerly
-   Sass variables in app/assets/css/main.scss. `static` so every variable
-   is emitted even where only the hand-written rules below use it. */
+   Sass variables in the former Jekyll site's stylesheet. `static` so every
+   variable is emitted even where only the hand-written rules below use it. */
 @theme static {
   --color-primary: #2c3e50;
   --color-secondary: #95a5a6;
@@ -214,7 +214,7 @@
 }
 
 /* ------------------------------------------------------------------
-   The site's own rules, ported from app/assets/css/main.scss.
+   The site's own rules, ported from the former Jekyll site's stylesheet.
    ------------------------------------------------------------------ */
 @layer components {
   /* ----------------------------------------------------------------
@@ -1110,13 +1110,6 @@
         margin-bottom: 0;
       }
     }
-  }
-
-  /* small country flag shown next to a person's name (see the alumni
-     timeline and the team map on team.html) */
-  .person-flag {
-    font-size: 0.9em;
-    vertical-align: middle;
   }
 
   /* full-profile modal opened from the member grid / alumni timeline:
