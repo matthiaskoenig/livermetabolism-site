@@ -21,6 +21,13 @@ export function asset(relPath: string): string {
  * pre-base-path data) or a fully external URL. Root-absolute paths get the
  * base prefix via `url()`; everything else (http(s):, mailto:, #anchor,
  * protocol-relative //) passes through unchanged.
+ *
+ * This trusts its input to come from `data/*.yml` (validated by
+ * src/data.py and site/lib/schemas.ts, both closed to arbitrary user
+ * input); it does not check the scheme of a non-root-relative href before
+ * passing it through. If this is ever fed anything else (e.g. user input),
+ * it needs a scheme allow-list (http:, https:, mailto:, tel:, #, //) first
+ * to avoid emitting a `javascript:` or similar href.
  */
 export function link(href: string): string {
   return /^\/(?!\/)/.test(href) ? url(href) : href;
