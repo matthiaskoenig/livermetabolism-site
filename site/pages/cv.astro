@@ -4,7 +4,7 @@ import { asset } from '../lib/url';
 const pdf = asset('cv/Koenig_CV.pdf');
 ---
 <Base title="Curriculum Vitae">
-  <object data={pdf} type="application/pdf" style="display:block; width:100%; height:80vh;">
+  <object data={pdf} type="application/pdf" class="cv-pdf-embed">
     <a href={pdf}>Koenig_CV.pdf</a>
   </object>
 </Base>
