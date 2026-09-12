@@ -17,6 +17,7 @@
  * cannot turn snapshot text into markup.
  */
 import type { ActivityRows, StarRow, TimelineRow } from './githubRows';
+import { TAG_PALETTE } from './tagGraphics';
 import { STATUS_ORDER, type PublicationYearRows } from './publicationRows';
 import type { HistoryRow, PerYearRow } from './scholarRows';
 import { capitalize } from './text';
@@ -24,19 +25,15 @@ import { capitalize } from './text';
 export const PALETTE = ['#18bc9c', '#3498db', '#f39c12', '#e74c3c', '#2c3e50', '#8e44ad', '#16a085', '#d35400', '#2980b9', '#7f8c8d', '#c0392b'];
 
 /**
- * The research-area colours of the publications chart, by tag slug
- * (`slugify(tag)`, as on `TagInfo.slug`). These repeat the `--color-tag-*`
- * tokens of `site/styles/global.css` for the same reason as `PALETTE` above —
- * a canvas cannot read CSS custom properties — so keep the two in sync; a tag
- * without an entry here falls back to `PALETTE`.
+ * The research-area colours by tag slug (`slugify(tag)`, as on
+ * `TagInfo.slug`), used by the publications chart and the network graph. They
+ * live in `tagGraphics.ts` beside the per-area artwork, because the thumbnail
+ * generator (`scripts/lib/graph-thumbs.ts`) rings the topic nodes in them and
+ * cannot import this module through Node's type stripping; re-exported here,
+ * where every chart reads them.
  */
-export const TAG_PALETTE: Record<string, string> = {
-  'digital-twins': '#3498db',
-  ai: '#f39c12',
-  'digital-pathology': '#e74c3c',
-  pharmacometrics: '#18bc9c',
-  'open-fair': '#2c3e50',
-};
+export { TAG_PALETTE };
+
 /** Muted grey of the axis labels and the legend text. */
 export const MUTED = '#95a5a6';
 /** Body ink of the theme, used wherever a chart draws real text. */
