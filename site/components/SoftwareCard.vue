@@ -3,15 +3,23 @@ import Icon from './Icon.vue';
 import PeopleAvatars from './PeopleAvatars.vue';
 import TagList from './TagList.vue';
 import type { PeopleMap } from '../lib/people';
-import { relativeDate, type RepoStats } from '../lib/githubRows';
+import { relativeDate, shortDate, type RepoStats } from '../lib/githubRows';
 import type { SoftwareData } from '../lib/schemas';
 import type { Entry, TagInfo } from '../lib/views';
 
-// `stats` is the build-time snapshot row for this card's repository (null for
-// an entry without one); the bundled script of SoftwareLive.astro patches the
-// [data-field] spans below in place from a newer snapshot.
-const props = defineProps<{ item: Entry<SoftwareData>; tagInfo: TagInfo[]; peopleMap: PeopleMap; imageBase: string; avatarBase: string; stats?: RepoStats | null }>();
-const releaseTitle = () => (props.stats?.release ? `Release ${props.stats.release.tag}, ${relativeDate(props.stats.release.publishedAt)}` : 'Releases');
+// `repo` is this card's snapshot key (`owner/name` from `item.repository`) and
+// `stats` the build-time row for it, null when the build had no snapshot for
+// it. The line is rendered whenever there is a key — with every field hidden
+// if there is no data yet — so the bundled script of SoftwareLive.astro can
+// fill it in from the live snapshot even when the build fell back to
+// emptySnapshot(). `data-repo` must stay the key, not GitHub's current
+// `fullName`, or that lookup misses a renamed repository.
+const props = defineProps<{
+  item: Entry<SoftwareData>; tagInfo: TagInfo[]; peopleMap: PeopleMap; imageBase: string; avatarBase: string;
+  repo?: string | null; stats?: RepoStats | null;
+}>();
+// absolute, so it stays right without being re-rendered by refreshRelativeDates()
+const releaseTitle = () => (props.stats?.release ? `Release ${props.stats.release.tag} · ${shortDate(props.stats.release.publishedAt)}` : 'Releases');
 </script>
 
 <template>
@@ -21,15 +29,15 @@ const releaseTitle = () => (props.stats?.release ? `Release ${props.stats.releas
       <h3>{{ item.name }}</h3>
       <TagList :tags="item.tags" :tag-info="tagInfo" />
       <p><strong>{{ item.title }}</strong><br />{{ item.description }}</p>
-      <p v-if="stats" class="software-stats" :data-repo="stats.fullName">
-        <a class="software-stat" :hidden="!stats.release" :href="stats.release ? stats.release.htmlUrl : stats.htmlUrl" :title="releaseTitle()" target="_blank" rel="noopener noreferrer"
-          ><span data-field="release">{{ stats.release ? stats.release.tag : '' }}</span></a
+      <p v-if="repo" class="software-stats" :data-repo="repo">
+        <a class="software-stat" :hidden="!stats?.release" :href="stats?.release?.htmlUrl ?? stats?.htmlUrl ?? item.repository ?? undefined" :title="releaseTitle()" target="_blank" rel="noopener noreferrer"
+          ><span data-field="release">{{ stats?.release?.tag ?? '' }}</span></a
         >
-        <span class="software-stat" title="Stars">★&nbsp;<span data-field="stars">{{ stats.stars }}</span></span>
-        <span class="software-stat" title="Open issues"><span data-field="issues">{{ stats.openIssues }} open</span></span>
-        <span class="software-stat" title="Last push"><span data-field="pushed" :data-iso="stats.pushedAt">{{ relativeDate(stats.pushedAt) }}</span></span>
-        <span class="software-stat" :hidden="!stats.language" title="Main language"><span data-field="language">{{ stats.language }}</span></span>
-        <span class="software-stat" :hidden="!stats.license" title="License"><span data-field="license">{{ stats.license }}</span></span>
+        <span class="software-stat" :hidden="!stats" title="Stars">★&nbsp;<span data-field="stars">{{ stats?.stars ?? '' }}</span></span>
+        <span class="software-stat" :hidden="!stats" title="Open issues"><span data-field="issues">{{ stats ? `${stats.openIssues} open` : '' }}</span></span>
+        <span class="software-stat" :hidden="!stats" title="Last push"><span data-field="pushed" :data-iso="stats?.pushedAt">{{ stats ? relativeDate(stats.pushedAt) : '' }}</span></span>
+        <span class="software-stat" :hidden="!stats?.language" title="Main language"><span data-field="language">{{ stats?.language ?? '' }}</span></span>
+        <span class="software-stat" :hidden="!stats?.license" title="License"><span data-field="license">{{ stats?.license ?? '' }}</span></span>
       </p>
       <div class="project-links">
         <PeopleAvatars :people="item.people" :people-map="peopleMap" :avatar-base="avatarBase" />

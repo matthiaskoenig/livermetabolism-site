@@ -38,16 +38,22 @@ const activity = activityRows(snapshot, repos);
   <h2 id="software">Software</h2>
   <TagFilter client:idle id="software" tags={tagFilterEntries} target="software-grid" />
   <div class="project-grid" id="software-grid">
-    {software.map((item) => (
-      <SoftwareCard
-        item={item}
-        tagInfo={tagInfo}
-        peopleMap={peopleMap}
-        imageBase={asset('image/software/')}
-        avatarBase={avatarBase}
-        stats={item.repository ? statsFor(snapshot, repoFullName(item.repository) ?? '') : null}
-      />
-    ))}
+    {software.map((item) => {
+      // the snapshot key, which is also the card's data-repo: the browser-side
+      // refresh looks the repository up by it again (see statsFor)
+      const repo = item.repository ? repoFullName(item.repository) : null;
+      return (
+        <SoftwareCard
+          item={item}
+          tagInfo={tagInfo}
+          peopleMap={peopleMap}
+          imageBase={asset('image/software/')}
+          avatarBase={avatarBase}
+          repo={repo}
+          stats={repo ? statsFor(snapshot, repo) : null}
+        />
+      );
+    })}
   </div>
   <SoftwareLive fetchedAt={snapshot.fetchedAt} />
 

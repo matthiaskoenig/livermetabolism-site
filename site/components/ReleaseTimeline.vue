@@ -7,7 +7,7 @@ import { onMounted, ref } from 'vue';
 import { openInNewTab, useChart } from './useChart';
 import { releaseTimelineHeight, releaseTimelineOption } from '../lib/chartOptions';
 import { isFresherThan, loadLiveSnapshot } from '../lib/githubLive';
-import { releaseTimelineRows, type TimelineRow } from '../lib/githubRows';
+import { releaseTimelineRows, releaseUrl, type TimelineRow } from '../lib/githubRows';
 
 const props = defineProps<{ rows: TimelineRow[]; repos: string[]; fetchedAt: string }>();
 const rows = ref<TimelineRow[]>(props.rows);
@@ -20,7 +20,12 @@ onMounted(async () => {
 const el = useChart(
   () => releaseTimelineOption(rows.value),
   () => releaseTimelineHeight(rows.value.length),
-  (params) => openInNewTab((params as { value?: unknown[] }).value?.[3]),
+  (params) => {
+    // the point carries [date, lane, tag]; the URL comes from its lane
+    const [, lane, tag] = (params as { value: [string, number, string] }).value;
+    const row = rows.value[lane];
+    if (row && typeof tag === 'string') openInNewTab(releaseUrl(row, tag));
+  },
 );
 </script>
 

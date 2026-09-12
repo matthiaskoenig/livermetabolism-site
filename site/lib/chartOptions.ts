@@ -42,7 +42,7 @@ export function releaseTimelineOption(rows: TimelineRow[]) {
   const names = rows.map((r) => r.name);
   return {
     animation: false,
-    tooltip: tooltip((p: { value: [string, number, string, string] }) => `${names[p.value[1]]} ${p.value[2]}\n${p.value[0].slice(0, 10)}`),
+    tooltip: tooltip((p: { value: [string, number, string] }) => `${names[p.value[1]]} ${p.value[2]}\n${p.value[0].slice(0, 10)}`),
     grid: { left: 8, right: 20, top: 8, bottom: 52, containLabel: true },
     xAxis: { type: 'time', axisLabel: axisLabel(), splitLine: { lineStyle: { color: GRID } } },
     yAxis: { type: 'category', data: names, inverse: true, axisLabel: axisLabel(INK), axisTick: { show: false } },
@@ -54,7 +54,8 @@ export function releaseTimelineOption(rows: TimelineRow[]) {
       {
         type: 'scatter',
         symbolSize: 10,
-        data: rows.flatMap((r, i) => r.points.map((p) => ({ value: [p.date, i, p.tag, p.url], itemStyle: { color: color(i) } }))),
+        // [date, lane, tag] — the release URL is derived from the lane (releaseUrl)
+        data: rows.flatMap((r, i) => r.points.map((p) => ({ value: [p.date, i, p.tag], itemStyle: { color: color(i) } }))),
         emphasis: { scale: 1.6 },
       },
     ],
