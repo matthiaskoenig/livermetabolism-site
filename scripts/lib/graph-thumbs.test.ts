@@ -1,8 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { load } from 'js-yaml';
 import { describe, expect, it } from 'vitest';
-import { TAG_GRAPHICS, TAG_PALETTE } from '../../site/lib/tagGraphics.ts';
-import { thumbJobs, PERSON_RING, PERSON_THUMB_SIZE, ITEM_THUMB_SIZE, TOPIC_RING_WIDTH, TOPIC_THUMB_SIZE } from './graph-thumbs.ts';
+import { thumbJobs, PERSON_RING, PERSON_THUMB_SIZE, ITEM_THUMB_SIZE } from './graph-thumbs.ts';
 
 const ROOT = 'img';
 
@@ -20,7 +19,6 @@ const input = {
     { id: 'sbmlutils', image: 'sbmlutils.webp' },
     { id: 'livermetabolism-site', image: null },
   ],
-  tags: [{ slug: 'ai' }, { slug: 'unknown-topic' }],
 };
 
 describe('thumbJobs', () => {
@@ -57,16 +55,8 @@ describe('thumbJobs', () => {
     });
   });
 
-  it('maps a topic to a 160px disc of its artwork, ringed in the research area colour', () => {
-    expect(jobs).toContainEqual({
-      source: `${ROOT}/tags/${TAG_GRAPHICS['ai']}`,
-      target: `${ROOT}/graph/topics/ai.webp`,
-      size: TOPIC_THUMB_SIZE,
-      shape: 'circle',
-      ring: { width: TOPIC_RING_WIDTH, color: TAG_PALETTE['ai'] },
-    });
-    expect(TOPIC_THUMB_SIZE).toBe(160);
-    expect(TOPIC_RING_WIDTH).toBe(6);
+  it('maps no research area: they filter the graph instead of being in it', () => {
+    expect(jobs.some((j) => j.target.includes('/graph/topics/'))).toBe(false);
   });
 
   it('skips entries without a source image', () => {
@@ -74,8 +64,7 @@ describe('thumbJobs', () => {
     expect(targets).not.toContain(`${ROOT}/graph/people/no_photo.webp`);
     expect(targets).not.toContain(`${ROOT}/graph/projects/imageless.webp`);
     expect(targets).not.toContain(`${ROOT}/graph/software/livermetabolism-site.webp`);
-    expect(targets).not.toContain(`${ROOT}/graph/topics/unknown-topic.webp`);
-    expect(jobs).toHaveLength(4);
+    expect(jobs).toHaveLength(3);
   });
 
   it('produces unique targets', () => {
@@ -84,7 +73,7 @@ describe('thumbJobs', () => {
   });
 
   it('joins paths without a leading slash when imageRoot is empty', () => {
-    const [job] = thumbJobs({ ...input, imageRoot: '', people: [input.people[0]], projects: [], software: [], tags: [] });
+    const [job] = thumbJobs({ ...input, imageRoot: '', people: [input.people[0]], projects: [], software: [] });
     expect(job.source).toBe('people/128/matthias_koenig.webp');
     expect(job.target).toBe('graph/people/matthias_koenig.webp');
   });
@@ -92,20 +81,17 @@ describe('thumbJobs', () => {
 
 describe('thumbJobs over the real data', () => {
   const rows = (name: string) => load(readFileSync(`data/${name}.yml`, 'utf8')) as Record<string, string | string[] | null>[];
-  const tags = rows('tags').map((t) => ({
-    slug: String(t.tag).toLowerCase().replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-+|-+$/g, ''),
-  }));
   const jobs = thumbJobs({
     imageRoot: 'public/assets/image',
     people: rows('people') as { id: string; image?: string | null }[],
     projects: rows('projects') as { id: string; images?: string | string[] | null }[],
     software: rows('software') as { id: string; image?: string | null }[],
-    tags,
   });
 
-  it('has a source image for every person and every topic', () => {
+  it('has a source image for every person, and none for a research area', () => {
     expect(jobs.filter((j) => j.target.includes('/graph/people/'))).toHaveLength(61);
-    expect(jobs.filter((j) => j.target.includes('/graph/topics/'))).toHaveLength(5);
+    expect(jobs.filter((j) => j.target.includes('/graph/topics/'))).toHaveLength(0);
+    expect(jobs).toHaveLength(97);
   });
 
   it('covers every project and all but the one image-less software entry', () => {
