@@ -102,6 +102,7 @@ function metric(metrics: Record<string, Metric>, label: string): Metric {
  * order, so they pair by index; when Scholar omits the bar of a year without
  * citations the lists differ in length, and the bars are then matched to the
  * labels by their `right:<n>px` position (a bar sits 5 px right of its label).
+ * That match is greedy nearest-unclaimed, processed in label order.
  */
 function parseHistogram(html: string): YearCount[] {
   const labels = [...html.matchAll(/<span class="gsc_g_t"([^>]*)>\s*(\d{4})\s*<\/span>/g)].map((m) => ({
