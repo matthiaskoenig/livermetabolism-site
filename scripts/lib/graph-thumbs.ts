@@ -10,10 +10,18 @@
  * A row without a source image yields no job at all: the script never
  * warns about it and the graph node falls back to a plain circle.
  */
-import { TAG_GRAPHICS } from '../../site/lib/tagGraphics.ts';
+import { TAG_GRAPHICS, TAG_PALETTE } from '../../site/lib/tagGraphics.ts';
 
-/** Round photos for people, centre-cropped squares for everything else. */
+/** Round photos for people and topics, centre-cropped squares for the rest. */
 export type ThumbShape = 'circle' | 'square';
+
+/** A ring drawn inside the edge of a circular thumbnail. */
+export interface ThumbRing {
+  /** Stroke width in pixels. */
+  width: number;
+  /** Any CSS colour. */
+  color: string;
+}
 
 export interface ThumbJob {
   /** Source image, `imageRoot`-relative. */
@@ -23,7 +31,16 @@ export interface ThumbJob {
   /** Edge length in pixels; the thumbnail is always square. */
   size: number;
   shape: ThumbShape;
+  /** Outline around a circular thumbnail; absent for a plain square. */
+  ring?: ThumbRing;
 }
+
+/** White outline that lifts a round photo off the graph's edges. */
+export const PERSON_RING: ThumbRing = { width: 2, color: '#ffffff' };
+/** Width of the topic ring, drawn in the research area's own colour. */
+export const TOPIC_RING_WIDTH = 6;
+/** Ring colour of a topic whose slug is not in `TAG_PALETTE`. */
+export const TOPIC_RING_FALLBACK = '#18bc9c';
 
 /** Person photos: the graph draws them at ~40 px, 96 px covers retina zoom. */
 export const PERSON_THUMB_SIZE = 96;
@@ -65,6 +82,7 @@ export function thumbJobs(input: ThumbInput): ThumbJob[] {
       target: join(root, `graph/people/${person.id}.webp`),
       size: PERSON_THUMB_SIZE,
       shape: 'circle',
+      ring: PERSON_RING,
     });
   }
   for (const project of input.projects) {
@@ -93,7 +111,10 @@ export function thumbJobs(input: ThumbInput): ThumbJob[] {
       source: join(root, `tags/${graphic}`),
       target: join(root, `graph/topics/${tag.slug}.webp`),
       size: TOPIC_THUMB_SIZE,
-      shape: 'square',
+      // a hub is a disc ringed in its own research-area colour: the square
+      // artwork alone was too faint to tell the five apart in the graph
+      shape: 'circle',
+      ring: { width: TOPIC_RING_WIDTH, color: TAG_PALETTE[tag.slug] ?? TOPIC_RING_FALLBACK },
     });
   }
   return jobs;

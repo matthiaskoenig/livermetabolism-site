@@ -1,8 +1,8 @@
 import { readFileSync } from 'node:fs';
 import { load } from 'js-yaml';
 import { describe, expect, it } from 'vitest';
-import { TAG_GRAPHICS } from '../../site/lib/tagGraphics.ts';
-import { thumbJobs, PERSON_THUMB_SIZE, ITEM_THUMB_SIZE, TOPIC_THUMB_SIZE } from './graph-thumbs.ts';
+import { TAG_GRAPHICS, TAG_PALETTE } from '../../site/lib/tagGraphics.ts';
+import { thumbJobs, PERSON_RING, PERSON_THUMB_SIZE, ITEM_THUMB_SIZE, TOPIC_RING_WIDTH, TOPIC_THUMB_SIZE } from './graph-thumbs.ts';
 
 const ROOT = 'img';
 
@@ -26,14 +26,16 @@ const input = {
 describe('thumbJobs', () => {
   const jobs = thumbJobs(input);
 
-  it('maps a person to a circular 96px thumbnail of their 128px avatar', () => {
+  it('maps a person to a circular 96px thumbnail of their 128px avatar, ringed in white', () => {
     expect(jobs).toContainEqual({
       source: `${ROOT}/people/128/matthias_koenig.webp`,
       target: `${ROOT}/graph/people/matthias_koenig.webp`,
       size: PERSON_THUMB_SIZE,
       shape: 'circle',
+      ring: PERSON_RING,
     });
     expect(PERSON_THUMB_SIZE).toBe(96);
+    expect(PERSON_RING).toEqual({ width: 2, color: '#ffffff' });
   });
 
   it('maps a project to a square thumbnail of its first image', () => {
@@ -55,14 +57,16 @@ describe('thumbJobs', () => {
     });
   });
 
-  it('maps a topic to a 160px square thumbnail of its artwork', () => {
+  it('maps a topic to a 160px disc of its artwork, ringed in the research area colour', () => {
     expect(jobs).toContainEqual({
       source: `${ROOT}/tags/${TAG_GRAPHICS['ai']}`,
       target: `${ROOT}/graph/topics/ai.webp`,
       size: TOPIC_THUMB_SIZE,
-      shape: 'square',
+      shape: 'circle',
+      ring: { width: TOPIC_RING_WIDTH, color: TAG_PALETTE['ai'] },
     });
     expect(TOPIC_THUMB_SIZE).toBe(160);
+    expect(TOPIC_RING_WIDTH).toBe(6);
   });
 
   it('skips entries without a source image', () => {

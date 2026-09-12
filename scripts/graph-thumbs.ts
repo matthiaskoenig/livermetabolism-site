@@ -1,8 +1,9 @@
 /**
  * Writes the node thumbnails of the network graph (`/network/`) into
- * `public/assets/image/graph/`: one round 96 px photo per person, one square
- * 96 px crop per project and per software entry, and one 160 px crop per
- * research topic (the hub nodes).
+ * `public/assets/image/graph/`: one round 96 px photo per person (ringed in
+ * white), one square 96 px crop per project and per software entry, and one
+ * round 160 px crop per research topic (the hub nodes, ringed in the area's
+ * own colour so the five are told apart at a glance).
  *
  * Usage:
  *   npm run graph:thumbs
@@ -23,9 +24,9 @@ import { existsSync, mkdirSync, readFileSync, statSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { load } from 'js-yaml';
-import sharp from 'sharp';
+import sharp, { type OverlayOptions } from 'sharp';
 import { slugify } from '../site/lib/text.ts';
-import { thumbJobs, type ThumbJob } from './lib/graph-thumbs.ts';
+import { thumbJobs, type ThumbJob, type ThumbRing } from './lib/graph-thumbs.ts';
 
 /** `sharp`'s webp quality; 82 keeps a 96 px photo at a few kB. */
 const WEBP_QUALITY = 82;
@@ -40,18 +41,34 @@ function circleMask(size: number): Buffer {
 }
 
 /**
+ * An SVG ring just inside the edge of the thumbnail: the stroke is centred on
+ * its radius, so the radius is inset by half the stroke width to keep all of
+ * it on the canvas.
+ */
+function ringOverlay(size: number, ring: ThumbRing): Buffer {
+  const r = size / 2;
+  return Buffer.from(
+    `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">` +
+      `<circle cx="${r}" cy="${r}" r="${r - ring.width / 2}" fill="none" ` +
+      `stroke="${ring.color}" stroke-width="${ring.width}"/></svg>`,
+  );
+}
+
+/**
  * One thumbnail: centre-cropped to `size`×`size`, for a circle masked with an
  * SVG circle (`blend: 'dest-in'` keeps only the pixels under the circle, so
- * the corners come out transparent), written as webp.
+ * the corners come out transparent) and then ringed with an SVG outline
+ * (drawn over the image, which is why it comes after the mask), written as
+ * webp.
  */
 export async function renderThumb(job: ThumbJob): Promise<number> {
   mkdirSync(dirname(job.target), { recursive: true });
   const resized = sharp(job.source).resize(job.size, job.size, { fit: 'cover' });
-  const masked =
-    job.shape === 'circle'
-      ? resized.composite([{ input: circleMask(job.size), blend: 'dest-in' }])
-      : resized;
-  const { size } = await masked.webp({ quality: WEBP_QUALITY }).toFile(job.target);
+  const layers: OverlayOptions[] = [];
+  if (job.shape === 'circle') layers.push({ input: circleMask(job.size), blend: 'dest-in' });
+  if (job.ring) layers.push({ input: ringOverlay(job.size, job.ring), blend: 'over' });
+  const composed = layers.length ? resized.composite(layers) : resized;
+  const { size } = await composed.webp({ quality: WEBP_QUALITY }).toFile(job.target);
   return size;
 }
 

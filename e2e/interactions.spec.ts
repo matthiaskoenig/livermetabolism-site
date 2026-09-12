@@ -268,9 +268,12 @@ test('network page draws the graph and ?topic= focuses one research area', async
 
   // client:load island: the canvas is up without scrolling anywhere
   await expect(page.locator('#network-graph canvas').first()).toBeVisible();
-  const buttons = page.locator('#network-graph .chart-mode-btn');
+  const buttons = page.locator('#network-graph .network-topic-btn');
   await expect(buttons).toHaveCount(5);
   await expect(buttons.first()).toHaveText(/\S/);
+  // the wheel is left to the page, so zooming is by button
+  await expect(page.locator('#network-graph [aria-label="Zoom in"]')).toBeVisible();
+  await expect(page.locator('#network-graph [aria-label="Zoom out"]')).toBeVisible();
   // nothing focused yet, and the loading note is gone
   await expect(page.locator('#network-graph .chart-mode-btn.active')).toHaveCount(0);
   await expect(page.getByText('Loading the network…')).toHaveCount(0);
@@ -282,6 +285,12 @@ test('network page draws the graph and ?topic= focuses one research area', async
   await expect(page.locator('#network-graph .chart-mode-btn.active')).toHaveCount(1);
   await expect(page.locator('#network-graph canvas').first()).toBeVisible();
 
+  // the zoom and reset controls re-render without throwing either
+  await page.locator('#network-graph [aria-label="Zoom in"]').click();
+  await page.locator('#network-graph [aria-label="Zoom out"]').click();
+  await page.locator('#network-graph .chart-mode-btn', { hasText: 'Reset' }).click();
+  await expect(page.locator('#network-graph canvas').first()).toBeVisible();
+
   expect(errors).toEqual([]);
 });
 
@@ -291,7 +300,7 @@ test('network page pre-applies ?topic= to the matching research area', async ({ 
   page.on('pageerror', (e) => errors.push(e.message));
   await page.goto('network/?topic=AI');
 
-  const active = page.locator('#network-graph .chart-mode-btn.active');
+  const active = page.locator('#network-graph .network-topic-btn.active');
   await expect(active).toHaveCount(1);
   await expect(active).toHaveText('AI');
   await expect(active).toHaveAttribute('aria-pressed', 'true');
@@ -299,7 +308,7 @@ test('network page pre-applies ?topic= to the matching research area', async ({ 
 
   // an unknown topic is ignored rather than dimming the whole graph
   await page.goto('network/?topic=nope');
-  await expect(page.locator('#network-graph .chart-mode-btn.active')).toHaveCount(0);
+  await expect(page.locator('#network-graph .network-topic-btn.active')).toHaveCount(0);
 
   expect(errors).toEqual([]);
 });

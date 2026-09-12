@@ -13,7 +13,7 @@
  * a `style=` attribute, for the same reason.
  */
 import { onBeforeUnmount, onMounted, ref, watch, type Ref } from 'vue';
-import { init, use, type EChartsCoreOption, type ECharts } from 'echarts/core';
+import { getInstanceByDom, init, use, type EChartsCoreOption, type ECharts } from 'echarts/core';
 import { BarChart, GraphChart, LineChart, ScatterChart } from 'echarts/charts';
 import { DataZoomComponent, GridComponent, LegendComponent, TooltipComponent } from 'echarts/components';
 import { CanvasRenderer } from 'echarts/renderers';
@@ -21,12 +21,27 @@ import { CanvasRenderer } from 'echarts/renderers';
 // GraphChart is the force-directed network of /network/ (NetworkGraph.vue)
 use([BarChart, LineChart, ScatterChart, GraphChart, GridComponent, TooltipComponent, LegendComponent, DataZoomComponent, CanvasRenderer]);
 
+export interface ChartOptions {
+  /**
+   * Whether a re-render throws the previous option away (ECharts' `notMerge`).
+   * True — the default — is what the bar/line/scatter charts want: their
+   * series are rebuilt from scratch and a stale series must not survive.
+   *
+   * The network graph passes false: `notMerge` rebuilds the whole
+   * `GlobalModel`, which discards the force layout's `preservedPoints` (the
+   * node positions it resumes from, keyed by node id), so every focus change
+   * and every height change would rescramble all 213 nodes. In merge mode the
+   * series model survives and only the new styles are applied.
+   */
+  notMerge?: boolean;
+}
+
 /**
  * Renders `option()` into the returned element ref and keeps it in sync:
  * re-renders whenever the reactive data behind `option`/`height` changes,
  * resizes with the container, and disposes on unmount.
  */
-export function useChart(option: () => EChartsCoreOption, height: () => number, onClick?: (params: unknown) => void): Ref<HTMLDivElement | null> {
+export function useChart(option: () => EChartsCoreOption, height: () => number, onClick?: (params: unknown) => void, { notMerge = true }: ChartOptions = {}): Ref<HTMLDivElement | null> {
   const el = ref<HTMLDivElement | null>(null);
   let chart: ECharts | null = null;
   let observer: ResizeObserver | null = null;
@@ -46,7 +61,7 @@ export function useChart(option: () => EChartsCoreOption, height: () => number, 
     if (!chart || !el.value) return;
     el.value.style.height = `${h}px`;
     chart.resize();
-    chart.setOption(next, true);
+    chart.setOption(next, notMerge);
   });
 
   onBeforeUnmount(() => {
@@ -56,6 +71,25 @@ export function useChart(option: () => EChartsCoreOption, height: () => number, 
   });
 
   return el;
+}
+
+/**
+ * Zooms or pans the chart drawn into `el` (the zoom buttons of the network
+ * graph): `graphRoam` multiplies the current zoom around the given pixel
+ * origin. Kept here so no component has to import ECharts itself.
+ */
+export function roamChart(el: HTMLElement | null, action: { type: string; zoom?: number; originX?: number; originY?: number; dx?: number; dy?: number }): void {
+  if (el) getInstanceByDom(el)?.dispatchAction({ seriesIndex: 0, ...action });
+}
+
+/**
+ * Draws `option` from scratch (`notMerge`), which is also the only way to
+ * throw the user's zoom and pan away without the toolbox component — the
+ * "Reset" button of the network graph. The layout starts over with it, which
+ * is why nothing else re-renders this way (see `ChartOptions.notMerge`).
+ */
+export function resetChart(el: HTMLElement | null, option: EChartsCoreOption): void {
+  if (el) getInstanceByDom(el)?.setOption(option, true);
 }
 
 /** Opens a chart item's URL in a new tab (click handler of the timeline and stars charts). */

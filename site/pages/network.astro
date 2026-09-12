@@ -20,11 +20,19 @@ const citations = await loadCitations();
 // bundled prerender chunk under dist/, and the working directory is not ours
 // to rely on either.
 const thumbRoot = fileURLToPath(new URL('assets/image/graph', publicDir));
-const thumbs = new Set(
-  readdirSync(thumbRoot, { withFileTypes: true, recursive: true })
-    .filter((e) => e.isFile())
-    .map((e) => `assets/image/graph/${relative(thumbRoot, `${e.parentPath}${sep}${e.name}`).split(sep).join('/')}`),
-);
+// A missing directory is not fatal: graphRows() draws a circle for a node
+// without a thumbnail, so an unreadable directory means circles, not a
+// failed build.
+let thumbs = new Set<string>();
+try {
+  thumbs = new Set(
+    readdirSync(thumbRoot, { withFileTypes: true, recursive: true })
+      .filter((e) => e.isFile())
+      .map((e) => `assets/image/graph/${relative(thumbRoot, `${e.parentPath}${sep}${e.name}`).split(sep).join('/')}`),
+  );
+} catch (error) {
+  console.warn(`[network] no graph thumbnails at ${thumbRoot} (${error}); nodes fall back to circles`);
+}
 
 // Rows and hrefs are built once here; the island only draws them (about
 // 110 kB of props for a page whose content is the graph).
@@ -51,6 +59,6 @@ const counts = {
     project or tool on the site.
   </p>
   <div id="network-graph">
-    <NetworkGraph client:load rows={rows} topics={topics} initialTopic={null} />
+    <NetworkGraph client:load rows={rows} topics={topics} />
   </div>
 </Base>
