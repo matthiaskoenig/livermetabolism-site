@@ -2,10 +2,10 @@
 defineProps<{ id: string; title: string; centered?: boolean }>();
 
 // Every Modal renders statically (no client directive) and needs no JS of
-// its own: ModalRouter.vue installs the document-level router once from
-// Base.astro and opens/closes them. The site search dialog - the last
-// component that listened to this one's open/close events - is plain
-// markup in SiteSearch.astro now.
+// its own: Base.astro installs the document-level router once and opens
+// and closes them. The site search dialog - the last component that
+// listened to this one's open/close events - is plain markup in
+// SiteSearch.astro now.
 </script>
 
 <template>
