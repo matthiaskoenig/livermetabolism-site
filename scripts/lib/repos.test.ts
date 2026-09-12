@@ -63,10 +63,10 @@ describe('reposFromSoftware', () => {
   });
 
   it('reads the real data/software.yml', () => {
-    // Every software entry carries a GitHub repository; sbmlutils is listed
-    // twice (sbmlutils and SBML4Humans share it), so 12 entries yield 11 names.
+    // Every software entry carries its own GitHub repository.
     const names = reposFromSoftware(readFileSync('data/software.yml', 'utf8'));
-    expect(names).toHaveLength(11);
+    expect(names).toHaveLength(12);
+    expect(names).toContain('matthiaskoenig/sbml4humans');
     expect(new Set(names).size).toBe(names.length);
     expect(names).toContain('matthiaskoenig/sbmlutils');
     expect(names).toContain('sys-bio/roadrunner');
