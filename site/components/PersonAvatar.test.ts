@@ -2,14 +2,15 @@ import { mount } from '@vue/test-utils';
 import { describe, expect, it } from 'vitest';
 import PersonAvatar from './PersonAvatar.vue';
 
-const props = { name: 'Jane Doe', src: '/p/jane.webp', position: 'PhD student', description: 'Works on livers.', modalId: 'person-modal-jane' };
+const props = { name: 'Jane Doe', src: '/p/jane.webp', position: 'PhD student', description: 'Works on livers.', detail: 'person:jane' };
 
 describe('PersonAvatar', () => {
   it('renders the photo and a hidden card', () => {
     const w = mount(PersonAvatar, { props, attachTo: document.body });
     expect(w.find('img').attributes('alt')).toBe('Jane Doe');
     expect(w.find('.person-card').classes()).not.toContain('is-visible');
-    expect(w.find('.member-more').attributes('data-modal-target')).toBe('person-modal-jane');
+    expect(w.find('.member-more').attributes('data-detail')).toBe('person:jane');
+    expect(w.find('.member-more').attributes('href')).toBe('#person/jane');
     w.unmount();
   });
   it('opens on mouseenter/focus, closes on mouseleave/blur, toggles on click', async () => {

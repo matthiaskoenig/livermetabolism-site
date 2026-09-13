@@ -41,7 +41,7 @@ export const optDate = z
   .transform((d) => (d ? toIsoDate(d) : null));
 export const reqDate = z.coerce.date().transform(toIsoDate);
 
-// news.yml's `video` embeds a YouTube player directly (see NewsModal.vue);
+// news.yml's `video` is a YouTube embed URL (linked from the news detail);
 // restrict it to the two hosts astro.config.mjs's CSP frame-src allows, so a
 // bad or hand-edited URL fails the data build instead of a silently-blocked
 // iframe on the live site.

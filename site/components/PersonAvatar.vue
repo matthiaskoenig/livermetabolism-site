@@ -1,7 +1,14 @@
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref } from 'vue';
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 
-const props = defineProps<{ name: string; src: string; position: string; description?: string | null; modalId?: string; imgClass?: string }>();
+/**
+ * `detail` is the hover card's "Full profile" trigger, in the
+ * `data-detail="person:<id>"` form the detail router (site/lib/detailModal.ts)
+ * reads; the href is the same entry in its `#<type>/<id>` hash form, so the
+ * link deep-links and middle-clicks like any other.
+ */
+const props = defineProps<{ name: string; src: string; position: string; description?: string | null; detail?: string; imgClass?: string }>();
+const detailHref = computed(() => `#${(props.detail ?? '').replace(':', '/')}`);
 const root = ref<HTMLElement | null>(null);
 const card = ref<HTMLElement | null>(null);
 const open = ref(false);
@@ -43,7 +50,7 @@ onBeforeUnmount(() => { registry.delete(close); document.removeEventListener('cl
       <strong>{{ name }}</strong>
       <span class="person-position">{{ position }}</span>
       <p v-if="description">{{ description }}</p>
-      <a v-if="modalId" :href="`#${modalId}`" :data-modal-target="modalId" class="member-more">Full profile &rarr;</a>
+      <a v-if="detail" :href="detailHref" :data-detail="detail" class="member-more">Full profile &rarr;</a>
     </div>
   </div>
 </template>

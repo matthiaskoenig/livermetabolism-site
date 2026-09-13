@@ -14,14 +14,14 @@ import {
  */
 const rows: GraphRows = {
   nodes: [
-    { id: 'person:ada', type: 'person', label: 'Ada Lovelace', detail: 'PostDoc', href: '/people/#person-modal-ada', image: '/assets/image/graph/people/ada.webp', topics: ['ai'], value: 3, citations: null },
-    { id: 'person:bob', type: 'person', label: 'Bob Stone', detail: 'PhD student', href: '/people/#person-modal-bob', image: null, topics: ['pharmacometrics'], value: 1, citations: null },
-    { id: 'project:atlas', type: 'project', label: 'Atlas', detail: 'Atlas', href: '/projects/#project-modal-atlas', image: null, topics: ['ai'], value: 1, citations: null },
+    { id: 'person:ada', type: 'person', label: 'Ada Lovelace', detail: 'PostDoc', href: '/people/#person/ada', image: '/assets/image/graph/people/ada.webp', topics: ['ai'], value: 3, citations: null },
+    { id: 'person:bob', type: 'person', label: 'Bob Stone', detail: 'PhD student', href: '/people/#person/bob', image: null, topics: ['pharmacometrics'], value: 1, citations: null },
+    { id: 'project:atlas', type: 'project', label: 'Atlas', detail: 'Atlas', href: '/projects/#project/atlas', image: null, topics: ['ai'], value: 1, citations: null },
     { id: 'software:tool', type: 'software', label: 'tool', detail: 'A tool for models', href: '/research/#software-tool', image: null, topics: ['pharmacometrics'], value: 2, citations: null },
     { id: 'publication:p1', type: 'publication', label: 'A paper on AI', detail: '2026 · Nature', href: '/publications/#pub-p1', image: null, topics: ['ai'], value: 1, citations: 17 },
     { id: 'publication:p2', type: 'publication', label: 'A paper on PK', detail: '2020 · JPKPD', href: '/publications/#pub-p2', image: null, topics: ['pharmacometrics'], value: 1, citations: 0 },
     { id: 'publication:p3', type: 'publication', label: 'An untagged paper', detail: '2019 · Other', href: '/publications/#pub-p3', image: null, topics: [], value: 1, citations: 5 },
-    { id: 'person:cleo', type: 'person', label: 'Cleo Solo', detail: 'Intern', href: '/people/#person-modal-cleo', image: null, topics: ['ai'], value: 0, citations: null },
+    { id: 'person:cleo', type: 'person', label: 'Cleo Solo', detail: 'Intern', href: '/people/#person/cleo', image: null, topics: ['ai'], value: 0, citations: null },
   ],
   links: [
     { source: 'publication:p1', target: 'person:ada', kind: 'author' },
@@ -199,7 +199,7 @@ describe('networkOption', () => {
 
   it('carries the click target and the tooltip text on every node', () => {
     const n = node(null, 'project:atlas');
-    expect(n.href).toBe('/projects/#project-modal-atlas');
+    expect(n.href).toBe('/projects/#project/atlas');
     expect(n.type).toBe('project');
     expect(n.value).toBe(1);
     // every link endpoint resolves to a node id

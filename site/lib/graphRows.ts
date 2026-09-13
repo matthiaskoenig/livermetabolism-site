@@ -20,8 +20,10 @@
  *
  * Every `href` is a site-internal path built from `base` (the deploy's
  * `import.meta.env.BASE_URL`, always ending in `/`) and an id the schemas
- * restrict, mirroring `url()`; the click handler of the island refuses an
- * href that does not start with the base.
+ * restrict, mirroring `url()`: the list page of the node's type plus the
+ * `#<type>/<id>` hash the detail modal is addressed by, so an href opened
+ * directly lands on the list page with that modal open. (The island itself
+ * opens the modal in place instead — see `NetworkGraph.vue`.)
  *
  * The input field sets are `Pick`s of the collection entries, so the page can
  * pass its full `Entry<PersonData>[]` etc. unchanged while the tests stay
@@ -125,21 +127,21 @@ export function graphRows(input: GraphRowsInput): GraphRows {
     push({
       id: nodeId('person', person.id), type: 'person', label: person.name,
       detail: person.role.length ? person.role.join(', ') : capitalized(person.status),
-      href: `${base}people/#person-modal-${person.id}`, image: photo(person.id),
+      href: `${base}people/#person/${person.id}`, image: photo(person.id),
       topics: [], // filled in from their publications below
     });
   }
   for (const project of input.projects) {
     push({
       id: nodeId('project', project.id), type: 'project', label: project.title, detail: project.title,
-      href: `${base}projects/#project-modal-${project.id}`, image: null,
+      href: `${base}projects/#project/${project.id}`, image: null,
       topics: topicsOf(project.tags),
     });
   }
   for (const entry of input.software) {
     push({
       id: nodeId('software', entry.id), type: 'software', label: entry.name, detail: entry.title,
-      href: `${base}research/#software-${entry.id}`, image: null,
+      href: `${base}research/#software/${entry.id}`, image: null,
       topics: topicsOf(entry.tags),
     });
   }
@@ -147,7 +149,7 @@ export function graphRows(input: GraphRowsInput): GraphRows {
     push({
       id: nodeId('publication', pub.id), type: 'publication', label: pub.title,
       detail: `${pub.year} · ${pub.journal_short || pub.journal}`,
-      href: `${base}publications/#pub-${pub.id}`, image: null,
+      href: `${base}publications/#publication/${pub.id}`, image: null,
       topics: topicsOf(pub.tags),
       citations: citationFor(citations, pub.doi)?.citedByCount ?? 0,
     });

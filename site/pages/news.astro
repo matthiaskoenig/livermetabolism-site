@@ -1,16 +1,14 @@
 ---
 import Base from '../layouts/Base.astro';
 import NewsCard from '../components/NewsCard.vue';
-import NewsModal from '../components/NewsModal.vue';
 import TagFilter from '../components/TagFilter.vue';
-import { getNews, getPeople, getPeopleMap, getTags } from '../lib/data';
-import { asset, url } from '../lib/url';
+import { getNews, getPeopleMap, getTags } from '../lib/data';
+import { asset } from '../lib/url';
 import { toTagFilterEntries } from '../lib/views';
 
-const [tagInfo, people, peopleMap, news] = await Promise.all([getTags(), getPeople(), getPeopleMap(), getNews()]);
+const [tagInfo, peopleMap, news] = await Promise.all([getTags(), getPeopleMap(), getNews()]);
 const imageBase = asset('image/news/');
 const avatarBase = asset('image/people/128/');
-const peopleUrl = url('/people/');
 const tagFilterEntries = toTagFilterEntries(tagInfo);
 ---
 <Base title="News" sectionid="news">
@@ -18,5 +16,4 @@ const tagFilterEntries = toTagFilterEntries(tagInfo);
   <div class="project-grid" id="news-grid">
     {news.map((n) => <NewsCard item={n} tagInfo={tagInfo} peopleMap={peopleMap} imageBase={imageBase} avatarBase={avatarBase} />)}
   </div>
-  {news.map((n) => <NewsModal item={n} tagInfo={tagInfo} people={people} imageBase={imageBase} peopleUrl={peopleUrl} />)}
 </Base>

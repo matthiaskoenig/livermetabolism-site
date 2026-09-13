@@ -4,30 +4,15 @@ import CoreMessages from '../components/CoreMessages.astro';
 import Icon from '../components/Icon.vue';
 import PersonAvatar from '../components/PersonAvatar.vue';
 import PersonCard from '../components/PersonCard.vue';
-import PersonModal from '../components/PersonModal.vue';
-import { getPeople, getProjects, getPublications, getSoftware, getTags } from '../lib/data';
+import { getPeople, getTags } from '../lib/data';
 import { stripHtml, truncateWords } from '../lib/text';
 import { asset, url } from '../lib/url';
-import { alumniByYear, crossRefs } from '../lib/views';
+import { alumniByYear } from '../lib/views';
 
-const [tags, people, publications, projects, software] = await Promise.all([getTags(), getPeople(), getPublications(), getProjects(), getSoftware()]);
+const [tags, people] = await Promise.all([getTags(), getPeople()]);
 const avatarBase = asset('image/people/128/');
 const current = people.filter((p) => p.status === 'current');
 const alumniGroups = alumniByYear(people);
-// every person shown on the page gets a static <dialog>; the modal router
-// (installed in Base.astro) opens it on click and on a #person-modal-<id>
-// deep link
-const modalItems = [...current, ...alumniGroups.flatMap((g) => g.people)].map((person) => {
-  const r = crossRefs(person.id, publications, projects, software);
-  return {
-    person,
-    refs: {
-      publications: r.publications.map(({ id, title, year }) => ({ id, title, year })),
-      projects: r.projects.map(({ id, title, homepage }) => ({ id, title, homepage })),
-      software: r.software.map(({ id, name, title, homepage }) => ({ id, name, title, homepage })),
-    },
-  };
-});
 const positions = [
   { title: 'Internship', paragraphs: ['We offer internships online or in-person for instance via the <a href="https://hic.hu-berlin.de/en/internship-program/projects/201" target="_blank" rel="noopener noreferrer">Humboldt Internship Program</a>.', 'We support ERASMUS student internships.'] },
   { title: 'Bachelor Thesis', paragraphs: ['Undergraduate (Bachelor) students are always welcome. Projects can take place in Lübeck or Berlin.'] },
@@ -65,11 +50,11 @@ const positions = [
         <div class="timeline-year-marker"><span class="timeline-dot"></span><span class="timeline-year">{g.year}</span></div>
         <div class="timeline-year-people">
           {g.people.map((p) => (
-            <div class="alumni-card">
+            <div class="alumni-card" id={`person-${p.id}`}>
               <PersonAvatar client:visible name={p.name} src={avatarBase + p.image} position={p.role[p.role.length - 1] ?? ''}
-                description={p.description ? truncateWords(stripHtml(p.description), 24) : null} modalId={`person-modal-${p.id}`} imgClass="alumni-photo" />
+                description={p.description ? truncateWords(stripHtml(p.description), 24) : null} detail={`person:${p.id}`} imgClass="alumni-photo" />
               <div class="alumni-info">
-                <a href={`#person-modal-${p.id}`} data-modal-target={`person-modal-${p.id}`} class="member-name-link"><strong>{p.name}</strong></a>{p.orcid && (<> <a href={`https://orcid.org/${p.orcid}`} target="_blank" rel="noopener noreferrer" title="ORCID"><Icon name="orcid" /></a></>)}
+                <a href={`#person/${p.id}`} data-detail={`person:${p.id}`} class="member-name-link"><strong>{p.name}</strong></a>{p.orcid && (<> <a href={`https://orcid.org/${p.orcid}`} target="_blank" rel="noopener noreferrer" title="ORCID"><Icon name="orcid" /></a></>)}
                 <span class="person-position">{p.role[p.role.length - 1]}</span>
               </div>
             </div>
@@ -79,5 +64,4 @@ const positions = [
     ))}
   </div>
 
-  {modalItems.map((it) => <PersonModal person={it.person} refs={it.refs} avatarBase={avatarBase} publicationsUrl={url('/publications/')} />)}
 </Base>

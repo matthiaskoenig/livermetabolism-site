@@ -18,7 +18,7 @@ const thumb = computed(() => {
 </script>
 
 <template>
-  <div class="project-card is-clickable" :id="`news-${item.id}`" :data-tags="item.tags.join('|')" :data-modal-target="`news-modal-${item.id}`" role="button" tabindex="0" aria-haspopup="dialog">
+  <div class="project-card is-clickable" :id="`news-${item.id}`" :data-tags="item.tags.join('|')" :data-detail="`news:${item.id}`" role="button" tabindex="0" aria-haspopup="dialog">
     <img v-if="thumb" :src="thumb" :alt="item.title" loading="lazy" decoding="async" class="project-image" />
     <div class="project-body">
       <p class="news-date">{{ item.date }}</p>
