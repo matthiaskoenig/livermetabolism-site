@@ -279,7 +279,8 @@ describe('detailModel: project', () => {
   it('renders title, status and cooperation partners', () => {
     expect(model).toMatchObject({
       type: 'project', id: 'atlas', title: 'ATLAS', subtitle: 'Current · Charité, EMBL',
-      image: `${BASE}assets/image/projects/atlas.webp`, imageShape: 'thumb', tags: ['AI'],
+      // no header thumbnail: the gallery below already shows every image
+      image: null, imageShape: 'thumb', tags: ['AI'],
       body: '<p>Decision support.</p>', figures: [], keywords: [], listHref: `${BASE}projects/#project-atlas`,
     });
     expect(model.links.map((l) => l.label)).toEqual(['Homepage', 'Repository']);
@@ -337,6 +338,36 @@ describe('detailModel: news', () => {
     expect(withoutAbstract.body).toBe('Short text.');
     expect(model.related.map((r) => r.label)).toEqual(['People']);
     expect(model.related[0].rows[0].id).toBe('ada');
+  });
+});
+
+describe('detailModel: media', () => {
+  it('embeds a news item’s video, and nothing when it has none', () => {
+    const video = 'https://www.youtube.com/embed/Mu9oXKLtTGI';
+    const withVideo = detailModel('news', 'award', ctx({ news: [{ ...news[0], image: null, video }] }));
+    expect(withVideo.media).toEqual({ kind: 'video', src: video, title: 'Award' });
+    // the player carries the video, so the header does not repeat its still
+    expect(withVideo.image).toBeNull();
+    expect(detailModel('news', 'award', ctx()).media).toBeNull();
+  });
+
+  it('shows every image of a project with its caption', () => {
+    const gallery = detailModel('project', 'atlas', ctx({ projects: [{ ...projects[0], images: ['one.webp', 'two.webp'], image_title: 'Two views' }] }));
+    expect(gallery.media).toEqual({
+      kind: 'gallery',
+      images: [`${BASE}assets/image/projects/one.webp`, `${BASE}assets/image/projects/two.webp`],
+      caption: 'Two views',
+    });
+    // the gallery replaces the header thumbnail, and a missing image_title is no caption
+    expect(gallery.image).toBeNull();
+    expect(detailModel('project', 'atlas', ctx()).media).toEqual({ kind: 'gallery', images: [`${BASE}assets/image/projects/atlas.webp`], caption: null });
+    expect(detailModel('project', 'atlas', ctx({ projects: [{ ...projects[0], images: [] }] })).media).toBeNull();
+  });
+
+  it('gives a person, a publication and a software entry no media at all', () => {
+    expect(detailModel('person', 'ada', ctx()).media).toBeNull();
+    expect(detailModel('publication', 'Ada2026_ai', ctx()).media).toBeNull();
+    expect(detailModel('software', 'sbmlutils', ctx()).media).toBeNull();
   });
 });
 

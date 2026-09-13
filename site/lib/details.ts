@@ -74,6 +74,21 @@ export interface DetailSection {
   rows: RelatedRow[];
 }
 
+/**
+ * The one rich block a detail can carry, between the figures and the body —
+ * what the retired `NewsModal.vue` and `ProjectModal.vue` showed:
+ *
+ * - `video`: a news item's YouTube embed. `src` is `news.video` unchanged,
+ *   which `newsSchema` has already restricted to the two YouTube embed hosts
+ *   `astro.config.mjs`'s `frame-src` allows, so a hand-edited URL fails the
+ *   data build instead of being silently blocked in the modal.
+ * - `gallery`: a project's images, every one of them, with `image_title` as
+ *   the caption.
+ */
+export type DetailMedia =
+  | { kind: 'video'; src: string; title: string }
+  | { kind: 'gallery'; images: string[]; caption: string | null };
+
 export interface DetailModel {
   type: DetailType;
   id: string;
@@ -88,6 +103,8 @@ export interface DetailModel {
   tags: string[];
   links: DetailLink[];
   figures: DetailFigure[];
+  /** A news item's video embed or a project's image gallery; null for every other type (and for a news item without a video). */
+  media: DetailMedia | null;
   /** Trusted HTML from the data — the same field the cards already render. */
   body: string;
   keywords: string[];
@@ -427,6 +444,7 @@ function personModel(ctx: DetailContext, id: string): DetailModel {
       ...(pubs.length ? [{ label: 'Publications', value: String(pubs.length) }] : []),
       ...(cited > 0 ? [{ label: 'Citations', value: String(cited) }] : []),
     ],
+    media: null,
     body: p.description ?? '',
     keywords: [],
     related: [
@@ -466,6 +484,7 @@ function publicationModel(ctx: DetailContext, id: string): DetailModel {
           ...(cites.isOa ? [{ label: 'Open access', value: cites.oaStatus }] : []),
         ]
       : [],
+    media: null,
     body: p.abstract ?? '',
     keywords: p.keywords,
     related: [
@@ -485,11 +504,15 @@ function projectModel(ctx: DetailContext, id: string): DetailModel {
   return {
     type: 'project', id, title: p.title,
     subtitle: line([capitalize(p.status), p.cooperation_partners]),
-    image: p.images[0] ? `${ctx.base}${PROJECT_DIR}${p.images[0]}` : null,
+    // no header thumbnail: the gallery below shows every image, the first one
+    // included, so a thumbnail would only repeat it (as the retired
+    // ProjectModal.vue did, which led with the gallery too)
+    image: null,
     imageShape: 'thumb',
     tags: p.tags,
     links: [...extLink('Homepage', p.homepage, 'globe'), ...extLink('Repository', p.repository, 'github')],
     figures: [],
+    media: p.images.length ? { kind: 'gallery', images: p.images.map((img) => `${ctx.base}${PROJECT_DIR}${img}`), caption: p.image_title ?? null } : null,
     body: p.abstract,
     keywords: [],
     related: [
@@ -529,6 +552,7 @@ function softwareModel(ctx: DetailContext, id: string): DetailModel {
           { label: 'Last push', value: shortDate(stats.pushedAt) },
         ]
       : [],
+    media: null,
     body: s.description,
     keywords: [],
     related: [
@@ -546,7 +570,9 @@ function newsModel(ctx: DetailContext, id: string): DetailModel {
   return {
     type: 'news', id, title: n.title,
     subtitle: n.date,
-    image: newsImage(ctx, n),
+    // the player below carries the video, so the header falls back to the
+    // YouTube still only when there is no embed to show (as NewsCard.vue does)
+    image: n.video ? (n.image ? `${ctx.base}${NEWS_DIR}${n.image}` : null) : newsImage(ctx, n),
     imageShape: 'thumb',
     tags: n.tags,
     links: [
@@ -554,6 +580,7 @@ function newsModel(ctx: DetailContext, id: string): DetailModel {
       ...extLink('Video', n.video, 'video-camera'),
     ],
     figures: [],
+    media: n.video ? { kind: 'video', src: n.video, title: n.title } : null,
     body: n.abstract ?? n.short,
     keywords: [],
     related: [...section('People', rel.people.map((pid) => personRow(ctx, pid)))],
