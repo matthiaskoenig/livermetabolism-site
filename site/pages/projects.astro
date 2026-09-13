@@ -1,19 +1,16 @@
 ---
 import Base from '../layouts/Base.astro';
 import ProjectCard from '../components/ProjectCard.vue';
-import ProjectModal from '../components/ProjectModal.vue';
 import TagFilter from '../components/TagFilter.vue';
-import { getPeople, getPeopleMap, getProjects, getPublications, getTags } from '../lib/data';
-import { asset, url } from '../lib/url';
+import { getPeopleMap, getProjects, getPublications, getTags } from '../lib/data';
+import { asset } from '../lib/url';
 import { toTagFilterEntries } from '../lib/views';
 
-const [tagInfo, people, peopleMap, projects, publications] = await Promise.all([getTags(), getPeople(), getPeopleMap(), getProjects(), getPublications()]);
+const [tagInfo, peopleMap, projects, publications] = await Promise.all([getTags(), getPeopleMap(), getProjects(), getPublications()]);
 const current = projects.filter((p) => p.status === 'current');
 const imageBase = asset('image/projects/');
 const pdfBase = asset('pdf/');
 const avatarBase = asset('image/people/128/');
-const peopleUrl = url('/people/');
-const publicationsUrl = url('/publications/');
 const tagFilterEntries = toTagFilterEntries(tagInfo);
 ---
 <Base title="Projects" sectionid="projects">
@@ -21,5 +18,4 @@ const tagFilterEntries = toTagFilterEntries(tagInfo);
   <div class="project-grid" id="project-grid">
     {current.map((p) => <ProjectCard project={p} tagInfo={tagInfo} peopleMap={peopleMap} publications={publications} imageBase={imageBase} pdfBase={pdfBase} avatarBase={avatarBase} />)}
   </div>
-  {current.map((p) => <ProjectModal project={p} tagInfo={tagInfo} peopleMap={peopleMap} people={people} publications={publications} imageBase={imageBase} peopleUrl={peopleUrl} publicationsUrl={publicationsUrl} />)}
 </Base>

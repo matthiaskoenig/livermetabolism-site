@@ -15,7 +15,7 @@ const pdfs = computed(() => props.project.publications.map((id) => props.publica
 </script>
 
 <template>
-  <div class="project-card is-clickable" :id="`project-${project.id}`" :data-tags="project.tags.join('|')" :data-modal-target="`project-modal-${project.id}`" role="button" tabindex="0" aria-haspopup="dialog">
+  <div class="project-card is-clickable" :id="`project-${project.id}`" :data-tags="project.tags.join('|')" :data-detail="`project:${project.id}`" role="button" tabindex="0" aria-haspopup="dialog">
     <img v-if="project.images[0]" :src="imageBase + project.images[0]" :alt="project.title" loading="lazy" decoding="async" class="project-image" />
     <div class="project-body">
       <h3>{{ project.title }}</h3>

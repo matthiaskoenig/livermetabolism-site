@@ -26,7 +26,7 @@ const releaseTitle = () => (props.stats?.release ? `Release ${props.stats.releas
   <div class="project-card" :id="`software-${item.id}`" :data-tags="item.tags.join('|')">
     <img v-if="item.image" :src="imageBase + item.image" :alt="item.name" loading="lazy" decoding="async" class="project-image project-image-contain" />
     <div class="project-body">
-      <h3>{{ item.name }}</h3>
+      <h3><a class="software-name-link" :href="`#software/${item.id}`" :data-detail="`software:${item.id}`">{{ item.name }}</a></h3>
       <TagList :tags="item.tags" :tag-info="tagInfo" />
       <p><strong>{{ item.title }}</strong><br />{{ item.description }}</p>
       <p v-if="repo" class="software-stats" :data-repo="repo">

@@ -24,6 +24,7 @@
  * the index always agree.
  */
 import { repoFullName } from '../../scripts/lib/repos';
+import type { DetailType } from './detailTypes';
 import { citationFor } from './citations';
 import { openalexWorkUrl, type Citations } from './citationsSchema';
 import { shortDate, statsFor } from './githubRows';
@@ -34,12 +35,10 @@ import type { Scholar } from './scholarSchema';
 import { capitalize, slugify } from './text';
 import type { Entry, TagInfo } from './views';
 
-/** The five entities that get a detail fragment and a modal. */
-export type DetailType = 'person' | 'publication' | 'project' | 'software' | 'news';
+/** The five entities that get a detail fragment and a modal (defined in the leaf module the client router imports). */
+export { DETAIL_TYPES, type DetailType } from './detailTypes';
 /** Presentations and posters have no detail of their own: they only appear as related rows linking to their card. */
 export type RelatedType = DetailType | 'presentation' | 'poster';
-
-export const DETAIL_TYPES = ['person', 'publication', 'project', 'software', 'news'] as const;
 
 /** One external (or PDF) link of the header's icon row. */
 export interface DetailLink {

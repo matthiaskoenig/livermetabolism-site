@@ -106,31 +106,58 @@ export function resetChart(el: HTMLElement | null, option: EChartsCoreOption): v
  * drag that starts on empty canvas has no node under it.
  *
  * `force.friction: 0` rides along so the merge-render this needs cannot
- * restart the simulation mid-drag. Returns the unbind function.
+ * restart the simulation mid-drag.
+ *
+ * That merge-render is also why a node cannot use the chart's `click` event:
+ * `setOption` on mousedown rebuilds the series' graphic elements, so the
+ * mouseup lands on a different element and ECharts never synthesises a click.
+ * The press/release pair is owned here anyway, so `onNodeTap` is called with
+ * the node's data when the pointer did not travel more than `TAP_SLOP` pixels
+ * between them — a click, as opposed to a drag.
+ *
+ * Returns the unbind function.
  */
-export function enableNodeDragging(el: HTMLElement | null, roam: string): () => void {
+const TAP_SLOP = 4;
+
+/** The zrender/ECharts mouse events both carry the pointer position as offsets into the canvas. */
+function offsets(e: unknown): { x: number; y: number } | null {
+  const { offsetX, offsetY } = (e ?? {}) as { offsetX?: unknown; offsetY?: unknown };
+  return typeof offsetX === 'number' && typeof offsetY === 'number' ? { x: offsetX, y: offsetY } : null;
+}
+
+export function enableNodeDragging(el: HTMLElement | null, roam: string, onNodeTap?: (data: unknown) => void): () => void {
   const chart = el ? getInstanceByDom(el) : null;
   if (!chart) return () => {};
   let dragging = false;
+  /** Where the press started and on what, so the release can tell a click from a drag. */
+  let pressed: { at: { x: number; y: number } | null; data: unknown } | null = null;
   const setRoam = (value: string | boolean) => chart.setOption({ series: [{ roam: value, force: { friction: 0 } }] });
   const onDown = (params: unknown) => {
-    if ((params as { dataType?: string })?.dataType !== 'node' || dragging) return;
+    const p = (params ?? {}) as { dataType?: string; data?: unknown; event?: unknown };
+    if (p.dataType !== 'node' || dragging) return;
     dragging = true;
+    pressed = { at: offsets(p.event), data: p.data };
     setRoam(false);
   };
-  const release = () => {
+  const release = (e?: unknown) => {
     if (!dragging) return;
     dragging = false;
     setRoam(roam);
+    const press = pressed;
+    pressed = null;
+    if (!press?.at || !onNodeTap) return;
+    const up = offsets(e);
+    if (up && Math.hypot(up.x - press.at.x, up.y - press.at.y) <= TAP_SLOP) onNodeTap(press.data);
   };
+  const cancel = () => { pressed = null; release(); };
   chart.on('mousedown', onDown);
   const zr = chart.getZr();
   zr.on('mouseup', release);
-  zr.on('globalout', release);
+  zr.on('globalout', cancel);
   return () => {
     chart.off('mousedown', onDown);
     zr.off('mouseup', release);
-    zr.off('globalout', release);
+    zr.off('globalout', cancel);
   };
 }
 

@@ -60,20 +60,6 @@ export function alumniByYear<T extends Pick<PersonData, 'status' | 'end_year' | 
   return groups;
 }
 
-/** person_modal.html: everything a person is credited on via `people:`. */
-export function crossRefs(
-  personId: string,
-  publications: Entry<PublicationData>[],
-  projects: Entry<ProjectData>[],
-  software: Entry<SoftwareData>[],
-) {
-  return {
-    publications: publications.filter((p) => p.people.includes(personId)).sort((a, b) => b.year - a.year),
-    projects: projects.filter((p) => p.people.includes(personId)),
-    software: software.filter((s) => s.people.includes(personId)),
-  };
-}
-
 /** index.html tag sections: counts behind the Publications/Projects/Software links. */
 export function tagCounts(
   tag: string,

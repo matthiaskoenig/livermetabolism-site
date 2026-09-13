@@ -9,6 +9,8 @@
 // for why static chrome is done the other way round).
 import { onBeforeUnmount, onMounted, ref } from 'vue';
 import { enableNodeDragging, resetChart, roamChart, useChart } from './useChart';
+import { DETAIL_TYPES, type DetailType } from '../lib/detailTypes';
+import { openDetail } from '../lib/detailModal';
 import type { GraphRows } from '../lib/graphRows';
 import { ROAM, networkOption } from '../lib/networkOptions';
 
@@ -83,14 +85,27 @@ function select(slug: string | null): void {
 }
 
 /**
- * Click on a node: go to its item. The href was built at build time from ids
- * the schemas restrict (graphRows.ts), and only a site-internal one is
- * followed.
+ * A click on a node opens its detail modal in place, without leaving the
+ * graph. The node's row id is `<type>:<id>` (graphRows.ts), exactly the form a
+ * `data-detail` trigger carries, and `openDetail` validates both halves before
+ * it fetches anything; the shell is on every page (Base.astro), so nothing has
+ * to be rendered here. A node whose id is not one of the five detail types
+ * falls back to its build-time href, which is site-internal by construction.
+ *
+ * This hangs off `enableNodeDragging`'s press/release pair rather than the
+ * chart's `click` event — see the comment there for why a graph whose nodes
+ * can be dragged never emits one.
  */
-function onClick(params: unknown): void {
-  const p = (params ?? {}) as { dataType?: string; data?: { href?: string } };
-  if (p.dataType !== 'node' || !p.data) return;
-  const { href } = p.data;
+function onNodeTap(data: unknown): void {
+  const node = (data ?? {}) as { id?: string; href?: string };
+  const rowId = node.id ?? '';
+  const colon = rowId.indexOf(':');
+  const type = colon > 0 ? rowId.slice(0, colon) : '';
+  if ((DETAIL_TYPES as readonly string[]).includes(type)) {
+    void openDetail(type as DetailType, rowId.slice(colon + 1));
+    return;
+  }
+  const { href } = node;
   if (typeof href === 'string' && href.startsWith(import.meta.env.BASE_URL)) location.assign(href);
 }
 
@@ -100,13 +115,13 @@ function onClick(params: unknown): void {
 const el = useChart(
   () => networkOption(props.rows, topic.value, { relayout: relayout.value }),
   () => height.value,
-  onClick,
+  undefined,
   { notMerge: () => relayout.value },
 );
 
 // after useChart's own onMounted, so the chart instance exists
 let unbindDrag: () => void = () => {};
-onMounted(() => { unbindDrag = enableNodeDragging(el.value, ROAM); });
+onMounted(() => { unbindDrag = enableNodeDragging(el.value, ROAM, onNodeTap); });
 onBeforeUnmount(() => unbindDrag());
 
 /** Zoom around the middle of the canvas: the wheel is left to the page. */

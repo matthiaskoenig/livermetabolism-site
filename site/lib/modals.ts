@@ -1,9 +1,19 @@
 /**
- * One document-level router for every native <dialog class="modal"> on a
- * page (person/project/news modals, site search): opens on
- * [data-modal-target] clicks/keys, on a matching URL hash (search results
- * deep-link to #person-modal-<id>), and pulses non-modal anchors.
+ * One document-level router for the static native <dialog class="modal">
+ * elements of a page (the site search): opens on [data-modal-target]
+ * clicks/keys, on a matching URL hash, and pulses non-modal anchors
+ * (`#pub-<id>`, `#project-<id>`, ... the list anchors search results and the
+ * detail modal's "Show in list" link point at).
+ *
+ * The detail modal is the other half: `installDetailRouter()` handles every
+ * `[data-detail]` trigger and every detail hash (`#<type>/<id>` and the legacy
+ * `#person-modal-<id>` forms) beside this, on the same document. The two do
+ * not overlap - a detail hash never matches an element id, and a list anchor
+ * is never a detail hash.
  */
+import { installDetailRouter } from './detailModal';
+import { url } from './url';
+
 let installed = false;
 
 function dialog(id: string): HTMLDialogElement | null {
@@ -39,6 +49,8 @@ function focusHashTarget(): void {
 export function installModalRouter(): void {
   if (installed) return;
   installed = true;
+
+  installDetailRouter({ base: url('/') });
 
   document.addEventListener('click', (e) => {
     const target = e.target as HTMLElement | null;

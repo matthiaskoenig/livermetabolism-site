@@ -136,12 +136,12 @@ describe('graphRows', () => {
 
   it('builds every href from the base path', () => {
     for (const node of rows.nodes) expect(node.href.startsWith(BASE)).toBe(true);
-    expect(byId.get('person:ada')?.href).toBe(`${BASE}people/#person-modal-ada`);
-    expect(byId.get('project:atlas')?.href).toBe(`${BASE}projects/#project-modal-atlas`);
-    expect(byId.get('software:sbmlutils')?.href).toBe(`${BASE}research/#software-sbmlutils`);
-    expect(byId.get('publication:Ada2026_ai')?.href).toBe(`${BASE}publications/#pub-Ada2026_ai`);
+    expect(byId.get('person:ada')?.href).toBe(`${BASE}people/#person/ada`);
+    expect(byId.get('project:atlas')?.href).toBe(`${BASE}projects/#project/atlas`);
+    expect(byId.get('software:sbmlutils')?.href).toBe(`${BASE}research/#software/sbmlutils`);
+    expect(byId.get('publication:Ada2026_ai')?.href).toBe(`${BASE}publications/#publication/Ada2026_ai`);
     const local = graphRows(input({ base: '/' }));
-    expect(local.nodes.find((n) => n.id === 'person:ada')?.href).toBe('/people/#person-modal-ada');
+    expect(local.nodes.find((n) => n.id === 'person:ada')?.href).toBe('/people/#person/ada');
   });
 
   it('gives a photo to people only, and only when the file exists', () => {

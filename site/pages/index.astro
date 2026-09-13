@@ -48,7 +48,7 @@ const quickLinks = [
       <div class="people-strip">
         {strip.map((p) => (
           <PersonAvatar client:visible name={p.name} src={asset(`image/people/128/${p.image}`)} position={p.role[p.role.length - 1] ?? ''}
-            description={p.description ? truncateWords(stripHtml(p.description), 24) : null} />
+            description={p.description ? truncateWords(stripHtml(p.description), 24) : null} detail={`person:${p.id}`} />
         ))}
       </div>
     </div>

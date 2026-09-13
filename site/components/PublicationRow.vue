@@ -39,7 +39,7 @@ const cites = props.citation ?? null;
     </td>
     <td>
       <TagList :tags="pub.tags" :tag-info="tagInfo" />
-      <p class="pub-title"><i>{{ pub.title }}</i></p>
+      <p class="pub-title"><a class="pub-title-link" :href="`#publication/${pub.id}`" :data-detail="`publication:${pub.id}`"><i>{{ pub.title }}</i></a></p>
       <p class="pub-meta">
         <PersonChips :text="pub.authors" :people="pub.people" :people-map="peopleMap" :avatar-base="avatarBase" />; {{ pub.journal }}<template v-if="pub.doi">. doi:<a :href="`https://doi.org/${pub.doi}`">{{ pub.doi }}</a></template><template v-if="pub.pmid">. pmid:<a :href="`https://pubmed.ncbi.nlm.nih.gov/${pub.pmid}`">{{ pub.pmid }}</a></template>
       </p>

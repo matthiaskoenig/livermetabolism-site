@@ -1,0 +1,20 @@
+---
+// The one detail modal of the site: static markup in the base layout on every
+// page, filled by `site/lib/detailModal.ts` with the prerendered fragment of
+// the person, publication, project, software entry or news item that was
+// clicked (or named by the URL hash). No island - the shell is empty markup
+// and the router is installed once by Base.astro's script.
+//
+// The Back button walks the in-modal stack built by the related rows; it stays
+// hidden while there is nothing to go back to. The title is set from the
+// fragment's own .detail-title.
+const MODAL_ID = 'detail-modal';
+---
+<dialog id={MODAL_ID} class="modal detail-modal" aria-labelledby={`${MODAL_ID}-label`}>
+  <div class="modal-header">
+    <button type="button" class="modal-back" aria-label="Back to the previous entry" hidden>&larr; Back</button>
+    <h5 class="modal-title" id={`${MODAL_ID}-label`}></h5>
+    <button type="button" class="btn-close" data-modal-close aria-label="Close"></button>
+  </div>
+  <div class="modal-body"></div>
+</dialog>
