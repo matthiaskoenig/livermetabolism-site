@@ -107,6 +107,9 @@ function shell(): Shell | null {
   const title = dialog.querySelector<HTMLElement>('.modal-title');
   const back = dialog.querySelector<HTMLElement>('.modal-back');
   if (!body || !title || !back) return null;
+  // replacing the body drops whatever was focused (the clicked related row),
+  // so `render()` moves focus to the title - which has to be focusable for it
+  title.tabIndex = -1;
   const view: Shell = { dialog, body, title, back, stack: [], cache: new Map(), pending: 0 };
   states.set(dialog, view);
   // Escape, the backdrop and the × all end in the dialog's own close event
@@ -167,10 +170,12 @@ async function render(view: Shell): Promise<void> {
     view.title.textContent = node.querySelector('.detail-title')?.textContent?.trim() || 'Details';
     view.body.replaceChildren(node);
     view.body.scrollTop = 0;
+    view.title.focus();
   } catch {
     if (token !== view.pending) return;
     view.title.textContent = 'Details';
     view.body.replaceChildren(message('detail-error', 'This entry could not be loaded. Please try again.'));
+    view.title.focus();
   }
 }
 
@@ -221,6 +226,16 @@ function goBack(view: Shell): void {
   void render(view);
 }
 
+/**
+ * A click the browser is expected to handle itself: ⌘/Ctrl/Shift/Alt-click and
+ * every button but the primary one open a link in a new tab, window or the
+ * background, so a trigger that is an anchor must not be intercepted. Shared
+ * with the static-dialog router in `modals.ts`.
+ */
+export function isModifiedClick(e: MouseEvent): boolean {
+  return e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0;
+}
+
 /** The `<type>:<id>` of a trigger, validated. */
 function triggerEntry(el: HTMLElement): DetailEntry | null {
   const value = el.dataset.detail ?? '';
@@ -235,7 +250,10 @@ function triggerEntry(el: HTMLElement): DetailEntry | null {
  * Follow the current URL hash: open the detail it names, or close a modal left
  * open by a non-detail hash (a "Show in list" link, say). A hash that already
  * names what is on screen changes nothing — the modal writes the hash itself,
- * and a search result may point at the detail that is already open.
+ * and a search result may point at the detail that is already open. A hash that
+ * names the entry *below* the top of the stack is the browser Back out of a
+ * related-row hop, so it pops the in-modal stack instead of pushing the same
+ * detail onto it a second time.
  */
 function followHash(): void {
   const view = shell();
@@ -244,8 +262,14 @@ function followHash(): void {
     if (view?.dialog.open) closeDetail();
     return;
   }
-  const top = view?.stack[view.stack.length - 1];
-  if (view?.dialog.open && top && top.type === entry.type && top.id === entry.id) return;
+  const same = (e: DetailEntry | undefined) => !!e && e.type === entry.type && e.id === entry.id;
+  if (view?.dialog.open) {
+    if (same(view.stack[view.stack.length - 1])) return;
+    if (same(view.stack[view.stack.length - 2])) {
+      goBack(view);
+      return;
+    }
+  }
   void openDetail(entry.type, entry.id, { push: false });
 }
 
@@ -271,6 +295,9 @@ export function installDetailRouter(opts: { base: string; fetchImpl?: typeof fet
       }
       const trigger = target.closest<HTMLElement>('[data-detail]');
       if (!trigger) return;
+      // ⌘/Ctrl-click and friends belong to the browser: the trigger is an
+      // anchor with the detail's own hash, so it opens in a new tab
+      if (isModifiedClick(e)) return;
       // a real link inside a clickable card (PDF, homepage, repository) navigates on its own
       const link = target.closest('a');
       if (link && trigger.contains(link) && link !== trigger) return;
