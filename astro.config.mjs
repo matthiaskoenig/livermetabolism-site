@@ -37,7 +37,10 @@ export default defineConfig({
   // inline spacing between adjacent elements (icons next to text, author
   // chips) survives; this is already Astro's default, kept explicit here.
   compressHTML: true,
-  integrations: [vue(), sitemap()],
+  // /detail/<type>/<id>/ are page partials (no doctype, no <head>, no layout)
+  // that the detail modal fetches and adopts, not pages of the site — keep
+  // them out of the sitemap so search engines index the list pages instead.
+  integrations: [vue(), sitemap({ filter: (page) => !page.includes('/detail/') })],
   vite: {
     plugins: [tailwindcss()],
     define: {
