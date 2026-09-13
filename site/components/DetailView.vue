@@ -61,6 +61,18 @@ const detailTarget = (row: RelatedRow): string | undefined =>
       </span>
     </p>
 
+    <template v-if="model.media">
+      <div v-if="model.media.kind === 'video'" class="detail-media detail-video">
+        <iframe :src="model.media.src" :title="model.media.title" loading="lazy" allowfullscreen></iframe>
+      </div>
+      <template v-else>
+        <div class="detail-media detail-gallery">
+          <img v-for="img in model.media.images" :key="img" :src="img" :alt="model.title" loading="lazy" decoding="async" />
+        </div>
+        <p v-if="model.media.caption" class="detail-media-caption">{{ model.media.caption }}</p>
+      </template>
+    </template>
+
     <div v-if="model.body" class="detail-body" v-html="model.body"></div>
     <p v-if="model.keywords.length" class="detail-keywords"><strong>Keywords:</strong> {{ model.keywords.join(', ') }}</p>
 
