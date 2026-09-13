@@ -6,6 +6,7 @@ import TopNav from '../components/TopNav.astro';
 import Footer from '../components/Footer.astro';
 import SiteSearch from '../components/SiteSearch.astro';
 import CookieConsent from '../components/CookieConsent.astro';
+import DetailModal from '../components/DetailModal.astro';
 import { url } from '../lib/url';
 
 interface Props { title?: string; description?: string; sectionid?: string }
@@ -29,11 +30,12 @@ const isHome = Astro.url.pathname === url('/');
     <Footer home={isHome} />
     <CookieConsent gaId="G-FDNGDW6G09" privacyUrl={url('/privacy/')} />
     <SiteSearch searchUrl={url('/search.json')} />
+    <DetailModal />
     <slot name="global" />
     <script>
-      // The document-level modal router (person/project/news modals, the
-      // search dialog): plain TypeScript, so a page whose only interactive
-      // parts are static dialogs ships no Vue runtime at all.
+      // The document-level modal router (the detail modal, the search
+      // dialog): plain TypeScript, so a page whose only interactive parts
+      // are static dialogs ships no Vue runtime at all.
       import { installModalRouter } from '../lib/modals';
       installModalRouter();
     </script>

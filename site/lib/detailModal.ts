@@ -28,7 +28,7 @@
  * element adopted — never assigned as HTML — and it is the site's own
  * same-origin build output (`connect-src 'self'`).
  */
-import { DETAIL_TYPES, type DetailType } from './details';
+import { DETAIL_TYPES, type DetailType } from './detailTypes';
 
 export interface DetailEntry {
   type: DetailType;
@@ -185,6 +185,9 @@ export async function openDetail(type: DetailType, id: string, opts: { push?: bo
   const view = shell();
   if (!view) return;
   const entry: DetailEntry = { type, id };
+  const top = view.stack[view.stack.length - 1];
+  // re-opening what is already on screen is a no-op, not a second stack entry
+  if (view.dialog.open && top && top.type === type && top.id === id) return;
   if (view.dialog.open) view.stack.push(entry);
   else view.stack.splice(0, view.stack.length, entry);
   setHash(entry, opts.push !== false);

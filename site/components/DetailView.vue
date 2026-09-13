@@ -2,7 +2,8 @@
 import Icon from './Icon.vue';
 import PersonChips from './PersonChips.vue';
 import TagList from './TagList.vue';
-import { DETAIL_TYPES, type DetailModel, type RelatedRow } from '../lib/details';
+import { type DetailModel, type RelatedRow } from '../lib/details';
+import { DETAIL_TYPES } from '../lib/detailTypes';
 import type { PeopleMap } from '../lib/people';
 import type { TagInfo } from '../lib/views';
 

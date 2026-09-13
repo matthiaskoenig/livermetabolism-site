@@ -1300,7 +1300,7 @@
   }
 
   /* wraps a person's photo/name on the member grid, alumni timeline, and
-     the alumni hover-card - opens the matching #person-modal-<id> without
+     the alumni hover-card - opens the matching #person/<id> detail without
      inheriting default link styling */
   .member-photo-link,
   .member-name-link {
@@ -1458,120 +1458,62 @@
     }
   }
 
-  /* full-profile modal opened from the member grid / alumni timeline:
-     photo + role/links header, full description, and the
-     publications/projects/software cross-referenced via people: */
-  .person-modal-header {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-    margin-bottom: 1em;
+  /* a title that opens its detail modal (publication rows, software cards):
+     a real href for deep links and middle-clicks, but not link-coloured */
+  .pub-title-link,
+  .software-name-link {
+    color: inherit;
+    text-decoration: none;
 
-    .person-position {
-      display: block;
-      color: var(--color-success);
-      font-size: 0.85em;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .person-tenure {
-      display: block;
-      color: var(--color-gray-600);
-      font-size: 0.85em;
-    }
-
-    .member-links {
-      margin-top: 0.4em;
-
-      a {
-        margin-right: 0.6em;
-      }
-
-      .fa {
-        font-size: 16px;
-        vertical-align: middle;
-        color: var(--color-gray-800);
-      }
+    &:hover,
+    &:focus {
+      text-decoration: underline;
     }
   }
 
-  .person-modal-photo {
-    width: 96px;
-    height: 96px;
-    object-fit: cover;
-    border-radius: 50%;
+  /* ----------------------------------------------------------------
+     The detail modal shell (site/components/DetailModal.astro): the one
+     dialog on every page, filled with the fetched /detail/<type>/<id>/
+     fragment. The header carries the Back button of the in-modal
+     browsing stack (hidden at the first entry), the title read from
+     the fragment, and the close button.
+     ---------------------------------------------------------------- */
+  .detail-modal {
+    .modal-header {
+      gap: 0.6em;
+    }
+
+    .modal-title {
+      min-width: 0;
+      flex: 1;
+      font-size: 1.05rem;
+      line-height: 1.35;
+    }
+  }
+
+  .modal-back {
     flex-shrink: 0;
-  }
-
-  .person-modal-description {
+    padding: 0.15em 0.6em;
     color: var(--color-gray-800);
-  }
+    background-color: transparent;
+    border: 1px solid var(--color-gray-300);
+    border-radius: 0.375rem;
+    font-size: 0.82rem;
+    cursor: pointer;
 
-  .modal-image-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 0.6em;
-    margin-bottom: 0.4em;
-
-    img {
-      width: 100%;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 6px;
-      background-color: var(--color-gray-200);
+    &:hover,
+    &:focus {
+      color: var(--color-body);
+      border-color: var(--color-gray-600);
     }
   }
 
-  .modal-image-single {
-    width: 100%;
-    max-height: 320px;
-    object-fit: cover;
-    border-radius: 6px;
-    background-color: var(--color-gray-200);
-    margin-bottom: 0.8em;
-  }
-
-  .modal-image-caption {
+  .detail-loading,
+  .detail-error {
+    margin: 0;
+    padding: 1.5em 0;
+    text-align: center;
     color: var(--color-gray-600);
-    font-size: 0.82em;
-    margin-top: -0.2em;
-    margin-bottom: 1em;
-  }
-
-  /* responsive 16:9 iframe wrapper for a news item's video embed */
-  .modal-video-embed {
-    position: relative;
-    width: 100%;
-    padding-top: 56.25%;
-    margin-bottom: 0.8em;
-    border-radius: 6px;
-    overflow: hidden;
-    background-color: var(--color-gray-900);
-
-    iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-  }
-
-  .person-modal-list {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 1.2em;
-    font-size: 0.9em;
-
-    li {
-      padding: 0.3em 0;
-      border-bottom: 1px solid var(--color-gray-200);
-
-      &:last-child {
-        border-bottom: none;
-      }
-    }
   }
 
   /* ----------------------------------------------------------------
@@ -1598,7 +1540,7 @@
     background-color: var(--color-gray-200);
   }
 
-  /* a person's photo, like .person-modal-photo */
+  /* a person's photo */
   .detail-image-round {
     width: 96px;
     height: 96px;
