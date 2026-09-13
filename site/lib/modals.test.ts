@@ -49,6 +49,14 @@ describe('modal router', () => {
     expect(document.getElementById('m1')!.hasAttribute('open')).toBe(false);
   });
 
+  it('leaves a modified click on a trigger to the browser', async () => {
+    await setup();
+    const ctrl = new MouseEvent('click', { bubbles: true, cancelable: true, ctrlKey: true });
+    document.getElementById('btn')!.dispatchEvent(ctrl);
+    expect(ctrl.defaultPrevented).toBe(false);
+    expect(document.getElementById('m1')!.hasAttribute('open')).toBe(false);
+  });
+
   it('opens a card on Enter', async () => {
     await setup();
     document.getElementById('card')!.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));

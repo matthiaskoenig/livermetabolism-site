@@ -11,7 +11,7 @@
  * not overlap - a detail hash never matches an element id, and a list anchor
  * is never a detail hash.
  */
-import { installDetailRouter } from './detailModal';
+import { installDetailRouter, isModifiedClick } from './detailModal';
 import { url } from './url';
 
 let installed = false;
@@ -60,6 +60,8 @@ export function installModalRouter(): void {
     if (target.closest('[data-modal-close]')) { target.closest('dialog')?.close(); return; }
     const trigger = target.closest<HTMLElement>('[data-modal-target]');
     if (!trigger) return;
+    // ⌘/Ctrl-click and friends belong to the browser, not to the router
+    if (isModifiedClick(e)) return;
     // links inside a clickable card navigate on their own
     const link = target.closest('a');
     if (link && trigger.contains(link) && link !== trigger) return;

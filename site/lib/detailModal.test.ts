@@ -186,6 +186,48 @@ describe('detail modal router', () => {
     expect(window.location.hash).toBe('#publication/P1');
   });
 
+  it('keeps the focus inside the dialog when a related row replaces the body', async () => {
+    await setup(FRAGMENTS);
+    await openDetail('publication', 'P1');
+    await shown('A paper about livers');
+
+    // the clicked row is gone with the old body, so focus would fall back to <body>
+    body().querySelector<HTMLElement>('.related-row')!.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }));
+    await shown('Ada Lovelace');
+    expect(dialog().contains(document.activeElement)).toBe(true);
+  });
+
+  it('leaves a modified click on a trigger to the browser', async () => {
+    const { fetchStub } = await setup(FRAGMENTS);
+    const ctrl = new MouseEvent('click', { bubbles: true, cancelable: true, ctrlKey: true });
+    document.getElementById('trigger')!.dispatchEvent(ctrl);
+    expect(ctrl.defaultPrevented).toBe(false);
+
+    const middle = new MouseEvent('click', { bubbles: true, cancelable: true, button: 1 });
+    document.getElementById('trigger')!.dispatchEvent(middle);
+    expect(middle.defaultPrevented).toBe(false);
+
+    expect(dialog().hasAttribute('open')).toBe(false);
+    expect(fetchStub.urls).toEqual([]);
+  });
+
+  it('pops the in-modal stack when the browser Back returns to the entry below the top', async () => {
+    await setup(FRAGMENTS);
+    await openDetail('publication', 'P1');
+    await shown('A paper about livers');
+    body().querySelector<HTMLElement>('.related-row')!.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }));
+    await shown('Ada Lovelace');
+    expect(back().hidden).toBe(false);
+
+    // the browser has already restored the previous URL when popstate fires
+    window.history.replaceState(null, '', '#publication/P1');
+    window.dispatchEvent(new PopStateEvent('popstate'));
+    await shown('A paper about livers');
+    // the stack is [P1] again - pushing it a second time would keep Back visible
+    expect(back().hidden).toBe(true);
+    expect(window.location.hash).toBe('#publication/P1');
+  });
+
   it('closeDetail empties the body, closes the dialog and drops the hash', async () => {
     await setup(FRAGMENTS);
     await openDetail('publication', 'P1');
