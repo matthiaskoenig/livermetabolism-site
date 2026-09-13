@@ -1574,6 +1574,220 @@
     }
   }
 
+  /* ----------------------------------------------------------------
+     Standard detail view (site/components/DetailView.vue): the same
+     anatomy for a person, publication, project, software entry and
+     news item - header, figures, body, related rows, footer. It is
+     prerendered as a fragment under /detail/<type>/<id>/ and shown
+     inside the detail modal, so these rules must stand on their own
+     (the fragment is also served as a plain page).
+     ---------------------------------------------------------------- */
+  .detail {
+    font-size: 0.95em;
+  }
+
+  .detail-header {
+    display: flex;
+    gap: 1em;
+    align-items: flex-start;
+    margin-bottom: 1em;
+  }
+
+  .detail-image {
+    flex-shrink: 0;
+    background-color: var(--color-gray-200);
+  }
+
+  /* a person's photo, like .person-modal-photo */
+  .detail-image-round {
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  /* project, software and news thumbnails */
+  .detail-image-thumb {
+    width: 120px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  .detail-heading {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .detail-badge {
+    margin: 0 0 0.3em;
+  }
+
+  .detail-title {
+    margin: 0 0 0.2em;
+    font-size: 1.05em;
+  }
+
+  .detail-subtitle {
+    margin: 0 0 0.5em;
+    color: var(--color-gray-600);
+    font-size: 0.85em;
+  }
+
+  .detail-links {
+    margin-top: 0.4em;
+
+    a {
+      margin-right: 0.6em;
+    }
+
+    .fa {
+      font-size: 16px;
+      vertical-align: middle;
+      color: var(--color-gray-800);
+    }
+  }
+
+  /* live numbers: citations, stars, publication counts */
+  .detail-figures {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em 1.2em;
+    margin: 0 0 1em;
+    padding: 0.6em 0.8em;
+    border: 1px solid var(--color-gray-200);
+    border-radius: 6px;
+  }
+
+  .detail-figure {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+
+  .detail-figure-value {
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  .detail-figure-label {
+    color: var(--color-gray-600);
+    font-size: 0.72em;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .detail-body {
+    color: var(--color-gray-800);
+    text-align: justify;
+
+    p {
+      margin-top: 0;
+    }
+  }
+
+  .detail-keywords {
+    color: var(--color-gray-600);
+    font-size: 0.82em;
+  }
+
+  .detail-related-label {
+    margin: 1.2em 0 0.3em;
+    font-size: 0.78em;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-success);
+  }
+
+  .detail-related {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+
+    li {
+      border-bottom: 1px solid var(--color-gray-200);
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  /* one compact row: small image, title, one line - clickable as a whole
+     (the detail router opens the next detail from its data-detail) */
+  .related-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    padding: 0.35em 0.2em;
+    color: inherit;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-gray-100);
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  .related-row-image {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 4px;
+    background-color: var(--color-gray-200);
+  }
+
+  .related-row-image-round {
+    border-radius: 50%;
+  }
+
+  .related-row-image-blank {
+    display: block;
+    background-color: transparent;
+  }
+
+  .related-row-text {
+    min-width: 0;
+  }
+
+  .related-row-title {
+    display: block;
+    font-size: 0.85em;
+    color: var(--color-primary);
+  }
+
+  .related-row:hover .related-row-title {
+    text-decoration: underline;
+  }
+
+  .related-row-line {
+    display: block;
+    color: var(--color-gray-600);
+    font-size: 0.75em;
+  }
+
+  .detail-footer {
+    margin: 1.2em 0 0;
+    padding-top: 0.6em;
+    border-top: 1px solid var(--color-gray-200);
+  }
+
+  .detail-list-link {
+    font-size: 0.82em;
+    font-weight: 600;
+    color: var(--color-success);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
   /* compact, uppercase "journal section" style year dividers used to
      group the publication lists (see publications.html / index.html) */
   .year-heading {
