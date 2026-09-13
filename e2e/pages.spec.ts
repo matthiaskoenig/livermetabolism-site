@@ -35,6 +35,28 @@ test('footer states the build version and commit', async ({ page }) => {
   }
 });
 
+// The detail fragments (/detail/<type>/<id>/) are Astro page partials: no
+// doctype, no <head>, no navbar and no footer, so they cannot join the loop
+// above. What matters is that one is served, that it is still a partial (the
+// modal adopts its root element), and that it stays out of the sitemap.
+test('a detail fragment is served as a partial and is not in the sitemap', async ({ page, request }) => {
+  const res = await request.get('detail/person/matthias_koenig/');
+  expect(res.status()).toBe(200);
+  const html = (await res.text()).trim();
+  expect(html.startsWith('<div class="detail"')).toBe(true);
+  expect(html).not.toContain('<!DOCTYPE');
+  expect(html).not.toContain('<head');
+  // it parses to exactly one .detail root with a title and related rows
+  await page.setContent(html);
+  await expect(page.locator('.detail')).toHaveCount(1);
+  await expect(page.locator('.detail > .detail-header .detail-title')).not.toBeEmpty();
+  expect(await page.locator('.detail-related .related-row[data-detail]').count()).toBeGreaterThan(0);
+
+  const sitemap = await request.get('sitemap-0.xml');
+  expect(sitemap.status()).toBe(200);
+  expect(await sitemap.text()).not.toContain('/detail/');
+});
+
 test('404 page', async ({ page }) => {
   const res = await page.goto('does-not-exist/');
   expect(res?.status()).toBe(404);
