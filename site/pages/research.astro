@@ -35,6 +35,22 @@ const stars = starsRows(snapshot, repos);
 const activity = activityRows(snapshot, repos);
 ---
 <Base title="Research" sectionid="research">
+  <section id="releases">
+    <h2>Releases</h2>
+    <h3>Latest releases</h3>
+    <ReleaseFeed client:visible rows={releaseRows} repos={repos} fetchedAt={snapshot.fetchedAt} />
+    <h3>Release history</h3>
+    <ReleaseTimeline client:visible rows={timelineRows} repos={repos} fetchedAt={snapshot.fetchedAt} />
+  </section>
+
+  <section id="activity">
+    <h2>Activity</h2>
+    <h3>Commit activity</h3>
+    <CommitActivityChart client:visible data={activity} repos={repos} fetchedAt={snapshot.fetchedAt} />
+    <h3>Stars</h3>
+    <StarsChart client:visible rows={stars} repos={repos} fetchedAt={snapshot.fetchedAt} />
+  </section>
+
   <h2 id="software">Software</h2>
   <TagFilter client:idle id="software" tags={tagFilterEntries} target="software-grid" />
   <div class="project-grid" id="software-grid">
@@ -56,22 +72,6 @@ const activity = activityRows(snapshot, repos);
     })}
   </div>
   <SoftwareLive fetchedAt={snapshot.fetchedAt} />
-
-  <section id="releases">
-    <h2>Releases</h2>
-    <h3>Latest releases</h3>
-    <ReleaseFeed client:visible rows={releaseRows} repos={repos} fetchedAt={snapshot.fetchedAt} />
-    <h3>Release history</h3>
-    <ReleaseTimeline client:visible rows={timelineRows} repos={repos} fetchedAt={snapshot.fetchedAt} />
-  </section>
-
-  <section id="activity">
-    <h2>Activity</h2>
-    <h3>Commit activity</h3>
-    <CommitActivityChart client:visible data={activity} repos={repos} fetchedAt={snapshot.fetchedAt} />
-    <h3>Stars</h3>
-    <StarsChart client:visible rows={stars} repos={repos} fetchedAt={snapshot.fetchedAt} />
-  </section>
 
   <h2 id="funding">Funding</h2>
   <TagFilter client:idle id="funding" tags={tagFilterEntries} target="funding-grid" />
