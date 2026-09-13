@@ -1,27 +1,107 @@
 import { expect, test } from '@playwright/test';
 
-test('project card opens its modal, links inside do not', async ({ page }) => {
-  await page.goto('projects/');
-  const card = page.locator('.project-card.is-clickable').first();
-  const id = (await card.getAttribute('data-modal-target'))!;
-  await card.click();
-  await expect(page.locator(`dialog#${id}`)).toHaveAttribute('open', '');
+const modal = 'dialog#detail-modal';
+
+/** Open the first trigger of a page and assert the shell shows that entity. */
+async function opensDetail(page: import('@playwright/test').Page, path: string, selector: string, type: string) {
+  await page.goto(path);
+  const trigger = page.locator(selector).first();
+  const id = (await trigger.getAttribute('data-detail'))!.split(':').slice(1).join(':');
+  await trigger.click();
+  const dialog = page.locator(modal);
+  await expect(dialog).toHaveAttribute('open', '');
+  await expect(dialog.locator('.detail')).toHaveAttribute('data-detail-type', type);
+  await expect(dialog.locator('.modal-title')).not.toBeEmpty();
+  await expect(page).toHaveURL(new RegExp(`#${type}/`));
+  return { dialog, id };
+}
+
+test('a publication title opens its detail modal, with related rows', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
+  page.on('pageerror', (e) => errors.push(e.message));
+  const { dialog } = await opensDetail(page, 'publications/', '#publication-list .pub-title-link', 'publication');
+  // the title of the shell is the fragment's own title
+  await expect(dialog.locator('.modal-title')).toHaveText((await dialog.locator('.detail-title').innerText()).trim());
+  expect(await dialog.locator('.related-row').count()).toBeGreaterThan(0);
+  // Escape closes it and the hash goes away again
   await page.keyboard.press('Escape');
-  await expect(page.locator(`dialog#${id}`)).not.toHaveAttribute('open', '');
+  await expect(dialog).not.toHaveAttribute('open', '');
+  expect(new URL(page.url()).hash).toBe('');
+  expect(errors).toEqual([]);
 });
 
-test('news card opens its modal', async ({ page }) => {
-  await page.goto('news/');
-  const card = page.locator('.project-card.is-clickable').first();
-  const id = (await card.getAttribute('data-modal-target'))!; // "news-modal-<id>"
-  await card.click();
-  await expect(page.locator(`dialog#${id}`)).toHaveAttribute('open', '');
+test('a person card opens the person detail', async ({ page }) => {
+  await opensDetail(page, 'people/', '.member-card .member-name-link', 'person');
 });
 
-test('deep link opens a person modal', async ({ page }) => {
+test('a project card opens the project detail, links inside do not', async ({ page }) => {
+  const { dialog } = await opensDetail(page, 'projects/', '.project-card.is-clickable', 'project');
+  await page.keyboard.press('Escape');
+  await expect(dialog).not.toHaveAttribute('open', '');
+  // a real link inside the clickable card navigates instead of opening the modal
+  const link = page.locator('.project-card.is-clickable a[target="_blank"]').first();
+  await expect(link).toHaveAttribute('href', /^https?:/);
+  await link.click({ modifiers: ['Control'] }); // open in a background tab, stay here
+  await expect(dialog).not.toHaveAttribute('open', '');
+});
+
+test('a news card opens the news detail', async ({ page }) => {
+  await opensDetail(page, 'news/', '.project-card.is-clickable', 'news');
+});
+
+test('a software card title opens the software detail', async ({ page }) => {
+  await opensDetail(page, 'research/', '.software-name-link', 'software');
+});
+
+test('a related row opens the next detail and Back returns', async ({ page }) => {
+  const { dialog } = await opensDetail(page, 'publications/', '#publication-list .pub-title-link', 'publication');
+  const first = (await dialog.locator('.modal-title').innerText()).trim();
+  const back = dialog.locator('.modal-back');
+  await expect(back).toBeHidden();
+
+  const row = dialog.locator('.related-row[data-detail]').first();
+  const rowType = (await row.getAttribute('data-detail'))!.split(':')[0];
+  await row.click();
+  await expect(dialog.locator('.detail')).toHaveAttribute('data-detail-type', rowType!);
+  await expect(back).toBeVisible();
+  await expect(page).toHaveURL(new RegExp(`#${rowType}/`));
+
+  await back.click();
+  await expect(dialog.locator('.modal-title')).toHaveText(first);
+  await expect(back).toBeHidden();
+  await expect(page).toHaveURL(/#publication\//);
+});
+
+test('a #<type>/<id> deep link opens the detail on load', async ({ page }) => {
+  await page.goto('publications/');
+  const id = (await page.locator('#publication-list .pub-title-link').first().getAttribute('data-detail'))!.split(':').slice(1).join(':');
+  await page.goto(`publications/#publication/${id}`);
+  const dialog = page.locator(modal);
+  await expect(dialog).toHaveAttribute('open', '');
+  await expect(dialog.locator('.detail')).toHaveAttribute('data-detail-id', id);
+});
+
+test('the legacy #person-modal-<id> deep link still opens the person detail', async ({ page }) => {
   await page.goto('people/#person-modal-matthias_koenig');
-  await expect(page.locator('dialog#person-modal-matthias_koenig')).toHaveAttribute('open', '');
-  await expect(page.locator('dialog#person-modal-matthias_koenig .modal-title')).toContainText('König');
+  const dialog = page.locator(modal);
+  await expect(dialog).toHaveAttribute('open', '');
+  await expect(dialog.locator('.modal-title')).toContainText('König');
+  await expect(dialog.locator('.detail')).toHaveAttribute('data-detail-id', 'matthias_koenig');
+});
+
+test('a search result opens the detail modal on the page it lands on', async ({ page }) => {
+  await page.goto('');
+  await page.keyboard.press('/');
+  await expect(page.locator('dialog#site-search-modal')).toHaveAttribute('open', '');
+  await page.locator('#site-search-input').fill('Matthias');
+  const result = page.locator('.site-search-result[href*="#person/"]').first();
+  await expect(result).toBeVisible();
+  await result.click();
+  const dialog = page.locator(modal);
+  await expect(dialog).toHaveAttribute('open', '');
+  await expect(dialog.locator('.detail')).toHaveAttribute('data-detail-type', 'person');
+  expect(await dialog.locator('.related-row').count()).toBeGreaterThan(0);
 });
 
 test('alumni hover card shows on hover', async ({ page }) => {
@@ -78,7 +158,7 @@ test('search opens with "/", finds a publication, result navigates', async ({ pa
   const first = page.locator('.site-search-result').first();
   await expect(first).toBeVisible();
   await first.click();
-  await expect(page).toHaveURL(/#(pub|presentation|poster|abstract|project-modal|software|funding|editor|news-modal|meeting|teaching|person-modal)-/);
+  await expect(page).toHaveURL(/#((publication|person|project|software|news)\/|(presentation|poster|abstract|funding|editor|meeting|teaching)-)/);
 });
 
 test('analytics loads only after consent', async ({ page }) => {
@@ -317,6 +397,52 @@ test('network page pre-selects ?topic= as the research-area filter', async ({ pa
   // an unknown area is ignored: the whole graph is shown
   await page.goto('network/?topic=nope');
   await expect(page.locator('#network-graph .network-topic-btn.active')).toHaveText('All');
+
+  expect(errors).toEqual([]);
+});
+
+test('network graph: clicking a node opens its detail modal in place', async ({ page }) => {
+  // probing the canvas pixel by pixel and clicking several candidates is slow
+  test.slow();
+  const errors: string[] = [];
+  page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto('network/');
+  const canvas = page.locator('#network-graph canvas').first();
+  await expect(canvas).toBeVisible();
+  // the force layout needs a moment to settle before the pixels mean anything
+  await page.waitForTimeout(6000);
+
+  const box = (await canvas.boundingBox())!;
+  const centre = { x: box.x + box.width / 2, y: box.y + box.height / 2 };
+  // ECharts draws on a canvas, so there is nothing to query: a hoverable item
+  // shows up as the container's `pointer` cursor (like the drag test). That is
+  // true of the edges too, and only a node opens a detail — so collect the
+  // candidates and click them until one does.
+  const candidates: { x: number; y: number }[] = [];
+  for (let dx = -100; dx <= 100 && candidates.length < 24; dx += 10) {
+    for (let dy = -100; dy <= 100 && candidates.length < 24; dy += 10) {
+      await page.mouse.move(centre.x + dx, centre.y + dy);
+      const cursor = await page.evaluate(() => getComputedStyle(document.querySelector('#network-graph canvas')!.parentElement!).cursor);
+      if (cursor === 'pointer') candidates.push({ x: centre.x + dx, y: centre.y + dy });
+    }
+  }
+  expect(candidates.length, 'hoverable items under the cursor near the middle of the canvas').toBeGreaterThan(0);
+
+  const dialog = page.locator(modal);
+  let opened = false;
+  for (const point of candidates) {
+    await page.mouse.click(point.x, point.y);
+    await page.waitForTimeout(300);
+    opened = await dialog.evaluate((d) => (d as HTMLDialogElement).open);
+    if (opened) break;
+  }
+  expect(opened, 'a node click opened the detail modal').toBe(true);
+  await expect(dialog.locator('.modal-title')).not.toBeEmpty();
+  // the graph stays where it is: the modal opened in place, no navigation
+  await expect(page).toHaveURL(/\/network\/#(person|publication|project|software|news)\//);
+  await page.keyboard.press('Escape');
+  await expect(dialog).not.toHaveAttribute('open', '');
 
   expect(errors).toEqual([]);
 });
