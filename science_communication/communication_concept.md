@@ -128,7 +128,7 @@ Guiding principle: clarity and focus — **3-4 core messages maximum**, prioriti
 ### Technology direction (brainstormed)
 
 - Mobile-friendly and accessible (different end devices, users with disabilities).
-- Simple, plain-text content storage (Markdown, JSON/YAML) — this became the `app/_data/*.yml` + pydantic (`src/data.py`) validation approach actually adopted.
+- Simple, plain-text content storage (Markdown, JSON/YAML) — this became the `data/*.yml` tables, validated by pydantic (`src/data.py`) and again by Zod in the site build.
 - CI: automatic build/deploy on git push (GitHub Actions) — removes manual deployment steps.
 - Modern web framework, TypeScript, a modern CSS framework.
 - AI-assisted build and maintenance (Visual Studio Code & Claude Code).
@@ -150,10 +150,22 @@ Guiding principle: clarity and focus — **3-4 core messages maximum**, prioriti
 - Define a corporate identity: logo, color palette.
 - People page: more personal (hobbies, extra bio info), separate current members from alumni, refresh lab photos.
 
+### How the plan was implemented
+
+(status: release 0.10.0, September 2026; full checklist in [`project_output.md`](project_output.md))
+
+- **Text**: short texts; one vision statement for the group and one per research area; brief descriptions on tiles and cards instead of long prose on the landing page.
+- **Visuals**: brand mark and favicon; one color, icon, and artwork per research area, used for badges, filters, charts, and section backgrounds; people photos in author lists, hover cards, and the network graph.
+- **Structure**: the five research areas (Digital Twins, AI, Digital Pathology, Pharmacometrics, Open & FAIR) serve as the core messages. The landing page is a one-pager with a start screen (vision, at-a-glance figures, team strip, entry tiles) and one full-screen section per research area, each leading to the matching publications, projects, software, and network view.
+- **Linking**: people, publications, projects, software, and news are cross-linked. Each of them opens in one standard detail view with its related items, and the network page shows these links as a graph.
+- **Evidence of impact**: citation metrics (Google Scholar), per-paper citations and open-access status (OpenAlex), and software activity (GitHub) are shown on the site and collected daily.
+- **Technology**: the brainstormed direction was adopted: Astro with TypeScript, Vue components, and Tailwind; YAML data with automatic validation; automatic build and deployment via GitHub Actions; full-text search; `robots.txt`, `llms.txt`, and `llms-full.txt` so search engines and AI agents (a target audience in the table above) find and read the content. Not yet done: live PK-DB data, social-media post generation, embedded web tools.
+
 ### Governance
 
 - Rebuilt and maintained as a static site using Visual Studio Code & Claude Code.
-- Change management via GitHub.
+- Change management via GitHub: every change goes through a pull request and must pass the automatic checks (data validation, unit and browser tests) before it reaches `main`.
+- Versioned releases with public release notes, and the version is shown in the site footer.
 - Legal safeguards: Impressum and Datenschutzerklärung pages added, with a cookie-consent banner gating Google Analytics behind opt-in.
 
 ---
@@ -161,8 +173,10 @@ Guiding principle: clarity and focus — **3-4 core messages maximum**, prioriti
 ## Control (Tracking Goals & Measuring Success)
 
 - Feedback rounds in group meetings.
-- Google Analytics / website traffic tracking.
+- Google Analytics / website traffic tracking (opt-in only, so the numbers undercount real traffic).
 - Collected feedback from stakeholders.
+- Research-impact indicators, updated daily: Google Scholar citations and h-index (with a day-by-day history since 12 September 2026), per-paper citations (OpenAlex), and GitHub stars, releases, and commit activity of the group's software.
+- Content quality: automatic validation of all data and cross-references on every change, so broken entries are caught before they go live.
 - Success criteria (from the SWOT "Opportunities"):
   - Users are willing to spend more time on the site.
   - Users know where to find which information (via headers, tiles, etc.).

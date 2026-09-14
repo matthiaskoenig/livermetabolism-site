@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import * as d from '../lib/data';
 import type { SearchRecord } from '../lib/search';
+import { SITE_PAGES } from '../lib/sitePages';
 import { stripHtml } from '../lib/text';
 import { url } from '../lib/url';
 
@@ -26,20 +27,7 @@ export const GET: APIRoute = async () => {
   for (const p of people) if (p.status === 'current' || p.image) out.push({ type: 'Person', title: stripHtml(p.name), text: join([p.role.join(', '), p.affiliation, p.tenure, stripHtml(p.description ?? '')]), url: url(`/people/#person/${p.id}`) });
   for (const t of tags) out.push({ type: 'Research area', title: t.tag, text: join([t.short_description, t.vision]), url: url(`/#${t.slug}`) });
 
-  const pages: [string, string, string][] = [
-    ['Team', 'Current members and alumni of the group.', '/people/'],
-    ['Open Positions', 'Internships, Bachelor and Master theses, PhD and PostDoc positions - in Lübeck or Berlin.', '/people/#open-positions'],
-    ['Research', 'Software, funding, and editorial roles.', '/research/'],
-    ['Projects', 'Ongoing research projects.', '/projects/'],
-    ['Publications', 'Publications, presentations, posters, and abstracts.', '/publications/'],
-    ['Network', 'Interactive network graph of the research areas, people, publications, projects, and software of the group.', '/network/'],
-    ['News', 'Recent news and updates from the group.', '/news/'],
-    ['Meetings', 'Meetings, workshops, and events organized or hosted by the group.', '/meetings/'],
-    ['Teaching', 'Project-based teaching in digital health and shared decision-making, Open Science, and interdisciplinary collaboration.', '/teaching/'],
-    ['Impressum', 'Legal notice: contact details, address, and person responsible for content per section 5 TMG.', '/impressum/'],
-    ['Datenschutzerklärung', 'Privacy policy: server logs, Google Analytics, cookie consent, and data subject rights.', '/privacy/'],
-  ];
-  for (const [title, text, path] of pages) out.push({ type: 'Page', title, text, url: url(path) });
+  for (const p of SITE_PAGES) out.push({ type: 'Page', title: p.title, text: p.description, url: url(p.path) });
 
   return new Response(JSON.stringify(out), { headers: { 'Content-Type': 'application/json; charset=utf-8' } });
 };

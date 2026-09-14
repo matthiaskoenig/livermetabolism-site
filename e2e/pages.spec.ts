@@ -57,6 +57,50 @@ test('a detail fragment is served as a partial and is not in the sitemap', async
   expect(await sitemap.text()).not.toContain('/detail/');
 });
 
+// robots.txt, llms.txt and llms-full.txt carry absolute URLs built from the
+// build's SITE and BASE, not from the preview server's origin; the path below
+// BASE is what the preview serves.
+const base = process.env.BASE ?? '/';
+const servedPath = (absolute: string) => {
+  const { pathname } = new URL(absolute);
+  expect(pathname.startsWith(base), absolute).toBe(true);
+  return pathname.slice(base.length);
+};
+
+test('robots.txt lets crawlers in, keeps the detail fragments out, and names the sitemap and llms.txt', async ({ request }) => {
+  const res = await request.get('robots.txt');
+  expect(res.status()).toBe(200);
+  expect(res.headers()['content-type']).toContain('text/plain');
+  const text = await res.text();
+  expect(text).toMatch(/^User-agent: \*$/m);
+  expect(text).toContain(`\nDisallow: ${base}detail/\n`);
+  for (const pattern of [/^Sitemap: (\S+)$/m, /(\S+\/llms\.txt)$/m]) {
+    const target = text.match(pattern)?.[1];
+    expect(target, String(pattern)).toBeDefined();
+    expect((await request.get(servedPath(target as string))).status(), target).toBe(200);
+  }
+});
+
+test('llms.txt and llms-full.txt are Markdown whose site links all resolve', async ({ request }) => {
+  const paths = new Set<string>();
+  for (const file of ['llms.txt', 'llms-full.txt']) {
+    const res = await request.get(file);
+    expect(res.status()).toBe(200);
+    expect(res.headers()['content-type']).toContain('text/plain');
+    const text = await res.text();
+    expect(text.startsWith('# ')).toBe(true);
+    expect(text).not.toMatch(/<\/?[a-z][^>]*>/i);
+    // the site root (origin + base) from the file's own link to llms-full.txt or its "Website:" line;
+    // other sites on the same origin (GitHub Pages project sites) are external links
+    const anchor = text.match(/\((https?:\/\/[^)]*\/llms-full\.txt)\)|Website: (\S+)/)?.slice(1).find(Boolean);
+    expect(anchor, file).toBeDefined();
+    const siteRoot = new URL('./', anchor as string).href;
+    for (const m of text.matchAll(/https?:\/\/[^\s)\]]+/g)) if (m[0].startsWith(siteRoot)) paths.add(servedPath(m[0].split('#')[0]));
+  }
+  expect(paths.size).toBeGreaterThan(10);
+  for (const path of paths) expect((await request.get(path)).status(), path).toBe(200);
+});
+
 test('404 page', async ({ page }) => {
   const res = await page.goto('does-not-exist/');
   expect(res?.status()).toBe(404);
