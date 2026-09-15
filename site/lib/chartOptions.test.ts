@@ -62,6 +62,35 @@ describe('commitActivityOption', () => {
     const { formatter } = commitActivityOption(data).xAxis.axisLabel;
     expect(data.weeks.map((w, i) => formatter(w, i))).toEqual(['Jan 26', '', 'Feb 26']);
   });
+
+  // `n` repositories, most active first (the order activityRows() returns)
+  const many = (n: number) => ({
+    weeks: ['2026-01-04', '2026-01-11'],
+    series: Array.from({ length: n }, (_, i) => ({ repo: `o/r${i}`, name: `r${i}`, values: [n - i, i % 2] })),
+  });
+
+  it('gives each of up to ten repositories a colour of its own', () => {
+    const option = commitActivityOption(many(10));
+    expect(option.series.map((s) => s.name)).toEqual(many(10).series.map((s) => s.name));
+    expect(new Set(option.series.map((s) => s.itemStyle.color)).size).toBe(10);
+  });
+
+  it('stacks the repositories after the nine most active as one grey series, so no colour repeats', () => {
+    const option = commitActivityOption(many(12));
+    expect(option.series.map((s) => s.name)).toEqual(['r0', 'r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8', '3 others']);
+    expect(new Set(option.series.map((s) => s.itemStyle.color)).size).toBe(10);
+    expect(option.series.at(-1)!.itemStyle.color).toBe(PALETTE[9]);
+    // r9 [3, 1] + r10 [2, 0] + r11 [1, 1]
+    expect(option.series.at(-1)!.data).toEqual([6, 2]);
+  });
+
+  it('names the stacked repositories with their commits in the tooltip', () => {
+    const option = commitActivityOption(many(12));
+    const params = option.series.map((s, seriesIndex) => ({ name: 'Jan 11', seriesName: s.name, seriesIndex, dataIndex: 1, value: s.data[1]! }));
+    expect(option.tooltip.formatter(params).split('\n')).toEqual([
+      'Week of Jan 11', 'r1: 1', 'r3: 1', 'r5: 1', 'r7: 1', '3 others: 2 (r9 1, r11 1)', 'total: 6',
+    ]);
+  });
 });
 
 describe('citationsPerYearOption', () => {

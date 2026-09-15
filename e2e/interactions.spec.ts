@@ -50,8 +50,16 @@ test('a news card opens the news detail', async ({ page }) => {
   await opensDetail(page, 'news/', '.project-card.is-clickable', 'news');
 });
 
-test('a software card title opens the software detail', async ({ page }) => {
-  await opensDetail(page, 'research/', '.software-name-link', 'software');
+test('a software card title opens the software detail, its logo shown whole', async ({ page }) => {
+  const { dialog } = await opensDetail(page, 'research/', '.software-name-link', 'software');
+  // a logo is letterboxed, never cropped to the thumbnail's 4:3 box
+  await expect(dialog.locator('.detail-header .detail-image')).toHaveCSS('object-fit', 'contain');
+});
+
+test('a software row inside a person detail shows its logo whole', async ({ page }) => {
+  await page.goto('people/#person/matthias_koenig');
+  const row = page.locator(`${modal} .related-row[data-detail^="software:"] .related-row-image`).first();
+  await expect(row).toHaveCSS('object-fit', 'contain');
 });
 
 test('a related row opens the next detail and Back returns', async ({ page }) => {
@@ -80,6 +88,9 @@ test('a #<type>/<id> deep link opens the detail on load', async ({ page }) => {
   const dialog = page.locator(modal);
   await expect(dialog).toHaveAttribute('open', '');
   await expect(dialog.locator('.detail')).toHaveAttribute('data-detail-id', id);
+  // the title takes the focus for screen readers, but it is no control: no focus ring
+  await expect(dialog.locator('.modal-title')).toBeFocused();
+  await expect(dialog.locator('.modal-title')).toHaveCSS('outline-style', 'none');
 });
 
 test('the legacy #person-modal-<id> deep link still opens the person detail', async ({ page }) => {
