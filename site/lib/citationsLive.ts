@@ -10,34 +10,11 @@
  */
 import { citationsSchema, CITATIONS_URL, type Citations } from './citationsSchema';
 
-let pending: Promise<Citations | null> | null = null;
+import { createLiveSnapshot, isSnapshotFresher } from './liveSnapshot';
 
-/** The live snapshot, fetched at most once per page load; `null` on any failure. */
-export function loadLiveCitations(fetchImpl: typeof fetch = globalThis.fetch, url: string = CITATIONS_URL): Promise<Citations | null> {
-  pending ??= (async () => {
-    try {
-      // 'default' so the browser cache/304 handling applies: the snapshot
-      // changes at most once a day and every reader asks for the same URL.
-      const res = await fetchImpl(url, { cache: 'default' });
-      if (!res.ok) return null;
-      const parsed = citationsSchema.safeParse(await res.json());
-      return parsed.success ? parsed.data : null;
-    } catch {
-      return null;
-    }
-  })();
-  return pending;
-}
+const reader = createLiveSnapshot<Citations>(citationsSchema, CITATIONS_URL);
 
-/** Drop the memoized fetch (tests only). */
-export function resetLiveCitations(): void {
-  pending = null;
-}
-
-/** True when `citations` was fetched after the one the page was built from. */
-export function isCitationsFresherThan(citations: Citations | null, builtAt: string): citations is Citations {
-  if (!citations) return false;
-  const live = Date.parse(citations.fetchedAt);
-  const built = Date.parse(builtAt);
-  return Number.isFinite(live) && (!Number.isFinite(built) || live > built);
-}
+export const loadLiveCitations = reader.load;
+/** Reset the page-local cache for tests. */
+export const resetLiveCitations = reader.reset;
+export const isCitationsFresherThan = isSnapshotFresher<Citations>;

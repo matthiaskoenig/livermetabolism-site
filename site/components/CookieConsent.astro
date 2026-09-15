@@ -16,7 +16,7 @@ const { gaId, privacyUrl } = Astro.props;
 </div>
 
 <script>
-  import { clearConsent, deleteGoogleAnalyticsCookies, getConsent, loadGoogleAnalytics, setConsent } from '../lib/consent';
+  import { clearConsent, disableGoogleAnalytics, getConsent, loadGoogleAnalytics, setConsent } from '../lib/consent';
 
   const banner = document.getElementById('cookie-consent-banner');
   if (banner) {
@@ -30,14 +30,13 @@ const { gaId, privacyUrl } = Astro.props;
     });
     document.getElementById('cookie-consent-decline')?.addEventListener('click', () => {
       setConsent('declined');
-      deleteGoogleAnalyticsCookies();
+      disableGoogleAnalytics(gaId);
       show(false);
     });
     // "Cookie-Einstellungen ändern" button on /privacy/ — withdrawing must be as easy as giving
     document.getElementById('cookie-consent-reset')?.addEventListener('click', () => {
       clearConsent();
-      deleteGoogleAnalyticsCookies();
-      window.gaLoaded = false;
+      disableGoogleAnalytics(gaId);
       show(true);
     });
 
