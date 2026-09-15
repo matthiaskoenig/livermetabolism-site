@@ -119,12 +119,34 @@ const weekLabel = (week: string) => {
   return Number.isNaN(d.getTime()) ? week : `${MONTHS[d.getUTCMonth()]} ${String(d.getUTCFullYear()).slice(2)}`;
 };
 
-/** Weekly commits of the last year, stacked per repository. */
+/**
+ * Most stacked series of the commit chart. Ten distinct palette entries are
+ * enough for ten repositories; with more, the nine most active keep theirs and
+ * the rest share one "N others" series in the grey of `PALETTE[9]`, so a colour
+ * never stands for two repositories.
+ */
+const ACTIVITY_SERIES = 10;
+
+/**
+ * Weekly commits of the last year, stacked per repository. `series` arrive
+ * most active first (`activityRows()`), which decides who is folded.
+ */
 export function commitActivityOption({ weeks, series }: ActivityRows) {
+  const folded = series.length > ACTIVITY_SERIES ? series.slice(ACTIVITY_SERIES - 1) : [];
+  const drawn = folded.length
+    ? [
+        ...series.slice(0, ACTIVITY_SERIES - 1),
+        { name: `${folded.length} others`, values: weeks.map((_, i) => folded.reduce((s, f) => s + f.values[i]!, 0)) },
+      ]
+    : series;
+  const foldedIn = (week: number) =>
+    folded.flatMap((f) => (f.values[week]! > 0 ? [`${f.name} ${f.values[week]}`] : [])).join(', ');
   return {
     animation: false,
-    tooltip: tooltip((ps: { name: string; seriesName: string; value: number }[]) => {
-      const rows = ps.filter((p) => p.value > 0).map((p) => `${p.seriesName}: ${p.value}`);
+    tooltip: tooltip((ps: { name: string; seriesName: string; seriesIndex: number; dataIndex: number; value: number }[]) => {
+      const rows = ps
+        .filter((p) => p.value > 0)
+        .map((p) => (folded.length && p.seriesIndex === drawn.length - 1 ? `${p.seriesName}: ${p.value} (${foldedIn(p.dataIndex)})` : `${p.seriesName}: ${p.value}`));
       const total = ps.reduce((s, p) => s + p.value, 0);
       return [`Week of ${ps[0]?.name ?? ''}`, ...rows, `total: ${total}`].join('\n');
     }, 'axis'),
@@ -138,7 +160,7 @@ export function commitActivityOption({ weeks, series }: ActivityRows) {
       axisTick: { show: false },
     },
     yAxis: { type: 'value', axisLabel: axisLabel(), splitLine: { lineStyle: { color: GRID } } },
-    series: series.map((s, i) => ({ name: s.name, type: 'bar', stack: 'commits', data: s.values, itemStyle: { color: color(i) } })),
+    series: drawn.map((s, i) => ({ name: s.name, type: 'bar', stack: 'commits', data: s.values, itemStyle: { color: color(i) } })),
   };
 }
 

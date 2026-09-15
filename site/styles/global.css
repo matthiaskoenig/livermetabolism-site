@@ -945,8 +945,10 @@
 
     /* separator after every visible field except the last visible one
        (`::after` rather than `::before`, so a field that wraps onto the
-       next line does not start it with a stray separator) */
+       next line does not start it with a stray separator; inline-block, so
+       the underline of the release link does not run on under it) */
     .software-stat:not([hidden]):has(~ .software-stat:not([hidden]))::after {
+      display: inline-block;
       margin-left: 0.45em;
       color: var(--color-gray-500);
       content: "·";
@@ -1488,6 +1490,12 @@
       flex: 1;
       font-size: 1.05rem;
       line-height: 1.35;
+
+      /* render() focuses the title for screen readers; it is no control,
+         so a deep link or a keyboard-opened row draws no ring around it */
+      &:focus {
+        outline: none;
+      }
     }
   }
 
@@ -1548,11 +1556,21 @@
     border-radius: 50%;
   }
 
-  /* project, software and news thumbnails */
+  /* project and news thumbnails */
   .detail-image-thumb {
     width: 120px;
     height: 90px;
     object-fit: cover;
+    border-radius: 6px;
+  }
+
+  /* software logos, shown whole like on the research cards (.project-image-contain) */
+  .detail-image-logo {
+    box-sizing: border-box;
+    width: 120px;
+    height: 90px;
+    padding: 0.5em;
+    object-fit: contain;
     border-radius: 6px;
   }
 
@@ -1733,6 +1751,12 @@
 
   .related-row-image-round {
     border-radius: 50%;
+  }
+
+  .related-row-image-logo {
+    box-sizing: border-box;
+    padding: 3px;
+    object-fit: contain;
   }
 
   .related-row-image-blank {

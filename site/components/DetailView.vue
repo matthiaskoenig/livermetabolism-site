@@ -35,7 +35,7 @@ const detailTarget = (row: RelatedRow): string | undefined =>
   <div class="detail" :data-detail-type="model.type" :data-detail-id="model.id">
     <div class="detail-header">
       <img v-if="model.image" :src="model.image" :alt="model.title" decoding="async"
-        class="detail-image" :class="model.imageShape === 'round' ? 'detail-image-round' : 'detail-image-thumb'" />
+        class="detail-image" :class="`detail-image-${model.imageShape}`" />
       <div class="detail-heading">
         <p v-if="model.badge" class="detail-badge">
           <span class="status-badge" :class="model.badge.cls">{{ model.badge.text }}</span>
@@ -82,7 +82,7 @@ const detailTarget = (row: RelatedRow): string | undefined =>
         <li v-for="row in s.rows" :key="`${row.type}:${row.id}`">
           <a class="related-row" :href="row.href" :data-detail="detailTarget(row)">
             <img v-if="row.image" :src="row.image" alt="" loading="lazy" decoding="async"
-              class="related-row-image" :class="{ 'related-row-image-round': row.type === 'person' }" />
+              class="related-row-image" :class="{ 'related-row-image-round': row.type === 'person', 'related-row-image-logo': row.type === 'software' }" />
             <span v-else class="related-row-image related-row-image-blank"></span>
             <span class="related-row-text">
               <span class="related-row-title">{{ row.title }}</span>

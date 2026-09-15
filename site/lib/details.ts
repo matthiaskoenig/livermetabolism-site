@@ -98,7 +98,8 @@ export interface DetailModel {
   /** Publications only: the free-text author string plus the internal ids `PersonChips` splices avatars into. */
   authors?: { text: string; people: string[] };
   image: string | null;
-  imageShape: 'round' | 'thumb';
+  /** `round` a person's photo, `thumb` a picture cropped to fill, `logo` a software logo shown whole. */
+  imageShape: 'round' | 'thumb' | 'logo';
   badge?: { text: string; cls: string };
   tags: string[];
   links: DetailLink[];
@@ -535,7 +536,7 @@ function softwareModel(ctx: DetailContext, id: string): DetailModel {
     type: 'software', id, title: s.name,
     subtitle: s.title,
     image: s.image ? `${ctx.base}${SOFTWARE_DIR}${s.image}` : null,
-    imageShape: 'thumb',
+    imageShape: 'logo',
     tags: s.tags,
     links: [
       ...extLink('Homepage', s.homepage, 'globe'),

@@ -298,7 +298,7 @@ describe('detailModel: software', () => {
   it('renders name, title and links', () => {
     expect(model).toMatchObject({
       type: 'software', id: 'sbmlutils', title: 'sbmlutils', subtitle: 'SBML tools',
-      image: `${BASE}assets/image/software/sbmlutils.webp`, imageShape: 'thumb',
+      image: `${BASE}assets/image/software/sbmlutils.webp`, imageShape: 'logo',
       body: 'Utilities for SBML.', keywords: [], listHref: `${BASE}research/#software-sbmlutils`,
     });
     expect(model.links.map((l) => l.label)).toEqual(['Homepage', 'Repository', 'DOI']);

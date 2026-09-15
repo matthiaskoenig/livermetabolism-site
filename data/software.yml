@@ -18,6 +18,24 @@
   publications:
     - 'Grzegorzewski2020_pkdb'
 
+- id: 'pkpdutils'
+  tags:
+    - 'Pharmacometrics'
+    - 'Open & FAIR'
+  type: "software"
+  name: 'pkpdutils'
+  title: 'PK/PD analysis in python'
+  description: 'Developed a Python library for the pharmacokinetic and pharmacodynamic analysis of timecourses and parameters, from non-compartmental analysis and curve fitting to bioequivalence and meta-analysis. Formerly pkdb_analysis, the analysis toolbox of PK-DB.'
+  image: 'pkpdutils.webp'
+  people:
+    - jan_grzegorzewski
+    - matthias_koenig
+  homepage: https://matthiaskoenig.github.io/pkpdutils
+  repository: https://github.com/matthiaskoenig/pkpdutils
+  doi: 10.5281/zenodo.3997539
+  publications:
+    - 'Grzegorzewski2020_pkdb'
+
 - id: 'sbmlutils'
   tags:
     - 'Open & FAIR'
