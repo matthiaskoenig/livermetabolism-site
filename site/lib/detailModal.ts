@@ -310,7 +310,7 @@ export function installDetailRouter(opts: { base: string; fetchImpl?: typeof fet
     document.addEventListener('keydown', (e) => {
       if (e.key !== 'Enter' && e.key !== ' ') return;
       const card = (e.target as HTMLElement | null)?.closest<HTMLElement>('[data-detail][role="button"]');
-      if (!card) return;
+      if (!card || e.target !== card) return;
       const entry = triggerEntry(card);
       if (!entry) return;
       e.preventDefault();

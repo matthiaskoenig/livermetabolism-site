@@ -13,6 +13,7 @@
  * script), never HTML, and are inserted with textContent / Vue interpolation.
  */
 import { z } from 'astro/zod';
+import { snapshotUrl } from './snapshotUrl.ts';
 
 /** Raw URL of the daily snapshot on the `github-data` branch. */
 export const SNAPSHOT_URL = 'https://raw.githubusercontent.com/matthiaskoenig/livermetabolism-site/github-data/github.json';
@@ -22,7 +23,7 @@ export const commitEntrySchema = z
     sha: z.string(),
     date: z.string(),
     message: z.string(),
-    htmlUrl: z.string(),
+    htmlUrl: snapshotUrl,
   })
   .strict();
 
@@ -31,7 +32,7 @@ export const latestReleaseSchema = z
     tag: z.string(),
     name: z.string(),
     publishedAt: z.string(),
-    htmlUrl: z.string(),
+    htmlUrl: snapshotUrl,
   })
   .strict();
 
@@ -49,7 +50,8 @@ export const repoEntrySchema = z
     owner: z.string(),
     fullName: z.string(),
     description: z.string().nullable(),
-    htmlUrl: z.string(),
+    htmlUrl: snapshotUrl,
+    // GitHub permits free-form homepage text; this metadata is not rendered as a link.
     homepage: z.string().nullable(),
     stars: z.number(),
     forks: z.number(),
@@ -71,7 +73,7 @@ export const releaseEntrySchema = z
     tag: z.string(),
     name: z.string(),
     publishedAt: z.string(),
-    htmlUrl: z.string(),
+    htmlUrl: snapshotUrl,
     prerelease: z.boolean(),
     summary: z.string(),
   })

@@ -43,6 +43,12 @@ describe('snapshotSchema', () => {
     expect(parsed.commitActivity).toEqual([]);
   });
 
+  it('accepts free-form homepage metadata but rejects executable navigation URLs', () => {
+    expect(repoEntrySchema.parse({ ...repo, homepage: 'example.org' }).homepage).toBe('example.org');
+    expect(repoEntrySchema.safeParse({ ...repo, htmlUrl: 'javascript:alert(1)' }).success).toBe(false);
+    expect(repoEntrySchema.safeParse({ ...repo, latestRelease: { ...repo.latestRelease, htmlUrl: 'data:text/html,unsafe' } }).success).toBe(false);
+  });
+
   it('rejects an unknown top-level key', () => {
     expect(() => snapshotSchema.parse({ ...snapshot, contributions: {} })).toThrow();
   });

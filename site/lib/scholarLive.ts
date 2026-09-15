@@ -11,34 +11,11 @@
  */
 import { scholarSchema, SCHOLAR_URL, type Scholar } from './scholarSchema';
 
-let pending: Promise<Scholar | null> | null = null;
+import { createLiveSnapshot, isSnapshotFresher } from './liveSnapshot';
 
-/** The live snapshot, fetched at most once per page load; `null` on any failure. */
-export function loadLiveScholar(fetchImpl: typeof fetch = globalThis.fetch, url: string = SCHOLAR_URL): Promise<Scholar | null> {
-  pending ??= (async () => {
-    try {
-      // 'default' so the browser cache/304 handling applies: the snapshot
-      // changes at most once a day and every reader asks for the same URL.
-      const res = await fetchImpl(url, { cache: 'default' });
-      if (!res.ok) return null;
-      const parsed = scholarSchema.safeParse(await res.json());
-      return parsed.success ? parsed.data : null;
-    } catch {
-      return null;
-    }
-  })();
-  return pending;
-}
+const reader = createLiveSnapshot<Scholar>(scholarSchema, SCHOLAR_URL);
 
-/** Drop the memoized fetch (tests only). */
-export function resetLiveScholar(): void {
-  pending = null;
-}
-
-/** True when `scholar` was fetched after the one the page was built from. */
-export function isScholarFresherThan(scholar: Scholar | null, builtAt: string): scholar is Scholar {
-  if (!scholar) return false;
-  const live = Date.parse(scholar.fetchedAt);
-  const built = Date.parse(builtAt);
-  return Number.isFinite(live) && (!Number.isFinite(built) || live > built);
-}
+export const loadLiveScholar = reader.load;
+/** Reset the page-local cache for tests. */
+export const resetLiveScholar = reader.reset;
+export const isScholarFresherThan = isSnapshotFresher<Scholar>;

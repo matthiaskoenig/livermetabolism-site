@@ -15,6 +15,7 @@
  * textContent / Vue interpolation, never as HTML.
  */
 import { z } from 'astro/zod';
+import { snapshotUrl } from './snapshotUrl.ts';
 
 /** Raw URL of the daily snapshot on the `github-data` branch. */
 export const SCHOLAR_URL = 'https://raw.githubusercontent.com/matthiaskoenig/livermetabolism-site/github-data/scholar.json';
@@ -57,7 +58,7 @@ export const scholarProfileSchema = z
   .object({
     userId: z.string(),
     name: z.string(),
-    htmlUrl: z.string(),
+    htmlUrl: snapshotUrl,
   })
   .strict();
 

@@ -2511,6 +2511,10 @@
       flex-direction: column;
       align-items: stretch;
 
+      .cookie-consent-text {
+        flex: none;
+      }
+
       .cookie-consent-actions {
         justify-content: flex-end;
       }
