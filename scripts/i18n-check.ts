@@ -22,28 +22,25 @@ const readDataYaml = (file: string): Record<string, unknown>[] => {
 // NOTE: site/lib/i18n/content.ts has loadCatalog(), but its module-level imports
 // lack .ts extensions which break Node direct execution. Keep this inline reader
 // in sync with loadCatalog semantics: missing files return {}, not an error.
-const readCatalogYaml = (file: string): Catalog => {
+//
+// A data table's catalog (row id -> field -> {sha, text}) and the flat UI
+// catalog (dotted key -> {sha, text}) are read the exact same way - parse
+// the YAML, fall back to {} for a missing file or a non-object - and differ
+// only in the shape TypeScript assigns the result, so one reader serves
+// both instead of two body-identical copies (see the i18n review's finding
+// on this: readCatalogYaml/readUiCatalogYaml were a byte-identical clone of
+// each other with no cross-reference).
+const readYamlCatalog = <T>(file: string): T => {
   try {
-    if (!fs.existsSync(file)) return {};
+    if (!fs.existsSync(file)) return {} as T;
     const content = load(fs.readFileSync(file, 'utf8'));
-    return (typeof content === 'object' && content !== null ? content : {}) as Catalog;
+    return (typeof content === 'object' && content !== null ? content : {}) as T;
   } catch (err) {
     throw new CatalogParseError(file, err instanceof Error ? err : new Error(String(err)));
   }
 };
-
-// i18n/de/ui.yml is flat (dotted key -> {sha, text}), unlike a data table's
-// catalog - no per-row id nesting - so it gets its own reader. Kept in sync
-// with auditUi()'s expectations by hand, same as readCatalogYaml above.
-const readUiCatalogYaml = (file: string): Record<string, CatalogEntry> => {
-  try {
-    if (!fs.existsSync(file)) return {};
-    const content = load(fs.readFileSync(file, 'utf8'));
-    return (typeof content === 'object' && content !== null ? content : {}) as Record<string, CatalogEntry>;
-  } catch (err) {
-    throw new CatalogParseError(file, err instanceof Error ? err : new Error(String(err)));
-  }
-};
+const readCatalogYaml = (file: string): Catalog => readYamlCatalog<Catalog>(file);
+const readUiCatalogYaml = (file: string): Record<string, CatalogEntry> => readYamlCatalog<Record<string, CatalogEntry>>(file);
 
 const rowsFor = (table: string, rows: Record<string, unknown>[]) =>
   table === 'tags' ? rows.map((r) => ({ ...r, id: r.tag })) : rows;
