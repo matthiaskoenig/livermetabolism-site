@@ -4,15 +4,17 @@ import TeachingCard from '../../components/TeachingCard.vue';
 import { getPeopleMap, getTags, getTeaching } from '../../lib/data';
 import { uiFor } from '../../lib/i18n/catalog';
 import { localeFromParams, localePaths } from '../../lib/i18n/routes';
+import { slices } from '../../lib/i18n/slices';
 import { asset } from '../../lib/url';
 
 export const getStaticPaths = localePaths;
 const locale = localeFromParams(Astro.params);
 const { t } = uiFor(locale);
+const ui = slices(t);
 const [tagInfo, peopleMap, teaching] = await Promise.all([getTags(locale), getPeopleMap(locale), getTeaching(locale)]);
 ---
 <Base title={t('nav.teaching')} sectionid="teaching" locale={locale}>
   <p>{t('teaching.intro')}</p>
   <img src={asset('image/teaching/teaching_banner.webp')} alt="" decoding="async" width="1800" height="191" class="img-fluid" />
-  {teaching.map((t) => <TeachingCard item={t} tagInfo={tagInfo} peopleMap={peopleMap} imageBase={asset('image/teaching/')} avatarBase={asset('image/people/128/')} />)}
+  {teaching.map((item) => <TeachingCard item={item} tagInfo={tagInfo} peopleMap={peopleMap} imageBase={asset('image/teaching/')} avatarBase={asset('image/people/128/')} strings={ui.teachingCard} />)}
 </Base>

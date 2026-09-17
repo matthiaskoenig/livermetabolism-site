@@ -5,7 +5,7 @@ import type { UiSlices } from '../lib/i18n/slices';
 import type { FundingData } from '../lib/schemas';
 import type { Entry, TagInfo } from '../lib/views';
 
-defineProps<{ item: Entry<FundingData>; tagInfo: TagInfo[]; imageBase: string; strings: UiSlices['links'] }>();
+defineProps<{ item: Entry<FundingData>; tagInfo: TagInfo[]; imageBase: string; strings: UiSlices['fundingCard'] }>();
 </script>
 
 <template>
@@ -14,7 +14,7 @@ defineProps<{ item: Entry<FundingData>; tagInfo: TagInfo[]; imageBase: string; s
     <div class="project-body">
       <h3>{{ item.title }}</h3>
       <TagList :tags="item.tags" :tag-info="tagInfo" />
-      <p><strong>{{ item.funder_short }}</strong>, {{ item.role }}, {{ item.start }}&ndash;{{ item.end }}<br />{{ item.description }}</p>
+      <p><strong>{{ item.funder_short }}</strong>, {{ strings.role[item.role] }}, {{ item.start }}&ndash;{{ item.end }}<br />{{ item.description }}</p>
       <div class="project-links">
         <span class="project-links-spacer"></span>
         <a v-if="item.homepage" :href="item.homepage" target="_blank" rel="noopener noreferrer" :title="strings.projectHomepage"><Icon name="globe" /></a>

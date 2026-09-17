@@ -84,7 +84,7 @@ const activity = activityRows(snapshot, repos);
   <h2 id="funding">{t('nav.funding')}</h2>
   <TagFilter client:idle id="funding" tags={tagFilterEntries} target="funding-grid" strings={ui.tagFilter} />
   <div class="project-grid" id="funding-grid">
-    {funding.map((item) => <FundingCard item={item} tagInfo={tagInfo} imageBase={asset('image/funding/')} strings={ui.links} />)}
+    {funding.map((item) => <FundingCard item={item} tagInfo={tagInfo} imageBase={asset('image/funding/')} strings={ui.fundingCard} />)}
   </div>
   <p>
     {t('research.fundingBefore')} <a href="https://www.denbi.de/">{t('research.fundingLinkText')}</a> {t('research.fundingAfter')}
