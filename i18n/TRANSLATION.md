@@ -111,6 +111,34 @@ two values byte-identical to the English on every regeneration:
 A regeneration pass that rewrites either of these has translated a brand
 name by accident. Check them explicitly after any bulk UI-catalog run.
 
+### Externally-registered project, programme and event names
+
+A funded project, a programme, a working group or an event often has a
+name that reads like ordinary English prose - not an acronym, not visibly
+a brand - but is still the name **someone else** (a funder, an alliance, a
+standards body) has registered for it externally. That name stays fixed on
+every locale, exactly like `COMBINE coordinator`'s `COMBINE` or `SimLivA`'s
+acronym expansion, even though nothing about its spelling marks it as a
+proper noun.
+
+**The tell is usually the data itself, not the wording**: check the row's
+`link`/`homepage`/`event_page` URL. If the name (or a slugified form of it)
+appears in that URL - the funder's own page names the project that way -
+translating it breaks a reader's ability to cross-reference the entry
+against the source. `data/activities.yml`'s `xstudent-doac-2025` row is the
+worked example: its `link` ends in
+`.../research-groups/archiv/sem_aktuell/Digital-Twins-in-Action/index.html`
+- the Berlin University Alliance's own slug for the project is
+`Digital-Twins-in-Action`, so `Digital Twins in Action` (the matching
+`funding.xresearch2025.title` and `activities.xstudent-doac-2025.title`)
+is that project's registered name and stays in English; only the
+descriptive tail after it translates.
+
+This is the same principle already applied to `X-Student Research Group`,
+`SimLivA`, `ATLAS`, and `LiSyM` - it just does not require an acronym to
+apply. When in doubt on a title that reads like plain English, check the
+row's own link before translating it.
+
 ### Known single-language surfaces
 
 `site/pages/site.webmanifest.ts` is one root-level file, not routed per
