@@ -420,7 +420,7 @@ Expected: PASS, and the build log lists both `/publications/index.html` and `/de
 
 ```bash
 test -f dist/index.html && test -f dist/de/index.html && test -f dist/de/publications/index.html \
-  && test -f dist/de/detail/person/koenig/index.html \
+  && test -f dist/de/detail/person/matthias_koenig/index.html \
   && grep -q 'lang="de"' dist/de/publications/index.html \
   && grep -q 'lang="en"' dist/publications/index.html \
   && echo OK
