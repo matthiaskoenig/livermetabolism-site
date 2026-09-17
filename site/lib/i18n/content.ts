@@ -14,6 +14,12 @@ const cache = new Map<string, Catalog>();
  * The translation catalog for one table. A missing file is an empty
  * catalog, not an error: translation lags English by design, and every
  * lookup falls back to the English source.
+ *
+ * NOTE: scripts/i18n-check.ts has a parallel `readCatalogYaml()` that must
+ * be kept in sync with this. That script runs under Node direct execution,
+ * which requires `.ts` import extensions; this module's bare imports break it.
+ * If you change the semantics here (what counts as a missing file, entry shape,
+ * error handling), change readCatalogYaml there too.
  */
 export function loadCatalog(locale: Locale, table: TranslatableTable): Catalog {
   if (locale === DEFAULT_LOCALE) return {};
