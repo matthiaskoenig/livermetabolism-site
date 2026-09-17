@@ -9,6 +9,8 @@
  * island as props (the numbers only change when the YAML does, i.e. on a
  * rebuild), so nothing here ever runs in the browser.
  */
+import type { TFn } from './i18n/catalog';
+import type { UiKey } from './i18n/ui.en';
 import type { PublicationData } from './schemas';
 import type { TagInfo } from './views';
 
@@ -39,6 +41,23 @@ export interface PublicationYearRows {
  * does not shift the colours of the others.
  */
 export const STATUS_ORDER = ['publication', 'review', 'proceeding', 'chapter', 'preprint', 'abstract', 'thesis', 'report'] as const;
+
+/**
+ * The display label of a publication status - `status` itself is a machine
+ * value (a lookup key and a `.status-{status}` CSS class, see `PublicationRow.vue`
+ * and `details.ts`) and is never translated on its own; only this label is.
+ * Shared so the chart legend (`chartOptions.ts`) and the detail badge
+ * (`details.ts`) can never drift apart.
+ */
+const STATUS_KEY: Record<ChartPublication['status'], UiKey> = {
+  publication: 'status.publication', review: 'status.review', proceeding: 'status.proceeding',
+  chapter: 'status.chapter', preprint: 'status.preprint', abstract: 'status.abstract',
+  thesis: 'status.thesis', report: 'status.report',
+};
+
+export function publicationStatusLabel(status: ChartPublication['status'], t: TFn): string {
+  return t(STATUS_KEY[status]);
+}
 
 const zeros = (n: number) => Array.from({ length: n }, () => 0);
 

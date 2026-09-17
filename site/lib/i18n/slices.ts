@@ -16,7 +16,18 @@ import type { TFn } from './catalog';
  * appear, so one narrow bundle reused by ten cards is simpler than ten
  * near-identical ones.
  */
+/** The one-per-unit "N ago" bundle `relativeDate()` (`githubRows.ts`) needs, shared by every component and script that renders a relative date. */
+const relativeDateStrings = (t: TFn) => ({
+  today: t('time.today'),
+  yesterday: t('time.yesterday'),
+  day: { one: t('time.day.one'), other: t('time.day.other') },
+  week: { one: t('time.week.one'), other: t('time.week.other') },
+  month: { one: t('time.month.one'), other: t('time.month.other') },
+  year: { one: t('time.year.one'), other: t('time.year.other') },
+});
+
 export const slices = (t: TFn) => ({
+  relativeDate: relativeDateStrings(t),
   softwareCard: {
     stars: t('gh.stars'),
     issues: t('gh.issues'),
@@ -28,6 +39,7 @@ export const slices = (t: TFn) => ({
     releases: t('gh.releases'),
     homepage: t('links.projectHomepage'),
     repository: t('links.repositoryHomepage'),
+    relativeDate: relativeDateStrings(t),
   },
   publicationRow: {
     citations: t('pub.citationsTitle'),
@@ -71,6 +83,12 @@ export const slices = (t: TFn) => ({
     researchArea: t('chart.researchArea'),
     status: t('chart.status'),
     ariaLabel: t('chart.publicationsPerYear'),
+    total: t('chart.total'),
+    statusLabels: {
+      publication: t('status.publication'), review: t('status.review'), proceeding: t('status.proceeding'),
+      chapter: t('status.chapter'), preprint: t('status.preprint'), abstract: t('status.abstract'),
+      thesis: t('status.thesis'), report: t('status.report'),
+    },
   },
   starsChart: {
     ariaLabel: t('chart.starsPerRepository'),
@@ -79,14 +97,20 @@ export const slices = (t: TFn) => ({
   },
   citationHistoryChart: {
     ariaLabel: t('chart.totalCitationsOverTime'),
+    historyNote: { yearly: t('scholar.historyYearly'), daily: t('scholar.historyDaily'), starts: t('scholar.historyStarts') },
+    citation: { one: t('chart.citationOne'), other: t('chart.citationOther') },
   },
   citationsPerYearChart: {
     ariaLabel: t('chart.citationsPerYear'),
     caption: t('chart.citationsPerYearCaption'),
+    citation: { one: t('chart.citationOne'), other: t('chart.citationOther') },
   },
   commitActivityChart: {
     ariaLabel: t('chart.commitsPerWeek'),
     caption: t('chart.commitActivityCaption'),
+    weekOf: t('chart.weekOf'),
+    total: t('chart.total'),
+    others: t('chart.others'),
   },
   releaseTimeline: {
     ariaLabel: t('chart.releaseDatesPerRepository'),
@@ -105,6 +129,11 @@ export const slices = (t: TFn) => ({
     loading: t('network.loading'),
     graphLabel: t('network.graphLabel'),
     caption: t('network.caption'),
+    labels: {
+      category: { person: t('detail.people'), project: t('nav.projects'), software: t('nav.software'), publication: t('nav.publications') },
+      type: { person: t('type.person'), project: t('type.project'), software: t('type.software'), publication: t('type.publication') },
+      citation: { one: t('chart.citationOne'), other: t('chart.citationOther') },
+    },
   },
 });
 

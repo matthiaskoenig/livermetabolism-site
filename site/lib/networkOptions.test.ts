@@ -1,10 +1,19 @@
 import { describe, expect, it } from 'vitest';
 import { TAG_PALETTE } from './chartOptions';
 import type { GraphRows } from './graphRows';
+import { uiFor } from './i18n/catalog';
 import {
-  CATEGORY_COLOR, CATEGORY_LABEL, CATEGORY_ORDER, LAYOUT_FRICTION, SETTLE_FRICTION, SIZE, SYMBOL,
-  ROAM, ZOOM_ALL, ZOOM_TOPIC, degrees, filterRows, networkOption, symbolSize,
+  CATEGORY_COLOR, CATEGORY_ORDER, LAYOUT_FRICTION, SETTLE_FRICTION, SIZE, SYMBOL,
+  ROAM, ZOOM_ALL, ZOOM_TOPIC, degrees, filterRows, networkOption, symbolSize, type NetworkLabels,
 } from './networkOptions';
+
+const { t } = uiFor('en');
+const labels: NetworkLabels = {
+  category: { person: t('detail.people'), project: t('nav.projects'), software: t('nav.software'), publication: t('nav.publications') },
+  type: { person: t('type.person'), project: t('type.project'), software: t('type.software'), publication: t('type.publication') },
+  citation: { one: t('chart.citationOne'), other: t('chart.citationOther') },
+};
+const CATEGORY_LABEL = labels.category;
 
 /**
  * Two research areas over seven nodes: `person:ada` is in `ai` only through
@@ -33,7 +42,7 @@ const rows: GraphRows = {
 };
 
 const series = (topic: string | null, relayout?: boolean) =>
-  networkOption(rows, topic, relayout === undefined ? undefined : { relayout }).series[0]!;
+  networkOption(rows, topic, labels, relayout === undefined ? undefined : { relayout }).series[0]!;
 const node = (topic: string | null, id: string) => series(topic).data.find((n) => n.id === id)!;
 const ids = (topic: string | null) => series(topic).data.map((n) => n.id);
 
@@ -129,7 +138,7 @@ describe('networkOption', () => {
     expect(s.categories.map((c) => c.itemStyle.color)).toEqual(CATEGORY_ORDER.map((t) => CATEGORY_COLOR[t]));
     expect(node(null, 'person:ada').category).toBe(CATEGORY_ORDER.indexOf('person'));
     expect(node(null, 'publication:p1').category).toBe(CATEGORY_ORDER.indexOf('publication'));
-    expect(networkOption(rows, null).legend.data).toEqual(s.categories.map((c) => c.name));
+    expect(networkOption(rows, null, labels).legend.data).toEqual(s.categories.map((c) => c.name));
   });
 
   it('draws a person as their photo and every other type as a shape', () => {
@@ -211,7 +220,7 @@ describe('networkOption', () => {
   });
 
   it('renders the tooltip inside the canvas as "label\\ntype · detail"', () => {
-    const { tooltip } = networkOption(rows, null);
+    const { tooltip } = networkOption(rows, null, labels);
     expect(tooltip.renderMode).toBe('richText');
     // a publication also gets its citation count, the only `value` that means
     // something to a reader (every other type carries a degree)

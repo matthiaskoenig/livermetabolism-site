@@ -4,11 +4,14 @@ import { describe, expect, it } from 'vitest';
 import { emptyCitations, type Citations } from './citationsSchema';
 import { buildRelations, detailIds, detailModel, listAnchor, type DetailContext } from './details';
 import { emptySnapshot, type Snapshot } from './githubSchema';
+import { uiFor } from './i18n/catalog';
 import { emptyScholar } from './scholarSchema';
 import type { PeopleMap } from './people';
 import * as s from './schemas';
 import { toTagInfo } from './views';
 import type { Entry, TagInfo } from './views';
+
+const { t } = uiFor('en');
 
 const BASE = '/livermetabolism-site/';
 
@@ -102,7 +105,7 @@ const snapshot: Snapshot = {
 function ctx(over: Partial<DetailContext> = {}): DetailContext {
   return {
     people, publications, projects, software, news, presentations, posters,
-    tags: tagInfo, peopleMap, github: snapshot, scholar: emptyScholar(), citations, base: BASE, assetBase: BASE,
+    tags: tagInfo, peopleMap, github: snapshot, scholar: emptyScholar(), citations, base: BASE, assetBase: BASE, t,
     ...over,
   };
 }
@@ -423,7 +426,7 @@ describe('the real data', () => {
     ...real,
     tags: toTagInfo(parse('tags', s.tagSchema)),
     peopleMap: Object.fromEntries(real.people.map((p) => [p.id, { id: p.id, name: p.name, image: p.image ?? null }])),
-    github: emptySnapshot(), scholar: emptyScholar(), citations: emptyCitations(), base: '/', assetBase: '/',
+    github: emptySnapshot(), scholar: emptyScholar(), citations: emptyCitations(), base: '/', assetBase: '/', t,
   };
   const rel = buildRelations(realCtx);
 

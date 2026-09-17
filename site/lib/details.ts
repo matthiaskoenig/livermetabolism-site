@@ -31,11 +31,22 @@ import { citationFor } from './citations';
 import { openalexWorkUrl, type Citations } from './citationsSchema';
 import { shortDate, statsFor } from './githubRows';
 import type { Snapshot } from './githubSchema';
+import type { TFn } from './i18n/catalog';
+import { publicationStatusLabel } from './publicationRows';
 import type { PeopleMap } from './people';
 import type { NewsData, PersonData, PosterData, PresentationData, ProjectData, PublicationData, SoftwareData } from './schemas';
 import type { Scholar } from './scholarSchema';
-import { capitalize, slugify } from './text';
+import { slugify } from './text';
 import type { Entry, TagInfo } from './views';
+
+/**
+ * The two `ContentStatus` values a project or news item carries ('current' /
+ * 'old', see `schemas.ts`) - the same `status.*` catalog keys a publication's
+ * `PublicationStatus` uses, since both are display labels of a machine value
+ * that is never itself translated (see `publicationStatusLabel`).
+ */
+const contentStatusLabel = (status: ProjectData['status'], t: TFn): string =>
+  status === 'current' ? t('status.current') : t('status.old');
 
 /** The five entities that get a detail fragment and a modal (defined in the leaf module the client router imports). */
 export { DETAIL_TYPES, type DetailType } from './detailTypes';
@@ -154,6 +165,14 @@ export interface DetailContext {
    * are shared across languages and are not duplicated under `/de/`.
    */
   assetBase: string;
+  /**
+   * The page's own translator: every label a model carries (link labels,
+   * figure labels, related-section headings, status badges) is baked into it
+   * as plain text at build time, one fragment per locale - `DetailView.vue`
+   * never sees a `t` of its own (see CLAUDE.md, the static-first islands
+   * convention: a plain object, not a function, so the model stays a value).
+   */
+  t: TFn;
 }
 
 export interface PersonRelations {
@@ -355,7 +374,7 @@ const projectRow = (ctx: DetailContext, id: string): RelatedRow | null => {
   const p = lookups(ctx).projects.get(id);
   if (!p) return null;
   return {
-    type: 'project', id, title: p.title, line: capitalize(p.status),
+    type: 'project', id, title: p.title, line: contentStatusLabel(p.status, ctx.t),
     image: p.images[0] ? `${ctx.assetBase}${PROJECT_DIR}${p.images[0]}` : null,
     href: listAnchor('project', id, ctx.base),
   };
@@ -442,6 +461,7 @@ function personTags(ctx: DetailContext, rel: PersonRelations): string[] {
 function personModel(ctx: DetailContext, id: string): DetailModel {
   const p = lookups(ctx).people.get(id);
   if (!p) throw new Error(`detailModel: no person with id ${id}`);
+  const { t } = ctx;
   const rel = relationsFor(ctx).person.get(id)!;
   const pubs = byYearDesc(ctx, rel.publications);
   const cited = pubs.reduce((sum, pubId) => sum + (citationFor(ctx.citations, lookups(ctx).publications.get(pubId)?.doi)?.citedByCount ?? 0), 0);
@@ -452,24 +472,24 @@ function personModel(ctx: DetailContext, id: string): DetailModel {
     imageShape: 'round',
     tags: personTags(ctx, rel),
     links: [
-      ...extLink('Homepage', p.homepage, 'home'),
-      ...extLink('ORCID', p.orcid ? `https://orcid.org/${p.orcid}` : null, 'orcid'),
-      ...extLink('Repository', p.repository, 'github'),
+      ...extLink(t('links.homepage'), p.homepage, 'home'),
+      ...extLink(t('person.orcid'), p.orcid ? `https://orcid.org/${p.orcid}` : null, 'orcid'),
+      ...extLink(t('links.repository'), p.repository, 'github'),
     ],
     figures: [
-      ...(pubs.length ? [{ label: 'Publications', value: String(pubs.length) }] : []),
-      ...(cited > 0 ? [{ label: 'Citations', value: String(cited) }] : []),
+      ...(pubs.length ? [{ label: t('nav.publications'), value: String(pubs.length) }] : []),
+      ...(cited > 0 ? [{ label: t('scholar.citations'), value: String(cited) }] : []),
     ],
     media: null,
     body: p.description ?? '',
     keywords: [],
     related: [
-      ...section('Publications', pubs.map((pubId) => publicationRow(ctx, pubId))),
-      ...section('Projects', rel.projects.map((pid) => projectRow(ctx, pid))),
-      ...section('Software', rel.software.map((sid) => softwareRow(ctx, sid))),
-      ...section('News', rel.news.map((nid) => newsRow(ctx, nid))),
-      ...section('Presentations', rel.presentations.map((tid) => presentationRow(ctx, tid))),
-      ...section('Posters', rel.posters.map((pid) => posterRow(ctx, pid))),
+      ...section(t('nav.publications'), pubs.map((pubId) => publicationRow(ctx, pubId))),
+      ...section(t('nav.projects'), rel.projects.map((pid) => projectRow(ctx, pid))),
+      ...section(t('nav.software'), rel.software.map((sid) => softwareRow(ctx, sid))),
+      ...section(t('nav.news'), rel.news.map((nid) => newsRow(ctx, nid))),
+      ...section(t('nav.presentations'), rel.presentations.map((tid) => presentationRow(ctx, tid))),
+      ...section(t('nav.posters'), rel.posters.map((pid) => posterRow(ctx, pid))),
     ],
     listHref: listAnchor('person', id, ctx.base),
   };
@@ -478,6 +498,7 @@ function personModel(ctx: DetailContext, id: string): DetailModel {
 function publicationModel(ctx: DetailContext, id: string): DetailModel {
   const p = lookups(ctx).publications.get(id);
   if (!p) throw new Error(`detailModel: no publication with id ${id}`);
+  const { t } = ctx;
   const rel = relationsFor(ctx).publication.get(id)!;
   const cites = citationFor(ctx.citations, p.doi);
   return {
@@ -485,29 +506,29 @@ function publicationModel(ctx: DetailContext, id: string): DetailModel {
     subtitle: line([p.journal, p.year]),
     authors: { text: p.authors, people: p.people },
     image: null, imageShape: 'thumb',
-    badge: { text: capitalize(p.status), cls: `status-${slugify(p.status)}` },
+    badge: { text: publicationStatusLabel(p.status, t), cls: `status-${slugify(p.status)}` },
     tags: p.tags,
     links: [
-      ...extLink('DOI', p.doi ? `https://doi.org/${p.doi}` : null, 'book'),
-      ...extLink('PubMed', p.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${p.pmid}` : null, 'file-text-o'),
-      ...(p.pdf ? [{ label: 'PDF', href: `${ctx.assetBase}${PDF_DIR}${p.pdf}`, icon: 'file-pdf-o', external: false }] : []),
-      ...extLink('Homepage', p.homepage, 'globe'),
-      ...extLink('Repository', p.repository, 'github'),
+      ...extLink(t('links.doi'), p.doi ? `https://doi.org/${p.doi}` : null, 'book'),
+      ...extLink(t('links.pubmed'), p.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${p.pmid}` : null, 'file-text-o'),
+      ...(p.pdf ? [{ label: t('links.pdf'), href: `${ctx.assetBase}${PDF_DIR}${p.pdf}`, icon: 'file-pdf-o', external: false }] : []),
+      ...extLink(t('links.homepage'), p.homepage, 'globe'),
+      ...extLink(t('links.repository'), p.repository, 'github'),
     ],
     figures: cites
       ? [
-          { label: 'Citations', value: String(cites.citedByCount), href: openalexWorkUrl(cites.openalexId) },
-          ...(cites.isOa ? [{ label: 'Open access', value: cites.oaStatus }] : []),
+          { label: t('scholar.citations'), value: String(cites.citedByCount), href: openalexWorkUrl(cites.openalexId) },
+          ...(cites.isOa ? [{ label: t('pub.openAccessTitle'), value: cites.oaStatus }] : []),
         ]
       : [],
     media: null,
     body: p.abstract ?? '',
     keywords: p.keywords,
     related: [
-      ...section('People', rel.people.map((pid) => personRow(ctx, pid))),
-      ...section('Projects', rel.projects.map((pid) => projectRow(ctx, pid))),
-      ...section('Software', rel.software.map((sid) => softwareRow(ctx, sid))),
-      ...section('Presentations', rel.presentations.map((tid) => presentationRow(ctx, tid))),
+      ...section(t('detail.people'), rel.people.map((pid) => personRow(ctx, pid))),
+      ...section(t('nav.projects'), rel.projects.map((pid) => projectRow(ctx, pid))),
+      ...section(t('nav.software'), rel.software.map((sid) => softwareRow(ctx, sid))),
+      ...section(t('nav.presentations'), rel.presentations.map((tid) => presentationRow(ctx, tid))),
     ],
     listHref: listAnchor('publication', id, ctx.base),
   };
@@ -516,24 +537,25 @@ function publicationModel(ctx: DetailContext, id: string): DetailModel {
 function projectModel(ctx: DetailContext, id: string): DetailModel {
   const p = lookups(ctx).projects.get(id);
   if (!p) throw new Error(`detailModel: no project with id ${id}`);
+  const { t } = ctx;
   const rel = relationsFor(ctx).project.get(id)!;
   return {
     type: 'project', id, title: p.title,
-    subtitle: line([capitalize(p.status), p.cooperation_partners]),
+    subtitle: line([contentStatusLabel(p.status, t), p.cooperation_partners]),
     // no header thumbnail: the gallery below shows every image, the first one
     // included, so a thumbnail would only repeat it (as the retired
     // ProjectModal.vue did, which led with the gallery too)
     image: null,
     imageShape: 'thumb',
     tags: p.tags,
-    links: [...extLink('Homepage', p.homepage, 'globe'), ...extLink('Repository', p.repository, 'github')],
+    links: [...extLink(t('links.homepage'), p.homepage, 'globe'), ...extLink(t('links.repository'), p.repository, 'github')],
     figures: [],
     media: p.images.length ? { kind: 'gallery', images: p.images.map((img) => `${ctx.assetBase}${PROJECT_DIR}${img}`), caption: p.image_title ?? null } : null,
     body: p.abstract,
     keywords: [],
     related: [
-      ...section('People', rel.people.map((pid) => personRow(ctx, pid))),
-      ...section('Publications', byYearDesc(ctx, rel.publications).map((pubId) => publicationRow(ctx, pubId))),
+      ...section(t('detail.people'), rel.people.map((pid) => personRow(ctx, pid))),
+      ...section(t('nav.publications'), byYearDesc(ctx, rel.publications).map((pubId) => publicationRow(ctx, pubId))),
     ],
     listHref: listAnchor('project', id, ctx.base),
   };
@@ -542,6 +564,7 @@ function projectModel(ctx: DetailContext, id: string): DetailModel {
 function softwareModel(ctx: DetailContext, id: string): DetailModel {
   const s = lookups(ctx).software.get(id);
   if (!s) throw new Error(`detailModel: no software with id ${id}`);
+  const { t } = ctx;
   const rel = relationsFor(ctx).software.get(id)!;
   // the snapshot key of this entry's repository, exactly as the research page
   // looks it up (see statsFor: the key, not GitHub's current fullName)
@@ -554,26 +577,26 @@ function softwareModel(ctx: DetailContext, id: string): DetailModel {
     imageShape: 'logo',
     tags: s.tags,
     links: [
-      ...extLink('Homepage', s.homepage, 'globe'),
-      ...extLink('Repository', s.repository, 'github'),
-      ...extLink('DOI', s.doi ? `https://doi.org/${s.doi}` : null, 'book'),
+      ...extLink(t('links.homepage'), s.homepage, 'globe'),
+      ...extLink(t('links.repository'), s.repository, 'github'),
+      ...extLink(t('links.doi'), s.doi ? `https://doi.org/${s.doi}` : null, 'book'),
     ],
     figures: stats
       ? [
-          { label: 'Stars', value: String(stats.stars), href: stats.htmlUrl },
-          ...(stats.release ? [{ label: 'Latest release', value: stats.release.tag, href: stats.release.htmlUrl }] : []),
-          { label: 'Open issues', value: String(stats.openIssues), href: stats.htmlUrl },
+          { label: t('gh.stars'), value: String(stats.stars), href: stats.htmlUrl },
+          ...(stats.release ? [{ label: t('gh.latestRelease'), value: stats.release.tag, href: stats.release.htmlUrl }] : []),
+          { label: t('gh.issues'), value: String(stats.openIssues), href: stats.htmlUrl },
           // an absolute date, not "3 days ago": a fragment is cached in the
           // browser and never re-rendered, so a relative date would go stale
-          { label: 'Last push', value: shortDate(stats.pushedAt) },
+          { label: t('gh.lastPush'), value: shortDate(stats.pushedAt) },
         ]
       : [],
     media: null,
     body: s.description,
     keywords: [],
     related: [
-      ...section('People', rel.people.map((pid) => personRow(ctx, pid))),
-      ...section('Publications', byYearDesc(ctx, rel.publications).map((pubId) => publicationRow(ctx, pubId))),
+      ...section(t('detail.people'), rel.people.map((pid) => personRow(ctx, pid))),
+      ...section(t('nav.publications'), byYearDesc(ctx, rel.publications).map((pubId) => publicationRow(ctx, pubId))),
     ],
     listHref: listAnchor('software', id, ctx.base),
   };
@@ -582,6 +605,7 @@ function softwareModel(ctx: DetailContext, id: string): DetailModel {
 function newsModel(ctx: DetailContext, id: string): DetailModel {
   const n = lookups(ctx).news.get(id);
   if (!n) throw new Error(`detailModel: no news with id ${id}`);
+  const { t } = ctx;
   const rel = relationsFor(ctx).news.get(id)!;
   return {
     type: 'news', id, title: n.title,
@@ -592,14 +616,14 @@ function newsModel(ctx: DetailContext, id: string): DetailModel {
     imageShape: 'thumb',
     tags: n.tags,
     links: [
-      ...(n.link ? [{ label: 'Read more', href: dataHref(n.link, ctx.assetBase), icon: 'globe', external: true }] : []),
-      ...extLink('Video', n.video, 'video-camera'),
+      ...(n.link ? [{ label: t('links.readMore'), href: dataHref(n.link, ctx.assetBase), icon: 'globe', external: true }] : []),
+      ...extLink(t('links.video'), n.video, 'video-camera'),
     ],
     figures: [],
     media: n.video ? { kind: 'video', src: n.video, title: n.title } : null,
     body: n.abstract ?? n.short,
     keywords: [],
-    related: [...section('People', rel.people.map((pid) => personRow(ctx, pid)))],
+    related: [...section(t('detail.people'), rel.people.map((pid) => personRow(ctx, pid)))],
     listHref: listAnchor('news', id, ctx.base),
   };
 }

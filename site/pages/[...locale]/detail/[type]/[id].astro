@@ -48,7 +48,7 @@ export async function getStaticPaths() {
   // object per build, not one per fragment
   const view = { tagInfo: data.tags, peopleMap: data.peopleMap, avatarBase: asset('image/people/128/') };
   return LOCALES.flatMap((locale) => {
-    const ctx: DetailContext = { ...data, base: localeUrl(locale, '/'), assetBase };
+    const ctx: DetailContext = { ...data, base: localeUrl(locale, '/'), assetBase, t: uiFor(locale).t };
     return detailIds(ctx).map(({ type, id }) => ({
       params: { type, id, locale: locale === DEFAULT_LOCALE ? undefined : locale },
       props: { model: detailModel(type, id, ctx), ...view, locale },

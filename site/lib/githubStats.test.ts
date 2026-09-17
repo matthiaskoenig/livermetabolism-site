@@ -47,7 +47,7 @@ const markup = `
     <span class="software-stat" hidden><span data-field="pushed"></span></span>
     <span class="software-stat" hidden><span data-field="license"></span></span>
   </p>
-  <p data-github-note>updated <time data-field="updated" data-empty="never" data-iso="2026-09-01T05:00:00.000Z">2 weeks ago</time></p>`;
+  <p data-github-note data-release-template="Release {tag} · {date}" data-releases-label="Releases" data-issues-open-template="{count} open">updated <time data-field="updated" data-empty="never" data-iso="2026-09-01T05:00:00.000Z">2 weeks ago</time></p>`;
 
 const el = (selector: string) => document.querySelector<HTMLElement>(selector)!;
 

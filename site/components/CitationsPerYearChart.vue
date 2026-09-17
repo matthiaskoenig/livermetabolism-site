@@ -19,7 +19,7 @@ onMounted(async () => {
 });
 
 const el = useChart(
-  () => citationsPerYearOption(rows.value),
+  () => citationsPerYearOption(rows.value, props.strings.citation),
   () => PER_YEAR_HEIGHT,
 );
 </script>

@@ -11,6 +11,7 @@
  * `ScholarStats.astro` (site chrome is plain TypeScript, not a Vue island —
  * see CLAUDE.md).
  */
+import { ENGLISH_RELATIVE_DATE_STRINGS, type RelativeDateStrings } from './githubRows';
 import { refreshNote } from './githubStats';
 import { fmt } from './i18n/format';
 import { stripValues } from './scholarRows';
@@ -26,7 +27,7 @@ function set(root: ParentNode, name: string, value: string): void {
  * epoch of `emptyScholar()`) leaves the figures hidden and only re-renders the
  * note, so the page never shows zeros as if they were metrics.
  */
-export function applyScholar(scholar: Scholar, root: ParentNode = document, now: Date = new Date()): void {
+export function applyScholar(scholar: Scholar, root: ParentNode = document, now: Date = new Date(), strings: RelativeDateStrings = ENGLISH_RELATIVE_DATE_STRINGS): void {
   const v = stripValues(scholar);
   const strip = root.querySelector<HTMLElement>('[data-scholar-strip]');
   if (strip && v.known) {
@@ -54,7 +55,7 @@ export function applyScholar(scholar: Scholar, root: ParentNode = document, now:
     const wrap = name.closest<HTMLElement>('[data-scholar-name]');
     if (wrap) wrap.hidden = false;
   }
-  refreshNote(note.querySelector<HTMLElement>('[data-field="updated"]'), v.fetchedAt, now);
+  refreshNote(note.querySelector<HTMLElement>('[data-field="updated"]'), v.fetchedAt, now, strings);
 }
 
 /**

@@ -17,7 +17,7 @@ onMounted(async () => {
 });
 
 const el = useChart(
-  () => commitActivityOption(data.value),
+  () => commitActivityOption(data.value, props.strings),
   () => ACTIVITY_HEIGHT,
 );
 </script>

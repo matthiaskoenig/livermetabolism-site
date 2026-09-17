@@ -14,6 +14,7 @@
  * text) and the profile URL (guarded by `profileHref`, see below).
  */
 import { hasData, shortDate } from './githubRows';
+import { fmt } from './i18n/format';
 import { scholarProfileUrl, type Scholar } from './scholarSchema';
 
 /** One bar of the citations-per-year chart. */
@@ -110,12 +111,25 @@ export function stripValues(scholar: Scholar): StripValues {
  * year) and the daily readings (from their first date). A single daily point
  * without year points keeps the "history starts <date>" wording.
  */
-export function historyNote(rows: HistoryRow[]): string {
+/**
+ * The three `historyNote` templates ({year}/{date} placeholders), a narrow
+ * serialisable bundle (see `slices.ts`'s `historyNote`) rather than a `TFn`:
+ * `CitationHistoryChart.vue` is a hydrated island and recomputes the caption
+ * in the browser when the live snapshot is newer, so its props - and
+ * therefore what this function takes - must serialise into `astro-island`.
+ */
+export interface HistoryNoteStrings {
+  yearly: string;
+  daily: string;
+  starts: string;
+}
+
+export function historyNote(rows: HistoryRow[], strings: HistoryNoteStrings): string {
   const years = rows.filter((r) => r.source === 'year');
   const days = rows.filter((r) => r.source === 'day');
   const parts: string[] = [];
-  if (years.length) parts.push(`yearly totals from the citation histogram up to ${years[years.length - 1]!.date.slice(0, 4)}`);
-  if (days.length && years.length) parts.push(`daily readings from ${shortDate(`${days[0]!.date}T00:00:00Z`)}`);
-  else if (days.length === 1) parts.push(`history starts ${shortDate(`${days[0]!.date}T00:00:00Z`)}`);
+  if (years.length) parts.push(fmt(strings.yearly, { year: years[years.length - 1]!.date.slice(0, 4) }));
+  if (days.length && years.length) parts.push(fmt(strings.daily, { date: shortDate(`${days[0]!.date}T00:00:00Z`) }));
+  else if (days.length === 1) parts.push(fmt(strings.starts, { date: shortDate(`${days[0]!.date}T00:00:00Z`) }));
   return parts.join(', ');
 }

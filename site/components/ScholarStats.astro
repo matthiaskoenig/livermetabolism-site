@@ -11,6 +11,7 @@ import { relativeDate } from '../lib/githubRows';
 import { uiFor } from '../lib/i18n/catalog';
 import { fmt } from '../lib/i18n/format';
 import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
+import { slices } from '../lib/i18n/slices';
 import { stripValues } from '../lib/scholarRows';
 import type { Scholar } from '../lib/scholarSchema';
 
@@ -22,6 +23,7 @@ interface Props {
 }
 const { scholar, publications, locale = DEFAULT_LOCALE } = Astro.props;
 const { t } = uiFor(locale);
+const ui = slices(t);
 const v = stripValues(scholar);
 // a build that could not read the snapshot renders emptyScholar()'s epoch and
 // zeros: hide the metric figures and let the browser fill them in
@@ -30,7 +32,7 @@ const num = (n: number) => (known ? String(n) : '');
 const sinceTemplate = t('scholar.since');
 const since = known ? fmt(sinceTemplate, { year: v.sinceYear }) : t('scholar.sinceUnknown');
 ---
-<div class="scholar-strip" data-scholar-strip data-since-template={sinceTemplate}>
+<div class="scholar-strip" data-scholar-strip data-since-template={sinceTemplate} data-time-strings={JSON.stringify(ui.relativeDate)}>
   <div class="scholar-figure" data-scholar-metric hidden={!known}>
     <span class="scholar-value" data-field="citations">{num(v.citations)}</span>
     <span class="scholar-label">{t('scholar.citations')}</span>
@@ -56,21 +58,24 @@ const since = known ? fmt(sinceTemplate, { year: v.sinceYear }) : t('scholar.sin
 <p class="scholar-note" data-scholar-note>
   {t('scholar.citationMetricsFrom')}
   <a href={v.href} target="_blank" rel="noopener noreferrer">Google Scholar</a><span data-scholar-name hidden={!v.name}> (<span data-field="profile-name">{v.name}</span>)</span>, {t('scholar.lastUpdate')}
-  <time data-field="updated" data-empty={t('scholar.none')} data-iso={v.fetchedAt} datetime={known ? v.fetchedAt : undefined}>{known ? relativeDate(v.fetchedAt) : t('scholar.none')}</time>.
+  <time data-field="updated" data-empty={t('scholar.none')} data-iso={v.fetchedAt} datetime={known ? v.fetchedAt : undefined}>{known ? relativeDate(v.fetchedAt, new Date(), ui.relativeDate) : t('scholar.none')}</time>.
 </p>
 
 <script>
   import { isScholarFresherThan, loadLiveScholar } from '../lib/scholarLive';
   import { applyScholar, refreshRelativeDates } from '../lib/scholarStats';
+  import { timeStringsFrom } from '../lib/githubStats';
 
+  const strip = document.querySelector<HTMLElement>('[data-scholar-strip]');
   const note = document.querySelector<HTMLElement>('[data-scholar-note] [data-field="updated"]');
   if (note) {
+    const strings = timeStringsFrom(strip);
     // 1. the build may be weeks old: re-date what it rendered
-    refreshRelativeDates(document);
+    refreshRelativeDates(document, new Date(), strings);
     // 2. and take the newer snapshot if there is one (shared, memoized fetch)
     const builtAt = note.dataset.iso ?? '';
     void loadLiveScholar().then((scholar) => {
-      if (isScholarFresherThan(scholar, builtAt)) applyScholar(scholar);
+      if (isScholarFresherThan(scholar, builtAt)) applyScholar(scholar, document, new Date(), strings);
     });
   }
 </script>

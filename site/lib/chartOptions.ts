@@ -17,10 +17,11 @@
  * cannot turn snapshot text into markup.
  */
 import type { ActivityRows, StarRow, TimelineRow } from './githubRows';
+import { monthsFor } from './i18n/dates';
+import { fmt } from './i18n/format';
 import { TAG_PALETTE } from './tagGraphics';
 import { STATUS_ORDER, type PublicationYearRows } from './publicationRows';
 import type { HistoryRow, PerYearRow } from './scholarRows';
-import { capitalize } from './text';
 
 export const PALETTE = ['#18bc9c', '#3498db', '#f39c12', '#e74c3c', '#2c3e50', '#8e44ad', '#16a085', '#d35400', '#2980b9', '#7f8c8d', '#c0392b'];
 
@@ -113,10 +114,9 @@ export function starsOption(rows: StarRow[]) {
 
 export const starsHeight = (rows: number) => Math.max(180, rows * 26 + 40);
 
-const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const weekLabel = (week: string) => {
   const d = new Date(week);
-  return Number.isNaN(d.getTime()) ? week : `${MONTHS[d.getUTCMonth()]} ${String(d.getUTCFullYear()).slice(2)}`;
+  return Number.isNaN(d.getTime()) ? week : `${monthsFor('en')[d.getUTCMonth()]} ${String(d.getUTCFullYear()).slice(2)}`;
 };
 
 /**
@@ -127,16 +127,23 @@ const weekLabel = (week: string) => {
  */
 const ACTIVITY_SERIES = 10;
 
+/** The commit-activity chart's tooltip templates ({date}/{count} placeholders) - a narrow, serialisable bundle (see `slices.ts`), the island's props must serialise into `astro-island`. */
+export interface CommitActivityStrings {
+  weekOf: string;
+  total: string;
+  others: string;
+}
+
 /**
  * Weekly commits of the last year, stacked per repository. `series` arrive
  * most active first (`activityRows()`), which decides who is folded.
  */
-export function commitActivityOption({ weeks, series }: ActivityRows) {
+export function commitActivityOption({ weeks, series }: ActivityRows, strings: CommitActivityStrings) {
   const folded = series.length > ACTIVITY_SERIES ? series.slice(ACTIVITY_SERIES - 1) : [];
   const drawn = folded.length
     ? [
         ...series.slice(0, ACTIVITY_SERIES - 1),
-        { name: `${folded.length} others`, values: weeks.map((_, i) => folded.reduce((s, f) => s + f.values[i]!, 0)) },
+        { name: fmt(strings.others, { count: folded.length }), values: weeks.map((_, i) => folded.reduce((s, f) => s + f.values[i]!, 0)) },
       ]
     : series;
   const foldedIn = (week: number) =>
@@ -148,7 +155,7 @@ export function commitActivityOption({ weeks, series }: ActivityRows) {
         .filter((p) => p.value > 0)
         .map((p) => (folded.length && p.seriesIndex === drawn.length - 1 ? `${p.seriesName}: ${p.value} (${foldedIn(p.dataIndex)})` : `${p.seriesName}: ${p.value}`));
       const total = ps.reduce((s, p) => s + p.value, 0);
-      return [`Week of ${ps[0]?.name ?? ''}`, ...rows, `total: ${total}`].join('\n');
+      return [fmt(strings.weekOf, { date: ps[0]?.name ?? '' }), ...rows, fmt(strings.total, { count: total })].join('\n');
     }, 'axis'),
     legend: { type: 'scroll', bottom: 0, itemHeight: 8, itemWidth: 12, textStyle: axisLabel() },
     grid: { left: 8, right: 16, top: 8, bottom: 34, containLabel: true },
@@ -172,12 +179,20 @@ export const ACTIVITY_HEIGHT = 340;
    richText tooltips.
    ------------------------------------------------------------------ */
 
+/** "{count} citation(s)", one/other - shared by both citation tooltips below. */
+export interface CitationCountStrings {
+  one: string;
+  other: string;
+}
+
+const citationCount = (n: number, strings: CitationCountStrings) => fmt(n === 1 ? strings.one : strings.other, { count: n });
+
 /** Scholar's citations-per-year histogram as bars, years ascending. */
-export function citationsPerYearOption(rows: PerYearRow[]) {
+export function citationsPerYearOption(rows: PerYearRow[], citation: CitationCountStrings) {
   const years = [...rows].sort((a, b) => a.year - b.year);
   return {
     animation: false,
-    tooltip: tooltip((p: { name: string; value: number }) => `${p.name}\n${p.value} citations`),
+    tooltip: tooltip((p: { name: string; value: number }) => `${p.name}\n${citationCount(p.value, citation)}`),
     grid: { left: 8, right: 14, top: 14, bottom: 8, containLabel: true },
     xAxis: {
       type: 'category',
@@ -204,11 +219,11 @@ export const PER_YEAR_HEIGHT = 260;
  * on purpose: the series starts with a single point (the first snapshot), and
  * a line through one point would draw nothing at all.
  */
-export function citationHistoryOption(rows: HistoryRow[]) {
+export function citationHistoryOption(rows: HistoryRow[], citation: CitationCountStrings) {
   const points = [...rows].sort((a, b) => a.date.localeCompare(b.date));
   return {
     animation: false,
-    tooltip: tooltip((ps: { name: string; value: [string, number] }[]) => `${ps[0]?.name ?? ''}\n${ps[0]?.value[1] ?? 0} citations`, 'axis'),
+    tooltip: tooltip((ps: { name: string; value: [string, number] }[]) => `${ps[0]?.name ?? ''}\n${citationCount(ps[0]?.value[1] ?? 0, citation)}`, 'axis'),
     grid: { left: 8, right: 14, top: 14, bottom: 8, containLabel: true },
     // a time axis, so the year-end totals and the daily readings sit at their
     // true distances instead of one slot per point
@@ -246,6 +261,17 @@ export const HISTORY_HEIGHT = 260;
 export type PublicationsMode = 'tag' | 'status';
 
 /**
+ * The `total: {count}` template plus every status' display label
+ * (`publicationStatusLabel()` in `publicationRows.ts`, keyed by the status
+ * value itself - a narrow, serialisable bundle, not a `TFn`, because
+ * `PublicationsChart.vue` is a hydrated island).
+ */
+export interface PublicationsChartStrings {
+  total: string;
+  status: Record<string, string>;
+}
+
+/**
  * Papers per year as stacked bars, split by research area or by status.
  *
  * `xAxis.triggerEvent` is on so a click on a year label reaches the
@@ -253,10 +279,10 @@ export type PublicationsMode = 'tag' | 'status';
  * the plain tag names, which is what the handler presses in the tag filter as
  * `[data-tag="…"]`.
  */
-export function publicationsOption(rows: PublicationYearRows, mode: PublicationsMode) {
+export function publicationsOption(rows: PublicationYearRows, mode: PublicationsMode, strings: PublicationsChartStrings) {
   const series = mode === 'status'
     ? rows.byStatus.map((s) => ({
-        name: capitalize(s.status), type: 'bar', stack: 'publications', data: s.counts,
+        name: strings.status[s.status] ?? s.status, type: 'bar', stack: 'publications', data: s.counts,
         itemStyle: { color: color(STATUS_ORDER.indexOf(s.status)) },
       }))
     : rows.byTag.map((s, i) => ({
@@ -268,7 +294,7 @@ export function publicationsOption(rows: PublicationYearRows, mode: Publications
     tooltip: tooltip((ps: { name: string; seriesName: string; value: number }[]) => {
       const lines = ps.filter((p) => p.value > 0).map((p) => `${p.seriesName}: ${p.value}`);
       const total = ps.reduce((s, p) => s + p.value, 0);
-      return [ps[0]?.name ?? '', ...lines, `total: ${total}`].join('\n');
+      return [ps[0]?.name ?? '', ...lines, fmt(strings.total, { count: total })].join('\n');
     }, 'axis'),
     legend: { type: 'scroll', bottom: 0, itemHeight: 8, itemWidth: 12, textStyle: axisLabel() },
     grid: { left: 8, right: 14, top: 10, bottom: 34, containLabel: true },

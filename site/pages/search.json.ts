@@ -1,9 +1,14 @@
 import type { APIRoute } from 'astro';
 import * as d from '../lib/data';
+import { uiFor } from '../lib/i18n/catalog';
 import type { SearchRecord } from '../lib/search';
-import { SITE_PAGES } from '../lib/sitePages';
+import { sitePages } from '../lib/sitePages';
 import { stripHtml } from '../lib/text';
 import { url } from '../lib/url';
+
+// This endpoint is not under [...locale] (see CLAUDE.md, "Site search"): the
+// index is one global file, always in English, like llms.ts's endpoints.
+const { t } = uiFor('en');
 
 const clean = (s: string | null | undefined) => (s ?? '').replace(/\s*\n\s*/g, ' ').trim();
 const join = (parts: (string | number | null | undefined)[]) => clean(parts.map((p) => (p == null ? '' : String(p))).join(' '));
@@ -27,7 +32,7 @@ export const GET: APIRoute = async () => {
   for (const p of people) if (p.status === 'current' || p.image) out.push({ type: 'Person', title: stripHtml(p.name), text: join([p.role.join(', '), p.affiliation, p.tenure, stripHtml(p.description ?? '')]), url: url(`/people/#person/${p.id}`) });
   for (const t of tags) out.push({ type: 'Research area', title: t.tag, text: join([t.short_description, t.vision]), url: url(`/#${t.slug}`) });
 
-  for (const p of SITE_PAGES) out.push({ type: 'Page', title: p.title, text: p.description, url: url(p.path) });
+  for (const p of sitePages(t)) out.push({ type: 'Page', title: p.title, text: p.description, url: url(p.path) });
 
   return new Response(JSON.stringify(out), { headers: { 'Content-Type': 'application/json; charset=utf-8' } });
 };

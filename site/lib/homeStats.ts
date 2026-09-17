@@ -11,6 +11,8 @@
  * actually read.
  */
 import { hasData } from './githubRows';
+import type { TFn } from './i18n/catalog';
+import { fmt } from './i18n/format';
 import { url } from './url';
 
 /** Publication statuses that count as peer-reviewed for the site's own count. */
@@ -45,8 +47,6 @@ export interface HomeStatsInput {
   scholar: { fetchedAt: string; citations: { all: number }; hIndex: { all: number } };
 }
 
-const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`;
-
 /**
  * The strip in display order: publications, citations, h-index, team,
  * software, funded projects.
@@ -56,7 +56,7 @@ const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one :
  * to the epoch, which `hasData` detects. A 0 that comes from `data/*.yml` is a
  * real number and is shown.
  */
-export function homeFigures(input: HomeStatsInput): HomeFigure[] {
+export function homeFigures(input: HomeStatsInput, t: TFn): HomeFigure[] {
   const { publications, people, software, funding, github, scholar } = input;
   const scholarKnown = hasData(scholar.fetchedAt);
   const githubKnown = hasData(github.fetchedAt);
@@ -64,24 +64,24 @@ export function homeFigures(input: HomeStatsInput): HomeFigure[] {
   const alumni = people.filter((p) => p.status === 'alumni').length;
 
   const figures: (HomeFigure | null)[] = [
-    { id: 'publications', value: countPeerReviewed(publications), label: 'Publications', href: url('/publications/') },
-    scholarKnown ? { id: 'citations', value: scholar.citations.all, label: 'Citations', href: url('/publications/#scholar') } : null,
-    scholarKnown ? { id: 'h-index', value: scholar.hIndex.all, label: 'h-index', href: url('/publications/#scholar') } : null,
+    { id: 'publications', value: countPeerReviewed(publications), label: t('nav.publications'), href: url('/publications/') },
+    scholarKnown ? { id: 'citations', value: scholar.citations.all, label: t('scholar.citations'), href: url('/publications/#scholar') } : null,
+    scholarKnown ? { id: 'h-index', value: scholar.hIndex.all, label: t('scholar.hIndex'), href: url('/publications/#scholar') } : null,
     {
       id: 'team',
       value: people.filter((p) => p.status === 'current').length,
-      label: 'Team members',
-      sub: `${alumni} alumni`,
+      label: t('home.teamMembers'),
+      sub: fmt(t('home.alumniCount'), { count: alumni }),
       href: url('/people/'),
     },
     {
       id: 'software',
       value: software.length,
-      label: 'Software packages',
-      ...(githubKnown ? { sub: plural(stars, 'star', 'stars') } : {}),
+      label: t('home.softwarePackages'),
+      ...(githubKnown ? { sub: fmt(stars === 1 ? t('home.starOne') : t('home.starOther'), { count: stars }) } : {}),
       href: url('/research/#software'),
     },
-    { id: 'funding', value: funding.length, label: 'Funded projects', href: url('/research/#funding') },
+    { id: 'funding', value: funding.length, label: t('home.fundedProjects'), href: url('/research/#funding') },
   ];
   return figures.filter((f): f is HomeFigure => f !== null);
 }

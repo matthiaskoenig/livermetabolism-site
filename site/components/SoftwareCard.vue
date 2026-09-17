@@ -37,7 +37,7 @@ const releaseTitle = () => (props.stats?.release ? fmt(props.strings.release, { 
         >
         <span class="software-stat" :hidden="!stats" :title="strings.stars">★&nbsp;<span data-field="stars">{{ stats?.stars ?? '' }}</span></span>
         <span class="software-stat" :hidden="!stats" :title="strings.issues"><span data-field="issues">{{ stats ? fmt(strings.issuesOpen, { count: stats.openIssues }) : '' }}</span></span>
-        <span class="software-stat" :hidden="!stats" :title="strings.lastPush"><span data-field="pushed" :data-iso="stats?.pushedAt">{{ stats ? relativeDate(stats.pushedAt) : '' }}</span></span>
+        <span class="software-stat" :hidden="!stats" :title="strings.lastPush"><span data-field="pushed" :data-iso="stats?.pushedAt">{{ stats ? relativeDate(stats.pushedAt, new Date(), strings.relativeDate) : '' }}</span></span>
         <span class="software-stat" :hidden="!stats?.language" :title="strings.language"><span data-field="language">{{ stats?.language ?? '' }}</span></span>
         <span class="software-stat" :hidden="!stats?.license" :title="strings.license"><span data-field="license">{{ stats?.license ?? '' }}</span></span>
       </p>

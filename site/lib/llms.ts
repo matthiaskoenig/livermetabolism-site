@@ -3,14 +3,14 @@
  * `data/*.yml` by the endpoints `robots.txt.ts`, `llms.txt.ts` and
  * `llms-full.txt.ts`:
  *
- * - `robotsTxt()` — every crawler (AI crawlers and agents included) may read
+ * - `robotsTxt()` - every crawler (AI crawlers and agents included) may read
  *   the whole site except `/detail/`, the page partials the detail modal
  *   fetches (also kept out of the sitemap, see `astro.config.mjs`); it names
  *   the sitemap and the two LLM files.
- * - `llmsTxt()` — the short Markdown index of https://llmstxt.org/: H1 title,
+ * - `llmsTxt()` - the short Markdown index of https://llmstxt.org/: H1 title,
  *   blockquote summary, then link lists (research areas, pages, software,
  *   current projects) and the `Optional` section last.
- * - `llmsFullTxt()` — the content of every list page in one Markdown file,
+ * - `llmsFullTxt()` - the content of every list page in one Markdown file,
  *   showing what the site shows (current projects, current members and
  *   alumni with a photo).
  *
@@ -22,8 +22,17 @@
  *
  * Input field sets are `Pick`s of the collection entries, so the endpoints
  * pass their full entries unchanged while the tests stay small.
+ *
+ * `llmsTxt()`/`llmsFullTxt()` take `t` for their section headings and field
+ * labels, like every other pure module - but `robots.txt`, `llms.txt` and
+ * `llms-full.txt` are single global endpoints, not under `[...locale]` (see
+ * CLAUDE.md, "Live GitHub and Scholar data" and "Site search" for the same
+ * pattern), so their caller always passes the English translator today; the
+ * strings still live in the one catalog rather than a second, independently
+ * maintained copy.
  */
-import { SITE_PAGES } from './sitePages';
+import type { TFn } from './i18n/catalog';
+import { sitePages } from './sitePages';
 import { truncateWords } from './text';
 import type { Entry, TagInfo } from './views';
 import type * as S from './schemas';
@@ -36,6 +45,7 @@ export interface Deploy {
 }
 
 export interface LlmsInput extends Deploy {
+  t: TFn;
   tags: Pick<TagInfo, 'tag' | 'slug' | 'short_description' | 'description' | 'vision'>[];
   projects: Pick<Entry<S.ProjectData>, 'id' | 'title' | 'status' | 'tags' | 'abstract' | 'homepage'>[];
   software: Pick<Entry<S.SoftwareData>, 'id' | 'name' | 'title' | 'description' | 'homepage' | 'repository' | 'tags'>[];
@@ -54,10 +64,10 @@ export interface LlmsFullInput extends LlmsInput {
   news: Pick<Entry<S.NewsData>, 'id' | 'title' | 'date' | 'short'>[];
 }
 
-const TITLE = 'König Lab — Systems Medicine, Digital Twins & AI';
+const TITLE = 'König Lab - Systems Medicine, Digital Twins & AI';
 const SUMMARY =
   'The König Lab (Prof. Matthias König, University Hospital Schleswig-Holstein, Campus Lübeck, Germany) works on metabolic inflammation and carcinogenesis of the liver. ' +
-  'We build open, FAIR digital twins of human physiology — AI-powered models that predict disease and therapy, patient by patient.';
+  'We build open, FAIR digital twins of human physiology - AI-powered models that predict disease and therapy, patient by patient.';
 const CV_PDF = '/assets/cv/Koenig_CV.pdf';
 
 type Abs = (path: string) => string;
@@ -123,45 +133,46 @@ export function robotsTxt(deploy: Deploy): string {
 }
 
 export function llmsTxt(input: LlmsInput): string {
+  const { t } = input;
   const abs = absolute(input);
   const summary = (html: string, words: number) => truncateWords(plainText(html, abs, { links: false }), words);
-  const pages = SITE_PAGES.filter((p) => !p.legal);
-  const legal = SITE_PAGES.filter((p) => p.legal);
+  const pages = sitePages(t).filter((p) => !p.legal);
+  const legal = sitePages(t).filter((p) => p.legal);
 
   return doc([
     header(),
-    'The site presents the research areas, team, publications, projects, software, funding, meetings, teaching and news of the group. ' +
-      'Every entry links to its place on the site; `llms-full.txt` holds all of it as one Markdown file.',
-    section('Research areas', input.tags.map((t) => item(t.tag, abs(`/#${t.slug}`), t.short_description))),
-    section('Pages', pages.map((p) => item(p.title, abs(p.path), p.description))),
+    t('llms.intro'),
+    section(t('llms.researchAreas'), input.tags.map((tag) => item(tag.tag, abs(`/#${tag.slug}`), tag.short_description))),
+    section(t('llms.pages'), pages.map((p) => item(p.title, abs(p.path), p.description))),
     section(
-      'Software',
+      t('nav.software'),
       input.software.map((s) => {
-        const source = s.repository ? ` Source: ${s.repository}` : s.homepage ? ` Homepage: ${s.homepage}` : '';
+        const source = s.repository ? ` ${t('llms.source')} ${s.repository}` : s.homepage ? ` ${t('links.homepage')}: ${s.homepage}` : '';
         return item(s.name, abs(`/research/#software/${s.id}`), `${sentence(plainText(s.title, abs, { links: false }))}${source}`);
       }),
     ),
     section(
-      'Current projects',
+      t('llms.currentProjects'),
       input.projects.filter((p) => p.status === 'current').map((p) => item(plainText(p.title, abs, { links: false }), abs(`/projects/#project/${p.id}`), summary(p.abstract, 30))),
     ),
-    section('Optional', [
-      item('Full content', abs('llms-full.txt'), 'research areas, team, publications, projects, software, funding, editorial roles, presentations, posters, meetings, teaching and news as one Markdown file'),
-      item('Search index', abs('search.json'), 'JSON index of every entry, as used by the site search'),
-      item('Sitemap', abs('sitemap-index.xml')),
-      item('CV of Matthias König', abs(CV_PDF), 'PDF'),
+    section(t('llms.optional'), [
+      item(t('llms.fullContent'), abs('llms-full.txt'), t('llms.fullContentNote')),
+      item(t('llms.searchIndex'), abs('search.json'), t('llms.searchIndexNote')),
+      item(t('llms.sitemap'), abs('sitemap-index.xml')),
+      item(t('llms.cvOfMatthias'), abs(CV_PDF), t('links.pdf')),
       ...legal.map((p) => item(p.title, abs(p.path), p.description)),
     ]),
   ]);
 }
 
 export function llmsFullTxt(input: LlmsFullInput): string {
+  const { t } = input;
   const abs = absolute(input);
   const text = (html: string | null | undefined) => (html ? plainText(html, abs) : '');
   const title = (html: string) => plainText(html, abs, { links: false });
   const areas = (tags: string[]) => (tags.length ? tags.join(', ') : null);
   const byDateDesc = <T extends { date: string }>(rows: T[]) => [...rows].sort((a, b) => b.date.localeCompare(a.date));
-  /** `### heading`, the field lines, then the body paragraph — each block only if set, a blank line between. */
+  /** `### heading`, the field lines, then the body paragraph - each block only if set, a blank line between. */
   const entry = (heading: string, lines: string[], body?: string) => [`### ${heading}`, lines.join('\n'), body].filter(Boolean).join('\n\n');
 
   const current = input.people.filter((p) => p.status === 'current');
@@ -169,77 +180,77 @@ export function llmsFullTxt(input: LlmsFullInput): string {
   const person = (p: LlmsFullInput['people'][number]) => {
     const context = [p.tenure, p.affiliation].filter(Boolean).join(', ');
     const description = text(p.description);
-    return `- **${p.name}** — ${p.role.join(', ')}${context ? ` (${context})` : ''}.${description ? ` ${description}` : ''} Profile: ${abs(`/people/#person/${p.id}`)}`;
+    return `- **${p.name}** - ${p.role.join(', ')}${context ? ` (${context})` : ''}.${description ? ` ${description}` : ''} Profile: ${abs(`/people/#person/${p.id}`)}`;
   };
 
   return doc([
     header(),
-    `Generated from the website's data at build time. Website: ${abs('')} — short index: ${abs('llms.txt')}`,
-    entries('Research areas', input.tags.map((t) => entry(t.tag, [], `${t.description.trim()}\n\nVision: ${t.vision.trim()}`))),
-    entries('Team', [
-      ...(current.length ? [`### Current members\n\n${current.map(person).join('\n')}`] : []),
-      ...(alumni.length ? [`### Alumni\n\n${alumni.map(person).join('\n')}`] : []),
+    `Generated from the website's data at build time. Website: ${abs('')} - short index: ${abs('llms.txt')}`,
+    entries(t('llms.researchAreas'), input.tags.map((tag) => entry(tag.tag, [], `${tag.description.trim()}\n\nVision: ${tag.vision.trim()}`))),
+    entries(t('nav.team'), [
+      ...(current.length ? [`### ${t('llms.currentMembers')}\n\n${current.map(person).join('\n')}`] : []),
+      ...(alumni.length ? [`### ${t('nav.alumni')}\n\n${alumni.map(person).join('\n')}`] : []),
     ]),
     entries(
-      'Publications',
+      t('nav.publications'),
       [...input.publications]
         .sort((a, b) => b.year - a.year)
         .map((p) =>
           entry(
             title(p.title),
             fields([
-              ['Authors', title(p.authors)],
-              ['Published', `${title(p.journal)}, ${p.year}`],
-              ['Type', p.status],
-              ['DOI', p.doi ? `https://doi.org/${p.doi}` : null],
-              ['Research areas', areas(p.tags)],
-              ['URL', abs(`/publications/#publication/${p.id}`)],
+              [t('llms.authors'), title(p.authors)],
+              [t('llms.published'), `${title(p.journal)}, ${p.year}`],
+              [t('llms.type'), p.status],
+              [t('links.doi'), p.doi ? `https://doi.org/${p.doi}` : null],
+              [t('llms.researchAreas'), areas(p.tags)],
+              [t('llms.url'), abs(`/publications/#publication/${p.id}`)],
             ]),
             text(p.abstract),
           ),
         ),
     ),
     entries(
-      'Projects',
+      t('nav.projects'),
       input.projects
         .filter((p) => p.status === 'current')
-        .map((p) => entry(title(p.title), fields([['Research areas', areas(p.tags)], ['Homepage', p.homepage], ['URL', abs(`/projects/#project/${p.id}`)]]), text(p.abstract))),
+        .map((p) => entry(title(p.title), fields([[t('llms.researchAreas'), areas(p.tags)], [t('links.homepage'), p.homepage], [t('llms.url'), abs(`/projects/#project/${p.id}`)]]), text(p.abstract))),
     ),
     entries(
-      'Software',
+      t('nav.software'),
       input.software.map((s) =>
         entry(
-          `${s.name} — ${title(s.title)}`,
-          fields([['Repository', s.repository], ['Homepage', s.homepage], ['Research areas', areas(s.tags)], ['URL', abs(`/research/#software/${s.id}`)]]),
+          `${s.name} - ${title(s.title)}`,
+          fields([[t('links.repository'), s.repository], [t('links.homepage'), s.homepage], [t('llms.researchAreas'), areas(s.tags)], [t('llms.url'), abs(`/research/#software/${s.id}`)]]),
           text(s.description),
         ),
       ),
     ),
     entries(
-      'Funding',
+      t('nav.funding'),
       input.funding.map((f) =>
         entry(
           title(f.title),
-          fields([['Funder', `${f.funder} (${f.funder_short})`], ['Period', `${f.start}–${f.end}`], ['Role', f.role], ['Homepage', f.homepage], ['URL', abs(`/research/#funding-${f.id}`)]]),
+          fields([[t('llms.funder'), `${f.funder} (${f.funder_short})`], [t('llms.period'), `${f.start}–${f.end}`], [t('llms.role'), f.role], [t('links.homepage'), f.homepage], [t('llms.url'), abs(`/research/#funding-${f.id}`)]]),
           text(f.description),
         ),
       ),
     ),
-    entries('Editorial roles', input.editors.map((e) => entry(title(e.name), fields([['Tenure', e.tenure], ['Homepage', e.homepage], ['URL', abs(`/research/#editor-${e.id}`)]]), text(e.description)))),
+    entries(t('llms.editorialRoles'), input.editors.map((e) => entry(title(e.name), fields([[t('llms.tenure'), e.tenure], [t('links.homepage'), e.homepage], [t('llms.url'), abs(`/research/#editor-${e.id}`)]]), text(e.description)))),
     section(
-      'Presentations',
+      t('nav.presentations'),
       byDateDesc(input.presentations).map((p) => `- ${sentence(title(p.title))} ${sentence(title(p.authors))} ${[p.event, p.location, p.date].filter(Boolean).join(', ')}. ${abs(`/publications/#presentation-${p.id}`)}`),
     ),
-    section('Posters', byDateDesc(input.posters).map((p) => `- ${sentence(title(p.title))} ${sentence(title(p.authors))} ${p.event}, ${p.date}. ${abs(`/publications/#poster-${p.id}`)}`)),
+    section(t('nav.posters'), byDateDesc(input.posters).map((p) => `- ${sentence(title(p.title))} ${sentence(title(p.authors))} ${p.event}, ${p.date}. ${abs(`/publications/#poster-${p.id}`)}`)),
     section(
-      'Conference abstracts',
+      t('llms.conferenceAbstracts'),
       [...input.abstracts].sort((a, b) => b.year - a.year).map((a) => `- ${sentence(title(a.title))} ${sentence(title(a.authors))} ${[a.event, a.year].filter(Boolean).join(', ')}. ${abs(`/publications/#abstract-${a.id}`)}`),
     ),
     entries(
-      'Meetings',
-      byDateDesc(input.meetings).map((m) => entry(title(m.title), fields([['Date', m.date], ['Location', m.location], ['Homepage', m.homepage], ['URL', abs(`/meetings/#meeting-${m.id}`)]]), text(m.description))),
+      t('nav.meetings'),
+      byDateDesc(input.meetings).map((m) => entry(title(m.title), fields([[t('llms.date'), m.date], [t('llms.location'), m.location], [t('links.homepage'), m.homepage], [t('llms.url'), abs(`/meetings/#meeting-${m.id}`)]]), text(m.description))),
     ),
-    entries('Teaching', input.teaching.map((t) => entry(title(t.title), fields([['Semester', t.semester], ['Location', t.location], ['URL', abs(`/teaching/#teaching-${t.id}`)]]), text(t.content)))),
-    entries('News', byDateDesc(input.news).map((n) => entry(`${n.date}: ${title(n.title)}`, fields([['URL', abs(`/news/#news/${n.id}`)]]), text(n.short)))),
+    entries(t('nav.teaching'), input.teaching.map((row) => entry(title(row.title), fields([[t('llms.semester'), row.semester], [t('llms.location'), row.location], [t('llms.url'), abs(`/teaching/#teaching-${row.id}`)]]), text(row.content)))),
+    entries(t('nav.news'), byDateDesc(input.news).map((n) => entry(`${n.date}: ${title(n.title)}`, fields([[t('llms.url'), abs(`/news/#news/${n.id}`)]]), text(n.short)))),
   ]);
 }

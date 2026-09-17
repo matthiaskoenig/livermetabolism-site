@@ -18,9 +18,9 @@ onMounted(async () => {
   if (isScholarFresherThan(live, props.fetchedAt)) rows.value = historyRows(live);
 });
 
-const note = computed(() => historyNote(rows.value));
+const note = computed(() => historyNote(rows.value, props.strings.historyNote));
 const el = useChart(
-  () => citationHistoryOption(rows.value),
+  () => citationHistoryOption(rows.value, props.strings.citation),
   () => HISTORY_HEIGHT,
 );
 </script>

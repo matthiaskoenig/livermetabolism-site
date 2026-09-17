@@ -1,12 +1,14 @@
 import { readFileSync } from 'node:fs';
 import { load } from 'js-yaml';
 import { describe, expect, it } from 'vitest';
+import { uiFor } from './i18n/catalog';
 import { llmsFullTxt, llmsTxt, plainText, robotsTxt, type LlmsFullInput } from './llms';
 import * as s from './schemas';
 import { toTagInfo } from './views';
 
-const ROOT = { site: 'https://example.org', base: '/' };
-const PAGES = { site: 'https://matthiaskoenig.github.io', base: '/livermetabolism-site/' };
+const { t } = uiFor('en');
+const ROOT = { site: 'https://example.org', base: '/', t };
+const PAGES = { site: 'https://matthiaskoenig.github.io', base: '/livermetabolism-site/', t };
 
 const lines = (text: string) => text.split('\n');
 /** Every `[text](target)` link target in a Markdown document. */
@@ -101,7 +103,7 @@ describe('llmsTxt', () => {
 
   it('opens with the H1 title and a blockquote summary, as llmstxt.org requires', () => {
     const [h1, blank, quote] = lines(text);
-    expect(h1).toBe('# König Lab — Systems Medicine, Digital Twins & AI');
+    expect(h1).toBe('# König Lab - Systems Medicine, Digital Twins & AI');
     expect(blank).toBe('');
     expect(quote.startsWith('> ')).toBe(true);
   });
@@ -224,6 +226,7 @@ describe('llms files over the real data', () => {
   const input: LlmsFullInput = {
     site: 'https://livermetabolism.com',
     base: '/',
+    t,
     tags: toTagInfo(parse('tags', s.tagSchema)),
     people: withIds(parse('people', s.personSchema)),
     publications: withIds(parse('publications', s.publicationSchema)),

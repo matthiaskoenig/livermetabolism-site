@@ -57,7 +57,7 @@ function onClick(params: unknown): void {
 }
 
 const el = useChart(
-  () => publicationsOption(props.rows, mode.value),
+  () => publicationsOption(props.rows, mode.value, { total: props.strings.total, status: props.strings.statusLabels }),
   () => PUBLICATIONS_HEIGHT,
   onClick,
 );

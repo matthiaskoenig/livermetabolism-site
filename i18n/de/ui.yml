@@ -173,6 +173,15 @@ scholar.lastUpdate:
 scholar.none:
   sha: '0000000000000000'
   text: noch keine
+scholar.historyYearly:
+  sha: '0000000000000000'
+  text: 'jährliche Summen aus dem Zitationshistogramm bis {year}'
+scholar.historyDaily:
+  sha: '0000000000000000'
+  text: 'tägliche Messwerte ab {date}'
+scholar.historyStarts:
+  sha: '0000000000000000'
+  text: 'Verlauf beginnt am {date}'
 pubOrder.groupLabel:
   sha: '0000000000000000'
   text: Publikationen sortieren
@@ -506,3 +515,231 @@ detail.keywords:
 detail.showInList:
   sha: '0000000000000000'
   text: In der Liste anzeigen
+detail.people:
+  sha: '0000000000000000'
+  text: Personen
+links.doi:
+  sha: '0000000000000000'
+  text: DOI
+links.pubmed:
+  sha: '0000000000000000'
+  text: PubMed
+gh.latestRelease:
+  sha: '0000000000000000'
+  text: Neuestes Release
+chart.weekOf:
+  sha: '0000000000000000'
+  text: 'Woche vom {date}'
+chart.total:
+  sha: '0000000000000000'
+  text: 'Gesamt: {count}'
+chart.others:
+  sha: '0000000000000000'
+  text: '{count} weitere'
+chart.citationOne:
+  sha: '0000000000000000'
+  text: '{count} Zitation'
+chart.citationOther:
+  sha: '0000000000000000'
+  text: '{count} Zitationen'
+home.teamMembers:
+  sha: '0000000000000000'
+  text: Teammitglieder
+home.softwarePackages:
+  sha: '0000000000000000'
+  text: Software-Pakete
+home.fundedProjects:
+  sha: '0000000000000000'
+  text: Geförderte Projekte
+home.alumniCount:
+  sha: '0000000000000000'
+  text: '{count} Ehemalige'
+home.starOne:
+  sha: '0000000000000000'
+  text: '{count} Stern'
+home.starOther:
+  sha: '0000000000000000'
+  text: '{count} Sterne'
+time.today:
+  sha: '0000000000000000'
+  text: heute
+time.yesterday:
+  sha: '0000000000000000'
+  text: gestern
+time.day.one:
+  sha: '0000000000000000'
+  text: 'vor {count} Tag'
+time.day.other:
+  sha: '0000000000000000'
+  text: 'vor {count} Tagen'
+time.week.one:
+  sha: '0000000000000000'
+  text: 'vor {count} Woche'
+time.week.other:
+  sha: '0000000000000000'
+  text: 'vor {count} Wochen'
+time.month.one:
+  sha: '0000000000000000'
+  text: 'vor {count} Monat'
+time.month.other:
+  sha: '0000000000000000'
+  text: 'vor {count} Monaten'
+time.year.one:
+  sha: '0000000000000000'
+  text: 'vor {count} Jahr'
+time.year.other:
+  sha: '0000000000000000'
+  text: 'vor {count} Jahren'
+status.current:
+  sha: '0000000000000000'
+  text: Aktuell
+status.old:
+  sha: '0000000000000000'
+  text: Abgeschlossen
+status.publication:
+  sha: '0000000000000000'
+  text: Publikation
+status.review:
+  sha: '0000000000000000'
+  text: Übersichtsartikel
+status.proceeding:
+  sha: '0000000000000000'
+  text: Tagungsband
+status.chapter:
+  sha: '0000000000000000'
+  text: Buchkapitel
+status.preprint:
+  sha: '0000000000000000'
+  text: Preprint
+status.abstract:
+  sha: '0000000000000000'
+  text: Abstract
+status.thesis:
+  sha: '0000000000000000'
+  text: Abschlussarbeit
+status.report:
+  sha: '0000000000000000'
+  text: Bericht
+type.person:
+  sha: '0000000000000000'
+  text: Person
+type.project:
+  sha: '0000000000000000'
+  text: Projekt
+type.software:
+  sha: '0000000000000000'
+  text: Software
+type.publication:
+  sha: '0000000000000000'
+  text: Publikation
+llms.researchAreas:
+  sha: '0000000000000000'
+  text: Forschungsbereiche
+llms.pages:
+  sha: '0000000000000000'
+  text: Seiten
+llms.currentProjects:
+  sha: '0000000000000000'
+  text: Aktuelle Projekte
+llms.optional:
+  sha: '0000000000000000'
+  text: Optional
+llms.intro:
+  sha: '0000000000000000'
+  text: 'Die Website stellt die Forschungsbereiche, das Team, Publikationen, Projekte, Software, Förderungen, Tagungen, Lehre und Aktuelles der Gruppe vor. Jeder Eintrag verlinkt auf seinen Platz auf der Website; `llms-full.txt` enthält alles davon als eine Markdown-Datei.'
+llms.fullContent:
+  sha: '0000000000000000'
+  text: Vollständiger Inhalt
+llms.fullContentNote:
+  sha: '0000000000000000'
+  text: 'Forschungsbereiche, Team, Publikationen, Projekte, Software, Förderungen, Herausgeberschaften, Vorträge, Poster, Tagungen, Lehre und Aktuelles als eine Markdown-Datei'
+llms.searchIndex:
+  sha: '0000000000000000'
+  text: Suchindex
+llms.searchIndexNote:
+  sha: '0000000000000000'
+  text: 'JSON-Index jedes Eintrags, wie von der Website-Suche verwendet'
+llms.sitemap:
+  sha: '0000000000000000'
+  text: Sitemap
+llms.cvOfMatthias:
+  sha: '0000000000000000'
+  text: Lebenslauf von Matthias König
+llms.source:
+  sha: '0000000000000000'
+  text: 'Quelle:'
+llms.currentMembers:
+  sha: '0000000000000000'
+  text: Aktuelle Mitglieder
+llms.authors:
+  sha: '0000000000000000'
+  text: Autorinnen und Autoren
+llms.published:
+  sha: '0000000000000000'
+  text: Veröffentlicht
+llms.type:
+  sha: '0000000000000000'
+  text: Typ
+llms.url:
+  sha: '0000000000000000'
+  text: URL
+llms.funder:
+  sha: '0000000000000000'
+  text: Förderer
+llms.period:
+  sha: '0000000000000000'
+  text: Zeitraum
+llms.role:
+  sha: '0000000000000000'
+  text: Rolle
+llms.editorialRoles:
+  sha: '0000000000000000'
+  text: Herausgeberschaften
+llms.tenure:
+  sha: '0000000000000000'
+  text: Zeitraum
+llms.conferenceAbstracts:
+  sha: '0000000000000000'
+  text: Konferenz-Abstracts
+llms.date:
+  sha: '0000000000000000'
+  text: Datum
+llms.location:
+  sha: '0000000000000000'
+  text: Ort
+llms.semester:
+  sha: '0000000000000000'
+  text: Semester
+sitePages.team:
+  sha: '0000000000000000'
+  text: 'Aktuelle Mitglieder und Ehemalige der Gruppe.'
+sitePages.openPositions:
+  sha: '0000000000000000'
+  text: 'Praktika, Bachelor- und Masterarbeiten, Promotions- und PostDoc-Stellen - in Lübeck oder Berlin.'
+sitePages.research:
+  sha: '0000000000000000'
+  text: 'Software, Förderung und Herausgeberschaften.'
+sitePages.projects:
+  sha: '0000000000000000'
+  text: 'Laufende Forschungsprojekte.'
+sitePages.publications:
+  sha: '0000000000000000'
+  text: 'Publikationen, Vorträge, Poster und Abstracts.'
+sitePages.network:
+  sha: '0000000000000000'
+  text: 'Interaktiver Netzwerkgraph der Forschungsbereiche, Personen, Publikationen, Projekte und Software der Gruppe.'
+sitePages.news:
+  sha: '0000000000000000'
+  text: 'Aktuelle Neuigkeiten und Updates der Gruppe.'
+sitePages.meetings:
+  sha: '0000000000000000'
+  text: 'Tagungen, Workshops und Veranstaltungen, die von der Gruppe organisiert oder ausgerichtet wurden.'
+sitePages.teaching:
+  sha: '0000000000000000'
+  text: 'Projektbasierte Lehre in digitaler Gesundheit und partizipativer Entscheidungsfindung, Open Science und interdisziplinärer Zusammenarbeit.'
+sitePages.impressum:
+  sha: '0000000000000000'
+  text: 'Impressum: Kontaktdaten, Anschrift und inhaltlich Verantwortliche oder Verantwortlicher gemäß § 5 TMG.'
+sitePages.privacy:
+  sha: '0000000000000000'
+  text: 'Datenschutzerklärung: Server-Protokolle, Google Analytics, Cookie-Einwilligung und Rechte der betroffenen Person.'

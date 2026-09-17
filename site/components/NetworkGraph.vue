@@ -115,7 +115,7 @@ function onNodeTap(data: unknown): void {
 // force layout starts over and re-arranges what is left; a resize merges, so
 // the preserved node positions survive it (see useChart's ChartOptions)
 const el = useChart(
-  () => networkOption(props.rows, topic.value, { relayout: relayout.value }),
+  () => networkOption(props.rows, topic.value, props.strings.labels, { relayout: relayout.value }),
   () => height.value,
   undefined,
   { notMerge: () => relayout.value },
@@ -134,7 +134,7 @@ function zoom(factor: number): void {
 
 /** Throw the zoom and the panning away and lay the nodes out afresh. */
 function reset(): void {
-  resetChart(el.value, networkOption(props.rows, topic.value));
+  resetChart(el.value, networkOption(props.rows, topic.value, props.strings.labels));
 }
 </script>
 
