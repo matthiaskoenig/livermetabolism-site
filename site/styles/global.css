@@ -1678,7 +1678,19 @@
   .detail-title {
     margin: 0 0 0.2em;
     font-size: 1.05em;
-    overflow-wrap: break-word;
+    /* .detail-heading (this element's parent) is a row-flex item with
+       flex-basis: 0% / min-width: 0, so its width is resolved through the
+       flex sizing algorithm rather than simple block containment.
+       overflow-wrap: break-word is spec'd to NOT count toward an element's
+       min-content contribution (only overflow-wrap: anywhere is), so under
+       flex-basis: 0 the browser still sized this h3 to the *unbroken*
+       title's full width (332px in a 183px-wide slot) and broke wrapping
+       silently failed - verified: switching to `anywhere` here (and only
+       here; .core-message p and .project-body h3/p sit in grid/column-flex
+       contexts where plain block containment applies and break-word alone
+       is correct, per the earlier verified fix) brings scrollWidth back to
+       clientWidth. */
+    overflow-wrap: anywhere;
   }
 
   .detail-subtitle {
