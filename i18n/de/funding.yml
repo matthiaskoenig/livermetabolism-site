@@ -43,8 +43,8 @@ xresearch2023:
     text: 'Projektbasierte Lehrinitiative zu digitalen Zwillingen in der Pharmakologie mit Fokus auf physiologiebasierter pharmakokinetischer (PBPK) Modellierung zur Optimierung der Bluthochdrucktherapie mit ACE-Hemmern und Diuretika.'
 atlas:
   title:
-    sha: efbd25102b39bd16
-    text: 'ATLAS - AI and Simulation for Tumor Liver ASessment'
+    sha: a16edab3d7bbb01d
+    text: 'ATLAS - AI and Simulation for Tumor Liver ASsessment'
   description:
     sha: e454b2bb46e14294
     text: 'Entwicklung KI-gestützter und simulationsbasierter Methoden zur Verbesserung der Beurteilung von Lebertumoren, durch Integration computergestützter Modellierung mit klinischen Daten zur Unterstützung einer personalisierten Diagnose und Therapieplanung.'
