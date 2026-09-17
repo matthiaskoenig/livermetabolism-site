@@ -10,17 +10,17 @@ import DetailModal from '../components/DetailModal.astro';
 import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
 import { localeUrl } from '../lib/i18n/routes';
 
-interface Props { title?: string; description?: string; sectionid?: string; locale?: Locale }
-const { title, description, sectionid, locale = DEFAULT_LOCALE } = Astro.props;
+interface Props { title?: string; description?: string; sectionid?: string; locale?: Locale; langSwitchPath?: string; noAlternates?: boolean }
+const { title, description, sectionid, locale = DEFAULT_LOCALE, langSwitchPath, noAlternates } = Astro.props;
 const isHome = Astro.url.pathname === localeUrl(locale, '/');
 ---
 <html lang={locale} class:list={[{ onepager: isHome }]}>
   <head>
-    <Head title={title} description={description} locale={locale} />
+    <Head title={title} description={description} locale={locale} noAlternates={noAlternates} />
   </head>
   <body>
     <IconSprite />
-    <TopNav sectionid={sectionid} locale={locale} />
+    <TopNav sectionid={sectionid} locale={locale} langSwitchPath={langSwitchPath} />
     <div class="page-content">
       <div class="wrapper">
         <div class="container">

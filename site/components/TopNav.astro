@@ -6,8 +6,8 @@ import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
 import { urlFor } from '../lib/i18n/routes';
 import { asset } from '../lib/url';
 
-interface Props { sectionid?: string; locale?: Locale }
-const { sectionid, locale = DEFAULT_LOCALE } = Astro.props;
+interface Props { sectionid?: string; locale?: Locale; langSwitchPath?: string }
+const { sectionid, locale = DEFAULT_LOCALE, langSwitchPath } = Astro.props;
 const u = urlFor(locale);
 const { t } = uiFor(locale);
 const active = (...ids: string[]) => (sectionid && ids.includes(sectionid) ? 'active' : '');
@@ -32,7 +32,7 @@ const active = (...ids: string[]) => (sectionid && ids.includes(sectionid) ? 'ac
       <span class="brand-word">König Lab</span>
     </a>
     <div class="navbar-controls">
-      <LanguageSwitch locale={locale} />
+      <LanguageSwitch locale={locale} path={langSwitchPath} />
       <button type="button" class="search-toggle" data-modal-target="site-search-modal" aria-label={t('search.open')} title={t('search.openTitle', { key: '/' })}>
         <Icon name="search" />
       </button>
@@ -107,7 +107,7 @@ const active = (...ids: string[]) => (sectionid && ids.includes(sectionid) ? 'ac
       document.documentElement.style.setProperty('--navbar-height', `${siteNavbar.getBoundingClientRect().height}px`);
     };
     setNavbarHeight();
-    if ('ResizeObserver' in window) {
+    if (typeof ResizeObserver !== 'undefined') {
       new ResizeObserver(setNavbarHeight).observe(siteNavbar);
     } else {
       window.addEventListener('resize', setNavbarHeight);
