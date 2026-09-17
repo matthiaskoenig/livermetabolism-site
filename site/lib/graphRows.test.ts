@@ -40,7 +40,7 @@ const citations: Citations = {
 
 function input(over: Partial<GraphRowsInput> = {}): GraphRowsInput {
   return {
-    tags, people, publications, projects, software, citations, base: BASE,
+    tags, people, publications, projects, software, citations, base: BASE, assetBase: BASE,
     thumbs: new Set(['assets/image/graph/people/ada.webp']),
     ...over,
   };
@@ -156,6 +156,15 @@ describe('graphRows', () => {
     expect(withStale.nodes.find((n) => n.id === 'project:atlas')?.image).toBeNull();
   });
 
+  it('prefixes page hrefs with a locale base, but a photo with the asset base only', () => {
+    // `base` carries a locale prefix (a German page); `assetBase` never does -
+    // the thumbnail is not duplicated under /de/.
+    const localeRows = graphRows(input({ base: `${BASE}de/`, assetBase: BASE }));
+    const byLocaleId = new Map(localeRows.nodes.map((n) => [n.id, n]));
+    expect(byLocaleId.get('person:ada')?.href).toBe(`${BASE}de/people/#person/ada`);
+    expect(byLocaleId.get('person:ada')?.image).toBe(`${BASE}assets/image/graph/people/ada.webp`);
+  });
+
   it('labels nodes and adds a detail line per type', () => {
     expect(byId.get('person:ada')).toMatchObject({ label: 'Ada L.', detail: 'Group Leader' });
     expect(byId.get('person:bob')?.detail).toBe('Alumni');
@@ -185,7 +194,7 @@ describe('graphRows over the real data', () => {
     projects: withIds(parse('projects', s.projectSchema)),
     software: withIds(parse('software', s.softwareSchema)),
   };
-  const graph = graphRows({ ...data, citations: emptyCitations(), base: '/', thumbs });
+  const graph = graphRows({ ...data, citations: emptyCitations(), base: '/', assetBase: '/', thumbs });
   const byId = new Map(graph.nodes.map((n) => [n.id, n]));
 
   it('has one node per row of every table and 209 nodes with 309 links in total', () => {

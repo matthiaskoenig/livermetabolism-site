@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { closeDetail, installDetailRouter, isValidId, openDetail, parseDetailHash } from './detailModal';
+import { closeDetail, detailBase, installDetailRouter, isValidId, openDetail, parseDetailHash } from './detailModal';
 
 /**
  * The router's document-level listeners are installed once per page, so the
@@ -8,7 +8,6 @@ import { closeDetail, installDetailRouter, isValidId, openDetail, parseDetailHas
  * The browsing stack and the fragment cache hang off the shell element, so
  * building a fresh dialog in `setup()` is what gives each test a clean slate.
  */
-const BASE = '/';
 
 /** A fragment exactly as `site/pages/detail/[type]/[id].astro` renders it: a bare `.detail` root, no doctype. */
 function fragment(type: string, id: string, title: string, related: [string, string][] = []): string {
@@ -52,7 +51,7 @@ async function setup(fragments: Record<string, string>, hash = '') {
   }
   window.location.hash = hash;
   const fetchStub = makeFetch(fragments);
-  installDetailRouter({ base: BASE, fetchImpl: fetchStub.impl });
+  installDetailRouter({ fetchImpl: fetchStub.impl });
   return { fetchStub };
 }
 
@@ -118,6 +117,7 @@ describe('isValidId', () => {
 describe('detail modal router', () => {
   beforeEach(() => {
     document.body.innerHTML = '';
+    document.documentElement.lang = 'en';
     window.history.replaceState(null, '', window.location.pathname);
   });
 
@@ -271,5 +271,20 @@ describe('detail modal router', () => {
     await vi.waitFor(() => expect(body().querySelector('.detail-error')).not.toBeNull());
     expect(body().querySelector('.detail-error')!.textContent).toMatch(/could not be loaded/i);
     expect(dialog().hasAttribute('open')).toBe(true);
+  });
+});
+
+describe('detailBase', () => {
+  it('fetches from the root on an English page', () => {
+    document.documentElement.lang = 'en';
+    expect(detailBase()).toBe('/');
+  });
+  it('fetches from the locale prefix on a German page', () => {
+    document.documentElement.lang = 'de';
+    expect(detailBase()).toBe('/de/');
+  });
+  it('falls back to the default locale for an unknown lang', () => {
+    document.documentElement.lang = 'fr';
+    expect(detailBase()).toBe('/');
   });
 });

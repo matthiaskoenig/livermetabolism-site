@@ -22,38 +22,36 @@ import { getNews, getPeople, getPeopleMap, getPosters, getPresentations, getProj
 import { detailIds, detailModel, type DetailContext } from '../../../../lib/details';
 import { loadSnapshot } from '../../../../lib/github';
 import { DEFAULT_LOCALE, LOCALES } from '../../../../lib/i18n/locales';
+import { localeUrl } from '../../../../lib/i18n/routes';
 import { loadScholar } from '../../../../lib/scholar';
 import { asset } from '../../../../lib/url';
 
-// The collections and snapshots are read once, in detailPaths(), and every
-// model is built from that one context; getStaticPaths() below crosses
-// those entity paths with the locales, so the same fragment is emitted at
-// both /detail/<type>/<id>/ and /de/detail/<type>/<id>/.
-export async function detailPaths() {
+// The collections and snapshots are read once here, shared by every locale;
+// only the per-locale `base` (and therefore the model's page hrefs) differs,
+// so the model itself is built once per locale below, crossing the entity
+// ids with the locales so the same fragment is emitted at both
+// /detail/<type>/<id>/ and /de/detail/<type>/<id>/.
+export async function getStaticPaths() {
   const [tags, people, peopleMap, publications, projects, software, news, presentations, posters] = await Promise.all([
     getTags(), getPeople(), getPeopleMap(), getPublications(), getProjects(), getSoftware(), getNews(), getPresentations(), getPosters(),
   ]);
   // the same daily snapshots the research and publications pages render from;
   // a failed read yields an empty one and the figures simply disappear
   const [github, scholar, citations] = await Promise.all([loadSnapshot(), loadScholar(), loadCitations()]);
-  const ctx: DetailContext = {
-    people, publications, projects, software, news, presentations, posters,
-    tags, peopleMap, github, scholar, citations, base: import.meta.env.BASE_URL,
-  };
+  const data = { tags, people, peopleMap, publications, projects, software, news, presentations, posters, github, scholar, citations };
+  // assets (avatars, PDFs, galleries) are shared across languages and must
+  // never carry a locale prefix - only the page hrefs (`base`) do
+  const assetBase = import.meta.env.BASE_URL;
   // TagList and PersonChips need the same inputs as on the cards; one shared
   // object per build, not one per fragment
-  const view = { tagInfo: tags, peopleMap, avatarBase: asset('image/people/128/') };
-  return detailIds(ctx).map(({ type, id }) => ({ params: { type, id }, props: { model: detailModel(type, id, ctx), ...view } }));
-}
-
-export async function getStaticPaths() {
-  const entities = await detailPaths();
-  return LOCALES.flatMap((locale) =>
-    entities.map((e) => ({
-      params: { ...e.params, locale: locale === DEFAULT_LOCALE ? undefined : locale },
-      props: { ...e.props, locale },
-    })),
-  );
+  const view = { tagInfo: data.tags, peopleMap: data.peopleMap, avatarBase: asset('image/people/128/') };
+  return LOCALES.flatMap((locale) => {
+    const ctx: DetailContext = { ...data, base: localeUrl(locale, '/'), assetBase };
+    return detailIds(ctx).map(({ type, id }) => ({
+      params: { type, id, locale: locale === DEFAULT_LOCALE ? undefined : locale },
+      props: { model: detailModel(type, id, ctx), ...view, locale },
+    }));
+  });
 }
 
 const { model, tagInfo, peopleMap, avatarBase } = Astro.props;

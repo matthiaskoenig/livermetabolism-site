@@ -570,3 +570,13 @@ test('the language switch carries an open detail modal across', async ({ page })
   expect(new URL(page.url()).hash).toBe(hash);
   await expect(page.locator('#detail-modal')).toBeVisible();
 });
+
+test('a detail modal opens on the German tree', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
+  await page.goto('de/people/');
+  await page.locator('[data-detail^="person:"]').first().click();
+  await expect(page.locator('#detail-modal')).toBeVisible();
+  await expect(page.locator('#detail-modal .modal-title')).not.toBeEmpty();
+  expect(errors).toEqual([]);
+});

@@ -18,12 +18,15 @@
  * carry a photo, and a person whose thumbnail is missing gets `image: null`
  * and is drawn as a plain circle.
  *
- * Every `href` is a site-internal path built from `base` (the deploy's
- * `import.meta.env.BASE_URL`, always ending in `/`) and an id the schemas
- * restrict, mirroring `url()`: the list page of the node's type plus the
- * `#<type>/<id>` hash the detail modal is addressed by, so an href opened
- * directly lands on the list page with that modal open. (The island itself
- * opens the modal in place instead — see `NetworkGraph.vue`.)
+ * Every `href` is a site-internal path built from `base` (`import.meta.env.BASE_URL`
+ * plus the page's locale prefix, e.g. `/de/`, always ending in `/`) and an id
+ * the schemas restrict, mirroring `url()`: the list page of the node's type
+ * plus the `#<type>/<id>` hash the detail modal is addressed by, so an href
+ * opened directly lands on the list page with that modal open. (The island
+ * itself opens the modal in place instead — see `NetworkGraph.vue`.) A
+ * person's photo path is built from `assetBase` instead: always
+ * `import.meta.env.BASE_URL`, never locale-prefixed, since the thumbnails
+ * under `public/assets/image/graph/` are not duplicated per language.
  *
  * The input field sets are `Pick`s of the collection entries, so the page can
  * pass its full `Entry<PersonData>[]` etc. unchanged while the tests stay
@@ -79,8 +82,10 @@ export interface GraphRowsInput {
   software: GraphSoftware[];
   /** The OpenAlex snapshot; `emptyCitations()` is fine and leaves every publication at 0 citations. */
   citations: Citations;
-  /** `import.meta.env.BASE_URL`: `/` locally, `/livermetabolism-site/` on GitHub Pages. */
+  /** The page-href base: `import.meta.env.BASE_URL` plus the page's locale prefix (e.g. `/de/`). Never used for a thumbnail path - see `assetBase`. */
   base: string;
+  /** The thumbnail-path base: always `import.meta.env.BASE_URL`, never locale-prefixed. */
+  assetBase: string;
   /** Thumbnail paths relative to `public/`, e.g. `assets/image/graph/people/matthias_koenig.webp`. */
   thumbs: Set<string>;
 }
@@ -98,7 +103,7 @@ function capitalized(s: string): string {
 }
 
 export function graphRows(input: GraphRowsInput): GraphRows {
-  const { base, thumbs, citations } = input;
+  const { base, assetBase, thumbs, citations } = input;
   /** Tag name (as written in the YAML `tags` lists) -> topic slug. */
   const slugOf = new Map(input.tags.map((t) => [t.tag, t.slug]));
 
@@ -115,7 +120,7 @@ export function graphRows(input: GraphRowsInput): GraphRows {
   /** A person's photo, or null when the thumbnail has not been generated. */
   const photo = (id: string): string | null => {
     const path = `assets/image/graph/${PEOPLE_THUMB_DIR}/${id}.webp`;
-    return thumbs.has(path) ? `${base}${path}` : null;
+    return thumbs.has(path) ? `${assetBase}${path}` : null;
   };
 
   // --- nodes, in the category order of the chart legend -----------------

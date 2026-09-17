@@ -12,7 +12,6 @@
  * is never a detail hash.
  */
 import { installDetailRouter, isModifiedClick } from './detailModal';
-import { url } from './url';
 
 let installed = false;
 
@@ -50,7 +49,7 @@ export function installModalRouter(): void {
   if (installed) return;
   installed = true;
 
-  installDetailRouter({ base: url('/') });
+  installDetailRouter();
 
   document.addEventListener('click', (e) => {
     const target = e.target as HTMLElement | null;

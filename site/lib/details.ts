@@ -11,10 +11,12 @@
  * and adopts its nodes (see the spec in
  * `docs/superpowers/specs/2026-09-13-detail-modals-design.md`).
  *
- * Free of DOM, Vue and Astro imports, like `graphRows.ts`: every href is built
- * from the `base` the context carries (`import.meta.env.BASE_URL`, always
- * ending in `/`), mirroring `url()`/`asset()`, so the model can be built and
- * asserted in a plain test without the Astro runtime.
+ * Free of DOM, Vue and Astro imports, like `graphRows.ts`: every page href is
+ * built from the `base` the context carries (`import.meta.env.BASE_URL` plus
+ * the page's locale prefix, always ending in `/`) and every image/PDF path
+ * from `assetBase` (`import.meta.env.BASE_URL`, never locale-prefixed - an
+ * asset is not duplicated per language), mirroring `url()`/`asset()`, so the
+ * model can be built and asserted in a plain test without the Astro runtime.
  *
  * `buildRelations()` derives the relations **once and symmetrically**: a
  * person is related to everything whose `people:` lists them, and a
@@ -137,8 +139,21 @@ export interface DetailContext {
   scholar: Scholar;
   /** The OpenAlex snapshot behind the publication and person citation figures. */
   citations: Citations;
-  /** `import.meta.env.BASE_URL`: `/` locally, `/livermetabolism-site/` on GitHub Pages. */
+  /**
+   * The base for site-internal page hrefs (`listHref`, related-row hrefs):
+   * `import.meta.env.BASE_URL`, plus the current page's locale prefix (e.g.
+   * `/de/`) when it is not the default locale. Never used for an image, PDF
+   * or `dataHref` path - see `assetBase`.
+   */
   base: string;
+  /**
+   * The base for image/PDF asset paths (`assets/image/...`, `assets/pdf/...`)
+   * and for `dataHref` (a free-text data URL such as `news.link` may itself
+   * be a root-absolute asset path, a leftover of the pre-base-path data):
+   * always `import.meta.env.BASE_URL`, never locale-prefixed, since assets
+   * are shared across languages and are not duplicated under `/de/`.
+   */
+  assetBase: string;
 }
 
 export interface PersonRelations {
@@ -322,7 +337,7 @@ const personRow = (ctx: DetailContext, id: string): RelatedRow | null => {
   if (!p) return null;
   return {
     type: 'person', id, title: p.name, line: p.role.join(' · '),
-    image: p.image ? `${ctx.base}${AVATAR_DIR}${p.image}` : null,
+    image: p.image ? `${ctx.assetBase}${AVATAR_DIR}${p.image}` : null,
     href: listAnchor('person', id, ctx.base),
   };
 };
@@ -341,7 +356,7 @@ const projectRow = (ctx: DetailContext, id: string): RelatedRow | null => {
   if (!p) return null;
   return {
     type: 'project', id, title: p.title, line: capitalize(p.status),
-    image: p.images[0] ? `${ctx.base}${PROJECT_DIR}${p.images[0]}` : null,
+    image: p.images[0] ? `${ctx.assetBase}${PROJECT_DIR}${p.images[0]}` : null,
     href: listAnchor('project', id, ctx.base),
   };
 };
@@ -351,7 +366,7 @@ const softwareRow = (ctx: DetailContext, id: string): RelatedRow | null => {
   if (!s) return null;
   return {
     type: 'software', id, title: s.name, line: s.title,
-    image: s.image ? `${ctx.base}${SOFTWARE_DIR}${s.image}` : null,
+    image: s.image ? `${ctx.assetBase}${SOFTWARE_DIR}${s.image}` : null,
     href: listAnchor('software', id, ctx.base),
   };
 };
@@ -370,7 +385,7 @@ const presentationRow = (ctx: DetailContext, id: string): RelatedRow | null => {
   if (!t) return null;
   return {
     type: 'presentation', id, title: t.title, line: line([t.date, t.event]),
-    image: t.image ? `${ctx.base}${PDF_DIR}${t.image}` : null,
+    image: t.image ? `${ctx.assetBase}${PDF_DIR}${t.image}` : null,
     href: listAnchor('presentation', id, ctx.base),
   };
 };
@@ -380,7 +395,7 @@ const posterRow = (ctx: DetailContext, id: string): RelatedRow | null => {
   if (!p) return null;
   return {
     type: 'poster', id, title: p.title, line: line([p.date, p.event]),
-    image: p.image ? `${ctx.base}${PDF_DIR}${p.image}` : null,
+    image: p.image ? `${ctx.assetBase}${PDF_DIR}${p.image}` : null,
     href: listAnchor('poster', id, ctx.base),
   };
 };
@@ -399,7 +414,7 @@ function byYearDesc(ctx: DetailContext, ids: string[]): string[] {
 
 /** The card's thumbnail: the image, else the YouTube still of an embedded video (as `NewsCard.vue`). */
 function newsImage(ctx: DetailContext, n: Entry<NewsData>): string | null {
-  if (n.image) return `${ctx.base}${NEWS_DIR}${n.image}`;
+  if (n.image) return `${ctx.assetBase}${NEWS_DIR}${n.image}`;
   if (n.video) return `https://img.youtube.com/vi/${n.video.split('/embed/').pop()}/hqdefault.jpg`;
   return null;
 }
@@ -433,7 +448,7 @@ function personModel(ctx: DetailContext, id: string): DetailModel {
   return {
     type: 'person', id, title: p.name,
     subtitle: line([p.role.join(' · '), p.tenure, p.affiliation]),
-    image: p.image ? `${ctx.base}${AVATAR_DIR}${p.image}` : null,
+    image: p.image ? `${ctx.assetBase}${AVATAR_DIR}${p.image}` : null,
     imageShape: 'round',
     tags: personTags(ctx, rel),
     links: [
@@ -475,7 +490,7 @@ function publicationModel(ctx: DetailContext, id: string): DetailModel {
     links: [
       ...extLink('DOI', p.doi ? `https://doi.org/${p.doi}` : null, 'book'),
       ...extLink('PubMed', p.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${p.pmid}` : null, 'file-text-o'),
-      ...(p.pdf ? [{ label: 'PDF', href: `${ctx.base}${PDF_DIR}${p.pdf}`, icon: 'file-pdf-o', external: false }] : []),
+      ...(p.pdf ? [{ label: 'PDF', href: `${ctx.assetBase}${PDF_DIR}${p.pdf}`, icon: 'file-pdf-o', external: false }] : []),
       ...extLink('Homepage', p.homepage, 'globe'),
       ...extLink('Repository', p.repository, 'github'),
     ],
@@ -513,7 +528,7 @@ function projectModel(ctx: DetailContext, id: string): DetailModel {
     tags: p.tags,
     links: [...extLink('Homepage', p.homepage, 'globe'), ...extLink('Repository', p.repository, 'github')],
     figures: [],
-    media: p.images.length ? { kind: 'gallery', images: p.images.map((img) => `${ctx.base}${PROJECT_DIR}${img}`), caption: p.image_title ?? null } : null,
+    media: p.images.length ? { kind: 'gallery', images: p.images.map((img) => `${ctx.assetBase}${PROJECT_DIR}${img}`), caption: p.image_title ?? null } : null,
     body: p.abstract,
     keywords: [],
     related: [
@@ -535,7 +550,7 @@ function softwareModel(ctx: DetailContext, id: string): DetailModel {
   return {
     type: 'software', id, title: s.name,
     subtitle: s.title,
-    image: s.image ? `${ctx.base}${SOFTWARE_DIR}${s.image}` : null,
+    image: s.image ? `${ctx.assetBase}${SOFTWARE_DIR}${s.image}` : null,
     imageShape: 'logo',
     tags: s.tags,
     links: [
@@ -573,11 +588,11 @@ function newsModel(ctx: DetailContext, id: string): DetailModel {
     subtitle: n.date,
     // the player below carries the video, so the header falls back to the
     // YouTube still only when there is no embed to show (as NewsCard.vue does)
-    image: n.video ? (n.image ? `${ctx.base}${NEWS_DIR}${n.image}` : null) : newsImage(ctx, n),
+    image: n.video ? (n.image ? `${ctx.assetBase}${NEWS_DIR}${n.image}` : null) : newsImage(ctx, n),
     imageShape: 'thumb',
     tags: n.tags,
     links: [
-      ...(n.link ? [{ label: 'Read more', href: dataHref(n.link, ctx.base), icon: 'globe', external: true }] : []),
+      ...(n.link ? [{ label: 'Read more', href: dataHref(n.link, ctx.assetBase), icon: 'globe', external: true }] : []),
       ...extLink('Video', n.video, 'video-camera'),
     ],
     figures: [],

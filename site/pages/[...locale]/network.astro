@@ -8,7 +8,7 @@ import NetworkGraph from '../../components/NetworkGraph.vue';
 import { loadCitations } from '../../lib/citations';
 import { getPeople, getProjects, getPublications, getSoftware, getTags } from '../../lib/data';
 import { graphRows } from '../../lib/graphRows';
-import { localeFromParams, localePaths } from '../../lib/i18n/routes';
+import { localeFromParams, localePaths, localeUrl } from '../../lib/i18n/routes';
 import { filterRows } from '../../lib/networkOptions';
 
 export const getStaticPaths = localePaths;
@@ -41,7 +41,10 @@ try {
 // Rows and hrefs are built once here; the island only draws them and filters
 // them by research area (about 100 kB of props for a page whose content is
 // the graph).
-const rows = graphRows({ tags, people, publications, projects, software, citations, base: import.meta.env.BASE_URL, thumbs });
+const rows = graphRows({
+  tags, people, publications, projects, software, citations, thumbs,
+  base: localeUrl(locale, '/'), assetBase: import.meta.env.BASE_URL,
+});
 const topics = tags.map(({ tag, slug }) => ({ tag, slug }));
 // what the graph actually draws: filterRows() drops a node without a single
 // link, so the intro counts the connected network rather than the table rows
