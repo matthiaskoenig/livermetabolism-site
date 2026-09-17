@@ -84,7 +84,7 @@ Ships `/de/` as a fully navigable mirror rendering English text. No translation 
 Create `site/lib/i18n/locales.test.ts`:
 
 ```ts
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { DEFAULT_LOCALE, isLocale, LOCALES } from './locales';
 
 describe('locales', () => {
@@ -109,7 +109,7 @@ describe('locales', () => {
 Create `site/lib/i18n/routes.test.ts`:
 
 ```ts
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { localeFromParams, localePaths, localeUrl, stripLocale, switchPath, urlFor } from './routes';
 
 describe('localePaths', () => {
@@ -460,7 +460,7 @@ git commit --author="matthiaskoenig <konigmatt@googlemail.com>" -m "Render every
 Create `site/lib/i18n/alternates.test.ts`:
 
 ```ts
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { alternates } from './alternates';
 
 const site = new URL('https://livermetabolism.com');
@@ -813,7 +813,7 @@ No behaviour change. The built English HTML must be byte-identical apart from th
 Create `site/lib/i18n/format.test.ts`:
 
 ```ts
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { fmt } from './format';
 
 describe('fmt', () => {
@@ -838,7 +838,7 @@ describe('fmt', () => {
 Create `site/lib/i18n/catalog.test.ts`:
 
 ```ts
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { EN_FLAT, flatten, loadUi, uiFor } from './catalog';
 import { en } from './ui.en';
 
@@ -876,9 +876,31 @@ describe('uiFor', () => {
   it('interpolates', () => {
     expect(uiFor('en').t('search.empty', { query: 'x' })).toContain('x');
   });
-  it('falls back to English when the German catalog has no text yet', () => {
-    const de = uiFor('de');
-    expect(de.t('nav.publications')).toBeTruthy();
+  // NOTE: do not write this as `expect(uiFor('de').t(key)).toBeTruthy()`. Every
+  // seeded German entry has non-empty text, so such a test passes whether t()
+  // uses `||`, `??`, or no fallback at all - it asserts nothing about the very
+  // behaviour it is named after, and `||` vs `??` is the difference between an
+  // English UI and a blank one. Drive it from a fixture instead: build a record
+  // carrying every `EN_FLAT` key (so the parity check still passes) with an
+  // empty `text` for the one key under test, then `vi.resetModules()` and
+  // `vi.doMock('node:fs', ...)` before a fresh `await import('./catalog')`,
+  // because `loadUi()` memoises per locale at module scope and would otherwise
+  // serve the real catalog from cache. The test must fail under both mutations:
+  // `||` changed to `??`, and the fallback removed entirely.
+  it('falls back to English when the German entry text is empty, not merely missing', async () => {
+    const fixture: Record<string, { sha: string; text: string }> = {};
+    for (const key of Object.keys(EN_FLAT)) {
+      fixture[key] = { sha: '0000000000000000', text: key === 'nav.publications' ? '' : `stub:${key}` };
+    }
+    vi.resetModules();
+    vi.doMock('node:fs', () => ({ default: { readFileSync: () => dump(fixture) } }));
+    try {
+      const { uiFor: freshUiFor } = await import('./catalog');
+      expect(freshUiFor('de').t('nav.publications')).toBe('Publications');
+    } finally {
+      vi.doUnmock('node:fs');
+      vi.resetModules();
+    }
   });
 });
 
@@ -1237,7 +1259,7 @@ git commit --author="matthiaskoenig <konigmatt@googlemail.com>" -m "Move the sit
 Create `site/lib/i18n/slices.test.ts`:
 
 ```ts
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { uiFor } from './catalog';
 import { slices } from './slices';
 
@@ -1401,7 +1423,7 @@ git commit --author="matthiaskoenig <konigmatt@googlemail.com>" -m "Move the pag
 Create `site/lib/i18n/dates.test.ts`:
 
 ```ts
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { monthsFor, shortDate } from './dates';
 
 describe('monthsFor', () => {
@@ -1501,7 +1523,7 @@ git commit --author="matthiaskoenig <konigmatt@googlemail.com>" -m "Move the lib
 Create `site/lib/i18n/sha.test.ts`:
 
 ```ts
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { sourceSha } from './sha';
 
 describe('sourceSha', () => {
@@ -1524,7 +1546,7 @@ describe('sourceSha', () => {
 Create `site/lib/i18n/content.test.ts`:
 
 ```ts
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { localize, type Catalog } from './content';
 
 const rows = [
@@ -1565,7 +1587,7 @@ describe('localize', () => {
 Create `site/lib/i18n/fields.test.ts`:
 
 ```ts
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { isTranslatable, TRANSLATABLE } from './fields';
 
 const BIBLIOGRAPHIC = ['publications', 'posters', 'presentations', 'abstracts', 'panels'];
@@ -1736,7 +1758,7 @@ git commit --author="matthiaskoenig <konigmatt@googlemail.com>" -m "Add the tran
 Create `site/lib/data.test.ts`:
 
 ```ts
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { getNews, getPublications } from './data';
 
 describe('the locale-aware getters', () => {
@@ -1955,7 +1977,7 @@ git commit --author="matthiaskoenig <konigmatt@googlemail.com>" -m "Build a sear
 Create `scripts/lib/i18n-check.test.ts`:
 
 ```ts
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { sourceSha } from '../../site/lib/i18n/sha';
 import { auditTable, formatIssues } from './i18n-check';
 
@@ -2497,7 +2519,7 @@ git commit --author="matthiaskoenig <konigmatt@googlemail.com>" -m "Generate the
 Create `site/lib/i18n/pages.test.ts`:
 
 ```ts
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { loadPage } from './pages';
 
 describe('loadPage', () => {
