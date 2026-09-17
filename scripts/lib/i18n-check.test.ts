@@ -77,6 +77,51 @@ describe('auditTable', () => {
     expect(auditTable([{ id: 'a', description: '' }], {}, fields, 'de', 'people')).toEqual([]);
   });
 
+  describe('markup-bearing fields (v-html)', () => {
+    // people.description is one of the markup-bearing fields (see
+    // i18n/TRANSLATION.md's "Some data fields keep their HTML"), so the
+    // generic `rows`/`fields`/'people' fixture above doubles as one here.
+    const html = '<p>Hello <a href="https://example.org">world</a></p>';
+
+    it('reports nothing for a translation that keeps the exact same tags, in order, with the same attributes', () => {
+      const rows2 = [{ id: 'a', description: html }];
+      const catalog = { a: { description: { sha: sourceSha(html), text: '<p>Hallo <a href="https://example.org">Welt</a></p>' } } };
+      expect(auditTable(rows2, catalog, fields, 'de', 'people')).toEqual([]);
+    });
+
+    it('reports (as stale) a translation whose sha matches but dropped a tag', () => {
+      const rows2 = [{ id: 'a', description: html }];
+      const catalog = { a: { description: { sha: sourceSha(html), text: 'Hallo Welt' } } };
+      expect(auditTable(rows2, catalog, fields, 'de', 'people')).toEqual([
+        { kind: 'stale', locale: 'de', table: 'people', id: 'a', field: 'description' },
+      ]);
+    });
+
+    it('reports (as stale) a translation whose sha matches but changed an attribute, e.g. the href', () => {
+      const rows2 = [{ id: 'a', description: html }];
+      const catalog = { a: { description: { sha: sourceSha(html), text: '<p>Hallo <a href="https://evil.test">Welt</a></p>' } } };
+      expect(auditTable(rows2, catalog, fields, 'de', 'people')).toEqual([
+        { kind: 'stale', locale: 'de', table: 'people', id: 'a', field: 'description' },
+      ]);
+    });
+
+    it('reports (as stale) a translation whose sha matches but reordered two tags', () => {
+      const src = '<b>one</b><i>two</i>';
+      const rows2 = [{ id: 'a', description: src }];
+      const catalog = { a: { description: { sha: sourceSha(src), text: '<i>zwei</i><b>eins</b>' } } };
+      expect(auditTable(rows2, catalog, fields, 'de', 'people')).toEqual([
+        { kind: 'stale', locale: 'de', table: 'people', id: 'a', field: 'description' },
+      ]);
+    });
+
+    it('never checks tag sequence for a field outside MARKUP_FIELDS, e.g. tags.short_description', () => {
+      const src = 'Plain <not-real-html> text that just happens to look tag-like';
+      const rows2 = [{ id: 'a', short_description: src }];
+      const catalog = { a: { short_description: { sha: sourceSha(src), text: 'Andere Interpunktion <ganz anders>' } } };
+      expect(auditTable(rows2, catalog, ['short_description'], 'de', 'tags')).toEqual([]);
+    });
+  });
+
   it('handles malformed YAML gracefully', () => {
     const err = new Error('bad YAML');
     const parseErr = new CatalogParseError('i18n/de/people.yml', err);

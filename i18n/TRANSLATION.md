@@ -441,6 +441,15 @@ attribute, `href` and `src` byte-identical to the English source, with the
 same elements in the same order. Do not add, remove, or reorder markup;
 do not translate a URL, a class name, or an attribute value.
 
+`npm run i18n:check` verifies this automatically for exactly this list
+(`MARKUP_FIELDS` in `scripts/lib/i18n-check.ts`, kept in sync with it by
+hand): a translation whose tag sequence (tag name plus attributes, in
+order) does not byte-for-byte match its English source is reported
+`stale`, even when its `sha` matches - the sha only says the translation
+was generated against the current English text, not that its markup
+survived intact, since it is a hash of the English source, never of the
+German output.
+
 ## Placeholders
 
 Tokens like `{query}`, `{tag}`, `{date}`, `{n}` and similar must survive

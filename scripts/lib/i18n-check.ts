@@ -9,6 +9,37 @@ export interface Issue {
   field: string;
 }
 
+/**
+ * Tables/fields whose value is markup, rendered via Vue's v-html rather
+ * than as plain text - see i18n/TRANSLATION.md's "Some data fields keep
+ * their HTML" section, which is the authority this list is kept in sync
+ * with by hand. A translation of one of these must carry the exact same
+ * tags, in the exact same order, with byte-identical attributes (a `href`,
+ * a `class`) as its English source - only the text nodes between tags may
+ * change - because the German catalog is machine-generated text fed
+ * straight to v-html with no further validation downstream.
+ */
+const MARKUP_FIELDS: Record<string, readonly string[]> = {
+  news: ['abstract', 'short'],
+  people: ['description'],
+  projects: ['abstract'],
+  software: ['description'],
+  teaching: ['content', 'caption', 'funding'],
+};
+
+/** Every HTML tag in a string, in order, tag name and attributes verbatim (not just the name) - so a translation that drops, adds, reorders a tag, or edits an attribute, is caught. */
+function tagSequence(html: string): string[] {
+  return [...html.matchAll(/<[^>]+>/g)].map((m) => m[0]);
+}
+
+function hasMatchingMarkup(table: string, field: string, source: unknown, text: unknown): boolean {
+  if (!MARKUP_FIELDS[table]?.includes(field)) return true;
+  if (typeof source !== 'string' || typeof text !== 'string') return true;
+  const a = tagSequence(source);
+  const b = tagSequence(text);
+  return a.length === b.length && a.every((tag, i) => tag === b[i]);
+}
+
 export class CatalogParseError extends Error {
   file: string;
   inner: Error;
@@ -53,6 +84,12 @@ export function auditTable(
       const isEmpty = (text: unknown) => text === '' || text == null || (Array.isArray(text) && text.length === 0);
       if (!entry || isEmpty(entry.text)) issues.push({ kind: 'missing', locale, table, id, field });
       else if (entry.sha !== sourceSha(source as string | string[])) issues.push({ kind: 'stale', locale, table, id, field });
+      // A matching sha only says the translation was generated against the
+      // current English text - it says nothing about whether the German
+      // text itself still carries the same markup, since the sha is a hash
+      // of the English source, never of the German output. Report a broken
+      // tag sequence the same way as 'stale': it needs re-translating.
+      else if (!hasMatchingMarkup(table, field, source, entry.text)) issues.push({ kind: 'stale', locale, table, id, field });
     }
     for (const field of Object.keys(entries)) {
       if (!fields.includes(field)) issues.push({ kind: 'unknown-field', locale, table, id, field });
