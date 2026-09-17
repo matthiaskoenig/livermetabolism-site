@@ -233,6 +233,14 @@ them as written rather than "correcting" them - `people.role` is in the
 translatable registry, but a value that is already German needs no work,
 and re-translating it risks drifting from the established wording above.
 
+This table governs a *person's* role (`people.role`). An advertised
+*position* is a different context and keeps the established
+German-academic form "PostDoc" rather than "Postdoktorand/-in": the UI
+keys `positions.postdoc.title`, `positions.postdoc.text1`,
+`positions.postdoc.text2` and `sitePages.openPositions` already ship
+"PostDoc"/"PostDoc-Stelle"/"PostDoc-Projekte" and must be left as they
+are - do not "fix" them to match the table above.
+
 **Domain glossary.**
 
 | English | German |
