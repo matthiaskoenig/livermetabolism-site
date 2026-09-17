@@ -13,10 +13,16 @@ import { ENGLISH_RELATIVE_DATE_STRINGS, hasData, relativeDate, shortDate, statsF
 import type { Snapshot } from './githubSchema';
 import { fmt } from './i18n/format';
 
-/** English fallbacks for markup that carries no `data-*-template` (older cached HTML, a test fixture) - the literal text these fields always showed before they took a template. */
-const DEFAULT_RELEASE_TEMPLATE = 'Release {tag} · {date}';
-const DEFAULT_RELEASES_LABEL = 'Releases';
-const DEFAULT_ISSUES_OPEN_TEMPLATE = '{count} open';
+/**
+ * English fallbacks for markup that carries no `data-*-template` (older
+ * cached HTML, a test fixture) - the literal text these fields always
+ * showed before they took a template. Exported so `githubStats.test.ts` can
+ * pin them to `en.gh.release` / `en.gh.releases` / `en.gh.issuesOpen`, the
+ * catalog entries they must never drift from.
+ */
+export const DEFAULT_RELEASE_TEMPLATE = 'Release {tag} · {date}';
+export const DEFAULT_RELEASES_LABEL = 'Releases';
+export const DEFAULT_ISSUES_OPEN_TEMPLATE = '{count} open';
 
 /**
  * The `RelativeDateStrings` a bundled script needs, from the `data-time-strings`

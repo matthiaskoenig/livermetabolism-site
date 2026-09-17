@@ -26,6 +26,20 @@ const relativeDateStrings = (t: TFn) => ({
   year: { one: t('time.year.one'), other: t('time.year.other') },
 });
 
+/**
+ * Every `PublicationStatus` display label, keyed by the status value itself
+ * (never translated on its own - see `publicationStatusLabel()` in
+ * `publicationRows.ts`). Shared by `publicationsChart` (the legend) and
+ * `publicationRow` (the list badge) so the status text can never drift
+ * between the list, the chart and the detail modal (which builds the same
+ * label at build time via `publicationStatusLabel()` directly).
+ */
+const statusLabels = (t: TFn) => ({
+  publication: t('status.publication'), review: t('status.review'), proceeding: t('status.proceeding'),
+  chapter: t('status.chapter'), preprint: t('status.preprint'), abstract: t('status.abstract'),
+  thesis: t('status.thesis'), report: t('status.report'),
+});
+
 export const slices = (t: TFn) => ({
   relativeDate: relativeDateStrings(t),
   softwareCard: {
@@ -52,6 +66,7 @@ export const slices = (t: TFn) => ({
     pdf: t('links.pdf'),
     homepage: t('links.projectHomepage'),
     repository: t('links.repositoryHomepage'),
+    statusLabels: statusLabels(t),
   },
   personCard: {
     viewProfile: t('person.viewProfile'),
@@ -84,11 +99,7 @@ export const slices = (t: TFn) => ({
     status: t('chart.status'),
     ariaLabel: t('chart.publicationsPerYear'),
     total: t('chart.total'),
-    statusLabels: {
-      publication: t('status.publication'), review: t('status.review'), proceeding: t('status.proceeding'),
-      chapter: t('status.chapter'), preprint: t('status.preprint'), abstract: t('status.abstract'),
-      thesis: t('status.thesis'), report: t('status.report'),
-    },
+    statusLabels: statusLabels(t),
   },
   starsChart: {
     ariaLabel: t('chart.starsPerRepository'),

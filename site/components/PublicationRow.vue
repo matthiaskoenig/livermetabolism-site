@@ -7,7 +7,7 @@ import { fmt } from '../lib/i18n/format';
 import type { UiSlices } from '../lib/i18n/slices';
 import type { PeopleMap } from '../lib/people';
 import type { PublicationData } from '../lib/schemas';
-import { capitalize, slugify } from '../lib/text';
+import { slugify } from '../lib/text';
 import type { Entry, TagInfo } from '../lib/views';
 
 /**
@@ -26,7 +26,9 @@ const cites = props.citation ?? null;
 <template>
   <tr :id="`pub-${pub.id}`" :data-tags="pub.tags.join('|')" :data-cited="cites ? cites.citedByCount : 0">
     <td class="publication-status">
-      <span class="status-badge" :class="`status-${slugify(pub.status)}`">{{ capitalize(pub.status) }}</span>
+      <!-- the class name is built from the raw status value (never translated, a CSS/lookup key);
+           only the text shown to the reader comes from the catalog -->
+      <span class="status-badge" :class="`status-${slugify(pub.status)}`">{{ strings.statusLabels[pub.status] }}</span>
       <div class="pub-links">
         <a v-if="pub.pdf" :href="pdfBase + pub.pdf" :title="strings.pdf"><Icon name="file-pdf-o" /></a>
         <a v-if="pub.homepage" :href="pub.homepage" :title="strings.homepage"><Icon name="globe" /></a>

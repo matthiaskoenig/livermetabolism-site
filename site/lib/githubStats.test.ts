@@ -1,7 +1,9 @@
 import { beforeEach, describe, expect, it } from 'vitest';
-import { applyStats, refreshRelativeDates } from './githubStats';
+import { applyStats, DEFAULT_ISSUES_OPEN_TEMPLATE, DEFAULT_RELEASE_TEMPLATE, DEFAULT_RELEASES_LABEL, refreshRelativeDates } from './githubStats';
 import { emptySnapshot } from './githubSchema';
 import type { Snapshot } from './githubSchema';
+import { ENGLISH_RELATIVE_DATE_STRINGS } from './githubRows';
+import { en } from './i18n/ui.en';
 
 const now = new Date('2026-09-12T00:00:00Z');
 
@@ -125,5 +127,23 @@ describe('refreshRelativeDates', () => {
     el('[data-field="updated"]').dataset.iso = new Date(0).toISOString();
     refreshRelativeDates(document, now);
     expect(el('[data-field="updated"]').textContent).toBe('never');
+  });
+});
+
+describe('the English defaults', () => {
+  // markup with no data-*-template/data-time-strings falls back to these -
+  // pinned to the catalog so the two can never quietly drift apart
+  it('match their catalog counterparts', () => {
+    expect(DEFAULT_RELEASE_TEMPLATE).toBe(en.gh.release);
+    expect(DEFAULT_RELEASES_LABEL).toBe(en.gh.releases);
+    expect(DEFAULT_ISSUES_OPEN_TEMPLATE).toBe(en.gh.issuesOpen);
+    expect(ENGLISH_RELATIVE_DATE_STRINGS).toEqual({
+      today: en.time.today,
+      yesterday: en.time.yesterday,
+      day: { one: en.time.day.one, other: en.time.day.other },
+      week: { one: en.time.week.one, other: en.time.week.other },
+      month: { one: en.time.month.one, other: en.time.month.other },
+      year: { one: en.time.year.one, other: en.time.year.other },
+    });
   });
 });

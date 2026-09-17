@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it } from 'vitest';
-import { applyCitations, refreshNote } from './citationsStats';
+import { applyCitations, DEFAULT_CITED_TEMPLATE, DEFAULT_OPEN_ACCESS_TEMPLATE, refreshNote } from './citationsStats';
 import { emptyCitations, type Citations } from './citationsSchema';
+import { en } from './i18n/ui.en';
 
 const now = new Date('2026-09-13T00:00:00Z');
 
@@ -85,6 +86,32 @@ describe('applyCitations', () => {
     expect(row('cited').dataset.cited).toBe('0');
     document.body.innerHTML = '<p>nothing here</p>';
     expect(() => applyCitations(document, citations)).not.toThrow();
+  });
+
+  it('reads its templates from #publication-order, so a German page stays German after a live refresh', () => {
+    document.body.insertAdjacentHTML(
+      'afterbegin',
+      '<div id="publication-order" data-cited-template="{count} Zitationen" data-open-access-template="Open Access ({status})"></div>',
+    );
+    applyCitations(document, citations);
+    expect(field('cited', 'cited').textContent).toBe('101 Zitationen');
+    expect(field('cited', 'oa').title).toBe('Open Access (gold)');
+  });
+
+  it('falls back to the English templates without a #publication-order element', () => {
+    applyCitations(document, citations);
+    expect(field('cited', 'cited').textContent).toBe('cited 101');
+    expect(field('cited', 'oa').title).toBe('Open access (gold)');
+  });
+});
+
+describe('the English defaults', () => {
+  // markup with no #publication-order (older cached HTML, a test fixture)
+  // falls back to these - pinned to the catalog so the two can never
+  // quietly drift apart
+  it('match their catalog counterparts', () => {
+    expect(DEFAULT_CITED_TEMPLATE).toBe(en.pub.cited);
+    expect(DEFAULT_OPEN_ACCESS_TEMPLATE).toBe(en.pub.openAccessWith);
   });
 });
 
