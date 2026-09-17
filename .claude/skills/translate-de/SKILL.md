@@ -1,6 +1,6 @@
 ---
 name: translate-de
-description: Use when German translations need regenerating - after editing English prose in data/*.yml or site/lib/i18n/ui.en.ts, when `npm run i18n:check` reports missing/stale/orphaned/unknown-field entries, when i18n/de/ui.yml has placeholder shas ('0000000000000000') to reconcile, or when asked to update/refresh/audit the German version of the site.
+description: Use when German translations need regenerating - after editing English prose in data/*.yml or site/lib/i18n/ui.en.ts, when `npm run i18n:check` reports missing/stale/orphaned/unknown-field entries for either the data tables or the UI catalog (i18n/de/ui.yml, including its placeholder-sha entries), or when asked to update/refresh/audit the German version of the site.
 ---
 
 # Regenerating the German catalogs
@@ -19,7 +19,7 @@ people's names, pinned brand names). **Read it before translating anything,
 every time** - this skill only owns the mechanical workflow around it, not
 translation content, and the two must never contradict each other.
 
-## What `npm run i18n:check` actually covers - and what it does not
+## What `npm run i18n:check` actually covers
 
 Run it to see the work:
 
@@ -27,36 +27,48 @@ Run it to see the work:
 npm run i18n:check
 ```
 
-It audits **only the ten data tables registered in
-`site/lib/i18n/fields.ts`** (`tags`, `people`, `projects`, `software`,
-`editors`, `funding`, `news`, `teaching`, `meetings`, `activities`) against
-their `i18n/de/<table>.yml` catalogs. Each printed line has the form
-`<locale>/<table>/<id>.<field>`, e.g. `de/people/matthias_koenig.description`,
+It audits **the ten data tables registered in `site/lib/i18n/fields.ts`**
+(`tags`, `people`, `projects`, `software`, `editors`, `funding`, `news`,
+`teaching`, `meetings`, `activities`) against their `i18n/de/<table>.yml`
+catalogs, **and** the UI catalog (`i18n/de/ui.yml`) against
+`site/lib/i18n/ui.en.ts`. A data-table line reads
+`<locale>/<table>/<id>.<field>`, e.g.
+`de/people/matthias_koenig.description`; a UI line reads
+`<locale>/ui/<dotted.key>`, e.g. `de/ui/nav.publications` (the UI catalog
+has no per-row id the way a data table does - see `auditUi()` in
+`scripts/lib/i18n-check.ts` for why it is printed this way). Every line is
 grouped under one of four kinds:
 
 | Kind | Meaning | Action |
 |---|---|---|
-| `missing` | No German entry for this field yet. | Translate it. |
+| `missing` | No German entry for this field/key yet. | Translate it. |
 | `stale` | The recorded `sha` no longer matches the current English source. | Re-translate from the current English, replace the text and `sha`. |
-| `orphaned` | The German entry's row no longer exists in `data/<table>.yml`. | Delete the entry. |
-| `unknown-field` | The entry's field is not in `fields.ts` (e.g. a bibliographic field). | Delete the entry. |
+| `orphaned` | A data-table entry's row no longer exists in `data/<table>.yml`. Cannot occur for the UI catalog - see below. | Delete the entry. |
+| `unknown-field` | The entry's field/key is not in `fields.ts` (data tables) or `ui.en.ts` (UI catalog). | Delete the entry. |
 
 It exits `0` only when there is nothing left to do; otherwise it exits `1`
 and ends with "Run the translate-de skill to regenerate the affected
 entries."
 
-**It never looks at `i18n/de/ui.yml`.** The UI catalog is a different
-mechanism entirely: `loadUi()` (`site/lib/i18n/catalog.ts`) enforces at
-build/runtime that `i18n/de/ui.yml` carries **exactly** the key set of
-`site/lib/i18n/ui.en.ts` (a missing or unknown key throws and fails the
-build) - but nothing anywhere checks a UI entry's `sha` against its current
-English source the way `i18n:check` does for the ten data tables. **A clean
-`npm run i18n:check` says nothing about whether `i18n/de/ui.yml` is
-current.** As of this writing every entry in `i18n/de/ui.yml` carries the
-placeholder `sha: '0000000000000000'` written by hand in earlier tasks;
-since nothing flags these automatically, reconciling them is a manual step
-(below) - do not skip it and do not assume a clean `i18n:check` means the
-site's UI strings are done.
+**Why the UI catalog never reports `orphaned`:** `i18n/de/ui.yml` is one
+flat map of dotted key -> `{sha, text}`, not rows keyed by id the way a
+data table is. A UI key that no longer exists in `ui.en.ts` is reported as
+`unknown-field` instead - the same actionable outcome (delete the entry),
+just under the kind that actually fits a flat catalog's shape.
+
+**This subsumes, but does not replace, a separate build-time guard:**
+`loadUi()` (`site/lib/i18n/catalog.ts`) still throws at build/runtime if
+`i18n/de/ui.yml`'s key set doesn't **exactly** match `ui.en.ts`'s - the
+same condition `i18n:check`'s `missing`/`unknown-field` kinds now catch
+earlier and more legibly. Keep relying on both: `i18n:check` is the fast,
+CI-friendly signal; `npm run build` is the one that actually fails the
+site if a key is ever missed regardless.
+
+As of this writing every entry in `i18n/de/ui.yml` carries the placeholder
+`sha: '0000000000000000'` written by hand in earlier tasks; since a
+placeholder can never equal a real sha, `i18n:check` reports every one of
+them `stale` - that is expected and is exactly what makes them visible to
+translate.
 
 ## Computing the sha correctly
 
@@ -118,9 +130,8 @@ the same YAML/module loader.
    wrong even when it is fluent.
 
 2. **Run `npm run i18n:check`.** This is the work list for the ten data
-   tables. Translate **only** what it lists - re-translating current
-   entries produces diff churn for no gain. (It does not surface UI-catalog
-   drift; see the UI-catalog step below.)
+   tables **and** the UI catalog. Translate **only** what it lists -
+   re-translating current entries produces diff churn for no gain.
 
 3. **For each listed entry**, read the English source with
    `node scripts/i18n-sha.ts <table> <id> <field>` (prints the sha and the
@@ -168,24 +179,27 @@ the same YAML/module loader.
    uv run python scripts/reindent_yaml.py
    ```
 
-8. **Reconcile the UI catalog.** `npm run i18n:check` does not do this
-   step for you (see above). For every key in `site/lib/i18n/ui.en.ts`
-   (flattened, dotted, e.g. `nav.publications`, `tags.label.digitalTwins`):
-   - Run `node scripts/i18n-sha.ts ui <key>` and compare its `sha` to the
-     one recorded in `i18n/de/ui.yml` (including every placeholder
-     `'0000000000000000'`, which can never match and must be replaced).
-   - If the sha differs (placeholder or genuinely stale), re-check the
-     German `text` against the current English and `i18n/TRANSLATION.md`;
-     fix the text if it no longer matches, then write the freshly computed
-     sha regardless (even when the text itself was already correct - a
-     placeholder must not survive the run).
-   - `i18n/de/ui.yml` must keep **exactly** the key set of `ui.en.ts` - do
-     not add or drop a key (`loadUi()` throws on any mismatch at build
-     time); `npm run build` is how a key-set mismatch actually surfaces.
+8. **The UI catalog (`i18n/de/ui.yml`) entries `npm run i18n:check` listed
+   in step 2** get the same treatment as a data-table entry: translate a
+   `missing`/`stale` one (source via
+   `node scripts/i18n-sha.ts ui <dotted.key>`, e.g. `nav.publications` or
+   `tags.label.digitalTwins`), delete an `unknown-field` one. Two UI-only
+   points to keep in mind:
+   - A `stale` UI entry with the placeholder `sha: '0000000000000000'`
+     still needs its `text` checked against the current English and
+     `i18n/TRANSLATION.md` before you trust it - the placeholder means "sha
+     never computed", not "text is wrong"; it may already be correct
+     German, in which case only the `sha` needs updating.
    - The five `tags.label.*` keys are the translated research-area display
      labels - a different thing from `tags.tag` (never translated, see
      `i18n/TRANSLATION.md`) and from the `tags.yml` data-table catalog
      fields (`short_description`/`description`/`vision`).
+
+   `i18n/de/ui.yml` must also keep **exactly** the key set of `ui.en.ts` -
+   do not add a key `i18n:check` didn't ask for. `loadUi()`
+   (`site/lib/i18n/catalog.ts`) throws on any mismatch at build time as a
+   second, independent guard - `npm run build` is where that would
+   actually surface.
 
 9. **Verify.**
 

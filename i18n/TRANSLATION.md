@@ -13,15 +13,19 @@ reading this because you are about to translate something, work from
    did not flag, and do not translate rows it does not mention.
 3. Re-run `npm run i18n:check` until it reports zero issues.
 
-Its output names four fields per issue: `locale`, `table`, `id`, `field`
-(printed as `locale/table/id.field`). Each issue has one of four kinds:
+Its output names four fields per issue: `locale`, `table`, `id`, `field`. A
+data-table issue prints as `locale/table/id.field`, e.g.
+`de/people/matthias_koenig.description`. The UI catalog has no per-row id -
+it is one flat map of dotted key -> `{sha, text}` - so its issues print as
+`locale/ui/<dotted.key>`, e.g. `de/ui/nav.publications` (see `auditUi()` in
+`scripts/lib/i18n-check.ts`). Each issue has one of four kinds:
 
 | Kind | Meaning | What to do |
 |---|---|---|
-| `missing` | No German entry exists yet for this field. | Translate it, write the entry with the current source hash (`sha`). |
+| `missing` | No German entry exists yet for this field/key. | Translate it, write the entry with the current source hash (`sha`). |
 | `stale` | The English source changed since this German text was generated (the recorded `sha` no longer matches). | Re-translate from the current English; replace the German text and `sha`. |
-| `orphaned` | The German entry exists but the English row it belonged to is gone. | Delete the entry. |
-| `unknown-field` | The German entry's field is not in the registry below. | Delete the entry. |
+| `orphaned` | A data-table entry exists but the English row it belonged to is gone. Cannot occur for the UI catalog, which has no separate row/field split - a UI key with nothing to belong to is reported `unknown-field` instead. | Delete the entry. |
+| `unknown-field` | The entry's field/key is not in the registry below (`fields.ts`) or in `site/lib/i18n/ui.en.ts` (UI catalog). | Delete the entry. |
 
 `site/lib/i18n/fields.ts` is the **single registry** of which
 `<table>.<field>` pairs are translatable. Nothing outside it is translated,
@@ -41,7 +45,13 @@ regardless of what the YAML contains. As of this writing it lists:
 | `activities` | `title`, `description` |
 
 Plus the UI catalog, `i18n/de/ui.yml`, which mirrors the English strings
-baked into the site chrome (`site/lib/i18n/en.ts` or equivalent) key by key.
+baked into the site chrome (`site/lib/i18n/ui.en.ts`) key by key, dotted
+(`nav.publications`, `tags.label.digitalTwins`, ...). `npm run i18n:check`
+audits this catalog too, the same as the ten data tables above - both are
+part of the same work list from step 1. This is on top of, not instead of,
+a separate build-time guard: `loadUi()` (`site/lib/i18n/catalog.ts`) still
+throws at build time if `i18n/de/ui.yml`'s key set doesn't exactly match
+`ui.en.ts`'s.
 
 ## What is never translated
 
