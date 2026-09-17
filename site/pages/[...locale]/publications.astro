@@ -62,14 +62,14 @@ const chartRows = publicationsPerYear(publications, tagInfo);
     <h2>{t('scholar.citations')}</h2>
     <ScholarStats scholar={scholar} publications={publicationCount} locale={locale} />
     <div class="scholar-charts">
-      <CitationsPerYearChart client:visible rows={perYear} fetchedAt={scholar.fetchedAt} strings={ui.citationsPerYearChart} />
-      <CitationHistoryChart client:visible rows={history} fetchedAt={scholar.fetchedAt} strings={ui.citationHistoryChart} />
+      <CitationsPerYearChart client:visible rows={perYear} fetchedAt={scholar.fetchedAt} strings={ui.citationsPerYearChart} locale={locale} />
+      <CitationHistoryChart client:visible rows={history} fetchedAt={scholar.fetchedAt} strings={ui.citationHistoryChart} locale={locale} />
     </div>
   </section>
 
   <section id="publications-chart">
     <h2>{t('pubChart.title')}</h2>
-    <PublicationsChart client:visible rows={chartRows} strings={ui.publicationsChart} />
+    <PublicationsChart client:visible rows={chartRows} strings={ui.publicationsChart} locale={locale} />
     <p class="chart-note">{t('pubChart.note')}</p>
   </section>
 

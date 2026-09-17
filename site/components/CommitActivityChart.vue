@@ -7,8 +7,9 @@ import { ACTIVITY_HEIGHT, commitActivityOption } from '../lib/chartOptions';
 import { isFresherThan, loadLiveSnapshot } from '../lib/githubLive';
 import { activityRows, type ActivityRows } from '../lib/githubRows';
 import type { UiSlices } from '../lib/i18n/slices';
+import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
 
-const props = defineProps<{ data: ActivityRows; repos: string[]; fetchedAt: string; strings: UiSlices['commitActivityChart'] }>();
+const props = defineProps<{ data: ActivityRows; repos: string[]; fetchedAt: string; strings: UiSlices['commitActivityChart']; locale?: Locale }>();
 const data = ref<ActivityRows>(props.data);
 
 onMounted(async () => {
@@ -17,7 +18,7 @@ onMounted(async () => {
 });
 
 const el = useChart(
-  () => commitActivityOption(data.value, props.strings),
+  () => commitActivityOption(data.value, props.strings, props.locale ?? DEFAULT_LOCALE),
   () => ACTIVITY_HEIGHT,
 );
 </script>

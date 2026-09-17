@@ -12,9 +12,10 @@ import { ref } from 'vue';
 import { useChart } from './useChart';
 import { publicationsOption, PUBLICATIONS_HEIGHT, type PublicationsMode } from '../lib/chartOptions';
 import type { UiSlices } from '../lib/i18n/slices';
+import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
 import type { PublicationYearRows } from '../lib/publicationRows';
 
-const props = defineProps<{ rows: PublicationYearRows; strings: UiSlices['publicationsChart'] }>();
+const props = defineProps<{ rows: PublicationYearRows; strings: UiSlices['publicationsChart']; locale?: Locale }>();
 const mode = ref<PublicationsMode>('tag');
 
 /** Scroll to the publication list, or to one year group inside it. */
@@ -57,7 +58,7 @@ function onClick(params: unknown): void {
 }
 
 const el = useChart(
-  () => publicationsOption(props.rows, mode.value, { total: props.strings.total, status: props.strings.statusLabels }),
+  () => publicationsOption(props.rows, mode.value, { total: props.strings.total, status: props.strings.statusLabels }, props.locale ?? DEFAULT_LOCALE),
   () => PUBLICATIONS_HEIGHT,
   onClick,
 );

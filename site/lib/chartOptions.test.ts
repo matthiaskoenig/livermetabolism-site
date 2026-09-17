@@ -76,6 +76,11 @@ describe('commitActivityOption', () => {
     expect(data.weeks.map((w, i) => formatter(w, i))).toEqual(['Jan 26', '', 'Feb 26']);
   });
 
+  it("formats the yAxis with the locale's thousands separator, not always English's", () => {
+    expect(commitActivityOption(data, activityStrings).yAxis.axisLabel.formatter(4000)).toBe('4,000');
+    expect(commitActivityOption(data, activityStrings, 'de').yAxis.axisLabel.formatter(4000)).toBe('4.000');
+  });
+
   // `n` repositories, most active first (the order activityRows() returns)
   const many = (n: number) => ({
     weeks: ['2026-01-04', '2026-01-11'],

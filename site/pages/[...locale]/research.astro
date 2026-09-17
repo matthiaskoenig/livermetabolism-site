@@ -53,7 +53,7 @@ const activity = activityRows(snapshot, repos);
   <section id="activity">
     <h2>{t('nav.activity')}</h2>
     <h3>{t('research.commitActivity')}</h3>
-    <CommitActivityChart client:visible data={activity} repos={repos} fetchedAt={snapshot.fetchedAt} strings={ui.commitActivityChart} />
+    <CommitActivityChart client:visible data={activity} repos={repos} fetchedAt={snapshot.fetchedAt} strings={ui.commitActivityChart} locale={locale} />
     <h3>{t('gh.stars')}</h3>
     <StarsChart client:visible rows={stars} repos={repos} fetchedAt={snapshot.fetchedAt} strings={ui.starsChart} />
   </section>

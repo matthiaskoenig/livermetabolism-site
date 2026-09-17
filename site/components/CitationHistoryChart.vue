@@ -9,8 +9,9 @@ import { citationHistoryOption, HISTORY_HEIGHT } from '../lib/chartOptions';
 import type { UiSlices } from '../lib/i18n/slices';
 import { isScholarFresherThan, loadLiveScholar } from '../lib/scholarLive';
 import { historyNote, historyRows, type HistoryRow } from '../lib/scholarRows';
+import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
 
-const props = defineProps<{ rows: HistoryRow[]; fetchedAt: string; strings: UiSlices['citationHistoryChart'] }>();
+const props = defineProps<{ rows: HistoryRow[]; fetchedAt: string; strings: UiSlices['citationHistoryChart']; locale?: Locale }>();
 const rows = ref<HistoryRow[]>(props.rows);
 
 onMounted(async () => {
@@ -20,7 +21,7 @@ onMounted(async () => {
 
 const note = computed(() => historyNote(rows.value, props.strings.historyNote));
 const el = useChart(
-  () => citationHistoryOption(rows.value, props.strings.citation),
+  () => citationHistoryOption(rows.value, props.strings.citation, props.locale ?? DEFAULT_LOCALE),
   () => HISTORY_HEIGHT,
 );
 </script>

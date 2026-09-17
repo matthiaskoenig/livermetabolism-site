@@ -19,6 +19,7 @@
 import type { ActivityRows, StarRow, TimelineRow } from './githubRows';
 import { monthsFor } from './i18n/dates';
 import { fmt } from './i18n/format';
+import { DEFAULT_LOCALE, type Locale } from './i18n/locales';
 import { TAG_PALETTE } from './tagGraphics';
 import { STATUS_ORDER, type PublicationYearRows } from './publicationRows';
 import type { HistoryRow, PerYearRow } from './scholarRows';
@@ -60,6 +61,22 @@ export const tooltip = <T>(formatter: (p: T) => string, trigger: 'item' | 'axis'
 });
 
 const axisLabel = (c = MUTED) => ({ color: c, fontFamily: FONT, fontSize: 11 });
+
+/**
+ * A numeric yAxis's axisLabel, with a locale-appropriate thousands
+ * separator. ECharts has no locale awareness of its own: a bare
+ * `axisLabel()` on a numeric axis renders whatever `String(value)` gives,
+ * which for a value like 4000 is "4000" (no separator at all, not even
+ * English's) - fine as-is, but once an axis crosses into the thousands on
+ * a German page, a hand-rolled separator is needed or the reader has
+ * nothing to parse the magnitude by. `Intl.NumberFormat` handles both
+ * locales' grouping (and decimal, should a non-integer ever reach one of
+ * these axes) correctly with no separate en/de branch.
+ */
+const numberAxisLabel = (locale: Locale, c = MUTED) => ({
+  ...axisLabel(c),
+  formatter: (value: number) => new Intl.NumberFormat(locale).format(value),
+});
 
 /** Scatter of every release date, one lane per repository. */
 export function releaseTimelineOption(rows: TimelineRow[]) {
@@ -138,7 +155,7 @@ export interface CommitActivityStrings {
  * Weekly commits of the last year, stacked per repository. `series` arrive
  * most active first (`activityRows()`), which decides who is folded.
  */
-export function commitActivityOption({ weeks, series }: ActivityRows, strings: CommitActivityStrings) {
+export function commitActivityOption({ weeks, series }: ActivityRows, strings: CommitActivityStrings, locale: Locale = DEFAULT_LOCALE) {
   const folded = series.length > ACTIVITY_SERIES ? series.slice(ACTIVITY_SERIES - 1) : [];
   const drawn = folded.length
     ? [
@@ -166,7 +183,7 @@ export function commitActivityOption({ weeks, series }: ActivityRows, strings: C
       axisLabel: { ...axisLabel(), hideOverlap: true, interval: 0, formatter: (week: string, i: number) => (i > 0 && weeks[i - 1]?.slice(0, 7) === week.slice(0, 7) ? '' : weekLabel(week)) },
       axisTick: { show: false },
     },
-    yAxis: { type: 'value', axisLabel: axisLabel(), splitLine: { lineStyle: { color: GRID } } },
+    yAxis: { type: 'value', axisLabel: numberAxisLabel(locale), splitLine: { lineStyle: { color: GRID } } },
     series: drawn.map((s, i) => ({ name: s.name, type: 'bar', stack: 'commits', data: s.values, itemStyle: { color: color(i) } })),
   };
 }
@@ -188,7 +205,7 @@ export interface CitationCountStrings {
 const citationCount = (n: number, strings: CitationCountStrings) => fmt(n === 1 ? strings.one : strings.other, { count: n });
 
 /** Scholar's citations-per-year histogram as bars, years ascending. */
-export function citationsPerYearOption(rows: PerYearRow[], citation: CitationCountStrings) {
+export function citationsPerYearOption(rows: PerYearRow[], citation: CitationCountStrings, locale: Locale = DEFAULT_LOCALE) {
   const years = [...rows].sort((a, b) => a.year - b.year);
   return {
     animation: false,
@@ -200,7 +217,7 @@ export function citationsPerYearOption(rows: PerYearRow[], citation: CitationCou
       axisLabel: { ...axisLabel(), hideOverlap: true },
       axisTick: { show: false },
     },
-    yAxis: { type: 'value', axisLabel: axisLabel(), splitLine: { lineStyle: { color: GRID } } },
+    yAxis: { type: 'value', axisLabel: numberAxisLabel(locale), splitLine: { lineStyle: { color: GRID } } },
     series: [
       {
         type: 'bar',
@@ -219,7 +236,7 @@ export const PER_YEAR_HEIGHT = 260;
  * on purpose: the series starts with a single point (the first snapshot), and
  * a line through one point would draw nothing at all.
  */
-export function citationHistoryOption(rows: HistoryRow[], citation: CitationCountStrings) {
+export function citationHistoryOption(rows: HistoryRow[], citation: CitationCountStrings, locale: Locale = DEFAULT_LOCALE) {
   const points = [...rows].sort((a, b) => a.date.localeCompare(b.date));
   return {
     animation: false,
@@ -233,7 +250,7 @@ export function citationHistoryOption(rows: HistoryRow[], citation: CitationCoun
       axisTick: { show: false },
     },
     // `scale` so a slowly growing total does not look flat against a 0 baseline
-    yAxis: { type: 'value', scale: true, axisLabel: axisLabel(), splitLine: { lineStyle: { color: GRID } } },
+    yAxis: { type: 'value', scale: true, axisLabel: numberAxisLabel(locale), splitLine: { lineStyle: { color: GRID } } },
     series: [
       {
         type: 'line',
@@ -279,7 +296,7 @@ export interface PublicationsChartStrings {
  * the plain tag names, which is what the handler presses in the tag filter as
  * `[data-tag="…"]`.
  */
-export function publicationsOption(rows: PublicationYearRows, mode: PublicationsMode, strings: PublicationsChartStrings) {
+export function publicationsOption(rows: PublicationYearRows, mode: PublicationsMode, strings: PublicationsChartStrings, locale: Locale = DEFAULT_LOCALE) {
   // Series `name` stays the machine tag value (never the label): the click
   // handler in PublicationsChart.vue matches it against `[data-tag]`, and a
   // translated name would break that match on a German page. Only the
@@ -315,7 +332,7 @@ export function publicationsOption(rows: PublicationYearRows, mode: Publications
       axisTick: { show: false },
     },
     // whole papers only: no 0.5 gridline on a year with a single paper
-    yAxis: { type: 'value', minInterval: 1, axisLabel: axisLabel(), splitLine: { lineStyle: { color: GRID } } },
+    yAxis: { type: 'value', minInterval: 1, axisLabel: numberAxisLabel(locale), splitLine: { lineStyle: { color: GRID } } },
     series,
   };
 }
