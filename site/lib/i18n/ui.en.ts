@@ -161,15 +161,15 @@ export const en = {
       "Pick a research area to show only its people, publications, projects and software; the graph re-arranges itself around what is left. Drag a node to move it, drag the background to pan, use the buttons to zoom. Clicking a node opens it on the site. People carry their photo, projects are squares and software diamonds; a publication is a dot in its research area's colour. Every node is sized by how many people, papers, projects and tools it connects to.",
     intro:
       "How the work of the group hangs together: {people} people, {publications} publications, {projects} projects and {software} software tools, connected by authorship and membership. People carry their photo, projects are squares, software diamonds and publications dots in their research area's colour; every node is sized by how many people, papers, projects and tools it connects to.",
-    introFilterHint: 'Pick a research area to show only its people, publications, projects and software — the graph re-arranges itself around what is left. Drag a node to move it, drag the background to pan, and click a node to open it on the site.',
+    introFilterHint: 'Pick a research area to show only its people, publications, projects and software - the graph re-arranges itself around what is left. Drag a node to move it, drag the background to pan, and click a node to open it on the site.',
     metaDescription: 'Interactive network graph of the people, publications, projects, and software of the König group.',
   },
   home: {
     subtitle: 'Metabolic Inflammation and Carcinogenesis of the Liver',
     visionBefore: 'We build open, FAIR',
     visionStrong: 'digital twins',
-    visionAfter: 'of human physiology — AI-powered models that predict disease and therapy, patient by patient.',
-    provocation: 'What if every medical model served you, not the average — and belonged to everyone?',
+    visionAfter: 'of human physiology - AI-powered models that predict disease and therapy, patient by patient.',
+    provocation: 'What if every medical model served you, not the average - and belonged to everyone?',
     scrollTo: 'Scroll to {label}',
     sectionHome: 'Home',
     sectionFooter: 'Footer',
@@ -177,7 +177,7 @@ export const en = {
     linkPublicationsText: 'Peer-reviewed papers, preprints, and open datasets from the lab.',
     linkSoftwareText: 'Open-source tools and models we build to make research reproducible, reusable, and trustworthy.',
     linkTeamText: 'Get to know the researchers, engineers, and students turning ideas into digital twins.',
-    linkOpenPositionsText: 'Internships, theses, and PhD opportunities — come join us.',
+    linkOpenPositionsText: 'Internships, theses, and PhD opportunities - come join us.',
     publicationsOn: 'Papers, reviews, and preprints on {tag}.',
     projectsOn: 'Ongoing {tag} research projects.',
     softwareOn: 'Open-source tools for {tag}.',
@@ -231,7 +231,7 @@ export const en = {
   },
   teaching: {
     intro:
-      'Welcome to our teaching page! Our focus is on project-based learning that empowers students to actively engage with real-world challenges in digital health and shared decision-making. Through interdisciplinary collaboration, innovative digital formats, and a strong commitment to Open Science and ethical research, we create hands-on, inclusive learning environments. By supporting early-career researchers—especially women—and integrating digital competencies, we prepare the next generation of professionals to shape the future of healthcare.',
+      'Welcome to our teaching page! Our focus is on project-based learning that empowers students to actively engage with real-world challenges in digital health and shared decision-making. Through interdisciplinary collaboration, innovative digital formats, and a strong commitment to Open Science and ethical research, we create hands-on, inclusive learning environments. By supporting early-career researchers - especially women - and integrating digital competencies, we prepare the next generation of professionals to shape the future of healthcare.',
   },
   cv: {
     title: 'Curriculum Vitae',

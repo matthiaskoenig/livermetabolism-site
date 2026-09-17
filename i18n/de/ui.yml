@@ -391,7 +391,7 @@ home.linkProjectsText:
   text: 'Entdecken Sie unsere laufenden Forschungsprojekte und Digital-Twin-Modelle.'
 home.linkPublicationsText:
   sha: '0000000000000000'
-  text: 'Peer-reviewte Arbeiten, Preprints und offene Datensätze aus dem Labor.'
+  text: 'Begutachtete Arbeiten, Preprints und offene Datensätze aus dem Labor.'
 home.linkSoftwareText:
   sha: '0000000000000000'
   text: 'Open-Source-Werkzeuge und Modelle, die wir entwickeln, um Forschung reproduzierbar, wiederverwendbar und vertrauenswürdig zu machen.'
@@ -445,7 +445,7 @@ positions.phd.title:
   text: Promotion
 positions.phd.text1:
   sha: '0000000000000000'
-  text: 'Wir haben eine voll finanzierte offene Promotionsstelle in Lübeck als Research Software Engineer (RSE) oder Informatiker/in zu besetzen.'
+  text: 'Wir haben eine voll finanzierte offene Promotionsstelle in Lübeck als Research Software Engineer (RSE) oder Informatikerin oder Informatiker zu besetzen.'
 positions.phd.text2:
   sha: '0000000000000000'
   text: 'Wir betreuen auch Promotionsprojekte, wenn Sie über ein Stipendium oder eine ähnliche Finanzierung verfügen.'
@@ -454,7 +454,7 @@ positions.postdoc.title:
   text: PostDoc
 positions.postdoc.text1:
   sha: '0000000000000000'
-  text: 'Wir haben eine voll finanzierte offene PostDoc-Stelle in Lübeck als Research Software Engineer (RSE) oder Informatiker/in zu besetzen.'
+  text: 'Wir haben eine voll finanzierte offene PostDoc-Stelle in Lübeck als Research Software Engineer (RSE) oder Informatikerin oder Informatiker zu besetzen.'
 positions.postdoc.text2:
   sha: '0000000000000000'
   text: 'Wir betreuen auch PostDoc-Projekte, wenn Sie über ein Stipendium oder eine ähnliche Finanzierung verfügen.'

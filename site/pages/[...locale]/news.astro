@@ -21,6 +21,6 @@ const tagFilterEntries = toTagFilterEntries(tagInfo);
 <Base title={t('nav.news')} sectionid="news" locale={locale}>
   <TagFilter client:idle id="news" tags={tagFilterEntries} target="news-grid" strings={ui.tagFilter} />
   <div class="project-grid" id="news-grid">
-    {news.map((n) => <NewsCard item={n} tagInfo={tagInfo} peopleMap={peopleMap} imageBase={imageBase} avatarBase={avatarBase} strings={ui.links} />)}
+    {news.map((n) => <NewsCard item={n} tagInfo={tagInfo} peopleMap={peopleMap} imageBase={imageBase} avatarBase={avatarBase} strings={{ readMore: ui.links.readMore }} />)}
   </div>
 </Base>
