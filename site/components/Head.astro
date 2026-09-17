@@ -1,17 +1,20 @@
 ---
 import { asset, url } from '../lib/url';
+import { alternates } from '../lib/i18n/alternates';
 
 interface Props { title?: string; description?: string }
 const siteTitle = 'livermetabolism';
 const { title, description = 'Research Group König' } = Astro.props;
 const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const alternateLinks = alternates(Astro.url.pathname, Astro.site);
 ---
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
+{alternateLinks.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
 <meta property="og:type" content="website" />
 <meta property="og:title" content={title ?? siteTitle} />
 <meta property="og:description" content={description} />
