@@ -42,12 +42,17 @@ regardless of what the YAML contains. As of this writing it lists:
 | `news` | `title`, `short`, `abstract` |
 | `teaching` | `title`, `content`, `caption`, `funding` |
 | `meetings` | `title`, `description`, `location` |
-| `activities` | `title`, `description` |
+
+`activities` has a collection and schema, like `panels` and `linkedin`, but
+nothing renders it - no getter, page, or component shows it anywhere on the
+site (see `AGENTS.md`'s repository-layout note) - so it is deliberately
+absent from the registry. Translating it only cost a red `npm run
+i18n:check` for content no visitor ever sees.
 
 Plus the UI catalog, `i18n/de/ui.yml`, which mirrors the English strings
 baked into the site chrome (`site/lib/i18n/ui.en.ts`) key by key, dotted
 (`nav.publications`, `tags.label.digitalTwins`, ...). `npm run i18n:check`
-audits this catalog too, the same as the ten data tables above - both are
+audits this catalog too, the same as the nine data tables above - both are
 part of the same work list from step 1. This is on top of, not instead of,
 a separate build-time guard: `loadUi()` (`site/lib/i18n/catalog.ts`) still
 throws at build time if `i18n/de/ui.yml`'s key set doesn't exactly match
@@ -61,6 +66,11 @@ throws at build time if `i18n/de/ui.yml`'s key set doesn't exactly match
   title is its citation identity: a German rendering matches nothing in the
   literature, in Scholar, or in OpenAlex. This is not an oversight; these
   five tables are deliberately absent from `fields.ts`.
+- **`activities`.** Has a collection and schema, like `panels` and
+  `linkedin`, but nothing on the site renders it - no getter, page, or
+  component. Translating unrendered content only turned `npm run
+  i18n:check` red on every edit to `data/activities.yml`, so it was removed
+  from `fields.ts` rather than given a page.
 - **`tags.tag`.** Never translated. It is simultaneously a reference key, a
   URL slug, a chart series name and a filter value - translating it would
   break all four at once, so `tag` stays byte-identical on every locale:
@@ -126,13 +136,14 @@ proper noun.
 appears in that URL - the funder's own page names the project that way -
 translating it breaks a reader's ability to cross-reference the entry
 against the source. `data/activities.yml`'s `xstudent-doac-2025` row is the
-worked example: its `link` ends in
+worked example (its own `title` is not translated - see "What is never
+translated" - but the row is still useful corroborating evidence, since it
+is untranslated `data/*.yml` prose, not an i18n catalog): its `link` ends in
 `.../research-groups/archiv/sem_aktuell/Digital-Twins-in-Action/index.html`
 - the Berlin University Alliance's own slug for the project is
 `Digital-Twins-in-Action`, so `Digital Twins in Action` (the matching
-`funding.xresearch2025.title` and `activities.xstudent-doac-2025.title`)
-is that project's registered name and stays in English; only the
-descriptive tail after it translates.
+`funding.xresearch2025.title`) is that project's registered name and stays
+in English; only the descriptive tail after it translates.
 
 This is the same principle already applied to `X-Student Research Group`,
 `SimLivA`, `ATLAS`, and `LiSyM` - it just does not require an acronym to

@@ -27,9 +27,9 @@ Run it to see the work:
 npm run i18n:check
 ```
 
-It audits **the ten data tables registered in `site/lib/i18n/fields.ts`**
+It audits **the nine data tables registered in `site/lib/i18n/fields.ts`**
 (`tags`, `people`, `projects`, `software`, `editors`, `funding`, `news`,
-`teaching`, `meetings`, `activities`) against their `i18n/de/<table>.yml`
+`teaching`, `meetings`) against their `i18n/de/<table>.yml`
 catalogs, **and** the UI catalog (`i18n/de/ui.yml`) against
 `site/lib/i18n/ui.en.ts`. A data-table line reads
 `<locale>/<table>/<id>.<field>`, e.g.

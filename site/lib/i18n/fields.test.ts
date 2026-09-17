@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { isTranslatable, TRANSLATABLE } from './fields';
 import {
   tagSchema, personSchema, projectSchema, softwareSchema, editorSchema, fundingSchema,
-  newsSchema, teachingSchema, meetingSchema, activitySchema,
+  newsSchema, teachingSchema, meetingSchema,
 } from '../schemas';
 
 const BIBLIOGRAPHIC = ['publications', 'posters', 'presentations', 'abstracts', 'panels'];
@@ -37,7 +37,6 @@ describe('TRANSLATABLE', () => {
       news: newsSchema,
       teaching: teachingSchema,
       meetings: meetingSchema,
-      activities: activitySchema,
     };
     for (const [table, fields] of Object.entries(TRANSLATABLE)) {
       const schema = schemas[table as keyof typeof schemas];
