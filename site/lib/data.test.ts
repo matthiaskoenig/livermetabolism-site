@@ -5,6 +5,7 @@
 // because Astro's content plugin only registers it for the SSR/node
 // environment) - data.ts is build-time only by design (see CLAUDE.md), so
 // this file overrides the environment rather than relaxing that boundary.
+import path from 'node:path';
 import { dump } from 'js-yaml';
 import { describe, expect, it, vi } from 'vitest';
 import { getNews, getPublications } from './data';
@@ -55,25 +56,38 @@ const TAGS_CATALOG = { 'Digital Twins': { description: { sha: 'cccc000000000000'
  * of data.ts gets its own empty cache and reads these fixtures instead of
  * (non-existent) real i18n/de/*.yml files - nothing is ever written to
  * disk, so no stray fixture file can leak into i18n/de/.
+ *
+ * The mock must pass every other path straight through to the real
+ * `node:fs`, not just `ui.yml` - both named and default exports, and
+ * matching the fixture catalogs' exact paths rather than a bare
+ * `endsWith('people.yml')` suffix (which used to also match the real
+ * `data/people.yml`). Astro's own content-layer cache
+ * (`.astro/data-store.json`, see vitest.global-setup.ts) is unaffected by
+ * this either way: it is read once, by Astro's Vite plugin, via a
+ * `node:fs` reference bound before any test file - let alone this mock -
+ * ever runs, so it is not this mock's job to account for it; it only ever
+ * has to behave correctly for the three `i18n/de/<table>.yml` paths it
+ * fakes.
  */
 async function withGermanFixtures<T>(run: (mod: typeof import('./data')) => Promise<T>): Promise<T> {
   vi.resetModules();
-  // getTags() also reads the UI catalog (for the tags.label.* display
-  // labels, see tagLabel.ts) - readFileSync must fall through to the real
-  // i18n/de/ui.yml for that file rather than the empty-catalog default, or
-  // loadUi() throws on the (correctly detected) key-set mismatch.
   const actualFs = await vi.importActual<typeof import('node:fs')>('node:fs');
+  const catalogPath = (table: string) => path.join(process.cwd(), 'i18n', 'de', `${table}.yml`);
+  const fixtures = new Map<string, unknown>([
+    [catalogPath('people'), PEOPLE_CATALOG],
+    [catalogPath('news'), NEWS_CATALOG],
+    [catalogPath('tags'), TAGS_CATALOG],
+  ]);
+  const existsSync = (file: string) => (fixtures.has(file) ? true : actualFs.existsSync(file));
+  const readFileSync = (file: string, ...args: unknown[]) => {
+    const fixture = fixtures.get(file);
+    return fixture ? dump(fixture) : actualFs.readFileSync(file, ...(args as []));
+  };
   vi.doMock('node:fs', () => ({
-    default: {
-      existsSync: (file: string) => (file.endsWith('ui.yml') ? actualFs.existsSync(file) : true),
-      readFileSync: (file: string, ...args: unknown[]) => {
-        if (file.endsWith('people.yml')) return dump(PEOPLE_CATALOG);
-        if (file.endsWith('news.yml')) return dump(NEWS_CATALOG);
-        if (file.endsWith('tags.yml')) return dump(TAGS_CATALOG);
-        if (file.endsWith('ui.yml')) return actualFs.readFileSync(file, ...(args as []));
-        return dump({});
-      },
-    },
+    ...actualFs,
+    existsSync,
+    readFileSync,
+    default: { ...actualFs, existsSync, readFileSync },
   }));
   try {
     const mod = await import('./data');
