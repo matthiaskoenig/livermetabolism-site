@@ -1,6 +1,6 @@
-import { describe, expect, it } from 'vitest';
+import { dump } from 'js-yaml';
+import { describe, expect, it, vi } from 'vitest';
 import { EN_FLAT, flatten, loadUi, uiFor } from './catalog';
-import { en } from './ui.en';
 
 describe('flatten', () => {
   it('joins nested keys with dots', () => {
@@ -36,9 +36,30 @@ describe('uiFor', () => {
   it('interpolates', () => {
     expect(uiFor('en').t('search.empty', { query: 'x' })).toContain('x');
   });
-  it('falls back to English when the German catalog has no text yet', () => {
-    const de = uiFor('de');
-    expect(de.t('nav.publications')).toBeTruthy();
+  it('falls back to English when the German entry text is empty, not merely missing', async () => {
+    // Build a German file with every key the parity check requires, but an
+    // empty `text` for the one key under test - so this fails if t()'s
+    // fallback is `??` (empty string is not null/undefined) or is removed
+    // entirely, and only passes for the real `flat[key] || EN_FLAT[key]`.
+    const fixture: Record<string, { sha: string; text: string }> = {};
+    for (const key of Object.keys(EN_FLAT)) {
+      fixture[key] = { sha: '0000000000000000', text: key === 'nav.publications' ? '' : `stub:${key}` };
+    }
+
+    // loadUi() caches per locale at module scope, so a plain re-call would
+    // just hit the cache already populated from the real i18n/de/ui.yml by
+    // the tests above. Reset the module registry and mock node:fs for a
+    // fresh import of catalog.ts, which gets its own empty cache and reads
+    // the fixture above instead of the real file.
+    vi.resetModules();
+    vi.doMock('node:fs', () => ({ default: { readFileSync: () => dump(fixture) } }));
+    try {
+      const { uiFor: freshUiFor } = await import('./catalog');
+      expect(freshUiFor('de').t('nav.publications')).toBe('Publications');
+    } finally {
+      vi.doUnmock('node:fs');
+      vi.resetModules();
+    }
   });
 });
 
