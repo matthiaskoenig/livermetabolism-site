@@ -1,6 +1,7 @@
 ---
 import Icon from './Icon.vue';
 import LanguageSwitch from './LanguageSwitch.astro';
+import { uiFor } from '../lib/i18n/catalog';
 import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
 import { urlFor } from '../lib/i18n/routes';
 import { asset } from '../lib/url';
@@ -8,6 +9,7 @@ import { asset } from '../lib/url';
 interface Props { sectionid?: string; locale?: Locale }
 const { sectionid, locale = DEFAULT_LOCALE } = Astro.props;
 const u = urlFor(locale);
+const { t } = uiFor(locale);
 const active = (...ids: string[]) => (sectionid && ids.includes(sectionid) ? 'active' : '');
 ---
 <nav class="navbar site-navbar">
@@ -31,49 +33,49 @@ const active = (...ids: string[]) => (sectionid && ids.includes(sectionid) ? 'ac
     </a>
     <div class="navbar-controls">
       <LanguageSwitch locale={locale} />
-      <button type="button" class="search-toggle" data-modal-target="site-search-modal" aria-label="Search" title="Search (/)">
+      <button type="button" class="search-toggle" data-modal-target="site-search-modal" aria-label={t('search.open')} title={t('search.openTitle', { key: '/' })}>
         <Icon name="search" />
       </button>
-      <button type="button" class="navbar-toggler" id="navbar-toggler" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <button type="button" class="navbar-toggler" id="navbar-toggler" aria-controls="navbar" aria-expanded="false" aria-label={t('nav.toggleNav')}>
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
     <div id="navbar" class="navbar-collapse">
       <ul class="navbar-nav">
         <li class:list={['nav-item', 'dropdown', active('publications')]}>
-          <a class="nav-link" href={u('/publications/')}>Publications</a>
+          <a class="nav-link" href={u('/publications/')}>{t('nav.publications')}</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href={u('/publications/#scholar')}>Citations</a></li>
-            <li><a class="dropdown-item" href={u('/publications/#publications')}>Publications</a></li>
-            <li><a class="dropdown-item" href={u('/publications/#presentations')}>Presentations</a></li>
-            <li><a class="dropdown-item" href={u('/publications/#posters')}>Posters</a></li>
-            <li><a class="dropdown-item" href={u('/publications/#abstracts')}>Abstracts</a></li>
+            <li><a class="dropdown-item" href={u('/publications/#scholar')}>{t('nav.citations')}</a></li>
+            <li><a class="dropdown-item" href={u('/publications/#publications')}>{t('nav.publications')}</a></li>
+            <li><a class="dropdown-item" href={u('/publications/#presentations')}>{t('nav.presentations')}</a></li>
+            <li><a class="dropdown-item" href={u('/publications/#posters')}>{t('nav.posters')}</a></li>
+            <li><a class="dropdown-item" href={u('/publications/#abstracts')}>{t('nav.abstracts')}</a></li>
           </ul>
         </li>
-        <li class:list={['nav-item', active('projects')]}><a class="nav-link" href={u('/projects/')}>Projects</a></li>
+        <li class:list={['nav-item', active('projects')]}><a class="nav-link" href={u('/projects/')}>{t('nav.projects')}</a></li>
         <li class:list={['nav-item', 'dropdown', active('people')]}>
-          <a class="nav-link" href={u('/people/')}>Team</a>
+          <a class="nav-link" href={u('/people/')}>{t('nav.team')}</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href={u('/people/#current-members')}>Team</a></li>
-            <li><a class="dropdown-item" href={u('/people/#open-positions')}>Open Positions</a></li>
-            <li><a class="dropdown-item" href={u('/people/#alumni')}>Alumni</a></li>
+            <li><a class="dropdown-item" href={u('/people/#current-members')}>{t('nav.team')}</a></li>
+            <li><a class="dropdown-item" href={u('/people/#open-positions')}>{t('nav.openPositions')}</a></li>
+            <li><a class="dropdown-item" href={u('/people/#alumni')}>{t('nav.alumni')}</a></li>
           </ul>
         </li>
         <li class:list={['nav-item', 'dropdown', active('research', 'meetings')]}>
-          <a class="nav-link" href={u('/research/')}>Research</a>
+          <a class="nav-link" href={u('/research/')}>{t('nav.research')}</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href={u('/research/#releases')}>Releases</a></li>
-            <li><a class="dropdown-item" href={u('/research/#activity')}>Activity</a></li>
-            <li><a class="dropdown-item" href={u('/research/#software')}>Software</a></li>
-            <li><a class="dropdown-item" href={u('/research/#funding')}>Funding</a></li>
-            <li><a class="dropdown-item" href={u('/research/#editors')}>Editors</a></li>
-            <li><a class="dropdown-item" href={u('/meetings/')}>Meetings</a></li>
+            <li><a class="dropdown-item" href={u('/research/#releases')}>{t('nav.releases')}</a></li>
+            <li><a class="dropdown-item" href={u('/research/#activity')}>{t('nav.activity')}</a></li>
+            <li><a class="dropdown-item" href={u('/research/#software')}>{t('nav.software')}</a></li>
+            <li><a class="dropdown-item" href={u('/research/#funding')}>{t('nav.funding')}</a></li>
+            <li><a class="dropdown-item" href={u('/research/#editors')}>{t('nav.editors')}</a></li>
+            <li><a class="dropdown-item" href={u('/meetings/')}>{t('nav.meetings')}</a></li>
           </ul>
         </li>
-        <li class:list={['nav-item', active('network')]}><a class="nav-link" href={u('/network/')}>Network</a></li>
-        <li class:list={['nav-item', active('news')]}><a class="nav-link" href={u('/news/')}>News</a></li>
-        <li class:list={['nav-item', active('teaching')]}><a class="nav-link" href={u('/teaching/')}>Teaching</a></li>
-        <li class="nav-item"><a class="nav-link" href={asset('cv/Koenig_CV.pdf')} target="_blank" rel="noopener noreferrer">CV</a></li>
+        <li class:list={['nav-item', active('network')]}><a class="nav-link" href={u('/network/')}>{t('nav.network')}</a></li>
+        <li class:list={['nav-item', active('news')]}><a class="nav-link" href={u('/news/')}>{t('nav.news')}</a></li>
+        <li class:list={['nav-item', active('teaching')]}><a class="nav-link" href={u('/teaching/')}>{t('nav.teaching')}</a></li>
+        <li class="nav-item"><a class="nav-link" href={asset('cv/Koenig_CV.pdf')} target="_blank" rel="noopener noreferrer">{t('nav.cv')}</a></li>
       </ul>
     </div>
   </div>

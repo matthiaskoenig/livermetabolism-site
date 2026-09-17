@@ -12,6 +12,7 @@
  * see CLAUDE.md).
  */
 import { refreshNote } from './githubStats';
+import { fmt } from './i18n/format';
 import { stripValues } from './scholarRows';
 import type { Scholar } from './scholarSchema';
 
@@ -35,7 +36,11 @@ export function applyScholar(scholar: Scholar, root: ParentNode = document, now:
     set(strip, 'h-index-since', String(v.hIndexSince));
     set(strip, 'i10-index', String(v.i10Index));
     set(strip, 'i10-index-since', String(v.i10IndexSince));
-    for (const el of strip.querySelectorAll<HTMLElement>('[data-since-year]')) el.textContent = `since ${v.sinceYear}`;
+    // the "since {year}" template is the locale's own text, set by
+    // ScholarStats.astro from the UI catalog (data-since-template), with the
+    // English default as a fallback for markup that carries none
+    const sinceTemplate = strip.dataset.sinceTemplate ?? 'since {year}';
+    for (const el of strip.querySelectorAll<HTMLElement>('[data-since-year]')) el.textContent = fmt(sinceTemplate, { year: v.sinceYear });
     // the metric figures are rendered empty and hidden by a build that had no
     // snapshot; now that there are numbers, show them
     for (const el of strip.querySelectorAll<HTMLElement>('[data-scholar-metric]')) el.hidden = false;

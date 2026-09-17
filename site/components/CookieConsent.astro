@@ -2,16 +2,23 @@
 // Cookie banner: plain TypeScript, no Vue island (this is on every page).
 // The banner renders hidden and the script below unhides it unless a
 // choice is already stored, so a returning visitor never sees it flash.
-interface Props { gaId: string; privacyUrl: string }
-const { gaId, privacyUrl } = Astro.props;
+import { uiFor } from '../lib/i18n/catalog';
+import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
+
+interface Props { gaId: string; privacyUrl: string; locale?: Locale }
+const { gaId, privacyUrl, locale = DEFAULT_LOCALE } = Astro.props;
+const { t } = uiFor(locale);
+// Built as one trusted HTML string (catalog text plus the page's own,
+// locally-built privacyUrl - never user input) rather than three separate
+// {t()} interpolations, so the sentence's own apostrophe renders literally
+// instead of Astro's automatic text-escaping turning it into "&#39;".
+const messageHtml = `\n${t('consent.message')} <a href="${privacyUrl}">${t('consent.privacyLink')}</a> ${t('consent.messageSuffix')}\n`;
 ---
 <div id="cookie-consent-banner" class="cookie-consent" data-ga-id={gaId} hidden>
-  <p class="cookie-consent-text">
-    This site uses Google Analytics to understand how it's used. It only runs if you accept — see the <a href={privacyUrl}>privacy policy</a> for details.
-  </p>
+  <p class="cookie-consent-text" set:html={messageHtml} />
   <div class="cookie-consent-actions">
-    <button type="button" id="cookie-consent-decline" class="btn btn-outline-secondary btn-sm">Decline</button>
-    <button type="button" id="cookie-consent-accept" class="btn btn-primary btn-sm">Accept</button>
+    <button type="button" id="cookie-consent-decline" class="btn btn-outline-secondary btn-sm">{t('consent.decline')}</button>
+    <button type="button" id="cookie-consent-accept" class="btn btn-primary btn-sm">{t('consent.accept')}</button>
   </div>
 </div>
 

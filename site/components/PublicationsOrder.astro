@@ -10,23 +10,27 @@
 // the buttons are static markup and the rows are moved, never re-rendered —
 // there is only ever one copy of them in the DOM.
 import { hasData, relativeDate } from '../lib/githubRows';
+import { uiFor } from '../lib/i18n/catalog';
+import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
 
 interface Props {
   /** `fetchedAt` of the build's citation snapshot. */
   fetchedAt: string;
+  locale?: Locale;
 }
-const { fetchedAt } = Astro.props;
+const { fetchedAt, locale = DEFAULT_LOCALE } = Astro.props;
+const { t } = uiFor(locale);
 // a build that could not read the snapshot renders emptyCitations()'s epoch:
 // that is "never", not "56 years ago" (the browser then fills the page in)
 const known = hasData(fetchedAt);
 ---
 
-<div class="publication-order" id="publication-order" role="group" aria-label="Order publications">
-  <button type="button" class="order-btn active" data-order="year" aria-pressed="true">Year</button>
-  <button type="button" class="order-btn" data-order="cited" aria-pressed="false">Most cited</button>
+<div class="publication-order" id="publication-order" role="group" aria-label={t('pubOrder.groupLabel')}>
+  <button type="button" class="order-btn active" data-order="year" aria-pressed="true">{t('pubOrder.year')}</button>
+  <button type="button" class="order-btn" data-order="cited" aria-pressed="false">{t('pubOrder.mostCited')}</button>
   <p class="citations-note" data-citations-note>
-    Citations from <a href="https://openalex.org" target="_blank" rel="noopener noreferrer">OpenAlex</a>, updated
-    <time data-field="updated" data-empty="never" data-iso={fetchedAt} datetime={known ? fetchedAt : undefined}>{known ? relativeDate(fetchedAt) : 'never'}</time>.
+    {t('pubOrder.citationsFrom')} <a href="https://openalex.org" target="_blank" rel="noopener noreferrer">OpenAlex</a>, {t('pubOrder.updated')}
+    <time data-field="updated" data-empty={t('pubOrder.never')} data-iso={fetchedAt} datetime={known ? fetchedAt : undefined}>{known ? relativeDate(fetchedAt) : t('pubOrder.never')}</time>.
   </p>
 </div>
 

@@ -47,3 +47,156 @@ search.unavailable:
 search.empty:
   sha: '0000000000000000'
   text: 'Keine Treffer für „{query}“.'
+nav.citations:
+  sha: '0000000000000000'
+  text: Zitationen
+nav.presentations:
+  sha: '0000000000000000'
+  text: Vorträge
+nav.posters:
+  sha: '0000000000000000'
+  text: Poster
+nav.abstracts:
+  sha: '0000000000000000'
+  text: Abstracts
+nav.openPositions:
+  sha: '0000000000000000'
+  text: Offene Stellen
+nav.alumni:
+  sha: '0000000000000000'
+  text: Ehemalige
+nav.releases:
+  sha: '0000000000000000'
+  text: Releases
+nav.activity:
+  sha: '0000000000000000'
+  text: Aktivität
+nav.software:
+  sha: '0000000000000000'
+  text: Software
+nav.funding:
+  sha: '0000000000000000'
+  text: Förderung
+nav.editors:
+  sha: '0000000000000000'
+  text: Herausgeber
+nav.toggleNav:
+  sha: '0000000000000000'
+  text: Navigation umschalten
+footer.tagline:
+  sha: '0000000000000000'
+  text: Systems Medicine, Digital Twins & AI
+footer.position:
+  sha: '0000000000000000'
+  text: Professor für metabolische Entzündung und Karzinogenese der Leber
+footer.cv:
+  sha: '0000000000000000'
+  text: Lebenslauf
+footer.releaseNotes:
+  sha: '0000000000000000'
+  text: Versionshinweise
+footer.deployedCommit:
+  sha: '0000000000000000'
+  text: Veröffentlichter Commit
+footer.toTop:
+  sha: '0000000000000000'
+  text: Nach oben scrollen
+footer.impressum:
+  sha: '0000000000000000'
+  text: Impressum
+footer.privacy:
+  sha: '0000000000000000'
+  text: Datenschutzerklärung
+meta.description:
+  sha: '0000000000000000'
+  text: Forschungsgruppe König
+consent.message:
+  sha: '0000000000000000'
+  text: 'Diese Website verwendet Google Analytics, um zu verstehen, wie sie genutzt wird. Sie läuft nur, wenn Sie zustimmen - siehe die'
+consent.privacyLink:
+  sha: '0000000000000000'
+  text: Datenschutzerklärung
+consent.messageSuffix:
+  sha: '0000000000000000'
+  text: für Details.
+consent.decline:
+  sha: '0000000000000000'
+  text: Ablehnen
+consent.accept:
+  sha: '0000000000000000'
+  text: Akzeptieren
+detail.back:
+  sha: '0000000000000000'
+  text: Zurück
+detail.backLabel:
+  sha: '0000000000000000'
+  text: Zurück zum vorherigen Eintrag
+detail.close:
+  sha: '0000000000000000'
+  text: Schließen
+detail.loading:
+  sha: '0000000000000000'
+  text: Wird geladen…
+detail.title:
+  sha: '0000000000000000'
+  text: Details
+detail.error:
+  sha: '0000000000000000'
+  text: Dieser Eintrag konnte nicht geladen werden. Bitte versuchen Sie es erneut.
+scholar.citations:
+  sha: '0000000000000000'
+  text: Zitationen
+scholar.hIndex:
+  sha: '0000000000000000'
+  text: h-Index
+scholar.i10Index:
+  sha: '0000000000000000'
+  text: i10-Index
+scholar.publications:
+  sha: '0000000000000000'
+  text: Publikationen
+scholar.peerReviewed:
+  sha: '0000000000000000'
+  text: peer-reviewed
+scholar.since:
+  sha: '0000000000000000'
+  text: 'seit {year}'
+scholar.sinceUnknown:
+  sha: '0000000000000000'
+  text: seit
+scholar.citationMetricsFrom:
+  sha: '0000000000000000'
+  text: Zitationskennzahlen von
+scholar.lastUpdate:
+  sha: '0000000000000000'
+  text: letzte Aktualisierung
+scholar.none:
+  sha: '0000000000000000'
+  text: noch keine
+pubOrder.groupLabel:
+  sha: '0000000000000000'
+  text: Publikationen sortieren
+pubOrder.year:
+  sha: '0000000000000000'
+  text: Jahr
+pubOrder.mostCited:
+  sha: '0000000000000000'
+  text: Meistzitiert
+pubOrder.citationsFrom:
+  sha: '0000000000000000'
+  text: Zitationen von
+pubOrder.updated:
+  sha: '0000000000000000'
+  text: aktualisiert
+pubOrder.never:
+  sha: '0000000000000000'
+  text: nie
+gh.dataFrom:
+  sha: '0000000000000000'
+  text: Daten von
+gh.updated:
+  sha: '0000000000000000'
+  text: aktualisiert
+gh.never:
+  sha: '0000000000000000'
+  text: nie

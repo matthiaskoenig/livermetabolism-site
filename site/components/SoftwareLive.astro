@@ -7,16 +7,19 @@
 // not a Vue island (see CLAUDE.md): the stats lines are static HTML rendered
 // by SoftwareCard.vue and only their text nodes change.
 import { hasData, relativeDate } from '../lib/githubRows';
+import { uiFor } from '../lib/i18n/catalog';
+import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
 
-interface Props { fetchedAt: string }
-const { fetchedAt } = Astro.props;
+interface Props { fetchedAt: string; locale?: Locale }
+const { fetchedAt, locale = DEFAULT_LOCALE } = Astro.props;
+const { t } = uiFor(locale);
 // a build that could not read the snapshot renders emptySnapshot()'s epoch:
 // that is "never", not "56 years ago" (the browser then fills the page in)
 const known = hasData(fetchedAt);
 ---
 <p class="github-note" data-github-note>
-  Data from <a href="https://github.com/matthiaskoenig" target="_blank" rel="noopener noreferrer">GitHub</a>, updated
-  <time data-field="updated" data-empty="never" data-iso={fetchedAt} datetime={known ? fetchedAt : undefined}>{known ? relativeDate(fetchedAt) : 'never'}</time>.
+  {t('gh.dataFrom')} <a href="https://github.com/matthiaskoenig" target="_blank" rel="noopener noreferrer">GitHub</a>, {t('gh.updated')}
+  <time data-field="updated" data-empty={t('gh.never')} data-iso={fetchedAt} datetime={known ? fetchedAt : undefined}>{known ? relativeDate(fetchedAt) : t('gh.never')}</time>.
 </p>
 
 <script>

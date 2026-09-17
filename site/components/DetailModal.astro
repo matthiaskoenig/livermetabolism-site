@@ -18,18 +18,23 @@
 // background (see the .detail-modal override beside LanguageSwitch's own
 // rules in global.css).
 import LanguageSwitch from './LanguageSwitch.astro';
+import { uiFor } from '../lib/i18n/catalog';
 import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
 
 interface Props { locale?: Locale }
 const { locale = DEFAULT_LOCALE } = Astro.props;
+const { t } = uiFor(locale);
 const MODAL_ID = 'detail-modal';
 ---
-<dialog id={MODAL_ID} class="modal detail-modal" aria-labelledby={`${MODAL_ID}-label`}>
+<dialog id={MODAL_ID} class="modal detail-modal" aria-labelledby={`${MODAL_ID}-label`}
+  data-loading={t('detail.loading')}
+  data-title-fallback={t('detail.title')}
+  data-error={t('detail.error')}>
   <div class="modal-header">
-    <button type="button" class="modal-back" aria-label="Back to the previous entry" hidden>&larr; Back</button>
+    <button type="button" class="modal-back" aria-label={t('detail.backLabel')} hidden>&larr; {t('detail.back')}</button>
     <h5 class="modal-title" id={`${MODAL_ID}-label`}></h5>
     <LanguageSwitch locale={locale} />
-    <button type="button" class="btn-close" data-modal-close aria-label="Close"></button>
+    <button type="button" class="btn-close" data-modal-close aria-label={t('detail.close')}></button>
   </div>
   <div class="modal-body"></div>
 </dialog>

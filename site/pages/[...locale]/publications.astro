@@ -56,7 +56,7 @@ const chartRows = publicationsPerYear(publications, tagInfo);
 <Base title="Publications" sectionid="publications" locale={locale}>
   <section id="scholar">
     <h2>Citations</h2>
-    <ScholarStats scholar={scholar} publications={publicationCount} />
+    <ScholarStats scholar={scholar} publications={publicationCount} locale={locale} />
     <div class="scholar-charts">
       <CitationsPerYearChart client:visible rows={perYear} fetchedAt={scholar.fetchedAt} />
       <CitationHistoryChart client:visible rows={history} fetchedAt={scholar.fetchedAt} />
@@ -71,7 +71,7 @@ const chartRows = publicationsPerYear(publications, tagInfo);
 
   <h2 id="publications">Publications</h2>
   <TagFilter client:idle id="publication" tags={tagFilterEntries} target="publication-list" />
-  <PublicationsOrder fetchedAt={citations.fetchedAt} />
+  <PublicationsOrder fetchedAt={citations.fetchedAt} locale={locale} />
   <div id="publication-list">
     {years.map((g) => (
       <div class="pub-year-group">

@@ -1,10 +1,14 @@
 ---
 import { asset, url } from '../lib/url';
 import { alternates } from '../lib/i18n/alternates';
+import { uiFor } from '../lib/i18n/catalog';
+import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
 
-interface Props { title?: string; description?: string }
+interface Props { title?: string; description?: string; locale?: Locale }
 const siteTitle = 'livermetabolism';
-const { title, description = 'Research Group König' } = Astro.props;
+const { locale = DEFAULT_LOCALE } = Astro.props;
+const { t } = uiFor(locale);
+const { title, description = t('meta.description') } = Astro.props;
 const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const alternateLinks = alternates(Astro.url.pathname, Astro.site);

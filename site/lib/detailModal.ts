@@ -105,6 +105,16 @@ interface Shell {
   cache: Map<string, Element>;
   /** Guards against a slow fetch landing after the user has moved on. */
   pending: number;
+  /**
+   * The locale's own text for the three states this router renders itself
+   * (the fragment's own content carries everything else). Read once from the
+   * shell's `data-*` attributes - set by `DetailModal.astro` from the UI
+   * catalog - with the English literal as a fallback for a dialog that carries
+   * none (older markup, a test fixture).
+   */
+  loadingText: string;
+  titleFallback: string;
+  errorText: string;
 }
 
 let fetchImpl: typeof fetch = (...args) => fetch(...args);
@@ -123,7 +133,10 @@ function shell(): Shell | null {
   // replacing the body drops whatever was focused (the clicked related row),
   // so `render()` moves focus to the title - which has to be focusable for it
   title.tabIndex = -1;
-  const view: Shell = { dialog, body, title, back, stack: [], cache: new Map(), pending: 0 };
+  const loadingText = dialog.dataset.loading ?? 'Loading…';
+  const titleFallback = dialog.dataset.titleFallback ?? 'Details';
+  const errorText = dialog.dataset.error ?? 'This entry could not be loaded. Please try again.';
+  const view: Shell = { dialog, body, title, back, stack: [], cache: new Map(), pending: 0, loadingText, titleFallback, errorText };
   states.set(dialog, view);
   // Escape, the backdrop and the × all end in the dialog's own close event
   // (the modal router handles the last two), so the URL and the stack are
@@ -174,20 +187,20 @@ async function render(view: Shell): Promise<void> {
   const token = ++view.pending;
   view.back.hidden = view.stack.length < 2;
   if (!view.cache.has(`${entry.type}:${entry.id}`)) {
-    view.title.textContent = 'Loading…';
-    view.body.replaceChildren(message('detail-loading', 'Loading…'));
+    view.title.textContent = view.loadingText;
+    view.body.replaceChildren(message('detail-loading', view.loadingText));
   }
   try {
     const node = await fragment(view, entry);
     if (token !== view.pending) return;
-    view.title.textContent = node.querySelector('.detail-title')?.textContent?.trim() || 'Details';
+    view.title.textContent = node.querySelector('.detail-title')?.textContent?.trim() || view.titleFallback;
     view.body.replaceChildren(node);
     view.body.scrollTop = 0;
     view.title.focus();
   } catch {
     if (token !== view.pending) return;
-    view.title.textContent = 'Details';
-    view.body.replaceChildren(message('detail-error', 'This entry could not be loaded. Please try again.'));
+    view.title.textContent = view.titleFallback;
+    view.body.replaceChildren(message('detail-error', view.errorText));
     view.title.focus();
   }
 }

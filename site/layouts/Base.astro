@@ -16,7 +16,7 @@ const isHome = Astro.url.pathname === localeUrl(locale, '/');
 ---
 <html lang={locale} class:list={[{ onepager: isHome }]}>
   <head>
-    <Head title={title} description={description} />
+    <Head title={title} description={description} locale={locale} />
   </head>
   <body>
     <IconSprite />
@@ -29,8 +29,8 @@ const isHome = Astro.url.pathname === localeUrl(locale, '/');
       </div>
     </div>
     <Footer home={isHome} locale={locale} />
-    <CookieConsent gaId="G-FDNGDW6G09" privacyUrl={localeUrl(locale, '/privacy/')} />
-    <SiteSearch searchUrl={localeUrl(locale, '/search.json')} />
+    <CookieConsent gaId="G-FDNGDW6G09" privacyUrl={localeUrl(locale, '/privacy/')} locale={locale} />
+    <SiteSearch searchUrl={localeUrl(locale, '/search.json')} locale={locale} />
     <DetailModal locale={locale} />
     <slot name="global" />
     <script>

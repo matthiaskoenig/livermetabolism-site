@@ -74,7 +74,7 @@ const activity = activityRows(snapshot, repos);
       );
     })}
   </div>
-  <SoftwareLive fetchedAt={snapshot.fetchedAt} />
+  <SoftwareLive fetchedAt={snapshot.fetchedAt} locale={locale} />
 
   <h2 id="funding">Funding</h2>
   <TagFilter client:idle id="funding" tags={tagFilterEntries} target="funding-grid" />

@@ -8,6 +8,9 @@
 // bundled script block, not a Vue island (see CLAUDE.md): the strip is static
 // HTML and only its text nodes change.
 import { relativeDate } from '../lib/githubRows';
+import { uiFor } from '../lib/i18n/catalog';
+import { fmt } from '../lib/i18n/format';
+import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
 import { stripValues } from '../lib/scholarRows';
 import type { Scholar } from '../lib/scholarSchema';
 
@@ -15,42 +18,45 @@ interface Props {
   scholar: Scholar;
   /** Peer-reviewed entries of `data/publications.yml` (not a Scholar number). */
   publications: number;
+  locale?: Locale;
 }
-const { scholar, publications } = Astro.props;
+const { scholar, publications, locale = DEFAULT_LOCALE } = Astro.props;
+const { t } = uiFor(locale);
 const v = stripValues(scholar);
 // a build that could not read the snapshot renders emptyScholar()'s epoch and
 // zeros: hide the metric figures and let the browser fill them in
 const known = v.known;
 const num = (n: number) => (known ? String(n) : '');
-const since = known ? `since ${v.sinceYear}` : 'since';
+const sinceTemplate = t('scholar.since');
+const since = known ? fmt(sinceTemplate, { year: v.sinceYear }) : t('scholar.sinceUnknown');
 ---
-<div class="scholar-strip" data-scholar-strip>
+<div class="scholar-strip" data-scholar-strip data-since-template={sinceTemplate}>
   <div class="scholar-figure" data-scholar-metric hidden={!known}>
     <span class="scholar-value" data-field="citations">{num(v.citations)}</span>
-    <span class="scholar-label">Citations</span>
+    <span class="scholar-label">{t('scholar.citations')}</span>
     <span class="scholar-since"><span data-since-year>{since}</span>: <span data-field="citations-since">{num(v.citationsSince)}</span></span>
   </div>
   <div class="scholar-figure" data-scholar-metric hidden={!known}>
     <span class="scholar-value" data-field="h-index">{num(v.hIndex)}</span>
-    <span class="scholar-label">h-index</span>
+    <span class="scholar-label">{t('scholar.hIndex')}</span>
     <span class="scholar-since"><span data-since-year>{since}</span>: <span data-field="h-index-since">{num(v.hIndexSince)}</span></span>
   </div>
   <div class="scholar-figure" data-scholar-metric hidden={!known}>
     <span class="scholar-value" data-field="i10-index">{num(v.i10Index)}</span>
-    <span class="scholar-label">i10-index</span>
+    <span class="scholar-label">{t('scholar.i10Index')}</span>
     <span class="scholar-since"><span data-since-year>{since}</span>: <span data-field="i10-index-since">{num(v.i10IndexSince)}</span></span>
   </div>
   <div class="scholar-figure">
     <span class="scholar-value">{publications}</span>
-    <span class="scholar-label">Publications</span>
-    <span class="scholar-since">peer-reviewed</span>
+    <span class="scholar-label">{t('scholar.publications')}</span>
+    <span class="scholar-since">{t('scholar.peerReviewed')}</span>
   </div>
 </div>
 
 <p class="scholar-note" data-scholar-note>
-  Citation metrics from
-  <a href={v.href} target="_blank" rel="noopener noreferrer">Google Scholar</a><span data-scholar-name hidden={!v.name}> (<span data-field="profile-name">{v.name}</span>)</span>, last update
-  <time data-field="updated" data-empty="none yet" data-iso={v.fetchedAt} datetime={known ? v.fetchedAt : undefined}>{known ? relativeDate(v.fetchedAt) : 'none yet'}</time>.
+  {t('scholar.citationMetricsFrom')}
+  <a href={v.href} target="_blank" rel="noopener noreferrer">Google Scholar</a><span data-scholar-name hidden={!v.name}> (<span data-field="profile-name">{v.name}</span>)</span>, {t('scholar.lastUpdate')}
+  <time data-field="updated" data-empty={t('scholar.none')} data-iso={v.fetchedAt} datetime={known ? v.fetchedAt : undefined}>{known ? relativeDate(v.fetchedAt) : t('scholar.none')}</time>.
 </p>
 
 <script>

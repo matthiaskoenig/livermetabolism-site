@@ -2,35 +2,49 @@
 // Site search: plain TypeScript, no Vue island (this is on every page).
 // The dialog is static markup; opening/closing goes through the shared
 // modal router (the navbar button carries data-modal-target), and the
-// index is fetched lazily the first time the dialog opens.
-interface Props { searchUrl: string }
-const { searchUrl } = Astro.props;
+// index is fetched lazily the first time the dialog opens. The strings its
+// bundled script needs at runtime (hint/unavailable/empty) travel through
+// data- attributes on the dialog root, matching data-search-url - the
+// catalog itself is build-time only and cannot be imported into browser code.
+import { uiFor } from '../lib/i18n/catalog';
+import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
+
+interface Props { searchUrl: string; locale?: Locale }
+const { searchUrl, locale = DEFAULT_LOCALE } = Astro.props;
+const { t } = uiFor(locale);
 const MODAL_ID = 'site-search-modal';
 ---
-<dialog id={MODAL_ID} class="modal modal-centered" aria-labelledby={`${MODAL_ID}-label`} data-search-url={searchUrl}>
+<dialog id={MODAL_ID} class="modal modal-centered" aria-labelledby={`${MODAL_ID}-label`}
+  data-search-url={searchUrl}
+  data-hint={t('search.hint')}
+  data-unavailable={t('search.unavailable')}
+  data-empty={t('search.empty')}>
   <div class="modal-header">
-    <h5 class="modal-title" id={`${MODAL_ID}-label`}>Search</h5>
-    <button type="button" class="btn-close" data-modal-close aria-label="Close"></button>
+    <h5 class="modal-title" id={`${MODAL_ID}-label`}>{t('search.open')}</h5>
+    <button type="button" class="btn-close" data-modal-close aria-label={t('search.close')}></button>
   </div>
   <div class="modal-body">
     <input type="search" id="site-search-input" class="form-control site-search-input"
-      placeholder="Search publications, people, projects, software, news, ..." autocomplete="off" aria-label="Search" />
+      placeholder={t('search.placeholder')} autocomplete="off" aria-label={t('search.open')} />
     <div id="site-search-results" class="site-search-results">
-      <p class="site-search-hint">Start typing to search publications, people, projects, software, news, and more.</p>
+      <p class="site-search-hint">{t('search.hint')}</p>
     </div>
   </div>
 </dialog>
 
 <script>
+  import { fmt } from '../lib/i18n/format';
   import { iconSvg } from '../lib/icons';
   import { closeModal, openModal } from '../lib/modals';
   import { rankRecords, SEARCH_TYPE_ICONS, type SearchRecord } from '../lib/search';
 
   const MODAL_ID = 'site-search-modal';
-  const HINT = 'Start typing to search publications, people, projects, software, news, and more.';
 
   function init(dialog: HTMLElement, input: HTMLInputElement, list: HTMLElement): void {
     const searchUrl = dialog.dataset.searchUrl ?? '';
+    const HINT = dialog.dataset.hint ?? '';
+    const UNAVAILABLE = dialog.dataset.unavailable ?? '';
+    const EMPTY = dialog.dataset.empty ?? '';
     let records: SearchRecord[] | null = null;
     let failed = false;
     let loading: Promise<void> | null = null;
@@ -78,10 +92,10 @@ const MODAL_ID = 'site-search-modal';
     function render(): void {
       const query = input.value.trim();
       list.replaceChildren();
-      if (failed) { list.append(message('site-search-empty', 'Search is temporarily unavailable.')); return; }
+      if (failed) { list.append(message('site-search-empty', UNAVAILABLE)); return; }
       if (!query) { list.append(message('site-search-hint', HINT)); return; }
       const found = records ? rankRecords(records, query) : [];
-      if (found.length === 0) { list.append(message('site-search-empty', `No results for “${query}”.`)); return; }
+      if (found.length === 0) { list.append(message('site-search-empty', fmt(EMPTY, { query }))); return; }
       list.append(...found.map(resultLink));
     }
 
