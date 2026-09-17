@@ -632,6 +632,48 @@ type.software:
 type.publication:
   sha: '0000000000000000'
   text: Publikation
+searchType.publication:
+  sha: '0000000000000000'
+  text: Publikation
+searchType.presentation:
+  sha: '0000000000000000'
+  text: Vortrag
+searchType.poster:
+  sha: '0000000000000000'
+  text: Poster
+searchType.abstract:
+  sha: '0000000000000000'
+  text: Abstract
+searchType.project:
+  sha: '0000000000000000'
+  text: Projekt
+searchType.software:
+  sha: '0000000000000000'
+  text: Software
+searchType.funding:
+  sha: '0000000000000000'
+  text: Förderung
+searchType.editorialRole:
+  sha: '0000000000000000'
+  text: Herausgeberschaft
+searchType.news:
+  sha: '0000000000000000'
+  text: Aktuelles
+searchType.meeting:
+  sha: '0000000000000000'
+  text: Tagung
+searchType.teaching:
+  sha: '0000000000000000'
+  text: Lehre
+searchType.person:
+  sha: '0000000000000000'
+  text: Person
+searchType.researchArea:
+  sha: '0000000000000000'
+  text: Forschungsbereich
+searchType.page:
+  sha: '0000000000000000'
+  text: Seite
 llms.researchAreas:
   sha: '0000000000000000'
   text: Forschungsbereiche

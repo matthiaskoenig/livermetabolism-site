@@ -75,7 +75,7 @@ const MODAL_ID = 'site-search-modal';
       icon.className = 'icon-wrap';
       // iconSvg only emits <use> references to the page's sprite and rejects
       // names outside its allow-list, so this markup never carries record data
-      icon.insertAdjacentHTML('beforeend', iconSvg(SEARCH_TYPE_ICONS[record.type] ?? 'file-o'));
+      icon.insertAdjacentHTML('beforeend', iconSvg(SEARCH_TYPE_ICONS[record.kind] ?? 'file-o'));
       const body = document.createElement('span');
       body.className = 'site-search-result-body';
       const title = document.createElement('span');

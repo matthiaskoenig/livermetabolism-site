@@ -580,3 +580,12 @@ test('a detail modal opens on the German tree', async ({ page }) => {
   await expect(page.locator('#detail-modal .modal-title')).not.toBeEmpty();
   expect(errors).toEqual([]);
 });
+
+test('the German search index exists and drives the dialog', async ({ page }) => {
+  await page.goto('de/');
+  await page.keyboard.press('/');
+  const dialog = page.locator('dialog#site-search-modal');
+  await expect(dialog).toHaveAttribute('open', '');
+  await page.locator('#site-search-input').fill('König');
+  await expect(page.locator('.site-search-result').first()).toBeVisible();
+});

@@ -1,10 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import { rankRecords } from './search';
+import { rankRecords, SEARCH_TYPE_ICONS } from './search';
 
 const recs = [
-  { type: 'Publication', title: 'Liver glucose model', text: 'hepatic metabolism', url: '/a' },
-  { type: 'Person', title: 'Jane Doe', text: 'works on liver models', url: '/b' },
-  { type: 'Project', title: 'Kidney twin', text: 'nothing here', url: '/c' },
+  { kind: 'publication', type: 'Publication', title: 'Liver glucose model', text: 'hepatic metabolism', url: '/a' },
+  { kind: 'person', type: 'Person', title: 'Jane Doe', text: 'works on liver models', url: '/b' },
+  { kind: 'project', type: 'Project', title: 'Kidney twin', text: 'nothing here', url: '/c' },
 ];
 
 describe('rankRecords', () => {
@@ -13,9 +13,9 @@ describe('rankRecords', () => {
   // exercised here through the ranking and filtering it drives.
   it('ranks title-prefix above title-contains above text-only', () => {
     const items = [
-      { type: 'A', title: 'zzz', text: 'mentions liver in the body', url: '/text' },
-      { type: 'B', title: 'MetaLiver toolkit', text: '', url: '/contains' },
-      { type: 'C', title: 'Liver glucose model', text: '', url: '/prefix' },
+      { kind: 'a', type: 'A', title: 'zzz', text: 'mentions liver in the body', url: '/text' },
+      { kind: 'b', type: 'B', title: 'MetaLiver toolkit', text: '', url: '/contains' },
+      { kind: 'c', type: 'C', title: 'Liver glucose model', text: '', url: '/prefix' },
     ];
     expect(rankRecords(items, 'liver').map((r) => r.url)).toEqual(['/prefix', '/contains', '/text']);
   });
@@ -28,5 +28,13 @@ describe('rankRecords', () => {
     expect(rankRecords(recs, 'liver').map((r) => r.url)).toEqual(['/a', '/b']);
     expect(rankRecords(recs, '  ')).toEqual([]);
     expect(rankRecords(recs, 'liver', 1)).toHaveLength(1);
+  });
+});
+
+describe('SEARCH_TYPE_ICONS', () => {
+  it('has an icon for every search kind', () => {
+    const kinds = ['publication', 'presentation', 'poster', 'abstract', 'project', 'software',
+      'funding', 'editorialRole', 'news', 'meeting', 'teaching', 'person', 'researchArea', 'page'];
+    for (const kind of kinds) expect(SEARCH_TYPE_ICONS[kind], kind).toBeTruthy();
   });
 });

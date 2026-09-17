@@ -4,14 +4,17 @@ import type { TFn } from './i18n/catalog';
  * The site's static pages with a one-line description each — the records
  * the site search indexes as "Page" (`search.json.ts`) and the page list of
  * `/llms.txt` (`llms.ts`). Paths are site paths without the base; callers
- * pass them through `url()` or an absolute-URL builder. `legal` marks the
- * Impressum and privacy pages, which `llms.txt` lists as optional.
+ * pass them through `url()`/`urlFor(locale)` or an absolute-URL builder.
+ * `legal` marks the Impressum and privacy pages, which `llms.txt` lists as
+ * optional.
  *
- * Neither `search.json.ts` nor `llms.ts`'s endpoints are localised (they are
- * single global files, not under `[...locale]`, see CLAUDE.md), so `t` is
- * always the English translator today - `sitePages()` still takes it, rather
- * than a hardcoded list, so these titles and descriptions stay in the one
- * catalog instead of a second, independently maintained copy.
+ * `search.json.ts` is under `[...locale]` and calls this once per locale
+ * with that locale's translator, so its titles/descriptions come out in the
+ * page's own language; `llms.ts`'s endpoints are single global files, not
+ * localised (see CLAUDE.md), so they always pass the English translator.
+ * `sitePages()` takes `t` either way, rather than a hardcoded list, so these
+ * strings stay in the one catalog instead of a second, independently
+ * maintained copy.
  */
 export interface SitePage {
   title: string;
