@@ -1,0 +1,63 @@
+# SOURCE. Authored in German; the English rendering is generated from
+# this file by the translate-de skill (reverse direction). Edit the
+# German here - this is hand-authored source, not AUTO-GENERATED like
+# every other catalog under i18n/de/.
+heading:
+  text: Impressum
+providerHeading:
+  text: Angaben gemäß § 5 TMG, § 18 Abs. 2 MStV
+addressName:
+  text: Prof. Dr. rer. nat. Matthias König
+addressInstitution:
+  text: University Hospital Schleswig-Holstein, Campus Lübeck
+addressDepartment:
+  text: First Department of Medicine
+addressStreet:
+  text: Ratzeburger Allee 160
+addressCity:
+  text: 23562 Lübeck, Germany
+contactHeading:
+  text: Kontakt
+contactPhone:
+  text: 'Telefon: +49 451 3101-7845'
+contactEmailLabel:
+  text: 'E-Mail:'
+contactEmail:
+  text: matthias.koenig@uni-luebeck.de
+responsibleHeading:
+  text: Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
+responsibleText:
+  text: Prof. Dr. rer. nat. Matthias König (Anschrift wie oben)
+disclaimerHeading:
+  text: Haftungsausschluss
+liabilityContentHeading:
+  text: Haftung für Inhalte
+liabilityContentText:
+  text: >-
+    Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit,
+    Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden. Als
+    Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den
+    allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch
+    nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach
+    Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+liabilityLinksHeading:
+  text: Haftung für Links
+liabilityLinksText:
+  text: >-
+    Dieses Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss
+    haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die
+    Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten
+    verantwortlich. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist ohne konkrete
+    Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen
+    werden derartige Links umgehend entfernt.
+copyrightHeading:
+  text: Urheberrecht
+copyrightText:
+  text: >-
+    Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem
+    deutschen Urheberrecht. Beiträge Dritter (z. B. Publikationsabbildungen, Fotos) sind als solche
+    gekennzeichnet. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung
+    außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen
+    Rechteinhabers.
+privacyLinkText:
+  text: Datenschutzerklärung

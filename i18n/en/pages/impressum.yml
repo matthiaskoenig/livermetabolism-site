@@ -1,0 +1,10 @@
+# PARTIAL SEED - Task 17. i18n/de/pages/impressum.yml is the legal source;
+# this file is the generated English rendering and is normally produced in
+# full by the translate-de skill run in reverse (Task 18). Only the two
+# keys covered by site/lib/i18n/pages.test.ts are seeded here so that test
+# passes ahead of Task 18; the remaining keys still fall back to the
+# German source via loadPage() until Task 18 fills this file in completely.
+heading:
+  text: Legal Notice
+bindingNotice:
+  text: This is a translation for convenience. Only the German version is legally binding.
