@@ -24,10 +24,14 @@ test('a publication title opens its detail modal, with related rows', async ({ p
   // the title of the shell is the fragment's own title
   await expect(dialog.locator('.modal-title')).toHaveText((await dialog.locator('.detail-title').innerText()).trim());
   expect(await dialog.locator('.related-row').count()).toBeGreaterThan(0);
-  // Escape closes it and the hash goes away again
+  // Escape closes it and the hash goes away again. The hash is cleared by
+  // the dialog's native 'close' event handler (detailModal.ts), which can
+  // fire a tick after the `open` attribute itself is removed - an
+  // immediate, non-retrying hash check here was measurably flaky (~30%),
+  // so assert through toHaveURL, which polls like the attribute check above.
   await page.keyboard.press('Escape');
   await expect(dialog).not.toHaveAttribute('open', '');
-  expect(new URL(page.url()).hash).toBe('');
+  await expect(page).toHaveURL(/^[^#]*$/);
   expect(errors).toEqual([]);
 });
 
