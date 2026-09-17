@@ -400,7 +400,7 @@
       padding: 0 0.5em;
 
       .fa {
-        display: block;
+        display: inline-block;
         font-size: 1.8em;
         color: var(--color-success);
         margin-bottom: 0.2em;
@@ -551,7 +551,7 @@
     color: #fff;
 
     .fa {
-      display: block;
+      display: inline-block;
       font-size: 2.6em;
       margin-bottom: 0.2em;
     }
