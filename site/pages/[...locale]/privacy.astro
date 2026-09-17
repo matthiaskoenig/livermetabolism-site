@@ -10,7 +10,7 @@ const u = urlFor(locale);
 // see loadPage() and i18n/TRANSLATION.md's "The legal pages" section.
 const page = loadPage(locale, 'privacy');
 ---
-<Base title="Datenschutzerklärung" sectionid="privacy" locale={locale}>
+<Base title={page.heading} sectionid="privacy" locale={locale}>
   <h2 id="privacy">{page.heading}</h2>
   {locale !== 'de' && <p class="legal-notice">{page.bindingNotice}</p>}
 
@@ -30,11 +30,11 @@ const page = loadPage(locale, 'privacy');
 
   <h3>{page.analyticsHeading}</h3>
   <p>{page.analyticsIntro}</p>
-  <p>{page.analyticsCookiesText} <a href="https://support.google.com/analytics/answer/11598602?hl=de" target="_blank" rel="noopener noreferrer">{page.analyticsCookiesLinkText}</a>.</p>
+  <p>{page.analyticsCookiesText} <a href={`https://support.google.com/analytics/answer/11598602?hl=${locale}`} target="_blank" rel="noopener noreferrer">{page.analyticsCookiesLinkText}</a>.</p>
   <p>{page.analyticsRevokeIntro}</p>
   <p><button type="button" id="cookie-consent-reset" class="btn btn-outline-secondary btn-sm">{page.consentResetLabel}</button></p>
-  <p>{page.analyticsRevokeText} <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank" rel="noopener noreferrer">{page.analyticsOptoutLinkText}</a> {page.analyticsRevokeAfter}</p>
-  <p>{page.analyticsMoreInfoText} <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer">{page.googlePrivacyLinkText}</a>.</p>
+  <p>{page.analyticsRevokeText} <a href={`https://tools.google.com/dlpage/gaoptout?hl=${locale}`} target="_blank" rel="noopener noreferrer">{page.analyticsOptoutLinkText}</a> {page.analyticsRevokeAfter}</p>
+  <p>{page.analyticsMoreInfoText} <a href={`https://policies.google.com/privacy?hl=${locale}`} target="_blank" rel="noopener noreferrer">{page.googlePrivacyLinkText}</a>.</p>
 
   <p>{page.consentStorageText}</p>
 
@@ -42,13 +42,13 @@ const page = loadPage(locale, 'privacy');
   <p>{page.externalResourcesText}</p>
 
   <h4>{page.fontsHeading}</h4>
-  <p>{page.fontsTextBefore} <code>fonts.googleapis.com</code> {page.fontsAnd} <code>fonts.gstatic.com</code>, {page.fontsTextAfter} <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer">{page.googlePrivacyLinkText}</a>.</p>
+  <p>{page.fontsTextBefore} <code>fonts.googleapis.com</code> {page.fontsAnd} <code>fonts.gstatic.com</code>, {page.fontsTextAfter} <a href={`https://policies.google.com/privacy?hl=${locale}`} target="_blank" rel="noopener noreferrer">{page.googlePrivacyLinkText}</a>.</p>
 
   <h4>{page.githubHeading}</h4>
   <p>{page.githubTextBefore} <code>raw.githubusercontent.com</code> {page.githubTextAfter} <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">{page.githubPrivacyLinkText}</a>.</p>
 
   <h4>{page.youtubeHeading}</h4>
-  <p>{page.youtubeTextBefore} <code>img.youtube.com</code> {page.youtubeTextMid} <code>www.youtube.com</code> {page.youtubeOr} <code>www.youtube-nocookie.com</code> {page.youtubeTextAfter} <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer">{page.googlePrivacyLinkText}</a>.</p>
+  <p>{page.youtubeTextBefore} <code>img.youtube.com</code> {page.youtubeTextMid} <code>www.youtube.com</code> {page.youtubeOr} <code>www.youtube-nocookie.com</code> {page.youtubeTextAfter} <a href={`https://policies.google.com/privacy?hl=${locale}`} target="_blank" rel="noopener noreferrer">{page.googlePrivacyLinkText}</a>.</p>
 
   <h4>{page.externalLinksParaHeading}</h4>
   <p>{page.externalLinksText}</p>
