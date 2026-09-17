@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { countPeerReviewed, homeFigures, type HomeStatsInput } from './homeStats';
 import { uiFor } from './i18n/catalog';
+import { urlFor } from './i18n/routes';
 
 const { t } = uiFor('en');
 
@@ -119,5 +120,12 @@ describe('homeFigures', () => {
 
   it('gives every figure a plain integer value', () => {
     for (const f of homeFigures(input, t)) expect(String(f.value)).toMatch(/^\d+$/);
+  });
+
+  it('builds every href through the given locale-bound URL builder, not the bare English one', () => {
+    const { t: tDe } = uiFor('de');
+    const figures = homeFigures(input, tDe, urlFor('de'));
+    expect(figures).toHaveLength(6);
+    for (const f of figures) expect(f.href).toMatch(/^\/de\//);
   });
 });
