@@ -21,8 +21,8 @@ import LanguageSwitch from './LanguageSwitch.astro';
 import { uiFor } from '../lib/i18n/catalog';
 import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
 
-interface Props { locale?: Locale }
-const { locale = DEFAULT_LOCALE } = Astro.props;
+interface Props { locale?: Locale; langSwitchPath?: string }
+const { locale = DEFAULT_LOCALE, langSwitchPath } = Astro.props;
 const { t } = uiFor(locale);
 const MODAL_ID = 'detail-modal';
 ---
@@ -33,7 +33,7 @@ const MODAL_ID = 'detail-modal';
   <div class="modal-header">
     <button type="button" class="modal-back" aria-label={t('detail.backLabel')} hidden>&larr; {t('detail.back')}</button>
     <h5 class="modal-title" id={`${MODAL_ID}-label`}></h5>
-    <LanguageSwitch locale={locale} />
+    <LanguageSwitch locale={locale} path={langSwitchPath} />
     <button type="button" class="btn-close" data-modal-close aria-label={t('detail.close')}></button>
   </div>
   <div class="modal-body"></div>
