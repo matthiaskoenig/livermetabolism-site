@@ -6,7 +6,7 @@ matthias_koenig:
   role:
     sha: 05b509640d6a7098
     text:
-      - 'Gruppenleiter'
+      - 'Gruppenleiterin oder Gruppenleiter'
 mariia_myshkina:
   description:
     sha: 755f5d3a71ba439d
@@ -70,7 +70,7 @@ minjun_kim:
 jessica_cruz:
   description:
     sha: 93791bf355e224d7
-    text: 'Jessica Cruz entwickelt ein physiologiebasiertes pharmakokinetisches (PBPK) Modell des Leukotrienrezeptor-Antagonisten Montelukast, um dessen Resorption, Verteilung, Metabolismus und Ausscheidung besser zu verstehen. Das Projekt konzentriert sich auf die interindividuelle Variabilität der Pharmakokinetik von Montelukast, insbesondere den Einfluss des hepatischen Metabolismus, die CYP2C9/CYP3A4-Variabilität, Arzneimittelwechselwirkungen und altersabhängige Unterschiede zwischen pädiatrischen und erwachsenen Populationen.'
+    text: 'Jessica Cruz entwickelt ein physiologiebasiertes pharmakokinetisches (PBPK) Modell des Leukotrienrezeptor-Antagonisten Montelukast, um dessen Resorption, Verteilung, Metabolismus und Ausscheidung besser zu verstehen. Das Projekt konzentriert sich auf die interindividuelle Variabilität der Pharmakokinetik von Montelukast, insbesondere den Einfluss des hepatischen Metabolismus, die CYP2C9/CYP3A4-Variabilität, Arzneimittelinteraktionen und altersabhängige Unterschiede zwischen pädiatrischen und erwachsenen Populationen.'
   role:
     sha: 8053cc46f9c27c40
     text:
@@ -78,7 +78,7 @@ jessica_cruz:
 shelee_bedon:
   description:
     sha: 3be07b194e65e51a
-    text: 'Shelee entwickelt ein physiologiebasiertes pharmakokinetisches (PBPK) Modell des Multikinase-Hemmers Lenvatinib, um dessen Resorption, Verteilung, Metabolismus und Ausscheidung besser zu verstehen. Das Projekt konzentriert sich auf die Charakterisierung der interindividuellen Variabilität des Therapieansprechens, mit besonderem Schwerpunkt auf dem hepatischen Metabolismus, Arzneimittelwechselwirkungen und dem Einfluss der Leberfunktion bei Patientinnen und Patienten mit hepatozellulärem Karzinom.'
+    text: 'Shelee entwickelt ein physiologiebasiertes pharmakokinetisches (PBPK) Modell des Multikinase-Hemmers Lenvatinib, um dessen Resorption, Verteilung, Metabolismus und Ausscheidung besser zu verstehen. Das Projekt konzentriert sich auf die Charakterisierung der interindividuellen Variabilität des Therapieansprechens, mit besonderem Schwerpunkt auf dem hepatischen Metabolismus, Arzneimittelinteraktionen und dem Einfluss der Leberfunktion bei Patientinnen und Patienten mit hepatozellulärem Karzinom.'
   role:
     sha: 16e6c7046607221b
     text:
@@ -331,7 +331,7 @@ sankha_das:
   role:
     sha: eb5c662b19a596cb
     text:
-      - 'Google Summer of Code-Studentin oder -Student'
+      - 'Google-Summer-of-Code-Studentin oder -Student'
       - 'Forschungspraktikum'
 xenia_petukhova:
   description:
@@ -352,7 +352,7 @@ zahra_bahri:
 florian_bartsch:
   description:
     sha: 2f4e871f68d675b0
-    text: 'Florian arbeitet an einem physiologiebasierten Modell der Statin-Clearance. Zentrale Fragestellungen sind die Auswirkungen von Statinen (Atorvastatin und Simvastatin) auf die Cholesterin-Plasmaspiegel und Arzneimittelwechselwirkungen.'
+    text: 'Florian arbeitet an einem physiologiebasierten Modell der Statin-Clearance. Zentrale Fragestellungen sind die Auswirkungen von Statinen (Atorvastatin und Simvastatin) auf die Cholesterin-Plasmaspiegel und Arzneimittelinteraktionen.'
   role:
     sha: 85d5a3ccabfd09a1
     text:
@@ -448,7 +448,7 @@ hemant_yadav:
   role:
     sha: 458fcd413c59da1c
     text:
-      - 'Google Summer of Code-Studentin oder -Student'
+      - 'Google-Summer-of-Code-Studentin oder -Student'
 hemil_panchiwala:
   description:
     sha: 3276ad37f49cb88b
@@ -456,7 +456,7 @@ hemil_panchiwala:
   role:
     sha: 458fcd413c59da1c
     text:
-      - 'Google Summer of Code-Studentin oder -Student'
+      - 'Google-Summer-of-Code-Studentin oder -Student'
 kaustubh_trivedi:
   description:
     sha: 3b18de87b7bc9e68
@@ -464,7 +464,7 @@ kaustubh_trivedi:
   role:
     sha: 458fcd413c59da1c
     text:
-      - 'Google Summer of Code-Studentin oder -Student'
+      - 'Google-Summer-of-Code-Studentin oder -Student'
 patrick_pett:
   description:
     sha: 7b39a3206eac9a41

@@ -70,7 +70,7 @@ montelukast:
     text: 'PBPK-Modell von Montelukast'
   abstract:
     sha: 37c2dc224b51a0af
-    text: 'Ein PBPK-Modell des Leukotrienrezeptor-Antagonisten Montelukast, das die interindividuelle Variabilität durch den hepatischen CYP2C9/CYP3A4-Stoffwechsel, Arzneimittelwechselwirkungen und altersbedingte Unterschiede untersucht.'
+    text: 'Ein PBPK-Modell des Leukotrienrezeptor-Antagonisten Montelukast, das die interindividuelle Variabilität durch den hepatischen CYP2C9/CYP3A4-Stoffwechsel, Arzneimittelinteraktionen und altersbedingte Unterschiede untersucht.'
 protein_distribution:
   title:
     sha: cf7dde10303e301e
