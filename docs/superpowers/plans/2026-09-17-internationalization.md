@@ -633,29 +633,16 @@ with `import LanguageSwitch from './LanguageSwitch.astro';` added to the frontma
 In `site/styles/global.css`, in the `components` layer, beside the other navbar rules:
 
 ```css
-  .lang-switch {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.125rem;
-    margin-right: 0.5rem;
-  }
+  .lang-switch { display: inline-flex; align-items: center; gap: 0.125rem; margin-right: 0.5rem; }
   .lang-switch-link {
-    padding: 0.125rem 0.375rem;
-    border-radius: var(--radius-sm);
-    font-size: 0.8125rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    color: var(--color-navbar-fg-muted);
-    text-decoration: none;
+    padding: 0.125rem 0.375rem; border-radius: 0.375rem; font-size: 0.8125rem;
+    font-weight: 600; letter-spacing: 0.02em; color: rgba(255, 255, 255, 0.55); text-decoration: none;
   }
-  .lang-switch-link:hover { color: var(--color-navbar-fg); }
-  .lang-switch-link.active {
-    color: var(--color-navbar-fg);
-    background: var(--color-navbar-active-bg);
-  }
+  .lang-switch-link:hover, .lang-switch-link:focus { color: var(--color-success); }
+  .lang-switch-link.active { color: #fff; background: rgba(255, 255, 255, 0.1); }
 ```
 
-Use the token names that already exist in `global.css` for the navbar; if a token above does not exist, substitute the one the sibling `.nav-link` rules use rather than inventing a new one.
+These values are the navbar's existing idiom, verified against `global.css`: `.nav-link` uses literal `#fff` with `var(--color-success)` on hover/focus, and `.navbar-toggler` uses `rgba(255, 255, 255, 0.55)` with `border-radius: 0.375rem` and a `rgba(255, 255, 255, 0.1)` border. **Do not** use `--color-navbar-fg`, `--color-navbar-fg-muted`, `--color-navbar-active-bg` or `--radius-sm`: none of them exist, and an undefined custom property would leave the switch unstyled and effectively invisible against the dark navbar.
 
 - [ ] **Step 4: Write the e2e test**
 
