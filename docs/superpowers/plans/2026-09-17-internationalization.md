@@ -679,7 +679,8 @@ test('the language switch carries an open detail modal across', async ({ page })
   const hash = new URL(page.url()).hash;
   expect(hash).not.toBe('');
   await page.locator('.lang-switch-link[lang="de"]').click();
-  await expect(page).toHaveURL(new RegExp(`/de/people/${hash.replace('#', '#')}$`.replace(/[.*+?^${}()|[\]\\]/g, (m) => (m === '#' ? m : `\\${m}`))));
+  await expect(page).toHaveURL(/\/de\/people\//);
+  expect(new URL(page.url()).hash).toBe(hash);
   await expect(page.locator('#detail-modal')).toBeVisible();
 });
 ```
@@ -1131,7 +1132,7 @@ git commit --author="matthiaskoenig <konigmatt@googlemail.com>" -m "Add the type
 - [ ] **Step 1: Capture the current English output as a baseline**
 
 ```bash
-npm run build && cp -r dist /tmp/dist-before-extraction
+npm run build && cp -r dist .superpowers/sdd/2026-09-17-internationalization/dist-baseline
 ```
 
 - [ ] **Step 2: Add the keys**
@@ -1213,7 +1214,7 @@ Do the same for `ScholarStats.astro`, `PublicationsOrder.astro` and `SoftwareLiv
 
 ```bash
 npm run build
-diff -r /tmp/dist-before-extraction dist --exclude='*.map' | head -40
+diff -r .superpowers/sdd/2026-09-17-internationalization/dist-baseline dist --exclude='*.map' | head -40
 ```
 
 Expected: the only differences are the consent em dash becoming a plain dash, and the `/de/` tree now carrying German nav labels. Any other English difference is a transcription error in a key. Fix it before continuing.
@@ -1377,7 +1378,7 @@ Pages to convert: all 13, including the `quickLinks` and per-tag link-card array
 
 ```bash
 npm run build
-diff -r /tmp/dist-before-extraction dist --exclude='*.map' | grep -v '^Only in dist: de' | head -40
+diff -r .superpowers/sdd/2026-09-17-internationalization/dist-baseline dist --exclude='*.map' | grep -v '^Only in dist: de' | head -40
 ```
 
 Expected: no English differences.
@@ -1402,6 +1403,7 @@ git commit --author="matthiaskoenig <konigmatt@googlemail.com>" -m "Move the pag
 - Create: `site/lib/i18n/dates.ts`, `site/lib/i18n/dates.test.ts`
 - Modify: `site/lib/llms.ts`, `details.ts`, `githubRows.ts`, `chartOptions.ts`, `networkOptions.ts`, `homeStats.ts`, `search.ts`, `detailModal.ts`, `scholarRows.ts`, `githubStats.ts`, `publicationRows.ts`, `sitePages.ts`
 - Modify: `site/pages/site.webmanifest.ts`
+- Modify: `site/lib/i18n/ui.en.ts` **and** `i18n/de/ui.yml` - every English key this task adds needs its German counterpart in the **same commit**, because `loadUi()` throws on a key-set mismatch and would otherwise fail the build.
 
 **Interfaces:**
 - Consumes: `TFn`, `fmt`.
@@ -1483,7 +1485,7 @@ Delete the duplicated `MONTHS` from `githubRows.ts` and `chartOptions.ts` and im
 
 ```bash
 npm run check && npm test && npm run build
-diff -r /tmp/dist-before-extraction dist --exclude='*.map' | grep -v '^Only in dist: de' | head -40
+diff -r .superpowers/sdd/2026-09-17-internationalization/dist-baseline dist --exclude='*.map' | grep -v '^Only in dist: de' | head -40
 ```
 
 Expected: no English differences.
@@ -2157,16 +2159,11 @@ const rowsFor = (table: string, rows: Record<string, unknown>[]) =>
   table === 'tags' ? rows.map((r) => ({ ...r, id: r.tag })) : rows;
 ```
 
-- [ ] **Step 6: Wire it up**
+- [ ] **Step 6: Wire up the npm script only**
 
 In `package.json` scripts: `"i18n:check": "node scripts/i18n-check.ts"`.
 
-In `.github/workflows/site.yml`, in the `build` job, add a step before `astro build`:
-
-```yaml
-      - name: Check translation catalogs
-        run: npm run i18n:check
-```
+Do **not** touch `.github/workflows/site.yml` in this task. The check exits non-zero until the catalogs exist in Task 16, and wiring a deliberately-failing step into CI would leave the branch red across Tasks 14 and 15 for no signal. Task 16 adds the CI step once it passes.
 
 - [ ] **Step 7: Run it**
 
@@ -2176,7 +2173,7 @@ Expected: exit 1, listing every missing entry (no data catalogs exist yet). That
 - [ ] **Step 8: Commit**
 
 ```bash
-git add scripts/i18n-check.ts scripts/lib/i18n-check.ts scripts/lib/i18n-check.test.ts package.json .github/workflows/site.yml
+git add scripts/i18n-check.ts scripts/lib/i18n-check.ts scripts/lib/i18n-check.test.ts package.json
 git commit --author="matthiaskoenig <konigmatt@googlemail.com>" -m "Add npm run i18n:check to detect stale German catalogs"
 ```
 
@@ -2468,7 +2465,18 @@ console.log(title && de.includes(title) ? 'paper titles still English: OK' : 'FA
 "
 ```
 
-- [ ] **Step 5: Run the e2e suite**
+- [ ] **Step 5: Wire the drift guard into CI**
+
+Now that `npm run i18n:check` passes, add it to `.github/workflows/site.yml` in the `build` job, before the `astro build` step:
+
+```yaml
+      - name: Check translation catalogs
+        run: npm run i18n:check
+```
+
+Confirm it passes locally one more time: `npm run i18n:check && echo "exit 0"`.
+
+- [ ] **Step 6: Run the e2e suite**
 
 ```bash
 npx astro preview --background && npm run e2e; npx astro preview stop
@@ -2476,7 +2484,7 @@ npx astro preview --background && npm run e2e; npx astro preview stop
 
 Expected: PASS.
 
-- [ ] **Step 6: Commit**
+- [ ] **Step 7: Commit**
 
 ```bash
 git add -A
@@ -2588,7 +2596,7 @@ The German output of `/impressum/` and `/privacy/` must be byte-identical to bef
 
 ```bash
 npm run build
-diff <(cat /tmp/dist-before-extraction/impressum/index.html) <(cat dist/de/impressum/index.html) | head
+diff <(cat .superpowers/sdd/2026-09-17-internationalization/dist-baseline/impressum/index.html) <(cat dist/de/impressum/index.html) | head
 ```
 
 Expected: only the chrome differs (German nav), not the legal prose.
@@ -2705,9 +2713,21 @@ describe('bilingual output', () => {
     expect(headings.at(-1)).toBe('Optional');
   });
 
-  it('a paper title appears only once, in English, in both halves', async () => {
+  it('renders a real paper title in English in BOTH halves, untranslated', async () => {
+    // Read a real title from the data rather than hard-coding a fragment, so
+    // the test keeps meaning something as publications.yml grows.
+    const publications = load(fs.readFileSync('data/publications.yml', 'utf8')) as { title: string }[];
+    const title = publications.find((p) => p.title.length > 40)!.title;
+
     const out = await buildLlmsFull();
-    expect(out).toContain('Systems biology');   // any known English title fragment
+    const split = out.indexOf('## Deutsch');
+    const english = out.slice(0, split);
+    const german = out.slice(split);
+
+    // The same English string, byte for byte, on both sides: bibliographic
+    // records are never translated.
+    expect(english).toContain(title);
+    expect(german).toContain(title);
   });
 });
 ```
