@@ -541,3 +541,32 @@ test('network graph: dragging a node moves the node, not the whole view', async 
 
   expect(errors).toEqual([]);
 });
+
+test('the language switch keeps the path and the hash', async ({ page }) => {
+  await page.goto('publications/');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  await page.locator('.site-navbar .lang-switch-link[lang="de"]').click();
+  await expect(page).toHaveURL(/\/de\/publications\/$/);
+  await expect(page.locator('html')).toHaveAttribute('lang', 'de');
+  await page.locator('.site-navbar .lang-switch-link[lang="en"]').click();
+  await expect(page).toHaveURL(/\/publications\/$/);
+});
+
+// A native <dialog> shown with showModal() (the detail modal) makes
+// everything outside it - including the fixed navbar - non-interactive to
+// pointer and keyboard, by design (verified against Chromium: elementFromPoint
+// over the navbar resolves outside the page entirely while the dialog is
+// modal, no matter the navbar's z-index or the dialog's own box size). So the
+// navbar's language switch cannot be the one clicked here - the detail modal
+// carries its own copy in its header for exactly this (see DetailModal.astro).
+test('the language switch carries an open detail modal across', async ({ page }) => {
+  await page.goto('people/');
+  await page.locator('[data-detail^="person:"]').first().click();
+  await expect(page.locator('#detail-modal')).toBeVisible();
+  const hash = new URL(page.url()).hash;
+  expect(hash).not.toBe('');
+  await page.locator('#detail-modal .lang-switch-link[lang="de"]').click();
+  await expect(page).toHaveURL(/\/de\/people\//);
+  expect(new URL(page.url()).hash).toBe(hash);
+  await expect(page.locator('#detail-modal')).toBeVisible();
+});

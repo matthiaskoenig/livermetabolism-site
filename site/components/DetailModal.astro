@@ -8,12 +8,27 @@
 // The Back button walks the in-modal stack built by the related rows; it stays
 // hidden while there is nothing to go back to. The title is set from the
 // fragment's own .detail-title.
+//
+// A native <dialog> shown with showModal() makes everything outside it,
+// including the fixed navbar, entirely non-interactive to click and
+// keyboard (this is standard modal-dialog accessibility behaviour, not
+// something CSS positioning can override) - so a reader with this modal
+// open cannot reach the navbar's language switch at all. The header
+// carries its own copy for that reason, styled for the header's light
+// background (see the .detail-modal override beside LanguageSwitch's own
+// rules in global.css).
+import LanguageSwitch from './LanguageSwitch.astro';
+import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
+
+interface Props { locale?: Locale }
+const { locale = DEFAULT_LOCALE } = Astro.props;
 const MODAL_ID = 'detail-modal';
 ---
 <dialog id={MODAL_ID} class="modal detail-modal" aria-labelledby={`${MODAL_ID}-label`}>
   <div class="modal-header">
     <button type="button" class="modal-back" aria-label="Back to the previous entry" hidden>&larr; Back</button>
     <h5 class="modal-title" id={`${MODAL_ID}-label`}></h5>
+    <LanguageSwitch locale={locale} />
     <button type="button" class="btn-close" data-modal-close aria-label="Close"></button>
   </div>
   <div class="modal-body"></div>

@@ -1,5 +1,6 @@
 ---
 import Icon from './Icon.vue';
+import LanguageSwitch from './LanguageSwitch.astro';
 import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
 import { urlFor } from '../lib/i18n/routes';
 import { asset } from '../lib/url';
@@ -29,6 +30,7 @@ const active = (...ids: string[]) => (sectionid && ids.includes(sectionid) ? 'ac
       <span class="brand-word">König Lab</span>
     </a>
     <div class="navbar-controls">
+      <LanguageSwitch locale={locale} />
       <button type="button" class="search-toggle" data-modal-target="site-search-modal" aria-label="Search" title="Search (/)">
         <Icon name="search" />
       </button>

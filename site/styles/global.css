@@ -147,9 +147,16 @@
   }
   .form-control:focus { outline: 0; border-color: #969fa8; box-shadow: 0 0 0 0.25rem rgba(44, 62, 80, 0.25); }
 
-  /* native <dialog> styled like Bootstrap's .modal-dialog.modal-lg */
+  /* native <dialog> styled like Bootstrap's .modal-dialog.modal-lg. The top
+     margin clears the fixed navbar (--navbar-height) rather than the plain
+     1.75rem a non-fixed page would use: a dialog is painted in the browser's
+     top layer, above the navbar's z-index entirely, so without this the open
+     modal's own header used to sit over the navbar and swallow clicks on it
+     - including the language switch, which must stay reachable while a
+     detail modal is open. */
   dialog.modal {
-    width: min(800px, calc(100% - 1rem)); max-height: calc(100vh - 3.5rem); margin: 1.75rem auto; padding: 0;
+    width: min(800px, calc(100% - 1rem)); max-height: calc(100vh - var(--navbar-height) - 2.75rem);
+    margin: calc(var(--navbar-height) + 1rem) auto 1.75rem; padding: 0;
     display: none; flex-direction: column; color: var(--color-body); background-color: var(--color-body-bg);
     border: 1px solid rgba(0, 0, 0, 0.175); border-radius: 0.5rem; box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   }
@@ -189,6 +196,13 @@
   .navbar-nav { display: flex; flex-direction: column; padding-left: 0; margin: 0; list-style: none; }
   .nav-link { display: block; padding: 0.5rem 0; color: #fff; text-decoration: none; }
   .nav-link:hover, .nav-link:focus { color: var(--color-success); }
+  .lang-switch { display: inline-flex; align-items: center; gap: 0.125rem; margin-right: 0.5rem; }
+  .lang-switch-link {
+    padding: 0.125rem 0.375rem; border-radius: 0.375rem; font-size: 0.8125rem;
+    font-weight: 600; letter-spacing: 0.02em; color: rgba(255, 255, 255, 0.55); text-decoration: none;
+  }
+  .lang-switch-link:hover, .lang-switch-link:focus { color: var(--color-success); }
+  .lang-switch-link.active { color: #fff; background: rgba(255, 255, 255, 0.1); }
   .navbar-toggler {
     padding: 0.25rem 0.75rem; font-size: 1.25rem; line-height: 1; color: rgba(255, 255, 255, 0.55);
     background: transparent; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 0.375rem; cursor: pointer;
@@ -1496,6 +1510,28 @@
       &:focus {
         outline: none;
       }
+    }
+
+    /* the navbar's .lang-switch-link colours (rgba(255,255,255,...), #fff)
+       assume the dark navbar behind them; restyle for this header's light
+       background instead of reusing them as-is */
+    .lang-switch {
+      flex-shrink: 0;
+      margin-right: 0;
+    }
+
+    .lang-switch-link {
+      color: var(--color-gray-700);
+    }
+
+    .lang-switch-link:hover,
+    .lang-switch-link:focus {
+      color: var(--color-link-hover);
+    }
+
+    .lang-switch-link.active {
+      color: var(--color-body);
+      background: var(--color-gray-200);
     }
   }
 
