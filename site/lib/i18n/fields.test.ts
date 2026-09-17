@@ -1,5 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import { isTranslatable, TRANSLATABLE } from './fields';
+import {
+  tagSchema, personSchema, projectSchema, softwareSchema, editorSchema, fundingSchema,
+  newsSchema, teachingSchema, meetingSchema, activitySchema,
+} from '../schemas';
 
 const BIBLIOGRAPHIC = ['publications', 'posters', 'presentations', 'abstracts', 'panels'];
 
@@ -21,5 +25,27 @@ describe('TRANSLATABLE', () => {
   });
   it('rejects a bibliographic table', () => {
     expect(isTranslatable('publications')).toBe(false);
+  });
+  it('cross-checks all fields exist in the Zod schemas', () => {
+    const schemas = {
+      tags: tagSchema,
+      people: personSchema,
+      projects: projectSchema,
+      software: softwareSchema,
+      editors: editorSchema,
+      funding: fundingSchema,
+      news: newsSchema,
+      teaching: teachingSchema,
+      meetings: meetingSchema,
+      activities: activitySchema,
+    };
+    for (const [table, fields] of Object.entries(TRANSLATABLE)) {
+      const schema = schemas[table as keyof typeof schemas];
+      expect(schema).toBeDefined();
+      const schemaKeys = Object.keys(schema.shape);
+      for (const field of fields) {
+        expect(schemaKeys).toContain(field);
+      }
+    }
   });
 });

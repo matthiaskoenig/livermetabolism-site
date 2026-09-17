@@ -17,7 +17,7 @@ export const TRANSLATABLE = {
   people: ['description', 'role'],
   projects: ['title', 'abstract', 'image_title'],
   software: ['title', 'description'],
-  editors: ['description'],
+  editors: ['name', 'description'],
   funding: ['title', 'description'],
   news: ['title', 'short', 'abstract'],
   teaching: ['title', 'content', 'caption', 'funding'],

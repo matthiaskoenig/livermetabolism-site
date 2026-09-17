@@ -39,9 +39,10 @@ export function localize<T extends { id: string }>(rows: T[], catalog: Catalog, 
     let out: T | undefined;
     for (const field of fields) {
       const entry = entries[field];
-      if (!entry || entry.text === '' || entry.text == null) continue;
+      if (!entry || entry.text === '' || (Array.isArray(entry.text) && entry.text.length === 0) || entry.text == null) continue;
       out ??= { ...row };
-      (out as Record<string, unknown>)[field] = entry.text;
+      const value = Array.isArray(entry.text) ? [...entry.text] : entry.text;
+      (out as Record<string, unknown>)[field] = value;
     }
     return out ?? row;
   });

@@ -33,4 +33,36 @@ describe('localize', () => {
   it('preserves row order', () => {
     expect(localize(rows, catalog, ['description']).map((r) => r.id)).toEqual(['koenig', 'other']);
   });
+  it('falls back to English when a field is missing from the catalog entry', () => {
+    const partial: Catalog = {
+      koenig: {
+        role: { sha: 'bbbb000000000000', text: ['Gruppenleiter'] },
+      },
+    };
+    expect(localize(rows, partial, ['description', 'role'])[0].description).toBe('Group leader.');
+  });
+  it('falls back to English when an entry has an empty string', () => {
+    const empty: Catalog = {
+      koenig: {
+        description: { sha: 'aaaa000000000000', text: '' },
+      },
+    };
+    expect(localize(rows, empty, ['description'])[0].description).toBe('Group leader.');
+  });
+  it('falls back to English when an entry has an empty array', () => {
+    const emptyArray: Catalog = {
+      koenig: {
+        role: { sha: 'bbbb000000000000', text: [] },
+      },
+    };
+    expect(localize(rows, emptyArray, ['role'])[0].role).toEqual(['Group Leader']);
+  });
+  it('copies array values to avoid sharing references', () => {
+    const result = localize(rows, catalog, ['role']);
+    expect(result[0].role).toEqual(['Gruppenleiter']);
+    result[0].role.push('new item');
+    expect(result[0].role).toContain('new item');
+    const result2 = localize(rows, catalog, ['role']);
+    expect(result2[0].role).toEqual(['Gruppenleiter']);
+  });
 });
