@@ -18,7 +18,7 @@ mariia_myshkina:
 shubhankar_palwankar:
   description:
     sha: db4a5476efc98beb
-    text: 'Shubhankar arbeitete daran, unser Verständnis der Pharmakokinetik und -dynamik von Enalapril anhand eines physiologiebasierten Modellierungsansatzes zu vertiefen. Die Arbeit baut auf bestehenden Modellen der ACE-Hemmer Lisinopril und Ramipril auf.'
+    text: 'Shubhankar arbeitete daran, unser Verständnis der Pharmakokinetik und -dynamik von Enalapril anhand eines physiologiebasierten Modellierungsansatzes zu vertiefen. Die Arbeit wird auf bestehenden Modellen der ACE-Hemmer Lisinopril und Ramipril aufbauen.'
   role:
     sha: 764120e7164be8a8
     text:
@@ -35,7 +35,7 @@ martina_grohs:
 michelle_elias:
   description:
     sha: 6d7cf4d1fe3cbafc
-    text: 'Michelle entwickelt ein physiologiebasiertes pharmakokinetisches/pharmakodynamisches (PBPK/PD) Modell des Sulfonylharnstoffs Glimepirid. Ziel ist es, unser Verständnis der zugrunde liegenden Ursachen der intraindividuellen Variabilität der Insulinsekretion und der Behandlung von Typ-2-Diabetes mit Sulfonylharnstoffen zu vertiefen, z. B. Unterschiede in der hepatorenalen Funktion.'
+    text: 'Michelle entwickelt ein physiologiebasiertes pharmakokinetisches/pharmakodynamisches (PBPK) Modell des Sulfonylharnstoffs Glimepirid. Ziel ist es, unser Verständnis der zugrunde liegenden Ursachen der intraindividuellen Variabilität der Insulinsekretion und der Behandlung von Typ-2-Diabetes mit Sulfonylharnstoffen zu vertiefen, z. B. Unterschiede in der hepatorenalen Funktion.'
   role:
     sha: 895e0d5e378ee59b
     text:
@@ -476,7 +476,7 @@ patrick_pett:
 roman_schulte:
   description:
     sha: 2632036b78dd0208
-    text: 'Im Rahmen seiner Bachelorarbeit wurde das Konzept einer Modular Research Environment (MRE) entwickelt. Eine MRE ist ein modulares Anwendungsframework, das durch Plugins zu einem neuen Werkzeug erweitert werden kann. InSilico ist die funktionsfähige Proof-of-Principle-Implementierung einer solchen MRE und wurde parallel zu dieser Arbeit entwickelt. Die geschaffene Infrastruktur von InSilico kann genutzt werden, um im Vergleich zum traditionellen Ansatz mit weniger Aufwand, Zeit und Ressourcen eigene Forschungswerkzeuge zu erstellen, zu teilen und wiederzuverwenden.'
+    text: 'Im Rahmen seiner Abschlussarbeit wurde das Konzept einer Modular Research Environment (MRE) entwickelt. Eine MRE ist ein modulares Anwendungsframework, das durch Plugins zu einem neuen Werkzeug erweitert werden kann. InSilico ist die funktionsfähige Proof-of-Principle-Implementierung einer solchen MRE und wurde parallel zu dieser Arbeit entwickelt. Die geschaffene Infrastruktur von InSilico kann genutzt werden, um im Vergleich zum traditionellen Ansatz mit weniger Aufwand, Zeit und Ressourcen eigene Forschungswerkzeuge zu erstellen, zu teilen und wiederzuverwenden.'
   role:
     sha: 1da89968cf7e676a
     text:
