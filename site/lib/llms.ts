@@ -4,15 +4,26 @@
  * `llms-full.txt.ts`:
  *
  * - `robotsTxt()` - every crawler (AI crawlers and agents included) may read
- *   the whole site except `/detail/`, the page partials the detail modal
- *   fetches (also kept out of the sitemap, see `astro.config.mjs`); it names
- *   the sitemap and the two LLM files.
+ *   the whole site except `/detail/` and `/de/detail/`, the page partials the
+ *   detail modal fetches (also kept out of the sitemap, see
+ *   `astro.config.mjs`); it names the sitemap and the two LLM files.
  * - `llmsTxt()` - the short Markdown index of https://llmstxt.org/: H1 title,
  *   blockquote summary, then link lists (research areas, pages, software,
- *   current projects) and the `Optional` section last.
+ *   current projects) and the `Optional` section last. It stays a single,
+ *   mostly-English index, but points at both language homepages and at both
+ *   halves of `llms-full.txt`.
  * - `llmsFullTxt()` - the content of every list page in one Markdown file,
  *   showing what the site shows (current projects, current members and
- *   alumni with a photo).
+ *   alumni with a photo) - the English document, then a German half after a
+ *   `## Deutsch` heading. The site owner's decision (task 19): this stays
+ *   ONE bilingual file rather than becoming per-locale files, so an agent
+ *   fetching either LLM file finds the content in either language.
+ *   Bibliographic tables (publications, presentations, posters, abstracts)
+ *   are never translated (see `i18n/fields.ts`'s `TRANSLATABLE`), so their
+ *   titles/authors/abstracts read identically in both halves by
+ *   construction - the endpoint feeds this function whatever
+ *   `d.getPublications(locale)` etc. return, and that overlay already
+ *   leaves those tables untouched for every locale.
  *
  * Pure (no Astro or DOM imports) like `graphRows.ts`: the endpoints pass the
  * collection entries plus `site`/`base` of the deploy, and every link is an
@@ -23,15 +34,26 @@
  * Input field sets are `Pick`s of the collection entries, so the endpoints
  * pass their full entries unchanged while the tests stay small.
  *
- * `llmsTxt()`/`llmsFullTxt()` take `t` for their section headings and field
- * labels, like every other pure module - but `robots.txt`, `llms.txt` and
- * `llms-full.txt` are single global endpoints, not under `[...locale]` (see
- * CLAUDE.md, "Live GitHub and Scholar data" and "Site search" for the same
- * pattern), so their caller always passes the English translator today; the
- * strings still live in the one catalog rather than a second, independently
- * maintained copy.
+ * `llmsTxt()` takes one `LlmsInput` (always English: `robots.txt`, `llms.txt`
+ * and `llms-full.txt` are single global endpoints, not under `[...locale]`,
+ * see CLAUDE.md "Live GitHub and Scholar data" and "Site search" for the same
+ * pattern); it still builds a German homepage link internally, via a second,
+ * locale-prefixed `abs()` built from the same `Deploy`, so the endpoint need
+ * not fetch a second, full German context just for two links.
+ *
+ * `llmsFullTxt()` takes one `LlmsFullInput` per locale (`Record<Locale,
+ * LlmsFullInput>`), each with its own translator and its own locale's data
+ * (fetched by the endpoint via `d.get*(locale)`), and renders the shared
+ * section-building logic (`fullSections()`) once per locale. Every link is
+ * built by a locale-prefixed `abs()` (the same `/de/...` prefixing
+ * `localeUrl()` does elsewhere, reimplemented locally here rather than
+ * imported: `localeUrl()` reads `import.meta.env.BASE_URL` at module load,
+ * while every function in this file takes `site`/`base` as explicit
+ * parameters instead, precisely so it stays independent of the Vite/Astro
+ * runtime and testable with arbitrary fixtures).
  */
 import type { TFn } from './i18n/catalog';
+import { DEFAULT_LOCALE, type Locale } from './i18n/locales';
 import { sitePages } from './sitePages';
 import { truncateWords } from './text';
 import type { Entry, TagInfo } from './views';
@@ -72,10 +94,15 @@ const CV_PDF = '/assets/cv/Koenig_CV.pdf';
 
 type Abs = (path: string) => string;
 
-/** Absolute URL of a site path under the deploy's origin and base path. */
-function absolute({ site, base }: Deploy): Abs {
+/**
+ * Absolute URL of a site path under the deploy's origin and base path,
+ * optionally locale-prefixed the way `localeUrl()` (`i18n/routes.ts`) is -
+ * `en` (the default locale) unprefixed, every other locale under `/<locale>/`.
+ */
+function absolute({ site, base }: Deploy, locale: Locale = DEFAULT_LOCALE): Abs {
   const root = new URL(base.endsWith('/') ? base : `${base}/`, site).href;
-  return (path) => root + path.replace(/^\/+/, '');
+  const prefix = locale === DEFAULT_LOCALE ? '' : `${locale}/`;
+  return (path) => root + prefix + path.replace(/^\/+/, '');
 }
 
 const escapeLinkText = (s: string) => s.replace(/[[\]]/g, '\\$&');
@@ -118,14 +145,15 @@ export function robotsTxt(deploy: Deploy): string {
   return [
     `# ${TITLE}`,
     '# Every crawler is welcome, AI crawlers and agents included.',
-    '# /detail/ holds the fragments the detail dialogs load, not pages of their own.',
+    '# /detail/ and /de/detail/ hold the fragments the detail dialogs load, not pages of their own.',
     '',
     'User-agent: *',
     'Allow: /',
     `Disallow: ${basePath}detail/`,
+    `Disallow: ${basePath}de/detail/`,
     '',
     `# Summary for LLMs and AI agents (https://llmstxt.org/): ${abs('llms.txt')}`,
-    `# The full content as one Markdown file: ${abs('llms-full.txt')}`,
+    `# The full content (English, then a German half) as one Markdown file: ${abs('llms-full.txt')}`,
     '',
     `Sitemap: ${abs('sitemap-index.xml')}`,
     '',
@@ -135,6 +163,7 @@ export function robotsTxt(deploy: Deploy): string {
 export function llmsTxt(input: LlmsInput): string {
   const { t } = input;
   const abs = absolute(input);
+  const deAbs = absolute(input, 'de');
   const summary = (html: string, words: number) => truncateWords(plainText(html, abs, { links: false }), words);
   const pages = sitePages(t).filter((p) => !p.legal);
   const legal = sitePages(t).filter((p) => p.legal);
@@ -156,7 +185,10 @@ export function llmsTxt(input: LlmsInput): string {
       input.projects.filter((p) => p.status === 'current').map((p) => item(plainText(p.title, abs, { links: false }), abs(`/projects/#project/${p.id}`), summary(p.abstract, 30))),
     ),
     section(t('llms.optional'), [
+      item('English', abs('/'), 'the default language of this site'),
+      item('Deutsch', deAbs('/'), 'the German homepage'),
       item(t('llms.fullContent'), abs('llms-full.txt'), t('llms.fullContentNote')),
+      item(`${t('llms.fullContent')} (Deutsch)`, `${abs('llms-full.txt')}#deutsch`, 'the German half of the same file'),
       item(t('llms.searchIndex'), abs('search.json'), t('llms.searchIndexNote')),
       item(t('llms.sitemap'), abs('sitemap-index.xml')),
       item(t('llms.cvOfMatthias'), abs(CV_PDF), t('links.pdf')),
@@ -165,9 +197,15 @@ export function llmsTxt(input: LlmsInput): string {
   ]);
 }
 
-export function llmsFullTxt(input: LlmsFullInput): string {
+/**
+ * The 13 table sections shared by every language: research areas, team,
+ * publications, projects, software, funding, editorial roles,
+ * presentations, posters, conference abstracts, meetings, teaching, news.
+ * Parameterised by `abs` (locale-prefixed or not) and `input.t` (English or
+ * German), so `llmsFullTxt()` calls this once per locale.
+ */
+function fullSections(input: LlmsFullInput, abs: Abs): string[] {
   const { t } = input;
-  const abs = absolute(input);
   const text = (html: string | null | undefined) => (html ? plainText(html, abs) : '');
   const title = (html: string) => plainText(html, abs, { links: false });
   const areas = (tags: string[]) => (tags.length ? tags.join(', ') : null);
@@ -183,9 +221,7 @@ export function llmsFullTxt(input: LlmsFullInput): string {
     return `- **${p.name}** - ${p.role.join(', ')}${context ? ` (${context})` : ''}.${description ? ` ${description}` : ''} Profile: ${abs(`/people/#person/${p.id}`)}`;
   };
 
-  return doc([
-    header(),
-    `Generated from the website's data at build time. Website: ${abs('')} - short index: ${abs('llms.txt')}`,
+  return [
     entries(t('llms.researchAreas'), input.tags.map((tag) => entry(tag.tag, [], `${tag.description.trim()}\n\nVision: ${tag.vision.trim()}`))),
     entries(t('nav.team'), [
       ...(current.length ? [`### ${t('llms.currentMembers')}\n\n${current.map(person).join('\n')}`] : []),
@@ -252,5 +288,33 @@ export function llmsFullTxt(input: LlmsFullInput): string {
     ),
     entries(t('nav.teaching'), input.teaching.map((row) => entry(title(row.title), fields([[t('llms.semester'), row.semester], [t('llms.location'), row.location], [t('llms.url'), abs(`/teaching/#teaching-${row.id}`)]]), text(row.content)))),
     entries(t('nav.news'), byDateDesc(input.news).map((n) => entry(`${n.date}: ${title(n.title)}`, fields([[t('llms.url'), abs(`/news/#news/${n.id}`)]]), text(n.short)))),
+  ];
+}
+
+/**
+ * The English document, then a German half after a `## Deutsch` heading -
+ * one bilingual file (task 19), not per-locale files. `contexts.en` and
+ * `contexts.de` carry the same `site`/`base` but each their own translator
+ * and their own locale's data (bibliographic tables come back identical
+ * either way, see the module docstring); every link in the German half is
+ * built by a `/de/`-prefixed `abs()`, every link in the English half by an
+ * unprefixed one.
+ */
+export function llmsFullTxt(contexts: Record<Locale, LlmsFullInput>): string {
+  const en = contexts[DEFAULT_LOCALE];
+  const de = contexts.de;
+  const absEn = absolute(en, DEFAULT_LOCALE);
+  const absDe = absolute(de, 'de');
+
+  const english = doc([
+    header(),
+    `Generated from the website's data at build time. Website: ${absEn('')} - short index: ${absEn('llms.txt')}`,
+    ...fullSections(en, absEn),
   ]);
+  const german = doc([de.t('llms.intro'), ...fullSections(de, absDe)]);
+
+  // english already ends in a single '\n' (doc()); strip it so joining with
+  // '\n\n## Deutsch\n\n' leaves exactly one blank line around the heading,
+  // never a run of three.
+  return `${english.replace(/\n$/, '')}\n\n## Deutsch\n\n${german}`;
 }
