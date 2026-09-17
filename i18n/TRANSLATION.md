@@ -470,3 +470,13 @@ generated English page's line stating that only the German version is
 legally binding. Never treat English as the source for these two files,
 and never hand-edit the generated English side directly - edit the German
 source and regenerate.
+
+`site/lib/i18n/pages.ts`'s `loadPage()` knows this inversion explicitly, via
+a small `PAGE_SOURCE_LOCALE` map (`impressum`/`privacy` -> `de`, every other
+page -> the default English). A key missing from a locale's catalog falls
+back to that page's *own* source locale, not blindly to English: for
+`impressum`/`privacy` a missing or lagging English key falls back to German,
+never to nothing. A legal notice must never render blank - the worst
+acceptable failure is showing the binding German text to an English reader,
+not showing an empty heading or paragraph. Keep the map and this note in
+sync if a third page ever inverts the direction.
