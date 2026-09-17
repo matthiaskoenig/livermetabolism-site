@@ -19,7 +19,7 @@ const locale = localeFromParams(Astro.params);
 const u = urlFor(locale);
 const { t } = uiFor(locale);
 const ui = slices(t);
-const [tags, people, publications, projects, software] = await Promise.all([getTags(), getPeople(), getPublications(), getProjects(), getSoftware()]);
+const [tags, people, publications, projects, software] = await Promise.all([getTags(locale), getPeople(locale), getPublications(locale), getProjects(locale), getSoftware(locale)]);
 const strip = people.filter((p) => p.status === 'current' && p.image);
 
 const sections = tags.map((tag, i) => {

@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import * as d from '../lib/data';
 import { uiFor } from '../lib/i18n/catalog';
+import { DEFAULT_LOCALE } from '../lib/i18n/locales';
 import { llmsFullTxt } from '../lib/llms';
 
 // Served at /llms-full.txt: the content of every list page as one Markdown
@@ -10,8 +11,8 @@ import { llmsFullTxt } from '../lib/llms';
 export const GET: APIRoute = async ({ site }) => {
   if (!site) throw new Error('llms-full.txt needs `site` in astro.config.mjs');
   const [tags, people, publications, projects, software, funding, editors, presentations, posters, abstracts, meetings, teaching, news] = await Promise.all([
-    d.getTags(), d.getPeople(), d.getPublications(), d.getProjects(), d.getSoftware(), d.getFunding(), d.getEditors(),
-    d.getPresentations(), d.getPosters(), d.getAbstracts(), d.getMeetings(), d.getTeaching(), d.getNews(),
+    d.getTags(DEFAULT_LOCALE), d.getPeople(DEFAULT_LOCALE), d.getPublications(DEFAULT_LOCALE), d.getProjects(DEFAULT_LOCALE), d.getSoftware(DEFAULT_LOCALE), d.getFunding(DEFAULT_LOCALE), d.getEditors(DEFAULT_LOCALE),
+    d.getPresentations(DEFAULT_LOCALE), d.getPosters(DEFAULT_LOCALE), d.getAbstracts(DEFAULT_LOCALE), d.getMeetings(DEFAULT_LOCALE), d.getTeaching(DEFAULT_LOCALE), d.getNews(DEFAULT_LOCALE),
   ]);
   const body = llmsFullTxt({
     site: site.href, base: import.meta.env.BASE_URL, t: uiFor('en').t,

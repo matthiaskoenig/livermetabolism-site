@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import * as d from '../lib/data';
 import { uiFor } from '../lib/i18n/catalog';
+import { DEFAULT_LOCALE } from '../lib/i18n/locales';
 import type { SearchRecord } from '../lib/search';
 import { sitePages } from '../lib/sitePages';
 import { stripHtml } from '../lib/text';
@@ -15,7 +16,7 @@ const join = (parts: (string | number | null | undefined)[]) => clean(parts.map(
 
 export const GET: APIRoute = async () => {
   const [tags, people, publications, presentations, posters, abstracts, projects, software, funding, editors, news, meetings, teaching] =
-    await Promise.all([d.getTags(), d.getPeople(), d.getPublications(), d.getPresentations(), d.getPosters(), d.getAbstracts(), d.getProjects(), d.getSoftware(), d.getFunding(), d.getEditors(), d.getNews(), d.getMeetings(), d.getTeaching()]);
+    await Promise.all([d.getTags(DEFAULT_LOCALE), d.getPeople(DEFAULT_LOCALE), d.getPublications(DEFAULT_LOCALE), d.getPresentations(DEFAULT_LOCALE), d.getPosters(DEFAULT_LOCALE), d.getAbstracts(DEFAULT_LOCALE), d.getProjects(DEFAULT_LOCALE), d.getSoftware(DEFAULT_LOCALE), d.getFunding(DEFAULT_LOCALE), d.getEditors(DEFAULT_LOCALE), d.getNews(DEFAULT_LOCALE), d.getMeetings(DEFAULT_LOCALE), d.getTeaching(DEFAULT_LOCALE)]);
 
   const out: SearchRecord[] = [];
   for (const p of publications) out.push({ type: 'Publication', title: stripHtml(p.title), text: join([stripHtml(p.authors), p.journal, p.year, p.status, p.tags.join(', '), stripHtml(p.abstract ?? ''), p.keywords.join(', ')]), url: url(`/publications/#publication/${p.id}`) });

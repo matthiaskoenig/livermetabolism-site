@@ -28,32 +28,34 @@ import { slices } from '../../../../lib/i18n/slices';
 import { loadScholar } from '../../../../lib/scholar';
 import { asset } from '../../../../lib/url';
 
-// The collections and snapshots are read once here, shared by every locale;
-// only the per-locale `base` (and therefore the model's page hrefs) differs,
-// so the model itself is built once per locale below, crossing the entity
-// ids with the locales so the same fragment is emitted at both
-// /detail/<type>/<id>/ and /de/detail/<type>/<id>/.
+// The snapshots are shared by every locale (they carry no translatable
+// prose); the collections are re-read per locale so the German overlay
+// (site/lib/data.ts's `all()`) reaches these fragments too, crossing the
+// entity ids with the locales so the same set of ids is emitted at both
+// /detail/<type>/<id>/ and /de/detail/<type>/<id>/ - only the row content
+// and the per-locale `base` (and therefore the model's page hrefs) differ.
 export async function getStaticPaths() {
-  const [tags, people, peopleMap, publications, projects, software, news, presentations, posters] = await Promise.all([
-    getTags(), getPeople(), getPeopleMap(), getPublications(), getProjects(), getSoftware(), getNews(), getPresentations(), getPosters(),
-  ]);
   // the same daily snapshots the research and publications pages render from;
   // a failed read yields an empty one and the figures simply disappear
   const [github, scholar, citations] = await Promise.all([loadSnapshot(), loadScholar(), loadCitations()]);
-  const data = { tags, people, peopleMap, publications, projects, software, news, presentations, posters, github, scholar, citations };
   // assets (avatars, PDFs, galleries) are shared across languages and must
   // never carry a locale prefix - only the page hrefs (`base`) do
   const assetBase = import.meta.env.BASE_URL;
-  // TagList and PersonChips need the same inputs as on the cards; one shared
-  // object per build, not one per fragment
-  const view = { tagInfo: data.tags, peopleMap: data.peopleMap, avatarBase: asset('image/people/128/') };
-  return LOCALES.flatMap((locale) => {
+  const perLocale = await Promise.all(LOCALES.map(async (locale) => {
+    const [tags, people, peopleMap, publications, projects, software, news, presentations, posters] = await Promise.all([
+      getTags(locale), getPeople(locale), getPeopleMap(locale), getPublications(locale), getProjects(locale), getSoftware(locale), getNews(locale), getPresentations(locale), getPosters(locale),
+    ]);
+    const data = { tags, people, peopleMap, publications, projects, software, news, presentations, posters, github, scholar, citations };
+    // TagList and PersonChips need the same inputs as on the cards; one
+    // shared object per locale, not one per fragment
+    const view = { tagInfo: data.tags, peopleMap: data.peopleMap, avatarBase: asset('image/people/128/') };
     const ctx: DetailContext = { ...data, base: localeUrl(locale, '/'), assetBase, t: uiFor(locale).t };
     return detailIds(ctx).map(({ type, id }) => ({
       params: { type, id, locale: locale === DEFAULT_LOCALE ? undefined : locale },
       props: { model: detailModel(type, id, ctx), ...view, locale },
     }));
-  });
+  }));
+  return perLocale.flat();
 }
 
 const { model, tagInfo, peopleMap, avatarBase, locale } = Astro.props;

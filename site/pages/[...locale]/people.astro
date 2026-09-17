@@ -17,7 +17,7 @@ const locale = localeFromParams(Astro.params);
 const u = urlFor(locale);
 const { t } = uiFor(locale);
 const ui = slices(t);
-const [tags, people] = await Promise.all([getTags(), getPeople()]);
+const [tags, people] = await Promise.all([getTags(locale), getPeople(locale)]);
 const avatarBase = asset('image/people/128/');
 const current = people.filter((p) => p.status === 'current');
 const alumniGroups = alumniByYear(people);

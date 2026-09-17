@@ -18,7 +18,7 @@ export const getStaticPaths = localePaths;
 const locale = localeFromParams(Astro.params);
 const { t } = uiFor(locale);
 const ui = slices(t);
-const [tags, people, publications, projects, software] = await Promise.all([getTags(), getPeople(), getPublications(), getProjects(), getSoftware()]);
+const [tags, people, publications, projects, software] = await Promise.all([getTags(locale), getPeople(locale), getPublications(locale), getProjects(locale), getSoftware(locale)]);
 // citations size the publication nodes; a failed read yields an empty
 // snapshot and every paper draws at its minimum size
 const citations = await loadCitations();

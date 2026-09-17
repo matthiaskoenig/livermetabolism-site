@@ -13,7 +13,7 @@ export const getStaticPaths = localePaths;
 const locale = localeFromParams(Astro.params);
 const { t } = uiFor(locale);
 const ui = slices(t);
-const [tagInfo, peopleMap, projects, publications] = await Promise.all([getTags(), getPeopleMap(), getProjects(), getPublications()]);
+const [tagInfo, peopleMap, projects, publications] = await Promise.all([getTags(locale), getPeopleMap(locale), getProjects(locale), getPublications(locale)]);
 const current = projects.filter((p) => p.status === 'current');
 const imageBase = asset('image/projects/');
 const pdfBase = asset('pdf/');

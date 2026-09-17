@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import * as d from '../lib/data';
 import { uiFor } from '../lib/i18n/catalog';
+import { DEFAULT_LOCALE } from '../lib/i18n/locales';
 import { llmsTxt } from '../lib/llms';
 
 // Served at /llms.txt, the short Markdown index for LLMs and AI agents
@@ -8,7 +9,7 @@ import { llmsTxt } from '../lib/llms';
 // global file, always in English.
 export const GET: APIRoute = async ({ site }) => {
   if (!site) throw new Error('llms.txt needs `site` in astro.config.mjs');
-  const [tags, projects, software] = await Promise.all([d.getTags(), d.getProjects(), d.getSoftware()]);
+  const [tags, projects, software] = await Promise.all([d.getTags(DEFAULT_LOCALE), d.getProjects(DEFAULT_LOCALE), d.getSoftware(DEFAULT_LOCALE)]);
   const body = llmsTxt({ site: site.href, base: import.meta.env.BASE_URL, t: uiFor('en').t, tags, projects, software });
   return new Response(body, { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
 };

@@ -9,7 +9,7 @@ import { asset } from '../../lib/url';
 export const getStaticPaths = localePaths;
 const locale = localeFromParams(Astro.params);
 const { t } = uiFor(locale);
-const [tagInfo, peopleMap, teaching] = await Promise.all([getTags(), getPeopleMap(), getTeaching()]);
+const [tagInfo, peopleMap, teaching] = await Promise.all([getTags(locale), getPeopleMap(locale), getTeaching(locale)]);
 ---
 <Base title={t('nav.teaching')} sectionid="teaching" locale={locale}>
   <p>{t('teaching.intro')}</p>

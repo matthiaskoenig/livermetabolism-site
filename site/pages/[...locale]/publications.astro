@@ -26,7 +26,7 @@ export const getStaticPaths = localePaths;
 const locale = localeFromParams(Astro.params);
 const { t } = uiFor(locale);
 const ui = slices(t);
-const [tagInfo, peopleMap, publications, presentations, posters, abstracts] = await Promise.all([getTags(), getPeopleMap(), getPublications(), getPresentations(), getPosters(), getAbstracts()]);
+const [tagInfo, peopleMap, publications, presentations, posters, abstracts] = await Promise.all([getTags(locale), getPeopleMap(locale), getPublications(locale), getPresentations(locale), getPosters(locale), getAbstracts(locale)]);
 const pdfBase = asset('pdf/');
 const avatarBase = asset('image/people/128/');
 // rows are static HTML; TagFilter hides the non-matching ones (and any
