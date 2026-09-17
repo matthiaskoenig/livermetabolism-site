@@ -119,3 +119,33 @@ test('every /assets/ reference on every page resolves', async ({ page, request }
     expect(res.status(), u).toBe(200);
   }
 });
+
+// The German tree mirrors the English page list one-for-one (site/pages/[...locale]/):
+// each page must render with lang="de", show the language switch back to English, and
+// stay free of console errors, the same bar the English pages above are held to.
+for (const path of pages) {
+  test(`renders /de/${path} without console errors`, async ({ page }) => {
+    const errors: string[] = [];
+    page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
+    page.on('pageerror', (e) => errors.push(e.message));
+    const res = await page.goto(`de/${path}`);
+    expect(res?.status()).toBe(200);
+    await expect(page.locator('html')).toHaveAttribute('lang', 'de');
+    // The detail modal (closed on load) carries its own copy of the language
+    // switch for use while its <dialog> is open (see DetailModal.astro), so
+    // the navbar's copy needs scoping to stay a single match.
+    await expect(page.locator('nav.site-navbar .lang-switch-link[lang="en"]')).toBeVisible();
+    expect(errors).toEqual([]);
+  });
+}
+
+// hreflang alternates (Head.astro, site/lib/i18n/alternates.ts) must resolve: en, de and
+// x-default, each fetched and asserted live rather than merely well-formed.
+test('hreflang alternates point at pages that exist', async ({ page, request }) => {
+  await page.goto('publications/');
+  const hrefs = await page.locator('link[rel="alternate"]').evaluateAll((ls) => ls.map((l) => (l as HTMLLinkElement).href));
+  expect(hrefs).toHaveLength(3);
+  for (const href of hrefs) {
+    expect((await request.get(href)).status(), href).toBe(200);
+  }
+});
