@@ -12,6 +12,7 @@ const page = loadPage(locale, 'privacy');
 ---
 <Base title="Datenschutzerklärung" sectionid="privacy" locale={locale}>
   <h2 id="privacy">{page.heading}</h2>
+  {locale !== 'de' && <p class="legal-notice">{page.bindingNotice}</p>}
 
   <h3>{page.controllerHeading}</h3>
   <p>

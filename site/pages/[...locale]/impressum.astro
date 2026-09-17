@@ -12,6 +12,7 @@ const page = loadPage(locale, 'impressum');
 ---
 <Base title="Impressum" sectionid="impressum" locale={locale}>
   <h2 id="impressum">{page.heading}</h2>
+  {locale !== 'de' && <p class="legal-notice">{page.bindingNotice}</p>}
 
   <h3>{page.providerHeading}</h3>
   <p>
