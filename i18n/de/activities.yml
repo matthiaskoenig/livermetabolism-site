@@ -29,8 +29,8 @@ sbml-editor-2018-2027:
     text: 'Weiterentwicklung des SBML-Standards (Systems Biology Markup Language) durch die Koordination redaktioneller Prozesse, die Verbesserung der Spezifikationen und die Förderung der Interoperabilität.'
 open-science-ambassador-2024:
   title:
-    sha: c6e5a6f3d666d4d6
-    text: 'Open Science Ambassador, Humboldt-University Berlin'
+    sha: 8afadac11c85ed52
+    text: 'Open Science Ambassador, Humboldt-Universität zu Berlin'
   description:
     sha: 6b548d35659380ff
     text: 'Förderung von Reproduzierbarkeit, FAIR-Daten und Open-Science-Praktiken innerhalb der Berlin University Alliance.'

@@ -326,7 +326,7 @@ frances_okibedi:
       - 'Praktikum'
 sankha_das:
   description:
-    sha: 76018a483f8b4410
+    sha: eeeb9964a5ba9198
     text: 'Sankha arbeitete an der Analyse und Quantifizierung von Mikrozirkulationsdaten, die bei Menschen und Ratten erfasst wurden, und entwickelte einen Workflow für die Analyse von orthogonaler Polarisationsspektroskopie (OPS) und IDF im Rahmen von <a href="https://qualiperf.de">QuaLiPerF</a>. Im Rahmen des Google Summer of Code 2021 implementierte er außerdem in Zusammenarbeit mit Ralf Steuer von der Humboldt-Universität zu Berlin einen SBML-Report für Menschen in <a href="https://github.com/matthiaskoenig/sbmlutils">sbmlutils</a>.'
   role:
     sha: eb5c662b19a596cb

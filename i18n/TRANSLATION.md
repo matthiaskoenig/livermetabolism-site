@@ -217,7 +217,7 @@ collaborators, not friends.
 
 ### Typography
 
-- German quotation marks: `„…"`, not `"…"`.
+- German quotation marks: `„…“` (opening U+201E `„`, closing U+201C `“`), not `"…"`. The closer is **not** the straight ASCII quote (U+0022) - check the actual codepoint, not just how the glyph looks, since some fonts render U+201C and a straight quote similarly.
 - Use `ß` where the Duden does (`Schließen`, not `Schliessen`).
 - No em dash (see above); plain `-` only.
 

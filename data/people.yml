@@ -562,7 +562,7 @@
   orcid:
   repository: 'https://github.com/sankha555'
   homepage: 'https://sbml4humans-gsoc-2021.blogspot.com/'
-  description: 'Sankha worked on the analysis and quantification of microcirculation data recorded in Humans and Rats, developing a workflow for the analysis of orthogonal polarization spectroscopy (OPS) and IDF as part of <a href="https://qualiperf.de">QuaLiPerF</a>. As part of Google Summer of Code 2021, in cooperation with Ralf Steuer from the Humboldt-University Berlin, he also implemented an SBML report for Humans in <a href="https://github.com/matthiaskoenig/sbmlutils">sbmlutils</a>.'
+  description: 'Sankha worked on the analysis and quantification of microcirculation data recorded in Humans and Rats, developing a workflow for the analysis of orthogonal polarization spectroscopy (OPS) and IDF as part of <a href="https://qualiperf.de">QuaLiPerF</a>. As part of Google Summer of Code 2021, in cooperation with Ralf Steuer from the Humboldt-Universität zu Berlin, he also implemented an SBML report for Humans in <a href="https://github.com/matthiaskoenig/sbmlutils">sbmlutils</a>.'
 
 - id: 'xenia_petukhova'
   status: 'alumni'
