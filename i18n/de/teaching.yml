@@ -101,8 +101,8 @@ xresearch2022:
           </ul>
           
   caption:
-    sha: 3ae80ff146084e7b
-    text: <strong>Physiologiebasiertes Pharmakokinetikmodell</strong> der ACE-Hemmer</strong>. Die Modelle untersuchen die Absorption (Magen-Darm-Trakt), Verteilung (systemischer Kreislauf), Metabolisierung (Leber) und Elimination (Nieren und Leber) der ACE-Hemmer Lisinopril und Ramipril. Organe und Plasmavolumina sind über den Blutfluss (Q) verbunden.
+    sha: 0527b1f87a6de519
+    text: <strong>Physiologiebasiertes Pharmakokinetikmodell</strong> der ACE-Hemmer. Die Modelle untersuchen die Absorption (Magen-Darm-Trakt), Verteilung (systemischer Kreislauf), Metabolisierung (Leber) und Elimination (Nieren und Leber) der ACE-Hemmer Lisinopril und Ramipril. Organe und Plasmavolumina sind über den Blutfluss (Q) verbunden.
   funding:
     sha: 9f7418bce0e2403b
     text: Gefördert im Rahmen der Exzellenzstrategie des Bundes und der Länder durch die <a href="https://www.berlin-university-alliance.de/">Berlin University Alliance</a>.

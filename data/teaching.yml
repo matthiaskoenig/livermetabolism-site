@@ -119,7 +119,7 @@
     - matthias_koenig
   location: Humboldt-Universität zu Berlin, Institute for Biology, ITB
   image: xresearch2022.webp
-  caption: '<strong>Physiological-based pharmacokinetics model</strong> of the ACE inhibitors</strong>. The models will study the absorption (GI tract), distribution (systemic circulation), metabolization (liver) and elimination (kidneys and liver) of the ACE inhibitors lisinopril and ramipril. Organs and plasma volumes are connected via the blood flow (Q).'
+  caption: '<strong>Physiological-based pharmacokinetics model</strong> of the ACE inhibitors. The models will study the absorption (GI tract), distribution (systemic circulation), metabolization (liver) and elimination (kidneys and liver) of the ACE inhibitors lisinopril and ramipril. Organs and plasma volumes are connected via the blood flow (Q).'
   funding: 'Funded under the Excellence Strategy of the Federal Government and the Länder by the <a href="https://www.berlin-university-alliance.de/">Berlin University Alliance</a>.'
   content: '
     <p>
