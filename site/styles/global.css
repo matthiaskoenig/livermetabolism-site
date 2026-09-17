@@ -161,7 +161,11 @@
     border: 1px solid rgba(0, 0, 0, 0.175); border-radius: 0.5rem; box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   }
   dialog.modal[open] { display: flex; }
-  dialog.modal.modal-centered { margin-block: auto; }
+  /* .modal-centered (the search dialog) is vertically centred by the browser
+     rather than pinned under the fixed navbar, so it never needed the navbar
+     clearance carved out of dialog.modal's max-height above - restore its
+     original budget rather than losing that height for no reason. */
+  dialog.modal.modal-centered { margin-block: auto; max-height: calc(100vh - 3.5rem); }
   dialog.modal::backdrop { background-color: rgba(0, 0, 0, 0.5); }
   body:has(dialog.modal[open]) { overflow: hidden; }
   .modal-header {
@@ -1496,6 +1500,13 @@
      ---------------------------------------------------------------- */
   .detail-modal {
     .modal-header {
+      /* a long title wraps to several lines here (unlike the header's other
+         two uses - the search dialog's fixed "Search" and the fallback
+         "Details"/"Loading..." strings); the default align-items: center
+         would then centre Back/the switch/Close on the wrapped block's full
+         height, leaving them floating beside a middle line instead of
+         pinned to the first one */
+      align-items: flex-start;
       gap: 0.6em;
     }
 
