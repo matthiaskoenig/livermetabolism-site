@@ -91,4 +91,26 @@ const active = (...ids: string[]) => (sectionid && ids.includes(sectionid) ? 'ac
     toggler.setAttribute('aria-expanded', open ? 'true' : 'false');
     navbar?.classList.toggle('show', open);
   });
+
+  // --navbar-height drives every "clear the fixed navbar" offset (body
+  // padding-top, :target/scroll-margin-top, the detail modal's margin) -
+  // see global.css. The navbar's real height is not the 64px fallback
+  // whenever its nav-item row wraps to two lines, which a longer
+  // translation (German labels run longer than English) or a narrow
+  // viewport can both trigger independently, so measure the rendered
+  // navbar instead of trusting the constant. ResizeObserver both sets the
+  // initial value and keeps it correct across a viewport resize that
+  // crosses the wrap breakpoint.
+  const siteNavbar = document.querySelector('.site-navbar');
+  if (siteNavbar instanceof HTMLElement) {
+    const setNavbarHeight = () => {
+      document.documentElement.style.setProperty('--navbar-height', `${siteNavbar.getBoundingClientRect().height}px`);
+    };
+    setNavbarHeight();
+    if ('ResizeObserver' in window) {
+      new ResizeObserver(setNavbarHeight).observe(siteNavbar);
+    } else {
+      window.addEventListener('resize', setNavbarHeight);
+    }
+  }
 </script>

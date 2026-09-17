@@ -39,6 +39,12 @@
   --font-serif-display: "Source Serif 4", Georgia, "Times New Roman", serif;
   --font-brand: "Space Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
+  /* fallback/first-paint value only - TopNav.astro's bundled script
+     measures the real rendered navbar height (it wraps to two lines at
+     some viewport widths, more readily in German than English, see the
+     i18n review) and overwrites this custom property on the root element
+     via ResizeObserver, so every "clear the fixed navbar" offset below
+     tracks the actual height instead of a constant. */
   --navbar-height: 64px;
 
   /* one colour per research tag (keyed by slugify(tag)) */
