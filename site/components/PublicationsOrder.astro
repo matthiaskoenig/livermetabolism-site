@@ -29,7 +29,8 @@ const known = hasData(fetchedAt);
 
 <div class="publication-order" id="publication-order" role="group" aria-label={t('pubOrder.groupLabel')}
   data-time-strings={JSON.stringify(ui.relativeDate)}
-  data-cited-template={t('pub.cited')}
+  data-cited-template-one={t('pub.citedOne')}
+  data-cited-template-other={t('pub.citedOther')}
   data-open-access-template={t('pub.openAccessWith')}>
   <button type="button" class="order-btn active" data-order="year" aria-pressed="true">{t('pubOrder.year')}</button>
   <button type="button" class="order-btn" data-order="cited" aria-pressed="false">{t('pubOrder.mostCited')}</button>

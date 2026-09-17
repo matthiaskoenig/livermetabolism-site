@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest';
-import { applyCitations, DEFAULT_CITED_TEMPLATE, DEFAULT_OPEN_ACCESS_TEMPLATE, refreshNote } from './citationsStats';
+import { applyCitations, DEFAULT_CITED_TEMPLATE_ONE, DEFAULT_CITED_TEMPLATE_OTHER, DEFAULT_OPEN_ACCESS_TEMPLATE, refreshNote } from './citationsStats';
 import { emptyCitations, type Citations } from './citationsSchema';
 import { en } from './i18n/ui.en';
 
@@ -10,6 +10,7 @@ const citations: Citations = {
   works: {
     '10.3389/fphar.2021.752826': { openalexId: 'W4226455100', citedByCount: 101, isOa: true, oaStatus: 'gold', countsByYear: [{ year: 2022, count: 7 }] },
     '10.1515/jib-2026-0006': { openalexId: 'W999', citedByCount: 0, isOa: false, oaStatus: 'closed', countsByYear: [] },
+    '10.1234/one-citation': { openalexId: 'W1', citedByCount: 1, isOa: false, oaStatus: 'closed', countsByYear: [] },
   },
 };
 
@@ -26,6 +27,7 @@ const markup = `
   <table><tbody>
     ${badge('cited', '10.3389/fphar.2021.752826')}
     ${badge('zero', '10.1515/jib-2026-0006')}
+    ${badge('one', '10.1234/one-citation')}
     ${badge('unknown', '10.1234/not-in-the-snapshot')}
     <tr id="pub-nodoi" data-tags="AI" data-cited="0"><td><span class="pub-links"></span></td></tr>
   </tbody></table>
@@ -91,16 +93,18 @@ describe('applyCitations', () => {
   it('reads its templates from #publication-order, so a German page stays German after a live refresh', () => {
     document.body.insertAdjacentHTML(
       'afterbegin',
-      '<div id="publication-order" data-cited-template="{count} Zitationen" data-open-access-template="Open Access ({status})"></div>',
+      '<div id="publication-order" data-cited-template-one="{count} Zitation" data-cited-template-other="{count} Zitationen" data-open-access-template="Open Access ({status})"></div>',
     );
     applyCitations(document, citations);
     expect(field('cited', 'cited').textContent).toBe('101 Zitationen');
+    expect(field('one', 'cited').textContent).toBe('1 Zitation');
     expect(field('cited', 'oa').title).toBe('Open Access (gold)');
   });
 
   it('falls back to the English templates without a #publication-order element', () => {
     applyCitations(document, citations);
     expect(field('cited', 'cited').textContent).toBe('cited 101');
+    expect(field('one', 'cited').textContent).toBe('cited 1');
     expect(field('cited', 'oa').title).toBe('Open access (gold)');
   });
 });
@@ -110,7 +114,8 @@ describe('the English defaults', () => {
   // falls back to these - pinned to the catalog so the two can never
   // quietly drift apart
   it('match their catalog counterparts', () => {
-    expect(DEFAULT_CITED_TEMPLATE).toBe(en.pub.cited);
+    expect(DEFAULT_CITED_TEMPLATE_ONE).toBe(en.pub.citedOne);
+    expect(DEFAULT_CITED_TEMPLATE_OTHER).toBe(en.pub.citedOther);
     expect(DEFAULT_OPEN_ACCESS_TEMPLATE).toBe(en.pub.openAccessWith);
   });
 });

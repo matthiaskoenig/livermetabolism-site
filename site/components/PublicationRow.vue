@@ -36,7 +36,7 @@ const cites = props.citation ?? null;
         <span v-if="doi" class="pub-cites" :data-doi="doi">
           <a class="pub-badge pub-badge-cited" data-field="cited" :href="cites ? openalexWorkUrl(cites.openalexId) : undefined"
             target="_blank" rel="noopener noreferrer" :title="strings.citations"
-            :hidden="!cites || cites.citedByCount === 0">{{ cites && cites.citedByCount ? fmt(strings.cited, { count: cites.citedByCount }) : '' }}</a>
+            :hidden="!cites || cites.citedByCount === 0">{{ cites && cites.citedByCount ? fmt(cites.citedByCount === 1 ? strings.cited.one : strings.cited.other, { count: cites.citedByCount }) : '' }}</a>
           <span class="pub-badge pub-badge-oa" data-field="oa" :title="cites ? fmt(strings.openAccessWith, { status: cites.oaStatus }) : strings.openAccessTitle" :hidden="!cites || !cites.isOa">{{ strings.openAccess }}</span>
         </span>
       </div>
