@@ -24,6 +24,24 @@ describe('auditTable', () => {
     ]);
   });
 
+  it('reports an entry with empty text as missing, even when its sha matches the source (it renders English forever otherwise)', () => {
+    const catalog = {
+      a: { description: { sha: sourceSha('English A'), text: '' } },
+      b: { description: { sha: sourceSha('English B'), text: 'Deutsch B' } },
+    };
+    expect(auditTable(rows, catalog, fields, 'de', 'people')).toEqual([
+      { kind: 'missing', locale: 'de', table: 'people', id: 'a', field: 'description' },
+    ]);
+  });
+
+  it('reports an empty-array entry (a string[] field) as missing too', () => {
+    const roleRows = [{ id: 'a', role: ['Group Leader'] }];
+    const catalog = { a: { role: { sha: sourceSha(['Group Leader']), text: [] } } };
+    expect(auditTable(roleRows, catalog, ['role'], 'de', 'people')).toEqual([
+      { kind: 'missing', locale: 'de', table: 'people', id: 'a', field: 'role' },
+    ]);
+  });
+
   it('reports a stale entry when the English source changed', () => {
     const catalog = {
       a: { description: { sha: sourceSha('something older'), text: 'Deutsch A' } },

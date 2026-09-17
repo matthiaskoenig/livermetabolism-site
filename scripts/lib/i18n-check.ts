@@ -44,7 +44,14 @@ export function auditTable(
       // An empty English source needs no translation.
       if (source == null || source === '' || (Array.isArray(source) && source.length === 0)) continue;
       const entry = entries[field];
-      if (!entry) issues.push({ kind: 'missing', locale, table, id, field });
+      // An entry with empty text is functionally untranslated - both
+      // loaders (localize() in content.ts, uiFor()'s `t` in catalog.ts)
+      // fall back to English for it - but a naive "does an entry exist"
+      // check would miss it: {sha: <correct>, text: ''} has a real entry
+      // whose sha can even match the source, so it would pass silently and
+      // render English forever. Treat it the same as no entry at all.
+      const isEmpty = (text: unknown) => text === '' || text == null || (Array.isArray(text) && text.length === 0);
+      if (!entry || isEmpty(entry.text)) issues.push({ kind: 'missing', locale, table, id, field });
       else if (entry.sha !== sourceSha(source as string | string[])) issues.push({ kind: 'stale', locale, table, id, field });
     }
     for (const field of Object.keys(entries)) {

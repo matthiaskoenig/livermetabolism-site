@@ -1,6 +1,6 @@
 ---
 name: translate-de
-description: Use when German translations need regenerating - after editing English prose in data/*.yml or site/lib/i18n/ui.en.ts, when `npm run i18n:check` reports missing/stale/orphaned/unknown-field entries for either the data tables or the UI catalog (i18n/de/ui.yml, including its placeholder-sha entries), or when asked to update/refresh/audit the German version of the site.
+description: Use when German translations need regenerating - after editing English prose in data/*.yml or site/lib/i18n/ui.en.ts, when `npm run i18n:check` reports missing/stale/orphaned/unknown-field entries for either the data tables or the UI catalog (i18n/de/ui.yml), or when asked to update/refresh/audit the German version of the site.
 ---
 
 # Regenerating the German catalogs
@@ -50,6 +50,16 @@ It exits `0` only when there is nothing left to do; otherwise it exits `1`
 and ends with "Run the translate-de skill to regenerate the affected
 entries."
 
+**It does NOT cover `i18n/de/pages/*.yml` / `i18n/en/pages/*.yml`** (the
+long-form legal-page prose, see "The legal pages invert the direction" in
+`i18n/TRANSLATION.md`). Those four files have no `sha` on any entry today,
+so there is nothing for a `missing`/`stale` comparison to check yet - an
+`i18n:check` exit of `0` says nothing about whether the English rendering
+of impressum/privacy is in sync with its German source. If you are asked to
+update `i18n/de/pages/impressum.yml` or `privacy.yml` (the binding source),
+regenerate `i18n/en/pages/` from it by hand as part of the same task - do
+not rely on `i18n:check` to tell you it needs doing.
+
 **Why the UI catalog never reports `orphaned`:** `i18n/de/ui.yml` is one
 flat map of dotted key -> `{sha, text}`, not rows keyed by id the way a
 data table is. A UI key that no longer exists in `ui.en.ts` is reported as
@@ -64,11 +74,12 @@ earlier and more legibly. Keep relying on both: `i18n:check` is the fast,
 CI-friendly signal; `npm run build` is the one that actually fails the
 site if a key is ever missed regardless.
 
-As of this writing every entry in `i18n/de/ui.yml` carries the placeholder
-`sha: '0000000000000000'` written by hand in earlier tasks; since a
-placeholder can never equal a real sha, `i18n:check` reports every one of
-them `stale` - that is expected and is exactly what makes them visible to
-translate.
+Earlier tasks (through Task 16a) had every entry in `i18n/de/ui.yml` carrying
+a placeholder `sha: '0000000000000000'`, which made `i18n:check` report all
+of them `stale` at once - that batch was cleared and every entry now carries
+its real sha, computed from its actual English source the same as a data-table
+entry. Do not expect to see the placeholder again; if `i18n:check` (or a page
+render) ever shows one, treat it as a regression, not the normal state.
 
 ## Computing the sha correctly
 
