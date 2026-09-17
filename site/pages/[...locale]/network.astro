@@ -3,13 +3,16 @@ import { publicDir } from 'astro:config/server';
 import { readdirSync } from 'node:fs';
 import { relative, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import Base from '../layouts/Base.astro';
-import NetworkGraph from '../components/NetworkGraph.vue';
-import { loadCitations } from '../lib/citations';
-import { getPeople, getProjects, getPublications, getSoftware, getTags } from '../lib/data';
-import { graphRows } from '../lib/graphRows';
-import { filterRows } from '../lib/networkOptions';
+import Base from '../../layouts/Base.astro';
+import NetworkGraph from '../../components/NetworkGraph.vue';
+import { loadCitations } from '../../lib/citations';
+import { getPeople, getProjects, getPublications, getSoftware, getTags } from '../../lib/data';
+import { graphRows } from '../../lib/graphRows';
+import { localeFromParams, localePaths } from '../../lib/i18n/routes';
+import { filterRows } from '../../lib/networkOptions';
 
+export const getStaticPaths = localePaths;
+const locale = localeFromParams(Astro.params);
 const [tags, people, publications, projects, software] = await Promise.all([getTags(), getPeople(), getPublications(), getProjects(), getSoftware()]);
 // citations size the publication nodes; a failed read yields an empty
 // snapshot and every paper draws at its minimum size
@@ -50,7 +53,7 @@ const counts = {
   software: shown.nodes.filter((n) => n.type === 'software').length,
 };
 ---
-<Base title="Network" sectionid="network"
+<Base title="Network" sectionid="network" locale={locale}
   description="Interactive network graph of the people, publications, projects, and software of the König group.">
   <h2 id="network">Network</h2>
   <p>

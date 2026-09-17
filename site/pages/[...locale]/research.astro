@@ -1,21 +1,24 @@
 ---
-import Base from '../layouts/Base.astro';
-import CommitActivityChart from '../components/CommitActivityChart.vue';
-import EditorCard from '../components/EditorCard.vue';
-import FundingCard from '../components/FundingCard.vue';
-import ReleaseFeed from '../components/ReleaseFeed.vue';
-import ReleaseTimeline from '../components/ReleaseTimeline.vue';
-import SoftwareCard from '../components/SoftwareCard.vue';
-import SoftwareLive from '../components/SoftwareLive.astro';
-import StarsChart from '../components/StarsChart.vue';
-import TagFilter from '../components/TagFilter.vue';
-import { repoFullName } from '../../scripts/lib/repos';
-import { getEditors, getFunding, getPeopleMap, getSoftware, getTags } from '../lib/data';
-import { loadSnapshot } from '../lib/github';
-import { activityRows, latestReleases, releaseTimelineRows, starsRows, statsFor } from '../lib/githubRows';
-import { asset } from '../lib/url';
-import { toTagFilterEntries } from '../lib/views';
+import Base from '../../layouts/Base.astro';
+import CommitActivityChart from '../../components/CommitActivityChart.vue';
+import EditorCard from '../../components/EditorCard.vue';
+import FundingCard from '../../components/FundingCard.vue';
+import ReleaseFeed from '../../components/ReleaseFeed.vue';
+import ReleaseTimeline from '../../components/ReleaseTimeline.vue';
+import SoftwareCard from '../../components/SoftwareCard.vue';
+import SoftwareLive from '../../components/SoftwareLive.astro';
+import StarsChart from '../../components/StarsChart.vue';
+import TagFilter from '../../components/TagFilter.vue';
+import { repoFullName } from '../../../scripts/lib/repos';
+import { getEditors, getFunding, getPeopleMap, getSoftware, getTags } from '../../lib/data';
+import { loadSnapshot } from '../../lib/github';
+import { activityRows, latestReleases, releaseTimelineRows, starsRows, statsFor } from '../../lib/githubRows';
+import { localeFromParams, localePaths } from '../../lib/i18n/routes';
+import { asset } from '../../lib/url';
+import { toTagFilterEntries } from '../../lib/views';
 
+export const getStaticPaths = localePaths;
+const locale = localeFromParams(Astro.params);
 const [tagInfo, peopleMap, software, funding, editors] = await Promise.all([getTags(), getPeopleMap(), getSoftware(), getFunding(), getEditors()]);
 const avatarBase = asset('image/people/128/');
 const tagFilterEntries = toTagFilterEntries(tagInfo);
@@ -34,7 +37,7 @@ const timelineRows = releaseTimelineRows(snapshot, repos);
 const stars = starsRows(snapshot, repos);
 const activity = activityRows(snapshot, repos);
 ---
-<Base title="Research" sectionid="research">
+<Base title="Research" sectionid="research" locale={locale}>
   <section id="releases">
     <h2>Releases</h2>
     <h3>Latest releases</h3>

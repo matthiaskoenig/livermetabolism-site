@@ -1,24 +1,27 @@
 ---
-import Base from '../layouts/Base.astro';
-import AbstractCard from '../components/AbstractCard.vue';
-import CitationHistoryChart from '../components/CitationHistoryChart.vue';
-import CitationsPerYearChart from '../components/CitationsPerYearChart.vue';
-import PosterCard from '../components/PosterCard.vue';
-import PresentationCard from '../components/PresentationCard.vue';
-import PublicationRow from '../components/PublicationRow.vue';
-import PublicationsChart from '../components/PublicationsChart.vue';
-import PublicationsOrder from '../components/PublicationsOrder.astro';
-import ScholarStats from '../components/ScholarStats.astro';
-import TagFilter from '../components/TagFilter.vue';
-import { citationFor, loadCitations } from '../lib/citations';
-import { getAbstracts, getPeopleMap, getPosters, getPresentations, getPublications, getTags } from '../lib/data';
-import { countPeerReviewed } from '../lib/homeStats';
-import { publicationsPerYear } from '../lib/publicationRows';
-import { loadScholar } from '../lib/scholar';
-import { historyRows, perYearRows } from '../lib/scholarRows';
-import { asset } from '../lib/url';
-import { groupByYear, toTagFilterEntries } from '../lib/views';
+import Base from '../../layouts/Base.astro';
+import AbstractCard from '../../components/AbstractCard.vue';
+import CitationHistoryChart from '../../components/CitationHistoryChart.vue';
+import CitationsPerYearChart from '../../components/CitationsPerYearChart.vue';
+import PosterCard from '../../components/PosterCard.vue';
+import PresentationCard from '../../components/PresentationCard.vue';
+import PublicationRow from '../../components/PublicationRow.vue';
+import PublicationsChart from '../../components/PublicationsChart.vue';
+import PublicationsOrder from '../../components/PublicationsOrder.astro';
+import ScholarStats from '../../components/ScholarStats.astro';
+import TagFilter from '../../components/TagFilter.vue';
+import { citationFor, loadCitations } from '../../lib/citations';
+import { getAbstracts, getPeopleMap, getPosters, getPresentations, getPublications, getTags } from '../../lib/data';
+import { countPeerReviewed } from '../../lib/homeStats';
+import { localeFromParams, localePaths } from '../../lib/i18n/routes';
+import { publicationsPerYear } from '../../lib/publicationRows';
+import { loadScholar } from '../../lib/scholar';
+import { historyRows, perYearRows } from '../../lib/scholarRows';
+import { asset } from '../../lib/url';
+import { groupByYear, toTagFilterEntries } from '../../lib/views';
 
+export const getStaticPaths = localePaths;
+const locale = localeFromParams(Astro.params);
 const [tagInfo, peopleMap, publications, presentations, posters, abstracts] = await Promise.all([getTags(), getPeopleMap(), getPublications(), getPresentations(), getPosters(), getAbstracts()]);
 const pdfBase = asset('pdf/');
 const avatarBase = asset('image/people/128/');
@@ -50,7 +53,7 @@ const publicationCount = countPeerReviewed(publications);
 // fetch) — the island's props are these aggregates, not the publications
 const chartRows = publicationsPerYear(publications, tagInfo);
 ---
-<Base title="Publications" sectionid="publications">
+<Base title="Publications" sectionid="publications" locale={locale}>
   <section id="scholar">
     <h2>Citations</h2>
     <ScholarStats scholar={scholar} publications={publicationCount} />

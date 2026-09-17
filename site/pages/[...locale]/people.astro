@@ -1,14 +1,18 @@
 ---
-import Base from '../layouts/Base.astro';
-import CoreMessages from '../components/CoreMessages.astro';
-import Icon from '../components/Icon.vue';
-import PersonAvatar from '../components/PersonAvatar.vue';
-import PersonCard from '../components/PersonCard.vue';
-import { getPeople, getTags } from '../lib/data';
-import { stripHtml, truncateWords } from '../lib/text';
-import { asset, url } from '../lib/url';
-import { alumniByYear } from '../lib/views';
+import Base from '../../layouts/Base.astro';
+import CoreMessages from '../../components/CoreMessages.astro';
+import Icon from '../../components/Icon.vue';
+import PersonAvatar from '../../components/PersonAvatar.vue';
+import PersonCard from '../../components/PersonCard.vue';
+import { getPeople, getTags } from '../../lib/data';
+import { localeFromParams, localePaths, urlFor } from '../../lib/i18n/routes';
+import { stripHtml, truncateWords } from '../../lib/text';
+import { asset } from '../../lib/url';
+import { alumniByYear } from '../../lib/views';
 
+export const getStaticPaths = localePaths;
+const locale = localeFromParams(Astro.params);
+const u = urlFor(locale);
 const [tags, people] = await Promise.all([getTags(), getPeople()]);
 const avatarBase = asset('image/people/128/');
 const current = people.filter((p) => p.status === 'current');
@@ -21,7 +25,7 @@ const positions = [
   { title: 'PostDoc', paragraphs: ['We have a fully funded open position available as PostDoc in Lübeck as a Research Software Engineer (RSE) or Informatician.', 'We also supervise postdoctoral projects if you have a fellowship or similar funding source.'] },
 ];
 ---
-<Base title="Team" sectionid="people">
+<Base title="Team" sectionid="people" locale={locale}>
   <h2 id="current-members">Team</h2>
   <div class="member-grid">
     {current.map((p) => <PersonCard person={p} avatarBase={avatarBase} />)}
@@ -39,7 +43,7 @@ const positions = [
       ))}
     </div>
     <p>We offer projects on the following topics</p>
-    <CoreMessages tags={tags} hrefPrefix={url('/')} />
+    <CoreMessages tags={tags} hrefPrefix={u('/')} />
     <p>Interested in joining the group? Contact <Icon name="envelope" /> <a href="mailto:matthias.koenig@uni-luebeck.de">Prof. Matthias König</a>.</p>
   </div>
 

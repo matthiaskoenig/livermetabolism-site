@@ -1,8 +1,12 @@
 ---
-import Base from '../layouts/Base.astro';
-import { url } from '../lib/url';
+import Base from '../../layouts/Base.astro';
+import { localeFromParams, localePaths, urlFor } from '../../lib/i18n/routes';
+
+export const getStaticPaths = localePaths;
+const locale = localeFromParams(Astro.params);
+const u = urlFor(locale);
 ---
-<Base title="Datenschutzerklärung" sectionid="privacy">
+<Base title="Datenschutzerklärung" sectionid="privacy" locale={locale}>
   <h2 id="privacy">Datenschutzerklärung</h2>
 
   <h3>1. Verantwortlicher</h3>
@@ -47,5 +51,5 @@ import { url } from '../lib/url';
   <h3>5. Ihre Rechte</h3>
   <p>Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten sowie ein Recht auf Datenübertragbarkeit und ein Widerspruchsrecht gegen die Verarbeitung. Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit über die im Impressum genannte Kontaktmöglichkeit an uns wenden. Ihnen steht zudem ein Beschwerderecht bei der zuständigen Datenschutz-Aufsichtsbehörde zu.</p>
 
-  <p><a href={url('/impressum/')}>Impressum</a></p>
+  <p><a href={u('/impressum/')}>Impressum</a></p>
 </Base>

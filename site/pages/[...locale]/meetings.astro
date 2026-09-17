@@ -1,18 +1,21 @@
 ---
-import Base from '../layouts/Base.astro';
-import MeetingCard from '../components/MeetingCard.vue';
-import TagFilter from '../components/TagFilter.vue';
-import { getMeetings, getPeopleMap, getTags } from '../lib/data';
-import { asset } from '../lib/url';
-import { toTagFilterEntries } from '../lib/views';
+import Base from '../../layouts/Base.astro';
+import MeetingCard from '../../components/MeetingCard.vue';
+import TagFilter from '../../components/TagFilter.vue';
+import { getMeetings, getPeopleMap, getTags } from '../../lib/data';
+import { localeFromParams, localePaths } from '../../lib/i18n/routes';
+import { asset } from '../../lib/url';
+import { toTagFilterEntries } from '../../lib/views';
 
+export const getStaticPaths = localePaths;
+const locale = localeFromParams(Astro.params);
 const [tagInfo, peopleMap, meetings] = await Promise.all([getTags(), getPeopleMap(), getMeetings()]);
 const imageBase = asset('image/meetings/');
 const pdfBase = asset('pdf/');
 const avatarBase = asset('image/people/128/');
 const tagFilterEntries = toTagFilterEntries(tagInfo);
 ---
-<Base title="Meetings" sectionid="meetings">
+<Base title="Meetings" sectionid="meetings" locale={locale}>
   <h2 id="meetings">Meetings</h2>
   <p>Meetings, workshops, and events we organized or hosted.</p>
   <TagFilter client:idle id="meeting" tags={tagFilterEntries} target="meetings-grid" />

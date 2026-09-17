@@ -1,9 +1,12 @@
 ---
 import Icon from './Icon.vue';
-import { asset, url } from '../lib/url';
+import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
+import { urlFor } from '../lib/i18n/routes';
+import { asset } from '../lib/url';
 
-interface Props { home?: boolean }
-const { home = false } = Astro.props;
+interface Props { home?: boolean; locale?: Locale }
+const { home = false, locale = DEFAULT_LOCALE } = Astro.props;
+const u = urlFor(locale);
 const email = 'matthias.koenig@uni-luebeck.de';
 // Injected by vite.define in astro.config.mjs (see site/env.d.ts).
 const version = __SITE_VERSION__;
@@ -22,7 +25,7 @@ const repo = 'https://github.com/matthiaskoenig/livermetabolism-site';
         <p class="footer-name"><strong>Prof. Dr. rer. nat. Matthias König</strong> &middot; Professor of Metabolic Inflammation and Carcinogenesis of the Liver</p>
       </div>
       <div class="footer-social">
-        <a href={url('/cv/')} target="_blank" rel="noopener noreferrer" title="Curriculum vitae"><Icon name="user" /></a>
+        <a href={u('/cv/')} target="_blank" rel="noopener noreferrer" title="Curriculum vitae"><Icon name="user" /></a>
         <a href="https://github.com/matthiaskoenig" target="_blank" rel="noopener noreferrer" title="GitHub"><Icon name="github" /></a>
         <a href="http://scholar.google.com/citations?user=xD9IjnYAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" title="Google Scholar"><Icon name="google" /></a>
         <a href="https://orcid.org/0000-0003-1725-179X" target="_blank" rel="noopener noreferrer" title="ORCID"><Icon name="orcid" /></a>
@@ -46,9 +49,9 @@ const repo = 'https://github.com/matthiaskoenig/livermetabolism-site';
       </div>
     </div>
     <div class="footer-legal">
-      <a href={url('/impressum/')}>Impressum</a>
+      <a href={u('/impressum/')}>Impressum</a>
       <span aria-hidden="true">&middot;</span>
-      <a href={url('/privacy/')}>Datenschutzerklärung</a>
+      <a href={u('/privacy/')}>Datenschutzerklärung</a>
       <span aria-hidden="true">&middot;</span>
       <a class="footer-version" href={`${repo}/releases/tag/${version}`} title="Release notes">v{version}</a>
       <a class="footer-version" href={`${repo}/commit/${commit}`} title="Deployed commit">{commit}</a>

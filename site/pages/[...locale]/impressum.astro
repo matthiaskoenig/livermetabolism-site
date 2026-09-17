@@ -1,8 +1,12 @@
 ---
-import Base from '../layouts/Base.astro';
-import { url } from '../lib/url';
+import Base from '../../layouts/Base.astro';
+import { localeFromParams, localePaths, urlFor } from '../../lib/i18n/routes';
+
+export const getStaticPaths = localePaths;
+const locale = localeFromParams(Astro.params);
+const u = urlFor(locale);
 ---
-<Base title="Impressum" sectionid="impressum">
+<Base title="Impressum" sectionid="impressum" locale={locale}>
   <h2 id="impressum">Impressum</h2>
 
   <h3>Angaben gemäß § 5 TMG, § 18 Abs. 2 MStV</h3>
@@ -36,5 +40,5 @@ import { url } from '../lib/url';
   <h4>Urheberrecht</h4>
   <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Beiträge Dritter (z. B. Publikationsabbildungen, Fotos) sind als solche gekennzeichnet. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Rechteinhabers.</p>
 
-  <p><a href={url('/privacy/')}>Datenschutzerklärung</a></p>
+  <p><a href={u('/privacy/')}>Datenschutzerklärung</a></p>
 </Base>

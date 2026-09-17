@@ -1,14 +1,17 @@
 ---
 import Icon from './Icon.vue';
-import { asset, url } from '../lib/url';
+import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
+import { urlFor } from '../lib/i18n/routes';
+import { asset } from '../lib/url';
 
-interface Props { sectionid?: string }
-const { sectionid } = Astro.props;
+interface Props { sectionid?: string; locale?: Locale }
+const { sectionid, locale = DEFAULT_LOCALE } = Astro.props;
+const u = urlFor(locale);
 const active = (...ids: string[]) => (sectionid && ids.includes(sectionid) ? 'active' : '');
 ---
 <nav class="navbar site-navbar">
   <div class="container navbar-container">
-    <a class="navbar-brand" href={url('/')}>
+    <a class="navbar-brand" href={u('/')}>
       <svg class="brand-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
         <polygon points="50,4 91,27 91,73 50,96 9,73 9,27" fill="none" stroke="#18BC9C" stroke-width="5"></polygon>
         <g stroke="#EAF0F1" stroke-width="3" fill="none">
@@ -36,38 +39,38 @@ const active = (...ids: string[]) => (sectionid && ids.includes(sectionid) ? 'ac
     <div id="navbar" class="navbar-collapse">
       <ul class="navbar-nav">
         <li class:list={['nav-item', 'dropdown', active('publications')]}>
-          <a class="nav-link" href={url('/publications/')}>Publications</a>
+          <a class="nav-link" href={u('/publications/')}>Publications</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href={url('/publications/#scholar')}>Citations</a></li>
-            <li><a class="dropdown-item" href={url('/publications/#publications')}>Publications</a></li>
-            <li><a class="dropdown-item" href={url('/publications/#presentations')}>Presentations</a></li>
-            <li><a class="dropdown-item" href={url('/publications/#posters')}>Posters</a></li>
-            <li><a class="dropdown-item" href={url('/publications/#abstracts')}>Abstracts</a></li>
+            <li><a class="dropdown-item" href={u('/publications/#scholar')}>Citations</a></li>
+            <li><a class="dropdown-item" href={u('/publications/#publications')}>Publications</a></li>
+            <li><a class="dropdown-item" href={u('/publications/#presentations')}>Presentations</a></li>
+            <li><a class="dropdown-item" href={u('/publications/#posters')}>Posters</a></li>
+            <li><a class="dropdown-item" href={u('/publications/#abstracts')}>Abstracts</a></li>
           </ul>
         </li>
-        <li class:list={['nav-item', active('projects')]}><a class="nav-link" href={url('/projects/')}>Projects</a></li>
+        <li class:list={['nav-item', active('projects')]}><a class="nav-link" href={u('/projects/')}>Projects</a></li>
         <li class:list={['nav-item', 'dropdown', active('people')]}>
-          <a class="nav-link" href={url('/people/')}>Team</a>
+          <a class="nav-link" href={u('/people/')}>Team</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href={url('/people/#current-members')}>Team</a></li>
-            <li><a class="dropdown-item" href={url('/people/#open-positions')}>Open Positions</a></li>
-            <li><a class="dropdown-item" href={url('/people/#alumni')}>Alumni</a></li>
+            <li><a class="dropdown-item" href={u('/people/#current-members')}>Team</a></li>
+            <li><a class="dropdown-item" href={u('/people/#open-positions')}>Open Positions</a></li>
+            <li><a class="dropdown-item" href={u('/people/#alumni')}>Alumni</a></li>
           </ul>
         </li>
         <li class:list={['nav-item', 'dropdown', active('research', 'meetings')]}>
-          <a class="nav-link" href={url('/research/')}>Research</a>
+          <a class="nav-link" href={u('/research/')}>Research</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href={url('/research/#releases')}>Releases</a></li>
-            <li><a class="dropdown-item" href={url('/research/#activity')}>Activity</a></li>
-            <li><a class="dropdown-item" href={url('/research/#software')}>Software</a></li>
-            <li><a class="dropdown-item" href={url('/research/#funding')}>Funding</a></li>
-            <li><a class="dropdown-item" href={url('/research/#editors')}>Editors</a></li>
-            <li><a class="dropdown-item" href={url('/meetings/')}>Meetings</a></li>
+            <li><a class="dropdown-item" href={u('/research/#releases')}>Releases</a></li>
+            <li><a class="dropdown-item" href={u('/research/#activity')}>Activity</a></li>
+            <li><a class="dropdown-item" href={u('/research/#software')}>Software</a></li>
+            <li><a class="dropdown-item" href={u('/research/#funding')}>Funding</a></li>
+            <li><a class="dropdown-item" href={u('/research/#editors')}>Editors</a></li>
+            <li><a class="dropdown-item" href={u('/meetings/')}>Meetings</a></li>
           </ul>
         </li>
-        <li class:list={['nav-item', active('network')]}><a class="nav-link" href={url('/network/')}>Network</a></li>
-        <li class:list={['nav-item', active('news')]}><a class="nav-link" href={url('/news/')}>News</a></li>
-        <li class:list={['nav-item', active('teaching')]}><a class="nav-link" href={url('/teaching/')}>Teaching</a></li>
+        <li class:list={['nav-item', active('network')]}><a class="nav-link" href={u('/network/')}>Network</a></li>
+        <li class:list={['nav-item', active('news')]}><a class="nav-link" href={u('/news/')}>News</a></li>
+        <li class:list={['nav-item', active('teaching')]}><a class="nav-link" href={u('/teaching/')}>Teaching</a></li>
         <li class="nav-item"><a class="nav-link" href={asset('cv/Koenig_CV.pdf')} target="_blank" rel="noopener noreferrer">CV</a></li>
       </ul>
     </div>
