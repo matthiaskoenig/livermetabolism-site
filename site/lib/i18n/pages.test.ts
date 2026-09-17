@@ -1,4 +1,6 @@
-import { describe, expect, it } from 'vitest';
+import path from 'node:path';
+import { dump } from 'js-yaml';
+import { describe, expect, it, vi } from 'vitest';
 import { loadPage } from './pages';
 
 describe('loadPage', () => {
@@ -13,6 +15,37 @@ describe('loadPage', () => {
   });
   it('returns an empty record for an unknown page rather than throwing', () => {
     expect(loadPage('en', 'nope')).toEqual({});
+  });
+
+  it('falls back to the German source when the English entry text is empty, not merely missing', async () => {
+    // Build an English catalog with an explicit but empty `text` for
+    // `heading`, and a German source with a real value for it - so this
+    // fails if the merge is `flat[k] ??= v` (an empty string is not
+    // null/undefined, so it would "win" and render blank) and only passes
+    // when an empty/whitespace-only value is treated as missing.
+    const enFixture = { heading: { sha: '0000000000000000', text: '' } };
+    const deFixture = { heading: { sha: '0000000000000000', text: 'Impressum' } };
+
+    // loadPage() caches per locale/page at module scope, so a plain
+    // re-call would just hit the cache already populated from the real
+    // catalogs by the tests above. Reset the module registry and mock
+    // node:fs for a fresh import of pages.ts, which gets its own empty
+    // cache and reads the fixtures above instead of the real files.
+    vi.resetModules();
+    vi.doMock('node:fs', () => ({
+      default: {
+        existsSync: () => true,
+        readFileSync: (filePath: string) =>
+          dump(filePath.includes(`${path.sep}en${path.sep}`) ? enFixture : deFixture),
+      },
+    }));
+    try {
+      const { loadPage: freshLoadPage } = await import('./pages');
+      expect(freshLoadPage('en', 'impressum').heading).toBe('Impressum');
+    } finally {
+      vi.doUnmock('node:fs');
+      vi.resetModules();
+    }
   });
 
   // A legal notice must never render blank: the worst acceptable failure is

@@ -44,7 +44,15 @@ export function loadPage(locale: Locale, page: string): Record<string, string> {
   const file = path.join(process.cwd(), 'i18n', locale, 'pages', `${page}.yml`);
   const raw = fs.existsSync(file) ? ((load(fs.readFileSync(file, 'utf8')) ?? {}) as Record<string, PageEntry>) : {};
   const flat: Record<string, string> = {};
-  for (const [k, entry] of Object.entries(raw)) flat[k] = entry.text;
+  // An entry that exists but is empty (or whitespace-only) is treated as
+  // untranslated, not as an explicit value: it falls through to the
+  // page's source locale below exactly like a missing key would. Without
+  // this, a catalog value written as `text: ''` would render blank rather
+  // than falling back to the binding German text (see the ??= fallback
+  // below and i18n/TRANSLATION.md's "The legal pages invert the direction").
+  for (const [k, entry] of Object.entries(raw)) {
+    if (entry.text != null && entry.text.trim() !== '') flat[k] = entry.text;
+  }
   const source = sourceLocaleFor(page);
   if (locale !== source) {
     const base = loadPage(source, page);
