@@ -106,6 +106,23 @@ export function flatten(tree: unknown, prefix = ''): Record<string, string> {
 const UI_ROW_ID = '(ui.en.ts)';
 
 export function auditUi(en: Record<string, string>, catalog: Record<string, CatalogEntry>, locale: string): Issue[] {
+  // `rows = [{ id: UI_ROW_ID, ...en }]` spreads every flattened UI key onto
+  // one object that also carries the synthetic row id under the same `id`
+  // property auditTable() uses to identify the row. A UI key literally
+  // named "id" would collide with it - silently, since object spread just
+  // overwrites - and either misroute the whole row (id lost) or shadow that
+  // one field's real English value (id kept), producing a confusing false
+  // positive with no indication why. Refuse instead of guessing: no such
+  // key exists today, so this only ever fires if one is added later, at
+  // which point it needs a real decision (rename the UI key, or rename
+  // UI_ROW_ID's carrier property), not a silently wrong audit.
+  if (Object.hasOwn(en, 'id')) {
+    throw new Error(
+      'site/lib/i18n/ui.en.ts has a flattened key literally named "id", which ' +
+        'collides with the synthetic row id auditUi() uses to audit it - rename ' +
+        'that UI key, or rename UI_ROW_ID\'s carrier property in scripts/lib/i18n-check.ts.',
+    );
+  }
   const fields = Object.keys(en);
   const rows = [{ id: UI_ROW_ID, ...en }];
   const nested: Catalog = { [UI_ROW_ID]: catalog };

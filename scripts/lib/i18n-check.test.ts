@@ -163,4 +163,10 @@ describe('auditUi', () => {
     const kinds = auditUi(en, catalog, 'de').map((i) => i.kind);
     expect(kinds).not.toContain('orphaned');
   });
+
+  it('refuses a flattened UI key literally named "id" instead of silently colliding with the synthetic row id', () => {
+    const enWithIdKey = { ...en, id: 'Some English value' };
+    const catalog = { 'nav.publications': { sha: sourceSha('Publications'), text: 'Publikationen' } };
+    expect(() => auditUi(enWithIdKey, catalog, 'de')).toThrow(/named "id"/);
+  });
 });

@@ -5,6 +5,14 @@ import { fmt } from './format';
 import { DEFAULT_LOCALE, type Locale } from './locales';
 import { en, type UiKey } from './ui.en';
 
+/**
+ * NOTE: scripts/lib/i18n-check.ts has a copy of this function (also named
+ * `flatten`) that must be kept in sync with this one. It cannot import this
+ * module instead: catalog.ts's own `./format`/`./locales` imports are bare
+ * (no ".ts") specifiers, which Vite resolves but Node's direct execution of
+ * that script cannot. If you change this transform (how nesting is walked,
+ * what counts as a leaf), change the copy there too.
+ */
 export function flatten(tree: unknown, prefix = ''): Record<string, string> {
   const out: Record<string, string> = {};
   for (const [key, value] of Object.entries(tree as Record<string, unknown>)) {
