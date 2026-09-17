@@ -1,38 +1,54 @@
 # AUTO-GENERATED from i18n/de/pages/impressum.yml (the binding German source).
 # Do not edit by hand; regenerate with the translate-de skill.
 heading:
+  sha: b8a6051923e6a649
   text: Legal Notice
 bindingNotice:
   text: This is a translation for convenience. Only the German version is legally binding.
 providerHeading:
+  sha: 378aba24bae99cca
   text: Information pursuant to § 5 TMG, § 18 Abs. 2 MStV
 addressName:
+  sha: af7d496229de4338
   text: Prof. Dr. rer. nat. Matthias König
 addressInstitution:
+  sha: 0f421bff9a80a5f8
   text: University Hospital Schleswig-Holstein, Campus Lübeck
 addressDepartment:
+  sha: 63631ab9c2863d16
   text: First Department of Medicine
 addressStreet:
+  sha: 8d7786cca5fa6fbc
   text: Ratzeburger Allee 160
 addressCity:
+  sha: 3afa0de9f0155df0
   text: 23562 Lübeck, Germany
 contactHeading:
+  sha: 325eecf9d30156c2
   text: Contact
 contactPhone:
+  sha: 7916ce91f0158209
   text: 'Phone: +49 451 3101-7845'
 contactEmailLabel:
+  sha: ef34d93f31a76f7a
   text: 'Email:'
 contactEmail:
+  sha: 4b329899ec622323
   text: matthias.koenig@uni-luebeck.de
 responsibleHeading:
+  sha: 248f10ef96cc10af
   text: Responsible for content pursuant to § 18 Abs. 2 MStV
 responsibleText:
+  sha: b76b4db5a2f57859
   text: Prof. Dr. rer. nat. Matthias König (address as above)
 disclaimerHeading:
+  sha: f441d0e7013fc52e
   text: Disclaimer
 liabilityContentHeading:
+  sha: 22e92ec30d50b76b
   text: Liability for Content
 liabilityContentText:
+  sha: 6aa385b4e087bfc7
   text: >-
     The content of this website has been created with the greatest care. However, we cannot
     guarantee the accuracy, completeness or timeliness of the content. As a service provider, we
@@ -41,8 +57,10 @@ liabilityContentText:
     obliged to monitor transmitted or stored third-party information or to investigate
     circumstances that indicate unlawful activity.
 liabilityLinksHeading:
+  sha: 34f4597f12bd1bcb
   text: Liability for Links
 liabilityLinksText:
+  sha: c6366f778e587cb2
   text: >-
     This website contains links to external third-party websites over whose content we have no
     influence. We therefore cannot accept any liability for this external content. The respective
@@ -51,12 +69,15 @@ liabilityLinksText:
     legal violation. If we become aware of any legal violations, we will remove such links
     immediately.
 copyrightHeading:
+  sha: afdd5134162384d6
   text: Copyright
 copyrightText:
+  sha: 4b74ddf7ec4de33c
   text: >-
     The content and works created by the site operators on these pages are subject to German
     copyright law. Third-party contributions (e.g. publication figures, photos) are marked as
     such. Reproduction, editing, distribution and any kind of use outside the limits of copyright
     law require the written consent of the respective rights holder.
 privacyLinkText:
+  sha: a1235efbc18d60e2
   text: Privacy Policy

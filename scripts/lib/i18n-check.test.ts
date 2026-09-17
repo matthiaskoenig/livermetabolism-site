@@ -1,6 +1,11 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { load } from 'js-yaml';
 import { describe, expect, it } from 'vitest';
 import { sourceSha } from '../../site/lib/i18n/sha';
-import { auditTable, auditUi, CatalogParseError, flatten, formatIssues } from './i18n-check';
+import { PAGE_SOURCE_LOCALE, PAGE_LOCALE_ONLY_FIELDS } from '../../site/lib/i18n/pageLocales';
+import { DEFAULT_LOCALE, LOCALES } from '../../site/lib/i18n/locales';
+import { auditTable, auditUi, auditPage, CatalogParseError, flatten, formatIssues } from './i18n-check';
 
 const rows = [
   { id: 'a', description: 'English A' },
@@ -231,5 +236,135 @@ describe('auditUi', () => {
     const enWithIdKey = { ...en, id: 'Some English value' };
     const catalog = { 'nav.publications': { sha: sourceSha('Publications'), text: 'Publikationen' } };
     expect(() => auditUi(enWithIdKey, catalog, 'de')).toThrow(/named "id"/);
+  });
+});
+
+// auditPage() is auditUi()'s adapter for i18n/{de,en}/pages/<page>.yml
+// (impressum, privacy): one flat map per page, wrapped as a single
+// synthetic row, same shape as the UI catalog - except the source side can
+// be either locale (PAGE_SOURCE_LOCALE inverts it for these two pages,
+// since the binding text is German). These fixture-based tests exercise
+// the adapter directly; the 'bites on the real catalogs' block below
+// proves the wiring in scripts/i18n-check.ts actually catches a real edit.
+describe('auditPage', () => {
+  const sourceValues = { heading: 'Impressum', providerHeading: 'Angaben gemäß § 5 TMG' };
+
+  it('reports nothing when every page entry is current', () => {
+    const catalog = {
+      heading: { sha: sourceSha('Impressum'), text: 'Legal Notice' },
+      providerHeading: { sha: sourceSha('Angaben gemäß § 5 TMG'), text: 'Information pursuant to § 5' },
+    };
+    expect(auditPage(sourceValues, catalog, 'en', 'impressum')).toEqual([]);
+  });
+
+  it('reports a stale entry when the source value changed', () => {
+    const catalog = {
+      heading: { sha: sourceSha('Impressum (old)'), text: 'Legal Notice' },
+      providerHeading: { sha: sourceSha('Angaben gemäß § 5 TMG'), text: 'Information pursuant to § 5' },
+    };
+    expect(auditPage(sourceValues, catalog, 'en', 'impressum')).toEqual([
+      { kind: 'stale', locale: 'en', table: 'pages/impressum', id: '(pages/impressum)', field: 'heading' },
+    ]);
+  });
+
+  it('reports a missing key', () => {
+    const catalog = { heading: { sha: sourceSha('Impressum'), text: 'Legal Notice' } };
+    expect(auditPage(sourceValues, catalog, 'en', 'impressum')).toEqual([
+      { kind: 'missing', locale: 'en', table: 'pages/impressum', id: '(pages/impressum)', field: 'providerHeading' },
+    ]);
+  });
+
+  it('reports an extra key not in the source as unknown-field', () => {
+    const catalog = {
+      heading: { sha: sourceSha('Impressum'), text: 'Legal Notice' },
+      providerHeading: { sha: sourceSha('Angaben gemäß § 5 TMG'), text: 'Information pursuant to § 5' },
+      staleLeftover: { sha: 'deadbeefdeadbeef', text: 'No longer a real field' },
+    };
+    expect(auditPage(sourceValues, catalog, 'en', 'impressum')).toEqual([
+      { kind: 'unknown-field', locale: 'en', table: 'pages/impressum', id: '(pages/impressum)', field: 'staleLeftover' },
+    ]);
+  });
+
+  it('never reports orphaned - like the UI catalog, a stray page key is always unknown-field instead', () => {
+    const catalog = {
+      heading: { sha: sourceSha('Impressum'), text: 'Legal Notice' },
+      providerHeading: { sha: sourceSha('Angaben gemäß § 5 TMG'), text: 'Information pursuant to § 5' },
+      bogus: { sha: 'x', text: 'y' },
+    };
+    const kinds = auditPage(sourceValues, catalog, 'en', 'impressum').map((i) => i.kind);
+    expect(kinds).not.toContain('orphaned');
+  });
+
+  it('excludes a locale-only field (no source counterpart) from both missing/stale and unknown-field', () => {
+    const catalog = {
+      heading: { sha: sourceSha('Impressum'), text: 'Legal Notice' },
+      providerHeading: { sha: sourceSha('Angaben gemäß § 5 TMG'), text: 'Information pursuant to § 5' },
+      bindingNotice: { text: 'This is a translation for convenience. Only the German version is legally binding.' },
+    };
+    expect(auditPage(sourceValues, catalog, 'en', 'impressum', ['bindingNotice'])).toEqual([]);
+  });
+
+  it('flags a locale-only field as unknown-field once it is no longer declared locale-only', () => {
+    const catalog = {
+      heading: { sha: sourceSha('Impressum'), text: 'Legal Notice' },
+      providerHeading: { sha: sourceSha('Angaben gemäß § 5 TMG'), text: 'Information pursuant to § 5' },
+      bindingNotice: { text: 'This is a translation for convenience. Only the German version is legally binding.' },
+    };
+    expect(auditPage(sourceValues, catalog, 'en', 'impressum', [])).toEqual([
+      { kind: 'unknown-field', locale: 'en', table: 'pages/impressum', id: '(pages/impressum)', field: 'bindingNotice' },
+    ]);
+  });
+});
+
+// These tests read the real i18n/{de,en}/pages/*.yml files (not fixtures)
+// to prove the sha guard actually bites on the checked-in catalogs, the
+// same way `PublicationsChart.vue` etc. are tested against the real YAML
+// elsewhere in this repo - a fixture-only test suite could pass while the
+// real catalogs (freshly given shas by this change) were still out of
+// sync with each other.
+describe('auditPage bites on the real page catalogs', () => {
+  const root = path.join(__dirname, '../..');
+
+  interface PageEntry { sha?: string; text: string }
+  const readPage = (locale: string, page: string): Record<string, PageEntry> =>
+    load(fs.readFileSync(path.join(root, 'i18n', locale, 'pages', `${page}.yml`), 'utf8')) as Record<string, PageEntry>;
+
+  it('PAGE_SOURCE_LOCALE covers every page catalog that exists on disk', () => {
+    for (const locale of LOCALES) {
+      const dir = path.join(root, 'i18n', locale, 'pages');
+      const pages = fs.readdirSync(dir).map((f) => f.replace(/\.yml$/, ''));
+      for (const page of pages) expect(Object.keys(PAGE_SOURCE_LOCALE)).toContain(page);
+    }
+  });
+
+  it('reports nothing today: the real generated catalogs are in sync with their real source', () => {
+    for (const page of Object.keys(PAGE_SOURCE_LOCALE)) {
+      const source = PAGE_SOURCE_LOCALE[page] ?? DEFAULT_LOCALE;
+      const generated = LOCALES.find((l) => l !== source);
+      if (!generated) continue;
+      const sourceValues = Object.fromEntries(
+        Object.entries(readPage(source, page)).map(([field, entry]) => [field, entry.text]),
+      );
+      const catalog = readPage(generated, page);
+      expect(auditPage(sourceValues, catalog, generated, page, PAGE_LOCALE_ONLY_FIELDS[page] ?? [])).toEqual([]);
+    }
+  });
+
+  it('catches a real, in-memory edit to the German source of impressum as stale in the generated English', () => {
+    const source = PAGE_SOURCE_LOCALE.impressum ?? DEFAULT_LOCALE;
+    const generated = LOCALES.find((l) => l !== source)!;
+    const sourceRaw = readPage(source, 'impressum');
+    const editedValues = Object.fromEntries(
+      Object.entries(sourceRaw).map(([field, entry]) => [field, entry.text]),
+    );
+    // Mutate the in-memory value only - the file on disk is untouched -
+    // simulating exactly the scenario the guard exists for: the owner
+    // edits the binding German text and forgets to regenerate English.
+    editedValues.heading = `${editedValues.heading} (edited)`;
+    const catalog = readPage(generated, 'impressum');
+    const issues = auditPage(editedValues, catalog, generated, 'impressum', PAGE_LOCALE_ONLY_FIELDS.impressum ?? []);
+    expect(issues).toEqual([
+      { kind: 'stale', locale: generated, table: 'pages/impressum', id: '(pages/impressum)', field: 'heading' },
+    ]);
   });
 });

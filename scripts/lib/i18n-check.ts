@@ -173,18 +173,87 @@ export function auditUi(en: Record<string, string>, catalog: Record<string, Cata
   return auditTable(rows, nested, fields, locale, 'ui');
 }
 
+/**
+ * i18n/{de,en}/pages/<page>.yml (impressum, privacy) audited the same way
+ * as the UI catalog is - one flat map, wrapped as a single synthetic row -
+ * except the *source* side can be either locale (PAGE_SOURCE_LOCALE in
+ * site/lib/i18n/pageLocales.ts inverts it for impressum/privacy, whose
+ * binding text is German), so the caller passes whichever locale's values
+ * are the source as `sourceValues` and the *other* locale's catalog to
+ * check against it; scripts/i18n-check.ts is the only caller and reads
+ * PAGE_SOURCE_LOCALE to know which is which for a given page.
+ *
+ * `localeOnlyFields` (PAGE_LOCALE_ONLY_FIELDS in pageLocales.ts) names
+ * fields that exist only in the generated locale by design, with no
+ * source counterpart at all (impressum/privacy's `bindingNotice`, the
+ * "this is a translation for convenience" notice, meaningful only in a
+ * non-source locale). They are filtered out of the catalog before handing
+ * it to auditTable, so they are never flagged `unknown-field` for having
+ * no matching source key, and are never checked for `missing`/`stale`
+ * either (they are absent from `fields`, which comes from `sourceValues`
+ * alone).
+ */
+/**
+ * A page-catalog entry, unlike a data-table or UI-catalog CatalogEntry, may
+ * legitimately have no `sha` at all: a locale-only field (see
+ * `localeOnlyFields` below) is never generated from a source value, so
+ * there is nothing to hash. `auditPage()` only ever compares the `sha` of
+ * an entry that survives the `localeOnlyFields` filter below, so this
+ * looser type is accurate, not a hole in the check.
+ */
+export type PageCatalogEntry = { sha?: string; text: string };
+
+export function auditPage(
+  sourceValues: Record<string, string>,
+  catalog: Record<string, PageCatalogEntry>,
+  locale: string,
+  page: string,
+  localeOnlyFields: readonly string[] = [],
+): Issue[] {
+  const rowId = `(pages/${page})`;
+  const fields = Object.keys(sourceValues);
+  const filteredCatalog = Object.fromEntries(
+    Object.entries(catalog).filter(([field]) => !localeOnlyFields.includes(field)),
+  ) as Record<string, CatalogEntry>;
+  const rows = [{ id: rowId, ...sourceValues }];
+  const nested: Catalog = { [rowId]: filteredCatalog };
+  return auditTable(rows, nested, fields, locale, `pages/${page}`);
+}
+
+/**
+ * auditPage() above tags its issues' `table` as `pages/<page>` (never a
+ * bare table name a real data table could collide with), so formatIssues()
+ * can group data-table, UI-catalog and page-catalog issues into their own
+ * sections below, without a third field on Issue.
+ */
+function categoryOf(table: string): 'Data tables' | 'UI catalog' | 'Page catalogs' {
+  if (table === 'ui') return 'UI catalog';
+  if (table.startsWith('pages/')) return 'Page catalogs';
+  return 'Data tables';
+}
+
 export function formatIssues(issues: Issue[]): string {
-  if (issues.length === 0) return 'i18n: every German catalog entry is up to date.';
-  const byKind = new Map<Issue['kind'], Issue[]>();
-  for (const issue of issues) byKind.set(issue.kind, [...(byKind.get(issue.kind) ?? []), issue]);
+  // "Every catalog", not "every German catalog": impressum/privacy invert
+  // the direction, so the catalog this check may need to update for them
+  // is the English one, not the German one - see auditPage() above.
+  if (issues.length === 0) return 'i18n: every catalog entry is up to date.';
   const lines = [`i18n: ${issues.length} issue(s).`];
-  for (const [kind, list] of byKind) {
-    lines.push(`\n  ${kind} (${list.length}):`);
-    for (const i of list) {
-      // ui rows carry no meaningful id (see auditUi/UI_ROW_ID above) - the
-      // dotted key in `field` already names the entry uniquely on its own.
-      const locator = i.table === 'ui' ? i.field : `${i.id}.${i.field}`;
-      lines.push(`    ${i.locale}/${i.table}/${locator}`);
+  const categories: ReturnType<typeof categoryOf>[] = ['Data tables', 'UI catalog', 'Page catalogs'];
+  for (const category of categories) {
+    const inCategory = issues.filter((i) => categoryOf(i.table) === category);
+    if (inCategory.length === 0) continue;
+    lines.push(`\n  ${category} - ${inCategory.length} issue(s):`);
+    const byKind = new Map<Issue['kind'], Issue[]>();
+    for (const issue of inCategory) byKind.set(issue.kind, [...(byKind.get(issue.kind) ?? []), issue]);
+    for (const [kind, list] of byKind) {
+      lines.push(`\n    ${kind} (${list.length}):`);
+      for (const i of list) {
+        // ui rows and page rows carry no meaningful id (see
+        // auditUi/UI_ROW_ID and auditPage above) - the dotted/plain key in
+        // `field` already names the entry uniquely on its own.
+        const locator = i.table === 'ui' || i.table.startsWith('pages/') ? i.field : `${i.id}.${i.field}`;
+        lines.push(`      ${i.locale}/${i.table}/${locator}`);
+      }
     }
   }
   lines.push('\n  Run the translate-de skill to regenerate the affected entries.');

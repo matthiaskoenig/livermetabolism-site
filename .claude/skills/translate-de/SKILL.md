@@ -1,6 +1,6 @@
 ---
 name: translate-de
-description: Use when German translations need regenerating - after editing English prose in data/*.yml or site/lib/i18n/ui.en.ts, when `npm run i18n:check` reports missing/stale/orphaned/unknown-field entries for either the data tables or the UI catalog (i18n/de/ui.yml), or when asked to update/refresh/audit the German version of the site.
+description: Use when German translations need regenerating - after editing English prose in data/*.yml or site/lib/i18n/ui.en.ts, after editing the German legal-page source (i18n/de/pages/impressum.yml or privacy.yml), when `npm run i18n:check` reports missing/stale/orphaned/unknown-field entries for the data tables, the UI catalog (i18n/de/ui.yml), or the page catalogs (i18n/{de,en}/pages/*.yml), or when asked to update/refresh/audit the German (or, for the legal pages, English) version of the site.
 ---
 
 # Regenerating the German catalogs
@@ -30,39 +30,49 @@ npm run i18n:check
 It audits **the nine data tables registered in `site/lib/i18n/fields.ts`**
 (`tags`, `people`, `projects`, `software`, `editors`, `funding`, `news`,
 `teaching`, `meetings`) against their `i18n/de/<table>.yml`
-catalogs, **and** the UI catalog (`i18n/de/ui.yml`) against
-`site/lib/i18n/ui.en.ts`. A data-table line reads
+catalogs, **the UI catalog** (`i18n/de/ui.yml`) against
+`site/lib/i18n/ui.en.ts`, **and the legal-page catalogs**
+(`i18n/{de,en}/pages/impressum.yml` and `.../privacy.yml`, the long-form
+legal-page prose) against each other. A data-table line reads
 `<locale>/<table>/<id>.<field>`, e.g.
 `de/people/matthias_koenig.description`; a UI line reads
-`<locale>/ui/<dotted.key>`, e.g. `de/ui/nav.publications` (the UI catalog
-has no per-row id the way a data table does - see `auditUi()` in
-`scripts/lib/i18n-check.ts` for why it is printed this way). Every line is
-grouped under one of four kinds:
+`<locale>/ui/<dotted.key>`, e.g. `de/ui/nav.publications`; a page-catalog
+line reads `<locale>/pages/<page>/<field>`, e.g.
+`en/pages/impressum/heading` (the UI and page catalogs have no per-row id
+the way a data table does - see `auditUi()`/`auditPage()` in
+`scripts/lib/i18n-check.ts` for why they print this way). The output groups
+issues into three sections - "Data tables", "UI catalog", "Page catalogs" -
+so you can tell at a glance which kind of catalog needs work. Every line is
+grouped under one of four kinds within its section:
 
 | Kind | Meaning | Action |
 |---|---|---|
-| `missing` | No German entry for this field/key yet. | Translate it. |
-| `stale` | The recorded `sha` no longer matches the current English source. | Re-translate from the current English, replace the text and `sha`. |
-| `orphaned` | A data-table entry's row no longer exists in `data/<table>.yml`. Cannot occur for the UI catalog - see below. | Delete the entry. |
-| `unknown-field` | The entry's field/key is not in `fields.ts` (data tables) or `ui.en.ts` (UI catalog). | Delete the entry. |
+| `missing` | No translated entry for this field/key yet. | Translate it. |
+| `stale` | The recorded `sha` no longer matches the current source value. | Re-translate from the current source, replace the text and `sha`. |
+| `orphaned` | A data-table entry's row no longer exists in `data/<table>.yml`. Cannot occur for the UI or page catalogs - see below. | Delete the entry. |
+| `unknown-field` | The entry's field/key is not in `fields.ts` (data tables), `ui.en.ts` (UI catalog), or the page's own source catalog (page catalogs). | Delete the entry. |
 
 It exits `0` only when there is nothing left to do; otherwise it exits `1`
 and ends with "Run the translate-de skill to regenerate the affected
 entries."
 
-**It does NOT cover `i18n/de/pages/*.yml` / `i18n/en/pages/*.yml`** (the
-long-form legal-page prose, see "The legal pages invert the direction" in
-`i18n/TRANSLATION.md`). Those four files have no `sha` on any entry today,
-so there is nothing for a `missing`/`stale` comparison to check yet - an
-`i18n:check` exit of `0` says nothing about whether the English rendering
-of impressum/privacy is in sync with its German source. If you are asked to
-update `i18n/de/pages/impressum.yml` or `privacy.yml` (the binding source),
-regenerate `i18n/en/pages/` from it by hand as part of the same task - do
-not rely on `i18n:check` to tell you it needs doing.
+**The legal pages invert the direction, and the audit follows it.**
+`impressum` and `privacy` are authored in German (`i18n/de/pages/*.yml`,
+the legally binding text), so their `i18n/en/pages/*.yml` rendering is the
+*generated* side there - the opposite of every other catalog, where English
+is the source. `PAGE_SOURCE_LOCALE` (`site/lib/i18n/pageLocales.ts`) says
+which is which per page, and `scripts/i18n-check.ts` reads that same map
+to audit the correct direction - see "The legal pages invert the
+direction" in `i18n/TRANSLATION.md` for the full design, including the one
+field (`bindingNotice`) that is locale-only by design and excluded from the
+audit entirely. If you are asked to update `i18n/de/pages/impressum.yml`
+or `privacy.yml` (the binding source), `i18n:check` will now tell you if
+`i18n/en/pages/` needs regenerating from it - the same as any other source
+edit.
 
-**Why the UI catalog never reports `orphaned`:** `i18n/de/ui.yml` is one
-flat map of dotted key -> `{sha, text}`, not rows keyed by id the way a
-data table is. A UI key that no longer exists in `ui.en.ts` is reported as
+**Why the UI and page catalogs never report `orphaned`:** both are one flat
+map of key -> `{sha, text}`, not rows keyed by id the way a data table is.
+A stray key that no longer exists in the source is reported as
 `unknown-field` instead - the same actionable outcome (delete the entry),
 just under the kind that actually fits a flat catalog's shape.
 
@@ -140,13 +150,19 @@ the same YAML/module loader.
    the glossary, the style rules and the traps that make a translation
    wrong even when it is fluent.
 
-2. **Run `npm run i18n:check`.** This is the work list for the ten data
-   tables **and** the UI catalog. Translate **only** what it lists -
-   re-translating current entries produces diff churn for no gain.
+2. **Run `npm run i18n:check`.** This is the work list for the nine data
+   tables, the UI catalog, **and** the two page catalogs
+   (impressum/privacy). Translate **only** what it lists - re-translating
+   current entries produces diff churn for no gain.
 
-3. **For each listed entry**, read the English source with
+3. **For each listed data-table or UI entry**, read the source with
    `node scripts/i18n-sha.ts <table> <id> <field>` (prints the sha and the
-   exact source value in one step - see above).
+   exact source value in one step - see above). For a page-catalog entry,
+   use `node scripts/i18n-sha.ts pages <page> <field>` instead - it reads
+   whichever locale is that page's actual source (`PAGE_SOURCE_LOCALE`;
+   German for impressum/privacy) and prints it, so you always translate
+   from the right side even though the direction is inverted for these two
+   pages.
 
 4. **Translate**, following `i18n/TRANSLATION.md`: plain prose for a
    `short_description`/`description`/`title`/etc., text-nodes-only for an
@@ -212,18 +228,41 @@ the same YAML/module loader.
    second, independent guard - `npm run build` is where that would
    actually surface.
 
-9. **Verify.**
+9. **A page-catalog (`pages/impressum`/`pages/privacy`) entry `npm run
+   i18n:check` listed in step 2** goes into the *generated* locale's file
+   for that page - `i18n/en/pages/<page>.yml` for impressum/privacy, since
+   German is their source (`PAGE_SOURCE_LOCALE`). Entry shape is the same
+   as any other catalog:
 
-   ```bash
-   npm run i18n:check        # must exit 0
-   npm run check
-   npx vitest run
-   npm run build
+   ```yaml
+   <field>:
+     sha: <16 hex chars from `node scripts/i18n-sha.ts pages <page> <field>`>
+     text: <the translated text>
    ```
 
-10. **Commit only the catalogs** (`i18n/de/*.yml`), nothing under `data/`,
-    `site/`, or `scripts/`. If `npm run i18n:check` still reports anything,
-    go back to step 2 rather than committing.
+   Skip `bindingNotice` if `i18n:check` ever lists it - it is locale-only by
+   design (`PAGE_LOCALE_ONLY_FIELDS` in `site/lib/i18n/pageLocales.ts`; see
+   "The legal pages invert the direction" in `i18n/TRANSLATION.md`) and
+   should never actually appear as an issue; if it does, treat that as a
+   bug in the exclusion list, not a translation task. Never hand-edit
+   `i18n/de/pages/*.yml` as part of a *translation* run - it is the
+   authored legal source, edited only when the owner actually changes the
+   legal text, which is a content change, not a translation one.
+
+10. **Verify.**
+
+    ```bash
+    npm run i18n:check        # must exit 0
+    npm run check
+    npx vitest run
+    npm run build
+    ```
+
+11. **Commit only the catalogs** touched by the run - `i18n/de/*.yml` for a
+    data-table or UI change, `i18n/en/pages/*.yml` for an impressum/privacy
+    change (never `i18n/de/pages/*.yml`, the authored source) - nothing
+    under `data/`, `site/`, or `scripts/`. If `npm run i18n:check` still
+    reports anything, go back to step 2 rather than committing.
 
 ## Never
 
