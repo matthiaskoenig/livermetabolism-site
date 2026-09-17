@@ -53,8 +53,17 @@ baked into the site chrome (`site/lib/i18n/en.ts` or equivalent) key by key.
   five tables are deliberately absent from `fields.ts`.
 - **`tags.tag`.** Never translated. It is simultaneously a reference key, a
   URL slug, a chart series name and a filter value - translating it would
-  break all four at once. Only its display label is German, via the
-  `tags.label.*` keys of the UI catalog.
+  break all four at once. As shipped, the tag chip itself also renders
+  `tags.tag` verbatim on both languages (`toTagInfo()` in
+  `site/lib/views.ts` copies `tag: d.tag` with no locale lookup) - there
+  is currently no separate German display label for a tag, despite a
+  stale comment in `site/lib/i18n/fields.ts` describing one; do not add
+  translated tag-chip text unless that mechanism is actually built.
+  Two of the five tag names - `"Digital Twins"` and `"AI"` - are also
+  ordinary English words that appear, translated, in unrelated prose (see
+  the domain glossary below and `footer.tagline`): translate the words
+  when they are prose, never touch them when they are the `tag:` value or
+  a `tags:` list entry.
 - **Names of people, institutions and funders.** `Humboldt-Universität zu
   Berlin`, `BMFTR`, `de.NBI` stay exactly as written.
 - **Identifiers and paths.** ids, DOIs, ORCIDs, PMIDs, URLs, image and PDF
@@ -73,6 +82,17 @@ two values byte-identical to the English on every regeneration:
 
 A regeneration pass that rewrites either of these has translated a brand
 name by accident. Check them explicitly after any bulk UI-catalog run.
+
+### Known single-language surfaces
+
+`site/pages/site.webmanifest.ts` is one root-level file, not routed per
+locale, so it cannot show German on `/de/` and English elsewhere - it has
+one `name`/`short_name` for every visitor. Its `name` hard-codes
+`König Lab - Systems Medicine, Digital Twins & AI` (matching the English
+`footer.tagline`, not the German one). This is intentional and correct as
+shipped: leave it in English. Do not "fix" it to German, and do not
+expect `footer.tagline` and the manifest `name` to read the same on a
+German page - they are two different surfaces with different constraints.
 
 ### `editors.name` holds role titles, not people's names
 
@@ -246,6 +266,7 @@ are - do not "fix" them to match the table above.
 | English | German |
 |---|---|
 | digital twin | digitaler Zwilling |
+| AI | KI - already shipped in `home.visionAfter` ("KI-gestützte Modelle") and in `footer.tagline` ("... & KI"). Only in prose; the `"AI"` tag name itself is never translated (see `tags.tag` above). |
 | systems medicine | Systemmedizin |
 | systems biology | Systembiologie |
 | liver | Leber |
