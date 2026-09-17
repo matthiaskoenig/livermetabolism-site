@@ -213,6 +213,36 @@ test('mobile navbar toggles', async ({ page }) => {
   await expect(page.locator('#navbar')).toBeVisible();
 });
 
+// Regression test: TopNav.astro's ResizeObserver writes --navbar-height from
+// the measured .site-navbar, but #navbar (.navbar-collapse, the mobile
+// dropdown) sits inside that observed element, and global.css sizes the
+// dropdown's own max-height from the same variable at <768px - a closed
+// loop entirely inside the observed subtree if the observer ever writes
+// while the dropdown is open. Assert the variable is stable across several
+// animation frames with the menu open; a prior version of this fix
+// oscillated indefinitely (60 callbacks/second, never settling), which the
+// "mobile navbar toggles" test above cannot see since it only checks
+// visibility, not the offset's stability.
+test('mobile navbar menu open does not oscillate --navbar-height', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 800 });
+  await page.goto('');
+  await page.locator('#navbar-toggler').click();
+  await expect(page.locator('#navbar')).toBeVisible();
+  const readings = await page.evaluate(
+    () =>
+      new Promise<string[]>((resolve) => {
+        const values: string[] = [];
+        const read = () => {
+          values.push(getComputedStyle(document.documentElement).getPropertyValue('--navbar-height').trim());
+          if (values.length < 10) requestAnimationFrame(read);
+          else resolve(values);
+        };
+        requestAnimationFrame(read);
+      }),
+  );
+  expect(new Set(readings).size).toBe(1);
+});
+
 test('research page renders the live GitHub data: stats lines, release feed, charts', async ({ page }) => {
   const errors: string[] = [];
   page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });

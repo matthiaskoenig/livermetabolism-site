@@ -101,9 +101,27 @@ const active = (...ids: string[]) => (sectionid && ids.includes(sectionid) ? 'ac
   // navbar instead of trusting the constant. ResizeObserver both sets the
   // initial value and keeps it correct across a viewport resize that
   // crosses the wrap breakpoint.
+  //
+  // The observed element is .site-navbar, and #navbar (.navbar-collapse,
+  // the mobile dropdown) sits inside it - global.css's mobile media query
+  // sizes that dropdown's own max-height from this same variable
+  // (`max-height: calc(100vh - var(--navbar-height))`). Writing a new
+  // value while the dropdown is open therefore closes a loop entirely
+  // inside the observed subtree: a new --navbar-height changes the
+  // dropdown's max-height, which changes .site-navbar's rendered height,
+  // which fires the observer again - measured never settling, 60
+  // callbacks/second, the page strobing between the full menu and a
+  // squashed sliver. Skipping the write while #navbar carries .show
+  // breaks the loop at its root: the offset only ever needs the navbar's
+  // CLOSED height anyway (the open dropdown is a temporary overlay, not
+  // something document flow should reserve space for), and that value was
+  // already captured correctly the moment before the dropdown opened -
+  // closing it again triggers a fresh, accurate measurement once the
+  // guard no longer applies.
   const siteNavbar = document.querySelector('.site-navbar');
   if (siteNavbar instanceof HTMLElement) {
     const setNavbarHeight = () => {
+      if (navbar?.classList.contains('show')) return;
       document.documentElement.style.setProperty('--navbar-height', `${siteNavbar.getBoundingClientRect().height}px`);
     };
     setNavbarHeight();

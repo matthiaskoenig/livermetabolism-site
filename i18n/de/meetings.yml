@@ -6,6 +6,9 @@ combine2022:
   description:
     sha: c698a93dd5e39cc8
     text: 'Wir organisierten die Tagung des Computational Modeling in Biology Network (COMBINE) in Berlin und brachten mehr als 100 internationale Expertinnen und Experten für computergestützte Modellierungsstandards in der Systembiologie und der synthetischen Biologie zusammen (SBML, SED-ML, SBGN, COMBINE-Archiv und verwandte Standards).'
+  location:
+    sha: 6bcaa755de51f216
+    text: 'Berlin, Deutschland'
 open-science-workshop-2025:
   title:
     sha: a06949176dc83af0
@@ -13,3 +16,6 @@ open-science-workshop-2025:
   description:
     sha: 95127d689fd46bf0
     text: 'Ein praxisorientierter Workshop zu Open Science und Reproduzierbarkeit für computergestützte Modelle, mit interaktiven Sessions (LEGO® Serious Play), Reproduzierbarkeits-Workflows und offenen Publikationspraktiken.'
+  location:
+    sha: 6bcaa755de51f216
+    text: 'Berlin, Deutschland'

@@ -1879,6 +1879,10 @@
     display: block;
     font-size: 0.85em;
     color: var(--color-primary);
+    /* .related-row is a row-flex container (like .detail-header /
+       .detail-heading above) - overflow-wrap: anywhere, not break-word,
+       for the same min-content reason documented on .detail-title. */
+    overflow-wrap: anywhere;
   }
 
   .related-row:hover .related-row-title {
@@ -1889,6 +1893,7 @@
     display: block;
     color: var(--color-gray-600);
     font-size: 0.75em;
+    overflow-wrap: anywhere;
   }
 
   .detail-footer {

@@ -41,7 +41,7 @@ regardless of what the YAML contains. As of this writing it lists:
 | `funding` | `title`, `description` |
 | `news` | `title`, `short`, `abstract` |
 | `teaching` | `title`, `content`, `caption`, `funding` |
-| `meetings` | `title`, `description` |
+| `meetings` | `title`, `description`, `location` |
 | `activities` | `title`, `description` |
 
 Plus the UI catalog, `i18n/de/ui.yml`, which mirrors the English strings
@@ -534,7 +534,9 @@ key-set check the way `loadUi()` does for the UI catalog. This is a real
 gap, not a documentation oversight to paper over - closing it properly
 means adding a `sha` to every existing entry of all four files first
 (`PageEntry.sha` is already declared optional in `site/lib/i18n/pages.ts`
-for exactly this reason, but none of the ~50 entries across the four files
+for exactly this reason, but none of the 132 entries across the four files
+(21 + 44 + 22 + 45: `i18n/de/pages/impressum.yml`, `i18n/de/pages/privacy.yml`,
+`i18n/en/pages/impressum.yml`, `i18n/en/pages/privacy.yml`)
 carry one today, so there is nothing yet for `auditUi()`-style comparison
 to check against). That migration was judged too large to do safely inside
 this fix wave and is left as follow-up work; **do not read "`i18n:check`

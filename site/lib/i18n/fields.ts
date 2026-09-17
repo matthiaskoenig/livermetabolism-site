@@ -25,7 +25,7 @@ export const TRANSLATABLE = {
   funding: ['title', 'description'],
   news: ['title', 'short', 'abstract'],
   teaching: ['title', 'content', 'caption', 'funding'],
-  meetings: ['title', 'description'],
+  meetings: ['title', 'description', 'location'],
   activities: ['title', 'description'],
 } as const;
 
