@@ -97,7 +97,7 @@ footer.releaseNotes:
   text: Versionshinweise
 footer.deployedCommit:
   sha: '0000000000000000'
-  text: Veröffentlichter Commit
+  text: Bereitgestellter Commit
 footer.toTop:
   sha: '0000000000000000'
   text: Nach oben scrollen
@@ -112,7 +112,7 @@ meta.description:
   text: Forschungsgruppe König
 consent.message:
   sha: '0000000000000000'
-  text: 'Diese Website verwendet Google Analytics, um zu verstehen, wie sie genutzt wird. Sie läuft nur, wenn Sie zustimmen - siehe die'
+  text: 'Diese Website verwendet Google Analytics, um zu verstehen, wie sie genutzt wird. Google Analytics läuft nur, wenn Sie zustimmen - siehe die'
 consent.privacyLink:
   sha: '0000000000000000'
   text: Datenschutzerklärung
