@@ -1,0 +1,49 @@
+---
+import Base from '../../layouts/Base.astro';
+import { localeFromParams, localePaths, urlFor } from '../../lib/i18n/routes';
+import { loadPage } from '../../lib/i18n/pages';
+
+export const getStaticPaths = localePaths;
+const locale = localeFromParams(Astro.params);
+const u = urlFor(locale);
+// impressum and privacy are authored in German (the legally binding text);
+// see loadPage() and i18n/TRANSLATION.md's "The legal pages" section.
+const page = loadPage(locale, 'impressum');
+---
+<Base title={page.heading} sectionid="impressum" locale={locale}>
+  <h2 id="impressum">{page.heading}</h2>
+  {locale !== 'de' && <p class="legal-notice">{page.bindingNotice}</p>}
+
+  <h3>{page.providerHeading}</h3>
+  <p>
+  {page.addressName}<br/>
+  {page.addressInstitution}<br/>
+  {page.addressDepartment}<br/>
+  {page.addressStreet}<br/>
+  {page.addressCity}
+  </p>
+
+  <h3>{page.contactHeading}</h3>
+  <p>
+  {page.contactPhone}<br/>
+  {page.contactEmailLabel} <a href="mailto:matthias.koenig@uni-luebeck.de">{page.contactEmail}</a>
+  </p>
+
+  <h3>{page.responsibleHeading}</h3>
+  <p>
+  {page.responsibleText}
+  </p>
+
+  <h3>{page.disclaimerHeading}</h3>
+
+  <h4>{page.liabilityContentHeading}</h4>
+  <p>{page.liabilityContentText}</p>
+
+  <h4>{page.liabilityLinksHeading}</h4>
+  <p>{page.liabilityLinksText}</p>
+
+  <h4>{page.copyrightHeading}</h4>
+  <p>{page.copyrightText}</p>
+
+  <p><a href={u('/privacy/')}>{page.privacyLinkText}</a></p>
+</Base>

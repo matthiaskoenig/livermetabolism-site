@@ -222,7 +222,7 @@
   
     This program is designed for advanced Bachelor as well as Master students and PhD candidates. Choose from projects in various academic areas, receive individual advising, and earn ECTS credit points. Some projects offer online internship opportunities. Please check the individual project descriptions for details.<br /><br />
   
-    The Summer Term internships take place from May to September 2025. More information <a href="https://hic.hu-berlin.de/en/internship-program">https://hic.hu-berlin.de/en/internship-program<a/>.'
+    The Summer Term internships take place from May to September 2025. More information <a href="https://hic.hu-berlin.de/en/internship-program">https://hic.hu-berlin.de/en/internship-program</a>.'
 
 - id: 'Nemitz2025_dapagliflozin_preprint'
   tags:
@@ -286,7 +286,7 @@
   video: https://www.youtube.com/embed/IvKvApzjGtM
   image:
   link: https://github.com/matthiaskoenig/glimepiride-model
-  short: 'Presenting at COMBINE2025 and the RDA assembly our approach to reproducible digitial twins.'
+  short: 'Presenting at COMBINE2025 and the RDA assembly our approach to reproducible digital twins.'
   abstract: 'Dr. Matthias König (Humboldt-Universität zu Berlin) presents how reproducibility and open standards enable trustworthy Digital Twins in pharmacology and medicine.
     Using the example of the glimepiride digital twin for type 2 diabetes, he demonstrates:
 
@@ -302,13 +302,12 @@
     📄 Publications:<br />
     - Elias M., König M. Front. Pharmacol. (2025) 16:1686415, <a href="https://doi.org/10.3389/fphar.2025.1686415">https://doi.org/10.3389/fphar.2025.1686415</a><br />
     - Elias M., König M. Physiome* (2025) doi: <a href="https://doi.org/10.36903/physiome.28379193">https://doi.org/10.36903/physiome.28379193</a><br />
-    Slides: <a href="https://docs.google.com/presentation/d/e/2PACX-1vQ93_XwINeHqL4eOK8V7zfwn8ZGvsEw1uHZ3Ka1cECuq6_ir46RgQu4QSgQuLxBrkUu7MEKxHsJ_FAi/pub?start=false&loop=false&delayms=3000">https://docs.google<br />
-    .com/presentation/d/e/2PACX-1vQ93_XwINeHqL4eOK8V7zfwn8ZGvsEw1uHZ3Ka1cECuq6_ir46RgQu4QSgQuLxBrkUu7MEKxHsJ_FAi/pub?start=false&loop=false&delayms=3000</a><br />
+    Slides: <a href="https://docs.google.com/presentation/d/e/2PACX-1vQ93_XwINeHqL4eOK8V7zfwn8ZGvsEw1uHZ3Ka1cECuq6_ir46RgQu4QSgQuLxBrkUu7MEKxHsJ_FAi/pub?start=false&loop=false&delayms=3000">https://docs.google.com/presentation/d/e/2PACX-1vQ93_XwINeHqL4eOK8V7zfwn8ZGvsEw1uHZ3Ka1cECuq6_ir46RgQu4QSgQuLxBrkUu7MEKxHsJ_FAi/pub?start=false&loop=false&delayms=3000</a><br />
     Biomodels: <a href="https://www.ebi.ac.uk/biomodels/MODEL2510140001">https://www.ebi.ac.uk/biomodels/MODEL2510140001</a><br />
     Youtube: <a href="https://youtu.be/IvKvApzjGtM">https://youtu.be/IvKvApzjGtM</a><br />
     <br />
     Presented at: COMBINE2025<br />
-    <a href=" https://co.mbine.org/events/>https://co.mbine.org/events/</a><br />
+    <a href="https://co.mbine.org/events/">https://co.mbine.org/events/</a><br />
 
     #DigitalTwins #Reproducibility #OpenScience #Pharmacokinetics #SBML #COMBINE #SystemsMedicine #FAIRdata #AIinHealthcare #RDA"'
 
@@ -366,7 +365,7 @@
   image: bachelor_ennie_tensil.webp
   link: https://github.com/matthiaskoenig/losartan-model
   short: "This thesis presents a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of losartan and its metabolite E3174, providing mechanistic insights into how physiological and genetic factors influence therapy and supporting individualized dosing strategies."
-  abstract: "Losartan is an angiotensin II receptor antagonist commonly used in the treatment of hyperten- sion and heart failure. Its pharmacokinetics and pharmacodynamics are influenced by a range of physiological and genetic factors, which may affect therapeutic efficacy. This thesis presents a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of losartan and its active metabolite E3174 to explore these influences systematically. The modular SBML-based model includes submodels for absorption, hepatic metabolism, renal excretion, and pharmacodynamic effects via the renin-angiotensin-aldosterone system (RAAS). Simulations were conducted to investigate the impact of dose, hepatic and renal impairment, as well as CYP2C9 and ABCB1 polymorphisms. The model successfully reproduced observed pharmacological trends, including a dose-dependent increase in pharmacodynamic response, likely reflecting enhanced receptor blockade at higher systemic exposures. Hepatic dysfunction blunted the pharmacodynamic response to losartan, whereas renal impairment reduced metabolite clearance and lead to modest enhancement in pharmacodynamic effect. Genetic variability in CYP2C9 significantly altered E3174 formation and downstream RAAS inhibition, whereas ABCB1 activity had only minor effects on systemic exposure. The model provides mechanistic insight into inter-individual variability in losartan therapy and supports its potential use in individualized dosing strategies."
+  abstract: "Losartan is an angiotensin II receptor antagonist commonly used in the treatment of hypertension and heart failure. Its pharmacokinetics and pharmacodynamics are influenced by a range of physiological and genetic factors, which may affect therapeutic efficacy. This thesis presents a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of losartan and its active metabolite E3174 to explore these influences systematically. The modular SBML-based model includes submodels for absorption, hepatic metabolism, renal excretion, and pharmacodynamic effects via the renin-angiotensin-aldosterone system (RAAS). Simulations were conducted to investigate the impact of dose, hepatic and renal impairment, as well as CYP2C9 and ABCB1 polymorphisms. The model successfully reproduced observed pharmacological trends, including a dose-dependent increase in pharmacodynamic response, likely reflecting enhanced receptor blockade at higher systemic exposures. Hepatic dysfunction blunted the pharmacodynamic response to losartan, whereas renal impairment reduced metabolite clearance and lead to modest enhancement in pharmacodynamic effect. Genetic variability in CYP2C9 significantly altered E3174 formation and downstream RAAS inhibition, whereas ABCB1 activity had only minor effects on systemic exposure. The model provides mechanistic insight into inter-individual variability in losartan therapy and supports its potential use in individualized dosing strategies."
 
 - id: 'elisabetta_rivaroxaban_preprint'
   tags:
@@ -396,7 +395,7 @@
   date: '2025-07-07'
   image: hip_day_2025.webp
   link: https://github.com/matthiaskoenig/losartan-model
-  short: "Isabella Tan, Olivia Yau and Minjun Kim presented there PBPK/PD modeling projects on GLP-1 agonists for Program Day here at Humboldt Universität-zu Berlin."
+  short: "Isabella Tan, Olivia Yau and Minjun Kim presented their PBPK/PD modeling projects on GLP-1 agonists for Program Day here at Humboldt-Universität zu Berlin."
   abstract: "During Program Day at Humboldt-Universität zu Berlin, Isabella Tan, Olivia Yau, and Minjun Kim presented their physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) modeling projects on GLP-1 receptor agonists. Minjun Kim is developing a model of dulaglutide to investigate its absorption, distribution, metabolism, and effects on glucose regulation. Isabella Tan is building a model of liraglutide to study its pharmacological behavior and impact on glucose homeostasis, focusing on individualized treatment strategies. Olivia Yau is working on a model of lixisenatide to explore its kinetics and therapeutic effects, aiming to advance personalized approaches to diabetes therapy. Additionally, Matthias König contributed as a panelist to the discussion 'Real Work Experiences for a Real Career: What Learnings and Skills Really Matter?'"
 
 - id: 'sirolimus_project'
@@ -608,7 +607,7 @@
   date: '2025-01-20'
   image: project_rivaroxaban.webp
   link:
-  short: "PBPK Model Development for Tirzepatide in Diabetes and Obesity Treatment"
+  short: "PBPK/PD Model Development for the Direct Oral Anticoagulant Rivaroxaban"
   abstract: "We are pleased to announce that Elisabetta Cassabianca will be joining the König Lab to work on an exciting new project focused on developing a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the direct oral anticoagulant (DOAC) rivaroxaban.
   
     Since their introduction, DOACs have revolutionized anticoagulant therapy, offering significant advantages over traditional vitamin K antagonist therapy, such as reduced dietary restrictions and less frequent monitoring. However, despite their widespread adoption, there remain gaps in understanding their long-term efficacy, safety, and impact on specific patient populations.
@@ -639,7 +638,7 @@
   image: algonomy.webp
   link: 'https://www.circle-u.eu/resources/seed-funded-projects/'
   short: "Circle U. has funded AlgoNomy: Advancing Doctor-Patient Autonomy in AI-Driven Healthcare, a collaborative project tackling the issue of digital paternalism—where algorithms dominate healthcare decisions over human collaboration. Partnering with six leading European universities, AlgoNomy aims to develop ethical, transparent, and patient-centered AI systems that preserve autonomy and promote shared decision-making."
-  abstract: "The Circle U. European University Alliance has announced funding for AlgoNomy: Advancing Doctor-Patient Autonomy in AI-Driven Healthcare, a pioneering project aimed at tackling the emerging issue of digital paternalism—an adaptation of medical paternalism where healthcare decisions are increasingly driven by algorithms rather than collaborative input from patients and physicians. Led by a consortium of six leading universities—UniPi (University of Pisa), KCL (King's College London), PC (Université Paris Cité), BU (University of Belgrade), UW (University of Vienna), and HU (Humboldt Universität zu Berlin)—AlgoNomy will focus on developing ethical, technical, and practical solutions to ensure AI empowers rather than replaces human autonomy in clinical decision-making. Funded under the Circle U. initiative, AlgoNomy is dedicated to fostering transparent, patient-centered, and clinician-friendly AI systems that promote shared decision-making and responsible innovation in healthcare. This ambitious project marks a significant step in redefining the role of AI in medicine, ensuring technology serves as a tool for collaboration, not control. Stay tuned for updates on how AlgoNomy is shaping the future of ethical AI in healthcare!"
+  abstract: "The Circle U. European University Alliance has announced funding for AlgoNomy: Advancing Doctor-Patient Autonomy in AI-Driven Healthcare, a pioneering project aimed at tackling the emerging issue of digital paternalism—an adaptation of medical paternalism where healthcare decisions are increasingly driven by algorithms rather than collaborative input from patients and physicians. Led by a consortium of six leading universities—UniPi (University of Pisa), KCL (King's College London), PC (Université Paris Cité), BU (University of Belgrade), UW (University of Vienna), and HU (Humboldt-Universität zu Berlin)—AlgoNomy will focus on developing ethical, technical, and practical solutions to ensure AI empowers rather than replaces human autonomy in clinical decision-making. Funded under the Circle U. initiative, AlgoNomy is dedicated to fostering transparent, patient-centered, and clinician-friendly AI systems that promote shared decision-making and responsible innovation in healthcare. This ambitious project marks a significant step in redefining the role of AI in medicine, ensuring technology serves as a tool for collaboration, not control. Stay tuned for updates on how AlgoNomy is shaping the future of ethical AI in healthcare!"
 
 - id: 'huinternship2025'
   status: 'old'
@@ -654,7 +653,7 @@
   
     This program is designed for advanced Bachelor as well as Master students and PhD candidates. Choose from projects in various academic areas, receive individual advising, and earn ECTS credit points. Some projects offer online internship opportunities. Please check the individual project descriptions for details.<br /><br />
   
-    The 3 month Summer Term internships take place between May and August 2025. More information <a href="https://hic.hu-berlin.de/en/internship-program">https://hic.hu-berlin.de/en/internship-program<a/>.'
+    The 3 month Summer Term internships take place between May and August 2025. More information <a href="https://hic.hu-berlin.de/en/internship-program">https://hic.hu-berlin.de/en/internship-program</a>.'
 
 - id: 'projects_ennie_michelle'
   tags:
@@ -667,7 +666,7 @@
   date: '2024-08-30'
   image: projects_ennie_michelle.webp
   link:
-  short: "Ennie Tensil and Michelle Elias start Bachelor projects on losartan and glimeperide"
+  short: "Ennie Tensil and Michelle Elias start Bachelor projects on losartan and glimepiride"
   abstract: "We are excited to announce the initiation of two  projects within our group, focusing on the development of Physiologically-Based Pharmacokinetic/Pharmacodynamic (PBPK/PD) models. These projects aim to deepen our understanding of drug action and variability in treatment responses, contributing significantly to personalized medicine.
   
     Michelle Elias will lead the first project, which centers on the development of a PBPK/PD model for the sulfonylurea glimepiride, a widely used medication for managing type 2 diabetes. This project aims to enhance our understanding of the intraindividual variability observed in diabetes treatment with sulfonylureas, particularly focusing on differences in hepatorenal function. The insights gained from this model could lead to more personalized and effective treatment strategies for patients with diabetes.
@@ -753,7 +752,7 @@
   date: '2024-07-01'
   image: vera_project.webp
   link: 
-  short: "Vera Tereshchuk will develop a PBPK models for canagliflozin, aiming to enhance understanding of pharmacokinetics and pharmacodynamics in diabetes."
+  short: "Vera Tereshchuk will develop a PBPK model for canagliflozin, aiming to enhance understanding of pharmacokinetics and pharmacodynamics in diabetes."
   abstract: 'Vera Tereshchuk is developing a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of the SGLT2 inhibitor canagliflozin. The objective is to enhance understanding of intraindividual variability in diabetes treatment with SGLT2 inhibitors, focusing on differences in hepatorenal function.'
 
 - id: 'page2024'
@@ -829,7 +828,7 @@
   people:
     - 'jan_grzegorzewski'
     - 'matthias_koenig'
-  title: 'Preprint: Cross-Species Variability in Lobular Geometry and Cytochrome P450 Hepatic Zonation: Insights into CYP1A2, CYP2E1, CYP2D6 and CYP3A4'
+  title: 'Publication: Cross-Species Variability in Lobular Geometry and Cytochrome P450 Hepatic Zonation: Insights into CYP1A2, CYP2E1, CYP2D6 and CYP3A4'
   date: '2024-05-16'
   image: species_comparison_preprint.webp
   link: 'https://www.frontiersin.org/journals/pharmacology/articles/10.3389/fphar.2024.1404938/full'
@@ -940,7 +939,7 @@
   date: '2024-01-18'
   image: edith_paris.webp
   link: 'https://www.vph-institute.org/news/advancing-the-virtual-human-twin-insights-from-the-first-edith-csa-ecosystem-meeting.html'
-  short: "We participated in the first EDITH-CSA 'Ecosystem meeting on building the Virtual Human Twin was held at the École Polytechnique de Paris on January 18 and 19, 2024."
+  short: "We participated in the first EDITH-CSA 'Ecosystem meeting on building the Virtual Human Twin', held at the École Polytechnique de Paris on January 18 and 19, 2024."
   abstract: 'After the official launch of the Virtual Human Twin initiative and the VHT Manifesto in December, the first open community meeting attracted over 180 registered guests from the EDITH-CSA consortium and the wider ecosystem. The enthusiasm of the wider community to travel to Paris (amidst difficult weather conditions) and proactively contributing towards developing the roadmap for the VHT was inspiring.'
 
 - id: 'species_comparison_preprint'
@@ -976,7 +975,7 @@
   status: 'old'
   people:
     - 'matthias_koenig'
-  title: 'Your Dietary Digitial Twin (DDtwin)'
+  title: 'Your Dietary Digital Twin (DDtwin)'
   date: '2023-11-03'
   image: dietary_twin.webp
   link: 'https://www.lorentzcenter.nl/your-dietary-digital-twin-ddtwin.html'
@@ -1002,7 +1001,7 @@
   
     This program is designed for advanced Bachelor as well as Master students and PhD candidates. Choose from projects in various academic areas, receive individual advising, and earn ECTS credit points. Some projects offer online internship opportunities. Please check the individual project descriptions for details.<br /><br />
   
-    The Summer Term internships take place from May to August 2023. More information <a href="https://hic.hu-berlin.de/en/internship-program">https://hic.hu-berlin.de/en/internship-program<a/> .'
+    The Summer Term internships take place from May to August 2023. More information <a href="https://hic.hu-berlin.de/en/internship-program">https://hic.hu-berlin.de/en/internship-program</a>.'
 
 - id: 'emed_presentation'
   tags:
@@ -1106,7 +1105,7 @@
   image: humboldt-internship.webp
   link:
   short: "Humboldt Internship Program 2023 - Computational Modeling of Drug Detoxification - A Systems Medicine Approach"
-  abstract: "We welcome Xenia and Zhara in our group for the Humboldt Internship Program 2023. Xenia and Zhara will develop a physiologically based pharmacokinetic (PBPK) model for inulin and creatinine to assess the glomerular filtration rate (GFR). Our goal is to gain a deeper understanding of the impact of various inulin protocols on GFR measurement and the influence of physiological factors, such as body composition, on GFR determination using inulin. Furthermore, it should enhance our understanding of how variations in creatinine production, muscle mass, and tubular secretion of creatinine influence eGFR calculations."
+  abstract: "We welcome Xenia and Zahra in our group for the Humboldt Internship Program 2023. Xenia and Zahra will develop a physiologically based pharmacokinetic (PBPK) model for inulin and creatinine to assess the glomerular filtration rate (GFR). Our goal is to gain a deeper understanding of the impact of various inulin protocols on GFR measurement and the influence of physiological factors, such as body composition, on GFR determination using inulin. Furthermore, it should enhance our understanding of how variations in creatinine production, muscle mass, and tubular secretion of creatinine influence eGFR calculations."
 
 - id: 'keynote_wcm2023'
   tags:
@@ -1331,7 +1330,7 @@
   date: '2022-10-24'
   image: dex_model.webp
   link: 'https://www.frontiersin.org/articles/10.3389/fphar.2022.1029073/full'
-  short: 'How does CYP2D6 genotype effect metabolic phenotyping? See our latest paper in Frontiers in Pharmacology for answers.'
+  short: 'How does CYP2D6 genotype affect metabolic phenotyping? See our latest paper in Frontiers in Pharmacology for answers.'
   abstract: 
 
 - id: 'xresearch2022'

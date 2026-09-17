@@ -7,8 +7,9 @@
 import { onMounted, ref } from 'vue';
 import { isFresherThan, loadLiveSnapshot } from '../lib/githubLive';
 import { latestReleases, shortDate, type ReleaseRow } from '../lib/githubRows';
+import type { UiSlices } from '../lib/i18n/slices';
 
-const props = defineProps<{ rows: ReleaseRow[]; repos: string[]; fetchedAt: string }>();
+const props = defineProps<{ rows: ReleaseRow[]; repos: string[]; fetchedAt: string; strings: UiSlices['releaseFeed'] }>();
 const rows = ref<ReleaseRow[]>(props.rows);
 
 onMounted(async () => {
@@ -23,11 +24,11 @@ onMounted(async () => {
       <div class="release-head">
         <span class="release-repo">{{ r.name }}</span>
         <a class="release-tag" :href="r.htmlUrl" target="_blank" rel="noopener noreferrer">{{ r.tag }}</a>
-        <span v-if="r.prerelease" class="release-pre">pre-release</span>
+        <span v-if="r.prerelease" class="release-pre">{{ strings.preRelease }}</span>
         <time class="release-date" :datetime="r.publishedAt">{{ shortDate(r.publishedAt) }}</time>
       </div>
       <p v-if="r.summary" class="release-summary">{{ r.summary }}</p>
     </li>
   </ol>
-  <p v-if="rows.length === 0" class="github-empty">No releases in the last two years.</p>
+  <p v-if="rows.length === 0" class="github-empty">{{ strings.noReleases }}</p>
 </template>

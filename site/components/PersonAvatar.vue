@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
+import type { UiSlices } from '../lib/i18n/slices';
 
 /**
  * `detail` is the hover card's "Full profile" trigger, in the
@@ -7,7 +8,7 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
  * reads; the href is the same entry in its `#<type>/<id>` hash form, so the
  * link deep-links and middle-clicks like any other.
  */
-const props = defineProps<{ name: string; src: string; position: string; description?: string | null; detail?: string; imgClass?: string }>();
+const props = defineProps<{ name: string; src: string; position: string; description?: string | null; detail?: string; imgClass?: string; strings: Pick<UiSlices['personCard'], 'fullProfile'> }>();
 const detailHref = computed(() => `#${(props.detail ?? '').replace(':', '/')}`);
 const root = ref<HTMLElement | null>(null);
 const card = ref<HTMLElement | null>(null);
@@ -50,7 +51,7 @@ onBeforeUnmount(() => { registry.delete(close); document.removeEventListener('cl
       <strong>{{ name }}</strong>
       <span class="person-position">{{ position }}</span>
       <p v-if="description">{{ description }}</p>
-      <a v-if="detail" :href="detailHref" :data-detail="detail" class="member-more">Full profile &rarr;</a>
+      <a v-if="detail" :href="detailHref" :data-detail="detail" class="member-more">{{ strings.fullProfile }} &rarr;</a>
     </div>
   </div>
 </template>

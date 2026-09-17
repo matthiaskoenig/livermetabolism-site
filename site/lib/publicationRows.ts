@@ -9,17 +9,19 @@
  * island as props (the numbers only change when the YAML does, i.e. on a
  * rebuild), so nothing here ever runs in the browser.
  */
+import type { TFn } from './i18n/catalog';
+import type { UiKey } from './i18n/ui.en';
 import type { PublicationData } from './schemas';
 import type { TagInfo } from './views';
 
 /** The publication fields the chart needs. */
 export type ChartPublication = Pick<PublicationData, 'year' | 'status' | 'tags'>;
 
-/** The tag fields the chart needs (label plus the slug that picks the colour). */
-export type ChartTag = Pick<TagInfo, 'tag' | 'slug'>;
+/** The tag fields the chart needs: `tag` (the series name/data-tag match), `slug` (the colour) and `label` (the legend/tooltip text). */
+export type ChartTag = Pick<TagInfo, 'tag' | 'slug' | 'label'>;
 
-/** One stacked series of the research-area split. */
-export interface TagSeries { tag: string; slug: string; counts: number[] }
+/** One stacked series of the research-area split. `tag` is the machine value the series is named after (matches `data-tag`); `label` is its display text. */
+export interface TagSeries { tag: string; slug: string; label: string; counts: number[] }
 
 /** One stacked series of the status split. */
 export interface StatusSeries { status: ChartPublication['status']; counts: number[] }
@@ -39,6 +41,23 @@ export interface PublicationYearRows {
  * does not shift the colours of the others.
  */
 export const STATUS_ORDER = ['publication', 'review', 'proceeding', 'chapter', 'preprint', 'abstract', 'thesis', 'report'] as const;
+
+/**
+ * The display label of a publication status - `status` itself is a machine
+ * value (a lookup key and a `.status-{status}` CSS class, see `PublicationRow.vue`
+ * and `details.ts`) and is never translated on its own; only this label is.
+ * Shared so the chart legend (`chartOptions.ts`) and the detail badge
+ * (`details.ts`) can never drift apart.
+ */
+const STATUS_KEY: Record<ChartPublication['status'], UiKey> = {
+  publication: 'status.publication', review: 'status.review', proceeding: 'status.proceeding',
+  chapter: 'status.chapter', preprint: 'status.preprint', abstract: 'status.abstract',
+  thesis: 'status.thesis', report: 'status.report',
+};
+
+export function publicationStatusLabel(status: ChartPublication['status'], t: TFn): string {
+  return t(STATUS_KEY[status]);
+}
 
 const zeros = (n: number) => Array.from({ length: n }, () => 0);
 
@@ -61,7 +80,7 @@ export function publicationsPerYear(publications: ChartPublication[], tags: Char
   const years = Array.from({ length: max - min + 1 }, (_, i) => min + i);
   const slot = (year: number) => year - min;
 
-  const byTag = tags.map((t) => ({ tag: t.tag, slug: t.slug, counts: zeros(years.length) }));
+  const byTag = tags.map((t) => ({ tag: t.tag, slug: t.slug, label: t.label, counts: zeros(years.length) }));
   const tagIndex = new Map(byTag.map((s, i) => [s.tag, i]));
   const byStatus = STATUS_ORDER.map((status) => ({ status, counts: zeros(years.length) }));
   const statusIndex = new Map(byStatus.map((s, i) => [s.status as string, i]));

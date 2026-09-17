@@ -2,11 +2,12 @@
 import Icon from './Icon.vue';
 import PersonChips from './PersonChips.vue';
 import TagList from './TagList.vue';
+import type { UiSlices } from '../lib/i18n/slices';
 import type { PeopleMap } from '../lib/people';
 import type { TeachingData } from '../lib/schemas';
 import type { Entry, TagInfo } from '../lib/views';
 
-defineProps<{ item: Entry<TeachingData>; tagInfo: TagInfo[]; peopleMap: PeopleMap; imageBase: string; avatarBase: string }>();
+defineProps<{ item: Entry<TeachingData>; tagInfo: TagInfo[]; peopleMap: PeopleMap; imageBase: string; avatarBase: string; strings: UiSlices['teachingCard'] }>();
 const TYPE_ICONS: Record<string, string> = { lecture: 'person-chalkboard', course: 'laptop-code', seminar: 'book' };
 </script>
 
@@ -14,7 +15,8 @@ const TYPE_ICONS: Record<string, string> = { lecture: 'person-chalkboard', cours
   <div :id="`teaching-${item.id}`">
     <h3>{{ item.title }}</h3>
     <h4>
-      <template v-for="(t, i) in item.type" :key="t"><Icon :name="TYPE_ICONS[t]" />&nbsp;{{ t }}<template v-if="i < item.type.length - 1">, </template></template>
+      <!-- the icon lookup and the :key stay on the raw machine value; only the label is translated -->
+      <template v-for="(entryType, i) in item.type" :key="entryType"><Icon :name="TYPE_ICONS[entryType]" />&nbsp;{{ strings.type[entryType] }}<template v-if="i < item.type.length - 1">, </template></template>
     </h4>
     <TagList :tags="item.tags" :tag-info="tagInfo" />
     <h4><PersonChips :text="item.authors" :people="item.people" :people-map="peopleMap" :avatar-base="avatarBase" /></h4>

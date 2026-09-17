@@ -1,0 +1,26 @@
+---
+import Base from '../../layouts/Base.astro';
+import NewsCard from '../../components/NewsCard.vue';
+import TagFilter from '../../components/TagFilter.vue';
+import { getNews, getPeopleMap, getTags } from '../../lib/data';
+import { uiFor } from '../../lib/i18n/catalog';
+import { localeFromParams, localePaths } from '../../lib/i18n/routes';
+import { slices } from '../../lib/i18n/slices';
+import { asset } from '../../lib/url';
+import { toTagFilterEntries } from '../../lib/views';
+
+export const getStaticPaths = localePaths;
+const locale = localeFromParams(Astro.params);
+const { t } = uiFor(locale);
+const ui = slices(t);
+const [tagInfo, peopleMap, news] = await Promise.all([getTags(locale), getPeopleMap(locale), getNews(locale)]);
+const imageBase = asset('image/news/');
+const avatarBase = asset('image/people/128/');
+const tagFilterEntries = toTagFilterEntries(tagInfo);
+---
+<Base title={t('nav.news')} sectionid="news" locale={locale}>
+  <TagFilter client:idle id="news" tags={tagFilterEntries} target="news-grid" strings={ui.tagFilter} />
+  <div class="project-grid" id="news-grid">
+    {news.map((n) => <NewsCard item={n} tagInfo={tagInfo} peopleMap={peopleMap} imageBase={imageBase} avatarBase={avatarBase} strings={{ readMore: ui.links.readMore }} />)}
+  </div>
+</Base>

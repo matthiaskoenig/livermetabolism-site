@@ -1,9 +1,14 @@
 ---
 import Icon from './Icon.vue';
-import { asset, url } from '../lib/url';
+import { uiFor } from '../lib/i18n/catalog';
+import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
+import { urlFor } from '../lib/i18n/routes';
+import { asset } from '../lib/url';
 
-interface Props { home?: boolean }
-const { home = false } = Astro.props;
+interface Props { home?: boolean; locale?: Locale }
+const { home = false, locale = DEFAULT_LOCALE } = Astro.props;
+const u = urlFor(locale);
+const { t } = uiFor(locale);
 const email = 'matthias.koenig@uni-luebeck.de';
 // Injected by vite.define in astro.config.mjs (see site/env.d.ts).
 const version = __SITE_VERSION__;
@@ -12,17 +17,17 @@ const repo = 'https://github.com/matthiaskoenig/livermetabolism-site';
 ---
 <footer class="footer" id="footer">
   {home && (
-    <a class="section-scroll-cue section-scroll-cue-up" href="#home" aria-label="Scroll to top"><Icon name="chevron-up" /></a>
+    <a class="section-scroll-cue section-scroll-cue-up" href="#home" aria-label={t('footer.toTop')}><Icon name="chevron-up" /></a>
   )}
   <div class="container">
     <div class="footer-top">
       <img src={asset('image/people/matthias_koenig.webp')} decoding="async" width="48" height="48" class="footer-photo" alt="Matthias König" />
       <div class="footer-title">
-        <h4>Systems Medicine, Digital Twins &amp; AI</h4>
-        <p class="footer-name"><strong>Prof. Dr. rer. nat. Matthias König</strong> &middot; Professor of Metabolic Inflammation and Carcinogenesis of the Liver</p>
+        <h4>{t('footer.tagline')}</h4>
+        <p class="footer-name"><strong>Prof. Dr. rer. nat. Matthias König</strong> &middot; {t('footer.position')}</p>
       </div>
       <div class="footer-social">
-        <a href={url('/cv/')} target="_blank" rel="noopener noreferrer" title="Curriculum vitae"><Icon name="user" /></a>
+        <a href={u('/cv/')} target="_blank" rel="noopener noreferrer" title={t('footer.cv')}><Icon name="user" /></a>
         <a href="https://github.com/matthiaskoenig" target="_blank" rel="noopener noreferrer" title="GitHub"><Icon name="github" /></a>
         <a href="http://scholar.google.com/citations?user=xD9IjnYAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" title="Google Scholar"><Icon name="google" /></a>
         <a href="https://orcid.org/0000-0003-1725-179X" target="_blank" rel="noopener noreferrer" title="ORCID"><Icon name="orcid" /></a>
@@ -34,24 +39,24 @@ const repo = 'https://github.com/matthiaskoenig/livermetabolism-site';
     <div class="footer-addresses grid md:grid-cols-2 gap-x-6">
       <div>
         <strong>Lübeck</strong> &middot;
-        University Hospital Schleswig-Holstein, Campus Lübeck, First Department of Medicine, Ratzeburger Allee 160, 23562 Lübeck, Germany &middot;
+        University Hospital Schleswig-Holstein, Campus Lübeck, First Department of Medicine, Ratzeburger Allee 160, 23562 Lübeck, {t('footer.country')} &middot;
         <Icon name="envelope" /> <a href={`mailto:${email}`}>{email}</a> &middot;
         <Icon name="phone" /> +49 451 3101-7845
       </div>
       <div>
         <strong>Berlin</strong> &middot;
-        Institute for Biology, ITB, Humboldt-Universität zu Berlin, Philippstraße 13, 10115 Berlin, Germany &middot;
+        Institute for Biology, ITB, Humboldt-Universität zu Berlin, Philippstraße 13, 10115 Berlin, {t('footer.country')} &middot;
         <Icon name="envelope" /> <a href="mailto:koenigmx@hu-berlin.de">koenigmx@hu-berlin.de</a> &middot;
         <Icon name="phone" /> +49 30 2093-98435
       </div>
     </div>
     <div class="footer-legal">
-      <a href={url('/impressum/')}>Impressum</a>
+      <a href={u('/impressum/')}>{t('footer.impressum')}</a>
       <span aria-hidden="true">&middot;</span>
-      <a href={url('/privacy/')}>Datenschutzerklärung</a>
+      <a href={u('/privacy/')}>{t('footer.privacy')}</a>
       <span aria-hidden="true">&middot;</span>
-      <a class="footer-version" href={`${repo}/releases/tag/${version}`} title="Release notes">v{version}</a>
-      <a class="footer-version" href={`${repo}/commit/${commit}`} title="Deployed commit">{commit}</a>
+      <a class="footer-version" href={`${repo}/releases/tag/${version}`} title={t('footer.releaseNotes')}>v{version}</a>
+      <a class="footer-version" href={`${repo}/commit/${commit}`} title={t('footer.deployedCommit')}>{commit}</a>
     </div>
   </div>
 </footer>

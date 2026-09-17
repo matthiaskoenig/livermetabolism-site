@@ -119,3 +119,43 @@ test('every /assets/ reference on every page resolves', async ({ page, request }
     expect(res.status(), u).toBe(200);
   }
 });
+
+// The German tree mirrors the English page list one-for-one (site/pages/[...locale]/):
+// each page must render with lang="de", show the language switch back to English, and
+// stay free of console errors, the same bar the English pages above are held to.
+for (const path of pages) {
+  test(`renders /de/${path} without console errors`, async ({ page }) => {
+    const errors: string[] = [];
+    page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
+    page.on('pageerror', (e) => errors.push(e.message));
+    const res = await page.goto(`de/${path}`);
+    expect(res?.status()).toBe(200);
+    await expect(page.locator('html')).toHaveAttribute('lang', 'de');
+    // The detail modal (closed on load) carries its own copy of the language
+    // switch for use while its <dialog> is open (see DetailModal.astro), so
+    // the navbar's copy needs scoping to stay a single match.
+    await expect(page.locator('nav.site-navbar .lang-switch-link[lang="en"]')).toBeVisible();
+    expect(errors).toEqual([]);
+  });
+}
+
+// hreflang alternates (Head.astro, site/lib/i18n/alternates.ts): en, de and
+// x-default, each absolute (built from the build's SITE/BASE, like
+// robots.txt/llms.txt above - see servedPath()) and each pointing at a page
+// that exists in *this* build. Asserting the absolute hrefs' status directly
+// would instead fetch the live production site (SITE, not the preview under
+// test) in CI, so - as with robots.txt/llms.txt above - resolve each to its
+// served path under BASE and request that from the preview.
+test('hreflang alternates point at pages that exist', async ({ page, request }) => {
+  await page.goto('publications/');
+  const alternates = await page.locator('link[rel="alternate"]').evaluateAll((ls) =>
+    ls.map((l) => ({ hreflang: (l as HTMLLinkElement).hreflang, href: (l as HTMLLinkElement).href })));
+  expect(alternates).toHaveLength(3);
+  const byHreflang = Object.fromEntries(alternates.map((a) => [a.hreflang, a.href]));
+  expect(Object.keys(byHreflang).sort()).toEqual(['de-DE', 'en-US', 'x-default']);
+  for (const { href } of alternates) expect(href, href).toMatch(/^https?:\/\//);
+  expect(byHreflang['x-default']).toBe(byHreflang['en-US']);
+  for (const { href } of alternates) {
+    expect((await request.get(servedPath(href))).status(), href).toBe(200);
+  }
+});

@@ -119,7 +119,7 @@ export const newsSchema = z.object({
 }).strict();
 
 export const teachingSchema = z.object({
-  id, order: z.number().default(0), tags: strList, people: strList, title: reqStr, title_german: optStr, date: reqStr,
+  id, order: z.number().default(0), tags: strList, people: strList, title: reqStr, date: reqStr,
   type: z.preprocess((v) => (v == null ? [] : v), z.array(TeachingType)), semester: reqStr,
   authors: reqStr, location: reqStr, image: optStr, caption: optStr, funding: optStr, content: reqStr,
 }).strict();

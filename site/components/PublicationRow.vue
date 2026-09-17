@@ -3,9 +3,11 @@ import Icon from './Icon.vue';
 import PersonChips from './PersonChips.vue';
 import TagList from './TagList.vue';
 import { normalizeDoi, openalexWorkUrl, type CitationEntry } from '../lib/citationsSchema';
+import { fmt } from '../lib/i18n/format';
+import type { UiSlices } from '../lib/i18n/slices';
 import type { PeopleMap } from '../lib/people';
 import type { PublicationData } from '../lib/schemas';
-import { capitalize, slugify } from '../lib/text';
+import { slugify } from '../lib/text';
 import type { Entry, TagInfo } from '../lib/views';
 
 /**
@@ -15,7 +17,7 @@ import type { Entry, TagInfo } from '../lib/views';
  * snapshot at all, so `citationsStats.ts` can fill it in from the live file in
  * the browser; `data-cited` is what the Year / Most cited toggle sorts by.
  */
-const props = defineProps<{ pub: Entry<PublicationData>; tagInfo: TagInfo[]; peopleMap: PeopleMap; pdfBase: string; avatarBase: string; citation?: CitationEntry | null }>();
+const props = defineProps<{ pub: Entry<PublicationData>; tagInfo: TagInfo[]; peopleMap: PeopleMap; pdfBase: string; avatarBase: string; citation?: CitationEntry | null; strings: UiSlices['publicationRow'] }>();
 // the snapshot is keyed by the normalised DOI, and so is the row's data-doi
 const doi = normalizeDoi(props.pub.doi ?? '');
 const cites = props.citation ?? null;
@@ -24,16 +26,18 @@ const cites = props.citation ?? null;
 <template>
   <tr :id="`pub-${pub.id}`" :data-tags="pub.tags.join('|')" :data-cited="cites ? cites.citedByCount : 0">
     <td class="publication-status">
-      <span class="status-badge" :class="`status-${slugify(pub.status)}`">{{ capitalize(pub.status) }}</span>
+      <!-- the class name is built from the raw status value (never translated, a CSS/lookup key);
+           only the text shown to the reader comes from the catalog -->
+      <span class="status-badge" :class="`status-${slugify(pub.status)}`">{{ strings.statusLabels[pub.status] }}</span>
       <div class="pub-links">
-        <a v-if="pub.pdf" :href="pdfBase + pub.pdf" title="PDF"><Icon name="file-pdf-o" /></a>
-        <a v-if="pub.homepage" :href="pub.homepage" title="Project homepage"><Icon name="globe" /></a>
-        <a v-if="pub.repository" :href="pub.repository" title="Repository homepage"><Icon name="github" /></a>
+        <a v-if="pub.pdf" :href="pdfBase + pub.pdf" :title="strings.pdf"><Icon name="file-pdf-o" /></a>
+        <a v-if="pub.homepage" :href="pub.homepage" :title="strings.homepage"><Icon name="globe" /></a>
+        <a v-if="pub.repository" :href="pub.repository" :title="strings.repository"><Icon name="github" /></a>
         <span v-if="doi" class="pub-cites" :data-doi="doi">
           <a class="pub-badge pub-badge-cited" data-field="cited" :href="cites ? openalexWorkUrl(cites.openalexId) : undefined"
-            target="_blank" rel="noopener noreferrer" title="Citations (OpenAlex)"
-            :hidden="!cites || cites.citedByCount === 0">{{ cites && cites.citedByCount ? `cited ${cites.citedByCount}` : '' }}</a>
-          <span class="pub-badge pub-badge-oa" data-field="oa" :title="cites ? `Open access (${cites.oaStatus})` : 'Open access'" :hidden="!cites || !cites.isOa">open access</span>
+            target="_blank" rel="noopener noreferrer" :title="strings.citations"
+            :hidden="!cites || cites.citedByCount === 0">{{ cites && cites.citedByCount ? fmt(cites.citedByCount === 1 ? strings.cited.one : strings.cited.other, { count: cites.citedByCount }) : '' }}</a>
+          <span class="pub-badge pub-badge-oa" data-field="oa" :title="cites ? fmt(strings.openAccessWith, { status: cites.oaStatus }) : strings.openAccessTitle" :hidden="!cites || !cites.isOa">{{ strings.openAccess }}</span>
         </span>
       </div>
     </td>
@@ -44,9 +48,9 @@ const cites = props.citation ?? null;
         <PersonChips :text="pub.authors" :people="pub.people" :people-map="peopleMap" :avatar-base="avatarBase" />; {{ pub.journal }}<template v-if="pub.doi">. doi:<a :href="`https://doi.org/${pub.doi}`">{{ pub.doi }}</a></template><template v-if="pub.pmid">. pmid:<a :href="`https://pubmed.ncbi.nlm.nih.gov/${pub.pmid}`">{{ pub.pmid }}</a></template>
       </p>
       <details v-if="pub.abstract || pub.keywords.length" class="pub-abstract" :id="`abstract-${pub.id}`">
-        <summary class="small"><Icon name="caret-down" /> Abstract</summary>
+        <summary class="small"><Icon name="caret-down" /> {{ strings.abstract }}</summary>
         <p v-if="pub.abstract" class="abstract text-justify small" v-html="pub.abstract"></p>
-        <p v-if="pub.keywords.length" class="small"><strong class="small">Keywords:</strong> {{ pub.keywords.join(', ') }}</p>
+        <p v-if="pub.keywords.length" class="small"><strong class="small">{{ strings.keywords }}</strong> {{ pub.keywords.join(', ') }}</p>
       </details>
     </td>
   </tr>

@@ -1,4 +1,9 @@
 import { getCollection, type CollectionEntry, type CollectionKey } from 'astro:content';
+import { uiFor } from './i18n/catalog';
+import { loadCatalog, localize } from './i18n/content';
+import { isTranslatable, TRANSLATABLE } from './i18n/fields';
+import type { Locale } from './i18n/locales';
+import { tagLabel } from './i18n/tagLabel';
 import type { PeopleMap } from './people';
 import type * as S from './schemas';
 import { toTagInfo } from './views';
@@ -38,41 +43,56 @@ function plain<K extends keyof CollectionData & CollectionKey>(entry: Collection
 // loader in content.config.ts) — restore it via the injected `order` field
 // before flattening. Pages that need a different order (date, year, ...)
 // sort again afterwards; this only fixes the ones that don't.
-async function all<K extends keyof CollectionData & CollectionKey>(key: K): Promise<Entry<CollectionData[K]>[]> {
+//
+// This is also the single choke point the German overlay is wired into
+// (Task 11): every page, the detail fragments, the search index and the
+// LLM files read through these getters, so overlaying here reaches every
+// surface without a second code path. A table absent from TRANSLATABLE
+// (the bibliographic ones) is returned as-is regardless of locale.
+async function all<K extends keyof CollectionData & CollectionKey>(key: K, locale: Locale): Promise<Entry<CollectionData[K]>[]> {
   const entries = await getCollection(key);
-  return entries
+  const rows = entries
     .slice()
     .sort((a, b) => (a.data as { order: number }).order - (b.data as { order: number }).order)
     .map((e) => plain(e));
+  if (!isTranslatable(key)) return rows;
+  return localize(rows, loadCatalog(locale, key), TRANSLATABLE[key]);
 }
 
-export async function getTags(): Promise<TagInfo[]> {
+export async function getTags(locale: Locale): Promise<TagInfo[]> {
   // getCollection() does not preserve tags.yml's file order (see
   // content.config.ts) — toTagInfo() (lib/views.ts) restores it via the
   // injected `order` field and shapes the exact TagInfo, so neither
   // `order` nor `id` (both present on the raw row) can leak into the
-  // homepage tag sections' island props.
+  // homepage tag sections' island props. tags.yml rows have no `id`
+  // column - the tag name is the id (see content.config.ts) - so the
+  // overlay is given `entry.id` explicitly; `toTagInfo` still reads the
+  // untranslated `tag` field for the id and slug, so only the three
+  // description fields can change.
   const tags = await getCollection('tags');
-  return toTagInfo(tags.map((t) => t.data as S.TagData));
+  const raw = tags.map((t) => ({ ...(t.data as S.TagData), id: t.id }));
+  const localized = localize(raw, loadCatalog(locale, 'tags'), TRANSLATABLE.tags);
+  const { t } = uiFor(locale);
+  return toTagInfo(localized, (slug, tag) => tagLabel(slug, t, tag));
 }
-export const getPeople = () => all('people');
-export const getPublications = () => all('publications');
-export const getProjects = () => all('projects');
-export const getSoftware = () => all('software');
-export const getEditors = () => all('editors');
-export const getFunding = () => all('funding');
-export const getNews = () => all('news');
-export const getTeaching = () => all('teaching');
-export const getPresentations = () => all('presentations');
-export const getPosters = () => all('posters');
-export const getAbstracts = () => all('abstracts');
+export const getPeople = (locale: Locale) => all('people', locale);
+export const getPublications = (locale: Locale) => all('publications', locale);
+export const getProjects = (locale: Locale) => all('projects', locale);
+export const getSoftware = (locale: Locale) => all('software', locale);
+export const getEditors = (locale: Locale) => all('editors', locale);
+export const getFunding = (locale: Locale) => all('funding', locale);
+export const getNews = (locale: Locale) => all('news', locale);
+export const getTeaching = (locale: Locale) => all('teaching', locale);
+export const getPresentations = (locale: Locale) => all('presentations', locale);
+export const getPosters = (locale: Locale) => all('posters', locale);
+export const getAbstracts = (locale: Locale) => all('abstracts', locale);
 /** meetings.html sorts by date, newest first. */
-export async function getMeetings() {
-  return (await all('meetings')).sort((a, b) => b.date.localeCompare(a.date));
+export async function getMeetings(locale: Locale) {
+  return (await all('meetings', locale)).sort((a, b) => b.date.localeCompare(a.date));
 }
 
-export async function getPeopleMap(): Promise<PeopleMap> {
+export async function getPeopleMap(locale: Locale): Promise<PeopleMap> {
   const map: PeopleMap = {};
-  for (const p of await getPeople()) map[p.id] = { id: p.id, name: p.name, image: p.image ?? null };
+  for (const p of await getPeople(locale)) map[p.id] = { id: p.id, name: p.name, image: p.image ?? null };
   return map;
 }

@@ -14,21 +14,49 @@
  * island — see CLAUDE.md).
  */
 import { openalexWorkUrl, type Citations } from './citationsSchema';
+import { fmt } from './i18n/format';
+
+/**
+ * English fallbacks for markup that carries no `data-cited-template-one` /
+ * `data-cited-template-other` / `data-open-access-template` (older cached
+ * HTML, a test fixture) - the literal text these fields always showed before
+ * they took a template. Exported so `citationsStats.test.ts` can pin them to
+ * `en.pub.citedOne` / `en.pub.citedOther` / `en.pub.openAccessWith`, the
+ * catalog entries they must never drift from.
+ */
+export const DEFAULT_CITED_TEMPLATE_ONE = 'cited {count}';
+export const DEFAULT_CITED_TEMPLATE_OTHER = 'cited {count}';
+export const DEFAULT_OPEN_ACCESS_TEMPLATE = 'Open access ({status})';
 
 /**
  * Patch every `.pub-cites` badge group and its row's `data-cited` from
  * `citations`. A row without a DOI has no badge group at all, and a DOI the
  * snapshot does not cover keeps what the build rendered (a hidden skeleton and
  * `data-cited="0"`), so an unknown paper never shows as "cited 0".
+ *
+ * The "cited {count}" and "Open access ({status})" templates are read from
+ * `data-cited-template-one` / `data-cited-template-other` /
+ * `data-open-access-template` on `#publication-order` - set by
+ * `PublicationsOrder.astro` from the same UI catalog keys (`pub.citedOne`,
+ * `pub.citedOther`, `pub.openAccessWith`) `PublicationRow.vue` renders at
+ * build time - so a German page's badges stay German (with the right plural
+ * form) after a live refresh instead of reverting to English (see
+ * CLAUDE.md, the four duplicates, and the `gh.release` template
+ * `githubStats.ts` reads the same way).
  */
 export function applyCitations(root: ParentNode, citations: Citations): void {
+  const order = root.querySelector<HTMLElement>('#publication-order');
+  const citedTemplateOne = order?.dataset.citedTemplateOne ?? DEFAULT_CITED_TEMPLATE_ONE;
+  const citedTemplateOther = order?.dataset.citedTemplateOther ?? DEFAULT_CITED_TEMPLATE_OTHER;
+  const openAccessTemplate = order?.dataset.openAccessTemplate ?? DEFAULT_OPEN_ACCESS_TEMPLATE;
+
   for (const group of root.querySelectorAll<HTMLElement>('.pub-cites[data-doi]')) {
     const entry = citations.works[group.dataset.doi ?? ''];
     if (!entry) continue;
 
     const cited = group.querySelector<HTMLElement>('[data-field="cited"]');
     if (cited) {
-      cited.textContent = `cited ${entry.citedByCount}`;
+      cited.textContent = fmt(entry.citedByCount === 1 ? citedTemplateOne : citedTemplateOther, { count: entry.citedByCount });
       if (cited instanceof HTMLAnchorElement) cited.href = openalexWorkUrl(entry.openalexId);
       // a paper nobody has cited yet gets no badge rather than a "cited 0" one
       cited.hidden = entry.citedByCount === 0;
@@ -36,7 +64,7 @@ export function applyCitations(root: ParentNode, citations: Citations): void {
 
     const oa = group.querySelector<HTMLElement>('[data-field="oa"]');
     if (oa) {
-      oa.title = `Open access (${entry.oaStatus})`;
+      oa.title = fmt(openAccessTemplate, { status: entry.oaStatus });
       oa.hidden = !entry.isOa;
     }
 

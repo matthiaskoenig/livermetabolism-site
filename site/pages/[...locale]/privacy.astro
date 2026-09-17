@@ -1,0 +1,60 @@
+---
+import Base from '../../layouts/Base.astro';
+import { localeFromParams, localePaths, urlFor } from '../../lib/i18n/routes';
+import { loadPage } from '../../lib/i18n/pages';
+
+export const getStaticPaths = localePaths;
+const locale = localeFromParams(Astro.params);
+const u = urlFor(locale);
+// impressum and privacy are authored in German (the legally binding text);
+// see loadPage() and i18n/TRANSLATION.md's "The legal pages" section.
+const page = loadPage(locale, 'privacy');
+---
+<Base title={page.heading} sectionid="privacy" locale={locale}>
+  <h2 id="privacy">{page.heading}</h2>
+  {locale !== 'de' && <p class="legal-notice">{page.bindingNotice}</p>}
+
+  <h3>{page.controllerHeading}</h3>
+  <p>
+  {page.controllerIntro}<br/>
+  {page.controllerName}<br/>
+  {page.controllerInstitution}<br/>
+  {page.controllerDepartment}<br/>
+  {page.controllerAddress}<br/>
+  {page.controllerEmailLabel} <a href="mailto:matthias.koenig@uni-luebeck.de">{page.controllerEmail}</a><br/>
+  {page.controllerPhone}
+  </p>
+
+  <h3>{page.logfilesHeading}</h3>
+  <p>{page.logfilesText}</p>
+
+  <h3>{page.analyticsHeading}</h3>
+  <p>{page.analyticsIntro}</p>
+  <p>{page.analyticsCookiesText} <a href={`https://support.google.com/analytics/answer/11598602?hl=${locale}`} target="_blank" rel="noopener noreferrer">{page.analyticsCookiesLinkText}</a>.</p>
+  <p>{page.analyticsRevokeIntro}</p>
+  <p><button type="button" id="cookie-consent-reset" class="btn btn-outline-secondary btn-sm">{page.consentResetLabel}</button></p>
+  <p>{page.analyticsRevokeText} <a href={`https://tools.google.com/dlpage/gaoptout?hl=${locale}`} target="_blank" rel="noopener noreferrer">{page.analyticsOptoutLinkText}</a> {page.analyticsRevokeAfter}</p>
+  <p>{page.analyticsMoreInfoText} <a href={`https://policies.google.com/privacy?hl=${locale}`} target="_blank" rel="noopener noreferrer">{page.googlePrivacyLinkText}</a>.</p>
+
+  <p>{page.consentStorageText}</p>
+
+  <h3>{page.externalLinksHeading}</h3>
+  <p>{page.externalResourcesText}</p>
+
+  <h4>{page.fontsHeading}</h4>
+  <p>{page.fontsTextBefore} <code>fonts.googleapis.com</code> {page.fontsAnd} <code>fonts.gstatic.com</code>, {page.fontsTextAfter} <a href={`https://policies.google.com/privacy?hl=${locale}`} target="_blank" rel="noopener noreferrer">{page.googlePrivacyLinkText}</a>.</p>
+
+  <h4>{page.githubHeading}</h4>
+  <p>{page.githubTextBefore} <code>raw.githubusercontent.com</code> {page.githubTextAfter} <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">{page.githubPrivacyLinkText}</a>.</p>
+
+  <h4>{page.youtubeHeading}</h4>
+  <p>{page.youtubeTextBefore} <code>img.youtube.com</code> {page.youtubeTextMid} <code>www.youtube.com</code> {page.youtubeOr} <code>www.youtube-nocookie.com</code> {page.youtubeTextAfter} <a href={`https://policies.google.com/privacy?hl=${locale}`} target="_blank" rel="noopener noreferrer">{page.googlePrivacyLinkText}</a>.</p>
+
+  <h4>{page.externalLinksParaHeading}</h4>
+  <p>{page.externalLinksText}</p>
+
+  <h3>{page.rightsHeading}</h3>
+  <p>{page.rightsText}</p>
+
+  <p><a href={u('/impressum/')}>{page.impressumLinkText}</a></p>
+</Base>

@@ -1,0 +1,152 @@
+# AUTO-GENERATED from i18n/de/pages/privacy.yml (the binding German source).
+# Do not edit by hand; regenerate with the translate-de skill.
+heading:
+  text: Privacy Policy
+bindingNotice:
+  text: This is a translation for convenience. Only the German version is legally binding.
+controllerHeading:
+  text: 1. Controller
+controllerIntro:
+  text: 'The controller within the meaning of the General Data Protection Regulation (GDPR, DSGVO) is:'
+controllerName:
+  text: Prof. Dr. rer. nat. Matthias König
+controllerInstitution:
+  text: University Hospital Schleswig-Holstein, Campus Lübeck
+controllerDepartment:
+  text: First Department of Medicine
+controllerAddress:
+  text: Ratzeburger Allee 160, 23562 Lübeck, Germany
+controllerEmailLabel:
+  text: 'Email:'
+controllerEmail:
+  text: matthias.koenig@uni-luebeck.de
+controllerPhone:
+  text: 'Phone: +49 451 3101-7845'
+logfilesHeading:
+  text: 2. Server Log Files
+logfilesText:
+  text: >-
+    When you access this website, the hosting provider automatically collects information in
+    so-called server log files, which your browser automatically transmits. These are: browser
+    type and version, operating system used, referrer URL, host name of the accessing computer,
+    time of the server request, and IP address. This data is not merged with other data sources
+    and serves exclusively to ensure trouble-free operation and the security of our information
+    technology systems (legal basis: Art. 6 Abs. 1 lit. f DSGVO, legitimate interest).
+analyticsHeading:
+  text: 3. Google Analytics
+analyticsIntro:
+  text: >-
+    This website uses Google Analytics 4, a web analytics service provided by Google Ireland
+    Limited, Gordon House, Barrow Street, Dublin 4, Ireland ("Google") - but only if you have
+    explicitly consented in the cookie banner on your first visit. Without your consent, no
+    Google Analytics script is loaded and no analytics cookies are set. In this case, the legal
+    basis is your consent (Art. 6 Abs. 1 lit. a DSGVO i. V. m. § 25 Abs. 1 TDDDG).
+analyticsCookiesText:
+  text: >-
+    If you consent, Google Analytics uses cookies or comparable technologies that enable an
+    analysis of your use of the website. The information generated in this way (including IP
+    address, pages visited, time spent, device used) is transmitted to and processed on a Google
+    server; this may include servers in the USA. According to Google, the IP address is used
+    during collection to derive location information and is then discarded before the data is
+    stored. Further information is provided by Google on
+analyticsCookiesLinkText:
+  text: regional data collection in Google Analytics 4
+analyticsRevokeIntro:
+  text: 'You can revoke or subsequently change your decision at any time:'
+consentResetLabel:
+  text: Change cookie settings
+analyticsRevokeText:
+  text: >-
+    Upon revocation, further data collection by the Google Analytics tag on this page is
+    deactivated, and Google Analytics cookies already set by this website are deleted from your
+    browser. Alternatively, you can also prevent data collection by Google Analytics by installing
+    the
+analyticsOptoutLinkText:
+  text: browser add-on for deactivating Google Analytics
+analyticsRevokeAfter:
+  text: or by preventing your browser from storing cookies from this website.
+analyticsMoreInfoText:
+  text: Further information on the handling of user data by Google Analytics can be found in the
+googlePrivacyLinkText:
+  text: Google Privacy Policy
+consentStorageText:
+  text: >-
+    Your choice in the banner is stored in your browser's local storage so that it can be taken
+    into account on further visits to the pages. You can reset your choice using the button above
+    or remove it by deleting this website's data in your browser. The banner controls Google
+    Analytics. The fonts, data retrievals and YouTube content described in the following section
+    are loaded independently of this choice.
+externalLinksHeading:
+  text: 4. External Links and Embedded Content
+externalResourcesText:
+  text: >-
+    This website also embeds resources from external providers. When such a resource is
+    retrieved, your browser establishes a direct connection to the respective provider. In doing
+    so, the provider receives in particular your IP address, the resource requested, and
+    technical information transmitted by your browser, such as the browser type; depending on
+    your browser settings, the referring page may also be transmitted. These connections can
+    occur simply when a page or an embedded content item is displayed, without you clicking on an
+    external link.
+fontsHeading:
+  text: Google Fonts
+fontsTextBefore:
+  text: >-
+    For the display of fonts, we use Google Fonts. When you access the pages, your browser loads
+    the associated stylesheets and font files from
+fontsAnd:
+  text: and
+fontsTextAfter:
+  text: >-
+    unless they are already cached in the browser. These requests also occur if you decline
+    Google Analytics. Information on processing by Google can be found in the
+githubHeading:
+  text: Current Research and Publication Data from GitHub
+githubTextBefore:
+  text: >-
+    On the research and publications pages, your browser retrieves current public metrics and
+    publication information from
+githubTextAfter:
+  text: >-
+    This includes information on software repositories as well as publication and citation
+    metrics. The data is regularly compiled for this website and made available on GitHub. For
+    this update, your browser connects to GitHub; the displayed Google Scholar and OpenAlex
+    metrics do not trigger any direct request from your browser to Google Scholar or OpenAlex.
+    These GitHub requests are independent of your Analytics choice. Further information can be
+    found in the
+githubPrivacyLinkText:
+  text: GitHub Privacy Policy
+youtubeHeading:
+  text: YouTube Thumbnails and Embedded Videos
+youtubeTextBefore:
+  text: For news items with videos, thumbnails may be loaded from
+youtubeTextMid:
+  text: >-
+    as soon as the browser displays or preloads these images. If you open a news item with an
+    embedded video, your browser may load the player from
+youtubeOr:
+  text: or
+youtubeTextAfter:
+  text: >-
+    already before playback starts. These requests are not tied to consent to Google Analytics.
+    Loading the player and playback may generate further requests to Google or YouTube services.
+    Information on their data processing can be found in the
+externalLinksParaHeading:
+  text: External Links
+externalLinksText:
+  text: >-
+    Individual pages of this website link to external services (e.g. GitHub, ORCID, Google
+    Scholar, LinkedIn, YouTube, ResearchGate). By clicking these links, you leave this website;
+    the operators of the linked pages are solely responsible for data processing on those pages.
+rightsHeading:
+  text: 5. Your Rights
+rightsText:
+  text: >-
+    Within the scope of applicable legal provisions, you have the right at any time to free
+    information about your stored personal data, its origin and recipients, and the purpose of
+    the data processing, as well as a right to rectification, blocking or deletion of this data,
+    and a right to data portability and a right to object to the processing. For this and for any
+    further questions on the topic of personal data, you may contact us at any time using the
+    contact details given in the Legal Notice. You also have the right to lodge a complaint with
+    the competent data protection supervisory authority.
+impressumLinkText:
+  text: Legal Notice

@@ -11,6 +11,8 @@
  * summaries are plain text and are inserted with textContent / Vue
  * interpolation, never as HTML.
  */
+import { monthsFor } from './i18n/dates';
+import { fmt } from './i18n/format';
 import type { Snapshot } from './githubSchema';
 
 /** What a software card's `.software-stats` line shows. */
@@ -181,33 +183,61 @@ export function hasData(iso: string): boolean {
   return Number.isFinite(t) && t > 0;
 }
 
-const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
 /**
- * "8 Sep 2026", in UTC and without `toLocaleDateString`, so the row rendered
- * by the build and the one re-rendered in the browser always read the same.
+ * "8 Sep 2026", in UTC, always in English and without `toLocaleDateString`,
+ * so the row rendered by the build and the one re-rendered in the browser
+ * always read the same - deliberately locale-independent (GitHub's own
+ * timestamps are shown the same way regardless of the page's language).
  */
 export function shortDate(iso: string): string {
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return '';
-  return `${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
+  return `${d.getUTCDate()} ${monthsFor('en')[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
 }
 
-const plural = (n: number, unit: string) => `${n} ${unit}${n === 1 ? '' : 's'} ago`;
+/** The translated "N ago" strings `relativeDate` needs, one/other per unit. */
+export interface RelativeDateStrings {
+  today: string;
+  yesterday: string;
+  day: { one: string; other: string };
+  week: { one: string; other: string };
+  month: { one: string; other: string };
+  year: { one: string; other: string };
+}
+
+/**
+ * The English literal of every `RelativeDateStrings` field, for a browser
+ * script whose page carries no `data-time-strings` (older cached markup, a
+ * test fixture) - the same text this function always produced before it took
+ * a `strings` argument.
+ */
+export const ENGLISH_RELATIVE_DATE_STRINGS: RelativeDateStrings = {
+  today: 'today',
+  yesterday: 'yesterday',
+  day: { one: '{count} day ago', other: '{count} days ago' },
+  week: { one: '{count} week ago', other: '{count} weeks ago' },
+  month: { one: '{count} month ago', other: '{count} months ago' },
+  year: { one: '{count} year ago', other: '{count} years ago' },
+};
+
+const plural = (n: number, unit: { one: string; other: string }) => fmt(n === 1 ? unit.one : unit.other, { count: n });
 const utcDay = (d: Date) => Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
 
 /**
  * A calendar-day-based "3 days ago" / "5 months ago" for the stats lines and
- * the "updated" note; an empty string for an unparsable date.
+ * the "updated" note; an empty string for an unparsable date. `strings` is a
+ * narrow, serialisable bundle (see `slices.ts`'s `relativeDate`) rather than
+ * a `TFn`, so this stays usable both from a build-time `t()` and from the
+ * browser refresh (`githubStats.ts`), which cannot import the catalog.
  */
-export function relativeDate(iso: string, now: Date = new Date()): string {
+export function relativeDate(iso: string, now: Date, strings: RelativeDateStrings): string {
   const then = new Date(iso);
   if (Number.isNaN(then.getTime())) return '';
   const days = Math.round((utcDay(now) - utcDay(then)) / DAY_MS);
-  if (days <= 0) return 'today';
-  if (days === 1) return 'yesterday';
-  if (days < 7) return plural(days, 'day');
-  if (days < 30) return plural(Math.round(days / 7), 'week');
-  if (days < 365) return plural(Math.max(1, Math.floor(days / 30.44)), 'month');
-  return plural(Math.max(1, Math.floor(days / 365.25)), 'year');
+  if (days <= 0) return strings.today;
+  if (days === 1) return strings.yesterday;
+  if (days < 7) return plural(days, strings.day);
+  if (days < 30) return plural(Math.round(days / 7), strings.week);
+  if (days < 365) return plural(Math.max(1, Math.floor(days / 30.44)), strings.month);
+  return plural(Math.max(1, Math.floor(days / 365.25)), strings.year);
 }

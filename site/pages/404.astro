@@ -1,11 +1,21 @@
 ---
+// A single static file, not routed per locale like every other page under
+// [...locale]/ (see i18n/TRANSLATION.md, "Known single-language surfaces"):
+// GitHub Pages serves this same dist/404.html for every 404, including one
+// under /de/, so there is no way to detect or switch the visited locale
+// here. The page is bilingual instead - both languages are shown at once -
+// rather than defaulting to English with a language-switch link that would
+// point at a German 404 page that was never built.
 import Base from '../layouts/Base.astro';
 import { url } from '../lib/url';
+import { localeUrl } from '../lib/i18n/routes';
 ---
-<Base title="Not found">
+<Base title="Not found / Seite nicht gefunden" langSwitchPath="/" noAlternates>
   <div class="text-center">
-    <p>The page you are looking for cannot be found.</p>
     <h2>404</h2>
+    <p>The page you are looking for cannot be found.</p>
     <p><a href={url('/')} class="btn btn-secondary" role="button">Go to homepage</a></p>
+    <p lang="de">Die gesuchte Seite wurde nicht gefunden.</p>
+    <p><a href={localeUrl('de', '/')} class="btn btn-secondary" role="button" lang="de">Zur Startseite</a></p>
   </div>
 </Base>

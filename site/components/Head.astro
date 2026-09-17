@@ -1,17 +1,29 @@
 ---
 import { asset, url } from '../lib/url';
+import { alternates } from '../lib/i18n/alternates';
+import { uiFor } from '../lib/i18n/catalog';
+import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
 
-interface Props { title?: string; description?: string }
+interface Props { title?: string; description?: string; locale?: Locale; noAlternates?: boolean }
 const siteTitle = 'livermetabolism';
-const { title, description = 'Research Group König' } = Astro.props;
+const { locale = DEFAULT_LOCALE, noAlternates = false } = Astro.props;
+const { t } = uiFor(locale);
+const { title, description = t('meta.description') } = Astro.props;
 const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
 const canonical = new URL(Astro.url.pathname, Astro.site);
+// alternates() assumes the page has a real per-locale counterpart at the
+// same path under every locale prefix - not true of a single bilingual
+// file like 404.astro (see i18n/TRANSLATION.md, "Known single-language
+// surfaces"), where it would emit a hreflang="de-DE" link to a page that
+// was never built.
+const alternateLinks = noAlternates ? [] : alternates(Astro.url.pathname, Astro.site);
 ---
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
+{alternateLinks.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
 <meta property="og:type" content="website" />
 <meta property="og:title" content={title ?? siteTitle} />
 <meta property="og:description" content={description} />

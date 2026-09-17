@@ -7,30 +7,41 @@
 // not a Vue island (see CLAUDE.md): the stats lines are static HTML rendered
 // by SoftwareCard.vue and only their text nodes change.
 import { hasData, relativeDate } from '../lib/githubRows';
+import { uiFor } from '../lib/i18n/catalog';
+import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
+import { slices } from '../lib/i18n/slices';
 
-interface Props { fetchedAt: string }
-const { fetchedAt } = Astro.props;
+interface Props { fetchedAt: string; locale?: Locale }
+const { fetchedAt, locale = DEFAULT_LOCALE } = Astro.props;
+const { t } = uiFor(locale);
+const ui = slices(t);
 // a build that could not read the snapshot renders emptySnapshot()'s epoch:
 // that is "never", not "56 years ago" (the browser then fills the page in)
 const known = hasData(fetchedAt);
 ---
-<p class="github-note" data-github-note>
-  Data from <a href="https://github.com/matthiaskoenig" target="_blank" rel="noopener noreferrer">GitHub</a>, updated
-  <time data-field="updated" data-empty="never" data-iso={fetchedAt} datetime={known ? fetchedAt : undefined}>{known ? relativeDate(fetchedAt) : 'never'}</time>.
+<p class="github-note" data-github-note
+  data-release-template={t('gh.release')}
+  data-releases-label={t('gh.releases')}
+  data-issues-open-template={t('gh.issuesOpen')}
+  data-time-strings={JSON.stringify(ui.relativeDate)}>
+  {t('gh.dataFrom')} <a href="https://github.com/matthiaskoenig" target="_blank" rel="noopener noreferrer">GitHub</a>, {t('gh.updated')}
+  <time data-field="updated" data-empty={t('gh.never')} data-iso={fetchedAt} datetime={known ? fetchedAt : undefined}>{known ? relativeDate(fetchedAt, new Date(), ui.relativeDate) : t('gh.never')}</time>.
 </p>
 
 <script>
   import { isFresherThan, loadLiveSnapshot } from '../lib/githubLive';
-  import { applyStats, refreshRelativeDates } from '../lib/githubStats';
+  import { applyStats, refreshRelativeDates, timeStringsFrom } from '../lib/githubStats';
 
-  const note = document.querySelector<HTMLElement>('[data-github-note] [data-field="updated"]');
+  const githubNote = document.querySelector<HTMLElement>('[data-github-note]');
+  const note = githubNote?.querySelector<HTMLElement>('[data-field="updated"]');
   if (note) {
+    const strings = timeStringsFrom(githubNote);
     // 1. the build may be weeks old: re-date what it rendered
-    refreshRelativeDates();
+    refreshRelativeDates(document, new Date(), strings);
     // 2. and take the newer snapshot if there is one (shared, memoized fetch)
     const builtAt = note.dataset.iso ?? '';
     void loadLiveSnapshot().then((snapshot) => {
-      if (isFresherThan(snapshot, builtAt)) applyStats(snapshot);
+      if (isFresherThan(snapshot, builtAt)) applyStats(snapshot, document, new Date(), strings);
     });
   }
 </script>

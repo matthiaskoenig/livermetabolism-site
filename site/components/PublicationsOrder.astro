@@ -10,34 +10,46 @@
 // the buttons are static markup and the rows are moved, never re-rendered —
 // there is only ever one copy of them in the DOM.
 import { hasData, relativeDate } from '../lib/githubRows';
+import { uiFor } from '../lib/i18n/catalog';
+import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
+import { slices } from '../lib/i18n/slices';
 
 interface Props {
   /** `fetchedAt` of the build's citation snapshot. */
   fetchedAt: string;
+  locale?: Locale;
 }
-const { fetchedAt } = Astro.props;
+const { fetchedAt, locale = DEFAULT_LOCALE } = Astro.props;
+const { t } = uiFor(locale);
+const ui = slices(t);
 // a build that could not read the snapshot renders emptyCitations()'s epoch:
 // that is "never", not "56 years ago" (the browser then fills the page in)
 const known = hasData(fetchedAt);
 ---
 
-<div class="publication-order" id="publication-order" role="group" aria-label="Order publications">
-  <button type="button" class="order-btn active" data-order="year" aria-pressed="true">Year</button>
-  <button type="button" class="order-btn" data-order="cited" aria-pressed="false">Most cited</button>
+<div class="publication-order" id="publication-order" role="group" aria-label={t('pubOrder.groupLabel')}
+  data-time-strings={JSON.stringify(ui.relativeDate)}
+  data-cited-template-one={t('pub.citedOne')}
+  data-cited-template-other={t('pub.citedOther')}
+  data-open-access-template={t('pub.openAccessWith')}>
+  <button type="button" class="order-btn active" data-order="year" aria-pressed="true">{t('pubOrder.year')}</button>
+  <button type="button" class="order-btn" data-order="cited" aria-pressed="false">{t('pubOrder.mostCited')}</button>
   <p class="citations-note" data-citations-note>
-    Citations from <a href="https://openalex.org" target="_blank" rel="noopener noreferrer">OpenAlex</a>, updated
-    <time data-field="updated" data-empty="never" data-iso={fetchedAt} datetime={known ? fetchedAt : undefined}>{known ? relativeDate(fetchedAt) : 'never'}</time>.
+    {t('pubOrder.citationsFrom')} <a href="https://openalex.org" target="_blank" rel="noopener noreferrer">OpenAlex</a>, {t('pubOrder.updated')}
+    <time data-field="updated" data-empty={t('pubOrder.never')} data-iso={fetchedAt} datetime={known ? fetchedAt : undefined}>{known ? relativeDate(fetchedAt, new Date(), ui.relativeDate) : t('pubOrder.never')}</time>.
   </p>
 </div>
 
 <script>
   import { isCitationsFresherThan, loadLiveCitations } from '../lib/citationsLive';
   import { applyCitations, refreshNote } from '../lib/citationsStats';
+  import { timeStringsFrom } from '../lib/githubStats';
   import { applyOrder, type PubOrder } from '../lib/pubOrder';
 
   const toggle = document.getElementById('publication-order');
   const list = document.getElementById('publication-list');
   if (toggle && list) {
+    const strings = timeStringsFrom(toggle);
     let current: PubOrder = new URLSearchParams(window.location.search).get('order') === 'cited' ? 'cited' : 'year';
 
     const setOrder = (order: PubOrder): void => {
@@ -60,12 +72,12 @@ const known = hasData(fetchedAt);
     const note = document.querySelector<HTMLElement>('[data-citations-note] [data-field="updated"]');
     const builtAt = note?.dataset.iso ?? '';
     // 1. the build may be weeks old: re-date what it rendered
-    refreshNote(note, builtAt);
+    refreshNote(note, builtAt, new Date(), strings);
     // 2. and take the newer snapshot if there is one (shared, memoized fetch)
     void loadLiveCitations().then((citations) => {
       if (!isCitationsFresherThan(citations, builtAt)) return;
       applyCitations(document, citations);
-      refreshNote(note, citations.fetchedAt);
+      refreshNote(note, citations.fetchedAt, new Date(), strings);
       // the counts just changed: the flat order has to be recomputed
       if (current === 'cited') applyOrder(list, 'cited');
     });

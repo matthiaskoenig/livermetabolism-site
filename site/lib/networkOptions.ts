@@ -21,21 +21,25 @@
  * what the component's click handler and the tooltip read back out of
  * `params.data`; nothing of that is markup.
  */
-import { FONT, INK, MUTED, PALETTE, TAG_PALETTE, tooltip } from './chartOptions';
+import { FONT, INK, MUTED, PALETTE, TAG_PALETTE, tooltip, type CitationCountStrings } from './chartOptions';
+import { fmt } from './i18n/format';
 import type { GraphRows, NodeType } from './graphRows';
 
 /** Node types in the order of the legend and of the `categories` array. */
 export const CATEGORY_ORDER: NodeType[] = ['person', 'project', 'software', 'publication'];
 
-/** Legend entry per node type (the legend toggles a whole type, edges included). */
-export const CATEGORY_LABEL: Record<NodeType, string> = {
-  person: 'People', project: 'Projects', software: 'Software', publication: 'Publications',
-};
-
-/** Second tooltip line per node type (singular, unlike the legend label). */
-export const TYPE_LABEL: Record<NodeType, string> = {
-  person: 'Person', project: 'Project', software: 'Software', publication: 'Publication',
-};
+/**
+ * The legend label and the tooltip's second line per node type - a narrow,
+ * serialisable bundle (`NetworkGraph.vue` is a `client:load` island, so its
+ * props, and therefore what `networkOption()` takes, must serialise into
+ * `astro-island`), built by `network.astro` from the UI catalog. The legend
+ * label is plural ("People"), the tooltip line singular ("Person").
+ */
+export interface NetworkLabels {
+  category: Record<NodeType, string>;
+  type: Record<NodeType, string>;
+  citation: CitationCountStrings;
+}
 
 /**
  * Category colours, which are also the legend swatches and the fallback
@@ -178,7 +182,7 @@ export interface NetworkRender {
  * Node sizes come from the degree *within the drawn view*, so filtering to
  * one area re-sizes every node by how much of that area it connects to.
  */
-export function networkOption(rows: GraphRows, topic: string | null, { relayout = true }: NetworkRender = {}) {
+export function networkOption(rows: GraphRows, topic: string | null, labels: NetworkLabels, { relayout = true }: NetworkRender = {}) {
   const shown = filterRows(rows, topic);
   const degree = degrees(shown);
 
@@ -202,21 +206,21 @@ export function networkOption(rows: GraphRows, topic: string | null, { relayout 
 
   const links: NetworkLink[] = shown.links.map((l) => ({ source: l.source, target: l.target, value: LINK_VALUE }));
 
-  const categories = CATEGORY_ORDER.map((type) => ({ name: CATEGORY_LABEL[type], itemStyle: { color: CATEGORY_COLOR[type] } }));
+  const categories = CATEGORY_ORDER.map((type) => ({ name: labels.category[type], itemStyle: { color: CATEGORY_COLOR[type] } }));
 
   return {
     animation: false,
     tooltip: tooltip((p: { dataType?: string; data?: NetworkNode }) => {
       const n = p.data;
       if (p.dataType !== 'node' || !n) return '';
-      const type = TYPE_LABEL[n.type];
+      const type = labels.type[n.type];
       // a project's detail is its title, which is the label already
       const second = n.detail && n.detail !== n.name ? `${type} · ${n.detail}` : type;
       // the size is the degree; a paper's citation count is worth a line of
       // its own, and it is the only number a reader can interpret
       return n.citations === null
         ? `${n.name}\n${second}`
-        : `${n.name}\n${second}\n${n.citations} citation${n.citations === 1 ? '' : 's'}`;
+        : `${n.name}\n${second}\n${fmt(n.citations === 1 ? labels.citation.one : labels.citation.other, { count: n.citations })}`;
     }),
     legend: {
       data: categories.map((c) => c.name),

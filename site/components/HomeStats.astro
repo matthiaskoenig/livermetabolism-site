@@ -12,12 +12,20 @@
 import { getFunding, getPeople, getPublications, getSoftware } from '../lib/data';
 import { loadSnapshot } from '../lib/github';
 import { homeFigures } from '../lib/homeStats';
+import { uiFor } from '../lib/i18n/catalog';
+import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
+import { urlFor } from '../lib/i18n/routes';
 import { loadScholar } from '../lib/scholar';
 
+interface Props { locale?: Locale }
+const { locale = DEFAULT_LOCALE } = Astro.props;
+const { t } = uiFor(locale);
+const u = urlFor(locale);
+
 const [publications, people, software, funding, github, scholar] = await Promise.all([
-  getPublications(), getPeople(), getSoftware(), getFunding(), loadSnapshot(), loadScholar(),
+  getPublications(locale), getPeople(locale), getSoftware(locale), getFunding(locale), loadSnapshot(), loadScholar(),
 ]);
-const figures = homeFigures({ publications, people, software, funding, github, scholar });
+const figures = homeFigures({ publications, people, software, funding, github, scholar }, t, u);
 ---
 <div class="home-stats">
   {figures.map((f) => (

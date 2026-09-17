@@ -29,6 +29,7 @@
  * same-origin build output (`connect-src 'self'`).
  */
 import { DETAIL_TYPES, type DetailType } from './detailTypes';
+import { DEFAULT_LOCALE, isLocale } from './i18n/locales';
 
 export interface DetailEntry {
   type: DetailType;
@@ -78,6 +79,19 @@ export function parseDetailHash(hash: string): DetailEntry | null {
   return null;
 }
 
+/**
+ * The prefix the prerendered detail fragments live under for the page the
+ * reader is on. The locale comes from <html lang>, which Base.astro already
+ * sets, so no extra data- attribute is needed. Read fresh on every fetch
+ * (rather than cached at install time) so it always matches the page's own
+ * markup, not whatever locale the router happened to be installed under.
+ */
+export function detailBase(): string {
+  const deployBase = import.meta.env.BASE_URL;
+  const lang = document.documentElement.lang;
+  return isLocale(lang) && lang !== DEFAULT_LOCALE ? `${deployBase}${lang}/` : deployBase;
+}
+
 // --- the shell and its state ---------------------------------------------
 
 interface Shell {
@@ -91,9 +105,18 @@ interface Shell {
   cache: Map<string, Element>;
   /** Guards against a slow fetch landing after the user has moved on. */
   pending: number;
+  /**
+   * The locale's own text for the three states this router renders itself
+   * (the fragment's own content carries everything else). Read once from the
+   * shell's `data-*` attributes - set by `DetailModal.astro` from the UI
+   * catalog - with the English literal as a fallback for a dialog that carries
+   * none (older markup, a test fixture).
+   */
+  loadingText: string;
+  titleFallback: string;
+  errorText: string;
 }
 
-let base = import.meta.env.BASE_URL || '/';
 let fetchImpl: typeof fetch = (...args) => fetch(...args);
 let installed = false;
 const states = new WeakMap<HTMLDialogElement, Shell>();
@@ -110,7 +133,10 @@ function shell(): Shell | null {
   // replacing the body drops whatever was focused (the clicked related row),
   // so `render()` moves focus to the title - which has to be focusable for it
   title.tabIndex = -1;
-  const view: Shell = { dialog, body, title, back, stack: [], cache: new Map(), pending: 0 };
+  const loadingText = dialog.dataset.loading ?? 'Loading…';
+  const titleFallback = dialog.dataset.titleFallback ?? 'Details';
+  const errorText = dialog.dataset.error ?? 'This entry could not be loaded. Please try again.';
+  const view: Shell = { dialog, body, title, back, stack: [], cache: new Map(), pending: 0, loadingText, titleFallback, errorText };
   states.set(dialog, view);
   // Escape, the backdrop and the × all end in the dialog's own close event
   // (the modal router handles the last two), so the URL and the stack are
@@ -131,7 +157,7 @@ async function fragment(view: Shell, entry: DetailEntry): Promise<Element> {
   const key = `${entry.type}:${entry.id}`;
   const hit = view.cache.get(key);
   if (hit) return hit;
-  const res = await fetchImpl(`${base}detail/${entry.type}/${entry.id}/`);
+  const res = await fetchImpl(`${detailBase()}detail/${entry.type}/${entry.id}/`);
   if (!res.ok) throw new Error(`detail fragment ${key}: HTTP ${res.status}`);
   const parsed = new DOMParser().parseFromString(await res.text(), 'text/html');
   const root = parsed.querySelector('.detail');
@@ -161,20 +187,20 @@ async function render(view: Shell): Promise<void> {
   const token = ++view.pending;
   view.back.hidden = view.stack.length < 2;
   if (!view.cache.has(`${entry.type}:${entry.id}`)) {
-    view.title.textContent = 'Loading…';
-    view.body.replaceChildren(message('detail-loading', 'Loading…'));
+    view.title.textContent = view.loadingText;
+    view.body.replaceChildren(message('detail-loading', view.loadingText));
   }
   try {
     const node = await fragment(view, entry);
     if (token !== view.pending) return;
-    view.title.textContent = node.querySelector('.detail-title')?.textContent?.trim() || 'Details';
+    view.title.textContent = node.querySelector('.detail-title')?.textContent?.trim() || view.titleFallback;
     view.body.replaceChildren(node);
     view.body.scrollTop = 0;
     view.title.focus();
   } catch {
     if (token !== view.pending) return;
-    view.title.textContent = 'Details';
-    view.body.replaceChildren(message('detail-error', 'This entry could not be loaded. Please try again.'));
+    view.title.textContent = view.titleFallback;
+    view.body.replaceChildren(message('detail-error', view.errorText));
     view.title.focus();
   }
 }
@@ -274,12 +300,12 @@ function followHash(): void {
 }
 
 /**
- * Wire the document-level listeners (once) and point the router at this
- * deploy's base path. Called by `installModalRouter()` (`site/lib/modals.ts`),
- * which keeps the plain-anchor and static-dialog behaviour beside it.
+ * Wire the document-level listeners (once). Called by `installModalRouter()`
+ * (`site/lib/modals.ts`), which keeps the plain-anchor and static-dialog
+ * behaviour beside it. The fragment base is not an option here - it is
+ * `detailBase()`, derived fresh from `<html lang>` on every fetch.
  */
-export function installDetailRouter(opts: { base: string; fetchImpl?: typeof fetch }): void {
-  base = opts.base || '/';
+export function installDetailRouter(opts: { fetchImpl?: typeof fetch } = {}): void {
   if (opts.fetchImpl) fetchImpl = opts.fetchImpl;
   if (!installed) {
     installed = true;

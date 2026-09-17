@@ -1,0 +1,42 @@
+---
+import { DEFAULT_LOCALE, LOCALES, type Locale } from '../lib/i18n/locales';
+import { switchPath } from '../lib/i18n/routes';
+
+interface Props { locale?: Locale; path?: string }
+const { locale = DEFAULT_LOCALE, path } = Astro.props;
+// `path` overrides Astro.url.pathname for a page whose build-time route
+// does not correspond to a real per-locale URL - 404.astro is the one
+// case: it is a single file outside [...locale]/ (GitHub Pages serves it
+// for every 404, /de/ included), so switchPath() from its own build path
+// would compute a "German version" at /de/404 that was never generated.
+const here = path ?? Astro.url.pathname;
+const LABEL: Record<Locale, string> = { en: 'EN', de: 'DE' };
+const TITLE: Record<Locale, string> = { en: 'English', de: 'Deutsch' };
+---
+<div class="lang-switch">
+  {LOCALES.map((l) => (
+    <a
+      class:list={['lang-switch-link', { active: l === locale }]}
+      href={switchPath(l, here)}
+      hreflang={l}
+      lang={l}
+      title={TITLE[l]}
+      aria-current={l === locale ? 'true' : undefined}
+    >{LABEL[l]}</a>
+  ))}
+</div>
+<script>
+  // Both entries are real links, so the switch works without JavaScript and
+  // middle-clicks like a link. This only carries the fragment across, so a
+  // reader with a detail modal open lands on the same entry in the other
+  // language (the hash is never sent to the server, so the href cannot
+  // carry it).
+  import { isModifiedClick } from '../lib/detailModal';
+  document.querySelectorAll<HTMLAnchorElement>('.lang-switch-link').forEach((a) => {
+    a.addEventListener('click', (event) => {
+      if (isModifiedClick(event) || !location.hash) return;
+      event.preventDefault();
+      location.assign(a.href + location.hash);
+    });
+  });
+</script>

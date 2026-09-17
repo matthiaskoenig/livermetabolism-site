@@ -5,34 +5,46 @@ import { slugify } from './text';
 export type Entry<T> = Omit<T, 'id' | 'order'> & { id: string };
 
 export interface TagInfo {
-  tag: string; slug: string; icon: string; short_description: string; description: string; vision: string;
+  tag: string; slug: string; icon: string; short_description: string; description: string; vision: string; label: string;
 }
 
-/** The subset of `TagInfo` the tag-filter bar actually renders (button label/icon/tooltip/data-tag) — narrows what `TagFilter.vue` serialises into its island props. */
-export type TagFilterEntry = Pick<TagInfo, 'tag' | 'slug' | 'icon' | 'short_description'>;
+/** The subset of `TagInfo` the tag-filter bar actually renders (button label/icon/tooltip/data-tag) - narrows what `TagFilter.vue` serialises into its island props. */
+export type TagFilterEntry = Pick<TagInfo, 'tag' | 'slug' | 'icon' | 'short_description' | 'label'>;
 
 /** Map full `TagInfo` rows down to `TagFilterEntry` before handing them to a `<TagFilter>` island. */
 export function toTagFilterEntries(tags: TagInfo[]): TagFilterEntry[] {
-  return tags.map(({ tag, slug, icon, short_description }) => ({ tag, slug, icon, short_description }));
+  return tags.map(({ tag, slug, icon, short_description, label }) => ({ tag, slug, icon, short_description, label }));
 }
 
 /**
  * lib/data.ts's getTags(): sort rows by the file-order `order` field
  * content.config.ts's tags loader injects (getCollection() doesn't
- * preserve tags.yml's order — see content.config.ts) and shape them into
+ * preserve tags.yml's order - see content.config.ts) and shape them into
  * the exact TagInfo the homepage's tag sections expect. Built explicitly,
- * field by field — no spread — so neither `order` nor `id` (both present
+ * field by field - no spread - so neither `order` nor `id` (both present
  * on the raw TagData row) can leak into the serialised `tagInfo` island
  * props.
+ *
+ * `tag` is the machine value (reference key, slug source, data-tag/?tag=
+ * filter value) and never varies by locale. `label` is its translated
+ * display text: the caller resolves it per slug (`labelFor`, backed by the
+ * `tags.label.*` UI-catalog keys - see `site/lib/data.ts`'s `getTags()` and
+ * i18n/TRANSLATION.md's "tags.tag" section) so this function stays free of
+ * any i18n import. The default identity fallback keeps every existing
+ * caller that does not care about the label (tests, the LLM export) compiling
+ * unchanged.
  */
-export function toTagInfo(rows: TagData[]): TagInfo[] {
+export function toTagInfo(rows: TagData[], labelFor: (slug: string, tag: string) => string = (slug) => slug): TagInfo[] {
   return rows
     .slice()
     .sort((a, b) => a.order - b.order)
-    .map((d) => ({
-      tag: d.tag, slug: slugify(d.tag), icon: d.icon,
-      short_description: d.short_description, description: d.description, vision: d.vision,
-    }));
+    .map((d) => {
+      const slug = slugify(d.tag);
+      return {
+        tag: d.tag, slug, icon: d.icon, label: labelFor(slug, d.tag),
+        short_description: d.short_description, description: d.description, vision: d.vision,
+      };
+    });
 }
 
 /** Consecutive runs of the same year, in the given order (Liquid's prev_year loop). */

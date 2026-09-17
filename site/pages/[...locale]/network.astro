@@ -1,0 +1,76 @@
+---
+import { publicDir } from 'astro:config/server';
+import { readdirSync } from 'node:fs';
+import { relative, sep } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import Base from '../../layouts/Base.astro';
+import NetworkGraph from '../../components/NetworkGraph.vue';
+import { loadCitations } from '../../lib/citations';
+import { getPeople, getProjects, getPublications, getSoftware, getTags } from '../../lib/data';
+import { graphRows } from '../../lib/graphRows';
+import { uiFor } from '../../lib/i18n/catalog';
+import { fmt } from '../../lib/i18n/format';
+import { localeFromParams, localePaths, localeUrl } from '../../lib/i18n/routes';
+import { slices } from '../../lib/i18n/slices';
+import { filterRows } from '../../lib/networkOptions';
+
+export const getStaticPaths = localePaths;
+const locale = localeFromParams(Astro.params);
+const { t } = uiFor(locale);
+const ui = slices(t);
+const [tags, people, publications, projects, software] = await Promise.all([getTags(locale), getPeople(locale), getPublications(locale), getProjects(locale), getSoftware(locale)]);
+// citations size the publication nodes; a failed read yields an empty
+// snapshot and every paper draws at its minimum size
+const citations = await loadCitations();
+
+// The thumbnails that actually exist (npm run graph:thumbs writes them, see
+// CLAUDE.md); a node without one falls back to a plain circle. `publicDir`
+// comes from the build's own config — `import.meta.url` would point into the
+// bundled prerender chunk under dist/, and the working directory is not ours
+// to rely on either.
+const thumbRoot = fileURLToPath(new URL('assets/image/graph', publicDir));
+// A missing directory is not fatal: graphRows() draws a circle for a node
+// without a thumbnail, so an unreadable directory means circles, not a
+// failed build.
+let thumbs = new Set<string>();
+try {
+  thumbs = new Set(
+    readdirSync(thumbRoot, { withFileTypes: true, recursive: true })
+      .filter((e) => e.isFile())
+      .map((e) => `assets/image/graph/${relative(thumbRoot, `${e.parentPath}${sep}${e.name}`).split(sep).join('/')}`),
+  );
+} catch (error) {
+  console.warn(`[network] no graph thumbnails at ${thumbRoot} (${error}); nodes fall back to circles`);
+}
+
+// Rows and hrefs are built once here; the island only draws them and filters
+// them by research area (about 100 kB of props for a page whose content is
+// the graph).
+const rows = graphRows({
+  tags, people, publications, projects, software, citations, thumbs,
+  base: localeUrl(locale, '/'), assetBase: import.meta.env.BASE_URL,
+});
+const topics = tags.map(({ tag, slug, label }) => ({ tag, slug, label }));
+// what the graph actually draws: filterRows() drops a node without a single
+// link, so the intro counts the connected network rather than the table rows
+const shown = filterRows(rows, null);
+const counts = {
+  people: shown.nodes.filter((n) => n.type === 'person').length,
+  publications: shown.nodes.filter((n) => n.type === 'publication').length,
+  projects: shown.nodes.filter((n) => n.type === 'project').length,
+  software: shown.nodes.filter((n) => n.type === 'software').length,
+};
+---
+<Base title={t('nav.network')} sectionid="network" locale={locale}
+  description={t('network.metaDescription')}>
+  <h2 id="network">{t('nav.network')}</h2>
+  <p>
+    {fmt(t('network.intro'), { people: counts.people, publications: counts.publications, projects: counts.projects, software: counts.software })}
+  </p>
+  <p>
+    {t('network.introFilterHint')}
+  </p>
+  <div id="network-graph">
+    <NetworkGraph client:load rows={rows} topics={topics} strings={ui.network} />
+  </div>
+</Base>

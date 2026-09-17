@@ -2,9 +2,9 @@ import { describe, expect, it } from 'vitest';
 import { publicationsPerYear, STATUS_ORDER, type ChartPublication, type ChartTag } from './publicationRows';
 
 const tags: ChartTag[] = [
-  { tag: 'Digital Twins', slug: 'digital-twins' },
-  { tag: 'AI', slug: 'ai' },
-  { tag: 'Open & FAIR', slug: 'open-fair' },
+  { tag: 'Digital Twins', slug: 'digital-twins', label: 'Digitale Zwillinge' },
+  { tag: 'AI', slug: 'ai', label: 'KI' },
+  { tag: 'Open & FAIR', slug: 'open-fair', label: 'Open & FAIR' },
 ];
 
 const pub = (year: number, status: ChartPublication['status'], ...t: string[]): ChartPublication => ({ year, status, tags: t });
@@ -31,6 +31,8 @@ describe('publicationsPerYear', () => {
     const { byTag } = publicationsPerYear(pubs, tags);
     // tags.yml order, and a tag no paper carries (Digital Twins) is dropped
     expect(byTag.map((s) => [s.tag, s.slug])).toEqual([['AI', 'ai'], ['Open & FAIR', 'open-fair']]);
+    // label carries through independently of the (never translated) tag value
+    expect(byTag.map((s) => s.label)).toEqual(['KI', 'Open & FAIR']);
     //                             2020 2021 2022 2023 2024
     expect(byTag[0]!.counts).toEqual([0, 0, 1, 0, 1]);
     expect(byTag[1]!.counts).toEqual([0, 0, 0, 0, 2]);

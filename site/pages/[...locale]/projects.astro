@@ -1,0 +1,28 @@
+---
+import Base from '../../layouts/Base.astro';
+import ProjectCard from '../../components/ProjectCard.vue';
+import TagFilter from '../../components/TagFilter.vue';
+import { getPeopleMap, getProjects, getPublications, getTags } from '../../lib/data';
+import { uiFor } from '../../lib/i18n/catalog';
+import { localeFromParams, localePaths } from '../../lib/i18n/routes';
+import { slices } from '../../lib/i18n/slices';
+import { asset } from '../../lib/url';
+import { toTagFilterEntries } from '../../lib/views';
+
+export const getStaticPaths = localePaths;
+const locale = localeFromParams(Astro.params);
+const { t } = uiFor(locale);
+const ui = slices(t);
+const [tagInfo, peopleMap, projects, publications] = await Promise.all([getTags(locale), getPeopleMap(locale), getProjects(locale), getPublications(locale)]);
+const current = projects.filter((p) => p.status === 'current');
+const imageBase = asset('image/projects/');
+const pdfBase = asset('pdf/');
+const avatarBase = asset('image/people/128/');
+const tagFilterEntries = toTagFilterEntries(tagInfo);
+---
+<Base title={t('nav.projects')} sectionid="projects" locale={locale}>
+  <TagFilter client:idle id="project" tags={tagFilterEntries} target="project-grid" strings={ui.tagFilter} />
+  <div class="project-grid" id="project-grid">
+    {current.map((p) => <ProjectCard project={p} tagInfo={tagInfo} peopleMap={peopleMap} publications={publications} imageBase={imageBase} pdfBase={pdfBase} avatarBase={avatarBase} strings={ui.links} />)}
+  </div>
+</Base>

@@ -37,10 +37,27 @@ export default defineConfig({
   // inline spacing between adjacent elements (icons next to text, author
   // chips) survives; this is already Astro's default, kept explicit here.
   compressHTML: true,
+  // English is unprefixed at the root, German lives under /de/. Astro does
+  // not generate localized routes by itself in static output, so every page
+  // sits under site/pages/[...locale]/ and yields both URLs from one source
+  // file via localePaths() (site/lib/i18n/routes.ts).
+  i18n: {
+    locales: ['en', 'de'],
+    defaultLocale: 'en',
+    routing: { prefixDefaultLocale: false },
+  },
   // /detail/<type>/<id>/ are page partials (no doctype, no <head>, no layout)
   // that the detail modal fetches and adopts, not pages of the site — keep
   // them out of the sitemap so search engines index the list pages instead.
-  integrations: [vue(), sitemap({ filter: (page) => !page.includes('/detail/') })],
+  // The existing filter already excludes /de/detail/ too, because it tests
+  // for the /detail/ substring anywhere in the URL.
+  integrations: [
+    vue(),
+    sitemap({
+      filter: (page) => !page.includes('/detail/'),
+      i18n: { defaultLocale: 'en', locales: { en: 'en-US', de: 'de-DE' } },
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()],
     define: {

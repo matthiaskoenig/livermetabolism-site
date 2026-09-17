@@ -11,7 +11,9 @@
  * `ScholarStats.astro` (site chrome is plain TypeScript, not a Vue island —
  * see CLAUDE.md).
  */
+import { ENGLISH_RELATIVE_DATE_STRINGS, type RelativeDateStrings } from './githubRows';
 import { refreshNote } from './githubStats';
+import { fmt } from './i18n/format';
 import { stripValues } from './scholarRows';
 import type { Scholar } from './scholarSchema';
 
@@ -25,7 +27,7 @@ function set(root: ParentNode, name: string, value: string): void {
  * epoch of `emptyScholar()`) leaves the figures hidden and only re-renders the
  * note, so the page never shows zeros as if they were metrics.
  */
-export function applyScholar(scholar: Scholar, root: ParentNode = document, now: Date = new Date()): void {
+export function applyScholar(scholar: Scholar, root: ParentNode = document, now: Date = new Date(), strings: RelativeDateStrings = ENGLISH_RELATIVE_DATE_STRINGS): void {
   const v = stripValues(scholar);
   const strip = root.querySelector<HTMLElement>('[data-scholar-strip]');
   if (strip && v.known) {
@@ -35,7 +37,11 @@ export function applyScholar(scholar: Scholar, root: ParentNode = document, now:
     set(strip, 'h-index-since', String(v.hIndexSince));
     set(strip, 'i10-index', String(v.i10Index));
     set(strip, 'i10-index-since', String(v.i10IndexSince));
-    for (const el of strip.querySelectorAll<HTMLElement>('[data-since-year]')) el.textContent = `since ${v.sinceYear}`;
+    // the "since {year}" template is the locale's own text, set by
+    // ScholarStats.astro from the UI catalog (data-since-template), with the
+    // English default as a fallback for markup that carries none
+    const sinceTemplate = strip.dataset.sinceTemplate ?? 'since {year}';
+    for (const el of strip.querySelectorAll<HTMLElement>('[data-since-year]')) el.textContent = fmt(sinceTemplate, { year: v.sinceYear });
     // the metric figures are rendered empty and hidden by a build that had no
     // snapshot; now that there are numbers, show them
     for (const el of strip.querySelectorAll<HTMLElement>('[data-scholar-metric]')) el.hidden = false;
@@ -49,7 +55,7 @@ export function applyScholar(scholar: Scholar, root: ParentNode = document, now:
     const wrap = name.closest<HTMLElement>('[data-scholar-name]');
     if (wrap) wrap.hidden = false;
   }
-  refreshNote(note.querySelector<HTMLElement>('[data-field="updated"]'), v.fetchedAt, now);
+  refreshNote(note.querySelector<HTMLElement>('[data-field="updated"]'), v.fetchedAt, now, strings);
 }
 
 /**

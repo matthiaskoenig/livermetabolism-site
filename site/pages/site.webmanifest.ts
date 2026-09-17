@@ -8,7 +8,7 @@ import { asset } from '../lib/url';
 // (import.meta.env.BASE_URL) the same way every other asset reference does.
 export const GET: APIRoute = () => {
   const manifest = {
-    name: 'König Lab — Systems Medicine, Digital Twins & AI',
+    name: 'König Lab - Systems Medicine, Digital Twins & AI',
     short_name: 'König Lab',
     icons: [
       { src: asset('favicon/android-chrome-192x192.png'), sizes: '192x192', type: 'image/png' },

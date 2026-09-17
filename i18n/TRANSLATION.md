@@ -1,0 +1,557 @@
+# Translating this site into German
+
+The English text in `data/*.yml` (and the English UI strings) is the source.
+German is generated into the catalogs under `i18n/de/` and **never edited by
+hand** - the next generation run overwrites whatever is there. If you are
+reading this because you are about to translate something, work from
+`npm run i18n:check`'s output, not from scanning the YAML yourself.
+
+## Workflow
+
+1. Run `npm run i18n:check`.
+2. Translate **only** the entries it lists. Do not "improve" German text it
+   did not flag, and do not translate rows it does not mention.
+3. Re-run `npm run i18n:check` until it reports zero issues.
+
+Its output names four fields per issue: `locale`, `table`, `id`, `field`. A
+data-table issue prints as `locale/table/id.field`, e.g.
+`de/people/matthias_koenig.description`. The UI catalog has no per-row id -
+it is one flat map of dotted key -> `{sha, text}` - so its issues print as
+`locale/ui/<dotted.key>`, e.g. `de/ui/nav.publications` (see `auditUi()` in
+`scripts/lib/i18n-check.ts`). Each issue has one of four kinds:
+
+| Kind | Meaning | What to do |
+|---|---|---|
+| `missing` | No German entry exists yet for this field/key. | Translate it, write the entry with the current source hash (`sha`). |
+| `stale` | The English source changed since this German text was generated (the recorded `sha` no longer matches). | Re-translate from the current English; replace the German text and `sha`. |
+| `orphaned` | A data-table entry exists but the English row it belonged to is gone. Cannot occur for the UI catalog, which has no separate row/field split - a UI key with nothing to belong to is reported `unknown-field` instead. | Delete the entry. |
+| `unknown-field` | The entry's field/key is not in the registry below (`fields.ts`) or in `site/lib/i18n/ui.en.ts` (UI catalog). | Delete the entry. |
+
+`site/lib/i18n/fields.ts` is the **single registry** of which
+`<table>.<field>` pairs are translatable. Nothing outside it is translated,
+regardless of what the YAML contains. As of this writing it lists:
+
+| Table | Fields |
+|---|---|
+| `tags` | `short_description`, `description`, `vision` |
+| `people` | `description`, `role` |
+| `projects` | `title`, `abstract`, `image_title` |
+| `software` | `title`, `description` |
+| `editors` | `name`, `description` |
+| `funding` | `title`, `description` |
+| `news` | `title`, `short`, `abstract` |
+| `teaching` | `title`, `content`, `caption`, `funding` |
+| `meetings` | `title`, `description`, `location` |
+| `activities` | `title`, `description` |
+
+Plus the UI catalog, `i18n/de/ui.yml`, which mirrors the English strings
+baked into the site chrome (`site/lib/i18n/ui.en.ts`) key by key, dotted
+(`nav.publications`, `tags.label.digitalTwins`, ...). `npm run i18n:check`
+audits this catalog too, the same as the ten data tables above - both are
+part of the same work list from step 1. This is on top of, not instead of,
+a separate build-time guard: `loadUi()` (`site/lib/i18n/catalog.ts`) still
+throws at build time if `i18n/de/ui.yml`'s key set doesn't exactly match
+`ui.en.ts`'s.
+
+## What is never translated
+
+- **Bibliographic records.** The `publications`, `posters`, `presentations`,
+  `abstracts` and `panels` tables are never translated - titles, abstracts,
+  authors, journals, event names, all of it stays in English. A paper's
+  title is its citation identity: a German rendering matches nothing in the
+  literature, in Scholar, or in OpenAlex. This is not an oversight; these
+  five tables are deliberately absent from `fields.ts`.
+- **`tags.tag`.** Never translated. It is simultaneously a reference key, a
+  URL slug, a chart series name and a filter value - translating it would
+  break all four at once, so `tag` stays byte-identical on every locale:
+  the same `data-tag`/`?tag=`/`?topic=` value, the same `slugify()` input,
+  the same `tags:` cross-reference everywhere in `data/*.yml`.
+
+  Its DISPLAY label is a separate thing and **is** German: `toTagInfo()`
+  (`site/lib/views.ts`) adds a `label` field to `TagInfo`, resolved per
+  slug by `tagLabel()` (`site/lib/i18n/tagLabel.ts`) from the `tags.label.*`
+  keys of the UI catalog (`ui.en.ts` / `i18n/de/ui.yml`), and
+  `site/lib/data.ts`'s `getTags()` bakes it in before anything renders. Every
+  tag chip, filter button, the homepage research-area heading, the network
+  graph's filter buttons and the publications chart's legend/tooltip render
+  `.label`, never `.tag` - only `TagFilterBar.vue`'s `data-tag` attribute and
+  `NetworkGraph.vue`'s `?topic=` matching still read `.tag`, on purpose.
+
+  Adding a sixth research area to `data/tags.yml` means adding its slug to
+  `TAG_LABEL_KEY` in `tagLabel.ts` and a matching `tags.label.*` key to both
+  `ui.en.ts` and `i18n/de/ui.yml` in the same commit (`loadUi()` throws on a
+  key-set mismatch between the two). A slug missing from `TAG_LABEL_KEY`
+  falls back to rendering the raw slug rather than failing the build - watch
+  for that during review, it is a sign the label key was forgotten.
+
+  Two of the five tag names - `"Digital Twins"` and `"AI"` - are also
+  ordinary English words that appear, translated, in unrelated prose (see
+  the domain glossary below and `footer.tagline`): translate the words
+  when they are prose, never touch them when they are the `tag:` value or
+  a `tags:` list entry. Their `tags.label.*` values follow the same rule as
+  that prose: `Digitale Zwillinge` and `KI` as standalone labels (leading
+  word capitalised), `digitale Zwillinge` / `KI` when the words sit inside
+  a lowercase-initial German sentence such as `footer.tagline`.
+- **Names of people, institutions and funders.** `Humboldt-Universität zu
+  Berlin`, `BMFTR`, `de.NBI` stay exactly as written.
+- **Identifiers and paths.** ids, DOIs, ORCIDs, PMIDs, URLs, image and PDF
+  paths, dates.
+
+### Proper nouns pinned inside otherwise-translatable UI strings
+
+Two UI-catalog keys are ordinary translatable sentence fragments that happen
+to hold a **brand name**. Translate the sentence around them; leave these
+two values byte-identical to the English on every regeneration:
+
+| Key | Value (do not change) |
+|---|---|
+| `research.fundingLinkText` | `de.NBI` |
+| `positions.internship.linkText` | `Humboldt Internship Program` |
+
+A regeneration pass that rewrites either of these has translated a brand
+name by accident. Check them explicitly after any bulk UI-catalog run.
+
+### Externally-registered project, programme and event names
+
+A funded project, a programme, a working group or an event often has a
+name that reads like ordinary English prose - not an acronym, not visibly
+a brand - but is still the name **someone else** (a funder, an alliance, a
+standards body) has registered for it externally. That name stays fixed on
+every locale, exactly like `COMBINE coordinator`'s `COMBINE` or `SimLivA`'s
+acronym expansion, even though nothing about its spelling marks it as a
+proper noun.
+
+**The tell is usually the data itself, not the wording**: check the row's
+`link`/`homepage`/`event_page` URL. If the name (or a slugified form of it)
+appears in that URL - the funder's own page names the project that way -
+translating it breaks a reader's ability to cross-reference the entry
+against the source. `data/activities.yml`'s `xstudent-doac-2025` row is the
+worked example: its `link` ends in
+`.../research-groups/archiv/sem_aktuell/Digital-Twins-in-Action/index.html`
+- the Berlin University Alliance's own slug for the project is
+`Digital-Twins-in-Action`, so `Digital Twins in Action` (the matching
+`funding.xresearch2025.title` and `activities.xstudent-doac-2025.title`)
+is that project's registered name and stays in English; only the
+descriptive tail after it translates.
+
+This is the same principle already applied to `X-Student Research Group`,
+`SimLivA`, `ATLAS`, and `LiSyM` - it just does not require an acronym to
+apply. When in doubt on a title that reads like plain English, check the
+row's own link before translating it.
+
+The evidence does not have to live on the row being translated: it can sit
+on a **different row, or in a different table** - an `activities.yml` row
+describing a working group, a `meetings.yml` event page, a person's bio
+mentioning the same initiative by name - so when a row itself carries no
+`link`/`homepage`/`event_page`, search the wider data for the name before
+assuming it is ordinary prose. `projects.rapamycin`'s abstract names the
+`Immune Digital Twin (IDT)` with no URL of its own on that row, but
+`data/activities.yml` has "Member Research Data Alliance (RDA) Working
+Group: Building Immune Digital Twins" - confirming it as an RDA working
+group's registered name, evidenced elsewhere in the data tree.
+
+### Known single-language surfaces
+
+`site/pages/site.webmanifest.ts` is one root-level file, not routed per
+locale, so it cannot show German on `/de/` and English elsewhere - it has
+one `name`/`short_name` for every visitor. Its `name` hard-codes
+`König Lab - Systems Medicine, Digital Twins & AI` (matching the English
+`footer.tagline`, not the German one). This is intentional and correct as
+shipped: leave it in English. Do not "fix" it to German, and do not
+expect `footer.tagline` and the manifest `name` to read the same on a
+German page - they are two different surfaces with different constraints.
+
+`site/pages/404.astro` is the same kind of single file: GitHub Pages serves
+it for every 404 on the site, `/de/...` included, with no way to detect
+which locale the visitor was on. Rather than defaulting to English with a
+language switch that would point at a German 404 page that does not exist,
+it shows both languages' "not found" text and both homepage links at once,
+and passes `langSwitchPath="/"` to `Base`/`TopNav`/`LanguageSwitch` so the
+navbar's own EN/DE links go to the two homepages instead of a nonexistent
+`/de/404`. Do not move it under `[...locale]/` or add a `de/ui` translation
+for it - the bilingual text is intentional, not a gap.
+
+The CV PDF (`public/assets/cv/Koenig_CV.pdf`, linked by `nav.cv`) is one
+file for every visitor, in English, generated by the Python/Typst tooling
+under `src/cv/` - it is not part of the Astro i18n pipeline and has no
+German counterpart.
+
+GitHub release summaries (the text `ReleaseFeed.vue`/`githubStats.ts` pull
+from the GitHub snapshot, see CLAUDE.md's "Live GitHub and Scholar data")
+are whatever each repository's release notes say, verbatim - normally
+English, entirely outside this site's translation workflow.
+
+### `editors.name` holds role titles, not people's names
+
+`data/editors.yml` rows look like they name a person but do not - `name`
+holds a **role title**: `COMBINE coordinator`, `PETab editor`, `SBML
+editor`, `SED-ML editor`. It is easy to mistake this for a proper noun and
+skip it, or to mistake it for a person and refuse to translate it. Do
+neither: translate the role word, keep the standard's own name as-is.
+
+| English | German |
+|---|---|
+| COMBINE coordinator | COMBINE-Koordinator |
+| PETab editor | PETab-Editor |
+| SBML editor | SBML-Editor |
+| SED-ML editor | SED-ML-Editor |
+
+## Style rules
+
+### Gender-inclusive language
+
+Use **spelled-out pairs or neutral participles only.** Examples already
+shipped: `Forschende`, `Studierende`, `Ingenieurinnen und Ingenieure`,
+`Informatikerin oder Informatiker`, `Nachwuchswissenschaftlerinnen und
+-wissenschaftler`.
+
+Never use:
+- Slash notation (`Informatiker/in`)
+- The gender asterisk (`Informatiker*in`)
+- The gender colon (`Informatiker:in`)
+
+This was mixed at first (slash notation crept in during early generations)
+and was deliberately unified to the spelled-out/participle style across the
+whole site. Do not reintroduce the other forms even for a single entry.
+
+### No em dash, anywhere
+
+Never use the em dash character (Unicode U+2014), in German or English
+text, including inside translated prose. Use a plain dash `-`, spaced on
+both sides, in its place.
+
+**The trap:** English source sentences sometimes use an em dash character
+directly abutting the words on both sides, with no spaces, to set off a
+parenthetical - for example `researchers` and `and` bracketing `especially
+women`, joined with no surrounding spaces. When you translate this, it
+does not become a hyphen and the words do not run together - it becomes a
+*spaced* plain dash: `Forschende - insbesondere Frauen - und`. Losing the
+spaces reads as an unrelated compound word in German; keeping the em dash
+character reintroduces the forbidden character. Check every translated
+sentence that came from an English original containing that character.
+
+### Formal address
+
+Use formal `Sie` throughout. The site addresses prospective students and
+collaborators, not friends.
+
+### Typography
+
+- German quotation marks: `„…“` (opening U+201E `„`, closing U+201C `“`), not `"…"`. The closer is **not** the straight ASCII quote (U+0022) - check the actual codepoint, not just how the glyph looks, since some fonts render U+201C and a straight quote similarly.
+- Use `ß` where the Duden does (`Schließen`, not `Schliessen`).
+- No em dash (see above); plain `-` only.
+
+### Source variant
+
+The English side is US English: `-ize`, `color`, `center`. Do not "correct"
+it to British spelling before translating from it - the German is a
+translation of the American original, and "fixing" the English is out of
+scope and will itself get flagged as an unrelated diff.
+
+## Checking what the German actually asserts
+
+A grammatically correct translation can still make a **false claim** if a
+pronoun resolves to the wrong subject. This already happened once and is
+worth checking for deliberately, especially on legal and consent text where
+a visitor acts on what they read.
+
+**Worked example.** The first generated cookie banner read:
+
+> Diese Website verwendet Google Analytics, um zu verstehen, wie sie genutzt
+> wird. **Sie läuft nur, wenn Sie zustimmen** - siehe die Datenschutzerklärung.
+
+`Sie läuft` grammatically resolves to `die Website` (the nearest feminine
+singular noun) - so the sentence states that **the site itself only runs if
+the visitor consents**. That is not true: the site runs regardless; only
+Google Analytics is gated on consent. The fix was to name Google Analytics
+as the explicit subject:
+
+> ... **Google Analytics läuft nur, wenn Sie zustimmen** - siehe die
+> Datenschutzerklärung.
+
+When translating a sentence with a pronoun, ask what noun it grammatically
+binds to in German (not what you intended it to mean), and check that the
+resulting claim is still true. This matters most on the cookie banner, the
+impressum and the privacy page, where an incorrect claim is a legal
+liability, not just an awkward sentence.
+
+## Established vocabulary - reuse it, do not re-invent
+
+The German text already shipped for these terms. A regeneration must match
+it, not propose a new rendering.
+
+**Publication status badges** (`Publication.status` in `src/data.py` /
+`site/lib/schemas.ts`):
+
+| Status | German |
+|---|---|
+| `publication` | Publikation |
+| `review` | Übersichtsartikel |
+| `proceeding` | Tagungsband |
+| `thesis` | Abschlussarbeit |
+| `preprint` | Preprint (unübersetzt) |
+| `abstract` | Abstract (unübersetzt) |
+| `report` | Bericht - already translated in `i18n/de/ui.yml` (`status.report`), currently unused by `data/publications.yml`. |
+| `chapter` | Buchkapitel - already translated in `i18n/de/ui.yml` (`status.chapter`), currently unused by `data/publications.yml`. |
+
+**Search index / record types** (the labels shown next to a search result
+and anywhere a record's kind is named in the UI):
+
+| English | German |
+|---|---|
+| news | Aktuelles |
+| research area | Forschungsbereich |
+| funding | Förderung |
+| editorial role | Herausgeberschaft |
+| teaching | Lehre |
+| meeting | Tagung |
+| presentation | Vortrag |
+| page | Seite |
+| project | Projekt |
+| abstract | Abstract (unübersetzt) |
+| poster | Poster (unübersetzt) |
+| person | Person (unübersetzt) |
+| software | Software (unübersetzt) |
+
+**Other pinned single terms:**
+
+| English | German | Note |
+|---|---|---|
+| peer-reviewed (adjective) | begutachtet | `scholar.peerReviewed` in `i18n/de/ui.yml`. Not "peer-reviewt" - that is Denglish and was rejected. This exact key shipped as the literal English string `peer-reviewed` for a time (a mixed-language regression on the German citation-stats strip, the same defect class as the citation/status badge fixes below); it is fixed as of this revision - if `i18n:check` or a page render ever shows this key in English again, treat it as the same bug and fix the catalog value, not just this guide. |
+| peer-reviewed (noun phrase, e.g. "peer-reviewed papers") | Begutachtete Arbeiten | `home.linkPublicationsText` ("Begutachtete Arbeiten, Preprints und offene Datensätze aus dem Labor."). Two different keys hold two different grammatical forms of the same term - translate each to fit its own sentence, do not force one key's wording onto the other. |
+| deployed (footer's deployed commit) | bereitgestellt | Not "veröffentlicht" - that word is already used for release notes (`footer.releaseNotes`) and reusing it for "deployed" would make the footer ambiguous between the two concepts. |
+
+**Academic roles.** Use the official German terms, not literal
+translations:
+
+| English | German |
+|---|---|
+| Group Leader | Gruppenleiter |
+| PhD student | Doktorand / Doktorandin |
+| Postdoc | Postdoktorand / Postdoktorandin |
+| Master Thesis | Masterarbeit |
+| Bachelor Thesis | Bachelorarbeit |
+| Internship | Praktikum |
+| Student Assistant | Studentische Hilfskraft |
+| Technical Assistant | Technische Assistentin (TA) |
+
+Some `people.role` values in `data/people.yml` are already German. Keep
+them as written rather than "correcting" them - `people.role` is in the
+translatable registry, but a value that is already German needs no work,
+and re-translating it risks drifting from the established wording above.
+
+This table governs a *person's* role (`people.role`). An advertised
+*position* is a different context and keeps the established
+German-academic form "PostDoc" rather than "Postdoktorand/-in": the UI
+keys `positions.postdoc.title`, `positions.postdoc.text1`,
+`positions.postdoc.text2` and `sitePages.openPositions` already ship
+"PostDoc"/"PostDoc-Stelle"/"PostDoc-Projekte" and must be left as they
+are - do not "fix" them to match the table above.
+
+**Domain glossary.**
+
+| English | German |
+|---|---|
+| digital twin | digitaler Zwilling - plural "digitale Zwillinge" (matches `tags.label.digitalTwins`). `home.linkProjectsText`'s "digital twin models" had drifted to the loanword compound "Digital-Twin-Modelle"; fixed to "Modelle digitaler Zwillinge" so the homepage teaser matches the tag label the reader lands on. |
+| AI | KI - already shipped in `home.visionAfter` ("KI-gestützte Modelle") and in `footer.tagline` ("... & KI"). Only in prose; the `"AI"` tag name itself is never translated (see `tags.tag` above). |
+| systems medicine | Systemmedizin |
+| systems biology | Systembiologie |
+| liver | Leber |
+| metabolism | Stoffwechsel |
+| hepatic | hepatisch |
+| whole-slide image | Ganzschnittbild |
+| digital pathology | digitale Pathologie |
+| pharmacokinetics | Pharmakokinetik |
+| physiologically based | physiologiebasiert |
+| open science | Open Science (unübersetzt) |
+| FAIR data | FAIR-Daten |
+| machine learning | maschinelles Lernen |
+| research area | Forschungsbereich |
+| peer-reviewed | begutachtet (adjective) / Begutachtete Arbeiten (noun phrase - see the pinned-terms table above for which key gets which form) |
+| open access | Open Access (unübersetzt) |
+| preprint | Preprint (unübersetzt) |
+| grant | Förderung |
+| funding | Förderung |
+| teaching | Lehre |
+| course | Kurs |
+| lecture | Vorlesung |
+| seminar | Seminar |
+| ACE inhibitor | ACE-Hemmer (not "ACE-Inhibitor" - the loanword crept into two rows of `teaching.yml` during an early generation and was normalized to the established term used everywhere else, 20 occurrences vs. 2). |
+| absorbed (verb, in the ADME "absorbed, distributed, metabolized, excreted" list) | resorbiert - not "absorbiert" or "aufgenommen", which had drifted between `news.yml` and `teaching.yml` for the identical recurring English sentence. Matches the noun `Resorption` already used for "absorption" in `people.yml`'s project descriptions, so the verb and noun forms of the same process now share one root. |
+| drug-drug interactions | Arzneimittelinteraktionen - not "Arzneimittelwechselwirkungen" or "Wechselwirkungen zwischen Arzneimitteln", both of which had crept in alongside it for the same English phrase. |
+| meeting (a `meetings.yml` row, i.e. a conference/event the group organized or hosted) | Tagung, matching the chrome's `searchType.meeting`/nav label - not "Treffen", which had crept into `meetings.yml`'s own `description` field and into `news.yml`/`activities.yml` prose describing the same COMBINE meetings. A casual, non-`meetings.yml` "get-together" (e.g. a community kickoff mentioned in passing in `news.yml` prose) is not covered by this entry and may still read "Treffen" - the rule is about the `meetings.yml` record type, not every English use of the word "meeting". |
+
+Established English terms that the German-language field itself already
+uses (Open Science, Open Access, Preprint, Repository, Commit, Release)
+stay English - do not translate a loanword the site has already adopted.
+
+## HTML-bearing fields vs. plain-text UI strings
+
+These are two different rules for two different kinds of field. Do not mix
+them up.
+
+### UI-catalog values are always plain text
+
+**No UI-catalog value (`i18n/de/ui.yml`) is ever rendered as HTML.** A
+catalog string must be plain text - no tags, no entities beyond what YAML
+itself needs. Where a sentence needs an inline link (like the cookie
+banner's link to the privacy page), the sentence is **split into
+fragments** in the catalog and the anchor element lives in the Astro/Vue
+template, built from those fragments with plain `{t('...')}`
+interpolations - never by assembling an HTML string from catalog text and
+feeding it to `set:html`.
+
+This rule exists because the German catalog is machine-generated: a
+`set:html` fed by generated text is an injection surface, since nothing
+downstream of the generation step re-validates that the text is inert
+markup rather than something a later regeneration accidentally makes
+executable. This was found and fixed **twice** during this work (once on
+the cookie-consent banner, see the worked example above; the UI-catalog
+migration task generalized the fix). Do not reintroduce `set:html` (or
+equivalent) over any catalog value, however convenient it looks for a
+single sentence with a link in the middle.
+
+### Some data fields keep their HTML - translate text nodes only
+
+**The rule is by cause, not by a fixed list:** any field whose value
+reaches `DetailModel.body` (built in `site/lib/details.ts`) or is bound
+with Vue's `v-html` anywhere in `site/components/` is markup-bearing,
+whether or not today's data for that field happens to contain a tag. A
+field can be markup-bearing and still look like plain text in every
+current row - the first row that gains an inline link is what exposes it,
+so check the code path, not the current YAML content, when in doubt.
+
+As of this writing, the markup-bearing fields are:
+
+- `news.abstract`
+- `news.short`
+- `people.description`
+- `projects.abstract` - reaches `DetailModel.body` via `details.ts`'s
+  project model, and `ProjectCard.vue` calls `stripHtml(project.abstract)`
+  on the card preview, which only makes sense if the field can carry
+  markup.
+- `software.description` - reaches `DetailModel.body` via `details.ts`'s
+  software model.
+- `teaching.content`
+- `teaching.caption`
+- `teaching.funding`
+
+For these fields: translate the text nodes, and leave every tag,
+attribute, `href` and `src` byte-identical to the English source, with the
+same elements in the same order. Do not add, remove, or reorder markup;
+do not translate a URL, a class name, or an attribute value.
+
+`npm run i18n:check` verifies this automatically for exactly this list
+(`MARKUP_FIELDS` in `scripts/lib/i18n-check.ts`, kept in sync with it by
+hand): a translation whose tag sequence (tag name plus attributes, in
+order) does not byte-for-byte match its English source is reported
+`stale`, even when its `sha` matches - the sha only says the translation
+was generated against the current English text, not that its markup
+survived intact, since it is a hash of the English source, never of the
+German output.
+
+## Placeholders
+
+Tokens like `{query}`, `{tag}`, `{date}`, `{n}` and similar must survive
+verbatim in the German text:
+
+- Keep the exact token, including the braces and the name inside them.
+  Never translate the name inside the braces (`{n}` stays `{n}`, not `{anzahl}`).
+- Place the token wherever German word order requires for the sentence to
+  read naturally - the token's *position* can move, its *contents* cannot.
+- Read the resulting German sentence with a plausible substitution in mind
+  and confirm it is grammatical, including case (`{tag}` substituted into
+  a dative slot must still make sense as a German noun phrase around it).
+
+## Dates
+
+`date_display` (`presentations.yml`, `meetings.yml`) holds free-text,
+English-formatted text and is **not** translated, and no render site
+reformats it for German. It exists because it can hold a multi-day range
+("6-8 October 2022") that the row's own single ISO `date` field cannot
+express, so it cannot be regenerated from `date` at render time; the German
+pages currently show it verbatim, the same as the English pages. Leave
+`date_display` values alone; do not hand-translate month names or date order.
+
+`site/lib/i18n/dates.ts`'s `shortDate(iso, locale)` *is* locale-aware (`Mar
+9, 2026` vs `9. Mär 2026`) and unit-tested, but as of this writing no
+component calls it with `locale: 'de'` - it is there for a future render site
+over a plain single-date field (not `date_display`), should one need
+German-formatted dates. `githubRows.ts` has its own, unrelated
+English-only `shortDate(iso)` for GitHub release/push dates, which is a
+different function despite the shared name.
+
+## YAML indentation
+
+`js-yaml` (the parser the Astro build uses) follows YAML 1.2, which
+requires the continuation lines of a multi-line quoted string to be
+indented **deeper than their key**. A generated German block whose
+continuation lines are flush with the key builds locally with PyYAML but
+fails the Astro build with "deficient indentation". After writing or
+editing any `i18n/de/*.yml` file by hand, either keep continuation lines
+indented deeper than their key, or run:
+
+```bash
+uv run python scripts/reindent_yaml.py
+```
+
+(`--check` reports without writing.) It re-indents only the continuation
+lines and refuses to write if `yaml.safe_load()` no longer returns the
+same object - so it is safe to run after every catalog edit.
+
+## The legal pages invert the direction
+
+`i18n/de/pages/impressum.yml` and `i18n/de/pages/privacy.yml` are the
+**source**, not a generated target: they are authored directly in German,
+because the German text is the legally binding one for a site operated
+under German law. Their English counterparts under `i18n/en/pages/` are
+*generated from the German*, in the opposite direction from every other
+table on this site.
+
+When asked to translate the legal pages, translate the German **into**
+English faithfully, add nothing beyond what the German says, and keep the
+generated English page's line stating that only the German version is
+legally binding. Never treat English as the source for these two files,
+and never hand-edit the generated English side directly - edit the German
+source and regenerate.
+
+`site/lib/i18n/pages.ts`'s `loadPage()` knows this inversion explicitly, via
+a small `PAGE_SOURCE_LOCALE` map (`impressum`/`privacy` -> `de`, every other
+page -> the default English). A key missing from a locale's catalog falls
+back to that page's *own* source locale, not blindly to English: for
+`impressum`/`privacy` a missing or lagging English key falls back to German,
+never to nothing. A legal notice must never render blank - the worst
+acceptable failure is showing the binding German text to an English reader,
+not showing an empty heading or paragraph. Keep the map and this note in
+sync if a third page ever inverts the direction.
+
+### `npm run i18n:check` does NOT cover the page catalogs
+
+`i18n/de/pages/*.yml` and `i18n/en/pages/*.yml` are outside every automated
+guard: `npm run i18n:check` audits the ten `TRANSLATABLE` data tables and
+`i18n/de/ui.yml` only, never `i18n/{de,en}/pages/`, and `loadPage()` has no
+key-set check the way `loadUi()` does for the UI catalog. This is a real
+gap, not a documentation oversight to paper over - closing it properly
+means adding a `sha` to every existing entry of all four files first
+(`PageEntry.sha` is already declared optional in `site/lib/i18n/pages.ts`
+for exactly this reason, but none of the 132 entries across the four files
+(21 + 44 + 22 + 45: `i18n/de/pages/impressum.yml`, `i18n/de/pages/privacy.yml`,
+`i18n/en/pages/impressum.yml`, `i18n/en/pages/privacy.yml`)
+carry one today, so there is nothing yet for `auditUi()`-style comparison
+to check against). That migration was judged too large to do safely inside
+this fix wave and is left as follow-up work; **do not read "`i18n:check`
+exits 0" as "the legal pages are in sync"** - it says nothing about them
+either way.
+
+**The concrete risk** (the direction that actually matters, since the
+German file is the legally binding source): the owner edits
+`i18n/de/pages/impressum.yml` or `privacy.yml` directly - editing the
+source, exactly as this section instructs - and `npm run i18n:check` still
+exits 0, because it never looked at that file. The English rendering
+(`i18n/en/pages/`) is now stale until someone remembers to run the
+translate-de skill on it specifically; nothing will say so on its own.
+Until the sha migration above happens, check both `i18n/en/pages/*.yml`
+files by hand against their German source after any manual edit to
+`i18n/de/pages/*.yml`, and regenerate the English side through the
+translate-de skill the same as any other change to the binding German
+text.

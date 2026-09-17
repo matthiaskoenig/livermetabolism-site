@@ -1,6 +1,6 @@
 {
   "name": "livermetabolism-site",
-  "version": "0.10.2",
+  "version": "0.11.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -17,7 +17,8 @@
     "fetch:github": "node scripts/fetch-github.ts",
     "fetch:scholar": "node scripts/fetch-scholar.ts",
     "fetch:citations": "node scripts/fetch-citations.ts",
-    "graph:thumbs": "node scripts/graph-thumbs.ts"
+    "graph:thumbs": "node scripts/graph-thumbs.ts",
+    "i18n:check": "node scripts/i18n-check.ts"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

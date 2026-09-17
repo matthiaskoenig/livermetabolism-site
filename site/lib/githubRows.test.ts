@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { emptySnapshot, type Snapshot } from './githubSchema';
-import { activityRows, hasData, latestReleases, relativeDate, releaseTimelineRows, releaseUrl, shortDate, starsRows, statsFor } from './githubRows';
+import { ENGLISH_RELATIVE_DATE_STRINGS, activityRows, hasData, latestReleases, relativeDate, releaseTimelineRows, releaseUrl, shortDate, starsRows, statsFor } from './githubRows';
 
 const repo = (fullName: string, over: Partial<Snapshot['repos'][string]> = {}): Snapshot['repos'][string] => {
   const [owner, name] = fullName.split('/');
@@ -187,7 +187,7 @@ describe('activityRows', () => {
 });
 
 describe('relativeDate', () => {
-  const at = (iso: string) => relativeDate(iso, now);
+  const at = (iso: string) => relativeDate(iso, now, ENGLISH_RELATIVE_DATE_STRINGS);
   it('formats the distance in the largest sensible unit', () => {
     expect(at('2026-09-12T00:00:00Z')).toBe('today');
     expect(at('2026-09-11T06:00:00Z')).toBe('yesterday');

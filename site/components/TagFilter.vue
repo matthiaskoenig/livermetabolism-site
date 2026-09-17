@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, watch } from 'vue';
 import TagFilterBar from './TagFilterBar.vue';
+import type { UiSlices } from '../lib/i18n/slices';
 import { useTagFilter } from '../lib/tagFilter';
 import type { TagFilterEntry } from '../lib/views';
 
@@ -13,7 +14,7 @@ import type { TagFilterEntry } from '../lib/views';
  * went away.
  */
 const props = withDefaults(
-  defineProps<{ id: string; tags: TagFilterEntry[]; target: string; groupSelector?: string }>(),
+  defineProps<{ id: string; tags: TagFilterEntry[]; target: string; groupSelector?: string; strings: UiSlices['tagFilter'] }>(),
   { groupSelector: '.pub-year-group' },
 );
 
@@ -37,5 +38,5 @@ watch(activeTag, apply);
 </script>
 
 <template>
-  <TagFilterBar :id="id" :tags="tags" :model-value="activeTag" @update:model-value="setTag" />
+  <TagFilterBar :id="id" :tags="tags" :model-value="activeTag" :strings="strings" @update:model-value="setTag" />
 </template>

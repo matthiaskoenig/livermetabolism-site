@@ -24,10 +24,14 @@ test('a publication title opens its detail modal, with related rows', async ({ p
   // the title of the shell is the fragment's own title
   await expect(dialog.locator('.modal-title')).toHaveText((await dialog.locator('.detail-title').innerText()).trim());
   expect(await dialog.locator('.related-row').count()).toBeGreaterThan(0);
-  // Escape closes it and the hash goes away again
+  // Escape closes it and the hash goes away again. The hash is cleared by
+  // the dialog's native 'close' event handler (detailModal.ts), which can
+  // fire a tick after the `open` attribute itself is removed - an
+  // immediate, non-retrying hash check here was measurably flaky (~30%),
+  // so assert through toHaveURL, which polls like the attribute check above.
   await page.keyboard.press('Escape');
   await expect(dialog).not.toHaveAttribute('open', '');
-  expect(new URL(page.url()).hash).toBe('');
+  await expect(page).toHaveURL(/^[^#]*$/);
   expect(errors).toEqual([]);
 });
 
@@ -207,6 +211,36 @@ test('mobile navbar toggles', async ({ page }) => {
   await expect(page.locator('#navbar')).toBeHidden();
   await page.locator('#navbar-toggler').click();
   await expect(page.locator('#navbar')).toBeVisible();
+});
+
+// Regression test: TopNav.astro's ResizeObserver writes --navbar-height from
+// the measured .site-navbar, but #navbar (.navbar-collapse, the mobile
+// dropdown) sits inside that observed element, and global.css sizes the
+// dropdown's own max-height from the same variable at <768px - a closed
+// loop entirely inside the observed subtree if the observer ever writes
+// while the dropdown is open. Assert the variable is stable across several
+// animation frames with the menu open; a prior version of this fix
+// oscillated indefinitely (60 callbacks/second, never settling), which the
+// "mobile navbar toggles" test above cannot see since it only checks
+// visibility, not the offset's stability.
+test('mobile navbar menu open does not oscillate --navbar-height', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 800 });
+  await page.goto('');
+  await page.locator('#navbar-toggler').click();
+  await expect(page.locator('#navbar')).toBeVisible();
+  const readings = await page.evaluate(
+    () =>
+      new Promise<string[]>((resolve) => {
+        const values: string[] = [];
+        const read = () => {
+          values.push(getComputedStyle(document.documentElement).getPropertyValue('--navbar-height').trim());
+          if (values.length < 10) requestAnimationFrame(read);
+          else resolve(values);
+        };
+        requestAnimationFrame(read);
+      }),
+  );
+  expect(new Set(readings).size).toBe(1);
 });
 
 test('research page renders the live GitHub data: stats lines, release feed, charts', async ({ page }) => {
@@ -540,4 +574,52 @@ test('network graph: dragging a node moves the node, not the whole view', async 
   expect(await drag(node!)).toBeLessThan(0.15);
 
   expect(errors).toEqual([]);
+});
+
+test('the language switch keeps the path and the hash', async ({ page }) => {
+  await page.goto('publications/');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  await page.locator('.site-navbar .lang-switch-link[lang="de"]').click();
+  await expect(page).toHaveURL(/\/de\/publications\/$/);
+  await expect(page.locator('html')).toHaveAttribute('lang', 'de');
+  await page.locator('.site-navbar .lang-switch-link[lang="en"]').click();
+  await expect(page).toHaveURL(/\/publications\/$/);
+});
+
+// A native <dialog> shown with showModal() (the detail modal) makes
+// everything outside it - including the fixed navbar - non-interactive to
+// pointer and keyboard, by design (verified against Chromium: elementFromPoint
+// over the navbar resolves outside the page entirely while the dialog is
+// modal, no matter the navbar's z-index or the dialog's own box size). So the
+// navbar's language switch cannot be the one clicked here - the detail modal
+// carries its own copy in its header for exactly this (see DetailModal.astro).
+test('the language switch carries an open detail modal across', async ({ page }) => {
+  await page.goto('people/');
+  await page.locator('[data-detail^="person:"]').first().click();
+  await expect(page.locator('#detail-modal')).toBeVisible();
+  const hash = new URL(page.url()).hash;
+  expect(hash).not.toBe('');
+  await page.locator('#detail-modal .lang-switch-link[lang="de"]').click();
+  await expect(page).toHaveURL(/\/de\/people\//);
+  expect(new URL(page.url()).hash).toBe(hash);
+  await expect(page.locator('#detail-modal')).toBeVisible();
+});
+
+test('a detail modal opens on the German tree', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
+  await page.goto('de/people/');
+  await page.locator('[data-detail^="person:"]').first().click();
+  await expect(page.locator('#detail-modal')).toBeVisible();
+  await expect(page.locator('#detail-modal .modal-title')).not.toBeEmpty();
+  expect(errors).toEqual([]);
+});
+
+test('the German search index exists and drives the dialog', async ({ page }) => {
+  await page.goto('de/');
+  await page.keyboard.press('/');
+  const dialog = page.locator('dialog#site-search-modal');
+  await expect(dialog).toHaveAttribute('open', '');
+  await page.locator('#site-search-input').fill('König');
+  await expect(page.locator('.site-search-result').first()).toBeVisible();
 });

@@ -51,6 +51,8 @@ jobs:
       - run: npm ci
       - run: npm run check
       - run: npm test
+      - name: Check translation catalogs
+        run: npm run i18n:check
       - run: npm run build
       - run: npx playwright install --with-deps chromium
       - run: npm run e2e

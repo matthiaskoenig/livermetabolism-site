@@ -1,12 +1,14 @@
 import { readFileSync } from 'node:fs';
 import { load } from 'js-yaml';
 import { describe, expect, it } from 'vitest';
+import { uiFor } from './i18n/catalog';
 import { llmsFullTxt, llmsTxt, plainText, robotsTxt, type LlmsFullInput } from './llms';
 import * as s from './schemas';
 import { toTagInfo } from './views';
 
-const ROOT = { site: 'https://example.org', base: '/' };
-const PAGES = { site: 'https://matthiaskoenig.github.io', base: '/livermetabolism-site/' };
+const { t } = uiFor('en');
+const ROOT = { site: 'https://example.org', base: '/', t };
+const PAGES = { site: 'https://matthiaskoenig.github.io', base: '/livermetabolism-site/', t };
 
 const lines = (text: string) => text.split('\n');
 /** Every `[text](target)` link target in a Markdown document. */
@@ -24,8 +26,8 @@ function fixture(over: Partial<LlmsFullInput> = {}): LlmsFullInput {
   return {
     ...ROOT,
     tags: [
-      { tag: 'AI', slug: 'ai', short_description: 'Short AI.', description: 'Long AI.', vision: 'AI vision.' },
-      { tag: 'Open & FAIR', slug: 'open-fair', short_description: 'Short FAIR.', description: 'Long FAIR.', vision: 'FAIR vision.' },
+      { tag: 'AI', slug: 'ai', label: 'AI', short_description: 'Short AI.', description: 'Long AI.', vision: 'AI vision.' },
+      { tag: 'Open & FAIR', slug: 'open-fair', label: 'Open & FAIR', short_description: 'Short FAIR.', description: 'Long FAIR.', vision: 'FAIR vision.' },
     ],
     people: [
       { id: 'ada', name: 'Ada Lovelace', status: 'current', role: ['PhD student', 'PostDoc'], tenure: '2020-', affiliation: null, description: 'Works on <b>digital twins</b>.', image: 'ada.webp' },
@@ -57,6 +59,43 @@ function fixture(over: Partial<LlmsFullInput> = {}): LlmsFullInput {
   };
 }
 
+/** `llmsFullTxt()` over a fixture, both locale contexts built from the same fixture (the fixture itself carries no real German text). */
+const fixtureFull = (over: Partial<LlmsFullInput> = {}) => llmsFullTxt({ en: fixture(over), de: fixture(over) });
+/** The English half of a bilingual `llmsFullTxt()` document, so single-locale assertions keep reading like before. */
+const englishHalf = (md: string) => md.slice(0, md.indexOf('## Deutsch'));
+
+const realRows = (name: string) => load(readFileSync(`data/${name}.yml`, 'utf8')) as Record<string, unknown>[];
+const realParse = <T>(name: string, schema: { array: () => { parse: (v: unknown) => T[] } }): T[] => schema.array().parse(realRows(name));
+const withRealIds = <T extends { id?: string }>(items: T[]): (T & { id: string })[] => items.map((i) => ({ ...i, id: i.id as string }));
+
+/**
+ * A real, full `LlmsFullInput` from the actual YAML, for the given locale's
+ * translator. Bibliographic tables (publications, presentations, posters,
+ * abstracts) read the same for either locale: they are absent from
+ * i18n/fields.ts's TRANSLATABLE, so nothing here (or in production) overlays
+ * them - which is exactly what the bibliographic-title test below relies on.
+ */
+function realInput(locale: 'en' | 'de'): LlmsFullInput {
+  return {
+    site: 'https://livermetabolism.com',
+    base: '/',
+    t: uiFor(locale).t,
+    tags: toTagInfo(realParse('tags', s.tagSchema)),
+    people: withRealIds(realParse('people', s.personSchema)),
+    publications: withRealIds(realParse('publications', s.publicationSchema)),
+    projects: withRealIds(realParse('projects', s.projectSchema)),
+    software: withRealIds(realParse('software', s.softwareSchema)),
+    funding: withRealIds(realParse('funding', s.fundingSchema)),
+    editors: withRealIds(realParse('editors', s.editorSchema)),
+    presentations: withRealIds(realParse('presentations', s.presentationSchema)),
+    posters: withRealIds(realParse('posters', s.posterSchema)),
+    abstracts: withRealIds(realParse('abstracts', s.abstractSchema)),
+    meetings: withRealIds(realParse('meetings', s.meetingSchema)),
+    teaching: withRealIds(realParse('teaching', s.teachingSchema)),
+    news: withRealIds(realParse('news', s.newsSchema)),
+  };
+}
+
 describe('robotsTxt', () => {
   it('names the sitemap and llms.txt by their absolute URLs', () => {
     const text = robotsTxt(ROOT);
@@ -64,14 +103,15 @@ describe('robotsTxt', () => {
     expect(text).toContain('https://example.org/llms.txt');
   });
 
-  it('lets every crawler in and keeps only the detail fragments out', () => {
+  it('lets every crawler in and keeps only the detail fragments (English and German) out', () => {
     const rules = lines(robotsTxt(ROOT)).filter((l) => /^(User-agent|Allow|Disallow):/.test(l));
-    expect(rules).toEqual(['User-agent: *', 'Allow: /', 'Disallow: /detail/']);
+    expect(rules).toEqual(['User-agent: *', 'Allow: /', 'Disallow: /detail/', 'Disallow: /de/detail/']);
   });
 
-  it('carries the base path in the disallowed path and the sitemap URL', () => {
+  it('carries the base path in the disallowed paths and the sitemap URL', () => {
     const text = lines(robotsTxt(PAGES));
     expect(text).toContain('Disallow: /livermetabolism-site/detail/');
+    expect(text).toContain('Disallow: /livermetabolism-site/de/detail/');
     expect(text).toContain('Sitemap: https://matthiaskoenig.github.io/livermetabolism-site/sitemap-index.xml');
   });
 });
@@ -101,7 +141,7 @@ describe('llmsTxt', () => {
 
   it('opens with the H1 title and a blockquote summary, as llmstxt.org requires', () => {
     const [h1, blank, quote] = lines(text);
-    expect(h1).toBe('# König Lab — Systems Medicine, Digital Twins & AI');
+    expect(h1).toBe('# König Lab - Systems Medicine, Digital Twins & AI');
     expect(blank).toBe('');
     expect(quote.startsWith('> ')).toBe(true);
   });
@@ -127,10 +167,12 @@ describe('llmsTxt', () => {
     expect(md).not.toMatch(/\n\n\n/);
   });
 
-  it('puts llms-full.txt and the sitemap into the Optional section, which comes last', () => {
+  it('puts llms-full.txt, the sitemap and both language homepages into the Optional section, which comes last', () => {
     const optional = section(text, 'Optional');
     expect(optional).toContain('(https://example.org/llms-full.txt)');
     expect(optional).toContain('(https://example.org/sitemap-index.xml)');
+    expect(optional).toContain('[English](https://example.org/)');
+    expect(optional).toContain('[Deutsch](https://example.org/de/)');
     expect(text.lastIndexOf('\n## ')).toBe(text.indexOf('\n## Optional\n'));
   });
 
@@ -142,7 +184,8 @@ describe('llmsTxt', () => {
 });
 
 describe('llmsFullTxt', () => {
-  const text = llmsFullTxt(fixture());
+  const full = fixtureFull();
+  const text = englishHalf(full);
 
   it('opens with the same H1 title and summary as llms.txt', () => {
     expect(lines(text)[0]).toMatch(/^# \S/);
@@ -198,7 +241,7 @@ describe('llmsFullTxt', () => {
 
   it.each([
     ['llms.txt', () => llmsTxt(fixture())],
-    ['llms-full.txt', () => llmsFullTxt(fixture())],
+    ['llms-full.txt', () => fixtureFull()],
   ])('%s sets every heading off by a blank line and never leaves two blank lines in a row', (_name, build) => {
     const md = build();
     const ls = lines(md);
@@ -212,45 +255,86 @@ describe('llmsFullTxt', () => {
 
   it('contains no HTML', () => {
     expect(text).toContain('Works on digital twins.');
-    expect(text).not.toMatch(/<\/?[a-z][^>]*>/i);
+    expect(full).not.toMatch(/<\/?[a-z][^>]*>/i);
   });
 });
 
 describe('llms files over the real data', () => {
-  const rows = (name: string) => load(readFileSync(`data/${name}.yml`, 'utf8')) as Record<string, unknown>[];
-  const parse = <T>(name: string, schema: { array: () => { parse: (v: unknown) => T[] } }): T[] => schema.array().parse(rows(name));
-  const withIds = <T extends { id?: string }>(items: T[]): (T & { id: string })[] => items.map((i) => ({ ...i, id: i.id as string }));
+  const en = realInput('en');
+  const full = llmsFullTxt({ en, de: realInput('de') });
+  const english = englishHalf(full);
+  const index = llmsTxt(en);
 
-  const input: LlmsFullInput = {
-    site: 'https://livermetabolism.com',
-    base: '/',
-    tags: toTagInfo(parse('tags', s.tagSchema)),
-    people: withIds(parse('people', s.personSchema)),
-    publications: withIds(parse('publications', s.publicationSchema)),
-    projects: withIds(parse('projects', s.projectSchema)),
-    software: withIds(parse('software', s.softwareSchema)),
-    funding: withIds(parse('funding', s.fundingSchema)),
-    editors: withIds(parse('editors', s.editorSchema)),
-    presentations: withIds(parse('presentations', s.presentationSchema)),
-    posters: withIds(parse('posters', s.posterSchema)),
-    abstracts: withIds(parse('abstracts', s.abstractSchema)),
-    meetings: withIds(parse('meetings', s.meetingSchema)),
-    teaching: withIds(parse('teaching', s.teachingSchema)),
-    news: withIds(parse('news', s.newsSchema)),
-  };
-  const full = llmsFullTxt(input);
-  const index = llmsTxt(input);
-
-  it('writes one heading per publication and contains no HTML', () => {
-    const headings = lines(section(full, 'Publications')!).filter((l) => l.startsWith('### '));
-    expect(headings).toHaveLength(input.publications.length);
+  it('writes one heading per publication (in both halves) and contains no HTML', () => {
+    const headings = lines(section(english, 'Publications')!).filter((l) => l.startsWith('### '));
+    expect(headings).toHaveLength(en.publications.length);
     expect(full).not.toMatch(/<\/?[a-z][^>]*>/i);
     expect(index).not.toMatch(/<\/?[a-z][^>]*>/i);
   });
 
   it('links only to absolute http(s) URLs', () => {
     expect(linkTargets(full).length).toBeGreaterThan(0);
-    expect(linkTargets(index).length).toBeGreaterThan(input.software.length);
+    expect(linkTargets(index).length).toBeGreaterThan(en.software.length);
     for (const target of [...linkTargets(full), ...linkTargets(index)]) expect(target).toMatch(/^https?:\/\/\S+$/);
+  });
+});
+
+// Task 19: llms.txt/llms-full.txt stay single, bilingual files rather than
+// becoming per-locale files (the site owner's own decision) - an agent
+// fetching either file must find the content in either language.
+describe('bilingual output', () => {
+  async function buildLlmsFull(): Promise<string> {
+    return llmsFullTxt({ en: realInput('en'), de: realInput('de') });
+  }
+
+  async function buildLlms(): Promise<string> {
+    return llmsTxt(realInput('en'));
+  }
+
+  it('llms-full.txt carries an English and a German half', async () => {
+    const out = await buildLlmsFull();
+    expect(out).toContain('## Deutsch');
+    expect(out.indexOf('## Deutsch')).toBeGreaterThan(0);
+  });
+
+  it('the German half links to /de/ URLs', async () => {
+    const out = await buildLlmsFull();
+    const german = out.slice(out.indexOf('## Deutsch'));
+    expect(german).toContain('/de/publications/');
+  });
+
+  it('the English half never links to /de/', async () => {
+    const out = await buildLlmsFull();
+    const english = out.slice(0, out.indexOf('## Deutsch'));
+    expect(english).not.toContain('/de/');
+  });
+
+  it('llms.txt lists both language homepages', async () => {
+    const out = await buildLlms();
+    expect(out).toContain('/de/');
+    expect(out).toMatch(/^# /m);
+  });
+
+  it('llms.txt keeps ## Optional last', async () => {
+    const out = await buildLlms();
+    const headings = [...out.matchAll(/^## (.+)$/gm)].map((m) => m[1]);
+    expect(headings.at(-1)).toBe('Optional');
+  });
+
+  it('renders a real paper title in English in BOTH halves, untranslated', async () => {
+    // Read a real title from the data rather than hard-coding a fragment, so
+    // the test keeps meaning something as publications.yml grows.
+    const publications = load(readFileSync('data/publications.yml', 'utf8')) as { title: string }[];
+    const title = publications.find((p) => p.title.length > 40)!.title;
+
+    const out = await buildLlmsFull();
+    const split = out.indexOf('## Deutsch');
+    const english = out.slice(0, split);
+    const german = out.slice(split);
+
+    // The same English string, byte for byte, on both sides: bibliographic
+    // records are never translated.
+    expect(english).toContain(title);
+    expect(german).toContain(title);
   });
 });

@@ -1,0 +1,65 @@
+---
+/**
+ * One prerendered detail fragment per person, publication, project, software
+ * entry and news item, at `/detail/<type>/<id>/`.
+ *
+ * `export const partial = true` makes this an Astro page partial: no doctype,
+ * no `<head>`, no layout — the response is just the `<div class="detail">`
+ * `DetailView.vue` renders. The detail modal fetches it on first open, parses
+ * it with `DOMParser` and adopts the root element into the dialog, so the
+ * list pages no longer carry a serialised copy of every record (see
+ * `docs/superpowers/specs/2026-09-13-detail-modals-design.md`).
+ *
+ * The collections and the three snapshots are read **once** here, in
+ * `getStaticPaths()`, and every model is built from that one context; the
+ * frontmatter below only unpacks the props of the route it renders.
+ */
+export const partial = true;
+
+import DetailView from '../../../../components/DetailView.vue';
+import { loadCitations } from '../../../../lib/citations';
+import { getNews, getPeople, getPeopleMap, getPosters, getPresentations, getProjects, getPublications, getSoftware, getTags } from '../../../../lib/data';
+import { detailIds, detailModel, type DetailContext } from '../../../../lib/details';
+import { loadSnapshot } from '../../../../lib/github';
+import { uiFor } from '../../../../lib/i18n/catalog';
+import { DEFAULT_LOCALE, LOCALES } from '../../../../lib/i18n/locales';
+import { localeUrl } from '../../../../lib/i18n/routes';
+import { slices } from '../../../../lib/i18n/slices';
+import { loadScholar } from '../../../../lib/scholar';
+import { asset } from '../../../../lib/url';
+
+// The snapshots are shared by every locale (they carry no translatable
+// prose); the collections are re-read per locale so the German overlay
+// (site/lib/data.ts's `all()`) reaches these fragments too, crossing the
+// entity ids with the locales so the same set of ids is emitted at both
+// /detail/<type>/<id>/ and /de/detail/<type>/<id>/ - only the row content
+// and the per-locale `base` (and therefore the model's page hrefs) differ.
+export async function getStaticPaths() {
+  // the same daily snapshots the research and publications pages render from;
+  // a failed read yields an empty one and the figures simply disappear
+  const [github, scholar, citations] = await Promise.all([loadSnapshot(), loadScholar(), loadCitations()]);
+  // assets (avatars, PDFs, galleries) are shared across languages and must
+  // never carry a locale prefix - only the page hrefs (`base`) do
+  const assetBase = import.meta.env.BASE_URL;
+  const perLocale = await Promise.all(LOCALES.map(async (locale) => {
+    const [tags, people, peopleMap, publications, projects, software, news, presentations, posters] = await Promise.all([
+      getTags(locale), getPeople(locale), getPeopleMap(locale), getPublications(locale), getProjects(locale), getSoftware(locale), getNews(locale), getPresentations(locale), getPosters(locale),
+    ]);
+    const data = { tags, people, peopleMap, publications, projects, software, news, presentations, posters, github, scholar, citations };
+    // TagList and PersonChips need the same inputs as on the cards; one
+    // shared object per locale, not one per fragment
+    const view = { tagInfo: data.tags, peopleMap: data.peopleMap, avatarBase: asset('image/people/128/') };
+    const ctx: DetailContext = { ...data, base: localeUrl(locale, '/'), assetBase, t: uiFor(locale).t };
+    return detailIds(ctx).map(({ type, id }) => ({
+      params: { type, id, locale: locale === DEFAULT_LOCALE ? undefined : locale },
+      props: { model: detailModel(type, id, ctx), ...view, locale },
+    }));
+  }));
+  return perLocale.flat();
+}
+
+const { model, tagInfo, peopleMap, avatarBase, locale } = Astro.props;
+const { t } = uiFor(locale);
+const ui = slices(t);
+---
+<DetailView model={model} tagInfo={tagInfo} peopleMap={peopleMap} avatarBase={avatarBase} strings={ui.detailView} />

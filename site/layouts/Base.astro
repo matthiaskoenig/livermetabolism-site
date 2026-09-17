@@ -7,19 +7,20 @@ import Footer from '../components/Footer.astro';
 import SiteSearch from '../components/SiteSearch.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import DetailModal from '../components/DetailModal.astro';
-import { url } from '../lib/url';
+import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
+import { localeUrl } from '../lib/i18n/routes';
 
-interface Props { title?: string; description?: string; sectionid?: string }
-const { title, description, sectionid } = Astro.props;
-const isHome = Astro.url.pathname === url('/');
+interface Props { title?: string; description?: string; sectionid?: string; locale?: Locale; langSwitchPath?: string; noAlternates?: boolean }
+const { title, description, sectionid, locale = DEFAULT_LOCALE, langSwitchPath, noAlternates } = Astro.props;
+const isHome = Astro.url.pathname === localeUrl(locale, '/');
 ---
-<html lang="en" class:list={[{ onepager: isHome }]}>
+<html lang={locale} class:list={[{ onepager: isHome }]}>
   <head>
-    <Head title={title} description={description} />
+    <Head title={title} description={description} locale={locale} noAlternates={noAlternates} />
   </head>
   <body>
     <IconSprite />
-    <TopNav sectionid={sectionid} />
+    <TopNav sectionid={sectionid} locale={locale} langSwitchPath={langSwitchPath} />
     <div class="page-content">
       <div class="wrapper">
         <div class="container">
@@ -27,10 +28,10 @@ const isHome = Astro.url.pathname === url('/');
         </div>
       </div>
     </div>
-    <Footer home={isHome} />
-    <CookieConsent gaId="G-FDNGDW6G09" privacyUrl={url('/privacy/')} />
-    <SiteSearch searchUrl={url('/search.json')} />
-    <DetailModal />
+    <Footer home={isHome} locale={locale} />
+    <CookieConsent gaId="G-FDNGDW6G09" privacyUrl={localeUrl(locale, '/privacy/')} locale={locale} />
+    <SiteSearch searchUrl={localeUrl(locale, '/search.json')} locale={locale} />
+    <DetailModal locale={locale} langSwitchPath={langSwitchPath} />
     <slot name="global" />
     <script>
       // The document-level modal router (the detail modal, the search

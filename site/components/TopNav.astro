@@ -1,14 +1,20 @@
 ---
 import Icon from './Icon.vue';
-import { asset, url } from '../lib/url';
+import LanguageSwitch from './LanguageSwitch.astro';
+import { uiFor } from '../lib/i18n/catalog';
+import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
+import { urlFor } from '../lib/i18n/routes';
+import { asset } from '../lib/url';
 
-interface Props { sectionid?: string }
-const { sectionid } = Astro.props;
+interface Props { sectionid?: string; locale?: Locale; langSwitchPath?: string }
+const { sectionid, locale = DEFAULT_LOCALE, langSwitchPath } = Astro.props;
+const u = urlFor(locale);
+const { t } = uiFor(locale);
 const active = (...ids: string[]) => (sectionid && ids.includes(sectionid) ? 'active' : '');
 ---
 <nav class="navbar site-navbar">
   <div class="container navbar-container">
-    <a class="navbar-brand" href={url('/')}>
+    <a class="navbar-brand" href={u('/')}>
       <svg class="brand-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
         <polygon points="50,4 91,27 91,73 50,96 9,73 9,27" fill="none" stroke="#18BC9C" stroke-width="5"></polygon>
         <g stroke="#EAF0F1" stroke-width="3" fill="none">
@@ -26,49 +32,50 @@ const active = (...ids: string[]) => (sectionid && ids.includes(sectionid) ? 'ac
       <span class="brand-word">König Lab</span>
     </a>
     <div class="navbar-controls">
-      <button type="button" class="search-toggle" data-modal-target="site-search-modal" aria-label="Search" title="Search (/)">
+      <LanguageSwitch locale={locale} path={langSwitchPath} />
+      <button type="button" class="search-toggle" data-modal-target="site-search-modal" aria-label={t('search.open')} title={t('search.openTitle', { key: '/' })}>
         <Icon name="search" />
       </button>
-      <button type="button" class="navbar-toggler" id="navbar-toggler" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <button type="button" class="navbar-toggler" id="navbar-toggler" aria-controls="navbar" aria-expanded="false" aria-label={t('nav.toggleNav')}>
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
     <div id="navbar" class="navbar-collapse">
       <ul class="navbar-nav">
         <li class:list={['nav-item', 'dropdown', active('publications')]}>
-          <a class="nav-link" href={url('/publications/')}>Publications</a>
+          <a class="nav-link" href={u('/publications/')}>{t('nav.publications')}</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href={url('/publications/#scholar')}>Citations</a></li>
-            <li><a class="dropdown-item" href={url('/publications/#publications')}>Publications</a></li>
-            <li><a class="dropdown-item" href={url('/publications/#presentations')}>Presentations</a></li>
-            <li><a class="dropdown-item" href={url('/publications/#posters')}>Posters</a></li>
-            <li><a class="dropdown-item" href={url('/publications/#abstracts')}>Abstracts</a></li>
+            <li><a class="dropdown-item" href={u('/publications/#scholar')}>{t('nav.citations')}</a></li>
+            <li><a class="dropdown-item" href={u('/publications/#publications')}>{t('nav.publications')}</a></li>
+            <li><a class="dropdown-item" href={u('/publications/#presentations')}>{t('nav.presentations')}</a></li>
+            <li><a class="dropdown-item" href={u('/publications/#posters')}>{t('nav.posters')}</a></li>
+            <li><a class="dropdown-item" href={u('/publications/#abstracts')}>{t('nav.abstracts')}</a></li>
           </ul>
         </li>
-        <li class:list={['nav-item', active('projects')]}><a class="nav-link" href={url('/projects/')}>Projects</a></li>
+        <li class:list={['nav-item', active('projects')]}><a class="nav-link" href={u('/projects/')}>{t('nav.projects')}</a></li>
         <li class:list={['nav-item', 'dropdown', active('people')]}>
-          <a class="nav-link" href={url('/people/')}>Team</a>
+          <a class="nav-link" href={u('/people/')}>{t('nav.team')}</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href={url('/people/#current-members')}>Team</a></li>
-            <li><a class="dropdown-item" href={url('/people/#open-positions')}>Open Positions</a></li>
-            <li><a class="dropdown-item" href={url('/people/#alumni')}>Alumni</a></li>
+            <li><a class="dropdown-item" href={u('/people/#current-members')}>{t('nav.team')}</a></li>
+            <li><a class="dropdown-item" href={u('/people/#open-positions')}>{t('nav.openPositions')}</a></li>
+            <li><a class="dropdown-item" href={u('/people/#alumni')}>{t('nav.alumni')}</a></li>
           </ul>
         </li>
         <li class:list={['nav-item', 'dropdown', active('research', 'meetings')]}>
-          <a class="nav-link" href={url('/research/')}>Research</a>
+          <a class="nav-link" href={u('/research/')}>{t('nav.research')}</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href={url('/research/#releases')}>Releases</a></li>
-            <li><a class="dropdown-item" href={url('/research/#activity')}>Activity</a></li>
-            <li><a class="dropdown-item" href={url('/research/#software')}>Software</a></li>
-            <li><a class="dropdown-item" href={url('/research/#funding')}>Funding</a></li>
-            <li><a class="dropdown-item" href={url('/research/#editors')}>Editors</a></li>
-            <li><a class="dropdown-item" href={url('/meetings/')}>Meetings</a></li>
+            <li><a class="dropdown-item" href={u('/research/#releases')}>{t('nav.releases')}</a></li>
+            <li><a class="dropdown-item" href={u('/research/#activity')}>{t('nav.activity')}</a></li>
+            <li><a class="dropdown-item" href={u('/research/#software')}>{t('nav.software')}</a></li>
+            <li><a class="dropdown-item" href={u('/research/#funding')}>{t('nav.funding')}</a></li>
+            <li><a class="dropdown-item" href={u('/research/#editors')}>{t('nav.editors')}</a></li>
+            <li><a class="dropdown-item" href={u('/meetings/')}>{t('nav.meetings')}</a></li>
           </ul>
         </li>
-        <li class:list={['nav-item', active('network')]}><a class="nav-link" href={url('/network/')}>Network</a></li>
-        <li class:list={['nav-item', active('news')]}><a class="nav-link" href={url('/news/')}>News</a></li>
-        <li class:list={['nav-item', active('teaching')]}><a class="nav-link" href={url('/teaching/')}>Teaching</a></li>
-        <li class="nav-item"><a class="nav-link" href={asset('cv/Koenig_CV.pdf')} target="_blank" rel="noopener noreferrer">CV</a></li>
+        <li class:list={['nav-item', active('network')]}><a class="nav-link" href={u('/network/')}>{t('nav.network')}</a></li>
+        <li class:list={['nav-item', active('news')]}><a class="nav-link" href={u('/news/')}>{t('nav.news')}</a></li>
+        <li class:list={['nav-item', active('teaching')]}><a class="nav-link" href={u('/teaching/')}>{t('nav.teaching')}</a></li>
+        <li class="nav-item"><a class="nav-link" href={asset('cv/Koenig_CV.pdf')} target="_blank" rel="noopener noreferrer">{t('nav.cv')}</a></li>
       </ul>
     </div>
   </div>
@@ -84,4 +91,44 @@ const active = (...ids: string[]) => (sectionid && ids.includes(sectionid) ? 'ac
     toggler.setAttribute('aria-expanded', open ? 'true' : 'false');
     navbar?.classList.toggle('show', open);
   });
+
+  // --navbar-height drives every "clear the fixed navbar" offset (body
+  // padding-top, :target/scroll-margin-top, the detail modal's margin) -
+  // see global.css. The navbar's real height is not the 64px fallback
+  // whenever its nav-item row wraps to two lines, which a longer
+  // translation (German labels run longer than English) or a narrow
+  // viewport can both trigger independently, so measure the rendered
+  // navbar instead of trusting the constant. ResizeObserver both sets the
+  // initial value and keeps it correct across a viewport resize that
+  // crosses the wrap breakpoint.
+  //
+  // The observed element is .site-navbar, and #navbar (.navbar-collapse,
+  // the mobile dropdown) sits inside it - global.css's mobile media query
+  // sizes that dropdown's own max-height from this same variable
+  // (`max-height: calc(100vh - var(--navbar-height))`). Writing a new
+  // value while the dropdown is open therefore closes a loop entirely
+  // inside the observed subtree: a new --navbar-height changes the
+  // dropdown's max-height, which changes .site-navbar's rendered height,
+  // which fires the observer again - measured never settling, 60
+  // callbacks/second, the page strobing between the full menu and a
+  // squashed sliver. Skipping the write while #navbar carries .show
+  // breaks the loop at its root: the offset only ever needs the navbar's
+  // CLOSED height anyway (the open dropdown is a temporary overlay, not
+  // something document flow should reserve space for), and that value was
+  // already captured correctly the moment before the dropdown opened -
+  // closing it again triggers a fresh, accurate measurement once the
+  // guard no longer applies.
+  const siteNavbar = document.querySelector('.site-navbar');
+  if (siteNavbar instanceof HTMLElement) {
+    const setNavbarHeight = () => {
+      if (navbar?.classList.contains('show')) return;
+      document.documentElement.style.setProperty('--navbar-height', `${siteNavbar.getBoundingClientRect().height}px`);
+    };
+    setNavbarHeight();
+    if (typeof ResizeObserver !== 'undefined') {
+      new ResizeObserver(setNavbarHeight).observe(siteNavbar);
+    } else {
+      window.addEventListener('resize', setNavbarHeight);
+    }
+  }
 </script>

@@ -1,6 +1,10 @@
 import { describe, expect, it } from 'vitest';
+import { uiFor } from './i18n/catalog';
 import { emptyScholar, type Scholar } from './scholarSchema';
 import { historyNote, historyRows, perYearRows, profileHref, stripValues } from './scholarRows';
+
+const { t } = uiFor('en');
+const historyNoteStrings = { yearly: t('scholar.historyYearly'), daily: t('scholar.historyDaily'), starts: t('scholar.historyStarts') };
 
 /** The snapshot as recorded on 2026-09-12, trimmed to three histogram years. */
 const scholar: Scholar = {
@@ -111,19 +115,19 @@ describe('profileHref', () => {
 
 describe('historyNote', () => {
   it('names both sources when year totals and daily readings are present', () => {
-    expect(historyNote(historyRows(scholar))).toBe('yearly totals from the citation histogram up to 2013, daily readings from 12 Sep 2026');
+    expect(historyNote(historyRows(scholar), historyNoteStrings)).toBe('yearly totals from the citation histogram up to 2013, daily readings from 12 Sep 2026');
   });
 
   it('names only the histogram without daily readings', () => {
-    expect(historyNote([{ date: '2011-12-31', citations: 25, source: 'year' }])).toBe('yearly totals from the citation histogram up to 2011');
+    expect(historyNote([{ date: "2011-12-31", citations: 25, source: "year" }], historyNoteStrings)).toBe('yearly totals from the citation histogram up to 2011');
   });
 
   it('explains a one-point history', () => {
-    expect(historyNote(historyRows({ ...scholar, citationsPerYear: [] }))).toBe('history starts 12 Sep 2026');
+    expect(historyNote(historyRows({ ...scholar, citationsPerYear: [] }), historyNoteStrings)).toBe('history starts 12 Sep 2026');
   });
 
   it('says nothing once the series has two points or none', () => {
-    expect(historyNote([{ ...point('2026-09-11', 3800), source: 'day' }, { ...point('2026-09-12', 3827), source: 'day' }])).toBe('');
-    expect(historyNote([])).toBe('');
+    expect(historyNote([{ ...point('2026-09-11', 3800), source: 'day' }, { ...point('2026-09-12', 3827), source: 'day' }], historyNoteStrings)).toBe('');
+    expect(historyNote([], historyNoteStrings)).toBe('');
   });
 });

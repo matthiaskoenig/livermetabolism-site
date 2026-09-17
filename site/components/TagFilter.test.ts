@@ -4,7 +4,7 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import TagFilter from './TagFilter.vue';
 import type { TagInfo } from '../lib/views';
 
-const tag = (t: string): TagInfo => ({ tag: t, slug: t.toLowerCase().replace(/[^a-z0-9]+/g, '-'), icon: 'fa-flask', short_description: t, description: t, vision: t });
+const tag = (t: string): TagInfo => ({ tag: t, slug: t.toLowerCase().replace(/[^a-z0-9]+/g, '-'), icon: 'fa-flask', label: t, short_description: t, description: t, vision: t });
 const tags = [tag('AI'), tag('Open & FAIR')];
 
 /**
@@ -34,7 +34,7 @@ function target(): void {
 function mountFilter(search = '') {
   window.history.replaceState({}, '', `/publications/${search}`);
   target();
-  return mount(TagFilter, { props: { id: 'publication', tags, target: 'list' }, attachTo: document.body });
+  return mount(TagFilter, { props: { id: 'publication', tags, target: 'list', strings: { all: 'All' } }, attachTo: document.body });
 }
 
 const hidden = (id: string) => document.getElementById(id)!.hasAttribute('hidden');
@@ -102,7 +102,7 @@ describe('TagFilter', () => {
   it('does nothing when the target container is missing', async () => {
     window.history.replaceState({}, '', '/publications/?tag=AI');
     document.body.innerHTML = '';
-    const w = mount(TagFilter, { props: { id: 'publication', tags, target: 'nope' }, attachTo: document.body });
+    const w = mount(TagFilter, { props: { id: 'publication', tags, target: 'nope', strings: { all: 'All' } }, attachTo: document.body });
     await nextTick();
     expect(w.find('[data-tag="AI"]').classes()).toContain('active');
     w.unmount();
@@ -115,7 +115,7 @@ describe('TagFilter', () => {
         <div class="card-group"><div id="c1" data-tags="AI"></div></div>
         <div class="card-group"><div id="c2" data-tags="Open &amp; FAIR"></div></div>
       </div>`;
-    const w = mount(TagFilter, { props: { id: 'software', tags, target: 'grid', groupSelector: '.card-group' }, attachTo: document.body });
+    const w = mount(TagFilter, { props: { id: 'software', tags, target: 'grid', groupSelector: '.card-group', strings: { all: 'All' } }, attachTo: document.body });
     await w.find('[data-tag="AI"]').trigger('click');
     expect([hidden('c1'), hidden('c2')]).toEqual([false, true]);
     const groups = document.querySelectorAll('.card-group');

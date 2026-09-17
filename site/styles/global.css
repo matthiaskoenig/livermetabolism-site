@@ -39,6 +39,12 @@
   --font-serif-display: "Source Serif 4", Georgia, "Times New Roman", serif;
   --font-brand: "Space Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
+  /* fallback/first-paint value only - TopNav.astro's bundled script
+     measures the real rendered navbar height (it wraps to two lines at
+     some viewport widths, more readily in German than English, see the
+     i18n review) and overwrites this custom property on the root element
+     via ResizeObserver, so every "clear the fixed navbar" offset below
+     tracks the actual height instead of a constant. */
   --navbar-height: 64px;
 
   /* one colour per research tag (keyed by slugify(tag)) */
@@ -125,6 +131,11 @@
   /* cv.astro's <object> embed of the CV PDF */
   .cv-pdf-embed { display: block; width: 100%; height: 80vh; }
 
+  /* impressum.astro/privacy.astro: the English rendering's notice that
+     only the German version is legally binding (see PAGE_SOURCE_LOCALE in
+     site/lib/i18n/pages.ts). Reuses the .text-muted color token. */
+  .legal-notice { color: rgba(33, 37, 41, 0.75); font-style: italic; }
+
   .btn {
     display: inline-block; padding: 0.375rem 0.75rem; font-size: 1rem; font-weight: 400; line-height: 1.5;
     text-align: center; text-decoration: none; vertical-align: middle; cursor: pointer; user-select: none;
@@ -147,14 +158,25 @@
   }
   .form-control:focus { outline: 0; border-color: #969fa8; box-shadow: 0 0 0 0.25rem rgba(44, 62, 80, 0.25); }
 
-  /* native <dialog> styled like Bootstrap's .modal-dialog.modal-lg */
+  /* native <dialog> styled like Bootstrap's .modal-dialog.modal-lg. The top
+     margin clears the fixed navbar (--navbar-height) rather than the plain
+     1.75rem a non-fixed page would use: a dialog is painted in the browser's
+     top layer, above the navbar's z-index entirely, so without this the open
+     modal's own header used to sit over the navbar and swallow clicks on it
+     - including the language switch, which must stay reachable while a
+     detail modal is open. */
   dialog.modal {
-    width: min(800px, calc(100% - 1rem)); max-height: calc(100vh - 3.5rem); margin: 1.75rem auto; padding: 0;
+    width: min(800px, calc(100% - 1rem)); max-height: calc(100vh - var(--navbar-height) - 2.75rem);
+    margin: calc(var(--navbar-height) + 1rem) auto 1.75rem; padding: 0;
     display: none; flex-direction: column; color: var(--color-body); background-color: var(--color-body-bg);
     border: 1px solid rgba(0, 0, 0, 0.175); border-radius: 0.5rem; box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   }
   dialog.modal[open] { display: flex; }
-  dialog.modal.modal-centered { margin-block: auto; }
+  /* .modal-centered (the search dialog) is vertically centred by the browser
+     rather than pinned under the fixed navbar, so it never needed the navbar
+     clearance carved out of dialog.modal's max-height above - restore its
+     original budget rather than losing that height for no reason. */
+  dialog.modal.modal-centered { margin-block: auto; max-height: calc(100vh - 3.5rem); }
   dialog.modal::backdrop { background-color: rgba(0, 0, 0, 0.5); }
   body:has(dialog.modal[open]) { overflow: hidden; }
   .modal-header {
@@ -186,9 +208,28 @@
   .navbar > .container { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; }
   .navbar-brand { padding: 0.3125rem 0; margin-right: 1rem; font-size: 1.25rem; color: #fff; text-decoration: none; }
   .navbar-brand:hover, .navbar-brand:focus { color: #fff; }
-  .navbar-nav { display: flex; flex-direction: column; padding-left: 0; margin: 0; list-style: none; }
-  .nav-link { display: block; padding: 0.5rem 0; color: #fff; text-decoration: none; }
+  /* flex-wrap: wrap so a nav item that cannot fit the remaining row width
+     (a longer German label, its dropdown caret included) wraps as a whole
+     unit onto the next row, rather than shrinking below its content width
+     and stranding just the caret on its own line - the caret is a
+     trailing inline-block glued to the label text by .nav-link's
+     white-space: nowrap below, so the two can never separate. */
+  .navbar-nav { display: flex; flex-direction: column; flex-wrap: wrap; padding-left: 0; margin: 0; list-style: none; }
+  .nav-link { display: block; padding: 0.5rem 0; color: #fff; text-decoration: none; white-space: nowrap; }
   .nav-link:hover, .nav-link:focus { color: var(--color-success); }
+  .lang-switch { display: inline-flex; align-items: center; gap: 0.125rem; margin-right: 0.5rem; }
+  .lang-switch-link {
+    /* min-height/inline-flex centering grows the tap target toward the
+       44px touch-target guideline (was 29x24 measured at 390px) without
+       inflating the visible pill - the extra hit area sits in the padding,
+       centred on the same small badge, matching .search-toggle's 40px
+       navbar control next to it. */
+    display: inline-flex; align-items: center; justify-content: center; min-height: 2.25rem;
+    padding: 0.125rem 0.5rem; border-radius: 0.375rem; font-size: 0.8125rem;
+    font-weight: 600; letter-spacing: 0.02em; color: rgba(255, 255, 255, 0.55); text-decoration: none;
+  }
+  .lang-switch-link:hover, .lang-switch-link:focus { color: var(--color-success); }
+  .lang-switch-link.active { color: #fff; background: rgba(255, 255, 255, 0.1); }
   .navbar-toggler {
     padding: 0.25rem 0.75rem; font-size: 1.25rem; line-height: 1; color: rgba(255, 255, 255, 0.55);
     background: transparent; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 0.375rem; cursor: pointer;
@@ -397,6 +438,15 @@
         color: var(--color-gray-800);
         font-size: 0.95em;
         margin-bottom: 0;
+        /* German compounds (e.g. "pharmakokinetische/pharmakodynamische",
+           37 characters against the English "pharmacokinetic/pharmacodynamic"
+           pair's shorter words) do not contain a break opportunity a browser
+           will use on its own, so with the block centered and no wrap rule
+           the text overflows past both edges onto the neighbouring column
+           instead of wrapping - break-word gives it one. hyphens: auto alone
+           does not fix this (verified: German-language hyphenation dictionaries
+           are not reliably available/enabled), so this is the one that matters. */
+        overflow-wrap: break-word;
       }
 
       a {
@@ -859,12 +909,17 @@
         display: block;
         margin-top: 0;
         font-size: 0.95em;
+        /* a long German title compound can otherwise overflow .project-card's
+           overflow: hidden border and clip mid-word - see the note on
+           .core-message p above, same fix, same reason. */
+        overflow-wrap: break-word;
       }
 
       p {
         flex: 1;
         color: var(--color-gray-800);
         font-size: 0.82em;
+        overflow-wrap: break-word;
       }
 
       .news-date {
@@ -1283,6 +1338,9 @@
         margin: 0.3em 0 0;
         font-size: 0.85em;
         color: var(--color-gray-800);
+        /* e.g. German "Entscheidungsunterstützungswerkzeug" (a single
+           35-character compound noun) - same fix as .core-message p above. */
+        overflow-wrap: break-word;
       }
     }
 
@@ -1482,6 +1540,13 @@
      ---------------------------------------------------------------- */
   .detail-modal {
     .modal-header {
+      /* a long title wraps to several lines here (unlike the header's other
+         two uses - the search dialog's fixed "Search" and the fallback
+         "Details"/"Loading..." strings); the default align-items: center
+         would then centre Back/the switch/Close on the wrapped block's full
+         height, leaving them floating beside a middle line instead of
+         pinned to the first one */
+      align-items: flex-start;
       gap: 0.6em;
     }
 
@@ -1490,12 +1555,39 @@
       flex: 1;
       font-size: 1.05rem;
       line-height: 1.35;
+      /* a German title can carry one unbreakable slash-joined compound
+         (e.g. "Pharmakokinetische/pharmakodynamische Modellierung") that
+         min-width: 0 alone does not wrap - it escaped into the language
+         switch and close button on a narrow viewport without this. */
+      overflow-wrap: break-word;
 
       /* render() focuses the title for screen readers; it is no control,
          so a deep link or a keyboard-opened row draws no ring around it */
       &:focus {
         outline: none;
       }
+    }
+
+    /* the navbar's .lang-switch-link colours (rgba(255,255,255,...), #fff)
+       assume the dark navbar behind them; restyle for this header's light
+       background instead of reusing them as-is */
+    .lang-switch {
+      flex-shrink: 0;
+      margin-right: 0;
+    }
+
+    .lang-switch-link {
+      color: var(--color-gray-700);
+    }
+
+    .lang-switch-link:hover,
+    .lang-switch-link:focus {
+      color: var(--color-link-hover);
+    }
+
+    .lang-switch-link.active {
+      color: var(--color-body);
+      background: var(--color-gray-200);
     }
   }
 
@@ -1586,12 +1678,26 @@
   .detail-title {
     margin: 0 0 0.2em;
     font-size: 1.05em;
+    /* .detail-heading (this element's parent) is a row-flex item with
+       flex-basis: 0% / min-width: 0, so its width is resolved through the
+       flex sizing algorithm rather than simple block containment.
+       overflow-wrap: break-word is spec'd to NOT count toward an element's
+       min-content contribution (only overflow-wrap: anywhere is), so under
+       flex-basis: 0 the browser still sized this h3 to the *unbroken*
+       title's full width (332px in a 183px-wide slot) and broke wrapping
+       silently failed - verified: switching to `anywhere` here (and only
+       here; .core-message p and .project-body h3/p sit in grid/column-flex
+       contexts where plain block containment applies and break-word alone
+       is correct, per the earlier verified fix) brings scrollWidth back to
+       clientWidth. */
+    overflow-wrap: anywhere;
   }
 
   .detail-subtitle {
     margin: 0 0 0.5em;
     color: var(--color-gray-600);
     font-size: 0.85em;
+    overflow-wrap: break-word;
   }
 
   .detail-links {
@@ -1689,6 +1795,7 @@
   .detail-body {
     color: var(--color-gray-800);
     text-align: justify;
+    overflow-wrap: break-word;
 
     p {
       margin-top: 0;
@@ -1772,6 +1879,10 @@
     display: block;
     font-size: 0.85em;
     color: var(--color-primary);
+    /* .related-row is a row-flex container (like .detail-header /
+       .detail-heading above) - overflow-wrap: anywhere, not break-word,
+       for the same min-content reason documented on .detail-title. */
+    overflow-wrap: anywhere;
   }
 
   .related-row:hover .related-row-title {
@@ -1782,6 +1893,7 @@
     display: block;
     color: var(--color-gray-600);
     font-size: 0.75em;
+    overflow-wrap: anywhere;
   }
 
   .detail-footer {
