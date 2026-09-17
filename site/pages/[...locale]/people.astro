@@ -5,7 +5,9 @@ import Icon from '../../components/Icon.vue';
 import PersonAvatar from '../../components/PersonAvatar.vue';
 import PersonCard from '../../components/PersonCard.vue';
 import { getPeople, getTags } from '../../lib/data';
+import { uiFor } from '../../lib/i18n/catalog';
 import { localeFromParams, localePaths, urlFor } from '../../lib/i18n/routes';
+import { slices } from '../../lib/i18n/slices';
 import { stripHtml, truncateWords } from '../../lib/text';
 import { asset } from '../../lib/url';
 import { alumniByYear } from '../../lib/views';
@@ -13,41 +15,46 @@ import { alumniByYear } from '../../lib/views';
 export const getStaticPaths = localePaths;
 const locale = localeFromParams(Astro.params);
 const u = urlFor(locale);
+const { t } = uiFor(locale);
+const ui = slices(t);
 const [tags, people] = await Promise.all([getTags(), getPeople()]);
 const avatarBase = asset('image/people/128/');
 const current = people.filter((p) => p.status === 'current');
 const alumniGroups = alumniByYear(people);
-const positions = [
-  { title: 'Internship', paragraphs: ['We offer internships online or in-person for instance via the <a href="https://hic.hu-berlin.de/en/internship-program/projects/201" target="_blank" rel="noopener noreferrer">Humboldt Internship Program</a>.', 'We support ERASMUS student internships.'] },
-  { title: 'Bachelor Thesis', paragraphs: ['Undergraduate (Bachelor) students are always welcome. Projects can take place in Lübeck or Berlin.'] },
-  { title: 'Master Thesis', paragraphs: ['Graduate (Master) students are always welcome. Projects can take place in Lübeck or Berlin.'] },
-  { title: 'PhD', paragraphs: ['We have a fully funded open position available as PhD in Lübeck as a Research Software Engineer (RSE) or Informatician.', 'We also supervise doctoral projects if you have a fellowship or similar funding source.'] },
-  { title: 'PostDoc', paragraphs: ['We have a fully funded open position available as PostDoc in Lübeck as a Research Software Engineer (RSE) or Informatician.', 'We also supervise postdoctoral projects if you have a fellowship or similar funding source.'] },
-];
 ---
-<Base title="Team" sectionid="people" locale={locale}>
-  <h2 id="current-members">Team</h2>
+<Base title={t('nav.team')} sectionid="people" locale={locale}>
+  <h2 id="current-members">{t('nav.team')}</h2>
   <div class="member-grid">
-    {current.map((p) => <PersonCard person={p} avatarBase={avatarBase} />)}
+    {current.map((p) => <PersonCard person={p} avatarBase={avatarBase} strings={ui.personCard} />)}
   </div>
 
-  <h2 id="open-positions">Open Positions</h2>
+  <h2 id="open-positions">{t('nav.openPositions')}</h2>
   <img src={asset('image/teaching/teaching_banner.webp')} alt="" decoding="async" width="1800" height="191" class="img-fluid" />
   <div class="text-justify">
     <div class="position-cards">
-      {positions.map((pos) => (
-        <div class="position-card">
-          <h3>{pos.title}</h3>
-          {pos.paragraphs.map((html) => <p set:html={html} />)}
-        </div>
-      ))}
+      <div class="position-card">
+        <h3>{t('positions.internship.title')}</h3>
+        <p>{t('positions.internship.before')} <a href="https://hic.hu-berlin.de/en/internship-program/projects/201" target="_blank" rel="noopener noreferrer">{t('positions.internship.linkText')}</a>{t('positions.internship.after')}</p><p>{t('positions.internship.erasmus')}</p>
+      </div><div class="position-card">
+        <h3>{t('positions.bachelor.title')}</h3>
+        <p>{t('positions.bachelor.text')}</p>
+      </div><div class="position-card">
+        <h3>{t('positions.master.title')}</h3>
+        <p>{t('positions.master.text')}</p>
+      </div><div class="position-card">
+        <h3>{t('positions.phd.title')}</h3>
+        <p>{t('positions.phd.text1')}</p><p>{t('positions.phd.text2')}</p>
+      </div><div class="position-card">
+        <h3>{t('positions.postdoc.title')}</h3>
+        <p>{t('positions.postdoc.text1')}</p><p>{t('positions.postdoc.text2')}</p>
+      </div>
     </div>
-    <p>We offer projects on the following topics</p>
+    <p>{t('positions.intro')}</p>
     <CoreMessages tags={tags} hrefPrefix={u('/')} />
-    <p>Interested in joining the group? Contact <Icon name="envelope" /> <a href="mailto:matthias.koenig@uni-luebeck.de">Prof. Matthias König</a>.</p>
+    <p>{t('positions.contactBefore')} <Icon name="envelope" /> <a href="mailto:matthias.koenig@uni-luebeck.de">Prof. Matthias König</a>.</p>
   </div>
 
-  <h2 id="alumni">Alumni</h2>
+  <h2 id="alumni">{t('nav.alumni')}</h2>
   <div class="alumni-timeline">
     {alumniGroups.map((g) => (
       <div class="timeline-year-group">
@@ -56,9 +63,9 @@ const positions = [
           {g.people.map((p) => (
             <div class="alumni-card" id={`person-${p.id}`}>
               <PersonAvatar client:visible name={p.name} src={avatarBase + p.image} position={p.role[p.role.length - 1] ?? ''}
-                description={p.description ? truncateWords(stripHtml(p.description), 24) : null} detail={`person:${p.id}`} imgClass="alumni-photo" />
+                description={p.description ? truncateWords(stripHtml(p.description), 24) : null} detail={`person:${p.id}`} imgClass="alumni-photo" strings={{ fullProfile: ui.personCard.fullProfile }} />
               <div class="alumni-info">
-                <a href={`#person/${p.id}`} data-detail={`person:${p.id}`} class="member-name-link"><strong>{p.name}</strong></a>{p.orcid && (<> <a href={`https://orcid.org/${p.orcid}`} target="_blank" rel="noopener noreferrer" title="ORCID"><Icon name="orcid" /></a></>)}
+                <a href={`#person/${p.id}`} data-detail={`person:${p.id}`} class="member-name-link"><strong>{p.name}</strong></a>{p.orcid && (<> <a href={`https://orcid.org/${p.orcid}`} target="_blank" rel="noopener noreferrer" title={t('person.orcid')}><Icon name="orcid" /></a></>)}
                 <span class="person-position">{p.role[p.role.length - 1]}</span>
               </div>
             </div>

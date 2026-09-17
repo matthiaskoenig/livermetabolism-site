@@ -12,12 +12,14 @@ import { enableNodeDragging, resetChart, roamChart, useChart } from './useChart'
 import { DETAIL_TYPES, type DetailType } from '../lib/detailTypes';
 import { openDetail } from '../lib/detailModal';
 import type { GraphRows } from '../lib/graphRows';
+import type { UiSlices } from '../lib/i18n/slices';
 import { ROAM, networkOption } from '../lib/networkOptions';
 
 const props = defineProps<{
   rows: GraphRows;
   /** The research areas, in homepage order: the filter buttons and what `?topic=` matches. */
   topics: { tag: string; slug: string }[];
+  strings: UiSlices['network'];
 }>();
 
 /** Tag name or slug -> slug; null for anything unknown (a stale `?topic=`). */
@@ -138,27 +140,23 @@ function reset(): void {
 
 <template>
   <figure class="network-plot">
-    <div class="chart-modes" role="group" aria-label="Show one research area">
+    <div class="chart-modes" role="group" :aria-label="strings.showArea">
       <button type="button" class="chart-mode-btn network-topic-btn" :class="{ active: topic === null }"
-        :aria-pressed="topic === null" @click="select(null)">All</button>
+        :aria-pressed="topic === null" @click="select(null)">{{ strings.all }}</button>
       <button v-for="area in props.topics" :key="area.slug" type="button" class="chart-mode-btn network-topic-btn"
         :class="{ active: topic === area.slug }" :aria-pressed="topic === area.slug" @click="select(area.slug)">
         {{ area.tag }}
       </button>
       <span class="chart-mode-gap"></span>
-      <button type="button" class="chart-mode-btn network-zoom-btn" aria-label="Zoom in" title="Zoom in" @click="zoom(1.25)">+</button>
-      <button type="button" class="chart-mode-btn network-zoom-btn" aria-label="Zoom out" title="Zoom out" @click="zoom(0.8)">−</button>
-      <button type="button" class="chart-mode-btn" @click="reset()">Reset</button>
+      <button type="button" class="chart-mode-btn network-zoom-btn" :aria-label="strings.zoomIn" :title="strings.zoomIn" @click="zoom(1.25)">+</button>
+      <button type="button" class="chart-mode-btn network-zoom-btn" :aria-label="strings.zoomOut" :title="strings.zoomOut" @click="zoom(0.8)">−</button>
+      <button type="button" class="chart-mode-btn" @click="reset()">{{ strings.reset }}</button>
     </div>
-    <p v-if="!ready" class="chart-note">Loading the network…</p>
+    <p v-if="!ready" class="chart-note">{{ strings.loading }}</p>
     <div ref="el" class="network-graph" role="img"
-      aria-label="Network of the people, publications, projects and software of the group"></div>
+      :aria-label="strings.graphLabel"></div>
     <figcaption class="chart-note">
-      Pick a research area to show only its people, publications, projects and software; the graph re-arranges itself
-      around what is left. Drag a node to move it, drag the background to pan, use the buttons to zoom. Clicking a node
-      opens it on the site. People carry their photo, projects are squares and software diamonds; a publication is a
-      dot in its research area's colour. Every node is sized by how many people, papers, projects and tools it
-      connects to.
+      {{ strings.caption }}
     </figcaption>
   </figure>
 </template>

@@ -6,8 +6,9 @@ import { useChart } from './useChart';
 import { ACTIVITY_HEIGHT, commitActivityOption } from '../lib/chartOptions';
 import { isFresherThan, loadLiveSnapshot } from '../lib/githubLive';
 import { activityRows, type ActivityRows } from '../lib/githubRows';
+import type { UiSlices } from '../lib/i18n/slices';
 
-const props = defineProps<{ data: ActivityRows; repos: string[]; fetchedAt: string }>();
+const props = defineProps<{ data: ActivityRows; repos: string[]; fetchedAt: string; strings: UiSlices['commitActivityChart'] }>();
 const data = ref<ActivityRows>(props.data);
 
 onMounted(async () => {
@@ -23,7 +24,7 @@ const el = useChart(
 
 <template>
   <figure class="github-figure">
-    <div ref="el" class="github-chart" role="img" aria-label="Commits per week per repository"></div>
-    <figcaption>Commits per week over the last year, stacked per repository.</figcaption>
+    <div ref="el" class="github-chart" role="img" :aria-label="strings.ariaLabel"></div>
+    <figcaption>{{ strings.caption }}</figcaption>
   </figure>
 </template>

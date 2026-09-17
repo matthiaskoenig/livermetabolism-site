@@ -8,8 +8,9 @@ import { openInNewTab, useChart } from './useChart';
 import { starsHeight, starsLanguages, starsOption } from '../lib/chartOptions';
 import { isFresherThan, loadLiveSnapshot } from '../lib/githubLive';
 import { starsRows, type StarRow } from '../lib/githubRows';
+import type { UiSlices } from '../lib/i18n/slices';
 
-const props = defineProps<{ rows: StarRow[]; repos: string[]; fetchedAt: string }>();
+const props = defineProps<{ rows: StarRow[]; repos: string[]; fetchedAt: string; strings: UiSlices['starsChart'] }>();
 const rows = ref<StarRow[]>(props.rows);
 
 onMounted(async () => {
@@ -27,10 +28,10 @@ const el = useChart(
 
 <template>
   <figure class="github-figure">
-    <div ref="el" class="github-chart" role="img" aria-label="Stars per repository"></div>
-    <ul class="chart-legend" aria-label="Primary language">
+    <div ref="el" class="github-chart" role="img" :aria-label="strings.ariaLabel"></div>
+    <ul class="chart-legend" :aria-label="strings.primaryLanguage">
       <li v-for="(l, i) in languages" :key="l"><span class="chart-legend-swatch" :class="`chart-swatch-${i}`"></span>{{ l }}</li>
     </ul>
-    <figcaption>Stars per repository, coloured by primary language; click a bar to open the repository.</figcaption>
+    <figcaption>{{ strings.caption }}</figcaption>
   </figure>
 </template>

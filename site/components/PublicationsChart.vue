@@ -11,9 +11,10 @@
 import { ref } from 'vue';
 import { useChart } from './useChart';
 import { publicationsOption, PUBLICATIONS_HEIGHT, type PublicationsMode } from '../lib/chartOptions';
+import type { UiSlices } from '../lib/i18n/slices';
 import type { PublicationYearRows } from '../lib/publicationRows';
 
-const props = defineProps<{ rows: PublicationYearRows }>();
+const props = defineProps<{ rows: PublicationYearRows; strings: UiSlices['publicationsChart'] }>();
 const mode = ref<PublicationsMode>('tag');
 
 /** Scroll to the publication list, or to one year group inside it. */
@@ -64,10 +65,10 @@ const el = useChart(
 
 <template>
   <figure class="publications-plot">
-    <div class="chart-modes" role="group" aria-label="Stack publications by">
-      <button type="button" class="chart-mode-btn" :class="{ active: mode === 'tag' }" :aria-pressed="mode === 'tag'" @click="mode = 'tag'">Research area</button>
-      <button type="button" class="chart-mode-btn" :class="{ active: mode === 'status' }" :aria-pressed="mode === 'status'" @click="mode = 'status'">Status</button>
+    <div class="chart-modes" role="group" :aria-label="strings.stackBy">
+      <button type="button" class="chart-mode-btn" :class="{ active: mode === 'tag' }" :aria-pressed="mode === 'tag'" @click="mode = 'tag'">{{ strings.researchArea }}</button>
+      <button type="button" class="chart-mode-btn" :class="{ active: mode === 'status' }" :aria-pressed="mode === 'status'" @click="mode = 'status'">{{ strings.status }}</button>
     </div>
-    <div ref="el" class="publications-chart" role="img" aria-label="Publications per year"></div>
+    <div ref="el" class="publications-chart" role="img" :aria-label="strings.ariaLabel"></div>
   </figure>
 </template>

@@ -1,13 +1,15 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { uiFor } from '../../lib/i18n/catalog';
 import { localeFromParams, localePaths } from '../../lib/i18n/routes';
 import { asset } from '../../lib/url';
 
 export const getStaticPaths = localePaths;
 const locale = localeFromParams(Astro.params);
+const { t } = uiFor(locale);
 const pdf = asset('cv/Koenig_CV.pdf');
 ---
-<Base title="Curriculum Vitae" locale={locale}>
+<Base title={t('cv.title')} locale={locale}>
   <object data={pdf} type="application/pdf" class="cv-pdf-embed">
     <a href={pdf}>Koenig_CV.pdf</a>
   </object>

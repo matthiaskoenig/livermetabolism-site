@@ -8,8 +8,9 @@ import { openInNewTab, useChart } from './useChart';
 import { releaseTimelineHeight, releaseTimelineOption } from '../lib/chartOptions';
 import { isFresherThan, loadLiveSnapshot } from '../lib/githubLive';
 import { releaseTimelineRows, releaseUrl, type TimelineRow } from '../lib/githubRows';
+import type { UiSlices } from '../lib/i18n/slices';
 
-const props = defineProps<{ rows: TimelineRow[]; repos: string[]; fetchedAt: string }>();
+const props = defineProps<{ rows: TimelineRow[]; repos: string[]; fetchedAt: string; strings: UiSlices['releaseTimeline'] }>();
 const rows = ref<TimelineRow[]>(props.rows);
 
 onMounted(async () => {
@@ -31,7 +32,7 @@ const el = useChart(
 
 <template>
   <figure class="github-figure">
-    <div ref="el" class="github-chart" role="img" aria-label="Release dates per repository"></div>
-    <figcaption>One dot per release; drag the slider to zoom, click a dot to open it on GitHub.</figcaption>
+    <div ref="el" class="github-chart" role="img" :aria-label="strings.ariaLabel"></div>
+    <figcaption>{{ strings.caption }}</figcaption>
   </figure>
 </template>

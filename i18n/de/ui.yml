@@ -200,3 +200,309 @@ gh.updated:
 gh.never:
   sha: '0000000000000000'
   text: nie
+gh.stars:
+  sha: '0000000000000000'
+  text: Sterne
+gh.issues:
+  sha: '0000000000000000'
+  text: Offene Issues
+gh.issuesOpen:
+  sha: '0000000000000000'
+  text: '{count} offen'
+gh.lastPush:
+  sha: '0000000000000000'
+  text: Letzter Push
+gh.language:
+  sha: '0000000000000000'
+  text: Hauptsprache
+gh.license:
+  sha: '0000000000000000'
+  text: Lizenz
+gh.release:
+  sha: '0000000000000000'
+  text: 'Release {tag} · {date}'
+gh.releases:
+  sha: '0000000000000000'
+  text: Releases
+gh.preRelease:
+  sha: '0000000000000000'
+  text: Vorabversion
+gh.noReleases:
+  sha: '0000000000000000'
+  text: Keine Releases in den letzten zwei Jahren.
+links.pdf:
+  sha: '0000000000000000'
+  text: PDF
+links.homepage:
+  sha: '0000000000000000'
+  text: Homepage
+links.projectHomepage:
+  sha: '0000000000000000'
+  text: Projekt-Homepage
+links.meetingHomepage:
+  sha: '0000000000000000'
+  text: Tagungs-Homepage
+links.repository:
+  sha: '0000000000000000'
+  text: Repository
+links.repositoryHomepage:
+  sha: '0000000000000000'
+  text: Repository-Homepage
+links.eventPage:
+  sha: '0000000000000000'
+  text: Veranstaltungsseite
+links.slides:
+  sha: '0000000000000000'
+  text: Folien
+links.video:
+  sha: '0000000000000000'
+  text: Video
+links.readMore:
+  sha: '0000000000000000'
+  text: Weiterlesen
+person.viewProfile:
+  sha: '0000000000000000'
+  text: 'Vollständiges Profil von {name} ansehen'
+person.fullProfile:
+  sha: '0000000000000000'
+  text: Vollständiges Profil
+person.orcid:
+  sha: '0000000000000000'
+  text: ORCID
+pub.citationsTitle:
+  sha: '0000000000000000'
+  text: Zitationen (OpenAlex)
+pub.openAccess:
+  sha: '0000000000000000'
+  text: Open Access
+pub.openAccessWith:
+  sha: '0000000000000000'
+  text: 'Open Access ({status})'
+pub.openAccessTitle:
+  sha: '0000000000000000'
+  text: Open Access
+pub.cited:
+  sha: '0000000000000000'
+  text: '{count} Zitationen'
+pub.abstract:
+  sha: '0000000000000000'
+  text: Abstract
+filter.all:
+  sha: '0000000000000000'
+  text: Alle
+chart.stackBy:
+  sha: '0000000000000000'
+  text: Publikationen stapeln nach
+chart.researchArea:
+  sha: '0000000000000000'
+  text: Forschungsbereich
+chart.status:
+  sha: '0000000000000000'
+  text: Status
+chart.publicationsPerYear:
+  sha: '0000000000000000'
+  text: Publikationen pro Jahr
+chart.starsPerRepository:
+  sha: '0000000000000000'
+  text: Sterne pro Repository
+chart.primaryLanguage:
+  sha: '0000000000000000'
+  text: Hauptsprache
+chart.starsCaption:
+  sha: '0000000000000000'
+  text: 'Sterne pro Repository, eingefärbt nach Hauptsprache; klicken Sie auf einen Balken, um das Repository zu öffnen.'
+chart.totalCitationsOverTime:
+  sha: '0000000000000000'
+  text: Zitationen im Zeitverlauf
+chart.citationsPerYear:
+  sha: '0000000000000000'
+  text: Zitationen pro Jahr
+chart.citationsPerYearCaption:
+  sha: '0000000000000000'
+  text: 'Zitationen pro Jahr, gezählt von Google Scholar.'
+chart.commitsPerWeek:
+  sha: '0000000000000000'
+  text: Commits pro Woche pro Repository
+chart.commitActivityCaption:
+  sha: '0000000000000000'
+  text: 'Commits pro Woche im letzten Jahr, gestapelt nach Repository.'
+chart.releaseDatesPerRepository:
+  sha: '0000000000000000'
+  text: Release-Termine pro Repository
+chart.releaseTimelineCaption:
+  sha: '0000000000000000'
+  text: 'Ein Punkt pro Release; ziehen Sie den Regler zum Zoomen, klicken Sie auf einen Punkt, um ihn auf GitHub zu öffnen.'
+network.showArea:
+  sha: '0000000000000000'
+  text: Einen Forschungsbereich anzeigen
+network.zoomIn:
+  sha: '0000000000000000'
+  text: Vergrößern
+network.zoomOut:
+  sha: '0000000000000000'
+  text: Verkleinern
+network.reset:
+  sha: '0000000000000000'
+  text: Zurücksetzen
+network.loading:
+  sha: '0000000000000000'
+  text: Netzwerk wird geladen…
+network.graphLabel:
+  sha: '0000000000000000'
+  text: Netzwerk der Personen, Publikationen, Projekte und Software der Gruppe
+network.caption:
+  sha: '0000000000000000'
+  text: 'Wählen Sie einen Forschungsbereich, um nur dessen Personen, Publikationen, Projekte und Software anzuzeigen; das Netzwerk ordnet sich neu an. Ziehen Sie einen Knoten, um ihn zu verschieben, ziehen Sie den Hintergrund, um zu schwenken, nutzen Sie die Schaltflächen zum Zoomen. Ein Klick auf einen Knoten öffnet ihn auf der Website. Personen tragen ihr Foto, Projekte sind Quadrate und Software Rauten; eine Publikation ist ein Punkt in der Farbe ihres Forschungsbereichs. Jeder Knoten ist so groß wie die Anzahl der Personen, Arbeiten, Projekte und Werkzeuge, mit denen er verbunden ist.'
+network.intro:
+  sha: '0000000000000000'
+  text: 'So hängt die Arbeit der Gruppe zusammen: {people} Personen, {publications} Publikationen, {projects} Projekte und {software} Software-Werkzeuge, verbunden durch Autorenschaft und Mitgliedschaft. Personen tragen ihr Foto, Projekte sind Quadrate, Software Rauten und Publikationen Punkte in der Farbe ihres Forschungsbereichs; jeder Knoten ist so groß wie die Anzahl der Personen, Arbeiten, Projekte und Werkzeuge, mit denen er verbunden ist.'
+network.introFilterHint:
+  sha: '0000000000000000'
+  text: 'Wählen Sie einen Forschungsbereich, um nur dessen Personen, Publikationen, Projekte und Software anzuzeigen - das Netzwerk ordnet sich neu an. Ziehen Sie einen Knoten, um ihn zu verschieben, ziehen Sie den Hintergrund, um zu schwenken, und klicken Sie auf einen Knoten, um ihn auf der Website zu öffnen.'
+network.metaDescription:
+  sha: '0000000000000000'
+  text: 'Interaktiver Netzwerkgraph der Personen, Publikationen, Projekte und Software der Gruppe König.'
+home.subtitle:
+  sha: '0000000000000000'
+  text: Metabolische Entzündung und Karzinogenese der Leber
+home.visionBefore:
+  sha: '0000000000000000'
+  text: 'Wir entwickeln offene, FAIRe'
+home.visionStrong:
+  sha: '0000000000000000'
+  text: digitale Zwillinge
+home.visionAfter:
+  sha: '0000000000000000'
+  text: 'der menschlichen Physiologie - KI-gestützte Modelle, die Krankheit und Therapie patientenindividuell vorhersagen.'
+home.provocation:
+  sha: '0000000000000000'
+  text: 'Was wäre, wenn jedes medizinische Modell Ihnen dienen würde, nicht dem Durchschnitt - und allen gehören würde?'
+home.scrollTo:
+  sha: '0000000000000000'
+  text: 'Zu {label} scrollen'
+home.sectionHome:
+  sha: '0000000000000000'
+  text: Startseite
+home.sectionFooter:
+  sha: '0000000000000000'
+  text: Fußzeile
+home.linkProjectsText:
+  sha: '0000000000000000'
+  text: 'Entdecken Sie unsere laufenden Forschungsprojekte und Digital-Twin-Modelle.'
+home.linkPublicationsText:
+  sha: '0000000000000000'
+  text: 'Peer-reviewte Arbeiten, Preprints und offene Datensätze aus dem Labor.'
+home.linkSoftwareText:
+  sha: '0000000000000000'
+  text: 'Open-Source-Werkzeuge und Modelle, die wir entwickeln, um Forschung reproduzierbar, wiederverwendbar und vertrauenswürdig zu machen.'
+home.linkTeamText:
+  sha: '0000000000000000'
+  text: 'Lernen Sie die Forschenden, Ingenieurinnen und Ingenieure sowie Studierenden kennen, die Ideen in digitale Zwillinge verwandeln.'
+home.linkOpenPositionsText:
+  sha: '0000000000000000'
+  text: 'Praktika, Abschlussarbeiten und Promotionsmöglichkeiten - kommen Sie zu uns.'
+home.publicationsOn:
+  sha: '0000000000000000'
+  text: 'Arbeiten, Übersichtsartikel und Preprints zu {tag}.'
+home.projectsOn:
+  sha: '0000000000000000'
+  text: 'Laufende Forschungsprojekte zu {tag}.'
+home.softwareOn:
+  sha: '0000000000000000'
+  text: 'Open-Source-Werkzeuge für {tag}.'
+home.networkOn:
+  sha: '0000000000000000'
+  text: 'Personen, Arbeiten und Werkzeuge rund um {tag}.'
+positions.internship.title:
+  sha: '0000000000000000'
+  text: Praktikum
+positions.internship.before:
+  sha: '0000000000000000'
+  text: Wir bieten Praktika online oder vor Ort an, zum Beispiel über das
+positions.internship.linkText:
+  sha: '0000000000000000'
+  text: Humboldt Internship Program
+positions.internship.after:
+  sha: '0000000000000000'
+  text: '.'
+positions.internship.erasmus:
+  sha: '0000000000000000'
+  text: Wir unterstützen ERASMUS-Praktika für Studierende.
+positions.bachelor.title:
+  sha: '0000000000000000'
+  text: Bachelorarbeit
+positions.bachelor.text:
+  sha: '0000000000000000'
+  text: 'Studierende im Bachelorstudium sind jederzeit willkommen. Die Projekte können in Lübeck oder Berlin stattfinden.'
+positions.master.title:
+  sha: '0000000000000000'
+  text: Masterarbeit
+positions.master.text:
+  sha: '0000000000000000'
+  text: 'Studierende im Masterstudium sind jederzeit willkommen. Die Projekte können in Lübeck oder Berlin stattfinden.'
+positions.phd.title:
+  sha: '0000000000000000'
+  text: Promotion
+positions.phd.text1:
+  sha: '0000000000000000'
+  text: 'Wir haben eine voll finanzierte offene Promotionsstelle in Lübeck als Research Software Engineer (RSE) oder Informatiker/in zu besetzen.'
+positions.phd.text2:
+  sha: '0000000000000000'
+  text: 'Wir betreuen auch Promotionsprojekte, wenn Sie über ein Stipendium oder eine ähnliche Finanzierung verfügen.'
+positions.postdoc.title:
+  sha: '0000000000000000'
+  text: PostDoc
+positions.postdoc.text1:
+  sha: '0000000000000000'
+  text: 'Wir haben eine voll finanzierte offene PostDoc-Stelle in Lübeck als Research Software Engineer (RSE) oder Informatiker/in zu besetzen.'
+positions.postdoc.text2:
+  sha: '0000000000000000'
+  text: 'Wir betreuen auch PostDoc-Projekte, wenn Sie über ein Stipendium oder eine ähnliche Finanzierung verfügen.'
+positions.intro:
+  sha: '0000000000000000'
+  text: Wir bieten Projekte zu folgenden Themen an
+positions.contactBefore:
+  sha: '0000000000000000'
+  text: Interesse, der Gruppe beizutreten? Kontaktieren Sie
+meetings.intro:
+  sha: '0000000000000000'
+  text: 'Tagungen, Workshops und Veranstaltungen, die wir organisiert oder ausgerichtet haben.'
+research.latestReleases:
+  sha: '0000000000000000'
+  text: Neueste Releases
+research.releaseHistory:
+  sha: '0000000000000000'
+  text: Release-Verlauf
+research.commitActivity:
+  sha: '0000000000000000'
+  text: Commit-Aktivität
+research.fundingBefore:
+  sha: '0000000000000000'
+  text: Diese Arbeit wurde gefördert durch die vom BMFTR finanzierte
+research.fundingLinkText:
+  sha: '0000000000000000'
+  text: de.NBI
+research.fundingAfter:
+  sha: '0000000000000000'
+  text: 'Cloud im Rahmen des Deutschen Netzwerks für Bioinformatik-Infrastruktur (de.NBI) (031A537B, 031A533A, 031A538A, 031A533B, 031A535A, 031A537C, 031A534A, 031A532B).'
+research.editorsIntro:
+  sha: '0000000000000000'
+  text: 'Wir engagieren uns aktiv in der Standardisierung und in Reproduzierbarkeitsbemühungen in Systems Biology und Systems Medicine.'
+pubChart.title:
+  sha: '0000000000000000'
+  text: Publikationen im Zeitverlauf
+pubChart.note:
+  sha: '0000000000000000'
+  text: 'Ein Klick auf einen Balken filtert die Liste unten nach diesem Forschungsbereich; ein Klick auf ein Jahr springt dorthin. Eine Arbeit mit mehreren Forschungsbereichen zählt einmal pro Bereich.'
+teaching.intro:
+  sha: '0000000000000000'
+  text: 'Willkommen auf unserer Lehrseite! Unser Fokus liegt auf projektbasiertem Lernen, das Studierende dazu befähigt, sich aktiv mit realen Herausforderungen in digitaler Gesundheit und partizipativer Entscheidungsfindung auseinanderzusetzen. Durch interdisziplinäre Zusammenarbeit, innovative digitale Formate und ein starkes Engagement für Open Science und ethische Forschung schaffen wir praxisnahe, inklusive Lernumgebungen. Indem wir Nachwuchswissenschaftlerinnen und -wissenschaftler - insbesondere Frauen - fördern und digitale Kompetenzen integrieren, bereiten wir die nächste Generation von Fachkräften darauf vor, die Zukunft des Gesundheitswesens zu gestalten.'
+cv.title:
+  sha: '0000000000000000'
+  text: Lebenslauf
+detail.keywords:
+  sha: '0000000000000000'
+  text: 'Schlüsselwörter:'
+detail.showInList:
+  sha: '0000000000000000'
+  text: In der Liste anzeigen

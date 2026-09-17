@@ -6,10 +6,11 @@
 import { onMounted, ref } from 'vue';
 import { useChart } from './useChart';
 import { citationsPerYearOption, PER_YEAR_HEIGHT } from '../lib/chartOptions';
+import type { UiSlices } from '../lib/i18n/slices';
 import { isScholarFresherThan, loadLiveScholar } from '../lib/scholarLive';
 import { perYearRows, type PerYearRow } from '../lib/scholarRows';
 
-const props = defineProps<{ rows: PerYearRow[]; fetchedAt: string }>();
+const props = defineProps<{ rows: PerYearRow[]; fetchedAt: string; strings: UiSlices['citationsPerYearChart'] }>();
 const rows = ref<PerYearRow[]>(props.rows);
 
 onMounted(async () => {
@@ -25,7 +26,7 @@ const el = useChart(
 
 <template>
   <figure class="scholar-plot">
-    <div ref="el" class="scholar-chart" role="img" aria-label="Citations per year"></div>
-    <figcaption>Citations per year, as counted by Google Scholar.</figcaption>
+    <div ref="el" class="scholar-chart" role="img" :aria-label="strings.ariaLabel"></div>
+    <figcaption>{{ strings.caption }}</figcaption>
   </figure>
 </template>

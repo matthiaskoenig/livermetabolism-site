@@ -8,11 +8,16 @@ import NetworkGraph from '../../components/NetworkGraph.vue';
 import { loadCitations } from '../../lib/citations';
 import { getPeople, getProjects, getPublications, getSoftware, getTags } from '../../lib/data';
 import { graphRows } from '../../lib/graphRows';
+import { uiFor } from '../../lib/i18n/catalog';
+import { fmt } from '../../lib/i18n/format';
 import { localeFromParams, localePaths, localeUrl } from '../../lib/i18n/routes';
+import { slices } from '../../lib/i18n/slices';
 import { filterRows } from '../../lib/networkOptions';
 
 export const getStaticPaths = localePaths;
 const locale = localeFromParams(Astro.params);
+const { t } = uiFor(locale);
+const ui = slices(t);
 const [tags, people, publications, projects, software] = await Promise.all([getTags(), getPeople(), getPublications(), getProjects(), getSoftware()]);
 // citations size the publication nodes; a failed read yields an empty
 // snapshot and every paper draws at its minimum size
@@ -56,20 +61,16 @@ const counts = {
   software: shown.nodes.filter((n) => n.type === 'software').length,
 };
 ---
-<Base title="Network" sectionid="network" locale={locale}
-  description="Interactive network graph of the people, publications, projects, and software of the König group.">
-  <h2 id="network">Network</h2>
+<Base title={t('nav.network')} sectionid="network" locale={locale}
+  description={t('network.metaDescription')}>
+  <h2 id="network">{t('nav.network')}</h2>
   <p>
-    How the work of the group hangs together: {counts.people} people, {counts.publications} publications,
-    {counts.projects} projects and {counts.software} software tools, connected by authorship and membership. People carry
-    their photo, projects are squares, software diamonds and publications dots in their research area's colour; every
-    node is sized by how many people, papers, projects and tools it connects to.
+    {fmt(t('network.intro'), { people: counts.people, publications: counts.publications, projects: counts.projects, software: counts.software })}
   </p>
   <p>
-    Pick a research area to show only its people, publications, projects and software — the graph re-arranges itself
-    around what is left. Drag a node to move it, drag the background to pan, and click a node to open it on the site.
+    {t('network.introFilterHint')}
   </p>
   <div id="network-graph">
-    <NetworkGraph client:load rows={rows} topics={topics} />
+    <NetworkGraph client:load rows={rows} topics={topics} strings={ui.network} />
   </div>
 </Base>

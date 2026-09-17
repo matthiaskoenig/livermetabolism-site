@@ -13,12 +13,16 @@ import { repoFullName } from '../../../scripts/lib/repos';
 import { getEditors, getFunding, getPeopleMap, getSoftware, getTags } from '../../lib/data';
 import { loadSnapshot } from '../../lib/github';
 import { activityRows, latestReleases, releaseTimelineRows, starsRows, statsFor } from '../../lib/githubRows';
+import { uiFor } from '../../lib/i18n/catalog';
 import { localeFromParams, localePaths } from '../../lib/i18n/routes';
+import { slices } from '../../lib/i18n/slices';
 import { asset } from '../../lib/url';
 import { toTagFilterEntries } from '../../lib/views';
 
 export const getStaticPaths = localePaths;
 const locale = localeFromParams(Astro.params);
+const { t } = uiFor(locale);
+const ui = slices(t);
 const [tagInfo, peopleMap, software, funding, editors] = await Promise.all([getTags(), getPeopleMap(), getSoftware(), getFunding(), getEditors()]);
 const avatarBase = asset('image/people/128/');
 const tagFilterEntries = toTagFilterEntries(tagInfo);
@@ -37,25 +41,25 @@ const timelineRows = releaseTimelineRows(snapshot, repos);
 const stars = starsRows(snapshot, repos);
 const activity = activityRows(snapshot, repos);
 ---
-<Base title="Research" sectionid="research" locale={locale}>
+<Base title={t('nav.research')} sectionid="research" locale={locale}>
   <section id="releases">
-    <h2>Releases</h2>
-    <h3>Latest releases</h3>
-    <ReleaseFeed client:visible rows={releaseRows} repos={repos} fetchedAt={snapshot.fetchedAt} />
-    <h3>Release history</h3>
-    <ReleaseTimeline client:visible rows={timelineRows} repos={repos} fetchedAt={snapshot.fetchedAt} />
+    <h2>{t('nav.releases')}</h2>
+    <h3>{t('research.latestReleases')}</h3>
+    <ReleaseFeed client:visible rows={releaseRows} repos={repos} fetchedAt={snapshot.fetchedAt} strings={ui.releaseFeed} />
+    <h3>{t('research.releaseHistory')}</h3>
+    <ReleaseTimeline client:visible rows={timelineRows} repos={repos} fetchedAt={snapshot.fetchedAt} strings={ui.releaseTimeline} />
   </section>
 
   <section id="activity">
-    <h2>Activity</h2>
-    <h3>Commit activity</h3>
-    <CommitActivityChart client:visible data={activity} repos={repos} fetchedAt={snapshot.fetchedAt} />
-    <h3>Stars</h3>
-    <StarsChart client:visible rows={stars} repos={repos} fetchedAt={snapshot.fetchedAt} />
+    <h2>{t('nav.activity')}</h2>
+    <h3>{t('research.commitActivity')}</h3>
+    <CommitActivityChart client:visible data={activity} repos={repos} fetchedAt={snapshot.fetchedAt} strings={ui.commitActivityChart} />
+    <h3>{t('gh.stars')}</h3>
+    <StarsChart client:visible rows={stars} repos={repos} fetchedAt={snapshot.fetchedAt} strings={ui.starsChart} />
   </section>
 
-  <h2 id="software">Software</h2>
-  <TagFilter client:idle id="software" tags={tagFilterEntries} target="software-grid" />
+  <h2 id="software">{t('nav.software')}</h2>
+  <TagFilter client:idle id="software" tags={tagFilterEntries} target="software-grid" strings={ui.tagFilter} />
   <div class="project-grid" id="software-grid">
     {software.map((item) => {
       // the snapshot key, which is also the card's data-repo: the browser-side
@@ -70,25 +74,26 @@ const activity = activityRows(snapshot, repos);
           avatarBase={avatarBase}
           repo={repo}
           stats={repo ? statsFor(snapshot, repo) : null}
+          strings={ui.softwareCard}
         />
       );
     })}
   </div>
   <SoftwareLive fetchedAt={snapshot.fetchedAt} locale={locale} />
 
-  <h2 id="funding">Funding</h2>
-  <TagFilter client:idle id="funding" tags={tagFilterEntries} target="funding-grid" />
+  <h2 id="funding">{t('nav.funding')}</h2>
+  <TagFilter client:idle id="funding" tags={tagFilterEntries} target="funding-grid" strings={ui.tagFilter} />
   <div class="project-grid" id="funding-grid">
-    {funding.map((item) => <FundingCard item={item} tagInfo={tagInfo} imageBase={asset('image/funding/')} />)}
+    {funding.map((item) => <FundingCard item={item} tagInfo={tagInfo} imageBase={asset('image/funding/')} strings={ui.links} />)}
   </div>
   <p>
-    This work was supported by the BMFTR-funded <a href="https://www.denbi.de/">de.NBI</a> Cloud within the German Network for Bioinformatics Infrastructure (de.NBI) (031A537B, 031A533A, 031A538A, 031A533B, 031A535A, 031A537C, 031A534A, 031A532B).
+    {t('research.fundingBefore')} <a href="https://www.denbi.de/">{t('research.fundingLinkText')}</a> {t('research.fundingAfter')}
   </p>
 
-  <h2 id="editors">Editors</h2>
-  <p>We are actively involved in the standardization and reproducibility efforts in Systems Biology and Systems Medicine.</p>
-  <TagFilter client:idle id="editors" tags={tagFilterEntries} target="editors-grid" />
+  <h2 id="editors">{t('nav.editors')}</h2>
+  <p>{t('research.editorsIntro')}</p>
+  <TagFilter client:idle id="editors" tags={tagFilterEntries} target="editors-grid" strings={ui.tagFilter} />
   <div class="project-grid" id="editors-grid">
-    {editors.map((item) => <EditorCard item={item} tagInfo={tagInfo} imageBase={asset('image/editors/')} />)}
+    {editors.map((item) => <EditorCard item={item} tagInfo={tagInfo} imageBase={asset('image/editors/')} strings={ui.links} />)}
   </div>
 </Base>

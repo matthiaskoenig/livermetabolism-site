@@ -5,7 +5,10 @@ import HomeStats from '../../components/HomeStats.astro';
 import Icon from '../../components/Icon.vue';
 import PersonAvatar from '../../components/PersonAvatar.vue';
 import { getPeople, getProjects, getPublications, getSoftware, getTags } from '../../lib/data';
+import { uiFor } from '../../lib/i18n/catalog';
+import { fmt } from '../../lib/i18n/format';
 import { localeFromParams, localePaths, urlFor } from '../../lib/i18n/routes';
+import { slices } from '../../lib/i18n/slices';
 import { TAG_GRAPHICS } from '../../lib/tagGraphics';
 import { stripHtml, truncateWords } from '../../lib/text';
 import { asset } from '../../lib/url';
@@ -14,27 +17,29 @@ import { tagCounts } from '../../lib/views';
 export const getStaticPaths = localePaths;
 const locale = localeFromParams(Astro.params);
 const u = urlFor(locale);
+const { t } = uiFor(locale);
+const ui = slices(t);
 const [tags, people, publications, projects, software] = await Promise.all([getTags(), getPeople(), getPublications(), getProjects(), getSoftware()]);
 const strip = people.filter((p) => p.status === 'current' && p.image);
 
-const sections = tags.map((t, i) => {
-  const prev = i === 0 ? { slug: 'home', label: 'Home' } : { slug: tags[i - 1].slug, label: tags[i - 1].tag };
-  const next = i === tags.length - 1 ? { slug: 'footer', label: 'Footer' } : { slug: tags[i + 1].slug, label: tags[i + 1].tag };
-  return { ...t, prev, next, counts: tagCounts(t.tag, publications, projects, software), graphic: TAG_GRAPHICS[t.slug] };
+const sections = tags.map((tag, i) => {
+  const prev = i === 0 ? { slug: 'home', label: t('home.sectionHome') } : { slug: tags[i - 1].slug, label: tags[i - 1].tag };
+  const next = i === tags.length - 1 ? { slug: 'footer', label: t('home.sectionFooter') } : { slug: tags[i + 1].slug, label: tags[i + 1].tag };
+  return { ...tag, prev, next, counts: tagCounts(tag.tag, publications, projects, software), graphic: TAG_GRAPHICS[tag.slug] };
 });
 const quickLinks = [
-  { href: u('/projects/'), icon: 'cogs', title: 'Projects', text: 'Explore our ongoing research projects and digital twin models.' },
-  { href: u('/publications/'), icon: 'file-pdf-o', title: 'Publications', text: 'Peer-reviewed papers, preprints, and open datasets from the lab.' },
-  { href: u('/research/#software'), icon: 'code', title: 'Software', text: 'Open-source tools and models we build to make research reproducible, reusable, and trustworthy.' },
-  { href: u('/people/'), icon: 'user-circle-o', title: 'Team', text: 'Get to know the researchers, engineers, and students turning ideas into digital twins.' },
-  { href: u('/people/#open-positions'), icon: 'users', title: 'Open Positions', text: 'Internships, theses, and PhD opportunities — come join us.' },
+  { href: u('/projects/'), icon: 'cogs', title: t('nav.projects'), text: t('home.linkProjectsText') },
+  { href: u('/publications/'), icon: 'file-pdf-o', title: t('nav.publications'), text: t('home.linkPublicationsText') },
+  { href: u('/research/#software'), icon: 'code', title: t('nav.software'), text: t('home.linkSoftwareText') },
+  { href: u('/people/'), icon: 'user-circle-o', title: t('nav.team'), text: t('home.linkTeamText') },
+  { href: u('/people/#open-positions'), icon: 'users', title: t('nav.openPositions'), text: t('home.linkOpenPositionsText') },
 ];
 ---
 <Base locale={locale}>
   <section class="page-section" id="home">
     <div class="text-justify">
-      <h2 class="header-light">Systems Medicine, Digital Twins &amp; AI</h2>
-      <p class="hero-subtitle">Metabolic Inflammation and Carcinogenesis of the Liver</p>
+      <h2 class="header-light">{t('footer.tagline')}</h2>
+      <p class="hero-subtitle">{t('home.subtitle')}</p>
     </div>
 
     <HomeStats />
@@ -43,8 +48,7 @@ const quickLinks = [
 
     <div class="text-center vision-statement">
       <p class="lead">
-        We build open, FAIR <strong>digital twins</strong> of human physiology — AI-powered models that
-        predict disease and therapy, patient by patient.
+        {t('home.visionBefore')} <strong>{t('home.visionStrong')}</strong> {t('home.visionAfter')}
       </p>
     </div>
 
@@ -52,13 +56,13 @@ const quickLinks = [
       <div class="people-strip">
         {strip.map((p) => (
           <PersonAvatar client:visible name={p.name} src={asset(`image/people/128/${p.image}`)} position={p.role[p.role.length - 1] ?? ''}
-            description={p.description ? truncateWords(stripHtml(p.description), 24) : null} detail={`person:${p.id}`} />
+            description={p.description ? truncateWords(stripHtml(p.description), 24) : null} detail={`person:${p.id}`} strings={{ fullProfile: ui.personCard.fullProfile }} />
         ))}
       </div>
     </div>
 
     <div class="text-center vision-statement">
-      <p class="lead">What if every medical model served you, not the average — and belonged to everyone?</p>
+      <p class="lead">{t('home.provocation')}</p>
     </div>
 
     <div class="core-messages">
@@ -69,13 +73,13 @@ const quickLinks = [
       ))}
     </div>
 
-    <a class="section-scroll-cue section-scroll-cue-down" href={`#${tags[0].slug}`} aria-label={`Scroll to ${tags[0].tag}`}><Icon name="chevron-down" /></a>
+    <a class="section-scroll-cue section-scroll-cue-down" href={`#${tags[0].slug}`} aria-label={fmt(t('home.scrollTo'), { label: tags[0].tag })}><Icon name="chevron-down" /></a>
   </section>
 
   {sections.map((s) => (
     <section class:list={['page-section', 'tag-section', `tag-${s.slug}`]} id={s.slug}>
       {s.graphic && <img class="tag-section-graphic" src={asset(`image/tags/${s.graphic}`)} alt="" aria-hidden="true" loading="lazy" decoding="async" />}
-      <a class="section-scroll-cue section-scroll-cue-up" href={`#${s.prev.slug}`} aria-label={`Scroll to ${s.prev.label}`}><Icon name="chevron-up" /></a>
+      <a class="section-scroll-cue section-scroll-cue-up" href={`#${s.prev.slug}`} aria-label={fmt(t('home.scrollTo'), { label: s.prev.label })}><Icon name="chevron-up" /></a>
       <div class="tag-section-columns">
         <div class="tag-section-content">
           <Icon name={s.icon.replace(/^fa-/, '')} />
@@ -86,26 +90,26 @@ const quickLinks = [
           <div class="tag-section-links">
             {s.counts.publications > 0 && (
               <a class="tag-section-link" href={`${u('/publications/')}?tag=${encodeURIComponent(s.tag)}`}>
-                <Icon name="file-pdf-o" /><span><strong>Publications</strong><span>Papers, reviews, and preprints on {s.tag}.</span></span>
+                <Icon name="file-pdf-o" /><span><strong>{t('nav.publications')}</strong><span>{fmt(t('home.publicationsOn'), { tag: s.tag })}</span></span>
               </a>
             )}
             {s.counts.projects > 0 && (
               <a class="tag-section-link" href={`${u('/projects/')}?tag=${encodeURIComponent(s.tag)}`}>
-                <Icon name="cogs" /><span><strong>Projects</strong><span>Ongoing {s.tag} research projects.</span></span>
+                <Icon name="cogs" /><span><strong>{t('nav.projects')}</strong><span>{fmt(t('home.projectsOn'), { tag: s.tag })}</span></span>
               </a>
             )}
             {s.counts.software > 0 && (
               <a class="tag-section-link" href={`${u('/research/')}?tag=${encodeURIComponent(s.tag)}#software`}>
-                <Icon name="code" /><span><strong>Software</strong><span>Open-source tools for {s.tag}.</span></span>
+                <Icon name="code" /><span><strong>{t('nav.software')}</strong><span>{fmt(t('home.softwareOn'), { tag: s.tag })}</span></span>
               </a>
             )}
             <a class="tag-section-link" href={`${u('/network/')}?topic=${encodeURIComponent(s.tag)}`}>
-              <Icon name="share-alt" /><span><strong>Network</strong><span>People, papers, and tools around {s.tag}.</span></span>
+              <Icon name="share-alt" /><span><strong>{t('nav.network')}</strong><span>{fmt(t('home.networkOn'), { tag: s.tag })}</span></span>
             </a>
           </div>
         )}
       </div>
-      <a class="section-scroll-cue section-scroll-cue-down" href={`#${s.next.slug}`} aria-label={`Scroll to ${s.next.label}`}><Icon name="chevron-down" /></a>
+      <a class="section-scroll-cue section-scroll-cue-down" href={`#${s.next.slug}`} aria-label={fmt(t('home.scrollTo'), { label: s.next.label })}><Icon name="chevron-down" /></a>
     </section>
   ))}
 </Base>

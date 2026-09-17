@@ -21,8 +21,10 @@ import { loadCitations } from '../../../../lib/citations';
 import { getNews, getPeople, getPeopleMap, getPosters, getPresentations, getProjects, getPublications, getSoftware, getTags } from '../../../../lib/data';
 import { detailIds, detailModel, type DetailContext } from '../../../../lib/details';
 import { loadSnapshot } from '../../../../lib/github';
+import { uiFor } from '../../../../lib/i18n/catalog';
 import { DEFAULT_LOCALE, LOCALES } from '../../../../lib/i18n/locales';
 import { localeUrl } from '../../../../lib/i18n/routes';
+import { slices } from '../../../../lib/i18n/slices';
 import { loadScholar } from '../../../../lib/scholar';
 import { asset } from '../../../../lib/url';
 
@@ -54,6 +56,8 @@ export async function getStaticPaths() {
   });
 }
 
-const { model, tagInfo, peopleMap, avatarBase } = Astro.props;
+const { model, tagInfo, peopleMap, avatarBase, locale } = Astro.props;
+const { t } = uiFor(locale);
+const ui = slices(t);
 ---
-<DetailView model={model} tagInfo={tagInfo} peopleMap={peopleMap} avatarBase={avatarBase} />
+<DetailView model={model} tagInfo={tagInfo} peopleMap={peopleMap} avatarBase={avatarBase} strings={ui.detailView} />

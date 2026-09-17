@@ -13,7 +13,9 @@ import TagFilter from '../../components/TagFilter.vue';
 import { citationFor, loadCitations } from '../../lib/citations';
 import { getAbstracts, getPeopleMap, getPosters, getPresentations, getPublications, getTags } from '../../lib/data';
 import { countPeerReviewed } from '../../lib/homeStats';
+import { uiFor } from '../../lib/i18n/catalog';
 import { localeFromParams, localePaths } from '../../lib/i18n/routes';
+import { slices } from '../../lib/i18n/slices';
 import { publicationsPerYear } from '../../lib/publicationRows';
 import { loadScholar } from '../../lib/scholar';
 import { historyRows, perYearRows } from '../../lib/scholarRows';
@@ -22,6 +24,8 @@ import { groupByYear, toTagFilterEntries } from '../../lib/views';
 
 export const getStaticPaths = localePaths;
 const locale = localeFromParams(Astro.params);
+const { t } = uiFor(locale);
+const ui = slices(t);
 const [tagInfo, peopleMap, publications, presentations, posters, abstracts] = await Promise.all([getTags(), getPeopleMap(), getPublications(), getPresentations(), getPosters(), getAbstracts()]);
 const pdfBase = asset('pdf/');
 const avatarBase = asset('image/people/128/');
@@ -53,24 +57,24 @@ const publicationCount = countPeerReviewed(publications);
 // fetch) — the island's props are these aggregates, not the publications
 const chartRows = publicationsPerYear(publications, tagInfo);
 ---
-<Base title="Publications" sectionid="publications" locale={locale}>
+<Base title={t('nav.publications')} sectionid="publications" locale={locale}>
   <section id="scholar">
-    <h2>Citations</h2>
+    <h2>{t('scholar.citations')}</h2>
     <ScholarStats scholar={scholar} publications={publicationCount} locale={locale} />
     <div class="scholar-charts">
-      <CitationsPerYearChart client:visible rows={perYear} fetchedAt={scholar.fetchedAt} />
-      <CitationHistoryChart client:visible rows={history} fetchedAt={scholar.fetchedAt} />
+      <CitationsPerYearChart client:visible rows={perYear} fetchedAt={scholar.fetchedAt} strings={ui.citationsPerYearChart} />
+      <CitationHistoryChart client:visible rows={history} fetchedAt={scholar.fetchedAt} strings={ui.citationHistoryChart} />
     </div>
   </section>
 
   <section id="publications-chart">
-    <h2>Publications over time</h2>
-    <PublicationsChart client:visible rows={chartRows} />
-    <p class="chart-note">Clicking a bar filters the list below by that research area; clicking a year jumps to it. A paper with several research areas counts once per area.</p>
+    <h2>{t('pubChart.title')}</h2>
+    <PublicationsChart client:visible rows={chartRows} strings={ui.publicationsChart} />
+    <p class="chart-note">{t('pubChart.note')}</p>
   </section>
 
-  <h2 id="publications">Publications</h2>
-  <TagFilter client:idle id="publication" tags={tagFilterEntries} target="publication-list" />
+  <h2 id="publications">{t('nav.publications')}</h2>
+  <TagFilter client:idle id="publication" tags={tagFilterEntries} target="publication-list" strings={ui.tagFilter} />
   <PublicationsOrder fetchedAt={citations.fetchedAt} locale={locale} />
   <div id="publication-list">
     {years.map((g) => (
@@ -79,7 +83,7 @@ const chartRows = publicationsPerYear(publications, tagInfo);
         <table class="table publication-table">
           <colgroup><col class="publication-status-col" /><col /></colgroup>
           <tbody>
-            {g.items.map((p) => <PublicationRow pub={p} tagInfo={tagInfo} peopleMap={peopleMap} pdfBase={pdfBase} avatarBase={avatarBase} citation={citationFor(citations, p.doi)} />)}
+            {g.items.map((p) => <PublicationRow pub={p} tagInfo={tagInfo} peopleMap={peopleMap} pdfBase={pdfBase} avatarBase={avatarBase} citation={citationFor(citations, p.doi)} strings={ui.publicationRow} />)}
           </tbody>
         </table>
       </div>
@@ -93,18 +97,18 @@ const chartRows = publicationsPerYear(publications, tagInfo);
     </table>
   </div>
 
-  <h2 id="presentations">Presentations</h2>
+  <h2 id="presentations">{t('nav.presentations')}</h2>
   <div class="project-grid" id="presentations-grid">
-    {presentations.map((p) => <PresentationCard item={p} tagInfo={tagInfo} peopleMap={peopleMap} pdfBase={pdfBase} avatarBase={avatarBase} />)}
+    {presentations.map((p) => <PresentationCard item={p} tagInfo={tagInfo} peopleMap={peopleMap} pdfBase={pdfBase} avatarBase={avatarBase} strings={ui.links} />)}
   </div>
 
-  <h2 id="posters">Posters</h2>
+  <h2 id="posters">{t('nav.posters')}</h2>
   <div class="project-grid" id="posters-grid">
-    {posters.map((p) => <PosterCard item={p} tagInfo={tagInfo} peopleMap={peopleMap} pdfBase={pdfBase} avatarBase={avatarBase} />)}
+    {posters.map((p) => <PosterCard item={p} tagInfo={tagInfo} peopleMap={peopleMap} pdfBase={pdfBase} avatarBase={avatarBase} strings={ui.links} />)}
   </div>
 
-  <h2 id="abstracts">Abstracts</h2>
+  <h2 id="abstracts">{t('nav.abstracts')}</h2>
   <div class="project-grid" id="abstracts-grid">
-    {abstracts.map((a) => <AbstractCard item={a} pdfBase={pdfBase} />)}
+    {abstracts.map((a) => <AbstractCard item={a} pdfBase={pdfBase} strings={ui.links} />)}
   </div>
 </Base>

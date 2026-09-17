@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils';
 import { describe, expect, it } from 'vitest';
 import PersonAvatar from './PersonAvatar.vue';
 
-const props = { name: 'Jane Doe', src: '/p/jane.webp', position: 'PhD student', description: 'Works on livers.', detail: 'person:jane' };
+const props = { name: 'Jane Doe', src: '/p/jane.webp', position: 'PhD student', description: 'Works on livers.', detail: 'person:jane', strings: { fullProfile: 'Full profile' } };
 
 describe('PersonAvatar', () => {
   it('renders the photo and a hidden card', () => {

@@ -4,6 +4,7 @@ import PersonChips from './PersonChips.vue';
 import TagList from './TagList.vue';
 import { type DetailModel, type RelatedRow } from '../lib/details';
 import { DETAIL_TYPES } from '../lib/detailTypes';
+import type { UiSlices } from '../lib/i18n/slices';
 import type { PeopleMap } from '../lib/people';
 import type { TagInfo } from '../lib/views';
 
@@ -24,7 +25,7 @@ import type { TagInfo } from '../lib/views';
  * already render the same way (`data/*.yml` is closed to outside input and
  * validated by both schemas). Every other value is interpolated as text.
  */
-defineProps<{ model: DetailModel; tagInfo: TagInfo[]; peopleMap: PeopleMap; avatarBase: string }>();
+defineProps<{ model: DetailModel; tagInfo: TagInfo[]; peopleMap: PeopleMap; avatarBase: string; strings: UiSlices['detailView'] }>();
 
 /** A row of one of the five modal types opens its own detail; a presentation or poster row just links to its card. */
 const detailTarget = (row: RelatedRow): string | undefined =>
@@ -74,7 +75,7 @@ const detailTarget = (row: RelatedRow): string | undefined =>
     </template>
 
     <div v-if="model.body" class="detail-body" v-html="model.body"></div>
-    <p v-if="model.keywords.length" class="detail-keywords"><strong>Keywords:</strong> {{ model.keywords.join(', ') }}</p>
+    <p v-if="model.keywords.length" class="detail-keywords"><strong>{{ strings.keywords }}</strong> {{ model.keywords.join(', ') }}</p>
 
     <div v-for="s in model.related" :key="s.label" class="detail-related-group">
       <h6 class="detail-related-label">{{ s.label }} ({{ s.rows.length }})</h6>
@@ -93,6 +94,6 @@ const detailTarget = (row: RelatedRow): string | undefined =>
       </ul>
     </div>
 
-    <p class="detail-footer"><a class="detail-list-link" :href="model.listHref">Show in list &rarr;</a></p>
+    <p class="detail-footer"><a class="detail-list-link" :href="model.listHref">{{ strings.showInList }} &rarr;</a></p>
   </div>
 </template>

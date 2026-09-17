@@ -2,6 +2,8 @@
 import Icon from './Icon.vue';
 import PeopleAvatars from './PeopleAvatars.vue';
 import TagList from './TagList.vue';
+import { fmt } from '../lib/i18n/format';
+import type { UiSlices } from '../lib/i18n/slices';
 import type { PeopleMap } from '../lib/people';
 import { relativeDate, shortDate, type RepoStats } from '../lib/githubRows';
 import type { SoftwareData } from '../lib/schemas';
@@ -16,10 +18,10 @@ import type { Entry, TagInfo } from '../lib/views';
 // `fullName`, or that lookup misses a renamed repository.
 const props = defineProps<{
   item: Entry<SoftwareData>; tagInfo: TagInfo[]; peopleMap: PeopleMap; imageBase: string; avatarBase: string;
-  repo?: string | null; stats?: RepoStats | null;
+  repo?: string | null; stats?: RepoStats | null; strings: UiSlices['softwareCard'];
 }>();
 // absolute, so it stays right without being re-rendered by refreshRelativeDates()
-const releaseTitle = () => (props.stats?.release ? `Release ${props.stats.release.tag} · ${shortDate(props.stats.release.publishedAt)}` : 'Releases');
+const releaseTitle = () => (props.stats?.release ? fmt(props.strings.release, { tag: props.stats.release.tag, date: shortDate(props.stats.release.publishedAt) }) : props.strings.releases);
 </script>
 
 <template>
@@ -33,17 +35,17 @@ const releaseTitle = () => (props.stats?.release ? `Release ${props.stats.releas
         <a class="software-stat" :hidden="!stats?.release" :href="stats?.release?.htmlUrl ?? stats?.htmlUrl ?? item.repository ?? undefined" :title="releaseTitle()" target="_blank" rel="noopener noreferrer"
           ><span data-field="release">{{ stats?.release?.tag ?? '' }}</span></a
         >
-        <span class="software-stat" :hidden="!stats" title="Stars">★&nbsp;<span data-field="stars">{{ stats?.stars ?? '' }}</span></span>
-        <span class="software-stat" :hidden="!stats" title="Open issues"><span data-field="issues">{{ stats ? `${stats.openIssues} open` : '' }}</span></span>
-        <span class="software-stat" :hidden="!stats" title="Last push"><span data-field="pushed" :data-iso="stats?.pushedAt">{{ stats ? relativeDate(stats.pushedAt) : '' }}</span></span>
-        <span class="software-stat" :hidden="!stats?.language" title="Main language"><span data-field="language">{{ stats?.language ?? '' }}</span></span>
-        <span class="software-stat" :hidden="!stats?.license" title="License"><span data-field="license">{{ stats?.license ?? '' }}</span></span>
+        <span class="software-stat" :hidden="!stats" :title="strings.stars">★&nbsp;<span data-field="stars">{{ stats?.stars ?? '' }}</span></span>
+        <span class="software-stat" :hidden="!stats" :title="strings.issues"><span data-field="issues">{{ stats ? fmt(strings.issuesOpen, { count: stats.openIssues }) : '' }}</span></span>
+        <span class="software-stat" :hidden="!stats" :title="strings.lastPush"><span data-field="pushed" :data-iso="stats?.pushedAt">{{ stats ? relativeDate(stats.pushedAt) : '' }}</span></span>
+        <span class="software-stat" :hidden="!stats?.language" :title="strings.language"><span data-field="language">{{ stats?.language ?? '' }}</span></span>
+        <span class="software-stat" :hidden="!stats?.license" :title="strings.license"><span data-field="license">{{ stats?.license ?? '' }}</span></span>
       </p>
       <div class="project-links">
         <PeopleAvatars :people="item.people" :people-map="peopleMap" :avatar-base="avatarBase" />
         <span class="project-links-spacer"></span>
-        <a v-if="item.homepage" :href="item.homepage" target="_blank" rel="noopener noreferrer" title="Project homepage"><Icon name="globe" /></a>
-        <a v-if="item.repository" :href="item.repository" target="_blank" rel="noopener noreferrer" title="Repository homepage"><Icon name="github" /></a>
+        <a v-if="item.homepage" :href="item.homepage" target="_blank" rel="noopener noreferrer" :title="strings.homepage"><Icon name="globe" /></a>
+        <a v-if="item.repository" :href="item.repository" target="_blank" rel="noopener noreferrer" :title="strings.repository"><Icon name="github" /></a>
       </div>
     </div>
   </div>
