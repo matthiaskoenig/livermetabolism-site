@@ -141,6 +141,23 @@ export const en = {
   filter: {
     all: 'All',
   },
+  tags: {
+    // The display label of a research-area tag - `tag` itself (data/tags.yml)
+    // is a machine value (a cross-reference target, a slug source, a
+    // data-tag/?tag= filter value, a chart series name) and is never
+    // translated; only this label is. Keyed by the tag's slug
+    // (`slugify(tag)`), the same key TAG_PALETTE/TAG_GRAPHICS use, so it
+    // survives a tag being renamed as long as the slug does not change.
+    // Adding a research area to data/tags.yml means adding its slug's label
+    // key here (see i18n/TRANSLATION.md).
+    label: {
+      digitalTwins: 'Digital Twins',
+      ai: 'AI',
+      digitalPathology: 'Digital Pathology',
+      pharmacometrics: 'Pharmacometrics',
+      openFair: 'Open & FAIR',
+    },
+  },
   chart: {
     stackBy: 'Stack publications by',
     researchArea: 'Research area',

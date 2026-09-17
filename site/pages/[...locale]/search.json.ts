@@ -35,7 +35,7 @@ export const GET: APIRoute = async ({ params }) => {
   for (const m of meetings) out.push({ kind: 'meeting', type: t('searchType.meeting'), title: stripHtml(m.title), text: join([m.location, stripHtml(m.description), m.tags.join(', ')]), url: url(`/meetings/#meeting-${m.id}`) });
   for (const t2 of teaching) out.push({ kind: 'teaching', type: t('searchType.teaching'), title: stripHtml(t2.title), text: join([t2.type.join(', '), t2.location, stripHtml(t2.content), t2.tags.join(', ')]), url: url(`/teaching/#teaching-${t2.id}`) });
   for (const p of people) if (p.status === 'current' || p.image) out.push({ kind: 'person', type: t('searchType.person'), title: stripHtml(p.name), text: join([p.role.join(', '), p.affiliation, p.tenure, stripHtml(p.description ?? '')]), url: url(`/people/#person/${p.id}`) });
-  for (const tag of tags) out.push({ kind: 'researchArea', type: t('searchType.researchArea'), title: tag.tag, text: join([tag.short_description, tag.vision]), url: url(`/#${tag.slug}`) });
+  for (const tag of tags) out.push({ kind: 'researchArea', type: t('searchType.researchArea'), title: tag.label, text: join([tag.short_description, tag.vision]), url: url(`/#${tag.slug}`) });
 
   for (const p of sitePages(t)) out.push({ kind: 'page', type: t('searchType.page'), title: p.title, text: p.description, url: url(p.path) });
 

@@ -24,8 +24,18 @@ describe('toTagInfo', () => {
     const rows = [t(2, 'Open & FAIR'), t(0, 'Digital Twins'), t(1, 'AI')];
     const info = toTagInfo(rows as never);
     expect(info.map((i) => i.tag)).toEqual(['Digital Twins', 'AI', 'Open & FAIR']);
-    for (const i of info) expect(Object.keys(i)).toEqual(['tag', 'slug', 'icon', 'short_description', 'description', 'vision']);
-    expect(info[0]).toEqual({ tag: 'Digital Twins', slug: 'digital-twins', icon: 'icon-Digital Twins', short_description: 'short', description: 'long', vision: 'vision' });
+    for (const i of info) expect(Object.keys(i)).toEqual(['tag', 'slug', 'icon', 'label', 'short_description', 'description', 'vision']);
+    // no labelFor given: label defaults to the slug, never the (never
+    // translated) tag value itself.
+    expect(info[0]).toEqual({ tag: 'Digital Twins', slug: 'digital-twins', icon: 'icon-Digital Twins', label: 'digital-twins', short_description: 'short', description: 'long', vision: 'vision' });
+  });
+
+  it('resolves label through the given labelFor, keyed by slug', () => {
+    const t = (order: number, tag: string) =>
+      ({ id: tag, order, tag, icon: 'icon-' + tag, short_description: 'short', description: 'long', vision: 'vision' });
+    const info = toTagInfo([t(0, 'Digital Twins')] as never, (slug) => `translated:${slug}`);
+    expect(info[0]?.tag).toBe('Digital Twins');
+    expect(info[0]?.label).toBe('translated:digital-twins');
   });
 });
 
@@ -35,8 +45,8 @@ describe('toTagFilterEntries', () => {
       { id: 'AI', order: 0, tag: 'AI', icon: 'fa-robot', short_description: 'short', description: 'long', vision: 'vision' },
     ] as never);
     const entries = toTagFilterEntries(info);
-    expect(entries).toEqual([{ tag: 'AI', slug: 'ai', icon: 'fa-robot', short_description: 'short' }]);
-    expect(Object.keys(entries[0])).toEqual(['tag', 'slug', 'icon', 'short_description']);
+    expect(entries).toEqual([{ tag: 'AI', slug: 'ai', icon: 'fa-robot', short_description: 'short', label: 'ai' }]);
+    expect(Object.keys(entries[0])).toEqual(['tag', 'slug', 'icon', 'short_description', 'label']);
   });
 });
 

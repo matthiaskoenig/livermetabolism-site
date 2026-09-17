@@ -16,8 +16,8 @@ const { t } = uiFor('en');
 const BASE = '/livermetabolism-site/';
 
 const tagInfo: TagInfo[] = [
-  { tag: 'AI', slug: 'ai', icon: 'fa-cogs', short_description: 'AI', description: 'AI', vision: 'AI' },
-  { tag: 'Digital Twins', slug: 'digital-twins', icon: 'fa-cube', short_description: 'DT', description: 'DT', vision: 'DT' },
+  { tag: 'AI', slug: 'ai', icon: 'fa-cogs', label: 'AI', short_description: 'AI', description: 'AI', vision: 'AI' },
+  { tag: 'Digital Twins', slug: 'digital-twins', icon: 'fa-cube', label: 'Digital Twins', short_description: 'DT', description: 'DT', vision: 'DT' },
 ];
 
 const people: Entry<s.PersonData>[] = [

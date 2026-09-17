@@ -299,6 +299,21 @@ pub.abstract:
 filter.all:
   sha: '0000000000000000'
   text: Alle
+tags.label.digitalTwins:
+  sha: '0000000000000000'
+  text: Digitale Zwillinge
+tags.label.ai:
+  sha: '0000000000000000'
+  text: KI
+tags.label.digitalPathology:
+  sha: '0000000000000000'
+  text: Digitale Pathologie
+tags.label.pharmacometrics:
+  sha: '0000000000000000'
+  text: Pharmakometrie
+tags.label.openFair:
+  sha: '0000000000000000'
+  text: Open & FAIR
 chart.stackBy:
   sha: '0000000000000000'
   text: Publikationen stapeln nach
@@ -496,7 +511,7 @@ research.fundingAfter:
   text: 'Cloud im Rahmen des Deutschen Netzwerks für Bioinformatik-Infrastruktur (de.NBI) (031A537B, 031A533A, 031A538A, 031A533B, 031A535A, 031A537C, 031A534A, 031A532B).'
 research.editorsIntro:
   sha: '0000000000000000'
-  text: 'Wir engagieren uns aktiv in der Standardisierung und in Reproduzierbarkeitsbemühungen in Systems Biology und Systems Medicine.'
+  text: 'Wir engagieren uns aktiv für Standardisierung und Reproduzierbarkeit in der Systembiologie und Systemmedizin.'
 pubChart.title:
   sha: '0000000000000000'
   text: Publikationen im Zeitverlauf

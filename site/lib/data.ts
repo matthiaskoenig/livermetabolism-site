@@ -1,7 +1,9 @@
 import { getCollection, type CollectionEntry, type CollectionKey } from 'astro:content';
+import { uiFor } from './i18n/catalog';
 import { loadCatalog, localize } from './i18n/content';
 import { isTranslatable, TRANSLATABLE } from './i18n/fields';
 import type { Locale } from './i18n/locales';
+import { tagLabel } from './i18n/tagLabel';
 import type { PeopleMap } from './people';
 import type * as S from './schemas';
 import { toTagInfo } from './views';
@@ -70,7 +72,8 @@ export async function getTags(locale: Locale): Promise<TagInfo[]> {
   const tags = await getCollection('tags');
   const raw = tags.map((t) => ({ ...(t.data as S.TagData), id: t.id }));
   const localized = localize(raw, loadCatalog(locale, 'tags'), TRANSLATABLE.tags);
-  return toTagInfo(localized);
+  const { t } = uiFor(locale);
+  return toTagInfo(localized, (slug) => tagLabel(slug, t));
 }
 export const getPeople = (locale: Locale) => all('people', locale);
 export const getPublications = (locale: Locale) => all('publications', locale);

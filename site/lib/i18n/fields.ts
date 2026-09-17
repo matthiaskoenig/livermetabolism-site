@@ -8,8 +8,12 @@
  *  - every bibliographic table (publications, posters, presentations,
  *    abstracts, panels): a paper's title is its citation identity.
  *  - tags.tag: it is simultaneously a reference key, a slug, a chart series
- *    name and a filter value. Only its display label is German, via the
- *    tags.label.* keys of the UI catalog.
+ *    name and a filter value, so it is never translated. Its display label
+ *    is German, via the tags.label.* keys of the UI catalog (ui.en.ts /
+ *    i18n/de/ui.yml), resolved per slug by tagLabel() in
+ *    site/lib/i18n/tagLabel.ts and baked into TagInfo.label by
+ *    site/lib/data.ts's getTags() - see i18n/TRANSLATION.md's "tags.tag"
+ *    section.
  *  - names, institutions, funders and place names, which stay as written.
  */
 export const TRANSLATABLE = {

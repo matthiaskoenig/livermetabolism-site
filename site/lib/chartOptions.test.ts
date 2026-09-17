@@ -160,10 +160,12 @@ describe('citationHistoryOption', () => {
 describe('publicationsOption', () => {
   const rows = {
     years: [2020, 2021, 2022],
+    // labels deliberately differ from the (never translated) tag value, to
+    // prove the chart displays the label and matches on the tag
     byTag: [
-      { tag: 'AI', slug: 'ai', counts: [0, 1, 2] },
-      { tag: 'Open & FAIR', slug: 'open-fair', counts: [1, 0, 3] },
-      { tag: 'New Area', slug: 'new-area', counts: [0, 0, 1] },
+      { tag: 'AI', slug: 'ai', label: 'KI', counts: [0, 1, 2] },
+      { tag: 'Open & FAIR', slug: 'open-fair', label: 'Open & FAIR', counts: [1, 0, 3] },
+      { tag: 'New Area', slug: 'new-area', label: 'Neuer Bereich', counts: [0, 0, 1] },
     ],
     byStatus: [
       { status: 'publication' as const, counts: [1, 1, 4] },
@@ -183,7 +185,12 @@ describe('publicationsOption', () => {
     // that has no token yet falls back to the generic palette
     expect(option.series.map((s) => s.itemStyle.color)).toEqual([TAG_PALETTE.ai, TAG_PALETTE['open-fair'], PALETTE[2]]);
     // the series name is what the click handler looks up as [data-tag="…"]
+    // - the never-translated tag value, not the label
     expect(option.series[1]!.name).toBe(rows.byTag[1]!.tag);
+    // the legend TEXT is the translated label, keyed off that same name
+    expect(rows.byTag.map((s) => option.legend.formatter(s.tag))).toEqual(['KI', 'Open & FAIR', 'Neuer Bereich']);
+    // an unknown series name (the status split) passes through unchanged
+    expect(option.legend.formatter('Publication')).toBe('Publication');
   });
 
   it('swaps to one series per status, coloured by the status order', () => {
@@ -205,11 +212,13 @@ describe('publicationsOption', () => {
     const { tooltip } = publicationsOption(rows, 'tag', publicationsStrings);
     expect(tooltip.renderMode).toBe('richText');
     expect(tooltip.trigger).toBe('axis');
+    // the tooltip lines show the translated label too, keyed off the
+    // (never translated) seriesName the chart matches [data-tag="…"] with
     expect(tooltip.formatter([
       { name: '2022', seriesName: 'AI', value: 2 },
       { name: '2022', seriesName: 'Open & FAIR', value: 3 },
       { name: '2022', seriesName: 'New Area', value: 0 },
-    ])).toBe('2022\nAI: 2\nOpen & FAIR: 3\ntotal: 5');
+    ])).toBe('2022\nKI: 2\nOpen & FAIR: 3\ntotal: 5');
   });
 
   it('survives a page without publications', () => {

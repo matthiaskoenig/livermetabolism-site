@@ -4,7 +4,7 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import TagFilter from './TagFilter.vue';
 import type { TagInfo } from '../lib/views';
 
-const tag = (t: string): TagInfo => ({ tag: t, slug: t.toLowerCase().replace(/[^a-z0-9]+/g, '-'), icon: 'fa-flask', short_description: t, description: t, vision: t });
+const tag = (t: string): TagInfo => ({ tag: t, slug: t.toLowerCase().replace(/[^a-z0-9]+/g, '-'), icon: 'fa-flask', label: t, short_description: t, description: t, vision: t });
 const tags = [tag('AI'), tag('Open & FAIR')];
 
 /**

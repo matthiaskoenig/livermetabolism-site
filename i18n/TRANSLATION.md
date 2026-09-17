@@ -53,17 +53,35 @@ baked into the site chrome (`site/lib/i18n/en.ts` or equivalent) key by key.
   five tables are deliberately absent from `fields.ts`.
 - **`tags.tag`.** Never translated. It is simultaneously a reference key, a
   URL slug, a chart series name and a filter value - translating it would
-  break all four at once. As shipped, the tag chip itself also renders
-  `tags.tag` verbatim on both languages (`toTagInfo()` in
-  `site/lib/views.ts` copies `tag: d.tag` with no locale lookup) - there
-  is currently no separate German display label for a tag, despite a
-  stale comment in `site/lib/i18n/fields.ts` describing one; do not add
-  translated tag-chip text unless that mechanism is actually built.
+  break all four at once, so `tag` stays byte-identical on every locale:
+  the same `data-tag`/`?tag=`/`?topic=` value, the same `slugify()` input,
+  the same `tags:` cross-reference everywhere in `data/*.yml`.
+
+  Its DISPLAY label is a separate thing and **is** German: `toTagInfo()`
+  (`site/lib/views.ts`) adds a `label` field to `TagInfo`, resolved per
+  slug by `tagLabel()` (`site/lib/i18n/tagLabel.ts`) from the `tags.label.*`
+  keys of the UI catalog (`ui.en.ts` / `i18n/de/ui.yml`), and
+  `site/lib/data.ts`'s `getTags()` bakes it in before anything renders. Every
+  tag chip, filter button, the homepage research-area heading, the network
+  graph's filter buttons and the publications chart's legend/tooltip render
+  `.label`, never `.tag` - only `TagFilterBar.vue`'s `data-tag` attribute and
+  `NetworkGraph.vue`'s `?topic=` matching still read `.tag`, on purpose.
+
+  Adding a sixth research area to `data/tags.yml` means adding its slug to
+  `TAG_LABEL_KEY` in `tagLabel.ts` and a matching `tags.label.*` key to both
+  `ui.en.ts` and `i18n/de/ui.yml` in the same commit (`loadUi()` throws on a
+  key-set mismatch between the two). A slug missing from `TAG_LABEL_KEY`
+  falls back to rendering the raw slug rather than failing the build - watch
+  for that during review, it is a sign the label key was forgotten.
+
   Two of the five tag names - `"Digital Twins"` and `"AI"` - are also
   ordinary English words that appear, translated, in unrelated prose (see
   the domain glossary below and `footer.tagline`): translate the words
   when they are prose, never touch them when they are the `tag:` value or
-  a `tags:` list entry.
+  a `tags:` list entry. Their `tags.label.*` values follow the same rule as
+  that prose: `Digitale Zwillinge` and `KI` as standalone labels (leading
+  word capitalised), `digitale Zwillinge` / `KI` when the words sit inside
+  a lowercase-initial German sentence such as `footer.tagline`.
 - **Names of people, institutions and funders.** `Humboldt-Universität zu
   Berlin`, `BMFTR`, `de.NBI` stay exactly as written.
 - **Identifiers and paths.** ids, DOIs, ORCIDs, PMIDs, URLs, image and PDF

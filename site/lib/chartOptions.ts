@@ -280,6 +280,11 @@ export interface PublicationsChartStrings {
  * `[data-tag="…"]`.
  */
 export function publicationsOption(rows: PublicationYearRows, mode: PublicationsMode, strings: PublicationsChartStrings) {
+  // Series `name` stays the machine tag value (never the label): the click
+  // handler in PublicationsChart.vue matches it against `[data-tag]`, and a
+  // translated name would break that match on a German page. Only the
+  // legend/tooltip TEXT is translated, via this name -> label lookup.
+  const tagLabelOf = new Map(rows.byTag.map((s) => [s.tag, s.label]));
   const series = mode === 'status'
     ? rows.byStatus.map((s) => ({
         name: strings.status[s.status] ?? s.status, type: 'bar', stack: 'publications', data: s.counts,
@@ -292,11 +297,14 @@ export function publicationsOption(rows: PublicationYearRows, mode: Publications
   return {
     animation: false,
     tooltip: tooltip((ps: { name: string; seriesName: string; value: number }[]) => {
-      const lines = ps.filter((p) => p.value > 0).map((p) => `${p.seriesName}: ${p.value}`);
+      const lines = ps.filter((p) => p.value > 0).map((p) => `${tagLabelOf.get(p.seriesName) ?? p.seriesName}: ${p.value}`);
       const total = ps.reduce((s, p) => s + p.value, 0);
       return [ps[0]?.name ?? '', ...lines, fmt(strings.total, { count: total })].join('\n');
     }, 'axis'),
-    legend: { type: 'scroll', bottom: 0, itemHeight: 8, itemWidth: 12, textStyle: axisLabel() },
+    legend: {
+      type: 'scroll', bottom: 0, itemHeight: 8, itemWidth: 12, textStyle: axisLabel(),
+      formatter: (name: string) => tagLabelOf.get(name) ?? name,
+    },
     grid: { left: 8, right: 14, top: 10, bottom: 34, containLabel: true },
     xAxis: {
       type: 'category',

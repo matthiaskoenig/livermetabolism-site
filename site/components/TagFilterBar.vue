@@ -12,7 +12,7 @@ const emit = defineEmits<{ 'update:modelValue': [tag: string] }>();
     <button type="button" class="tag-filter-btn" :class="{ active: modelValue === 'all' }" :aria-pressed="modelValue === 'all'" data-tag="all" @click="emit('update:modelValue', 'all')">{{ strings.all }}</button>
     <button v-for="t in tags" :key="t.tag" type="button" class="tag-filter-btn" :class="[`tag-${t.slug}`, { active: modelValue === t.tag }]"
       :aria-pressed="modelValue === t.tag" :data-tag="t.tag" :title="t.short_description" @click="emit('update:modelValue', t.tag)">
-      <Icon :name="t.icon.replace(/^fa-/, '')" /> {{ t.tag }}
+      <Icon :name="t.icon.replace(/^fa-/, '')" /> {{ t.label }}
     </button>
   </div>
 </template>

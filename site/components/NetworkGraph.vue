@@ -17,8 +17,8 @@ import { ROAM, networkOption } from '../lib/networkOptions';
 
 const props = defineProps<{
   rows: GraphRows;
-  /** The research areas, in homepage order: the filter buttons and what `?topic=` matches. */
-  topics: { tag: string; slug: string }[];
+  /** The research areas, in homepage order: the filter buttons and what `?topic=` matches. `tag` (matching only, never rendered) is the machine value; `label` is the translated button text. */
+  topics: { tag: string; slug: string; label: string }[];
   strings: UiSlices['network'];
 }>();
 
@@ -145,7 +145,7 @@ function reset(): void {
         :aria-pressed="topic === null" @click="select(null)">{{ strings.all }}</button>
       <button v-for="area in props.topics" :key="area.slug" type="button" class="chart-mode-btn network-topic-btn"
         :class="{ active: topic === area.slug }" :aria-pressed="topic === area.slug" @click="select(area.slug)">
-        {{ area.tag }}
+        {{ area.label }}
       </button>
       <span class="chart-mode-gap"></span>
       <button type="button" class="chart-mode-btn network-zoom-btn" :aria-label="strings.zoomIn" :title="strings.zoomIn" @click="zoom(1.25)">+</button>

@@ -17,11 +17,11 @@ import type { TagInfo } from './views';
 /** The publication fields the chart needs. */
 export type ChartPublication = Pick<PublicationData, 'year' | 'status' | 'tags'>;
 
-/** The tag fields the chart needs (label plus the slug that picks the colour). */
-export type ChartTag = Pick<TagInfo, 'tag' | 'slug'>;
+/** The tag fields the chart needs: `tag` (the series name/data-tag match), `slug` (the colour) and `label` (the legend/tooltip text). */
+export type ChartTag = Pick<TagInfo, 'tag' | 'slug' | 'label'>;
 
-/** One stacked series of the research-area split. */
-export interface TagSeries { tag: string; slug: string; counts: number[] }
+/** One stacked series of the research-area split. `tag` is the machine value the series is named after (matches `data-tag`); `label` is its display text. */
+export interface TagSeries { tag: string; slug: string; label: string; counts: number[] }
 
 /** One stacked series of the status split. */
 export interface StatusSeries { status: ChartPublication['status']; counts: number[] }
@@ -80,7 +80,7 @@ export function publicationsPerYear(publications: ChartPublication[], tags: Char
   const years = Array.from({ length: max - min + 1 }, (_, i) => min + i);
   const slot = (year: number) => year - min;
 
-  const byTag = tags.map((t) => ({ tag: t.tag, slug: t.slug, counts: zeros(years.length) }));
+  const byTag = tags.map((t) => ({ tag: t.tag, slug: t.slug, label: t.label, counts: zeros(years.length) }));
   const tagIndex = new Map(byTag.map((s, i) => [s.tag, i]));
   const byStatus = STATUS_ORDER.map((status) => ({ status, counts: zeros(years.length) }));
   const statusIndex = new Map(byStatus.map((s, i) => [s.status as string, i]));

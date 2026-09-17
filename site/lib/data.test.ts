@@ -58,13 +58,19 @@ const TAGS_CATALOG = { 'Digital Twins': { description: { sha: 'cccc000000000000'
  */
 async function withGermanFixtures<T>(run: (mod: typeof import('./data')) => Promise<T>): Promise<T> {
   vi.resetModules();
+  // getTags() also reads the UI catalog (for the tags.label.* display
+  // labels, see tagLabel.ts) - readFileSync must fall through to the real
+  // i18n/de/ui.yml for that file rather than the empty-catalog default, or
+  // loadUi() throws on the (correctly detected) key-set mismatch.
+  const actualFs = await vi.importActual<typeof import('node:fs')>('node:fs');
   vi.doMock('node:fs', () => ({
     default: {
-      existsSync: () => true,
-      readFileSync: (file: string) => {
+      existsSync: (file: string) => (file.endsWith('ui.yml') ? actualFs.existsSync(file) : true),
+      readFileSync: (file: string, ...args: unknown[]) => {
         if (file.endsWith('people.yml')) return dump(PEOPLE_CATALOG);
         if (file.endsWith('news.yml')) return dump(NEWS_CATALOG);
         if (file.endsWith('tags.yml')) return dump(TAGS_CATALOG);
+        if (file.endsWith('ui.yml')) return actualFs.readFileSync(file, ...(args as []));
         return dump({});
       },
     },
