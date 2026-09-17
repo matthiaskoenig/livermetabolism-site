@@ -2,31 +2,23 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { load } from 'js-yaml';
 import { DEFAULT_LOCALE, type Locale } from './locales';
+import { PAGE_SOURCE_LOCALE } from './pageLocales';
 
 interface PageEntry { sha?: string; text: string }
 
 const cache = new Map<string, Record<string, string>>();
 
 /**
- * The locale each page is authored in. Every page defaults to
- * DEFAULT_LOCALE (English-sourced, i18n/en/pages/ is the source and
- * i18n/de/pages/ is generated) except impressum and privacy, which invert
- * the direction: they are authored in German (the legally binding text
- * under German law) and their i18n/en/pages/ rendering is the generated,
- * secondary one (see i18n/TRANSLATION.md's "The legal pages" section).
- * loadPage() falls back to a page's own source locale, not blindly to
- * DEFAULT_LOCALE, precisely so a missing key on one of these two pages
- * falls back to the binding German text rather than rendering blank - a
- * legal notice must never render empty, in any locale, at any point
- * (including after Task 18 fills the English catalogs in: a future key
- * could still go missing and this keeps the fallback safe).
+ * loadPage() falls back to a page's own source locale (PAGE_SOURCE_LOCALE
+ * in pageLocales.ts - the single source of truth for this, also read by
+ * scripts/i18n-check.ts's auditPage()), not blindly to DEFAULT_LOCALE,
+ * precisely so a missing key on impressum/privacy falls back to the
+ * binding German text rather than rendering blank - a legal notice must
+ * never render empty, in any locale, at any point (a future key could
+ * still go missing even with the page catalogs now under the sha guard,
+ * and this keeps the fallback safe).
  */
-const PAGE_SOURCE_LOCALE: Record<string, Locale> = {
-  impressum: 'de',
-  privacy: 'de',
-};
-
-function sourceLocaleFor(page: string): Locale {
+function sourceLocaleFor(page: string) {
   return PAGE_SOURCE_LOCALE[page] ?? DEFAULT_LOCALE;
 }
 

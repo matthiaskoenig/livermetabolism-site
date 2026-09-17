@@ -1,24 +1,28 @@
 #!/usr/bin/env node
 /**
- * Look up one English source field and print the sha the translate-de skill
- * must write beside its German translation, plus the exact value that sha
- * covers (so the translator can see precisely what YAML's scalar folding
- * produced - a multi-line quoted string collapses to single-spaced text -
- * without retyping it and risking a mismatch).
+ * Look up one source field and print the sha the translate-de skill must
+ * write beside its translation, plus the exact value that sha covers (so
+ * the translator can see precisely what YAML's scalar folding produced -
+ * a multi-line quoted string collapses to single-spaced text - without
+ * retyping it and risking a mismatch).
  *
  * Reads data/<table>.yml the same way scripts/i18n-check.ts does (tags rows
  * keyed by `tag`, ui keys read from site/lib/i18n/ui.en.ts instead of a
- * data file), so this can never disagree with what `npm run i18n:check`
- * expects.
+ * data file, page keys read from i18n/<source locale>/pages/<page>.yml -
+ * PAGE_SOURCE_LOCALE says which locale that is per page), so this can
+ * never disagree with what `npm run i18n:check` expects.
  *
  * Usage:
  *   node scripts/i18n-sha.ts <table> <id> <field>
  *   node scripts/i18n-sha.ts ui <dotted.key>
+ *   node scripts/i18n-sha.ts pages <page> <field>
  */
 import fs from 'node:fs';
 import path from 'node:path';
 import { load } from 'js-yaml';
 import { sourceSha } from '../site/lib/i18n/sha.ts';
+import { DEFAULT_LOCALE } from '../site/lib/i18n/locales.ts';
+import { PAGE_SOURCE_LOCALE } from '../site/lib/i18n/pageLocales.ts';
 
 const root = process.cwd();
 const [table, a, b] = process.argv.slice(2);
@@ -26,6 +30,7 @@ const [table, a, b] = process.argv.slice(2);
 if (!table || !a || (table !== 'ui' && !b)) {
   console.error('Usage: node scripts/i18n-sha.ts <table> <id> <field>');
   console.error('       node scripts/i18n-sha.ts ui <dotted.key>');
+  console.error('       node scripts/i18n-sha.ts pages <page> <field>');
   process.exit(1);
 }
 
@@ -40,6 +45,23 @@ if (table === 'ui') {
     console.error(`No UI key "${key}" in site/lib/i18n/ui.en.ts`);
     process.exit(1);
   }
+} else if (table === 'pages') {
+  const page = a;
+  const field = b;
+  const source = PAGE_SOURCE_LOCALE[page] ?? DEFAULT_LOCALE;
+  const file = path.join(root, 'i18n', source, 'pages', `${page}.yml`);
+  if (!fs.existsSync(file)) {
+    console.error(`No such page: ${file}`);
+    process.exit(1);
+  }
+  const entries = load(fs.readFileSync(file, 'utf8')) as Record<string, { text: unknown }>;
+  const entry = entries[field];
+  if (entry == null || entry.text == null || entry.text === '') {
+    console.error(`Field "${field}" on pages/${page} is empty in its source (${source}) - nothing to translate`);
+    process.exit(1);
+  }
+  console.log(`source locale: ${source}`);
+  value = entry.text;
 } else {
   const id = a;
   const field = b;

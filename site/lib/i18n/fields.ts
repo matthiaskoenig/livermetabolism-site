@@ -15,6 +15,12 @@
  *    site/lib/data.ts's getTags() - see i18n/TRANSLATION.md's "tags.tag"
  *    section.
  *  - names, institutions, funders and place names, which stay as written.
+ *  - activities: has a collection and schema (like panels and linkedin)
+ *    but no getter, page, or component renders it anywhere on the site -
+ *    see CLAUDE.md's repository-layout note. Translating content nothing
+ *    shows a visitor only cost a red `npm run i18n:check` on every edit
+ *    to data/activities.yml, so it was removed rather than built a page
+ *    for; re-add it here only alongside an actual renderer.
  */
 export const TRANSLATABLE = {
   tags: ['short_description', 'description', 'vision'],
@@ -26,7 +32,6 @@ export const TRANSLATABLE = {
   news: ['title', 'short', 'abstract'],
   teaching: ['title', 'content', 'caption', 'funding'],
   meetings: ['title', 'description', 'location'],
-  activities: ['title', 'description'],
 } as const;
 
 export type TranslatableTable = keyof typeof TRANSLATABLE;

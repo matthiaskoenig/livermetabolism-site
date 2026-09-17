@@ -42,16 +42,26 @@ regardless of what the YAML contains. As of this writing it lists:
 | `news` | `title`, `short`, `abstract` |
 | `teaching` | `title`, `content`, `caption`, `funding` |
 | `meetings` | `title`, `description`, `location` |
-| `activities` | `title`, `description` |
+
+`activities` has a collection and schema, like `panels` and `linkedin`, but
+nothing renders it - no getter, page, or component shows it anywhere on the
+site (see `AGENTS.md`'s repository-layout note) - so it is deliberately
+absent from the registry. Translating it only cost a red `npm run
+i18n:check` for content no visitor ever sees.
 
 Plus the UI catalog, `i18n/de/ui.yml`, which mirrors the English strings
 baked into the site chrome (`site/lib/i18n/ui.en.ts`) key by key, dotted
 (`nav.publications`, `tags.label.digitalTwins`, ...). `npm run i18n:check`
-audits this catalog too, the same as the ten data tables above - both are
+audits this catalog too, the same as the nine data tables above - both are
 part of the same work list from step 1. This is on top of, not instead of,
 a separate build-time guard: `loadUi()` (`site/lib/i18n/catalog.ts`) still
 throws at build time if `i18n/de/ui.yml`'s key set doesn't exactly match
 `ui.en.ts`'s.
+
+`npm run i18n:check` also audits the long-form legal-page catalogs,
+`i18n/{de,en}/pages/impressum.yml` and `.../privacy.yml` - see "The legal
+pages invert the direction" below for how, since their source locale is
+German rather than English.
 
 ## What is never translated
 
@@ -61,6 +71,11 @@ throws at build time if `i18n/de/ui.yml`'s key set doesn't exactly match
   title is its citation identity: a German rendering matches nothing in the
   literature, in Scholar, or in OpenAlex. This is not an oversight; these
   five tables are deliberately absent from `fields.ts`.
+- **`activities`.** Has a collection and schema, like `panels` and
+  `linkedin`, but nothing on the site renders it - no getter, page, or
+  component. Translating unrendered content only turned `npm run
+  i18n:check` red on every edit to `data/activities.yml`, so it was removed
+  from `fields.ts` rather than given a page.
 - **`tags.tag`.** Never translated. It is simultaneously a reference key, a
   URL slug, a chart series name and a filter value - translating it would
   break all four at once, so `tag` stays byte-identical on every locale:
@@ -126,13 +141,14 @@ proper noun.
 appears in that URL - the funder's own page names the project that way -
 translating it breaks a reader's ability to cross-reference the entry
 against the source. `data/activities.yml`'s `xstudent-doac-2025` row is the
-worked example: its `link` ends in
+worked example (its own `title` is not translated - see "What is never
+translated" - but the row is still useful corroborating evidence, since it
+is untranslated `data/*.yml` prose, not an i18n catalog): its `link` ends in
 `.../research-groups/archiv/sem_aktuell/Digital-Twins-in-Action/index.html`
 - the Berlin University Alliance's own slug for the project is
 `Digital-Twins-in-Action`, so `Digital Twins in Action` (the matching
-`funding.xresearch2025.title` and `activities.xstudent-doac-2025.title`)
-is that project's registered name and stays in English; only the
-descriptive tail after it translates.
+`funding.xresearch2025.title`) is that project's registered name and stays
+in English; only the descriptive tail after it translates.
 
 This is the same principle already applied to `X-Student Research Group`,
 `SimLivA`, `ATLAS`, and `LiSyM` - it just does not require an acronym to
@@ -516,42 +532,62 @@ and never hand-edit the generated English side directly - edit the German
 source and regenerate.
 
 `site/lib/i18n/pages.ts`'s `loadPage()` knows this inversion explicitly, via
-a small `PAGE_SOURCE_LOCALE` map (`impressum`/`privacy` -> `de`, every other
-page -> the default English). A key missing from a locale's catalog falls
-back to that page's *own* source locale, not blindly to English: for
-`impressum`/`privacy` a missing or lagging English key falls back to German,
-never to nothing. A legal notice must never render blank - the worst
-acceptable failure is showing the binding German text to an English reader,
-not showing an empty heading or paragraph. Keep the map and this note in
-sync if a third page ever inverts the direction.
+`PAGE_SOURCE_LOCALE` (`impressum`/`privacy` -> `de`, every other page -> the
+default English) - a small map with **no runtime imports** (its only import
+is `import type { Locale }`, erased at compile time), so it lives in its own
+leaf module, `site/lib/i18n/pageLocales.ts`, alongside `PAGE_LOCALE_ONLY_FIELDS`
+(below). That is what lets `scripts/i18n-check.ts` import the exact same map
+under direct Node execution (see content.ts's NOTE on why a module with real
+runtime imports can't be reused there) - `PAGE_SOURCE_LOCALE` is the single
+source of truth for which locale is which for a page, read by both the
+runtime loader and the audit script, never duplicated. A key missing from a
+locale's catalog falls back to that page's *own* source locale, not blindly
+to English: for `impressum`/`privacy` a missing or lagging English key falls
+back to German, never to nothing. A legal notice must never render blank -
+the worst acceptable failure is showing the binding German text to an
+English reader, not showing an empty heading or paragraph. Keep the map and
+this note in sync if a third page ever inverts the direction.
 
-### `npm run i18n:check` does NOT cover the page catalogs
+One field per legal page is locale-only by design, not generated at all:
+`bindingNotice` ("This is a translation for convenience. Only the German
+version is legally binding.") exists only in `i18n/en/pages/impressum.yml`
+and `i18n/en/pages/privacy.yml`, rendered only for a locale other than
+German (`site/pages/[...locale]/impressum.astro`/`privacy.astro`). It has no
+German counterpart to generate from or compare against, so it carries no
+`sha` and is excluded from the audit below entirely -
+`PAGE_LOCALE_ONLY_FIELDS` in `pageLocales.ts` names it.
 
-`i18n/de/pages/*.yml` and `i18n/en/pages/*.yml` are outside every automated
-guard: `npm run i18n:check` audits the ten `TRANSLATABLE` data tables and
-`i18n/de/ui.yml` only, never `i18n/{de,en}/pages/`, and `loadPage()` has no
-key-set check the way `loadUi()` does for the UI catalog. This is a real
-gap, not a documentation oversight to paper over - closing it properly
-means adding a `sha` to every existing entry of all four files first
-(`PageEntry.sha` is already declared optional in `site/lib/i18n/pages.ts`
-for exactly this reason, but none of the 132 entries across the four files
-(21 + 44 + 22 + 45: `i18n/de/pages/impressum.yml`, `i18n/de/pages/privacy.yml`,
-`i18n/en/pages/impressum.yml`, `i18n/en/pages/privacy.yml`)
-carry one today, so there is nothing yet for `auditUi()`-style comparison
-to check against). That migration was judged too large to do safely inside
-this fix wave and is left as follow-up work; **do not read "`i18n:check`
-exits 0" as "the legal pages are in sync"** - it says nothing about them
-either way.
+### `npm run i18n:check` covers the page catalogs too
 
-**The concrete risk** (the direction that actually matters, since the
-German file is the legally binding source): the owner edits
-`i18n/de/pages/impressum.yml` or `privacy.yml` directly - editing the
-source, exactly as this section instructs - and `npm run i18n:check` still
-exits 0, because it never looked at that file. The English rendering
-(`i18n/en/pages/`) is now stale until someone remembers to run the
-translate-de skill on it specifically; nothing will say so on its own.
-Until the sha migration above happens, check both `i18n/en/pages/*.yml`
-files by hand against their German source after any manual edit to
-`i18n/de/pages/*.yml`, and regenerate the English side through the
-translate-de skill the same as any other change to the binding German
-text.
+`i18n/{de,en}/pages/impressum.yml` and `.../privacy.yml` are audited the
+same way the UI catalog is: `auditPage()` (`scripts/lib/i18n-check.ts`)
+wraps a page's whole flat key -> `{sha, text}` map as one synthetic row and
+delegates to `auditTable()`, the same adapter pattern `auditUi()` uses for
+`i18n/de/ui.yml` - reused rather than a third bespoke audit, per that
+section's own note. The one difference from `auditUi()`: the *source* side
+can be either locale, since `PAGE_SOURCE_LOCALE` inverts it for these two
+pages, so the caller (`scripts/i18n-check.ts`) reads that map to work out
+which locale's values are the source and which locale's catalog is the
+generated one being checked, instead of assuming English the way the data
+tables and the UI catalog do.
+
+Every entry of the *generated* catalog now carries a `sha` (computed from
+the corresponding *source*-locale value, `sourceSha()`, same as every other
+catalog) - `i18n/en/pages/impressum.yml` and `i18n/en/pages/privacy.yml`,
+since German is the source for both. The *source*-locale files
+(`i18n/de/pages/*.yml`) carry no `sha`, the same as `data/*.yml` never
+carries one: there is nothing upstream of a source value to hash against.
+
+Because a page catalog has no per-row id the way a data table does (it is
+one flat map, like `i18n/de/ui.yml`), `orphaned` cannot be produced by this
+shape either - a stray key with nothing to belong to is reported
+`unknown-field` instead, exactly as documented for `auditUi()` above.
+
+`npm run i18n:check`'s output labels these issues distinguishably: they
+print under their own "Page catalogs" section, separate from "Data tables"
+and "UI catalog", as `<locale>/pages/<page>/<field>`, e.g.
+`en/pages/impressum/heading`. **`i18n:check` exiting 0 now does mean the
+legal pages are in sync** - editing `i18n/de/pages/impressum.yml` or
+`privacy.yml` without regenerating the English rendering through the
+translate-de skill turns it red, the same as editing any other source
+without regenerating its translation.

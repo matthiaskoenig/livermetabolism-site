@@ -2,9 +2,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { load } from 'js-yaml';
-import { auditTable, auditUi, flatten, CatalogParseError, formatIssues, type Issue } from './lib/i18n-check.ts';
+import { auditTable, auditUi, auditPage, flatten, CatalogParseError, formatIssues, type Issue, type PageCatalogEntry } from './lib/i18n-check.ts';
 import { TRANSLATABLE } from '../site/lib/i18n/fields.ts';
 import { LOCALES, DEFAULT_LOCALE } from '../site/lib/i18n/locales.ts';
+import { PAGE_SOURCE_LOCALE, PAGE_LOCALE_ONLY_FIELDS } from '../site/lib/i18n/pageLocales.ts';
 import type { Catalog, CatalogEntry } from '../site/lib/i18n/content.ts';
 
 const root = process.cwd();
@@ -42,6 +43,13 @@ const readYamlCatalog = <T>(file: string): T => {
 const readCatalogYaml = (file: string): Catalog => readYamlCatalog<Catalog>(file);
 const readUiCatalogYaml = (file: string): Record<string, CatalogEntry> => readYamlCatalog<Record<string, CatalogEntry>>(file);
 
+// i18n/{de,en}/pages/<page>.yml entries ({sha?, text}) - read the same way
+// as the UI catalog (readUiCatalogYaml above), just from a different path.
+// The *source*-locale file for a page never needs a `sha` (there is
+// nothing upstream of it to hash against); the *generated* file's entries
+// carry one, computed from the source value, same as every other catalog.
+const readPageCatalogYaml = (file: string): Record<string, PageCatalogEntry> => readYamlCatalog<Record<string, PageCatalogEntry>>(file);
+
 const rowsFor = (table: string, rows: Record<string, unknown>[]) =>
   table === 'tags' ? rows.map((r) => ({ ...r, id: r.tag })) : rows;
 
@@ -62,6 +70,27 @@ try {
     const uiEn = flatten(uiEnModule.en);
     const uiCatalog = readUiCatalogYaml(path.join(root, 'i18n', locale, 'ui.yml'));
     issues.push(...auditUi(uiEn, uiCatalog, locale));
+  }
+
+  // Page catalogs (i18n/{de,en}/pages/<page>.yml: impressum, privacy).
+  // Unlike the data tables and the UI catalog, whose source is always
+  // DEFAULT_LOCALE, a page's source locale is per-page - PAGE_SOURCE_LOCALE
+  // inverts it for impressum/privacy, whose binding text is German (see
+  // site/lib/i18n/pageLocales.ts and i18n/TRANSLATION.md's "The legal pages
+  // invert the direction"). So this loop is separate from the one above,
+  // and for each page audits whichever locale is NOT that page's source,
+  // against the source locale's own values - never assuming English is the
+  // source the way auditTable/auditUi's outer loop does.
+  for (const page of Object.keys(PAGE_SOURCE_LOCALE)) {
+    const source = PAGE_SOURCE_LOCALE[page] ?? DEFAULT_LOCALE;
+    const generated = LOCALES.find((locale) => locale !== source);
+    if (!generated) continue;
+    const sourceCatalog = readPageCatalogYaml(path.join(root, 'i18n', source, 'pages', `${page}.yml`));
+    const sourceValues = Object.fromEntries(
+      Object.entries(sourceCatalog).map(([field, entry]) => [field, entry.text]),
+    );
+    const generatedCatalog = readPageCatalogYaml(path.join(root, 'i18n', generated, 'pages', `${page}.yml`));
+    issues.push(...auditPage(sourceValues, generatedCatalog, generated, page, PAGE_LOCALE_ONLY_FIELDS[page] ?? []));
   }
 } catch (err) {
   if (err instanceof CatalogParseError) {
