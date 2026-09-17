@@ -60,13 +60,21 @@ export const slices = (t: TFn) => ({
     openAccess: t('pub.openAccess'),
     openAccessWith: t('pub.openAccessWith'),
     openAccessTitle: t('pub.openAccessTitle'),
-    cited: t('pub.cited'),
+    cited: { one: t('pub.citedOne'), other: t('pub.citedOther') },
     abstract: t('pub.abstract'),
     keywords: t('detail.keywords'),
     pdf: t('links.pdf'),
     homepage: t('links.projectHomepage'),
     repository: t('links.repositoryHomepage'),
     statusLabels: statusLabels(t),
+  },
+  teachingCard: {
+    type: { lecture: t('teachingType.lecture'), course: t('teachingType.course'), seminar: t('teachingType.seminar') },
+  },
+  fundingCard: {
+    role: { Recipient: t('fundingRole.recipient'), 'Co-Investigator': t('fundingRole.coInvestigator') },
+    projectHomepage: t('links.projectHomepage'),
+    repositoryHomepage: t('links.repositoryHomepage'),
   },
   personCard: {
     viewProfile: t('person.viewProfile'),

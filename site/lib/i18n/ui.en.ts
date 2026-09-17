@@ -48,8 +48,22 @@ export const en = {
     releaseNotes: 'Release notes',
     deployedCommit: 'Deployed commit',
     toTop: 'Scroll to top',
-    impressum: 'Impressum',
-    privacy: 'Datenschutzerklärung',
+    // Footer.astro's two postal addresses (institution/department names and
+    // the street stay fixed template text in both locales, like every other
+    // institution name - see TRANSLATION.md); only the country word was
+    // unreachable by the translation workflow. Whether German says
+    // "Deutschland" is a reversible content call, not a translation
+    // correctness one - swap this one value back to "Germany" to revert.
+    country: 'Germany',
+    // Matches the page's own <h2> heading (i18n/en/pages/impressum.yml /
+    // privacy.yml's `heading`), not the German loanword: a footer link
+    // reading "Impressum" that lands on a page headed "Legal Notice" read
+    // as two different pages to an English visitor. sitePages.impressum /
+    // .privacy (the search/llms.txt description) already used the English
+    // wording; this brings the footer link and the <title> (see
+    // impressum.astro/privacy.astro) in line with it.
+    impressum: 'Legal Notice',
+    privacy: 'Privacy Policy',
   },
   meta: {
     description: 'Research Group König',
@@ -135,7 +149,8 @@ export const en = {
     openAccess: 'open access',
     openAccessWith: 'Open access ({status})',
     openAccessTitle: 'Open access',
-    cited: 'cited {count}',
+    citedOne: 'cited {count}',
+    citedOther: 'cited {count}',
     abstract: 'Abstract',
   },
   filter: {
@@ -296,6 +311,15 @@ export const en = {
     project: 'Project',
     software: 'Software',
     publication: 'Publication',
+  },
+  teachingType: {
+    lecture: 'Lecture',
+    course: 'Course',
+    seminar: 'Seminar',
+  },
+  fundingRole: {
+    recipient: 'Recipient',
+    coInvestigator: 'Co-Investigator',
   },
   searchType: {
     publication: 'Publication',

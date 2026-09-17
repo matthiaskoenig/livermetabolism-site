@@ -101,11 +101,14 @@ footer.deployedCommit:
 footer.toTop:
   sha: '0d26ae7f847f3b0b'
   text: Nach oben scrollen
+footer.country:
+  sha: '80db4ccdca106d37'
+  text: Deutschland
 footer.impressum:
-  sha: 'b8a6051923e6a649'
+  sha: '058d2182bd01da2d'
   text: Impressum
 footer.privacy:
-  sha: 'a1235efbc18d60e2'
+  sha: '506ff394621596dd'
   text: Datenschutzerklärung
 meta.description:
   sha: '273ca3bf443a9bb4'
@@ -290,7 +293,10 @@ pub.openAccessWith:
 pub.openAccessTitle:
   sha: '4099a2c228b17acc'
   text: Open Access
-pub.cited:
+pub.citedOne:
+  sha: '54f97ea52391a3ba'
+  text: '{count} Zitation'
+pub.citedOther:
   sha: '54f97ea52391a3ba'
   text: '{count} Zitationen'
 pub.abstract:
@@ -412,7 +418,7 @@ home.sectionFooter:
   text: Fußzeile
 home.linkProjectsText:
   sha: '4af6e81b7cb76806'
-  text: 'Entdecken Sie unsere laufenden Forschungsprojekte und Digital-Twin-Modelle.'
+  text: 'Entdecken Sie unsere laufenden Forschungsprojekte und Modelle digitaler Zwillinge.'
 home.linkPublicationsText:
   sha: 'dc267a9851a1451a'
   text: 'Begutachtete Arbeiten, Preprints und offene Datensätze aus dem Labor.'
@@ -647,6 +653,21 @@ type.software:
 type.publication:
   sha: '15fc65b69327ad3a'
   text: Publikation
+teachingType.lecture:
+  sha: 'a757c6b4039f9966'
+  text: Vorlesung
+teachingType.course:
+  sha: '2096cefba06a32ba'
+  text: Kurs
+teachingType.seminar:
+  sha: '1bbd481fbe665caa'
+  text: Seminar
+fundingRole.recipient:
+  sha: '51fac985e95345d9'
+  text: Empfängerin oder Empfänger
+fundingRole.coInvestigator:
+  sha: '30df09b77988fa10'
+  text: Mitantragstellerin oder Mitantragsteller
 searchType.publication:
   sha: '15fc65b69327ad3a'
   text: Publikation
