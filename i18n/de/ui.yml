@@ -157,7 +157,7 @@ scholar.publications:
   text: Publikationen
 scholar.peerReviewed:
   sha: '0000000000000000'
-  text: peer-reviewed
+  text: begutachtet
 scholar.since:
   sha: '0000000000000000'
   text: 'seit {year}'

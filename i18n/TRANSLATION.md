@@ -184,8 +184,8 @@ it, not propose a new rendering.
 | `thesis` | Abschlussarbeit |
 | `preprint` | Preprint (unübersetzt) |
 | `abstract` | Abstract (unübersetzt) |
-| `report` | (not yet shipped - if you must, use `Bericht`, but check `i18n:check` first) |
-| `chapter` | (not yet shipped - if you must, use `Buchkapitel`, but check `i18n:check` first) |
+| `report` | Bericht - already translated in `i18n/de/ui.yml` (`status.report`), currently unused by `data/publications.yml`. |
+| `chapter` | Buchkapitel - already translated in `i18n/de/ui.yml` (`status.chapter`), currently unused by `data/publications.yml`. |
 
 **Search index / record types** (the labels shown next to a search result
 and anywhere a record's kind is named in the UI):
@@ -210,7 +210,8 @@ and anywhere a record's kind is named in the UI):
 
 | English | German | Note |
 |---|---|---|
-| peer-reviewed | begutachtet | Not "peer-reviewt" - that is Denglish and was rejected. |
+| peer-reviewed (adjective) | begutachtet | `scholar.peerReviewed` in `i18n/de/ui.yml`. Not "peer-reviewt" - that is Denglish and was rejected. This exact key shipped as the literal English string `peer-reviewed` for a time (a mixed-language regression on the German citation-stats strip, the same defect class as the citation/status badge fixes below); it is fixed as of this revision - if `i18n:check` or a page render ever shows this key in English again, treat it as the same bug and fix the catalog value, not just this guide. |
+| peer-reviewed (noun phrase, e.g. "peer-reviewed papers") | Begutachtete Arbeiten | `home.linkPublicationsText` ("Begutachtete Arbeiten, Preprints und offene Datensätze aus dem Labor."). Two different keys hold two different grammatical forms of the same term - translate each to fit its own sentence, do not force one key's wording onto the other. |
 | deployed (footer's deployed commit) | bereitgestellt | Not "veröffentlicht" - that word is already used for release notes (`footer.releaseNotes`) and reusing it for "deployed" would make the footer ambiguous between the two concepts. |
 
 **Academic roles.** Use the official German terms, not literal
@@ -250,7 +251,7 @@ and re-translating it risks drifting from the established wording above.
 | FAIR data | FAIR-Daten |
 | machine learning | maschinelles Lernen |
 | research area | Forschungsbereich |
-| peer-reviewed | begutachtet |
+| peer-reviewed | begutachtet (adjective) / Begutachtete Arbeiten (noun phrase - see the pinned-terms table above for which key gets which form) |
 | open access | Open Access (unübersetzt) |
 | preprint | Preprint (unübersetzt) |
 | grant | Förderung |
@@ -292,12 +293,25 @@ single sentence with a link in the middle.
 
 ### Some data fields keep their HTML - translate text nodes only
 
-The following data fields are markup-bearing **by design** and are the
-exception to "plain text only":
+**The rule is by cause, not by a fixed list:** any field whose value
+reaches `DetailModel.body` (built in `site/lib/details.ts`) or is bound
+with Vue's `v-html` anywhere in `site/components/` is markup-bearing,
+whether or not today's data for that field happens to contain a tag. A
+field can be markup-bearing and still look like plain text in every
+current row - the first row that gains an inline link is what exposes it,
+so check the code path, not the current YAML content, when in doubt.
+
+As of this writing, the markup-bearing fields are:
 
 - `news.abstract`
 - `news.short`
 - `people.description`
+- `projects.abstract` - reaches `DetailModel.body` via `details.ts`'s
+  project model, and `ProjectCard.vue` calls `stripHtml(project.abstract)`
+  on the card preview, which only makes sense if the field can carry
+  markup.
+- `software.description` - reaches `DetailModel.body` via `details.ts`'s
+  software model.
 - `teaching.content`
 - `teaching.caption`
 - `teaching.funding`
