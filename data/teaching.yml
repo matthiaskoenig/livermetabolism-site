@@ -1,6 +1,5 @@
 - id: theory_tools_methods_ss25
   title: "Theory, tools and methods in biology"
-  title_german: "Theorie, Werkzeuge und Methoden der Biologie"
   date: 04/2025 - 09/2025
   type:
     - lecture
@@ -26,7 +25,6 @@
 
 - id: theory_tools_methods_ss24
   title: "Theory, tools and methods in biology"
-  title_german: "Theorie, Werkzeuge und Methoden der Biologie"
   date: 04/2024 - 09/2024
   type:
     - lecture
@@ -53,7 +51,6 @@
 
 - id: xresearch2023
   title: "X-Student Research Group: Physiologically based digital twins for the treatment of hypertension with ACE inhibitors and diuretics"
-  title_german: "X-Student Research Group: Physiologisch basierte Digital Twins für die Behandlung von Bluthochdruck mit ACE-Inhibitoren und Diuretika"
   date: 04/2023 - 09/2023
   type:
     - lecture
@@ -83,7 +80,6 @@
 
 - id: theory_tools_methods_ss23
   title: "Theory, tools and methods in biology"
-  title_german: "Theorie, Werkzeuge und Methoden der Biologie"
   date: 04/2023 - 09/2023
   type:
     - lecture
@@ -110,7 +106,6 @@
 
 - id: xresearch2022
   title: "X-Student Research Group: Physiologically based modeling of drugs: ACE inhibitors in the treatment of high blood pressure"
-  title_german: "X-Student Research Group: Physiologisch basierte Modellierung von Arzneimitteln: ACE-Hemmer bei der Behandlung von Bluthochdruck"
   date: 10/2022 - 03/2023
   type:
     - lecture
@@ -143,7 +138,6 @@
 
 - id: models_quantitative_biology_ws21
   title: "Important models of quantitative biology from the literature"
-  title_german: "Wichtige Modelle der Quantitativen Biologie aus der Literatur"
   date: 10/2021 - 03/2022
   type:
     - seminar
@@ -166,7 +160,6 @@
 
 - id: models_quantitative_biology_ws20
   title: "Important models of quantitative biology from the literature"
-  title_german: "Wichtige Modelle der Quantitativen Biologie aus der Literatur"
   date: 10/2020 - 03/2021
   type:
     - seminar
@@ -189,7 +182,6 @@
 
 - id: models_cellular_processes_ws19
   title: "Models of cellular processes"
-  title_german: "Vorlesung: Modelle zellulärer Prozesse"
   date: 10/2019 - 03/2020
   type:
     - lecture
@@ -211,7 +203,6 @@
 
 - id: models_quantitative_biology_ws19
   title: "Important models of quantitative biology from the literature"
-  title_german: "Wichtige Modelle der Quantitativen Biologie aus der Literatur"
   date: 10/2019 - 03/2020
   type:
     - seminar
@@ -234,7 +225,6 @@
 
 - id: models_quantitative_biology_ws18
   title: "Important models of quantitative biology from the literature"
-  title_german: "Wichtige Modelle der Quantitativen Biologie aus der Literatur"
   date: 10/2018 - 03/2019
   type:
     - seminar

@@ -338,7 +338,6 @@ class News(Taggable, PeopleLinked):
 class Teaching(Taggable, PeopleLinked):
     id: str
     title: str
-    title_german: str | None = None
     date: str
     type: list[TeachingType] = list_field()
     semester: str
