@@ -343,7 +343,7 @@ xenia_petukhova:
       - 'Humboldt-Praktikantin oder Humboldt-Praktikant'
 zahra_bahri:
   description:
-    sha: bfac29608513c681
+    sha: 8593d732a941304c
     text: 'Zahra arbeitet an einem physiologiebasierten pharmakokinetischen (PBPK) Modell zur Schätzung der glomerulären Filtrationsrate (eGFR) mittels Kreatinin. Ziel ist es, unser Verständnis dafür zu vertiefen, wie Schwankungen der Kreatininproduktion, der Muskelmasse und der tubulären Sekretion von Kreatinin die eGFR-Berechnung beeinflussen.'
   role:
     sha: 080f5b6385804fa4
@@ -379,7 +379,7 @@ nurudeen_sojimade:
       - 'Praktikum'
 jan_grzegorzewski:
   description:
-    sha: 8c60bbdfd2d4ac4b
+    sha: ab838adf9c520fcc
     text: 'Jan arbeitete an der Stratifizierung und Personalisierung computergestützter Modelle. Er entwickelt Methoden und Software für die halbautomatische Datenkuratierung pharmakokinetischer Informationen sowie eine pharmakokinetische Datenbank für die Speicherung und den FAIR-Zugriff auf solche Daten (<a href="https://pk-db.com">PK-DB</a>).'
   role:
     sha: ff7caa797dcf9832

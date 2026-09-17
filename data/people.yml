@@ -591,7 +591,7 @@
   orcid:
   repository: 'https://github.com/Rain-marine'
   homepage:
-  description: 'Zhara works on a physiologically based pharmacokinetic (PBPK) model to estimate the glomerular filtration rate (eGFR) using creatinine. The objective is to enhance our understanding of how variations in creatinine production, muscle mass, and tubular secretion of creatinine influence eGFR calculations.'
+  description: 'Zahra works on a physiologically based pharmacokinetic (PBPK) model to estimate the glomerular filtration rate (eGFR) using creatinine. The objective is to enhance our understanding of how variations in creatinine production, muscle mass, and tubular secretion of creatinine influence eGFR calculations.'
 
 - id: 'florian_bartsch'
   status: 'alumni'
@@ -651,7 +651,7 @@
   orcid: '0000-0002-4588-4925'
   repository: 'https://github.com/janekg89/'
   homepage: 'https://github.com/janekg89/'
-  description: 'Jan worked on the stratification and personalization of computational models. He develops methods and software for semi-automatic data curation of pharmacokinetic information and a pharmacokinetic database for storage and the storage and FAIR access of such data (<a href="https://pk-db.com">PK-DB</a>).'
+  description: 'Jan worked on the stratification and personalization of computational models. He develops methods and software for semi-automatic data curation of pharmacokinetic information and a pharmacokinetic database for the storage and FAIR access of such data (<a href="https://pk-db.com">PK-DB</a>).'
 
 - id: 'sophie_silberhorn'
   status: 'alumni'

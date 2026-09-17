@@ -139,6 +139,17 @@ This is the same principle already applied to `X-Student Research Group`,
 apply. When in doubt on a title that reads like plain English, check the
 row's own link before translating it.
 
+The evidence does not have to live on the row being translated: it can sit
+on a **different row, or in a different table** - an `activities.yml` row
+describing a working group, a `meetings.yml` event page, a person's bio
+mentioning the same initiative by name - so when a row itself carries no
+`link`/`homepage`/`event_page`, search the wider data for the name before
+assuming it is ordinary prose. `projects.rapamycin`'s abstract names the
+`Immune Digital Twin (IDT)` with no URL of its own on that row, but
+`data/activities.yml` has "Member Research Data Alliance (RDA) Working
+Group: Building Immune Digital Twins" - confirming it as an RDA working
+group's registered name, evidenced elsewhere in the data tree.
+
 ### Known single-language surfaces
 
 `site/pages/site.webmanifest.ts` is one root-level file, not routed per
