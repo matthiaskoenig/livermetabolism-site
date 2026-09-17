@@ -34,14 +34,14 @@ export function toTagFilterEntries(tags: TagInfo[]): TagFilterEntry[] {
  * caller that does not care about the label (tests, the LLM export) compiling
  * unchanged.
  */
-export function toTagInfo(rows: TagData[], labelFor: (slug: string) => string = (slug) => slug): TagInfo[] {
+export function toTagInfo(rows: TagData[], labelFor: (slug: string, tag: string) => string = (slug) => slug): TagInfo[] {
   return rows
     .slice()
     .sort((a, b) => a.order - b.order)
     .map((d) => {
       const slug = slugify(d.tag);
       return {
-        tag: d.tag, slug, icon: d.icon, label: labelFor(slug),
+        tag: d.tag, slug, icon: d.icon, label: labelFor(slug, d.tag),
         short_description: d.short_description, description: d.description, vision: d.vision,
       };
     });

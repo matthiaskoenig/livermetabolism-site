@@ -73,7 +73,7 @@ export async function getTags(locale: Locale): Promise<TagInfo[]> {
   const raw = tags.map((t) => ({ ...(t.data as S.TagData), id: t.id }));
   const localized = localize(raw, loadCatalog(locale, 'tags'), TRANSLATABLE.tags);
   const { t } = uiFor(locale);
-  return toTagInfo(localized, (slug) => tagLabel(slug, t));
+  return toTagInfo(localized, (slug, tag) => tagLabel(slug, t, tag));
 }
 export const getPeople = (locale: Locale) => all('people', locale);
 export const getPublications = (locale: Locale) => all('publications', locale);

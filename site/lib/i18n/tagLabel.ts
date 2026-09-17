@@ -13,9 +13,11 @@ import type { UiKey } from './ui.en';
  * Adding a research area to data/tags.yml means adding its slug here and its
  * `tags.label.*` key to both `ui.en.ts` and `i18n/de/ui.yml` (`loadUi()`
  * throws on a key-set mismatch, so both catalogs land in the same commit). A
- * slug missing from this map falls back to itself rather than failing the
- * build, so a forgotten label shows up as a raw slug during review instead
- * of crashing the site.
+ * slug missing from this map falls back to `fallback` (the row's own `tag`
+ * value, e.g. "Metabolic Modeling" - pre-i18n, `label` was always `tag.tag`)
+ * rather than failing the build, so a forgotten label shows up as readable
+ * English on every locale during review, not as a raw slug like
+ * "metabolic-modeling" on the German pages too.
  */
 const TAG_LABEL_KEY: Record<string, UiKey> = {
   'digital-twins': 'tags.label.digitalTwins',
@@ -25,7 +27,7 @@ const TAG_LABEL_KEY: Record<string, UiKey> = {
   'open-fair': 'tags.label.openFair',
 };
 
-export function tagLabel(slug: string, t: TFn): string {
+export function tagLabel(slug: string, t: TFn, fallback: string): string {
   const key = TAG_LABEL_KEY[slug];
-  return key ? t(key) : slug;
+  return key ? t(key) : fallback;
 }

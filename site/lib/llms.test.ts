@@ -26,8 +26,8 @@ function fixture(over: Partial<LlmsFullInput> = {}): LlmsFullInput {
   return {
     ...ROOT,
     tags: [
-      { tag: 'AI', slug: 'ai', short_description: 'Short AI.', description: 'Long AI.', vision: 'AI vision.' },
-      { tag: 'Open & FAIR', slug: 'open-fair', short_description: 'Short FAIR.', description: 'Long FAIR.', vision: 'FAIR vision.' },
+      { tag: 'AI', slug: 'ai', label: 'AI', short_description: 'Short AI.', description: 'Long AI.', vision: 'AI vision.' },
+      { tag: 'Open & FAIR', slug: 'open-fair', label: 'Open & FAIR', short_description: 'Short FAIR.', description: 'Long FAIR.', vision: 'FAIR vision.' },
     ],
     people: [
       { id: 'ada', name: 'Ada Lovelace', status: 'current', role: ['PhD student', 'PostDoc'], tenure: '2020-', affiliation: null, description: 'Works on <b>digital twins</b>.', image: 'ada.webp' },

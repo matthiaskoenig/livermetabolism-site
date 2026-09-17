@@ -68,7 +68,7 @@ export interface Deploy {
 
 export interface LlmsInput extends Deploy {
   t: TFn;
-  tags: Pick<TagInfo, 'tag' | 'slug' | 'short_description' | 'description' | 'vision'>[];
+  tags: Pick<TagInfo, 'tag' | 'slug' | 'label' | 'short_description' | 'description' | 'vision'>[];
   projects: Pick<Entry<S.ProjectData>, 'id' | 'title' | 'status' | 'tags' | 'abstract' | 'homepage'>[];
   software: Pick<Entry<S.SoftwareData>, 'id' | 'name' | 'title' | 'description' | 'homepage' | 'repository' | 'tags'>[];
 }
@@ -171,7 +171,7 @@ export function llmsTxt(input: LlmsInput): string {
   return doc([
     header(),
     t('llms.intro'),
-    section(t('llms.researchAreas'), input.tags.map((tag) => item(tag.tag, abs(`/#${tag.slug}`), tag.short_description))),
+    section(t('llms.researchAreas'), input.tags.map((tag) => item(tag.label, abs(`/#${tag.slug}`), tag.short_description))),
     section(t('llms.pages'), pages.map((p) => item(p.title, abs(p.path), p.description))),
     section(
       t('nav.software'),
@@ -188,7 +188,11 @@ export function llmsTxt(input: LlmsInput): string {
       item('English', abs('/'), 'the default language of this site'),
       item('Deutsch', deAbs('/'), 'the German homepage'),
       item(t('llms.fullContent'), abs('llms-full.txt'), t('llms.fullContentNote')),
-      item(`${t('llms.fullContent')} (Deutsch)`, `${abs('llms-full.txt')}#deutsch`, 'the German half of the same file'),
+      // llms-full.txt is served as text/plain, where a URL fragment does
+      // nothing - same href as the English entry above, distinguished only
+      // by its own label/description (see the "## Deutsch" heading inside
+      // the file itself for where the German half actually starts).
+      item(`${t('llms.fullContent')} (Deutsch)`, abs('llms-full.txt'), 'the German half of the same file'),
       item(t('llms.searchIndex'), abs('search.json'), t('llms.searchIndexNote')),
       item(t('llms.sitemap'), abs('sitemap-index.xml')),
       item(t('llms.cvOfMatthias'), abs(CV_PDF), t('links.pdf')),
@@ -222,7 +226,7 @@ function fullSections(input: LlmsFullInput, abs: Abs): string[] {
   };
 
   return [
-    entries(t('llms.researchAreas'), input.tags.map((tag) => entry(tag.tag, [], `${tag.description.trim()}\n\nVision: ${tag.vision.trim()}`))),
+    entries(t('llms.researchAreas'), input.tags.map((tag) => entry(tag.label, [], `${tag.description.trim()}\n\nVision: ${tag.vision.trim()}`))),
     entries(t('nav.team'), [
       ...(current.length ? [`### ${t('llms.currentMembers')}\n\n${current.map(person).join('\n')}`] : []),
       ...(alumni.length ? [`### ${t('nav.alumni')}\n\n${alumni.map(person).join('\n')}`] : []),
