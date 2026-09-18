@@ -168,3 +168,99 @@ test('hreflang alternates point at pages that exist', async ({ page, request }) 
     expect((await request.get(servedPath(href))).status(), href).toBe(200);
   }
 });
+
+test('the language switch sits at the right of the navbar, styled apart from the nav links', async ({ page }) => {
+  await page.goto('');
+  const box = await page.evaluate(() => {
+    const sw = document.querySelector('nav.site-navbar .lang-switch')!.getBoundingClientRect();
+    const container = document.querySelector('.navbar-container')!.getBoundingClientRect();
+    const links = [...document.querySelectorAll('.navbar-nav .nav-link')].map((l) => l.getBoundingClientRect().right);
+    return { swLeft: sw.left, swRight: sw.right, containerRight: container.right, lastLink: Math.max(...links) };
+  });
+  // hard right: within the container's own padding of its right edge
+  expect(box.containerRight - box.swRight).toBeLessThan(24);
+  // and after every navigation item, not before them
+  expect(box.swLeft).toBeGreaterThan(box.lastLink);
+});
+
+test('the language switch shows a flag beside each language code', async ({ page }) => {
+  await page.goto('');
+  const links = page.locator('nav.site-navbar .lang-switch .lang-switch-link');
+  await expect(links).toHaveCount(2);
+  await expect(links.nth(0)).toContainText('EN');
+  await expect(links.nth(1)).toContainText('DE');
+  // the flag is decorative: the accessible name stays the language, not a country
+  const flags = await page.locator('nav.site-navbar .lang-switch .lang-switch-flag').evaluateAll(
+    (els) => els.map((e) => ({ text: e.textContent?.trim(), hidden: e.getAttribute('aria-hidden') })),
+  );
+  expect(flags).toEqual([
+    { text: '\u{1F1FA}\u{1F1F8}', hidden: 'true' },
+    { text: '\u{1F1E9}\u{1F1EA}', hidden: 'true' },
+  ]);
+  // and it reads as one control rather than two more menu entries
+  const border = await page.locator('nav.site-navbar .lang-switch').evaluate((el) => getComputedStyle(el).borderTopWidth);
+  expect(border).not.toBe('0px');
+});
+
+test('the flags do not push the mobile navbar onto a second row', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 700 });
+  await page.goto('projects/');
+  const navH = await page.evaluate(() => document.querySelector('.site-navbar')!.getBoundingClientRect().height);
+  // one row: brand, controls and hamburger side by side, as before the flags
+  expect(navH).toBeLessThan(80);
+  // the flag is decorative, so it is what gives way rather than the EN/DE text
+  await expect(page.locator('nav.site-navbar .lang-switch-link').first()).toContainText('EN');
+});
+
+test('the filter row is a compact tinted band with a gap before the content', async ({ page }) => {
+  await page.goto('projects/');
+  const m = await page.evaluate(() => {
+    const bar = document.getElementById('topic-filter')!;
+    const b = bar.getBoundingClientRect();
+    // the first real element, not .page-content itself - the gap is that
+    // element's distance from the chrome, wherever the padding lives
+    const content = document.querySelector('.page-content .container > *')!.getBoundingClientRect();
+    return {
+      height: b.height,
+      background: getComputedStyle(bar).backgroundColor,
+      gap: content.top - b.bottom,
+      radius: getComputedStyle(document.querySelector('.tag-filter-btn')!).borderTopLeftRadius,
+    };
+  });
+  expect(m.height).toBeLessThan(46);
+  expect(m.background).toBe('rgb(248, 249, 250)');
+  expect(m.gap).toBeGreaterThan(16);
+  expect(m.radius).toBe('4px');
+});
+
+test('every page starts the same distance below the chrome, bar or no bar', async ({ page }) => {
+  const gapOn = async (path: string) => {
+    await page.goto(path);
+    return page.evaluate(() => {
+      const bar = document.getElementById('topic-filter');
+      const above = (bar ?? document.querySelector('.site-navbar')!).getBoundingClientRect().bottom;
+      return Math.round(document.querySelector('.page-content .container > *')!.getBoundingClientRect().top - above);
+    });
+  };
+  const withBar = await gapOn('projects/');
+  const withoutBar = await gapOn('impressum/');
+  expect(withBar).toBeGreaterThan(16);
+  expect(withoutBar).toBe(withBar);
+});
+
+test('the pill controls and the card badges share one square corner radius', async ({ page }) => {
+  await page.goto('publications/');
+  const radii = await page.evaluate(() => {
+    const r = (s: string) => {
+      const el = document.querySelector(s);
+      return el ? getComputedStyle(el).borderTopLeftRadius : 'missing';
+    };
+    return {
+      filter: r('.tag-filter-btn'),
+      order: r('.order-btn'),
+      chartMode: r('.chart-mode-btn'),
+      badge: r('.tag-badge'),
+    };
+  });
+  expect(radii).toEqual({ filter: '4px', order: '4px', chartMode: '4px', badge: '4px' });
+});

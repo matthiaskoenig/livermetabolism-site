@@ -714,6 +714,17 @@ test('the language switch carries an open detail modal across', async ({ page })
   await expect(page.locator('#detail-modal')).toBeVisible();
 });
 
+test('the modal\u2019s own language switch is visible against its light header', async ({ page }) => {
+  await page.goto('publications/#publication/Balaur2026_fairification');
+  await expect(page.locator('#detail-modal')).toBeVisible();
+  // the fragment really loaded, so the header this switch sits in is real
+  await expect(page.locator('#detail-modal .detail')).toBeVisible();
+  const border = await page.locator('#detail-modal .lang-switch').evaluate((el) => getComputedStyle(el).borderTopColor);
+  // not the navbar's white-on-dark border, which this header would swallow
+  expect(border).not.toBe('rgba(255, 255, 255, 0.25)');
+  expect(border).toBe('rgb(222, 226, 230)');
+});
+
 test('a detail modal opens on the German tree', async ({ page }) => {
   const errors: string[] = [];
   page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
