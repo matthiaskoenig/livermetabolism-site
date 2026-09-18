@@ -85,6 +85,24 @@
   doi:
   publications:
 
+- id: 'sbml2cellml'
+  tags:
+    - 'Open & FAIR'
+    - 'Digital Twins'
+  type: "software"
+  name: 'sbml2cellml'
+  title: 'Conversion between SBML and CellML'
+  description: 'Built a bidirectional converter between SBML and CellML 2.0, validating every conversion
+    with libcellml and checking it by simulation against the SBML test suite and the curated BioModels.
+    Lets models move between the two main model description standards instead of being locked into one.'
+  image:
+  people:
+    - matthias_koenig
+  homepage: https://matthiaskoenig.github.io/sbml2cellml
+  repository: https://github.com/matthiaskoenig/sbml2cellml
+  doi: 10.5281/zenodo.22829187
+  publications:
+
 - id: 'cysbml'
   tags:
     - 'Open & FAIR'

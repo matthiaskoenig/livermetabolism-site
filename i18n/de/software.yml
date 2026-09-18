@@ -34,6 +34,13 @@ sbmlsim:
   description:
     sha: 5095995898798af1
     text: 'Entwicklung eines schlanken Python-Pakets, das Simulationen von SBML-Modellen auf Basis von libRoadRunner vereinfacht und die Einstiegshürde für Modelltests und Lehre senkt.'
+sbml2cellml:
+  title:
+    sha: bfd600e18db99102
+    text: 'Konvertierung zwischen SBML und CellML'
+  description:
+    sha: 9c16adc4d4b19116
+    text: 'Entwicklung eines bidirektionalen Konverters zwischen SBML und CellML 2.0, bei dem jede Konvertierung mit libcellml validiert und per Simulation gegen die SBML test suite sowie die kuratierten BioModels geprüft wird. Modelle lassen sich so zwischen den beiden wichtigsten Standards zur Modellbeschreibung austauschen, statt an einen davon gebunden zu sein.'
 cysbml:
   title:
     sha: 09eb6ee52efa4de2

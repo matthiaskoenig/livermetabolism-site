@@ -568,26 +568,32 @@ test('network graph: clicking a node opens its detail modal in place', async ({ 
   await page.waitForTimeout(6000);
 
   const box = (await canvas.boundingBox())!;
-  const centre = { x: box.x + box.width / 2, y: box.y + box.height / 2 };
   // ECharts draws on a canvas, so there is nothing to query: a hoverable item
-  // shows up as the container's `pointer` cursor (like the drag test). That is
-  // true of the edges too, and only a node opens a detail — so collect the
-  // candidates and click them until one does.
+  // shows up as the container's `pointer` cursor (like the drag test). Edges
+  // are hoverable too and only a node opens a detail, so collect candidates
+  // and click them until one does.
+  //
+  // The sweep covers the WHOLE canvas rather than a patch around the centre.
+  // A small patch can return a screenful of points that all sit on the same
+  // long edge through the middle, and then every click misses - which is
+  // exactly how this test used to fail on CI while passing locally, since the
+  // force layout lands differently every run.
+  const STEP = 24;
   const candidates: { x: number; y: number }[] = [];
-  for (let dx = -100; dx <= 100 && candidates.length < 24; dx += 10) {
-    for (let dy = -100; dy <= 100 && candidates.length < 24; dy += 10) {
-      await page.mouse.move(centre.x + dx, centre.y + dy);
+  for (let y = box.y + STEP; y < box.y + box.height - STEP; y += STEP) {
+    for (let x = box.x + STEP; x < box.x + box.width - STEP; x += STEP) {
+      await page.mouse.move(x, y);
       const cursor = await page.evaluate(() => getComputedStyle(document.querySelector('#network-graph canvas')!.parentElement!).cursor);
-      if (cursor === 'pointer') candidates.push({ x: centre.x + dx, y: centre.y + dy });
+      if (cursor === 'pointer') candidates.push({ x, y });
     }
   }
-  expect(candidates.length, 'hoverable items under the cursor near the middle of the canvas').toBeGreaterThan(0);
+  expect(candidates.length, 'hoverable items across the canvas').toBeGreaterThan(0);
 
   const dialog = page.locator(modal);
   let opened = false;
   for (const point of candidates) {
     await page.mouse.click(point.x, point.y);
-    await page.waitForTimeout(300);
+    await page.waitForTimeout(250);
     opened = await dialog.evaluate((d) => (d as HTMLDialogElement).open);
     if (opened) break;
   }

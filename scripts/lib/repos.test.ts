@@ -65,10 +65,11 @@ describe('reposFromSoftware', () => {
   it('reads the real data/software.yml', () => {
     // Every software entry carries its own GitHub repository.
     const names = reposFromSoftware(readFileSync('data/software.yml', 'utf8'));
-    expect(names).toHaveLength(13);
+    expect(names).toHaveLength(14);
     expect(names).toContain('matthiaskoenig/sbml4humans');
     expect(new Set(names).size).toBe(names.length);
     expect(names).toContain('matthiaskoenig/sbmlutils');
+    expect(names).toContain('matthiaskoenig/sbml2cellml');
     expect(names).toContain('sys-bio/roadrunner');
     expect(names).toContain('opencobra/cobrapy');
     expect(names.at(-1)).toBe('matthiaskoenig/livermetabolism-site');
