@@ -35,6 +35,15 @@ test('footer states the build version and commit', async ({ page }) => {
   }
 });
 
+test('footer links to the issue tracker (issue #67)', async ({ page }) => {
+  await page.goto('');
+  const report = page.locator('footer.footer .footer-legal a.footer-issue');
+  await expect(report).toBeVisible();
+  await expect(report).toHaveAttribute('href', 'https://github.com/matthiaskoenig/livermetabolism-site/issues/new');
+  await expect(report).toHaveAttribute('target', '_blank');
+  await expect(report).toHaveAttribute('rel', /noopener/);
+});
+
 // The detail fragments (/detail/<type>/<id>/) are Astro page partials: no
 // doctype, no <head>, no navbar and no footer, so they cannot join the loop
 // above. What matters is that one is served, that it is still a partial (the

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { tagSlugs } from '../lib/text';
 import Icon from './Icon.vue';
 import PersonChips from './PersonChips.vue';
 import TagList from './TagList.vue';
@@ -12,7 +13,7 @@ const TYPE_ICONS: Record<string, string> = { lecture: 'person-chalkboard', cours
 </script>
 
 <template>
-  <div :id="`teaching-${item.id}`">
+  <div :id="`teaching-${item.id}`" :data-tags="tagSlugs(item.tags)">
     <h3>{{ item.title }}</h3>
     <h4>
       <!-- the icon lookup and the :key stay on the raw machine value; only the label is translated -->

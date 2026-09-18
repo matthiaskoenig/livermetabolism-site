@@ -110,6 +110,9 @@ footer.impressum:
 footer.privacy:
   sha: '506ff394621596dd'
   text: Datenschutzerklärung
+footer.reportIssue:
+  sha: '635ae219ad13dc71'
+  text: Problem melden
 meta.description:
   sha: '273ca3bf443a9bb4'
   text: Forschungsgruppe König
@@ -305,6 +308,18 @@ pub.abstract:
 filter.all:
   sha: 'a52ace420f2175d0'
   text: Alle
+filter.label:
+  sha: '1b85a3422e09758c'
+  text: Forschungsbereich
+filter.empty:
+  sha: 'd158f4f3e5ab08f7'
+  text: 'Noch nichts in diesem Forschungsbereich.'
+filter.active:
+  sha: '2883dc34ff77d3b3'
+  text: 'Anzeige auf {topic} beschränkt'
+filter.clear:
+  sha: '6c29dcf02ded9bb7'
+  text: Alle Forschungsbereiche anzeigen
 tags.label.digitalTwins:
   sha: 'afb18eb174634b44'
   text: Digitale Zwillinge
@@ -362,9 +377,6 @@ chart.releaseDatesPerRepository:
 chart.releaseTimelineCaption:
   sha: '7dbc35d2b0bcd405'
   text: 'Ein Punkt pro Release; ziehen Sie den Regler zum Zoomen, klicken Sie auf einen Punkt, um ihn auf GitHub zu öffnen.'
-network.showArea:
-  sha: '5c77f9fd9b135fd3'
-  text: Einen Forschungsbereich anzeigen
 network.zoomIn:
   sha: '0e47f09a748fa132'
   text: Vergrößern

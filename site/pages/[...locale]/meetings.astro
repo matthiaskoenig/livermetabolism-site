@@ -1,13 +1,11 @@
 ---
 import Base from '../../layouts/Base.astro';
 import MeetingCard from '../../components/MeetingCard.vue';
-import TagFilter from '../../components/TagFilter.vue';
 import { getMeetings, getPeopleMap, getTags } from '../../lib/data';
 import { uiFor } from '../../lib/i18n/catalog';
 import { localeFromParams, localePaths } from '../../lib/i18n/routes';
 import { slices } from '../../lib/i18n/slices';
 import { asset } from '../../lib/url';
-import { toTagFilterEntries } from '../../lib/views';
 
 export const getStaticPaths = localePaths;
 const locale = localeFromParams(Astro.params);
@@ -17,13 +15,12 @@ const [tagInfo, peopleMap, meetings] = await Promise.all([getTags(locale), getPe
 const imageBase = asset('image/meetings/');
 const pdfBase = asset('pdf/');
 const avatarBase = asset('image/people/128/');
-const tagFilterEntries = toTagFilterEntries(tagInfo);
 ---
-<Base title={t('nav.meetings')} sectionid="meetings" locale={locale}>
+<Base title={t('nav.meetings')} sectionid="meetings" locale={locale} filter>
   <h2 id="meetings">{t('nav.meetings')}</h2>
   <p>{t('meetings.intro')}</p>
-  <TagFilter client:idle id="meeting" tags={tagFilterEntries} target="meetings-grid" strings={ui.tagFilter} />
   <div class="project-grid" id="meetings-grid">
     {meetings.map((item) => <MeetingCard item={item} tagInfo={tagInfo} peopleMap={peopleMap} imageBase={imageBase} pdfBase={pdfBase} avatarBase={avatarBase} strings={ui.links} />)}
+    <p data-filter-empty hidden>{t('filter.empty')}</p>
   </div>
 </Base>

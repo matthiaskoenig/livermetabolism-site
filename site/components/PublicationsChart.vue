@@ -14,6 +14,7 @@ import { publicationsOption, PUBLICATIONS_HEIGHT, type PublicationsMode } from '
 import type { UiSlices } from '../lib/i18n/slices';
 import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
 import type { PublicationYearRows } from '../lib/publicationRows';
+import { setTopic } from '../lib/topicFilter';
 
 const props = defineProps<{ rows: PublicationYearRows; strings: UiSlices['publicationsChart']; locale?: Locale }>();
 const mode = ref<PublicationsMode>('tag');
@@ -36,11 +37,15 @@ function yearGroup(year: string): HTMLElement | null {
 }
 
 /**
- * Click on a bar segment: in research-area mode press the matching button of
- * the tag filter (`TagFilter` is a client:idle island — before it hydrates, or
- * on a page without the bar, there is simply nothing to press), then scroll to
- * the list. In status mode a segment only scrolls, there is no status filter.
- * Click on a year label (xAxis, `triggerEvent`): scroll to that year's group.
+ * Click on a bar segment: in research-area mode narrow the site to that area
+ * and scroll to the list. In status mode a segment only scrolls, there is no
+ * status filter. Click on a year label (xAxis, `triggerEvent`): scroll to that
+ * year's group.
+ *
+ * The filter is the site-wide one (`topicFilter.ts`, issue #68), so this sets
+ * a value rather than reaching into another island's DOM as it had to when
+ * every page kept its own `TagFilter`: whoever renders the rows - the bar's
+ * sweep here, the graph on /network/ - follows the same store.
  */
 function onClick(params: unknown): void {
   const p = (params ?? {}) as { componentType?: string; seriesName?: string; name?: string; value?: unknown };
@@ -48,12 +53,9 @@ function onClick(params: unknown): void {
     scrollTo(yearGroup(String(p.value ?? '')));
     return;
   }
-  if (mode.value === 'tag' && p.seriesName) {
-    // matched on the attribute rather than through a `[data-tag="…"]`
-    // selector, so a tag name never has to be escaped into a selector
-    const buttons = document.querySelectorAll<HTMLElement>('#publication-tag-filter [data-tag]');
-    [...buttons].find((b) => b.dataset.tag === p.seriesName)?.click();
-  }
+  // a series is named after the machine tag value ("Open & FAIR", never a
+  // slug - see chartOptions.ts); setTopic() resolves either spelling
+  if (mode.value === 'tag' && p.seriesName) setTopic(p.seriesName);
   scrollTo(null);
 }
 

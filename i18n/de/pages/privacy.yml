@@ -80,6 +80,13 @@ consentStorageText:
     oben zurücksetzen oder durch Löschen der Website-Daten in Ihrem Browser entfernen. Das Banner
     steuert Google Analytics. Die im folgenden Abschnitt beschriebenen Schriftarten, Datenabrufe und
     YouTube-Inhalte werden unabhängig von dieser Auswahl geladen.
+filterStorageText:
+  text: >-
+    Wenn Sie auf dieser Website einen Forschungsbereich als Filter auswählen, wird auch diese
+    Auswahl im lokalen Speicher Ihres Browsers gespeichert, damit sie beim Wechsel auf eine andere
+    Seite erhalten bleibt. Es handelt sich um eine reine Anzeigeeinstellung. Sie wird weder an uns
+    noch an Dritte übermittelt und enthält keine personenbezogenen Daten. Sie entfernen sie, indem
+    Sie den Filter auf "Alle" zurücksetzen oder die Website-Daten in Ihrem Browser löschen.
 externalLinksHeading:
   text: 4. Externe Links und eingebundene Inhalte
 externalResourcesText:

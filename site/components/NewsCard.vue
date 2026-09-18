@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { tagSlugs } from '../lib/text';
 import { computed } from 'vue';
 import Icon from './Icon.vue';
 import PeopleAvatars from './PeopleAvatars.vue';
@@ -19,7 +20,7 @@ const thumb = computed(() => {
 </script>
 
 <template>
-  <div class="project-card is-clickable" :id="`news-${item.id}`" :data-tags="item.tags.join('|')" :data-detail="`news:${item.id}`" role="button" tabindex="0" aria-haspopup="dialog">
+  <div class="project-card is-clickable" :id="`news-${item.id}`" :data-tags="tagSlugs(item.tags)" :data-detail="`news:${item.id}`" role="button" tabindex="0" aria-haspopup="dialog">
     <img v-if="thumb" :src="thumb" :alt="item.title" loading="lazy" decoding="async" class="project-image" />
     <div class="project-body">
       <p class="news-date">{{ item.date }}</p>

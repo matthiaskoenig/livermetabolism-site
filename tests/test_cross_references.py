@@ -7,6 +7,7 @@ import pytest
 from pydantic import ValidationError
 
 from tests.conftest import (
+    make_abstract,
     make_database,
     make_editor,
     make_person,
@@ -38,6 +39,21 @@ def test_known_tag_accepted():
         projects=[make_project(tags=["AI"])],
     )
     assert db.projects[0].tags == ["AI"]
+
+
+def test_abstract_tags_are_cross_checked():
+    """Abstracts carry research areas like every other bibliographic table,
+    so the site-wide filter can reach them (issue #68)."""
+    with pytest.raises(ValidationError, match="unknown tag"):
+        make_database(abstracts=[make_abstract(tags=["Not A Real Tag"])])
+
+
+def test_abstract_known_tag_accepted():
+    db = make_database(
+        tags=[make_tag(tag="Pharmacometrics")],
+        abstracts=[make_abstract(tags=["Pharmacometrics"])],
+    )
+    assert db.abstracts[0].tags == ["Pharmacometrics"]
 
 
 def test_unknown_publication_id_rejected():

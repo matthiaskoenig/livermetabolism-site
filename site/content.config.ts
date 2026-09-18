@@ -47,7 +47,7 @@ export const collections = {
   presentations: defineCollection({ loader: yml('presentations'), schema: s.presentationSchema.extend({ ...withPeopleTags, publications: refList('publications') }) }),
   posters: defineCollection({ loader: yml('posters'), schema: s.posterSchema.extend(withPeopleTags) }),
   panels: defineCollection({ loader: yml('panels'), schema: s.panelSchema.extend({ people: refList('people'), publications: refList('publications') }) }),
-  abstracts: defineCollection({ loader: yml('abstracts'), schema: s.abstractSchema.extend({ people: refList('people') }) }),
+  abstracts: defineCollection({ loader: yml('abstracts'), schema: s.abstractSchema.extend({ ...withPeopleTags }) }),
   meetings: defineCollection({ loader: yml('meetings'), schema: s.meetingSchema.extend(withPeopleTags) }),
   activities: defineCollection({ loader: yml('activities'), schema: s.activitySchema }),
   linkedin: defineCollection({ loader: yml('linkedin'), schema: s.linkedInSchema }),

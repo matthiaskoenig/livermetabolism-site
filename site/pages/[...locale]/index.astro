@@ -89,21 +89,21 @@ const quickLinks = [
         {(s.counts.publications > 0 || s.counts.projects > 0 || s.counts.software > 0) && (
           <div class="tag-section-links">
             {s.counts.publications > 0 && (
-              <a class="tag-section-link" href={`${u('/publications/')}?tag=${encodeURIComponent(s.tag)}`}>
+              <a class="tag-section-link" href={`${u('/publications/')}?tag=${s.slug}`}>
                 <Icon name="file-pdf-o" /><span><strong>{t('nav.publications')}</strong><span>{fmt(t('home.publicationsOn'), { tag: s.label })}</span></span>
               </a>
             )}
             {s.counts.projects > 0 && (
-              <a class="tag-section-link" href={`${u('/projects/')}?tag=${encodeURIComponent(s.tag)}`}>
+              <a class="tag-section-link" href={`${u('/projects/')}?tag=${s.slug}`}>
                 <Icon name="cogs" /><span><strong>{t('nav.projects')}</strong><span>{fmt(t('home.projectsOn'), { tag: s.label })}</span></span>
               </a>
             )}
             {s.counts.software > 0 && (
-              <a class="tag-section-link" href={`${u('/research/')}?tag=${encodeURIComponent(s.tag)}#software`}>
+              <a class="tag-section-link" href={`${u('/research/')}?tag=${s.slug}#software`}>
                 <Icon name="code" /><span><strong>{t('nav.software')}</strong><span>{fmt(t('home.softwareOn'), { tag: s.label })}</span></span>
               </a>
             )}
-            <a class="tag-section-link" href={`${u('/network/')}?topic=${encodeURIComponent(s.tag)}`}>
+            <a class="tag-section-link" href={`${u('/network/')}?tag=${s.slug}`}>
               <Icon name="share-alt" /><span><strong>{t('nav.network')}</strong><span>{fmt(t('home.networkOn'), { tag: s.label })}</span></span>
             </a>
           </div>

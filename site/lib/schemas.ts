@@ -144,7 +144,7 @@ export const panelSchema = z.object({
 }).strict();
 
 export const abstractSchema = z.object({
-  id, order: z.number().default(0), people: strList, year: reqInt, date: optDate, title: reqStr, pdf: optStr,
+  id, order: z.number().default(0), tags: strList, people: strList, year: reqInt, date: optDate, title: reqStr, pdf: optStr,
   authors: reqStr, affiliations: optStr, abstract: optStr, keywords: strList, event: optStr,
   event_page: optStr, journal: optStr, doi: optStr, homepage: optStr, repository: optStr,
 }).strict();

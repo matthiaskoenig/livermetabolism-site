@@ -34,6 +34,7 @@
  */
 import { citationFor } from './citations';
 import type { Citations } from './citationsSchema';
+import { peopleTopics } from './peopleTopics';
 import type { Entry, TagInfo } from './views';
 import type { PersonData, ProjectData, PublicationData, SoftwareData } from './schemas';
 
@@ -123,6 +124,12 @@ export function graphRows(input: GraphRowsInput): GraphRows {
     return thumbs.has(path) ? `${assetBase}${path}` : null;
   };
 
+  // A person carries no tags of their own: their research areas are derived
+  // from the publications they co-authored. Shared with the team page's
+  // `data-tags`, so the graph and the filter bar cannot disagree about which
+  // area someone belongs to.
+  const personTopics = peopleTopics(input.people, input.publications);
+
   // --- nodes, in the category order of the chart legend -----------------
   const nodes: GraphNode[] = [];
   const push = (node: Omit<GraphNode, 'value' | 'citations'> & { citations?: number }) =>
@@ -133,7 +140,7 @@ export function graphRows(input: GraphRowsInput): GraphRows {
       id: nodeId('person', person.id), type: 'person', label: person.name,
       detail: person.role.length ? person.role.join(', ') : capitalized(person.status),
       href: `${base}people/#person/${person.id}`, image: photo(person.id),
-      topics: [], // filled in from their publications below
+      topics: personTopics.get(person.id) ?? [],
     });
   }
   for (const project of input.projects) {
@@ -189,18 +196,6 @@ export function graphRows(input: GraphRowsInput): GraphRows {
   }
 
   // --- derived node fields ---------------------------------------------
-  // A person carries no tags of their own: their research areas are the union
-  // of those of the publications they co-authored, in first-seen order.
-  for (const pub of input.publications) {
-    const slugs = topicsOf(pub.tags);
-    if (!slugs.length) continue;
-    for (const personId of pub.people) {
-      const node = byId.get(nodeId('person', personId));
-      if (!node) continue;
-      for (const slug of slugs) if (!node.topics.includes(slug)) node.topics.push(slug);
-    }
-  }
-
   // Every node is sized by how much it connects to; the chart counts the
   // degree again per filtered view, so this is the whole graph's count.
   const degree = new Map<string, number>();

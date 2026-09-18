@@ -7,11 +7,15 @@ import Footer from '../components/Footer.astro';
 import SiteSearch from '../components/SiteSearch.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import DetailModal from '../components/DetailModal.astro';
+import TopicFilter from '../components/TopicFilter.astro';
 import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
 import { localeUrl } from '../lib/i18n/routes';
 
-interface Props { title?: string; description?: string; sectionid?: string; locale?: Locale; langSwitchPath?: string; noAlternates?: boolean }
-const { title, description, sectionid, locale = DEFAULT_LOCALE, langSwitchPath, noAlternates } = Astro.props;
+// `filter` opts a page into the site-wide research-area bar (issue #68).
+// Only pages that actually hold taggable content set it, so a page with
+// nothing to filter never shows a control that does nothing.
+interface Props { title?: string; description?: string; sectionid?: string; locale?: Locale; langSwitchPath?: string; noAlternates?: boolean; filter?: boolean }
+const { title, description, sectionid, locale = DEFAULT_LOCALE, langSwitchPath, noAlternates, filter = false } = Astro.props;
 const isHome = Astro.url.pathname === localeUrl(locale, '/');
 ---
 <html lang={locale} class:list={[{ onepager: isHome }]}>
@@ -21,6 +25,7 @@ const isHome = Astro.url.pathname === localeUrl(locale, '/');
   <body>
     <IconSprite />
     <TopNav sectionid={sectionid} locale={locale} langSwitchPath={langSwitchPath} />
+    {filter && <TopicFilter locale={locale} />}
     <div class="page-content">
       <div class="wrapper">
         <div class="container">

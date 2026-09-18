@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { tagSlugs } from '../lib/text';
 import Icon from './Icon.vue';
 import TagList from './TagList.vue';
 import type { UiSlices } from '../lib/i18n/slices';
@@ -9,7 +10,7 @@ defineProps<{ item: Entry<FundingData>; tagInfo: TagInfo[]; imageBase: string; s
 </script>
 
 <template>
-  <div class="project-card" :id="`funding-${item.id}`" :data-tags="item.tags.join('|')">
+  <div class="project-card" :id="`funding-${item.id}`" :data-tags="tagSlugs(item.tags)">
     <img v-if="item.funder_logo" :src="imageBase + item.funder_logo" :alt="item.funder" loading="lazy" decoding="async" class="project-image project-image-contain" />
     <div class="project-body">
       <h3>{{ item.title }}</h3>

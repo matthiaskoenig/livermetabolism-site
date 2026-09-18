@@ -29,6 +29,6 @@ export const TAG_PALETTE: Record<string, string> = {
   'digital-twins': '#3498db',
   ai: '#f39c12',
   'digital-pathology': '#e74c3c',
-  pharmacometrics: '#18bc9c',
+  pharmacometrics: '#1e8449',
   'open-fair': '#2c3e50',
 };

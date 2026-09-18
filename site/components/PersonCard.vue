@@ -6,11 +6,16 @@ import type { PersonData } from '../lib/schemas';
 import { stripHtml, truncateWords } from '../lib/text';
 import type { Entry } from '../lib/views';
 
-defineProps<{ person: Entry<PersonData>; avatarBase: string; strings: UiSlices['personCard'] }>();
+// `topics` are the person's research-area slugs, which `peopleTopics()`
+// derives from their publications: people have no `tags:` of their own, so
+// unlike every other card this one cannot build its `data-tags` from the
+// record alone and has to be handed the slugs. Defaulted so a caller on a
+// page without the global filter bar need not compute them.
+withDefaults(defineProps<{ person: Entry<PersonData>; avatarBase: string; strings: UiSlices['personCard']; topics?: string[] }>(), { topics: () => [] });
 </script>
 
 <template>
-  <div class="member-card" :id="`person-${person.id}`">
+  <div class="member-card" :id="`person-${person.id}`" :data-tags="topics.join('|')">
     <a v-if="person.image" :href="`#person/${person.id}`" :data-detail="`person:${person.id}`" class="member-photo-link" :aria-label="fmt(strings.viewProfile, { name: person.name })">
       <img :src="avatarBase + person.image" :alt="person.name" loading="lazy" decoding="async" width="56" height="56" class="member-photo" />
     </a>

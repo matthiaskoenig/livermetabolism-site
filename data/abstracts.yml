@@ -1,4 +1,7 @@
 - id: 'Gerhaeusser2026_gamm2026_abstract_simliva'
+  tags:
+    - 'Digital Twins'
+    - 'Pharmacometrics'
   people:
     - matthias_koenig
   year: 2026
@@ -24,6 +27,9 @@
   repository:
 
 - id: 'Myshkina2026_easllcs2026_abstract_sorafenib'
+  tags:
+    - 'Digital Twins'
+    - 'Pharmacometrics'
   people:
     - mariia_myshkina
     - matthias_koenig
@@ -50,6 +56,8 @@
   repository: https://github.com/matthiaskoenig/sorafenib-model
 
 - id: 'Koeller2021_srd2021_abstract_icg'
+  tags:
+    - 'Pharmacometrics'
   people:
     - adrian_koeller
     - jan_grzegorzewski
@@ -68,6 +76,8 @@
   repository: https://github.com/matthiaskoenig/icg-model
 
 - id: 'Hoepfl2021_srd2021_abstract_uncertainty'
+  tags:
+    - 'Pharmacometrics'
   people:
     - matthias_koenig
   year: 2021

@@ -9,7 +9,6 @@ import PublicationRow from '../../components/PublicationRow.vue';
 import PublicationsChart from '../../components/PublicationsChart.vue';
 import PublicationsOrder from '../../components/PublicationsOrder.astro';
 import ScholarStats from '../../components/ScholarStats.astro';
-import TagFilter from '../../components/TagFilter.vue';
 import { citationFor, loadCitations } from '../../lib/citations';
 import { getAbstracts, getPeopleMap, getPosters, getPresentations, getPublications, getTags } from '../../lib/data';
 import { countPeerReviewed } from '../../lib/homeStats';
@@ -20,7 +19,7 @@ import { publicationsPerYear } from '../../lib/publicationRows';
 import { loadScholar } from '../../lib/scholar';
 import { historyRows, perYearRows } from '../../lib/scholarRows';
 import { asset } from '../../lib/url';
-import { groupByYear, toTagFilterEntries } from '../../lib/views';
+import { groupByYear } from '../../lib/views';
 
 export const getStaticPaths = localePaths;
 const locale = localeFromParams(Astro.params);
@@ -29,13 +28,13 @@ const ui = slices(t);
 const [tagInfo, peopleMap, publications, presentations, posters, abstracts] = await Promise.all([getTags(locale), getPeopleMap(locale), getPublications(locale), getPresentations(locale), getPosters(locale), getAbstracts(locale)]);
 const pdfBase = asset('pdf/');
 const avatarBase = asset('image/people/128/');
-// rows are static HTML; TagFilter hides the non-matching ones (and any
-// year group left empty) client-side, so nothing is serialised twice.
+// rows are static HTML; the site-wide research-area bar (TopicFilter.astro)
+// hides the non-matching ones, and any year group left empty, client-side,
+// so nothing is serialised twice.
 // Sorted by year descending first: the "Most cited" order of
 // PublicationsOrder.astro keeps the rendered order as its tie-break, so the
 // rows must not depend on where an entry sits in publications.yml.
 const years = groupByYear([...publications].sort((a, b) => b.year - a.year));
-const tagFilterEntries = toTagFilterEntries(tagInfo);
 
 // Live Google Scholar data (see CLAUDE.md, "Live GitHub and Scholar data"):
 // read the daily snapshot once here and server-render the summary strip and
@@ -57,7 +56,7 @@ const publicationCount = countPeerReviewed(publications);
 // fetch) — the island's props are these aggregates, not the publications
 const chartRows = publicationsPerYear(publications, tagInfo);
 ---
-<Base title={t('nav.publications')} sectionid="publications" locale={locale}>
+<Base title={t('nav.publications')} sectionid="publications" locale={locale} filter>
   <section id="scholar">
     <h2>{t('scholar.citations')}</h2>
     <ScholarStats scholar={scholar} publications={publicationCount} locale={locale} />
@@ -74,11 +73,10 @@ const chartRows = publicationsPerYear(publications, tagInfo);
   </section>
 
   <h2 id="publications">{t('nav.publications')}</h2>
-  <TagFilter client:idle id="publication" tags={tagFilterEntries} target="publication-list" strings={ui.tagFilter} />
   <PublicationsOrder fetchedAt={citations.fetchedAt} locale={locale} />
   <div id="publication-list">
     {years.map((g) => (
-      <div class="pub-year-group">
+      <div class="pub-year-group" data-filter-group>
         <h3 class="year-heading">{g.year}</h3>
         <table class="table publication-table">
           <colgroup><col class="publication-status-col" /><col /></colgroup>
@@ -88,27 +86,31 @@ const chartRows = publicationsPerYear(publications, tagInfo);
         </table>
       </div>
     ))}
-    {/* "Most cited" moves the existing rows in here (pubOrder.ts) — one copy of
+    {/* "Most cited" moves the existing rows in here (pubOrder.ts) - one copy of
         the rows, and inside #publication-list so the tag filter still finds
         them by [data-tags] in either order */}
     <table id="publication-list-flat" class="table publication-table" hidden>
       <colgroup><col class="publication-status-col" /><col /></colgroup>
       <tbody></tbody>
     </table>
+    <p data-filter-empty hidden>{t('filter.empty')}</p>
   </div>
 
   <h2 id="presentations">{t('nav.presentations')}</h2>
   <div class="project-grid" id="presentations-grid">
     {presentations.map((p) => <PresentationCard item={p} tagInfo={tagInfo} peopleMap={peopleMap} pdfBase={pdfBase} avatarBase={avatarBase} strings={ui.links} />)}
+    <p data-filter-empty hidden>{t('filter.empty')}</p>
   </div>
 
   <h2 id="posters">{t('nav.posters')}</h2>
   <div class="project-grid" id="posters-grid">
     {posters.map((p) => <PosterCard item={p} tagInfo={tagInfo} peopleMap={peopleMap} pdfBase={pdfBase} avatarBase={avatarBase} strings={ui.links} />)}
+    <p data-filter-empty hidden>{t('filter.empty')}</p>
   </div>
 
   <h2 id="abstracts">{t('nav.abstracts')}</h2>
   <div class="project-grid" id="abstracts-grid">
-    {abstracts.map((a) => <AbstractCard item={a} pdfBase={pdfBase} strings={ui.links} />)}
+    {abstracts.map((a) => <AbstractCard item={a} tagInfo={tagInfo} pdfBase={pdfBase} strings={ui.links} />)}
+    <p data-filter-empty hidden>{t('filter.empty')}</p>
   </div>
 </Base>

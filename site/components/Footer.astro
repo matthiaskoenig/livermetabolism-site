@@ -55,6 +55,8 @@ const repo = 'https://github.com/matthiaskoenig/livermetabolism-site';
       <span aria-hidden="true">&middot;</span>
       <a href={u('/privacy/')}>{t('footer.privacy')}</a>
       <span aria-hidden="true">&middot;</span>
+      <a class="footer-issue" href={`${repo}/issues/new`} target="_blank" rel="noopener noreferrer"><Icon name="github" /> {t('footer.reportIssue')}</a>
+      <span aria-hidden="true">&middot;</span>
       <a class="footer-version" href={`${repo}/releases/tag/${version}`} title={t('footer.releaseNotes')}>v{version}</a>
       <a class="footer-version" href={`${repo}/commit/${commit}`} title={t('footer.deployedCommit')}>{commit}</a>
     </div>
