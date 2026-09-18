@@ -110,6 +110,7 @@ const chartRows = publicationsPerYear(publications, tagInfo);
 
   <h2 id="abstracts">{t('nav.abstracts')}</h2>
   <div class="project-grid" id="abstracts-grid">
-    {abstracts.map((a) => <AbstractCard item={a} pdfBase={pdfBase} strings={ui.links} />)}
+    {abstracts.map((a) => <AbstractCard item={a} tagInfo={tagInfo} pdfBase={pdfBase} strings={ui.links} />)}
+    <p data-filter-empty hidden>{t('filter.empty')}</p>
   </div>
 </Base>

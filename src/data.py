@@ -419,7 +419,7 @@ class Panel(PeopleLinked):
     _keywords_none = field_validator("keywords", mode="before")(_none_to_list)
 
 
-class Abstract(PeopleLinked):
+class Abstract(Taggable, PeopleLinked):
     id: str
     year: int
     date: Date | None = None
@@ -524,6 +524,7 @@ TAGGED_TABLES = (
     "meetings",
     "presentations",
     "posters",
+    "abstracts",
 )
 
 # tables whose rows carry a `publications: list[str]` referencing publications.yml

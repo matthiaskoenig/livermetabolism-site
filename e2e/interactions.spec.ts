@@ -235,6 +235,18 @@ test('a page with nothing taggable shows no filter bar', async ({ page }) => {
   await expect(page.locator('#topic-filter')).toHaveCount(1);
 });
 
+test('the abstracts section filters by research area too', async ({ page }) => {
+  await page.goto('publications/?tag=digital-twins');
+  const off = page.locator('#abstracts-grid [data-tags]:not([data-tags*="digital-twins"])');
+  for (let i = 0; i < await off.count(); i++) await expect(off.nth(i)).toBeHidden();
+  await expect(page.locator('#abstracts-grid [data-tags]:not([hidden])').first()).toBeVisible();
+  // an area no abstract carries empties the section and says so, instead of
+  // leaving a full unfiltered list under a filtered publications list
+  await page.goto('publications/?tag=open-fair');
+  await expect(page.locator('#abstracts-grid [data-tags]:not([hidden])')).toHaveCount(0);
+  await expect(page.locator('#abstracts-grid [data-filter-empty]')).toBeVisible();
+});
+
 test('the teaching list filters by research area too', async ({ page }) => {
   await page.goto('teaching/?tag=ai');
   await expect(page.locator('#topic-filter .tag-filter-btn.active')).toHaveText(/AI/);
