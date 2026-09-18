@@ -831,6 +831,12 @@
   /* Shown by topicApply.ts where the active area empties a grid, so a
      section keeps its heading and its #anchor instead of disappearing. */
   [data-filter-empty] {
+    /* Most of these notes live inside a .project-grid / .member-grid, where
+       being revealed makes them a grid item: the sentence would wrap inside
+       one ~250px column instead of speaking for the whole section. Ignored
+       where the container is not a grid (the publications and teaching
+       lists). */
+    grid-column: 1 / -1;
     margin: 0;
     padding: 1.5em 0;
     color: var(--color-gray-700);

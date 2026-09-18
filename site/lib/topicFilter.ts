@@ -84,12 +84,26 @@ export function initTopic(slugs: string[], names: Record<string, string>): void 
     next = resolveTopic(params.get(param));
     if (next) break;
   }
+  const before = current;
   current = next ?? resolveTopic(read(STORAGE_KEY));
+
+  // An area that arrived in the URL is a choice like any other, so it is
+  // stored too. Without this, following a homepage link to
+  // /publications/?tag=ai and then clicking "Projects" in the navbar dropped
+  // the area again, while picking the same area from the bar carried it -
+  // two entry points, two behaviours.
+  write(STORAGE_KEY, current);
+
   // The URL always shows the area in effect, in one canonical spelling: a
   // `?tag=Open & FAIR` or `?topic=ai` link normalises on arrival, and a
   // topic restored from storage appears too, so what a reader copies out of
   // the address bar is what they are actually looking at.
   syncUrl();
+
+  // An island that hydrated before this ran (NetworkGraph is client:load)
+  // was handed the pre-init value by subscribe(). Tell it what was actually
+  // restored, or the bar would show an area the graph never applied.
+  if (current !== before) notify();
 }
 
 /** Mirrors `current` into `?tag=`, leaving every other parameter alone. */

@@ -176,10 +176,27 @@ test('an area that empties a grid shows an empty-state line, keeping the section
   await page.goto('research/?tag=digital-pathology');
   const empty = page.locator('#editors-grid [data-filter-empty]');
   await expect(empty).toBeVisible();
+  // it speaks for the whole section, so it spans the grid rather than
+  // wrapping inside one ~250px column
+  const spans = await page.evaluate(() => {
+    const n = document.querySelector('#editors-grid [data-filter-empty]')!.getBoundingClientRect().width;
+    const g = document.querySelector('#editors-grid')!.getBoundingClientRect().width;
+    return n / g;
+  });
+  expect(spans).toBeGreaterThan(0.9);
   // the section itself must stay, because the navbar dropdown links at #editors
   await expect(page.locator('h2#editors')).toBeVisible();
   await page.locator('#topic-filter [data-tag="all"]').click();
   await expect(empty).toBeHidden();
+});
+
+test('an area followed in from a link carries on to the next page', async ({ page }) => {
+  // the homepage research-area sections link with ?tag=
+  await page.goto('publications/?tag=ai');
+  await expect(page.locator('#topic-filter .tag-filter-btn.active')).toHaveText(/AI/);
+  await page.locator('nav.site-navbar a[href$="/projects/"]').first().click();
+  await page.waitForURL(/projects\//);
+  await expect(page.locator('#topic-filter .tag-filter-btn.active')).toHaveText(/AI/);
 });
 
 test('the chosen area carries across pages and shows its colour (issue #68)', async ({ page }) => {
@@ -512,7 +529,14 @@ test('network page still honours its legacy ?topic= parameter', async ({ page })
   await expect(page.locator('#topic-filter .tag-filter-btn').first()).toHaveAttribute('aria-pressed', 'false');
   await expect(page.locator('#network-graph canvas').first()).toBeVisible();
 
-  // an unknown area is ignored: the whole graph is shown
+  // an unknown area is ignored rather than applied: it leaves the reader's
+  // own choice (AI, stored a moment ago) standing, so a malformed link does
+  // not silently wipe their filter
+  await page.goto('network/?topic=nope');
+  await expect(page.locator('#topic-filter .tag-filter-btn.active')).toHaveText('AI');
+
+  // and for someone arriving fresh, an unknown area means the whole graph
+  await page.evaluate(() => localStorage.clear());
   await page.goto('network/?topic=nope');
   await expect(page.locator('#topic-filter .tag-filter-btn.active')).toHaveText('All');
 

@@ -117,14 +117,39 @@ describe('initTopic', () => {
     // NetworkGraph is client:load and can hydrate (and subscribe) before
     // TopicFilter.astro's own script calls initTopic. If init dropped
     // subscribers, that island would never hear another change.
-    for (const off of offs.splice(0)) off();
+    reset();
     const seen: (string | null)[] = [];
     listen((t) => seen.push(t));
-    localStorage.clear();
-    window.history.replaceState(null, '', '/network/');
     initTopic(SLUGS, NAMES);
     setTopic('ai');
     expect(seen).toContain('ai');
+  });
+
+  it('remembers a topic that arrived by URL, so it carries to the next page too', () => {
+    // the homepage sections link with ?tag=; without this, following one and
+    // then clicking a navbar link silently dropped the area again
+    reset('?tag=ai');
+    expect(localStorage.getItem(STORAGE_KEY)).toBe('ai');
+  });
+
+  it('tells a subscriber that registered early about the restored topic', () => {
+    // NetworkGraph is client:load: it can subscribe (and be handed null)
+    // before the bar's script calls initTopic. Without a notify here the bar
+    // would show AI while the graph still drew the whole network.
+    reset();
+    const seen: (string | null)[] = [];
+    listen((t) => seen.push(t));
+    window.history.replaceState(null, '', '/network/?tag=ai');
+    initTopic(SLUGS, NAMES);
+    expect(seen).toEqual([null, 'ai']);
+  });
+
+  it('does not notify an early subscriber when there was nothing to restore', () => {
+    reset();
+    const seen: (string | null)[] = [];
+    listen((t) => seen.push(t));
+    initTopic(SLUGS, NAMES);
+    expect(seen).toEqual([null]);
   });
 
   it('ignores a stored value that is no longer a known tag', () => {
