@@ -18,7 +18,8 @@
     "fetch:scholar": "node scripts/fetch-scholar.ts",
     "fetch:citations": "node scripts/fetch-citations.ts",
     "graph:thumbs": "node scripts/graph-thumbs.ts",
-    "i18n:check": "node scripts/i18n-check.ts"
+    "i18n:check": "node scripts/i18n-check.ts",
+    "newsletter": "node scripts/newsletter.ts"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
