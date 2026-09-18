@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { tagSlugs } from '../lib/text';
 import Icon from './Icon.vue';
 import PeopleAvatars from './PeopleAvatars.vue';
 import TagList from './TagList.vue';
@@ -25,7 +26,7 @@ const releaseTitle = () => (props.stats?.release ? fmt(props.strings.release, { 
 </script>
 
 <template>
-  <div class="project-card" :id="`software-${item.id}`" :data-tags="item.tags.join('|')">
+  <div class="project-card" :id="`software-${item.id}`" :data-tags="tagSlugs(item.tags)">
     <img v-if="item.image" :src="imageBase + item.image" :alt="item.name" loading="lazy" decoding="async" class="project-image project-image-contain" />
     <div class="project-body">
       <h3><a class="software-name-link" :href="`#software/${item.id}`" :data-detail="`software:${item.id}`">{{ item.name }}</a></h3>

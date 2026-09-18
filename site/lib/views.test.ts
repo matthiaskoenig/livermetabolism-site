@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { alumniByYear, groupByYear, tagCounts, toTagFilterEntries, toTagInfo } from './views';
+import { alumniByYear, groupByYear, tagCounts, toTagInfo } from './views';
 
 describe('groupByYear', () => {
   it('groups consecutive runs in file order like the Liquid template', () => {
@@ -39,16 +39,6 @@ describe('toTagInfo', () => {
   });
 });
 
-describe('toTagFilterEntries', () => {
-  it('narrows TagInfo down to the fields the tag-filter bar renders — no description, no vision', () => {
-    const info = toTagInfo([
-      { id: 'AI', order: 0, tag: 'AI', icon: 'fa-robot', short_description: 'short', description: 'long', vision: 'vision' },
-    ] as never);
-    const entries = toTagFilterEntries(info);
-    expect(entries).toEqual([{ tag: 'AI', slug: 'ai', icon: 'fa-robot', short_description: 'short', label: 'ai' }]);
-    expect(Object.keys(entries[0])).toEqual(['tag', 'slug', 'icon', 'short_description', 'label']);
-  });
-});
 
 describe('tagCounts', () => {
   it('counts publications, current projects, software carrying the tag', () => {

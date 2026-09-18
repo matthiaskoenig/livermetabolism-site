@@ -1,5 +1,19 @@
 import { describe, expect, it } from 'vitest';
-import { capitalize, escapeHtml, slugify, stripHtml, truncateWords } from './text';
+import { capitalize, escapeHtml, slugify, stripHtml, tagSlugs, truncateWords } from './text';
+
+describe('tagSlugs', () => {
+  // The `data-tags` attribute topicApply.ts sweeps. Slugs, not tag names:
+  // the filter, the CSS tokens and TAG_PALETTE are all slug-keyed.
+  it('joins an entry’s research areas as slugs', () => {
+    expect(tagSlugs(['Digital Twins', 'Open & FAIR'])).toBe('digital-twins|open-fair');
+  });
+  it('is an empty string for an entry with no areas', () => {
+    expect(tagSlugs([])).toBe('');
+  });
+  it('never emits a pipe from inside a tag name, which would split it in two', () => {
+    expect(tagSlugs(['A|B'])).toBe('a-b');
+  });
+});
 
 describe('text helpers (Liquid parity)', () => {
   it('slugify matches Jekyll default mode', () => {

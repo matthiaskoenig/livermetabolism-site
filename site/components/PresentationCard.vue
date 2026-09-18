@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { tagSlugs } from '../lib/text';
 import Icon from './Icon.vue';
 import PeopleAvatars from './PeopleAvatars.vue';
 import TagList from './TagList.vue';
@@ -12,7 +13,7 @@ defineProps<{ item: Entry<PresentationData>; tagInfo: TagInfo[]; peopleMap: Peop
 </script>
 
 <template>
-  <div class="project-card" :id="`presentation-${item.id}`" :data-tags="item.tags.join('|')">
+  <div class="project-card" :id="`presentation-${item.id}`" :data-tags="tagSlugs(item.tags)">
     <template v-if="item.image">
       <a v-if="item.slides" :href="link(item.slides)" target="_blank" rel="noopener noreferrer"><img :src="pdfBase + item.image" :alt="item.title" loading="lazy" decoding="async" class="project-image" /></a>
       <img v-else :src="pdfBase + item.image" :alt="item.title" loading="lazy" decoding="async" class="project-image" />

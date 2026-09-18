@@ -1,0 +1,137 @@
+---
+/**
+ * The site's one research-area filter bar (issue #68).
+ *
+ * Site chrome, not a Vue island: it is on every page that has taggable
+ * content, so it follows the same rule as the navbar, the cookie banner and
+ * the search dialog - static markup plus a bundled `<script>` that imports
+ * the shared logic from `site/lib/*.ts`. That also removed the seven
+ * `client:idle` `TagFilter` islands this replaces, which is why `/news/`,
+ * `/projects/` and `/meetings/` now ship no Vue runtime at all.
+ *
+ * The markup deliberately keeps the `.tag-filter` / `.tag-filter-btn` /
+ * `tag-<slug>` classes the old per-page bars used, so the pill styling and
+ * the per-area colours carry over unchanged. What changed is `data-tag`: it
+ * holds the area's **slug** now, matching `data-tags` on the cards and the
+ * `--color-tag-*` / `TAG_PALETTE` keys.
+ *
+ * Configuration reaches the script through `data-*` attributes rather than
+ * props, the same as `data-ga-id` and `data-search-url` elsewhere.
+ */
+import Icon from './Icon.vue';
+import { getTags } from '../lib/data';
+import { uiFor } from '../lib/i18n/catalog';
+import { DEFAULT_LOCALE, type Locale } from '../lib/i18n/locales';
+
+interface Props { locale?: Locale }
+const { locale = DEFAULT_LOCALE } = Astro.props;
+const { t } = uiFor(locale);
+
+const tags = await getTags(locale);
+// slug -> machine tag name, so the script can resolve the `?tag=Open & FAIR`
+// spelling the homepage sections link with (see resolveTopic)
+const names = Object.fromEntries(tags.map((tag) => [tag.slug, tag.tag]));
+---
+<div
+  class="topic-filter"
+  id="topic-filter"
+  data-slugs={tags.map((tag) => tag.slug).join('|')}
+  data-names={JSON.stringify(names)}
+  data-active-template={t('filter.active')}
+>
+  <div class="container topic-filter-inner">
+    <span class="topic-filter-label" aria-hidden="true">{t('filter.label')}</span>
+    <div class="tag-filter" role="group" aria-label={t('filter.label')}>
+      <button type="button" class="tag-filter-btn active" data-tag="all" aria-pressed="true" title={t('filter.clear')}>{t('filter.all')}</button>
+      {tags.map((tag) => (
+        <button
+          type="button"
+          class:list={['tag-filter-btn', `tag-${tag.slug}`]}
+          data-tag={tag.slug}
+          aria-pressed="false"
+          title={tag.short_description}
+        ><Icon name={tag.icon.replace(/^fa-/, '')} /> {tag.label}</button>
+      ))}
+    </div>
+    <p class="topic-filter-status" role="status" aria-live="polite"></p>
+  </div>
+</div>
+
+<script>
+  import { applyTopic, hiddenByFilter } from '../lib/topicApply';
+  import { initTopic, setTopic, subscribe } from '../lib/topicFilter';
+
+  const bar = document.getElementById('topic-filter');
+  if (bar) {
+    const slugs = (bar.dataset.slugs ?? '').split('|').filter(Boolean);
+    let names: Record<string, string> = {};
+    try { names = JSON.parse(bar.dataset.names ?? '{}') as Record<string, string>; } catch { /* keep the slug-only vocabulary */ }
+    initTopic(slugs, names);
+
+    const buttons = [...bar.querySelectorAll<HTMLButtonElement>('[data-tag]')];
+    const row = bar.querySelector<HTMLElement>('.tag-filter');
+    const status = bar.querySelector<HTMLElement>('.topic-filter-status');
+    // Both plural-free, but read from the DOM for the same reason the
+    // citation/release counts are: the script is locale-agnostic.
+    const template = bar.dataset.activeTemplate ?? '';
+    const labels = new Map(buttons.map((b) => [b.dataset.tag, (b.textContent ?? '').trim()]));
+
+    for (const button of buttons) {
+      button.addEventListener('click', () => {
+        const tag = button.dataset.tag;
+        setTopic(!tag || tag === 'all' ? null : tag);
+      });
+    }
+
+    // Anchors have to clear the navbar AND this bar (see :target in
+    // global.css). Measured rather than assumed: the pill row wraps to two
+    // lines on a narrow viewport, and German labels run longer than English.
+    const setHeight = () => {
+      document.documentElement.style.setProperty('--filter-height', `${bar.getBoundingClientRect().height}px`);
+    };
+    setHeight();
+    if (typeof ResizeObserver !== 'undefined') new ResizeObserver(setHeight).observe(bar);
+    else window.addEventListener('resize', setHeight);
+
+    subscribe((topic) => {
+      let active: HTMLButtonElement | null = null;
+      for (const button of buttons) {
+        const on = button.dataset.tag === 'all' ? topic === null : button.dataset.tag === topic;
+        button.classList.toggle('active', on);
+        button.setAttribute('aria-pressed', String(on));
+        if (on) active = button;
+      }
+      // On a phone the pill row is one horizontally scrollable line, so an
+      // area restored from a previous page can sit off-screen and the bar
+      // would look like it were set to "All". Only the row's own overflow is
+      // scrolled - scrollIntoView() would move the page as well.
+      if (row && active && row.scrollWidth > row.clientWidth) {
+        row.scrollLeft = active.offsetLeft - (row.clientWidth - active.offsetWidth) / 2;
+      }
+      // Drives --color-topic (global.css), which is how the page shows
+      // which area is in effect wherever the reader has scrolled to.
+      if (topic) document.documentElement.dataset.topic = topic;
+      else delete document.documentElement.dataset.topic;
+
+      applyTopic(topic);
+      if (status) status.textContent = topic ? template.replace('{topic}', labels.get(topic) ?? topic) : '';
+    });
+
+    // A search result, a "Show in list" link or any #anchor names one entry
+    // the reader is asking for by name. If an area they picked earlier has
+    // hidden it, the request wins and the filter steps aside - otherwise the
+    // page would scroll them to something that is not there.
+    const revealTarget = () => {
+      if (!hiddenByFilter(window.location.hash)) return;
+      setTopic(null);
+      // The browser scrolled to the anchor before this script ran, while
+      // everything was still visible; clearing the filter has just put back
+      // the entries that were hidden, moving the target. Scroll again so it
+      // ends up where the reader expects (scroll-margin-top clears the
+      // navbar and this bar, see global.css).
+      document.getElementById(window.location.hash.slice(1))?.scrollIntoView();
+    };
+    revealTarget();
+    window.addEventListener('hashchange', revealTarget);
+  }
+</script>

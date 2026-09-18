@@ -131,11 +131,11 @@ test('alumni hover card shows on hover', async ({ page }) => {
   await expect(avatar.locator('.person-card')).toHaveClass(/is-visible/);
 });
 
-test('tag filter hides non-matching publications and honours ?tag=', async ({ page }) => {
+test('the global filter hides non-matching publications and honours ?tag=', async ({ page }) => {
   await page.goto('publications/?tag=AI');
-  await expect(page.locator('#publication-tag-filter .tag-filter-btn.active')).toHaveText(/AI/);
-  // rows are static HTML now; TagFilter toggles the `hidden` attribute on them
-  const nonMatching = page.locator('#publication-list tr[data-tags]:not([data-tags*="AI"])');
+  await expect(page.locator('#topic-filter .tag-filter-btn.active')).toHaveText(/AI/);
+  // rows are static HTML; topicApply.ts toggles the `hidden` attribute on them
+  const nonMatching = page.locator('#publication-list tr[data-tags]:not([data-tags*="ai"])');
   const hidden = await nonMatching.evaluateAll((rows) => rows.filter((r) => (r as HTMLElement).hidden).length);
   expect(hidden).toBe(await nonMatching.count());
   expect(hidden).toBeGreaterThan(0);
@@ -144,23 +144,94 @@ test('tag filter hides non-matching publications and honours ?tag=', async ({ pa
     (groups) => groups.filter((g) => !g.querySelector('tr[data-tags]:not([hidden])')).every((g) => (g as HTMLElement).hidden),
   );
   expect(emptyGroups).toBe(true);
-  await page.locator('#publication-tag-filter [data-tag="all"]').click();
+  await page.locator('#topic-filter [data-tag="all"]').click();
   await expect(page.locator('#publication-list tr[data-tags]').first()).toBeVisible();
   await expect(page.locator('#publication-list tr[data-tags][hidden]')).toHaveCount(0);
 });
 
-test('research pre-applies ?tag= to each of its three filter bars', async ({ page }) => {
-  await page.goto('research/?tag=Open%20%26%20FAIR');
+test('?tag= still accepts a tag name, which is what the homepage sections link with', async ({ page }) => {
+  await page.goto('publications/?tag=Open%20%26%20FAIR');
+  await expect(page.locator('#topic-filter .tag-filter-btn.active')).toHaveText(/Open & FAIR/);
+  // and it is rewritten to the canonical slug without adding a history entry
+  await expect(page).toHaveURL(/[?&]tag=open-fair/);
+});
+
+test('one filter bar drives every grid on the research page (issue #68)', async ({ page }) => {
+  await page.goto('research/?tag=open-fair');
+  await expect(page.locator('#topic-filter .tag-filter-btn.active')).toHaveText(/Open & FAIR/);
   for (const id of ['software', 'funding', 'editors']) {
-    await expect(page.locator(`#${id}-tag-filter .tag-filter-btn.active`)).toHaveText(/Open & FAIR/);
     const grid = page.locator(`#${id}-grid`);
-    await expect(grid.locator('[data-tags*="Open & FAIR"]').first()).toBeVisible();
-    const off = grid.locator('[data-tags]:not([data-tags*="Open & FAIR"])');
+    const off = grid.locator('[data-tags]:not([data-tags*="open-fair"])');
     for (let i = 0; i < await off.count(); i++) await expect(off.nth(i)).toBeHidden();
   }
-  // "All" on one bar only affects that bar's grid
-  await page.locator('#funding-tag-filter [data-tag="all"]').click();
-  await expect(page.locator('#funding-grid [data-tags]:not([data-tags*="Open & FAIR"])').first()).toBeVisible();
+  // the three grids used to have three independent bars that fell out of sync;
+  // now "All" is one control and releases all of them at once
+  await page.locator('#topic-filter [data-tag="all"]').click();
+  for (const id of ['software', 'funding', 'editors']) {
+    await expect(page.locator(`#${id}-grid [data-tags][hidden]`)).toHaveCount(0);
+  }
+});
+
+test('an area that empties a grid shows an empty-state line, keeping the section anchor', async ({ page }) => {
+  await page.goto('research/?tag=digital-pathology');
+  const empty = page.locator('#editors-grid [data-filter-empty]');
+  await expect(empty).toBeVisible();
+  // the section itself must stay, because the navbar dropdown links at #editors
+  await expect(page.locator('h2#editors')).toBeVisible();
+  await page.locator('#topic-filter [data-tag="all"]').click();
+  await expect(empty).toBeHidden();
+});
+
+test('the chosen area carries across pages and shows its colour (issue #68)', async ({ page }) => {
+  await page.goto('projects/');
+  await page.locator('#topic-filter [data-tag="pharmacometrics"]').click();
+  await expect(page.locator('html')).toHaveAttribute('data-topic', 'pharmacometrics');
+
+  // navigating by a plain navbar link, carrying nothing in the URL
+  await page.locator('nav.site-navbar a[href$="/publications/"]').first().click();
+  await page.waitForURL(/publications\//);
+  await expect(page.locator('#topic-filter .tag-filter-btn.active')).toHaveText(/Pharmacometrics/);
+  await expect(page.locator('html')).toHaveAttribute('data-topic', 'pharmacometrics');
+  await expect(page.locator('#publication-list tr[data-tags][hidden]').first()).toBeAttached();
+
+  // The bar carries the area's own colour. Asserted against the active
+  // pill's fill rather than a literal hex: both read the same
+  // --color-tag-pharmacometrics, and Tailwind's colour-space round-trip
+  // shifts the rendered channels by a digit.
+  // polled, because both carry a 0.15s colour transition and a single read
+  // can land on an intermediate frame
+  const read = () => page.evaluate(() => ({
+    border: getComputedStyle(document.getElementById('topic-filter')!).borderBottomColor,
+    pill: getComputedStyle(document.querySelector('#topic-filter .tag-filter-btn.active')!).backgroundColor,
+  }));
+  await expect.poll(read).toEqual({ border: 'rgb(30, 132, 73)', pill: 'rgb(30, 132, 73)' });
+  // a dark green, and specifically not the #18bc9c accent that means "link"
+  const link = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--color-link').trim());
+  expect(link).toBe('#18bc9c');
+});
+
+test('a page with nothing taggable shows no filter bar', async ({ page }) => {
+  // /cv/ is a PDF embed; /teaching/ does carry research areas and has the bar
+  await page.goto('cv/');
+  await expect(page.locator('#topic-filter')).toHaveCount(0);
+  await page.goto('teaching/');
+  await expect(page.locator('#topic-filter')).toHaveCount(1);
+});
+
+test('the teaching list filters by research area too', async ({ page }) => {
+  await page.goto('teaching/?tag=ai');
+  await expect(page.locator('#topic-filter .tag-filter-btn.active')).toHaveText(/AI/);
+  const off = page.locator('#teaching-list [data-tags]:not([data-tags*="ai"])');
+  for (let i = 0; i < await off.count(); i++) await expect(off.nth(i)).toBeHidden();
+  await expect(page.locator('#teaching-list [data-tags]:not([hidden])').first()).toBeVisible();
+  await expect(page.locator('#teaching-list [data-filter-empty]')).toBeHidden();
+});
+
+test('an area no teaching entry carries shows the empty-state line', async ({ page }) => {
+  // nothing in data/teaching.yml is tagged Open & FAIR today
+  await page.goto('teaching/?tag=open-fair');
+  await expect(page.locator('#teaching-list [data-tags]:not([hidden])')).toHaveCount(0);
+  await expect(page.locator('#teaching-list [data-filter-empty]')).toBeVisible();
 });
 
 test('search opens with "/", finds a publication, result navigates', async ({ page }) => {
@@ -328,16 +399,16 @@ test('publication rows show citation badges and the Year / Most cited toggle reo
   expect(errors).toEqual([]);
 });
 
-test('the tag filter still applies in "Most cited" order (?tag= and ?order=)', async ({ page }) => {
+test('the global filter still applies in "Most cited" order (?tag= and ?order=)', async ({ page }) => {
   await page.goto('publications/?tag=AI&order=cited');
   await expect(page.locator('#publication-order [data-order="cited"]')).toHaveClass(/active/);
   await expect(page.locator('#publication-list-flat')).toBeVisible();
-  // TagFilter hydrates client:idle and filters the rows wherever they now sit
+  // the bar's script filters the rows wherever pubOrder.ts has moved them
   await expect(page.locator('#publication-list tr[data-tags][hidden]').first()).toBeAttached();
   const visible = page.locator('#publication-list tr[data-tags]:not([hidden])');
   expect(await visible.count()).toBeGreaterThan(0);
   const tags = await visible.evaluateAll((rows) => rows.map((r) => (r as HTMLElement).dataset.tags ?? ''));
-  expect(tags.every((t) => t.split('|').includes('AI'))).toBe(true);
+  expect(tags.every((t) => t.split('|').includes('ai'))).toBe(true);
 
   // back to year order: only the groups that still hold a matching row show
   await page.locator('#publication-order [data-order="year"]').click();
@@ -385,7 +456,7 @@ test('homepage at-a-glance strip shows six linked figures', async ({ page }) => 
   await expect(page.locator('.home-stats script')).toHaveCount(0);
 });
 
-test('network page draws the graph and filters by research area', async ({ page }) => {
+test('network page draws the graph, filtered by the global bar (issue #68)', async ({ page }) => {
   const errors: string[] = [];
   page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
   page.on('pageerror', (e) => errors.push(e.message));
@@ -393,23 +464,25 @@ test('network page draws the graph and filters by research area', async ({ page 
 
   // client:load island: the canvas is up without scrolling anywhere
   await expect(page.locator('#network-graph canvas').first()).toBeVisible();
-  // "All" plus the five research areas; the areas are filters, not nodes
-  const buttons = page.locator('#network-graph .network-topic-btn');
+  // the graph's own toolbar keeps only the view controls now; the research
+  // areas are the one site-wide bar, the same control as on every other page
+  await expect(page.locator('#network-graph .network-topic-btn')).toHaveCount(0);
+  const buttons = page.locator('#topic-filter .tag-filter-btn');
   await expect(buttons).toHaveCount(6);
   await expect(buttons.first()).toHaveText('All');
   // the wheel is left to the page, so zooming is by button
   await expect(page.locator('#network-graph [aria-label="Zoom in"]')).toBeVisible();
   await expect(page.locator('#network-graph [aria-label="Zoom out"]')).toBeVisible();
   // "All" is the state on arrival, and the loading note is gone
-  await expect(page.locator('#network-graph .network-topic-btn.active')).toHaveText('All');
+  await expect(page.locator('#topic-filter .tag-filter-btn.active')).toHaveText('All');
   await expect(page.getByText('Loading the network…')).toHaveCount(0);
   await expect(page.locator('nav.site-navbar .nav-item.active .nav-link')).toHaveText('Network');
 
   // a node click is not reliably hittable on a canvas; assert that a filter
   // re-renders the graph (setOption) without throwing instead
   await buttons.nth(1).click();
-  await expect(page.locator('#network-graph .network-topic-btn.active')).toHaveCount(1);
-  await expect(page.locator('#network-graph .network-topic-btn').first()).not.toHaveClass(/active/);
+  await expect(page.locator('#topic-filter .tag-filter-btn.active')).toHaveCount(1);
+  await expect(buttons.first()).not.toHaveClass(/active/);
   await expect(page.locator('#network-graph canvas').first()).toBeVisible();
 
   // the zoom and reset controls re-render without throwing either
@@ -420,28 +493,28 @@ test('network page draws the graph and filters by research area', async ({ page 
 
   // and back to the whole graph
   await buttons.first().click();
-  await expect(page.locator('#network-graph .network-topic-btn.active')).toHaveText('All');
+  await expect(page.locator('#topic-filter .tag-filter-btn.active')).toHaveText('All');
 
   expect(errors).toEqual([]);
 });
 
-test('network page pre-selects ?topic= as the research-area filter', async ({ page }) => {
+test('network page still honours its legacy ?topic= parameter', async ({ page }) => {
   const errors: string[] = [];
   page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
   page.on('pageerror', (e) => errors.push(e.message));
   await page.goto('network/?topic=AI');
 
-  const active = page.locator('#network-graph .network-topic-btn.active');
+  const active = page.locator('#topic-filter .tag-filter-btn.active');
   await expect(active).toHaveCount(1);
   await expect(active).toHaveText('AI');
   await expect(active).toHaveAttribute('aria-pressed', 'true');
   // "All" is off while an area is selected
-  await expect(page.locator('#network-graph .network-topic-btn').first()).toHaveAttribute('aria-pressed', 'false');
+  await expect(page.locator('#topic-filter .tag-filter-btn').first()).toHaveAttribute('aria-pressed', 'false');
   await expect(page.locator('#network-graph canvas').first()).toBeVisible();
 
   // an unknown area is ignored: the whole graph is shown
   await page.goto('network/?topic=nope');
-  await expect(page.locator('#network-graph .network-topic-btn.active')).toHaveText('All');
+  await expect(page.locator('#topic-filter .tag-filter-btn.active')).toHaveText('All');
 
   expect(errors).toEqual([]);
 });
@@ -622,4 +695,19 @@ test('the German search index exists and drives the dialog', async ({ page }) =>
   await expect(dialog).toHaveAttribute('open', '');
   await page.locator('#site-search-input').fill('König');
   await expect(page.locator('.site-search-result').first()).toBeVisible();
+});
+
+test('a deep link to an entry the active area hides clears the filter (issue #68)', async ({ page }) => {
+  await page.goto('publications/?tag=ai');
+  // an entry that the AI filter has hidden
+  const other = await page.locator('#publication-list tr[data-tags][hidden]:not([data-tags*="ai"])').first()
+    .evaluate((el) => el.id);
+  await page.goto(`publications/?tag=ai#${other}`);
+  await expect(page.locator(`#${other}`)).toBeVisible();
+  await expect(page.locator('#topic-filter .tag-filter-btn.active')).toHaveText('All');
+  // and it is scrolled to, not merely un-hidden somewhere off-screen
+  await expect.poll(() => page.locator(`#${other}`).evaluate((el) => {
+    const { top, bottom } = el.getBoundingClientRect();
+    return top >= 0 && bottom <= window.innerHeight;
+  })).toBe(true);
 });

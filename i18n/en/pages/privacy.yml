@@ -100,6 +100,14 @@ consentStorageText:
     or remove it by deleting this website's data in your browser. The banner controls Google
     Analytics. The fonts, data retrievals and YouTube content described in the following section
     are loaded independently of this choice.
+filterStorageText:
+  sha: 3421b1b29f8752ca
+  text: >-
+    If you select a research area as a filter on this website, this choice is also stored in your
+    browser's local storage so that it is retained when you move to another page. It is purely a
+    display setting. It is transmitted neither to us nor to third parties and contains no personal
+    data. You can remove it by resetting the filter to "All" or by deleting this website's data in
+    your browser.
 externalLinksHeading:
   sha: 7345626906b61472
   text: 4. External Links and Embedded Content

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { tagSlugs } from '../lib/text';
 import Icon from './Icon.vue';
 import PersonChips from './PersonChips.vue';
 import TagList from './TagList.vue';
@@ -24,7 +25,7 @@ const cites = props.citation ?? null;
 </script>
 
 <template>
-  <tr :id="`pub-${pub.id}`" :data-tags="pub.tags.join('|')" :data-cited="cites ? cites.citedByCount : 0">
+  <tr :id="`pub-${pub.id}`" :data-tags="tagSlugs(pub.tags)" :data-cited="cites ? cites.citedByCount : 0">
     <td class="publication-status">
       <!-- the class name is built from the raw status value (never translated, a CSS/lookup key);
            only the text shown to the reader comes from the catalog -->

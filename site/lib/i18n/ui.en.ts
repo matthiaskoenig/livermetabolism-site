@@ -64,6 +64,10 @@ export const en = {
     // impressum.astro/privacy.astro) in line with it.
     impressum: 'Legal Notice',
     privacy: 'Privacy Policy',
+    // Opens GitHub's "new issue" form for this site's own repository
+    // (issue #67): the site has no contact form, and a reader who spots a
+    // broken link or a wrong figure has nowhere else to say so.
+    reportIssue: 'Report an issue',
   },
   meta: {
     description: 'Research Group König',
@@ -155,6 +159,18 @@ export const en = {
   },
   filter: {
     all: 'All',
+    // The one global research-area filter (issue #68). It is site chrome now
+    // (TopicFilter.astro, sticky under the navbar on every page that has
+    // taggable content), not a per-page island, so these strings describe the
+    // whole page's filtered state rather than one grid's.
+    label: 'Research area',
+    // Shown in place of a grid that the active research area empties, so a
+    // section keeps its heading and its #anchor instead of vanishing.
+    empty: 'Nothing in this research area yet.',
+    // Screen-reader-only summary of what the bar currently does, announced
+    // when the selection changes. {topic} is the translated area label.
+    active: 'Showing {topic} only',
+    clear: 'Show all research areas',
   },
   tags: {
     // The display label of a research-area tag - `tag` itself (data/tags.yml)
@@ -195,7 +211,6 @@ export const en = {
     citationOther: '{count} citations',
   },
   network: {
-    showArea: 'Show one research area',
     zoomIn: 'Zoom in',
     zoomOut: 'Zoom out',
     reset: 'Reset',

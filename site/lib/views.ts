@@ -9,12 +9,7 @@ export interface TagInfo {
 }
 
 /** The subset of `TagInfo` the tag-filter bar actually renders (button label/icon/tooltip/data-tag) - narrows what `TagFilter.vue` serialises into its island props. */
-export type TagFilterEntry = Pick<TagInfo, 'tag' | 'slug' | 'icon' | 'short_description' | 'label'>;
 
-/** Map full `TagInfo` rows down to `TagFilterEntry` before handing them to a `<TagFilter>` island. */
-export function toTagFilterEntries(tags: TagInfo[]): TagFilterEntry[] {
-  return tags.map(({ tag, slug, icon, short_description, label }) => ({ tag, slug, icon, short_description, label }));
-}
 
 /**
  * lib/data.ts's getTags(): sort rows by the file-order `order` field

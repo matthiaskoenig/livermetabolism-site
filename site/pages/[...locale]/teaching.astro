@@ -13,8 +13,11 @@ const { t } = uiFor(locale);
 const ui = slices(t);
 const [tagInfo, peopleMap, teaching] = await Promise.all([getTags(locale), getPeopleMap(locale), getTeaching(locale)]);
 ---
-<Base title={t('nav.teaching')} sectionid="teaching" locale={locale}>
+<Base title={t('nav.teaching')} sectionid="teaching" locale={locale} filter>
   <p>{t('teaching.intro')}</p>
   <img src={asset('image/teaching/teaching_banner.webp')} alt="" decoding="async" width="1800" height="191" class="img-fluid" />
-  {teaching.map((item) => <TeachingCard item={item} tagInfo={tagInfo} peopleMap={peopleMap} imageBase={asset('image/teaching/')} avatarBase={asset('image/people/128/')} strings={ui.teachingCard} />)}
+  <div id="teaching-list">
+    {teaching.map((item) => <TeachingCard item={item} tagInfo={tagInfo} peopleMap={peopleMap} imageBase={asset('image/teaching/')} avatarBase={asset('image/people/128/')} strings={ui.teachingCard} />)}
+    <p data-filter-empty hidden>{t('filter.empty')}</p>
+  </div>
 </Base>

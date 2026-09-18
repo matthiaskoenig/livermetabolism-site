@@ -1,12 +1,15 @@
 <script setup lang="ts">
 // The network graph of /network/ (client:load island): every person,
-// publication, project and software entry of the lab, with the research-area
-// filter and the zoom controls above the canvas.
+// publication, project and software entry of the lab, with the zoom controls
+// above the canvas.
 //
 // The rows come from the page's frontmatter (graphRows.ts) and only change
-// when the YAML does; the buttons live inside the component rather than in the
-// page because this island is hydrated anyway (see CLAUDE.md, "Site chrome",
-// for why static chrome is done the other way round).
+// when the YAML does; the research area drawn is whatever the site-wide filter
+// bar holds (topicFilter.ts, issue #68), which this island subscribes to
+// instead of keeping a selection of its own. The zoom buttons live inside the
+// component rather than in the page because it is hydrated anyway (see
+// CLAUDE.md, "Site chrome", for why static chrome is done the other way
+// round).
 import { onBeforeUnmount, onMounted, ref } from 'vue';
 import { enableNodeDragging, resetChart, roamChart, useChart } from './useChart';
 import { DETAIL_TYPES, type DetailType } from '../lib/detailTypes';
@@ -14,21 +17,12 @@ import { openDetail } from '../lib/detailModal';
 import type { GraphRows } from '../lib/graphRows';
 import type { UiSlices } from '../lib/i18n/slices';
 import { ROAM, networkOption } from '../lib/networkOptions';
+import { subscribe } from '../lib/topicFilter';
 
 const props = defineProps<{
   rows: GraphRows;
-  /** The research areas, in homepage order: the filter buttons and what `?topic=` matches. `tag` (matching only, never rendered) is the machine value; `label` is the translated button text. */
-  topics: { tag: string; slug: string; label: string }[];
   strings: UiSlices['network'];
 }>();
-
-/** Tag name or slug -> slug; null for anything unknown (a stale `?topic=`). */
-function slugOf(value: string | null | undefined): string | null {
-  if (!value) return null;
-  const wanted = value.trim().toLowerCase();
-  const topic = props.topics.find((t) => t.tag.toLowerCase() === wanted || t.slug === wanted);
-  return topic ? topic.slug : null;
-}
 
 /** The research area the graph is narrowed to, or null for all of it. */
 const topic = ref<string | null>(null);
@@ -63,22 +57,32 @@ const onResize = () => {
   resizeTimer = setTimeout(measure, 200);
 };
 
-// registered before useChart()'s own onMounted, so the height and a `?topic=`
-// selection are in place by the time the chart draws
+let untrack: () => void = () => {};
+
+// registered before useChart()'s own onMounted, so the height and the active
+// research area are in place by the time the chart draws
 onMounted(() => {
   measure();
-  topic.value = slugOf(new URLSearchParams(window.location.search).get('topic'));
+  // subscribe() calls back immediately, which is how the graph picks up an
+  // area the bar restored from ?tag= or from storage. That first callback only
+  // has to leave `topic` right: the chart is built by useChart's own
+  // onMounted, which runs after this one and reads the ref, so the first draw
+  // is never the callback's to make - which is also why show() may drop a
+  // callback carrying the value the ref already holds (the unfiltered case)
+  // without costing the graph its first render.
+  untrack = subscribe(show);
   ready.value = true;
   window.addEventListener('resize', onResize);
 });
 
 onBeforeUnmount(() => {
   clearTimeout(resizeTimer);
+  untrack();
   window.removeEventListener('resize', onResize);
 });
 
-/** A filter button: `null` is "All". */
-function select(slug: string | null): void {
+/** The site-wide research area changed, or was restored on load: `null` is all of it. */
+function show(slug: string | null): void {
   if (slug === topic.value) return;
   // set first: both refs change in one tick, so the graph re-renders once —
   // from scratch, so the remaining nodes are laid out afresh
@@ -140,14 +144,10 @@ function reset(): void {
 
 <template>
   <figure class="network-plot">
-    <div class="chart-modes" role="group" :aria-label="strings.showArea">
-      <button type="button" class="chart-mode-btn network-topic-btn" :class="{ active: topic === null }"
-        :aria-pressed="topic === null" @click="select(null)">{{ strings.all }}</button>
-      <button v-for="area in props.topics" :key="area.slug" type="button" class="chart-mode-btn network-topic-btn"
-        :class="{ active: topic === area.slug }" :aria-pressed="topic === area.slug" @click="select(area.slug)">
-        {{ area.label }}
-      </button>
-      <span class="chart-mode-gap"></span>
+    <!-- no group label left to give: the research areas moved to the filter bar
+         and the three remaining controls name themselves. The spacer still
+         holds them at the right edge, where they have always sat. -->
+    <div class="chart-modes network-controls">
       <button type="button" class="chart-mode-btn network-zoom-btn" :aria-label="strings.zoomIn" :title="strings.zoomIn" @click="zoom(1.25)">+</button>
       <button type="button" class="chart-mode-btn network-zoom-btn" :aria-label="strings.zoomOut" :title="strings.zoomOut" @click="zoom(0.8)">−</button>
       <button type="button" class="chart-mode-btn" @click="reset()">{{ strings.reset }}</button>

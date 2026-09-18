@@ -50,7 +50,6 @@ const rows = graphRows({
   tags, people, publications, projects, software, citations, thumbs,
   base: localeUrl(locale, '/'), assetBase: import.meta.env.BASE_URL,
 });
-const topics = tags.map(({ tag, slug, label }) => ({ tag, slug, label }));
 // what the graph actually draws: filterRows() drops a node without a single
 // link, so the intro counts the connected network rather than the table rows
 const shown = filterRows(rows, null);
@@ -61,7 +60,7 @@ const counts = {
   software: shown.nodes.filter((n) => n.type === 'software').length,
 };
 ---
-<Base title={t('nav.network')} sectionid="network" locale={locale}
+<Base title={t('nav.network')} sectionid="network" locale={locale} filter
   description={t('network.metaDescription')}>
   <h2 id="network">{t('nav.network')}</h2>
   <p>
@@ -71,6 +70,6 @@ const counts = {
     {t('network.introFilterHint')}
   </p>
   <div id="network-graph">
-    <NetworkGraph client:load rows={rows} topics={topics} strings={ui.network} />
+    <NetworkGraph client:load rows={rows} strings={ui.network} />
   </div>
 </Base>

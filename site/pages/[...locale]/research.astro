@@ -8,7 +8,6 @@ import ReleaseTimeline from '../../components/ReleaseTimeline.vue';
 import SoftwareCard from '../../components/SoftwareCard.vue';
 import SoftwareLive from '../../components/SoftwareLive.astro';
 import StarsChart from '../../components/StarsChart.vue';
-import TagFilter from '../../components/TagFilter.vue';
 import { repoFullName } from '../../../scripts/lib/repos';
 import { getEditors, getFunding, getPeopleMap, getSoftware, getTags } from '../../lib/data';
 import { loadSnapshot } from '../../lib/github';
@@ -17,7 +16,6 @@ import { uiFor } from '../../lib/i18n/catalog';
 import { localeFromParams, localePaths } from '../../lib/i18n/routes';
 import { slices } from '../../lib/i18n/slices';
 import { asset } from '../../lib/url';
-import { toTagFilterEntries } from '../../lib/views';
 
 export const getStaticPaths = localePaths;
 const locale = localeFromParams(Astro.params);
@@ -25,9 +23,6 @@ const { t } = uiFor(locale);
 const ui = slices(t);
 const [tagInfo, peopleMap, software, funding, editors] = await Promise.all([getTags(locale), getPeopleMap(locale), getSoftware(locale), getFunding(locale), getEditors(locale)]);
 const avatarBase = asset('image/people/128/');
-const tagFilterEntries = toTagFilterEntries(tagInfo);
-// three independent TagFilter islands; each reads the same ?tag= on mount,
-// so a /research/?tag=AI link still pre-filters all three grids
 
 // Live GitHub data (see CLAUDE.md, "Live GitHub data"): read the daily
 // snapshot once here and server-render the stats lines, the release feed and
@@ -41,7 +36,7 @@ const timelineRows = releaseTimelineRows(snapshot, repos);
 const stars = starsRows(snapshot, repos);
 const activity = activityRows(snapshot, repos);
 ---
-<Base title={t('nav.research')} sectionid="research" locale={locale}>
+<Base title={t('nav.research')} sectionid="research" locale={locale} filter>
   <section id="releases">
     <h2>{t('nav.releases')}</h2>
     <h3>{t('research.latestReleases')}</h3>
@@ -59,7 +54,6 @@ const activity = activityRows(snapshot, repos);
   </section>
 
   <h2 id="software">{t('nav.software')}</h2>
-  <TagFilter client:idle id="software" tags={tagFilterEntries} target="software-grid" strings={ui.tagFilter} />
   <div class="project-grid" id="software-grid">
     {software.map((item) => {
       // the snapshot key, which is also the card's data-repo: the browser-side
@@ -78,13 +72,14 @@ const activity = activityRows(snapshot, repos);
         />
       );
     })}
+    <p data-filter-empty hidden>{t('filter.empty')}</p>
   </div>
   <SoftwareLive fetchedAt={snapshot.fetchedAt} locale={locale} />
 
   <h2 id="funding">{t('nav.funding')}</h2>
-  <TagFilter client:idle id="funding" tags={tagFilterEntries} target="funding-grid" strings={ui.tagFilter} />
   <div class="project-grid" id="funding-grid">
     {funding.map((item) => <FundingCard item={item} tagInfo={tagInfo} imageBase={asset('image/funding/')} strings={ui.fundingCard} />)}
+    <p data-filter-empty hidden>{t('filter.empty')}</p>
   </div>
   <p>
     {t('research.fundingBefore')} <a href="https://www.denbi.de/">{t('research.fundingLinkText')}</a> {t('research.fundingAfter')}
@@ -92,8 +87,8 @@ const activity = activityRows(snapshot, repos);
 
   <h2 id="editors">{t('nav.editors')}</h2>
   <p>{t('research.editorsIntro')}</p>
-  <TagFilter client:idle id="editors" tags={tagFilterEntries} target="editors-grid" strings={ui.tagFilter} />
   <div class="project-grid" id="editors-grid">
     {editors.map((item) => <EditorCard item={item} tagInfo={tagInfo} imageBase={asset('image/editors/')} strings={ui.links} />)}
+    <p data-filter-empty hidden>{t('filter.empty')}</p>
   </div>
 </Base>

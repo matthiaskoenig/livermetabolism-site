@@ -51,13 +51,18 @@
   --color-tag-digital-twins: #3498db;
   --color-tag-ai: #f39c12;
   --color-tag-digital-pathology: #e74c3c;
-  --color-tag-pharmacometrics: #18bc9c;
+  /* A forest green, deliberately NOT the #18bc9c accent (issue #68): that
+     value is --color-link, --color-success and the brand mark, so a green
+     Pharmacometrics pill used to be indistinguishable from a link or a
+     section underline. Darker as well as a different hue, so it still
+     separates where hue alone would not. */
+  --color-tag-pharmacometrics: #1e8449;
   --color-tag-open-fair: #2c3e50;
   /* full-screen homepage sections */
   --color-hero-digital-twins: #2766a5;
   --color-hero-ai: #a7661b;
   --color-hero-digital-pathology: #ae294a;
-  --color-hero-pharmacometrics: #157965;
+  --color-hero-pharmacometrics: #17643a;
   --color-hero-open-fair: #282f5d;
 }
 
@@ -68,7 +73,13 @@
   body {
     margin: 0;
     padding-top: var(--navbar-height);
-    overflow-x: hidden;
+    /* clip, not hidden: `overflow-x: hidden` forces `overflow-y: auto`, which
+       makes <body> a scroll container, and a scroll container becomes the
+       scrollport that `position: sticky` measures against - which put the
+       research-area bar (TopicFilter.astro) a navbar's height below where it
+       belonged and stopped it sticking at all. `clip` suppresses the same
+       horizontal overflow without creating a scroll container. */
+    overflow-x: clip;
     font-family: var(--font-sans);
     font-size: 1rem;
     line-height: 1.5;
@@ -76,7 +87,12 @@
     background-color: var(--color-body-bg);
     -webkit-text-size-adjust: 100%;
   }
-  :target { scroll-margin-top: var(--navbar-height); }
+  /* The sticky research-area bar sits under the fixed navbar on every
+     filterable page, so an #anchor has to clear both or it lands behind
+     the bar. --filter-height is measured and written by
+     TopicFilter.astro's script; on a page without the bar it is unset and
+     the fallback 0px leaves this exactly as it was. */
+  :target { scroll-margin-top: calc(var(--navbar-height) + var(--filter-height, 0px)); }
   h1, h2, h3, h4, h5, h6 { margin-top: 0; margin-bottom: 0.5rem; font-weight: 500; line-height: 1.2; }
   h1 { font-size: calc(1.425rem + 2.1vw); }
   h2 { font-size: calc(1.375rem + 1.5vw); }
@@ -758,6 +774,78 @@
     }
   }
 
+  /* The one site-wide research-area filter (issue #68): site chrome, sticky
+     directly under the fixed navbar on every page that has taggable
+     content. --color-topic is set from <html data-topic> by
+     TopicFilter.astro's script, so the active area's colour stays visible
+     as a rule under the bar no matter where the reader has scrolled to -
+     that is the "the filter is indicated by the topic's colour" part. */
+  :root[data-topic="digital-twins"] { --color-topic: var(--color-tag-digital-twins); }
+  :root[data-topic="ai"] { --color-topic: var(--color-tag-ai); }
+  :root[data-topic="digital-pathology"] { --color-topic: var(--color-tag-digital-pathology); }
+  :root[data-topic="pharmacometrics"] { --color-topic: var(--color-tag-pharmacometrics); }
+  :root[data-topic="open-fair"] { --color-topic: var(--color-tag-open-fair); }
+
+  .topic-filter {
+    position: sticky;
+    top: var(--navbar-height);
+    z-index: 900;
+    background-color: var(--color-body-bg);
+    border-bottom: 3px solid var(--color-topic, var(--color-gray-200));
+    transition: border-color 0.15s ease;
+  }
+
+  .topic-filter-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5em;
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+  }
+
+  .topic-filter-label {
+    color: var(--color-gray-700);
+    font-size: 0.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  /* The bar owns its own spacing; the pill row inside it must not keep the
+     1.5em bottom margin it needed as a standalone block. */
+  .topic-filter .tag-filter { margin-bottom: 0; }
+
+  /* Announced to screen readers only - the pills already show the state. */
+  .topic-filter-status {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  /* Shown by topicApply.ts where the active area empties a grid, so a
+     section keeps its heading and its #anchor instead of disappearing. */
+  [data-filter-empty] {
+    margin: 0;
+    padding: 1.5em 0;
+    color: var(--color-gray-700);
+    font-style: italic;
+  }
+
+  @media (max-width: 767.98px) {
+    .topic-filter-label { display: none; }
+    .topic-filter-inner { padding-top: 0.45em; padding-bottom: 0.45em; }
+    /* a long row of areas must not eat the phone screen: one swipeable line */
+    .topic-filter .tag-filter { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+    .topic-filter .tag-filter::-webkit-scrollbar { display: none; }
+    .topic-filter .tag-filter-btn { flex: 0 0 auto; }
+  }
+
   /* tag filter bar and badges, reused on projects.html and publications.html */
   .tag-filter {
     display: flex;
@@ -853,7 +941,7 @@
   .tag-badge.tag-digital-twins { background-color: rgba(52, 152, 219, 0.14); color: #2383c4; }
   .tag-badge.tag-ai { background-color: rgba(243, 156, 18, 0.14); color: #d2850b; }
   .tag-badge.tag-digital-pathology { background-color: rgba(231, 76, 60, 0.14); color: #df2e1b; }
-  .tag-badge.tag-pharmacometrics { background-color: rgba(24, 188, 156, 0.14); color: #13987e; }
+  .tag-badge.tag-pharmacometrics { background-color: rgba(30, 132, 73, 0.14); color: #1a7340; }
   .tag-badge.tag-open-fair { background-color: rgba(44, 62, 80, 0.14); color: #1e2a36; }
 
   /* compact card grid for the projects overview (see projects.html) */
@@ -1245,12 +1333,13 @@
   }
 
   /* pushes the zoom controls away from the research-area pills */
-  .chart-mode-gap {
-    flex: 1 1 1em;
-    min-width: 0.5em;
-  }
 
   /* square pills for the +/- zoom buttons, so they read as a pair */
+  /* Only view controls live in the graph's own toolbar now (issue #68 moved
+     the research areas into the site-wide bar), so the row is aligned to the
+     right of the plot rather than spaced apart by a filler element. */
+  .chart-modes.network-controls { justify-content: flex-end; }
+
   .network-zoom-btn {
     min-width: 2.2em;
     font-weight: 700;

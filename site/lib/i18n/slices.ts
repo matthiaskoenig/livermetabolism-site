@@ -100,7 +100,6 @@ export const slices = (t: TFn) => ({
     keywords: t('detail.keywords'),
     showInList: t('detail.showInList'),
   },
-  tagFilter: { all: t('filter.all') },
   publicationsChart: {
     stackBy: t('chart.stackBy'),
     researchArea: t('chart.researchArea'),
@@ -140,8 +139,6 @@ export const slices = (t: TFn) => ({
     noReleases: t('gh.noReleases'),
   },
   network: {
-    showArea: t('network.showArea'),
-    all: t('filter.all'),
     zoomIn: t('network.zoomIn'),
     zoomOut: t('network.zoomOut'),
     reset: t('network.reset'),
