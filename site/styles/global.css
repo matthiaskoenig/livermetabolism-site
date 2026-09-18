@@ -233,7 +233,22 @@
   .navbar-nav { display: flex; flex-direction: column; flex-wrap: wrap; padding-left: 0; margin: 0; list-style: none; }
   .nav-link { display: block; padding: 0.5rem 0; color: #fff; text-decoration: none; white-space: nowrap; }
   .nav-link:hover, .nav-link:focus { color: var(--color-success); }
-  .lang-switch { display: inline-flex; align-items: center; gap: 0.125rem; margin-right: 0.5rem; }
+  /* One bordered control rather than two more menu entries: the pair reads
+     as a switch, and the segments sit flush inside the box. */
+  .lang-switch {
+    display: inline-flex; align-items: center; gap: 0;
+    border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 4px; overflow: hidden;
+  }
+  .lang-switch-flag { margin-right: 0.3em; font-size: 0.95em; line-height: 1; }
+  /* The flag is decorative, so it is what gives way whenever the navbar is
+     tight: it makes the switch 108px instead of 60px, which is enough to
+     wrap the bar onto another row (and --navbar-height with it) at every
+     width below the one where the nav comfortably fits on one line. Shown
+     only from 1200px up, where it never costs a row. */
+  .lang-switch-flag { display: none; }
+  @media (min-width: 1200px) {
+    .lang-switch-flag { display: inline; }
+  }
   .lang-switch-link {
     /* min-height/inline-flex centering grows the tap target toward the
        44px touch-target guideline (was 29x24 measured at 390px) without
@@ -241,11 +256,11 @@
        centred on the same small badge, matching .search-toggle's 40px
        navbar control next to it. */
     display: inline-flex; align-items: center; justify-content: center; min-height: 2.25rem;
-    padding: 0.125rem 0.5rem; border-radius: 0.375rem; font-size: 0.8125rem;
+    padding: 0.125rem 0.55rem; border-radius: 0; font-size: 0.8125rem;
     font-weight: 600; letter-spacing: 0.02em; color: rgba(255, 255, 255, 0.55); text-decoration: none;
   }
   .lang-switch-link:hover, .lang-switch-link:focus { color: var(--color-success); }
-  .lang-switch-link.active { color: #fff; background: rgba(255, 255, 255, 0.1); }
+  .lang-switch-link.active { color: #fff; background: rgba(255, 255, 255, 0.18); }
   .navbar-toggler {
     padding: 0.25rem 0.75rem; font-size: 1.25rem; line-height: 1; color: rgba(255, 255, 255, 0.55);
     background: transparent; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 0.375rem; cursor: pointer;
@@ -270,6 +285,9 @@
     .navbar-toggler { display: none; }
     .navbar-nav { flex-direction: row; }
     .nav-link { padding: 0.5rem; }
+    /* within the controls, the switch is the rightmost thing on the bar */
+    .navbar-controls .search-toggle { order: 1; }
+    .navbar-controls .lang-switch { order: 2; }
   }
 }
 
@@ -790,8 +808,9 @@
     position: sticky;
     top: var(--navbar-height);
     z-index: 900;
-    background-color: var(--color-body-bg);
-    border-bottom: 3px solid var(--color-topic, var(--color-gray-200));
+    /* tinted, so the row reads as chrome rather than as the top of the page */
+    background-color: var(--color-gray-100);
+    border-bottom: 3px solid var(--color-topic, var(--color-gray-300));
     transition: border-color 0.15s ease;
   }
 
@@ -800,8 +819,8 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 0.5em;
-    padding-top: 0.6em;
-    padding-bottom: 0.6em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
   }
 
   .topic-filter-label {
@@ -845,7 +864,7 @@
 
   @media (max-width: 767.98px) {
     .topic-filter-label { display: none; }
-    .topic-filter-inner { padding-top: 0.45em; padding-bottom: 0.45em; }
+    .topic-filter-inner { padding-top: 0.3em; padding-bottom: 0.3em; }
     /* a long row of areas must not eat the phone screen: one swipeable line */
     .topic-filter .tag-filter { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
     .topic-filter .tag-filter::-webkit-scrollbar { display: none; }
@@ -861,9 +880,9 @@
   }
 
   .tag-filter-btn {
-    padding: 0.35em 0.9em;
-    border: 1px solid var(--color-gray-200);
-    border-radius: 999px;
+    padding: 0.3em 0.75em;
+    border: 1px solid var(--color-gray-300);
+    border-radius: 4px;
     background-color: var(--color-body-bg);
     color: var(--color-gray-800);
     font-size: 0.85em;
@@ -929,7 +948,7 @@
 
   .tag-badge {
     padding: 0.1em 0.5em;
-    border-radius: 999px;
+    border-radius: 4px;
     background-color: rgba(24, 188, 156, 0.12);
     color: #11866f;
     font-size: 0.65em;
@@ -1669,6 +1688,8 @@
     .lang-switch {
       flex-shrink: 0;
       margin-right: 0;
+      /* the navbar's white border would be invisible on this light header */
+      border-color: var(--color-gray-300);
     }
 
     .lang-switch-link {
@@ -2068,8 +2089,8 @@
   .order-btn,
   .chart-mode-btn {
     padding: 0.35em 0.9em;
-    border: 1px solid var(--color-gray-200);
-    border-radius: 999px;
+    border: 1px solid var(--color-gray-300);
+    border-radius: 4px;
     background-color: var(--color-body-bg);
     color: var(--color-gray-800);
     font-size: 0.85em;
@@ -2197,8 +2218,8 @@
     .pub-badge {
       display: inline-block;
       padding: 0.1em 0.45em;
-      border: 1px solid var(--color-gray-200);
-      border-radius: 999px;
+      border: 1px solid var(--color-gray-300);
+      border-radius: 4px;
       background-color: var(--color-body-bg);
       color: var(--color-gray-800);
       font-size: 0.9em;
@@ -2469,13 +2490,33 @@
     font-size: 16px;
   }
 
+  /* Search and the language switch belong at the far right, after the
+     navigation. Reordering rather than moving .navbar-controls in the DOM:
+     it has to stay outside #navbar so it stays visible when the mobile menu
+     is collapsed behind the hamburger.
+     Only from 992px up: below that the nav no longer fits beside the brand,
+     and putting it before the controls costs a third wrapped row (measured
+     99px -> 139px at 768-960px, which every page pays as body padding). */
+  @media (min-width: 992px) {
+    .site-navbar .navbar-collapse { order: 2; margin-right: auto; }
+    .site-navbar .navbar-controls { order: 3; }
+  }
+
   .page-content {
+    /* Clears whatever sits above it - the navbar alone, or the navbar plus
+       the research-area bar - so every page starts the same distance below
+       the chrome. Headings reset their own margin-top, so without this the
+       first element butts straight against it (measured 0px on /cv/,
+       /impressum/ and /privacy/ before this). */
+    padding-top: 1.5rem;
     padding-bottom: 20px;
   }
 
-  /* the homepage's full-bleed sections should butt straight up against
-     the footer, not leave a gap of plain background behind them */
+  /* the homepage's full-bleed sections set their own spacing, and should
+     butt straight up against the footer rather than leave a gap of plain
+     background behind them */
   html.onepager .page-content {
+    padding-top: 0;
     padding-bottom: 0;
   }
 

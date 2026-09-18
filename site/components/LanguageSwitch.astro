@@ -12,6 +12,13 @@ const { locale = DEFAULT_LOCALE, path } = Astro.props;
 const here = path ?? Astro.url.pathname;
 const LABEL: Record<Locale, string> = { en: 'EN', de: 'DE' };
 const TITLE: Record<Locale, string> = { en: 'English', de: 'Deutsch' };
+// Decorative only, and always beside the EN/DE text, never instead of it: a
+// flag is a country rather than a language, and Windows renders a
+// regional-indicator pair as the bare letters ("US", "DE") rather than a
+// flag at all. The site already uses flag emoji for people's countries
+// (data/country_flags.yml). US rather than UK because the site's English is
+// US English (see i18n/TRANSLATION.md).
+const FLAG: Record<Locale, string> = { en: '\u{1F1FA}\u{1F1F8}', de: '\u{1F1E9}\u{1F1EA}' };
 ---
 <div class="lang-switch">
   {LOCALES.map((l) => (
@@ -22,7 +29,7 @@ const TITLE: Record<Locale, string> = { en: 'English', de: 'Deutsch' };
       lang={l}
       title={TITLE[l]}
       aria-current={l === locale ? 'true' : undefined}
-    >{LABEL[l]}</a>
+    ><span class="lang-switch-flag" aria-hidden="true">{FLAG[l]}</span>{LABEL[l]}</a>
   ))}
 </div>
 <script>
