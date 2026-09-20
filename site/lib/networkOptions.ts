@@ -1,8 +1,8 @@
 /**
  * The ECharts option of the network graph (`/network/`, `NetworkGraph.vue`).
  *
- * Same rules as `chartOptions.ts`, whose `PALETTE`, `TAG_PALETTE` and
- * `tooltip()` this module reuses: pure functions over the rows from
+ * Same rules as `chartOptions.ts`, whose `PALETTE` and `tooltip()` this
+ * module reuses: pure functions over the rows from
  * `graphRows.ts`, no ECharts import (the library is pulled in by
  * `useChart.ts` alone) and a `renderMode: 'richText'` tooltip, which draws
  * inside the canvas instead of injecting an HTML element with inline styles
@@ -21,7 +21,7 @@
  * what the component's click handler and the tooltip read back out of
  * `params.data`; nothing of that is markup.
  */
-import { FONT, INK, MUTED, PALETTE, TAG_PALETTE, tooltip, type CitationCountStrings } from './chartOptions';
+import { FONT, INK, PALETTE, tooltip, type CitationCountStrings } from './chartOptions';
 import { fmt } from './i18n/format';
 import type { GraphRows, NodeType } from './graphRows';
 
@@ -42,21 +42,51 @@ export interface NetworkLabels {
 }
 
 /**
- * Category colours, which are also the legend swatches and the fallback
- * circle of a node without a thumbnail — so they are the colours actually
- * drawn: `PALETTE` entries for people, projects and software, and grey for
- * the publications, whose dots each take their first research area's
- * `TAG_PALETTE` colour (the figcaption says so).
+ * The main colour per node type: the **outline** of every node of that type
+ * and of its legend entry, and nothing else decides a node's colour (issue
+ * #77 - a publication used to take its research area's colour, which put the
+ * People blue and the Projects orange on dots that were neither). The research
+ * areas filter the graph, they do not colour it.
+ *
+ * A person's photo cannot be outlined by ECharts (an `image://` symbol has no
+ * stroke), so its ring is part of the thumbnail: `PERSON_RING` in
+ * `scripts/lib/graph-thumbs.ts` repeats the people colour, and a test there
+ * keeps the two equal. Changing it means re-running `npm run graph:thumbs`.
  */
 export const CATEGORY_COLOR: Record<NodeType, string> = {
   person: PALETTE[1]!, project: PALETTE[2]!, software: PALETTE[5]!, publication: PALETTE[9]!,
 };
 
+/** Outline width of a node and of its legend symbol, in px. */
+export const BORDER_WIDTH = 2;
+
+/** How far a node's fill is lightened towards white from its outline colour. */
+export const FILL_TINT = 0.75;
+
+/** `#rrggbb` mixed with white: 0 leaves it alone, 1 is white. */
+export function tint(hex: string, amount: number): string {
+  const channel = (i: number) => {
+    const c = parseInt(hex.slice(1 + 2 * i, 3 + 2 * i), 16);
+    return Math.round(c + (255 - c) * amount).toString(16).padStart(2, '0');
+  };
+  return `#${channel(0)}${channel(1)}${channel(2)}`;
+}
+
+/**
+ * How a node of `type` is painted, and its legend symbol with it: outlined in
+ * the main colour, filled with a light tint of it. It sits on the category, so
+ * a node carries no `itemStyle` of its own.
+ */
+export function nodeStyle(type: NodeType): { color: string; borderColor: string; borderWidth: number } {
+  return { color: tint(CATEGORY_COLOR[type], FILL_TINT), borderColor: CATEGORY_COLOR[type], borderWidth: BORDER_WIDTH };
+}
+
 /**
  * The symbol per node type. A person is drawn as their photo (the `image://`
  * symbol below) and falls back to a circle without one; nothing else has a
  * thumbnail, so projects are rounded squares, software diamonds and
- * publications circles, each in its category colour.
+ * publications circles, each painted by `nodeStyle()`. The legend draws the
+ * same symbols.
  */
 export const SYMBOL: Record<NodeType, string> = {
   person: 'circle', project: 'roundRect', software: 'diamond', publication: 'circle',
@@ -138,7 +168,6 @@ export interface NetworkNode {
   href: string;
   /** Citations of a publication, for the tooltip; null for every other type. */
   citations: number | null;
-  itemStyle: { color?: string };
 }
 
 export interface NetworkLink {
@@ -198,15 +227,11 @@ export function networkOption(rows: GraphRows, topic: string | null, labels: Net
     detail: n.detail,
     href: n.href,
     citations: n.citations,
-    itemStyle: {
-      // a publication is a dot in its first research area's colour
-      ...(n.type === 'publication' ? { color: TAG_PALETTE[n.topics[0] ?? ''] ?? CATEGORY_COLOR.publication } : {}),
-    },
   }));
 
   const links: NetworkLink[] = shown.links.map((l) => ({ source: l.source, target: l.target, value: LINK_VALUE }));
 
-  const categories = CATEGORY_ORDER.map((type) => ({ name: labels.category[type], itemStyle: { color: CATEGORY_COLOR[type] } }));
+  const categories = CATEGORY_ORDER.map((type) => ({ name: labels.category[type], itemStyle: nodeStyle(type) }));
 
   return {
     animation: false,
@@ -223,11 +248,17 @@ export function networkOption(rows: GraphRows, topic: string | null, labels: Net
         : `${n.name}\n${second}\n${fmt(n.citations === 1 ? labels.citation.one : labels.citation.other, { count: n.citations })}`;
     }),
     legend: {
-      data: categories.map((c) => c.name),
+      // each entry is the symbol of its nodes, outlined and filled like them
+      data: CATEGORY_ORDER.map((type, i) => ({ name: categories[i]!.name, icon: SYMBOL[type], itemStyle: nodeStyle(type) })),
       bottom: 0,
-      itemHeight: 8,
-      itemWidth: 12,
-      textStyle: { color: MUTED, fontFamily: FONT, fontSize: 11 },
+      itemGap: 20,
+      itemHeight: 14,
+      itemWidth: 14,
+      // the legend lies over the canvas: an edge must not run through its text
+      backgroundColor: 'rgba(255, 255, 255, 0.85)',
+      borderRadius: 4,
+      padding: [6, 10],
+      textStyle: { color: INK, fontFamily: FONT, fontSize: 13 },
     },
     series: [
       {

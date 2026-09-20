@@ -7,9 +7,9 @@ import { stripHtml, truncateWords } from '../lib/text';
 import type { Entry } from '../lib/views';
 
 // `topics` are the person's research-area slugs, which `peopleTopics()`
-// derives from their publications: people have no `tags:` of their own, so
-// unlike every other card this one cannot build its `data-tags` from the
-// record alone and has to be handed the slugs. Defaulted so a caller on a
+// builds from their own `tags:` plus those of their publications, so unlike
+// every other card this one cannot build its `data-tags` from the record
+// alone and has to be handed the slugs. Defaulted so a caller on a
 // page without the global filter bar need not compute them.
 withDefaults(defineProps<{ person: Entry<PersonData>; avatarBase: string; strings: UiSlices['personCard']; topics?: string[] }>(), { topics: () => [] });
 </script>

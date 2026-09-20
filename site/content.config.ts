@@ -36,7 +36,7 @@ const withPeopleTags = { tags: refList('tags'), people: refList('people') };
 export const collections = {
   tags: defineCollection({ loader: tagsLoader, schema: s.tagSchema }),
   countryFlags: defineCollection({ loader: countryFlagsLoader, schema: s.countryFlagSchema }),
-  people: defineCollection({ loader: yml('people'), schema: s.personSchema }),
+  people: defineCollection({ loader: yml('people'), schema: s.personFields.extend({ tags: refList('tags') }).refine(...s.alumniNeedEndYear) }),
   publications: defineCollection({ loader: yml('publications'), schema: s.publicationSchema.extend(withPeopleTags) }),
   projects: defineCollection({ loader: yml('projects'), schema: s.projectSchema.extend({ ...withPeopleTags, publications: refList('publications') }) }),
   software: defineCollection({ loader: yml('software'), schema: s.softwareSchema.extend({ ...withPeopleTags, publications: refList('publications') }) }),

@@ -1,10 +1,9 @@
 import { describe, expect, it } from 'vitest';
-import { TAG_PALETTE } from './chartOptions';
 import type { GraphRows } from './graphRows';
 import { uiFor } from './i18n/catalog';
 import {
-  CATEGORY_COLOR, CATEGORY_ORDER, LAYOUT_FRICTION, SETTLE_FRICTION, SIZE, SYMBOL,
-  ROAM, ZOOM_ALL, ZOOM_TOPIC, degrees, filterRows, networkOption, symbolSize, type NetworkLabels,
+  BORDER_WIDTH, CATEGORY_COLOR, CATEGORY_ORDER, FILL_TINT, LAYOUT_FRICTION, SETTLE_FRICTION, SIZE, SYMBOL,
+  ROAM, ZOOM_ALL, ZOOM_TOPIC, degrees, filterRows, networkOption, nodeStyle, symbolSize, tint, type NetworkLabels,
 } from './networkOptions';
 
 const { t } = uiFor('en');
@@ -131,14 +130,33 @@ describe('networkOption', () => {
     expect(ZOOM_TOPIC).toBeGreaterThan(ZOOM_ALL);
   });
 
-  it('has the four node categories in legend order, with their colours', () => {
+  it('has the four node categories in legend order, each outlined in its main colour', () => {
     const s = series(null);
     expect(CATEGORY_ORDER).toEqual(['person', 'project', 'software', 'publication']);
     expect(s.categories.map((c) => c.name)).toEqual(CATEGORY_ORDER.map((t) => CATEGORY_LABEL[t]));
-    expect(s.categories.map((c) => c.itemStyle.color)).toEqual(CATEGORY_ORDER.map((t) => CATEGORY_COLOR[t]));
+    expect(s.categories.map((c) => c.itemStyle)).toEqual(CATEGORY_ORDER.map((t) => nodeStyle(t)));
+    expect(s.categories.map((c) => c.itemStyle.borderColor)).toEqual(CATEGORY_ORDER.map((t) => CATEGORY_COLOR[t]));
     expect(node(null, 'person:ada').category).toBe(CATEGORY_ORDER.indexOf('person'));
     expect(node(null, 'publication:p1').category).toBe(CATEGORY_ORDER.indexOf('publication'));
-    expect(networkOption(rows, null, labels).legend.data).toEqual(s.categories.map((c) => c.name));
+  });
+
+  it('gives the four categories four different main colours', () => {
+    expect(new Set(Object.values(CATEGORY_COLOR)).size).toBe(CATEGORY_ORDER.length);
+  });
+
+  it('fills a node with a light tint of the colour it is outlined in', () => {
+    expect(tint('#000000', 0.5)).toBe('#808080');
+    expect(tint('#3498db', 0)).toBe('#3498db');
+    expect(tint('#3498db', 1)).toBe('#ffffff');
+    for (const type of CATEGORY_ORDER) {
+      expect(nodeStyle(type)).toEqual({ color: tint(CATEGORY_COLOR[type], FILL_TINT), borderColor: CATEGORY_COLOR[type], borderWidth: BORDER_WIDTH });
+    }
+  });
+
+  it('draws every legend entry as the symbol of its nodes, in their outline and fill', () => {
+    expect(networkOption(rows, null, labels).legend.data).toEqual(
+      CATEGORY_ORDER.map((t) => ({ name: CATEGORY_LABEL[t], icon: SYMBOL[t], itemStyle: nodeStyle(t) })),
+    );
   });
 
   it('draws a person as their photo and every other type as a shape', () => {
@@ -189,12 +207,8 @@ describe('networkOption', () => {
     expect(filtered.symbolSize).toBeLessThan(node(null, 'person:ada').symbolSize);
   });
 
-  it('colours a publication by its first research area and falls back to the category colour', () => {
-    expect(node(null, 'publication:p1').itemStyle.color).toBe(TAG_PALETTE.ai);
-    expect(node(null, 'publication:p2').itemStyle.color).toBe(TAG_PALETTE.pharmacometrics);
-    expect(node(null, 'publication:p3').itemStyle.color).toBe(CATEGORY_COLOR.publication);
-    // an image node keeps its category colour (it only shows through a circle fallback)
-    expect(node(null, 'person:ada').itemStyle.color).toBeUndefined();
+  it('never colours a node by its research area: the category alone decides (issue #77)', () => {
+    for (const n of series(null).data) expect(n).not.toHaveProperty('itemStyle');
   });
 
   it('labels a node on hover only', () => {

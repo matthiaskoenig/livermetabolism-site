@@ -22,8 +22,9 @@ const [tags, people, publications] = await Promise.all([getTags(locale), getPeop
 const avatarBase = asset('image/people/128/');
 const current = people.filter((p) => p.status === 'current');
 const alumniGroups = alumniByYear(people);
-// The research areas of a person are their publications' - the same
-// derivation the network graph's person nodes use (site/lib/peopleTopics.ts).
+// The research areas of a person are their own tags plus their
+// publications' - the same derivation the network graph's person nodes use
+// (site/lib/peopleTopics.ts).
 const topics = peopleTopics(people, publications);
 const areasOf = (id: string) => topics.get(id) ?? [];
 ---

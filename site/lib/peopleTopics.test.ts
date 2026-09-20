@@ -5,7 +5,7 @@ import { peopleTopics, type TopicPerson, type TopicPublication } from './peopleT
 import * as s from './schemas';
 import { slugify } from './text';
 
-const people: TopicPerson[] = [{ id: 'ada' }, { id: 'bob' }, { id: 'cleo' }];
+const people: TopicPerson[] = [{ id: 'ada', tags: [] }, { id: 'bob', tags: [] }, { id: 'cleo', tags: [] }];
 
 const publications: TopicPublication[] = [
   { people: ['ada', 'bob'], tags: ['AI'] },
@@ -33,8 +33,19 @@ describe('peopleTopics', () => {
   });
 
   it('returns slugs, not the tag names the YAML carries', () => {
-    const one = peopleTopics([{ id: 'x' }], [{ people: ['x'], tags: ['Open & FAIR', 'Digital Pathology'] }]);
+    const one = peopleTopics([{ id: 'x', tags: [] }], [{ people: ['x'], tags: ['Open & FAIR', 'Digital Pathology'] }]);
     expect(one.get('x')).toEqual(['open-fair', 'digital-pathology']);
+  });
+
+  it('puts a person\'s own tags first, then the areas of their publications, deduplicated', () => {
+    const own = peopleTopics(
+      [{ id: 'ada', tags: ['Digital Pathology', 'AI'] }, { id: 'cleo', tags: ['Open & FAIR'] }],
+      publications,
+    );
+    // 'ai' is both an own tag and a publication area: listed once
+    expect(own.get('ada')).toEqual(['digital-pathology', 'ai']);
+    // no paper at all, so the own tag is the only area
+    expect(own.get('cleo')).toEqual(['open-fair']);
   });
 
   it('hands out a fresh list per person, so a caller cannot leak areas into another', () => {
@@ -78,5 +89,10 @@ describe('peopleTopics over the real data', () => {
     // empty `data-tags` means
     const empty = [...topics.values()].filter((areas) => areas.length === 0);
     expect(empty).toHaveLength(27);
+  });
+
+  it('adds the areas a person is tagged with in people.yml to those of their papers (#78)', () => {
+    expect(topics.get('michelle_elias')).toContain('digital-pathology');
+    expect(topics.get('shubhankar_palwankar')).toContain('digital-pathology');
   });
 });

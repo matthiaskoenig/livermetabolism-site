@@ -24,9 +24,9 @@ const people: Entry<s.PersonData>[] = [
   {
     id: 'ada', status: 'current', tenure: '2020-2026', name: 'Ada Lovelace', role: ['Group Leader', 'PI'],
     image: 'ada.webp', orcid: '0000-0001-0000-0001', repository: 'https://github.com/ada', homepage: 'https://ada.example',
-    affiliation: 'University of Lübeck', description: '<p>Works on livers.</p>',
+    affiliation: 'University of Lübeck', description: '<p>Works on livers.</p>', tags: [],
   },
-  { id: 'bob', status: 'alumni', tenure: '2018-2021', name: 'Bob Brown', role: ['PhD Student'], image: null, end_year: 2021 },
+  { id: 'bob', status: 'alumni', tenure: '2018-2021', name: 'Bob Brown', role: ['PhD Student'], image: null, end_year: 2021, tags: [] },
 ];
 
 const publications: Entry<s.PublicationData>[] = [

@@ -16,8 +16,8 @@ const tags: GraphTopic[] = [
 ];
 
 const people: GraphPerson[] = [
-  { id: 'ada', name: 'Ada L.', role: ['Group Leader'], status: 'current' },
-  { id: 'bob', name: 'Bob B.', role: [], status: 'alumni' },
+  { id: 'ada', name: 'Ada L.', role: ['Group Leader'], status: 'current', tags: [] },
+  { id: 'bob', name: 'Bob B.', role: [], status: 'alumni', tags: [] },
 ];
 
 const publications: GraphPublication[] = [

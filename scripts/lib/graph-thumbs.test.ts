@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { load } from 'js-yaml';
 import { describe, expect, it } from 'vitest';
+import { CATEGORY_COLOR } from '../../site/lib/networkOptions.ts';
 import { thumbJobs, PERSON_RING, PERSON_THUMB_SIZE } from './graph-thumbs.ts';
 
 const ROOT = 'img';
@@ -16,7 +17,7 @@ const input = {
 describe('thumbJobs', () => {
   const jobs = thumbJobs(input);
 
-  it('maps a person to a circular 96px thumbnail of their 128px avatar, ringed in white', () => {
+  it('maps a person to a circular 96px thumbnail of their 128px avatar, ringed in the people colour', () => {
     expect(jobs).toContainEqual({
       source: `${ROOT}/people/128/matthias_koenig.webp`,
       target: `${ROOT}/graph/people/matthias_koenig.webp`,
@@ -25,7 +26,8 @@ describe('thumbJobs', () => {
       ring: PERSON_RING,
     });
     expect(PERSON_THUMB_SIZE).toBe(96);
-    expect(PERSON_RING).toEqual({ width: 2, color: '#ffffff' });
+    // the ring is the node's outline, so it is the colour of the People legend entry
+    expect(PERSON_RING).toEqual({ width: 6, color: CATEGORY_COLOR.person });
   });
 
   it('maps nothing but people: every other node type is drawn as a symbol', () => {

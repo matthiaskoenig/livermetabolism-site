@@ -166,7 +166,7 @@ class Tag(StrictModel):
 # ---------------------------------------------------------------------------
 
 
-class Person(StrictModel):
+class Person(Taggable):
     id: str
     status: PersonStatus
     tenure: str
@@ -514,6 +514,7 @@ PEOPLE_LINKED_TABLES = (
 
 # tables whose rows carry a `tags: list[str]` referencing tags.yml
 TAGGED_TABLES = (
+    "people",
     "publications",
     "projects",
     "software",

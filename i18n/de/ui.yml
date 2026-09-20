@@ -393,11 +393,11 @@ network.graphLabel:
   sha: 'ea6af198368e0a1f'
   text: Netzwerk der Personen, Publikationen, Projekte und Software der Gruppe
 network.caption:
-  sha: '8b8586b4573ec360'
-  text: 'Wählen Sie einen Forschungsbereich, um nur dessen Personen, Publikationen, Projekte und Software anzuzeigen; das Netzwerk ordnet sich neu an. Ziehen Sie einen Knoten, um ihn zu verschieben, ziehen Sie den Hintergrund, um zu schwenken, nutzen Sie die Schaltflächen zum Zoomen. Ein Klick auf einen Knoten öffnet ihn auf der Website. Personen tragen ihr Foto, Projekte sind Quadrate und Software Rauten; eine Publikation ist ein Punkt in der Farbe ihres Forschungsbereichs. Jeder Knoten ist so groß wie die Anzahl der Personen, Arbeiten, Projekte und Werkzeuge, mit denen er verbunden ist.'
+  sha: 'fd8840f52945fe23'
+  text: 'Wählen Sie einen Forschungsbereich, um nur dessen Personen, Publikationen, Projekte und Software anzuzeigen; das Netzwerk ordnet sich neu an. Ziehen Sie einen Knoten, um ihn zu verschieben, ziehen Sie den Hintergrund, um zu schwenken, nutzen Sie die Schaltflächen zum Zoomen. Ein Klick auf einen Knoten öffnet ihn auf der Website. Personen tragen ihr Foto, Projekte sind Quadrate, Software Rauten und Publikationen Punkte; jede Art ist in ihrer eigenen Farbe umrandet, wie in der Legende. Jeder Knoten ist so groß wie die Anzahl der Personen, Arbeiten, Projekte und Werkzeuge, mit denen er verbunden ist.'
 network.intro:
-  sha: '8e0d9d3cedaa79fa'
-  text: 'So hängt die Arbeit der Gruppe zusammen: {people} Personen, {publications} Publikationen, {projects} Projekte und {software} Software-Werkzeuge, verbunden durch Autorenschaft und Mitgliedschaft. Personen tragen ihr Foto, Projekte sind Quadrate, Software Rauten und Publikationen Punkte in der Farbe ihres Forschungsbereichs; jeder Knoten ist so groß wie die Anzahl der Personen, Arbeiten, Projekte und Werkzeuge, mit denen er verbunden ist.'
+  sha: 'c08a43f90e3c6cce'
+  text: 'So hängt die Arbeit der Gruppe zusammen: {people} Personen, {publications} Publikationen, {projects} Projekte und {software} Software-Werkzeuge, verbunden durch Autorenschaft und Mitgliedschaft. Personen tragen ihr Foto, Projekte sind Quadrate, Software Rauten und Publikationen Punkte, jede Art in ihrer eigenen Farbe umrandet; jeder Knoten ist so groß wie die Anzahl der Personen, Arbeiten, Projekte und Werkzeuge, mit denen er verbunden ist.'
 network.introFilterHint:
   sha: '2d3742c54af2d0bf'
   text: 'Wählen Sie einen Forschungsbereich, um nur dessen Personen, Publikationen, Projekte und Software anzuzeigen - das Netzwerk ordnet sich neu an. Ziehen Sie einen Knoten, um ihn zu verschieben, ziehen Sie den Hintergrund, um zu schwenken, und klicken Sie auf einen Knoten, um ihn auf der Website zu öffnen.'

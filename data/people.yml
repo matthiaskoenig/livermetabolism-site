@@ -38,6 +38,8 @@
   orcid: "0009-0007-3431-463X"
   repository: "https://github.com/shubhankarpalwankar"
   homepage:
+  tags:
+    - 'Digital Pathology'
   description: "Shubhankar worked on enhancing our understanding of enalapril's pharmacokinetics and dynamics based on a physiologically based modeling approach. The work will build on top of existing models of the ACE inhibitors lisinopril and ramipril."
 
 - id: 'martina_grohs'
@@ -66,6 +68,8 @@
   orcid: "0009-0005-7959-3164"
   repository: 'https://github.com/mii-halina'
   homepage:
+  tags:
+    - 'Digital Pathology'
   description: 'Michelle develops a physiologically based pharmacokinetic/ pharmacodynamic (PBPK) model of the sulfonylurea glimepiride. The objective is to enhance our understanding of the underlying causes of intraindividual variability in insulin secretion and T2DM treatment with sulfonylurea, e.g., differences in hepatorenal function.'
 
 - id: 'mariia_babaeva'

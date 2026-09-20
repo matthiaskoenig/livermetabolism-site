@@ -217,9 +217,9 @@ export const en = {
     loading: 'Loading the network…',
     graphLabel: 'Network of the people, publications, projects and software of the group',
     caption:
-      "Pick a research area to show only its people, publications, projects and software; the graph re-arranges itself around what is left. Drag a node to move it, drag the background to pan, use the buttons to zoom. Clicking a node opens it on the site. People carry their photo, projects are squares and software diamonds; a publication is a dot in its research area's colour. Every node is sized by how many people, papers, projects and tools it connects to.",
+      "Pick a research area to show only its people, publications, projects and software; the graph re-arranges itself around what is left. Drag a node to move it, drag the background to pan, use the buttons to zoom. Clicking a node opens it on the site. People carry their photo, projects are squares, software diamonds and publications dots; each kind is outlined in its own colour, as in the legend. Every node is sized by how many people, papers, projects and tools it connects to.",
     intro:
-      "How the work of the group hangs together: {people} people, {publications} publications, {projects} projects and {software} software tools, connected by authorship and membership. People carry their photo, projects are squares, software diamonds and publications dots in their research area's colour; every node is sized by how many people, papers, projects and tools it connects to.",
+      "How the work of the group hangs together: {people} people, {publications} publications, {projects} projects and {software} software tools, connected by authorship and membership. People carry their photo, projects are squares, software diamonds and publications dots, each kind outlined in its own colour; every node is sized by how many people, papers, projects and tools it connects to.",
     introFilterHint: 'Pick a research area to show only its people, publications, projects and software - the graph re-arranges itself around what is left. Drag a node to move it, drag the background to pan, and click a node to open it on the site.',
     metaDescription: 'Interactive network graph of the people, publications, projects, and software of the König group.',
   },

@@ -77,11 +77,24 @@ export const tagSchema = z.object({
 
 export const countryFlagSchema = z.object({ id, flag: reqStr }).strict();
 
-export const personSchema = z.object({
+/**
+ * The person fields without the alumni rule: a refined Zod object cannot be
+ * `.extend()`ed, and `content.config.ts` has to swap `tags` for a
+ * `reference()` list before it applies `alumniNeedEndYear` itself.
+ */
+export const personFields = z.object({
   id, order: z.number().default(0), status: PersonStatus, tenure: reqStr, name: reqStr, country: optStr, role: strList,
   image: optStr, orcid: optStr, repository: optStr, homepage: optStr, affiliation: optStr,
-  description: optStr, end_year: optInt,
-}).strict().refine((p) => p.status !== 'alumni' || p.end_year != null, { message: 'alumni need end_year' });
+  description: optStr, end_year: optInt, tags: strList,
+}).strict();
+
+/** `[check, params]` for `.refine()`, shared with `content.config.ts`. */
+export const alumniNeedEndYear = [
+  (p: { status: string; end_year?: number | null }) => p.status !== 'alumni' || p.end_year != null,
+  { message: 'alumni need end_year' },
+] as const;
+
+export const personSchema = personFields.refine(...alumniNeedEndYear);
 
 export const publicationSchema = z.object({
   id, order: z.number().default(0), tags: strList, people: strList, year: reqInt, date: optDate, pdf: optStr,
