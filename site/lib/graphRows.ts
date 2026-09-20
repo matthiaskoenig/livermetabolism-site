@@ -70,7 +70,7 @@ export interface GraphRows { nodes: GraphNode[]; links: GraphLink[] }
 
 /** Only the tag-name-to-slug mapping is needed: the research areas are filters, not nodes. */
 export type GraphTopic = Pick<TagInfo, 'tag' | 'slug'>;
-export type GraphPerson = Pick<Entry<PersonData>, 'id' | 'name' | 'role' | 'status'>;
+export type GraphPerson = Pick<Entry<PersonData>, 'id' | 'name' | 'role' | 'status' | 'tags'>;
 export type GraphPublication = Pick<Entry<PublicationData>, 'id' | 'title' | 'year' | 'journal' | 'journal_short' | 'people' | 'tags' | 'doi'>;
 export type GraphProject = Pick<Entry<ProjectData>, 'id' | 'title' | 'people' | 'publications' | 'tags' | 'images'>;
 export type GraphSoftware = Pick<Entry<SoftwareData>, 'id' | 'name' | 'title' | 'people' | 'publications' | 'tags' | 'image'>;
@@ -124,8 +124,8 @@ export function graphRows(input: GraphRowsInput): GraphRows {
     return thumbs.has(path) ? `${assetBase}${path}` : null;
   };
 
-  // A person carries no tags of their own: their research areas are derived
-  // from the publications they co-authored. Shared with the team page's
+  // A person's research areas are their own tags plus those of the
+  // publications they co-authored. Shared with the team page's
   // `data-tags`, so the graph and the filter bar cannot disagree about which
   // area someone belongs to.
   const personTopics = peopleTopics(input.people, input.publications);
