@@ -1,7 +1,7 @@
 /**
  * Writes the node thumbnails of the network graph (`/network/`) into
  * `public/assets/image/graph/`: one round 96 px photo per person, ringed in
- * white. Nothing else has a thumbnail — the research areas filter the graph
+ * the people colour of the graph (its node outline). Nothing else has a thumbnail — the research areas filter the graph
  * instead of appearing in it, and projects, software and publications are
  * drawn as plain symbols.
  *

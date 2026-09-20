@@ -37,8 +37,15 @@ export interface ThumbJob {
   ring?: ThumbRing;
 }
 
-/** White outline that lifts a round photo off the graph's edges. */
-export const PERSON_RING: ThumbRing = { width: 2, color: '#ffffff' };
+/**
+ * The outline of a person node. ECharts cannot stroke an `image://` symbol, so
+ * the ring is part of the thumbnail: the people colour of the graph
+ * (`CATEGORY_COLOR.person` in `site/lib/networkOptions.ts`, which this module
+ * cannot import - Node runs it without a bundler; the test keeps the two
+ * equal). 6 px of the 96 px thumbnail is the 2 px outline of the other nodes
+ * at a typical 32 px photo.
+ */
+export const PERSON_RING: ThumbRing = { width: 6, color: '#3498db' };
 
 /** Person photos: the graph draws them at 24-56 px, 96 px covers retina zoom. */
 export const PERSON_THUMB_SIZE = 96;
