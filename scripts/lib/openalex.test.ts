@@ -68,15 +68,19 @@ describe('doisFromPublications', () => {
   const dois = doisFromPublications(yamlText);
 
   /**
-   * The real file has 110 entries, 87 of which carry a `doi:` value; one DOI
+   * The expected list is read off the raw `doi:` lines of the real file, so
+   * adding or reordering publications does not break the test. One DOI
    * (`10.24407/kxp:1902121317`, a thesis published twice) appears on two
-   * entries, so 86 DOIs are asked of OpenAlex.
+   * entries and must be asked of OpenAlex only once.
    */
   it('collects every DOI of the real publications.yml, unique and in file order', () => {
-    expect(dois).toHaveLength(86);
-    expect(new Set(dois).size).toBe(86);
-    expect(dois[0]).toBe('10.1515/jib-2026-0006');
-    expect(dois.at(-1)).toBe('10.1038/msb.2010.62');
+    const listed = [...yamlText.matchAll(/^ {2}doi: *['"]?([^'"\s]+)['"]?\s*$/gm)].map((m) => normalizeDoi(m[1]));
+    expect(listed.length).toBeGreaterThan(80);
+    expect(listed.every((doi) => doi !== null)).toBe(true);
+    expect(dois).toEqual([...new Set(listed)]);
+    expect(listed.filter((doi) => doi === '10.24407/kxp:1902121317')).toHaveLength(2);
+    expect(dois.filter((doi) => doi === '10.24407/kxp:1902121317')).toHaveLength(1);
+    expect(dois).toContain('10.1038/msb.2010.62');
     expect(dois).toContain('10.1371/journal.pcbi.1002577');
     expect(dois.every((doi) => doi === doi.toLowerCase() && doi.startsWith('10.'))).toBe(true);
   });
