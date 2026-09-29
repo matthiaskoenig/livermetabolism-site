@@ -73,6 +73,7 @@ export const slices = (t: TFn) => ({
   },
   fundingCard: {
     role: { Recipient: t('fundingRole.recipient'), 'Co-Investigator': t('fundingRole.coInvestigator') },
+    groupShare: t('research.fundingGroupShare'),
     projectHomepage: t('links.projectHomepage'),
     repositoryHomepage: t('links.repositoryHomepage'),
   },
