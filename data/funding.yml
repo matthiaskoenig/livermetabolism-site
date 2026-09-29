@@ -1,3 +1,24 @@
+- id: 'anthropic-ai-for-science'
+  funder_short: Anthropic
+  funder: Anthropic - AI for Science Program
+  funder_link: https://www.anthropic.com/
+  funder_logo: anthropic.webp
+  grant:
+  start: '09/2026'
+  end: '03/2027'
+  title: 'AI-Ready PK-DB: From Pharmacokinetic Data to Executable PBPK Models with Claude'
+  tags:
+    - 'AI'
+    - 'Pharmacometrics'
+    - 'Open & FAIR'
+  role: Recipient
+  amount: 50000
+  personal_amount: 50000
+  currency: "$"
+  homepage: https://alpha.pk-db.com
+  repository:
+  description: "Developing an MCP server that lets AI agents navigate the pharmacokinetics database PK-DB from study to concentration-time profile and on to an executable PBPK model, making the database accessible to agents well beyond our own group. Awarded as usage credits for Claude."
+
 - id: 'xresearch2025'
   funder_short: BMFTR
   funder: Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR) und dem Land Berlin im Rahmen der Exzellenzstrategie von Bund und Ländern
