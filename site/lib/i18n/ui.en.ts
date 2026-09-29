@@ -288,6 +288,8 @@ export const en = {
     fundingLinkText: 'de.NBI',
     fundingAfter:
       'Cloud within the German Network for Bioinformatics Infrastructure (de.NBI) (031A537B, 031A533A, 031A538A, 031A533B, 031A535A, 031A537C, 031A534A, 031A532B).',
+    /** A grant's total with the group's part of it, e.g. "€3,825,000 (group share: €425,000)". */
+    fundingGroupShare: '{total} (group share: {share})',
     editorsIntro: 'We are actively involved in the standardization and reproducibility efforts in Systems Biology and Systems Medicine.',
   },
   pubChart: {
@@ -373,6 +375,7 @@ export const en = {
     funder: 'Funder',
     period: 'Period',
     role: 'Role',
+    amount: 'Amount',
     editorialRoles: 'Editorial roles',
     tenure: 'Tenure',
     conferenceAbstracts: 'Conference abstracts',
