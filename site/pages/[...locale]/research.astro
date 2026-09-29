@@ -78,7 +78,7 @@ const activity = activityRows(snapshot, repos);
 
   <h2 id="funding">{t('nav.funding')}</h2>
   <div class="project-grid" id="funding-grid">
-    {funding.map((item) => <FundingCard item={item} tagInfo={tagInfo} imageBase={asset('image/funding/')} strings={ui.fundingCard} />)}
+    {funding.map((item) => <FundingCard item={item} tagInfo={tagInfo} imageBase={asset('image/funding/')} strings={ui.fundingCard} locale={locale} />)}
     <p data-filter-empty hidden>{t('filter.empty')}</p>
   </div>
   <p>

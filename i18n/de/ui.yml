@@ -527,6 +527,9 @@ research.fundingLinkText:
 research.fundingAfter:
   sha: '6f06c360696a01ca'
   text: 'Cloud im Rahmen des Deutschen Netzwerks für Bioinformatik-Infrastruktur (de.NBI) (031A537B, 031A533A, 031A538A, 031A533B, 031A535A, 031A537C, 031A534A, 031A532B).'
+research.fundingGroupShare:
+  sha: '4066006fa9515d88'
+  text: '{total} (Anteil der Gruppe: {share})'
 research.editorsIntro:
   sha: 'a6f8529f52061423'
   text: 'Wir engagieren uns aktiv für Standardisierung und Reproduzierbarkeit in der Systembiologie und Systemmedizin.'
@@ -782,6 +785,9 @@ llms.period:
 llms.role:
   sha: '14736a2eb9f4159f'
   text: Rolle
+llms.amount:
+  sha: '49e96d7cdf58069c'
+  text: Betrag
 llms.editorialRoles:
   sha: '700fa6a941371453'
   text: Herausgeberschaften

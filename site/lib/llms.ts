@@ -54,6 +54,7 @@
  */
 import type { TFn } from './i18n/catalog';
 import { DEFAULT_LOCALE, type Locale } from './i18n/locales';
+import { fundingAmount } from './funding';
 import { sitePages } from './sitePages';
 import { truncateWords } from './text';
 import type { Entry, TagInfo } from './views';
@@ -76,7 +77,7 @@ export interface LlmsInput extends Deploy {
 export interface LlmsFullInput extends LlmsInput {
   people: Pick<Entry<S.PersonData>, 'id' | 'name' | 'status' | 'role' | 'tenure' | 'affiliation' | 'description' | 'image'>[];
   publications: Pick<Entry<S.PublicationData>, 'id' | 'title' | 'authors' | 'journal' | 'year' | 'status' | 'doi' | 'tags' | 'abstract'>[];
-  funding: Pick<Entry<S.FundingData>, 'id' | 'title' | 'funder' | 'funder_short' | 'start' | 'end' | 'role' | 'description' | 'homepage'>[];
+  funding: Pick<Entry<S.FundingData>, 'id' | 'title' | 'funder' | 'funder_short' | 'start' | 'end' | 'role' | 'amount' | 'personal_amount' | 'currency' | 'description' | 'homepage'>[];
   editors: Pick<Entry<S.EditorData>, 'id' | 'name' | 'tenure' | 'description' | 'homepage'>[];
   presentations: Pick<Entry<S.PresentationData>, 'id' | 'title' | 'authors' | 'event' | 'date' | 'location'>[];
   posters: Pick<Entry<S.PosterData>, 'id' | 'title' | 'authors' | 'event' | 'date'>[];
@@ -208,7 +209,7 @@ export function llmsTxt(input: LlmsInput): string {
  * Parameterised by `abs` (locale-prefixed or not) and `input.t` (English or
  * German), so `llmsFullTxt()` calls this once per locale.
  */
-function fullSections(input: LlmsFullInput, abs: Abs): string[] {
+function fullSections(input: LlmsFullInput, abs: Abs, locale: Locale): string[] {
   const { t } = input;
   const text = (html: string | null | undefined) => (html ? plainText(html, abs) : '');
   const title = (html: string) => plainText(html, abs, { links: false });
@@ -271,7 +272,7 @@ function fullSections(input: LlmsFullInput, abs: Abs): string[] {
       input.funding.map((f) =>
         entry(
           title(f.title),
-          fields([[t('llms.funder'), `${f.funder} (${f.funder_short})`], [t('llms.period'), `${f.start}–${f.end}`], [t('llms.role'), f.role], [t('links.homepage'), f.homepage], [t('llms.url'), abs(`/research/#funding-${f.id}`)]]),
+          fields([[t('llms.funder'), `${f.funder} (${f.funder_short})`], [t('llms.period'), `${f.start}–${f.end}`], [t('llms.role'), t(f.role === 'Recipient' ? 'fundingRole.recipient' : 'fundingRole.coInvestigator')], [t('llms.amount'), fundingAmount(f, locale, t('research.fundingGroupShare'))], [t('links.homepage'), f.homepage], [t('llms.url'), abs(`/research/#funding-${f.id}`)]]),
           text(f.description),
         ),
       ),
@@ -313,9 +314,9 @@ export function llmsFullTxt(contexts: Record<Locale, LlmsFullInput>): string {
   const english = doc([
     header(),
     `Generated from the website's data at build time. Website: ${absEn('')} - short index: ${absEn('llms.txt')}`,
-    ...fullSections(en, absEn),
+    ...fullSections(en, absEn, DEFAULT_LOCALE),
   ]);
-  const german = doc([de.t('llms.intro'), ...fullSections(de, absDe)]);
+  const german = doc([de.t('llms.intro'), ...fullSections(de, absDe, 'de')]);
 
   // english already ends in a single '\n' (doc()); strip it so joining with
   // '\n\n## Deutsch\n\n' leaves exactly one blank line around the heading,

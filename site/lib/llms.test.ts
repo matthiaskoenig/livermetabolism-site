@@ -46,7 +46,7 @@ function fixture(over: Partial<LlmsFullInput> = {}): LlmsFullInput {
       { id: 'sbmlutils', name: 'sbmlutils', title: 'Python utilities for SBML', description: 'Tools for <a href="https://sbml.org">SBML</a>.', homepage: null, repository: 'https://github.com/matthiaskoenig/sbmlutils', tags: ['Open & FAIR'] },
     ],
     funding: [
-      { id: 'grant1', title: 'Liver twins', funder: 'Deutsche Forschungsgemeinschaft', funder_short: 'DFG', start: '2024', end: '2027', role: 'Recipient', description: 'Funded work.', homepage: null },
+      { id: 'grant1', title: 'Liver twins', funder: 'Deutsche Forschungsgemeinschaft', funder_short: 'DFG', start: '2024', end: '2027', role: 'Recipient', amount: 895500, personal_amount: 219000, currency: '€', description: 'Funded work.', homepage: null },
     ],
     editors: [{ id: 'ed1', name: 'Journal of Examples', tenure: '2021-', description: 'Editorial board member.', homepage: null }],
     presentations: [{ id: 'talk1', title: 'Digital twins talk', authors: 'Lovelace A', event: 'Liver Meeting', date: '2025-05-01', location: 'Berlin' }],
@@ -225,6 +225,14 @@ describe('llmsFullTxt', () => {
     const projects = section(text, 'Projects')!;
     expect(projects).toContain('### ATLAS');
     expect(projects).not.toContain('Finished project');
+  });
+
+  it('names a funding role in the reader\'s language', () => {
+    expect(llmsFullTxt({ en: realInput('en'), de: realInput('de') })).toContain('- Rolle: Empfängerin oder Empfänger');
+  });
+
+  it('gives a funding entry its amount, like the funding card', () => {
+    expect(section(text, 'Funding')).toContain('- Amount: €895,500 (group share: €219,000)');
   });
 
   it('has a section for every other table the site shows', () => {
