@@ -1,3 +1,21 @@
+- id: 'Koenig2026_Anthropic_AI_for_Science_PKDB'
+  tags:
+    - 'AI'
+    - 'Pharmacometrics'
+    - 'Open & FAIR'
+  status: 'current'
+  people:
+    - 'matthias_koenig'
+  title: 'Anthropic AI for Science Award for AI-Ready PK-DB'
+  date: '2026-09-29'
+  image: Koenig2026_Anthropic_AI_for_Science_PKDB.webp
+  link: 'https://alpha.pk-db.com'
+  short: "Our project AI-Ready PK-DB has received an AI for Science award from Anthropic. We will build an MCP server that lets AI agents work with the pharmacokinetics database PK-DB, from a clinical study all the way to an executable PBPK model."
+  abstract: >-
+    <p>We are pleased to announce that our project <em>AI-Ready PK-DB: From Pharmacokinetic Data to Executable PBPK Models with Claude</em> has received an award from Anthropic's AI for Science program, providing $50,000 in usage credits for Claude.</p>
+    <p>PK-DB is our open, FAIR database of pharmacokinetic data from clinical and pre-clinical studies, and the curated data behind our physiologically based pharmacokinetic (PBPK) models. Within the project we will develop a Model Context Protocol (MCP) server that lets AI agents navigate PK-DB step by step: from a study, to its individual and group concentration-time profiles, and on to an executable PBPK model.</p>
+    <p>Opening PK-DB to AI agents makes the database useful well beyond our own group and brings reproducible, data-driven pharmacokinetic modeling within reach of a much wider research community.</p>
+
 - id: 'Koenig2026_Luebeck_Welcome'
   tags: []
   status: 'current'
