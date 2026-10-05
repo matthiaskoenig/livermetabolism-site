@@ -13,6 +13,13 @@ pkpdutils:
   description:
     sha: 0c81510c684eb654
     text: 'Entwicklung einer Python-Bibliothek für die pharmakokinetische und pharmakodynamische Analyse von Zeitverläufen und Parametern, von nichtkompartimenteller Analyse und Kurvenanpassung bis hin zu Bioäquivalenz und Metaanalyse. Vormals pkdb_analysis, die Analyse-Toolbox von PK-DB.'
+pkpdbib:
+  title:
+    sha: 82647505c03c1fe1
+    text: 'PK/PD-Literatur in Python'
+  description:
+    sha: 59169f6dfb77ce4f
+    text: 'Entwicklung einer Python-Bibliothek für die Arbeit mit pharmakokinetischer und pharmakodynamischer (PK/PD) Literatur und Bibliographien, vom Abruf der PDFs eines Zotero-Exports bis zum programmatischen Zugriff auf Zotero-Bibliotheken. Unterstützt die Literaturkuratierung von PK-DB und der darauf aufbauenden PK/PD-Modelle.'
 sbmlutils:
   title:
     sha: 619fa13553eb7552
