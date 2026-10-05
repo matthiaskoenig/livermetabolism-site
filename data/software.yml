@@ -36,6 +36,22 @@
   publications:
     - 'Grzegorzewski2020_pkdb'
 
+- id: 'pkpdbib'
+  tags:
+    - 'Pharmacometrics'
+    - 'Open & FAIR'
+  type: "software"
+  name: 'pkpdbib'
+  title: 'PK/PD literature in python'
+  description: 'Developed a Python library for working with pharmacokinetics and pharmacodynamics (PK/PD) literature and bibliographies, from retrieving the PDFs of a Zotero export to programmatic access to Zotero libraries. Supports the literature curation of PK-DB and of the PK/PD models built on it.'
+  image: 'pkpdbib.webp'
+  people:
+    - matthias_koenig
+  homepage: https://matthiaskoenig.github.io/pkpdbib
+  repository: https://github.com/matthiaskoenig/pkpdbib
+  doi: 10.5281/zenodo.11076700
+  publications:
+
 - id: 'sbmlutils'
   tags:
     - 'Open & FAIR'

@@ -37,6 +37,22 @@
     <p>PK-DB 2.0 contains curated PK/PD data from more than 700 clinical studies. A unified data model captures study design, interventions, concentration-time profiles, derived pharmacokinetic parameters, and pharmacodynamic endpoints. Validation rules, automated quality checks, unit normalization, uncertainty representation, and ontology-based annotation keep the data consistent and comparable across studies. A redesigned REST API and a dedicated Model Context Protocol (MCP) server give programmatic access to researchers and AI clients alike.</p>
     <p>At the conference we showed how PK-DB fits into Open Systems Pharmacology workflows: to find and import reference datasets, to support model qualification, to compare simulations with observed concentration-time profiles, and to make PBPK model development and evaluation reproducible.</p>
 
+- id: 'Myshkina2026_VPH_YSC'
+  tags:
+    - 'Digital Twins'
+  status: 'current'
+  people:
+    - 'mariia_myshkina'
+  title: 'Mariia Myshkina joins the 2027-28 VPH Young Scientists Committee'
+  date: '2026-09-18'
+  image: Myshkina2026_VPH_YSC.webp
+  link: 'https://vph-society.org/meet-the-new-young-scientists-committee-2027-2028/'
+  short: "Mariia Myshkina is a member of the 2027-28 Young Scientists Committee of the VPH Society, the largest in its history. The Committee begins its two-year mandate in January 2027 and represents early-career researchers in in silico medicine."
+  abstract: >-
+    <p>During the closing ceremony of the VPH 2026 Conference at Politecnico di Milano, VPH, the Society for In Silico Medicine, announced the new composition of its Young Scientists Committee. Mariia Myshkina from our group is one of its 13 members, which makes it the largest Young Scientists Committee in VPH's history.</p>
+    <p>The new Committee begins its two-year mandate in January 2027 and continues until December 2028. Its activities will strengthen the VPH young scientists community, create new opportunities for engagement and support, and foster exchange and representation of early-career researchers across in silico medicine.</p>
+    <p><small>Image: VPH, the Society for In Silico Medicine.</small></p>
+
 - id: 'Koenig2026_Luebeck_Welcome'
   tags: []
   status: 'current'

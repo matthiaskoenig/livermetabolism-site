@@ -19,6 +19,16 @@ OSP2026_PKDB_Koenig:
   abstract:
     sha: 14fc0caef69f98d2
     text: '<p>Bei der Open Systems Pharmacology (OSP) Community Conference 2026 in Beerse, Belgien, präsentierte Matthias König unser Poster zu PK-DB 2.0, einer offenen Pharmakokinetik- und Pharmakodynamik-Datenbank für pharmakometrische Modellierung, künstliche Intelligenz und digitale Zwillinge. Die Arbeit entstand gemeinsam mit Mariia Myshkina und Jan Grzegorzewski.</p> <p>PK-DB 2.0 enthält kuratierte PK/PD-Daten aus mehr als 700 klinischen Studien. Ein einheitliches Datenmodell erfasst Studiendesign, Interventionen, Konzentrations-Zeit-Profile, abgeleitete pharmakokinetische Parameter und pharmakodynamische Endpunkte. Validierungsregeln, automatisierte Qualitätsprüfungen, Einheitennormalisierung, die Darstellung von Unsicherheiten und ontologiebasierte Annotation halten die Daten konsistent und studienübergreifend vergleichbar. Eine neu gestaltete REST-API und ein dedizierter Model-Context-Protocol-(MCP)-Server bieten Forschenden und KI-Clients gleichermaßen programmatischen Zugriff.</p> <p>Auf der Konferenz haben wir gezeigt, wie sich PK-DB in die Workflows von Open Systems Pharmacology einfügt: um Referenzdatensätze zu finden und zu importieren, die Modellqualifizierung zu unterstützen, Simulationen mit beobachteten Konzentrations-Zeit-Profilen zu vergleichen und die Entwicklung und Evaluierung von PBPK-Modellen reproduzierbar zu machen.</p>'
+Myshkina2026_VPH_YSC:
+  title:
+    sha: d24c69bb4a20a4be
+    text: 'Mariia Myshkina wird Mitglied des VPH Young Scientists Committee 2027-28'
+  short:
+    sha: 5520106377e373de
+    text: 'Mariia Myshkina ist Mitglied des Young Scientists Committee 2027-28 der VPH Society, des größten in ihrer Geschichte. Das Committee beginnt seine zweijährige Amtszeit im Januar 2027 und vertritt Nachwuchsforschende in der In-silico-Medizin.'
+  abstract:
+    sha: a11c0b79b92958b1
+    text: '<p>Bei der Abschlussveranstaltung der VPH 2026 Conference am Politecnico di Milano gab VPH, the Society for In Silico Medicine, die neue Zusammensetzung des Young Scientists Committee bekannt. Mariia Myshkina aus unserer Gruppe ist eines von 13 Mitgliedern des Committee, des größten Young Scientists Committee in der Geschichte von VPH.</p> <p>Das neue Committee beginnt seine zweijährige Amtszeit im Januar 2027 und bleibt bis Dezember 2028 im Amt. Seine Aktivitäten sollen die Gemeinschaft junger Wissenschaftlerinnen und Wissenschaftler in VPH stärken, neue Möglichkeiten für Engagement und Unterstützung schaffen und den Austausch sowie die Vertretung von Nachwuchsforschenden in der gesamten In-silico-Medizin fördern.</p> <p><small>Bild: VPH, the Society for In Silico Medicine.</small></p>'
 Koenig2026_Luebeck_Welcome:
   title:
     sha: 35382b3e4cedb093
