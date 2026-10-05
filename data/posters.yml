@@ -1,3 +1,38 @@
+- id: 'Myshkina2026_osp'
+  people:
+    - mariia_myshkina
+    - jan_grzegorzewski
+    - matthias_koenig
+  year: 2026
+  date: 2026-09-24
+  pdf: 'poster/Myshkina2026_osp.pdf'
+  image: 'poster/Myshkina2026_osp.webp'
+  authors: 'Mariia Myshkina<sup>1</sup>, Jan Grzegorzewski<sup>1</sup>, <b>Matthias König</b><sup>1,2</sup>'
+  affiliations: '<sup>1</sup>Humboldt-Universität zu Berlin, Faculty of Life Sciences, Berlin, Germany; <sup>2</sup>University Hospital Schleswig-Holstein, Campus Lübeck, First Department of Medicine, Lübeck, Germany'
+  tags:
+    - Pharmacometrics
+    - AI
+    - Open & FAIR
+    - Digital Twins
+  title: 'PK-DB 2.0: An Open Pharmacokinetics and Pharmacodynamics Database for Pharmacometric Modeling, AI, and Digital Twins'
+  event: 'OSP Community Conference 2026, Beerse, Belgium, 24-25 September 2026'
+  event_page: 'https://www.open-systems-pharmacology.org/conference.html'
+  doi:
+  keywords:
+    - pharmacokinetics
+    - pharmacodynamics
+    - database
+    - PBPK
+    - Open Systems Pharmacology
+  homepage: https://pk-db.com
+  repository: https://github.com/matthiaskoenig/pkdb
+  abstract: 'Introduction: The growing volume of published pharmacokinetic (PK) and pharmacodynamic (PD) data requires structured, interoperable, and reproducible data infrastructures. Following FAIR principles [1], data must be standardized, contextualized, and comparable across studies. PK-DB [2] was developed as an open database for curated PK/PD data with detailed study and cohort metadata, but its original architecture was not designed for AI-driven analyses or Digital Twin applications.
+    Objectives: PK-DB 2.0 provides an open, standardized, and computationally accessible platform for pharmacometric modeling, automated workflows, artificial intelligence, and digital twin development.
+    Methods: A unified data model captures study design, interventions, concentration-time profiles, derived PK parameters, and PD endpoints. Collaborative curation is supported by validation rules, automated quality checks, unit normalization, uncertainty representation, and ontology-based annotation. A redesigned REST API enables language-independent, bi-directional access, while a dedicated Model Context Protocol (MCP) server allows structured access by AI clients.
+    Results: PK-DB 2.0 contains curated data from more than 700 clinical studies. Major advances include broader support for PD endpoints, ontology-based annotation, stronger structural validation, and AI-ready access through REST and MCP. The data can be incorporated into Open Systems Pharmacology workflows to identify and import reference datasets, support model qualification, compare simulations with observed concentration-time profiles, and enable reproducible PBPK model development and evaluation.
+    Conclusions: PK-DB 2.0 is a machine-readable PK/PD data infrastructure for modern pharmacometrics. By combining rigorous curation, standardized representation, and programmatic access, it supports reproducible cross-study analyses, OSP-based PBPK workflows, machine learning, and AI- and Digital Twin-enabled applications.
+    References: [1] Wilkinson, M.D. et al. 2016. The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data. 3, (Mar. 2016), 160018. DOI:https://doi.org/10.1038/sdata.2016.18. [2] Grzegorzewski, J. et al. 2021. PK-DB: pharmacokinetics database for individualized and stratified computational modeling. Nucleic Acids Research. 49, D1 (Jan. 2021), D1358-D1364. DOI:https://doi.org/10.1093/nar/gkaa990.'
+
 - id: 'Koenig2026_ekf.selection.day'
   people:
     - matthias_koenig

@@ -9,6 +9,16 @@ Koenig2026_Anthropic_AI_for_Science_PKDB:
   abstract:
     sha: 70262a0c53f3b40f
     text: '<p>Wir freuen uns, bekannt zu geben, dass unser Projekt <em>AI-Ready PK-DB: From Pharmacokinetic Data to Executable PBPK Models with Claude</em> im Rahmen des AI for Science Programms von Anthropic ausgezeichnet wurde. Die Förderung umfasst Nutzungsguthaben für Claude im Wert von 50.000 $.</p> <p>PK-DB ist unsere offene, FAIRe Datenbank für pharmakokinetische Daten aus klinischen und präklinischen Studien und die kuratierte Datengrundlage unserer physiologiebasierten pharmakokinetischen (PBPK) Modelle. Im Projekt entwickeln wir einen Model Context Protocol (MCP) Server, mit dem KI-Agenten PK-DB Schritt für Schritt durchlaufen können: von einer Studie über ihre individuellen und gruppenbezogenen Konzentrations-Zeit-Profile bis hin zu einem ausführbaren PBPK-Modell.</p> <p>Indem wir PK-DB für KI-Agenten öffnen, wird die Datenbank weit über unsere eigene Gruppe hinaus nutzbar, und reproduzierbare, datengetriebene pharmakokinetische Modellierung wird für eine deutlich größere Forschungsgemeinschaft zugänglich.</p>'
+OSP2026_PKDB_Koenig:
+  title:
+    sha: d32fd5d1754cdcfb
+    text: 'Poster bei der OSP Community Conference 2026: PK-DB 2.0 für pharmakometrische Modellierung, KI und digitale Zwillinge'
+  short:
+    sha: fa7d5b1862bb4181
+    text: 'Bei der Open Systems Pharmacology (OSP) Community Conference 2026 in Beerse, Belgien, haben wir PK-DB 2.0 vorgestellt, unsere offene und KI-taugliche Datenbank für Pharmakokinetik und Pharmakodynamik, und gezeigt, wie ihre kuratierten Daten in OSP-basierte PBPK-Workflows einfließen.'
+  abstract:
+    sha: 14fc0caef69f98d2
+    text: '<p>Bei der Open Systems Pharmacology (OSP) Community Conference 2026 in Beerse, Belgien, präsentierte Matthias König unser Poster zu PK-DB 2.0, einer offenen Pharmakokinetik- und Pharmakodynamik-Datenbank für pharmakometrische Modellierung, künstliche Intelligenz und digitale Zwillinge. Die Arbeit entstand gemeinsam mit Mariia Myshkina und Jan Grzegorzewski.</p> <p>PK-DB 2.0 enthält kuratierte PK/PD-Daten aus mehr als 700 klinischen Studien. Ein einheitliches Datenmodell erfasst Studiendesign, Interventionen, Konzentrations-Zeit-Profile, abgeleitete pharmakokinetische Parameter und pharmakodynamische Endpunkte. Validierungsregeln, automatisierte Qualitätsprüfungen, Einheitennormalisierung, die Darstellung von Unsicherheiten und ontologiebasierte Annotation halten die Daten konsistent und studienübergreifend vergleichbar. Eine neu gestaltete REST-API und ein dedizierter Model-Context-Protocol-(MCP)-Server bieten Forschenden und KI-Clients gleichermaßen programmatischen Zugriff.</p> <p>Auf der Konferenz haben wir gezeigt, wie sich PK-DB in die Workflows von Open Systems Pharmacology einfügt: um Referenzdatensätze zu finden und zu importieren, die Modellqualifizierung zu unterstützen, Simulationen mit beobachteten Konzentrations-Zeit-Profilen zu vergleichen und die Entwicklung und Evaluierung von PBPK-Modellen reproduzierbar zu machen.</p>'
 Koenig2026_Luebeck_Welcome:
   title:
     sha: 35382b3e4cedb093
