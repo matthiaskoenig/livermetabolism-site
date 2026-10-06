@@ -14,7 +14,7 @@
  * Text only: the single free-text field is the profile name, rendered with
  * textContent / Vue interpolation, never as HTML.
  */
-import { z } from 'astro/zod';
+import { z } from './zod.ts';
 import { snapshotUrl } from './snapshotUrl.ts';
 
 /** Raw URL of the daily snapshot on the `github-data` branch. */

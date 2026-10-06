@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs';
-import { expect, test } from '@playwright/test';
+import { expect, test, type Page } from '@playwright/test';
 
 // base-relative (no leading slash): see playwright.config.ts
 const pages = ['', 'projects/', 'publications/', 'people/', 'research/', 'meetings/', 'network/', 'news/', 'teaching/', 'cv/', 'impressum/', 'privacy/'];
@@ -7,16 +7,33 @@ const pages = ['', 'projects/', 'publications/', 'people/', 'research/', 'meetin
 // read once so the footer-version assertion never drifts from the released version
 const { version } = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')) as { version: string };
 
+// A Content-Security-Policy violation is reported as a DevTools issue, not a
+// console error, so the console listeners below never see one - even a
+// swallowed one, such as a library probing for `eval`, is still reported to
+// the visitor's browser. Collect the page's own violation events instead.
+async function watchCsp(page: Page): Promise<() => Promise<string[]>> {
+  await page.addInitScript(() => {
+    const seen: string[] = [];
+    (window as unknown as { cspViolations: string[] }).cspViolations = seen;
+    document.addEventListener('securitypolicyviolation', (e) => {
+      seen.push(`${e.violatedDirective} ${e.blockedURI} ${e.sourceFile}:${e.lineNumber}`);
+    });
+  });
+  return () => page.evaluate(() => (window as unknown as { cspViolations: string[] }).cspViolations);
+}
+
 for (const path of pages) {
   test(`renders ${path} without console errors`, async ({ page }) => {
     const errors: string[] = [];
     page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
     page.on('pageerror', (e) => errors.push(e.message));
+    const cspViolations = await watchCsp(page);
     const res = await page.goto(path);
     expect(res?.status()).toBe(200);
     await expect(page.locator('nav.site-navbar')).toBeVisible();
     await expect(page.locator('footer.footer')).toBeVisible();
     expect(errors).toEqual([]);
+    expect(await cspViolations()).toEqual([]);
   });
 }
 
@@ -137,6 +154,7 @@ for (const path of pages) {
     const errors: string[] = [];
     page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
     page.on('pageerror', (e) => errors.push(e.message));
+    const cspViolations = await watchCsp(page);
     const res = await page.goto(`de/${path}`);
     expect(res?.status()).toBe(200);
     await expect(page.locator('html')).toHaveAttribute('lang', 'de');
@@ -145,6 +163,7 @@ for (const path of pages) {
     // the navbar's copy needs scoping to stay a single match.
     await expect(page.locator('nav.site-navbar .lang-switch-link[lang="en"]')).toBeVisible();
     expect(errors).toEqual([]);
+    expect(await cspViolations()).toEqual([]);
   });
 }
 
