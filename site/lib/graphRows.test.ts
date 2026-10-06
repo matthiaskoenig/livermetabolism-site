@@ -197,14 +197,14 @@ describe('graphRows over the real data', () => {
   const graph = graphRows({ ...data, citations: emptyCitations(), base: '/', assetBase: '/', thumbs });
   const byId = new Map(graph.nodes.map((n) => [n.id, n]));
 
-  it('has one node per row of every table and 211 nodes with 311 links in total', () => {
+  it('has one node per row of every table and 212 nodes with 312 links in total', () => {
     expect(graph.nodes.filter((n) => n.type === 'person')).toHaveLength(data.people.length);
     expect(graph.nodes.filter((n) => n.type === 'publication')).toHaveLength(data.publications.length);
     expect(graph.nodes.filter((n) => n.type === 'project')).toHaveLength(data.projects.length);
     expect(graph.nodes.filter((n) => n.type === 'software')).toHaveLength(data.software.length);
     expect(byId.size).toBe(graph.nodes.length);
-    expect(graph.nodes).toHaveLength(211);
-    expect(graph.links).toHaveLength(311);
+    expect(graph.nodes).toHaveLength(212);
+    expect(graph.links).toHaveLength(312);
   });
 
   it('links only existing nodes and draws no duplicate edge', () => {
@@ -232,7 +232,7 @@ describe('graphRows over the real data', () => {
     // filterRows() draws only what is connected (see networkOptions.ts)
     const view = filterRows(graph, null);
     expect(view.nodes).toHaveLength(graph.nodes.length - isolated.length);
-    expect(view.nodes).toHaveLength(188);
+    expect(view.nodes).toHaveLength(189);
     for (const node of view.nodes) {
       expect(view.links.some((l) => l.source === node.id || l.target === node.id)).toBe(true);
     }
