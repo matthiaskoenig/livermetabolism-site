@@ -111,12 +111,28 @@
   description: 'Built a bidirectional converter between SBML and CellML 2.0, validating every conversion
     with libcellml and checking it by simulation against the SBML test suite and the curated BioModels.
     Lets models move between the two main model description standards instead of being locked into one.'
-  image:
+  image: 'sbml2cellml.webp'
   people:
     - matthias_koenig
   homepage: https://matthiaskoenig.github.io/sbml2cellml
   repository: https://github.com/matthiaskoenig/sbml2cellml
   doi: 10.5281/zenodo.22829187
+  publications:
+
+- id: 'sbmlode'
+  tags:
+    - 'Open & FAIR'
+    - 'Digital Twins'
+  type: "software"
+  name: 'sbmlode'
+  title: 'Ordinary differential equations of SBML models'
+  description: 'Built a Python package that derives the system of ordinary differential equations of an SBML model from its reactions, rules, events and units, and writes it as simulation code for Python, Julia and R, verified against libRoadRunner over the SBML test suite, or as Typst, LaTeX and Markdown documents of the equations. The ODE export of sbmlutils as a package of its own.'
+  image: 'sbmlode.webp'
+  people:
+    - matthias_koenig
+  homepage: https://matthiaskoenig.github.io/sbmlode
+  repository: https://github.com/matthiaskoenig/sbmlode
+  doi: 10.5281/zenodo.23179199
   publications:
 
 - id: 'cysbml'

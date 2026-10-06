@@ -22,7 +22,7 @@
  * so it can be interpolated into an `openalex.org` link, and `oaStatus` is a
  * short label rendered as text — never as HTML.
  */
-import { z } from 'astro/zod';
+import { z } from './zod.ts';
 
 /** Raw URL of the daily snapshot on the `github-data` branch. */
 export const CITATIONS_URL = 'https://raw.githubusercontent.com/matthiaskoenig/livermetabolism-site/github-data/citations.json';

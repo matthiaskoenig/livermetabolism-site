@@ -12,7 +12,7 @@
  * Text only: release summaries are plain text (markdown stripped by the fetch
  * script), never HTML, and are inserted with textContent / Vue interpolation.
  */
-import { z } from 'astro/zod';
+import { z } from './zod.ts';
 import { snapshotUrl } from './snapshotUrl.ts';
 
 /** Raw URL of the daily snapshot on the `github-data` branch. */

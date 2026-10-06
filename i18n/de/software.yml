@@ -48,6 +48,13 @@ sbml2cellml:
   description:
     sha: 9c16adc4d4b19116
     text: 'Entwicklung eines bidirektionalen Konverters zwischen SBML und CellML 2.0, bei dem jede Konvertierung mit libcellml validiert und per Simulation gegen die SBML test suite sowie die kuratierten BioModels geprüft wird. Modelle lassen sich so zwischen den beiden wichtigsten Standards zur Modellbeschreibung austauschen, statt an einen davon gebunden zu sein.'
+sbmlode:
+  title:
+    sha: 571e84ef414de710
+    text: 'Gewöhnliche Differentialgleichungen von SBML-Modellen'
+  description:
+    sha: 57b5a0160a01ff67
+    text: 'Entwicklung eines Python-Pakets, das das System gewöhnlicher Differentialgleichungen eines SBML-Modells aus dessen Reaktionen, Regeln, Ereignissen und Einheiten ableitet und es als Simulationscode für Python, Julia und R ausgibt, geprüft gegen libRoadRunner anhand der SBML test suite, oder als Typst-, LaTeX- und Markdown-Dokumente der Gleichungen. Der ODE-Export von sbmlutils als eigenständiges Paket.'
 cysbml:
   title:
     sha: 09eb6ee52efa4de2
