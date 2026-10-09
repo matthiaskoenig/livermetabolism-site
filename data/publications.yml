@@ -1,3 +1,29 @@
+- id: 'Anton2026_standard.gem_preprint'
+  tags:
+    - 'Open & FAIR'
+  year: 2026
+  date: 2026-10-05
+  pdf: 'preprint/Anton2026_standard.gem_preprint.pdf'
+  authors: 'M. Anton, E. Almaas, F. Bäuerle, M. E. Beber, R. Benfeitas, S. Benito-Vaquerizo, L. M. Blank, F. Clasen, C. de Buck, A. Dräger, J. M. Hancock, V. Hatzimanikatis, M. König, D. Lappa, F. Li, U. W. Liebal, H. Lu, H. Ma, R. Mahadevan, C. D. Maranas, A. Mardinoglu, J. Nielsen, J. Nogales, M. Pagni, J. A. Papin, J. L. Robinson, B. J. Sánchez, S. Shoaie, V. Simensen, M. Suarez-Diez, S. Sulheim, L. T. Svensson, B. Teusink, W. Vongsangnak, A. A. Zeidan, and E. J. Kerkhoven'
+  people:
+    - matthias_koenig
+  title: 'Standard-GEM supports reproducible development of genome-scale metabolic models'
+  journal: 'bioRxiv 2023.03.21.512712'
+  journal_short: Preprints
+  status: preprint
+  impact: 0
+  position: index
+  doi: 10.1101/2023.03.21.512712
+  pmid:
+  keywords:
+    - genome-scale metabolic model
+    - open source
+    - versioning
+    - Git
+  homepage:
+  repository: https://github.com/MetabolicAtlas/standard-GEM
+  abstract: 'The field of metabolic modelling at the genome scale continues to expand, with increasing numbers of models being reconstructed, shared and curated. This expansion creates a need to adopt common principles regarding transparency and versioning, in addition to standardisation of file formats, annotations, and model testing. Here, we present a repository standard and template for Git-based genome-scale metabolic models (GEMs) supporting both newly reconstructed and actively curated models, following FAIR principles (findability, accessibility, interoperability, and reusability), and incorporating research software best practices. Standard-GEM exposes GEMs across web services and platforms in the metabolic modelling field and enables automatic validation of GEMs. The use of this template for new models and its adoption reduces the effort required to share, validate and reuse GEMs.'
+
 - id: 'Corradi2026_llemy'
   tags:
     - 'AI'
@@ -1494,29 +1520,6 @@
   homepage: https://co.mbine.org
   repository:
   abstract: "This special issue of the Journal of Integrative Bioinformatics contains updated specifications of COMBINE standards in systems and synthetic biology. The 2022 special issue presents three updates to the standards: CellML 2.0.1, SBML Level 3 Package: Spatial Processes, Version 1, Release 1, and Synthetic Biology Open Language (SBOL) Version 3.1.0. This document can also be used to identify the latest specifications for all COMBINE standards. In addition, this editorial provides a brief overview of the COMBINE 2022 meeting in Berlin."
-
-- id: 'Anton2023_standard.gem_preprint'
-  tags:
-    - 'Open & FAIR'
-  year: 2023
-  pdf: 'preprint/Anton2023_standard.gem_preprint.pdf'
-  authors: 'M. Anton, E. Almaas, R. Benfeitas, S. Benito-Vaquerizo, L. M. Blank, A. Dräger, J. M. Hancock, C. Kittikunapong, M. König, F. Li, U. W. Liebal, H. Lu, H. Ma, R. Mahadevan, A. Mardinoglu, J. Nielsen, J. Nogales, M. Pagni, J. A. Papin, K. R. Patil, N. D. Price, J. L. Robinson, B. J. Sánchez, M. Suarez-Diez, S. Sulheim, L. T. Svensson, B. Teusink, W. Vongsangnak, H. Wang, A. A. Zeidan, and E. J. Kerkhoven'
-  people:
-    - matthias_koenig
-  title: 'standard-GEM: standardization of open-source genome-scale metabolic models'
-  journal: 'bioRxiv 2023.03.21.512712'
-  status: preprint
-  impact: 0
-  position: index
-  doi: 10.1101/2023.03.21.512712
-  pmid:
-  keywords:
-    - genome-scale metabolic model
-    - open source
-    - versioning
-  homepage:
-  repository: https://github.com/MetabolicAtlas/standard-GEM
-  abstract: "The field of metabolic modelling at the genome-scale continues to grow with more models being created and curated. This comes with an increasing demand for adopting common principles regarding transparency and versioning, in addition to standardisation efforts regarding file formats, annotation and testing. Here, we present a standardised template for git-based and GitHub-hosted genome-scale metabolic models (GEMs) supporting both new models and curated ones, following FAIR principles (findability, accessibility, interoperability, and reusability), and incorporating best-practices. standard-GEM facilitates the reuse of GEMs across web services and platforms in the metabolic modelling field and enables automatic validation of GEMs. The use of this template for new models, and its adoption for existing ones, paves the way for increasing model quality, openness, and accessibility with minimal effort."
 
 - id: 'Bartsch2023_simvastatin_preprint'
   tags:
