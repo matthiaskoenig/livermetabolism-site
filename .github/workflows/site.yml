@@ -16,8 +16,10 @@ permissions:
   contents: read
 
 concurrency:
-  group: site-${{ github.ref }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  # a newer run supersedes the running one of the same branch or pull request;
+  # a cancelled deployment leaves the published site as it was, the newer run deploys
+  cancel-in-progress: true
 
 jobs:
   validate:
@@ -28,6 +30,8 @@ jobs:
       - uses: astral-sh/setup-uv@v10.2.0
         with:
           enable-cache: true
+          # the interpreter is cached with the packages instead of downloaded by every run
+          cache-python: true
       - run: uv python install
       - run: uv sync
       - run: uv run pytest tests/ -q
@@ -48,12 +52,19 @@ jobs:
         with:
           node-version: 24
           cache: npm
+          cache-dependency-path: package-lock.json
       - run: npm ci
       - run: npm run check
       - run: npm test
       - name: Check translation catalogs
         run: npm run i18n:check
       - run: npm run build
+      # the browser is cached per version of the lock file, the system
+      # dependencies are installed by every run
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9  # v6.1.0
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
       - run: npx playwright install --with-deps chromium
       - run: npm run e2e
         env:

@@ -1,9 +1,11 @@
+# Keep the GitHub Actions, the npm and the uv dependencies up to date, monthly,
+# since every update pull request runs the checks.
 version: 2
 updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     groups:
       github-actions:
         patterns: ["*"]
@@ -12,7 +14,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     ignore:
       # vue-tsc and @astrojs/check cannot run on the TypeScript 7 (Go) compiler
       # yet; lift once they support it.
@@ -26,7 +28,7 @@ updates:
   - package-ecosystem: "uv"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     groups:
       uv-minor-patch:
         patterns: ["*"]

@@ -684,8 +684,7 @@ test('network graph: dragging a node moves the node, not the whole view', async 
   // A node drag moves that node and re-projects the rest a little (measured
   // at 8-9 % of the far pixels); the bug this guards against — the drag
   // panning the whole view, because the image symbol under the cursor is not
-  // the draggable element — moves everything (~19 %). See the task report for
-  // the manual check with .superpowers/.../drag-check.cjs.
+  // the draggable element — moves everything (~19 %).
   expect(await drag(node!)).toBeLessThan(0.15);
 
   expect(errors).toEqual([]);

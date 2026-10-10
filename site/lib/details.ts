@@ -8,8 +8,7 @@
  * numbers), body (the data's own HTML) and the related rows that link the
  * entities together. `site/pages/detail/[type]/[id].astro` prerenders one
  * static fragment per entity from it; the modal shell fetches that fragment
- * and adopts its nodes (see the spec in
- * `docs/superpowers/specs/2026-09-13-detail-modals-design.md`).
+ * and adopts its nodes (see the contract in `.claude/rules/detail-modal.md`).
  *
  * Free of DOM, Vue and Astro imports, like `graphRows.ts`: every page href is
  * built from the `base` the context carries (`import.meta.env.BASE_URL` plus

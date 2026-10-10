@@ -8,7 +8,7 @@
  * `DetailView.vue` renders. The detail modal fetches it on first open, parses
  * it with `DOMParser` and adopts the root element into the dialog, so the
  * list pages no longer carry a serialised copy of every record (see
- * `docs/superpowers/specs/2026-09-13-detail-modals-design.md`).
+ * `.claude/rules/detail-modal.md`).
  *
  * The collections and the three snapshots are read **once** here, in
  * `getStaticPaths()`, and every model is built from that one context; the
