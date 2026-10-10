@@ -25,6 +25,7 @@ jobs:
   validate:
     name: validate
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@v10.2.0
@@ -34,13 +35,14 @@ jobs:
           cache-python: true
       - run: uv python install
       - run: uv sync
-      - run: uv run pytest tests/ -q
+      - run: uv run pytest tests/ -q --durations=15
       - run: uv run python -m src.data
 
   build:
     name: build
     needs: validate
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     env:
       # interim project-pages URL; switch to SITE=https://livermetabolism.com
       # and BASE=/ (plus public/CNAME) when the domain is attached
@@ -84,6 +86,7 @@ jobs:
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions:
       pages: write
       id-token: write

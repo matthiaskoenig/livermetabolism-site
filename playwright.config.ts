@@ -15,6 +15,10 @@ export default defineConfig({
   testDir: 'e2e',
   testMatch: /.*\.spec\.ts/,
   timeout: 30_000,
+  // the specs share no state, so every test runs in a worker of its own; CI
+  // runs four at once, one per core of the runner, instead of the default two
+  fullyParallel: true,
+  workers: process.env.CI ? 4 : undefined,
   use: { baseURL: origin, viewport: { width: 1280, height: 800 } },
   webServer: { command: `npm run preview -- --port ${port}`, url: origin, timeout: 120_000, reuseExistingServer: !process.env.CI },
   projects: [{ name: 'chromium', use: { browserName: 'chromium' } }],
