@@ -7,6 +7,11 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  # a release is never superseded, every tag is a group of its own
+  cancel-in-progress: true
+
 jobs:
   release:
     runs-on: ubuntu-latest

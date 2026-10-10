@@ -21,8 +21,10 @@ permissions:
   contents: write
 
 concurrency:
-  group: github-data
-  cancel-in-progress: false
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  # a newer run supersedes the running one; a cancelled run has not pushed yet,
+  # the previous snapshots stay in place and the newer run writes them
+  cancel-in-progress: true
 
 jobs:
   github-data:
@@ -35,6 +37,7 @@ jobs:
         with:
           node-version: 24
           cache: npm
+          cache-dependency-path: package-lock.json
       - run: npm ci
       - run: npm run fetch:github -- github.json
         env:
