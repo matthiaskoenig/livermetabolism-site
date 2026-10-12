@@ -1,3 +1,24 @@
+- id: 'Koenig2026_Open_Science_Award'
+  tags:
+    - 'Open & FAIR'
+    - 'Pharmacometrics'
+    - 'Digital Twins'
+  status: 'current'
+  people:
+    - 'matthias_koenig'
+    - 'amanda_schwaiger'
+    - 'michelle_elias'
+    - 'mariia_myshkina'
+  title: 'Open Science Award 2026 of the University of Lübeck for our hydrochlorothiazide digital twin'
+  date: '2026-10-12'
+  image: Schwaiger2026_hctz.webp
+  link: 'https://osi-luebeck.de/ausschreibung-open-science-preis-2026/'
+  short: "Our open and reproducible digital twin of hydrochlorothiazide pharmacokinetics and pharmacodynamics has received the 2026 Open Science Award of the University of Lübeck."
+  abstract: >-
+    <p>We are delighted to announce that the jury of the Open Science Award of the University of Lübeck has selected our project <em>An open, reproducible digital twin of hydrochlorothiazide pharmacokinetics and pharmacodynamics</em> for this year's award, which comes with prize money of 1,000 euros. The award recognizes projects at the University of Lübeck and the UKSH, Campus Lübeck, that go beyond the standards of their field in transparency, reproducibility, reusability, and open communication.</p>
+    <p>Hydrochlorothiazide is one of the most widely prescribed antihypertensive drugs, and many patients with hypertension also have renal, cardiac, or hepatic impairment that alters how the drug acts. Based on a systematic literature review, we curated pharmacokinetic and pharmacodynamic data from 25 clinical studies in our open database <a href="https://pk-db.com">PK-DB</a> and built a whole-body physiologically based PK/PD model of the drug (<a href="https://doi.org/10.20944/preprints202607.0306.v1">Schwaiger &amp; König 2026</a>). The model is encoded in the open standard SBML, annotated with metadata, and published with all equations, parameters, data, and simulation scripts under CC-BY 4.0 on <a href="https://github.com/matthiaskoenig/hctz-model">GitHub</a> and <a href="https://doi.org/10.5281/zenodo.15427418">Zenodo</a>.</p>
+    <p>In a separate reproducibility study for the Physiome Journal (Elias, Myshkina, Schwaiger &amp; König 2026), every figure of the primary work is regenerated with a single command, locally or in a Docker container, on Linux and Windows, and automated integration tests repeat this check on every code change. Hydrochlorothiazide is the fourth model, after glimepiride, losartan, and dapagliflozin, whose reproducibility we have confirmed in this way, and the workflow is now established at the University of Lübeck and the UKSH.</p>
+
 - id: 'Koenig2026_Anthropic_AI_for_Science_PKDB'
   tags:
     - 'AI'
