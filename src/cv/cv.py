@@ -11,7 +11,14 @@ https://itslinuxfoss.com/install-fonts-ubuntu-24-04/
 And install fonts
 sudo apt install fonts-roboto fonts-roboto-fontface
 
-typst compile --font-path fonts cv.typ
+Build the PDF CV from src/cv/typst/ (cv_conf.typ, lang.toml, Koenig.png and
+the Source Sans and Font Awesome fonts are in that folder; Roboto comes from
+the system fonts above):
+cd src/cv/typst && typst compile --font-path fonts cv.typ
+
+The handwritten signature images/koenig_signature.png is gitignored and must be
+copied into src/cv/typst/images/ locally; the build fails without it.
+
 typst compile cv/cv.typ cv_html/cv.html --features html
 
 """
