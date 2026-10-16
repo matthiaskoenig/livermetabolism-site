@@ -751,14 +751,18 @@ test('the German search index exists and drives the dialog', async ({ page }) =>
 
 test('a deep link to an entry the active area hides clears the filter (issue #68)', async ({ page }) => {
   await page.goto('publications/?tag=ai');
-  // an entry that the AI filter has hidden
-  const other = await page.locator('#publication-list tr[data-tags][hidden]:not([data-tags*="ai"])').first()
-    .evaluate((el) => el.id);
+  // an entry that the AI filter has hidden; data-tags is a '|'-separated slug
+  // list, so match whole slugs ("open-fair" contains "ai")
+  const other = await page.locator('#publication-list tr[data-tags][hidden]').evaluateAll(
+    (rows) => rows.find((el) => !el.getAttribute('data-tags')!.split('|').includes('ai'))!.id,
+  );
   await page.goto(`publications/?tag=ai#${other}`);
-  await expect(page.locator(`#${other}`)).toBeVisible();
+  // ids may contain dots (pub-Koeller2021_icg.variability), so not a #id selector
+  const row = page.locator(`[id="${other}"]`);
+  await expect(row).toBeVisible();
   await expect(page.locator('#topic-filter .tag-filter-btn.active')).toHaveText('All');
   // and it is scrolled to, not merely un-hidden somewhere off-screen
-  await expect.poll(() => page.locator(`#${other}`).evaluate((el) => {
+  await expect.poll(() => row.evaluate((el) => {
     const { top, bottom } = el.getBoundingClientRect();
     return top >= 0 && bottom <= window.innerHeight;
   })).toBe(true);
