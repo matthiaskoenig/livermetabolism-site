@@ -354,6 +354,14 @@ describe('detailModel: media', () => {
     expect(detailModel('news', 'award', ctx()).media).toBeNull();
   });
 
+  it('shows a news item’s second image full width, unless it has a video', () => {
+    const withImage2 = detailModel('news', 'award', ctx({ news: [{ ...news[0], image2: 'second.webp' }] }));
+    expect(withImage2.media).toEqual({ kind: 'image', src: `${BASE}assets/image/news/second.webp`, alt: 'Award' });
+    const video = 'https://www.youtube.com/embed/Mu9oXKLtTGI';
+    const both = detailModel('news', 'award', ctx({ news: [{ ...news[0], image2: 'second.webp', video }] }));
+    expect(both.media).toEqual({ kind: 'video', src: video, title: 'Award' });
+  });
+
   it('shows every image of a project with its caption', () => {
     const gallery = detailModel('project', 'atlas', ctx({ projects: [{ ...projects[0], images: ['one.webp', 'two.webp'], image_title: 'Two views' }] }));
     expect(gallery.media).toEqual({

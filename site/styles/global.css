@@ -1901,6 +1901,15 @@
     }
   }
 
+  /* a news item's second image, shown whole at the modal's width */
+  .detail-media-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-inline: auto;
+    border-radius: 6px;
+  }
+
   .detail-media-caption {
     color: var(--color-gray-600);
     font-size: 0.82em;
