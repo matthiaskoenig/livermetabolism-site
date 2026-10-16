@@ -15,6 +15,11 @@
   radius: 0.2em,
 )[#content]
 
+// A research area of the website: links to its section on the homepage.
+#let topic(slug, icon, color, label) = link("https://livermetabolism.com/#" + slug)[
+  #text(fill: rgb(color))[#fa-icon(icon) #label]
+]
+
 #show: resume.with(
   author: (
     firstname: "Matthias",
@@ -31,12 +36,13 @@
     linkedin: "matthias-k%C3%B6nig-796bb758",
     //researchgate: "Matthias_Koenig4",
     address: "University Hospital Schleswig-Holstein, Campus Lübeck, First Department of Medicine",  // , Ratzeburger Allee 160, 23562 Lübeck, Germany",
+    // research areas: icon and colour from data/tags.yml and global.css
     positions: (
-      "Digital Twins",
-      "AI",
-      "Digital Pathology",
-      "Pharmacometrics",
-      "Open & FAIR",
+      topic("digital-twins", "cube", "#3498db", "Digital Twins"),
+      topic("ai", "heart-pulse", "#f39c12", "AI"),
+      topic("digital-pathology", "image", "#e74c3c", "Digital Pathology"),
+      topic("pharmacometrics", "chart-line", "#1e8449", "Pharmacometrics"),
+      topic("open-fair", "unlock-keyhole", "#2c3e50", "Open & FAIR"),
     ),
   ),
   profile-picture: "Koenig.png",
@@ -174,26 +180,41 @@
 #pagebreak(weak: true)
 = Skills
 
+#set text(hyphenate: false)
+#resume-skill-item(
+  "Modeling & Digital Twins",
+  (strong("PBPK/PD Modeling"), strong("Digital Twins"), "Pharmacometrics", "Systems Biology", "Multiscale Modeling", "Bayesian Inference"),
+)
+#resume-skill-item(
+  "AI & Agentic Workflows",
+  (strong("Agentic AI Workflows"), strong("AI Coding Agents (Claude Code)"), "Large Language Models", "Deep Learning", "Image Segmentation"),
+)
+#resume-skill-item(
+  "Digital Pathology",
+  (strong("Whole-Slide Image Analysis"), "Liver Zonation", "Quantitative Histology"),
+)
+#resume-skill-item(
+  "Open & FAIR Science",
+  (strong("SBML (Editor 2025 - 2027)"), "SED-ML", "COMBINE/OMEX", "PEtab", "PK-DB", "Reproducible Workflows"),
+)
+#resume-skill-item(
+  "Programming",
+  (strong("Python"), strong("R"), strong("Julia"), "TypeScript", "Java", "C++", "MATLAB", "SQL", "PyTorch", "TensorFlow"),
+)
+#resume-skill-item(
+  "Tools",
+  (strong("git & GitHub"), "Docker", "Continuous Integration", "LaTeX", "Typst", "BioRender", "Illustrator", "Inkscape"),
+)
+#resume-skill-item(
+  "Teaching & Communication",
+  (strong("University Teaching"), "Project-Based Learning", "AI-Supported Teaching", "Science Communication", "Mentoring"),
+)
 #resume-skill-item(
   "Languages",
   (strong("German"), strong("English"), "Spanish (B2)"),
 )
-#resume-skill-item(
-  "Teaching & Communication",
-  (strong("University Teaching"), "Project-Based Learning", "Digital Learning Tools", "Science Communication", "Mentoring & Supervision", "Public Engagement"),
-)
-#resume-skill-item(
-  "Research & Modeling",
-  (strong("Physiologically Based Pharmacokinetic/ Pharmacodynamic (PBPK/PD)"), "Systems Biology", "Multiscale Modeling", "Machine Learning & Artificial Intelligence", "FAIR Data Management", "Reproducible Workflows", "Computational Simulation", "Digital Pathology"),
-)
-#resume-skill-item(
-  "Programming",
-  (strong("Python"), strong("R"), strong("Julia"), "Java", "C++", "MATLAB", "SQL", "HTML", "JavaScript", "PyTorch", "TensorFlow", "SBML"),
-)
-#resume-skill-item(
-  "Tools & Software",
-  (strong("git"), strong("PyCharm"), strong("VS Code"), strong("Excel"), "LaTeX", "Typst", "Word", "PowerPoint", "Canva", "BioRender", "Adobe Illustrator", "Inkscape"),
-)
+#set text(hyphenate: auto)
+#v(6pt)
 
 = Scientific Results
 == Ten Selected Publications (total: 68, HF: 26, i10: 37, citations: 3897, #link("https://scholar.google.de/citations?user=xD9IjnYAAAAJ&hl=de")[#google-scholar-icon Google Scholar] 10/26)
@@ -480,7 +501,7 @@ Over the last 5 years, 1 PhD theses, 4 Master thesis, 11 Bachelor's theses, 18 H
   title: [#link("https://livermetabolism.com/assets/pdf/certificate/Koenig2025_ai.teaching.pdf")[#fa-icon("file-pdf")] AI Teaching Certificate (KI-Lehrzertifikat)],
   location: [HU Berlin, KI-Campus 2.0 & AI Skills Initiative],
   date: "2026",
-  description: "Higher education didactics qualification on Artificial Intelligence (150 AE)",
+  description: "Higher education didactics qualification on Artificial Intelligence (200 AE)",
 )
 #resume-item[
   - AI Foundations (96%), AI Advanced & Ethics (93%), and AI Didactics in Higher Education (91%), aligned with DGHD standards, including a teaching observation.
