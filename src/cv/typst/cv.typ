@@ -39,6 +39,7 @@
 
 #show: resume.with(
   author: (
+    title: "Prof. Dr.",
     firstname: "Matthias",
     lastname: "König",
     email: "matthias.koenig@uni-luebeck.de",

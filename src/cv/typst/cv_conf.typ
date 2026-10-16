@@ -332,7 +332,7 @@
               weight: "thin",
             )[#author.firstname]#text(weight: "bold")[#author.lastname]
           ] else [
-            //#text(size:20pt, weight: "thin")[Dr. rer. nat.]
+            #if "title" in author [#text(accent-color, weight: "thin")[#author.title]]
             #text(accent-color, weight: "thin")[#author.firstname]
             #text(weight: "bold")[#author.lastname]
           ]
@@ -499,7 +499,7 @@
     columns: 2,
     gutter: 15mm,
     [
-      *Dr. Matthias König* \
+      *Prof. Dr. Matthias König* \
       Lübeck, 16. October 2026
     ],
     [
