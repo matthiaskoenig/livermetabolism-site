@@ -58,6 +58,22 @@
     <p>PK-DB 2.0 contains curated PK/PD data from more than 700 clinical studies. A unified data model captures study design, interventions, concentration-time profiles, derived pharmacokinetic parameters, and pharmacodynamic endpoints. Validation rules, automated quality checks, unit normalization, uncertainty representation, and ontology-based annotation keep the data consistent and comparable across studies. A redesigned REST API and a dedicated Model Context Protocol (MCP) server give programmatic access to researchers and AI clients alike.</p>
     <p>At the conference we showed how PK-DB fits into Open Systems Pharmacology workflows: to find and import reference datasets, to support model qualification, to compare simulations with observed concentration-time profiles, and to make PBPK model development and evaluation reproducible.</p>
 
+- id: 'Koenig2026_Science_Communication_Certificate'
+  tags:
+    - 'AI'
+  status: 'current'
+  people:
+    - 'matthias_koenig'
+  title: 'Certificate in Science Communication from TU Berlin'
+  date: '2026-09-23'
+  image: Koenig2026_Science_Communication_Certificate.webp
+  link: 'https://www.tu.berlin/en/zewk/offers-by-topic/further-education-for-lecturers-and-researchers/science-communication'
+  short: "Matthias König has completed the certificate program Science Communication for (Junior) Scholars at TU Berlin. His practical project was the redesign of this website with agentic, AI-assisted workflows."
+  abstract: >-
+    <p>Matthias König has successfully completed the certificate program <em>Science Communication for (Junior) Scholars</em> of the Center for Scientific Continuing Education and Cooperation (ZEWK) at TU Berlin. The program comprises 200 work units of 45 minutes each and trains researchers to make complex research understandable for audiences outside their field. Besides an introductory course on developing a communication concept, it included foundation and specialization courses on communication strategies, speaking and presenting, visual communication, slide and poster design, graphical abstracts, explainer videos, and writing research proposals with generative AI.</p>
+    <p>The practical project of the certificate, <em>Agentic Workflows for Science Communication: AI-Assisted Updating of a Research Group Website</em>, is the website you are reading. Starting from an analysis of our target audiences and their information needs, he developed a communication concept with a clear positioning, core messages, and five research areas as a guide through our work. On this basis, the site was rebuilt as a responsive Astro website on a validated, interlinked data foundation, with automated tests and daily updated figures from GitHub, Google Scholar, and OpenAlex.</p>
+    <p>AI agents supported the analysis, content work, programming, and quality assurance, in small, reviewable steps checked by tests and browser scenarios. Subject-matter review, sources, image rights, data protection, and the final decision to publish remained a human responsibility. The result is a sustainable process for clear, accessible, and up-to-date science communication.</p>
+
 - id: 'Myshkina2026_VPH_YSC'
   tags:
     - 'Digital Twins'
