@@ -225,39 +225,39 @@
 #set text(hyphenate: false)
 #resume-skill-item(
   [#tags(size: 1em, "Digital Twins") Modeling & Digital Twins],
-  (strong("Digital Twins"), strong("Multiscale Modeling"), "Systems Biology", "Bayesian Inference"),
+  ("Digital Twins", "Multiscale Modeling", "Systems Biology", "Bayesian Inference"),
 )
 #resume-skill-item(
   [#tags(size: 1em, "Pharmacometrics") Pharmacometrics],
-  (strong("PBPK/PD Modeling"), "Model-Informed Precision Dosing", "Hepatic & Renal Impairment", "Pharmacogenomics", "Drug-Drug Interactions"),
+  ("PBPK/PD Modeling", "Model-Informed Precision Dosing", "Hepatic & Renal Impairment", "Pharmacogenomics", "Drug-Drug Interactions"),
 )
 #resume-skill-item(
   [#tags(size: 1em, "AI") AI & Agentic Workflows],
-  (strong("Agentic AI Workflows"), strong("AI Coding Agents (Claude Code)"), "Large Language Models", "Deep Learning", "Image Segmentation"),
+  ("Agentic AI Workflows", "AI Coding Agents (Claude Code)", "Large Language Models", "Deep Learning", "Image Segmentation"),
 )
 #resume-skill-item(
   [#tags(size: 1em, "Digital Pathology") Digital Pathology],
-  (strong("Whole-Slide Image Analysis"), "Liver Zonation", "Quantitative Histology"),
+  ("Whole-Slide Image Analysis", "Liver Zonation", "Quantitative Histology"),
 )
 #resume-skill-item(
   [#tags(size: 1em, "Open & FAIR") Open & FAIR Science],
-  (strong("SBML (Editor 2025 - 2027)"), "SED-ML", "COMBINE/OMEX", "PEtab", "PK-DB", "Reproducible Workflows"),
+  ("SBML (Editor 2025 - 2027)", "SED-ML", "COMBINE/OMEX", "PEtab", "PK-DB", "Reproducible Workflows"),
 )
 #resume-skill-item(
   "Programming",
-  (strong("Python"), strong("R"), strong("Julia"), "TypeScript", "Java", "C++", "MATLAB", "SQL", "PyTorch", "TensorFlow"),
+  ("Python", "R", "Julia", "TypeScript", "Java", "C++", "MATLAB", "SQL", "PyTorch", "TensorFlow"),
 )
 #resume-skill-item(
   "Tools",
-  (strong("git & GitHub"), "Docker", "Continuous Integration", "LaTeX", "Typst", "BioRender", "Illustrator", "Inkscape"),
+  ("git & GitHub", "Docker", "Continuous Integration", "LaTeX", "Typst", "BioRender", "Illustrator", "Inkscape"),
 )
 #resume-skill-item(
   "Teaching & Communication",
-  (strong("University Teaching"), "Project-Based Learning", "AI-Supported Teaching", "Science Communication", "Mentoring"),
+  ("University Teaching", "Project-Based Learning", "AI-Supported Teaching", "Science Communication", "Mentoring"),
 )
 #resume-skill-item(
   "Languages",
-  (strong("German"), strong("English"), "Spanish (B2)", "Russian (A1)"),
+  ("German", "English", "Spanish (B2)", "Russian (A1)"),
 )
 #set text(hyphenate: auto)
 #v(6pt)
