@@ -65,6 +65,7 @@
   date: datetime.today().display(),
   language: "en",
   colored-headers: true,
+  accent-color: black,
   show-footer: false,
   // paper-size: "us-letter",
 )
