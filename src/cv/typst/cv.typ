@@ -31,10 +31,10 @@
   link("https://livermetabolism.com/#" + s.slug)[#text(fill: rgb(s.color))[#fa-icon(s.icon) #name]]
 }
 
-// The research areas of an entry as small coloured icons.
-#let tags(..names) = names.pos().map(name => {
+// The research areas of an entry as coloured icons, small by default.
+#let tags(size: 0.8em, ..names) = names.pos().map(name => {
   let s = tag-style.at(name)
-  link("https://livermetabolism.com/#" + s.slug)[#text(fill: rgb(s.color), size: 0.8em)[#fa-icon(s.icon)]]
+  link("https://livermetabolism.com/#" + s.slug)[#text(fill: rgb(s.color), size: size)[#fa-icon(s.icon)]]
 }).join(h(1pt))
 
 #show: resume.with(
@@ -224,19 +224,19 @@
 
 #set text(hyphenate: false)
 #resume-skill-item(
-  "Modeling & Digital Twins",
+  [#tags(size: 1em, "Digital Twins") Modeling & Digital Twins],
   (strong("PBPK/PD Modeling"), strong("Digital Twins"), "Pharmacometrics", "Systems Biology", "Multiscale Modeling", "Bayesian Inference"),
 )
 #resume-skill-item(
-  "AI & Agentic Workflows",
+  [#tags(size: 1em, "AI") AI & Agentic Workflows],
   (strong("Agentic AI Workflows"), strong("AI Coding Agents (Claude Code)"), "Large Language Models", "Deep Learning", "Image Segmentation"),
 )
 #resume-skill-item(
-  "Digital Pathology",
+  [#tags(size: 1em, "Digital Pathology") Digital Pathology],
   (strong("Whole-Slide Image Analysis"), "Liver Zonation", "Quantitative Histology"),
 )
 #resume-skill-item(
-  "Open & FAIR Science",
+  [#tags(size: 1em, "Open & FAIR") Open & FAIR Science],
   (strong("SBML (Editor 2025 - 2027)"), "SED-ML", "COMBINE/OMEX", "PEtab", "PK-DB", "Reproducible Workflows"),
 )
 #resume-skill-item(
