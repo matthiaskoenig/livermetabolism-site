@@ -225,7 +225,11 @@
 #set text(hyphenate: false)
 #resume-skill-item(
   [#tags(size: 1em, "Digital Twins") Modeling & Digital Twins],
-  (strong("PBPK/PD Modeling"), strong("Digital Twins"), "Pharmacometrics", "Systems Biology", "Multiscale Modeling", "Bayesian Inference"),
+  (strong("Digital Twins"), strong("Multiscale Modeling"), "Systems Biology", "Bayesian Inference"),
+)
+#resume-skill-item(
+  [#tags(size: 1em, "Pharmacometrics") Pharmacometrics],
+  (strong("PBPK/PD Modeling"), "Model-Informed Precision Dosing", "Hepatic & Renal Impairment", "Pharmacogenomics", "Drug-Drug Interactions"),
 )
 #resume-skill-item(
   [#tags(size: 1em, "AI") AI & Agentic Workflows],
@@ -253,7 +257,7 @@
 )
 #resume-skill-item(
   "Languages",
-  (strong("German"), strong("English"), "Spanish (B2)"),
+  (strong("German"), strong("English"), "Spanish (B2)", "Russian (A1)"),
 )
 #set text(hyphenate: auto)
 #v(6pt)
