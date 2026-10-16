@@ -9,14 +9,18 @@
  * Only public data is read, so the Action's default GITHUB_TOKEN is enough
  * (see .github/workflows/github-data.yml, which commits the result to the
  * `github-data` branch). The output path defaults to ./github.json, which is
- * gitignored on the source branches.
+ * gitignored on the source branches. An existing file there is the previous
+ * snapshot: a repository GitHub answers without commit activity keeps its
+ * previous weeks, and a fall in the total stars or releases fails the run
+ * without writing (`scripts/lib/snapshot.ts`).
  */
-import { renameSync, readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { snapshotSchema, type Snapshot } from '../site/lib/githubSchema.ts';
 import { GitHubClient } from './lib/github-client.ts';
 import { reposFromSoftware } from './lib/repos.ts';
-import { buildSnapshot, weeksFromParticipation, type RepoFetch } from './lib/transform.ts';
+import { assertPlausible, readPrevious, writeJsonAtomic } from './lib/snapshot.ts';
+import { buildSnapshot, githubFigures, keepPreviousActivity, weeksFromParticipation, type RepoFetch } from './lib/transform.ts';
 
 const CONCURRENCY = 4;
 
@@ -32,15 +36,6 @@ async function mapLimit<T, R>(items: T[], limit: number, fn: (item: T) => Promis
   }
   await Promise.all(Array.from({ length: Math.min(limit, items.length) }, worker));
   return results;
-}
-
-/** Write to a temp file and rename, so a failed run never leaves a half-written snapshot. */
-function writeJsonAtomic(path: string, data: unknown): number {
-  const text = `${JSON.stringify(data)}\n`;
-  const tmp = `${path}.tmp`;
-  writeFileSync(tmp, text);
-  renameSync(tmp, path);
-  return Buffer.byteLength(text);
 }
 
 export async function runFetch(opts: {
@@ -75,7 +70,9 @@ export async function runFetch(opts: {
 
   // Parsing our own output catches a drift between the writer and the site,
   // which reads the file through the very same schema.
-  const snapshot = snapshotSchema.parse(buildSnapshot(fetches, fetchedAt));
+  const previous = readPrevious(opts.outPath, snapshotSchema);
+  const snapshot = snapshotSchema.parse(keepPreviousActivity(buildSnapshot(fetches, fetchedAt), previous));
+  assertPlausible(githubFigures(previous, snapshot));
   const bytes = writeJsonAtomic(opts.outPath, snapshot);
   console.log(`Wrote ${opts.outPath} (${Object.keys(snapshot.repos).length} repositories, ${(bytes / 1024).toFixed(1)} kB)`);
   return snapshot;

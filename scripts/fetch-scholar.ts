@@ -11,37 +11,27 @@
  * exists and validates) and the output. In the workflow it points into the
  * `github-data` worktree, so the history grows with every run; see
  * .github/workflows/github-data.yml, where the step is `continue-on-error`:
- * a run Google blocks must never fail the GitHub snapshot, and it writes
- * nothing, so the previous good file stays in place.
+ * a failed run must never fail the GitHub snapshot, and it writes nothing, so
+ * the previous good file stays in place. A profile that parses but whose
+ * citations, h-index or i10-index fell sharply since the previous snapshot is
+ * such a failure too (`scripts/lib/snapshot.ts`): written, it would also have
+ * entered the history for good.
  *
  * The fetch itself is retried up to 3 attempts (30 s, then 60 s apart) when
  * Google answers with a transient "blocked" — GitHub-hosted runner IPs get an
  * occasional 403 that a plain retry clears. A `no stats table` (page layout
  * changed) or any other error is not transient and is never retried.
  */
-import { existsSync, readFileSync, renameSync, writeFileSync } from 'node:fs';
 import { scholarSchema, SCHOLAR_USER_ID, type Scholar } from '../site/lib/scholarSchema.ts';
-import { buildScholarSnapshot, fetchProfileHtml, parseProfile, profileUrl } from './lib/scholar.ts';
+import { buildScholarSnapshot, fetchProfileHtml, parseProfile, profileUrl, scholarFigures } from './lib/scholar.ts';
+import { assertPlausible, readPrevious, writeJsonAtomic } from './lib/snapshot.ts';
 
-/** The previous snapshot, or null when there is none or it does not validate. */
-export function readPrevious(path: string): Scholar | null {
-  if (!existsSync(path)) return null;
-  try {
-    return scholarSchema.parse(JSON.parse(readFileSync(path, 'utf8')));
-  } catch (err) {
-    console.warn(`Ignoring the previous snapshot at ${path}: ${err instanceof Error ? err.message : err}`);
-    return null;
-  }
-}
-
-/** Write to a temp file and rename, so a failed run never leaves a half-written snapshot. */
-function writeJsonAtomic(path: string, data: unknown): number {
-  const text = `${JSON.stringify(data)}\n`;
-  const tmp = `${path}.tmp`;
-  writeFileSync(tmp, text);
-  renameSync(tmp, path);
-  return Buffer.byteLength(text);
-}
+/**
+ * The exit code of a run Google blocked (EX_TEMPFAIL), which the workflow
+ * reports as a warning: a block is routine on GitHub-hosted runners, while any
+ * other failure (a changed layout, an implausible drop) fails the run.
+ */
+export const EXIT_BLOCKED = 75;
 
 /** The wait before each retry, in order (also the max number of retries). */
 const RETRY_DELAYS_MS = [30_000, 60_000];
@@ -82,12 +72,14 @@ export async function runFetch(opts: {
   const now = opts.now ?? new Date();
   console.log(`Fetching ${profileUrl(opts.userId)} as of ${now.toISOString()}`);
 
-  const previous = readPrevious(opts.outPath);
+  const previous = readPrevious(opts.outPath, scholarSchema);
   const html = await fetchProfileHtmlWithRetry(opts.userId, opts.fetchImpl ?? fetch, opts.sleep);
   const parsed = parseProfile(html);
   // Parsing our own output catches a drift between the writer and the site,
   // which reads the file through the very same schema.
   const snapshot = scholarSchema.parse(buildScholarSnapshot(parsed, previous, now, opts.userId));
+  // Before the write: a zero or a sharp fall would also enter the history for good.
+  assertPlausible(scholarFigures(previous, snapshot));
 
   const bytes = writeJsonAtomic(opts.outPath, snapshot);
   console.log(
@@ -100,7 +92,8 @@ export async function runFetch(opts: {
 
 if (import.meta.main) {
   runFetch({ userId: SCHOLAR_USER_ID, outPath: process.argv[2] ?? './scholar.json' }).catch((err) => {
-    console.error(err instanceof Error ? err.message : err);
-    process.exit(1);
+    const message = err instanceof Error ? err.message : String(err);
+    console.error(message);
+    process.exit(message.startsWith('blocked') ? EXIT_BLOCKED : 1);
   });
 }

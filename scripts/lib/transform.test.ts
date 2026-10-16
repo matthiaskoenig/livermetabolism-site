@@ -2,7 +2,16 @@ import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { snapshotSchema } from '../../site/lib/githubSchema.ts';
 import { apiCommitActivitySchema, apiCommitSchema, apiReleaseSchema, apiRepoSchema } from './github-client.ts';
-import { buildSnapshot, latestRelease, summarize, toReleaseEntries, toRepoEntry, weeksFromParticipation } from './transform.ts';
+import {
+  buildSnapshot,
+  githubFigures,
+  keepPreviousActivity,
+  latestRelease,
+  summarize,
+  toReleaseEntries,
+  toRepoEntry,
+  weeksFromParticipation,
+} from './transform.ts';
 import { z } from 'astro/zod';
 
 const fixture = (name: string) => JSON.parse(readFileSync(`tests/fixtures/github/${name}.json`, 'utf8'));
@@ -183,5 +192,38 @@ describe('weeksFromParticipation', () => {
 
   it('returns nothing for an empty list', () => {
     expect(weeksFromParticipation([], new Date('2026-09-12T10:00:00Z'))).toEqual([]);
+  });
+});
+
+describe('keepPreviousActivity and githubFigures', () => {
+  const build = (stars: number, releases = releasesApi, commitActivity = activityApi) =>
+    buildSnapshot([{ fullName: FULL_NAME, repo: { ...repoApi, stargazers_count: stars }, releases, latestCommit: commitApi, commitActivity }], '2026-09-12T05:00:00.000Z');
+  const previous = build(100);
+
+  it('keeps the previous weeks of a repository GitHub answered without commit activity', () => {
+    const next = keepPreviousActivity(build(101, releasesApi, []), previous);
+    expect(next.repos[FULL_NAME].commitActivity).toEqual(previous.repos[FULL_NAME].commitActivity);
+    expect(next.repos[FULL_NAME].stars).toBe(101);
+    expect(keepPreviousActivity(build(101, releasesApi, []), null).repos[FULL_NAME].commitActivity).toEqual([]);
+  });
+
+  it('never replaces commit activity GitHub did answer', () => {
+    const weeks = weeksFromParticipation([1, 2], new Date('2026-09-12T10:00:00Z'));
+    const next = keepPreviousActivity(build(101, releasesApi, weeks), previous);
+    expect(next.repos[FULL_NAME].commitActivity).toHaveLength(2);
+  });
+
+  it('compares stars and releases over the repositories both snapshots carry', () => {
+    expect(githubFigures(null, previous)).toEqual([]);
+    expect(githubFigures(previous, build(0, []))).toEqual([
+      { label: 'stars', previous: 100, next: 0 },
+      { label: 'releases', previous: previous.releases[FULL_NAME].length, next: 0 },
+    ]);
+    // A repository only one of them carries counts for neither.
+    const added = buildSnapshot([{ fullName: 'matthiaskoenig/visfem', repo: repoApi, releases: [], latestCommit: null, commitActivity: [] }], '2026-09-12T05:00:00.000Z');
+    expect(githubFigures(previous, added)).toEqual([
+      { label: 'stars', previous: 0, next: 0 },
+      { label: 'releases', previous: 0, next: 0 },
+    ]);
   });
 });

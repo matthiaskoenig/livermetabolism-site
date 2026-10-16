@@ -47,6 +47,7 @@ Three live snapshots (`github.json`, `scholar.json`, `citations.json`) feed the 
 - The snapshots carry text only. Never insert snapshot content as HTML, and never let a snapshot string become an `href` the page did not build itself.
 - The snapshots bypass the Astro data pipeline (one build-time read plus a browser refresh), so the pages stay current without a redeploy. A failed read falls back to an empty snapshot: it must never fail the build, and a missing figure is left out or hidden, never rendered as 0.
 - Each snapshot has one `.strict()` schema in `site/lib/*Schema.ts` shared by its writer and every reader - change the shape there, nowhere else.
+- A writer never replaces a good snapshot with an implausible one: `scripts/lib/snapshot.ts`'s guard refuses to write when a headline figure fell by more than 10 % since the previous snapshot, and the run fails visibly instead.
 
 ## UI conventions
 
