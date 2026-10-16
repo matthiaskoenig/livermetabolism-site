@@ -96,14 +96,15 @@ export interface DetailSection {
  *   data build instead of being silently blocked in the modal.
  * - `gallery`: a project's images, every one of them, with `image_title` as
  *   the caption.
- * - `image`: a news item's `image2` (when it has no video), shown full width
- *   and uncropped, because it is a picture meant to be read (a document, a
- *   group photo) that neither the header thumbnail nor a gallery tile fits.
+ * - `images`: a news item's `images` (when it has no video), each shown full
+ *   width and uncropped, because they are pictures meant to be read (a
+ *   document, a diagram, a group photo) that neither the header thumbnail
+ *   nor a gallery tile fits.
  */
 export type DetailMedia =
   | { kind: 'video'; src: string; title: string }
   | { kind: 'gallery'; images: string[]; caption: string | null }
-  | { kind: 'image'; src: string; alt: string };
+  | { kind: 'images'; images: string[]; alt: string };
 
 export interface DetailModel {
   type: DetailType;
@@ -120,7 +121,7 @@ export interface DetailModel {
   tags: string[];
   links: DetailLink[];
   figures: DetailFigure[];
-  /** A news item's video embed or second image, or a project's image gallery; null for every other type (and for a news item with neither). */
+  /** A news item's video embed or further images, or a project's image gallery; null for every other type (and for a news item with neither). */
   media: DetailMedia | null;
   /** Trusted HTML from the data — the same field the cards already render. */
   body: string;
@@ -625,7 +626,7 @@ function newsModel(ctx: DetailContext, id: string): DetailModel {
     figures: [],
     media: n.video
       ? { kind: 'video', src: n.video, title: n.title }
-      : n.image2 ? { kind: 'image', src: `${ctx.assetBase}${NEWS_DIR}${n.image2}`, alt: n.title } : null,
+      : n.images.length ? { kind: 'images', images: n.images.map((img) => `${ctx.assetBase}${NEWS_DIR}${img}`), alt: n.title } : null,
     body: n.abstract ?? n.short,
     keywords: [],
     related: [...section(t('detail.people'), rel.people.map((pid) => personRow(ctx, pid)))],

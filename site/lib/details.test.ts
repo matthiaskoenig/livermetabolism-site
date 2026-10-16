@@ -61,7 +61,7 @@ const software: Entry<s.SoftwareData>[] = [
 const news: Entry<s.NewsData>[] = [
   {
     id: 'award', tags: ['AI'], people: ['ada'], status: 'current', title: 'Award', date: '2026-02-01',
-    image: 'award.webp', link: '/assets/pdf/publication/Ada2026_ai.pdf', short: 'Short text.', abstract: '<p>Long text.</p>',
+    image: 'award.webp', images: [], link: '/assets/pdf/publication/Ada2026_ai.pdf', short: 'Short text.', abstract: '<p>Long text.</p>',
   },
 ];
 
@@ -354,11 +354,13 @@ describe('detailModel: media', () => {
     expect(detailModel('news', 'award', ctx()).media).toBeNull();
   });
 
-  it('shows a news item’s second image full width, unless it has a video', () => {
-    const withImage2 = detailModel('news', 'award', ctx({ news: [{ ...news[0], image2: 'second.webp' }] }));
-    expect(withImage2.media).toEqual({ kind: 'image', src: `${BASE}assets/image/news/second.webp`, alt: 'Award' });
+  it('shows a news item’s further images full width, in order, unless it has a video', () => {
+    const withImages = detailModel('news', 'award', ctx({ news: [{ ...news[0], images: ['two.webp', 'three.webp'] }] }));
+    expect(withImages.media).toEqual({
+      kind: 'images', images: [`${BASE}assets/image/news/two.webp`, `${BASE}assets/image/news/three.webp`], alt: 'Award',
+    });
     const video = 'https://www.youtube.com/embed/Mu9oXKLtTGI';
-    const both = detailModel('news', 'award', ctx({ news: [{ ...news[0], image2: 'second.webp', video }] }));
+    const both = detailModel('news', 'award', ctx({ news: [{ ...news[0], images: ['two.webp'], video }] }));
     expect(both.media).toEqual({ kind: 'video', src: video, title: 'Award' });
   });
 

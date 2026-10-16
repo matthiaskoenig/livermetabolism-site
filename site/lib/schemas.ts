@@ -128,7 +128,7 @@ export const fundingSchema = z.object({
 
 export const newsSchema = z.object({
   id, order: z.number().default(0), tags: strList, people: strList, status: ContentStatus, title: reqStr, date: reqDate,
-  image: optStr, image2: optStr, link: optStr, short: reqStr, abstract: optStr, video: optYoutubeEmbedUrl,
+  image: optStr, images: strList, link: optStr, short: reqStr, abstract: optStr, video: optYoutubeEmbedUrl,
 }).strict();
 
 export const teachingSchema = z.object({

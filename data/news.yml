@@ -67,7 +67,9 @@
   title: 'Certificate in Science Communication from TU Berlin'
   date: '2026-09-23'
   image: Koenig2026_Science_Communication_Certificate.webp
-  image2: Koenig2026_Science_Communication_Certificate_modules.webp
+  images:
+    - Koenig2026_Science_Communication_Certificate_modules.webp
+    - Koenig2026_Science_Communication_Certificate_structure.webp
   link: 'https://www.tu.berlin/en/zewk/offers-by-topic/further-education-for-lecturers-and-researchers/science-communication'
   short: "Matthias König has completed the certificate program Science Communication for (Junior) Scholars at TU Berlin. His practical project was the redesign of this website with agentic, AI-assisted workflows."
   abstract: >-
@@ -1445,7 +1447,8 @@
   title: 'COMBINE 2022'
   date: '2022-10-06'
   image: COMBINE2022_logo.webp
-  image2: COMBINE2022_participants.webp
+  images:
+    - COMBINE2022_participants.webp
   link: 'http://co.mbine.org/events/'
   short: 'We organized the Computational Modeling in Biology Network (COMBINE) meeting in Berlin this year with > 100 participants from 06-08 October 2022.'
 

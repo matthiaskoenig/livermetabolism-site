@@ -328,11 +328,14 @@ class News(Taggable, PeopleLinked):
     title: str
     date: Date
     image: str | None = None
-    image2: str | None = None
+    # further pictures, shown whole in the detail modal below the header
+    images: list[str] = list_field()
     link: str | None = None
     short: str
     abstract: str | None = None
     video: str | None = None
+
+    _images_none = field_validator("images", mode="before")(_none_to_list)
 
 
 class Teaching(Taggable, PeopleLinked):
@@ -536,7 +539,7 @@ IMAGE_FIELDS: dict[str, list[tuple[str, str, bool]]] = {
     "people": [("image", "assets/image/people/128", False)],
     "editors": [("image", "assets/image/editors", False)],
     "software": [("image", "assets/image/software", False)],
-    "news": [("image", "assets/image/news", False), ("image2", "assets/image/news", False)],
+    "news": [("image", "assets/image/news", False), ("images", "assets/image/news", True)],
     "projects": [("images", "assets/image/projects", True)],
     "teaching": [("image", "assets/image/teaching", False)],
     "posters": [("image", "assets/pdf", False), ("pdf", "assets/pdf", False)],

@@ -1901,7 +1901,7 @@
     }
   }
 
-  /* a news item's second image, shown whole at the modal's width */
+  /* a news item's further images, each shown whole at the modal's width */
   .detail-media-image {
     display: block;
     max-width: 100%;

@@ -66,8 +66,10 @@ const detailTarget = (row: RelatedRow): string | undefined =>
       <div v-if="model.media.kind === 'video'" class="detail-media detail-video">
         <iframe :src="model.media.src" :title="model.media.title" loading="lazy" allowfullscreen></iframe>
       </div>
-      <img v-else-if="model.media.kind === 'image'" class="detail-media detail-media-image" :src="model.media.src" :alt="model.media.alt"
-        loading="lazy" decoding="async" />
+      <template v-else-if="model.media.kind === 'images'">
+        <img v-for="img in model.media.images" :key="img" class="detail-media detail-media-image" :src="img" :alt="model.media.alt"
+          loading="lazy" decoding="async" />
+      </template>
       <template v-else>
         <div class="detail-media detail-gallery">
           <img v-for="img in model.media.images" :key="img" :src="img" :alt="model.title" loading="lazy" decoding="async" />
