@@ -2097,6 +2097,7 @@
 - id: 'Koeller2021_bachelor.thesis'
   tags:
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2021
   pdf: 'thesis/Koeller2021_bachelor.thesis.pdf'
   authors: 'Adrian Köller (supervisor: M. König)'
@@ -2138,6 +2139,7 @@
 - id: 'Bartsch2020_bachelor.thesis'
   tags:
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2020
   pdf: 'thesis/Bartsch2020_bachelor.thesis.pdf'
   authors: 'Florian Bartsch (supervisor: M. König)'
@@ -2164,6 +2166,7 @@
 - id: 'Duport2020_bachelor.thesis'
   tags:
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2020
   pdf: 'thesis/Duport2020_bachelor.thesis.pdf'
   authors: 'Yannick Duport (supervisor: M. König)'
@@ -2715,6 +2718,7 @@
 - id: 'Koenig2014_systembiologie'
   tags:
     - 'AI'
+    - 'Open & FAIR'
   year: 2014
   pdf: publication/Koenig2014_systembiologie.pdf
   authors: 'M. König and H. G. Holzhütter'
@@ -2735,6 +2739,7 @@
   tags:
     - 'Digital Pathology'
     - 'AI'
+    - 'Open & FAIR'
   year: 2013
   pdf: 'publication/Koenig2013_cancertissue.pdf'
   authors: 'M. König, H. G. Holzhütter, and N. Berndt'
@@ -2754,6 +2759,7 @@
 - id: 'Koenig2012b_glucosemodelt2dm'
   tags:
     - 'AI'
+    - 'Open & FAIR'
   year: 2012
   pdf: 'publication/Koenig2012b_glucosemodelt2dm.pdf'
   authors: 'M. König and H. G. Holzhütter'
@@ -2793,6 +2799,7 @@
 - id: 'Koenig2012a_glucosemodel'
   tags:
     - 'AI'
+    - 'Open & FAIR'
   year: 2012
   pdf: 'publication/Koenig2012a_glucosemodel.pdf'
   authors: 'M. König, S. Bulik, and H. G. Holzhütter'
