@@ -66,6 +66,13 @@
 ]
 
 #resume-entry(
+  title: "Guest Professor",
+  location: [Humboldt-Universität zu Berlin],
+  date: "06/2026 – Present",
+  description: "Systems Medicine of the Liver",
+)
+
+#resume-entry(
   title: "Associate Professor of Pharmacoepidemiology and Data Science",
   location: [SDU, Odense, Denmark],
   date: "05/2026",
@@ -81,13 +88,6 @@
 #resume-item[
   - Coordinated biomechanics and numerical modeling toward reproducible, clinically applicable in silico models.
 ]
-
-#resume-entry(
-  title: "Guest Professor",
-  location: [Humboldt-Universität zu Berlin],
-  date: "12/2025 – Present",
-  description: "Systems Medicine of the Liver",
-)
 
 #resume-entry(
   title: "Head of Systems Medicine of the Liver Group",
@@ -164,17 +164,21 @@
   title: [#link("https://livermetabolism.com/assets/pdf/certificate/Koenig2025_leadership.pdf")[#fa-icon("file-pdf")] Leadership Certificate Program],
   location: [ZEWK, TU Berlin],
   date: "2025",
-  description: "Certificate in Academic Leadership (100 AE)",
+  description: "Certificate in Academic Leadership (100 AE), two-stage program for professors and group leaders",
 )
-#resume-item[
-  - Two-stage program for junior professors and group leaders: team leadership, communication, and conflict resolution.
-]
 
 #resume-entry(
   title: [#link("https://livermetabolism.com/assets/pdf/certificate/Koenig2025_scientific.integrity.pdf")[#fa-icon("file-pdf")] EP PerMed Training on Scientific Integrity],
   location: [European Partnership for Personalised Medicine],
   date: "2025",
   description: "Research integrity and ethical, legal, and social aspects of personalised medicine (20 AE)",
+)
+
+#resume-entry(
+  title: [#link("https://livermetabolism.com/assets/pdf/certificate/Koenig2025_mental.health.pdf")[#fa-icon("file-pdf")] IAR Identify, Assist, Refer],
+  location: [Health & Wellness, University of Toronto],
+  date: "2025",
+  description: "Certificate in Mental Health Assistance and Support (10 AE)",
 )
 
 #pagebreak(weak: true)
