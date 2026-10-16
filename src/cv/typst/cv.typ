@@ -144,7 +144,7 @@
 
 = Training & Certifications
 #resume-entry(
-  title: "Science Communication for (Junior) Scholars",
+  title: [#link("https://livermetabolism.com/assets/pdf/certificate/Koenig2026_science.communication.pdf")[#fa-icon("file-pdf")] Science Communication for (Junior) Scholars],
   location: [ZEWK, TU Berlin],
   date: "2025 - 2026",
   description: "Certificate in Science Communication (200 AE)",
@@ -155,7 +155,7 @@
 ]
 
 #resume-entry(
-  title: "Leadership Certificate Program",
+  title: [#link("https://livermetabolism.com/assets/pdf/certificate/Koenig2025_leadership.pdf")[#fa-icon("file-pdf")] Leadership Certificate Program],
   location: [ZEWK, TU Berlin],
   date: "2025",
   description: "Certificate in Academic Leadership (100 AE)",
@@ -165,7 +165,7 @@
 ]
 
 #resume-entry(
-  title: "EP PerMed Training on Scientific Integrity",
+  title: [#link("https://livermetabolism.com/assets/pdf/certificate/Koenig2025_scientific.integrity.pdf")[#fa-icon("file-pdf")] EP PerMed Training on Scientific Integrity],
   location: [European Partnership for Personalised Medicine],
   date: "2025",
   description: "Research integrity and ethical, legal, and social aspects of personalised medicine (20 AE)",
@@ -467,7 +467,7 @@ Over the last 5 years, 1 PhD theses, 4 Master thesis, 11 Bachelor's theses, 18 H
 )
 == Teaching Qualifications
 #resume-entry(
-  title: "Digital Health Professions Educator (DHPE)",
+  title: [#link("https://livermetabolism.com/assets/pdf/certificate/Koenig2025_dhpe.pdf")[#fa-icon("file-pdf")] Digital Health Professions Educator (DHPE)],
   location: [Charité – Universitätsmedizin Berlin],
   date: "2024 – 2025",
   description: "Certificate in Digital Teaching for Health Professions (200 AE)",
@@ -477,7 +477,7 @@ Over the last 5 years, 1 PhD theses, 4 Master thesis, 11 Bachelor's theses, 18 H
 ]
 
 #resume-entry(
-  title: "AI Teaching Certificate (KI-Lehrzertifikat)",
+  title: [#link("https://livermetabolism.com/assets/pdf/certificate/Koenig2025_ai.teaching.pdf")[#fa-icon("file-pdf")] AI Teaching Certificate (KI-Lehrzertifikat)],
   location: [HU Berlin, KI-Campus 2.0 & AI Skills Initiative],
   date: "2026",
   description: "Higher education didactics qualification on Artificial Intelligence (150 AE)",
