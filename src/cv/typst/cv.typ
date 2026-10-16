@@ -217,7 +217,7 @@
 #v(6pt)
 
 = Scientific Results
-== Ten Selected Publications (total: 68, HF: 26, i10: 37, citations: 3897, #link("https://scholar.google.de/citations?user=xD9IjnYAAAAJ&hl=de")[#google-scholar-icon Google Scholar] 10/26)
+== Ten Selected Publications (total: 68, citations: 3897, h: 26, i10: 37, #link("https://scholar.google.de/citations?user=xD9IjnYAAAAJ&hl=de")[#google-scholar-icon Google Scholar] 10/2026)
 
 1. #link("https://livermetabolism.com/assets/pdf/publication/Bafna2026_segmentation.pdf")[#fa-icon("file-pdf")]#link("https://doi.org/10.5281/zenodo.17041227")[#fa-icon("git-alt")] *Automated Segmentation of Hepatic Vessels and Lobules in Whole-Slide Images Using U-Net Models*. M. Bafna, M. König, S. Saalfeld, V. Moulisova, V. Liska, U. Dahmen, and M. Albadry; Front. Bioinform. 6:1713736, #link("https://doi.org/10.3389/fbinf.2026.1713736")[10.3389/fbinf.2026.1713736], IF: *3.9*
 2. #link("https://livermetabolism.com/assets/pdf/publication/Nemitz2026_dapagliflozin.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/dapagliflozin-model")[#fa-icon("git-alt")] *A Physiologically Based Pharmacokinetic and Pharmacodynamic (PBPK/PD) Model of Dapagliflozin in Type 2 Diabetes Mellitus: The Effect of Dosing, Hepatorenal Impairment, and Food*. N. Nemitz, M. Elias, and M. König; Pharmaceutics 2026, 18(3), 287, #link("https://doi.org/10.3390/pharmaceutics18030287")[10.3390/pharmaceutics18030287], IF: *6.9*, #underline[Last author]
