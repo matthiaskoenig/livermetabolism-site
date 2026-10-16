@@ -145,6 +145,7 @@
   tags:
     - 'Digital Twins'
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2026
   date: 2026-07-06
   pdf: 'preprint/Schwaiger2026_hctz_preprint.pdf'
@@ -235,6 +236,7 @@
   tags:
     - 'Digital Twins'
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2026
   date: 2026-05-06
   pdf: 'preprint/Jesionek2026_rapamycin_preprint.pdf'
@@ -267,6 +269,7 @@
   tags:
     - 'Digital Twins'
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2026
   date: 2026-05-05
   pdf: 'preprint/Myshkina2026_apixaban_preprint.pdf'
@@ -383,6 +386,7 @@
   tags:
     - 'Digital Twins'
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2026
   date: 2026-03-20
   pdf: 'preprint/Alejandro2026_empagliflozin_preprint.pdf'
@@ -415,6 +419,7 @@
 - id: 'Nemitz2026_dapagliflozin'
   tags:
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2026
   date: 2026-02-26
   pdf: 'publication/Nemitz2026_dapagliflozin.pdf'
@@ -446,6 +451,7 @@
   tags:
     - 'Digital Twins'
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2026
   date: 2026-02-19
   pdf: 'publication/Tensil2026_losartan.pdf'
@@ -510,6 +516,7 @@
   tags:
     - 'Digital Twins'
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2026
   date: 2026-01-27
   pdf: 'preprint/Tereshchuk2026_canagliflozin_preprint.pdf'
@@ -543,6 +550,7 @@
   tags:
     - 'Digital Twins'
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2025
   date: 2025-10-08
   pdf: 'publication/Elias2025_glimepiride.pdf'
@@ -635,6 +643,7 @@
 - id: 'Casabianca2025_master.thesis'
   tags:
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2025
   date: 2025-07-14
   pdf: 'thesis/Casabianca2025_master.thesis.pdf'
@@ -664,6 +673,7 @@
 - id: 'Casabianca2025_rivaroxaban_preprint'
   tags:
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2025
   date: 2025-07-25
   pdf: 'preprint/Casabianca2025_rivaroxaban_preprint.pdf'
@@ -694,6 +704,7 @@
 - id: 'Tensil2025_bachelor.thesis'
   tags:
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2025
   date: 2025-07-14
   pdf: 'thesis/Tensil2025_bachelor.thesis.pdf'
@@ -724,6 +735,7 @@
 - id: 'Nemitz2025_bachelor.thesis'
   tags:
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2025
   date: 2025-06-15
   pdf: 'thesis/Nemitz2025_bachelor.thesis.pdf'
@@ -759,6 +771,7 @@
 - id: 'Elias2025_bachelor.thesis'
   tags:
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2025
   date: 2025-04-03
   pdf: 'thesis/Elias2025_bachelor.thesis.pdf'
@@ -842,6 +855,7 @@
 - id: 'Mishra2025_internship_report'
   tags:
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2025
   date: 2025-03-03
   pdf: 'thesis/Mishra2025_internship_report.pdf'
@@ -947,6 +961,7 @@
 - id: 'Kulanoglu2025_bachelor.thesis'
   tags:
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2025
   pdf: 'thesis/Kulanoglu2025_bachelor.thesis.pdf'
   authors: 'Bachelor Thesis Yusuf Ali Kulanoglu (supervisor: M. König)'
@@ -1123,6 +1138,7 @@
 - id: 'Palwankar2024_master.thesis'
   tags:
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2024
   pdf: 'thesis/Palwankar2024_master.thesis.pdf'
   authors: 'Master Thesis Shubhankar Palwankar (supervisor: M. König)'
@@ -1334,6 +1350,7 @@
 - id: 'Okibedi2024_internship_report'
   tags:
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2024
   pdf: 'thesis/Okibedi2024_internship_report.pdf'
   authors: 'Internship Report Frances Okibedi (supervisor: M. König)'
@@ -1384,6 +1401,7 @@
 - id: 'StemmerMallol2023_talinolol_preprint'
   tags:
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2023
   pdf: 'preprint/StemmerMallol2023_talinolol_preprint.pdf'
   authors: 'B. S. Mallol, J. Grzegorzewski, and M. König'
@@ -1414,6 +1432,7 @@
 - id: 'Maheshvare2023_pancreas'
   tags:
     - 'AI'
+    - 'Open & FAIR'
   year: 2023
   pdf: 'publication/Maheshvare2023_pancreas.pdf'
   authors: 'M. D. Maheshvare, S. Raha, M. KönigΔ, and D. PalΔ (Δ equal contribution)'
@@ -1441,6 +1460,7 @@
 - id: 'Mallol2023_bachelor.thesis'
   tags:
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2023
   pdf: 'thesis/Mallol2023_bachelor.thesis.pdf'
   authors: 'Bachelor Thesis Beatrice Stemmer Mallol (supervisor: M. König)'
@@ -1471,6 +1491,7 @@
 - id: 'Kuettner2023_chlorzoxazone_preprint'
   tags:
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2023
   pdf: 'preprint/Kuettner2023_chlorzoxazone_preprint.pdf'
   authors: 'J. Küttner, J. Grzegorzewski, H. M. Tautenhahn, and M. König'
@@ -1524,6 +1545,7 @@
 - id: 'Bartsch2023_simvastatin_preprint'
   tags:
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2023
   pdf: 'preprint/Bartsch2023_simvastatin_preprint.pdf'
   authors: 'F. Bartsch, J. Grzegorzewski, H. Pujol, H. M. Tautenhahn, and M. König'
@@ -1630,6 +1652,7 @@
 - id: 'Grzegorzewski2022_dextromethorphan'
   tags:
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2022
   pdf: 'publication/Grzegorzewski2022_dextromethorphan.pdf'
   authors: 'J. Grzegorzewski, J. Brandhorst, and M. König'
@@ -1707,6 +1730,7 @@
 - id: 'Pujol2022_bachelor.thesis'
   tags:
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2022
   pdf: 'thesis/Pujol2022_bachelor.thesis.pdf'
   authors: 'Helena Leal Pujol (supervisor: M. König)'
@@ -1794,6 +1818,7 @@
   tags:
     - 'Pharmacometrics'
     - 'AI'
+    - 'Open & FAIR'
   year: 2021
   pdf: 'publication/Koeller2021_icg.hepatectomy.pdf'
   authors: 'A. Köller, J. Grzegorzewski, M. Tautenhahn, and M. König'
@@ -1824,6 +1849,7 @@
 - id: 'Koeller2021_icg.variability'
   tags:
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2021
   pdf: 'publication/Koeller2021_icg.variability.pdf'
   authors: 'A. Köller, J. Grzegorzewski, and M. König'
@@ -1908,6 +1934,7 @@
 - id: 'Balci2021_bachelor.thesis'
   tags:
     - 'Pharmacometrics'
+    - 'Open & FAIR'
   year: 2021
   pdf: 'thesis/Balci2021_bachelor.thesis.pdf'
   authors: 'Sükrü Balci (supervisor: M. König)'
@@ -2333,6 +2360,7 @@
 - id: 'Koenig2020_exsimo_preprint'
   tags:
     - 'Digital Twins'
+    - 'Open & FAIR'
   year: 2020
   pdf: 'preprint/Koenig2020_exsimo_preprint.pdf'
   authors: 'M. König'
