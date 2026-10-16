@@ -76,7 +76,7 @@
 #resume-entry(
   title: "Professor of Metabolic Inflammation and Carcinogenesis of the Liver",
   location: [University of Lübeck, Germany],
-  date: "06/2026 -",
+  date: "06/2026 – Present",
   description: "Head of Systems Medicine, Digital Twins & AI",
 )
 #resume-item[
