@@ -17,6 +17,7 @@
 import { load } from 'js-yaml';
 import { z } from 'astro/zod';
 import { normalizeDoi, type CitationEntry, type Citations } from '../../site/lib/citationsSchema.ts';
+import { sum, type Figure } from './snapshot.ts';
 
 const API = 'https://api.openalex.org/works';
 /** OpenAlex asks unauthenticated clients to identify themselves. */
@@ -211,4 +212,23 @@ export function buildCitations(works: ApiWork[], now: Date): Citations {
     if (!previous || entry.citedByCount > previous.citedByCount) entries[doi] = entry;
   }
   return { fetchedAt: now.toISOString(), works: entries };
+}
+
+/**
+ * The headline figures the plausibility guard compares (`snapshot.ts`), over
+ * the DOIs the previous snapshot found that `data/publications.yml` still
+ * lists, so removing a publication never counts as a drop. A DOI missing from
+ * `next` counts as zero citations. Empty without a previous snapshot.
+ */
+export function citationFigures(previous: Citations | null, next: Citations, dois: string[]): Figure[] {
+  if (!previous) return [];
+  const known = dois.filter((doi) => doi in previous.works);
+  return [
+    { label: 'DOIs found', previous: known.length, next: known.filter((doi) => doi in next.works).length },
+    {
+      label: 'citations',
+      previous: sum(known, (doi) => previous.works[doi]!.citedByCount),
+      next: sum(known, (doi) => next.works[doi]?.citedByCount ?? 0),
+    },
+  ];
 }

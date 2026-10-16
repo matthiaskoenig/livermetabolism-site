@@ -6,6 +6,7 @@
  */
 import type { ReleaseEntry, RepoEntry, Snapshot } from '../../site/lib/githubSchema.ts';
 import type { ApiCommit, ApiCommitActivity, ApiRelease, ApiRepo } from './github-client.ts';
+import { sum, type Figure } from './snapshot.ts';
 
 /** Everything fetched for one repository, keyed by its name in `data/software.yml`. */
 export interface RepoFetch {
@@ -167,4 +168,35 @@ export function buildSnapshot(fetches: RepoFetch[], fetchedAt: string): Snapshot
     releases[f.fullName] = entries;
   }
   return { fetchedAt, repos, releases };
+}
+
+/**
+ * `next` with the previous commit activity of every repository GitHub
+ * answered without one. An empty list means both statistics endpoints were
+ * still being computed, which is unknown rather than a year without commits
+ * (that is 52 weeks of zero), so the last good weeks are kept.
+ */
+export function keepPreviousActivity(next: Snapshot, previous: Snapshot | null): Snapshot {
+  if (!previous) return next;
+  const repos: Snapshot['repos'] = {};
+  for (const [fullName, entry] of Object.entries(next.repos)) {
+    const kept = previous.repos[fullName]?.commitActivity ?? [];
+    repos[fullName] = !entry.commitActivity.length && kept.length ? { ...entry, commitActivity: kept } : entry;
+  }
+  return { ...next, repos };
+}
+
+/**
+ * The headline figures the plausibility guard compares (`snapshot.ts`), over
+ * the repositories both snapshots carry, so adding or removing an entry of
+ * `data/software.yml` never counts as a drop. Empty without a previous one.
+ */
+export function githubFigures(previous: Snapshot | null, next: Snapshot): Figure[] {
+  if (!previous) return [];
+  const shared = Object.keys(next.repos).filter((fullName) => fullName in previous.repos);
+  const releases = (snapshot: Snapshot) => sum(shared, (fullName) => snapshot.releases[fullName]?.length ?? 0);
+  return [
+    { label: 'stars', previous: sum(shared, (fullName) => previous.repos[fullName]!.stars), next: sum(shared, (fullName) => next.repos[fullName]!.stars) },
+    { label: 'releases', previous: releases(previous), next: releases(next) },
+  ];
 }

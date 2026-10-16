@@ -14,23 +14,19 @@
  * with `citationsSchema` and written atomically, so a failed run leaves the
  * previous snapshot in place — see .github/workflows/github-data.yml, where the
  * step is `continue-on-error` and must never fail the other two snapshots.
+ * An existing file at the output path is the previous snapshot: fewer DOIs
+ * found or fewer citations than there fails the run without writing
+ * (`scripts/lib/snapshot.ts`), so an empty or truncated OpenAlex answer never
+ * replaces the last good counts.
  *
  * The output path defaults to ./citations.json, which is gitignored on the
  * source branches.
  */
-import { renameSync, readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { citationsSchema, type Citations } from '../site/lib/citationsSchema.ts';
-import { buildCitations, BATCH_SIZE, chunk, doisFromPublications, fetchWorks, type ApiWork } from './lib/openalex.ts';
-
-/** Write to a temp file and rename, so a failed run never leaves a half-written snapshot. */
-function writeJsonAtomic(path: string, data: unknown): number {
-  const text = `${JSON.stringify(data)}\n`;
-  const tmp = `${path}.tmp`;
-  writeFileSync(tmp, text);
-  renameSync(tmp, path);
-  return Buffer.byteLength(text);
-}
+import { buildCitations, BATCH_SIZE, chunk, citationFigures, doisFromPublications, fetchWorks, type ApiWork } from './lib/openalex.ts';
+import { assertPlausible, readPrevious, writeJsonAtomic } from './lib/snapshot.ts';
 
 export async function runFetch(opts: {
   publicationsPath: string;
@@ -55,6 +51,7 @@ export async function runFetch(opts: {
   // Parsing our own output catches a drift between the writer and the site,
   // which reads the file through the very same schema.
   const citations = citationsSchema.parse(buildCitations(works, now));
+  assertPlausible(citationFigures(readPrevious(opts.outPath, citationsSchema), citations, dois));
   const entries = Object.values(citations.works);
   const total = entries.reduce((sum, entry) => sum + entry.citedByCount, 0);
   const bytes = writeJsonAtomic(opts.outPath, citations);

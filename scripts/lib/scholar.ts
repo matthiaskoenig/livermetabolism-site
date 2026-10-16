@@ -12,6 +12,7 @@
  * `tests/fixtures/scholar/profile.html` is a recorded copy of the real page.
  */
 import { scholarProfileUrl, type HistoryPoint, type Metric, type Scholar, type YearCount } from '../../site/lib/scholarSchema.ts';
+import type { Figure } from './snapshot.ts';
 
 /** A browser-like identity; Scholar answers a bare script UA with a CAPTCHA. */
 const USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0';
@@ -188,4 +189,18 @@ export function buildScholarSnapshot(parsed: ParsedProfile, previous: Scholar | 
     citationsPerYear: parsed.citationsPerYear,
     history: mergeHistory(previous?.history ?? [], point),
   };
+}
+
+/**
+ * The headline figures the plausibility guard compares (`snapshot.ts`): the
+ * all-time metrics only, since the "since <year>" column moves with the year
+ * and legitimately falls every January. Empty without a previous snapshot.
+ */
+export function scholarFigures(previous: Scholar | null, next: Scholar): Figure[] {
+  if (!previous) return [];
+  return [
+    { label: 'citations', previous: previous.citations.all, next: next.citations.all },
+    { label: 'h-index', previous: previous.hIndex.all, next: next.hIndex.all },
+    { label: 'i10-index', previous: previous.i10Index.all, next: next.i10Index.all },
+  ];
 }

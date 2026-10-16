@@ -11,11 +11,24 @@ name: GitHub data
 # numbers stay fresh without a redeploy. The site workflow only runs on main,
 # pull requests and its own daily schedule, so this push never triggers a
 # deployment.
+#
+# Each fetch writes into the github-data worktree, over the previous snapshot,
+# and writes nothing when it fails: the site then keeps showing the last good
+# figures with their "updated ..." date. A well-formed but implausible answer
+# (a headline figure fallen by more than 10 %, see scripts/lib/snapshot.ts)
+# is such a failure too. Every failure except a routine Scholar block fails the
+# run after the commit, so it is reported instead of passing silently; a real
+# drop is accepted by running the workflow by hand with accept_drop.
 
 on:
   schedule:
     - cron: "0 5 * * *"
   workflow_dispatch:
+    inputs:
+      accept_drop:
+        description: Accept a fall of a headline figure by more than 10 % (a real drop, not a broken source)
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -39,12 +52,10 @@ jobs:
           cache: npm
           cache-dependency-path: package-lock.json
       - run: npm ci
-      - run: npm run fetch:github -- github.json
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # The worktree is prepared before the Scholar fetch so that the previous
-      # scholar.json is in place: the script reads its accumulated history from
-      # the very path it writes. A missing file is normal on the first run.
+      # The worktree is prepared first: every fetch reads the previous snapshot
+      # from the very path it writes (Scholar its accumulated history, all
+      # three the figures the plausibility guard compares). A missing file is
+      # normal on the first run.
       - name: Prepare the github-data worktree
         run: |
           git config user.name "github-actions[bot]"
@@ -57,29 +68,52 @@ jobs:
             git -C ../data checkout --orphan github-data
             git -C ../data rm -rfq . || true
           fi
-      # Scholar has no API and may block the runner. That must never fail the
-      # GitHub snapshot, and a failed fetch writes nothing, so the previous
-      # scholar.json is committed again unchanged.
-      - name: Fetch Google Scholar
+      # No fetch may fail another: each is continue-on-error and a failed one
+      # writes nothing, so its previous snapshot is committed again unchanged.
+      - name: Fetch GitHub
+        id: github
         continue-on-error: true
-        run: npm run fetch:scholar -- ../data/scholar.json
+        run: npm run fetch:github -- ../data/github.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SNAPSHOT_ACCEPT_DROP: ${{ inputs.accept_drop && '1' || '' }}
+      # Scholar has no API and blocks the GitHub-hosted runner on most days.
+      # A block (exit code 75 after the script's own retries) is only a
+      # warning; a changed page layout or an implausible drop fails the step.
+      - name: Fetch Google Scholar
+        id: scholar
+        continue-on-error: true
+        run: |
+          status=0
+          npm run fetch:scholar -- ../data/scholar.json || status=$?
+          if [ "$status" -eq 75 ]; then
+            echo "::warning title=Google Scholar blocked::the previous scholar.json is kept"
+            exit 0
+          fi
+          exit "$status"
+        env:
+          SNAPSHOT_ACCEPT_DROP: ${{ inputs.accept_drop && '1' || '' }}
       # OpenAlex needs no key; OPENALEX_MAILTO (a repository variable, unset by
-      # default) only asks for the polite pool. A failed fetch writes nothing,
-      # so the previous citations.json is committed again unchanged.
+      # default) only asks for the polite pool.
       - name: Fetch citations
+        id: citations
         continue-on-error: true
         run: npm run fetch:citations -- ../data/citations.json
         env:
           OPENALEX_MAILTO: ${{ vars.OPENALEX_MAILTO }}
+          SNAPSHOT_ACCEPT_DROP: ${{ inputs.accept_drop && '1' || '' }}
       - name: Commit to the github-data branch
         run: |
-          cp github.json ../data/github.json
           cd ../data
-          git add github.json
-          # The two continue-on-error fetches may not have produced a file yet.
-          for f in scholar.json citations.json; do
+          # A fetch that failed on the very first run has not produced a file.
+          for f in github.json scholar.json citations.json; do
             if [ -f "$f" ]; then git add "$f"; fi
           done
           if git diff --cached --quiet; then echo "no change"; exit 0; fi
           git commit -m "Update data snapshots $(date -u +%Y-%m-%dT%H:%MZ)"
           git push origin HEAD:github-data
+      - name: Fail on a failed fetch
+        if: steps.github.outcome == 'failure' || steps.scholar.outcome == 'failure' || steps.citations.outcome == 'failure'
+        run: |
+          echo "::error::fetch outcomes: GitHub ${{ steps.github.outcome }}, Scholar ${{ steps.scholar.outcome }}, citations ${{ steps.citations.outcome }} - the failed snapshots were not updated, see the step logs"
+          exit 1

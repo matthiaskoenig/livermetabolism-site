@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { emptyScholar, type HistoryPoint, type Scholar } from '../../site/lib/scholarSchema.ts';
-import { buildScholarSnapshot, fetchProfileHtml, mergeHistory, parseProfile, profileUrl } from './scholar.ts';
+import { buildScholarSnapshot, fetchProfileHtml, mergeHistory, parseProfile, profileUrl, scholarFigures } from './scholar.ts';
 
 const html = readFileSync('tests/fixtures/scholar/profile.html', 'utf8');
 
@@ -171,5 +171,22 @@ describe('buildScholarSnapshot', () => {
     const second = buildScholarSnapshot(parsed, first, new Date('2026-09-12T17:00:00.000Z'), 'xD9IjnYAAAAJ');
     expect(second.history).toHaveLength(1);
     expect(second.fetchedAt).toBe('2026-09-12T17:00:00.000Z');
+  });
+});
+
+describe('scholarFigures', () => {
+  const snapshot = buildScholarSnapshot(parseProfile(html), null, new Date('2026-09-12T05:00:00.000Z'), 'xD9IjnYAAAAJ');
+
+  it('is empty without a previous snapshot', () => {
+    expect(scholarFigures(null, snapshot)).toEqual([]);
+  });
+
+  it('compares the all-time metrics only', () => {
+    const previous: Scholar = { ...snapshot, citations: { all: 4000, since: 1 }, hIndex: { all: 30, since: 1 }, i10Index: { all: 40, since: 1 } };
+    expect(scholarFigures(previous, snapshot)).toEqual([
+      { label: 'citations', previous: 4000, next: 3827 },
+      { label: 'h-index', previous: 30, next: 26 },
+      { label: 'i10-index', previous: 40, next: 36 },
+    ]);
   });
 });

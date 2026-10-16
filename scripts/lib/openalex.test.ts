@@ -5,6 +5,7 @@ import {
   apiWorkSchema,
   buildCitations,
   chunk,
+  citationFigures,
   doisFromPublications,
   fetchWorks,
   normalizeDoi,
@@ -271,5 +272,29 @@ describe('buildCitations', () => {
     const citations = buildCitations([], now);
     expect(citations.works).toEqual({});
     expect(citationsSchema.parse(citations)).toEqual(citations);
+  });
+});
+
+describe('citationFigures', () => {
+  const now = new Date('2026-09-12T06:00:00.000Z');
+  const previous = buildCitations(works, now);
+  const dois = Object.keys(previous.works);
+
+  it('is empty without a previous snapshot', () => {
+    expect(citationFigures(null, previous, dois)).toEqual([]);
+  });
+
+  it('counts a DOI missing from the new snapshot as zero citations', () => {
+    expect(citationFigures(previous, buildCitations([], now), dois)).toEqual([
+      { label: 'DOIs found', previous: 3, next: 0 },
+      { label: 'citations', previous: 293 + previous.works['10.1371/journal.pcbi.1002577'].citedByCount + previous.works['10.1038/s41540-026-00651-0'].citedByCount, next: 0 },
+    ]);
+  });
+
+  it('ignores a DOI data/publications.yml no longer lists', () => {
+    expect(citationFigures(previous, buildCitations(works.slice(1), now), dois.filter((doi) => doi !== '10.1038/msb.2010.62'))).toEqual([
+      { label: 'DOIs found', previous: 2, next: 2 },
+      { label: 'citations', previous: expect.any(Number), next: expect.any(Number) },
+    ]);
   });
 });
