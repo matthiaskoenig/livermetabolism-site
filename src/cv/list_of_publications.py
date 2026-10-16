@@ -11,6 +11,22 @@ from src.cv.list_of_software import is_missing
 
 console = Console()
 
+TAGS_FILE: Path = Path(__file__).parent.parent.parent / "data" / "tags.yml"
+
+
+def typst_tags(tags) -> str:
+    """Research-area tags as the small coloured icons of the CV (`#tags()` in cv.typ).
+
+    Ordered as in data/tags.yml; empty when the entry has no tags.
+    """
+    if not isinstance(tags, list) or not tags:
+        return ""
+    with open(TAGS_FILE, "r", encoding="utf-8") as f:
+        order = [t["tag"] for t in yaml.safe_load(f)]
+    names = ", ".join(f'"{tag}"' for tag in sorted(tags, key=order.index))
+    return f"#tags({names}) "
+
+
 def read_publications(yaml_file: Path) -> pd.DataFrame:
     """Read publication in pandas DataFrame"""
     with open(yaml_file, "r", encoding="utf-8") as file:
@@ -34,6 +50,7 @@ def read_publications(yaml_file: Path) -> pd.DataFrame:
             "position",  # first, first_equal, index, last_equal, last
             "pdf",
             "repository",
+            "tags",
         ]
     ]
     print(df.status.unique())
@@ -133,7 +150,8 @@ def create_list_of_publications_typst(
             position_str = (
                 f", #underline[{' '.join([t for t in tokens]).title()} author]"
             )
-        text = f"{pdf}{repository} *{e.title.strip('.')}*. {authors}; {e.journal}{doi}{impact}{position_str}"
+        tags = typst_tags(e.tags)
+        text = f"{pdf}{repository} {tags}*{e.title.strip('.')}*. {authors}; {e.journal}{doi}{impact}{position_str}"
         if highlights and e.id in highlights:
             text = f"#publication_highlight[{text}]"
         return text
