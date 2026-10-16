@@ -157,7 +157,7 @@
   } else {
     title-content = title
   }
-  block(above: 1em, below: 0.65em)[
+  block(above: 1em, below: 0.65em, breakable: false)[
     #pad[
       #justified-header(title-content, location)
       #if description != "" or date != "" [
@@ -322,7 +322,7 @@
       #pad(bottom: 5pt)[
         #block[
           #set text(
-            size: 32pt,
+            size: 44pt,
             style: "normal",
             font: header-font,
           )
@@ -332,7 +332,7 @@
               weight: "thin",
             )[#author.firstname]#text(weight: "bold")[#author.lastname]
           ] else [
-            #if "title" in author [#text(accent-color, size: 20pt, weight: "thin")[#author.title]]
+            #if "title" in author [#text(accent-color, size: 14pt, weight: "thin")[#author.title]]
             #text(accent-color, weight: "thin")[#author.firstname]
             #text(weight: "bold")[#author.lastname]
           ]
@@ -464,7 +464,7 @@
   if profile-picture != none {
     grid(
       columns: (100% - 4cm, 4cm),
-      rows: (100pt),
+      rows: (auto),
       gutter: 10pt,
       [
         #name
