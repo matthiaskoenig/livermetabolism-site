@@ -164,9 +164,10 @@ def create_list_of_publications_typst(
             "Preprints": [
                 "preprint",
             ],
-            "Theses": [
-                "thesis",
-            ],
+            # supervised theses are listed separately in the CV
+            # "Theses": [
+            #     "thesis",
+            # ],
         }
         # categories = {
         #     "Original papers": ["publication", ],

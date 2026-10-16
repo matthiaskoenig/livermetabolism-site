@@ -73,18 +73,25 @@
   description: "Coordination Project, DFG Priority Programme SPP 2311",
 )
 #resume-item[
-  - Coordinated interdisciplinary biomechanics and numerical modeling toward robust, reproducible in silico models for clinical application.
+  - Coordinated biomechanics and numerical modeling toward reproducible, clinically applicable in silico models.
 ]
+
+#resume-entry(
+  title: "Guest Professor",
+  location: [Humboldt-Universität zu Berlin],
+  date: "12/2025 – Present",
+  description: "Systems Medicine of the Liver",
+)
 
 #resume-entry(
   title: "Head of Systems Medicine of the Liver Group",
   location: [Humboldt-Universität zu Berlin],
-  date: "06/2021 – Present",
+  date: "06/2021 – 11/2025",
   description: "DFG Position for Principal Investigators, Institute for Theoretical Biology",
 )
 #resume-item[
   - Competitive third-party funding (DFG, EU, BMBF) for digital twins and personalized pharmacotherapy.
-  - Digital twins integrating physiology, pharmacokinetics, and AI-based decision support; international collaborations (Virtual Human Twin, EDITH, Lorentz Center).
+  - Digital twins combining physiology, pharmacokinetics, and AI; collaborations: Virtual Human Twin, EDITH, Lorentz Center.
 ]
 
 #resume-entry(
@@ -94,7 +101,7 @@
   description: "BMBF LiSyM Junior Group Leader, Systems Medicine of the Liver",
 )
 #resume-item[
-  - Independent group in the national program _LiSyM - Liver Systems Medicine_: multiscale models of liver function and PBPK/PD models of drug metabolism and liver surgery outcomes.
+  - Independent group in the national LiSyM program: PBPK/PD models of drug metabolism and liver surgery outcomes.
 ]
 
 #resume-entry(
@@ -104,7 +111,7 @@
   description: "Doctorate in Biophysics (magna cum laude), supervisor Prof. Hermann-Georg Holzhütter",
 ) // 9. Dec. 2015
 #resume-item[
-  - Kinetic models of hepatic glucose metabolism and its whole-body regulation, explaining glucose homeostasis and hypoglycemia risk in type 2 diabetes.
+  - Kinetic models of hepatic glucose metabolism explaining glucose homeostasis and hypoglycemia risk in type 2 diabetes.
 ]
 
 #resume-entry(
@@ -127,6 +134,14 @@
   - Thesis on systems biology modeling of hepatic metabolism.
 ]
 
+#resume-entry(
+  title: "Surgical Support Assistant",
+  location: [Bethesda Hospital Stuttgart],
+  date: "2001",
+  description: "Clinical experience in interdisciplinary surgical teams prior to academic studies",
+)
+#v(4pt)
+
 = Training & Certifications
 #resume-entry(
   title: "Science Communication for (Junior) Scholars",
@@ -135,8 +150,8 @@
   description: "Certificate in Science Communication (200 AE)",
 ) // https://www.tu.berlin/en/zewk/offers-by-topic/further-education-for-lecturers-and-researchers/science-communication
 #resume-item[
-  - Communication concepts, presenting, visual communication, graphical abstracts, explainer videos, and proposal writing with generative AI.
-  - Practical project: AI-assisted redesign of #link("https://livermetabolism.com")[livermetabolism.com] on a validated data foundation with daily updated figures from GitHub, Google Scholar, and OpenAlex.
+  - Concepts, presenting, visual communication, graphical abstracts, explainer videos, AI-assisted proposal writing.
+  - Project: AI-assisted redesign of #link("https://livermetabolism.com")[livermetabolism.com] with live figures from GitHub, Google Scholar, and OpenAlex.
 ]
 
 #resume-entry(
@@ -199,8 +214,8 @@ For a full list of publications and preprints see: #link("https://livermetabolis
 
 == Ten Selected Research Outcomes
 1. #link("https://livermetabolism.com/assets/pdf/preprint/Myshkina2026_apixaban_preprint.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/apixaban-model")[#fa-icon("git-alt")] *An Open and Reproducible Digital Twin for Personalised Anticoagulant Therapy: Modelling Apixaban Pharmacokinetics and Pharmacodynamics*. M. Myshkina, M. Babaeva, L. C. Nguyen, S. Bedón, J. Metternich, M. Elias, and M. König; Preprints 2026, 10.20944/preprints202605.0249.v1, #link("https://doi.org/10.20944/preprints202605.0249.v1")[10.20944/preprints202605.0249.v1], #underline[Last author]
-2. #link("https://livermetabolism.com/paper/theses/Master.Thesis.Jonas.Kuettner.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/zonation-image-analysis")[#fa-icon("git-alt")] *Quantitative Image Analysis of Hepatic Zonation in Cytochrome P450 and Steatosis Using Whole Slide Scans*. Master Thesis Jonas Küttner (supervisor: *Matthias König*); Master Thesis, August 2024, #underline[Last Author]
-3. #link("https://livermetabolism.com/paper/Myshkina2025_survey_preprint.pdf")[#fa-icon("file-pdf")]#link("https://doi.org/10.5281/zenodo.15013110")[#fa-icon("git-alt")] Preprint *Assessing the Impact of AI and Digital Twins on Clinical Decision-Making in Hepatology and Hepatobiliary Surgery*. Mariia Myshkina, Elisabetta Casabianca, Anton Schnurpel, Tim Ricken, Hans-Michael Tautenhahn, *Matthias König*; Preprints 2025, #link("https://doi.org/10.20944/preprints202509.1164.v1")[10.20944/preprints202509.1164.v1], #underline[Last Author]
+2. #link("https://livermetabolism.com/assets/pdf/thesis/Kuettner2024_master.thesis.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/zonation-image-analysis")[#fa-icon("git-alt")] *Quantitative Image Analysis of Hepatic Zonation in Cytochrome P450 and Steatosis Using Whole Slide Scans*. Master Thesis Jonas Küttner (supervisor: *Matthias König*); Master Thesis, August 2024, #underline[Last Author]
+3. #link("https://livermetabolism.com/assets/pdf/preprint/Myshkina2025_digital.twins_preprint.pdf")[#fa-icon("file-pdf")]#link("https://doi.org/10.5281/zenodo.15013110")[#fa-icon("git-alt")] Preprint *Assessing the Impact of AI and Digital Twins on Clinical Decision-Making in Hepatology and Hepatobiliary Surgery*. Mariia Myshkina, Elisabetta Casabianca, Anton Schnurpel, Tim Ricken, Hans-Michael Tautenhahn, *Matthias König*; Preprints 2025, #link("https://doi.org/10.20944/preprints202509.1164.v1")[10.20944/preprints202509.1164.v1], #underline[Last Author]
 4. #fa-icon("database") #link("https://github.com/matthiaskoenig/pkdb")[#fa-icon("git-alt")] Database *PK-DB - Pharmacokinetics database*. #link("https://doi.org/10.1093/nar/gkaa990")[doi:10.1093/nar/gkaa990] Developed the first FAIR-compliant open database for pharmacokinetics, integrating clinical and pre-clinical trial data. PK-DB enables reproducible PBPK/PD modeling, supports individualized simulations, and has become a key infrastructure for computational pharmacology research.
 5. #fa-icon("gear") #link("https://github.com/matthiaskoenig/sbmlutils")[#fa-icon("git-alt")] Software *sbmlutils - Python utilities for SBML*. #link("https://doi.org/10.5281/zenodo.597149")[doi:10.5281/zenodo.597149] Created a versatile Python library to streamline the use of SBML models, providing robust utilities for model handling, analysis, and integration with libSBML. Widely used in reproducible modeling workflows across systems biology.
 6. #fa-icon("gear") #link("https://github.com/matthiaskoenig/sbmlutils")[#fa-icon("git-alt")] Software *SBML4Humans - SBML simulation made easy*.  Designed an interactive reporting framework that makes SBML models human-readable and accessible, enabling experts and newcomers to explore model content without technical barriers.
@@ -464,8 +479,8 @@ Over the last 5 years, 1 PhD theses, 4 Master thesis, 11 Bachelor's theses, 18 H
 #resume-entry(
   title: "AI Teaching Certificate (KI-Lehrzertifikat)",
   location: [HU Berlin, KI-Campus 2.0 & AI Skills Initiative],
-  date: "2025",
-  description: "Higher education didactics qualification on Artificial Intelligence (200 AE)",
+  date: "2026",
+  description: "Higher education didactics qualification on Artificial Intelligence (150 AE)",
 )
 #resume-item[
   - AI Foundations (96%), AI Advanced & Ethics (93%), and AI Didactics in Higher Education (91%), aligned with DGHD standards, including a teaching observation.
@@ -569,23 +584,3 @@ Over the last 5 years, 1 PhD theses, 4 Master thesis, 11 Bachelor's theses, 18 H
 19. #link("https://livermetabolism.com/assets/pdf/preprint/Shaikh2021_sed.ml.validator_preprint.pdf")[#fa-icon("file-pdf")]#link("https://github.com/biosimulators/Biosimulators_utils")[#fa-icon("git-alt")] *SED-ML Validator: tool for debugging simulation experiments*. B. Shaikh, A. P. Freiburger, M. König, F. T. Bergmann, D. P. Nickerson, H. M. Sauro, M. L. Blinov, L. P. Smith, I. I. Moraru, and J. R. Karr; arXiV, 2021, #link("https://doi.org/10.48550/arXiv.2106.00844")[10.48550/arXiv.2106.00844]
 20. #link("https://livermetabolism.com/assets/pdf/preprint/Koenig2020_exsimo_preprint.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/exsimo")[#fa-icon("git-alt")] *Executable Simulation Model of the Liver*. M. König; bioRxiv 2020.01.04.894873, #link("https://doi.org/10.1101/2020.01.04.894873")[10.1101/2020.01.04.894873], #underline[First author]
 21. #link("https://livermetabolism.com/assets/pdf/preprint/Koenig2016_cy3sabiork_preprint.pdf")[#fa-icon("file-pdf")]#link("http://www.github.com/matthiaskoenig/cy3sabiork")[#fa-icon("git-alt")] *cy3sabiork: A Cytoscape app for visualizing kinetic data from SABIO-RK*. M. König; [version 1; referees: awaiting peer review]. F1000Research 2016, 5:1736, #link("https://doi.org/10.12688/f1000research.9211.1")[10.12688/f1000research.9211.1], #underline[First author]
-
-== Theses
-1. #link("https://livermetabolism.com/assets/pdf/thesis/Alvarez2026_master.thesis.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/parameter-variability")[#fa-icon("git-alt")] *Parameter Uncertainty in the Optimization of Pharmacokinetic Models: A Reproducible Bayesian Approach*. Antonio Alvarez (supervisor: M. König); Master Thesis, April 2026, #underline[Supervisor]
-2. #link("https://livermetabolism.com/assets/pdf/thesis/Casabianca2025_master.thesis.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/rivaroxaban-model")[#fa-icon("git-alt")] *A Systems Pharmacology Approach to Rivaroxaban: Physiologically Based Modeling of Pharmacokinetics and Coagulation Dynamics*. Elisabetta Casabianca (supervisor: M. König); Master Thesis, July 2025, #underline[Supervisor]
-3. #link("https://livermetabolism.com/assets/pdf/thesis/Tensil2025_bachelor.thesis.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/losartan-model")[#fa-icon("git-alt")] *A physiological-based pharmacokinetic/ pharmacodynamic (PBPK/PD) model of the angiotensin II receptor blocker (ARB) losartan*. Ennie Tensil (supervisor: M. König); Bachelor Thesis, July 2025, #underline[Supervisor]
-4. #link("https://livermetabolism.com/assets/pdf/thesis/Nemitz2025_bachelor.thesis.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/dapagliflozin-model")[#fa-icon("git-alt")] *Physiologically-Based Pharmacokinetic/Pharmacodynamic Modeling of Dapagliflozin: Exploring the Impact of Dosing, Hepatorenal Impairment and Food Intake*. Nike Nemitz (supervisor: M. König); Bachelor Thesis, June 2025, #underline[Supervisor]
-5. #link("https://livermetabolism.com/assets/pdf/thesis/Elias2025_bachelor.thesis.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/glimepiride-model")[#fa-icon("git-alt")] *A physiological-based pharmacokinetic (PBPK) model of the sulfonylurea glimepiride*. Michelle Elias (supervisor: M. König); Bachelor Thesis, April 2025, #underline[Supervisor]
-6. #link("https://livermetabolism.com/assets/pdf/thesis/Mishra2025_internship_report.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/tirzepatide-model")[#fa-icon("git-alt")] *A Physiologically-Based Pharmacokinetic Model of Tirzepatide*. Internship Report Abhinav Mishra (supervisor: M. König); Internship Report, Mar 2025, #underline[Supervisor]
-7. #link("https://livermetabolism.com/assets/pdf/thesis/Kulanoglu2025_bachelor.thesis.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/aliskiren-model")[#fa-icon("git-alt")] *Physiologically based pharmacokinetic/pharmacodynamic modeling of the direct renin inhibitor aliskiren: Exploring the impact of hepatorenal impairment and drug-drug interactions*. Bachelor Thesis Yusuf Ali Kulanoglu (supervisor: M. König); Bachelor Thesis, January 2025, #underline[Supervisor]
-8. #link("https://livermetabolism.com/assets/pdf/thesis/Kuettner2024_master.thesis.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/zonation-image-analysis")[#fa-icon("git-alt")] *Quantitative Image Analysis of Hepatic Zonation in Cytochrome P450 and Steatosis Using Whole Slide Scans*. Master Thesis Jonas Küttner (supervisor: M. König); Master Thesis, August 2024, #underline[Supervisor]
-9. #link("https://livermetabolism.com/assets/pdf/thesis/Palwankar2024_master.thesis.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/enalapril-model")[#fa-icon("git-alt")] *Enhancing Our Understanding of Enalapril’s Pharmacokinetics: A Physiologically Based Modeling Approach*. Master Thesis Shubhankar Palwankar (supervisor: M. König); Master Thesis, May 2024, #underline[Supervisor]
-10. #link("https://livermetabolism.com/assets/pdf/thesis/Hossain2024_bachelor.thesis.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/protein-distribution")[#fa-icon("git-alt")] *A systematic overview of protein variability in cytochrome P450 and UDP-glucuronosyltransferase enzymes in the human liver*. Bachelor Thesis Afruja Hossain (supervisor: M. König); Bachelor Thesis, Jan 2024, #underline[Supervisor]
-11. #link("https://livermetabolism.com/assets/pdf/thesis/Okibedi2024_internship_report.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/sorafenib-model")[#fa-icon("git-alt")] *A physiologically-based pharmacokinetic (PBPK) model of sorafenib for investigating the effect of sorafenib parameters in hepatorenal impairment*. Internship Report Frances Okibedi (supervisor: M. König); Internship report, July 2024, #underline[Supervisor]
-12. #link("https://livermetabolism.com/assets/pdf/thesis/Mallol2023_bachelor.thesis.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/talinolol-model")[#fa-icon("git-alt")] *A physiologically based pharmacokinetic (PBPK) model of the probe drug talinolol for the characterization of intestinal P-glycoprotein*. Bachelor Thesis Beatrice Stemmer Mallol (supervisor: M. König); Bachelor Thesis, July 2023, #underline[Supervisor]
-13. #link("https://livermetabolism.com/assets/pdf/thesis/Grzegorzewski2023_phd.thesis.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/dextromethorphan-model")[#fa-icon("git-alt")] *Physiologically based pharmacokinetic (PBPK) modeling for dynamical liver function tests and CYP phenotyping*. Jan Grzegorzewski (supervisor: M. König); PhD Thesis, Jan 2023, #underline[Supervisor]
-14. #link("https://livermetabolism.com/assets/pdf/thesis/Pujol2022_bachelor.thesis.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/pravastatin-model")[#fa-icon("git-alt")] *A physiologically based model of pravastatin - The role of genotypes and hepatic or renal impairment on the pharmacokinetics of pravastatin*. Helena Leal Pujol (supervisor: M. König); Bachelor Thesis, May 2022, #underline[Supervisor]
-15. #link("https://livermetabolism.com/assets/pdf/thesis/Balci2021_bachelor.thesis.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/omeprazole-model")[#fa-icon("git-alt")] *Computational modelling of omeprazole - pharmacokinetics and pharmacodynamics*. Sükrü Balci (supervisor: M. König); Bachelor Thesis, October 2021, #underline[Supervisor]
-16. #link("https://livermetabolism.com/assets/pdf/thesis/Koeller2021_bachelor.thesis.pdf")[#fa-icon("file-pdf")] *A Physiologically Based Model of Indocyanine Green Liver Function Tests - Eﬀects of Physiological Factors, Hepatic Disease and Hepatic Surgery*. Adrian Köller (supervisor: M. König); Bachelor Thesis, March 2021, #underline[Supervisor]
-17. #link("https://livermetabolism.com/assets/pdf/thesis/Bartsch2020_bachelor.thesis.pdf")[#fa-icon("file-pdf")] *Computational Modelling of Simvastatin - Eﬀects on HMG-CoA Reductase Activity and Cholesterol*. Florian Bartsch (supervisor: M. König); Bachelor Thesis, November 2020, #underline[Supervisor]
-18. #link("https://livermetabolism.com/assets/pdf/thesis/Duport2020_bachelor.thesis.pdf")[#fa-icon("file-pdf")] *Computational Modelling of Midazolam Clearance: Effect of Inhibitors and Inducers*. Yannick Duport (supervisor: M. König); Bachelor Thesis, August 2020, #underline[Supervisor]
