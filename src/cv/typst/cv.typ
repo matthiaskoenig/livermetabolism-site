@@ -48,26 +48,23 @@
 )
 
 
-= Carrer Stages & Education
+= Career Stages & Education
 #resume-entry(
-  title: "Professor of Metabolic Inflammation and Carcinogegensis of the Liver",
-  location: [Lübeck University, Germany],
+  title: "Professor of Metabolic Inflammation and Carcinogenesis of the Liver",
+  location: [University of Lübeck, Germany],
   date: "06/2026 -",
-  description: "Systems Medicine and Digital Twins",
+  description: "Head of Systems Medicine and Digital Twins",
 )
 #resume-item[
-  - Lead the *Systems Medicine and Digital Twins* at the University of Lübeck. Development of digital twins, digital pathology methods.
+  - Digital twins and digital pathology methods for liver disease.
 ]
 
 #resume-entry(
   title: "Associate Professor of Pharmacoepidemiology and Data Science",
   location: [SDU, Odense, Denmark],
   date: "05/2026",
-  description: "Pharmacoepidemiology and Data Science",
+  description: "Pharmacoepidemiology and Data Science Group",
 )
-#resume-item[
-  - Lead the *Pharmacoepidemiology and Data Science Group* at the University of Southern Denmark (SDU), advancing research in real-world data analytics, causal inference, and translational data science.
-]
 
 #resume-entry(
   title: "Head of Computational Biomechanics Group",
@@ -76,92 +73,71 @@
   description: "Coordination Project, DFG Priority Programme SPP 2311",
 )
 #resume-item[
-  - Lead the *Computational Biomechanics Group* at the University of Stuttgart.
-  - Coordinate interdisciplinary biomechanics and numerical modeling for robust, translational in silico models.
-  - Integrate modeling, simulation, and software usability toward clinical applications.
-  - Promote community building, standardization, and reproducibility within the SPP.
+  - Coordinated interdisciplinary biomechanics and numerical modeling toward robust, reproducible in silico models for clinical application.
 ]
 
 #resume-entry(
   title: "Head of Systems Medicine of the Liver Group",
   location: [Humboldt-Universität zu Berlin],
   date: "06/2021 – Present",
-  description: "DFG Position for Principal Investigators | Systems Medicine of the Liver",
+  description: "DFG Position for Principal Investigators, Institute for Theoretical Biology",
 )
 #resume-item[
-  - Established and lead the *Systems Medicine of the Liver Group* at the Institute for Theoretical Biology.  
-  - Secured competitive third-party funding (DFG, EU, BMBF) to advance digital physiology and personalized pharmacotherapy.  
-  - Developed innovative digital twin models integrating physiology, pharmacokinetics, and AI-based decision support.  
-  - Supervised and mentored PhD, Master, and Bachelor students, fostering interdisciplinary and open-science skills.  
-  - Built international collaborations (Virtual Human Twin, EDITH, Lorentz Center) to strengthen systems medicine research.  
+  - Competitive third-party funding (DFG, EU, BMBF) for digital twins and personalized pharmacotherapy.
+  - Digital twins integrating physiology, pharmacokinetics, and AI-based decision support; international collaborations (Virtual Human Twin, EDITH, Lorentz Center).
 ]
 
 #resume-entry(
   title: "Junior Group Leader",
   location: [Humboldt-Universität zu Berlin],
   date: "2016 – 2021",
-  description: "BMBF LiSyM Junior Group Leader | Systems Medicine of the Liver",
+  description: "BMBF LiSyM Junior Group Leader, Systems Medicine of the Liver",
 )
 #resume-item[
-  - Founded an independent junior research group focused on multiscale computational modeling of liver physiology and disease.  
-  - Developed predictive PBPK/PD models for drug metabolism, liver surgery outcomes, and metabolic disorders.  
-  - Contributed to national flagship program *LiSyM – Liver Systems Medicine* with interdisciplinary and translational projects.  
-  - Initiated and coordinated collaborative projects linking clinical hepatology, surgery, and computational biology.  
+  - Independent group in the national program _LiSyM - Liver Systems Medicine_: multiscale models of liver function and PBPK/PD models of drug metabolism and liver surgery outcomes.
 ]
 
 #resume-entry(
   title: "PhD in Biophysics",
   location: [Charité – University Medicine Berlin, Humboldt-Universität zu Berlin],
   date: "2010 - 2015",
-  description: "Doctorate in Biophysics (magna cum laude) | Computational Modeling of Glucose Metabolism",
+  description: "Doctorate in Biophysics (magna cum laude), supervisor Prof. Hermann-Georg Holzhütter",
 ) // 9. Dec. 2015
 #resume-item[
-  - Researched and developed detailed kinetic models of hepatic glucose metabolism and whole-body regulation.  
-  - Demonstrated mechanisms underlying glucose homeostasis and hypoglycemia risk in type 2 diabetes.  
-  - Supervisor: Prof. Hermann-Georg Holzhütter (Charité Berlin).  
+  - Kinetic models of hepatic glucose metabolism and its whole-body regulation, explaining glucose homeostasis and hypoglycemia risk in type 2 diabetes.
 ]
 
 #resume-entry(
   title: "Scientific Staff Member",
   location: [Charité – University Medicine Berlin],
   date: "2008 – 2015",
-  description: "Researcher in HepatoSys and Virtual Liver initiatives",
+  description: "BMBF consortia HepatoSys and Virtual Liver",
 )
 #resume-item[
-  - Contributed to two major BMBF-funded consortia (*HepatoSys*, *Virtual Liver*) advancing systems medicine of the liver.  
-  - Built multi-scale models of hepatic metabolism, perfusion, and drug elimination, bridging basic research and clinical application.  
-  - Collaborated closely with experimental and clinical partners to validate models with in vitro, in vivo, and patient data.  
+  - Multiscale models of hepatic metabolism, perfusion, and drug elimination, validated with experimental and clinical partners.
 ]
 
 #resume-entry(
   title: "Diploma in Biophysics",
   location: [Humboldt-Universität zu Berlin],
   date: "2002 – 2009",
-  description: "Diploma (equivalent to MSc, 1.0 with distinction)",
+  description: "Diploma (equivalent to MSc), 1.0 with distinction",
 ) //  14. December 2009
 #resume-item[
-  - Acquired a strong foundation in biophysics, physiology, and computational modeling.  
-  - Diploma thesis on systems biology modeling of hepatic metabolism, laying the groundwork for doctoral research.  
+  - Thesis on systems biology modeling of hepatic metabolism.
 ]
-
-#resume-entry(
-  title: "Surgical Support Assistant (Rotational Role)",
-  location: [Bethesda Hospital Stuttgart],
-  date: "2001",
-  description: "Clinical experience prior to academic studies",
-)
-#resume-item[
-  - Assisted surgical teams with preparation, organization, and post-operative support across multiple departments.  
-  - Coordinated with nurses, anesthesiologists, and surgeons to maintain high standards of patient safety and workflow efficiency.  
-  - Gained early exposure to interdisciplinary teamwork in high-pressure clinical environments.  
-]
-
-
-
-//- studentische Hilfskraft: 
- 
 
 = Training & Certifications
+#resume-entry(
+  title: "Science Communication for (Junior) Scholars",
+  location: [ZEWK, TU Berlin],
+  date: "2025 - 2026",
+  description: "Certificate in Science Communication (200 AE)",
+) // https://www.tu.berlin/en/zewk/offers-by-topic/further-education-for-lecturers-and-researchers/science-communication
+#resume-item[
+  - Communication concepts, presenting, visual communication, graphical abstracts, explainer videos, and proposal writing with generative AI.
+  - Practical project: AI-assisted redesign of #link("https://livermetabolism.com")[livermetabolism.com] on a validated data foundation with daily updated figures from GitHub, Google Scholar, and OpenAlex.
+]
 
 #resume-entry(
   title: "Leadership Certificate Program",
@@ -170,78 +146,17 @@
   description: "Certificate in Academic Leadership (100 AE)",
 )
 #resume-item[
-  - Completed a two-stage leadership program designed for junior professors and early-career group leaders.  
-  - Trained in collaborative and respectful teamwork, effective communication, and conflict resolution.  
-  - Strengthened ability to lead within collegial academic structures, balancing autonomy and institutional expectations.  
-  - Enhanced professional skills to take on leadership roles with clarity and confidence.  
-]
-
-#resume-entry(
-  title: "Digital Health Professions Educator (DHPE)",
-  location: [Charité – Universitätsmedizin Berlin],
-  date: "2024 – 2025",
-  description: "Certificate in Digital Teaching for Health Professions (200 AE)",
-) // https://dsfz.charite.de/hochschuldidaktik/digital_health_professions_educator_1
-#resume-item[
-  - Completed faculty development program focused on digital teaching and innovation in healthcare education.  
-  - Designed and implemented future-oriented teaching scenarios, integrating blended and digital learning.  
-  - Enhanced institutional teaching capacity through innovative, research-based learning formats.  
-  - Applied competencies to improve curriculum development and digitally supported learning in health sciences.  
-]
-#resume-entry(
-  title: "AI Teaching Certificate (KI-Lehrzertifikat)",
-  location: [HU Berlin, KI-Campus 2.0 & AI Skills Initiative],
-  date: "2025",
-  description: "Higher education didactics qualification on Artificial Intelligence (200 AE)",
-)
-#resume-item[
-- Completed: AI Foundations (96%), AI Advanced & Ethics (93%), and AI Didactics in Higher Education (91%).
-- Covered core AI topics: machine learning, neural networks, Python/Jupyter, text and image processing, and responsible AI use.
-- Training aligned with DGHD standards, including ethics, data and algorithmic governance, and regulatory aspects of AI.
-- Focus on AI-supported teaching: generative AI, speech assistants, prompt design, development of AI-based OER teaching units.
-- Included a teaching observation and reflective assessments demonstrating competence in designing and implementing AI-enhanced learning scenarios.
-]
-
-
-#resume-entry(
-  title: "Science Communication for (Junior) Scholars",
-  location: [ZEWK, TU Berlin],
-  date: "2025 - 2026",
-  description: "Certificate in Science Communication (200 AE)",
-) // https://www.tu.berlin/en/zewk/offers-by-topic/further-education-for-lecturers-and-researchers/science-communication
-#resume-item[
-  - Completed the certificate program in making complex research understandable for audiences outside the field, including the public, media, and funding bodies.  
-  - Courses on communication concepts and strategies, speaking and presenting, visual communication, slide and poster design, graphical abstracts, explainer videos, and writing research proposals with generative AI.  
-  - Practical project: _Agentic Workflows for Science Communication: AI-Assisted Updating of a Research Group Website_, the redesign of #link("https://livermetabolism.com")[livermetabolism.com] based on a communication concept with target audiences, core messages, and five research areas.  
-  - Rebuilt the website on a validated, interlinked data foundation with automated tests and daily updated figures from GitHub, Google Scholar, and OpenAlex.  
+  - Two-stage program for junior professors and group leaders: team leadership, communication, and conflict resolution.
 ]
 
 #resume-entry(
   title: "EP PerMed Training on Scientific Integrity",
   location: [European Partnership for Personalised Medicine],
   date: "2025",
-  description: "Training on Research Integrity and ELSA (20 AE)",
+  description: "Research integrity and ethical, legal, and social aspects of personalised medicine (20 AE)",
 )
-#resume-item[
-  - Participated in international training on ethical, legal, and social aspects (ELSA) of personalised medicine.  
-  - Studied European Code of Conduct guidelines and key principles of research integrity.  
-  - Learned procedures for good research practice, ethics compliance, and responsible dissemination of results.  
-  - Strengthened understanding of integrity issues in biomedical and translational research.  
-]
 
-#resume-entry(
-  title: "IAR Identify, Assist, Refer",
-  location: [Health & Wellness, University of Toronto],
-  date: "2025",
-  description: "Certificate in Mental Health Assistance and Support (10 AE)",
-)
-#resume-item[
-  - Completed training on identifying mental health challenges and offering appropriate assistance.  
-  - Gained skills in facilitating help-seeking behavior and providing mental health support in challenging situations.  
-  - Learned strategies for effective communication and crisis intervention.  
-  - Acquired practical knowledge to support individuals experiencing mental health difficulties.  
-]
-
+#pagebreak(weak: true)
 = Skills
 
 #resume-skill-item(
@@ -264,22 +179,6 @@
   "Tools & Software",
   (strong("git"), strong("PyCharm"), strong("VS Code"), strong("Excel"), "LaTeX", "Typst", "Word", "PowerPoint", "Canva", "BioRender", "Adobe Illustrator", "Inkscape"),
 )
-1. #link("https://livermetabolism.com/paper/theses/Master.Thesis.Antonio.Alvarez.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/parameter-variability")[#fa-icon("git-alt")] *Parameter Uncertainty in the Optimization of Pharmacokinetic Models: A Reproducible Bayesian Approach*. Antonio Alavarez (supervisor: *Matthias König*); Master Thesis, April 2026, #underline[Last Author]
-2. #link("https://livermetabolism.com/paper/theses/Master.Thesis.Elisabetta.Casabianca.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/rivaroxaban-model")[#fa-icon("git-alt")] *A Systems Pharmacology Approach to Rivaroxaban: Physiologically Based Modeling of Pharmacokinetics and Coagulation Dynamics*. Elisabetta Casabianca (supervisor: *Matthias König*); Master Thesis, July 2025, #underline[Last Author]
-3. #link("https://livermetabolism.com/paper/theses/Bachelor.Thesis.Ennie.Tensil.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/losartan-model")[#fa-icon("git-alt")] *A physiological-based pharmacokinetic/ pharmacodynamic (PBPK/PD) model of the angiotensin II receptor blocker (ARB) losartan*. Ennie Tensil (supervisor: *Matthias König*); Bachelor Thesis, July 2025, #underline[Last Author]
-4. #link("https://livermetabolism.com/paper/theses/Bachelor.Thesis.Nike.Nemitz.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/dapagliflozin-model")[#fa-icon("git-alt")] *Physiologically-Based Pharmacokinetic/Pharmacodynamic Modeling of Dapagliflozin: Exploring the Impact of Dosing, Hepatorenal Impairment and Food Intake*. Nike Nemitz (supervisor: *Matthias König*); Bachelor Thesis, June 2025, #underline[Last Author]
-5. #link("https://livermetabolism.com/paper/theses/Bachelor.Thesis.Michelle.Elias.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/glimepiride-model")[#fa-icon("git-alt")] *A physiological-based pharmacokinetic (PBPK) model of the sulfonylurea glimepiride*. Michelle Elias (supervisor: *Matthias König*); Bachelor Thesis, April 2025, #underline[Last Author]
-6. #link("https://livermetabolism.com/paper/theses/Bachelor.Thesis.Yusuf.Ali.Kulanoglu.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/aliskiren-model")[#fa-icon("git-alt")] *Physiologically based pharmacokinetic/pharmacodynamic modeling of the direct renin inhibitor aliskiren: Exploring the impact of hepatorenal impairment and drug-drug interactions*. Bachelor Thesis Yusuf Ali Kulanoglu (supervisor: *Matthias König*); Bachelor Thesis, January 2025, #underline[Last Author]
-7. #link("https://livermetabolism.com/paper/theses/Master.Thesis.Jonas.Kuettner.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/zonation-image-analysis")[#fa-icon("git-alt")] *Quantitative Image Analysis of Hepatic Zonation in Cytochrome P450 and Steatosis Using Whole Slide Scans*. Master Thesis Jonas Küttner (supervisor: *Matthias König*); Master Thesis, August 2024, #underline[Last Author]
-8. #link("https://livermetabolism.com/paper/theses/Master.Thesis.Shubhankar.Palwankar.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/enalapril-model")[#fa-icon("git-alt")] *Enhancing Our Understanding of Enalapril’s Pharmacokinetics: A Physiologically Based Modeling Approach*. Master Thesis Shubhankar Palwankar (supervisor: *Matthias König*); Master Thesis, May 2024, #underline[Last Author]
-9. #link("https://livermetabolism.com/paper/theses/Bachelor.Thesis.Afruja.Hossain.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/protein-distribution")[#fa-icon("git-alt")] *A systematic overview of protein variability in cytochrome P450 and UDP-glucuronosyltransferase enzymes in the human liver*. Bachelor Thesis Afruja Hossain (supervisor: *Matthias König*); Bachelor Thesis, Jan 2024, #underline[Last Author]
-10. #link("https://livermetabolism.com/paper/theses/Bachelor.Thesis.Beatrice.Stemmer.Mallol.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/talinolol-model")[#fa-icon("git-alt")] *A physiologically based pharmacokinetic (PBPK) model of the probe drug talinolol for the characterization of intestinal P-glycoprotein*. Bachelor Thesis Beatrice Stemmer Mallol (supervisor: *Matthias König*); Bachelor Thesis, July 2023, #underline[Last Author]
-11. #link("https://livermetabolism.com/paper/theses/PhD.Thesis.Jan.Grzegorzewski.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/dextromethorphan-model")[#fa-icon("git-alt")] *Physiologically based pharmacokinetic (PBPK) modeling for dynamical liver function tests and CYP phenotyping*. Jan Grzegorzewski (supervisor: *Matthias König*); PhD Thesis, Jan 2023, #underline[Last Author]
-12. #link("https://livermetabolism.com/paper/theses/Bachelor.Thesis.Helena.Leal.Pujol.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/pravastatin-model")[#fa-icon("git-alt")] *A physiologically based model of pravastatin - The role of genotypes and hepatic or renal impairment on the pharmacokinetics of pravastatin*. Helena Leal Pujol (supervisor: *Matthias König*); Bachelor Thesis, May 2022, #underline[Last Author]
-13. #link("https://livermetabolism.com/paper/theses/Bachelor.Thesis.Suekrue.Balci.pdf")[#fa-icon("file-pdf")]#link("https://github.com/matthiaskoenig/omeprazole-model")[#fa-icon("git-alt")] *Computational modelling of omeprazole - pharmacokinetics and pharmacodynamics*. Sükrü Balci (supervisor: *Matthias König*); Bachelor Thesis, October 2021, #underline[Last Author]
-14. #link("https://livermetabolism.com/paper/theses/Bachelor.Thesis.Adrian.Koeller.pdf")[#fa-icon("file-pdf")] *A Physiologically Based Model of Indocyanine Green Liver Function Tests - Eﬀects of Physiological Factors, Hepatic Disease and Hepatic Surgery*. Adrian Köller (supervisor: *Matthias König*); Bachelor Thesis, March 2021, #underline[Last Author]
-15. #link("https://livermetabolism.com/paper/theses/Bachelor.Thesis.Florian.Bartsch.pdf")[#fa-icon("file-pdf")] *Computational Modelling of Simvastatin - Eﬀects on HMG-CoA Reductase Activity and Cholesterol*. Florian Bartsch (supervisor: *Matthias König*); Bachelor Thesis, November 2020, #underline[Last Author]
-16. #link("https://livermetabolism.com/paper/theses/Bachelor.Thesis.Yannick.Duport.pdf")[#fa-icon("file-pdf")] *Computational Modelling of Midazolam Clearance: Effect of Inhibitors and Inducers*. Yannick Duport (supervisor: *Matthias König*); Bachelor Thesis, August 2020, #underline[Last Author]
 
 = Scientific Results
 == Ten Selected Publications (total: 68, HF: 26, i10: 37, citations: 3897, #link("https://scholar.google.de/citations?user=xD9IjnYAAAAJ&hl=de")[#google-scholar-icon Google Scholar] 10/26)
@@ -559,23 +458,17 @@ Over the last 5 years, 1 PhD theses, 4 Master thesis, 11 Bachelor's theses, 18 H
   description: "Certificate in Digital Teaching for Health Professions (200 AE)",
 ) // https://dsfz.charite.de/hochschuldidaktik/digital_health_professions_educator_1
 #resume-item[
-  - Completed faculty development program focused on digital teaching and innovation in healthcare education.  
-  - Designed and implemented future-oriented teaching scenarios, integrating blended and digital learning.  
-  - Enhanced institutional teaching capacity through innovative, research-based learning formats.  
-  - Applied competencies to improve curriculum development and digitally supported learning in health sciences.  
+  - Faculty development in digital and blended teaching and research-based learning formats for health professions.
 ]
-
 
 #resume-entry(
   title: "AI Teaching Certificate (KI-Lehrzertifikat)",
   location: [HU Berlin, KI-Campus 2.0 & AI Skills Initiative],
-  date: "2025 – 2026",
-  description: "Higher education didactics qualification on Artificial Intelligence (100/150 AE)",
+  date: "2025",
+  description: "Higher education didactics qualification on Artificial Intelligence (200 AE)",
 )
 #resume-item[
-  - Qualification focused on integrating AI concepts and learning formats into university curricula.  
-  - Training aligned with German Society for Higher Education Didactics (DGHD) standards.
-  - Emphasis on foundational AI literacy, didactic design, and sustainable curricular implementation.  
+  - AI Foundations (96%), AI Advanced & Ethics (93%), and AI Didactics in Higher Education (91%), aligned with DGHD standards, including a teaching observation.
 ]
 
 = List of Publications
