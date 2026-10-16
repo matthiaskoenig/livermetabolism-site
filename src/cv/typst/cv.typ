@@ -161,11 +161,31 @@
 ]
 
 #resume-entry(
+  title: [#link("https://livermetabolism.com/assets/pdf/certificate/Koenig2025_ai.teaching.pdf")[#fa-icon("file-pdf")] AI Teaching Certificate (KI-Lehrzertifikat)],
+  location: [HU Berlin, KI-Campus 2.0 & AI Skills Initiative],
+  date: "2026",
+  description: "Higher education didactics qualification on Artificial Intelligence (200 AE)",
+)
+#resume-item[
+  - AI Foundations (96%), AI Advanced & Ethics (93%), and AI Didactics in Higher Education (91%), aligned with DGHD standards, including a teaching observation.
+]
+
+#resume-entry(
   title: [#link("https://livermetabolism.com/assets/pdf/certificate/Koenig2025_leadership.pdf")[#fa-icon("file-pdf")] Leadership Certificate Program],
   location: [ZEWK, TU Berlin],
   date: "2025",
   description: "Certificate in Academic Leadership (100 AE), two-stage program for professors and group leaders",
 )
+
+#resume-entry(
+  title: [#link("https://livermetabolism.com/assets/pdf/certificate/Koenig2025_dhpe.pdf")[#fa-icon("file-pdf")] Digital Health Professions Educator (DHPE)],
+  location: [Charité – Universitätsmedizin Berlin],
+  date: "2024 – 2025",
+  description: "Certificate in Digital Teaching for Health Professions (200 AE)",
+) // https://dsfz.charite.de/hochschuldidaktik/digital_health_professions_educator_1
+#resume-item[
+  - Faculty development in digital and blended teaching and research-based learning formats for health professions.
+]
 
 #resume-entry(
   title: [#link("https://livermetabolism.com/assets/pdf/certificate/Koenig2025_scientific.integrity.pdf")[#fa-icon("file-pdf")] EP PerMed Training on Scientific Integrity],
@@ -180,8 +200,8 @@
   date: "2025",
   description: "Certificate in Mental Health Assistance and Support (10 AE)",
 )
+#v(4pt)
 
-#pagebreak(weak: true)
 = Skills
 
 #set text(hyphenate: false)
@@ -490,27 +510,6 @@ Over the last 5 years, 1 PhD theses, 4 Master thesis, 11 Bachelor's theses, 18 H
   ],
 
 )
-== Teaching Qualifications
-#resume-entry(
-  title: [#link("https://livermetabolism.com/assets/pdf/certificate/Koenig2025_dhpe.pdf")[#fa-icon("file-pdf")] Digital Health Professions Educator (DHPE)],
-  location: [Charité – Universitätsmedizin Berlin],
-  date: "2024 – 2025",
-  description: "Certificate in Digital Teaching for Health Professions (200 AE)",
-) // https://dsfz.charite.de/hochschuldidaktik/digital_health_professions_educator_1
-#resume-item[
-  - Faculty development in digital and blended teaching and research-based learning formats for health professions.
-]
-
-#resume-entry(
-  title: [#link("https://livermetabolism.com/assets/pdf/certificate/Koenig2025_ai.teaching.pdf")[#fa-icon("file-pdf")] AI Teaching Certificate (KI-Lehrzertifikat)],
-  location: [HU Berlin, KI-Campus 2.0 & AI Skills Initiative],
-  date: "2026",
-  description: "Higher education didactics qualification on Artificial Intelligence (200 AE)",
-)
-#resume-item[
-  - AI Foundations (96%), AI Advanced & Ethics (93%), and AI Didactics in Higher Education (91%), aligned with DGHD standards, including a teaching observation.
-]
-
 = List of Publications
 
 == Publications
