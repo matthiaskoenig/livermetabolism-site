@@ -53,12 +53,12 @@
     - 'Open & FAIR'
   year: 2026
   date: 2026-09-05
-  pdf:
+  pdf: 'publication/Balaur2026_fairification.pdf'
   authors: 'I. Balaur, D. P. Nickerson, D. Welter, J. A. Wodke, F. Ancien, T. Gebhardt, V. Grouès, H. Hermjakob, M. König, N. Radde, A. Rougny, R. Schneider, R. S. Malik-Sheriff, K. B. Shiferaw, M. Stefan, V. Satagopam, and D. Waltemath'
   people:
     - matthias_koenig
   title: 'A system for FAIR assessment of computational biology models and simulations based on RDA indicators'
-  journal: 'npj Systems Biology and Applications (2026), accepted'
+  journal: 'npj Systems Biology and Applications (2026)'
   journal_short: 'npj Syst Biol Appl'
   status: publication
   impact: 4.4
@@ -424,7 +424,7 @@
     - michelle_elias
     - matthias_koenig
   title: 'A Physiologically Based Pharmacokinetic and Pharmacodynamic (PBPK/PD) Model of Dapagliflozin in Type 2 Diabetes Mellitus: The Effect of Dosing, Hepatorenal Impairment, and Food'
-  journal: 'Pharmaceutics 2026, 18(3), 287; https://doi.org/10.3390/pharmaceutics18030287'
+  journal: 'Pharmaceutics 2026, 18(3), 287'
   journal_short: Pharmaceutics
   status: publication
   impact: 6.9
