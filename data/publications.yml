@@ -103,7 +103,7 @@
   tags:
     - 'Open & FAIR'
   year: 2026
-  date: 2026-03-10
+  date: 2026-08-13
   pdf: 'publication/Olivier2026_fbc.v3.pdf'
   authors: 'B. G. Olivier, F. T. Bergmann, S. Keating, and M. König'
   people:
@@ -132,7 +132,7 @@
   people:
     - matthias_koenig
   title: 'The Parameter Estimation tables (PEtab) format version 2'
-  journal: 'J Integr Bioinform. '
+  journal: 'J Integr Bioinform. 2026; 20260004'
   status: publication
   impact: 1.5
   position: index
@@ -272,7 +272,7 @@
     - monika_jesionek
     - matthias_koenig
   title: 'A PBPK Digital Twin of Rapamycin for Predicting Dose–Exposure Relationships, Organ Impairment Effects, and Drug–Drug Interactions'
-  journal: 'Preprints 2026, 10.20944/preprints202605.0249.v1'
+  journal: 'Preprints 2026, 10.20944/preprints202605.0328.v1'
   journal_short: Preprints
   status: preprint
   impact: 0
