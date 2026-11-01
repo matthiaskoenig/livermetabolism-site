@@ -13,11 +13,13 @@ sudo apt install fonts-roboto fonts-roboto-fontface
 
 Build the PDF CV from src/cv/typst/ (cv_conf.typ, lang.toml, Koenig.png and
 the Source Sans and Font Awesome fonts are in that folder; Roboto comes from
-the system fonts above):
-cd src/cv/typst && typst compile --font-path fonts cv.typ
+the system fonts above). The default build is the unsigned one the website
+serves:
+cd src/cv/typst && typst compile --font-path fonts cv.typ ../../../public/assets/cv/Koenig_CV.pdf
 
-The handwritten signature images/koenig_signature.png is gitignored and must be
-copied into src/cv/typst/images/ locally; the build fails without it.
+A signed copy adds the handwritten signature images/koenig_signature.png,
+which is gitignored and must be copied into src/cv/typst/images/ locally:
+cd src/cv/typst && typst compile --font-path fonts --input signature=true cv.typ
 
 typst compile cv/cv.typ cv_html/cv.html --features html
 
@@ -31,4 +33,4 @@ if __name__ == "__main__":
     cv_html: Path = Path(__file__).parent / "results/cv_html/cv.html"
 
 
-    typst.compile(str(cv_typst), format="html", output=str(cv_typst))
+    typst.compile(str(cv_typst), format="html", output=str(cv_html))

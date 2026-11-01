@@ -1,3 +1,28 @@
+- id: 'Schreiber2026_standards'
+  tags:
+    - 'Open & FAIR'
+  year: 2026
+  date: 2026-10-27
+  pdf: 'publication/Schreiber2026_standards.pdf'
+  authors: 'F. Schreiber, M. Golebiewski, P. Gleeson, S. M. Keating, M. König, A. Luna, E. May, G. Mısırlı, C. J. Myers, D. P. Nickerson, and B. Sommer'
+  people:
+    - matthias_koenig
+  title: 'Standards in systems and synthetic biology: status, developments, and tools in 2026'
+  journal: 'J Integr Bioinform. 2026; 20260037'
+  journal_short: 'J Integr Bioinform.'
+  status: publication
+  impact: 1.5
+  position: index
+  doi: 10.1515/jib-2026-0037
+  pmid: 42936890
+  keywords:
+    - COMBINE
+    - reproducibility
+    - standards
+  homepage: https://co.mbine.org
+  repository:
+  abstract: "For over a decade, the Journal of Integrative Bioinformatics has published special issues providing updated specifications for standards in systems biology and synthetic biology. Beginning in 2024, the special issues expanded to include novel or refined tools that leverage these standards or play a key role in their implementation. The current special issue contains four updated specifications and two tools or libraries. In addition, this document functions as a comprehensive reference for all COMBINE standard specifications, ensuring researchers and practitioners can access the most up-to-date versions available in the field."
+
 - id: 'Li2026_tabularqual'
   tags:
     - 'Open & FAIR'
@@ -199,33 +224,6 @@
   homepage:
   repository: https://github.com/matthiaskoenig/hctz-model
   abstract: "Background: Hydrochlorothiazide is a widely prescribed thiazide diuretic used for the treatment of hypertension. Cardiac, hepatic, and renal impairments are common comorbidities in hypertensive patients and may contribute to substantial interindividual variability in pharmacokinetic (PK) and pharmacodynamic (PD) responses. This variability complicates dose optimization, particularly in clinically heterogeneous patient populations. Methods: We developed a whole-body physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of hydrochlorothiazide integrating oral absorption, systemic distribution, renal elimination, renal sodium, chloride, and fluid handling, and blood-pressure regulation. The model was calibrated and evaluated using systematically curated PK and PD data from 25 clinical studies in healthy individuals and patients with hypertension, cardiac impairment, hepatic impairment, or renal impairment. Results: Model predictions were consistent with observed dose-proportional PK and PD and captured variability in hydrochlorothiazide exposure and response across simulated comorbid conditions. Renal impairment was identified as the main driver of altered hydrochlorothiazide exposure and reduced urinary excretion. By contrast, hepatic and cardiac impairment affected PK primarily through secondary effects on renal function, rather than through direct effects on drug metabolism or absorption. Conclusions: The developed PBPK/PD model provides a mechanistic framework for understanding hydrochlorothiazide pharmacology across heterogeneous clinical conditions. It supports model-informed assessment of variability in exposure and response and may contribute to individualized antihypertensive therapy in patients with comorbidities."
-
-- id: 'Li2026_tabularqual_preprint'
-  tags:
-    - 'Open & FAIR'
-  year: 2026
-  date: 2026-05-31
-  pdf: 'preprint/Li2026_tabularqual_preprint.pdf'
-  authors: 'L. X. Li, C. Bleker, S. Soliman, L. Calzone, N. Hiroi, T. Helikar, M. König, L. Ladeira, P. T. Monteiro, V. Noel, S. Pastva, A. Salazar, D. Safranek, D. Thieffry, E. Tsirvouli, A. Niarakis, and J. Gennari'
-  people:
-    - matthias_koenig
-  title: 'TabularQual: A spreadsheet-based format for annotating and curating logical models in SBML-qual'
-  journal: 'bioRxiv 2026.05.31.727710'
-  journal_short: Preprints
-  status: preprint
-  impact: 0
-  position: index
-  doi: 10.64898/2026.05.31.727710
-  pmid:
-  keywords:
-  - Logical models
-  - qual
-  - SBML
-  - standardization
-  - COMBINE
-  homepage: https://tabularqual.streamlit.app/
-  repository: https://github.com/sys-bio/TabularQual
-  abstract: "Logical models are widely used to study regulatory and signaling systems, yet their reuse, annotation, and exchange across tools remain challenging. Although SBML Level 3 Qualitative Models (SBML-qual) provides a standard representation, its XML-based syntax is difficult to inspect and edit directly. Here we introduce TabularQual, a spreadsheet-based, community-driven representation for Boolean and multi-valued logical models, together with a bidirectional converter between spreadsheets and SBML-qual. The converter is accessible programmatically and via a web interface to support diverse user workflows. We further describe two integration strategies that enable existing modeling tools to operate with TabularQual, either through SBML-qual exchange or via direct support. Case studies using the Stress Knowledge Map and CaSQ demonstrate how this integration supports model construction, curation, and reuse. TabularQual provides a practical bridge between human-readable model representations and standardized executable formats, supporting reproducibility, interoperability, and community-driven model development."
 
 - id: 'Elias2026_dapagliflozin.physiome'
   tags:
@@ -710,7 +708,7 @@
     - mariia_myshkina
     - matthias_koenig
   title: 'A Systems Pharmacology Approach to Rivaroxaban: Physiologically Based Modeling of Pharmacokinetics and Coagulation Dynamics'
-  journal: 'Preprints 2025, 202507.1945.'
+  journal: 'Preprints 2025, 10.20944/preprints202507.1945.v1'
   journal_short: Preprints
   status: preprint
   impact: 0
@@ -854,30 +852,6 @@
   homepage:
   repository:
   abstract: 'Metabolic syndrome (MetS) and type 2 diabetes mellitus (T2D) are associated with inflammation and the accumulation of macrophages in peripheral nerves, which increases the risk of developing peripheral neuropathy (PN). We have previously investigated that macrophage infiltration in the peripheral nerves of animals with T2D (leptin-deficient ob/ob mice, leptin receptor-deficient db/db) correlated with PN, whereas this process in animals with MetS (Wistar Ottawa Karlsburg W (RT1u) WOKW rat) did not lead to neuropathic changes. Additional data presented in this study suggest an association between increased mRNA expression of the anti-inflammatory marker IL-10 and autophagy in the prevention of neuropathy.'
-
-- id: 'Balaur2025_fairification_preprint'
-  tags:
-    - 'Open & FAIR'
-  year: 2025
-  date: 2025-03-21
-  pdf: 'preprint/Balaur2025_fairification_preprint.pdf'
-  authors: 'I. Balaur, D. P. Nickerson, D. Welter, J. A. Wodke, F. Ancien, T. Gebhardt, V. Grouès, H. Hermjakob, M. König, N. Radde, A. Rougny, R. Schneider, R. S. Malik-Sheriff, K. B. Shiferaw, M. Stefan, V. Satagopam, and D. Waltemath'
-  people:
-    - matthias_koenig
-  title: 'FAIRification of computational models in biology'
-  journal: 'bioRxiv 2025.03.21.644517'
-  journal_short:
-  status: preprint
-  impact: 0
-  position: index
-  doi: 10.1101/2025.03.21.644517
-  pmid:
-  keywords:
-    - FAIR
-    - computational models
-  homepage: https://github.com/FAIR-CA-indicators/FAIR-CA-indicators.github.io
-  repository: https://github.com/matthiaskoenig/fair-ca-visualization
-  abstract: 'Computational models are essential for studying complex systems which, particularly in clinical settings, need to be quality-approved and transparent. To enhance the communication of a model’s features and capabilities, we propose an adaptation of the Findability, Accessibility, Interoperability and Reusability (FAIR) indicators published by the Research Data Alliance to assess models encoded in domain-specific standards, such as those established by COMBINE. The assessments guide FAIRification and add value to models.'
 
 - id: 'Mishra2025_internship_report'
   tags:
@@ -1298,7 +1272,7 @@
   people:
     - matthias_koenig
   title: 'Simulation of zonation-function relationships in the liver using coupled multiscale models: Application to drug-induced liver injury'
-  journal: 'bioRxiv 2024.03.26.586870;'
+  journal: 'bioRxiv 2024.03.26.586870'
   status: preprint
   impact: 0
   position: last

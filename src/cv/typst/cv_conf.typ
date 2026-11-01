@@ -1,5 +1,5 @@
-#import "@preview/fontawesome:0.6.0": *
-#import "@preview/linguify:0.4.1": *
+#import "@preview/fontawesome:0.6.2": *
+#import "@preview/linguify:0.4.2": *
 
 // const color
 #let color-darknight = rgb("#131A28")
@@ -223,6 +223,7 @@
 /// - accent-color (color): The accent color of the resume
 /// - colored-headers (boolean): Whether the headers should be colored or not
 /// - language (string): The language of the resume, defaults to "en". See lang.toml for available languages
+/// - signature (boolean): Whether to sign the closing line with images/koenig_signature.png, which is gitignored and only exists locally. Off by default, so the default build is the public one; `typst compile --input signature=true` signs it.
 /// - body (content): The body of the resume
 /// -> none
 #let resume(
@@ -233,6 +234,7 @@
   colored-headers: true,
   show-footer: true,
   language: "en",
+  signature: sys.inputs.at("signature", default: "false") == "true",
   font: ("Source Sans Pro", "Source Sans 3"),
   header-font: ("Roboto"),
   paper-size: "a4",
@@ -500,11 +502,11 @@
     gutter: 15mm,
     [
       *Prof. Dr. rer. nat. Matthias König* \
-      Lübeck, 16. October 2026
+      Lübeck, #datetime.today().display("[day padding:none]. [month repr:long] [year]")
     ],
-    [
+    if signature [
       #image("images/koenig_signature.png", width: 3.5cm)
-    ]
+    ],
   )
   
 }
