@@ -55,6 +55,27 @@
   homepage:
   repository: https://github.com/matthiaskoenig/sorafenib-model
 
+- id: 'Albadry2023_dvgpathologie2023_abstract_steatosis'
+  tags:
+    - 'Digital Pathology'
+    - 'AI'
+  people:
+    - matthias_koenig
+  year: 2023
+  date: 2023-08-11
+  title: 'Periportale Steatose bei Mäusen beeinflusst verschiedene Parameter des perizentralen Arzneimittelstoffwechsels'
+  pdf:
+  authors: 'M. Albadry1,2, S. Höpfl3, N. Ehteshamzad1, <b>M. König</b>4, M. Böttcher5, J. Neumann5, A. Lupp6, O. Dirsch7, N. Radde3, B. Christ8, M. Christ8, L. Schwen9, H. Laue9, R. Klopfleisch10, U. Dahmen1'
+  affiliations: '1 Experimental Transplantation Surgery, Department of General, Visceral and Vascular Surgery, University Hospital Jena, Jena, Germany; 2 Department of Pathology, Faculty of Veterinary Medicine, Menoufia University; 3 Institute for Systems Theory and Automatic Control, Faculty of Engineering Design, Production Engineering and Automotive Engineering, University of Stuttgart, Stuttgart, Germany; 4 Institute for Theoretical Biology, Institute of Biology, Humboldt-University, Berlin, Germany; 5 MVZ Medizinische Labore Dessau Kassel GmbH, Dessau-Roßlau, Germany; 6 Institute of Pharmacology and Toxicology, Jena University Hospital, Jena, Germany; 7 Institute of Pathology, Klinikum Chemnitz, Chemnitz, Germany; 8 Cell Transplantation/Molecular Hepatology Lab, Department of Visceral, Transplant, Thoracic and Vascular Surgery, University of Leipzig Medical Center, Leipzig, Germany; 9 Fraunhofer MEVIS, Bremen, Germany; 10 Institute of Veterinary Pathology, Freie Universität Berlin, Berlin, Germany'
+  abstract: 'Hintergrund: Über die Auswirkungen morphologischer Störungen in bestimmten Zonen auf die metabolische Zonierung ist wenig bekannt. Kürzlich wurde beschrieben, dass eine periportale Fibrose die Expression von CYP-Proteinen, einer Gruppe von perizentral gelegenen Enzymen, die Medikamente metabolisieren, beeinflusst. Hier untersuchten wir, ob eine periportale Steatose einen ähnlichen Effekt haben könnte. Material und Methoden: Die periportale Steatose wurde bei C57BL6/J-Mäusen durch zwei- oder vierwöchige Fütterung mit einer fettreichen Diät mit niedrigem Methionin/Cholingehalt induziert. Der Schweregrad der Steatose wurde mittels Bildanalyse quantifiziert. Triglyceride und CYP-Aktivität wurden mit einem photometrischen oder fluorometrischen Test quantifiziert. Die Verteilung von CYP3A4, CYP1A2, CYP2D6 und CYP2E1 wurde durch Immunhistochemie sichtbar gemacht. Die pharmakokinetischen Parameter der Testmedikamente wurden nach Injektion eines Drogencocktails (Koffein, Codein und Midazolam) bestimmt. Ergebnisse: Das diätetische Modell führte zu einer mäßigen bis schweren gemischten Steatose, die auf periportale und midzonale Bereiche beschränkt war. Die periportale Steatose hatte keinen Einfluss auf die zonale Verteilung der CYP-Expression, aber die Aktivität ausgewählter CYPs war mit dem Schweregrad der Steatose verbunden. Die Elimination von Koffein wurde durch mikrovesikuläre Steatose beschleunigt, während die Elimination von Midazolam bei makrovesikulärer Steatose verzögert war. Zusammenfassung: Zusammenfassend lässt sich sagen, dass die periportale Steatose Parameter des perizentralen Arzneimittelstoffwechsels beeinflusst. Diese Beobachtung erfordert weitere Untersuchungen des hochkomplexen Zusammenhangs zwischen Steatose und Arzneimittelmetabolismus sowie der zugrunde liegenden Signalmechanismen.'
+  keywords:
+  event: '66. Jahrestagung der Fachgruppe Pathologie der DVG, 3.-5. März 2023'
+  event_page:
+  journal: 'Tierärztliche Praxis Ausgabe G: Großtiere / Nutztiere 2023; 51(03): 1'
+  doi: 10.1055/s-0043-1770825
+  homepage: https://doi.org/10.1055/s-0043-1770825
+  repository:
+
 - id: 'Koeller2021_srd2021_abstract_icg'
   tags:
     - 'Pharmacometrics'

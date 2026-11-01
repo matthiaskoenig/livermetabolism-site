@@ -14,7 +14,7 @@ defineProps<{ item: Entry<AbstractData>; tagInfo: TagInfo[]; pdfBase: string; st
     <div class="project-body">
       <p class="news-date">{{ item.date ?? item.year }}</p>
       <h3>{{ item.title }}</h3>
-      <p>{{ item.event }}<template v-if="item.authors"><br />{{ stripHtml(item.authors) }}</template></p>
+      <p><template v-if="item.event">{{ item.event }}<br /></template>{{ stripHtml(item.authors) }}</p>
       <TagList :tags="item.tags" :tag-info="tagInfo" />
       <div class="project-links">
         <span class="project-links-spacer"></span>
