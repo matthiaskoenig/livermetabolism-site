@@ -305,7 +305,7 @@
   tags:
     - "Open & FAIR"
   publications:
-    - 'Li2026_tabularqual_preprint'
+    - 'Li2026_tabularqual'
   homepage: https://tabularqual.streamlit.app/
   repository: https://github.com/sys-bio/TabularQual
   people:

@@ -1,3 +1,30 @@
+- id: 'Li2026_tabularqual'
+  tags:
+    - 'Open & FAIR'
+  year: 2026
+  date: 2026-10-23
+  pdf: 'publication/Li2026_tabularqual.pdf'
+  authors: 'L. X. Li, C. Bleker, S. Soliman, L. Calzone, N. Hiroi, T. Helikar, M. König, L. Ladeira, P. T. Monteiro, V. Noël, S. Pastva, A. Salazar, D. Šafránek, D. Thieffry, E. Tsirvouli, A. Niarakis, and J. H. Gennari'
+  people:
+    - matthias_koenig
+  title: 'TabularQual: a spreadsheet-based format for annotating and curating logical models in SBML-qual'
+  journal: 'npj Systems Biology and Applications (2026)'
+  journal_short: 'npj Syst Biol Appl'
+  status: publication
+  impact: 4.4
+  position: index
+  doi: 10.1038/s41540-026-00841-w
+  pmid:
+  keywords:
+  - Logical models
+  - qual
+  - SBML
+  - standardization
+  - COMBINE
+  homepage: https://tabularqual.streamlit.app/
+  repository: https://github.com/sys-bio/TabularQual
+  abstract: "Logical models are widely used to study regulatory and signaling systems, yet their reuse, annotation, and exchange across tools remain challenging. Although SBML Level 3 Qualitative Models (SBML-qual) provides a standard representation, its XML-based syntax is difficult to inspect and edit directly. Here we introduce TabularQual, a spreadsheet-based, community-driven representation for Boolean and multi-valued logical models, together with a bidirectional converter between spreadsheets and SBML-qual. The converter is accessible programmatically and through a public web interface (https://tabularqual.streamlit.app/), supporting diverse user workflows. We further describe two integration strategies that enable existing modeling tools to operate with TabularQual, either through SBML-qual exchange or via direct support. Case studies using the Stress Knowledge Map and CaSQ demonstrate how this integration supports model construction, curation, and reuse. TabularQual provides a practical bridge between human-readable model representations and standardized executable formats, supporting reproducibility, interoperability, and community-driven model development."
+
 - id: 'Anton2026_standard.gem_preprint'
   tags:
     - 'Open & FAIR'
