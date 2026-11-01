@@ -58,12 +58,22 @@ export default defineConfig({
       i18n: { defaultLocale: 'en', locales: { en: 'en-US', de: 'de-DE' } },
     }),
   ],
+  // The site renders no Markdown, so it needs no syntax highlighter. Shiki,
+  // Astro's default, writes inline style= attributes that the CSP below
+  // forbids, and Astro warns about it on every build while it is enabled.
+  markdown: { syntaxHighlight: false },
   vite: {
     plugins: [tailwindcss()],
     define: {
       __SITE_VERSION__: JSON.stringify(version),
       __SITE_COMMIT__: JSON.stringify(commit),
     },
+    // The shared ECharts chunk of the chart islands is about 620 kB
+    // minified (about 205 kB gzipped). site/components/useChart.ts already
+    // registers only the charts, components and renderer the site uses, so
+    // that is the real cost; it is fetched only when a chart island
+    // hydrates. The limit sits just above it to keep flagging real growth.
+    build: { chunkSizeWarningLimit: 700 },
   },
   // Content-Security-Policy, rendered as a per-page <meta http-equiv> tag.
   // Astro hashes its own bundled/inline scripts and styles (including the
