@@ -1,3 +1,21 @@
+- id: 'huinternship2027'
+  tags:
+    - 'Digital Twins'
+    - 'Pharmacometrics'
+    - 'AI'
+  status: 'current'
+  people:
+    - 'matthias_koenig'
+  title: 'Humboldt Internship Program 2027 - Computational Modeling of Drug Detoxification: Building Pharmacological Digital Twins with Agentic AI'
+  date: '2026-11-02'
+  image: humboldt-internship.webp
+  link: 'https://hic.hu-berlin.de/en/internship-program/projects/201'
+  short: "We offer internships in 2027, three-month research stays in Berlin within the Humboldt Internship Program. You can apply for the Humboldt Internship Program 2027 from 28 October to 05 December 2026."
+  abstract: >-
+    <p>The Humboldt Internship Program is an international short-term program for subject-specific, experiential learning. Participants spend three months in Berlin working with teams in research projects and university-related start-ups. The program is open to advanced Bachelor's students, Master's students and doctoral students who are enrolled at a university outside Germany. You can apply for the Humboldt Internship Program 2027 from 28 October to 05 December 2026.</p>
+    <p>In our project <em>Computational Modeling of Drug Detoxification: Building Pharmacological Digital Twins with Agentic AI</em>, interns build pharmacological digital twins that simulate how the body absorbs, distributes, metabolizes and eliminates drugs, with a focus on the liver and kidneys. Each intern develops a physiologically based pharmacokinetic (PBPK) model of a selected drug: from literature research and the curation of pharmacokinetic data, through implementing the model in Python and estimating its parameters, to validating it against clinical data and simulating scenarios such as drug-drug interactions or organ impairment.</p>
+    <p>New in 2027, the project uses agentic AI workflows for literature analysis, data extraction, coding, testing and documentation. Interns learn to use, supervise and critically evaluate these AI-supported workflows. No prior experience with AI or large language models is needed, only basic programming skills (preferably Python) and an interest in pharmacology, physiology or computational modeling. The internships run on site in Berlin in four windows between May and September 2027. To prepare, see our <a href="https://matthiaskoenig.github.io/dhpe-pkpd/">introduction to PK/PD</a>. More information on the program is available at <a href="https://hic.hu-berlin.de/en/internship-program">https://hic.hu-berlin.de/en/internship-program</a>.</p>
+
 - id: 'Koenig2026_VHT_Day'
   tags:
     - 'Digital Twins'
