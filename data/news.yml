@@ -1,3 +1,19 @@
+- id: 'Koenig2026_VHT_Day'
+  tags:
+    - 'Digital Twins'
+  status: 'current'
+  people:
+    - 'matthias_koenig'
+  title: 'Annual VHT Day 2026 in Brussels: building the Advanced Virtual Human Twin platform'
+  date: '2026-10-21'
+  image: Koenig2026_VHT_Day.webp
+  link: 'https://vph-society.org/annual-vht-day-2026/'
+  short: "Matthias König took part in the Annual VHT Day 2026 in Brussels, where the European Virtual Human Twin community discussed the Advanced VHT Platform, a shared infrastructure for bringing computational models from research into the clinic."
+  abstract: >-
+    <p>On 20-21 October 2026, Matthias König joined researchers, clinicians, technology providers and policymakers in Brussels for the Annual VHT Day 2026. The meeting brought together the European Virtual Human Twin (VHT) community to advance the Advanced VHT Platform and to discuss how computational models of human physiology and disease can move "from byte to bedside".</p>
+    <p>The Advanced VHT Platform is planned as a shared European infrastructure for biomedical research and healthcare innovation. It will be open source, federated and privacy-preserving, so that institutions keep control of their own models and data. The platform is aligned with the EU's AI Continent Action Plan and the European Health Data Space (EHDS). The VHTnet consortium is working towards a minimum viable product in September 2027 and a full platform release in September 2028.</p>
+    <p>A message repeated throughout the two days was that Virtual Human Twins can only be built as a community. More than 150 organisations have signed the VHT Manifesto, and a User Group of over 200 experts from 21 countries is shaping the platform's requirements, governance and applications. Our digital twins of liver function and drug metabolism, encoded in open standards such as SBML and built on curated data from PK-DB, are the kind of reusable and interoperable models the platform is meant to connect.</p>
+
 - id: 'Koenig2026_Open_Science_Award'
   tags:
     - 'Open & FAIR'
