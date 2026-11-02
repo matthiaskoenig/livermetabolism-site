@@ -72,20 +72,6 @@
     - 'Digital Pathology'
   description: 'Michelle develops a physiologically based pharmacokinetic/ pharmacodynamic (PBPK) model of the sulfonylurea glimepiride. The objective is to enhance our understanding of the underlying causes of intraindividual variability in insulin secretion and T2DM treatment with sulfonylurea, e.g., differences in hepatorenal function.'
 
-- id: 'mariia_babaeva'
-  status: 'current'
-  tenure: '2025-04/2026'
-  name: 'Mariia Babaeva'
-  country: 'Russia'
-  role:
-    - 'Master Project'
-    - 'Student Assistant'
-  image: mariia_babaeva.webp
-  orcid: "0009-0007-6659-7638"
-  repository: 'https://github.com/icalledmyselfmoon'
-  homepage:
-  description: 'Mariia works on a physiologically based model of lisinopril. Key questions are the effect of hepatic and renal disease on lisinopril pharmacokinetics and pharmacodynamics.'
-
 - id: 'amanda_schwaiger'
   status: 'current'
   tenure: '2023-09/2026-09'
@@ -138,6 +124,19 @@
   homepage:
   description: "Shelee is developing a physiologically based pharmacokinetic (PBPK) model of the multikinase inhibitor lenvatinib to better understand its absorption, distribution, metabolism, and excretion. The project focuses on characterizing interindividual variability in treatment response, with particular emphasis on hepatic metabolism, drug-drug interactions, and the impact of liver function in patients with hepatocellular carcinoma."
 
+- id: 'tom_oberlaender'
+  status: 'current'
+  tenure: '2026-10/2027-04'
+  name: 'Tom Oberländer'
+  country: 'Germany'
+  role:
+    - 'Master Thesis'
+  image: tom_oberlaender.webp
+  orcid: "0009-0003-7604-5771"
+  repository: 'https://github.com/tom-del792'
+  homepage:
+  description: "Tom is developing hybrid pharmacokinetic/pharmacodynamic (PK/PD) models in which neural networks replace poorly known terms of a mechanistic ODE model. Starting from our physiologically based PK/PD model of the anticoagulant apixaban, the project learns how kidney and liver function, body weight, and age scale drug clearance, and how apixaban concentrations translate into coagulation effects. The simulator is written in JAX and verified against libRoadRunner, and the hybrid models are exported in the PEtab SciML format so that other tools can load and reproduce them."
+
 - id: 'chang_nguyen'
   status: 'current'
   tenure: '2026-04/2026-11'
@@ -177,6 +176,21 @@
   repository: 'https://github.com/MadNietzsche'
   homepage:
   description: "Antonio will delve into the influence of parameter variability in PBPK models, focusing on the consequential effects for dynamic liver function assessments. The overarching objective of this project is to augment our comprehension of how inherent variability in parameters translates into intra-individual variability in pharmacokinetics."
+
+- id: 'mariia_babaeva'
+  status: 'alumni'
+  tenure: '2025-04/2026-10'
+  end_year: '2026'
+  name: 'Mariia Babaeva'
+  country: 'Russia'
+  role:
+    - 'Master Project'
+    - 'Student Assistant'
+  image: mariia_babaeva.webp
+  orcid: "0009-0007-6659-7638"
+  repository: 'https://github.com/icalledmyselfmoon'
+  homepage:
+  description: 'Mariia works on a physiologically based model of lisinopril. Key questions are the effect of hepatic and renal disease on lisinopril pharmacokinetics and pharmacodynamics.'
 
 - id: 'monika_jesionek'
   status: 'alumni'

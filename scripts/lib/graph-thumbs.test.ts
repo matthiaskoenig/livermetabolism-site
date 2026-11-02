@@ -61,8 +61,8 @@ describe('thumbJobs over the real data', () => {
   });
 
   it('has one job per person with a photo, and nothing else', () => {
-    expect(jobs.filter((j) => j.target.includes('/graph/people/'))).toHaveLength(61);
-    expect(jobs).toHaveLength(61);
+    expect(jobs.filter((j) => j.target.includes('/graph/people/'))).toHaveLength(62);
+    expect(jobs).toHaveLength(62);
   });
 
   it('reads every source from under public/assets/image', () => {

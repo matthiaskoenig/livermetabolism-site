@@ -69,7 +69,7 @@ describe('peopleTopics over the real data', () => {
 
   it('covers every person of people.yml exactly once', () => {
     expect(topics.size).toBe(data.people.length);
-    expect(topics.size).toBe(61);
+    expect(topics.size).toBe(62);
     for (const person of data.people) expect(topics.has(person.id)).toBe(true);
   });
 
@@ -84,11 +84,11 @@ describe('peopleTopics over the real data', () => {
     expect([...(topics.get('matthias_koenig') ?? [])].sort()).toEqual(
       ['ai', 'digital-pathology', 'digital-twins', 'open-fair', 'pharmacometrics'],
     );
-    // 27 of the 61 are students and alumni with no paper of their own; the
+    // 28 of the 62 are students and alumni with no paper of their own; the
     // team page hides their cards under any active area, which is what an
     // empty `data-tags` means
     const empty = [...topics.values()].filter((areas) => areas.length === 0);
-    expect(empty).toHaveLength(27);
+    expect(empty).toHaveLength(28);
   });
 
   it('adds the areas a person is tagged with in people.yml to those of their papers (#78)', () => {

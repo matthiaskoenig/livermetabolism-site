@@ -197,13 +197,13 @@ describe('graphRows over the real data', () => {
   const graph = graphRows({ ...data, citations: emptyCitations(), base: '/', assetBase: '/', thumbs });
   const byId = new Map(graph.nodes.map((n) => [n.id, n]));
 
-  it('has one node per row of every table and 212 nodes with 312 links in total', () => {
+  it('has one node per row of every table and 213 nodes with 312 links in total', () => {
     expect(graph.nodes.filter((n) => n.type === 'person')).toHaveLength(data.people.length);
     expect(graph.nodes.filter((n) => n.type === 'publication')).toHaveLength(data.publications.length);
     expect(graph.nodes.filter((n) => n.type === 'project')).toHaveLength(data.projects.length);
     expect(graph.nodes.filter((n) => n.type === 'software')).toHaveLength(data.software.length);
     expect(byId.size).toBe(graph.nodes.length);
-    expect(graph.nodes).toHaveLength(212);
+    expect(graph.nodes).toHaveLength(213);
     expect(graph.links).toHaveLength(312);
   });
 
@@ -224,11 +224,11 @@ describe('graphRows over the real data', () => {
     }
   });
 
-  it('has 23 people without a single link, which the drawn view drops', () => {
+  it('has 24 people without a single link, which the drawn view drops', () => {
     const isolated = graph.nodes.filter((n) => !graph.links.some((l) => l.source === n.id || l.target === n.id));
     // people with no publication, project or software entry of their own
     expect(isolated.every((n) => n.type === 'person')).toBe(true);
-    expect(isolated).toHaveLength(23);
+    expect(isolated).toHaveLength(24);
     // filterRows() draws only what is connected (see networkOptions.ts)
     const view = filterRows(graph, null);
     expect(view.nodes).toHaveLength(graph.nodes.length - isolated.length);

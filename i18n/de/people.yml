@@ -83,6 +83,14 @@ shelee_bedon:
     sha: 16e6c7046607221b
     text:
       - 'Praktikumsprojekt'
+tom_oberlaender:
+  description:
+    sha: e8395b00a9d80412
+    text: 'Tom entwickelt hybride pharmakokinetische/pharmakodynamische (PK/PD) Modelle, in denen neuronale Netze unzureichend bekannte Terme eines mechanistischen ODE-Modells ersetzen. Ausgehend von unserem physiologiebasierten PK/PD-Modell des Antikoagulans Apixaban lernt das Projekt, wie Nieren- und Leberfunktion, Körpergewicht und Alter die Clearance des Arzneimittels skalieren und wie sich Apixaban-Konzentrationen in Gerinnungseffekte übersetzen. Der Simulator ist in JAX geschrieben und gegen libRoadRunner verifiziert, und die hybriden Modelle werden im Format PEtab SciML exportiert, sodass andere Werkzeuge sie laden und reproduzieren können.'
+  role:
+    sha: b3134802c38504cc
+    text:
+      - 'Masterarbeit'
 chang_nguyen:
   description:
     sha: d03fed73cc204547
