@@ -82,17 +82,17 @@
   year: 2026
   date: 2026-09-21
   pdf: 'publication/Corradi2026_llemy.pdf'
-  authors: 'M. Corradi, I. Djidrovski, L. Ladeira, B. Staumont, A. Verhoeven, J. Sanz Serrano, A. Rougny, A. Vaez, A. Hemedan, A. Mazein, A. Niarakis, A. de Carvalho e Silva, C. Auffray, E. Wilighagen, E. Kuchovska, F. Schreiber, I. Balaur, L. Calzone, L. Matthews, L. Veschini, M. E. Gillespie, M. Kutmon, M. König, M. van Welzen, N. Hiroi, O. Lopata, P. Klemmer, R. Overall, T. Hofer, V. Satagopam, R. Schneider, M. Teunis, L. Geris, and M. Ostaszewski'
+  authors: 'M. Corradi, I. Djidrovski, L. Ladeira, B. Staumont, A. Verhoeven, J. Sanz Serrano, A. Rougny, A. Vaez, A. Hemedan, A. Mazein, A. Niarakis, A. de Carvalho e Silva, C. Auffray, E. Willighagen, E. Kuchovska, F. Schreiber, I. Balaur, L. Calzone, L. Matthews, L. Veschini, M. E. Gillespie, M. Kutmon, M. König, M. van Welzen, N. Hiroi, O. Lopata, P. Klemmer, R. Overall, T. Hofer, V. Satagopam, R. Schneider, M. Teunis, L. Geris, and M. Ostaszewski'
   people:
     - matthias_koenig
   title: 'User-driven development and evaluation of an agentic framework for analysis of large pathway diagrams'
-  journal: 'Bioinformatics Advances (2026), vbag277'
+  journal: 'Bioinformatics Advances. 2026;6(1):vbag277'
   journal_short: 'Bioinform Adv'
   status: publication
   impact: 2.6
   position: index
   doi: 10.1093/bioadv/vbag277
-  pmid:
+  pmid: 42891377
   keywords:
     - SBGN
     - LLM
