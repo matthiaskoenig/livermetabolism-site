@@ -7,7 +7,7 @@
 # so a root Docker daemon does not leave root-owned output behind.
 services:
   site:
-    image: node:24.22.3-alpine
+    image: node:26.13.1-alpine
     working_dir: /app
     command: sh -c "npm ci --no-audit --no-fund && npm run build && chown -R ${HOST_UID:-1000}:${HOST_GID:-1000} dist .astro"
     environment:
