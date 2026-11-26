@@ -1,4 +1,4 @@
-# Keep the GitHub Actions, the npm and the uv dependencies up to date, monthly,
+# Keep GitHub Actions, npm, uv and Docker Compose dependencies up to date monthly,
 # since every update pull request runs the checks.
 version: 2
 updates:
@@ -31,5 +31,14 @@ updates:
       interval: "monthly"
     groups:
       uv-minor-patch:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
+
+  - package-ecosystem: "docker-compose"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    groups:
+      docker-minor-patch:
         patterns: ["*"]
         update-types: ["minor", "patch"]

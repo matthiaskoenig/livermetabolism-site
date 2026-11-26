@@ -3,7 +3,7 @@
 # NGINX_PORT lets a local test bind another port (NGINX_PORT=8080 docker compose up).
 services:
   nginx:
-    image: nginx:1.31.5-alpine
+    image: nginx:1.31.10-alpine
     volumes:
       - $PWD/dist:/usr/share/nginx/html:ro
       - $PWD/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
